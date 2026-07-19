@@ -13,6 +13,8 @@ The wiki includes:
 > **This repository does not include the Stonetop PDFs, artwork, or a pre-built wiki.**  
 > You need a legal copy of the Book II **1-up** PDF from [the official Stonetop store](https://plusoneexp.com/collections/stonetop).
 
+## Screenshots
+
 ![Wiki screenshot — multi-column gazetteer](docs/wiki-screenshot-1.png)
 
 ![Wiki screenshot — arcana and navigation](docs/wiki-screenshot-2.png)
