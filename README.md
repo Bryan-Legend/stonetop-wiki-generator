@@ -8,7 +8,6 @@ The wiki includes:
 - Minor & major arcana as interactive cards (checkboxes for unlocks / progress / consequences)
 - Full-text search, hover previews, and dice rollers
 - Deep links between page references and monster/stat blocks
-- Maps rendered from the PDF (optional high-res campaign sheets)
 
 > **This repository does not include the Stonetop PDFs, artwork, or a pre-built wiki.**  
 > You need a legal copy of the Book II **1-up** PDF from [the official Stonetop store](https://plusoneexp.com/collections/stonetop).
@@ -125,9 +124,6 @@ Check the PDF filename and that it sits in the same directory as `build_book_ii_
 
 **Build is slow / uses a lot of RAM**  
 Normal for a ~500-page PDF with map renders. Give it a minute; maps are the heavy step.
-
-**Maps page only has PDF spreads**  
-That’s expected without a `Maps/` folder of campaign sheets.
 
 **Search / previews don’t work over `file://`**  
 Use a local static server (`python -m http.server`) as shown above.
