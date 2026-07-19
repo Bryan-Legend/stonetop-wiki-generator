@@ -11,7 +11,7 @@ The wiki includes:
 - Maps rendered from the PDF (optional high-res campaign sheets)
 
 > **This repository does not include the Stonetop PDFs, artwork, or a pre-built wiki.**  
-> You need a legal copy of the Book II **1-up** PDF from [the official Stonetop kickstarter / store](https://www.kickstarter.com/projects/jeremystrandberg/stonetop).
+> You need a legal copy of the Book II **1-up** PDF from [the official Stonetop store](https://plusoneexp.com/collections/stonetop).
 
 ![Wiki screenshot — multi-column gazetteer](docs/wiki-screenshot-1.png)
 
@@ -94,12 +94,6 @@ Maps/
   Map 2 - Vicinity.jpg
   …
 ```
-
-No maps folder is required — PDF map pages are always rendered from the book.
-
-## Optional: Book_II markdown
-
-If you have a `Book_II/` directory of chapter `.md` files (e.g. from a prior conversion), place it next to the script. It is **not required**; the wiki is built from the PDF table of contents and page text.
 
 ## What gets generated
 
