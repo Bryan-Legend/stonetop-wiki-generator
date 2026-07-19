@@ -1,0 +1,28 @@
+# Generated wiki site
+Stonetop_Wiki/
+Book_II_Wiki/
+
+# Source PDFs and campaign assets (not redistributed)
+*.pdf
+Maps/
+maps/
+Book_II/
+Book_I/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+.env
+*.egg-info/
+dist/
+build/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+*.tmp.*
