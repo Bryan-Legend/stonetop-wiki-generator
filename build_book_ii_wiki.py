@@ -1443,6 +1443,73 @@ html, body {
   width: 2.75rem;
   font-variant-numeric: tabular-nums;
 }
+.value-table .value-note {
+  padding: 0.28rem 0.5rem;
+  border-top: 1px solid var(--rule);
+  font-size: 0.76rem;
+  color: var(--muted);
+}
+
+/* Book-style lists rendered with traditional bullets */
+.content ul.bullets,
+.content ul.questions {
+  list-style: disc outside;
+  margin: 0.3rem 0 0.5rem;
+  padding-left: 1.2rem;
+}
+.content ul.bullets li,
+.content ul.questions li {
+  margin: 0.16rem 0;
+  break-inside: avoid;
+}
+.content ul.bullets li::marker,
+.content ul.questions li::marker {
+  color: var(--accent);
+}
+.content ul.ellipsis {
+  list-style: none;
+  margin: 0.3rem 0 0.5rem;
+  padding-left: 1.55rem;
+}
+.content ul.ellipsis li {
+  position: relative;
+  margin: 0.16rem 0;
+  break-inside: avoid;
+}
+.content ul.ellipsis li::before {
+  content: "…";
+  position: absolute;
+  left: -1.3rem;
+  top: 0;
+  color: var(--muted);
+}
+
+/* Chapter info box (steading summary) */
+.infobox {
+  break-inside: avoid;
+  margin: 0.35rem 0 0.85rem;
+  padding: 0.55rem 0.7rem 0.6rem;
+  border: 1px solid var(--accent);
+  border-radius: var(--radius);
+  background: var(--bg-elev);
+  max-width: var(--col-w);
+  font-size: 0.84rem;
+}
+.infobox h4 {
+  margin: 0.45rem 0 0.1rem;
+  color: var(--accent);
+  font-family: var(--font-serif);
+  font-size: 0.9rem;
+}
+.infobox h4:first-child { margin-top: 0; }
+.infobox p { margin: 0.18rem 0; }
+.infobox ul { margin: 0.12rem 0 0.3rem; }
+
+/* Fell-type table headers with no value column ("trade opportunities") */
+.content h3.table-heading {
+  font-variant: small-caps;
+  letter-spacing: 0.05em;
+}
 
 /* Roll tables */
 .roll-table {
@@ -1758,12 +1825,12 @@ button.dice-roll.rolling {
 }
 .arcana-move p {
   margin: 0 0 0.35rem;
-  font-size: 0.94rem;
+  font-size: 0.88rem;
 }
 .arcana-picks {
   margin: 0.25rem 0 0;
   padding-left: 1.15rem;
-  font-size: 0.9rem;
+  font-size: 0.84rem;
 }
 .arcana-picks li {
   margin: 0.15rem 0;
@@ -1941,6 +2008,71 @@ li.check-item input.wiki-check:checked + span {
   font-size: 0.92rem;
 }
 
+/* Artifact / tagged-discovery blocks */
+.discovery-block {
+  break-inside: avoid;
+  margin: 0.5rem 0 0.7rem;
+  padding: 0.5rem 0.65rem 0.55rem;
+  background: var(--stat-bg, #241c16);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--link);
+  border-radius: 0 var(--radius) var(--radius) 0;
+  max-width: var(--col-w);
+  font-size: 0.84rem;
+  line-height: 1.35;
+}
+.discovery-block .discovery-name {
+  margin: 0 0 0.1rem;
+  font-family: var(--font-serif);
+  font-size: 0.98rem;
+  color: var(--link);
+  border: none;
+  padding: 0;
+}
+.discovery-block .discovery-tags {
+  margin: 0 0 0.25rem;
+  color: var(--muted);
+  font-style: italic;
+  font-size: 0.8rem;
+}
+.discovery-block > p { margin: 0.25rem 0; }
+.discovery-block .discovery-note {
+  margin: 0.3rem 0 0;
+  color: var(--quote);
+}
+.discovery-block > :last-child { margin-bottom: 0; }
+
+/* Custom move blocks (ASK AROUND, CAROUSE, RECRUIT, …) */
+.move-block {
+  break-inside: avoid;
+  margin: 0.6rem 0 0.85rem;
+  padding: 0.55rem 0.7rem 0.65rem;
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--link);
+  border-radius: var(--radius);
+  background: rgba(224, 184, 136, 0.05);
+}
+.move-block .move-name {
+  margin: 0 0 0.3rem;
+  font-family: var(--font-serif);
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  color: var(--accent);
+  border: none;
+  padding: 0;
+}
+.move-block .move-trigger {
+  margin: 0 0 0.35rem;
+  font-style: italic;
+  color: var(--quote);
+}
+.move-block > ul {
+  margin: 0.25rem 0 0.35rem;
+}
+.move-block > p { margin: 0.3rem 0; }
+.move-block > :last-child { margin-bottom: 0; }
+
 /* Hover preview (Wikipedia-style) */
 .wiki-preview {
   position: fixed;
@@ -1988,9 +2120,10 @@ li.check-item input.wiki-check:checked + span {
   display: flex;
   gap: .9rem;
   padding: .35rem 1rem 1rem;
-  font-size: 1rem;
+  /* match main content type */
+  font-size: 0.88rem;
   color: var(--quote);
-  line-height: 1.5;
+  line-height: 1.4;
 }
 .wiki-preview .pv-thumb {
   width: 140px;
@@ -2004,8 +2137,9 @@ li.check-item input.wiki-check:checked + span {
 }
 .wiki-preview .pv-excerpt {
   margin: 0;
+  white-space: pre-line;
   display: -webkit-box;
-  -webkit-line-clamp: 12;
+  -webkit-line-clamp: 16;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
@@ -3358,7 +3492,7 @@ def main() -> None:
             )
         else:
             lines = extract_article_lines(
-                doc, art["start_page"], art["end_page"], art["title"]
+                doc, art["start_page"], art["end_page"], art["title"], rich=True
             )
             toc_labels, lines = split_chapter_toc(lines, art["title"])
             lines_cache[slug] = lines
@@ -3594,8 +3728,13 @@ Open `index.html` in a browser (or serve this folder with any static file server
 
 - Sidebar **Search wiki…** filters topics by title *and* full page text (with snippets)
 - Page numbers are hyperlinks; dice expressions roll on click
-- Hover previews (full stat blocks when deep-linked)
+- Hover previews (full stat/threat blocks when deep-linked; ~50-word excerpts otherwise)
 - Steading-improvement requirement checkboxes (saved in the browser)
+- Book-faithful structure parsed from the PDF's art: bullet lists (incl. Questions
+  and nested sub-lists), "…" option lists, People/Places entries with bold lead-ins,
+  inventory/uses diamonds (◇) in Trade & Barter tables, chapter steading info boxes,
+  threat blocks with countdown checklists (e.g. Marshedge's Fire), steading-improvement
+  blocks (multi-group requirements), and custom Move blocks (ASK AROUND, CAROUSE, …)
 - **Maps** page with campaign map sheets + PDF map spreads
 - Horizontal multi-column layout on topic pages
 
