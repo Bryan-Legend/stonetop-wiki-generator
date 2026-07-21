@@ -233,6 +233,664 @@ def extract_page_lines(
     return lines_out
 
 
+# ---------------------------------------------------------------------------
+# Rich (span/drawing-aware) extraction
+#
+# The book marks structure with vector art and special fonts that plain text
+# extraction loses: spiral bullets (two kinds — questions get a tail flourish),
+# open-square checkboxes, outline diamonds for inventory slots/uses, Fell Type
+# small-caps headers on trade/value tables, Avara-Bold headings, and a ruled
+# box around each chapter's steading summary. extract_article_lines(rich=True)
+# re-reads all of that and emits marker-prefixed lines that structure_html
+# understands. Markers use \x02 so they can never collide with body text.
+# ---------------------------------------------------------------------------
+M_B = "\x02B "        # spiral bullet item
+M_B2 = "\x02B2 "      # nested (tier-2) bullet under a People-style entry
+M_Q = "\x02Q "        # question-spiral bullet item
+M_E = "\x02E "        # ellipsis ("...") list item
+M_C = "\x02C "        # checkbox item
+M_H2 = "\x02H2 "      # Avara-Bold section heading
+M_H3 = "\x02H3 "      # Avara-Bold sub-heading (or creature name)
+M_H4 = "\x02H4 "      # bold label inside the chapter info box
+M_TH = "\x02TH "      # Fell Type header with no value column
+M_VT = "\x02VT "      # value table start (payload: title)
+M_VR = "\x02VR "      # value table row (payload: item \x03 value)
+M_VA = "\x02VA "      # append fragment to previous table's last row
+M_VF = "\x02VF "      # value table footnote
+M_BOX = "\x02BOX"     # chapter info box start
+M_ENDBOX = "\x02ENDBOX"
+M_MARK = "\x02MARK "  # progress-mark track (payload: count of marks)
+
+MARKER_RE = re.compile(r"^\x02[A-Z0-9]+ ?")
+VAL_TOKEN_RE = re.compile(
+    r"^(\d{1,2}\*?|\+\d{1,2}|free|\d{1,2} or \d{1,2})$", re.I
+)
+
+# Inline formatting sentinels carried through the pipeline and turned into
+# <strong>/<em> only at the final linkify step. Structural analysis always
+# runs on de-tokenized text (see _defmt / strip_markers).
+B_ON, B_OFF = "\x04", "\x05"   # bold
+I_ON, I_OFF = "\x06", "\x07"   # italic
+_FMT_TOKENS = str.maketrans("", "", B_ON + B_OFF + I_ON + I_OFF)
+
+
+def _defmt(s: str) -> str:
+    """Drop inline bold/italic sentinels (keep structural \\x02 markers)."""
+    if not s:
+        return ""
+    return s.translate(_FMT_TOKENS)
+
+
+def strip_markers(line: str) -> str:
+    if not line:
+        return ""
+    if line.startswith("\x02"):
+        line = MARKER_RE.sub("", line)
+    return line.translate(_FMT_TOKENS)
+
+
+def fmt_to_html(s: str) -> str:
+    """Convert inline formatting sentinels to <strong>/<em> (post-escape)."""
+    if not s:
+        return s
+    s = (
+        s.replace(B_ON, "<strong>").replace(B_OFF, "</strong>")
+        .replace(I_ON, "<em>").replace(I_OFF, "</em>")
+    )
+    # A run split by a line-wrap ("…one </em></strong> <strong><em>waystone…")
+    # renders identically to one run — collapse the seam (and its extra space).
+    s = re.sub(r"\s*</em></strong>\s+<strong><em>\s*", " ", s)
+    s = re.sub(r"\s*</strong>\s+<strong>\s*", " ", s)
+    s = re.sub(r"\s*</em>\s+<em>\s*", " ", s)
+    return s
+
+
+# Leading bold run of a list/entry item: "\x04Name\x05 rest of the text"
+BOLD_PREFIX_RE = re.compile(r"^\x04([^\x04\x05]*)\x05")
+
+
+def split_bold_prefix(s: str) -> tuple[str, str]:
+    """Return (plain bold_prefix, text with the leading bold sentinels removed)."""
+    m = BOLD_PREFIX_RE.match(s or "")
+    if m:
+        prefix = _defmt(m.group(1))
+        return prefix, prefix + s[m.end():]
+    return "", s or ""
+
+
+def render_rich_text(s: str, link_fn) -> str:
+    """Linkify text (inline formatting sentinels become tags inside link_fn)."""
+    return link_fn(s)
+
+
+def _lead_bold_prefix(text_spans: list[dict], text: str) -> str:
+    """Visible text of the leading run of bold spans (for entry detection)."""
+    parts: list[str] = []
+    for g in text_spans:
+        f = g["font"]
+        if "Bold" in f and not f.startswith("Avara") and "FellType" not in f:
+            parts.append(g["text"])
+        else:
+            break
+    if not parts:
+        return ""
+    prefix = normalize_text(re.sub(r"\s+", " ", " ".join(parts))).strip()
+    prefix = re.sub(r"\s+", " ", prefix).strip()
+    if prefix and _defmt(text).startswith(prefix):
+        return prefix
+    return ""
+
+
+def _dedupe_rects(rects: list) -> list:
+    out = []
+    seen = set()
+    for r in rects:
+        key = (round(r.x0), round(r.y0))
+        if key in seen:
+            continue
+        seen.add(key)
+        out.append(r)
+    return out
+
+
+def extract_page_rich(
+    page: fitz.Page,
+    article_title: str = "",
+    first_page: bool = False,
+    state: dict | None = None,
+    *,
+    y_clip: tuple[float, float] | None = None,
+    single_column: bool = False,
+) -> list[str]:
+    """Marker-annotated reading-order lines (left column then right).
+
+    ``y_clip`` restricts to a vertical band (used for minor-arcana halves).
+    ``single_column`` disables the mid-page gutter split (arcana cards read
+    as one column full width).
+    """
+    if state is None:
+        state = {}
+    gutter = page.rect.width * 0.5
+    if 350 < page.rect.width < 450:
+        gutter = DEFAULT_GUTTER
+    if single_column:
+        gutter = page.rect.width + 1  # everything falls in the left column
+    page_h = page.rect.height
+    cy0, cy1 = y_clip if y_clip else (float("-inf"), float("inf"))
+
+    spans: list[dict] = []
+    seen_spans: set = set()
+    for b in page.get_text("dict").get("blocks", []):
+        if b.get("type") != 0:
+            continue
+        for ln in b.get("lines", []):
+            for s in ln.get("spans", []):
+                txt = (s.get("text") or "").replace("\t", " ")
+                if not txt.strip():
+                    continue
+                x0, y0, x1, y1 = s["bbox"]
+                if not (cy0 <= y0 < cy1):
+                    continue
+                # Some headers are double-printed at identical coordinates
+                key = (round(x0), round(y0), txt.strip())
+                if key in seen_spans:
+                    continue
+                seen_spans.add(key)
+                spans.append(
+                    {
+                        "x": x0,
+                        "y": y0,
+                        "x1": x1,
+                        "text": txt,
+                        "font": s.get("font", ""),
+                        "size": s.get("size", 9.0),
+                    }
+                )
+    if not spans:
+        return []
+
+    spirals: list = []
+    tails: list = []
+    diamonds: list = []
+    boxes_sq: list = []
+    box_rect = None
+    for dr in page.get_drawings():
+        r = dr["rect"]
+        if not (cy0 <= (r.y0 + r.y1) / 2 < cy1):
+            continue
+        w, h = r.width, r.height
+        ni = len(dr["items"])
+        if 4.0 <= w <= 8.0 and 4.0 <= h <= 8.0:
+            if ni >= 15:
+                spirals.append(r)
+            elif ni == 4:
+                diamonds.append(r)
+            elif 7 <= ni <= 10:
+                boxes_sq.append(r)  # open-square checkbox
+        elif w <= 4.5 and h <= 6.5 and 5 <= ni <= 9:
+            tails.append(r)  # flourish on the question spiral
+        elif first_page and 110 <= w <= 320 and h >= 90 and box_rect is None:
+            box_rect = r
+    spirals = _dedupe_rects(spirals)
+    diamonds = _dedupe_rects(diamonds)
+    boxes_sq = _dedupe_rects(boxes_sq)
+
+    # Chapter info box (steading summary) — only if it really holds the stats
+    box_spans: list[dict] = []
+    if box_rect is not None:
+        cand = [
+            s
+            for s in spans
+            if box_rect.x0 - 2 <= s["x"] <= box_rect.x1 + 2
+            and box_rect.y0 - 2 <= s["y"] <= box_rect.y1 + 2
+        ]
+        if any(
+            s["text"].strip().startswith(("Size", "Population", "Prosperity"))
+            for s in cand
+        ):
+            ids = {id(s) for s in cand}
+            box_spans = cand
+            spans = [s for s in spans if id(s) not in ids]
+        else:
+            box_rect = None
+
+    def build_lines(region: list[dict], x_lo: float, x_hi: float) -> list[dict]:
+        """Cluster spans into visual lines, attach glyph markers."""
+        # Only glyphs inside this region's x-range may mark its lines —
+        # otherwise a bullet in the left column marks right-column lines
+        # that happen to share its y.
+        def _loc(rects: list) -> list:
+            return [r for r in rects if x_lo - 6 <= r.x0 <= x_hi]
+
+        r_spirals = _loc(spirals)
+        r_tails = _loc(tails)
+        r_diamonds = _loc(diamonds)
+        r_checks = _loc(boxes_sq)
+
+        region = sorted(region, key=lambda s: (s["y"], s["x"]))
+        lines: list[list[dict]] = []
+        for s in region:
+            if lines and abs(s["y"] - lines[-1][0]["y"]) <= 4.5:
+                lines[-1].append(s)
+            else:
+                lines.append([s])
+        recs: list[dict] = []
+        for group in lines:
+            group.sort(key=lambda s: s["x"])
+            size = max(g["size"] for g in group)
+            y_top = min(g["y"] for g in group)
+            y_c = y_top + size / 2
+            # Dingbat spans are glyph bullets, not text
+            text_spans = []
+            bullet = None
+            ding = 0
+            for g in group:
+                f = g["font"]
+                if "Dingbat" in f or "Wingdings" in f:
+                    ding += len(g["text"].strip())
+                    if not text_spans and g["text"].strip():
+                        bullet = "stat" if "ITC" in f else "check"
+                    continue
+                text_spans.append(g)
+            if not text_spans:
+                # A row of lone dingbat glyphs → an arcana progress-mark track
+                if ding >= 2:
+                    recs.append({"y": y_top, "marks": ding})
+                continue
+            first_x = text_spans[0]["x"]
+            # Vector glyphs on this line
+            row_dia = sorted(
+                (d for d in r_diamonds if abs((d.y0 + d.y1) / 2 - y_c) <= 4.0),
+                key=lambda d: d.x0,
+            )
+            if bullet is None:
+                for r in r_checks:
+                    if (
+                        abs((r.y0 + r.y1) / 2 - y_c) <= 5.5
+                        and r.x0 < first_x
+                        and first_x - r.x0 <= 25
+                    ):
+                        bullet = "check"
+                        break
+            if bullet is None:
+                for r in r_spirals:
+                    if (
+                        abs((r.y0 + r.y1) / 2 - y_c) <= 6.0
+                        and r.x0 < first_x
+                        and first_x - r.x0 <= 25
+                    ):
+                        bullet = "b"
+                        for t in r_tails:
+                            if (
+                                abs(t.x0 - r.x1) <= 5.0
+                                and abs(t.y0 - r.y0) <= 5.0
+                            ):
+                                bullet = "q"
+                                break
+                        break
+            # Assemble text with diamonds inserted by x position; add spaces
+            # only across real gaps so punctuation spans stay attached.
+            # Track bold/italic per span as (text, bold, ital) segments.
+            segs: list[list] = []  # [text, bold, ital]
+            prev_x1: float | None = None
+            di = 0
+
+            def _style(font: str) -> tuple[bool, bool]:
+                bold = (
+                    "Bold" in font
+                    and not font.startswith("Avara")
+                    and "FellType" not in font
+                )
+                return bold, ("Italic" in font)
+
+            def _push(seg: str, b: bool, ital: bool) -> None:
+                if not seg:
+                    return
+                if segs and segs[-1][1] == b and segs[-1][2] == ital:
+                    segs[-1][0] += seg
+                else:
+                    segs.append([seg, b, ital])
+
+            def _append(seg: str, x0: float, x1: float, b: bool, ital: bool) -> None:
+                nonlocal prev_x1
+                if segs and prev_x1 is not None:
+                    gap = x0 - prev_x1
+                    last = segs[-1][0]
+                    if gap > 1.0 and not last.endswith(" ") and not seg.startswith(" "):
+                        _push(" ", b, ital)
+                _push(seg, b, ital)
+                prev_x1 = x1
+
+            for g in text_spans:
+                gb, gi = _style(g["font"])
+                while di < len(row_dia) and row_dia[di].x0 < g["x"] - 1:
+                    _append("◇ ", row_dia[di].x0, row_dia[di].x1, False, False)
+                    di += 1
+                _append(g["text"], g["x"], g["x1"], gb, gi)
+            while di < len(row_dia):
+                _append("◇", row_dia[di].x0, row_dia[di].x1, False, False)
+                di += 1
+
+            def _wrap(seg_text: str, b: bool, ital: bool) -> str:
+                if not (b or ital):
+                    return seg_text
+                core = seg_text.strip()
+                if not core:
+                    return seg_text  # whitespace-only: never wrap
+                # Keep whitespace outside the tags so it collapses cleanly
+                lead = seg_text[: len(seg_text) - len(seg_text.lstrip())]
+                trail = seg_text[len(seg_text.rstrip()):]
+                if ital:
+                    core = I_ON + core + I_OFF
+                if b:
+                    core = B_ON + core + B_OFF
+                return lead + core + trail
+
+            text = "".join(_wrap(t, b, ital) for t, b, ital in segs)
+            text = re.sub(r"◇\s+(?=◇)", "◇", text)
+            text = text.replace("( ◇", "(◇")
+            text = re.sub(r"\s+([,;:.?!])", r"\1", text)
+            text = normalize_text(re.sub(r"\s+", " ", text)).strip()
+            if not _defmt(text).strip():
+                continue
+            fonts = defaultdict(int)
+            for g in text_spans:
+                fonts[(g["font"], round(g["size"]))] += len(g["text"])
+            dom_font, dom_size = max(fonts, key=fonts.get)
+            has_value = False
+            val_text = ""
+            last = text_spans[-1]
+            if (
+                len(text_spans) >= 2
+                and VAL_TOKEN_RE.match(last["text"].strip())
+                and last["size"] <= 9.5
+            ):
+                has_value = True
+                val_text = last["text"].strip()
+            recs.append(
+                {
+                    "y": y_top,
+                    "x": first_x,
+                    "text": text,
+                    "font": dom_font,
+                    "size": dom_size,
+                    "bullet": bullet,
+                    "has_value": has_value,
+                    "val": val_text,
+                    "val_x": last["x"] if has_value else 0.0,
+                    "bold_lead": "Bold" in text_spans[0]["font"],
+                    "all_bold": all("Bold" in g["font"] for g in text_spans),
+                    "bold_prefix": _lead_bold_prefix(text_spans, text),
+                }
+            )
+        return recs
+
+    def emit_region(recs: list[dict], col_x0: float, in_box: bool) -> list[str]:
+        out: list[str] = []
+        prev_y: float | None = None
+        table = state.get("table") if not in_box else None
+
+        def flush_table(keep_open: bool = False):
+            nonlocal table
+            if table is None:
+                return
+            header_done = table.get("header_emitted", False)
+            if table["rows"]:
+                if not header_done:
+                    out.append(M_VT + table["title"])
+                    header_done = True
+                for item, val in table["rows"]:
+                    out.append(f"{M_VR}{item}\x03{val}")
+                for note in table["notes"]:
+                    out.append(M_VF + note)
+            elif not header_done and not keep_open:
+                out.append(M_TH + table["title"])
+            if keep_open:
+                state["table"] = {
+                    "title": table["title"],
+                    "rows": [],
+                    "notes": [],
+                    "header_emitted": header_done,
+                    "resumed": True,
+                }
+            else:
+                state.pop("table", None)
+            table = None
+
+        def close_table():
+            flush_table(keep_open=False)
+
+        idx = 0
+        n_recs = len(recs)
+        entry_active = False  # inside a People-style entry (for tier-2 bullets)
+        while idx < n_recs:
+            rec = recs[idx]
+            if "marks" in rec:
+                close_table()
+                out.append(M_MARK + str(rec["marks"]))
+                prev_y = rec["y"]
+                idx += 1
+                continue
+            text = rec["text"]
+            y = rec["y"]
+            gap = (y - prev_y) if prev_y is not None else 999.0
+            prev_y = y
+            idx += 1
+
+            # Page furniture
+            if text.isdigit() and len(text) <= 3 and y > page_h - 40:
+                continue
+            near_top = y < 100
+            if is_running_header(_defmt(text), article_title, near_page_top=near_top):
+                continue
+            if is_fully_pairwise_doubled(_defmt(text)):
+                text = undouble_words(_defmt(text))
+                if is_running_header(text, article_title, near_page_top=True):
+                    continue
+
+            # De-tokenized copy for all content-based structural decisions;
+            # `text` keeps its inline bold/italic sentinels for output.
+            dtext = _defmt(text)
+
+            # Tail of the previously emitted line (persists across columns)
+            prev_tail = _defmt(state.get("last_line") or "")
+            state["last_line"] = dtext
+
+            font = rec["font"]
+            is_avara = font.startswith("Avara")
+            # Fell Type at ~12pt marks table headers; at 9pt it's just
+            # small-caps styling inside prose ("terrain", "encounter")
+            is_fell = "FellType" in font and rec["size"] >= 10.5
+
+            # Headings end any open table
+            if is_avara or is_fell:
+                close_table()
+                state["last_line"] = ""
+                entry_active = False
+
+            if is_avara:
+                if rec["size"] >= 16:
+                    continue  # chapter title — page shell already shows it
+                if dtext.isdigit():
+                    continue
+                if rec["size"] >= 11:
+                    out.append(M_H2 + dtext)
+                else:
+                    out.append(M_H3 + dtext)
+                continue
+
+            if is_fell:
+                title = dtext.strip(" .")
+                title = re.sub(r"\s*value\s*$", "", title, flags=re.I).strip(" .")
+                if re.match(r"^\d{0,2}d(?:4|6|8|10|12|20)\b", title, re.I):
+                    # dice-table header ("1d6 discovery") — let the
+                    # roll-table parser handle it as a plain line
+                    out.append(title)
+                    continue
+                if not title:
+                    title = "value"
+                table = {"title": title, "rows": [], "notes": []}
+                state.pop("table", None)
+                continue
+
+            # Inside a value table? (item text de-tokenized — tables are styled)
+            if table is not None:
+                if rec["has_value"] and rec["val_x"] - col_x0 > 100:
+                    item = dtext[: dtext.rfind(rec["val"])].strip() if dtext.endswith(rec["val"]) else dtext
+                    if item.endswith("("):  # value glued oddly — keep whole
+                        item = dtext
+                    # Wrapped item whose value prints on the second line
+                    if (
+                        table["rows"]
+                        and table["rows"][-1][1] == ""
+                        and rec["x"] - col_x0 >= 7
+                        and not item.startswith(("...", "…"))
+                    ):
+                        prev_item, _ = table["rows"][-1]
+                        table["rows"][-1] = (prev_item + " " + item, rec["val"])
+                    else:
+                        table["rows"].append((item, rec["val"]))
+                    state["table"] = table
+                    continue
+                if dtext.startswith("*"):
+                    table["notes"].append(dtext)
+                    continue
+                indent = rec["x"] - col_x0
+                wrapish = indent >= 7 or dtext[:1].islower() or dtext[:1] in "(◇"
+                if table["rows"] and wrapish and not rec["bullet"]:
+                    it, val = table["rows"][-1]
+                    table["rows"][-1] = (it + " " + dtext, val)
+                    continue
+                # Wrap of the previous column's last row, continuing at the
+                # top of this column
+                if (
+                    table.get("resumed")
+                    and not table["rows"]
+                    and wrapish
+                    and not rec["bullet"]
+                ):
+                    out.append(M_VA + dtext)
+                    continue
+                # flush line, no value: keep as a blank-value row only if the
+                # table clearly continues right after
+                if (
+                    table["rows"]
+                    and idx < n_recs
+                    and recs[idx]["has_value"]
+                    and recs[idx]["val_x"] - col_x0 > 100
+                    and not rec["bullet"]
+                ):
+                    table["rows"].append((dtext, ""))
+                    continue
+                close_table()
+
+            # Bullets / checkboxes / ellipsis items. The leading bold lead-in
+            # is already wrapped by the inline-formatting tokens in `text`.
+            def _marked(t: str) -> str:
+                return t
+
+            if rec["bullet"] == "check":
+                out.append(M_C + _marked(text))
+                continue
+            if rec["bullet"] == "stat":
+                out.append("• " + _marked(text))
+                continue
+            if rec["bullet"] in ("b", "q"):
+                marker = M_Q if rec["bullet"] == "q" else M_B
+                if marker == M_B and entry_active and not in_box:
+                    marker = M_B2  # sub-bullet of the current entry
+                if re.match(r"^(\.\.\.|…)", dtext):
+                    marker = M_E
+                    text = re.sub(r"^[\x04\x06]*(\.\.\.|…)\s*", "", text)
+                out.append(marker + _marked(text))
+                continue
+            if re.match(r"^(\.\.\.|…)\s*\S", dtext):
+                out.append(M_E + re.sub(r"^[\x04\x06]*(\.\.\.|…)\s*", "", text))
+                continue
+
+            # People/Places-style entry: bold lead-in on a hanging indent
+            # ("Brennan, onetime bandit leader…") — render as a list item.
+            # A small gap means a wrap of the previous line whose first word
+            # happens to be a bold cross-ref — not a new entry; at a column
+            # start, require the previous column to have ended a sentence.
+            if (
+                not in_box
+                and rec["bold_prefix"]
+                and 12 <= rec["x"] - col_x0 <= 30
+                and (
+                    15 < gap < 900
+                    or (
+                        gap >= 900
+                        and (not prev_tail or prev_tail[-1:] in '.!?):;"')
+                    )
+                )
+            ):
+                out.append(M_B + _marked(text))
+                entry_active = True
+                continue
+
+            # Bold labels inside the info box ("Resources", "Defenses +1")
+            if in_box and rec["all_bold"] and len(dtext) <= 40:
+                out.append(M_H4 + dtext)
+                continue
+
+            # Wrap continuation of a list item directly above; a bold lead
+            # ("Loyalist instinct …", "Defenses +1") starts a new thought.
+            # A steading requirement group-header ("Requires…", "And then…")
+            # must stay its own line so improvement blocks parse correctly.
+            if (
+                out
+                and gap <= 13.5
+                and not rec["bold_lead"]
+                and not re.match(
+                    r"^(Requires?\b|And then\b|And (?:either|one|any)\b)",
+                    dtext, re.I,
+                )
+                and (
+                    out[-1][:3] in (M_B, M_Q, M_E, M_C)
+                    or out[-1].startswith((M_B2, "• "))
+                )
+            ):
+                if out[-1].endswith("-") and text[:1].islower():
+                    out[-1] = out[-1][:-1] + text
+                else:
+                    out[-1] = out[-1] + " " + text
+                continue
+
+            entry_active = False  # a plain paragraph ends the current entry
+            out.append(text)
+
+        # A table still open at column end may continue in the next column
+        flush_table(keep_open=True)
+        return out
+
+    result: list[str] = []
+    if box_spans:
+        recs = build_lines(box_spans, box_rect.x0 - 2, box_rect.x1 + 2)
+        inner = emit_region(recs, box_rect.x0, True)
+        if inner:
+            result.append(M_BOX)
+            result.extend(inner)
+            result.append(M_ENDBOX)
+
+    cols: list[list[dict]] = [[], []]
+    for s in spans:
+        cols[0 if s["x"] < gutter else 1].append(s)
+    for ci, col in enumerate(cols):
+        if not col:
+            continue
+        col_x0 = min(s["x"] for s in col)
+        x_lo, x_hi = (0.0, gutter) if ci == 0 else (gutter, page.rect.width)
+        recs = build_lines(col, x_lo, x_hi)
+        # resume a table that carried over from the previous column/page
+        carried = state.get("table")
+        result.extend(emit_region(recs, col_x0, False))
+        # if the carried table produced no continuation rows, drop the state
+        if carried is not None and state.get("table") is carried:
+            state.pop("table", None)
+    return result
+
+
 def is_running_header(line: str, article_title: str, *, near_page_top: bool = False) -> bool:
     t = line.strip()
     if not t:
@@ -257,6 +915,10 @@ def is_running_header(line: str, article_title: str, *, near_page_top: bool = Fa
         return True
     if near_page_top and at and (lc.startswith(at) or at.startswith(lc)) and len(lc) >= 6:
         return True
+    # Short-form running head of a longer title ("Stonetop" on
+    # "The village of Stonetop" pages)
+    if near_page_top and at and len(lc) >= 6 and at.endswith(lc):
+        return True
     if t.lower() in {"contents", "index"}:
         return True
     return False
@@ -269,6 +931,9 @@ def looks_like_heading(line: str) -> bool:
     if is_fully_pairwise_doubled(line):
         return False
     if line.endswith((".", ",", ";", ":")) and not line.endswith(":"):
+        return False
+    # Sentence ending inside closing quotes ('…or "Go-Between."')
+    if line.rstrip("\"'”’").endswith((".", ",", ";")):
         return False
     if ENTRY_RE.match(line):
         return False
@@ -386,12 +1051,50 @@ def looks_like_value_header(line: str) -> bool:
 
 
 def should_join(a: str, b: str) -> bool:
+    # Analyze on de-tokenized text (keeps \x02 markers, drops inline
+    # bold/italic sentinels); merge_wrapped_lines concatenates the originals.
+    a = _defmt(a)
+    b = _defmt(b)
+    # Structural marker lines are atomic — never merge into or out of them
+    # (bullet items may still absorb plain continuations; see the a-side rule)
+    if b.startswith("\x02"):
+        return False
+    if a.startswith("\x02"):
+        if a[:3] in (M_B, M_Q, M_E, M_C) or a.startswith(M_B2):
+            a = strip_markers(a)
+        else:
+            return False
     # Never glue pure arcana tag lines to/from neighbors
     # ("A giant's dormitory" + "magical" + "In a ruin…")
     if _is_pure_arcana_tag_line(a) or _is_pure_arcana_tag_line(b):
         return False
     if not a or not b:
         return False
+    # Steading requirement group-headers start their own line, never a wrap
+    if re.match(r"^(Requires?\b|And then\b|And (?:either|one|any)\b)", b, re.I):
+        return False
+    # A stat-block move followed by capitalized prose is flavor text, not a
+    # wrap ("Throw a tantrum…" + "Misshapen brutes with sagging flesh…")
+    if a.startswith("• ") and b[0:1].isupper() and not a.endswith((",", ";", ":", "-", "—")):
+        m_move = re.search(r"([A-Za-z']+)\W*$", a)
+        if not m_move or m_move.group(1).lower() not in {
+            "the", "a", "an", "of", "and", "or", "to", "in", "on", "at",
+            "for", "by", "with", "from", "their", "its",
+        }:
+            return False
+    # Instinct lines are short; capitalized follow-ons are new flavor prose
+    if re.match(r"^Instinct\b", a, re.I) and b[0:1].isupper():
+        return False
+    # Name lists and similar wraps: "…, Owan, Ragan," + "Renan, Seadha, …"
+    if (
+        a.endswith(",")
+        and b[0:1].isupper()
+        and "," in b
+        and not looks_like_value_header(b)
+        and not looks_like_tag_line(b)
+        and not _is_all_caps_label(b)
+    ):
+        return True
     # Split mid page-ref BEFORE heading heuristics — otherwise
     # "… (page" + "436), especially…" is rejected as a short "heading".
     if re.search(r"\(pages?\s*$", a, re.I) and re.match(r"^\d", b):
@@ -402,11 +1105,26 @@ def should_join(a: str, b: str) -> bool:
         return True
     # Separate list/paragraph entries that each carry their own page ref:
     # "…near the Dread River" + "Spirits of the wild (page 356)…"
+    # Exception: a proper name split across the break, where the tail line is
+    # capitalized word(s) then a page ref ("…up in the Huffel" + "Peaks
+    # (page 236)…") — that's one wrapped sentence, so let it join.
+    name_wrap = bool(
+        re.search(r"\b[A-Z][A-Za-z'’\-]*$", a)
+        and re.match(
+            r"^[A-Z][A-Za-z'’\-]*(?:\s+[A-Z][A-Za-z'’\-]*){0,2}\s+"
+            r"\((?:see\s+)?pages?\s+\d",
+            b,
+        )
+    )
     if (
         re.search(r"\(pages?\s+[\d,\s\-–—]+\)", a, re.I)
         and re.search(r"\(pages?\s+[\d,\s\-–—]+\)", b, re.I)
         and b[0:1].isupper()
         and not a.endswith((",", ";", ":", "—", "-"))
+        and not name_wrap
+        and not re.search(
+            r"\b(?:the|a|an|of|to|by|and|or|for|with|into|from)\s*$", a, re.I
+        )
     ):
         return False
     if is_running_header(b, ""):
@@ -425,6 +1143,10 @@ def should_join(a: str, b: str) -> bool:
         # new mechanical paragraph — only join if a clearly mid-word
         if not a.endswith("-"):
             return False
+    # Capitalized intro lines ending in a colon start their own paragraph
+    # ("For disposition, choose or have someone roll:")
+    if b.endswith(":") and b[0:1].isupper() and len(b) < 60 and not a.endswith("-"):
+        return False
     # Never glue a price-table header onto the previous item line
     if looks_like_value_header(b):
         return False
@@ -468,6 +1190,9 @@ def should_join(a: str, b: str) -> bool:
         "for",
         "by",
         "as",
+        "in",
+        "on",
+        "at",
         "so",  # "or so"
         "its",
         "their",
@@ -725,6 +1450,14 @@ def _section_match_keys(label: str) -> list[str]:
             add(last)
             if stem:
                 add(stem)
+    # Trailing phrases: "they suffer the forest s wrath" → "forest s wrath"
+    base_words = base.split()
+    if len(base_words) >= 3:
+        for k_len in (4, 3, 2):
+            if len(base_words) > k_len:
+                tail = " ".join(base_words[-k_len:])
+                if len(tail) >= 8:
+                    add(tail)
     return keys
 
 
@@ -749,17 +1482,29 @@ def resolve_section_fragment(
     by_page = section_index.get("by_page_norm") or {}
     by_slug = section_index.get("by_slug_norm") or {}
 
+    def page_hit(key: str) -> str | None:
+        # Only trust a by-page hit whose section lives on the link's target
+        # article (one PDF page can map to several arcana slugs).
+        entry = by_page.get((page, key))
+        if entry and (target_slug is None or entry[0] == target_slug):
+            return entry[1]
+        return None
+
     for k in keys:
         if not k:
             continue
-        if page is not None and (page, k) in by_page:
-            return by_page[(page, k)][1]
+        if page is not None:
+            hit = page_hit(k)
+            if hit:
+                return hit
         if target_slug and (target_slug, k) in by_slug:
             return by_slug[(target_slug, k)]
         # Compact form without spaces
         compact = k.replace(" ", "")
-        if page is not None and (page, compact) in by_page:
-            return by_page[(page, compact)][1]
+        if page is not None:
+            hit = page_hit(compact)
+            if hit:
+                return hit
         if target_slug and (target_slug, compact) in by_slug:
             return by_slug[(target_slug, compact)]
     return None
@@ -904,6 +1649,47 @@ def linkify_pages(
         flags=re.IGNORECASE,
     )
 
+    # Bold cross-ref immediately followed by a page ref:
+    # "**Mudslides** (page 376)" / "**Ghosts (**page 76)" → make the *bold*
+    # text the (deep) link and drop the now-redundant "(page N)".
+    def repl_bold_pageref(m: re.Match) -> str:
+        inner = m.group("t")
+        pages = parse_page_nums(m.group("pg"))
+        clean = _defmt(inner).strip()
+        clean = re.sub(r"[\s(]+$", "", clean).strip()
+        if not pages or len(clean) < 2:
+            return m.group(0)
+        lk, sidx = resolve_lookup(None)
+        art = lk.get(pages[0])
+        if not art:
+            return m.group(0)
+        frag = resolve_section_fragment(pages[0], clean, art["slug"], sidx)
+        disp_inner = re.sub(r"[\s(]+$", "", inner)
+        disp = html.escape(B_ON + disp_inner + B_OFF)
+        if art["slug"] == current_slug:
+            if frag:
+                return store(
+                    f'<a class="wiki-link" href="#{frag}" '
+                    f'data-slug="{art["slug"]}" data-fragment="{frag}" '
+                    f'title="{html.escape(art["title"])}">{disp}</a>'
+                )
+            return store(disp)
+        href = f'{art["slug"]}.html' + (f"#{frag}" if frag else "")
+        title_attr = f"{clean} — {art['title']}" if frag else art["title"]
+        frag_attr = f'data-fragment="{frag}" ' if frag else ""
+        return store(
+            f'<a class="wiki-link" href="{href}" data-slug="{art["slug"]}" '
+            f'{frag_attr}title="{html.escape(title_attr)}">{disp}</a>'
+        )
+
+    work = re.sub(
+        r"\x04(?P<t>[^\x04\x05]*?)\x05\s*\(?\s*(?:see\s+)?"
+        r"pages?\s+(?P<pg>[\d,\s\-–—]+)\)",
+        repl_bold_pageref,
+        work,
+        flags=re.IGNORECASE,
+    )
+
     # Title (page N[, M]) — same-book
     def repl_title_page(m: re.Match) -> str:
         title = m.group(1).strip()
@@ -981,7 +1767,8 @@ def linkify_pages(
             esc = html.escape(part)
             esc = DICE_RE.sub(lambda mm: dice_button(mm.group(1)), esc)
             out.append(esc)
-    return "".join(out)
+    # Inline bold/italic sentinels → tags (after escaping and link insertion)
+    return fmt_to_html("".join(out))
 
 
 def auto_link_titles(html_text: str, articles: list[dict], current_slug: str | None) -> str:
@@ -1060,6 +1847,7 @@ def render_value_table(
     current_slug: str | None,
     section_index: dict | None = None,
     link_kw: dict | None = None,
+    notes: list[str] | None = None,
 ) -> str:
     lkw = link_kw or {}
     body = []
@@ -1068,10 +1856,14 @@ def render_value_table(
             f"<tr><td>{linkify_pages(item, lookup, current_slug, section_index, **lkw)}</td>"
             f'<td class="val">{html.escape(val)}</td></tr>'
         )
+    notes_html = "".join(
+        f'<div class="value-note">{html.escape(nt)}</div>' for nt in (notes or [])
+    )
     return (
         f'<div class="value-table">'
         f'<div class="value-table-head">{html.escape(title)}</div>'
         f"<table><tbody>{''.join(body)}</tbody></table>"
+        f"{notes_html}"
         f"</div>"
     )
 
@@ -1084,17 +1876,32 @@ def render_stat_block(
     section_index: dict | None = None,
     anchor_id: str | None = None,
     link_kw: dict | None = None,
+    check_id: str | None = None,
 ) -> str:
-    """Compact monster/enemy block — minimal vertical space."""
+    """Compact monster/enemy/threat block — minimal vertical space."""
     lkw = link_kw or {}
+    # Stat blocks are visually styled via CSS; parse/render on plain text so
+    # inline formatting sentinels never break the HP/Damage/tag detection.
+    name = _defmt(name)
+    lines = [
+        l if l.startswith(M_C) else _defmt(l)
+        for l in lines
+    ]
     tags = ""
     stats: list[str] = []
     moves: list[str] = []
     other: list[str] = []
+    checks: list[str] = []
     seen_instinct = False
 
     for line in lines:
+        if line.startswith(M_C):
+            checks.append(line[len(M_C):].strip())
+            continue
         low = line.lower().strip()
+        if not tags and re.match(r"^Threat\b", line, re.I):
+            tags = line
+            continue
         # Don't absorb the next monster's identity
         if (
             tags
@@ -1180,31 +1987,31 @@ def render_stat_block(
             continue
         notes.append(o)
 
+    def lf(t: str) -> str:
+        return linkify_pages(t, lookup, current_slug, section_index, **lkw)
+
+    def rr(t: str) -> str:
+        return render_rich_text(t, lf)
+
     id_attr = f' id="{html.escape(anchor_id)}"' if anchor_id else ""
     parts = [
         f'<div class="stat-block"{id_attr}>'
         f'<h3 class="stat-name">{html.escape(name)}</h3>'
     ]
     if tags:
-        parts.append(
-            f'<p class="stat-tags">{linkify_pages(tags, lookup, current_slug, section_index, **lkw)}</p>'
-        )
+        parts.append(f'<p class="stat-tags">{rr(tags)}</p>')
     if stats:
         compact = " · ".join(s for s in stats)
-        parts.append(
-            f'<p class="stat-stats">{linkify_pages(compact, lookup, current_slug, section_index, **lkw)}</p>'
-        )
+        parts.append(f'<p class="stat-stats">{rr(compact)}</p>')
     if moves:
         parts.append('<ul class="stat-moves">')
         for mv in moves:
-            parts.append(
-                f"<li>{linkify_pages(mv, lookup, current_slug, section_index, **lkw)}</li>"
-            )
+            parts.append(f"<li>{rr(mv)}</li>")
         parts.append("</ul>")
     for o in notes:
-        parts.append(
-            f'<p class="stat-note">{linkify_pages(o, lookup, current_slug, section_index, **lkw)}</p>'
-        )
+        parts.append(f'<p class="stat-note">{rr(o)}</p>')
+    if checks:
+        parts.append(render_check_list(checks, rr, check_id or "chk"))
     parts.append("</div>")
     return "".join(parts)
 
@@ -1272,6 +2079,9 @@ def split_chapter_toc(
 
     prose_idx: int | None = None
     for i, line in enumerate(lines):
+        # Rich structural markers mean this is not a chapter-opener TOC page
+        if line.startswith("\x02"):
+            return [], lines
         if _is_chapter_toc_prose(line):
             prose_idx = i
             break
@@ -1394,8 +2204,25 @@ def extract_article_lines(
     start_page: int,
     end_page: int,
     article_title: str,
+    rich: bool = False,
 ) -> list[str]:
     raw: list[str] = []
+    if rich:
+        state: dict = {}
+        first = True
+        for pno in range(start_page - 1, end_page):
+            if pno < 0 or pno >= doc.page_count:
+                continue
+            raw.extend(
+                extract_page_rich(
+                    doc[pno],
+                    article_title=article_title,
+                    first_page=first,
+                    state=state,
+                )
+            )
+            first = False
+        return merge_wrapped_lines(raw)
     for pno in range(start_page - 1, end_page):
         if pno < 0 or pno >= doc.page_count:
             continue
@@ -1505,6 +2332,7 @@ def _is_require_end(line: str) -> bool:
 
 
 def _is_require_item(line: str) -> bool:
+    line = strip_markers(line)
     if not line or not line.strip():
         return False
     L = line.strip()
@@ -1614,6 +2442,132 @@ def _benefit_continues(line: str) -> bool:
     return False
 
 
+def _render_steading_block_rich(
+    lines: list[str],
+    start: int,
+    link_fn,
+    anchors: "AnchorRegistry",
+    next_check_id,
+    rich_fn,
+) -> tuple[str, int]:
+    """
+    Render a steading-improvement block from the rich marker stream.
+
+    Gathers the block's marker lines (checkbox titles/requirements plus the
+    plain group-headers, blurb, and benefit paragraphs between them),
+    converts them to the plain-text form that ``try_parse_improvement_block``
+    understands, and delegates to it so multi-group requirements ("And then,
+    all of the following…"), blurbs, and wrapped titles render correctly.
+
+    Returns (html, next_index).
+    """
+    n = len(lines)
+    i = start
+    plain: list[str] = ["steading improvement"]
+    while i < n:
+        L = lines[i]
+        if L.startswith(M_C):
+            raw = L[len(M_C):]
+            bp, full = split_bold_prefix(raw)
+            if bp and _is_all_caps_label(bp):
+                # Checkbox on a title line: emit the name, then any trailing
+                # text (a blurb or a group-header) as its own line.
+                plain.append(bp)
+                rest = full[len(bp):].strip()
+                if rest:
+                    plain.append(rest)
+            else:
+                plain.append(strip_markers(L).strip())
+            i += 1
+            continue
+        if L.startswith("\x02"):
+            break  # heading / table / other structure ends the block
+        plain.append(strip_markers(L).strip())
+        i += 1
+
+    parsed = try_parse_improvement_block(plain, 0, link_fn, anchors, next_check_id)
+    if parsed is not None:
+        html_block, consumed = parsed
+        # Anything the parser did not consume → plain paragraphs
+        tail = "".join(
+            f"<p>{link_fn(t)}</p>" for t in plain[consumed:] if t.strip()
+        )
+        return html_block + tail, i
+
+    # Fallback: render whatever we gathered as paragraphs
+    body = "".join(f"<p>{link_fn(t)}</p>" for t in plain[1:] if t.strip())
+    return f'<div class="steading-improvement">{body}</div>', i
+
+
+def _render_artifact_block_rich(
+    lines: list[str],
+    start: int,
+    title: str,
+    link_fn,
+    anchors: "AnchorRegistry",
+) -> tuple[str, int]:
+    """
+    Render a tagged artifact / discovery as a card block.
+
+    Layout (from the rich stream):
+        M_H3  <title>            (already consumed → passed as ``title``)
+        <arcana tag line>        ("magical", "hand, magical, +1 damage", …)
+        <description prose …>
+        [Something interesting: …]
+        [Something useful: …]
+    Prose lines are re-flowed into paragraphs, breaking before the "Something
+    …" notes and at sentence boundaries. Returns (html, next_index).
+    """
+    n = len(lines)
+    i = start + 1  # skip the heading line
+    # Tag line: de-tokenized (styled italic via CSS); strip a stray lead comma
+    tags = re.sub(r"^[\x04\x06,\s]+", "", strip_markers(lines[i])).strip()
+    i += 1
+
+    # Body keeps inline formatting sentinels for rendering
+    body: list[str] = []
+    while i < n and not lines[i].startswith("\x02"):
+        b = lines[i].strip()
+        if b:
+            body.append(b)
+        i += 1
+
+    # Re-flow into paragraphs; decisions use de-tokenized text
+    paras: list[tuple[str, bool]] = []  # (token_text, is_note)
+    for L in body:
+        dL = _defmt(L)
+        if not dL:
+            continue
+        note = bool(
+            re.match(r"^(Something (?:interesting|useful)\b|When you\b)", dL, re.I)
+        )
+        if not paras:
+            paras.append((L, note))
+        elif note:
+            paras.append((L, True))
+        elif _defmt(paras[-1][0]).rstrip().endswith((".", "!", "?")) and dL[:1].isupper():
+            paras.append((L, False))
+        else:
+            prev, pn = paras[-1]
+            if _defmt(prev).endswith("-") and dL[:1].islower():
+                paras[-1] = (prev.rstrip()[:-1] + L, pn)
+            else:
+                paras[-1] = (prev + " " + L, pn)
+
+    hid = anchors.add(title.rstrip(":"))
+    parts = [
+        f'<div class="discovery-block" id="{html.escape(hid)}">',
+        f'<h3 class="discovery-name">{html.escape(title.rstrip(":"))}</h3>',
+    ]
+    if tags:
+        parts.append(f'<p class="discovery-tags">{link_fn(tags)}</p>')
+    for text, note in paras:
+        cls = ' class="discovery-note"' if note else ""
+        parts.append(f"<p{cls}>{link_fn(text)}</p>")
+    parts.append("</div>")
+    return "".join(parts), i
+
+
 def try_parse_improvement_block(
     lines: list[str],
     start: int,
@@ -1704,7 +2658,7 @@ def try_parse_improvement_block(
             parts.append(f'<p class="si-requires">{html.escape(header)}:</p>')
         items: list[str] = []
         while j < n and _is_require_item(lines[j]):
-            items.append(lines[j].strip())
+            items.append(strip_markers(lines[j]).strip())
             j += 1
         if items:
             # Guard against runaway false positives (prose treated as items)
@@ -1767,6 +2721,7 @@ def structure_html(
 
     Returns (html, sections) where sections is [{id, name, norm}, ...].
     """
+    lines = list(lines)  # this function rewrites entries in place
     out: list[str] = []
     i = 0
     n = len(lines)
@@ -1794,8 +2749,255 @@ def structure_html(
         base = slugify_id(prefix) if prefix else "req"
         return f"{base}-{check_list_n}"
 
+    rich_mode = any(l.startswith("\x02") for l in lines)
+    forced_creature: set[int] = set()
+
     while i < n:
         line = lines[i]
+
+        # --- Structural markers from rich PDF extraction ---
+        if line.startswith("\x02"):
+            if line == M_BOX:
+                inner: list[str] = []
+                j = i + 1
+                while j < n and lines[j] != M_ENDBOX:
+                    inner.append(lines[j])
+                    j += 1
+                inner_html, _ = structure_html(
+                    inner,
+                    article_title,
+                    lookup,
+                    articles,
+                    current_slug,
+                    section_index=section_index,
+                    anchors=anchors,
+                    lookups=lookups,
+                    section_indexes=section_indexes,
+                    current_book=current_book,
+                )
+                out.append(f'<div class="infobox">{inner_html}</div>')
+                i = j + 1
+                continue
+            if line == M_ENDBOX:
+                i += 1
+                continue
+            if line.startswith(M_H2):
+                txt = line[len(M_H2):].strip()
+                if (
+                    is_running_header(txt, article_title, near_page_top=True)
+                    or normalize_text(txt).lower()
+                    == normalize_text(article_title).lower()
+                ):
+                    i += 1
+                    continue
+                hid = anchors.add(txt.rstrip(":"))
+                out.append(
+                    f'<h2 id="{html.escape(hid)}">'
+                    f"{html.escape(txt.rstrip(':'))}</h2>"
+                )
+                i += 1
+                continue
+            if line.startswith(M_TH):
+                txt = line[len(M_TH):].strip()
+                # "steading improvement" label → custom improvement block
+                if txt.lower() == "steading improvement":
+                    block_html, i = _render_steading_block_rich(
+                        lines, i + 1, link, anchors, next_check_id,
+                        lambda t: render_rich_text(t, link),
+                    )
+                    out.append(block_html)
+                    continue
+                hid = anchors.add(txt)
+                out.append(
+                    f'<h3 id="{html.escape(hid)}" class="table-heading">'
+                    f"{html.escape(txt)}</h3>"
+                )
+                i += 1
+                continue
+            if line.startswith(M_H4):
+                txt = line[len(M_H4):].strip()
+                out.append(f"<h4>{html.escape(txt)}</h4>")
+                i += 1
+                continue
+            if line.startswith(M_H3):
+                bare = line[len(M_H3):].strip()
+                # Creature/threat block: HP-carrying monsters, and also
+                # HP-less threats (Fire, Gylglyd vines, The Forest's Wrath)
+                # that lead with tags, Damage, Instinct, or "Threat (…)".
+                creature = False
+                for k in range(1, 5):
+                    cand = peek(k)
+                    if not cand or cand.startswith("\x02"):
+                        break
+                    c = strip_markers(cand)
+                    if c.startswith("• "):
+                        continue
+                    low = c.lower()
+                    if (
+                        HP_LINE_RE.search(c)
+                        or re.match(r"^(damage|instinct|threat)\b", low)
+                        or (k <= 2 and looks_like_tag_line(c))
+                    ):
+                        creature = True
+                        break
+                if creature:
+                    forced_creature.add(i)
+                    lines[i] = bare
+                    continue
+                # Artifact / tagged-discovery block: heading immediately
+                # followed by an item tag line ("magical", "hand, magical,
+                # +1 damage", ", immobile"). Render as a card, not a heading.
+                nxt = peek(1)
+                if (
+                    nxt
+                    and not nxt.startswith("\x02")
+                    and _is_pure_arcana_tag_line(strip_markers(nxt))
+                ):
+                    block_html, i = _render_artifact_block_rich(
+                        lines, i, bare, link, anchors
+                    )
+                    out.append(block_html)
+                    continue
+                hid = anchors.add(bare.rstrip(":"))
+                out.append(
+                    f'<h3 id="{html.escape(hid)}">'
+                    f"{html.escape(bare.rstrip(':'))}</h3>"
+                )
+                i += 1
+                continue
+            if line.startswith(M_VA):
+                frag = line[len(M_VA):].strip()
+                prev = out[-1] if out else ""
+                k = prev.rfind('</td><td class="val">')
+                if 'class="value-table"' in prev and k != -1:
+                    out[-1] = prev[:k] + " " + link(frag) + prev[k:]
+                elif frag:
+                    out.append(f"<p>{link(frag)}</p>")
+                i += 1
+                continue
+            if line.startswith((M_VT, M_VR, M_VF)):
+                vt_title: str | None = None
+                if line.startswith(M_VT):
+                    vt_title = line[len(M_VT):].strip()
+                    i += 1
+                rows_v: list[tuple[str, str]] = []
+                notes_v: list[str] = []
+                while i < n and lines[i].startswith((M_VR, M_VF)):
+                    L = lines[i]
+                    if L.startswith(M_VR):
+                        body_, _, val_ = L[len(M_VR):].partition("\x03")
+                        rows_v.append((body_.strip(), val_.strip()))
+                    else:
+                        notes_v.append(L[len(M_VF):].strip())
+                    i += 1
+                if (
+                    vt_title is None
+                    and rows_v
+                    and out
+                    and 'class="value-table"' in out[-1]
+                ):
+                    # continuation of the table we just rendered
+                    row_html = "".join(
+                        f"<tr><td>{link(item)}</td>"
+                        f'<td class="val">{html.escape(val)}</td></tr>'
+                        for item, val in rows_v
+                    )
+                    out[-1] = out[-1].replace(
+                        "</tbody></table>", row_html + "</tbody></table>", 1
+                    )
+                    continue
+                pretty = re.sub(r"\s+", " ", (vt_title or "Value")).strip()
+                if not pretty.lower().endswith("value"):
+                    pretty = pretty + " value"
+                out.append(
+                    render_value_table(
+                        pretty.title(),
+                        rows_v,
+                        lookup,
+                        current_slug,
+                        section_index,
+                        link_kw=link_kw,
+                        notes=notes_v,
+                    )
+                )
+                continue
+            if line[:3] == M_B or line.startswith(M_B2):
+                # bullet run, possibly with tier-2 items nested under entries
+                items: list[tuple[int, str]] = []
+                while i < n and (
+                    lines[i][:3] == M_B or lines[i].startswith(M_B2)
+                ):
+                    L = lines[i]
+                    if L.startswith(M_B2):
+                        items.append((2, L[len(M_B2):].strip()))
+                    else:
+                        items.append((1, L[3:].strip()))
+                    i += 1
+                parts = ['<ul class="bullets">']
+                open_li = False
+                open_sub = False
+                for lvl, it in items:
+                    h = render_rich_text(it, link)
+                    if lvl == 1:
+                        if open_sub:
+                            parts.append("</ul>")
+                            open_sub = False
+                        if open_li:
+                            parts.append("</li>")
+                        parts.append(f"<li>{h}")
+                        open_li = True
+                    else:
+                        if not open_li:
+                            parts.append("<li>")
+                            open_li = True
+                        if not open_sub:
+                            parts.append('<ul class="bullets">')
+                            open_sub = True
+                        parts.append(f"<li>{h}</li>")
+                if open_sub:
+                    parts.append("</ul>")
+                if open_li:
+                    parts.append("</li>")
+                parts.append("</ul>")
+                out.append("".join(parts))
+                continue
+            if line[:3] in (M_Q, M_E):
+                kind3 = line[:3]
+                cls = {M_Q: "questions", M_E: "ellipsis"}[kind3]
+                items_q = []
+                while i < n and lines[i][:3] == kind3:
+                    items_q.append(lines[i][3:].strip())
+                    i += 1
+                out.append(
+                    f'<ul class="{cls}">'
+                    + "".join(
+                        f"<li>{render_rich_text(it, link)}</li>"
+                        for it in items_q
+                    )
+                    + "</ul>"
+                )
+                continue
+            if line.startswith(M_C):
+                items = []
+                while i < n and lines[i].startswith(M_C):
+                    items.append(lines[i][len(M_C):].strip())
+                    i += 1
+                out.append(
+                    render_check_list(
+                        items,
+                        lambda t: render_rich_text(t, link),
+                        next_check_id(current_slug or "chk"),
+                    )
+                )
+                continue
+            # Unknown marker — strip and reprocess as plain text
+            lines[i] = strip_markers(line)
+            continue
+
+        # Below here `line` is a non-marker line. Structural parsers run on the
+        # de-tokenized text; `orig_line` keeps inline formatting for prose.
+        orig_line = line
+        line = _defmt(line)
 
         # --- Steading improvement / requirement checklists ---
         parsed = try_parse_improvement_block(
@@ -1842,6 +3044,8 @@ def structure_html(
             pending_val: str | None = None
             while i < n:
                 L = lines[i]
+                if L.startswith("\x02"):
+                    break
                 # stop at new section/table/stat
                 if (
                     looks_like_value_header(L)
@@ -1975,6 +3179,8 @@ def structure_html(
 
         # --- Roll table header ---
         # Patterns: "1d12 theme", "theme"+"1d12", "1d12" alone, "label 1d12"
+        # (roll tables are CSS-styled, so parse/render on de-tokenized text)
+        dpeek1 = _defmt(peek(1))
         dice = label = None
         m = ROLL_HEADER_RE.match(line)
         m_rev = re.match(
@@ -1987,11 +3193,11 @@ def structure_html(
         elif (
             len(line) <= 40
             and not ENTRY_RE.match(line)
-            and ROLL_HEADER_DICE_ONLY.match(peek(1) or "")
+            and ROLL_HEADER_DICE_ONLY.match(dpeek1)
         ):
             # "theme" then "1d12"
             label = line
-            dice = peek(1)
+            dice = dpeek1
             i += 1  # consume dice line below after setting
         elif ROLL_HEADER_DICE_ONLY.match(line):
             dice = line
@@ -1999,11 +3205,11 @@ def structure_html(
             if out and re.search(r"<h2>[^<]{1,40}</h2>\s*$", out[-1]):
                 label = re.sub(r"</?h2>", "", out[-1]).strip()
                 out.pop()
-            elif peek(1) and len(peek(1)) < 40 and not ENTRY_RE.match(peek(1)):
+            elif dpeek1 and len(dpeek1) < 40 and not ENTRY_RE.match(dpeek1):
                 # only treat next as label if it does NOT look like entry start
-                if not re.match(r"^\d+", peek(1)):
+                if not re.match(r"^\d+", dpeek1):
                     i += 1
-                    label = lines[i]
+                    label = dpeek1
                 else:
                     label = "result"
             else:
@@ -2012,41 +3218,48 @@ def structure_html(
             i += 1  # move past header line(s); label+dice path already advanced once
             entries: list[tuple[str, str]] = []
             while i < n:
-                e = ENTRY_RE.match(lines[i])
+                if lines[i].startswith("\x02"):
+                    break
+                cur = _defmt(lines[i])
+                e = ENTRY_RE.match(cur)
                 if e:
                     num = e.group(1) + (f"-{e.group(2)}" if e.group(2) else "")
                     body = e.group(3).strip()
                     i += 1
                     # continuations
-                    while i < n and should_join(body, lines[i]) and not ENTRY_RE.match(lines[i]):
-                        if lines[i].endswith("-") or body.endswith("-"):
-                            body = body.rstrip("-") + lines[i].lstrip("-")
+                    while i < n and should_join(body, lines[i]) and not ENTRY_RE.match(_defmt(lines[i])):
+                        nxt = _defmt(lines[i])
+                        if nxt.endswith("-") or body.endswith("-"):
+                            body = body.rstrip("-") + nxt.lstrip("-")
                         else:
-                            body = body + " " + lines[i]
+                            body = body + " " + nxt
                         i += 1
                     entries.append((num, body))
                     continue
                 # stop at next section/table/stat
                 if (
-                    looks_like_heading(lines[i])
-                    or ROLL_HEADER_RE.match(lines[i])
-                    or ROLL_HEADER_DICE_ONLY.match(lines[i])
-                    or looks_like_tag_line(lines[i])
+                    looks_like_heading(cur)
+                    or ROLL_HEADER_RE.match(cur)
+                    or ROLL_HEADER_DICE_ONLY.match(cur)
+                    or looks_like_tag_line(cur)
                 ):
                     break
                 # orphan continuation of last entry
                 if entries and (
-                    lines[i][0:1].islower()
-                    or (entries and not ENTRY_RE.match(lines[i]) and len(lines[i]) < 90)
+                    cur[0:1].islower()
+                    or (entries and not ENTRY_RE.match(cur) and len(cur) < 90)
                 ):
                     # only glue if doesn't look like new prose paragraph
+                    # or a capitalized intro line ("For disposition, …roll:")
+                    if cur.endswith(":") and cur[0:1].isupper():
+                        break
                     if not (
-                        lines[i][0:1].isupper()
-                        and len(lines[i].split()) > 8
-                        and lines[i].endswith((".", "!", "?"))
+                        cur[0:1].isupper()
+                        and len(cur.split()) > 8
+                        and cur.endswith((".", "!", "?"))
                     ):
                         num, body = entries[-1]
-                        entries[-1] = (num, body + " " + lines[i])
+                        entries[-1] = (num, body + " " + cur)
                         i += 1
                         continue
                 break
@@ -2139,7 +3352,8 @@ def structure_html(
             "trade & barter",
             "trade and barter",
         }
-        is_creature_start = (
+        dp1, dp2 = _defmt(peek(1)), _defmt(peek(2))
+        is_creature_start = i in forced_creature or (
             len(line) <= 48
             and not line.endswith(".")
             and line.lower() not in _not_creature
@@ -2147,17 +3361,17 @@ def structure_html(
             and not VALUE_ROW_RE.match(line)
             and (
                 (
-                    looks_like_tag_line(peek(1))
+                    looks_like_tag_line(dp1)
                     and (
-                        HP_LINE_RE.search(peek(2))
-                        or HP_LINE_RE.search(peek(1))
-                        or (peek(2) or "").lower().startswith("damage")
+                        HP_LINE_RE.search(dp2)
+                        or HP_LINE_RE.search(dp1)
+                        or dp2.lower().startswith("damage")
                     )
                 )
                 # tags may be missing; name then HP
                 or (
-                    HP_LINE_RE.search(peek(1) or "")
-                    and not looks_like_heading(peek(1))
+                    HP_LINE_RE.search(dp1)
+                    and not looks_like_heading(dp1)
                 )
             )
         )
@@ -2167,6 +3381,19 @@ def structure_html(
             block_lines: list[str] = []
             while i < n:
                 L = lines[i]
+                if L.startswith(M_C):
+                    # countdown/requirement checklist belongs to this block
+                    block_lines.append(_defmt(L))
+                    i += 1
+                    continue
+                if L.startswith("\x02") and L[:3] not in (M_B, M_Q) and not L.startswith(M_B2):
+                    break
+                if L[:3] in (M_B, M_Q) or L.startswith(M_B2):
+                    # bullet inside a stat block — treat as a move
+                    L = "• " + (L[len(M_B2):] if L.startswith(M_B2) else L[3:])
+                # Stat blocks are CSS-styled; parse/render on plain text
+                L = _defmt(L)
+                lines[i] = L
                 low = L.lower()
                 # Next creature: short title then tags/HP
                 if block_lines and looks_like_heading(L) and not L.startswith("•"):
@@ -2223,11 +3450,13 @@ def structure_html(
                     block_lines.append(L)
                     i += 1
                     while i < n and should_join(block_lines[-1], lines[i]):
-                        block_lines[-1] = block_lines[-1] + " " + lines[i]
+                        block_lines[-1] = block_lines[-1] + " " + _defmt(lines[i])
                         i += 1
                     # more flavor paragraphs for named NPCs
                     while i < n:
-                        L2 = lines[i]
+                        L2 = _defmt(lines[i])
+                        if lines[i].startswith("\x02"):
+                            break
                         if (
                             looks_like_heading(L2)
                             or looks_like_tag_line(L2)
@@ -2245,6 +3474,10 @@ def structure_html(
                     break
                 block_lines.append(L)
                 i += 1
+            # Trailing checklist (e.g. after flavor text ended the loop)
+            while i < n and lines[i].startswith(M_C):
+                block_lines.append(lines[i])
+                i += 1
             out.append(
                 render_stat_block(
                     name,
@@ -2254,11 +3487,79 @@ def structure_html(
                     section_index,
                     anchor_id=anchors.add(name),
                     link_kw=link_kw,
+                    check_id=next_check_id(name),
                 )
             )
             continue
 
+        # --- Custom move block (ASK AROUND, CAROUSE, RECRUIT, …) ---
+        # An ALL-CAPS move name in body font followed by a "When …" trigger.
+        if (
+            rich_mode
+            and not line.startswith("\x02")
+            and _is_all_caps_label(line)
+            and peek(1)
+            and strip_markers(peek(1)).lstrip().startswith("When ")
+        ):
+            name = line.strip()
+            hid = anchors.add(name)
+            i += 1
+            inner: list[str] = []
+            while i < n:
+                L = lines[i]
+                # Next move / heading / table ends this block
+                if L.startswith(("\x02H", "\x02TH", "\x02VT", "\x02BOX")):
+                    break
+                if (
+                    not L.startswith("\x02")
+                    and _is_all_caps_label(L)
+                    and peek(1)
+                    and strip_markers(peek(1)).lstrip().startswith("When ")
+                ):
+                    break
+                inner.append(L)
+                i += 1
+            # Leading plain lines are the trigger; join them into one sentence
+            # (keep inline formatting sentinels so link() renders bold/italic)
+            k = 0
+            trig: list[str] = []
+            while (
+                k < len(inner)
+                and not inner[k].startswith("\x02")
+                and not _defmt(inner[k]).startswith(("•", "·"))
+            ):
+                trig.append(inner[k].strip())
+                k += 1
+            trigger = " ".join(t for t in trig if t.strip())
+            rest_html, _ = structure_html(
+                inner[k:],
+                article_title,
+                lookup,
+                articles,
+                current_slug,
+                section_index=section_index,
+                anchors=anchors,
+                lookups=lookups,
+                section_indexes=section_indexes,
+                current_book=current_book,
+            )
+            block = (
+                f'<div class="move-block" id="{html.escape(hid)}">'
+                f'<h3 class="move-name">{html.escape(name)}</h3>'
+            )
+            if trigger:
+                block += f'<p class="move-trigger">{link(trigger)}</p>'
+            block += rest_html + "</div>"
+            out.append(block)
+            continue
+
         # --- Heading ---
+        # In rich mode real headings arrive as markers; only ALL-CAPS move
+        # names (set in body font, e.g. "ASK AROUND") still need this path.
+        if rich_mode and looks_like_heading(line) and not _is_all_caps_label(line):
+            out.append(f"<p>{link(line)}</p>")
+            i += 1
+            continue
         if looks_like_heading(line) and (
             len(line) < 45
             or line.endswith(":")
@@ -2308,13 +3609,16 @@ def structure_html(
         # --- Bullet list run ---
         if line.startswith("•") or line.startswith("·"):
             items = []
-            while i < n and (lines[i].startswith("•") or lines[i].startswith("·")):
-                items.append(lines[i].lstrip("•· ").strip())
+            while i < n and _defmt(lines[i]).lstrip().startswith(("•", "·")):
+                items.append(_defmt(lines[i]).lstrip("•· ").strip())
                 i += 1
                 # join soft wraps already done; also join if next is continuation
-                while i < n and should_join(items[-1], lines[i]) and not lines[i].startswith("•"):
-                    items[-1] = items[-1] + " " + lines[i]
+                while i < n and should_join(items[-1], lines[i]) and not _defmt(lines[i]).lstrip().startswith(("•", "·")):
+                    items[-1] = items[-1] + " " + _defmt(lines[i])
                     i += 1
+            if not items:
+                i += 1  # never spin on a lone bullet glyph
+                continue
             out.append("<ul>")
             for it in items:
                 out.append(f"<li>{link(it)}</li>")
@@ -2322,16 +3626,16 @@ def structure_html(
             continue
 
         # --- Numbered standalone list that isn't a formal 1dN table ---
-        if ENTRY_RE.match(line) and peek(1) and ENTRY_RE.match(peek(1)):
+        if ENTRY_RE.match(line) and peek(1) and ENTRY_RE.match(_defmt(peek(1))):
             entries = []
-            while i < n and ENTRY_RE.match(lines[i]):
-                e = ENTRY_RE.match(lines[i])
+            while i < n and ENTRY_RE.match(_defmt(lines[i])):
+                e = ENTRY_RE.match(_defmt(lines[i]))
                 assert e
                 num = e.group(1) + (f"-{e.group(2)}" if e.group(2) else "")
                 body = e.group(3).strip()
                 i += 1
-                while i < n and should_join(body, lines[i]) and not ENTRY_RE.match(lines[i]):
-                    body = body + " " + lines[i]
+                while i < n and should_join(body, lines[i]) and not ENTRY_RE.match(_defmt(lines[i])):
+                    body = body + " " + _defmt(lines[i])
                     i += 1
                 entries.append((num, body))
             out.append('<div class="roll-table bare-numbered"><table><tbody>')
@@ -2343,8 +3647,8 @@ def structure_html(
             out.append("</tbody></table></div>")
             continue
 
-        # --- Regular paragraph ---
-        out.append(f"<p>{link(line)}</p>")
+        # --- Regular paragraph (preserve inline bold/italic formatting) ---
+        out.append(f"<p>{link(orig_line)}</p>")
         i += 1
 
     html_body = "\n".join(out)
@@ -2952,6 +4256,64 @@ def _looks_like_follower_name(line: str) -> bool:
     return L[0:1].isupper() and not L.endswith(".")
 
 
+def _dedupe_arcana_title(s: str) -> str:
+    """Collapse a doubled card title ("A folktale folktale" -> "A folktale")."""
+    s = re.sub(r"\s+", " ", s).strip()
+    words = s.split()
+    n = len(words)
+    for k in range(1, n // 2 + 1):
+        tail = words[n - k:]
+        if words[n - 2 * k: n - k] == tail:
+            # drop the repeated trailing phrase
+            return " ".join(words[: n - k])
+    return s
+
+
+_ARCANA_TAG_WORD = re.compile(
+    r"^(magical|fragile|immobile|beautiful|terrifying|close|reach|near|far|"
+    r"hand|worn|warm|crude|slow|applied|thrown|messy|forceful|area|"
+    r"dangerous|loud|ap|reload|cumbersome|awkward|indestructible|implanted|"
+    r"large|two-handed)\b[\s,]*",
+    re.I,
+)
+
+
+def _arcana_tags_prose(text: str):
+    """Peel a leading tag run (italic words, +N damage, etc.) off a line.
+
+    Returns (tags_string, remaining_prose). The prose keeps its formatting.
+    """
+    t = re.sub(r"^[◇\s,]+", "", text)
+    tags: list[str] = []
+    while t:
+        m = re.match(r"^\x06([^\x06\x07]*)\x07[\s,]*", t)
+        if m:
+            tags.append(_defmt(m.group(1)).strip(" ,"))
+            t = t[m.end():]
+            continue
+        m = re.match(r"^\+?\d+\s*(?:damage|piercing|armor|uses)\b[\s,]*", t)
+        if m:
+            tags.append(m.group(0).strip(" ,"))
+            t = t[m.end():]
+            continue
+        m = _ARCANA_TAG_WORD.match(t)
+        if m:
+            tags.append(m.group(1))
+            t = t[m.end():]
+            continue
+        break
+    tag_str = ", ".join(x for x in tags if x)
+    return tag_str, t.strip()
+
+
+def _arcana_strip_running(line: str) -> str:
+    """Drop 'front'/'back'/page-number running-header junk from a card line."""
+    d = _defmt(strip_markers(line))
+    d = re.sub(r"\bfront\s*\d*\b", "", d, flags=re.I)
+    d = re.sub(r"\bback\s*\d*\b", "", d, flags=re.I)
+    return re.sub(r"\s+", " ", d).strip()
+
+
 def structure_minor_arcana_html(
     lines: list[str],
     article_title: str,
@@ -2964,10 +4326,7 @@ def structure_minor_arcana_html(
     section_indexes: dict[str, dict] | None = None,
     current_book: str | None = None,
 ) -> tuple[str, list[dict]]:
-    """
-    Layout a minor arcanum as a card: discovery front (with unlock checkboxes)
-    and power back (moves).
-    """
+    """Layout a minor arcanum from rich marker lines (front + back faces)."""
     anchors = AnchorRegistry()
     link_kw = {
         "lookups": lookups,
@@ -2976,425 +4335,295 @@ def structure_minor_arcana_html(
     }
 
     def link(text: str) -> str:
-        return linkify_pages(
-            text, lookup, current_slug, section_index, **link_kw
+        return linkify_pages(text, lookup, current_slug, section_index, **link_kw)
+
+    def content(raw: str) -> str:
+        return raw[len("\x02H3 "):] if raw.startswith("\x02H3 ") else _arcana_content(raw)
+
+    power = (article_title or "Minor Arcanum").strip()
+    power_norm = normalize_section_key(power)
+
+    # Drop stray running-header-only lines
+    lines = [l for l in lines if l.startswith("\x02") or _arcana_strip_running(l)]
+
+    # Face split at the power-name H3 (the second card title)
+    h3_idx = [i for i, l in enumerate(lines) if l.startswith("\x02H3")]
+    split = None
+    for i in h3_idx:
+        nm = normalize_section_key(
+            _dedupe_arcana_title(_defmt(strip_markers(lines[i])))
         )
-
-    lines = _merge_orphan_bullets(list(lines))
-    power_name = (article_title or "").strip() or "Minor Arcanum"
-    power_norm = normalize_section_key(power_name)
-    power_idx = _find_power_title_index(lines, power_name)
-
-    # If title wasn't found but unlock prose ends before "When you", split there
-    if power_idx is None:
-        for i, line in enumerate(lines):
-            if re.match(r"^When you\b", line, re.I):
-                power_idx = i
-                break
-
-    front = lines[:power_idx] if power_idx is not None else lines[:]
-    back = lines[power_idx:] if power_idx is not None else []
-
-    # --- Front: discovery + unlock ---
-    unlock_at = None
-    for i, line in enumerate(front):
-        if _is_unlock_intro(line):
-            unlock_at = i
+        if nm == power_norm and i > 0:
+            split = i
             break
-    if unlock_at is None:
-        for i, line in enumerate(front):
-            if line.strip().startswith(("…", "...")):
-                unlock_at = i
+    if split is None and len(h3_idx) >= 2:
+        split = h3_idx[1]
+    if split is None:
+        # No clear back face; treat everything as front
+        split = len(lines)
+
+    front = lines[:split]
+    back = lines[split:]
+
+    def render_move(trigger: str, fl: list[str], j: int, n: int):
+        body = [trigger]
+        picks: list[str] = []
+        seen_pick = False
+        while j < n:
+            r = fl[j]
+            l = _defmt(strip_markers(r)).strip()
+            if not l:
+                j += 1
+                continue
+            if r.startswith(("\x02H", "\x02FACE", "\x02TH", M_MARK)):
                 break
+            if re.match(r"^(When you|When |During this battle|If )\b", l, re.I) and not r.startswith((M_B, M_B2)):
+                break
+            if r.startswith((M_B, M_B2)):
+                picks.append(_arcana_content(r))
+                seen_pick = True
+                j += 1
+                continue
+            if seen_pick:
+                picks.append(_arcana_content(r))
+            else:
+                body.append(_arcana_content(r))
+            j += 1
+        block = f'<div class="arcana-move"><p>{link(" ".join(body))}</p>'
+        if picks:
+            block += '<ul class="arcana-picks">'
+            for p in picks:
+                block += f"<li>{link(p)}</li>"
+            block += "</ul>"
+        block += "</div>"
+        return block, j
 
-    desc_lines = front[:unlock_at] if unlock_at is not None else front
-    unlock_lines = front[unlock_at:] if unlock_at is not None else []
-
-    discovery = ""
-    tags = ""
+    # ---- Front face: discovery + unlock ----
+    fparts: list[str] = []
+    disc_name = ""
+    disc_tags = ""
+    i = 0
+    n = len(front)
+    # discovery name (first H3)
+    while i < n and not front[i].startswith("\x02H3"):
+        i += 1
+    if i < n:
+        disc_name = _dedupe_arcana_title(_defmt(strip_markers(front[i])))
+        i += 1
+    # tags + description + unlock
     desc_paras: list[str] = []
-    if desc_lines:
-        discovery, tags, peeled_prose = _peel_discovery_tag_prose(desc_lines[0])
-        rest = desc_lines[1:]
-        if peeled_prose:
-            rest = [peeled_prose] + rest
-        if rest:
-            d2, t2 = _split_discovery_and_tags(rest[0])
-            if not d2 and t2:
-                tags = (tags + ", " + t2).strip(", ")
-                rest = rest[1:]
-            elif not discovery and d2:
-                discovery = d2
-                if t2:
-                    tags = (tags + ", " + t2).strip(", ")
-                rest = rest[1:]
-            elif _is_pure_arcana_tag_line(rest[0]):
-                tags = (tags + ", " + rest[0].strip(" ,")).strip(", ")
-                rest = rest[1:]
-        buf = ""
-        for line in rest:
-            if (
-                _is_pure_arcana_tag_line(line) or looks_like_tag_line(line)
-            ) and not tags:
-                tags = line.strip(" ,")
-                continue
-            if _is_pure_arcana_tag_line(line):
-                tags = (tags + ", " + line.strip(" ,")).strip(", ")
-                continue
-            if buf and (
-                line[0:1].islower()
-                or buf.endswith((",", "—", "-", "…", "..."))
-                or len(buf) < 40
-            ):
-                buf = buf + " " + line
-            else:
-                if buf:
-                    desc_paras.append(buf)
-                buf = line
-        if buf:
-            desc_paras.append(buf)
-
     unlock_intro = ""
-    groups: list[tuple[str | None, list[str]]] = []
-    cur_header: str | None = None
-    cur_items: list[str] = []
-    leftover_from_unlock: list[str] = []  # power side that leaked past split
+    unlock_items: list[str] = []
+    unlock_dividers: dict[int, str] = {}
+    in_unlock = False
+    while i < n:
+        raw = front[i]
+        i += 1
+        d = _defmt(strip_markers(raw)).strip()
+        if not d:
+            continue
+        if raw.startswith("\x02TH"):
+            continue
+        if raw.startswith((M_C, M_E)):
+            in_unlock = True
+            item = _arcana_content(raw)
+            item = re.sub(r"^[\s…\.]+", "", item)
+            unlock_items.append(item)
+            continue
+        if in_unlock:
+            # "or:" / "and then:" dividers between requirement groups
+            if len(d) <= 24 and re.match(r"^(or|and(?: then)?|either)\b", d, re.I):
+                unlock_dividers[len(unlock_items)] = d.rstrip(":.") + ":"
+                continue
+            unlock_items[-1] = unlock_items[-1] + " " + _arcana_content(raw) if unlock_items else _arcana_content(raw)
+            continue
+        # tags on the first content line
+        if not desc_paras and not disc_tags:
+            tg, prose = _arcana_tags_prose(_arcana_content(raw))
+            if tg:
+                disc_tags = tg
+            if prose:
+                desc_paras.append(prose)
+            continue
+        desc_paras.append(_arcana_content(raw))
+    # The last description paragraph before the checklist is the unlock intro
+    if unlock_items and desc_paras:
+        dl_last = _defmt(desc_paras[-1])
+        if re.search(r"(you (?:can|either|must|need)|following|:|…|\.\.\.)\s*$", dl_last, re.I) or "you " in dl_last.lower():
+            unlock_intro = desc_paras.pop()
 
-    def flush_group():
-        nonlocal cur_items, cur_header
-        if cur_items:
-            groups.append((cur_header, cur_items))
-            cur_items = []
-            cur_header = None
-
-    for i, line in enumerate(unlock_lines):
-        L = line.strip()
-        if not L or re.fullmatch(r"\d+", L):
-            continue
-        # Reached power title (maybe with tags)
-        if _line_matches_power_title(L, power_norm):
-            leftover_from_unlock = unlock_lines[i:]
-            break
-        # Unlock intros may start with "When you enter… You can learn… but…"
-        # — treat those as unlock text, not power moves.
-        if (
-            (i == 0 or not cur_items)
-            and _is_unlock_intro(L)
-            and not L.startswith(("…", "..."))
-        ):
-            if not unlock_intro:
-                unlock_intro = L
-            else:
-                flush_group()
-                cur_header = L
-            continue
-        if re.match(r"^When you\b", L, re.I):
-            leftover_from_unlock = unlock_lines[i:]
-            break
-        if _is_unlock_divider(L):
-            flush_group()
-            cur_header = L.rstrip(".:…")
-            continue
-        item = re.sub(r"^[\.…]+\s*", "", L)
-        item = item.lstrip("•· ").strip()
-        if not item:
-            continue
-        if re.match(r"^When you\b", item, re.I) and not _is_unlock_intro(L):
-            leftover_from_unlock = unlock_lines[i:]
-            break
-        if (
-            cur_items
-            and item[0:1].islower()
-            and not L.startswith(("…", "...", "•"))
-        ):
-            cur_items[-1] = cur_items[-1] + " " + item
-        else:
-            cur_items.append(item)
-    flush_group()
-
-    # If power side was empty but unlock leftover has the power content, use it
-    if leftover_from_unlock and (
-        not back
-        or (
-            len(back) <= 1
-            and back
-            and _line_matches_power_title(back[0], power_norm)
+    fparts.append('<p class="arcana-face-label">Discovery</p>')
+    if disc_name:
+        did = anchors.add(disc_name)
+        fparts.append(
+            f'<h3 id="{html.escape(did)}" class="arcana-discovery">'
+            f"{html.escape(disc_name)}</h3>"
         )
-    ):
-        back = leftover_from_unlock
-    elif leftover_from_unlock and not any(
-        re.match(r"^When you\b", x, re.I) for x in back
-    ):
-        # Merge leftovers if back missing moves
-        back = leftover_from_unlock + back
+    if disc_tags:
+        fparts.append(f'<p class="arcana-tags">{link(disc_tags)}</p>')
+    for p in desc_paras:
+        fparts.append(f"<p>{link(p)}</p>")
+    if unlock_items:
+        fparts.append('<div class="arcana-unlock">')
+        if unlock_intro:
+            fparts.append(
+                f'<p class="arcana-unlock-intro">{link(unlock_intro)}</p>'
+            )
+        lid = f"arcana-{slugify_id(power)}-unlock"
+        # split into groups by dividers
+        groups: list[tuple[str, list[str]]] = []
+        cur_hdr = ""
+        cur: list[str] = []
+        for idx, it in enumerate(unlock_items):
+            if idx in unlock_dividers:
+                groups.append((cur_hdr, cur))
+                cur_hdr = unlock_dividers[idx]
+                cur = []
+            cur.append(it)
+        groups.append((cur_hdr, cur))
+        gi = 0
+        for hdr, items in groups:
+            if hdr:
+                fparts.append(f'<p class="si-requires">{html.escape(hdr)}</p>')
+            fparts.append(render_check_list(items, link, f"{lid}-{gi}"))
+            gi += 1
+        fparts.append("</div>")
 
-    # --- Back: power + moves ---
-    move_lines = back[:]
+    # ---- Back face: power moves ----
+    bparts: list[str] = []
     power_tags = ""
-    # Strip power title line(s), capture tags
-    while move_lines:
-        name, tgs = _strip_power_line_tags(move_lines[0])
-        ln = normalize_section_key(name)
-        if ln and (
-            ln == power_norm
-            or power_norm.startswith(ln)
-            or ln.startswith(power_norm)
-            or _line_matches_power_title(move_lines[0], power_norm)
-        ):
-            if tgs:
-                power_tags = tgs
-            move_lines = move_lines[1:]
-            # second half of split title
-            if move_lines:
-                name2, tgs2 = _strip_power_line_tags(move_lines[0])
-                jn = normalize_section_key(name + " " + name2)
-                if jn == power_norm or power_norm.startswith(jn):
-                    if tgs2:
-                        power_tags = (power_tags + ", " + tgs2).strip(", ")
-                    move_lines = move_lines[1:]
-            continue
-        # Pure tag line after title
-        if move_lines[0].strip().startswith(",") or (
-            looks_like_tag_line(move_lines[0]) and not HP_LINE_RE.search(move_lines[0])
-        ):
-            tonly = move_lines[0].strip().lstrip(",").strip()
-            power_tags = (power_tags + ", " + tonly).strip(", ")
-            move_lines = move_lines[1:]
+    i = 0
+    n = len(back)
+    # skip to first non-header; capture power-name H3 (skip, shown in header)
+    while i < n:
+        raw = back[i]
+        d = _defmt(strip_markers(raw)).strip()
+        if raw.startswith("\x02H3") and normalize_section_key(
+            _dedupe_arcana_title(d)
+        ) == power_norm:
+            i += 1
+            break
+        if raw.startswith("\x02TH") or not d or d.lower() in ("front", "back"):
+            i += 1
             continue
         break
-
-    move_blocks: list[str] = []
-    i = 0
-    while i < len(move_lines):
-        line = move_lines[i].strip()
-        if not line or re.fullmatch(r"\d+", line):
+    first_prose = True
+    while i < n:
+        raw = back[i]
+        d = _defmt(strip_markers(raw)).strip()
+        if not d or raw.startswith("\x02TH") or d.lower() in ("front", "back"):
             i += 1
             continue
-
-        # Weapon/power track (Blaze, etc.)
-        if _is_track_line(line):
-            move_blocks.append(_render_track_line(line, link))
+        if raw.startswith(M_MARK):
+            nm = int(raw[len(M_MARK):] or "0")
+            bparts.append(
+                render_mark_track(
+                    nm, f"arcana-{slugify_id(power)}-uses", label="Uses"
+                )
+            )
             i += 1
             continue
-
-        # Follower / creature block
-        if _looks_like_follower_name(line) and i + 1 < len(move_lines) and (
-            looks_like_tag_line(move_lines[i + 1])
-            or HP_LINE_RE.search(move_lines[i + 1])
-        ):
-            name = line
+        # use / level track lines: "Blaze: ◇ 1d4, …" or "hours: ◇◇◇"
+        if "◇" in d and re.match(r"^[A-Za-z][\w\s]{0,18}:\s*◇", d):
+            bparts.append(f'<p class="arcana-uses">{link(_arcana_content(raw))}</p>')
             i += 1
-            block_lines: list[str] = []
-            while i < len(move_lines):
-                L2 = move_lines[i].strip()
-                if re.match(r"^When you\b", L2, re.I):
-                    break
-                if (
-                    _looks_like_follower_name(L2)
-                    and i + 1 < len(move_lines)
-                    and looks_like_tag_line(move_lines[i + 1])
-                    and block_lines
-                ):
-                    break
-                block_lines.append(move_lines[i])
+            continue
+        named = _arcana_named_move(_arcana_content(raw))
+        if named and not re.match(r"^When", named[0], re.I):
+            name, mtags, trig = named
+            hid = anchors.add(name.title() if name.isupper() else name)
+            label = html.escape(name)
+            if mtags:
+                label += f' <span class="arcana-sub-tags">({html.escape(mtags)})</span>'
+            bparts.append(f'<h3 id="{html.escape(hid)}" class="arcana-sub">{label}</h3>')
+            i += 1
+            if trig:
+                block, i = render_move(trig, back, i, n)
+                bparts.append(block)
+            continue
+        if re.match(r"^(When you|When |During this battle|If )\b", d, re.I):
+            block, i = render_move(_arcana_content(raw), back, i + 1, n)
+            bparts.append(block)
+            continue
+        # power tags line / prose
+        if first_prose:
+            tg, prose = _arcana_tags_prose(_arcana_content(raw))
+            if tg and not prose:
+                power_tags = tg
+                first_prose = False
                 i += 1
-            # Format follower
-            hid = anchors.add(name)
-            fb = [
-                f'<div class="arcana-follower" id="{html.escape(hid)}">',
-                f'<h3 class="arcana-sub">{html.escape(name)}</h3>',
-            ]
-            bullets: list[str] = []
-            for bl in block_lines:
-                b = bl.strip()
-                if not b or b == "HP":
-                    continue
-                if b.startswith("•") or b.startswith("·"):
-                    bullets.append(b.lstrip("•· ").strip())
-                elif looks_like_tag_line(b):
-                    fb.append(f'<p class="arcana-tags">{html.escape(b)}</p>')
-                elif re.match(r"^Cost\b", b, re.I):
-                    # Flush moves before cost
-                    if bullets:
-                        fb.append('<ul class="arcana-picks arcana-moves-list">')
-                        for bu in bullets:
-                            if bu:
-                                fb.append(f"<li>{link(bu)}</li>")
-                        fb.append("</ul>")
-                        bullets = []
-                    fb.append(f'<p class="arcana-stat">{link(b)}</p>')
-                elif HP_LINE_RE.search(b) or re.match(
-                    r"^(Damage|Instinct|Special|Armor)\b", b, re.I
-                ):
-                    fb.append(f'<p class="arcana-stat">{link(b)}</p>')
-                elif re.match(
-                    r"^(Make |Sense |Consume |Weave |Grow |Shape |Cast |"
-                    r"Heap |Demand |Unnerve )",
-                    b,
-                ):
-                    bullets.append(b)
-                else:
-                    # Short imperative phrases are follower moves
-                    if len(b) < 80 and b[0:1].isupper() and not b.endswith("."):
-                        bullets.append(b)
-                    else:
-                        fb.append(f"<p>{link(b)}</p>")
-            if bullets:
-                fb.append('<ul class="arcana-picks arcana-moves-list">')
-                for b in bullets:
-                    if b:
-                        fb.append(f"<li>{link(b)}</li>")
-                fb.append("</ul>")
-            fb.append("</div>")
-            move_blocks.append("\n".join(fb))
-            continue
-
-        if re.match(r"^When you\b", line, re.I) or re.match(
-            r"^(Lost memories|Strain|Starts at)\b", line, re.I
-        ):
-            body_parts = [line]
-            i += 1
-            pick_items: list[str] = []
-            in_pick = bool(
-                re.search(r"\bpick\s+\d", line, re.I)
-                or re.search(r"\bdesire:?\s*$", line, re.I)
-            )
-            while i < len(move_lines):
-                L2 = move_lines[i].strip()
-                if not L2:
-                    i += 1
-                    continue
-                if re.match(r"^When you\b", L2, re.I):
-                    break
-                if _is_track_line(L2):
-                    break
-                if _looks_like_follower_name(L2) and i + 1 < len(move_lines) and (
-                    looks_like_tag_line(move_lines[i + 1])
-                    or HP_LINE_RE.search(move_lines[i + 1])
-                ):
-                    break
-                # Standalone rule line after a complete When-you sentence
-                if (
-                    re.match(
-                        r"^(Reduce |Increase |Clear |Mark |Also,|But |The |You cannot )",
-                        L2,
-                    )
-                    and body_parts
-                    and body_parts[-1].endswith((".", "!", "?"))
-                    and not in_pick
-                ):
-                    break
-                if re.match(r"^(Then,|Also,|But |If |While |Each )", L2):
-                    if pick_items:
-                        break
-                    body_parts.append(L2)
-                    i += 1
-                    in_pick = bool(re.search(r"\bpick\s+\d", L2, re.I))
-                    continue
-                if in_pick and not re.match(r"^When you\b", L2, re.I):
-                    if re.match(
-                        r"^(It'?s |You |Regain |Clear |The |Act |Resist |Cast |"
-                        r"Hold |Point |Cause |Mark |Its |Hard |Solid |Quick )",
-                        L2,
-                    ) or (len(L2) < 100 and L2[0:1].isupper()):
-                        pick_items.append(L2)
-                        i += 1
-                        continue
-                # Continuation of move prose
-                if L2[0:1].islower() or not body_parts[-1].endswith((".", "!", "?")):
-                    body_parts.append(L2)
-                    i += 1
-                    if re.search(r"\bpick\s+\d", L2, re.I):
-                        in_pick = True
-                    continue
-                # New capital sentence — keep as part of move if short continuation
-                if re.match(r"^(They |It |This |That |While |If |On a )", L2):
-                    body_parts.append(L2)
-                    i += 1
-                    continue
-                break
-            para = " ".join(body_parts)
-            block = f'<div class="arcana-move"><p>{link(para)}</p>'
-            if pick_items:
-                block += '<ul class="arcana-picks">'
-                for pi in pick_items:
-                    block += f"<li>{link(pi)}</li>"
-                block += "</ul>"
-            block += "</div>"
-            move_blocks.append(block)
-            continue
-
-        # Bullet already merged
-        if line.startswith("•") or line.startswith("·"):
-            # collect consecutive bullets
-            bullets = [line.lstrip("•· ").strip()]
-            i += 1
-            while i < len(move_lines):
-                L2 = move_lines[i].strip()
-                if L2.startswith("•") or L2.startswith("·"):
-                    bullets.append(L2.lstrip("•· ").strip())
-                    i += 1
-                elif L2 and L2[0:1].islower() and bullets:
-                    bullets[-1] = bullets[-1] + " " + L2
-                    i += 1
-                else:
-                    break
-            move_blocks.append(
-                '<ul class="arcana-picks arcana-moves-list">'
-                + "".join(f"<li>{link(b)}</li>" for b in bullets if b)
-                + "</ul>"
-            )
-            continue
-
-        if looks_like_heading(line) and len(line) < 40:
-            hid = anchors.add(line)
-            move_blocks.append(
-                f'<h3 id="{html.escape(hid)}" class="arcana-sub">{html.escape(line)}</h3>'
-            )
-            i += 1
-            continue
-
-        move_blocks.append(f"<p>{link(line)}</p>")
+                continue
+            first_prose = False
+        bparts.append(f"<p>{link(_arcana_content(raw))}</p>")
         i += 1
 
-    # --- Assemble card ---
-    hid = anchors.add(power_name)
+    hid = anchors.add(power)
     parts = [f'<div class="arcana-card" id="{html.escape(hid)}">']
-
     parts.append('<div class="arcana-face arcana-front">')
-    parts.append('<p class="arcana-face-label">Discovery</p>')
-    if discovery:
-        parts.append(f'<h3 class="arcana-discovery">{html.escape(discovery)}</h3>')
-    if tags:
-        parts.append(f'<p class="arcana-tags">{html.escape(tags)}</p>')
-    for p in desc_paras:
-        parts.append(f"<p>{link(p)}</p>")
-
-    if unlock_intro or groups:
-        parts.append('<div class="arcana-unlock">')
-        if unlock_intro:
-            parts.append(f'<p class="arcana-unlock-intro">{link(unlock_intro)}</p>')
-        check_n = 0
-        for header, items in groups:
-            if header:
-                parts.append(f'<p class="si-requires">{html.escape(header)}:</p>')
-            if items:
-                check_n += 1
-                lid = f"arcana-{slugify_id(power_name)}-{check_n}"
-                parts.append(render_check_list(items, link, lid))
+    parts.extend(fparts)
+    parts.append("</div>")
+    if bparts:
+        parts.append('<div class="arcana-face arcana-back-face">')
+        parts.append('<p class="arcana-face-label">Power</p>')
+        parts.append(f'<h2 class="arcana-power-name">{html.escape(power)}</h2>')
+        if power_tags:
+            parts.append(f'<p class="arcana-tags">{link(power_tags)}</p>')
+        parts.extend(bparts)
         parts.append("</div>")
-    parts.append("</div>")  # front
-
-    parts.append('<div class="arcana-face arcana-back-face">')
-    parts.append('<p class="arcana-face-label">Power</p>')
-    parts.append(f'<h2 class="arcana-power-name">{html.escape(power_name)}</h2>')
-    if power_tags:
-        parts.append(f'<p class="arcana-tags">{html.escape(power_tags)}</p>')
-    parts.extend(move_blocks)
-    parts.append("</div>")  # back
-
-    parts.append("</div>")  # card
+    parts.append("</div>")
     return "\n".join(parts), anchors.sections
+
+
+def extract_major_arcana_rich(
+    doc: fitz.Document,
+    start_page: int,
+    end_page: int,
+    article_title: str,
+) -> list[str]:
+    """Rich (marker + formatting) extraction of a two-page major-arcana card.
+
+    Each page is a single full-width column; front page first, then back.
+    """
+    out: list[str] = []
+    for pno in range(start_page - 1, end_page):
+        if pno < 0 or pno >= doc.page_count:
+            continue
+        out.append("\x02FACE " + ("front" if pno == start_page - 1 else "back"))
+        out.extend(
+            extract_page_rich(
+                doc[pno], article_title=article_title, single_column=True
+            )
+        )
+    return merge_wrapped_lines(out)
+
+
+def extract_minor_arcana_rich(
+    doc: fitz.Document,
+    page_1based: int,
+    half: str,
+) -> list[str]:
+    """Rich extraction of one minor-arcana card (a top/bottom half of a page).
+
+    Front is the left column, back the right — the default gutter split.
+    """
+    page = doc[page_1based - 1]
+    h = page.rect.height
+    mid_y = h * 0.50
+    for winfo in page.get_text("words"):
+        if winfo[4].lower() in {"front", "back"} and 270 < winfo[1] < 340:
+            mid_y = winfo[1] - 2
+            break
+    y0, y1 = (45, mid_y) if half == "top" else (mid_y, h - 25)
+    lines = extract_page_rich(page, y_clip=(y0, y1))
+    lines = merge_wrapped_lines(lines)
+    # Strip card front/back labels + page numbers that wrap into the text
+    cleaned: list[str] = []
+    for l in lines:
+        l = re.sub(r"\s*\bfront\b\s*\d*\s*\bback\b\s*$", "", l, flags=re.I)
+        l = re.sub(r"\s*\b(front|back)\b\s*\d*\s*$", "", l, flags=re.I)
+        if _defmt(strip_markers(l)).strip():
+            cleaned.append(l)
+    return cleaned
 
 
 def extract_major_arcana_blocks(
@@ -3479,6 +4708,44 @@ def _is_mark_track_line(line: str) -> int:
     return 0
 
 
+def _arcana_content(raw: str) -> str:
+    """Strip a leading \\x02 marker but keep inline formatting sentinels."""
+    if raw.startswith("\x02"):
+        return MARKER_RE.sub("", raw)
+    return raw
+
+
+def _arcana_named_move(text: str):
+    """Parse "NAME [(tags)] [When you ...]" into (name, tags, trigger) or None."""
+    m = BOLD_PREFIX_RE.match(text)
+    if not m:
+        return None
+    name = _defmt(m.group(1)).strip()
+    if not name or not _is_all_caps_label(name):
+        return None
+    rest = text[m.end():]
+    tags = ""
+    tm = re.match(r"^[\s]*\x06([^\x06\x07]*)\x07\s*", rest)
+    if tm:
+        cand = _defmt(tm.group(1)).strip()
+        if "(" in cand or _is_pure_arcana_tag_line(cand):
+            tags = cand.strip(" ()")
+            rest = rest[tm.end():]
+    trigger = rest.strip()
+    return name, tags, trigger
+
+
+def _arcana_desc_tags(text: str):
+    """Split a description line into (tags, description); tags may be italic."""
+    t = re.sub(r"^[◇\s]+", "", text)
+    tags = ""
+    m = re.match(r"^\x06([^\x06\x07]*)\x07\s*", t)
+    if m and _is_pure_arcana_tag_line(_defmt(m.group(1))):
+        tags = _defmt(m.group(1)).strip(" ,")
+        t = t[m.end():]
+    return tags, t.strip()
+
+
 def structure_major_arcana_html(
     lines: list[str],
     article_title: str,
@@ -3491,10 +4758,7 @@ def structure_major_arcana_html(
     section_indexes: dict[str, dict] | None = None,
     current_book: str | None = None,
 ) -> tuple[str, list[dict]]:
-    """
-    Layout a major arcanum: front moves + mark tracks, back mysteries +
-    consequence checkboxes.
-    """
+    """Layout a major arcanum from rich marker lines (front/back faces)."""
     anchors = AnchorRegistry()
     link_kw = {
         "lookups": lookups,
@@ -3503,185 +4767,157 @@ def structure_major_arcana_html(
     }
 
     def link(text: str) -> str:
-        return linkify_pages(
-            text, lookup, current_slug, section_index, **link_kw
-        )
+        return linkify_pages(text, lookup, current_slug, section_index, **link_kw)
 
     power = (article_title or "Major Arcanum").strip()
     power_norm = normalize_section_key(power)
 
-    # Drop leading title lines that match the power name
-    i = 0
-    tags = ""
-    while i < len(lines):
-        L = lines[i].strip()
-        name, tgs = _strip_power_line_tags(L)
-        ln = normalize_section_key(name)
-        if ln == power_norm or (
-            ln and power_norm.startswith(ln) and len(ln) >= 4
-        ):
-            if tgs:
-                tags = tgs
-            i += 1
-            # next pure-tag line
-            if i < len(lines) and (
-                lines[i].strip().startswith(",")
-                or looks_like_tag_line(lines[i])
-            ):
-                tags = (tags + ", " + lines[i].strip().lstrip(",")).strip(", ")
-                i += 1
+    faces: dict[str, list[str]] = {"front": [], "back": []}
+    cur = "front"
+    for l in lines:
+        if l.startswith("\x02FACE "):
+            cur = l[len("\x02FACE "):].strip() or cur
+            faces.setdefault(cur, [])
             continue
-        if L.startswith(",") or (looks_like_tag_line(L) and not tags):
-            tags = L.lstrip(", ").strip()
-            i += 1
-            continue
-        break
+        faces.setdefault(cur, []).append(l)
 
-    front_parts: list[str] = []
-    mystery_parts: list[str] = []
-    cons_items: list[str] = []
-    section = "front"  # front | mysteries | consequences
-
-    while i < len(lines):
-        L = lines[i].strip()
-        i += 1
-        if not L:
-            continue
-        if re.match(r"^Mysteries of\b", L, re.I):
-            section = "mysteries"
-            continue
-        if re.match(r"^Moves\b", L, re.I) and section != "front":
-            continue
-        if re.match(r"^Consequences\b", L, re.I):
-            section = "consequences"
-            continue
-        if re.match(r"^(front|back)$", L, re.I):
-            continue
-
-        if section == "consequences":
-            # New consequence starts with You/Your/Pick…; "When you" continues
-            # Sub-effects like "Your instinct becomes…" stay under the prior item.
-            if re.match(r"^When you\b", L) and cons_items:
-                cons_items[-1] = cons_items[-1] + " " + L
-            elif re.match(r"^Your instinct becomes\b", L, re.I) and cons_items:
-                cons_items[-1] = cons_items[-1] + " " + L
-            elif re.match(r"^(You |Your |Pick |Whenever )", L):
-                cons_items.append(L)
-            elif cons_items:
-                cons_items[-1] = cons_items[-1] + " " + L
-            else:
-                cons_items.append(L)
-            continue
-
-        if section == "mysteries":
-            mystery_parts.append(L)
-            continue
-
-        # Front
-        front_parts.append(L)
-
-    def render_front_or_mystery(parts: list[str], face: str) -> str:
+    def render_face(fl: list[str], face: str, front: bool):
         out: list[str] = []
-        j = 0
-        while j < len(parts):
-            line = parts[j].strip()
-            j += 1
-            if not line:
-                continue
-            # Progress mark track (requirements toward unlocking mysteries)
-            nmarks = _is_mark_track_line(line)
-            if nmarks:
-                lid = f"arcana-{slugify_id(power)}-{face}-marks"
-                out.append(render_mark_track(nmarks, lid, label="Progress marks"))
-                continue
-            # ALL-CAPS move name
-            letters = [c for c in line if c.isalpha()]
-            if (
-                letters
-                and sum(1 for c in letters if c.isupper()) / len(letters) >= 0.75
-                and len(line) < 50
-                and not re.match(r"^When you\b", line, re.I)
-            ):
-                hid = anchors.add(line.title() if line.isupper() else line)
-                out.append(
-                    f'<h3 id="{html.escape(hid)}" class="arcana-sub">'
-                    f"{html.escape(line)}</h3>"
-                )
-                continue
-            # When-you move (+ optional spend/pick list)
-            if re.match(r"^When you\b", line, re.I) or re.match(
-                r"^During this battle\b", line, re.I
-            ):
-                body = [line]
-                picks: list[str] = []
-                in_pick = bool(
-                    re.search(r"\b(pick|spend|do the following|hold)\b", line, re.I)
-                )
-                while j < len(parts):
-                    L2 = parts[j].strip()
-                    if not L2:
-                        j += 1
-                        continue
-                    if re.match(r"^When you\b", L2, re.I):
-                        break
-                    if re.match(r"^During this battle\b", L2, re.I):
-                        break
-                    if _is_mark_track_line(L2):
-                        break
-                    letters2 = [c for c in L2 if c.isalpha()]
-                    if (
-                        letters2
-                        and sum(1 for c in letters2 if c.isupper()) / len(letters2)
-                        >= 0.75
-                        and len(L2) < 50
-                    ):
-                        break
-                    if re.match(r"^Consequences\b", L2, re.I):
-                        break
-                    # pick/spend options
-                    if in_pick and (
-                        re.match(
-                            r"^(Attack |Strike |Disengage |Name |Roll |Hold |"
-                            r"Cast |Spend |Ignore |Deal |Move |Cross )",
-                            L2,
-                        )
-                        or (
-                            len(L2) < 120
-                            and L2[0:1].isupper()
-                            and not re.match(r"^(When |During |Then |Also )", L2)
-                        )
-                    ):
-                        # continuation of option?
-                        if L2[0:1].islower() and picks:
-                            picks[-1] = picks[-1] + " " + L2
-                        else:
-                            picks.append(L2)
-                        j += 1
-                        continue
-                    if re.search(r"\b(do the following|spend \w+, 1-for-1)\b", L2, re.I):
-                        body.append(L2)
-                        in_pick = True
-                        j += 1
-                        continue
-                    # prose continuation
-                    body.append(L2)
+        tags = ""
+        desc_done = False
+        cons_items: list[str] = []
+        section = "moves"
+        i = 0
+        n = len(fl)
+
+        def dl(s: str) -> str:
+            return _defmt(strip_markers(s)).strip()
+
+        def collect_move(trigger_text: str, j: int):
+            body = [trigger_text]
+            picks: list[str] = []
+            seen_pick = False
+            while j < n:
+                r = fl[j]
+                l = dl(r)
+                if not l or l.lower() in ("front", "back"):
                     j += 1
-                    if re.search(r"\b(pick|following|1-for-1)\b", L2, re.I):
-                        in_pick = True
-                block = (
-                    f'<div class="arcana-move"><p>{link(" ".join(body))}</p>'
+                    continue
+                if r.startswith(("\x02H", "\x02FACE", "\x02TH", M_MARK)):
+                    break
+                if r.startswith(M_C):
+                    break
+                if _arcana_named_move(_arcana_content(r)):
+                    break
+                if re.match(r"^(When you|During this battle)\b", l, re.I):
+                    break
+                if r.startswith((M_B, M_B2)):
+                    picks.append(_arcana_content(r))
+                    seen_pick = True
+                    j += 1
+                    continue
+                if seen_pick:
+                    picks.append(_arcana_content(r))
+                else:
+                    body.append(_arcana_content(r))
+                j += 1
+            block = f'<div class="arcana-move"><p>{link(" ".join(body))}</p>'
+            if picks:
+                block += '<ul class="arcana-picks">'
+                for p in picks:
+                    block += f"<li>{link(p)}</li>"
+                block += "</ul>"
+            block += "</div>"
+            return block, j
+
+        while i < n:
+            raw = fl[i]
+            L = dl(raw)
+            if not L:
+                i += 1
+                continue
+            if raw.startswith("\x02TH") or L.lower() in ("front", "back"):
+                i += 1
+                continue
+            if raw.startswith("\x02H2") and L.lower() == "moves":
+                i += 1
+                continue
+            if raw.startswith(("\x02H2", "\x02H3")) and re.match(
+                r"^Mysteries of\b", L, re.I
+            ):
+                i += 1
+                continue
+            if raw.startswith(("\x02H2", "\x02H3")) and normalize_section_key(
+                L
+            ) == power_norm:
+                i += 1
+                continue
+            if raw.startswith("\x02H2") and re.match(r"^Consequences\b", L, re.I):
+                section = "consequences"
+                i += 1
+                continue
+            if section == "consequences":
+                if raw.startswith(M_C):
+                    cons_items.append(_arcana_content(raw))
+                i += 1
+                continue
+            if raw.startswith(M_MARK):
+                nm = int(raw[len(M_MARK):] or "0")
+                lid = f"arcana-{slugify_id(power)}-{face}-marks"
+                out.append(render_mark_track(nm, lid, label="Progress marks"))
+                i += 1
+                continue
+            named = _arcana_named_move(_arcana_content(raw))
+            if named:
+                name, mtags, trigger = named
+                hid = anchors.add(name.title() if name.isupper() else name)
+                label = html.escape(name)
+                if mtags:
+                    label += (
+                        f' <span class="arcana-sub-tags">'
+                        f"({html.escape(mtags)})</span>"
+                    )
+                out.append(
+                    f'<h3 id="{html.escape(hid)}" class="arcana-sub">{label}</h3>'
                 )
-                if picks:
-                    block += '<ul class="arcana-picks">'
-                    for p in picks:
-                        block += f"<li>{link(p)}</li>"
-                    block += "</ul>"
-                block += "</div>"
+                i += 1
+                if trigger and re.match(
+                    r"^(When you|During)\b", _defmt(trigger), re.I
+                ):
+                    block, i = collect_move(trigger, i)
+                    out.append(block)
+                elif trigger:
+                    out.append(f"<p>{link(trigger)}</p>")
+                continue
+            if re.match(r"^(When you|During this battle)\b", L, re.I):
+                block, i = collect_move(_arcana_content(raw), i + 1)
                 out.append(block)
                 continue
-            # Description / other prose
-            out.append(f"<p>{link(line)}</p>")
-        return "\n".join(out)
+            if front and not desc_done:
+                t, desc = _arcana_desc_tags(_arcana_content(raw))
+                if t:
+                    tags = t
+                if desc:
+                    out.append(f"<p>{link(desc)}</p>")
+                desc_done = True
+                i += 1
+                continue
+            out.append(f"<p>{link(_arcana_content(raw))}</p>")
+            i += 1
+
+        if cons_items:
+            lid = f"arcana-{slugify_id(power)}-cons"
+            out.append('<div class="arcana-unlock arcana-consequences">')
+            out.append('<p class="si-requires">Consequences</p>')
+            out.append(render_check_list(cons_items, link, lid))
+            out.append(
+                '<p class="arcana-note"><em>Mark consequences as they apply.</em></p>'
+            )
+            out.append("</div>")
+        return "\n".join(out), tags
+
+    front_html, tags = render_face(faces.get("front", []), "front", True)
+    back_html, _ = render_face(faces.get("back", []), "back", False)
 
     hid = anchors.add(power)
     parts = [
@@ -3691,27 +4927,15 @@ def structure_major_arcana_html(
         f'<h2 class="arcana-power-name">{html.escape(power)}</h2>',
     ]
     if tags:
-        parts.append(f'<p class="arcana-tags">{html.escape(tags)}</p>')
-    parts.append(render_front_or_mystery(front_parts, "front"))
-    parts.append("</div>")  # front
-
-    if mystery_parts or cons_items:
+        parts.append(f'<p class="arcana-tags">{link(tags)}</p>')
+    parts.append(front_html)
+    parts.append("</div>")
+    if back_html.strip():
         parts.append('<div class="arcana-face arcana-back-face">')
-        parts.append('<p class="arcana-face-label">Back — Mysteries</p>')
-        if mystery_parts:
-            parts.append(render_front_or_mystery(mystery_parts, "back"))
-        if cons_items:
-            lid = f"arcana-{slugify_id(power)}-cons"
-            parts.append('<div class="arcana-unlock arcana-consequences">')
-            parts.append('<p class="si-requires">Consequences</p>')
-            parts.append(render_check_list(cons_items, link, lid))
-            parts.append(
-                '<p class="arcana-note"><em>Mark consequences as they apply.</em></p>'
-            )
-            parts.append("</div>")
-        parts.append("</div>")  # back
-
-    parts.append("</div>")  # card
+        parts.append('<p class="arcana-face-label">Back &mdash; Mysteries</p>')
+        parts.append(back_html)
+        parts.append("</div>")
+    parts.append("</div>")
     return "\n".join(parts), anchors.sections
 
 
@@ -3734,13 +4958,11 @@ def minor_arcana_html_from_pdf(
 
     Returns (body_html, excerpt, sections).
     """
-    if lines is None:
-        title, lines = extract_minor_arcana_card(doc, page_1based, half)
-    else:
-        title = article_title
+    # Rich extraction preserves formatting, checkboxes, and diamonds
+    lines = extract_minor_arcana_rich(doc, page_1based, half)
     body, sections = structure_minor_arcana_html(
         lines,
-        article_title or title,
+        article_title,
         lookup,
         articles,
         current_slug,
@@ -3751,16 +4973,14 @@ def minor_arcana_html_from_pdf(
     )
     excerpt = ""
     for line in lines:
-        if len(line) >= 50 and not line.lower().startswith("when you"):
-            excerpt = line
+        if line.startswith("\x02"):
+            continue
+        clean = _defmt(line).strip()
+        if len(clean) >= 50 and not clean.lower().startswith("when you"):
+            excerpt = clean
             break
-    if not excerpt:
-        for line in lines:
-            if len(line) >= 40:
-                excerpt = line
-                break
     if not excerpt and lines:
-        excerpt = lines[0]
+        excerpt = _defmt(strip_markers(lines[0]))
     if len(excerpt) > 320:
         excerpt = excerpt[:319].rsplit(" ", 1)[0] + "…"
     return body, excerpt, sections
@@ -3782,12 +5002,8 @@ def major_arcana_html_from_pdf(
     current_book: str | None = None,
 ) -> tuple[str, str, list[dict]]:
     """Build HTML for a major arcanum (two-page card)."""
-    # Prefer block extraction; fall back to provided/legacy lines
-    block_lines = extract_major_arcana_blocks(doc, start_page, end_page)
-    if len(block_lines) >= 4:
-        lines = block_lines
-    elif lines is None:
-        lines = extract_article_lines(doc, start_page, end_page, article_title)
+    # Rich extraction preserves formatting, checkboxes, and mark tracks
+    lines = extract_major_arcana_rich(doc, start_page, end_page, article_title)
     body, sections = structure_major_arcana_html(
         lines,
         article_title,
@@ -3801,11 +5017,14 @@ def major_arcana_html_from_pdf(
     )
     excerpt = ""
     for line in lines:
-        if len(line) >= 50 and not line.lower().startswith("when you"):
-            excerpt = line
+        if line.startswith("\x02"):
+            continue
+        clean = _defmt(line).strip()
+        if len(clean) >= 50 and not clean.lower().startswith("when you"):
+            excerpt = clean
             break
     if not excerpt and lines:
-        excerpt = lines[0]
+        excerpt = _defmt(strip_markers(lines[0]))
     if len(excerpt) > 320:
         excerpt = excerpt[:319].rsplit(" ", 1)[0] + "…"
     return body, excerpt, sections
@@ -3830,7 +5049,9 @@ def article_html_from_pdf(
     Returns (body_html, excerpt_text, sections).
     """
     if lines is None:
-        lines = extract_article_lines(doc, start_page, end_page, article_title)
+        lines = extract_article_lines(
+            doc, start_page, end_page, article_title, rich=True
+        )
     body, sections = structure_html(
         lines,
         article_title,
@@ -3842,17 +5063,35 @@ def article_html_from_pdf(
         section_indexes=section_indexes,
         current_book=current_book,
     )
-    # Excerpt from first long-ish prose line
-    excerpt = ""
+    # Excerpt: whole prose paragraphs until we have at least ~50 words,
+    # always ending on a paragraph boundary
+    paras: list[str] = []
+    words = 0
+    in_box = False
     for line in lines:
-        if len(line) >= 60 and not ENTRY_RE.match(line) and not looks_like_tag_line(line):
-            if not HP_LINE_RE.search(line) and not ROLL_HEADER_RE.match(line):
-                excerpt = line
-                break
+        if line == "\x02BOX":
+            in_box = True
+            continue
+        if line == "\x02ENDBOX":
+            in_box = False
+            continue
+        # prose paragraphs only — skip headings, lists, tables, infobox
+        if in_box or line.startswith("\x02"):
+            continue
+        clean = strip_markers(line).strip()
+        if len(clean) < 40:
+            continue
+        if ENTRY_RE.match(clean) or looks_like_tag_line(clean):
+            continue
+        if HP_LINE_RE.search(clean) or ROLL_HEADER_RE.match(clean):
+            continue
+        paras.append(clean)
+        words += len(clean.split())
+        if words >= 50:
+            break
+    excerpt = "\n\n".join(paras)
     if not excerpt and lines:
-        excerpt = lines[0]
-    if len(excerpt) > 320:
-        excerpt = excerpt[:319].rsplit(" ", 1)[0] + "…"
+        excerpt = strip_markers(lines[0])
     return body, excerpt, sections
 
 
