@@ -28,6 +28,7 @@ from wiki_content import (
     major_arcana_html_from_pdf,
     match_toc_to_sections,
     minor_arcana_html_from_pdf,
+    set_title_index,
     split_chapter_toc,
 )
 
@@ -588,18 +589,21 @@ TITLE_PAGE_RE = re.compile(
 )
 
 
+def anchor_for_art(art: dict, text: str) -> str:
+    href = f"{art['slug']}.html"
+    return (
+        f'<a class="wiki-link" href="{href}" data-slug="{art["slug"]}" '
+        f'title="{html.escape(art["title"])}">{html.escape(text)}</a>'
+    )
+
+
 def link_for_page(
     page: int, lookup: dict[int, dict], link_text: str | None = None
 ) -> str:
     art = lookup.get(page)
     if not art:
         return html.escape(link_text or f"page {page}")
-    text = link_text if link_text else art["title"]
-    href = f"{art['slug']}.html"
-    return (
-        f'<a class="wiki-link" href="{href}" data-slug="{art["slug"]}" '
-        f'title="{html.escape(art["title"])}">{html.escape(text)}</a>'
-    )
+    return anchor_for_art(art, link_text if link_text else art["title"])
 
 
 def process_inline_links(
@@ -620,14 +624,29 @@ def process_inline_links(
         # ASCII token unlikely in source; survives markdown_it
         return f"WIKIPLACEHOLDER{idx}ENDPH"
 
+    # Exact-title -> article map. The bold title in "**Title** (page N)" is more
+    # authoritative than the page number, which can't disambiguate two articles
+    # printed on the same page (e.g. minor arcana, two cards per page).
+    exact_title_map: dict[str, dict] = {}
+    for art in articles:
+        exact_title_map.setdefault(art["title"].lower(), art)
+        t = art["title"]
+        if t.lower().startswith("the "):
+            exact_title_map.setdefault(t[4:].lower(), art)
+
     # 1) **Title** [optional words] (page N)
     def repl_bold_page(m: re.Match) -> str:
         title = m.group(1).strip()
         middle = m.group(2) or ""
         page = int(m.group(3))
-        art = lookup.get(page)
+        # Prefer an exact title match over the page-number lookup.
+        art = exact_title_map.get(title.lower())
+        if art is None:
+            art = lookup.get(page)
         if art and art["slug"] == current_slug:
             return f"**{title}**{middle}"
+        if art:
+            return store(anchor_for_art(art, title)) + middle
         return store(link_for_page(page, lookup, title)) + middle
 
     text = BOLD_PAGE_RE.sub(repl_bold_page, text)
@@ -780,6 +799,7 @@ def page_shell(
     articles: list[dict],
     rel_prefix: str = "../",
     section_navs: dict[str, list[dict]] | None = None,
+    content_class: str = "content",
 ) -> str:
     section_navs = section_navs or {}
     nav_items = []
@@ -844,7 +864,7 @@ def page_shell(
     </aside>
     <div class="main-wrap">
       <div class="content-scroll" id="main">
-        <main class="content">
+        <main class="{content_class}">
           {body_html}
         </main>
       </div>
@@ -871,8 +891,16 @@ def prepare_map_images(
     maps_out = img_dir / "maps"
     maps_out.mkdir(parents=True, exist_ok=True)
 
-    # 1) Optional HQ campaign maps from Maps/ (any nested layout)
+    # 1) Optional HQ campaign maps from Maps/ (any nested layout).
+    #    Keep one large view per distinct map: use only the 11x14 sheets
+    #    (drop the redundant 8.5x11 and A4 print sizes), and skip The Vicinity
+    #    and The World's End — the labeled book spreads below already cover them.
     for src in find_campaign_map_jpgs():
+        stem_low = src.stem.lower()
+        if "11 x 14" not in stem_low:
+            continue
+        if "vicinity" in stem_low or "world" in stem_low:
+            continue
         ext = src.suffix.lower() or ".jpg"
         dest_name = slugify(src.stem) + ext
         dest = maps_out / dest_name
@@ -920,48 +948,55 @@ def prepare_map_images(
     return out
 
 
+MAP_PIN_COLORS = [
+    "#e2534a",  # red
+    "#e08a3c",  # orange
+    "#e6c34a",  # yellow
+    "#5aa85a",  # green
+    "#4a90d9",  # blue
+    "#9b6dc4",  # purple
+]
+
+
 def maps_body_html(images: list[dict]) -> str:
-    """Render the Maps topic page from prepared map images."""
-    parts = [
-        "<p>Maps of Stonetop, the vicinity, and the World's End. "
-        "If you placed campaign map sheets in a <code>Maps/</code> folder they "
-        "appear first; PDF book spreads follow. "
-        "Click any map to open full size.</p>"
-    ]
+    """Render the Maps page: one full-height horizontal strip. The labeled book
+    map spreads come first, then the campaign maps. Each map is a pin canvas;
+    a floating toolbar drops colored, labeled pins (saved in localStorage)."""
     hq = [i for i in images if i.get("hq")]
-    full = [i for i in images if i.get("fullpage")]
-    other = [i for i in images if not i.get("hq") and not i.get("fullpage")]
+    spreads = sorted(
+        (i for i in images if i.get("fullpage")),
+        key=lambda i: i.get("page", 0),
+    )
 
-    def block(title: str, items: list[dict], css: str = "") -> str:
-        if not items:
-            return ""
-        figs = []
-        for im in items:
-            src = f"../images/{im['file']}"
-            label = im.get("label") or Path(im["file"]).stem.replace("-", " ").title()
-            figs.append(
-                f'<figure class="wiki-figure map-figure">'
-                f'<a href="{html.escape(src)}" target="_blank" rel="noopener">'
-                f'<img src="{html.escape(src)}" alt="{html.escape(label)}" loading="lazy">'
-                f"</a><figcaption>{html.escape(label)}</figcaption></figure>"
-            )
-        cls = f'gallery-grid maps {css}'.strip()
+    def canvas(im: dict, *, full: bool) -> str:
+        src = html.escape(f"../images/{im['file']}")
+        alt = html.escape(im.get("label") or "Map")
+        map_id = html.escape(Path(im["file"]).name)
+        full_attr = f' data-full="{src}"' if full else ""
         return (
-            f"<h2>{html.escape(title)}</h2>"
-            f'<div class="{cls}">{"".join(figs)}</div>'
+            f'<div class="map-canvas" data-map="{map_id}"{full_attr}>'
+            f'<img src="{src}" alt="{alt}" loading="lazy" draggable="false">'
+            f"</div>"
         )
 
-    parts.append(block("Campaign maps", hq))
-    parts.append(block("PDF map spreads", full))
-    parts.append(block("Other", other))
-    if len(parts) == 1:
-        parts.append(
-            "<p><em>No map images found. PDF map spreads are rendered when the "
-            "Maps chapter is present in the book PDF. Optionally place campaign "
-            "sheets named <code>Map *.jpg</code> under a <code>Maps/</code> "
-            "folder.</em></p>"
-        )
-    return "\n".join(parts)
+    items = [canvas(im, full=False) for im in spreads]
+    items += [canvas(im, full=True) for im in hq]
+    if not items:
+        return ""
+
+    swatches = "".join(
+        f'<button type="button" class="map-color" data-color="{c}" '
+        f'style="--sw:{c}" aria-label="Pin colour {c}"></button>'
+        for c in MAP_PIN_COLORS
+    )
+    tools = (
+        '<div class="map-tools" id="map-tools">'
+        '<button type="button" class="map-add" id="map-add" aria-pressed="false">'
+        "\U0001f4cd Add pin</button>"
+        f'<div class="map-colors" id="map-colors">{swatches}</div>'
+        "</div>"
+    )
+    return f'{tools}<div class="maps-strip">{"".join(items)}</div>'
 
 
 CSS = r"""/* Stonetop Wiki (Book II) */
@@ -1539,6 +1574,25 @@ html, body {
 .roll-table tr:last-child th,
 .roll-table tr:last-child td { border-bottom: none; }
 
+/* Rolled-result row highlight (set by the dice-roll handler) */
+.roll-table tr.roll-hit > th,
+.roll-table tr.roll-hit > td {
+  background: rgba(212, 165, 116, 0.16);
+  animation: roll-hit-flash 0.7s ease-out;
+}
+.roll-table tr.roll-hit > th {
+  color: var(--accent);
+  box-shadow: inset 3px 0 0 var(--accent);
+}
+@keyframes roll-hit-flash {
+  from { background: rgba(212, 165, 116, 0.5); }
+  to   { background: rgba(212, 165, 116, 0.16); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .roll-table tr.roll-hit > th,
+  .roll-table tr.roll-hit > td { animation: none; }
+}
+
 /* Enemy / monster blocks — tight, card-like */
 .stat-block {
   break-inside: avoid;
@@ -1675,49 +1729,156 @@ button.dice-roll.rolling {
   50% { transform: scale(1.08); }
 }
 
-/* Campaign maps (Maps page only — not inverted) */
-.gallery-grid.maps {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
-  gap: 1rem;
-  margin: 0.75rem 0 1.5rem;
-  break-inside: avoid;
-}
-.wiki-figure.map-figure {
-  margin: 0;
-  break-inside: avoid;
-  background: var(--bg-elev);
-  border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  overflow: hidden;
-}
-.wiki-figure.map-figure a {
+/* ---- Maps page: full-bleed, no text ---- */
+/* One full-height horizontal strip that scrolls with the page's default
+   horizontal scroller. Neutralise the multi-column "scroll of pages" layout. */
+main.maps-page {
   display: block;
-  line-height: 0;
-}
-.wiki-figure.map-figure img {
-  width: 100%;
-  height: auto;
-  display: block;
-  /* Real campaign maps — keep natural colors */
-  filter: none;
-}
-.wiki-figure.map-figure figcaption {
-  padding: 0.45rem 0.65rem;
-  font-size: 0.82rem;
-  color: var(--muted);
-  border-top: 1px solid var(--rule);
-}
-/* On the maps page, allow vertical scroll and wider single column for big maps.
-   Scope to .content so hover previews cannot trigger this. */
-.content:has(.gallery-grid.maps) {
   column-count: 1;
   column-width: auto;
-  max-width: 56rem;
+  column-rule: none;
+  column-gap: 0;
+  width: max-content;
+  max-width: none;
+  height: 100%;
+  padding: 0;
 }
-.content-scroll:has(.gallery-grid.maps) {
-  overflow: auto;
+.content-scroll:has(> main.maps-page) {
+  overflow-x: auto;
+  overflow-y: hidden;
 }
+/* All maps tiled side by side, no gaps, at full height. Book spreads first,
+   campaign maps after. width:max-content so the strip shrink-wraps its maps
+   (no dead space to scroll into on the right). */
+.maps-strip {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 0;
+  width: max-content;
+  height: 100%;
+  background: #fff;
+}
+.map-canvas {
+  position: relative;
+  flex: 0 0 auto;
+  height: 100%;
+  line-height: 0;
+}
+.map-canvas[data-full] { cursor: zoom-in; }
+.maps-strip img {
+  display: block;
+  height: 100%;
+  width: auto;
+  -webkit-user-drag: none;
+  user-select: none;
+}
+body.pins-adding .map-canvas { cursor: crosshair; }
+
+/* Pin toolbar (fixed, top-right so it clears the sidebar) */
+.map-tools {
+  position: fixed;
+  top: 0.6rem;
+  right: 1rem;
+  z-index: 40;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.5rem;
+  background: var(--bg-elev);
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  box-shadow: var(--shadow);
+}
+.map-add {
+  background: var(--bg-hover);
+  border: 1px solid var(--rule);
+  color: var(--ink);
+  font: 600 0.82rem var(--font-sans);
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  cursor: pointer;
+}
+.map-add[aria-pressed="true"] {
+  background: var(--accent);
+  color: #12100e;
+  border-color: var(--accent);
+}
+.map-colors { display: flex; gap: 0.3rem; }
+.map-color {
+  width: 1.2rem;
+  height: 1.2rem;
+  padding: 0;
+  border-radius: 50%;
+  background: var(--sw);
+  border: 2px solid transparent;
+  box-shadow: 0 0 0 1px rgba(0,0,0,.4);
+  cursor: pointer;
+}
+.map-color[aria-pressed="true"] {
+  border-color: #fff;
+  box-shadow: 0 0 0 2px var(--sw);
+}
+
+/* Pins + labels dropped onto a map */
+.map-pin {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  z-index: 5;
+  line-height: normal;
+  white-space: nowrap;
+}
+.pin-dot {
+  width: 15px;
+  height: 15px;
+  flex: 0 0 auto;
+  padding: 0;
+  border-radius: 50%;
+  background: var(--pin-color);
+  border: 2px solid #fff;
+  box-shadow: 0 1px 3px rgba(0,0,0,.55);
+  cursor: grab;
+}
+.pin-dot:active { cursor: grabbing; }
+.pin-label {
+  display: inline-block;
+  background: rgba(20,16,12,.82);
+  color: #fff;
+  font: 600 12px/1.3 var(--font-sans);
+  padding: 2px 6px;
+  border-radius: 4px;
+  /* Grow to fit the label; keep it on one line so the full text always shows. */
+  white-space: pre;
+  max-width: 40ch;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: text;
+}
+.pin-label:empty::before {
+  content: attr(data-placeholder);
+  opacity: 0.7;
+}
+.pin-label:focus {
+  outline: none;
+  background: rgba(20,16,12,.95);
+  box-shadow: 0 0 0 2px var(--pin-color);
+}
+.pin-del {
+  display: none;
+  width: 16px;
+  height: 16px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(20,16,12,.82);
+  color: #fff;
+  font: 700 12px/1 var(--font-sans);
+  cursor: pointer;
+}
+.map-pin:hover .pin-del,
+.map-pin:focus-within .pin-del { display: block; }
 
 .dice-toast {
   position: fixed;
@@ -2423,6 +2584,34 @@ JS = r"""/* Stonetop Book II Wiki — dice rolls + hover previews */
     }, 2200);
   }
 
+  // When a roll-table's own dice button is rolled, highlight the row whose
+  // number (or range, e.g. "5-6") contains the total.
+  function highlightRollRow(btn, total) {
+    var head = btn.closest(".roll-table-head");
+    if (!head) return;
+    var table = head.parentNode;
+    if (!table || !table.classList || !table.classList.contains("roll-table")) {
+      return;
+    }
+    var rows = table.querySelectorAll("tbody > tr");
+    var matched = null;
+    for (var i = 0; i < rows.length; i++) {
+      rows[i].classList.remove("roll-hit");
+      var th = rows[i].querySelector('th[scope="row"]');
+      if (!th) continue;
+      var m = th.textContent.trim().match(/^(\d+)(?:\s*[-–—]\s*(\d+))?$/);
+      if (!m) continue;
+      var lo = parseInt(m[1], 10);
+      var hi = m[2] ? parseInt(m[2], 10) : lo;
+      if (total >= lo && total <= hi) matched = rows[i];
+    }
+    if (matched) {
+      // Retrigger the flash animation on repeat rolls.
+      void matched.offsetWidth;
+      matched.classList.add("roll-hit");
+    }
+  }
+
   document.addEventListener("click", function (e) {
     const btn = e.target.closest(".dice-roll");
     if (!btn) return;
@@ -2433,6 +2622,7 @@ JS = r"""/* Stonetop Book II Wiki — dice rolls + hover previews */
     void btn.offsetWidth;
     btn.classList.add("rolling");
     showDiceResult(result);
+    highlightRollRow(btn, result.total);
   });
 
   /* ---------- Hover previews ---------- */
@@ -2653,19 +2843,24 @@ JS = r"""/* Stonetop Book II Wiki — dice rolls + hover previews */
     var section =
       frag && data.sections && data.sections[frag] ? data.sections[frag] : null;
 
-    // Full deep-link target (stat block, table, or section body)
-    if (section && section.html) {
+    // Arcana are one card with two faces (Discovery + Power). A per-face
+    // section extracts incomplete (the power side comes out empty), so always
+    // show the whole stored card — that lists both faces and carries its own
+    // titles, so there is nothing to duplicate.
+    var isArcana =
+      data.kind === "arcana" ||
+      (data.html && data.html.indexOf('class="arcana-card"') !== -1);
+
+    if (isArcana && data.html) {
+      bubble.classList.add("pv-arcana");
+      bubble.innerHTML =
+        '<div class="pv-body pv-full pv-card">' + data.html + "</div>";
+    } else if (section && section.html) {
+      // Deep-link target (stat block, item block, or section body). The block
+      // already begins with its own title, so don't repeat it as a pv-title.
       bubble.classList.remove("pv-arcana");
       bubble.innerHTML =
-        '<p class="pv-title">' +
-        escapeHtml(section.name || data.title || "") +
-        (section.kind === "stat-block"
-          ? ' <span class="pv-kind">monster</span>'
-          : "") +
-        "</p>" +
-        '<div class="pv-body pv-full">' +
-        section.html +
-        "</div>";
+        '<div class="pv-body pv-full">' + section.html + "</div>";
     } else if (data.html) {
       // Full page body for arcana cards (and anything that stores html)
       bubble.classList.add("pv-arcana");
@@ -3216,6 +3411,182 @@ JS = r"""/* Stonetop Book II Wiki — dice rolls + hover previews */
     if (currentSlug) bindWikiChecks(document, currentSlug);
   })();
 
+  /* ---------- Map pins + labels (Maps page) ---------- */
+  (function () {
+    var strip = document.querySelector(".maps-strip");
+    if (!strip) return;
+    var KEY = "stonetop-wiki-map-pins";
+
+    function load() {
+      try {
+        return JSON.parse(localStorage.getItem(KEY) || "{}") || {};
+      } catch (e) {
+        return {};
+      }
+    }
+    var store = load();
+    function persist() {
+      try {
+        localStorage.setItem(KEY, JSON.stringify(store));
+      } catch (e) {}
+    }
+    function pinsFor(mapId) {
+      return store[mapId] || (store[mapId] = []);
+    }
+
+    var adding = false;
+    var activeColor = "#e2534a";
+    var addBtn = document.getElementById("map-add");
+
+    function setAdding(on) {
+      adding = on;
+      if (addBtn) addBtn.setAttribute("aria-pressed", on ? "true" : "false");
+      document.body.classList.toggle("pins-adding", on);
+    }
+
+    function renderPin(canvas, mapId, pin) {
+      var el = document.createElement("div");
+      el.className = "map-pin";
+      el.style.left = pin.x * 100 + "%";
+      el.style.top = pin.y * 100 + "%";
+      el.style.setProperty("--pin-color", pin.color);
+
+      var dot = document.createElement("button");
+      dot.type = "button";
+      dot.className = "pin-dot";
+      dot.title = "Drag to move";
+
+      // A contenteditable span grows to fit its text, so the full label is
+      // always visible when you are not editing (an <input> cropped it).
+      var label = document.createElement("span");
+      label.className = "pin-label";
+      label.contentEditable = "true";
+      label.setAttribute("role", "textbox");
+      label.setAttribute("data-placeholder", "label");
+      label.textContent = pin.label || "";
+
+      var del = document.createElement("button");
+      del.type = "button";
+      del.className = "pin-del";
+      del.title = "Delete pin";
+      del.textContent = "×";
+
+      el.appendChild(dot);
+      el.appendChild(label);
+      el.appendChild(del);
+      canvas.appendChild(el);
+
+      // Keep clicks on the pin from reaching the canvas (add/open handlers).
+      el.addEventListener("mousedown", function (e) {
+        e.stopPropagation();
+      });
+      el.addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
+      el.addEventListener("dblclick", function (e) {
+        e.stopPropagation();
+      });
+      label.addEventListener("input", function () {
+        pin.label = label.textContent;
+        persist();
+      });
+      label.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          label.blur();
+        }
+      });
+      del.addEventListener("click", function (e) {
+        e.stopPropagation();
+        e.preventDefault();
+        var arr = pinsFor(mapId);
+        var idx = arr.indexOf(pin);
+        if (idx >= 0) arr.splice(idx, 1);
+        if (arr.length === 0) delete store[mapId];
+        persist();
+        el.remove();
+        // Deleting exits add/edit mode so the next click doesn't drop a pin.
+        setAdding(false);
+      });
+      dot.addEventListener("mousedown", function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        function move(ev) {
+          var r = canvas.getBoundingClientRect();
+          var x = (ev.clientX - r.left) / r.width;
+          var y = (ev.clientY - r.top) / r.height;
+          pin.x = Math.min(1, Math.max(0, x));
+          pin.y = Math.min(1, Math.max(0, y));
+          el.style.left = pin.x * 100 + "%";
+          el.style.top = pin.y * 100 + "%";
+        }
+        function up() {
+          document.removeEventListener("mousemove", move);
+          document.removeEventListener("mouseup", up);
+          persist();
+        }
+        document.addEventListener("mousemove", move);
+        document.addEventListener("mouseup", up);
+      });
+      return el;
+    }
+
+    var canvases = strip.querySelectorAll(".map-canvas");
+    canvases.forEach(function (canvas) {
+      var mapId = canvas.getAttribute("data-map");
+      (store[mapId] || []).forEach(function (pin) {
+        renderPin(canvas, mapId, pin);
+      });
+      canvas.addEventListener("click", function (e) {
+        if (!adding) return;
+        // Never treat a click on an existing pin (e.g. its × delete button)
+        // as a request to add a new one.
+        if (e.target.closest(".map-pin")) return;
+        var r = canvas.getBoundingClientRect();
+        var pin = {
+          x: Math.min(1, Math.max(0, (e.clientX - r.left) / r.width)),
+          y: Math.min(1, Math.max(0, (e.clientY - r.top) / r.height)),
+          color: activeColor,
+          label: "",
+        };
+        pinsFor(mapId).push(pin);
+        persist();
+        var el = renderPin(canvas, mapId, pin);
+        var inp = el.querySelector(".pin-label");
+        if (inp) inp.focus();
+      });
+      // Open the full-resolution campaign map on double-click.
+      canvas.addEventListener("dblclick", function () {
+        var full = canvas.getAttribute("data-full");
+        if (full && !adding) window.open(full, "_blank");
+      });
+    });
+
+    // Toolbar wiring
+    if (addBtn) {
+      addBtn.addEventListener("click", function () {
+        setAdding(!adding);
+      });
+    }
+    var swatches = Array.prototype.slice.call(
+      document.querySelectorAll(".map-color")
+    );
+    function selectColor(btn) {
+      activeColor = btn.getAttribute("data-color");
+      swatches.forEach(function (s) {
+        s.setAttribute("aria-pressed", s === btn ? "true" : "false");
+      });
+    }
+    swatches.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        selectColor(btn);
+        // Picking a colour is a strong signal you want to place a pin.
+        if (!adding) setAdding(true);
+      });
+    });
+    if (swatches.length) selectColor(swatches[0]);
+  })();
+
   /* Scroll to #fragment targets inside the horizontal multi-column pane */
   function scrollToFragment() {
     var id = (location.hash || "").replace(/^#/, "");
@@ -3431,6 +3802,7 @@ def main() -> None:
 
     lookup = build_page_lookup(articles)
     lookups = {"book2": lookup}
+    set_title_index(articles)
     previews: dict[str, dict] = {}
 
     # Campaign maps + PDF map spreads (maps page only)
@@ -3547,6 +3919,7 @@ def main() -> None:
                 articles,
                 rel_prefix="../",
                 section_navs=section_navs,
+                content_class="content maps-page",
             )
             excerpt = (
                 "Maps of Stonetop, the vicinity, and the World's End — "

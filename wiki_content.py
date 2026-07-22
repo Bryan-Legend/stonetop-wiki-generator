@@ -272,6 +272,36 @@ VAL_TOKEN_RE = re.compile(
 B_ON, B_OFF = "\x04", "\x05"   # bold
 I_ON, I_OFF = "\x06", "\x07"   # italic
 _FMT_TOKENS = str.maketrans("", "", B_ON + B_OFF + I_ON + I_OFF)
+_FMT_SET = frozenset((B_ON, B_OFF, I_ON, I_OFF))
+
+
+def _split_trailing_fmt(s: str) -> tuple[str, str]:
+    """Split off any trailing inline-format sentinels: (body, trailing)."""
+    i = len(s)
+    while i > 0 and s[i - 1] in _FMT_SET:
+        i -= 1
+    return s[:i], s[i:]
+
+
+def _split_leading_fmt(s: str) -> tuple[str, str]:
+    """Split off any leading inline-format sentinels: (leading, body)."""
+    i = 0
+    while i < len(s) and s[i] in _FMT_SET:
+        i += 1
+    return s[:i], s[i:]
+
+
+def _cancel_fmt_seam(tail: str, lead: str) -> str:
+    """Cancel matching OFF/ON sentinel pairs where a line-wrapped run rejoins,
+    so a hyphen-split word stays a single formatted run (and one link)."""
+    t, l = list(tail), list(lead)
+    while t and l and (
+        (t[-1] == B_OFF and l[0] == B_ON)
+        or (t[-1] == I_OFF and l[0] == I_ON)
+    ):
+        t.pop()
+        l.pop(0)
+    return "".join(t) + "".join(l)
 
 
 def _defmt(s: str) -> str:
@@ -851,8 +881,10 @@ def extract_page_rich(
                     or out[-1].startswith((M_B2, "• "))
                 )
             ):
-                if out[-1].endswith("-") and text[:1].islower():
-                    out[-1] = out[-1][:-1] + text
+                body_p, tail_p = _split_trailing_fmt(out[-1])
+                lead_p, rest_p = _split_leading_fmt(text)
+                if body_p.endswith("-") and rest_p[:1].islower():
+                    out[-1] = body_p[:-1] + _cancel_fmt_seam(tail_p, lead_p) + rest_p
                 else:
                     out[-1] = out[-1] + " " + text
                 continue
@@ -913,8 +945,15 @@ def is_running_header(line: str, article_title: str, *, near_page_top: bool = Fa
     # Exact / undoubled title as running head (any occurrence — it's never useful body)
     if at and (lt == at or lc == at or lt == at + at or lc == at + at):
         return True
-    if near_page_top and at and (lc.startswith(at) or at.startswith(lc)) and len(lc) >= 6:
-        return True
+    if near_page_top and at and len(lc) >= 6:
+        # A truncated title fragment ("The Dread Riv") is a running head.
+        if at.startswith(lc):
+            return True
+        # The title plus only trailing noise (a page number, a doubled word) is
+        # a running head — but the title followed by real sentence text is body
+        # ("The Dread River is the eastern border of the World's End").
+        if lc.startswith(at) and len(lc) <= len(at) + 6:
+            return True
     # Short-form running head of a longer title ("Stonetop" on
     # "The village of Stonetop" pages)
     if near_page_top and at and len(lc) >= 6 and at.endswith(lc):
@@ -1129,6 +1168,23 @@ def should_join(a: str, b: str) -> bool:
         return False
     if is_running_header(b, ""):
         return False
+    # A line ending on a dangling connector word (article/preposition/
+    # conjunction) is almost always mid-sentence, so join even when the next
+    # line looks like a short heading ("…en route to" + "Gordin's Delve").
+    if (
+        re.search(
+            r"\b(?:the|a|an|of|to|and|or|for|with|into|from|in|on|at|by)\s*$",
+            a,
+            re.I,
+        )
+        and not ENTRY_RE.match(b)
+        and not ROLL_HEADER_RE.match(b)
+        and not ROLL_HEADER_DICE_ONLY.match(b)
+        and not looks_like_tag_line(b)
+        and not HP_LINE_RE.search(b)
+        and not b.startswith(("•", "·"))
+    ):
+        return True
     if looks_like_heading(b) and len(b) < 40:
         return False
     if ROLL_HEADER_RE.match(b) or ROLL_HEADER_DICE_ONLY.match(b):
@@ -1323,11 +1379,17 @@ def merge_wrapped_lines(lines: list[str]) -> list[str]:
     buf = lines[0]
     for nxt in lines[1:]:
         if should_join(buf, nxt):
-            if buf.endswith("-") and not buf.endswith("--"):
-                # keep hyphen if next is capital (compound), else glue word
-                if nxt and nxt[0].islower():
-                    buf = buf[:-1] + nxt
+            # Test for a trailing hyphen past any inline-format sentinels, so a
+            # bold/italic word wrapped across a line ("crys-" + "tal") still
+            # de-hyphenates instead of becoming "crys- tal".
+            body, tail = _split_trailing_fmt(buf)
+            if body.endswith("-") and not body.endswith("--"):
+                lead, rest = _split_leading_fmt(nxt)
+                if rest[:1].islower():
+                    # De-hyphenate; cancel the format seam so it's one run.
+                    buf = body[:-1] + _cancel_fmt_seam(tail, lead) + rest
                 else:
+                    # Capital after the hyphen → real compound; keep it, glue.
                     buf = buf + nxt
             else:
                 buf = buf + " " + nxt
@@ -1543,6 +1605,24 @@ def _book_id_from_token(token: str) -> str | None:
     return None
 
 
+# Exact article/arcana title -> article. The bold label in "**Title** (page N)"
+# is more authoritative than the page number, which cannot disambiguate two
+# articles printed on the same page (minor arcana are two cards per page, so a
+# page resolves to only one of them). Populated by set_title_index().
+_TITLE_INDEX: dict[str, dict] = {}
+
+
+def set_title_index(articles: list[dict]) -> None:
+    _TITLE_INDEX.clear()
+    for art in articles:
+        t = (art.get("title") or "").strip()
+        if not t:
+            continue
+        _TITLE_INDEX.setdefault(t.lower(), art)
+        if t.lower().startswith("the "):
+            _TITLE_INDEX.setdefault(t[4:].lower(), art)
+
+
 def linkify_pages(
     text: str,
     lookup: dict[int, dict],
@@ -1580,6 +1660,26 @@ def linkify_pages(
         if not art:
             return html.escape(label or f"p. {page}")
         frag = resolve_section_fragment(page, label, art["slug"], sidx)
+        # When the page path finds no in-article section for a distinctive
+        # label, but that label uniquely names a section elsewhere, trust the
+        # name over the page number. Fixes arcana discovery refs like
+        # "A metal man (page 533)" where one printed page holds two arcana.
+        if label and not frag:
+            uniq = resolve_unique_section(label, sidx)
+            if uniq and uniq[0] != art["slug"]:
+                u_slug, u_sid, u_title = uniq
+                if u_slug == current_slug:
+                    return (
+                        f'<a class="wiki-link" href="#{u_sid}" data-slug="{u_slug}" '
+                        f'data-fragment="{u_sid}" title="{html.escape(u_title)}">'
+                        f"{html.escape(label)}</a>"
+                    )
+                return (
+                    f'<a class="wiki-link" href="{u_slug}.html#{u_sid}" '
+                    f'data-slug="{u_slug}" data-fragment="{u_sid}" '
+                    f'title="{html.escape(f"{label} — {u_title}")}">'
+                    f"{html.escape(label)}</a>"
+                )
         # Same article: in-page fragment if possible
         if art["slug"] == current_slug:
             if frag and label:
@@ -1660,10 +1760,19 @@ def linkify_pages(
         if not pages or len(clean) < 2:
             return m.group(0)
         lk, sidx = resolve_lookup(None)
-        art = lk.get(pages[0])
+        # Prefer an exact title match over the page number (which can't tell
+        # apart two arcana printed on the same page).
+        art_by_title = _TITLE_INDEX.get(clean.lower())
+        art = art_by_title or lk.get(pages[0])
         if not art:
             return m.group(0)
-        frag = resolve_section_fragment(pages[0], clean, art["slug"], sidx)
+        # A title-resolved article is unrelated to `pages[0]`, so don't derive an
+        # in-page fragment from that page.
+        frag = (
+            None
+            if art_by_title
+            else resolve_section_fragment(pages[0], clean, art["slug"], sidx)
+        )
         disp_inner = re.sub(r"[\s(]+$", "", inner)
         disp = html.escape(B_ON + disp_inner + B_OFF)
         if art["slug"] == current_slug:
@@ -2549,8 +2658,10 @@ def _render_artifact_block_rich(
             paras.append((L, False))
         else:
             prev, pn = paras[-1]
-            if _defmt(prev).endswith("-") and dL[:1].islower():
-                paras[-1] = (prev.rstrip()[:-1] + L, pn)
+            body_pv, tail_pv = _split_trailing_fmt(prev.rstrip())
+            lead_pv, rest_pv = _split_leading_fmt(L)
+            if body_pv.endswith("-") and rest_pv[:1].islower():
+                paras[-1] = (body_pv[:-1] + _cancel_fmt_seam(tail_pv, lead_pv) + rest_pv, pn)
             else:
                 paras[-1] = (prev + " " + L, pn)
 
@@ -4404,12 +4515,16 @@ def structure_minor_arcana_html(
     disc_tags = ""
     i = 0
     n = len(front)
-    # discovery name (first H3)
+    # Discovery name: the first run of consecutive H3 title lines. A long title
+    # wraps onto a second H3 line (e.g. "Runes around" + "a ruined hall"), so
+    # join them instead of leaving the tail as a stray paragraph.
     while i < n and not front[i].startswith("\x02H3"):
         i += 1
-    if i < n:
-        disc_name = _dedupe_arcana_title(_defmt(strip_markers(front[i])))
+    title_parts: list[str] = []
+    while i < n and front[i].startswith("\x02H3"):
+        title_parts.append(_defmt(strip_markers(front[i])))
         i += 1
+    disc_name = _dedupe_arcana_title(" ".join(title_parts))
     # tags + description + unlock
     desc_paras: list[str] = []
     unlock_intro = ""
@@ -5102,6 +5217,14 @@ def build_section_index(
     """Build cross-page lookup for section/monster deep links."""
     by_slug_norm: dict[tuple[str, str], str] = {}
     by_page_norm: dict[tuple[int, str], tuple[str, str]] = {}
+    title_by_slug = {a["slug"]: a.get("title") or a["slug"] for a in articles}
+    # Distinctive (multi-word) section names that live on exactly one article, so
+    # a page ref whose label names such a section can be resolved to the right
+    # article even when the printed page holds several arcana (two per page) or
+    # the page->article mapping is imperfect.
+    name_owner: dict[str, str] = {}
+    name_sid: dict[str, str] = {}
+    name_multi: set[str] = set()
     for art in articles:
         slug = art["slug"]
         sections = per_slug_sections.get(slug) or []
@@ -5116,4 +5239,48 @@ def build_section_index(
             for p in range(start, end + 1):
                 by_page_norm[(p, norm)] = (slug, sid)
                 by_page_norm[(p, norm.replace(" ", ""))] = (slug, sid)
-    return {"by_slug_norm": by_slug_norm, "by_page_norm": by_page_norm}
+            if " " in norm:  # multi-word only, to avoid hijacking title cross-refs
+                if norm in name_multi:
+                    pass
+                elif norm in name_owner and name_owner[norm] != slug:
+                    name_multi.add(norm)
+                    name_owner.pop(norm, None)
+                    name_sid.pop(norm, None)
+                else:
+                    name_owner[norm] = slug
+                    name_sid[norm] = sid
+    by_name_unique = {
+        norm: (slug, name_sid[norm], title_by_slug.get(slug, slug))
+        for norm, slug in name_owner.items()
+    }
+    return {
+        "by_slug_norm": by_slug_norm,
+        "by_page_norm": by_page_norm,
+        "by_name_unique": by_name_unique,
+    }
+
+
+def resolve_unique_section(
+    label: str | None, section_index: dict | None
+) -> tuple[str, str, str] | None:
+    """(slug, section_id, article_title) for a label that uniquely names a
+    multi-word section anywhere in the book, else None."""
+    if not label or not section_index:
+        return None
+    uniq = section_index.get("by_name_unique") or {}
+    if not uniq:
+        return None
+    keys = _section_match_keys(label)
+    for k in keys:
+        if k in uniq:
+            return uniq[k]
+    # Some arcana discovery headings are extracted truncated (a wrapped title
+    # like "Runes around a ruined hall" indexed as "Runes around"). Fall back to
+    # the label's leading words (>= 2) so the hook still resolves.
+    for k in keys:
+        words = k.split()
+        for j in range(len(words) - 1, 1, -1):
+            pref = " ".join(words[:j])
+            if pref in uniq:
+                return uniq[pref]
+    return None
