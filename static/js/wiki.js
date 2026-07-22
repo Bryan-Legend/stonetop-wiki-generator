@@ -23,7 +23,7 @@
       return Promise.resolve(previews);
     }
     if (previewsPromise) return previewsPromise;
-    // Prefer previews-data.js (works with file://); fall back to fetch JSON
+    // Load as a script so previews work over file:// (fetch of JSON often fails there).
     previewsPromise = new Promise(function (resolve) {
       const s = document.createElement("script");
       s.src = SCRIPT_BASE + "js/previews-data.js";
@@ -32,18 +32,8 @@
         resolve(previews);
       };
       s.onerror = function () {
-        fetch(SCRIPT_BASE + "previews.json")
-          .then(function (r) {
-            return r.ok ? r.json() : {};
-          })
-          .then(function (data) {
-            previews = data || {};
-            resolve(previews);
-          })
-          .catch(function () {
-            previews = {};
-            resolve(previews);
-          });
+        previews = {};
+        resolve(previews);
       };
       document.head.appendChild(s);
     });

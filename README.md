@@ -51,7 +51,7 @@ pip install -r requirements.txt
 Put the Book II **1-up** PDF in some input folder (filename must match exactly), then:
 
 ```bash
-python build_book_ii_wiki.py --input /path/to/folder-with-pdf --output /path/to/Stonetop_Wiki
+python stonetop-wiki-generator.py --input /path/to/folder-with-pdf --output /path/to/Stonetop_Wiki
 ```
 
 | Flag | Meaning | Default |
@@ -69,9 +69,9 @@ my-stonetop-stuff/
 ```
 
 ```bash
-python build_book_ii_wiki.py --input my-stonetop-stuff --output my-stonetop-stuff/Stonetop_Wiki
+python stonetop-wiki-generator.py --input my-stonetop-stuff --output my-stonetop-stuff/Stonetop_Wiki
 # or, from my-stonetop-stuff:
-python /path/to/stonetop-wiki-generator/build_book_ii_wiki.py --input . --output Stonetop_Wiki
+python /path/to/stonetop-wiki-generator/stonetop-wiki-generator.py --input . --output Stonetop_Wiki
 ```
 
 ### 3. Open it
@@ -118,8 +118,7 @@ Checkbox state for steading improvements and arcana is stored in your browser (`
 
 | File | Role |
 |------|------|
-| `build_book_ii_wiki.py` | Main entry point — builds the static site |
-| `wiki_content.py` | PDF extraction, structure, linkify, arcana parsing |
+| `stonetop-wiki-generator.py` | Single entry point — PDF extraction + static site build |
 | `static/css/wiki.css` | Wiki styles (copied into the output on build) |
 | `static/js/wiki.js` | Search, checkboxes, dice, previews (copied on build) |
 | `requirements.txt` | Python dependencies |
