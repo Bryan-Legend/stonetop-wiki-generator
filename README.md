@@ -46,29 +46,35 @@ source .venv/bin/activate
 pip install -r requirements.txt
 ```
 
-### 2. Add your PDF
+### 2. Point at your PDF and build
 
-Copy the Book II **1-up** PDF into this folder so the path is:
-
-```text
-stonetop-wiki-generator/
-  Book_II_-_The_Wider_World_and_Other_Wonders_(1-up)_-_2nd_printing.pdf
-  build_book_ii_wiki.py
-  wiki_content.py
-  …
-```
-
-The filename must match exactly (the script looks for that name).
-
-### 3. Build the wiki
+Put the Book II **1-up** PDF in some input folder (filename must match exactly), then:
 
 ```bash
-python build_book_ii_wiki.py
+python build_book_ii_wiki.py --input /path/to/folder-with-pdf --output /path/to/Stonetop_Wiki
 ```
 
-This creates `Stonetop_Wiki/` next to the script (HTML, CSS, JS, map images from the PDF).
+| Flag | Meaning | Default |
+|------|---------|---------|
+| `-i` / `--input` | Folder containing the Book II 1-up PDF. Optional subfolder: `Maps/` (campaign sheets). | current working directory |
+| `-o` / `--output` | Folder to write the static wiki into. | `<input>/Stonetop_Wiki` |
 
-### 4. Open it
+Example layout:
+
+```text
+my-stonetop-stuff/
+  Book_II_-_The_Wider_World_and_Other_Wonders_(1-up)_-_2nd_printing.pdf
+  Maps/                          # optional campaign map sheets
+  Stonetop_Wiki/                 # generated output
+```
+
+```bash
+python build_book_ii_wiki.py --input my-stonetop-stuff --output my-stonetop-stuff/Stonetop_Wiki
+# or, from my-stonetop-stuff:
+python /path/to/stonetop-wiki-generator/build_book_ii_wiki.py --input . --output Stonetop_Wiki
+```
+
+### 3. Open it
 
 Open in a browser:
 
@@ -87,7 +93,7 @@ python -m http.server 8000
 
 ## Optional: campaign map sheets
 
-If you own the separate campaign map images, put them under a `Maps/` folder (any nesting is fine). The generator looks for files named like `Map *.jpg` / `Map *.png` and lists them on the Maps page **before** the PDF spreads.
+If you own the separate campaign map images, put them under `Maps/` inside the **input** folder (any nesting is fine).
 
 ```text
 Maps/
@@ -114,16 +120,22 @@ Checkbox state for steading improvements and arcana is stored in your browser (`
 |------|------|
 | `build_book_ii_wiki.py` | Main entry point — builds the static site |
 | `wiki_content.py` | PDF extraction, structure, linkify, arcana parsing |
+| `static/css/wiki.css` | Wiki styles (copied into the output on build) |
+| `static/js/wiki.js` | Search, checkboxes, dice, previews (copied on build) |
 | `requirements.txt` | Python dependencies |
 | `docs/wiki-screenshot-*.png` | README screenshots |
 
 ## Troubleshooting
 
 **`PDF not found`**  
-Check the PDF filename and that it sits in the same directory as `build_book_ii_wiki.py`.
+Confirm `--input` points at the folder that holds the Book II 1-up PDF, and that the filename matches exactly:
+
+```text
+Book_II_-_The_Wider_World_and_Other_Wonders_(1-up)_-_2nd_printing.pdf
+```
 
 **Build is slow / uses a lot of RAM**  
-Normal for a ~500-page PDF with map renders. Give it a minute; maps are the heavy step.
+Normal for a ~500-page PDF with map renders. Give it a minute.
 
 **Search / previews don’t work over `file://`**  
 Use a local static server (`python -m http.server`) as shown above.
