@@ -21,6 +21,26 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
+/* Themed scrollbars (match horizontal content strip on vertical bars too) */
+* {
+  scrollbar-color: var(--accent) var(--bg-elev);
+  scrollbar-width: thin;
+}
+*::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+*::-webkit-scrollbar-track {
+  background: var(--bg-elev);
+}
+*::-webkit-scrollbar-thumb {
+  background: var(--rule);
+  border-radius: 5px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
 html { scroll-behavior: smooth; }
 
 body {
@@ -315,21 +335,6 @@ html, body {
   border: none;
   border-radius: 0;
   background: var(--bg);
-  scrollbar-color: var(--accent) var(--bg-elev);
-  scrollbar-width: thin;
-}
-.content-scroll::-webkit-scrollbar {
-  height: 10px;
-}
-.content-scroll::-webkit-scrollbar-track {
-  background: var(--bg-elev);
-}
-.content-scroll::-webkit-scrollbar-thumb {
-  background: var(--rule);
-  border-radius: 5px;
-}
-.content-scroll::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
 }
 
 .content {
