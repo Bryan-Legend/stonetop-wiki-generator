@@ -507,7 +507,16 @@ def extract_page_rich(
             if ni >= 15:
                 spirals.append(r)
             elif ni == 4:
+                # Older/alternate encoding: 4-path outline diamond
                 diamonds.append(r)
+            elif ni == 1 and abs(w - h) <= 1.0:
+                # Book II 1-up: inventory/uses diamonds are a single Quad path
+                # (~6.6×6.6). Spiral bullets are multi-item (~5.4×5.7, ni≥15).
+                items = dr.get("items") or []
+                if items and items[0] and items[0][0] == "qu":
+                    diamonds.append(r)
+                elif 5.5 <= w <= 7.5:
+                    diamonds.append(r)
             elif 7 <= ni <= 10:
                 boxes_sq.append(r)  # open-square checkbox
         elif w <= 4.5 and h <= 6.5 and 5 <= ni <= 9:
@@ -720,6 +729,10 @@ def extract_page_rich(
             text = "".join(_wrap(t, b, ital) for t, b, ital in segs)
             text = re.sub(r"◇\s+(?=◇)", "◇", text)
             text = text.replace("( ◇", "(◇")
+            # Keep inventory diamonds from gluing to neighboring words:
+            # "case◇ with" → "case ◇ with"
+            text = re.sub(r"([A-Za-z0-9])◇", r"\1 ◇", text)
+            text = re.sub(r"◇([A-Za-z0-9])", r"◇ \1", text)
             text = re.sub(r"\s+([,;:.?!])", r"\1", text)
             text = normalize_text(re.sub(r"\s+", " ", text)).strip()
             if not _defmt(text).strip():
@@ -1115,14 +1128,37 @@ def is_running_header(line: str, article_title: str, *, near_page_top: bool = Fa
 
 
 def looks_like_roll_header(line: str) -> bool:
-    """True if line is a dice-table header (``1d6 size``, bare ``1d12``, or reverse)."""
+    """True if line is a dice-table header (``1d6 size``, bare ``1d12``, or reverse).
+
+    Rejects item prose that merely starts with a dice expression
+    (``1d6 glass vials (fragile, Value 0), etched…``).
+    """
     if not line:
         return False
-    if ROLL_HEADER_RE.match(line) or ROLL_HEADER_DICE_ONLY.match(line):
+    m = ROLL_HEADER_RE.match(line)
+    if m:
+        label = (m.group(2) or "").strip()
+        # Real headers are short labels: "variety", "minor arcanum",
+        # "architectural elements". Item lines carry parens, Value, or clauses.
+        if len(label) > 48:
+            return False
+        if "(" in label or ")" in label:
+            return False
+        if re.search(r"\bValues?\b", label, re.I):
+            return False
+        if label.count(",") >= 2:
+            return False
+        if label.endswith((".", ";", ":")):
+            return False
+        return True
+    if ROLL_HEADER_DICE_ONLY.match(line):
         return True
     # reverse "label 1d6" — only when not also a numbered entry
-    if ROLL_HEADER_REV_RE.match(line) and not ENTRY_RE.match(line):
-        return True
+    m_rev = ROLL_HEADER_REV_RE.match(line)
+    if m_rev and not ENTRY_RE.match(line):
+        label = (m_rev.group(1) or "").strip()
+        if len(label) <= 40 and "(" not in label:
+            return True
     return False
 
 
@@ -1148,6 +1184,12 @@ def looks_like_heading(line: str) -> bool:
     if looks_like_value_header(line) or VALUE_ROW_RE.match(line):
         return False
     if LONE_VALUE_RE.match(line):
+        return False
+    # Table-row wrap fragments: "Value 2)" after a cut parenthetical
+    if re.match(r"^Values?\s*\d+\s*\)?\.?$", line.strip(), re.I):
+        return False
+    # Closing paren-only fragments / short wrap crumbs
+    if re.match(r"^[\d\s,;:.)\]]+$", line.strip()):
         return False
     # Never treat cross-refs as headings — they must become links
     if re.search(r"\(pages?\s+[\d,\s\-–—]+\)", line, re.I):
@@ -1257,6 +1299,16 @@ def looks_like_value_header(line: str) -> bool:
 def should_join(a: str, b: str) -> bool:
     # Analyze on de-tokenized text (keeps \x02 markers, drops inline
     # bold/italic sentinels); merge_wrapped_lines concatenates the originals.
+    # Item tag lines are italic in the PDF — check BEFORE stripping sentinels.
+    if _is_item_tag_line(a) or _is_item_tag_line(b):
+        # Allow joining two consecutive tag wrap lines (", close, thrown," +
+        # "1 piercing") but never tags + following prose.
+        if _is_item_tag_line(a) and (
+            _is_item_tag_line(b)
+            or _is_pure_arcana_tag_line(strip_markers(_defmt(b)))
+        ):
+            return True
+        return False
     a = _defmt(a)
     b = _defmt(b)
     # Structural marker lines are atomic — never merge into or out of them
@@ -1271,6 +1323,9 @@ def should_join(a: str, b: str) -> bool:
     # Never glue pure arcana tag lines to/from neighbors
     # ("A giant's dormitory" + "magical" + "In a ruin…")
     if _is_pure_arcana_tag_line(a) or _is_pure_arcana_tag_line(b):
+        # Two pure tag fragments may still wrap ("beautiful," + "1 piercing")
+        if _is_pure_arcana_tag_line(a) and _is_pure_arcana_tag_line(b):
+            return True
         return False
     if not a or not b:
         return False
@@ -2796,9 +2851,22 @@ def _render_artifact_block_rich(
     """
     n = len(lines)
     i = start + 1  # skip the heading line
-    # Tag line: de-tokenized (styled italic via CSS); strip a stray lead comma
-    tags = re.sub(r"^[\x04\x06,\s]+", "", strip_markers(lines[i])).strip()
-    i += 1
+    # One or more tag lines (PDF often wraps ", close, thrown," + "1 piercing").
+    # De-tokenized for CSS-styled italic tags; strip stray lead commas.
+    tag_bits: list[str] = []
+    while i < n and not lines[i].startswith("\x02"):
+        raw = lines[i]
+        if not (
+            _is_item_tag_line(raw)
+            or _is_pure_arcana_tag_line(strip_markers(_defmt(raw)))
+        ):
+            break
+        t = strip_markers(_defmt(raw)).strip().lstrip(", ").strip()
+        t = re.sub(r"^[\x04\x06,\s]+", "", t).strip().rstrip(",")
+        if t:
+            tag_bits.append(t)
+        i += 1
+    tags = ", ".join(tag_bits)
 
     # Body keeps inline formatting sentinels for rendering
     body: list[str] = []
@@ -3165,12 +3233,16 @@ def structure_html(
                     continue
                 # Artifact / tagged-discovery block: heading immediately
                 # followed by an item tag line ("magical", "hand, magical,
-                # +1 damage", ", immobile"). Render as a card, not a heading.
+                # +1 damage", ", immobile", ", beautiful, magical, Value 4").
+                # Tags are italic in the book — use italic-aware detection.
                 nxt = peek(1)
                 if (
                     nxt
                     and not nxt.startswith("\x02")
-                    and _is_pure_arcana_tag_line(strip_markers(nxt))
+                    and (
+                        _is_item_tag_line(nxt)
+                        or _is_pure_arcana_tag_line(strip_markers(nxt))
+                    )
                 ):
                     ic = take_icon_html()
                     block_html, i = _render_artifact_block_rich(
@@ -3186,7 +3258,8 @@ def structure_html(
                     out.append(block_html)
                     continue
                 # Hazard card: icon heading + prose until next rule/creature
-                # (e.g. Vitrified horrors).
+                # (e.g. Vitrified horrors). Do not swallow following roll tables
+                # (e.g. "Minor arcana" + "1d6 minor arcanum").
                 ic = take_icon_html()
                 body_parts: list[str] = []
                 j = i + 1
@@ -3199,6 +3272,9 @@ def structure_html(
                     if L2.startswith("\x02") and not L2.startswith(
                         (M_B, M_B2, M_Q, M_E, M_C)
                     ):
+                        break
+                    plain2 = _defmt(L2) if not L2.startswith("\x02") else strip_markers(L2)
+                    if looks_like_roll_header(plain2):
                         break
                     if L2.startswith((M_B, M_B2, M_Q, M_E)):
                         for pref in (M_B2, M_Q, M_E, M_B):
@@ -4355,17 +4431,27 @@ _ARCANA_TAGS = {
 }
 
 
+def _strip_leading_inventory_marks(s: str) -> str:
+    """Drop leading inventory-slot diamonds and stray commas from a tag line."""
+    return re.sub(r"^[◇\s,]+", "", (s or "").strip()).strip()
+
+
 def _is_pure_arcana_tag_line(line: str) -> bool:
     """True if the whole line is one or more arcana tags (e.g. 'magical', 'fragile, immobile')."""
-    L = line.strip().lstrip(",").strip()
-    if not L or len(L) > 70:
+    L = _strip_leading_inventory_marks(line.strip().lstrip(",").strip())
+    if not L or len(L) > 90:
         return False
+    # Diamonds as uses mid-line: "slow (◇)" — strip for part checks
+    L = L.replace("◇", "").strip()
     parts = [p.strip() for p in re.split(r"[,;]", L) if p.strip()]
     if not parts:
         return False
     for p in parts:
-        pl = p.lower().strip()
+        pl = p.lower().strip().rstrip("?")
         if pl in _ARCANA_TAGS:
+            continue
+        # "Value 0", "Value 4" (gear price tag used on treasures)
+        if re.match(r"^values?\s*\d+$", pl):
             continue
         # "+1 damage", "1 piercing", bare "+2"
         if re.match(
@@ -4379,6 +4465,53 @@ def _is_pure_arcana_tag_line(line: str) -> bool:
             continue
         return False
     return True
+
+
+def _is_item_tag_line(line: str) -> bool:
+    """
+    Item / treasure tag line as printed in Book II.
+
+    In the PDF these are always italic (and often lead with a stray comma and/or
+    an inventory-slot diamond). Prefer italic coverage over a hard-coded word
+    list; fall back to the pure-tag keyword check for de-tokenized plain lines.
+    """
+    if not line or line.startswith("\x02"):
+        return False
+    # Measure italic coverage on the raw (sentinel-bearing) line
+    ital_chunks = re.findall(re.escape(I_ON) + r"([^\x07]*)" + re.escape(I_OFF), line)
+    ital_chars = sum(len(c) for c in ital_chunks)
+    bare = re.sub(r"[\x02-\x07]", "", line)
+    bare_stripped = bare.strip()
+    if not bare_stripped:
+        return False
+    plain = _strip_leading_inventory_marks(
+        strip_markers(_defmt(line)).strip().lstrip(", ").strip()
+    )
+    if not plain or len(plain) > 160:
+        return False
+    # Ignore diamonds when measuring "is this only tags?"
+    plain_nod = plain.replace("◇", "").strip(" ,")
+    # Italic-dominated lines: book style for gear/monster tags
+    # (diamonds are not italic; exclude them from the coverage denominator)
+    bare_for_ratio = re.sub(r"[◇\s,]+", " ", bare_stripped).strip()
+    ratio_den = max(len(bare_for_ratio), 1)
+    if ital_chars >= max(3, int(0.50 * ratio_den)):
+        # Reject italic prose sentences ("When you…", long period-ended text)
+        if re.match(
+            r"^(When |Whenever |The |If |Pick |For |See |Consider |Most |Some )",
+            plain_nod,
+            re.I,
+        ):
+            return False
+        if plain_nod.endswith((".", "!", "…")) and len(plain_nod) > 48:
+            return False
+        parts = [p.strip() for p in re.split(r"[,;]", plain_nod) if p.strip()]
+        if not parts:
+            return False
+        # Tag parts are short phrases ("beautiful", "1 piercing", "Value 4")
+        if all(len(p) <= 40 and len(p.split()) <= 5 for p in parts):
+            return True
+    return _is_pure_arcana_tag_line(plain)
 
 
 def _split_discovery_and_tags(line: str) -> tuple[str, str]:
