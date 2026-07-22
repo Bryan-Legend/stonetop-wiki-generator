@@ -157,6 +157,38 @@
   let activeLink = null;
   let pageMap = null;
 
+  // Native title tooltips fight the custom popup; deep links use data-slug /
+  // data-fragment / href only. Strip titles on wiki links (incl. injected HTML).
+  function stripWikiLinkTitles(root) {
+    var scope = root || document;
+    var links = scope.querySelectorAll
+      ? scope.querySelectorAll("a.wiki-link[title]")
+      : [];
+    for (var i = 0; i < links.length; i++) {
+      links[i].removeAttribute("title");
+    }
+  }
+  stripWikiLinkTitles(document);
+  if (typeof MutationObserver === "function") {
+    var titleStripObs = new MutationObserver(function (muts) {
+      for (var i = 0; i < muts.length; i++) {
+        var nodes = muts[i].addedNodes;
+        for (var j = 0; j < nodes.length; j++) {
+          var n = nodes[j];
+          if (n.nodeType !== 1) continue;
+          if (n.matches && n.matches("a.wiki-link[title]")) {
+            n.removeAttribute("title");
+          }
+          if (n.querySelectorAll) stripWikiLinkTitles(n);
+        }
+      }
+    });
+    titleStripObs.observe(document.documentElement, {
+      childList: true,
+      subtree: true,
+    });
+  }
+
   function loadPageMap() {
     if (pageMap) return Promise.resolve(pageMap);
     if (typeof window.WIKI_PAGE_MAP === "object" && window.WIKI_PAGE_MAP) {
@@ -278,8 +310,7 @@
       }
       var frag = resolveFragment(info, label);
       var href = pageHref(info.slug) + (frag ? "#" + frag : "");
-      var title = info.title || "";
-      if (label && frag) title = label + " — " + title;
+      // No native title tooltip — hover uses the wiki-preview popup instead.
       return (
         '<a class="wiki-link" href="' +
         href +
@@ -287,9 +318,7 @@
         escapeHtml(info.slug) +
         '"' +
         (frag ? ' data-fragment="' + escapeHtml(frag) + '"' : "") +
-        ' title="' +
-        escapeHtml(title) +
-        '">' +
+        ">" +
         escapeHtml(label || info.title || "page " + num) +
         "</a>"
       );

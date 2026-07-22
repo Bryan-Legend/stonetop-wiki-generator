@@ -102,6 +102,10 @@ ROLL_HEADER_RE = re.compile(
     r"^(\d{0,2}d(?:4|6|8|10|12|20))\s+(.+)$", re.IGNORECASE
 )
 ROLL_HEADER_DICE_ONLY = re.compile(r"^(\d{0,2}d(?:4|6|8|10|12|20))$", re.IGNORECASE)
+# "size 1d6" / reverse dice-label form (must end with a die expression)
+ROLL_HEADER_REV_RE = re.compile(
+    r"^(.{1,40}?)\s+(\d{0,2}d(?:4|6|8|10|12|20))$", re.IGNORECASE
+)
 ENTRY_RE = re.compile(
     r"^(\d{1,2})(?:\s*[-–—]\s*(\d{1,2}))?\s+(.+)$"
 )
@@ -166,7 +170,9 @@ def parse_value_row(line: str) -> tuple[str, str] | None:
 def normalize_text(s: str) -> str:
     s = s.replace("\u2019", "'").replace("\u2018", "'")
     s = s.replace("\u201c", '"').replace("\u201d", '"')
-    s = s.replace("\u2013", "-").replace("\u2014", "-")
+    # Keep en/em dash distinct from ASCII hyphen so wrap logic does not
+    # treat "came—" + "when" as a soft-hyphenated word ("camewhen").
+    s = s.replace("\u2013", "–").replace("\u2014", "—")
     s = s.replace("\u00ad", "")  # soft hyphen
     s = s.replace("\ufeff", "").replace("\u200b", "").replace("\u200c", "")
     s = s.replace("ä", "•")  # PDF dingbat often extracted as ä
@@ -198,66 +204,14 @@ def is_fully_pairwise_doubled(line: str) -> bool:
     )
 
 
-def extract_page_lines(
-    page: fitz.Page,
-    gutter: float | None = None,
-    article_title: str = "",
-) -> list[str]:
-    """Return reading-order lines: full left column, then full right column."""
-    if gutter is None:
-        gutter = page.rect.width * 0.5
-        # Prefer classic Stonetop gutter when page is ~396 wide
-        if 350 < page.rect.width < 450:
-            gutter = DEFAULT_GUTTER
-
-    words = page.get_text("words")
-    if not words:
-        return []
-
-    cols: list[list] = [[], []]
-    for w in words:
-        cols[0 if w[0] < gutter else 1].append(w)
-
-    lines_out: list[str] = []
-    page_h = page.rect.height
-
-    for col_words in cols:
-        by_y: dict[float, list] = defaultdict(list)
-        for w in col_words:
-            y = round(w[1] * 2) / 2
-            by_y[y].append(w)
-        col_lines: list[tuple[float, str]] = []
-        for y in sorted(by_y):
-            ws = sorted(by_y[y], key=lambda t: t[0])
-            text = normalize_text(" ".join(t[4] for t in ws))
-            if not text:
-                continue
-            # Bottom-of-page numbers
-            if text.isdigit() and len(text) <= 3 and y > page_h - 40:
-                continue
-            col_lines.append((y, text))
-        # First ~3 lines of each column can be running headers
-        for idx, (y, text) in enumerate(col_lines):
-            near_top = idx < 3 and y < 100
-            if is_running_header(text, article_title, near_page_top=near_top):
-                continue
-            # Collapse accidental pairwise doubles that slipped through
-            if is_fully_pairwise_doubled(text):
-                text = undouble_words(text)
-                if is_running_header(text, article_title, near_page_top=True):
-                    continue
-            lines_out.append(text)
-    return lines_out
-
-
 # ---------------------------------------------------------------------------
 # Rich (span/drawing-aware) extraction
 #
 # The book marks structure with vector art and special fonts that plain text
 # extraction loses: spiral bullets (two kinds — questions get a tail flourish),
 # open-square checkboxes, outline diamonds for inventory slots/uses, Fell Type
-# small-caps headers on trade/value tables, Avara-Bold headings, and a ruled
-# box around each chapter's steading summary. extract_article_lines(rich=True)
+# small-caps headers on trade/value tables, Avara-Bold headings, horizontal rules, category icons, and a ruled
+# box around each chapter's steading summary. extract_article_lines()
 # re-reads all of that and emits marker-prefixed lines that structure_html
 # understands. Markers use \x02 so they can never collide with body text.
 # ---------------------------------------------------------------------------
@@ -277,6 +231,8 @@ M_VF = "\x02VF "      # value table footnote
 M_BOX = "\x02BOX"     # chapter info box start
 M_ENDBOX = "\x02ENDBOX"
 M_MARK = "\x02MARK "  # progress-mark track (payload: count of marks)
+M_HR = "\x02HR"       # horizontal rule (column separator line)
+M_ICON = "\x02ICON "  # category icon (payload: rel path under images/)
 
 MARKER_RE = re.compile(r"^\x02[A-Z0-9]+ ?")
 VAL_TOKEN_RE = re.compile(
@@ -400,6 +356,85 @@ def _dedupe_rects(rects: list) -> list:
     return out
 
 
+
+# PDF image xrefs → semantic game-icons.net assets (static/images/icons/*.svg).
+# White-on-transparent SVGs from https://game-icons.net/ (CC BY 3.0); CSS
+# recolors them to --accent.
+ICON_XREF_TO_NAME: dict[int, str] = {
+    18815: "spring",
+    18816: "summer",
+    18817: "winter",
+    18818: "autumn",
+    18819: "people",
+    18825: "arcana",
+    18826: "treasure",
+    18831: "danger",
+    18849: "undead",
+    18866: "aberration",
+    18867: "beast",
+    18869: "spirit",
+    18870: "person",
+    18879: "fae",
+    18881: "site",
+    18882: "aberration",
+    18883: "material",
+    18884: "construct",
+    18885: "beast-large",
+    18899: "primordial",
+    18900: "threat",
+    18910: "spirit",
+    4210: "hunter",
+    4525: "time",
+    5913: "sea",
+    6614: "flora",
+    7427: "spirit",
+    7479: "construct",
+    7548: "aberration",
+}
+
+
+def resolve_book_icon(xref: int, icon_dir: Path | None = None) -> str | None:
+    """
+    Map a PDF category-icon xref to a static game-icons SVG.
+
+    Returns path relative to images/ (e.g. ``icons/beast.svg``). Copies the
+    SVG into *icon_dir* when provided so the output wiki is self-contained.
+    """
+    if not xref:
+        return None
+    name = ICON_XREF_TO_NAME.get(int(xref), "default")
+    fname = f"{name}.svg"
+    static_src = Path(__file__).resolve().parent / "static" / "images" / "icons" / fname
+    if not static_src.is_file():
+        static_src = (
+            Path(__file__).resolve().parent / "static" / "images" / "icons" / "default.svg"
+        )
+        fname = "default.svg"
+    if not static_src.is_file():
+        return None
+    if icon_dir is not None:
+        icon_dir = Path(icon_dir)
+        icon_dir.mkdir(parents=True, exist_ok=True)
+        dest = icon_dir / fname
+        if not dest.exists() or dest.stat().st_size != static_src.stat().st_size:
+            try:
+                shutil.copy2(static_src, dest)
+            except OSError:
+                pass
+    return f"icons/{fname}"
+
+
+def book_icon_img_html(rel_path: str, *, rel_prefix: str = "../") -> str:
+    """HTML <img> for a book category icon (path under images/)."""
+    if not rel_path:
+        return ""
+    src = f"{rel_prefix}images/{rel_path.lstrip('/')}"
+    return (
+        f'<img class="book-icon" src="{html.escape(src)}" alt="" '
+        f'width="18" height="18" loading="lazy">'
+    )
+
+
 def extract_page_rich(
     page: fitz.Page,
     article_title: str = "",
@@ -460,6 +495,7 @@ def extract_page_rich(
     tails: list = []
     diamonds: list = []
     boxes_sq: list = []
+    hrules: list = []  # horizontal rules (hairlines)
     box_rect = None
     for dr in page.get_drawings():
         r = dr["rect"]
@@ -476,11 +512,42 @@ def extract_page_rich(
                 boxes_sq.append(r)  # open-square checkbox
         elif w <= 4.5 and h <= 6.5 and 5 <= ni <= 9:
             tails.append(r)  # flourish on the question spiral
+        elif w >= 40 and h <= 1.5 and ni <= 3:
+            hrules.append(r)
         elif first_page and 110 <= w <= 320 and h >= 90 and box_rect is None:
             box_rect = r
     spirals = _dedupe_rects(spirals)
     diamonds = _dedupe_rects(diamonds)
     boxes_sq = _dedupe_rects(boxes_sq)
+    hrules = _dedupe_rects(hrules)
+
+    # Small category icons (beast / undead / solitary / treasure / …)
+    icons: list[dict] = []
+    try:
+        for info in page.get_image_info(xrefs=True):
+            bb = info["bbox"]
+            bw = bb[2] - bb[0]
+            bh = bb[3] - bb[1]
+            if not (10.0 <= bw <= 24.0 and 10.0 <= bh <= 24.0):
+                continue
+            ymid = (bb[1] + bb[3]) / 2
+            if not (cy0 <= ymid < cy1):
+                continue
+            xref = info.get("xref")
+            if not xref:
+                continue
+            icons.append(
+                {
+                    "x0": bb[0],
+                    "y0": bb[1],
+                    "x1": bb[2],
+                    "y1": bb[3],
+                    "ymid": ymid,
+                    "xref": int(xref),
+                }
+            )
+    except Exception:
+        icons = []
 
     # Chapter info box (steading summary) — only if it really holds the stats
     box_spans: list[dict] = []
@@ -513,6 +580,8 @@ def extract_page_rich(
         r_tails = _loc(tails)
         r_diamonds = _loc(diamonds)
         r_checks = _loc(boxes_sq)
+        r_hrules = _loc(hrules)
+        r_icons = [ic for ic in icons if x_lo - 6 <= ic["x0"] <= x_hi]
 
         region = sorted(region, key=lambda s: (s["y"], s["x"]))
         lines: list[list[dict]] = []
@@ -545,6 +614,21 @@ def extract_page_rich(
                     recs.append({"y": y_top, "marks": ding})
                 continue
             first_x = text_spans[0]["x"]
+            # Category icon left of / near this line. Icons often sit slightly
+            # above the tag line and share an x with tab-indented body text,
+            # so keep the y band loose and don't require x1 < first_x.
+            # Consume the icon so the next line (tags) does not re-attach it.
+            icon_xref = None
+            for j, ic in enumerate(r_icons):
+                if abs(ic["ymid"] - y_c) > 11.0:
+                    continue
+                if ic["x0"] > first_x + 6:
+                    continue
+                if first_x - ic["x0"] > 42:
+                    continue
+                icon_xref = ic["xref"]
+                r_icons.pop(j)
+                break
             # Vector glyphs on this line
             row_dia = sorted(
                 (d for d in r_diamonds if abs((d.y0 + d.y1) / 2 - y_c) <= 4.0),
@@ -668,8 +752,13 @@ def extract_page_rich(
                     "bold_lead": "Bold" in text_spans[0]["font"],
                     "all_bold": all("Bold" in g["font"] for g in text_spans),
                     "bold_prefix": _lead_bold_prefix(text_spans, text),
+                    "icon_xref": icon_xref,
                 }
             )
+        # Horizontal rules interleaved by y
+        for r in r_hrules:
+            recs.append({"y": r.y0, "hr": True})
+        recs.sort(key=lambda rec: (rec.get("y", 0), 0 if rec.get("hr") else 1))
         return recs
 
     def emit_region(recs: list[dict], col_x0: float, in_box: bool) -> list[str]:
@@ -712,12 +801,39 @@ def extract_page_rich(
         entry_active = False  # inside a People-style entry (for tier-2 bullets)
         while idx < n_recs:
             rec = recs[idx]
+            if rec.get("hr"):
+                y_hr = float(rec["y"])
+                # Cross-column hairlines share a y; skip the second copy.
+                if any(abs(y_hr - yy) < 5.0 for yy in emitted_hr_ys):
+                    idx += 1
+                    continue
+                emitted_hr_ys.append(y_hr)
+                close_table()
+                # Don't stack HRs back-to-back within a column either
+                if not (out and out[-1] == M_HR):
+                    out.append(M_HR)
+                prev_y = rec["y"]
+                idx += 1
+                continue
             if "marks" in rec:
                 close_table()
                 out.append(M_MARK + str(rec["marks"]))
                 prev_y = rec["y"]
                 idx += 1
                 continue
+            if rec.get("icon_xref"):
+                rel = resolve_book_icon(
+                    rec["icon_xref"], state.get("icon_dir")
+                )
+                if rel:
+                    # Icons often sit on the tag/stat line under an Avara name
+                    # heading; attach them to that heading instead.
+                    if out and (
+                        out[-1].startswith(M_H2) or out[-1].startswith(M_H3)
+                    ):
+                        out.insert(len(out) - 1, M_ICON + rel)
+                    else:
+                        out.append(M_ICON + rel)
             text = rec["text"]
             y = rec["y"]
             gap = (y - prev_y) if prev_y is not None else 999.0
@@ -900,8 +1016,15 @@ def extract_page_rich(
             ):
                 body_p, tail_p = _split_trailing_fmt(out[-1])
                 lead_p, rest_p = _split_leading_fmt(text)
-                if body_p.endswith("-") and rest_p[:1].islower():
+                # Soft hyphen wrap only (not em/en dash: "came—" + "when")
+                if (
+                    body_p.endswith("-")
+                    and not body_p.endswith(("–", "—", "--"))
+                    and rest_p[:1].islower()
+                ):
                     out[-1] = body_p[:-1] + _cancel_fmt_seam(tail_p, lead_p) + rest_p
+                elif body_p.endswith(("–", "—")):
+                    out[-1] = body_p + _cancel_fmt_seam(tail_p, lead_p) + rest_p
                 else:
                     out[-1] = out[-1] + " " + text
                 continue
@@ -914,6 +1037,10 @@ def extract_page_rich(
         return out
 
     result: list[str] = []
+    # Matching left/right column hairlines share a y; only emit one per band
+    # so L→R reading order does not produce stacked double <hr>s.
+    emitted_hr_ys: list[float] = []
+
     if box_spans:
         recs = build_lines(box_spans, box_rect.x0 - 2, box_rect.x1 + 2)
         inner = emit_region(recs, box_rect.x0, True)
@@ -937,7 +1064,14 @@ def extract_page_rich(
         # if the carried table produced no continuation rows, drop the state
         if carried is not None and state.get("table") is carried:
             state.pop("table", None)
-    return result
+
+    # Collapse any remaining consecutive HRs from within a single column
+    cleaned: list[str] = []
+    for line in result:
+        if line == M_HR and cleaned and cleaned[-1] == M_HR:
+            continue
+        cleaned.append(line)
+    return cleaned
 
 
 def is_running_header(line: str, article_title: str, *, near_page_top: bool = False) -> bool:
@@ -980,6 +1114,18 @@ def is_running_header(line: str, article_title: str, *, near_page_top: bool = Fa
     return False
 
 
+def looks_like_roll_header(line: str) -> bool:
+    """True if line is a dice-table header (``1d6 size``, bare ``1d12``, or reverse)."""
+    if not line:
+        return False
+    if ROLL_HEADER_RE.match(line) or ROLL_HEADER_DICE_ONLY.match(line):
+        return True
+    # reverse "label 1d6" — only when not also a numbered entry
+    if ROLL_HEADER_REV_RE.match(line) and not ENTRY_RE.match(line):
+        return True
+    return False
+
+
 def looks_like_heading(line: str) -> bool:
     if not line or len(line) > 55:
         return False
@@ -997,7 +1143,7 @@ def looks_like_heading(line: str) -> bool:
         return False
     if line.startswith(("•", "-", "–")):
         return False
-    if ROLL_HEADER_RE.match(line) or ROLL_HEADER_DICE_ONLY.match(line):
+    if looks_like_roll_header(line):
         return False
     if looks_like_value_header(line) or VALUE_ROW_RE.match(line):
         return False
@@ -1058,7 +1204,7 @@ def parse_page_nums(spec: str) -> list[int]:
 
 def looks_like_tag_line(line: str) -> bool:
     """Horde, small, stealthy, … or Solitary, brutal, fearless, drunkard"""
-    if not line or len(line) > 80:
+    if not line or len(line) > 160:
         return False
     if HP_LINE_RE.search(line) or line.lower().startswith("damage"):
         return False
@@ -1076,6 +1222,8 @@ def looks_like_tag_line(line: str) -> bool:
             continue
         if tok[0] in TAG_WORDS or any(t in TAG_WORDS for t in tok):
             hits += 1
+    # Leading non-org adjectives (ghostly, Forge Lord, …) still count as a
+    # tag line when enough known tags follow.
     return hits >= 2
 
 
@@ -1229,7 +1377,10 @@ def should_join(a: str, b: str) -> bool:
         re.I,
     ):
         return False
-    # Hyphenated line wrap
+    # Em/en dash end of line ("came—") always continues
+    if a.endswith(("–", "—")):
+        return True
+    # Soft hyphenated line wrap (not em/en dash)
     if a.endswith("-") and not a.endswith("--"):
         return True
     # Ends with (page N) — still often mid-sentence
@@ -1400,10 +1551,14 @@ def merge_wrapped_lines(lines: list[str]) -> list[str]:
             # bold/italic word wrapped across a line ("crys-" + "tal") still
             # de-hyphenates instead of becoming "crys- tal".
             body, tail = _split_trailing_fmt(buf)
-            if body.endswith("-") and not body.endswith("--"):
+            if body.endswith(("–", "—")):
+                # Em/en dash line break: keep the dash, no extra space
+                lead, rest = _split_leading_fmt(nxt)
+                buf = body + _cancel_fmt_seam(tail, lead) + rest
+            elif body.endswith("-") and not body.endswith("--"):
                 lead, rest = _split_leading_fmt(nxt)
                 if rest[:1].islower():
-                    # De-hyphenate; cancel the format seam so it's one run.
+                    # Soft-hyphen wrap; cancel the format seam so it's one run.
                     buf = body[:-1] + _cancel_fmt_seam(tail, lead) + rest
                 else:
                     # Capital after the hyphen → real compound; keep it, glue.
@@ -1688,13 +1843,12 @@ def linkify_pages(
                 if u_slug == current_slug:
                     return (
                         f'<a class="wiki-link" href="#{u_sid}" data-slug="{u_slug}" '
-                        f'data-fragment="{u_sid}" title="{html.escape(u_title)}">'
+                        f'data-fragment="{u_sid}">'
                         f"{html.escape(label)}</a>"
                     )
                 return (
                     f'<a class="wiki-link" href="{u_slug}.html#{u_sid}" '
-                    f'data-slug="{u_slug}" data-fragment="{u_sid}" '
-                    f'title="{html.escape(f"{label} — {u_title}")}">'
+                    f'data-slug="{u_slug}" data-fragment="{u_sid}">'
                     f"{html.escape(label)}</a>"
                 )
         # Same article: in-page fragment if possible
@@ -1702,7 +1856,7 @@ def linkify_pages(
             if frag and label:
                 return (
                     f'<a class="wiki-link" href="#{frag}" data-slug="{art["slug"]}" '
-                    f'data-fragment="{frag}" title="{html.escape(art["title"])}">'
+                    f'data-fragment="{frag}">'
                     f"{html.escape(label)}</a>"
                 )
             return html.escape(label) if label else ""
@@ -1710,13 +1864,10 @@ def linkify_pages(
         href = f"{art['slug']}.html"
         if frag:
             href = f"{href}#{frag}"
-        title_attr = art["title"]
-        if label and frag:
-            title_attr = f"{label} — {art['title']}"
         return (
             f'<a class="wiki-link" href="{href}" data-slug="{art["slug"]}" '
             f'{f"data-fragment=\"{frag}\" " if frag else ""}'
-            f'title="{html.escape(title_attr)}">{html.escape(text_out)}</a>'
+            f">{html.escape(text_out)}</a>"
         )
 
     def links_for_pages(
@@ -1772,6 +1923,7 @@ def linkify_pages(
     def repl_bold_pageref(m: re.Match) -> str:
         inner = m.group("t")
         pages = parse_page_nums(m.group("pg"))
+        poss = m.groupdict().get("poss") or ""
         clean = _defmt(inner).strip()
         clean = re.sub(r"[\s(]+$", "", clean).strip()
         if not pages or len(clean) < 2:
@@ -1791,25 +1943,29 @@ def linkify_pages(
             else resolve_section_fragment(pages[0], clean, art["slug"], sidx)
         )
         disp_inner = re.sub(r"[\s(]+$", "", inner)
-        disp = html.escape(B_ON + disp_inner + B_OFF)
+        # Keep possessive inside the link: "Stone Lords'"
+        disp = html.escape(B_ON + disp_inner + B_OFF) + html.escape(poss)
         if art["slug"] == current_slug:
             if frag:
                 return store(
                     f'<a class="wiki-link" href="#{frag}" '
-                    f'data-slug="{art["slug"]}" data-fragment="{frag}" '
-                    f'title="{html.escape(art["title"])}">{disp}</a>'
+                    f'data-slug="{art["slug"]}" data-fragment="{frag}">'
+                    f"{disp}</a>"
                 )
             return store(disp)
         href = f'{art["slug"]}.html' + (f"#{frag}" if frag else "")
-        title_attr = f"{clean} — {art['title']}" if frag else art["title"]
         frag_attr = f'data-fragment="{frag}" ' if frag else ""
         return store(
             f'<a class="wiki-link" href="{href}" data-slug="{art["slug"]}" '
-            f'{frag_attr}title="{html.escape(title_attr)}">{disp}</a>'
+            f"{frag_attr}>{disp}</a>"
         )
 
+    # Allow optional possessive between bold close and the page ref:
+    # "Stone Lords' (page 382)"
     work = re.sub(
-        r"\x04(?P<t>[^\x04\x05]*?)\x05\s*\(?\s*(?:see\s+)?"
+        r"\x04(?P<t>[^\x04\x05]*?)\x05"
+        r"(?P<poss>(?:'|’)s?)?"
+        r"\s*\(?\s*(?:see\s+)?"
         r"pages?\s+(?P<pg>[\d,\s\-–—]+)\)",
         repl_bold_pageref,
         work,
@@ -1928,7 +2084,7 @@ def auto_link_titles(html_text: str, articles: list[dict], current_slug: str | N
             def repl(m, art=art, title=title):
                 return (
                     f'<a class="wiki-link" href="{art["slug"]}.html" '
-                    f'data-slug="{art["slug"]}" title="{html.escape(art["title"])}">'
+                    f'data-slug="{art["slug"]}">'
                     f"{m.group(1)}</a>"
                 )
 
@@ -2003,28 +2159,51 @@ def render_stat_block(
     anchor_id: str | None = None,
     link_kw: dict | None = None,
     check_id: str | None = None,
+    icon_html: str = "",
 ) -> str:
     """Compact monster/enemy/threat block — minimal vertical space."""
     lkw = link_kw or {}
     # Stat blocks are visually styled via CSS; parse/render on plain text so
     # inline formatting sentinels never break the HP/Damage/tag detection.
     name = _defmt(name)
-    lines = [
-        l if l.startswith(M_C) else _defmt(l)
-        for l in lines
-    ]
+    # Preserve embedded roll-table payloads; de-tokenized for everything else.
+    norm_lines: list[str] = []
+    for l in lines:
+        if l.startswith("__ROLL_TABLE__") or l.startswith(M_C):
+            norm_lines.append(l)
+        else:
+            norm_lines.append(_defmt(l))
+    lines = norm_lines
     tags = ""
     stats: list[str] = []
     moves: list[str] = []
     other: list[str] = []
     checks: list[str] = []
+    roll_tables: list[tuple[str, str, list[tuple[str, str]]]] = []
     seen_instinct = False
+    in_questions = False
 
     for line in lines:
+        if line.startswith("__ROLL_TABLE__"):
+            payload = line[len("__ROLL_TABLE__") :]
+            dice_s, _, rest = payload.partition("\x01")
+            label_s, _, rest = rest.partition("\x01")
+            ents: list[tuple[str, str]] = []
+            for part in rest.split("\x02"):
+                if not part:
+                    continue
+                num_s, _, body_s = part.partition("\x03")
+                ents.append((num_s, body_s))
+            roll_tables.append((dice_s, label_s, ents))
+            continue
         if line.startswith(M_C):
             checks.append(line[len(M_C):].strip())
             continue
         low = line.lower().strip()
+        if re.match(r"^questions\s*:?\s*$", low):
+            in_questions = True
+            other.append("Questions")
+            continue
         if not tags and re.match(r"^Threat\b", line, re.I):
             tags = line
             continue
@@ -2057,7 +2236,13 @@ def render_stat_block(
         elif re.match(r"^d\d+", low) and stats:
             stats[-1] = stats[-1] + " " + line
         elif line.startswith("•") or line.startswith("·"):
-            moves.append(line.lstrip("•· ").strip())
+            item = line.lstrip("•· ").strip()
+            # After flavor notes (or a Questions section), trailing bullets
+            # are options/requirements — keep them in notes, not moves.
+            if in_questions or (other and seen_instinct and moves):
+                other.append("• " + item)
+            else:
+                moves.append(item)
         elif low.startswith("when "):
             other.append(line)
         else:
@@ -2122,7 +2307,7 @@ def render_stat_block(
     id_attr = f' id="{html.escape(anchor_id)}"' if anchor_id else ""
     parts = [
         f'<div class="stat-block"{id_attr}>'
-        f'<h3 class="stat-name">{html.escape(name)}</h3>'
+        f'<h3 class="stat-name">{icon_html}{html.escape(name)}</h3>'
     ]
     if tags:
         parts.append(f'<p class="stat-tags">{rr(tags)}</p>')
@@ -2135,7 +2320,26 @@ def render_stat_block(
             parts.append(f"<li>{rr(mv)}</li>")
         parts.append("</ul>")
     for o in notes:
-        parts.append(f'<p class="stat-note">{rr(o)}</p>')
+        if o.startswith("• "):
+            # bullet note — keep as a compact list item style paragraph
+            parts.append(f'<p class="stat-note">• {rr(o[2:])}</p>')
+        else:
+            parts.append(f'<p class="stat-note">{rr(o)}</p>')
+    for dice_s, label_s, ents in roll_tables:
+        rows_html = "".join(
+            f'<tr><th scope="row">{html.escape(num_s)}</th>'
+            f"<td>{rr(body_s)}</td></tr>"
+            for num_s, body_s in ents
+        )
+        parts.append(
+            f'<div class="roll-table roll-table-inline">'
+            f'<div class="roll-table-head">'
+            f"{dice_button(dice_s)}"
+            f' <span class="roll-label">{html.escape(label_s)}</span>'
+            f"</div>"
+            f"<table><tbody>{rows_html}</tbody></table>"
+            f"</div>"
+        )
     if checks:
         parts.append(render_check_list(checks, rr, check_id or "chk"))
     parts.append("</div>")
@@ -2330,82 +2534,28 @@ def extract_article_lines(
     start_page: int,
     end_page: int,
     article_title: str,
-    rich: bool = False,
+    *,
+    icon_dir: Path | None = None,
 ) -> list[str]:
+    """Rich (span/drawing-aware) line extraction for an article page range."""
     raw: list[str] = []
-    if rich:
-        state: dict = {}
-        first = True
-        for pno in range(start_page - 1, end_page):
-            if pno < 0 or pno >= doc.page_count:
-                continue
-            raw.extend(
-                extract_page_rich(
-                    doc[pno],
-                    article_title=article_title,
-                    first_page=first,
-                    state=state,
-                )
-            )
-            first = False
-        return merge_wrapped_lines(raw)
+    state: dict = {}
+    if icon_dir is not None:
+        state["icon_dir"] = Path(icon_dir)
+    first = True
     for pno in range(start_page - 1, end_page):
         if pno < 0 or pno >= doc.page_count:
             continue
-        page_lines = extract_page_lines(doc[pno], article_title=article_title)
-        raw.extend(page_lines)
-    # Normalize orphan bullet dingbats: "text" / "•" → "• text"
-    fixed: list[str] = []
-    for line in raw:
-        if line in {"•", "·", "ä"} and fixed:
-            prev = fixed[-1]
-            if not prev.startswith("•"):
-                fixed[-1] = "• " + prev
-            continue
-        if line.startswith("•") or line.startswith("·"):
-            fixed.append("• " + line.lstrip("•· ").strip())
-        else:
-            fixed.append(line)
-    merged = merge_wrapped_lines(fixed)
-    # Split lines where a value-table header was glued to the previous item:
-    # "Hauberk… (2 armor…) goods value" → two lines
-    split_out: list[str] = []
-    tail_re = re.compile(
-        r"^(?P<item>.+?)\s+(?P<header>"
-        r"(?:goods|coin|services|weapons?\s+armor|food(?:\s+and)?\s+lodging)"
-        r"\s+value)\s*$",
-        re.I,
-    )
-    steading_tail = re.compile(
-        r"^(?P<pre>.+?)\s+(?P<label>steading improvement)\s*$",
-        re.I,
-    )
-    for line in merged:
-        m = tail_re.match(line)
-        if m and not looks_like_value_header(line):
-            split_out.append(m.group("item").strip())
-            split_out.append(m.group("header").strip())
-            continue
-        # "… first services value"
-        m2 = re.match(
-            r"^(?P<pre>.+?\bfirst)\s+(?P<header>services\s+value)\s*$",
-            line,
-            re.I,
+        raw.extend(
+            extract_page_rich(
+                doc[pno],
+                article_title=article_title,
+                first_page=first,
+                state=state,
+            )
         )
-        if m2:
-            split_out.append(m2.group("pre").strip())
-            split_out.append(m2.group("header").strip())
-            continue
-        # "…wrong steading improvement" / "…season steading improvement"
-        m3 = steading_tail.match(line)
-        if m3 and not re.fullmatch(r"steading improvement", line, re.I):
-            pre = m3.group("pre").strip()
-            if pre and not re.search(r"\bthe\s+Palisade\b", pre, re.I):
-                split_out.append(pre)
-                split_out.append(m3.group("label").strip())
-                continue
-        split_out.append(line)
-    return split_out
+        first = False
+    return merge_wrapped_lines(raw)
 
 
 def _is_all_caps_label(line: str) -> bool:
@@ -2879,12 +3029,43 @@ def structure_html(
 
     rich_mode = any(l.startswith("\x02") for l in lines)
     forced_creature: set[int] = set()
+    pending_icon: str | None = None  # images/… path from M_ICON
+
+    def take_icon_html() -> str:
+        nonlocal pending_icon
+        if not pending_icon:
+            return ""
+        img = book_icon_img_html(pending_icon, rel_prefix="../")
+        pending_icon = None
+        return img
 
     while i < n:
         line = lines[i]
 
         # --- Structural markers from rich PDF extraction ---
         if line.startswith("\x02"):
+            if line == M_HR:
+                # Collapse consecutive rules; skip under headings (CSS border);
+                # drop hairlines after monster cards (layout between stat blocks).
+                prev_html = out[-1] if out else ""
+                under_heading = bool(re.search(r"</h[1-4]>\s*$", prev_html))
+                prev_stat = bool(out and 'class="stat-block"' in out[-1])
+                if under_heading or prev_stat or (out and out[-1] == "<hr>"):
+                    i += 1
+                    continue
+                out.append("<hr>")
+                pending_icon = None
+                i += 1
+                continue
+            if line.startswith(M_ICON):
+                # Keep the first of back-to-back duplicate icons
+                path = line[len(M_ICON):].strip() or None
+                if path:
+                    pending_icon = path
+                i += 1
+                while i < n and lines[i].startswith(M_ICON):
+                    i += 1
+                continue
             if line == M_BOX:
                 inner: list[str] = []
                 j = i + 1
@@ -2916,12 +3097,14 @@ def structure_html(
                     or normalize_text(txt).lower()
                     == normalize_text(article_title).lower()
                 ):
+                    pending_icon = None
                     i += 1
                     continue
                 hid = anchors.add(txt.rstrip(":"))
+                ic = take_icon_html()
                 out.append(
                     f'<h2 id="{html.escape(hid)}">'
-                    f"{html.escape(txt.rstrip(':'))}</h2>"
+                    f"{ic}{html.escape(txt.rstrip(':'))}</h2>"
                 )
                 i += 1
                 continue
@@ -2929,6 +3112,7 @@ def structure_html(
                 txt = line[len(M_TH):].strip()
                 # "steading improvement" label → custom improvement block
                 if txt.lower() == "steading improvement":
+                    pending_icon = None
                     block_html, i = _render_steading_block_rich(
                         lines, i + 1, link, anchors, next_check_id,
                         lambda t: render_rich_text(t, link),
@@ -2936,14 +3120,16 @@ def structure_html(
                     out.append(block_html)
                     continue
                 hid = anchors.add(txt)
+                ic = take_icon_html()
                 out.append(
                     f'<h3 id="{html.escape(hid)}" class="table-heading">'
-                    f"{html.escape(txt)}</h3>"
+                    f"{ic}{html.escape(txt)}</h3>"
                 )
                 i += 1
                 continue
             if line.startswith(M_H4):
                 txt = line[len(M_H4):].strip()
+                pending_icon = None
                 out.append(f"<h4>{html.escape(txt)}</h4>")
                 i += 1
                 continue
@@ -2953,9 +3139,13 @@ def structure_html(
                 # HP-less threats (Fire, Gylglyd vines, The Forest's Wrath)
                 # that lead with tags, Damage, Instinct, or "Threat (…)".
                 creature = False
-                for k in range(1, 5):
+                for k in range(1, 6):
                     cand = peek(k)
-                    if not cand or cand.startswith("\x02"):
+                    if not cand:
+                        break
+                    if cand.startswith(M_H3):
+                        continue
+                    if cand.startswith("\x02"):
                         break
                     c = strip_markers(cand)
                     if c.startswith("• "):
@@ -2964,13 +3154,14 @@ def structure_html(
                     if (
                         HP_LINE_RE.search(c)
                         or re.match(r"^(damage|instinct|threat)\b", low)
-                        or (k <= 2 and looks_like_tag_line(c))
+                        or (k <= 3 and looks_like_tag_line(c))
                     ):
                         creature = True
                         break
                 if creature:
                     forced_creature.add(i)
                     lines[i] = bare
+                    # keep pending_icon for the stat-block name
                     continue
                 # Artifact / tagged-discovery block: heading immediately
                 # followed by an item tag line ("magical", "hand, magical,
@@ -2981,15 +3172,79 @@ def structure_html(
                     and not nxt.startswith("\x02")
                     and _is_pure_arcana_tag_line(strip_markers(nxt))
                 ):
+                    ic = take_icon_html()
                     block_html, i = _render_artifact_block_rich(
                         lines, i, bare, link, anchors
                     )
+                    if ic and block_html.startswith("<"):
+                        # Prefixed title inside the artifact card if present
+                        block_html = block_html.replace(
+                            f">{html.escape(bare)}",
+                            f">{ic}{html.escape(bare)}",
+                            1,
+                        )
                     out.append(block_html)
+                    continue
+                # Hazard card: icon heading + prose until next rule/creature
+                # (e.g. Vitrified horrors).
+                ic = take_icon_html()
+                body_parts: list[str] = []
+                j = i + 1
+                while j < n:
+                    L2 = lines[j]
+                    if L2 == M_HR or L2.startswith(
+                        (M_ICON, M_H2, M_H3, M_VT, M_TH, M_BOX)
+                    ):
+                        break
+                    if L2.startswith("\x02") and not L2.startswith(
+                        (M_B, M_B2, M_Q, M_E, M_C)
+                    ):
+                        break
+                    if L2.startswith((M_B, M_B2, M_Q, M_E)):
+                        for pref in (M_B2, M_Q, M_E, M_B):
+                            if L2.startswith(pref):
+                                body_parts.append("• " + L2[len(pref):].strip())
+                                break
+                    else:
+                        body_parts.append(_defmt(L2))
+                    j += 1
+                if ic:
+                    hid = anchors.add(bare.rstrip(":"))
+                    parts_h = [
+                        f'<div class="hazard-block" id="{html.escape(hid)}">',
+                        f'<h3 class="stat-name">{ic}'
+                        f"{html.escape(bare.rstrip(':'))}</h3>",
+                    ]
+                    bi = 0
+                    while bi < len(body_parts):
+                        if body_parts[bi].startswith("• "):
+                            items_h: list[str] = []
+                            while bi < len(body_parts) and body_parts[bi].startswith(
+                                "• "
+                            ):
+                                items_h.append(body_parts[bi][2:].strip())
+                                bi += 1
+                            parts_h.append(
+                                '<ul class="bullets">'
+                                + "".join(
+                                    f"<li>{render_rich_text(it, link)}</li>"
+                                    for it in items_h
+                                )
+                                + "</ul>"
+                            )
+                        else:
+                            parts_h.append(
+                                f"<p>{render_rich_text(body_parts[bi], link)}</p>"
+                            )
+                            bi += 1
+                    parts_h.append("</div>")
+                    out.append("".join(parts_h))
+                    i = j
                     continue
                 hid = anchors.add(bare.rstrip(":"))
                 out.append(
                     f'<h3 id="{html.escape(hid)}">'
-                    f"{html.escape(bare.rstrip(':'))}</h3>"
+                    f"{ic}{html.escape(bare.rstrip(':'))}</h3>"
                 )
                 i += 1
                 continue
@@ -3311,9 +3566,7 @@ def structure_html(
         dpeek1 = _defmt(peek(1))
         dice = label = None
         m = ROLL_HEADER_RE.match(line)
-        m_rev = re.match(
-            r"^(.{1,40}?)\s+(\d{0,2}d(?:4|6|8|10|12|20))$", line, re.I
-        )
+        m_rev = ROLL_HEADER_REV_RE.match(line)
         if m:
             dice, label = m.group(1), m.group(2).strip()
         elif m_rev and not ENTRY_RE.match(line):
@@ -3346,6 +3599,14 @@ def structure_html(
             i += 1  # move past header line(s); label+dice path already advanced once
             entries: list[tuple[str, str]] = []
             while i < n:
+                # Hairlines under dice headers are decorative — skip them so
+                # the entry list is not cut off (which broke roll tables).
+                if lines[i] == M_HR:
+                    i += 1
+                    continue
+                if lines[i].startswith(M_ICON):
+                    i += 1
+                    continue
                 if lines[i].startswith("\x02"):
                     break
                 cur = _defmt(lines[i])
@@ -3354,11 +3615,40 @@ def structure_html(
                     num = e.group(1) + (f"-{e.group(2)}" if e.group(2) else "")
                     body = e.group(3).strip()
                     i += 1
-                    # continuations
-                    while i < n and should_join(body, lines[i]) and not ENTRY_RE.match(_defmt(lines[i])):
+                    # continuations (also skip decorative HRs mid-entry)
+                    while i < n:
+                        if lines[i] == M_HR:
+                            # Peek past hairlines: a following roll header means
+                            # the next table starts — do not consume the HR/header.
+                            j = i + 1
+                            while j < n and (
+                                lines[j] == M_HR or lines[j].startswith(M_ICON)
+                            ):
+                                j += 1
+                            if j < n and looks_like_roll_header(_defmt(lines[j])):
+                                break
+                            i += 1
+                            continue
+                        if lines[i].startswith("\x02"):
+                            break
                         nxt = _defmt(lines[i])
-                        if nxt.endswith("-") or body.endswith("-"):
+                        if ENTRY_RE.match(nxt):
+                            break
+                        # Next dice table (e.g. "1d6 signs" after size row 6)
+                        # must not be glued into this row — that merged tables.
+                        if (
+                            looks_like_roll_header(nxt)
+                            or looks_like_heading(nxt)
+                            or looks_like_tag_line(nxt)
+                            or looks_like_value_header(nxt)
+                        ):
+                            break
+                        # Always glue non-entry lines into the current row
+                        # (wrapped descriptions; e.g. wonder #9's second sentence).
+                        if nxt.endswith("-") and not nxt.endswith(("–", "—", "--")):
                             body = body.rstrip("-") + nxt.lstrip("-")
+                        elif body.endswith(("–", "—")):
+                            body = body + nxt
                         else:
                             body = body + " " + nxt
                         i += 1
@@ -3367,29 +3657,24 @@ def structure_html(
                 # stop at next section/table/stat
                 if (
                     looks_like_heading(cur)
-                    or ROLL_HEADER_RE.match(cur)
-                    or ROLL_HEADER_DICE_ONLY.match(cur)
+                    or looks_like_roll_header(cur)
                     or looks_like_tag_line(cur)
                 ):
                     break
-                # orphan continuation of last entry
-                if entries and (
-                    cur[0:1].islower()
-                    or (entries and not ENTRY_RE.match(cur) and len(cur) < 90)
-                ):
-                    # only glue if doesn't look like new prose paragraph
-                    # or a capitalized intro line ("For disposition, …roll:")
-                    if cur.endswith(":") and cur[0:1].isupper():
-                        break
-                    if not (
-                        cur[0:1].isupper()
-                        and len(cur.split()) > 8
-                        and cur.endswith((".", "!", "?"))
+                # orphan continuation of last entry (before next numbered row)
+                if entries and not ENTRY_RE.match(cur):
+                    if (
+                        looks_like_roll_header(cur)
+                        or looks_like_heading(cur)
+                        or looks_like_tag_line(cur)
                     ):
-                        num, body = entries[-1]
-                        entries[-1] = (num, body + " " + cur)
-                        i += 1
-                        continue
+                        break
+                    if cur.endswith(":") and cur[0:1].isupper() and len(cur) < 60:
+                        break
+                    num, body = entries[-1]
+                    entries[-1] = (num, body + " " + cur)
+                    i += 1
+                    continue
                 break
             # Prefer a real label over placeholder "result"
             if (not label or label == "result") and out:
@@ -3505,107 +3790,174 @@ def structure_html(
         )
         if is_creature_start:
             name = line
+            # "Ferocedes Ogran, ghostly" → name + leading tags
+            extra_tags: list[str] = []
+            m_name = re.match(
+                r"^(.+?),\s*([a-z][\w\-]*(?:\s*,\s*[a-z][\w\-]*)*)$",
+                name,
+            )
+            if m_name:
+                tail = m_name.group(2)
+                bits = [t.strip() for t in tail.split(",") if t.strip()]
+                if bits and all(
+                    b[0:1].islower() or b.lower() in TAG_WORDS for b in bits
+                ):
+                    name = m_name.group(1).strip()
+                    extra_tags.extend(bits)
+            creature_icon = take_icon_html()
             i += 1
             block_lines: list[str] = []
+            tag_prefix = list(extra_tags)  # folded into first real tag line
+            # Boundaries: horizontal rules and the next creature's icon/heading.
+            # Trailing bullets, checklists, Questions, in-card roll tables, and
+            # flavor all stay until one of those boundaries.
             while i < n:
                 L = lines[i]
+                if L == M_HR:
+                    # Decorative HR mid-card before roll-table entries
+                    j = i + 1
+                    while j < n and lines[j] == M_HR:
+                        j += 1
+                    if j < n and ENTRY_RE.match(_defmt(lines[j])):
+                        i = j
+                        continue
+                    break
+                if L.startswith(M_ICON):
+                    break
+                if L.startswith(M_H2) or L.startswith(M_VT) or L.startswith(M_TH):
+                    break
+                if L.startswith(M_BOX) or L == M_ENDBOX:
+                    break
                 if L.startswith(M_C):
-                    # countdown/requirement checklist belongs to this block
-                    block_lines.append(_defmt(L))
+                    block_lines.append(L)  # keep marker for check-list render
                     i += 1
                     continue
-                if L.startswith("\x02") and L[:3] not in (M_B, M_Q) and not L.startswith(M_B2):
-                    break
-                if L[:3] in (M_B, M_Q) or L.startswith(M_B2):
-                    # bullet inside a stat block — treat as a move
-                    L = "• " + (L[len(M_B2):] if L.startswith(M_B2) else L[3:])
-                # Stat blocks are CSS-styled; parse/render on plain text
-                L = _defmt(L)
-                lines[i] = L
-                low = L.lower()
-                # Next creature: short title then tags/HP
-                if block_lines and looks_like_heading(L) and not L.startswith("•"):
-                    nxt = peek(1)
-                    if looks_like_tag_line(L):
-                        # this line is tags for a creature we already have — shouldn't
-                        # happen as heading; treat as end if we already have tags+stats
-                        if any(HP_LINE_RE.search(x) for x in block_lines):
-                            break
-                    if looks_like_tag_line(nxt) or HP_LINE_RE.search(nxt or ""):
-                        break
-                    if low in _not_creature or L in {
-                        "Dangers",
-                        "Discoveries",
-                        "Hooks",
-                        "Lore",
-                        "Questions",
-                        "Impressions",
-                        "Wasps",
-                        "Unstable nest",
-                        "Secrets",
-                        "Moves",
-                        "Shoddy construction",
-                        "The Delves",
-                        "Living conditions",
-                    }:
-                        break
-                    # prose note after monster (starts mid-sentence capital long)
-                    if len(L) > 50:
-                        # still part of flavor after block? include if after moves
-                        pass
-                # Don't treat damage dice "d6 (hand, crude)" as roll-table headers
-                if ROLL_HEADER_DICE_ONLY.match(L):
-                    break
-                if ROLL_HEADER_RE.match(L) and not re.match(
-                    r"^d\d+\s*\([^)]*\)\s*$", L, re.I
-                ):
-                    # "1d6 theme" is a table; "d6 (hand, crude)" is damage
-                    if not re.match(r"^d\d+\s*\(", L, re.I):
-                        break
-                if looks_like_value_header(L):
-                    break
-                # Flavor paragraph after complete stat block (long prose)
-                if (
-                    block_lines
-                    and any(x.lower().startswith("instinct") for x in block_lines)
-                    and len(L) > 60
-                    and not L.startswith("•")
-                    and not low.startswith(("damage", "hp", "special", "armor"))
-                    and L[0:1].isupper()
-                    and not looks_like_tag_line(L)
-                ):
-                    # include one flavor blurb then stop after collecting contiguous flavor
-                    block_lines.append(L)
+                if L.startswith(M_B2):
+                    block_lines.append("• " + L[len(M_B2) :].strip())
                     i += 1
-                    while i < n and should_join(block_lines[-1], lines[i]):
-                        block_lines[-1] = block_lines[-1] + " " + _defmt(lines[i])
+                    continue
+                if L.startswith(M_B):
+                    block_lines.append("• " + L[len(M_B) :].strip())
+                    i += 1
+                    continue
+                if L.startswith(M_Q):
+                    block_lines.append("• " + L[len(M_Q) :].strip())
+                    i += 1
+                    continue
+                if L.startswith(M_E):
+                    block_lines.append("• " + L[len(M_E) :].strip())
+                    i += 1
+                    continue
+                if L.startswith(M_H3):
+                    bare_h = L[len(M_H3) :].strip()
+                    bare_l = bare_h.rstrip(":").lower()
+                    if bare_l == "questions" or bare_l.startswith("questions"):
+                        block_lines.append(bare_h.rstrip(":") + ":")
                         i += 1
-                    # more flavor paragraphs for named NPCs
+                        continue
+                    nxt = _defmt(peek(1))
+                    # Type subtitle: "Forge Lord" then real tag line
+                    if len(bare_h.split()) <= 4 and (
+                        looks_like_tag_line(nxt)
+                        or HP_LINE_RE.search(nxt or "")
+                        or re.match(
+                            r"^(damage|instinct|threat)\b", nxt or "", re.I
+                        )
+                    ):
+                        tag_prefix.append(bare_h)
+                        i += 1
+                        continue
+                    if (
+                        looks_like_tag_line(nxt)
+                        or HP_LINE_RE.search(nxt or "")
+                        or re.match(r"^(damage|instinct|threat)\b", nxt or "", re.I)
+                    ):
+                        break
+                    if bare_l in _not_creature:
+                        break
+                    break
+                if L.startswith("\x02"):
+                    break
+                plain = _defmt(L)
+                if tag_prefix and (
+                    looks_like_tag_line(plain)
+                    or HP_LINE_RE.search(plain)
+                    or re.match(r"^(damage|instinct|threat)\b", plain, re.I)
+                ):
+                    if looks_like_tag_line(plain):
+                        plain = ", ".join(tag_prefix) + ", " + plain
+                    else:
+                        block_lines.append(", ".join(tag_prefix))
+                    tag_prefix = []
+                # In-card roll table header + rows (e.g. "1d6 current task")
+                m_roll = ROLL_HEADER_RE.match(plain)
+                m_dice_only = ROLL_HEADER_DICE_ONLY.match(plain)
+                if m_roll or (
+                    m_dice_only
+                    and len(plain.split()) <= 6
+                    and not plain.lower().startswith("damage")
+                ):
+                    if m_roll:
+                        dice_s, label_s = m_roll.group(1), m_roll.group(2).strip()
+                    else:
+                        dice_s, label_s = plain, "result"
+                        # "1d6 current task"
+                        m_lab = re.match(
+                            r"^(\d{0,2}d(?:4|6|8|10|12|20))\s+(.+)$",
+                            plain,
+                            re.I,
+                        )
+                        if m_lab:
+                            dice_s, label_s = m_lab.group(1), m_lab.group(2).strip()
+                    i += 1
+                    while i < n and lines[i] == M_HR:
+                        i += 1
+                    entries_c: list[tuple[str, str]] = []
                     while i < n:
-                        L2 = _defmt(lines[i])
+                        if lines[i] == M_HR:
+                            break
                         if lines[i].startswith("\x02"):
                             break
-                        if (
-                            looks_like_heading(L2)
-                            or looks_like_tag_line(L2)
-                            or HP_LINE_RE.search(L2)
-                            or ROLL_HEADER_RE.match(L2)
-                            or looks_like_value_header(L2)
-                        ):
+                        cur_e = _defmt(lines[i])
+                        em = ENTRY_RE.match(cur_e)
+                        if not em:
                             break
-                        if L2.startswith("•"):
-                            break
-                        if len(L2) < 40 and L2[0:1].isupper() and looks_like_heading(L2):
-                            break
-                        block_lines.append(L2)
+                        num_e = em.group(1) + (
+                            f"-{em.group(2)}" if em.group(2) else ""
+                        )
+                        body_e = em.group(3).strip()
                         i += 1
-                    break
-                block_lines.append(L)
+                        while i < n and not lines[i].startswith("\x02"):
+                            if lines[i] == M_HR:
+                                break
+                            nxt_e = _defmt(lines[i])
+                            if ENTRY_RE.match(nxt_e):
+                                break
+                            if looks_like_roll_header(nxt_e) or looks_like_heading(
+                                nxt_e
+                            ):
+                                break
+                            body_e = body_e + " " + nxt_e
+                            i += 1
+                        entries_c.append((num_e, body_e))
+                    if entries_c:
+                        # stash as a renderable HTML fragment line
+                        block_lines.append(
+                            "__ROLL_TABLE__"
+                            + dice_s
+                            + "\x01"
+                            + label_s
+                            + "\x01"
+                            + "\x02".join(f"{a}\x03{b}" for a, b in entries_c)
+                        )
+                    continue
+                if plain.startswith("•") or plain.startswith("·"):
+                    block_lines.append("• " + plain.lstrip("•· ").strip())
+                else:
+                    block_lines.append(plain)
                 i += 1
-            # Trailing checklist (e.g. after flavor text ended the loop)
-            while i < n and lines[i].startswith(M_C):
-                block_lines.append(lines[i])
-                i += 1
+            if tag_prefix:
+                block_lines.insert(0, ", ".join(tag_prefix))
             out.append(
                 render_stat_block(
                     name,
@@ -3616,6 +3968,7 @@ def structure_html(
                     anchor_id=anchors.add(name),
                     link_kw=link_kw,
                     check_id=next_check_id(name),
+                    icon_html=creature_icon,
                 )
             )
             continue
@@ -5176,13 +5529,14 @@ def article_html_from_pdf(
     lookups: dict[str, dict[int, dict]] | None = None,
     section_indexes: dict[str, dict] | None = None,
     current_book: str | None = None,
+    icon_dir: Path | None = None,
 ) -> tuple[str, str, list[dict]]:
     """
     Returns (body_html, excerpt_text, sections).
     """
     if lines is None:
         lines = extract_article_lines(
-            doc, start_page, end_page, article_title, rich=True
+            doc, start_page, end_page, article_title, icon_dir=icon_dir
         )
     body, sections = structure_html(
         lines,
@@ -6119,7 +6473,7 @@ def main(argv: list[str] | None = None) -> None:
         except OSError as e:
             print(f"  note: could not rename legacy folder ({e}); building fresh")
 
-    for sub in ("pages", "css", "js", "images"):
+    for sub in ("pages", "css", "js", "images", "images/icons"):
         (out / sub).mkdir(parents=True, exist_ok=True)
 
     for old in (out / "pages").glob("*.html"):
@@ -6128,7 +6482,16 @@ def main(argv: list[str] | None = None) -> None:
         except OSError:
             pass
 
+    # Drop previous PDF-extracted icon bitmaps; static SVGs are re-copied below.
+    icons_out = out / "images" / "icons"
+    for old in icons_out.glob("*"):
+        try:
+            old.unlink()
+        except OSError:
+            pass
+
     copy_static_assets(out)
+    icon_dir = icons_out
 
     doc = fitz.open(str(pdf_path))
     toc = load_toc(doc)
@@ -6197,7 +6560,11 @@ def main(argv: list[str] | None = None) -> None:
             )
         elif art.get("kind") == "arcana" and art.get("arcana_type") == "major":
             lines = extract_article_lines(
-                doc, art["start_page"], art["end_page"], art["title"]
+                doc,
+                art["start_page"],
+                art["end_page"],
+                art["title"],
+                icon_dir=icon_dir,
             )
             toc_labels = []
             lines_cache[slug] = lines
@@ -6217,7 +6584,11 @@ def main(argv: list[str] | None = None) -> None:
             )
         else:
             lines = extract_article_lines(
-                doc, art["start_page"], art["end_page"], art["title"], rich=True
+                doc,
+                art["start_page"],
+                art["end_page"],
+                art["title"],
+                icon_dir=icon_dir,
             )
             toc_labels, lines = split_chapter_toc(lines, art["title"])
             lines_cache[slug] = lines

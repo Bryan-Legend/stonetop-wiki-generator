@@ -121,6 +121,7 @@ Checkbox state for steading improvements and arcana is stored in your browser (`
 | `stonetop-wiki-generator.py` | Single entry point — PDF extraction + static site build |
 | `static/css/wiki.css` | Wiki styles (copied into the output on build) |
 | `static/js/wiki.js` | Search, checkboxes, dice, previews (copied on build) |
+| `static/images/icons/*.svg` | Category icons from [game-icons.net](https://game-icons.net/) (CC BY 3.0; recolored in CSS) |
 | `requirements.txt` | Python dependencies |
 | `docs/wiki-screenshot-*.png` | README screenshots |
 
