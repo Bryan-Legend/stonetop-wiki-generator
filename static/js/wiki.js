@@ -1,4 +1,4 @@
-/* Stonetop Book II Wiki — dice rolls + hover previews */
+/* Stonetop Wiki (Book I & Book II) — dice rolls + hover previews */
 (function () {
   "use strict";
 

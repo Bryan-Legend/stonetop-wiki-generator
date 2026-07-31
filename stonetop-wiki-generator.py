@@ -1,13 +1,17 @@
 #!/usr/bin/env python3
 """
-Build a static wiki from Stonetop Book II (1-up PDF).
+Build a static wiki from the Stonetop books (1-up PDFs).
 
 Usage:
   python stonetop-wiki-generator.py --input <folder> --output <folder>
 
-``--input`` is a folder containing the Book II 1-up PDF (and optionally
-``Maps/`` campaign sheets). ``--output`` is where the static site is written
-(index.html, pages/, css/, js/, images/).
+``--input`` is a folder containing the Book I and/or Book II 1-up PDFs (and
+optionally ``Maps/`` campaign sheets); see ``BOOKS``. ``--output`` is where the
+static site is written (index.html, pages/, css/, js/, images/).
+
+Both books share one flat ``pages/`` folder and one search index, but page
+numbers are tracked per book, so "page 270" in a Book I article resolves to a
+Book I page and an explicit "Book II, page 270" resolves to the other.
 
 PDF extraction, HTML structuring, linkify, and arcana parsing live in this
 same module (formerly wiki_content.py).
@@ -435,6 +439,21 @@ def book_icon_img_html(rel_path: str, *, rel_prefix: str = "../") -> str:
     )
 
 
+# Per-book typography conventions.
+#
+# Book II sets chapter titles at 24pt Avara-Bold and everything smaller is a
+# real heading, so anything >= 16pt is page furniture to drop (the 18pt runs
+# are chapter-title continuations like "Aratis, " / "the Lawkeeper").
+# Book I sets *section* headings at 20pt and playbook titles at 24pt — the same
+# size as its chapter titles, which the running-header/article-title guards
+# drop anyway — so only the decorative 32pt+ type is furniture there. Book I
+# headings also wrap across lines ("The" / "conversation").
+BOOK_TYPE_STYLE: dict[str, dict] = {
+    "book1": {"heading_max_size": 28.0, "merge_wrapped_headings": True},
+    "book2": {"heading_max_size": 16.0, "merge_wrapped_headings": False},
+}
+
+
 def extract_page_rich(
     page: fitz.Page,
     article_title: str = "",
@@ -449,9 +468,16 @@ def extract_page_rich(
     ``y_clip`` restricts to a vertical band (used for minor-arcana halves).
     ``single_column`` disables the mid-page gutter split (arcana cards read
     as one column full width).
+
+    ``state["book_style"]`` ("book1" / "book2", default "book2") selects the
+    per-book type conventions — see ``BOOK_TYPE_STYLE``.
     """
     if state is None:
         state = {}
+    style = (
+        BOOK_TYPE_STYLE.get(state.get("book_style") or "book2")
+        or BOOK_TYPE_STYLE["book2"]
+    )
     gutter = page.rect.width * 0.5
     if 350 < page.rect.width < 450:
         gutter = DEFAULT_GUTTER
@@ -885,9 +911,19 @@ def extract_page_rich(
                 entry_active = False
 
             if is_avara:
-                if rec["size"] >= 16:
+                if rec["size"] >= style["heading_max_size"]:
                     continue  # chapter title — page shell already shows it
                 if dtext.isdigit():
+                    continue
+                # Big headings often wrap ("The" / "conversation"); a heading
+                # line opening lowercase continues the one above it.
+                if (
+                    style["merge_wrapped_headings"]
+                    and out
+                    and out[-1].startswith((M_H2, M_H3))
+                    and dtext[:1].islower()
+                ):
+                    out[-1] = out[-1].rstrip() + " " + dtext
                     continue
                 if rec["size"] >= 11:
                     out.append(M_H2 + dtext)
@@ -1832,11 +1868,13 @@ def _book_id_from_token(token: str) -> str | None:
     return None
 
 
-# Exact article/arcana title -> article. The bold label in "**Title** (page N)"
+# Exact article/arcana title -> articles. The bold label in "**Title** (page N)"
 # is more authoritative than the page number, which cannot disambiguate two
 # articles printed on the same page (minor arcana are two cards per page, so a
 # page resolves to only one of them). Populated by set_title_index().
-_TITLE_INDEX: dict[str, dict] = {}
+# Values are lists because both books can hold the same title (e.g. "Threats");
+# lookups prefer the article from the book being rendered.
+_TITLE_INDEX: dict[str, list[dict]] = {}
 
 
 def set_title_index(articles: list[dict]) -> None:
@@ -1845,9 +1883,23 @@ def set_title_index(articles: list[dict]) -> None:
         t = (art.get("title") or "").strip()
         if not t:
             continue
-        _TITLE_INDEX.setdefault(t.lower(), art)
+        keys = [t.lower()]
         if t.lower().startswith("the "):
-            _TITLE_INDEX.setdefault(t[4:].lower(), art)
+            keys.append(t[4:].lower())
+        for key in keys:
+            _TITLE_INDEX.setdefault(key, []).append(art)
+
+
+def title_index_lookup(title: str, current_book: str | None = None) -> dict | None:
+    """Article for an exact title, preferring the book we're rendering."""
+    arts = _TITLE_INDEX.get((title or "").strip().lower())
+    if not arts:
+        return None
+    if current_book:
+        for art in arts:
+            if art.get("book") == current_book:
+                return art
+    return arts[0]
 
 
 def linkify_pages(
@@ -1946,27 +1998,38 @@ def linkify_pages(
 
     # Cross-book first: "Makers' Roads (Book II, page 270)" / "Book I, page 245"
     # Match Roman numerals carefully: Book II before Book I.
+    # Book/page refs are often italicised piecemeal ("(*Book II*, page 96)"), so
+    # allow inline formatting sentinels between the parts.
+    _FS = r"[\x04-\x07]*"
+
     def repl_book_page(m: re.Match) -> str:
-        raw_book = m.group("book")
-        # Regex only captures single char; re-scan for II
         full = m.group(0)
-        book_m = re.search(r"Book\s*(II|I|2|1)\b", full, re.I)
-        book_tok = book_m.group(1) if book_m else raw_book
-        book_id = _book_id_from_token(book_tok)
+        book_id = _book_id_from_token(m.group("book"))
         if not book_id:
-            return m.group(0)
-        title = (m.group("title") or "").strip() or None
+            return full
+        if book_id != current_book and (lookups is None or book_id not in lookups):
+            # Ref into a book this wiki wasn't built with. Keep the printed
+            # text, but consume it so the plain page-ref passes below don't
+            # link "page 549" into the wrong book.
+            return store(html.escape(full))
+        # Keep the printed "Book II, " lead-in and link the page part, so the
+        # sentence still reads as the book prints it.
+        cut = full.lower().find("page")
+        prefix, rest = (full[:cut], full[cut:]) if cut > 0 else ("", full)
         pages = parse_page_nums(m.group("pages"))
-        return store(links_for_pages(pages, title, book_id=book_id))
+        # Re-emit sentinels swallowed by the linked part so bold/italic runs
+        # stay balanced.
+        kept = "".join(ch for ch in rest if ch in _FMT_SET)
+        return store(
+            html.escape(prefix)
+            + links_for_pages(pages, book_id=book_id)
+            + kept
+        )
 
     work = re.sub(
-        r"(?P<title>(?:[A-Za-z][A-Za-z0-9'’\-]*(?:\s+[A-Za-z][A-Za-z0-9'’\-]*){0,6})\s+)?"
-        r"\(?"
-        r"(?:see\s+)?"
-        r"Book\s*(?P<book>II|I|2|1)\s*[,:]?\s*"
-        r"(?:starting\s+on\s+)?"
-        r"pages?\s+(?P<pages>[\d,\s\-–—]+)"
-        r"\)?",
+        rf"Book{_FS}\s*{_FS}(?P<book>II|I|2|1){_FS}\s*[,:]?\s*{_FS}"
+        rf"(?:see\s+)?(?:starting\s+on\s+)?"
+        rf"pages?{_FS}\s+{_FS}(?P<pages>[\d,\s\-–—]+)",
         repl_book_page,
         work,
         flags=re.IGNORECASE,
@@ -1986,7 +2049,7 @@ def linkify_pages(
         lk, sidx = resolve_lookup(None)
         # Prefer an exact title match over the page number (which can't tell
         # apart two arcana printed on the same page).
-        art_by_title = _TITLE_INDEX.get(clean.lower())
+        art_by_title = title_index_lookup(clean, current_book)
         art = art_by_title or lk.get(pages[0])
         if not art:
             return m.group(0)
@@ -2447,7 +2510,7 @@ def _is_chapter_toc_garbage(line: str) -> bool:
 
 
 def split_chapter_toc(
-    lines: list[str], article_title: str
+    lines: list[str], article_title: str, *, allow_markers: bool = False
 ) -> tuple[list[str], list[str]]:
     """
     Peel a chapter-opener table of contents off the start of extracted lines.
@@ -2456,18 +2519,28 @@ def split_chapter_toc(
     Those short lines currently become spurious <h2>s; strip them here so
     they can be rendered as sidebar deep links instead.
 
+    Book I sets those TOC labels in the same Avara-Bold as real headings, so
+    they arrive as ``M_H2``/``M_H3`` marker lines. ``allow_markers`` lets the
+    leading run contain heading markers (any other marker — bullet, table,
+    rule — still means this is not a TOC page).
+
     Returns (toc_labels, body_lines). If no TOC is detected, toc is empty
     and body_lines is the original list.
     """
     if not lines or len(lines) < 5:
         return [], lines
 
+    def plain(line: str) -> str:
+        return strip_markers(_defmt(line)).strip() if allow_markers else line.strip()
+
     prose_idx: int | None = None
     for i, line in enumerate(lines):
         # Rich structural markers mean this is not a chapter-opener TOC page
         if line.startswith("\x02"):
+            if allow_markers and line.startswith((M_H2, M_H3)):
+                continue
             return [], lines
-        if _is_chapter_toc_prose(line):
+        if _is_chapter_toc_prose(plain(line)):
             prose_idx = i
             break
     # Need a cluster of short TOC lines before prose
@@ -2477,17 +2550,19 @@ def split_chapter_toc(
     at = normalize_text(article_title).lower() if article_title else ""
     toc: list[str] = []
     for line in lines[:prose_idx]:
-        L = line.strip()
+        L = plain(line)
         if not L:
             continue
         if at and normalize_text(L).lower() == at:
             continue
         if is_running_header(L, article_title, near_page_top=True):
             continue
-        if _is_chapter_toc_garbage(L):
+        # Heading-marker lines are real Avara-Bold labels, never column glue.
+        is_head = line.startswith((M_H2, M_H3))
+        if not is_head and _is_chapter_toc_garbage(L):
             continue
         # Short label / ALL CAPS move name
-        if looks_like_heading(L) or (
+        if is_head or looks_like_heading(L) or (
             len(L) <= 40
             and L[0:1].isupper()
             and not L.endswith((".", ";", ","))
@@ -2502,7 +2577,11 @@ def split_chapter_toc(
 
     body = lines[prose_idx:]
     # Drop column-glued junk that sat between TOC and real prose
-    while body and _is_chapter_toc_garbage(body[0]):
+    while (
+        body
+        and not body[0].startswith("\x02")
+        and _is_chapter_toc_garbage(plain(body[0]))
+    ):
         body = body[1:]
     if not body:
         return [], lines
@@ -2591,10 +2670,11 @@ def extract_article_lines(
     article_title: str,
     *,
     icon_dir: Path | None = None,
+    book_style: str = "book2",
 ) -> list[str]:
     """Rich (span/drawing-aware) line extraction for an article page range."""
     raw: list[str] = []
-    state: dict = {}
+    state: dict = {"book_style": book_style}
     if icon_dir is not None:
         state["icon_dir"] = Path(icon_dir)
     first = True
@@ -5794,15 +5874,32 @@ def resolve_unique_section(
 # Site shell, CLI, and build orchestration
 # ---------------------------------------------------------------------------
 
-PDF_FILENAME = (
-    "Book_II_-_The_Wider_World_and_Other_Wonders_(1-up)_-_2nd_printing.pdf"
-)
+# The books the wiki is built from, in nav order. Each 1-up PDF is optional:
+# whichever ones are present in the input folder get built.
+BOOKS: list[dict] = [
+    {
+        "id": "book1",
+        "label": "Book I",
+        "title": "Book I — Stonetop",
+        "filename": "Book_I_-_Stonetop_(1-up)_-_2nd_printing.pdf",
+        "slug_prefix": "",
+    },
+    {
+        "id": "book2",
+        "label": "Book II",
+        "title": "Book II — The Wider World",
+        "filename": (
+            "Book_II_-_The_Wider_World_and_Other_Wonders_(1-up)_-_2nd_printing.pdf"
+        ),
+        "slug_prefix": "",
+    },
+]
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     p = argparse.ArgumentParser(
         description=(
-            "Build a static Stonetop Book II wiki from the 1-up PDF "
+            "Build a static Stonetop wiki from the Book I / Book II 1-up PDFs "
             "(optional Maps/ campaign sheets in the input folder)."
         )
     )
@@ -5812,8 +5909,8 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         type=Path,
         default=Path.cwd(),
         help=(
-            "Folder containing the Book II 1-up PDF. Optional subfolder: "
-            "Maps/ (campaign map sheets). "
+            "Folder containing the Book I and/or Book II 1-up PDFs. Optional "
+            "subfolder: Maps/ (campaign map sheets). "
             "Default: current working directory."
         ),
     )
@@ -5825,6 +5922,18 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         help=(
             "Folder to write the wiki into. "
             "Default: <input>/Stonetop_Wiki"
+        ),
+    )
+    p.add_argument(
+        "--books",
+        nargs="+",
+        choices=[b["id"] for b in BOOKS],
+        default=None,
+        metavar="BOOK",
+        help=(
+            "Limit the build to these books (book1, book2) — handy while "
+            "iterating, but the output wiki then only holds those books. "
+            "Default: every book PDF found in the input folder."
         ),
     )
     return p.parse_args(argv)
@@ -5909,6 +6018,46 @@ def articles_from_toc(
             }
         )
     return articles
+
+
+BOOK_SLUG_SUFFIX = {"book1": "-book-i", "book2": "-book-ii"}
+
+
+def ensure_unique_slugs(articles: list[dict]) -> None:
+    """
+    Make slugs unique across books (pages/ is one flat folder).
+
+    The first article to claim a slug keeps it; later ones get their book
+    appended ("threats" → "threats-book-ii"). Hub/child cross-references are
+    rewritten to match.
+    """
+    seen: set[str] = set()
+    renames: dict[str, str] = {}
+    for art in articles:
+        slug = art["slug"]
+        if slug not in seen:
+            seen.add(slug)
+            continue
+        base = f"{slug}{BOOK_SLUG_SUFFIX.get(art.get('book') or '', '-2')}"
+        new = base
+        n = 2
+        while new in seen:
+            new = f"{base}-{n}"
+            n += 1
+        renames[slug] = new
+        art["slug"] = new
+        seen.add(new)
+        print(f"  Slug collision: {slug} → {new}")
+
+    if not renames:
+        return
+    for art in articles:
+        hub = art.get("hub_slug")
+        if hub in renames:
+            art["hub_slug"] = renames[hub]
+        for child in art.get("children") or []:
+            if child.get("slug") in renames:
+                child["slug"] = renames[child["slug"]]
 
 
 def finalize_article_ranges(articles: list[dict], page_count: int) -> None:
@@ -6093,6 +6242,7 @@ def expand_arcana_articles(
                         "half": card["half"],  # top | bottom
                         "book": art.get("book", "book2"),
                         "book_label": art.get("book_label", ""),
+                        "book_title": art.get("book_title", ""),
                     }
                 )
         else:
@@ -6124,6 +6274,7 @@ def expand_arcana_articles(
                         "hub_slug": art["slug"],
                         "book": art.get("book", "book2"),
                         "book_label": art.get("book_label", ""),
+                        "book_title": art.get("book_title", ""),
                     }
                 )
                 p = card_end + 1
@@ -6154,19 +6305,16 @@ def extract_section_html_blocks(body: str, section_meta: list[dict]) -> dict[str
     name_by_id = {s["id"]: s.get("name") or s["id"] for s in (section_meta or [])}
     out: dict[str, dict] = {}
 
-    # Self-contained blocks: stat-block, roll-table, value-table
-    for m in re.finditer(
-        r'<(div)\s+class="(stat-block|roll-table|value-table)"(\s+id="([^"]+)")?',
-        body,
-    ):
-        tag, kind, _idattr, sid = m.group(1), m.group(2), m.group(3), m.group(4)
-        if not sid:
-            continue
-        start = m.start()
-        # Find matching close for this outer div (no nested same-class assumed for stat-block)
+    # Self-contained blocks (stat blocks, tables, discoveries, steading
+    # improvements, hazards, moves — anything with a class + id that deep-links).
+    _block_classes = (
+        "stat-block|roll-table|value-table|discovery-block|hazard-block|"
+        "steading-improvement|move-block|infobox"
+    )
+
+    def _capture_div_block(start: int) -> str | None:
         depth = 0
         i = start
-        end = None
         while i < len(body):
             open_m = re.match(r"<div\b", body[i:], re.I)
             close_m = re.match(r"</div\s*>", body[i:], re.I)
@@ -6178,13 +6326,37 @@ def extract_section_html_blocks(body: str, section_meta: list[dict]) -> dict[str
                 depth -= 1
                 i += close_m.end()
                 if depth == 0:
-                    end = i
-                    break
+                    return body[start:i]
                 continue
             i += 1
-        if end is None:
+        return None
+
+    for m in re.finditer(
+        rf'<div\s+class="({_block_classes})"\s+id="([^"]+)"',
+        body,
+        re.I,
+    ):
+        kind, sid = m.group(1), m.group(2)
+        html_block = _capture_div_block(m.start())
+        if not html_block:
             continue
-        html_block = body[start:end]
+        out[sid] = {
+            "name": name_by_id.get(sid, sid.replace("-", " ").title()),
+            "html": html_block,
+            "kind": kind,
+        }
+
+    for m in re.finditer(
+        rf'<div\s+id="([^"]+)"\s+class="({_block_classes})"',
+        body,
+        re.I,
+    ):
+        sid, kind = m.group(1), m.group(2)
+        if sid in out:
+            continue
+        html_block = _capture_div_block(m.start())
+        if not html_block:
+            continue
         out[sid] = {
             "name": name_by_id.get(sid, sid.replace("-", " ").title()),
             "html": html_block,
@@ -6255,6 +6427,66 @@ def build_page_lookup(articles: list[dict]) -> dict[int, dict]:
     return lookup
 
 
+def build_nav_items(
+    articles: list[dict],
+    *,
+    href_prefix: str = "",
+    current_slug: str | None = None,
+    section_navs: dict[str, list[dict]] | None = None,
+) -> list[str]:
+    """
+    Sidebar <li> items for every article, with a label row per book.
+
+    Book labels are only emitted when the wiki holds more than one book;
+    wiki.js hides a label whose articles are all filtered out.
+    """
+    section_navs = section_navs or {}
+    multi_book = len({a.get("book") for a in articles if a.get("book")}) > 1
+    items: list[str] = []
+    last_book: str | None = None
+    for art in articles:
+        book = art.get("book")
+        if multi_book and book != last_book:
+            label = art.get("book_label") or book or ""
+            if label:
+                items.append(
+                    f'<li class="nav-book-label">{html.escape(label)}</li>'
+                )
+            last_book = book
+
+        classes: list[str] = []
+        if art.get("kind") == "arcana":
+            classes.append("nav-arcana")
+        elif art.get("kind") == "arcana-hub":
+            classes.append("nav-hub")
+        secs = section_navs.get(art["slug"]) or []
+        if secs:
+            classes.append("has-sections")
+        if current_slug is not None and art["slug"] == current_slug:
+            classes.append("current")
+        cls_attr = f' class="{" ".join(classes)}"' if classes else ""
+        art_slug = html.escape(art["slug"])
+        href = f"{href_prefix}{art_slug}.html"
+        link = f'<a href="{href}">{html.escape(art["title"])}</a>'
+        if secs:
+            # Nested deep links into chapter sections (from first-page TOC)
+            sub = []
+            for sec in secs:
+                sid = html.escape(sec["id"])
+                sname = html.escape(sec["name"])
+                sub.append(
+                    f'<li class="nav-section">'
+                    f'<a href="{href}#{sid}">{sname}</a></li>'
+                )
+            items.append(
+                f"<li{cls_attr}>{link}"
+                f'<ul class="nav-sections">{"".join(sub)}</ul></li>'
+            )
+        else:
+            items.append(f"<li{cls_attr}>{link}</li>")
+    return items
+
+
 def page_shell(
     title: str,
     slug: str,
@@ -6264,42 +6496,13 @@ def page_shell(
     section_navs: dict[str, list[dict]] | None = None,
     content_class: str = "content",
 ) -> str:
-    section_navs = section_navs or {}
-    nav_items = []
-    for art in articles:
-        is_current = art["slug"] == slug
-        classes: list[str] = []
-        if art.get("kind") == "arcana":
-            classes.append("nav-arcana")
-        elif art.get("kind") == "arcana-hub":
-            classes.append("nav-hub")
-        secs = section_navs.get(art["slug"]) or []
-        if secs:
-            classes.append("has-sections")
-        if is_current:
-            classes.append("current")
-        cls_attr = f' class="{" ".join(classes)}"' if classes else ""
-        art_slug = html.escape(art["slug"])
-        link = (
-            f'<a href="{art_slug}.html">{html.escape(art["title"])}</a>'
+    nav_html = "\n".join(
+        build_nav_items(
+            articles,
+            current_slug=slug,
+            section_navs=section_navs,
         )
-        if secs:
-            # Nested deep links into chapter sections (from first-page TOC)
-            sub = []
-            for sec in secs:
-                sid = html.escape(sec["id"])
-                sname = html.escape(sec["name"])
-                sub.append(
-                    f'<li class="nav-section">'
-                    f'<a href="{art_slug}.html#{sid}">{sname}</a></li>'
-                )
-            nav_items.append(
-                f"<li{cls_attr}>{link}"
-                f'<ul class="nav-sections">{"".join(sub)}</ul></li>'
-            )
-        else:
-            nav_items.append(f"<li{cls_attr}>{link}</li>")
-    nav_html = "\n".join(nav_items)
+    )
 
     return f"""<!DOCTYPE html>
 <html lang="en">
@@ -6504,29 +6707,45 @@ def html_to_search_text(body_html: str) -> str:
     return text.strip()
 
 def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> None:
-    nav_items = []
-    for art in articles:
-        extra = ""
-        if art.get("kind") == "arcana":
-            extra = ' class="nav-arcana"'
-        elif art.get("kind") == "arcana-hub":
-            extra = ' class="nav-hub"'
-        nav_items.append(
-            f'<li{extra}><a href="pages/{html.escape(art["slug"])}.html">'
-            f'{html.escape(art["title"])}</a></li>'
-        )
+    nav_items = build_nav_items(articles, href_prefix="pages/")
 
-    cards = []
+    books_present = []
     for art in articles:
-        if art.get("kind") == "arcana":
-            continue
-        pv = previews.get(art["slug"], {})
-        excerpt = pv.get("excerpt") or ""
-        cards.append(
-            f'<a class="index-card" href="pages/{art["slug"]}.html">'
-            f'<p class="card-title">{html.escape(art["title"])}</p>'
-            f'<p class="card-excerpt">{html.escape(excerpt)}</p></a>'
+        key = (
+            art.get("book"),
+            art.get("book_title") or art.get("book_label") or art.get("book") or "",
         )
+        if key not in books_present:
+            books_present.append(key)
+    multi_book = len(books_present) > 1
+
+    sections: list[str] = []
+    for book, label in books_present:
+        cards = []
+        for art in articles:
+            if art.get("book") != book or art.get("kind") == "arcana":
+                continue
+            pv = previews.get(art["slug"], {})
+            excerpt = pv.get("excerpt") or ""
+            cards.append(
+                f'<a class="index-card" href="pages/{art["slug"]}.html">'
+                f'<p class="card-title">{html.escape(art["title"])}</p>'
+                f'<p class="card-excerpt">{html.escape(excerpt)}</p></a>'
+            )
+        if not cards:
+            continue
+        heading = html.escape(label) if multi_book else "Topics"
+        sections.append(
+            f"<h2>{heading}</h2>\n"
+            f'<div class="index-grid">{"".join(cards)}</div>'
+        )
+    cards_html = "\n".join(sections)
+
+    labels = [f"<strong>{html.escape(label)}</strong>" for _b, label in books_present]
+    if len(labels) > 1:
+        lede_books = ", ".join(labels[:-1]) + " and " + labels[-1]
+    else:
+        lede_books = labels[0]
 
     html_out = f"""<!DOCTYPE html>
 <html lang="en">
@@ -6557,14 +6776,11 @@ def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> 
         <main class="content">
         <div class="index-hero">
           <p class="lede">A static, hyperlinked wiki for <em>Stonetop</em>
-          <strong>Book II — The Wider World</strong>.
+          {lede_books}.
           Page numbers are links; dice expressions roll on click; hover a link for a preview
           (full stat blocks when deep-linked). Scroll sideways through columns on topic pages.</p>
         </div>
-        <h2>Topics</h2>
-        <div class="index-grid">
-          {''.join(cards)}
-        </div>
+        {cards_html}
         </main>
       </div>
     </div>
@@ -6586,18 +6802,33 @@ def main(argv: list[str] | None = None) -> None:
         if args.output is not None
         else (input_dir / "Stonetop_Wiki").resolve()
     )
-    pdf_path = input_dir / PDF_FILENAME
     legacy_out = input_dir / "Book_II_Wiki"
 
-    print("Building Stonetop wiki (Book II)…")
+    wanted = set(args.books) if args.books else None
+    books = [b for b in BOOKS if wanted is None or b["id"] in wanted]
+    found: list[dict] = []
+    for book in books:
+        path = input_dir / book["filename"]
+        if path.exists():
+            found.append({**book, "path": path})
+        else:
+            print(f"  note: {book['label']} PDF not found ({book['filename']}) — skipping")
+    if not found:
+        raise SystemExit(
+            "No book PDFs found in "
+            f"{input_dir}\n"
+            "Place the Book I and/or Book II 1-up PDFs in the input folder:\n"
+            + "\n".join(f"  {b['filename']}" for b in books)
+            + "\nor pass --input pointing at the folder that contains them."
+        )
+
+    print(
+        "Building Stonetop wiki ("
+        + ", ".join(b["label"] for b in found)
+        + ")…"
+    )
     print(f"  input:  {input_dir}")
     print(f"  output: {out}")
-    if not pdf_path.exists():
-        raise SystemExit(
-            f"PDF not found: {pdf_path}\n"
-            f"Place the Book II 1-up PDF ({PDF_FILENAME}) in the input folder,\n"
-            "or pass --input pointing at the folder that contains it."
-        )
 
     if legacy_out.is_dir() and not out.exists():
         try:
@@ -6626,19 +6857,34 @@ def main(argv: list[str] | None = None) -> None:
     copy_static_assets(out)
     icon_dir = icons_out
 
-    doc = fitz.open(str(pdf_path))
-    toc = load_toc(doc)
-    articles = articles_from_toc(
-        toc,
-        book="book2",
-        slug_prefix="",
-        book_label="Book II",
-    )
-    finalize_article_ranges(articles, doc.page_count)
-    articles = expand_arcana_articles(doc, articles)
+    docs: dict[str, fitz.Document] = {}
+    articles: list[dict] = []
+    for book in found:
+        bid = book["id"]
+        doc = fitz.open(str(book["path"]))
+        docs[bid] = doc
+        toc = load_toc(doc)
+        book_articles = articles_from_toc(
+            toc,
+            book=bid,
+            slug_prefix=book["slug_prefix"],
+            book_label=book["label"],
+        )
+        for art in book_articles:
+            art["book_title"] = book.get("title") or book["label"]
+        finalize_article_ranges(book_articles, doc.page_count)
+        # Arcana appendices (Book II) become a hub + one page per arcanum.
+        book_articles = expand_arcana_articles(doc, book_articles)
+        articles.extend(book_articles)
+
+    ensure_unique_slugs(articles)
 
     print("Articles:")
+    last_book = None
     for art in articles:
+        if art.get("book") != last_book:
+            last_book = art.get("book")
+            print(f"  [{art.get('book_label') or last_book}]")
         if art.get("kind") == "arcana":
             continue
         print(
@@ -6649,17 +6895,23 @@ def main(argv: list[str] | None = None) -> None:
     print(f"  (+ {n_arc} individual arcana pages)")
     print(f"  Total pages: {len(articles)}")
 
-    lookup = build_page_lookup(articles)
-    lookups = {"book2": lookup}
+    # Page-number lookups stay per book: "page 270" means a different article
+    # in Book I than in Book II.
+    lookups = {
+        bid: build_page_lookup([a for a in articles if a.get("book") == bid])
+        for bid in docs
+    }
     set_title_index(articles)
     previews: dict[str, dict] = {}
 
-    # Campaign maps + PDF map spreads (maps page only)
+    # Campaign maps + PDF map spreads (maps page only; Book II)
     maps_art = next((a for a in articles if a.get("kind") == "maps"), None)
     map_images: list[dict] = []
     if maps_art:
         print("Preparing maps…")
-        map_images = prepare_map_images(doc, maps_art, out / "images", input_dir)
+        map_images = prepare_map_images(
+            docs[maps_art["book"]], maps_art, out / "images", input_dir
+        )
 
     print("Indexing sections (for deep links)…")
     lines_cache: dict[str, list[str]] = {}
@@ -6667,6 +6919,9 @@ def main(argv: list[str] | None = None) -> None:
     sections_by_slug: dict[str, list[dict]] = {}
     for art in articles:
         slug = art["slug"]
+        book_id = art.get("book") or "book2"
+        doc = docs[book_id]
+        lookup = lookups[book_id]
         if art["kind"] in ("maps", "arcana-hub"):
             sections_by_slug[slug] = []
             toc_cache[slug] = []
@@ -6689,7 +6944,7 @@ def main(argv: list[str] | None = None) -> None:
                 section_index=None,
                 lines=lines,
                 lookups=lookups,
-                current_book="book2",
+                current_book=book_id,
             )
         elif art.get("kind") == "arcana" and art.get("arcana_type") == "major":
             lines = extract_article_lines(
@@ -6698,6 +6953,7 @@ def main(argv: list[str] | None = None) -> None:
                 art["end_page"],
                 art["title"],
                 icon_dir=icon_dir,
+                book_style=book_id,
             )
             toc_labels = []
             lines_cache[slug] = lines
@@ -6713,7 +6969,7 @@ def main(argv: list[str] | None = None) -> None:
                 section_index=None,
                 lines=lines,
                 lookups=lookups,
-                current_book="book2",
+                current_book=book_id,
             )
         else:
             lines = extract_article_lines(
@@ -6722,8 +6978,14 @@ def main(argv: list[str] | None = None) -> None:
                 art["end_page"],
                 art["title"],
                 icon_dir=icon_dir,
+                book_style=book_id,
             )
-            toc_labels, lines = split_chapter_toc(lines, art["title"])
+            toc_labels, lines = split_chapter_toc(
+                lines,
+                art["title"],
+                # Book I sets its chapter-opener TOCs in heading type.
+                allow_markers=(book_id == "book1"),
+            )
             lines_cache[slug] = lines
             toc_cache[slug] = toc_labels
             _body, _ex, sections = article_html_from_pdf(
@@ -6737,7 +6999,7 @@ def main(argv: list[str] | None = None) -> None:
                 section_index=None,
                 lines=lines,
                 lookups=lookups,
-                current_book="book2",
+                current_book=book_id,
             )
         sections_by_slug[slug] = sections
 
@@ -6754,8 +7016,14 @@ def main(argv: list[str] | None = None) -> None:
             f"{sum(len(v) for v in section_navs.values())} deep links"
         )
 
-    section_index = build_section_index(sections_by_slug, articles)
-    section_indexes = {"book2": section_index}
+    # One section index per book, so a "page N" ref resolves to a section in
+    # the book it was printed in.
+    section_indexes = {
+        bid: build_section_index(
+            sections_by_slug, [a for a in articles if a.get("book") == bid]
+        )
+        for bid in docs
+    }
     n_sec = sum(len(v) for v in sections_by_slug.values())
     print(f"  Indexed {n_sec} sections/monsters across {len(sections_by_slug)} pages")
 
@@ -6763,6 +7031,10 @@ def main(argv: list[str] | None = None) -> None:
     search_docs: list[dict] = []
     for art in articles:
         slug = art["slug"]
+        book_id = art.get("book") or "book2"
+        doc = docs[book_id]
+        lookup = lookups[book_id]
+        section_index = section_indexes[book_id]
         body = ""
         excerpt = ""
         card_preview_html = None
@@ -6810,7 +7082,7 @@ def main(argv: list[str] | None = None) -> None:
                     lines=lines,
                     lookups=lookups,
                     section_indexes=section_indexes,
-                    current_book="book2",
+                    current_book=book_id,
                 )
             elif art.get("kind") == "arcana" and art.get("arcana_type") == "major":
                 body, excerpt, _secs = major_arcana_html_from_pdf(
@@ -6825,7 +7097,7 @@ def main(argv: list[str] | None = None) -> None:
                     lines=lines,
                     lookups=lookups,
                     section_indexes=section_indexes,
-                    current_book="book2",
+                    current_book=book_id,
                 )
             else:
                 body, excerpt, _secs = article_html_from_pdf(
@@ -6840,7 +7112,7 @@ def main(argv: list[str] | None = None) -> None:
                     lines=lines,
                     lookups=lookups,
                     section_indexes=section_indexes,
-                    current_book="book2",
+                    current_book=book_id,
                 )
             # Keep pure card HTML for hover previews (before nav chrome)
             if art.get("kind") == "arcana":
@@ -6886,7 +7158,7 @@ def main(argv: list[str] | None = None) -> None:
             "title": art["title"],
             "excerpt": excerpt,
             "image": thumb,
-            "book": "book2",
+            "book": book_id,
             "sections": section_blocks,
         }
         if card_preview_html:
@@ -6905,7 +7177,7 @@ def main(argv: list[str] | None = None) -> None:
             {
                 "slug": slug,
                 "title": art["title"],
-                "book": "book2",
+                "book": book_id,
                 "excerpt": (excerpt or "")[:280],
                 "text": combined,
             }
@@ -6913,19 +7185,21 @@ def main(argv: list[str] | None = None) -> None:
 
     previews_json = json.dumps(previews, ensure_ascii=False, indent=2)
 
-    page_map: dict[str, dict] = {}
-    for pnum, art in lookup.items():
-        slug = art["slug"]
-        sec_map = {}
-        for s in sections_by_slug.get(slug, []):
-            sec_map[s["norm"]] = s["id"]
-            sec_map[s["name"].lower()] = s["id"]
-        page_map[str(pnum)] = {
-            "slug": slug,
-            "title": art["title"],
-            "sections": sec_map,
-        }
-    page_maps = {"book2": page_map}
+    page_maps: dict[str, dict] = {}
+    for bid, book_lookup in lookups.items():
+        page_map: dict[str, dict] = {}
+        for pnum, art in book_lookup.items():
+            slug = art["slug"]
+            sec_map = {}
+            for s in sections_by_slug.get(slug, []):
+                sec_map[s["norm"]] = s["id"]
+                sec_map[s["name"].lower()] = s["id"]
+            page_map[str(pnum)] = {
+                "slug": slug,
+                "title": art["title"],
+                "sections": sec_map,
+            }
+        page_maps[bid] = page_map
     page_map_json = json.dumps(page_maps, ensure_ascii=False, indent=2)
     # JS globals (not separate JSON) so hover previews work over file://
     (out / "js" / "previews-data.js").write_text(
