@@ -5,7 +5,8 @@ Generate a **static, offline wiki** from the *Stonetop* Book II PDF (*The Wider 
 The wiki includes:
 
 - Gazetteer pages (places, peoples, powers)
-- Minor & major arcana as interactive cards (checkboxes for unlocks / progress / consequences)
+- Minor & major arcana as interactive cards (checkboxes for unlocks / progress / consequences),
+  labelled with the number printed on the physical card
 - Full-text search, hover previews, and dice rollers
 - Deep links between page references and monster/stat blocks
 

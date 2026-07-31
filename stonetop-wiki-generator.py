@@ -6279,11 +6279,18 @@ def expand_arcana_articles(
                 )
                 p = card_end + 1
 
+        # The appendix order is the order of the printed arcana deck, so a
+        # card's position here is the number printed on it (minor 1-64,
+        # major 1-18). Carry it so pages can be found in the physical stack.
+        for i, child in enumerate(children, 1):
+            child["number"] = i
+
         hub = {
             **art,
             "kind": "arcana-hub",
             "children": [
-                {"title": c["title"], "slug": c["slug"]} for c in children
+                {"title": c["title"], "slug": c["slug"], "number": c["number"]}
+                for c in children
             ],
         }
         out.append(hub)
@@ -6427,6 +6434,31 @@ def build_page_lookup(articles: list[dict]) -> dict[int, dict]:
     return lookup
 
 
+def display_title(art: dict) -> str:
+    """Title as shown to the reader — arcana carry their printed card number."""
+    title = art.get("title") or ""
+    num = art.get("number")
+    return f"{num}. {title}" if num else title
+
+
+def nav_label(art: dict) -> str:
+    """
+    Sidebar label.
+
+    Book II files its entries alphabetically ignoring a leading "The" ("The
+    Great Wood" sits between Gordin's Delve and Green Lords), so the sidebar
+    drops it and reads in the order the book does.
+    """
+    if art.get("number"):
+        return display_title(art)
+    title = art.get("title") or ""
+    if art.get("book") == "book2" and title[:4].lower() == "the ":
+        rest = title[4:]
+        # "The village of Stonetop" → "Village of Stonetop"
+        return rest[:1].upper() + rest[1:]
+    return title
+
+
 def build_nav_items(
     articles: list[dict],
     *,
@@ -6467,7 +6499,7 @@ def build_nav_items(
         cls_attr = f' class="{" ".join(classes)}"' if classes else ""
         art_slug = html.escape(art["slug"])
         href = f"{href_prefix}{art_slug}.html"
-        link = f'<a href="{href}">{html.escape(art["title"])}</a>'
+        link = f'<a href="{href}">{html.escape(nav_label(art))}</a>'
         if secs:
             # Nested deep links into chapter sections (from first-page TOC)
             sub = []
@@ -7124,13 +7156,19 @@ def main(argv: list[str] | None = None) -> None:
                     if art.get("arcana_type") == "minor"
                     else "Major Arcana"
                 )
+                card_no = (
+                    f'<span class="arcana-card-no">'
+                    f'{html.escape(hub_title)} {art["number"]}</span>'
+                    if art.get("number")
+                    else ""
+                )
                 body = (
                     f'<p class="arcana-back"><a class="wiki-link" href="{hub}.html" '
-                    f'data-slug="{hub}">← All {hub_title}</a></p>\n'
+                    f'data-slug="{hub}">← All {hub_title}</a>{card_no}</p>\n'
                     + body
                 )
             page_html = page_shell(
-                art["title"],
+                display_title(art),
                 slug,
                 body,
                 articles,
@@ -7155,7 +7193,7 @@ def main(argv: list[str] | None = None) -> None:
         if art["kind"] == "maps" and map_images:
             thumb = map_images[0].get("file")
         previews[slug] = {
-            "title": art["title"],
+            "title": display_title(art),
             "excerpt": excerpt,
             "image": thumb,
             "book": book_id,
@@ -7176,7 +7214,7 @@ def main(argv: list[str] | None = None) -> None:
         search_docs.append(
             {
                 "slug": slug,
-                "title": art["title"],
+                "title": display_title(art),
                 "book": book_id,
                 "excerpt": (excerpt or "")[:280],
                 "text": combined,
