@@ -92,16 +92,17 @@ python -m http.server 8000
 # then visit http://localhost:8000
 ```
 
-## Optional: campaign map sheets
+## Sample adventure
 
-If you own the separate campaign map images, put them under `Maps/` inside the **input** folder (any nesting is fine).
+You can create adventures in html format that deep link to the wiki and use it's code and mechanics.
 
-```text
-Maps/
-  Map 1 - Stonetop.jpg
-  Map 2 - Vicinity.jpg
-  …
-```
+**[Vasilya’s Grove](https://bryan-legend.github.io/stonetop-wiki-generator/Adventures/Vasilyas-Grove.html)**
+
+**Wiki book links & hover previews**
+
+- The sheet styles, dice, and HP trackers work with only the files above (from `static/` + `Adventures/`).
+- Hover previews load `previews-data.js` from a **built** wiki if available.
+- After you build the wiki into `Stonetop_Wiki/` at the repo root (see Quick start), book links resolve to `../Stonetop_Wiki/pages/…` and hover previews fill in automatically.
 
 ## What gets generated
 
@@ -123,6 +124,7 @@ Checkbox state for steading improvements and arcana is stored in your browser (`
 | `static/css/wiki.css` | Wiki styles (copied into the output on build) |
 | `static/js/wiki.js` | Search, checkboxes, dice, previews (copied on build) |
 | `static/images/icons/*.svg` | Category icons from [game-icons.net](https://game-icons.net/) (CC BY 3.0; recolored in CSS) |
+| `Adventures/` | Adventure sheets |
 | `requirements.txt` | Python dependencies |
 | `docs/wiki-screenshot-*.png` | README screenshots |
 
@@ -145,8 +147,4 @@ Use a local static server (`python -m http.server`) as shown above.
 
 The **generator code** in this repository is MIT (see [LICENSE](LICENSE)).
 
-*Stonetop* and its text/art are © their respective owners (Jeremy Strandberg / the Stonetop team). This project only helps **you** turn a PDF you own into a personal reference wiki. Do not redistribute the PDFs, the extracted text, or a built wiki that contains the book’s content.
-
-## Credits
-
-Built for table use with the *Stonetop* RPG. Not affiliated with the official Stonetop publishers.
+*Stonetop* and its text/art are © their respective owners (Jeremy Strandberg / the Stonetop team). This project only helps **you** turn a PDF you own into a personal reference wiki. Do not redistribute the PDFs, the extracted text, or a built wiki that contains the book’s content. Not affiliated with the official Stonetop publishers.

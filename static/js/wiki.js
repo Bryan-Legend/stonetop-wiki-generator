@@ -24,18 +24,50 @@
     }
     if (previewsPromise) return previewsPromise;
     // Load as a script so previews work over file:// (fetch of JSON often fails there).
+    // Missing previews-data.js (e.g. adventure opened without a built wiki) → empty {}.
+    // Adventures may load wiki.js from static/ but set data-wiki-root to a built wiki.
     previewsPromise = new Promise(function (resolve) {
-      const s = document.createElement("script");
-      s.src = SCRIPT_BASE + "js/previews-data.js";
-      s.onload = function () {
-        previews = window.WIKI_PREVIEWS || {};
+      function finish(obj) {
+        previews =
+          typeof obj === "object" && obj ? obj : {};
         resolve(previews);
-      };
-      s.onerror = function () {
-        previews = {};
-        resolve(previews);
-      };
-      document.head.appendChild(s);
+      }
+      function trySrc(src, next) {
+        const s = document.createElement("script");
+        s.src = src;
+        s.onload = function () {
+          var obj =
+            typeof window.WIKI_PREVIEWS === "object" && window.WIKI_PREVIEWS
+              ? window.WIKI_PREVIEWS
+              : null;
+          if (obj && Object.keys(obj).length) finish(obj);
+          else if (next) next();
+          else finish({});
+        };
+        s.onerror = function () {
+          if (next) next();
+          else finish({});
+        };
+        document.head.appendChild(s);
+      }
+      var sources = [SCRIPT_BASE + "js/previews-data.js"];
+      var root =
+        document.body && document.body.getAttribute("data-wiki-root");
+      if (root) {
+        if (root.slice(-1) !== "/") root += "/";
+        var alt = root + "js/previews-data.js";
+        if (sources.indexOf(alt) === -1) sources.push(alt);
+      }
+      var i = 0;
+      function step() {
+        if (i >= sources.length) {
+          finish({});
+          return;
+        }
+        var src = sources[i++];
+        trySrc(src, step);
+      }
+      step();
     });
     return previewsPromise;
   }
@@ -384,6 +416,30 @@
     return escaped;
   }
 
+  function showMissingPreview(link, message) {
+    if (!bubble) return;
+    activeLink = link;
+    bubble.classList.remove("pv-arcana");
+    var title =
+      (link.textContent || "").replace(/\s+/g, " ").trim() ||
+      link.getAttribute("data-slug") ||
+      "Wiki link";
+    var msg =
+      message ||
+      "Preview data is missing. Build the Stonetop wiki to enable hover previews.";
+    bubble.innerHTML =
+      '<p class="pv-title">' +
+      escapeHtml(title) +
+      "</p>" +
+      '<div class="pv-body"><p class="pv-excerpt pv-missing">' +
+      escapeHtml(msg) +
+      "</p></div>";
+    bubble.hidden = false;
+    positionPreview(link);
+    void bubble.offsetWidth;
+    bubble.classList.add("visible");
+  }
+
   function showPreview(link, data, map) {
     if (!bubble || !data) return;
     activeLink = link;
@@ -478,13 +534,32 @@
     const slug = link.getAttribute("data-slug");
     if (!slug) return;
     cancelHide();
-    Promise.all([loadPreviews(), loadPageMap()]).then(function (pair) {
-      var data = pair[0];
-      var map = pair[1];
-      if (!data[slug]) return;
-      if (!link.matches(":hover") && !(bubble && bubble.matches(":hover"))) return;
-      showPreview(link, data[slug], map);
-    });
+    Promise.all([loadPreviews(), loadPageMap()])
+      .then(function (pair) {
+        var data = pair[0];
+        var map = pair[1];
+        if (!link.matches(":hover") && !(bubble && bubble.matches(":hover")))
+          return;
+        if (!data || typeof data !== "object" || !data[slug]) {
+          var empty = !data || typeof data !== "object" || !Object.keys(data).length;
+          showMissingPreview(
+            link,
+            empty
+              ? "Preview data is missing. Build the Stonetop wiki to enable hover previews."
+              : "No preview entry for this link."
+          );
+          return;
+        }
+        showPreview(link, data[slug], map);
+      })
+      .catch(function () {
+        if (!link.matches(":hover") && !(bubble && bubble.matches(":hover")))
+          return;
+        showMissingPreview(
+          link,
+          "Preview data is missing. Build the Stonetop wiki to enable hover previews."
+        );
+      });
   });
 
   document.addEventListener("mouseout", function (e) {
