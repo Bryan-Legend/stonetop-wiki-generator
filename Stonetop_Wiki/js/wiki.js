@@ -259,6 +259,11 @@
     const bw = bubble.offsetWidth || 520;
     const bh = bubble.offsetHeight || 320;
     let left = rect.left;
+    // Adventure left-nav wiki links: nudge right so the bubble doesn't
+    // sit on top of neighboring nav links and block hover.
+    if (link.closest(".adv-nav")) {
+      left += 20;
+    }
     // Overlap the link slightly so the cursor can cross into the bubble
     let top = rect.bottom + 2;
 
@@ -1235,7 +1240,6 @@
     if (!id) return;
     var el = document.getElementById(id);
     if (!el) return;
-    el.classList.add("target-highlight");
     var scroll = document.querySelector(".content-scroll");
     if (scroll) {
       // Place the element near the left of the scroll viewport

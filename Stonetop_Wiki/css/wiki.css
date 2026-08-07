@@ -12,11 +12,15 @@
   --quote: #cfc4b4;
   --ok: #8fbc8f;
   --danger: #c97b7b;
-  --sidebar-w: 17.5rem;
+  --sidebar-w: 13.125rem; /* was 17.5rem; −25% */
   --font-serif: Georgia, "Times New Roman", serif;
   --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
   --radius: 6px;
   --shadow: 0 8px 28px rgba(0,0,0,.45);
+  --shadow-soft: 0 2px 10px rgba(0,0,0,.28);
+  /* Arcana-style top wash used on cards/blocks across the wiki */
+  --card-wash: linear-gradient(180deg, rgba(212, 165, 116, 0.1), transparent 2.75rem);
+  --card-wash-deep: linear-gradient(180deg, rgba(212, 165, 116, 0.12), transparent 3.25rem);
   --text: 13px;  /* non-heading body/UI */
 }
 
@@ -96,6 +100,35 @@ html, body {
   top: 0;
   background: var(--bg-elev);
   z-index: 1;
+}
+
+/* After the topic list — scrolls with the nav, not pinned to the viewport */
+.sidebar-foot {
+  padding: 0.55rem 1rem 1rem;
+  margin-top: 0.35rem;
+  border-top: 1px solid var(--rule);
+}
+.sidebar-github {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-size: var(--text);
+  color: var(--muted);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+}
+.sidebar-github:hover {
+  color: var(--accent);
+}
+.sidebar-github::before {
+  content: "";
+  display: inline-block;
+  width: 0.95rem;
+  height: 0.95rem;
+  background: currentColor;
+  /* GitHub mark (simple monochrome) */
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
 .site-title {
@@ -195,7 +228,7 @@ html, body {
   color: var(--muted, #6b6560);
 }
 
-.toc { padding: .5rem 0 1.5rem; }
+.toc { padding: .5rem 0 0.25rem; }
 .toc ul {
   list-style: none;
   margin: 0;
@@ -539,15 +572,17 @@ h3 .book-icon,
   break-inside: avoid;
   margin: 0.45rem 0 0.65rem;
   background: var(--bg-elev);
+  background-image: var(--card-wash);
   border: 1px solid var(--rule);
   border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
   overflow: hidden;
   width: 100%;
 }
 .value-table-head {
   padding: 0.35rem 0.5rem;
   border-bottom: 1px solid var(--rule);
-  background: var(--bg-hover);
+  background: rgba(212, 165, 116, 0.08);
   font-family: var(--font-serif);
   color: var(--accent);
   font-weight: 700;
@@ -620,9 +655,12 @@ h3 .book-icon,
   break-inside: avoid;
   margin: 0.35rem 0 0.85rem;
   padding: 0.55rem 0.7rem 0.6rem;
-  border: 1px solid var(--accent);
+  border: 1px solid var(--rule);
+  border-top: 3px solid var(--accent);
   border-radius: var(--radius);
   background: var(--bg-elev);
+  background-image: var(--card-wash);
+  box-shadow: var(--shadow-soft);
   width: 100%;
   font-size: var(--text);
 }
@@ -647,8 +685,10 @@ h3 .book-icon,
   break-inside: avoid;
   margin: 0.45rem 0 0.65rem;
   background: var(--bg-elev);
+  background-image: var(--card-wash);
   border: 1px solid var(--rule);
   border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
   overflow: hidden;
   width: 100%;
 }
@@ -658,7 +698,7 @@ h3 .book-icon,
   gap: 0.4rem;
   padding: 0.35rem 0.5rem;
   border-bottom: 1px solid var(--rule);
-  background: var(--bg-hover);
+  background: rgba(212, 165, 116, 0.08);
   font-family: var(--font-serif);
   color: var(--accent);
   font-weight: 700;
@@ -689,16 +729,18 @@ h3 .book-icon,
   .roll-table tr.roll-hit > td { animation: none; }
 }
 
-/* Enemy / monster blocks — tight, card-like */
+/* Enemy / monster blocks — tight, card-like (arcana wash + elevated shell) */
 .stat-block,
 .hazard-block {
   break-inside: avoid;
   margin: 0.4rem 0 0.55rem;
-  padding: 0.4rem 0.55rem 0.45rem;
-  background: var(--stat-bg, #241c16);
+  padding: 0.45rem 0.6rem 0.5rem;
+  background: var(--bg-elev);
+  background-image: var(--card-wash);
   border: 1px solid var(--rule);
   border-left: 3px solid var(--accent);
-  border-radius: 0 var(--radius) var(--radius) 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
   font-size: var(--text);
   line-height: 1.28;
   width: 100%;
@@ -753,16 +795,7 @@ h3 .book-icon,
   color: var(--quote);
   font-size: var(--text);
 }
-/* Deep-link target highlight */
-.stat-block:target,
-h2:target,
-h3:target,
-.roll-table:target,
-.target-highlight {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
-  border-radius: 2px;
-}
+/* Deep-link :target — scroll still works; no outline flash on jump */
 
 /* Images flow into the rightmost columns after text */
 
@@ -1044,7 +1077,7 @@ body.pins-adding .map-canvas { cursor: crosshair; }
 }
 .arcana-front {
   border-bottom: 1px solid var(--rule);
-  background: linear-gradient(180deg, rgba(212, 165, 116, 0.08), transparent 3rem);
+  background: var(--card-wash-deep);
 }
 .arcana-back-face {
   background: rgba(0, 0, 0, 0.12);
@@ -1223,7 +1256,9 @@ body.pins-adding .map-canvas { cursor: crosshair; }
   border: 1px solid var(--rule);
   border-left: 3px solid var(--accent);
   border-radius: var(--radius);
-  background: rgba(0, 0, 0, 0.03);
+  background: var(--bg-elev);
+  background-image: var(--card-wash);
+  box-shadow: var(--shadow-soft);
 }
 .si-kind {
   margin: 0 0 0.2rem;
@@ -1290,10 +1325,12 @@ li.check-item input.wiki-check:checked + span {
   break-inside: avoid;
   margin: 0.5rem 0 0.7rem;
   padding: 0.5rem 0.65rem 0.55rem;
-  background: var(--stat-bg, #241c16);
+  background: var(--bg-elev);
+  background-image: var(--card-wash);
   border: 1px solid var(--rule);
   border-left: 3px solid var(--link);
-  border-radius: 0 var(--radius) var(--radius) 0;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
   width: 100%;
   font-size: var(--text);
   line-height: 1.35;
@@ -1327,7 +1364,9 @@ li.check-item input.wiki-check:checked + span {
   border: 1px solid var(--rule);
   border-left: 3px solid var(--link);
   border-radius: var(--radius);
-  background: rgba(224, 184, 136, 0.05);
+  background: var(--bg-elev);
+  background-image: var(--card-wash);
+  box-shadow: var(--shadow-soft);
   width: 100%;
 }
 .move-block .move-name {
@@ -1351,7 +1390,8 @@ li.check-item input.wiki-check:checked + span {
 .move-block > p { margin: 0.3rem 0; }
 .move-block > :last-child { margin-bottom: 0; }
 
-/* Hover preview (Wikipedia-style) */
+/* Hover preview (Wikipedia-style) — shell owns the frame/wash;
+   nested content cards drop their own chrome to avoid double frames. */
 .wiki-preview {
   position: fixed;
   z-index: 900;
@@ -1359,9 +1399,10 @@ li.check-item input.wiki-check:checked + span {
   max-height: min(28rem, calc(100vh - 2rem));
   overflow: auto;
   background: var(--bg-elev);
+  background-image: var(--card-wash-deep);
   border: 1px solid var(--rule);
   border-top: 3px solid var(--accent);
-  border-radius: var(--radius);
+  border-radius: calc(var(--radius) + 2px);
   box-shadow: var(--shadow);
   pointer-events: none;
   opacity: 0;
@@ -1433,7 +1474,7 @@ li.check-item input.wiki-check:checked + span {
 /* Full section/stat-block deep-link preview */
 .wiki-preview .pv-full {
   display: block;
-  padding: 0.35rem 1rem 1rem;
+  padding: 0.55rem 0.9rem 0.85rem;
   max-height: min(22rem, calc(100vh - 6rem));
   overflow: auto;
   font-size: var(--text);
@@ -1444,12 +1485,33 @@ li.check-item input.wiki-check:checked + span {
   max-height: none;
   padding: 0.55rem 0.65rem 0.75rem;
 }
-.wiki-preview .pv-full .arcana-card {
+/* Flatten nested cards inside previews: shell is the only frame. */
+.wiki-preview .pv-full .arcana-card,
+.wiki-preview .pv-full .stat-block,
+.wiki-preview .pv-full .hazard-block,
+.wiki-preview .pv-full .discovery-block,
+.wiki-preview .pv-full .move-block,
+.wiki-preview .pv-full .steading-improvement,
+.wiki-preview .pv-full .requirement-block,
+.wiki-preview .pv-full .infobox,
+.wiki-preview .pv-full .value-table,
+.wiki-preview .pv-full .roll-table {
   margin: 0;
-  box-shadow: none;
   max-width: none;
   border: none;
+  border-radius: 0;
+  box-shadow: none;
   background: transparent;
+  background-image: none;
+}
+.wiki-preview .pv-full .stat-block,
+.wiki-preview .pv-full .hazard-block,
+.wiki-preview .pv-full .discovery-block,
+.wiki-preview .pv-full .move-block,
+.wiki-preview .pv-full .steading-improvement,
+.wiki-preview .pv-full .requirement-block,
+.wiki-preview .pv-full .infobox {
+  padding: 0;
 }
 .wiki-preview .pv-full .arcana-face {
   padding: 0.45rem 0.25rem 0.55rem;
@@ -1462,17 +1524,16 @@ li.check-item input.wiki-check:checked + span {
   background: rgba(0, 0, 0, 0.22);
 }
 .wiki-preview .pv-full > :first-child { margin-top: 0; }
-.wiki-preview .pv-full .stat-block {
-  margin: 0;
-  max-width: none;
+.wiki-preview .pv-full .stat-name,
+.wiki-preview .pv-full .discovery-name,
+.wiki-preview .pv-full .move-name {
+  font-size: 1.1rem;
 }
-.wiki-preview .pv-full .stat-name {
-  font-size: 1.05rem;
-}
-.wiki-preview .pv-full .roll-table,
-.wiki-preview .pv-full .value-table {
-  margin: 0;
-  max-width: none;
+.wiki-preview .pv-full .value-table-head,
+.wiki-preview .pv-full .roll-table-head {
+  background: transparent;
+  padding-left: 0;
+  padding-right: 0;
 }
 .wiki-preview .pv-full h2,
 .wiki-preview .pv-full h3 {
@@ -1512,16 +1573,20 @@ li.check-item input.wiki-check:checked + span {
 .index-card {
   display: block;
   background: var(--bg-elev);
+  background-image: var(--card-wash);
   border: 1px solid var(--rule);
   border-radius: var(--radius);
+  box-shadow: var(--shadow-soft);
   padding: .75rem .9rem;
   text-decoration: none;
   color: var(--ink);
-  transition: border-color .12s, background .12s;
+  transition: border-color .12s, background .12s, box-shadow .12s;
 }
 .index-card:hover {
   border-color: var(--accent);
   background: var(--bg-hover);
+  background-image: var(--card-wash-deep);
+  box-shadow: var(--shadow);
 }
 .index-card .card-title {
   font-family: var(--font-serif);

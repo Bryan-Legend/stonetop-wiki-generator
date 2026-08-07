@@ -47,23 +47,18 @@
     });
   }
 
-  /* ---- Sidebar jump: single highlight, always clear previous ---- */
-  function clearNavTargets() {
-    document.querySelectorAll(".nav-target").forEach(function (el) {
-      el.classList.remove("nav-target");
-    });
+  /* ---- Sidebar jump: mark nav only (no section outline) ---- */
+  function clearNavCurrent() {
     document.querySelectorAll(".adv-nav a.is-current").forEach(function (a) {
       a.classList.remove("is-current");
     });
   }
 
-  function highlightNavTarget(hash) {
-    clearNavTargets();
+  function markNavCurrent(hash) {
+    clearNavCurrent();
     if (!hash || hash === "#") return;
     var id = hash.replace(/^#/, "");
     if (!id) return;
-    var el = document.getElementById(id);
-    if (el) el.classList.add("nav-target");
     document
       .querySelectorAll('.adv-nav a[href="#' + id + '"]')
       .forEach(function (a) {
@@ -79,15 +74,15 @@
         bubble.hidden = true;
       }
       setTimeout(function () {
-        highlightNavTarget(href);
+        markNavCurrent(href);
       }, 0);
     });
   });
   window.addEventListener("hashchange", function () {
-    highlightNavTarget(location.hash);
+    markNavCurrent(location.hash);
   });
   if (location.hash) {
-    highlightNavTarget(location.hash);
+    markNavCurrent(location.hash);
   }
 
   /* ---- HP trackers ---- */

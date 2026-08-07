@@ -37,6 +37,19 @@ ADVENTURES_BOOK_ID = "adventures"
 ADVENTURES_LABEL = "Adventures"
 ADVENTURES_HUB_SLUG = "adventures"
 
+# Project credit in the wiki sidebar footer.
+GITHUB_PROJECT_URL = "https://github.com/Bryan-Legend/stonetop-wiki-generator"
+
+
+def sidebar_foot_html() -> str:
+    """Sticky footer under the topic nav (GitHub project link)."""
+    return (
+        f'<div class="sidebar-foot">'
+        f'<a class="sidebar-github" href="{html.escape(GITHUB_PROJECT_URL)}" '
+        f'target="_blank" rel="noopener noreferrer">GitHub</a>'
+        f"</div>"
+    )
+
 
 def resolve_adventures_dir(out: Path) -> Path | None:
     """Return ``<out>/adventures/`` if present (sheets are edited in place)."""
@@ -6601,6 +6614,7 @@ def page_shell(
           {nav_html}
         </ul>
       </nav>
+      {sidebar_foot_html()}
     </aside>
     <div class="main-wrap">
       <div class="content-scroll" id="main">
@@ -7109,6 +7123,7 @@ def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> 
           {''.join(nav_items)}
         </ul>
       </nav>
+      {sidebar_foot_html()}
     </aside>
     <div class="main-wrap">
       <div class="content-scroll" id="main">
