@@ -45,8 +45,8 @@ def sidebar_foot_html() -> str:
     """Sticky footer under the topic nav (GitHub project link)."""
     return (
         f'<div class="sidebar-foot">'
-        f'<a class="sidebar-github" href="{html.escape(GITHUB_PROJECT_URL)}" '
-        f'target="_blank" rel="noopener noreferrer">GitHub</a>'
+        f'<a class="sidebar-github" href="{html.escape(GITHUB_PROJECT_URL)}">'
+        f"GitHub</a>"
         f"</div>"
     )
 

@@ -119,21 +119,31 @@
       background: var(--accent-soft);
       box-shadow: inset 2px 0 0 var(--accent);
     }
-    /* GitHub credit — same classes as wiki sidebar (styles in wiki.css) */
+    /* GitHub credit — same classes as wiki sidebar (icon styles in wiki.css) */
     .adv-nav .sidebar-foot {
-      padding: 0.55rem 0.4rem 0.35rem;
       margin-top: 0.75rem;
+      padding: 0.55rem 0 0.25rem;
       border-top: 1px solid var(--rule);
     }
     .adv-nav .sidebar-github {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
       border: none;
       border-bottom: none;
-      border-radius: 0;
-      padding: 0.15rem 0.35rem;
+      border-radius: 4px;
+      padding: 0.28rem 0.4rem;
       font-size: 0.8rem;
+      line-height: 1.2;
+      color: var(--muted);
+    }
+    .adv-nav .sidebar-github::before {
+      flex-shrink: 0;
+      width: 0.85rem;
+      height: 0.85rem;
     }
     .adv-nav .sidebar-github:hover {
-      background: transparent;
+      background: var(--accent-soft);
       color: var(--accent);
     }
 
