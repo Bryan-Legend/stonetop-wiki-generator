@@ -4366,21 +4366,37 @@ def _card_title_from_sides(left: list[str], right: list[str]) -> str:
         r"warm|close|reach|awkward|indestructible|large|cumbersome)\b",
         re.I,
     )
+    # Lines that are never part of a power/discovery title (tracks, age marks,
+    # move triggers, form labels). Keep Shell Game of Souls intact — "Souls"
+    # only junks a line that *starts* with it as a form label.
     junk_title = re.compile(
         r"^(starts at|souls\b|lost memories|daylight|vitality|hold\b|max\b|"
         r"uses\b|pouch of|when |if you|you can|your |mark |spend |"
-        r"roll |on a |the spell|alas,)",
+        r"roll |on a |the spell|alas,|"
+        r"preparation\b|youthful\b|mature\b|elderly\b|"
+        r"heat\b|strain\b|disturbance\b|breath\b|readiness\b|"
+        r"charges?\b|ken\b|sway\b|authority\b|loyalty\b|charge\b|ire\b)",
         re.I,
     )
+    # "youthful, mature, elderly" — comma list of short lowercase track options
+    track_opts = re.compile(
+        r"^[a-z][a-z0-9\-]*(?:\s*,\s*[a-z][a-z0-9\-]*)+$"
+    )
+
+    def is_non_title_line(line: str) -> bool:
+        L = (line or "").strip()
+        if not L:
+            return True
+        if junk_title.match(L) or tag_re.match(L):
+            return True
+        if track_opts.match(L):
+            return True
+        return False
 
     def title_from(side: list[str]) -> str | None:
         parts: list[str] = []
         for i, line in enumerate(side[:5]):
-            if not line or tag_re.match(line):
-                if parts:
-                    break
-                continue
-            if junk_title.match(line):
+            if not line or is_non_title_line(line):
                 if parts:
                     break
                 continue
@@ -4389,16 +4405,17 @@ def _card_title_from_sides(left: list[str], right: list[str]) -> str:
             parts.append(line.rstrip(",").strip())
             joined = " ".join(parts)
             nxt = side[i + 1] if i + 1 < len(side) else ""
-            # Continue when the name clearly wraps onto the next line
+            # Continue only when the name clearly wraps (not onto a track line).
             incomplete = (
-                line.endswith((",", "-", "'s", "\u2019s"))
-                or len(line.split()) <= 2
+                line.endswith((",", "-", "—", "'s", "\u2019s"))
+                or bool(re.search(r"\b(of|the|a|an|and|or|to|for)\s*$", line, re.I))
                 or (
-                    len(joined) < 28
+                    # One-word start of a multi-word title ("Thunderous" / "Bellow")
+                    len(line.split()) == 1
+                    and len(joined) < 28
                     and nxt
                     and nxt[0:1].isupper()
-                    and not junk_title.match(nxt)
-                    and not tag_re.match(nxt)
+                    and not is_non_title_line(nxt)
                     and not nxt.lower().startswith("when ")
                 )
             )
@@ -4420,6 +4437,16 @@ def _card_title_from_sides(left: list[str], right: list[str]) -> str:
             title,
             flags=re.I,
         )
+        # Bare form-label word stuck on the same line ("… Iron Body Preparation").
+        # Only labels that never appear as a real title word — not Authority
+        # (Sigil of Authority), Souls (Shell Game of Souls), etc.
+        title = re.sub(
+            r"\s+(Heat|Strain|Disturbance|Breath|Preparation|Charges?|"
+            r"Readiness|Vitality|Daylight|Uses|Hold)\s*$",
+            "",
+            title,
+            flags=re.I,
+        )
         title = re.sub(r"\s+You have\b.*$", "", title, flags=re.I)
         title = re.sub(r"\s+As long as\b.*$", "", title, flags=re.I)
         title = re.sub(
@@ -4431,7 +4458,7 @@ def _card_title_from_sides(left: list[str], right: list[str]) -> str:
         )
         title = re.sub(r"\s+raspy voice\b.*$", "", title, flags=re.I)
         title = title.strip(" ,:;")
-        if junk_title.match(title) or len(title) < 3:
+        if is_non_title_line(title) or len(title) < 3:
             return None
         return title
 
@@ -4988,6 +5015,65 @@ def _dedupe_arcana_title(s: str) -> str:
     return s
 
 
+def _skip_arcana_power_heading(
+    lines: list[str], start: int, power_norm: str
+) -> int:
+    """
+    Advance past the power-name heading on a minor-arcana back face.
+
+    The title is already shown in the face header; consuming it avoids
+    duplicates. Wrapped titles often arrive as consecutive H3 lines
+    (``Aalz Galt's`` + ``Sudden Sinkhole``).
+    """
+    i = start
+    n = len(lines)
+    while i < n:
+        raw = lines[i]
+        d = _defmt(strip_markers(raw)).strip()
+        if raw.startswith("\x02TH") or not d or d.lower() in ("front", "back"):
+            i += 1
+            continue
+        break
+
+    bits: list[str] = []
+    while i < n:
+        raw = lines[i]
+        d = _defmt(strip_markers(raw)).strip()
+        if not d:
+            i += 1
+            continue
+        is_h3 = raw.startswith("\x02H3")
+        is_plain_title = (
+            not raw.startswith("\x02")
+            and not re.match(r"^(When you|When |During|If )\b", d, re.I)
+            and len(d) <= 48
+            and not d.endswith((".", "!", "?", "…"))
+        )
+        if not (is_h3 or is_plain_title):
+            break
+        cand = _dedupe_arcana_title(d)
+        cnorm = normalize_section_key(cand)
+        if not cnorm:
+            break
+        trial = normalize_section_key(" ".join(bits + [cand]))
+        # Accept if trial equals or is a prefix of the power name
+        if (
+            trial == power_norm
+            or power_norm.startswith(trial + " ")
+            or power_norm == trial
+        ):
+            bits.append(cand)
+            i += 1
+            if trial == power_norm:
+                break
+            continue
+        if cnorm == power_norm:
+            i += 1
+            break
+        break
+    return i
+
+
 _ARCANA_TAG_WORD = re.compile(
     r"^(magical|fragile|immobile|beautiful|terrifying|close|reach|near|far|"
     r"hand|worn|warm|crude|slow|applied|thrown|messy|forceful|area|"
@@ -5252,21 +5338,9 @@ def structure_minor_arcana_html(
     # ---- Back face: power moves ----
     bparts: list[str] = []
     power_tags = ""
-    i = 0
     n = len(back)
-    # skip to first non-header; capture power-name H3 (skip, shown in header)
-    while i < n:
-        raw = back[i]
-        d = _defmt(strip_markers(raw)).strip()
-        if raw.startswith("\x02H3") and normalize_section_key(
-            _dedupe_arcana_title(d)
-        ) == power_norm:
-            i += 1
-            break
-        if raw.startswith("\x02TH") or not d or d.lower() in ("front", "back"):
-            i += 1
-            continue
-        break
+    # Skip power-name heading (may be one H3 or wrapped H3s); shown in header
+    i = _skip_arcana_power_heading(back, 0, power_norm)
     first_prose = True
     while i < n:
         raw = back[i]
@@ -5324,7 +5398,7 @@ def structure_minor_arcana_html(
     parts.append("</div>")
     if bparts:
         parts.append('<div class="arcana-face arcana-back-face">')
-        parts.append(_arcana_title_line(power, "Back", tag="h2"))
+        parts.append(_arcana_title_line(power, "Reverse", tag="h2"))
         if power_tags:
             parts.append(f'<p class="arcana-tags">{link(power_tags)}</p>')
         parts.extend(bparts)
@@ -5481,13 +5555,19 @@ def _arcana_title_line(
     tag: str = "h2",
     hid: str | None = None,
 ) -> str:
-    """Single-line arcana header: ``Name — DISCOVERY/POWER`` (sans-serif via CSS)."""
+    """Single-line arcana header: ``Name — FRONT/REVERSE`` (sans-serif via CSS).
+
+    If *name* is empty, only the face label is shown (major reverse side).
+    """
     id_attr = f' id="{html.escape(hid)}"' if hid else ""
+    face = f'<span class="arcana-title-face">{html.escape(face_label)}</span>'
+    if not (name or "").strip():
+        return f"<{tag}{id_attr} class=\"arcana-title-line\">{face}</{tag}>"
     return (
         f"<{tag}{id_attr} class=\"arcana-title-line\">"
         f'<span class="arcana-title-name">{html.escape(name)}</span>'
         f'<span class="arcana-title-sep" aria-hidden="true"> — </span>'
-        f'<span class="arcana-title-face">{html.escape(face_label)}</span>'
+        f"{face}"
         f"</{tag}>"
     )
 
@@ -5713,7 +5793,8 @@ def structure_major_arcana_html(
     parts.append("</div>")
     if back_html.strip():
         parts.append('<div class="arcana-face arcana-back-face">')
-        parts.append(_arcana_title_line(power, "Back", tag="h2"))
+        # Majors have no alternate reverse name — face label only
+        parts.append(_arcana_title_line("", "Reverse", tag="h2"))
         parts.append(back_html)
         parts.append("</div>")
     parts.append("</div>")

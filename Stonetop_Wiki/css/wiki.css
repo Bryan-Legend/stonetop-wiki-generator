@@ -1106,7 +1106,7 @@ body.pins-adding .map-canvas { cursor: crosshair; }
 .arcana-back-face {
   background: rgba(0, 0, 0, 0.12);
 }
-/* Single-line face header: NAME — DISCOVERY / POWER / FRONT / …
+/* Single-line face header: NAME — FRONT / REVERSE (or REVERSE alone on majors).
    Must beat `.content h2` / `.content h3` (serif) specificity. */
 .content h2.arcana-title-line,
 .content h3.arcana-title-line,
