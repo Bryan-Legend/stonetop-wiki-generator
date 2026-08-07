@@ -258,12 +258,9 @@
     const margin = 10;
     const bw = bubble.offsetWidth || 520;
     const bh = bubble.offsetHeight || 320;
-    let left = rect.left;
-    // Adventure left-nav wiki links: nudge right so the bubble doesn't
-    // sit on top of neighboring nav links and block hover.
-    if (link.closest(".adv-nav")) {
-      left += 20;
-    }
+    // Nudge right so the bubble doesn't sit on the link / neighbors
+    // and block hover to adjacent targets.
+    let left = rect.left + 20;
     // Overlap the link slightly so the cursor can cross into the bubble
     let top = rect.bottom + 2;
 

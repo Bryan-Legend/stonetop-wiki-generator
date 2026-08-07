@@ -339,6 +339,30 @@ html, body {
   text-transform: uppercase;
   white-space: nowrap;
 }
+/* Card number badge — top-right of the arcana hover popup (out of flow) */
+.arcana-preview-no {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+  line-height: 1.3;
+  white-space: nowrap;
+}
+.wiki-preview .arcana-preview-no {
+  position: absolute;
+  top: 0.45rem;
+  right: 0.55rem;
+  z-index: 2;
+  pointer-events: none;
+}
+/* Keep the first title from running under the badge */
+.wiki-preview .pv-full .arcana-face.arcana-front > .arcana-title-line:first-child {
+  padding-right: 7.5rem;
+}
 
 /* --- Adventures (sheets under adventures/) --- */
 .toc li.nav-adventure > a {
@@ -1082,20 +1106,60 @@ body.pins-adding .map-canvas { cursor: crosshair; }
 .arcana-back-face {
   background: rgba(0, 0, 0, 0.12);
 }
+/* Single-line face header: NAME — DISCOVERY / POWER / FRONT / …
+   Must beat `.content h2` / `.content h3` (serif) specificity. */
+.content h2.arcana-title-line,
+.content h3.arcana-title-line,
+.wiki-preview h2.arcana-title-line,
+.wiki-preview h3.arcana-title-line,
+h2.arcana-title-line,
+h3.arcana-title-line,
+.arcana-title-line {
+  margin: 0 0 0.5rem;
+  padding: 0;
+  border: none;
+  border-bottom: none;
+  font-family: var(--font-sans);
+  font-size: var(--text);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.35;
+  color: var(--accent);
+  break-after: avoid;
+  break-inside: avoid;
+}
+.arcana-title-line .arcana-title-name,
+.arcana-title-line .arcana-title-sep,
+.arcana-title-line .arcana-title-face {
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+  color: inherit;
+}
+.arcana-title-sep {
+  margin: 0 0.35em;
+  letter-spacing: normal;
+}
+/* Legacy class names (pre-title-line) — keep readable if any old HTML remains */
 .arcana-face-label {
   margin: 0 0 0.35rem;
+  font-family: var(--font-sans);
   font-size: var(--text);
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--accent);
 }
-.arcana-discovery {
-  margin: 0 0 0.25rem;
-  font-family: var(--font-serif);
-  font-size: 1.15rem;
+.arcana-discovery,
+.arcana-power-name {
+  margin: 0 0 0.45rem;
+  font-family: var(--font-sans);
+  font-size: 1.05rem;
   font-weight: 700;
-  color: var(--ink);
+  color: var(--accent);
 }
 .arcana-tags {
   margin: 0 0 0.55rem;
@@ -1114,14 +1178,6 @@ body.pins-adding .map-canvas { cursor: crosshair; }
 .arcana-unlock-intro {
   margin: 0 0 0.4rem;
   font-size: var(--text);
-}
-.arcana-power-name {
-  margin: 0 0 0.65rem;
-  font-family: var(--font-serif);
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: var(--accent);
-  letter-spacing: 0.01em;
 }
 .arcana-move {
   margin: 0 0 0.75rem;
@@ -1482,6 +1538,7 @@ li.check-item input.wiki-check:checked + span {
   color: var(--ink);
 }
 .wiki-preview.pv-arcana .pv-full {
+  position: relative;
   max-height: none;
   padding: 0.55rem 0.65rem 0.75rem;
 }
@@ -1535,12 +1592,43 @@ li.check-item input.wiki-check:checked + span {
   padding-left: 0;
   padding-right: 0;
 }
+/* Match .content h2/h3 serif headings (previews are outside .content). */
 .wiki-preview .pv-full h2,
 .wiki-preview .pv-full h3 {
   margin: 0 0 0.4rem;
+  font-family: var(--font-serif);
   font-size: 1.05rem;
   border-bottom: 1px solid var(--rule);
   padding-bottom: 0.15rem;
+  color: var(--accent);
+}
+/* Named moves / section heads inside arcana cards — same as page view. */
+.wiki-preview .pv-full h3.arcana-sub {
+  margin: 0.75rem 0 0.35rem;
+  padding: 0;
+  border: none;
+  border-bottom: none;
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: normal;
+  text-transform: none;
+}
+/* Arcana face headers: beat the generic h2/h3 rule above; same size as pages. */
+.wiki-preview .pv-full h2.arcana-title-line,
+.wiki-preview .pv-full h3.arcana-title-line {
+  margin: 0 0 0.5rem;
+  padding: 0;
+  border: none;
+  border-bottom: none;
+  font-family: var(--font-sans);
+  font-size: var(--text);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.35;
+  color: var(--accent);
 }
 .wiki-preview .pv-full p { margin: 0.35rem 0; }
 .wiki-preview .pv-full ul { margin: 0.3rem 0; padding-left: 1.1rem; }

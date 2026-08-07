@@ -4409,11 +4409,13 @@ def _card_title_from_sides(left: list[str], right: list[str]) -> str:
         if not parts:
             return None
         title = undouble_words(" ".join(parts)).strip(" ,")
-        # Strip form labels / tags accidentally glued to the name
+        # Strip form labels glued after the name ("… Souls (max CON):", "… Heat:").
+        # Require ":" or "(…)" so titles that end in the word itself
+        # (Shell Game of Souls) are kept intact.
         title = re.sub(
             r"\s+(Heat|Strain|Disturbance|Breath|Preparation|Charges?|Ken|"
             r"Sway|Authority|Loyalty|Charge|Ire|Readiness|Vitality|Daylight|"
-            r"Souls)\s*:?\s*$",
+            r"Souls)\s*(?:[:：].*|\([^)]*\).*)$",
             "",
             title,
             flags=re.I,
@@ -4995,28 +4997,65 @@ _ARCANA_TAG_WORD = re.compile(
 )
 
 
+def _arcana_strip_tag_seps(text: str) -> str:
+    """Drop leading inventory diamonds, commas, spaces, and fmt-only separators.
+
+    PDF tag lines often bold the commas between italic tags:
+    ``◇◇ \\x04,\\x05 \\x06magical\\x07\\x04,\\x05 \\x06beautiful\\x07``.
+    Those bold commas must not stop the peel.
+    """
+    t = text or ""
+    while t:
+        # Plain diamonds / commas / whitespace
+        m = re.match(r"^[◇\s,]+", t)
+        if m:
+            t = t[m.end() :]
+            continue
+        # Bold- or italic-wrapped separator (comma, diamond, space, or empty)
+        m = re.match(r"^[\x04\x06]([◇\s,]*)[\x05\x07]", t)
+        if m:
+            t = t[m.end() :]
+            continue
+        break
+    return t
+
+
 def _arcana_tags_prose(text: str):
     """Peel a leading tag run (italic words, +N damage, etc.) off a line.
 
     Returns (tags_string, remaining_prose). The prose keeps its formatting.
+    Handles bold commas and inventory diamonds between italic tag words.
     """
-    t = re.sub(r"^[◇\s,]+", "", text)
+    t = _arcana_strip_tag_seps(text)
     tags: list[str] = []
     while t:
-        m = re.match(r"^\x06([^\x06\x07]*)\x07[\s,]*", t)
+        t = _arcana_strip_tag_seps(t)
+        if not t:
+            break
+        # Nested bold+italic tag: \x04\x06word\x07\x05
+        m = re.match(r"^\x04\x06([^\x06\x07]*)\x07\x05", t)
         if m:
-            tags.append(_defmt(m.group(1)).strip(" ,"))
-            t = t[m.end():]
+            bit = _defmt(m.group(1)).strip(" ,")
+            if bit:
+                tags.append(bit)
+            t = t[m.end() :]
             continue
-        m = re.match(r"^\+?\d+\s*(?:damage|piercing|armor|uses)\b[\s,]*", t)
+        m = re.match(r"^\x06([^\x06\x07]*)\x07", t)
         if m:
-            tags.append(m.group(0).strip(" ,"))
-            t = t[m.end():]
+            bit = _defmt(m.group(1)).strip(" ,")
+            if bit:
+                tags.append(bit)
+            t = t[m.end() :]
+            continue
+        m = re.match(r"^\+?\d+\s*(?:damage|piercing|armor|uses)\b", t)
+        if m:
+            tags.append(m.group(0).strip())
+            t = t[m.end() :]
             continue
         m = _ARCANA_TAG_WORD.match(t)
         if m:
             tags.append(m.group(1))
-            t = t[m.end():]
+            t = t[m.end() :]
             continue
         break
     tag_str = ", ".join(x for x in tags if x)
@@ -5173,13 +5212,13 @@ def structure_minor_arcana_html(
         if re.search(r"(you (?:can|either|must|need)|following|:|…|\.\.\.)\s*$", dl_last, re.I) or "you " in dl_last.lower():
             unlock_intro = desc_paras.pop()
 
-    fparts.append('<p class="arcana-face-label">Discovery</p>')
     if disc_name:
         did = anchors.add(disc_name)
         fparts.append(
-            f'<h3 id="{html.escape(did)}" class="arcana-discovery">'
-            f"{html.escape(disc_name)}</h3>"
+            _arcana_title_line(disc_name, "Front", tag="h3", hid=did)
         )
+    else:
+        fparts.append(_arcana_title_line(power, "Front", tag="h3"))
     if disc_tags:
         fparts.append(f'<p class="arcana-tags">{link(disc_tags)}</p>')
     for p in desc_paras:
@@ -5285,8 +5324,7 @@ def structure_minor_arcana_html(
     parts.append("</div>")
     if bparts:
         parts.append('<div class="arcana-face arcana-back-face">')
-        parts.append('<p class="arcana-face-label">Power</p>')
-        parts.append(f'<h2 class="arcana-power-name">{html.escape(power)}</h2>')
+        parts.append(_arcana_title_line(power, "Back", tag="h2"))
         if power_tags:
             parts.append(f'<p class="arcana-tags">{link(power_tags)}</p>')
         parts.extend(bparts)
@@ -5436,6 +5474,24 @@ def _arcana_content(raw: str) -> str:
     return raw
 
 
+def _arcana_title_line(
+    name: str,
+    face_label: str,
+    *,
+    tag: str = "h2",
+    hid: str | None = None,
+) -> str:
+    """Single-line arcana header: ``Name — DISCOVERY/POWER`` (sans-serif via CSS)."""
+    id_attr = f' id="{html.escape(hid)}"' if hid else ""
+    return (
+        f"<{tag}{id_attr} class=\"arcana-title-line\">"
+        f'<span class="arcana-title-name">{html.escape(name)}</span>'
+        f'<span class="arcana-title-sep" aria-hidden="true"> — </span>'
+        f'<span class="arcana-title-face">{html.escape(face_label)}</span>'
+        f"</{tag}>"
+    )
+
+
 def _arcana_named_move(text: str):
     """Parse "NAME [(tags)] [When you ...]" into (name, tags, trigger) or None."""
     m = BOLD_PREFIX_RE.match(text)
@@ -5457,14 +5513,13 @@ def _arcana_named_move(text: str):
 
 
 def _arcana_desc_tags(text: str):
-    """Split a description line into (tags, description); tags may be italic."""
-    t = re.sub(r"^[◇\s]+", "", text)
-    tags = ""
-    m = re.match(r"^\x06([^\x06\x07]*)\x07\s*", t)
-    if m and _is_pure_arcana_tag_line(_defmt(m.group(1))):
-        tags = _defmt(m.group(1)).strip(" ,")
-        t = t[m.end():]
-    return tags, t.strip()
+    """Split a description line into (tags, description).
+
+    Gear tags in the PDF often interleave italic words with roman numerals
+    (``, close, +1 damage, 1 piercing, messy, magical``). Peel the full run
+    via ``_arcana_tags_prose`` — a single leading italic span is not enough.
+    """
+    return _arcana_tags_prose(text)
 
 
 def structure_major_arcana_html(
@@ -5617,10 +5672,16 @@ def structure_major_arcana_html(
             if front and not desc_done:
                 t, desc = _arcana_desc_tags(_arcana_content(raw))
                 if t:
-                    tags = t
+                    tags = f"{tags}, {t}" if tags else t
                 if desc:
                     out.append(f"<p>{link(desc)}</p>")
-                desc_done = True
+                    desc_done = True
+                elif not t:
+                    # Neither tags nor residual prose — treat as description.
+                    out.append(f"<p>{link(_arcana_content(raw))}</p>")
+                    desc_done = True
+                # Pure tag line: keep desc_done False so a wrapped tag
+                # continuation (or the real description) is handled next.
                 i += 1
                 continue
             out.append(f"<p>{link(_arcana_content(raw))}</p>")
@@ -5644,8 +5705,7 @@ def structure_major_arcana_html(
     parts = [
         f'<div class="arcana-card arcana-major" id="{html.escape(hid)}">',
         '<div class="arcana-face arcana-front">',
-        '<p class="arcana-face-label">Front</p>',
-        f'<h2 class="arcana-power-name">{html.escape(power)}</h2>',
+        _arcana_title_line(power, "Front", tag="h2"),
     ]
     if tags:
         parts.append(f'<p class="arcana-tags">{link(tags)}</p>')
@@ -5653,7 +5713,7 @@ def structure_major_arcana_html(
     parts.append("</div>")
     if back_html.strip():
         parts.append('<div class="arcana-face arcana-back-face">')
-        parts.append('<p class="arcana-face-label">Back &mdash; Mysteries</p>')
+        parts.append(_arcana_title_line(power, "Back", tag="h2"))
         parts.append(back_html)
         parts.append("</div>")
     parts.append("</div>")
@@ -7609,8 +7669,24 @@ def main(argv: list[str] | None = None) -> None:
             "sections": section_blocks,
         }
         if card_preview_html:
+            # Card number lives outside the card on full pages (nav chrome);
+            # bake it into the preview HTML so hover popups show it too.
+            if art.get("number"):
+                hub_title = (
+                    "Minor Arcana"
+                    if art.get("arcana_type") == "minor"
+                    else "Major Arcana"
+                )
+                card_preview_html = (
+                    f'<span class="arcana-preview-no">'
+                    f"{html.escape(hub_title)} {art['number']}</span>\n"
+                    + card_preview_html
+                )
             previews[slug]["html"] = card_preview_html
             previews[slug]["kind"] = "arcana"
+            if art.get("number") is not None:
+                previews[slug]["number"] = art["number"]
+                previews[slug]["arcana_type"] = art.get("arcana_type") or ""
         (out / "pages" / f"{slug}.html").write_text(page_html, encoding="utf-8")
 
         search_text = html_to_search_text(body)
