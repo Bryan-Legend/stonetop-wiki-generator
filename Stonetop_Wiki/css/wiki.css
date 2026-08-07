@@ -307,6 +307,60 @@ html, body {
   white-space: nowrap;
 }
 
+/* --- Adventures (sheets under adventures/) --- */
+.toc li.nav-adventure > a {
+  font-weight: 600;
+}
+
+.adventure-list {
+  margin: 0.5rem 0 0;
+}
+.adventure-card {
+  break-inside: avoid;
+  margin: 0 0 1rem;
+  padding: 0 0 0.75rem;
+  border-bottom: 1px solid var(--rule);
+}
+.adventure-card:last-child {
+  border-bottom: none;
+}
+.adventure-card h2 {
+  margin-top: 0;
+}
+.adventure-card .adv-excerpt {
+  color: var(--muted, #6b6560);
+}
+.adventure-card .adv-variants,
+.adventure-card .adv-refs {
+  font-size: var(--text);
+  margin: 0.3rem 0 0;
+}
+.adventure-card .adv-refs {
+  color: var(--muted, #6b6560);
+}
+.adv-refs-label,
+.related-adventures .ra-label {
+  display: inline-block;
+  margin-right: 0.4rem;
+  font-family: var(--font-serif);
+  font-size: 0.85em;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--muted, #6b6560);
+}
+
+/* "Adventures · Vasilya's Grove" strip atop a referenced wiki page */
+.related-adventures {
+  margin: 0 0 0.65rem;
+  padding: 0.35rem 0.55rem;
+  font-size: var(--text);
+  background: var(--bg-elev);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius);
+  break-inside: avoid;
+}
+
 .main-wrap {
   flex: 1;
   min-width: 0;
@@ -1433,6 +1487,10 @@ li.check-item input.wiki-check:checked + span {
   padding: 1.25rem;
   color: var(--muted);
   font-size: var(--text);
+}
+.wiki-preview .pv-missing {
+  color: var(--muted);
+  font-style: italic;
 }
 
 

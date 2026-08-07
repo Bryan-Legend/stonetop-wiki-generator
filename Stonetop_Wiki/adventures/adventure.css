@@ -6,6 +6,7 @@
       --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
       --radius: 6px; --shadow: 0 8px 28px rgba(0,0,0,.45); --text: 13px;
       --nav-w: 13.5rem;
+      --map-w: 39rem;
     }
     html, body {
       height: auto !important;
@@ -61,6 +62,20 @@
       text-decoration: none;
     }
     .adv-nav .nav-title:hover { color: var(--link-hover); }
+    .adv-nav .nav-wiki-home {
+      display: block;
+      margin: -0.35rem 0 0.55rem;
+      padding: 0.15rem 0.4rem 0.45rem;
+      font-size: 0.78rem;
+      color: var(--muted);
+      text-decoration: none;
+      border: none;
+      border-bottom: 1px solid var(--rule);
+    }
+    .adv-nav .nav-wiki-home:hover {
+      color: var(--link-hover);
+      background: transparent;
+    }
     .adv-nav ul {
       list-style: none;
       margin: 0;
@@ -124,6 +139,51 @@
       margin-left: var(--nav-w);
       max-width: calc(48rem + var(--nav-w));
       padding: 1.25rem 1.5rem 2.5rem;
+    }
+    body.has-map .adv-main {
+      margin-right: var(--map-w);
+      max-width: none;
+    }
+
+    /* Right map sidebar (opt-in: body.has-map + aside.adv-map) */
+    .adv-map {
+      display: none;
+    }
+    body.has-map .adv-map {
+      display: block;
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: var(--map-w);
+      height: 100vh;
+      overflow-y: auto;
+      padding: 0.85rem 0.7rem 1.5rem;
+      background: var(--bg-elev);
+      border-left: 1px solid var(--rule);
+      z-index: 20;
+    }
+    .adv-map > h2 {
+      margin-top: 0;
+      font-size: 0.95rem;
+    }
+    .adv-map .statline {
+      font-size: 0.8rem;
+      margin: 0.35rem 0 0;
+    }
+    .site-map-wrap {
+      background: var(--accent-soft);
+      border: 1px solid var(--rule);
+      border-radius: var(--radius);
+      padding: 0.4rem;
+      margin: 0.35rem 0 0.45rem;
+      overflow-x: auto;
+    }
+    .site-map-svg {
+      display: block;
+      width: 100%;
+      max-width: none;
+      height: auto;
+      margin: 0 auto;
     }
 
     header {
@@ -291,14 +351,29 @@
     .hp-readout.is-down { color: var(--danger); }
     .hp-readout.is-full { color: var(--ok); }
 
-    footer {
-      margin-top: 1rem;
-      padding-top: 0.5rem;
+    footer,
+    footer.adv-credit {
+      margin-top: 1.5rem;
+      padding-top: 0.55rem;
       border-top: 1px solid var(--rule);
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       color: var(--muted);
+      font-style: italic;
     }
 
+    @media (max-width: 1100px) {
+      body.has-map .adv-main {
+        margin-right: 0;
+      }
+      body.has-map .adv-map {
+        position: relative;
+        width: 100%;
+        height: auto;
+        max-height: none;
+        border-left: none;
+        border-top: 1px solid var(--rule);
+      }
+    }
     @media (max-width: 800px) {
       .adv-layout { flex-direction: column; }
       .adv-nav {
@@ -310,6 +385,7 @@
         border-bottom: 1px solid var(--rule);
       }
       .adv-main { margin-left: 0; max-width: none; }
+      body.has-map .adv-main { margin-right: 0; }
       .adv-nav ul {
         display: flex;
         flex-wrap: wrap;
@@ -324,6 +400,15 @@
         --ok: #2d5a2d; --link: #4a3018; --danger: #8b3a2a;
       }
       .adv-nav, .dice-toast, .wiki-preview { display: none !important; }
+      body.has-map .adv-map {
+        position: relative;
+        width: auto;
+        height: auto;
+        max-width: 22rem;
+        border: 1px solid var(--rule);
+        break-inside: avoid;
+      }
+      body.has-map .adv-main { margin-right: 0; }
       .room { break-inside: avoid; }
       button.dice-roll {
         background: none; border: none; color: inherit;

@@ -25,7 +25,7 @@
     if (previewsPromise) return previewsPromise;
     // Load as a script so previews work over file:// (fetch of JSON often fails there).
     // Missing previews-data.js (e.g. adventure opened without a built wiki) → empty {}.
-    // Adventures may load wiki.js from static/ but set data-wiki-root to a built wiki.
+    // Adventures load wiki.js from ../js/ and set data-wiki-root to the wiki root.
     previewsPromise = new Promise(function (resolve) {
       function finish(obj) {
         previews =
@@ -634,6 +634,12 @@
     return "pages/" + slug + ".html";
   }
 
+  /** Adventure sheets live outside the wiki; their hrefs are wiki-root relative. */
+  function hrefFromRoot(href) {
+    var path = location.pathname.replace(/\\/g, "/");
+    return (/\/pages\/[^/]+\.html$/i.test(path) ? "../" : "") + href;
+  }
+
   function escapeHtmlSearch(s) {
     return String(s)
       .replace(/&/g, "&amp;")
@@ -744,12 +750,13 @@
         var titleHit = haystackHasTerms(titleHay, terms);
         var textHit = haystackHasTerms(textHay, terms);
         if (!titleHit && !textHit) continue;
-        matchSlugs[doc.slug] = true;
+        matchSlugs[String(doc.slug).toLowerCase()] = true;
         var rank = titleHit ? 0 : 1;
         // Prefer denser title matches
         if (titleHit && titleHay === terms.join(" ")) rank = -1;
         hits.push({
           slug: doc.slug,
+          href: doc.href || null,
           title: doc.title,
           book: doc.book,
           titleHit: titleHit,
@@ -774,7 +781,10 @@
         var a = li.querySelector(":scope > a");
         var href = a ? a.getAttribute("href") || "" : "";
         var slugMatch = href.match(/([^\/]+)\.html/i);
-        var slug = slugMatch ? slugMatch[1] : "";
+        // Adventures carry their index slug explicitly — their file name
+        // doesn't have to match it.
+        var slug = (a && a.getAttribute("data-nav-slug")) || "";
+        if (!slug) slug = slugMatch ? slugMatch[1].toLowerCase() : "";
         var titleText = (li.textContent || "").toLowerCase();
         var titleMatch = haystackHasTerms(titleText, terms);
         var contentMatch = !!(slug && matchSlugs[slug]);
@@ -831,13 +841,15 @@
             ? "Book I"
             : hit.book === "book2"
               ? "Book II"
-              : "";
+              : hit.book === "adventures"
+                ? "Adventure"
+                : "";
         if (hit.titleHit && hit.textHit) where += (where ? " · " : "") + "title + text";
         else if (hit.titleHit) where += (where ? " · " : "") + "title";
         else where += (where ? " · " : "") + "in text";
         html.push(
           '<a class="search-hit" href="' +
-            pageHrefFromSlug(hit.slug) +
+            (hit.href ? hrefFromRoot(hit.href) : pageHrefFromSlug(hit.slug)) +
             '">' +
             '<span class="search-hit-title">' +
             escapeHtmlSearch(hit.title) +

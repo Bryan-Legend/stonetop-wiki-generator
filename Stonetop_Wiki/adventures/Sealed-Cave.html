@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Sealed Cave</title>
+  <link rel="stylesheet" href="../css/wiki.css" />
+  <link rel="stylesheet" href="adventure.css" />
+  <style>
+    /* SVG theme only — layout is body.has-map + aside.adv-map in adventure.css */
+    .site-map-svg .map-edge {
+      fill: none;
+      stroke: var(--rule);
+      stroke-width: 2;
+    }
+    .site-map-svg .map-edge-tight {
+      stroke-dasharray: 4 3;
+    }
+    .site-map-svg .map-node {
+      fill: var(--bg-elev);
+      stroke: var(--accent);
+      stroke-width: 1.5;
+      transition: fill 0.12s ease, stroke 0.12s ease;
+    }
+    .site-map-svg .map-node-out {
+      stroke: var(--muted);
+    }
+    .site-map-svg .map-node-danger {
+      stroke: var(--danger);
+    }
+    .site-map-svg a:hover .map-node,
+    .site-map-svg a:focus .map-node {
+      fill: var(--accent-soft);
+      stroke: var(--link-hover);
+    }
+    .site-map-svg a:hover .map-node-danger,
+    .site-map-svg a:focus .map-node-danger {
+      stroke: var(--danger);
+    }
+    .site-map-svg .map-num {
+      fill: var(--accent);
+      font-family: var(--font-serif);
+      font-size: 11px;
+      font-weight: 700;
+      text-anchor: middle;
+      pointer-events: none;
+    }
+    .site-map-svg .map-label {
+      fill: var(--quote);
+      font-family: var(--font-sans);
+      font-size: 10px;
+      text-anchor: middle;
+      pointer-events: none;
+    }
+    .site-map-svg a:hover .map-label,
+    .site-map-svg a:focus .map-label {
+      fill: var(--ink);
+    }
+    .site-map-svg a:focus {
+      outline: none;
+    }
+    .site-map-svg a:focus .map-node {
+      stroke-width: 2.5;
+    }
+    .exits {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin: 0.35rem 0 0.5rem;
+    }
+    .exits a { margin-right: 0.15rem; }
+    .goals li { margin: 0.2rem 0; }
+  </style>
+</head>
+<body class="adventure has-map" data-wiki-root="../" data-hp-storage="sealed-cave-hp">
+<div class="adv-layout">
+
+  <nav class="adv-nav" aria-label="Adventure">
+    <a class="nav-title" href="#top">Sealed Cave</a>
+    <a class="nav-wiki-home" href="../index.html">← Wiki</a>
+    <span class="nav-label">Prep</span>
+    <ul>
+      <li><a href="#truth">Truth</a></li>
+      <li><a href="#hooks">Hooks</a></li>
+      <li><a href="#peacebond-rules">Peacebond (site)</a></li>
+      <li><a href="#map">Map</a></li>
+    </ul>
+    <span class="nav-label">Areas</span>
+    <ul>
+      <li><a href="#room-1">Brick Mouth</a></li>
+      <li><a href="#room-2">Outer Slope</a></li>
+      <li><a href="#room-3">Sapling Ridge</a></li>
+      <li><a href="#room-4">Cold Gallery</a></li>
+      <li><a href="#room-5">Glyph Hall</a></li>
+      <li><a href="#room-6">Root Grotto</a></li>
+      <li><a href="#room-7">The Still</a></li>
+      <li><a href="#room-8">Deep Crack</a></li>
+    </ul>
+    <span class="nav-label">Payoffs</span>
+    <ul>
+      <li><a href="#unlock-peacebond">Unlock Peacebond</a></li>
+      <li><a href="#glasbren-deal">Glasbren</a></li>
+      <li><a href="#homefront">Homefront</a></li>
+    </ul>
+    <span class="nav-label">Wiki</span>
+    <ul>
+      <li><a href="../pages/minor-peacebond.html#a-sealed-cave" class="wiki-link" data-slug="minor-peacebond" data-fragment="a-sealed-cave">Peacebond</a></li>
+      <li><a href="../pages/spirits-of-the-wild.html#glasbren" class="wiki-link" data-slug="spirits-of-the-wild" data-fragment="glasbren">Glasbren</a></li>
+      <li><a href="../pages/spirits-of-the-wild.html#communion" class="wiki-link" data-slug="spirits-of-the-wild" data-fragment="communion">Communion</a></li>
+    </ul>
+  </nav>
+
+  <div class="adv-main" id="top">
+
+<header>
+  <h1>The Sealed Cave</h1>
+  <p class="meta">
+    Hills above Stonetop ·
+    <a href="../pages/minor-peacebond.html#a-sealed-cave" class="wiki-link" data-slug="minor-peacebond" data-fragment="a-sealed-cave">Peacebond</a>
+    discovery ·
+    <a href="../pages/spirits-of-the-wild.html#glasbren" class="wiki-link" data-slug="spirits-of-the-wild" data-fragment="glasbren">Glasbren</a>
+  </p>
+  <nav class="links">
+    <a href="../pages/spirits-of-the-wild.html#the-brennauwed" class="wiki-link" data-slug="spirits-of-the-wild" data-fragment="the-brennauwed">Brennauwed</a> ·
+    <a href="../pages/spirits-of-the-wild.html#communion" class="wiki-link" data-slug="spirits-of-the-wild" data-fragment="communion">Communion</a> ·
+    <a href="../pages/death-and-the-undying.html#specter" class="wiki-link" data-slug="death-and-the-undying" data-fragment="specter">Specters</a> ·
+    <a href="../pages/homefront.html" class="wiki-link" data-slug="homefront">Homefront</a>
+  </nav>
+</header>
+
+<section id="truth">
+  <h2>Truth</h2>
+  <p>
+    High in the hills, a bricked-over mouth hides a cold gallery of the dead.
+    Looping glyphs on every wall are a
+    <a href="../pages/minor-peacebond.html" class="wiki-link" data-slug="minor-peacebond">peacebond</a>
+    — they sap the will to struggle. The bodies never fought each other; they lay down and stopped.
+  </p>
+  <p>
+    Many have wrong jaws, long teeth, claw-fingers. They were changing under a Thing Below’s touch
+    (infection, gift, or bargain). Someone — Folk wardens, or earlier Manmarchers who still knew the craft —
+    sealed them here so the hunger would sleep instead of spread. The brick is the door; the glyphs are the lock.
+  </p>
+  <p>
+    <a href="../pages/spirits-of-the-wild.html#glasbren" class="wiki-link" data-slug="spirits-of-the-wild" data-fragment="glasbren">Glasbren</a>
+    rooted a sapling into the ridge years ago. She likes the quiet and the mortals who come poking.
+    She flirts with Sven. She will trade truth for wonder, company, or a little mischief — not for iron and threats.
+  </p>
+  <div class="gm-line">
+    “The brick is cold even in summer. Wind dies at the threshold.
+    Inside, your hand forgets how to make a fist.”
+  </div>
+</section>
+
+<section id="hooks">
+  <h2>Hooks (pick what fits)</h2>
+  <ul class="goals">
+    <li><strong>Geralt’s discovery:</strong> he already knows the sealed cave is here — he wants the glyphs (Peacebond).</li>
+    <li><strong>Commune:</strong> ask Glasbren about the Wood, the Folk, lumber taboo aftermath, or a secret for the next plan.</li>
+    <li><strong>Homefront tool:</strong> peacebond the public house, a gate, a threshing floor — stop a fight before it starts.</li>
+    <li><strong>Shades:</strong> hunters hear weeping above the sheep-runs; something morose wants company or release.</li>
+    <li><strong>Plaque is separate:</strong> Geralt’s half-buried plaque (Thunderous Bellow) is not in this cave —
+      study it at home. Don’t force a merge.</li>
+  </ul>
+</section>
+
+<section id="peacebond-rules">
+  <h2>Site rule — peacebond</h2>
+  <p class="statline">
+    Active in underground areas (1, 4–8).
+    Outside (2, 3) normal.
+  </p>
+  <ul>
+    <li>When you <strong>attempt violence</strong> (or to deface glyphs), you hesitate.</li>
+    <li>If you <strong>will yourself to continue</strong>: lose
+      <button type="button" class="dice-roll" data-dice="1d4" title="Click to roll 1d4">1d4</button>
+      HP and roll +WIS.
+      <strong>10+</strong> go for it;
+      <strong>7–9</strong> act with disadvantage on violence (including damage);
+      <strong>6−</strong> fail and mark <em>dazed</em>.</li>
+    <li><strong>Ennui:</strong> after ~half a day inside without leaving, each PC rolls +WIS once.
+      10+ fine; 7–9 mark <em>miserable</em> or lose the will to finish a task today; 6− lie down among the dead until dragged out
+      (or until a friend spends a scene hauling them).</li>
+    <li><strong>Fire / bronze tools on brick:</strong> not “violence against people,” but chipping the seal can still trigger a hesitate beat
+      if they treat it like an assault on the ward.</li>
+  </ul>
+</section>
+
+<!-- ========== AREAS ========== -->
+
+<article class="room" id="room-1">
+  <h2>Brick Mouth</h2>
+  <span class="tag">Threshold</span>
+  <span class="tag">Entry</span>
+  <div class="gm-line">
+    “Kiln-brick flush with living rock, mortar gone grey. No door. No keyhole.
+    Cold bleeds through the joints even when the sun is high.”
+  </div>
+  <ul>
+    <li><strong>Open carefully (chisels, time):</strong> hours of work; no roll if patient. First who steps in feels the peacebond (describe; teach the hesitate rule).</li>
+    <li><strong>Force it (sledges, fire, Pull Together later with crew):</strong> open faster; on 6− or carelessness, a shade rides the dust out — soft move on the trail home later.</li>
+    <li><strong>Leave it sealed:</strong> they can still meet Glasbren on the ridge. No Peacebond unlock without going in.</li>
+    <li><strong>Re-brick when done:</strong> good sense. If left open for a season, sheep go missing one night and the public house fights end in shrugs, not blows (peacebond leaks; weird Homefront).</li>
+  </ul>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>Down the scree → <a href="#room-2">Outer Slope</a>:</em>
+    “Wind again. The sheep-runs and the village smoke below. Your fist remembers how to close.”
+  </div>
+  <div class="gm-line">
+    <em>Through the broken brick (once open) → <a href="#room-4">Cold Gallery</a>:</em>
+    “The cold deepens. Bodies rank the floor like sleepers, and the first loops of script crawl the walls.”
+  </div>
+</article>
+
+<article class="room" id="room-2">
+  <h2>Outer Slope</h2>
+  <span class="tag">Approach</span>
+  <div class="gm-line">
+    “The sheep-runs thin into scree and scrub. Wind cuts. Below, Stonetop is a thumb of stone and smoke.
+    Above, a dark rectangle of brick in the hillside — wrong against the rock.”
+  </div>
+  <ul>
+    <li><strong>Seek Insight / tracks:</strong> old boot-scuffs at the brick; green sapling path up the ridge; no recent large predators.</li>
+    <li><strong>Know Things (glyphs from afar):</strong> ward-work, not a tomb-for-kings. Peace-binding, if anyone has seen the like.</li>
+    <li><strong>Rush the brick without care:</strong> fine — but first breath inside hits harder (first peacebond hesitate has disadvantage).</li>
+  </ul>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>Up to the dark rectangle → <a href="#room-1">Brick Mouth</a>:</em>
+    “Brick flush with rock. Cold through the joints even in summer. No door. No keyhole.”
+  </div>
+  <div class="gm-line">
+    <em>Green path up the ridge → <a href="#room-3">Sapling Ridge</a>:</em>
+    “A young tree grips the stone. Leaves too green for the height. Something watches from the wood.”
+  </div>
+  <div class="gm-line">
+    <em>Village trail down:</em>
+    “Half a day to Stonetop. The hills close behind you.”
+  </div>
+</article>
+
+<article class="room" id="room-3">
+  <h2>Sapling Ridge</h2>
+  <span class="tag">Glasbren’s tree</span>
+  <span class="tag">Talk</span>
+  <div class="gm-line">
+    “A young tree grips the ridge like a hand in stone. Bark pale, leaves too green for the height.
+    Something watches from the wood — curious, not shy.”
+  </div>
+  <p class="statline">
+    <a href="../pages/spirits-of-the-wild.html#glasbren" class="wiki-link" data-slug="spirits-of-the-wild" data-fragment="glasbren">Glasbren</a>
+    tether · she can appear here or in
+    <a href="#room-6">Root Grotto</a>
+  </p>
+
+  <h3>If they approach respectfully</h3>
+  <ul>
+    <li>Offering (fresh water, a song, a new story, a pretty stone, news of the Wood) → she manifests (moving wood, beautiful).</li>
+    <li>No offering, but kind + curious → she may still show, especially if Sven is present.</li>
+    <li>Axes, fire, iron threats → roots tighten; she flees into the tree; next approach is cold.</li>
+  </ul>
+
+  <h3>Dialog (pick 1–2)</h3>
+  <div class="dialog-lines">
+    <div class="gm-line">
+      <em>(to Sven, soft)</em>
+      “You stand like you mean to hold the sky up. Don’t. It likes falling a little.”
+    </div>
+    <div class="gm-line">
+      “The cave sleeps because they made it forget how to fight. I like forgetful places. They’re quiet.”
+    </div>
+    <div class="gm-line">
+      “If you want secrets, bring wonder. If you want a fight, go somewhere that isn’t mine.”
+    </div>
+    <div class="gm-line">
+      <em>(post–Vasilya’s Grove)</em>
+      “The deep Wood smells less wrong. You did a loud thing. Tell me every detail. Slowly.”
+    </div>
+  </div>
+  <p>Deals and secrets → <a href="#glasbren-deal">Glasbren payoffs</a>. Stats only if they attack her tree or body.</p>
+
+  <h3>If forced to fight</h3>
+  <p class="statline">
+    HP 19 · Armor 2 (bark, no vitals) ·
+    <button type="button" class="dice-roll" data-dice="d8" title="Click to roll d8">d8</button>
+    raking fingers (hand, disadvantage) · stabbing useless · fire hurts ·
+    instinct: stretch, grow, experience life
+  </p>
+  <div class="enemy-block">
+    <div class="enemy-row" data-hp-id="glasbren" data-hp-max="19">
+      <div class="enemy-meta"><span class="enemy-name">Glasbren</span> (manifest)</div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+  </div>
+  <p>0 HP here ends manifestation only. Killing the <strong>sapling</strong> truly wounds her — she becomes a threat, spreads word through the Wood, and the cave loses its living friend.</p>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>Down the green path → <a href="#room-2">Outer Slope</a>:</em>
+    “Scree, wind, and the brick mouth dark in the hillside below.”
+  </div>
+  <div class="gm-line">
+    <em>Narrow chimney in the roots (packs off) → <a href="#room-6">Root Grotto</a>:</em>
+    “Stone tight as a sleeve. Roots scrape your shoulders. Then living wood in dead rock and the smell of sap.”
+  </div>
+</article>
+
+<article class="room" id="room-4">
+  <h2>Cold Gallery</h2>
+  <span class="tag">Bodies</span>
+  <span class="tag">Clues</span>
+  <div class="gm-line">
+    “Dozens of bodies on the stone floor, ranked like sleepers. Skin pale, dry, intact.
+    Overlarge teeth. Fingers tapering to claws. Few wounds. They just… stopped.”
+  </div>
+  <ul>
+    <li><strong>Examine bodies:</strong> Know Things / Seek Insight.
+      10+ = changing under a Thing Below; sealed so the change would idle.
+      7–9 = same, but a shade notices you and follows (see below).
+      6− = you lie down for a while (ennui beat now).</li>
+    <li><strong>Loot:</strong> clay beads, a bronze pin (Value 1), a child’s wooden bird. Taking treasures wakes a shade if you haven’t spoken kindly.</li>
+    <li><strong>Burn / desecrate:</strong> peacebond hesitate first. On success: smoke fills; 2–3 shades rise angry. On failure: you can’t light the brand.</li>
+  </ul>
+
+  <h3>Morose shades</h3>
+  <p class="statline">
+    Not a fight party unless forced.
+    <a href="../pages/death-and-the-undying.html#specter" class="wiki-link" data-slug="death-and-the-undying" data-fragment="specter">Specter</a>-ish ·
+    want company, confession, or release · melt at 0 HP · peacebond still applies to PCs attacking them
+  </p>
+  <div class="enemy-block">
+    <div class="enemy-row" data-hp-id="shade-1" data-hp-max="8">
+      <div class="enemy-meta"><span class="enemy-name">Shade 1</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="shade-2" data-hp-max="8">
+      <div class="enemy-meta"><span class="enemy-name">Shade 2</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="shade-3" data-hp-max="8">
+      <div class="enemy-meta"><span class="enemy-name">Shade 3</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+  </div>
+  <div class="dialog-lines">
+    <div class="gm-line">“We were so tired of wanting. Stay. Want less with us.”</div>
+    <div class="gm-line">“Don’t open the deep crack. That’s where the wanting starts again.”</div>
+    <div class="gm-line">“The tree-girl listens. We don’t mind her. She doesn’t make fists either.”</div>
+  </div>
+  <ul>
+    <li><strong>Talk / comfort:</strong> +CHA or honest story. 10+ shade rests; may answer one question about the seal.
+      7–9 answer, but clings to one PC (disadvantage on violence until they leave the cave).
+      6− PC marks <em>miserable</em>; shade follows home as a soft threat.</li>
+    <li><strong>Fight:</strong> peacebond rules. Damage chill
+      <button type="button" class="dice-roll" data-dice="d6" title="Click to roll d6">d6</button>
+      (ignores armor on a miss / hard move).</li>
+  </ul>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>Back to daylight → <a href="#room-1">Brick Mouth</a>:</em>
+    “The brick mouth brightens. Wind waits just beyond the threshold.”
+  </div>
+  <div class="gm-line">
+    <em>Deeper, where the loops tighten → <a href="#room-5">Glyph Hall</a>:</em>
+    “Walls written solid. Looking too long makes your shoulders drop.”
+  </div>
+  <div class="gm-line">
+    <em>Center passage → <a href="#room-7">The Still</a>:</em>
+    “A round chamber ahead. Sound dies. The torch leans inward, tired.”
+  </div>
+  <div class="gm-line">
+    <em>Low crawl between the bodies → <a href="#room-6">Root Grotto</a>:</em>
+    “Knees and elbows. Then roots pour through the ceiling like pale ropes.”
+  </div>
+</article>
+
+<article class="room" id="room-5">
+  <h2>Glyph Hall</h2>
+  <span class="tag">Study</span>
+  <span class="tag">Arcana</span>
+  <div class="gm-line">
+    “The walls are a script of loops — tight, repeated, almost musical.
+    Looking too long makes your shoulders drop. Your jaw unclenches whether you want it to or not.”
+  </div>
+  <p>
+    This is the dense core of the
+    <a href="../pages/minor-peacebond.html" class="wiki-link" data-slug="minor-peacebond">Peacebond</a>
+    discovery. Transcription procedure lives here →
+    <a href="#unlock-peacebond">Unlock Peacebond</a>.
+  </p>
+  <ul>
+    <li><strong>Quick read (minutes):</strong> Know Things — “these suppress violence; longer stay, tighter weave, stronger effect.”</li>
+    <li><strong>Copy a fragment and leave:</strong> enough for research at home, but unlock still needs days total (count work here or at the table in Stonetop with rubbings).</li>
+    <li><strong>Deface a panel:</strong> peacebond hesitate. Success = weaken site peacebond one step (violence becomes possible without roll in Gallery only — shades notice). Whole-site collapse only if they wreck
+      <a href="#room-7">The Still</a>.</li>
+  </ul>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>Back among the sleepers → <a href="#room-4">Cold Gallery</a>:</em>
+    “Bodies again. The cold is ordinary cold compared to the script-hall.”
+  </div>
+  <div class="gm-line">
+    <em>Where roots break the glyph-lines → <a href="#room-6">Root Grotto</a>:</em>
+    “Living wood through dead stone. Condensation beads. Sap and old cold.”
+  </div>
+  <div class="gm-line">
+    <em>Toward denser loops → <a href="#room-7">The Still</a>:</em>
+    “A plinth cut with the same script, denser than anywhere else. No bodies.”
+  </div>
+</article>
+
+<article class="room" id="room-6">
+  <h2>Root Grotto</h2>
+  <span class="tag">Glasbren</span>
+  <span class="tag">Talk</span>
+  <div class="gm-line">
+    “Roots pour through the ceiling like pale ropes, living wood in dead stone.
+    Condensation beads on them. The air smells of sap and old cold.”
+  </div>
+  <p>
+    Best place to
+    <a href="../pages/spirits-of-the-wild.html#communion" class="wiki-link" data-slug="spirits-of-the-wild" data-fragment="communion">commune</a>
+    without leaving the cave. She can walk her roots like a hall.
+  </p>
+  <ul>
+    <li><strong>Offering at the roots:</strong> same as ridge — story, water, novelty. She appears among the roots.</li>
+    <li><strong>Spirit-realm journey (Dagmar / ritual):</strong> Chart a Course through green-dark and still-water.
+      Challenges: get lost in “quiet,” exhaustion, a
+      <a href="../pages/death-and-the-undying.html#dool-spirit" class="wiki-link" data-slug="death-and-the-undying" data-fragment="dool-spirit">dool spirit</a>
+      that wants them to stop walking.
+      Success = audience with Glasbren on her terms (advantage on the deal).
+      Miss = wake in
+      <a href="#room-7">The Still</a>
+      with a shade holding their hand.</li>
+    <li><strong>Cut roots to “free” the cave:</strong> she screams through the stone; fight or flee; sapling on the ridge sickens.</li>
+  </ul>
+  <p>Dialog / deals → <a href="#glasbren-deal">Glasbren</a> (same list as ridge; reuse).</p>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>Where the walls take up the loops again → <a href="#room-5">Glyph Hall</a>:</em>
+    “Script returns, dense and musical. Your jaw unclenches whether you want it to or not.”
+  </div>
+  <div class="gm-line">
+    <em>Crawl out under the roots → <a href="#room-4">Cold Gallery</a>:</em>
+    “Bodies ranked like sleepers. Shades may notice you leave.”
+  </div>
+  <div class="gm-line">
+    <em>Along the root-wall → <a href="#room-7">The Still</a>:</em>
+    “Round chamber. Plinth. The densest loops in the cave.”
+  </div>
+  <div class="gm-line">
+    <em>Chimney up through the roots (packs off) → <a href="#room-3">Sapling Ridge</a>:</em>
+    “Daylight and wind. The young tree grips the ridge above you.”
+  </div>
+</article>
+
+<article class="room" id="room-7">
+  <h2>The Still</h2>
+  <span class="tag">Heart of the ward</span>
+  <div class="gm-line">
+    “A round chamber. No bodies — only a low stone plinth cut with the same loops, denser than anywhere else.
+    Sound dies. Even the torch flame leans inward, tired.”
+  </div>
+  <ul>
+    <li><strong>Meditate / listen:</strong> roll +WIS. 10+ clear vision of the sealing night (warders weeping as they brick the mouth).
+      7–9 same vision, mark <em>dazed</em> or <em>miserable</em>.
+      6− you stop caring about your mission for a scene; friends must haul you out or spend a bond-moment.</li>
+    <li><strong>Study here counts double</strong> toward
+      <a href="#unlock-peacebond">Peacebond unlock</a>
+      (half the days), but ennui checks are at disadvantage.</li>
+    <li><strong>Smash the plinth:</strong> peacebond hesitate (hard). If they succeed and wreck it: site peacebond ends in minutes;
+      shades rise in the Gallery, hungry now; Deep Crack exhales warm air. Homefront later: a brawl in Stonetop goes farther than it should (mirror).</li>
+  </ul>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>Out among the bodies → <a href="#room-4">Cold Gallery</a>:</em>
+    “The sleepers again. Sound returns a little, if you call it sound.”
+  </div>
+  <div class="gm-line">
+    <em>Into the written walls → <a href="#room-5">Glyph Hall</a>:</em>
+    “Loops on every surface. Transcription work lives here.”
+  </div>
+  <div class="gm-line">
+    <em>Where roots meet the plinth-room → <a href="#room-6">Root Grotto</a>:</em>
+    “Living wood. Glasbren’s hall under the hill.”
+  </div>
+  <div class="gm-line">
+    <em>Behind the plinth → <a href="#room-8">Deep Crack</a>:</em>
+    “A hairline split in the floor. Warm air. Wet iron and spoiled fruit.”
+  </div>
+</article>
+
+<article class="room" id="room-8">
+  <h2>Deep Crack</h2>
+  <span class="tag danger">Optional · bad idea</span>
+  <div class="gm-line">
+    “Behind the plinth, a hairline split in the floor. Warm air. A smell like wet iron and spoiled fruit.
+    Something below is not sleeping as well as the gallery.”
+  </div>
+  <ul>
+    <li><strong>Leave it:</strong> smart. Shades approve.</li>
+    <li><strong>Probe with bronze / light:</strong> Seek Insight. 10+ = a deeper infection still bound; don’t open.
+      7–9 = same, but the crack widens a finger.
+      6− = a pale hand (or root-like tendril) brushes the light; take
+      <button type="button" class="dice-roll" data-dice="1d6" title="Click to roll 1d6">1d6</button>
+      ignore armor; mark a wrongness (GM: soft Fomoraij / Thing Below portent later).</li>
+    <li><strong>Widen / dig:</strong> ends the mercy. Spawn 1–2 infected thralls climbing up (use a base human + wrong jaw/claws;
+      HP 12, Armor 1, d8 claws; peacebond still fights the PCs more than the thralls if the Still is intact).
+      Or soft-move a future threat: missing livestock, a villager with too-long teeth.</li>
+  </ul>
+  <p class="statline">Not a boss room. It’s a choice with teeth.</p>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>Back from the split → <a href="#room-7">The Still</a>:</em>
+    “The plinth. The cold quiet. The crack is behind you if you leave it alone.”
+  </div>
+</article>
+
+<!-- ========== PAYOFFS ========== -->
+
+<section id="unlock-peacebond">
+  <h2>Unlock — Peacebond</h2>
+  <p>
+    From the discovery card: learn the mysteries, but…
+  </p>
+  <ul>
+    <li>☐ It’ll take <strong>days of careful transcription</strong>, haunted by morose shades.</li>
+    <li>☐ You risk <strong>succumbing to the ennui</strong> of the place.</li>
+  </ul>
+  <p><strong>At the table:</strong></p>
+  <ol>
+    <li>One PC leads (usually Geralt). Others may Aid, keep watch, or feed shades stories so they don’t cling.</li>
+    <li>Each day of work: one shade scene (talk or soft haunt) + one ennui check if they sleep in the cave.
+      Work at home with rubbings = slower (weeks) but safer; still needs the days of care fictionally.</li>
+    <li>When both boxes are true in the fiction, they have
+      <a href="../pages/minor-peacebond.html" class="wiki-link" data-slug="minor-peacebond">Peacebond</a>:
+      mark a place with the glyphs; violence is suppressed while they remain.</li>
+  </ol>
+  <div class="deal">
+    Power reminder: attempt violence in a peacebonded area → hesitate → will yourself: lose
+    <button type="button" class="dice-roll" data-dice="1d4" title="Click to roll 1d4">1d4</button>
+    HP, roll +WIS (10+ act / 7–9 disadvantage / 6− fail + dazed).
+  </div>
+  <p class="statline">Best study sites: <a href="#room-5">Glyph Hall</a> · double progress at <a href="#room-7">The Still</a> (harder ennui).</p>
+</section>
+
+<section id="glasbren-deal">
+  <h2>Glasbren — secrets &amp; deals</h2>
+  <p class="statline">
+    Instinct: stretch, grow, experience life ·
+    Cost if follower: wonder and excitement ·
+    Loyalty starts at 2 if they give heart/loyalty ·
+    Meet at <a href="#room-3">Sapling Ridge</a> or <a href="#room-6">Root Grotto</a>
+  </p>
+  <p>
+    When they spend real time with her alone at her tree (ridge or grotto), roll +CHA:
+    <strong>7+</strong> clear debilities and she reveals a secret about the Great Wood;
+    <strong>7–9</strong> also pick 1: days pass unnoticed · you offend her (lose Loyalty) · her “family” wants words now.
+  </p>
+
+  <h3>Secrets she can give (pick what the table needs)</h3>
+  <ul>
+    <li>Where a rune-marked elder still stands (safe felling guidance / timber thread).</li>
+    <li>That the Folk once used peace-glyphs on more than caves — on roads, on marriage halls.</li>
+    <li>A true path past a troelloff, or a warning about the Maw.</li>
+    <li>Gossip: who in Stonetop has been leaving iron nails in young trees (and why that matters).</li>
+    <li>If asked about Hec’tumel / the seal: she felt the Wood ease when the grove was fixed; she wants stories, not worship.</li>
+  </ul>
+
+  <h3>Prices she likes</h3>
+  <ul>
+    <li>A day of pure novelty (market day in Marshedge described blow-by-blow; a new song; a dance).</li>
+    <li>Sven’s company without armor and without a quest voice.</li>
+    <li>A promise to protect her sapling if lumber crews come through the hills.</li>
+    <li>Not: blood, iron gifts, “serve me,” or burning anything green.</li>
+  </ul>
+</section>
+
+<section id="homefront">
+  <h2>Homefront payoffs</h2>
+  <ul>
+    <li><strong>Peacebond a place</strong> in Stonetop (public house, council stone, gate): fights fizzle; useful against whiskey-war tempers, cult knives, drunken fathers — and awkward when someone needs to butcher a hog or hang a thief.</li>
+    <li><strong>Glasbren as ally / follower:</strong> Wood news, soft intel, personal stakes if loggers threaten her tree.</li>
+    <li><strong>Left the cave open:</strong> weird calm leaks; or shades on the sheep-runs.</li>
+    <li><strong>Broke the Still / opened Deep Crack:</strong> portent clock for something infected under the hills.</li>
+    <li><strong>Re-bricked + good terms with Glasbren:</strong> the hills stay quiet; she may warn them before the next Wood wrongness.</li>
+  </ul>
+  <div class="gm-line">
+    “You come down from the hills with cold still in your sleeves.
+    The village sounds louder than you remember — arguments, hammers, a dog.
+    For a moment you almost miss the quiet.”
+  </div>
+</section>
+
+  </div><!-- .adv-main -->
+
+<aside class="adv-map" id="map" aria-label="Site map">
+<h2>Map</h2>
+  <div class="site-map-wrap">
+    <svg class="site-map-svg" viewBox="0 0 420 480" role="img" aria-label="Sealed Cave site map">
+      <title>Sealed Cave</title>
+      <!-- Edges (drawn under nodes) -->
+      <line class="map-edge" x1="160" y1="58" x2="100" y2="110" />   <!-- 3→2 -->
+      <line class="map-edge" x1="160" y1="130" x2="240" y2="130" />  <!-- 2→1 -->
+      <line class="map-edge" x1="300" y1="148" x2="300" y2="200" />  <!-- 1→5 side -->
+      <line class="map-edge" x1="280" y1="148" x2="140" y2="200" />  <!-- 1→4 -->
+      <line class="map-edge" x1="180" y1="219" x2="240" y2="219" />  <!-- 4→5 -->
+      <line class="map-edge" x1="120" y1="238" x2="120" y2="290" />  <!-- 4→7 -->
+      <line class="map-edge" x1="150" y1="238" x2="270" y2="290" />  <!-- 4→6 crawl -->
+      <line class="map-edge" x1="300" y1="238" x2="300" y2="290" />  <!-- 5→6 -->
+      <line class="map-edge" x1="180" y1="309" x2="240" y2="309" />  <!-- 7→6 -->
+      <line class="map-edge" x1="120" y1="328" x2="210" y2="380" />  <!-- 7→8 -->
+      <!-- Chimney: 3 ↔ 6 (dashed) -->
+      <path class="map-edge map-edge-tight" d="M 270 40 C 380 80, 390 240, 360 300" fill="none" />
+      <text x="400" y="190" class="map-label" style="font-size:8px;fill:var(--muted)">chimney</text>
+
+      <!-- 3 Sapling Ridge -->
+      <a href="#room-3">
+        <rect class="map-node map-node-out" x="150" y="20" width="120" height="38" rx="6" />
+        <text class="map-label" x="210" y="44">Sapling Ridge</text>
+      </a>
+      <!-- 2 Outer Slope -->
+      <a href="#room-2">
+        <rect class="map-node map-node-out" x="40" y="110" width="120" height="38" rx="6" />
+        <text class="map-label" x="100" y="134">Outer Slope</text>
+      </a>
+      <!-- 1 Brick Mouth -->
+      <a href="#room-1">
+        <rect class="map-node" x="240" y="110" width="120" height="38" rx="6" />
+        <text class="map-label" x="300" y="134">Brick Mouth</text>
+      </a>
+      <!-- 4 Cold Gallery -->
+      <a href="#room-4">
+        <rect class="map-node" x="60" y="200" width="120" height="38" rx="6" />
+        <text class="map-label" x="120" y="224">Cold Gallery</text>
+      </a>
+      <!-- 5 Glyph Hall -->
+      <a href="#room-5">
+        <rect class="map-node" x="240" y="200" width="120" height="38" rx="6" />
+        <text class="map-label" x="300" y="224">Glyph Hall</text>
+      </a>
+      <!-- 7 The Still -->
+      <a href="#room-7">
+        <rect class="map-node" x="60" y="290" width="120" height="38" rx="6" />
+        <text class="map-label" x="120" y="314">The Still</text>
+      </a>
+      <!-- 6 Root Grotto -->
+      <a href="#room-6">
+        <rect class="map-node" x="240" y="290" width="120" height="38" rx="6" />
+        <text class="map-label" x="300" y="314">Root Grotto</text>
+      </a>
+      <!-- 8 Deep Crack -->
+      <a href="#room-8">
+        <rect class="map-node map-node-danger" x="150" y="380" width="120" height="38" rx="6" />
+        <text class="map-label" x="210" y="404">Deep Crack</text>
+      </a>
+    </svg>
+  </div>
+  <p class="statline">
+    Half-day from Stonetop. Village trail via <a href="#room-2">Outer Slope</a>.
+    Chimney (dashed) is packs-off tight.
+  </p>
+</aside>
+
+</div><!-- .adv-layout -->
+
+<div id="wiki-preview" class="wiki-preview" hidden></div>
+<div id="dice-toast" class="dice-toast" hidden></div>
+<script src="../js/wiki.js"></script>
+<script src="adventure.js"></script>
+</body>
+</html>

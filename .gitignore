@@ -1,8 +1,14 @@
-# Generated wiki site
-Stonetop_Wiki/
+# Book-derived wiki content (Stonetop text/art — do not redistribute)
+Stonetop_Wiki/pages/
+Stonetop_Wiki/index.html
+Stonetop_Wiki/js/previews-data.js
+Stonetop_Wiki/js/search-index.js
+Stonetop_Wiki/images/maps/
+
+# Legacy build folder name
 Book_II_Wiki/
 
-# Source PDFs and campaign assets (not redistributed)
+# Source PDFs and campaign map sheets (not redistributed)
 *.pdf
 Maps/
 maps/

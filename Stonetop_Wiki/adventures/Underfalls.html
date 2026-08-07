@@ -1,0 +1,1100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Underfalls</title>
+  <link rel="stylesheet" href="../css/wiki.css" />
+  <link rel="stylesheet" href="adventure.css" />
+  <style>
+    /* SVG theme only — layout is body.has-map + aside.adv-map in adventure.css */
+    .site-map-svg .map-edge {
+      fill: none;
+      stroke: var(--rule);
+      stroke-width: 2;
+    }
+    .site-map-svg .map-edge-fae {
+      stroke: var(--link);
+      stroke-dasharray: 4 3;
+    }
+    .site-map-svg .map-node {
+      fill: var(--bg-elev);
+      stroke: var(--accent);
+      stroke-width: 1.5;
+      transition: fill 0.12s ease, stroke 0.12s ease;
+    }
+    .site-map-svg .map-node-out {
+      stroke: var(--muted);
+    }
+    .site-map-svg .map-node-fae {
+      stroke: var(--link);
+    }
+    .site-map-svg .map-node-danger {
+      stroke: var(--danger);
+    }
+    .site-map-svg a:hover .map-node,
+    .site-map-svg a:focus .map-node {
+      fill: var(--accent-soft);
+      stroke: var(--link-hover);
+    }
+    .site-map-svg a:hover .map-node-danger,
+    .site-map-svg a:focus .map-node-danger {
+      stroke: var(--danger);
+    }
+    .site-map-svg a:hover .map-node-fae,
+    .site-map-svg a:focus .map-node-fae {
+      stroke: var(--link-hover);
+    }
+    .site-map-svg .map-num {
+      fill: var(--accent);
+      font-family: var(--font-serif);
+      font-size: 11px;
+      font-weight: 700;
+      text-anchor: middle;
+      pointer-events: none;
+    }
+    .site-map-svg .map-label {
+      fill: var(--quote);
+      font-family: var(--font-sans);
+      font-size: 10px;
+      text-anchor: middle;
+      pointer-events: none;
+    }
+    .site-map-svg a:hover .map-label,
+    .site-map-svg a:focus .map-label {
+      fill: var(--ink);
+    }
+    .site-map-svg a:focus {
+      outline: none;
+    }
+    .site-map-svg a:focus .map-node {
+      stroke-width: 2.5;
+    }
+  </style>
+</head>
+<body class="adventure has-map" data-wiki-root="../" data-hp-storage="underfalls-hp">
+<div class="adv-layout">
+
+  <nav class="adv-nav" aria-label="Adventure">
+    <a class="nav-title" href="#top">Underfalls</a>
+    <a class="nav-wiki-home" href="../index.html">← Wiki</a>
+    <span class="nav-label">Prep</span>
+    <ul>
+      <li><a href="#truth">Truth</a></li>
+      <li><a href="#map">Map</a></li>
+      <li><a href="#gate-keys">Gate keys</a></li>
+      <li><a href="#kit">What they need</a></li>
+      <li><a href="#fae-rule">Fae prices &amp; debts</a></li>
+      <li><a href="#hush">Hush-of-Snow</a></li>
+    </ul>
+    <span class="nav-label">Travel</span>
+    <ul>
+      <li><a href="#travel">Chart a Course</a></li>
+      <li><a class="nav-sub" href="#travel-pass">Barrier Pass</a></li>
+      <li><a class="nav-sub" href="#travel-dhaar">Dhaar valley</a></li>
+    </ul>
+    <span class="nav-label">Areas</span>
+    <ul>
+      <li><a href="#node-1">Prayer-Flag Stair</a></li>
+      <li><a href="#node-2">Vigil’s Cloister</a></li>
+      <li><a href="#node-3">The Ice Falls</a></li>
+      <li><a href="#node-4">Hall of Chants</a></li>
+      <li><a href="#node-5">Apes’ Hoard</a></li>
+      <li><a href="#node-6">Cistern Cave</a></li>
+      <li><a href="#node-7">Gate of Quiet</a></li>
+      <li><a href="#node-8">Stilled Meadow</a></li>
+      <li><a href="#node-9">Reliquary</a></li>
+      <li><a href="#node-10">Vault of Quiet</a></li>
+    </ul>
+    <span class="nav-label">Payoffs</span>
+    <ul>
+      <li><a href="#burial-steps">Burial steps</a></li>
+      <li><a href="#hectumel-offer">Hec’tumel’s offer</a></li>
+      <li><a href="#reward">If the Codex goes down</a></li>
+    </ul>
+    <span class="nav-label">Wiki</span>
+    <ul>
+      <li><a href="../pages/major-hectumel-codex.html" class="wiki-link" data-slug="major-hectumel-codex">Hec’tumel Codex</a></li>
+      <li><a href="../pages/major-norubas-ice-sphere.html" class="wiki-link" data-slug="major-norubas-ice-sphere">Noruba’s Ice Sphere</a></li>
+      <li><a href="../pages/fae.html#the-bear-of-winter" class="wiki-link" data-slug="fae" data-fragment="the-bear-of-winter">Bear of Winter</a></li>
+      <li><a href="../pages/fae.html#haggle" class="wiki-link" data-slug="fae" data-fragment="haggle">Haggle</a></li>
+      <li><a href="../pages/fae.html#the-white-billies" class="wiki-link" data-slug="fae" data-fragment="the-white-billies">White Billies</a></li>
+      <li><a href="../pages/rime-lords.html#tulpa" class="wiki-link" data-slug="rime-lords" data-fragment="tulpa">Tulpa</a></li>
+      <li><a href="../pages/rime-lords.html#dark-ice" class="wiki-link" data-slug="rime-lords" data-fragment="dark-ice">Dark ice</a></li>
+      <li><a href="../pages/rime-lords.html#a-column-of-ice" class="wiki-link" data-slug="rime-lords" data-fragment="a-column-of-ice">A column of ice</a></li>
+      <li><a href="../pages/the-whitefang-mountains.html#fortress-monasteries" class="wiki-link" data-slug="the-whitefang-mountains" data-fragment="fortress-monasteries">Fortress-monasteries</a></li>
+    </ul>
+  </nav>
+
+  <div class="adv-main" id="top">
+
+<header>
+  <h1>Underfalls</h1>
+  <p class="meta">
+    <strong>A working Rime Lord shrine</strong> ·
+    hanging valley under the ice falls in the
+    <a href="../pages/the-whitefang-mountains.html" class="wiki-link" data-slug="the-whitefang-mountains">Whitefang Mountains</a>,
+    two days east of
+    <a href="../pages/barrier-pass.html" class="wiki-link" data-slug="barrier-pass">Barrier Pass</a>
+    · 10 nodes, one major arcanum
+  </p>
+  <nav class="links">
+    <a href="../pages/major-hectumel-codex.html" class="wiki-link" data-slug="major-hectumel-codex">Codex</a> ·
+    <a href="../pages/rime-lords.html" class="wiki-link" data-slug="rime-lords">Rime Lords</a> ·
+    <a href="../pages/fae.html" class="wiki-link" data-slug="fae">Fae</a> ·
+    <a href="../pages/major-norubas-ice-sphere.html" class="wiki-link" data-slug="major-norubas-ice-sphere">Ice Sphere</a>
+  </nav>
+</header>
+
+<section id="truth">
+  <h2>Truth</h2>
+  <p>
+    Some things cannot be destroyed. The
+    <a href="../pages/major-hectumel-codex.html" class="wiki-link" data-slug="major-hectumel-codex">Hec’tumel Codex</a>
+    is one: copper does not burn, and the
+    <a href="../pages/the-things-below.html#hectumel-pale-serpent" class="wiki-link" data-slug="the-things-below" data-fragment="hectumel-pale-serpent">Pale Serpent</a>
+    only needs the next pair of hands. What cannot be unmade can still be <em>stilled</em>. The
+    <a href="../pages/rime-lords.html" class="wiki-link" data-slug="rime-lords">Rime Lords</a>
+    froze pockets of the world where nothing rots, nothing dreams, and nothing calls out;
+    <a href="../pages/rime-lords.html#dark-ice" class="wiki-link" data-slug="rime-lords" data-fragment="dark-ice">dark ice</a>
+    is a wall even a spirit cannot cross. People still carry great evils north and leave them here.
+  </p>
+  <p>
+    <strong>Underfalls</strong> is a working stasis-vault under a frozen waterfall — lamps lit, floors swept —
+    tended without a break by <strong>the Vigil</strong>: nine mountain-folk who took the Rime Lord discipline and never left.
+    The
+    <a href="../pages/rime-lords.html#tulpa" class="wiki-link" data-slug="rime-lords" data-fragment="tulpa">tulpas</a>
+    that guard it are dangerous the way a mill-wheel is dangerous: they are <em>working</em>.
+  </p>
+  <p>
+    Deep winter opens the shrine’s cistern cave as one of the mouths of
+    <a href="../pages/fae.html#the-bear-of-winter" class="wiki-link" data-slug="fae" data-fragment="the-bear-of-winter">the Bear of Winter’s</a>
+    domain. One of his retinue camps there every year the drifts hold:
+    <strong>Hush-of-Snow</strong>. She waits at the only door that opens for her, charming to the nine keepers,
+    ready for whoever climbs the stair with something they can no longer keep.
+  </p>
+  <p>
+    Underfalls takes deliveries — things too dangerous to keep and too durable to destroy.
+    Some of it is the best hoard in the north, and none of it can be stolen: Fae cannot cross the vault threshold;
+    a thing like this has to be <em>given</em>. Most winters nobody comes. When someone does, Hush is already at the door.
+  </p>
+  <h3>How she knows what’s coming <span class="tag">answer this when they ask</span></h3>
+  <p class="statline">
+    She rarely knows a month ahead. Often she only knows a day out. Pick what fits the trail they left —
+    and let them work out <em>how</em> she heard. That is the first real handle they get on her.
+  </p>
+  <ul>
+    <li><strong>Carried unwrapped:</strong> the plates dream loudly, and everything with a nose for the arcane between
+      here and Dhaar has been having the same dream. She followed the dream to the stair.</li>
+    <li><strong>Word at Barrier Pass / Dhaar:</strong> a fortress-monastery is a noisy place, and Hush buys news the way
+      other people buy bread (a song; a boy’s middle name). Somebody sold her the shape of travellers on the road.</li>
+    <li><strong>The Vigil paid her news</strong> (without meaning to). They have been buying her politeness in small things
+      since the first snow. One of those things was gossip. Dorji knows he did it (<a href="#node-8">the Stilled Meadow</a>).</li>
+    <li><strong>Wrapped well, no word out:</strong> she simply <em>is</em> at her camp, as she is every winter —
+      and works out what they carry from how they behave at the cistern. Her advantage is patience, not prophecy.</li>
+  </ul>
+  <p>
+    She never claims foresight. Asked directly she is delighted to explain, at length —
+    every explanation is also an advertisement for what she can do for <em>them</em>.
+  </p>
+  <div class="gm-line">
+    “You can’t burn it, you can’t drown it, and you already know what happens to the one who keeps it.
+    But there’s cold up north that stops things. Old cold, with people still minding it.
+    Carry it up, ask them nicely, and walk home lighter.”
+  </div>
+</section>
+
+<section id="gate-keys">
+  <h2>Three keys to <a href="#node-7">the Gate of Quiet</a></h2>
+  <p class="statline">Any one works.</p>
+  <ul>
+    <li><strong>The word</strong> <em>Sthira</em> — <a href="#node-4">Hall of Chants</a>, or study the
+      <a href="#node-10">Vault</a> floor-runes (column-of-ice craft).</li>
+    <li><strong>The Vigil’s token</strong>, a bronze tally given at <a href="#node-2">the Cloister</a> if they’re honest about what they carry.</li>
+    <li><strong>Hush’s leave</strong>, bought at <a href="#node-6">the Cistern</a>. Cheapest at the table, most expensive later.</li>
+    <li><em>Or force it.</em> The Warden is a made thing and can be broken. The Vigil will never forgive it.</li>
+  </ul>
+  <h3>Hush-of-Snow travels by snowdrift</h3>
+  <p>
+    She can show up at <strong>any room, once</strong>, whenever it would be interesting — sitting on the stair, walking
+    the meadow, waiting in a room they already cleared. Use her early. She never strikes first.
+    She only fights at <a href="#node-10">the Vault</a>, when the rite actually starts.
+  </p>
+</section>
+
+<section id="kit">
+  <h2>Before you leave</h2>
+  <ul>
+    <li><strong>Cold kit:</strong> warm clothes, fuel, climbing rope. No fuel = every camp costs a provision or a debility.</li>
+    <li><strong>Iron.</strong> Few pilgrims bring it to a holy mountain — and iron is the one thing
+      Hush and her Billies genuinely fear
+      (<a href="../pages/fae.html#lore" class="wiki-link" data-slug="fae" data-fragment="lore">Fae lore</a>).
+      A plain iron nail is worth more up here than a sword.</li>
+    <li><strong>Gifts.</strong> The Vigil takes no coin. They take salt, ink, lamp oil, and news. Bring some and <a href="#node-2">the Cloister</a> opens like a door.</li>
+    <li><strong>Whatever they bury, wrap it.</strong> Unwrapped on the mountain, a living evil (Codex plates, a bound spirit,
+      a curse that still speaks) gets a soft move each night — dreams, whispers, frost-writing.</li>
+    <li><strong>Do not work the thing on the mountain.</strong> Casting from the Codex (or anything similar) above Dhaar is a shout.
+      The Vigil closes the shrine to them; Hush raises her price one step.</li>
+  </ul>
+</section>
+
+<section id="fae-rule">
+  <h2>Fae prices &amp; debts — run it like this</h2>
+  <p class="statline">
+    Pressure is <strong>obligation</strong> — promises and prices. Use
+    <a href="../pages/fae.html#haggle" class="wiki-link" data-slug="fae" data-fragment="haggle">HAGGLE</a>
+    whenever they dicker with Hush or her Billies.
+  </p>
+  <ul>
+    <li>Every favour she does them has a price, and she is happy to let them name it later.
+      “Later” is how Fae eat.</li>
+    <li><strong>Hush’s ladder.</strong> Each time they take her help, refuse her, or insult her, move one step down —
+      and tell them where they are: <em>(1) she is charmed → (2) she is owed → (3) she is impatient →
+      (4) she is offended.</em> At 4 she calls the Billies at <a href="#node-10">the Vault</a>, and she names one PC’s promise out loud in front of the Vigil.</li>
+    <li><strong>Iron in hand changes the conversation</strong> — she will not be threatened, she will simply leave and
+      raise the price. Iron in a <em>wound</em> is what ends her.</li>
+    <li>The pressure is debt, not curse or transformation. The worst thing that happens here is that someone
+      <em>agrees</em> to something.</li>
+  </ul>
+</section>
+
+<section id="hush">
+  <h2>Hush-of-Snow <span class="tag">the antagonist</span></h2>
+  <p class="statline">
+    Fae, large, magical, devious, hoarder · of
+    <a href="../pages/fae.html#the-bear-of-winter" class="wiki-link" data-slug="fae" data-fragment="the-bear-of-winter">the Bear of Winter’s</a>
+    retinue · Instinct: <em>to be owed</em>
+  </p>
+  <p>
+    A tall woman built out of drift-snow and good manners, in a coat of white goat-hide, who leaves no prints.
+    Sometimes a white hind at the edge of sight. She is unfailingly warm, remembers everyone’s name and their
+    children’s names, and is never in a hurry. She has been here since the first snow, and she is going home with
+    something.
+  </p>
+  <div class="enemy-block">
+    <div class="enemy-row" data-hp-id="hush" data-hp-max="22">
+      <div class="enemy-meta">
+        <span class="enemy-name">Hush-of-Snow</span>
+        Armor 4 (resilience, ice) · <strong>0 vs iron</strong> ·
+        <button type="button" class="dice-roll" data-dice="1d10+2" title="Click to roll 1d10+2">d10+2</button>
+        (reach, forceful, grabby) · weave snow and glamour · call the Billies · be somewhere else · never strikes first
+      </div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+  </div>
+  <p class="statline">
+    Same tracker wherever she appears. <strong>She cannot cross the vault threshold</strong> (<a href="#node-10">the Vault</a>) — that is the whole
+    shape of the climax.
+  </p>
+  <h3>What she offers (escalating)</h3>
+  <ul>
+    <li><strong>First:</strong> passage, warmth, a guide through the shrine, the Gate opened. Small prices. Charming.</li>
+    <li><strong>Then:</strong> she will take the Codex off their hands entirely and swear it will never be read again
+      — which is <em>true</em>. She will not swear it will never be lent.</li>
+    <li><strong>Last (her real ask, when she is out of patience or they refuse the Codex):</strong>
+      a <em>true name</em> — not a nickname. Someone living that a PC loves or is bound to: child, spouse, parent, dog.
+      She phrases it as a trinket for her hoard: <em>“Only to keep. I won’t call them. I won’t hurt them.”</em>
+      <strong>What that means:</strong> Fae who hold a true name can find that person, speak into their dreams, bind a promise to them,
+      or sell the name on. She may not use it <em>today</em>. She will own it forever. That is the price.</li>
+  </ul>
+</section>
+
+<section class="room" id="travel">
+  <h2>Travel — Chart a Course</h2>
+  <p class="statline">
+    Stonetop → Highway → Foothills → Barrier Pass (5 days) → Dhaar valley (2 days) → the falls.
+    Run <strong>2 stops</strong>. One hard choice each.
+  </p>
+
+  <h3 id="travel-pass">1. Barrier Pass</h3>
+  <div class="gm-line">
+    “The pass is a wall, and the wall has a gate that hasn’t opened for southerners in living memory.
+    Above it, prayer-flags snap over cliff-houses, and something you can’t quite see keeps pace with you along the parapet.”
+  </div>
+  <ul>
+    <li><strong>Ask the road to Underfalls:</strong> Parley. Tell the truth and they give the road, a warning
+      (<em>“the drifts are open this year — do not eat anything you did not carry up”</em>), and a letter to the Vigil
+      that makes <a href="#node-2">the Cloister</a> friendly on sight.</li>
+    <li><strong>Lie:</strong> they give a road a day longer that comes out at <a href="#node-3">the Ice Falls</a> instead of <a href="#node-1">the Stair</a>.</li>
+    <li><strong>Skip the Pass:</strong> no letter, no warning. The first person who offers them food up here is Hush.</li>
+  </ul>
+
+  <h3 id="travel-dhaar">2. Dhaar valley</h3>
+  <div class="gm-line">
+    “Terraced barley under snow and a dozen roofs. Every lintel has a nail hammered into it, cold iron,
+    driven deep — and the newest one is very new.”
+  </div>
+  <ul>
+    <li><strong>Ask about the nails:</strong> a white lady has been walking the valley since the first snow.
+      She is polite. She has bought two things from them already: a song, and a boy’s middle name.
+      Nobody will say which boy.</li>
+    <li><strong>Ask for a guide:</strong> old <strong>Lhamo</strong> will walk them to the stair for lamp oil, and tell them
+      the Vigil are nine and count everything.</li>
+    <li><strong>Take iron from a lintel:</strong> the valley will let them, unhappily. It is the single best decision
+      they can make and they will not know why for two days.</li>
+  </ul>
+</section>
+
+<article class="room" id="node-1">
+  <h2>Prayer-Flag Stair</h2>
+  <span class="tag">Way in</span>
+  <span class="tag danger">Fight</span>
+  <div class="gm-line">
+    “A stair of cut stone climbs the headwall, swept clear this morning by somebody.
+    Rotted prayer-flags hang across it in ropes — and the drifts to either side are lumpy, and breathing.”
+  </div>
+
+  <h3>Fight — ice drakes</h3>
+  <p class="statline">
+    A flock of
+    <a href="../pages/the-whitefang-mountains.html#ice-drake" class="wiki-link" data-slug="the-whitefang-mountains" data-fragment="ice-drake">ice drakes</a>
+    · Armor 0 ·
+    <button type="button" class="dice-roll" data-dice="1d4" title="Click to roll 1d4">1d4</button>
+    freezing mist (close, area, reload) · they spook, they don’t hunt
+  </p>
+  <div class="enemy-block">
+    <div class="enemy-row" data-hp-id="drake-1" data-hp-max="3">
+      <div class="enemy-meta"><span class="enemy-name">Drake 1</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="drake-2" data-hp-max="3">
+      <div class="enemy-meta"><span class="enemy-name">Drake 2</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="drake-3" data-hp-max="3">
+      <div class="enemy-meta"><span class="enemy-name">Drake 3</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="drake-4" data-hp-max="3">
+      <div class="enemy-meta"><span class="enemy-name">Drake 4</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="drake-5" data-hp-max="3">
+      <div class="enemy-meta"><span class="enemy-name">Drake 5</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+  </div>
+  <ul>
+    <li><strong>Kill the flock:</strong> loud. The Vigil comes out to see who is shouting on their stair — <a href="#node-2">the Cloister</a> opens
+      cool and formal instead of warm.</li>
+    <li><strong>Walk through slow:</strong> Defy Danger +DEX or +WIS. The flock lifts off downhill and nobody knows they’re here.</li>
+    <li><strong>Loot them:</strong> a full flock renders to a ◇ jar of ice drake oil (Value 1 up here) — and it is
+      <em>exactly</em> the gift the Vigil wants.</li>
+    <li><strong>Hush is sitting on the top step</strong> if this is where you want to introduce her. She helps with the drakes.
+      That help is a price.</li>
+  </ul>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>Up through the gate-arch → <a href="#node-2">Cloister</a>:</em> “The steps end at an arch with no gate in it, and beyond, a swept courtyard,
+    lamplight behind a window of oiled hide, and someone in grey standing very still, watching you arrive.”
+  </div>
+  <div class="gm-line">
+    <em>West along the headwall → <a href="#node-3">The Ice Falls</a>:</em> “A goat-track cuts away west under the drifts toward a roaring you can feel
+    in your boots — and then a wall of green-black ice four storeys high, with the roar stopped inside it.”
+  </div>
+</article>
+
+<article class="room" id="node-2">
+  <h2>The Vigil’s Cloister</h2>
+  <span class="tag">Talk / the token</span>
+  <div class="gm-line">
+    “Cells around a swept square. Nine bowls on a shelf, nine cloaks on nine pegs, one of them very old and never taken down.
+    A woman with a shaved head is scraping ice off a step that has no ice on it, and she does not stop when you come in.”
+  </div>
+  <p class="statline">
+    <strong>The Vigil</strong> — nine living disciples of the Rime Lord tradition
+    (<a href="../pages/the-whitefang-mountains.html#fortress-monasteries" class="wiki-link" data-slug="the-whitefang-mountains" data-fragment="fortress-monasteries">order</a>,
+    not a fortress). Master <strong>Dorji</strong> (blind, 80s), <strong>Tashi</strong> (the step-scraper, speaks for them),
+    six adepts, one novice: <strong>Nobu</strong>, fourteen, desperate for news of anywhere else.
+  </p>
+  <div class="enemy-block">
+    <div class="enemy-row" data-hp-id="vigil-adept" data-hp-max="12">
+      <div class="enemy-meta">
+        <span class="enemy-name">Adept</span> (×6, only if it comes to that)
+        Armor 1 · staff
+        <button type="button" class="dice-roll" data-dice="1d8" title="Click to roll 1d8">d8</button>
+        (close, forceful) · disarm, bind, carry out — <em>they do not kill</em>
+      </div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="vigil-nobu" data-hp-max="6">
+      <div class="enemy-meta">
+        <span class="enemy-name">Nobu</span>
+        <a href="../pages/the-whitefang-mountains.html#novice" class="wiki-link" data-slug="the-whitefang-mountains" data-fragment="novice">novice</a>
+        · hesitates, balks, flinches · will absolutely follow them home
+      </div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+  </div>
+  <p>
+    They often know what is being carried before anyone says it — Dorji has spirit-sight and no manners about it.
+    They are not shocked. Things are brought here to be put down. There is a
+    <em>procedure</em>, and the procedure is the point.
+  </p>
+  <ul>
+    <li><strong>Ask properly (Parley, or the Barrier Pass letter):</strong> they give the <strong>bronze tally</strong> —
+      the Gate token, Key 2 — and the shape of the rite. Gifts of salt, ink, or lamp oil make this automatic.</li>
+    <li><strong>Ask what it costs:</strong> nothing. But one of them comes down with them and watches, and if the visitors
+      does anything to the shrine, that witness is what the mountain remembers.</li>
+    <li><strong>Warn them about the white lady:</strong> Dorji’s face changes for the first time. They have been feeding her
+      at the cistern all winter because turning her away costs more. That is the first honest fear in the place.</li>
+    <li><strong>Push past / draw steel:</strong> six adepts, staves, nets. They aim to disarm and carry out, not kill.
+      Losing means waking up outside, unhurt, with the shrine shut. Winning means the shrine is open and
+      <em>every tulpa inside now treats them as vermin</em> (Nodes 7, 9 and 10 hostile on sight).</li>
+  </ul>
+  <h3>Dialog (pick 1–2)</h3>
+  <div class="dialog-lines">
+    <div class="gm-line">“You brought it up the stair unwrapped, didn’t you. No — don’t. I can hear the answer.”</div>
+    <div class="gm-line">“We are nine. We were nine when my teacher came and nine when hers did. Nothing here is dying, southerner. That’s the whole discipline.”</div>
+    <div class="gm-line">“Put it down and you may never take it up again. That is not a warning. That is the offer.”</div>
+    <div class="gm-line"><em>(Nobu, later, alone)</em> “Is it true there’s a lake down there so big you can’t see the far side? — Don’t tell Tashi I asked.”</div>
+  </div>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>Back out under the arch → <a href="#node-1">Prayer-Flag Stair</a>:</em> “The wind has already filled your footprints on the steps. Somebody is watching you leave.”
+  </div>
+  <div class="gm-line">
+    <em>The chapel door, north → <a href="#node-4">Hall of Chants</a>:</em> “Under a lintel carved with a closed eye, a dark doorway breathes out air warmer than the yard,
+    and from inside, faint and steady, a hundred voices holding one note.”
+  </div>
+  <div class="gm-line">
+    <em>The store-room stair, west → <a href="#node-5">Apes’ Hoard</a>:</em> “Down two flights past sacks of barley to a door standing open —
+    which Tashi says has been open since the apes decided it was theirs, and no, the Vigil will not be discussing it.”
+  </div>
+</article>
+
+<article class="room" id="node-3">
+  <h2>The Ice Falls</h2>
+  <span class="tag">Way in</span>
+  <span class="tag">Climb / spirit</span>
+  <div class="gm-line">
+    “The waterfall stopped mid-fall a long time ago — a curtain of green-black ice, and the daylight through it is the colour of a bruise.
+    Behind it, a dry hollow, and the ice is carved with names, smallest at the bottom, layered deep.”
+  </div>
+  <p class="statline">
+    A
+    <a href="../pages/spirits-of-the-wild.html#cold-spirit" class="wiki-link" data-slug="spirits-of-the-wild" data-fragment="cold-spirit">cold spirit</a>
+    lives in the falls — patient, bitter, dislikes exuberance, and has opinions about everyone in this valley.
+    It does not attack. It <em>tells</em>.
+  </p>
+  <ul>
+    <li><strong>Climb the face:</strong> Defy Danger +STR/+DEX, or rope-work and a real plan. Miss =
+      <button type="button" class="dice-roll" data-dice="1d6" title="Click to roll 1d6">1d6</button>
+      and dangling. This is the way in for anyone avoiding the front door.</li>
+    <li><strong>Talk to the spirit (offer stillness — sit, shut up, wait):</strong> it will answer three things.
+      It knows: the white lady sleeps in the cistern; the Vigil are frightened of her; the vault door does not open for Fae,
+      and she knows it, and she is not trying to open it.</li>
+    <li><strong>Be loud, chip the ice, take a souvenir:</strong> the spirit freezes their water, their food and one held weapon.
+      Nothing is destroyed. Everything is <em>inconvenient</em>.</li>
+  </ul>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>Down the goat-track east → <a href="#node-1">Prayer-Flag Stair</a>:</em> “The flags come back into view below you, and the swept stair, and whoever is standing at the top of it.”
+  </div>
+  <div class="gm-line">
+    <em>The sluice channel, behind the curtain → <a href="#node-4">Hall of Chants</a>:</em> “A cut stone channel that once fed the shrine, dry now, sloping into the mountain —
+    and out of it, warm as breath, a hundred voices holding one note.”
+  </div>
+  <div class="gm-line">
+    <em>The plunge basin, below the ice → <a href="#node-6">Cistern Cave</a>:</em> “Under the frozen fall the basin has gone hollow, and a drift has piled against a cave-mouth
+    that is deeper than the mountain has any business being. There are goat-tracks going in. None coming out.”
+  </div>
+</article>
+
+<article class="room" id="node-4">
+  <h2>Hall of Chants</h2>
+  <span class="tag">Key 1 — the word</span>
+  <div class="gm-line">
+    “A long hall, and the chant is in your chest before your ears catch up — a hundred voices, none of them here.
+    The pillars are carved with mouths. Pass a mouth and its part of the chant gets louder.”
+  </div>
+  <p class="statline">
+    A
+    <a href="../pages/rime-lords.html#thoughtform" class="wiki-link" data-slug="rime-lords" data-fragment="thoughtform">thoughtform</a>
+    — not real, but real enough. No attack, no HP, no malice. It has been reciting the same instruction for centuries.
+    The instruction contains the stilling word, <strong><em>Sthira</em></strong>
+    (the same command-word craft as
+    <a href="../pages/rime-lords.html#a-column-of-ice" class="wiki-link" data-slug="rime-lords" data-fragment="a-column-of-ice">a column of ice</a>).
+  </p>
+  <h3>Getting the word</h3>
+  <ul>
+    <li><strong>10+:</strong> they hold it and its use — spoken at a <em>made</em> thing, it stops it dead for one exchange.
+      Also the line the Warden wants: <em>“nothing out.”</em></li>
+    <li><strong>7–9:</strong> the word, but rough. First use each scene, roll
+      <button type="button" class="dice-roll" data-dice="1d6" title="Click to roll 1d6">1d6</button>
+      — 4+ it takes.</li>
+    <li><strong>6−:</strong> they mishear a syllable. It will fail once, at the worst moment, and they will not know why.</li>
+  </ul>
+  <p>
+    Advantage for: spirit-sight, Rime Lord script, the Vigil’s teaching (<a href="#node-2">the Cloister</a>), or one PC who will sit down and
+    <em>listen</em> for an hour. Smashing a mouth-pillar ends that voice permanently — the Vigil will hear the gap in the
+    chant from the courtyard, and Master Dorji will weep, and that is worse than being attacked.
+  </p>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>South, under the closed-eye lintel → <a href="#node-2">Cloister</a>:</em> “Cold clean air, a swept square, and nine bowls on a shelf.”
+  </div>
+  <div class="gm-line">
+    <em>Up the sluice channel → <a href="#node-3">The Ice Falls</a>:</em> “The chant thins behind you and the roar that isn’t moving gets louder ahead,
+    until you step out under a wall of standing water.”
+  </div>
+  <div class="gm-line">
+    <em>The pushed-out wall-block, behind the last pillar → <a href="#node-5">Apes’ Hoard</a>:</em> “A gap where a block was shoved out from the far side.
+    White hair caught on the stone, and a smell like a wet dog that has been eating flowers.”
+  </div>
+  <div class="gm-line">
+    <em>The Long Stair, end of the hall → <a href="#node-7">Gate of Quiet</a>:</em> “Steps going down into a cold with teeth, and at the bottom,
+    a blue light that does not flicker, and something seated in it that has not moved in your lifetime.”
+  </div>
+</article>
+
+<article class="room" id="node-5">
+  <h2>The Apes’ Hoard</h2>
+  <span class="tag">Block / talk</span>
+  <span class="tag danger">Fight if pressed</span>
+  <div class="gm-line">
+    “A vaulted store-room, every surface stacked: finger-bones sorted by size, scraps of writing flattened under stones,
+    and at the centre, on a folded blanket, chips of purple ice laid out like a meal nobody is eating.”
+  </div>
+  <p class="statline">
+    3
+    <a href="../pages/the-whitefang-mountains.html#mountain-ape" class="wiki-link" data-slug="the-whitefang-mountains" data-fragment="mountain-ape">mountain apes</a>
+    + 1 alpha · they do <strong>not</strong> attack first · they will die for the hoard · the Vigil have quietly let them stay for forty years
+  </p>
+  <div class="enemy-block">
+    <div class="enemy-row" data-hp-id="ape-1" data-hp-max="6">
+      <div class="enemy-meta"><span class="enemy-name">Ape 1</span> Armor 1 ·
+        <button type="button" class="dice-roll" data-dice="1d8+2" title="Click to roll 1d8+2">d8+2</button> (reach, grabby)</div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="ape-2" data-hp-max="6">
+      <div class="enemy-meta"><span class="enemy-name">Ape 2</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="ape-3" data-hp-max="6">
+      <div class="enemy-meta"><span class="enemy-name">Ape 3</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="ape-alpha" data-hp-max="12">
+      <div class="enemy-meta"><span class="enemy-name">Alpha</span> large · Armor 1 ·
+        <button type="button" class="dice-roll" data-dice="1d8+3" title="Click to roll 1d8+3">d8+3</button> · never leaves the hoard</div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+  </div>
+  <p>
+    <strong>In the hoard:</strong> a
+    <a href="../pages/rime-lords.html#a-dark-ice-knife" class="wiki-link" data-slug="rime-lords" data-fragment="a-dark-ice-knife">dark ice knife</a>,
+    a disciple’s wax tablet naming the vault below — and, sitting on top of the purple chips where anyone can see it,
+    <strong>a single iron nail</strong>. Nobody in this valley leaves iron lying around by accident.
+  </p>
+  <ul>
+    <li><strong>Trade:</strong> they collect bones, writing, and dark ice. Offer any of the three and the alpha lets one item go.
+      A page of southern writing buys the knife outright.</li>
+    <li><strong>Steal:</strong> Defy +DEX at disadvantage. Miss = the whole band, and they trail the thief through the site,
+      hitting once per node at the worst moment.</li>
+    <li><strong>Kill them:</strong> it works, and it is four animals dying over a bone collection in a holy house.
+      Tashi will not speak to them again.</li>
+  </ul>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>Up the store-room stair → <a href="#node-2">Cloister</a>:</em> “Barley sacks, then daylight, then the swept square and somebody counting you as you come up.”
+  </div>
+  <div class="gm-line">
+    <em>Through the pushed-out block → <a href="#node-4">Hall of Chants</a>:</em> “Back into the chant, and it has not noticed you were gone.”
+  </div>
+  <div class="gm-line">
+    <em>The apes’ own crawl, down and north → <a href="#node-6">Cistern Cave</a>:</em> “A belly-crawl that comes out on a lip of rock above still black water —
+    and a warmth down there that has no business being warm, and someone humming.”
+  </div>
+</article>
+
+<article class="room" id="node-6">
+  <h2>The Cistern Cave</h2>
+  <span class="tag">Way in</span>
+  <span class="tag">Key 3 — her leave</span>
+  <span class="tag danger">Fight if refused badly</span>
+  <div class="gm-line">
+    “The shrine’s cistern: still black water under a dome of natural rock. Except the far wall is gone.
+    Where it should be there is a snowdrift, indoors, going back further than the mountain allows —
+    and past it, firelight, and goats laughing, if goats could laugh.”
+  </div>
+  <p class="statline">
+    This is a mouth of
+    <a href="../pages/fae.html#the-bear-of-winter" class="wiki-link" data-slug="fae" data-fragment="the-bear-of-winter">the Bear of Winter’s</a>
+    domain, open while the drifts hold. Hush camps at the threshold with a handful of
+    <a href="../pages/fae.html#the-white-billies" class="wiki-link" data-slug="fae" data-fragment="the-white-billies">White Billies</a>.
+    Standard
+    <a href="../pages/fae.html#fae-domain-hazards" class="wiki-link" data-slug="fae" data-fragment="fae-domain-hazards">domain hazards</a>
+    apply past the drift — <strong>do not let them go in</strong> unless they insist, and then let time do what time does.
+  </p>
+  <div class="enemy-block">
+    <div class="enemy-row" data-hp-id="billy-1" data-hp-max="7">
+      <div class="enemy-meta"><span class="enemy-name">Billy 1</span> Armor 4 · <strong>0 vs iron</strong> ·
+        <button type="button" class="dice-roll" data-dice="1d6+2" title="Click to roll 1d6+2">d6+2</button> headbutt (forceful)</div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="billy-2" data-hp-max="7">
+      <div class="enemy-meta"><span class="enemy-name">Billy 2</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="billy-3" data-hp-max="7">
+      <div class="enemy-meta"><span class="enemy-name">Billy 3</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="billy-4" data-hp-max="7">
+      <div class="enemy-meta"><span class="enemy-name">Billy 4</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+  </div>
+  <p>
+    The Billies are drinking, dancing, and grieving something they will not name. They will pull PCs into the revel
+    — that is their whole move, and it costs a night and a debility. Armor 4 makes them nearly unkillable with bronze
+    and trivial with a nail. <strong>This is a good place to show what iron does.</strong>
+  </p>
+  <ul>
+    <li><strong>Deal with Hush here:</strong>
+      <a href="../pages/fae.html#haggle" class="wiki-link" data-slug="fae" data-fragment="haggle">HAGGLE</a>.
+      She will open the Gate for them (Key 3), guide them, even carry a lamp. Every yes moves her ladder one step.</li>
+    <li><strong>Refuse politely:</strong> costs nothing. She smiles and says she’ll ask again lower down. She will.</li>
+    <li><strong>Refuse rudely / draw iron:</strong> the Billies stand up. She does not — she watches how they fight
+      and adjusts her price accordingly.</li>
+    <li><strong>Steal from her camp:</strong> the fastest way to Ladder 4 and the only way to make her genuinely dangerous early.</li>
+  </ul>
+  <h3>Dialog (pick 1–2)</h3>
+  <div class="dialog-lines">
+    <div class="gm-line">“Sit down, you’re cold. No — sit down. I’m not going to ask for anything while you’re cold. That would be rude.”</div>
+    <div class="gm-line">“Those nine upstairs will put your book in a hole and forget it, and in a hundred years someone will dig it up because it is in a hole.
+      I would keep it. I keep things beautifully.”</div>
+    <div class="gm-line">“I don’t want your hand, or your years, or your firstborn. Aunties in stories want those.
+      I want a <em>true name</em> — someone you love. Just to keep in my pocket. I won’t call them. You have several.”</div>
+    <div class="gm-line"><em>(If they mention the Vigil’s fear)</em> “Frightened? Of me? I’ve been fed at that door all winter.
+      Ask yourself what they think they owe me, and why.”</div>
+    <div class="gm-line"><em>(Asked how she knew they were coming)</em> “Knew? Dear, I’ve wintered in this hole eleven times.
+      Nobody climbs to the top of the world in the snow to look at the <em>view</em>. You all come up carrying something,
+      and you all come down lighter, and I am simply the only one who ever asks what you’re putting down.”</div>
+  </div>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>Up through the plunge basin → <a href="#node-3">The Ice Falls</a>:</em> “Out under the frozen fall, into daylight the colour of a bruise, and the wind takes the humming away.”
+  </div>
+  <div class="gm-line">
+    <em>The apes’ crawl, up and south → <a href="#node-5">Apes’ Hoard</a>:</em> “A belly-crawl that ends in a room that smells of wet fur, and something big and white going very still when it hears you.”
+  </div>
+  <div class="gm-line">
+    <em>The siphon, down under the water → <a href="#node-7">Gate of Quiet</a>:</em> “The old overflow, half-choked with ice, dropping into the dark under the shrine.
+    Two lungfuls of black water, and then blue light and a seated shape that turns its head as you surface.”
+  </div>
+</article>
+
+<article class="room" id="node-7">
+  <h2>The Gate of Quiet</h2>
+  <span class="tag">Gate — three keys</span>
+  <span class="tag danger">Fight if forced</span>
+  <div class="gm-line">
+    “A gate of dark ice, and standing in it a shape made of cold — a tall seated figure that is not sitting on anything.
+    It performs the same courtesy it always has, and it performs it now, for you.”
+  </div>
+  <p class="statline">
+    <strong>The Warden</strong> —
+    <a href="../pages/rime-lords.html#tulpa" class="wiki-link" data-slug="rime-lords" data-fragment="tulpa">tulpa</a>,
+    purpose <em>protection</em>, tethered to the gate, cannot leave it. Not mad, not corrupt: <em>literal</em>.
+  </p>
+  <div class="enemy-block">
+    <div class="enemy-row" data-hp-id="warden-gate" data-hp-max="17">
+      <div class="enemy-meta">
+        <span class="enemy-name">The Warden</span>
+        Armor 2 (0 while stilled) ·
+        <button type="button" class="dice-roll" data-dice="1d10" title="Click to roll 1d10">d10</button>
+        cold (reach, forceful) · unmanifest and reform · never pursues
+      </div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+  </div>
+  <h3>Its three questions</h3>
+  <ol>
+    <li>“What do you carry?” — <em>the truth, or it knows.</em></li>
+    <li>“Who sent you?” — <em>“no one” is acceptable. Naming the Vigil without the tally is not.</em></li>
+    <li>“What will you take out?” — <em>“nothing” is the answer it wants. See <a href="#node-9">the Reliquary</a>.</em></li>
+  </ol>
+  <ul>
+    <li><strong>Key 1 — the word:</strong> <em>Sthira</em> stops it for an exchange; walk past. It remembers, and it will not help
+      them in <a href="#node-10">the Vault</a>.</li>
+    <li><strong>Key 2 — the bronze tally:</strong> show it and the questions are a formality. It opens the gate <em>and</em>
+      names the vault’s rite in order, which is worth a whole roll later.</li>
+    <li><strong>Key 3 — her leave:</strong> Hush walks them to the gate and says one word into it. It opens.
+      The Warden does not like this and says so, in a voice like a door: <em>“That is not yours to give.”</em></li>
+    <li><strong>Force:</strong> it fights, reforming twice at 6 HP unless stilled. Breaking it means the gate cannot be shut behind them —
+      and in <a href="#node-10">the Vault</a>, Hush’s Billies can come through.</li>
+  </ul>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>Back up the Long Stair → <a href="#node-4">Hall of Chants</a>:</em> “Up out of the teeth-cold into the warm hum, and the mouths take up their parts as you pass.”
+  </div>
+  <div class="gm-line">
+    <em>Back up the siphon → <a href="#node-6">Cistern Cave</a>:</em> “Black water, two lungfuls, and then firelight and goats and somebody who says
+    ‘back so soon?’ without looking up.”
+  </div>
+  <div class="gm-line">
+    <em>Through the gate → <a href="#node-8">Stilled Meadow</a>:</em> “The cold changes character — not hostile now, just <em>total</em> —
+    and past the arch there is light, and grass, and, impossibly, the smell of cut flowers.”
+  </div>
+</article>
+
+<article class="room" id="node-8">
+  <h2>The Stilled Meadow</h2>
+  <span class="tag">Judgement</span>
+  <div class="gm-line">
+    “A meadow in high spring, under a mountain, in winter. Grass to the knee, rhododendron in flower, a bee stopped
+    mid-air over a bloom. Nothing here has moved in living memory — except the old man sitting in it,
+    who is blind, and who says your names in the order you came through the gate.”
+  </div>
+  <p class="statline">
+    <strong>Master Dorji</strong> is here (he came down ahead of them, and no, they will not learn how), or
+    <strong>Tenzi</strong>, a
+    <a href="../pages/the-whitefang-mountains.html#shantyara" class="wiki-link" data-slug="the-whitefang-mountains" data-fragment="shantyara">shantyara</a>,
+    if they made an enemy of the Vigil. Either way: this is where somebody looks at them and decides.
+  </p>
+  <div class="enemy-block">
+    <div class="enemy-row" data-hp-id="tenzi" data-hp-max="18">
+      <div class="enemy-meta">
+        <span class="enemy-name">Tenzi</span> (only if the Vigil were wronged)
+        Armor 2 · orichalcum sword
+        <button type="button" class="dice-roll" data-dice="1d10+2" title="Click to roll 1d10+2">d10+2</button>
+        w/ advantage (2 piercing) · counters what she sees coming
+      </div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+  </div>
+  <p>
+    Dorji’s question is not whether they may bury it. It is <strong>what they promised the white lady on the way down</strong>,
+    and whether they intend to keep it. He can hear a Fae bargain on a person the way you can smell smoke.
+  </p>
+  <ul>
+    <li><strong>Tell him everything:</strong> he tells them the thing the Vigil has never said aloud —
+      the Vigil have been paying Hush all winter in small things, and they are out of small things.
+      If they bury the Codex and refuse her, <em>she will be the shrine’s problem, not theirs</em>, and Dorji
+      is going to let that happen, and he wants them to know he chose it.</li>
+    <li><strong>Lie about a bargain:</strong> he says nothing, and the meadow’s stillness stops applying to the liar —
+      their breath fogs, alone in the whole valley, for the rest of the adventure. Everyone can see it.</li>
+    <li><strong>Ask him to do the rite instead:</strong> he cannot. Eighty years of stillness means his will can’t
+      grip a thing that <em>wants</em>. That is the whole reason a shrine full of masters needs three loud southerners.</li>
+    <li><strong>Wronged the Vigil?</strong> Tenzi is here instead, and she is not interested in the Codex.
+      She is interested in whether they leave.</li>
+  </ul>
+  <h3>Dialog (pick 1–2)</h3>
+  <div class="dialog-lines">
+    <div class="gm-line">“Sit. The flowers don’t mind. Nothing here minds anything — that is what we made it for.”</div>
+    <div class="gm-line">“You said yes to her. No, don’t look at him. <em>You</em> said yes to her. What did you say yes to?”</div>
+    <div class="gm-line">“We have fed her since the first snow because turning her away costs more than feeding her.
+      That was cowardice. I have had all winter to name it.”</div>
+    <div class="gm-line">“Put it under and she will stay, and she will ask us, and we will have nothing left that is small.
+      Do it anyway.”</div>
+  </div>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>Back through the arch → <a href="#node-7">Gate of Quiet</a>:</em> “Grass, then no grass. The seated shape has not moved and asks nothing on the way out.”
+  </div>
+  <div class="gm-line">
+    <em>The low north door → <a href="#node-9">Reliquary</a>:</em> “A door of dark ice with a hundred names cut into it, and cold coming out of it like water from a jug.”
+  </div>
+  <div class="gm-line">
+    <em>The stone throat under the grass → <a href="#node-10">Vault of Quiet</a>:</em> “Steps going down into a dark the meadow’s light won’t enter.
+    Nothing is waiting at the bottom. That is somehow worse.”
+  </div>
+</article>
+
+<article class="room" id="node-9">
+  <h2>The Reliquary</h2>
+  <span class="tag danger">Fight</span>
+  <span class="tag">Major arcanum</span>
+  <div class="gm-line">
+    “Nine alcoves, nine kneeling figures of clear grey ice, hands cupped and empty — all but the ninth.
+    Hers holds a torc of fine metal with a fist-sized ball of dark ice set in it, and looking at it makes the room feel further away.”
+  </div>
+  <p class="statline">
+    <a href="../pages/major-norubas-ice-sphere.html" class="wiki-link" data-slug="major-norubas-ice-sphere">Noruba’s Ice Sphere</a>
+    — a major arcanum, held in trust here, not lost. The kneelers are
+    <a href="../pages/rime-lords.html#tulpa" class="wiki-link" data-slug="rime-lords" data-fragment="tulpa">tulpas</a>
+    made in the shape of nine dead disciples — working guardians, not restless dead. It is simply <em>not theirs</em>.
+  </p>
+  <div class="enemy-block">
+    <div class="enemy-row" data-hp-id="kneeler-1" data-hp-max="11">
+      <div class="enemy-meta"><span class="enemy-name">Kneeler 1</span> Armor 2 (0 while stilled) ·
+        <button type="button" class="dice-roll" data-dice="1d8" title="Click to roll 1d8">d8</button> (grabby) · <em>disarms and puts back</em></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="kneeler-2" data-hp-max="11">
+      <div class="enemy-meta"><span class="enemy-name">Kneeler 2</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="kneeler-3" data-hp-max="11">
+      <div class="enemy-meta"><span class="enemy-name">Kneeler 3</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="kneeler-4" data-hp-max="11">
+      <div class="enemy-meta"><span class="enemy-name">Kneeler 4</span> <em>(and five more, same stats, if they persist)</em></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+  </div>
+  <ul>
+    <li><strong>Lift it and they stand.</strong> Their whole purpose is “nothing out.” They grab, disarm, and carry the Sphere
+      back to the ninth pair of hands. They will not stop and they will not kill.</li>
+    <li><strong><em>Sthira</em>:</strong> stops all nine for one exchange — enough to reach the stair.</li>
+    <li><strong>Ask the Vigil for it (<a href="#node-2">the Cloister</a> or <a href="#node-8">the Stilled Meadow</a>) first:</strong> Dorji will say yes, actually — the Sphere is a tool and
+      tools are for using — <em>if</em> they bury the Codex first. Promised, then earned. No fight at all.</li>
+    <li><strong>Take it by force:</strong> nine ice statues of dead monks, broken up in a holy house, while their order stands
+      upstairs. It works. Tenzi is at the top of the stair afterwards.</li>
+  </ul>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>Back through the low door → <a href="#node-8">Stilled Meadow</a>:</em> “The flowers are exactly as you left them, and the old man is facing the door already.”
+  </div>
+  <div class="gm-line">
+    <em>The inner stair, down → <a href="#node-10">Vault of Quiet</a>:</em> “A short flight cut straight down through the ice, and at the bottom a round room
+    with a cupped hollow in the floor, open, and waiting, and lit by nothing.”
+  </div>
+</article>
+
+<article class="room" id="node-10">
+  <h2>The Vault of Quiet: burial + boss</h2>
+  <span class="tag danger">Climax</span>
+  <div class="gm-line">
+    “A round chamber walled in dark ice. In the floor a cyst of it stands open like a cupped hand,
+    set in a ring of rune-etched stone — the same craft as those lonely meadow pillars further north.
+    It is clean. It is swept. Somebody comes down here every week to sweep a room almost no one enters.”
+  </div>
+  <p class="statline">
+    This is a worked vault built on the same principle as
+    <a href="../pages/rime-lords.html#a-column-of-ice" class="wiki-link" data-slug="rime-lords" data-fragment="a-column-of-ice">a column of ice</a>:
+    speak the <strong>command word</strong> near the dark ice, and it answers — opens, expands, seals, traps even spirits.
+    Here the word is <strong><em>Sthira</em></strong> (<a href="#node-4">Hall of Chants</a>, or a few hours studying the floor-runes if they have Rime Lord script).
+    Nothing lives in the chamber. The fight comes to the threshold:
+    <strong>Hush-of-Snow arrives the moment the rite begins</strong> — now the thing must be <em>given</em> or lost.
+    <strong>She cannot cross into the chamber.</strong> Neither can the Billies.
+  </p>
+  <div class="enemy-block">
+    <div class="enemy-row" data-hp-id="hush" data-hp-max="22">
+      <div class="enemy-meta">
+        <span class="enemy-name">Hush-of-Snow</span>
+        Armor 4 · <strong>0 vs iron</strong> ·
+        <button type="button" class="dice-roll" data-dice="1d10+2" title="Click to roll 1d10+2">d10+2</button>
+        (reach, grabby) · at the threshold only · glamour, snow-weave, call the Billies
+      </div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="billy-v1" data-hp-max="7">
+      <div class="enemy-meta"><span class="enemy-name">Billy (threshold)</span> Armor 4 · 0 vs iron ·
+        <button type="button" class="dice-roll" data-dice="1d6+2" title="Click to roll 1d6+2">d6+2</button>
+        <em>— only if <a href="#node-7">the Gate of Quiet</a> was broken, or her ladder is at 4</em></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="billy-v2" data-hp-max="7">
+      <div class="enemy-meta"><span class="enemy-name">Billy (threshold)</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+  </div>
+
+  <h3>The shape of the fight</h3>
+  <p>
+    One PC has to stay in the chamber doing the rite. Everyone else is at a doorway holding off something with
+    Armor 4 that cannot come in but can reach in, grab, glamour, drag, and talk. She goes for the rite-worker
+    every time, and she goes for their <em>ears</em> first.
+  </p>
+  <ul>
+    <li><strong>Iron ends her.</strong> Armor 0 against it. A nail, a horseshoe, a lintel-spike from Dhaar, the one in the ape
+      hoard. Without iron this is a grinding, losing fight and they should feel it by the second exchange.</li>
+    <li><strong>She will not fight to the death.</strong> At 8 HP or less she stops, brushes herself off, and makes her
+      last offer as though nothing happened.</li>
+    <li><strong>She keeps every promise made to her</strong> — that is the trap. If a PC owes her, she spends it here:
+      “you said you would hand me the next thing I asked for. I am asking.”</li>
+    <li><strong>Nobody has to fight at all.</strong> If they simply give her the Codex, she takes it, thanks them warmly,
+      and the drift closes. That is a real ending. It is also a major arcanum in the hands of the Bear’s retinue,
+      and the Vigil will have to be told.</li>
+  </ul>
+
+  <h3 id="burial-steps">Burial steps (in order)</h3>
+  <p class="statline">
+    Same move as the outdoor discovery: when you <strong>speak the command word near the dark ice</strong>, it expands or yields.
+    At Underfalls the word opens the floor-cyst, receives what is set in, then knits shut — stilling what cannot be destroyed.
+  </p>
+  <ol>
+    <li>
+      <strong>Open the cyst</strong> — speak <em>Sthira</em> at the floor-runes (or +INT/+WIS with the
+      <a href="#node-2">Vigil’s</a> rite / the
+      <a href="#node-7">Warden’s</a> recital if they only half-know the word).
+      <ul>
+        <li><strong>10+:</strong> the ice cups open.</li>
+        <li><strong>7–9:</strong> opens; pick 1 —
+          <button type="button" class="dice-roll" data-dice="1d6" title="Click to roll 1d6">1d6</button>
+          cold (ignores armor) · Hush gets a free reach-in now · the word is spent for this scene.</li>
+        <li><strong>6−:</strong> the floor doesn’t answer. No opening this beat, and she starts talking.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Unwrap and set the Codex in</strong> — hands on it, +CON or Defy Danger. This is where the plates speak.
+      <em>Trigger Hec’tumel’s offer now if it hasn’t landed.</em>
+      <ul>
+        <li><strong>10+:</strong> plates in, face down.</li>
+        <li><strong>7–9:</strong> in — pick 1: the bearer marks a Codex consequence · Hush has them by the wrist ·
+          someone else must pull them off it (an action).</li>
+        <li><strong>6−:</strong> the bearer doesn’t let go. Not dropped — <em>held</em>. Ask them why, out loud.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Seal it</strong> — pack the cyst and speak the stilling over it: +INT, +WIS, or the dark ice knife driven into the seam.
+      <ul>
+        <li><strong>10+:</strong> the ice knits shut, purple-black, and the room goes quiet in a way they feel in their teeth.</li>
+        <li><strong>7–9:</strong> shuts, pick 1 —
+          <button type="button" class="dice-roll" data-dice="1d8" title="Click to roll 1d8">1d8</button>
+          from the threshold · the knife is spent · a hand frozen into the seam (Defy +STR, damage and a debility).</li>
+        <li><strong>6−:</strong> the seam won’t take, and Hush names her price into the gap.</li>
+      </ul>
+    </li>
+    <li>
+      <strong>Hold until it takes</strong> (only if she is still at the door) — +CON, or Defend the cyst one more exchange.
+      <ul>
+        <li><strong>10+:</strong> it locks. She stops mid-sentence, and the sentence never gets finished.</li>
+        <li><strong>7–9:</strong> locks; mark a debility or lose gear into the ice.</li>
+        <li><strong>6−:</strong> the seal sets crooked — buried, but she knows exactly where, and so does her aunt.</li>
+      </ul>
+    </li>
+  </ol>
+
+  <h3>Hush at the threshold (dialog)</h3>
+  <div class="dialog-lines">
+    <div class="gm-line">“Oh, don’t. Don’t put it in the <em>ground</em>. Something that old, and you’re going to bury it like a dog.”</div>
+    <div class="gm-line">“I can’t come in. You know that, I know that. So we can both stop pretending this is a fight and start talking about the price.”</div>
+    <div class="gm-line"><em>(To whoever owes her)</em> “You said yes to me at the cistern. In front of your friends. Are you a liar in front of them too?”</div>
+    <div class="gm-line"><em>(At 8 HP or less, brushing snow off her sleeve)</em> “Well. That was undignified. Last offer, and it’s a kind one.”</div>
+  </div>
+
+  <h3 id="hectumel-offer">Hec’tumel’s offer <span class="tag">use this</span></h3>
+  <div class="gm-line">
+    From the plates, to whoever is holding them — once, at step 2:
+    “She will keep me on a shelf. <em>You</em> could keep me working. Refuse her and refuse them, and I will teach you,
+    tonight, the word that closes a Fae’s mouth. You may bury me tomorrow. You will not want to.”
+  </div>
+  <ul>
+    <li><strong>Accept:</strong> Hush is silenced and driven off outright. Mark a Codex consequence.
+      The Codex is not buried; it is <em>theirs</em> now, with the Vigil watching them carry it back up the stair.</li>
+    <li><strong>Refuse:</strong> the scene continues as it is. Dorji, upstairs, already knew which they’d pick and is unbearable about it.</li>
+  </ul>
+
+  <h3 id="reward">If the Codex goes down</h3>
+  <p>
+    The vault seals purple-black and the mountain is quieter than any of them have heard anything be.
+    Hec’tumel has no mouth in the world tonight, and whoever carried the Codex loses it —
+    and any Codex spells with it, like a language you stop being able to hear.
+  </p>
+  <ul>
+    <li><strong>The Sphere:</strong>
+      <a href="../pages/major-norubas-ice-sphere.html" class="wiki-link" data-slug="major-norubas-ice-sphere">Noruba’s Ice Sphere</a>
+      is theirs if the Vigil gave it or they took it. Cold, quiet, and a much politer road to the same appetite —
+      deliberate.</li>
+    <li><strong>Hush goes home owed nothing</strong> — a wound, for one of the Bear’s retinue.
+      She knows the southern road they came by, and any promises spoken in her hearing. Winter is long.</li>
+    <li><strong>The Vigil:</strong> the shrine took something in and the order held. They are nine, and may now count
+      southern allies. An adept walks the road down before spring — a mountain
+      <a href="../pages/homefront.html#steading-improvements" class="wiki-link" data-slug="homefront" data-fragment="steading-improvements">trade partner</a>
+      if their home steading will believe it.</li>
+    <li><strong>Nobu:</strong> if anyone was kind to him, he is two days behind them on the road, with a bowl and no cloak.</li>
+  </ul>
+</article>
+
+<footer class="adv-credit">
+  Created and play-tested 8/6/2026 by Bryan Livingston · Session #5
+</footer>
+
+  </div><!-- .adv-main -->
+
+<aside class="adv-map" id="map" aria-label="Site map">
+<h2>Map</h2>
+  <div class="site-map-wrap">
+    <svg class="site-map-svg" viewBox="0 0 520 580" role="img" aria-label="Underfalls site map">
+      <title>Underfalls</title>
+      <!-- Edges (node centers: mid y = node y + 19) -->
+      <line class="map-edge" x1="260" y1="39" x2="100" y2="129" />   <!-- 1→2 -->
+      <line class="map-edge" x1="260" y1="39" x2="420" y2="129" />   <!-- 1→3 -->
+      <line class="map-edge" x1="100" y1="129" x2="260" y2="209" />  <!-- 2→4 -->
+      <line class="map-edge" x1="100" y1="129" x2="100" y2="289" />  <!-- 2→5 -->
+      <line class="map-edge" x1="420" y1="129" x2="260" y2="209" />  <!-- 3→4 -->
+      <line class="map-edge" x1="420" y1="129" x2="420" y2="289" />  <!-- 3→6 -->
+      <line class="map-edge" x1="260" y1="209" x2="100" y2="289" />  <!-- 4→5 -->
+      <line class="map-edge" x1="260" y1="209" x2="260" y2="369" />  <!-- 4→7 -->
+      <line class="map-edge" x1="100" y1="289" x2="420" y2="289" />  <!-- 5→6 -->
+      <line class="map-edge" x1="420" y1="289" x2="260" y2="369" />  <!-- 6→7 -->
+      <line class="map-edge" x1="260" y1="369" x2="260" y2="449" />  <!-- 7→8 -->
+      <line class="map-edge" x1="260" y1="449" x2="100" y2="529" />  <!-- 8→9 -->
+      <line class="map-edge" x1="260" y1="449" x2="420" y2="529" />  <!-- 8→10 -->
+      <line class="map-edge" x1="100" y1="529" x2="420" y2="529" />  <!-- 9→10 -->
+      <!-- Fae door into 6 (domain) -->
+      <path class="map-edge map-edge-fae" d="M 480 289 C 500 289, 500 320, 480 320" fill="none" />
+      <text class="map-label" x="505" y="308" style="font-size:8px;fill:var(--muted);text-anchor:start">drift</text>
+
+      <!-- 1 Stair -->
+      <a href="#node-1">
+        <rect class="map-node map-node-out" x="200" y="20" width="120" height="38" rx="6" />
+        <text class="map-label" x="260" y="44">Stair</text>
+      </a>
+      <!-- 2 Cloister -->
+      <a href="#node-2">
+        <rect class="map-node" x="40" y="110" width="120" height="38" rx="6" />
+        <text class="map-label" x="100" y="134">Cloister</text>
+      </a>
+      <!-- 3 Falls -->
+      <a href="#node-3">
+        <rect class="map-node map-node-out" x="360" y="110" width="120" height="38" rx="6" />
+        <text class="map-label" x="420" y="134">Ice Falls</text>
+      </a>
+      <!-- 4 Hall -->
+      <a href="#node-4">
+        <rect class="map-node" x="200" y="190" width="120" height="38" rx="6" />
+        <text class="map-label" x="260" y="214">Hall of Chants</text>
+      </a>
+      <!-- 5 Apes -->
+      <a href="#node-5">
+        <rect class="map-node" x="40" y="270" width="120" height="38" rx="6" />
+        <text class="map-label" x="100" y="294">Apes’ Hoard</text>
+      </a>
+      <!-- 6 Cistern -->
+      <a href="#node-6">
+        <rect class="map-node map-node-fae" x="360" y="270" width="120" height="38" rx="6" />
+        <text class="map-label" x="420" y="294">Cistern Cave</text>
+      </a>
+      <!-- 7 Gate -->
+      <a href="#node-7">
+        <rect class="map-node" x="200" y="350" width="120" height="38" rx="6" />
+        <text class="map-label" x="260" y="374">Gate of Quiet</text>
+      </a>
+      <!-- 8 Meadow -->
+      <a href="#node-8">
+        <rect class="map-node" x="200" y="430" width="120" height="38" rx="6" />
+        <text class="map-label" x="260" y="454">Stilled Meadow</text>
+      </a>
+      <!-- 9 Reliquary -->
+      <a href="#node-9">
+        <rect class="map-node" x="40" y="510" width="120" height="38" rx="6" />
+        <text class="map-label" x="100" y="534">Reliquary</text>
+      </a>
+      <!-- 10 Vault -->
+      <a href="#node-10">
+        <rect class="map-node map-node-danger" x="360" y="510" width="120" height="38" rx="6" />
+        <text class="map-label" x="420" y="534">Vault</text>
+      </a>
+    </svg>
+  </div>
+  <p class="statline">
+    Ways in: <a href="#node-1">Prayer-Flag Stair</a> ·
+    <a href="#node-3">Ice Falls</a> ·
+    <a href="#node-6">Cistern</a> (Fae door while drifts hold).
+  </p>
+</aside>
+
+</div><!-- .adv-layout -->
+
+<div id="wiki-preview" class="wiki-preview" hidden></div>
+<div id="dice-toast" class="dice-toast" hidden></div>
+<script src="../js/wiki.js"></script>
+<script src="adventure.js"></script>
+</body>
+</html>
