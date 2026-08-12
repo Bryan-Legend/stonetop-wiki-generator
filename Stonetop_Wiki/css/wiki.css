@@ -1,27 +1,78 @@
-/* Stonetop Wiki (Book I & Book II) */
+/* Stonetop Wiki (Book I & Book II) — GrokNight: near-black ground, magenta headings, blue links */
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/source-serif-4-latin-600-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Serif 4";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/source-serif-4-latin-700-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/source-sans-3-latin-400-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/source-sans-3-latin-400-italic.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url("fonts/source-sans-3-latin-600-normal.woff2") format("woff2");
+}
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("fonts/source-sans-3-latin-700-normal.woff2") format("woff2");
+}
+
 :root {
-  --bg: #12100e;
-  --bg-elev: #1c1814;
-  --bg-hover: #2a2218;
-  --ink: #e8e0d4;
-  --muted: #9a8b78;
-  --rule: #4a3f32;
-  --accent: #d4a574;
-  --link: #e0b888;
-  --link-hover: #f0d0a0;
-  --quote: #cfc4b4;
-  --ok: #8fbc8f;
-  --danger: #c97b7b;
+  /* Workbench from Grok Build GrokNight */
+  --bg: #0a0a0a;
+  --bg-page: #0e0e0e;
+  --bg-elev: #141414;
+  --bg-hover: #1a1a1a;
+  --ink: #e1e1e1;
+  --muted: #787878;
+  --rule: #3c3c41;
+  --accent: #bb9af7;
+  --accent-rgb: 187, 154, 247;
+  --accent-deep: #9d7cd8;
+  --accent-soft: #1a1a1a;
+  --link: #7aa2f7;
+  --link-rgb: 122, 162, 247;
+  --link-hover: #c0caf5;
+  --quote: #c8c8c8;
+  --ok: #9ece6a;
+  --danger: #f7768e;
+  --card: var(--bg-elev);
   --sidebar-w: 13.125rem; /* was 17.5rem; −25% */
-  --font-serif: Georgia, "Times New Roman", serif;
-  --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
-  --radius: 6px;
-  --shadow: 0 8px 28px rgba(0,0,0,.45);
-  --shadow-soft: 0 2px 10px rgba(0,0,0,.28);
+  --font-serif: "Source Serif 4", "Palatino Linotype", Palatino, "Iowan Old Style", Georgia, serif;
+  --font-sans: "Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --radius: 4px;
+  --shadow: 0 12px 36px rgba(0, 0, 0, .62);
+  --shadow-soft: 0 2px 10px rgba(0, 0, 0, .4);
   /* Arcana-style top wash used on cards/blocks across the wiki */
-  --card-wash: linear-gradient(180deg, rgba(212, 165, 116, 0.1), transparent 2.75rem);
-  --card-wash-deep: linear-gradient(180deg, rgba(212, 165, 116, 0.12), transparent 3.25rem);
-  --text: 13px;  /* non-heading body/UI */
+  --card-wash: linear-gradient(180deg, rgba(var(--accent-rgb), 0.11), transparent 2.75rem);
+  --card-wash-deep: linear-gradient(180deg, rgba(var(--accent-rgb), 0.16), transparent 3.25rem);
+  --text: 13px;  /* sidebar / chrome */
+  --content: 15px;  /* article body */
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -46,14 +97,25 @@
   background: var(--accent);
 }
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+  color-scheme: dark;
+}
 
 body {
   margin: 0;
   font: 16px/1.55 var(--font-sans);
   color: var(--ink);
-  background: var(--bg);
+  background-color: var(--bg);
+  background-image:
+    radial-gradient(ellipse 90% 55% at 0% 0%, rgba(var(--accent-rgb), 0.07), transparent 46%),
+    radial-gradient(ellipse 70% 50% at 100% 100%, rgba(var(--link-rgb), 0.06), transparent 52%);
   min-height: 100vh;
+}
+
+::selection {
+  background: rgba(var(--accent-rgb), 0.32);
+  color: var(--ink);
 }
 
 .skip-link {
@@ -89,6 +151,7 @@ html, body {
   overflow: auto;
   background: var(--bg-elev);
   border-right: 1px solid var(--rule);
+  box-shadow: inset -1px 0 0 rgba(var(--accent-rgb), 0.08);
   flex-shrink: 0;
   z-index: 20;
 }
@@ -96,9 +159,10 @@ html, body {
 .sidebar-head {
   padding: 1rem 1rem .75rem;
   border-bottom: 1px solid var(--rule);
+  box-shadow: inset 0 2px 0 var(--accent-deep);
   position: sticky;
   top: 0;
-  background: var(--bg-elev);
+  background: color-mix(in srgb, var(--bg-elev) 92%, #000 8%);
   z-index: 1;
 }
 
@@ -135,28 +199,45 @@ html, body {
 
 .site-title {
   font-family: var(--font-serif);
-  font-size: 1.15rem;
+  font-size: 1.18rem;
   font-weight: 700;
+  letter-spacing: 0.015em;
   color: var(--accent);
   text-decoration: none;
-  display: block;
+  display: flex;
+  align-items: center;
+  gap: 0.48rem;
+  margin-bottom: .65rem;
+}
+.site-title::before {
+  content: "";
+  width: 0.7rem;
+  height: 1.32rem;
+  flex-shrink: 0;
+  background: var(--accent);
+  /* Outlined menhir — reads as the Stone at small size */
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 36'%3E%3Cpath fill='none' stroke='black' stroke-width='2.1' stroke-linejoin='round' d='M5.6 2.2 10.6 3.4 12.6 31.6 8.2 34.2 3.4 31.4 4.6 7.2z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 36'%3E%3Cpath fill='none' stroke='black' stroke-width='2.1' stroke-linejoin='round' d='M5.6 2.2 10.6 3.4 12.6 31.6 8.2 34.2 3.4 31.4 4.6 7.2z'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 .site-title:hover { color: var(--link-hover); }
-.site-title { margin-bottom: .65rem; }
+.site-title:hover::before { background: var(--link-hover); }
 
 .nav-filter {
   width: 100%;
-  padding: .4rem .55rem;
+  padding: .42rem .55rem;
   border: 1px solid var(--rule);
   border-radius: var(--radius);
   background: var(--bg);
   color: var(--ink);
   font: inherit;
   font-size: var(--text);
+  box-shadow: inset 0 1px 2px rgba(0, 0, 0, .28);
 }
+.nav-filter::placeholder { color: var(--muted); opacity: 0.85; }
 .nav-filter:focus {
   outline: 2px solid var(--accent);
   outline-offset: 1px;
+  border-color: var(--accent-deep);
 }
 
 .search-results {
@@ -168,7 +249,7 @@ html, body {
   margin: 0;
   overflow-y: auto;
   border: 1px solid var(--rule);
-  border-top: 3px solid var(--accent);
+  border-top: 2px solid var(--accent);
   border-radius: var(--radius);
   background: var(--bg-elev);
   box-shadow: var(--shadow);
@@ -218,7 +299,7 @@ html, body {
   color: var(--quote);
 }
 .search-hit-snippet mark {
-  background: rgba(224, 184, 136, 0.35);
+  background: rgba(var(--accent-rgb), 0.32);
   color: inherit;
   padding: 0 0.1em;
   border-radius: 2px;
@@ -251,7 +332,7 @@ html, body {
 .toc li.current a {
   color: var(--accent);
   border-left-color: var(--accent);
-  background: var(--bg-hover);
+  background: color-mix(in srgb, var(--accent) 12%, var(--bg-hover));
   font-weight: 600;
 }
 .toc li.nav-arcana a {
@@ -271,9 +352,9 @@ html, body {
   margin: 0.85rem 0 0.35rem;
   padding: 0.45rem 0.9rem 0.25rem;
   font-family: var(--font-serif);
-  font-size: var(--text);
+  font-size: 0.72rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.12em;
   text-transform: uppercase;
   color: var(--accent);
   border-top: 1px solid var(--rule);
@@ -306,13 +387,13 @@ html, body {
 }
 .toc li.nav-section a:hover {
   color: var(--accent);
-  background: rgba(0, 0, 0, 0.04);
+  background: var(--bg-hover);
 }
 .toc li.current ul.nav-sections {
   border-left-color: var(--accent);
 }
 .toc li.current li.nav-section a {
-  color: var(--ink, #2a2622);
+  color: var(--ink);
 }
 .toc li.hidden { display: none; }
 
@@ -414,6 +495,7 @@ html, body {
   padding: 0.35rem 0.55rem;
   font-size: var(--text);
   background: var(--bg-elev);
+  background-image: var(--card-wash);
   border: 1px solid var(--rule);
   border-left: 3px solid var(--accent);
   border-radius: var(--radius);
@@ -460,19 +542,21 @@ html, body {
   overflow-y: hidden;
   border: none;
   border-radius: 0;
-  background: var(--bg);
+  background-color: var(--bg-page);
+  background-image: linear-gradient(180deg, rgba(var(--accent-rgb), 0.035), transparent 7rem);
 }
 
 .content {
   --col-w: 360px;
+  --text: var(--content);
   font-size: var(--text);
-  line-height: 1.4;
+  line-height: 1.45;
   height: 100%;
   box-sizing: border-box;
   padding: 0.85rem 1rem 1rem;
   column-width: var(--col-w);
-  column-gap: 1.25rem;
-  column-rule: 1px solid var(--rule);
+  column-gap: 1.35rem;
+  column-rule: 1px solid color-mix(in srgb, var(--rule) 80%, transparent);
   column-fill: auto; /* fill first column, then next — enables horizontal growth */
   /* width grows with number of columns */
   width: max-content;
@@ -482,7 +566,9 @@ html, body {
 
 .content h1 {
   font-family: var(--font-serif);
-  font-size: 1.35rem;
+  font-size: 1.4rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
   color: var(--accent);
   margin: 0.5rem 0 0.45rem;
 }
@@ -490,11 +576,16 @@ html, body {
 
 .content h2 {
   font-family: var(--font-serif);
-  font-size: 1.05rem;
+  font-size: 1.08rem;
+  font-weight: 700;
   color: var(--accent);
-  margin: 0.85rem 0 0.35rem;
-  border-bottom: 1px solid var(--rule);
-  padding-bottom: .15rem;
+  margin: 0.95rem 0 0.4rem;
+  border-bottom: none;
+  padding-bottom: .32rem;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-size: 2.4rem 2px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
   break-after: avoid;
   break-inside: avoid;
 }
@@ -502,7 +593,8 @@ html, body {
 .content h3 {
   font-family: var(--font-serif);
   font-size: 0.98rem;
-  color: var(--link);
+  font-weight: 600;
+  color: color-mix(in srgb, var(--accent) 72%, var(--ink));
   margin: 0.7rem 0 0.3rem;
   break-after: avoid;
   break-inside: avoid;
@@ -517,10 +609,10 @@ html, body {
   vertical-align: -0.15em;
   margin-right: 0.3em;
   object-fit: contain;
-  /* white → near-black → warm accent gold matching --accent (#d4a574) */
+  /* white → near-black → GrokNight magenta matching --accent (#bb9af7) */
   filter: brightness(0) saturate(100%)
-    invert(77%) sepia(28%) saturate(650%) hue-rotate(346deg)
-    brightness(95%) contrast(92%);
+    invert(72%) sepia(28%) saturate(1400%) hue-rotate(214deg)
+    brightness(101%) contrast(96%);
   opacity: 0.95;
 }
 h2 .book-icon,
@@ -561,7 +653,7 @@ h3 .book-icon,
   border-radius: 3px;
 }
 
-.content strong { color: #f0e6d8; }
+.content strong { color: #f3f3f3; }
 
 .content hr {
   border: none;
@@ -608,7 +700,7 @@ h3 .book-icon,
 .value-table-head {
   padding: 0.35rem 0.5rem;
   border-bottom: 1px solid var(--rule);
-  background: rgba(212, 165, 116, 0.08);
+  background: rgba(var(--accent-rgb), 0.09);
   font-family: var(--font-serif);
   color: var(--accent);
   font-weight: 700;
@@ -724,7 +816,7 @@ h3 .book-icon,
   gap: 0.4rem;
   padding: 0.35rem 0.5rem;
   border-bottom: 1px solid var(--rule);
-  background: rgba(212, 165, 116, 0.08);
+  background: rgba(var(--accent-rgb), 0.09);
   font-family: var(--font-serif);
   color: var(--accent);
   font-weight: 700;
@@ -739,7 +831,7 @@ h3 .book-icon,
 /* Rolled-result row highlight (set by the dice-roll handler) */
 .roll-table tr.roll-hit > th,
 .roll-table tr.roll-hit > td {
-  background: rgba(212, 165, 116, 0.16);
+  background: rgba(var(--accent-rgb), 0.16);
   animation: roll-hit-flash 0.7s ease-out;
 }
 .roll-table tr.roll-hit > th {
@@ -747,12 +839,18 @@ h3 .book-icon,
   box-shadow: inset 3px 0 0 var(--accent);
 }
 @keyframes roll-hit-flash {
-  from { background: rgba(212, 165, 116, 0.5); }
-  to   { background: rgba(212, 165, 116, 0.16); }
+  from { background: rgba(var(--accent-rgb), 0.5); }
+  to   { background: rgba(var(--accent-rgb), 0.16); }
 }
 @media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
   .roll-table tr.roll-hit > th,
   .roll-table tr.roll-hit > td { animation: none; }
+  .index-card,
+  .wiki-preview,
+  a.wiki-link,
+  button.dice-roll { transition: none; }
+  .index-card:hover { transform: none; }
 }
 
 /* Enemy / monster blocks — tight, card-like (arcana wash + elevated shell) */
@@ -860,13 +958,13 @@ body:has(.index-grid) .content {
 a.wiki-link {
   color: var(--link);
   text-decoration: none;
-  border-bottom: 1px solid rgba(224, 184, 136, .35);
+  border-bottom: 1px solid rgba(var(--link-rgb), .4);
   transition: color .12s, border-color .12s, background .12s;
 }
 a.wiki-link:hover {
   color: var(--link-hover);
   border-bottom-color: var(--link-hover);
-  background: rgba(212, 165, 116, .12);
+  background: rgba(var(--link-rgb), .12);
 }
 a.wiki-link strong {
   color: inherit;
@@ -879,15 +977,15 @@ button.dice-roll {
   font: inherit;
   font-variant-numeric: tabular-nums;
   font-weight: 600;
-  color: #1a1410;
-  background: linear-gradient(180deg, #e8c090, var(--accent));
-  border: 1px solid #a67c4a;
-  border-radius: 4px;
+  color: #0a0a0a;
+  background: linear-gradient(180deg, #ffdb8d, #e0af68 55%, #c4924a);
+  border: 1px solid #c4924a;
+  border-radius: 3px;
   padding: .05em .4em;
   margin: 0 .1em;
   cursor: pointer;
   line-height: 1.4;
-  box-shadow: 0 1px 0 rgba(0,0,0,.25);
+  box-shadow: 0 1px 0 rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.18);
   vertical-align: baseline;
 }
 button.dice-roll:hover {
@@ -975,7 +1073,7 @@ body.pins-adding .map-canvas { cursor: crosshair; }
 }
 .map-add[aria-pressed="true"] {
   background: var(--accent);
-  color: #12100e;
+  color: var(--bg);
   border-color: var(--accent);
 }
 .map-colors { display: flex; gap: 0.3rem; }
@@ -1121,6 +1219,7 @@ h3.arcana-title-line,
   padding: 0;
   border: none;
   border-bottom: none;
+  background-image: none;
   font-family: var(--font-sans);
   font-size: var(--text);
   font-weight: 700;
@@ -1184,7 +1283,7 @@ h3.arcana-title-line,
 .arcana-move {
   margin: 0 0 0.75rem;
   padding-bottom: 0.55rem;
-  border-bottom: 1px dashed rgba(74, 63, 50, 0.7);
+  border-bottom: 1px dashed color-mix(in srgb, var(--rule) 80%, transparent);
 }
 .arcana-move:last-child {
   border-bottom: none;
@@ -1451,6 +1550,7 @@ li.check-item input.wiki-check:checked + span {
 /* Hover preview (Wikipedia-style) — shell owns the frame/wash;
    nested content cards drop their own chrome to avoid double frames. */
 .wiki-preview {
+  --text: var(--content);
   position: fixed;
   z-index: 900;
   width: min(36rem, calc(100vw - 1.5rem));
@@ -1459,7 +1559,7 @@ li.check-item input.wiki-check:checked + span {
   background: var(--bg-elev);
   background-image: var(--card-wash-deep);
   border: 1px solid var(--rule);
-  border-top: 3px solid var(--accent);
+  border-top: 2px solid var(--accent);
   border-radius: calc(var(--radius) + 2px);
   box-shadow: var(--shadow);
   pointer-events: none;
@@ -1479,7 +1579,7 @@ li.check-item input.wiki-check:checked + span {
 .wiki-preview .pv-excerpt a.wiki-link {
   color: var(--link);
   text-decoration: none;
-  border-bottom: 1px solid rgba(224, 184, 136, .35);
+  border-bottom: 1px solid rgba(var(--link-rgb), .4);
 }
 .wiki-preview .pv-excerpt a.wiki-link:hover {
   color: var(--link-hover);
@@ -1600,8 +1700,12 @@ li.check-item input.wiki-check:checked + span {
   margin: 0 0 0.4rem;
   font-family: var(--font-serif);
   font-size: 1.05rem;
-  border-bottom: 1px solid var(--rule);
-  padding-bottom: 0.15rem;
+  border-bottom: none;
+  padding-bottom: 0.3rem;
+  background-image: linear-gradient(var(--accent), var(--accent));
+  background-size: 2.4rem 2px;
+  background-repeat: no-repeat;
+  background-position: left bottom;
   color: var(--accent);
 }
 /* Named moves / section heads inside arcana cards — same as page view. */
@@ -1610,6 +1714,7 @@ li.check-item input.wiki-check:checked + span {
   padding: 0;
   border: none;
   border-bottom: none;
+  background-image: none;
   font-family: var(--font-serif);
   font-size: 1rem;
   font-weight: 700;
@@ -1624,6 +1729,7 @@ li.check-item input.wiki-check:checked + span {
   padding: 0;
   border: none;
   border-bottom: none;
+  background-image: none;
   font-family: var(--font-sans);
   font-size: var(--text);
   font-weight: 700;
@@ -1647,18 +1753,30 @@ li.check-item input.wiki-check:checked + span {
 
 /* Index */
 .index-hero {
-  padding: 1rem 0 1.5rem;
+  padding: 1.15rem 0 1.6rem;
+  margin-bottom: 0.35rem;
+  max-width: 44rem;
 }
 .index-hero p.lede {
-  color: var(--muted);
-  font-size: 1.05rem;
+  color: var(--quote);
+  font-size: 1.08rem;
+  line-height: 1.5;
   max-width: 40rem;
+  margin: 0;
+}
+.index-hero p.lede em {
+  font-style: italic;
+  color: var(--ink);
+}
+.index-hero p.lede strong {
+  color: var(--accent);
+  font-weight: 700;
 }
 .index-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(15rem, 1fr));
-  gap: .65rem;
-  margin: 1.25rem 0;
+  gap: .7rem;
+  margin: 1.15rem 0 1.75rem;
 }
 .index-card {
   display: block;
@@ -1667,23 +1785,25 @@ li.check-item input.wiki-check:checked + span {
   border: 1px solid var(--rule);
   border-radius: var(--radius);
   box-shadow: var(--shadow-soft);
-  padding: .75rem .9rem;
+  padding: .8rem .95rem .85rem;
   text-decoration: none;
   color: var(--ink);
-  transition: border-color .12s, background .12s, box-shadow .12s;
+  transition: border-color .14s ease, background .14s ease, box-shadow .14s ease, transform .14s ease;
 }
 .index-card:hover {
-  border-color: var(--accent);
+  border-color: color-mix(in srgb, var(--accent) 70%, var(--rule));
   background: var(--bg-hover);
   background-image: var(--card-wash-deep);
-  box-shadow: var(--shadow);
+  box-shadow: var(--shadow-soft), inset 3px 0 0 var(--accent);
+  transform: translateY(-1px);
 }
 .index-card .card-title {
   font-family: var(--font-serif);
   color: var(--accent);
   font-weight: 700;
-  font-size: 1rem;
-  margin: 0 0 .35rem;
+  font-size: 1.02rem;
+  letter-spacing: 0.01em;
+  margin: 0 0 .4rem;
 }
 .index-card .card-excerpt {
   font-size: var(--text);
@@ -1693,7 +1813,7 @@ li.check-item input.wiki-check:checked + span {
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
-  line-height: 1.4;
+  line-height: 1.45;
 }
 
 /* Mobile */
@@ -1710,6 +1830,8 @@ li.check-item input.wiki-check:checked + span {
   .sidebar.open { transform: translateX(0); }
   .sidebar-toggle { display: inline-block; }
   .main-wrap { padding: 0; }
+  .content:not(.maps-page),
+  body:has(.index-grid) .content { padding-top: 2.85rem; }
   body.sidebar-open::after {
     content: "";
     position: fixed;
@@ -1722,8 +1844,8 @@ li.check-item input.wiki-check:checked + span {
 @media print {
   .sidebar, .sidebar-toggle, .dice-toast, .wiki-preview { display: none !important; }
   .main-wrap { max-width: none; }
-  html, body { height: auto; overflow: visible; }
-  body { background: #fff; color: #111; }
+  html, body { height: auto; overflow: visible; color-scheme: light; }
+  body { background: #fff; color: #111; background-image: none; }
   .content h1, .content h2 { color: #333; }
   .content-scroll { height: auto; overflow: visible; }
   a.wiki-link { color: #000; border: none; text-decoration: underline; }

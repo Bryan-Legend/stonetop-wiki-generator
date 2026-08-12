@@ -1,14 +1,5 @@
 :root {
-      --ink: #e8e0d4; --muted: #9a8b78; --rule: #4a3f32; --bg: #12100e;
-      --bg-elev: #1c1814; --card: #1c1814; --accent: #d4a574; --accent-soft: #2a2218;
-      --ok: #8fbc8f; --link: #e0b888; --link-hover: #f0d0a0; --quote: #cfc4b4;
-      --danger: #c97a6a; --font-serif: Georgia, "Times New Roman", serif;
-      --font-sans: "Segoe UI", system-ui, -apple-system, sans-serif;
-      --radius: 6px; --shadow: 0 8px 28px rgba(0,0,0,.45);
-      --shadow-soft: 0 2px 10px rgba(0,0,0,.28);
-      --card-wash: linear-gradient(180deg, rgba(212, 165, 116, 0.1), transparent 2.75rem);
-      --card-wash-deep: linear-gradient(180deg, rgba(212, 165, 116, 0.12), transparent 3.25rem);
-      --text: 13px;
+      /* Palette, type, and card chrome come from ../css/wiki.css */
       --nav-w: 13.5rem;
       --map-w: 39rem;
     }
@@ -22,17 +13,16 @@
       margin: 0;
       font: 15px/1.45 var(--font-sans);
       color: var(--ink);
-      background: var(--bg);
     }
     a, a.wiki-link { color: var(--link); }
     a.wiki-link {
       text-decoration: none;
-      border-bottom: 1px solid rgba(224, 184, 136, .35);
+      border-bottom: 1px solid rgba(var(--link-rgb), .4);
     }
     a.wiki-link:hover {
       color: var(--link-hover);
       border-bottom-color: var(--link-hover);
-      background: rgba(212, 165, 116, .12);
+      background: rgba(var(--link-rgb), .12);
     }
 
     .adv-layout {
@@ -52,6 +42,7 @@
       padding: 1rem 0.75rem 1.5rem;
       background: var(--bg-elev);
       border-right: 1px solid var(--rule);
+      box-shadow: inset -1px 0 0 rgba(var(--accent-rgb), 0.08), inset 0 2px 0 var(--accent-deep);
       z-index: 20;
     }
     .adv-nav .nav-title {
@@ -221,8 +212,12 @@
       font-size: 1.05rem;
       color: var(--accent);
       margin: 1.2rem 0 0.4rem;
-      border-bottom: 1px solid var(--rule);
-      padding-bottom: 0.1rem;
+      border-bottom: none;
+      padding-bottom: 0.32rem;
+      background-image: linear-gradient(var(--accent), var(--accent));
+      background-size: 2.4rem 2px;
+      background-repeat: no-repeat;
+      background-position: left bottom;
     }
     h3 {
       font-family: var(--font-serif);
@@ -247,6 +242,7 @@
       padding: 0 0 0.4rem;
       border: none;
       border-bottom: 1px solid var(--rule);
+      background-image: none;
       font-family: var(--font-sans);
       font-size: 0.78rem;
       font-weight: 700;
@@ -363,11 +359,11 @@
     }
     .hp-box:hover {
       border-color: var(--accent);
-      background: rgba(212, 165, 116, 0.15);
+      background: rgba(var(--accent-rgb), 0.15);
     }
     .hp-box.is-filled {
       background: var(--accent);
-      border-color: #a67c4a;
+      border-color: var(--accent-deep);
     }
     .hp-box.is-empty {
       background: rgba(0, 0, 0, 0.25);

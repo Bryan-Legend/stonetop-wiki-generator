@@ -16,9 +16,11 @@ The wiki includes:
 
 ## Screenshots
 
-![Wiki screenshot — multi-column gazetteer](docs/wiki-screenshot-1.png)
+![Wiki screenshot — gazetteer columns with a monster hover preview](docs/wiki-screenshot-1.png)
 
-![Wiki screenshot — arcana and navigation](docs/wiki-screenshot-2.png)
+![Wiki screenshot — search results and a dice roll](docs/wiki-screenshot-2.png)
+
+![Wiki screenshot — adventure sheet with a page hover preview](docs/wiki-screenshot-3.png)
 
 ## Requirements
 
