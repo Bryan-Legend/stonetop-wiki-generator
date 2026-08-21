@@ -35,7 +35,7 @@
             return;
           var m = h.match(/^([^\/#]+\.html)(#.*)?$/i);
           if (m)
-            a.setAttribute("href", WIKI + "pages/" + m[1] + (m[2] || ""));
+            a.setAttribute("href", WIKI + m[1] + (m[2] || ""));
         });
       } catch (e) {
         /* ignore rewrite failures */

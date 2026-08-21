@@ -13,6 +13,19 @@
     return "";
   })();
 
+  /**
+   * Prefix to reach the wiki root from the current document.
+   *
+   * Wiki pages sit at the wiki root beside index.html, so they need no prefix.
+   * Adventure sheets live in adventures/ and declare data-wiki-root="../".
+   */
+  function wikiRootPrefix() {
+    var root =
+      (document.body && document.body.getAttribute("data-wiki-root")) || "";
+    if (root && root.slice(-1) !== "/") root += "/";
+    return root;
+  }
+
   let previews = null;
   let previewsPromise = null;
 
@@ -307,11 +320,7 @@
     var escaped = escapeHtml(text || "No summary available.");
 
     function pageHref(slug) {
-      var path = location.pathname.replace(/\\/g, "/");
-      if (/\/pages\/[^/]+\.html$/i.test(path)) {
-        return slug + ".html";
-      }
-      return "pages/" + slug + ".html";
+      return wikiRootPrefix() + slug + ".html";
     }
 
     function normSection(name) {
@@ -629,17 +638,12 @@
   }
 
   function pageHrefFromSlug(slug) {
-    var path = location.pathname.replace(/\\/g, "/");
-    if (/\/pages\/[^/]+\.html$/i.test(path)) {
-      return slug + ".html";
-    }
-    return "pages/" + slug + ".html";
+    return wikiRootPrefix() + slug + ".html";
   }
 
-  /** Adventure sheets live outside the wiki; their hrefs are wiki-root relative. */
+  /** Hrefs from the index are wiki-root relative; re-base for the caller. */
   function hrefFromRoot(href) {
-    var path = location.pathname.replace(/\\/g, "/");
-    return (/\/pages\/[^/]+\.html$/i.test(path) ? "../" : "") + href;
+    return wikiRootPrefix() + href;
   }
 
   function escapeHtmlSearch(s) {

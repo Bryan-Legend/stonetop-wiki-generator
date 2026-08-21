@@ -84,7 +84,7 @@ Drop HTML sheets in `Stonetop_Wiki/adventures/` (or a subfolder of variants). Ea
 - lists them in an **Adventures** group at the foot of the sidebar and home page
 - builds an Adventures hub and full-text search entries
 
-Sheets should link wiki pages as `../pages/<slug>.html` and set `data-wiki-root="../"`. Shared chrome: `adventure.css` and `adventure.js` in the same folder.
+Sheets should link wiki pages as `../<slug>.html` and set `data-wiki-root="../"`. Shared chrome: `adventure.css` and `adventure.js` in the same folder.
 
 ### Included play-tested Adventure Sites:
 
@@ -95,7 +95,7 @@ Sheets should link wiki pages as `../pages/<slug>.html` and set `data-wiki-root=
 
 **Generator code** and the wiki chrome (CSS/JS/templates) are MIT — see [LICENSE](LICENSE).
 
-**Book text** (everything under `Stonetop_Wiki/pages/`, plus the generated index and search
+**Book text** (the `<slug>.html` pages at the wiki root, plus the generated index and search
 data) is from *Stonetop* and *Stonetop: The Wider World and Other Wonders*, written by
 Jeremy Strandberg and published by Lampblack & Brimstone. Both books' copyright pages
 (second printing, July 2026) state:
