@@ -66,6 +66,44 @@ BUILD_MANIFEST = ".build-manifest"
 SITE_BASE_URL = "https://stonetop-wiki.github.io"
 
 
+SITE_NAME = "Stonetop Wiki"
+
+
+def meta_description(text: str, limit: int = 160) -> str:
+    """One-line summary for <meta name="description">, trimmed on a word."""
+    clean = " ".join((text or "").split())
+    if len(clean) <= limit:
+        return clean
+    return clean[: limit - 1].rsplit(" ", 1)[0].rstrip(",.;:—-") + "…"
+
+
+def social_meta_html(title: str, description: str, path: str) -> str:
+    """Description + Open Graph/Twitter tags.
+
+    Open Graph is what Discord, Reddit, and Slack read when someone pastes a
+    link — the audience this wiki is shared with — so it ships on every page.
+    """
+    desc = meta_description(description) or (
+        "A searchable web edition of Stonetop, the Powered-by-the-Apocalypse "
+        "game by Jeremy Strandberg."
+    )
+    full = f"{title} — {SITE_NAME}"
+    url = SITE_BASE_URL.rstrip("/") + "/" + path.lstrip("/")
+    img = SITE_BASE_URL.rstrip("/") + "/images/favicon.png"
+    e = html.escape
+    tags = [
+        f'  <meta name="description" content="{e(desc)}">',
+        f'  <meta property="og:site_name" content="{e(SITE_NAME)}">',
+        f'  <meta property="og:title" content="{e(full)}">',
+        f'  <meta property="og:description" content="{e(desc)}">',
+        '  <meta property="og:type" content="article">',
+        f'  <meta property="og:url" content="{e(url)}">',
+        f'  <meta property="og:image" content="{e(img)}">',
+        '  <meta name="twitter:card" content="summary">',
+    ]
+    return "\n".join(tags)
+
+
 def read_build_manifest(out: Path) -> list[str]:
     """Root-level files the previous build wrote (safe to delete and rewrite)."""
     try:
@@ -6817,7 +6855,9 @@ def page_shell(
     rel_prefix: str = "",
     section_navs: dict[str, list[dict]] | None = None,
     content_class: str = "content",
+    description: str = "",
 ) -> str:
+    meta_html = social_meta_html(title, description, slug + ".html")
     nav_html = "\n".join(
         build_nav_items(
             articles,
@@ -6833,6 +6873,7 @@ def page_shell(
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{html.escape(title)} — Stonetop Wiki</title>
+{meta_html}
   <link rel="icon" href="{rel_prefix}images/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="{rel_prefix}images/favicon.ico" sizes="16x16 32x32 48x48 64x64">
   <link rel="stylesheet" href="{rel_prefix}css/wiki.css">
@@ -7325,6 +7366,14 @@ def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> 
     else:
         lede_books = labels[0]
     issues_url = html.escape(ISSUES_URL)
+    license_url = html.escape(LICENSE_URL)
+    home_meta = social_meta_html(
+        "Stonetop Wiki",
+        "A searchable web edition of Stonetop and The Wider World and Other "
+        "Wonders by Jeremy Strandberg — moves, gear, threats, places, and "
+        "arcana, plus table-ready adventure sheets.",
+        "",
+    )
 
     html_out = f"""<!DOCTYPE html>
 <html lang="en">
@@ -7332,6 +7381,7 @@ def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stonetop Wiki</title>
+{home_meta}
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="images/favicon.ico" sizes="16x16 32x32 48x48 64x64">
   <link rel="stylesheet" href="css/wiki.css">
@@ -7365,6 +7415,13 @@ def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> 
           <strong>expect defects</strong> — mangled tables, dropped or duplicated text, wrong
           headings, broken links. If you spot one, or want to help fix them,
           <a href="{issues_url}">open an issue or a pull request on GitHub</a>.</p>
+          <p class="index-license">The books' <strong>text</strong> is published by
+          Jeremy Strandberg under a
+          <a href="{license_url}" rel="license">CC BY-SA 4.0</a> license, and is
+          reproduced here under that license — this edition is shared under the same terms.
+          The books' <strong>artwork is &copy; 2026 Lucie Arnoux and is not included</strong>:
+          no illustrations or maps are published here. Not affiliated with or endorsed by
+          Lampblack &amp; Brimstone.</p>
         </div>
         {cards_html}
         </main>
@@ -7681,6 +7738,7 @@ def main(argv: list[str] | None = None) -> None:
                         articles,
                         rel_prefix="",
                         section_navs=section_navs,
+                        description=excerpt,
                     ),
                     encoding="utf-8",
                 )
@@ -7722,6 +7780,7 @@ def main(argv: list[str] | None = None) -> None:
                 rel_prefix="",
                 section_navs=section_navs,
                 content_class="content maps-page",
+                description=excerpt,
             )
             excerpt = (
                 "Maps of Stonetop, the vicinity, and the World's End — "
@@ -7739,6 +7798,7 @@ def main(argv: list[str] | None = None) -> None:
                 articles,
                 rel_prefix="",
                 section_navs=section_navs,
+                description=excerpt,
             )
         else:
             lines = lines_cache.get(slug)
@@ -7815,6 +7875,7 @@ def main(argv: list[str] | None = None) -> None:
                 articles,
                 rel_prefix="",
                 section_navs=section_navs,
+                description=excerpt,
             )
 
         section_blocks: dict[str, dict] = {}

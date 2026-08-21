@@ -1788,6 +1788,18 @@ li.check-item input.wiki-check:checked + span {
   line-height: 1.5;
 }
 .index-hero p.index-note strong { color: var(--accent); }
+
+/* Licensing statement — say it before anyone has to ask. */
+.index-hero p.index-license {
+  margin: 0.75rem 0 0;
+  max-width: 40rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.index-hero p.index-license strong { color: var(--quote); }
+.index-hero p.index-license a { color: var(--link); }
+.index-hero p.index-license a:hover { color: var(--link-hover); }
 .index-hero p.index-note a { color: var(--link); }
 .index-hero p.index-note a:hover { color: var(--link-hover); }
 
