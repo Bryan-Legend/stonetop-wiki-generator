@@ -69,9 +69,35 @@ SITE_BASE_URL = "https://stonetop-wiki.github.io"
 SITE_NAME = "Stonetop Wiki"
 
 
+_DESC_PAGE_RE = re.compile(
+    r"\s*\((?:see\s+)?(?:Book\s+[IVXLC]+,\s*)?pages?\s*"
+    r"\d+(?:\s*[-–—]\s*\d+)?(?:\s*,\s*\d+(?:\s*[-–—]\s*\d+)?)*\)",
+    re.I,
+)
+_DESC_BARE_PAGE_RE = re.compile(
+    r"\s*\b(?:Book\s+[IVXLC]+,\s*)?pages?\s*"
+    r"\d+(?:\s*[-–—]\s*\d+)?\b",
+    re.I,
+)
+
+
+def strip_page_refs(text: str) -> str:
+    """Drop "(page 200)" cruft from prose meant to be read without links.
+
+    Hover previews keep the raw refs — wiki.js linkifies them into the target
+    page's title. Index cards cannot nest an <a>, and <meta> takes no markup,
+    so both read the stripped version instead.
+    """
+    out = _DESC_PAGE_RE.sub("", text or "")
+    out = _DESC_BARE_PAGE_RE.sub("", out)
+    out = re.sub(r"\s+([,.;:!?])", r"\1", out)
+    out = re.sub(r"\(\s*\)", "", out)
+    return " ".join(out.split())
+
+
 def meta_description(text: str, limit: int = 160) -> str:
     """One-line summary for <meta name="description">, trimmed on a word."""
-    clean = " ".join((text or "").split())
+    clean = strip_page_refs(text)
     if len(clean) <= limit:
         return clean
     return clean[: limit - 1].rsplit(" ", 1)[0].rstrip(",.;:—-") + "…"
@@ -7339,7 +7365,7 @@ def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> 
             if art.get("book") != book or art.get("kind") == "arcana":
                 continue
             pv = previews.get(art["slug"], {})
-            excerpt = pv.get("excerpt") or ""
+            excerpt = strip_page_refs(pv.get("excerpt") or "")
             # Adventures sit in adventures/ — link to the sheet where it lives.
             href = art.get("href") or f'{art["slug"]}.html'
             cards.append(
@@ -7410,18 +7436,13 @@ def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> 
           <p class="lede">A static, hyperlinked wiki for <em>Stonetop</em>
           {lede_books}.
           Page numbers are links; dice expressions roll on click; hover a link for a preview
-          (full stat blocks when deep-linked). Scroll sideways through columns on topic pages.</p>
+          (full stat blocks when deep-linked).</p>
           <p class="index-note">These pages are extracted from the books' PDFs automatically, so
           <strong>expect defects</strong> — mangled tables, dropped or duplicated text, wrong
           headings, broken links. If you spot one, or want to help fix them,
           <a href="{issues_url}">open an issue or a pull request on GitHub</a>.</p>
-          <p class="index-license">The books' <strong>text</strong> is published by
-          Jeremy Strandberg under a
-          <a href="{license_url}" rel="license">CC BY-SA 4.0</a> license, and is
-          reproduced here under that license — this edition is shared under the same terms.
-          The books' <strong>artwork is &copy; 2026 Lucie Arnoux and is not included</strong>:
-          no illustrations or maps are published here. Not affiliated with or endorsed by
-          Lampblack &amp; Brimstone.</p>
+          <p class="index-license">The books' <strong>text</strong> is by
+          Jeremy Strandberg under <a href="{license_url}" rel="license">CC BY-SA 4.0</a></p>
         </div>
         {cards_html}
         </main>
