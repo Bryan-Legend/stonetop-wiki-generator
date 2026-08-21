@@ -1,0 +1,44 @@
+# Publishes Stonetop_Wiki/ as the site root, so URLs are /adventures/Foo.html
+# rather than /stonetop-wiki-generator/Stonetop_Wiki/adventures/Foo.html.
+#
+# Only tracked files are deployed. The book-derived wiki (pages/, index.html,
+# js/search-index.js, js/previews-data.js, images/maps/) is gitignored and is
+# NOT published — the public site is the adventure sheets plus shared chrome.
+name: Deploy wiki to Pages
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/configure-pages@v5
+      - name: Assemble site
+        # Stonetop_Wiki/index.html is generated + gitignored, so the published
+        # root comes from site/index.html instead of being committed into the
+        # wiki folder (where the next build would clobber it).
+        run: |
+          mkdir -p _site
+          cp -r Stonetop_Wiki/. _site/
+          cp site/index.html _site/index.html
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+      - id: deployment
+        uses: actions/deploy-pages@v4

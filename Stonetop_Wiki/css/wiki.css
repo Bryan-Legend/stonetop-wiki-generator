@@ -1,4 +1,4 @@
-/* Stonetop Wiki (Book I & Book II) — GrokNight: near-black ground, magenta headings, blue links */
+/* Stonetop Wiki (Book I & Book II) — near-black ground, warm brown headings, blue links */
 @font-face {
   font-family: "Source Serif 4";
   font-style: normal;
@@ -43,7 +43,7 @@
 }
 
 :root {
-  /* Workbench from Grok Build GrokNight */
+  /* Near-black workbench, warm brown accent */
   --bg: #0a0a0a;
   --bg-page: #0e0e0e;
   --bg-elev: #141414;
@@ -51,9 +51,9 @@
   --ink: #e1e1e1;
   --muted: #787878;
   --rule: #3c3c41;
-  --accent: #bb9af7;
-  --accent-rgb: 187, 154, 247;
-  --accent-deep: #9d7cd8;
+  --accent: #d4a574;
+  --accent-rgb: 212, 165, 116;
+  --accent-deep: #a67c4a;
   --accent-soft: #1a1a1a;
   --link: #7aa2f7;
   --link-rgb: 122, 162, 247;
@@ -211,13 +211,13 @@ html, body {
 }
 .site-title::before {
   content: "";
-  width: 0.7rem;
-  height: 1.32rem;
+  width: 0.5rem;
+  height: 1.05rem;
   flex-shrink: 0;
   background: var(--accent);
-  /* Outlined menhir — reads as the Stone at small size */
-  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 36'%3E%3Cpath fill='none' stroke='black' stroke-width='2.1' stroke-linejoin='round' d='M5.6 2.2 10.6 3.4 12.6 31.6 8.2 34.2 3.4 31.4 4.6 7.2z'/%3E%3C/svg%3E") center / contain no-repeat;
-  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 36'%3E%3Cpath fill='none' stroke='black' stroke-width='2.1' stroke-linejoin='round' d='M5.6 2.2 10.6 3.4 12.6 31.6 8.2 34.2 3.4 31.4 4.6 7.2z'/%3E%3C/svg%3E") center / contain no-repeat;
+  /* Filled menhir — same silhouette as images/favicon.svg; keep the two in sync */
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13.89 28.99'%3E%3Cpath fill='black' d='M3.32 0 10.87 1.09 13.89 26.64 7.25 28.99 0 26.46 1.81 4.53z'/%3E%3C/svg%3E") center / contain no-repeat;
+  mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13.89 28.99'%3E%3Cpath fill='black' d='M3.32 0 10.87 1.09 13.89 26.64 7.25 28.99 0 26.46 1.81 4.53z'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 .site-title:hover { color: var(--link-hover); }
 .site-title:hover::before { background: var(--link-hover); }
@@ -609,10 +609,10 @@ html, body {
   vertical-align: -0.15em;
   margin-right: 0.3em;
   object-fit: contain;
-  /* white → near-black → GrokNight magenta matching --accent (#bb9af7) */
+  /* white → near-black → warm accent brown matching --accent (#d4a574) */
   filter: brightness(0) saturate(100%)
-    invert(72%) sepia(28%) saturate(1400%) hue-rotate(214deg)
-    brightness(101%) contrast(96%);
+    invert(77%) sepia(28%) saturate(650%) hue-rotate(346deg)
+    brightness(95%) contrast(92%);
   opacity: 0.95;
 }
 h2 .book-icon,

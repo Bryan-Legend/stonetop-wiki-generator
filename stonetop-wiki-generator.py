@@ -6738,6 +6738,8 @@ def page_shell(
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{html.escape(title)} — Stonetop Wiki</title>
+  <link rel="icon" href="{rel_prefix}images/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="{rel_prefix}images/favicon.ico" sizes="16x16 32x32 48x48 64x64">
   <link rel="stylesheet" href="{rel_prefix}css/wiki.css">
 </head>
 <body>
@@ -7247,6 +7249,8 @@ def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Stonetop Wiki</title>
+  <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="images/favicon.ico" sizes="16x16 32x32 48x48 64x64">
   <link rel="stylesheet" href="css/wiki.css">
 </head>
 <body>
