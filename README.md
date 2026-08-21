@@ -90,8 +90,8 @@ Sheets should link wiki pages as `../pages/<slug>.html` and set `data-wiki-root=
 
 ### Included play-tested Adventure Sites:
 
-- **[Vasilya’s Grove](https://bryan-legend.github.io/stonetop-wiki-generator/Stonetop_Wiki/adventures/Vasilyas-Grove.html)**
-- **[Underfalls](https://bryan-legend.github.io/stonetop-wiki-generator/Stonetop_Wiki/adventures/Underfalls.html)**
+- **[Vasilya’s Grove](https://stonetop-wiki.github.io/adventures/Vasilyas-Grove.html)**
+- **[Underfalls](https://stonetop-wiki.github.io/adventures/Underfalls.html)**
 
 ## License
 
