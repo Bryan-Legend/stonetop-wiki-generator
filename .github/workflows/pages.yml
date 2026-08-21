@@ -23,13 +23,12 @@ jobs:
       - uses: actions/checkout@v5
 
       - name: Assemble site
-        # Stonetop_Wiki/index.html is generated + gitignored, so the published
-        # root comes from site/index.html instead of being committed into the
-        # wiki folder (where the next build would clobber it).
+        # The wiki's own generated index.html is the site root. Book artwork is
+        # never in the tree (built without --maps), so everything tracked under
+        # Stonetop_Wiki/ is publishable.
         run: |
           mkdir -p _site
           cp -r Stonetop_Wiki/. _site/
-          cp site/index.html _site/index.html
           touch _site/.nojekyll
 
       - name: Publish to stonetop-wiki.github.io

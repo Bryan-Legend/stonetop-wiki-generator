@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Player Moves — Stonetop Wiki</title>
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="../images/favicon.ico" sizes="16x16 32x32 48x48 64x64">
+  <link rel="stylesheet" href="../css/wiki.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <button type="button" class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle navigation">☰</button>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-head">
+        <a class="site-title" href="../index.html">Stonetop Wiki</a>
+        <input type="search" id="nav-filter" class="nav-filter" placeholder="Search wiki…" autocomplete="off" aria-label="Search wiki">
+        <div id="search-results" class="search-results" hidden></div>
+      </div>
+      <nav class="toc" aria-label="Topics">
+        <ul id="nav-list">
+          <li class="nav-book-label">Book II</li>
+<li><a href="welcome-to-the-worlds-end.html">Welcome to the World&#x27;s End</a></li>
+<li><a href="the-village-of-stonetop.html">Village of Stonetop</a></li>
+<li><a href="aratis-the-lawkeeper.html">Aratis, the Lawkeeper</a></li>
+<li><a href="barrier-pass.html">Barrier Pass</a></li>
+<li><a href="barrow-builders.html">Barrow Builders</a></li>
+<li><a href="blackwater-lake.html">Blackwater Lake</a></li>
+<li><a href="crinwin.html">Crinwin</a></li>
+<li><a href="the-crombil.html">Crombil</a></li>
+<li><a href="danu-the-earth-mother.html">Danu, the Earth Mother</a></li>
+<li><a href="death-and-the-undying.html">Death and the undying</a></li>
+<li><a href="the-dread-river.html">Dread River</a></li>
+<li><a href="fae.html">Fae</a></li>
+<li><a href="ferriers-fen.html">Ferrier&#x27;s Fen</a></li>
+<li><a href="the-flats.html">Flats</a></li>
+<li><a href="fomoraij.html">Fomoraij</a></li>
+<li><a href="the-foothills.html">Foothills</a></li>
+<li><a href="forest-folk.html">Forest Folk</a></li>
+<li><a href="forge-lords.html">Forge Lords</a></li>
+<li><a href="the-frozen-wastes.html">Frozen Wastes</a></li>
+<li><a href="gods-and-religion.html">Gods and religion</a></li>
+<li><a href="the-golden-oak.html">Golden Oak</a></li>
+<li><a href="gordins-delve.html">Gordin&#x27;s Delve</a></li>
+<li><a href="the-great-wood.html">Great Wood</a></li>
+<li><a href="green-lords.html">Green Lords</a></li>
+<li><a href="helior-the-daybringer.html">Helior, the Daybringer</a></li>
+<li><a href="hillfolk.html">Hillfolk</a></li>
+<li><a href="huffel-peaks.html">Huffel Peaks</a></li>
+<li><a href="the-labyrinth.html">Labyrinth</a></li>
+<li><a href="lygos-and-the-south.html">Lygos and the South</a></li>
+<li><a href="the-makers.html">Makers</a></li>
+<li><a href="the-makers-roads.html">Makers&#x27; Roads</a></li>
+<li><a href="marshedge.html">Marshedge</a></li>
+<li><a href="the-maw.html">Maw</a></li>
+<li><a href="north-manmarch.html">North Manmarch</a></li>
+<li><a href="the-pale-hunter.html">Pale Hunter</a></li>
+<li><a href="primordial-powers.html">Primordial powers</a></li>
+<li><a href="red-groves.html">Red Groves</a></li>
+<li><a href="rime-lords.html">Rime Lords</a></li>
+<li><a href="the-ruined-tower.html">Ruined Tower</a></li>
+<li><a href="south-manmarch.html">South Manmarch</a></li>
+<li><a href="spirits-of-the-wild.html">Spirits of the Wild</a></li>
+<li><a href="the-steplands.html">Steplands</a></li>
+<li><a href="stone-lords.html">Stone Lords</a></li>
+<li><a href="the-stream.html">Stream</a></li>
+<li><a href="tempest-lords.html">Tempest Lords</a></li>
+<li><a href="the-things-below.html">Things Below</a></li>
+<li><a href="three-coven-lake.html">Three Coven Lake</a></li>
+<li><a href="titan-bones.html">Titan Bones</a></li>
+<li><a href="tor-the-rain-maker.html">Tor, the Rain-maker</a></li>
+<li><a href="useful-or-valuable-flora.html">Useful or valuable flora</a></li>
+<li><a href="ustrina.html">Ustrina</a></li>
+<li><a href="vor-svetelik.html">Vor Svetelik</a></li>
+<li><a href="waystones.html">Waystones</a></li>
+<li><a href="the-whitefang-mountains.html">Whitefang Mountains</a></li>
+<li><a href="appendix-a-ages-of-the-world.html">APPENDIX A: Ages of the World</a></li>
+<li><a href="appendix-b-artifact-creation.html">APPENDIX B: Artifact Creation</a></li>
+<li class="nav-hub"><a href="appendix-c-minor-arcana.html">APPENDIX C: Minor Arcana</a></li>
+<li class="nav-arcana"><a href="minor-laoj-daveths-galvanic-infusion.html">1. Laoj Daveth&#x27;s Galvanic Infusion</a></li>
+<li class="nav-arcana"><a href="minor-truth-seeds.html">2. Truth Seeds</a></li>
+<li class="nav-arcana"><a href="minor-old-mothers-wine.html">3. Old Mother&#x27;s Wine</a></li>
+<li class="nav-arcana"><a href="minor-aalz-galts-sudden-sinkhole.html">4. Aalz Galt&#x27;s Sudden Sinkhole</a></li>
+<li class="nav-arcana"><a href="minor-shell-game-of-souls.html">5. Shell Game of Souls</a></li>
+<li class="nav-arcana"><a href="minor-thunderous-bellow.html">6. Thunderous Bellow</a></li>
+<li class="nav-arcana"><a href="minor-the-fiery-veil.html">7. The Fiery Veil</a></li>
+<li class="nav-arcana"><a href="minor-the-tomb-bogs-mark.html">8. The Tomb-bog&#x27;s Mark</a></li>
+<li class="nav-arcana"><a href="minor-fear-of-the-flame.html">9. Fear of the Flame</a></li>
+<li class="nav-arcana"><a href="minor-mantle-wraiths.html">10. Mantle Wraiths</a></li>
+<li class="nav-arcana"><a href="minor-shattering-words-of-aalz-childric.html">11. Shattering Words of Aalz Childric</a></li>
+<li class="nav-arcana"><a href="minor-ffyrnig-tonic.html">12. Ffyrnig Tonic</a></li>
+<li class="nav-arcana"><a href="minor-song-of-the-dool-trees.html">13. Song of the Dool Trees</a></li>
+<li class="nav-arcana"><a href="minor-ward-of-still-waters.html">14. Ward of Still Waters</a></li>
+<li class="nav-arcana"><a href="minor-ice-weaving.html">15. Ice Weaving</a></li>
+<li class="nav-arcana"><a href="minor-the-six-locks-of-sajua.html">16. The Six Locks of Sajua</a></li>
+<li class="nav-arcana"><a href="minor-heliors-shining-ring.html">17. Helior&#x27;s Shining Ring</a></li>
+<li class="nav-arcana"><a href="minor-nerth-serpents-vigor.html">18. Nerth Serpent&#x27;s Vigor</a></li>
+<li class="nav-arcana"><a href="minor-goldleaf-cloak.html">19. Goldleaf Cloak</a></li>
+<li class="nav-arcana"><a href="minor-opening-the-way.html">20. Opening the Way</a></li>
+<li class="nav-arcana"><a href="minor-the-drowning-scale.html">21. The Drowning Scale</a></li>
+<li class="nav-arcana"><a href="minor-preserving-runes.html">22. Preserving Runes</a></li>
+<li class="nav-arcana"><a href="minor-peacebond.html">23. Peacebond</a></li>
+<li class="nav-arcana"><a href="minor-the-eye-opened.html">24. The Eye, Opened</a></li>
+<li class="nav-arcana"><a href="minor-sanctifying-mark.html">25. Sanctifying Mark</a></li>
+<li class="nav-arcana"><a href="minor-the-green-lords-shade.html">26. The Green Lord&#x27;s Shade</a></li>
+<li class="nav-arcana"><a href="minor-chimeric-transmogrification.html">27. Chimeric Transmogrification</a></li>
+<li class="nav-arcana"><a href="minor-the-sylvan-web.html">28. The Sylvan Web</a></li>
+<li class="nav-arcana"><a href="minor-flying-cloak.html">29. Flying Cloak</a></li>
+<li class="nav-arcana"><a href="minor-satchel-of-plenty.html">30. Satchel of Plenty</a></li>
+<li class="nav-arcana"><a href="minor-dancing-wind-spirit.html">31. Dancing Wind Spirit</a></li>
+<li class="nav-arcana"><a href="minor-call-of-the-hunt.html">32. Call of the Hunt</a></li>
+<li class="nav-arcana"><a href="minor-convocation-of-the-soil.html">33. Convocation of the Soil</a></li>
+<li class="nav-arcana"><a href="minor-unliving-chimera.html">34. Unliving Chimera</a></li>
+<li class="nav-arcana"><a href="minor-impudent-polymorph.html">35. Impudent Polymorph</a></li>
+<li class="nav-arcana"><a href="minor-make-pliant-the-stone.html">36. Make Pliant the Stone</a></li>
+<li class="nav-arcana"><a href="minor-plaster-of-joining.html">37. Plaster of Joining</a></li>
+<li class="nav-arcana"><a href="minor-cold-mind-iron-body.html">38. Cold Mind, Iron Body</a></li>
+<li class="nav-arcana"><a href="minor-little-friend.html">39. Little Friend</a></li>
+<li class="nav-arcana"><a href="minor-revealing-light.html">40. Revealing Light</a></li>
+<li class="nav-arcana"><a href="minor-darkwalker-cloak.html">41. Darkwalker Cloak</a></li>
+<li class="nav-arcana"><a href="minor-the-flesh-is-like-clay.html">42. The Flesh Is Like Clay</a></li>
+<li class="nav-arcana"><a href="minor-fetchs-mask.html">43. Fetch&#x27;s Mask</a></li>
+<li class="nav-arcana"><a href="minor-witch-bottle.html">44. Witch Bottle</a></li>
+<li class="nav-arcana"><a href="minor-wishing-candles.html">45. Wishing Candles</a></li>
+<li class="nav-arcana"><a href="minor-baleful-utterance.html">46. Baleful Utterance</a></li>
+<li class="nav-arcana"><a href="minor-aetherium-spear.html">47. Aetherium Spear</a></li>
+<li class="nav-arcana"><a href="minor-staff-of-magnetism.html">48. Staff of Magnetism</a></li>
+<li class="nav-arcana"><a href="minor-groundskimmer.html">49. Groundskimmer</a></li>
+<li class="nav-arcana"><a href="minor-thunderbolt-bow.html">50. Thunderbolt Bow</a></li>
+<li class="nav-arcana"><a href="minor-bronze-protector.html">51. Bronze Protector</a></li>
+<li class="nav-arcana"><a href="minor-sublime-words.html">52. Sublime Words</a></li>
+<li class="nav-arcana"><a href="minor-flaming-sword.html">53. Flaming Sword</a></li>
+<li class="nav-arcana"><a href="minor-searing-touch.html">54. Searing Touch</a></li>
+<li class="nav-arcana"><a href="minor-sigil-of-authority.html">55. Sigil of Authority</a></li>
+<li class="nav-arcana"><a href="minor-horn-of-storms.html">56. Horn of Storms</a></li>
+<li class="nav-arcana"><a href="minor-moonstone.html">57. Moonstone</a></li>
+<li class="nav-arcana"><a href="minor-hand-of-aals-sannan.html">58. Hand of Aals Sannan</a></li>
+<li class="nav-arcana"><a href="minor-bittersweet-elixir.html">59. Bittersweet Elixir</a></li>
+<li class="nav-arcana"><a href="minor-the-brooms-lullaby.html">60. The Broom&#x27;s Lullaby</a></li>
+<li class="nav-arcana"><a href="minor-the-angry-little-god.html">61. The Angry Little God</a></li>
+<li class="nav-arcana"><a href="minor-the-silver-branch.html">62. The Silver Branch</a></li>
+<li class="nav-arcana"><a href="minor-void-elemental.html">63. Void Elemental</a></li>
+<li class="nav-arcana"><a href="minor-runes-of-creation.html">64. Runes of Creation</a></li>
+<li class="nav-hub"><a href="appendix-d-major-arcana.html">APPENDIX D: Major Arcana</a></li>
+<li class="nav-arcana"><a href="major-staff-of-the-lidless-orb.html">1. Staff of the Lidless Orb</a></li>
+<li class="nav-arcana"><a href="major-twisted-spear.html">2. Twisted Spear</a></li>
+<li class="nav-arcana"><a href="major-demonhide-cloak.html">3. Demonhide Cloak</a></li>
+<li class="nav-arcana"><a href="major-norubas-ice-sphere.html">4. Noruba&#x27;s Ice Sphere</a></li>
+<li class="nav-arcana"><a href="major-mindgem.html">5. Mindgem</a></li>
+<li class="nav-arcana"><a href="major-whispering-rocks.html">6. Whispering Rocks</a></li>
+<li class="nav-arcana"><a href="major-blood-quenched-sword.html">7. Blood-quenched Sword</a></li>
+<li class="nav-arcana"><a href="major-shield-of-the-wisent-witch.html">8. Shield of the Wisent Witch</a></li>
+<li class="nav-arcana"><a href="major-hectumel-codex.html">9. Hec&#x27;tumel Codex</a></li>
+<li class="nav-arcana"><a href="major-red-scepter.html">10. Red Scepter</a></li>
+<li class="nav-arcana"><a href="major-ring-of-daagon.html">11. Ring of Daagon</a></li>
+<li class="nav-arcana"><a href="major-rune-laden-scales.html">12. Rune-laden Scales</a></li>
+<li class="nav-arcana"><a href="major-blackwood-fetishes.html">13. Blackwood Fetishes</a></li>
+<li class="nav-arcana"><a href="major-storm-markings.html">14. Storm Markings</a></li>
+<li class="nav-arcana"><a href="major-ineffable-words.html">15. Ineffable Words</a></li>
+<li class="nav-arcana"><a href="major-redwood-effigy.html">16. Redwood Effigy</a></li>
+<li class="nav-arcana"><a href="major-hungering-maw-of-hlad.html">17. Hungering Maw of Hlad</a></li>
+<li class="nav-arcana"><a href="major-azure-hand.html">18. Azure Hand</a></li>
+<li class="nav-book-label">Book I</li>
+<li><a href="welcome-to-stonetop.html">Welcome to Stonetop</a></li>
+<li><a href="expectations.html">Expectations</a></li>
+<li><a href="the-setting.html">The setting</a></li>
+<li><a href="why-play.html">Why play?</a></li>
+<li class="has-sections"><a href="getting-started.html">Getting Started</a><ul class="nav-sections"><li class="nav-section"><a href="getting-started.html#review-the-setting">Review the setting</a></li><li class="nav-section"><a href="getting-started.html#set-expectations">Set expectations</a></li><li class="nav-section"><a href="getting-started.html#discuss-tone-and-content">Discuss tone and content</a></li><li class="nav-section"><a href="getting-started.html#create-characters">Create characters</a></li><li class="nav-section"><a href="getting-started.html#intro-the-pcs">Intro the PCs</a></li><li class="nav-section"><a href="getting-started.html#let-spring-burst-forth">Let spring burst forth</a></li><li class="nav-section"><a href="getting-started.html#after-the-session">After the session</a></li></ul></li>
+<li class="has-sections"><a href="playing-the-game.html">Playing the Game</a><ul class="nav-sections"><li class="nav-section"><a href="playing-the-game.html#the-conversation">The conversation</a></li><li class="nav-section"><a href="playing-the-game.html#your-agenda">Your agenda</a></li><li class="nav-section"><a href="playing-the-game.html#flow-of-play">Flow of play</a></li><li class="nav-section"><a href="playing-the-game.html#dice-and-moves">Dice and moves</a></li><li class="nav-section"><a href="playing-the-game.html#your-principles">Your principles</a></li><li class="nav-section"><a href="playing-the-game.html#other-things-to-do">Other things to do</a></li><li class="nav-section"><a href="playing-the-game.html#your-character">Your character</a></li><li class="nav-section"><a href="playing-the-game.html#arcana">Arcana</a></li><li class="nav-section"><a href="playing-the-game.html#followers">Followers</a></li><li class="nav-section"><a href="playing-the-game.html#your-home">Your home</a></li><li class="nav-section"><a href="playing-the-game.html#moves">Moves</a></li><li class="nav-section"><a href="playing-the-game.html#gear-and-possessions">Gear and possessions</a></li><li class="nav-section"><a href="playing-the-game.html#if-you-want-to">If you want to…</a></li></ul></li>
+<li class="has-sections"><a href="playbooks-inserts.html">Playbooks &amp; Inserts</a><ul class="nav-sections"><li class="nav-section"><a href="playbooks-inserts.html#the-blessed">The Blessed</a></li><li class="nav-section"><a href="playbooks-inserts.html#the-fox">The Fox</a></li><li class="nav-section"><a href="playbooks-inserts.html#the-heavy">The Heavy</a></li><li class="nav-section"><a href="playbooks-inserts.html#the-judge">The Judge</a></li><li class="nav-section"><a href="playbooks-inserts.html#the-lightbearer">The Lightbearer</a></li><li class="nav-section"><a href="playbooks-inserts.html#the-marshal">The Marshal</a></li><li class="nav-section"><a href="playbooks-inserts.html#the-ranger">The Ranger</a></li><li class="nav-section"><a href="playbooks-inserts.html#the-seeker">The Seeker</a></li><li class="nav-section"><a href="playbooks-inserts.html#the-would-be-hero">The Would-be Hero</a></li><li class="nav-section"><a href="playbooks-inserts.html#ghost">Ghost</a></li><li class="nav-section"><a href="playbooks-inserts.html#revenant">Revenant</a></li><li class="nav-section"><a href="playbooks-inserts.html#thrall">Thrall</a></li></ul></li>
+<li class="has-sections"><a href="running-the-game.html">Running the Game</a><ul class="nav-sections"><li class="nav-section"><a href="running-the-game.html#your-agenda">Your agenda</a></li><li class="nav-section"><a href="running-the-game.html#the-core-loop">The core loop</a></li><li class="nav-section"><a href="running-the-game.html#the-spotlight">The spotlight</a></li><li class="nav-section"><a href="running-the-game.html#scenes-and-loose-play">Scenes and loose play</a></li><li class="nav-section"><a href="running-the-game.html#your-gm-moves">Your GM moves</a></li><li class="nav-section"><a href="running-the-game.html#example-of-play">Example of play</a></li><li class="nav-section"><a href="running-the-game.html#your-principles">Your principles</a></li><li class="nav-section"><a href="running-the-game.html#other-things-to-do">Other things to do</a></li><li class="nav-section"><a href="running-the-game.html#gming-is-a-practice">GMing is a practice</a></li><li class="nav-section"><a href="running-the-game.html#prep">Prep</a></li></ul></li>
+<li class="has-sections current"><a href="player-moves.html">Player Moves</a><ul class="nav-sections"><li class="nav-section"><a href="player-moves.html#defy-danger">DEFY DANGER</a></li><li class="nav-section"><a href="player-moves.html#aid">AID</a></li><li class="nav-section"><a href="player-moves.html#clash">CLASH</a></li><li class="nav-section"><a href="player-moves.html#defend">DEFEND</a></li><li class="nav-section"><a href="player-moves.html#interfere">INTERFERE</a></li><li class="nav-section"><a href="player-moves.html#know-things">KNOW THINGS</a></li><li class="nav-section"><a href="player-moves.html#let-fly">LET FLY</a></li><li class="nav-section"><a href="player-moves.html#seek-insight">SEEK INSIGHT</a></li><li class="nav-section"><a href="player-moves.html#special-moves">Special moves</a></li><li class="nav-section"><a href="player-moves.html#advantage-disadvantage">ADVANTAGE/DISADVANTAGE</a></li><li class="nav-section"><a href="player-moves.html#burn-brightly">BURN BRIGHTLY</a></li><li class="nav-section"><a href="player-moves.html#end-of-session">END OF SESSION</a></li><li class="nav-section"><a href="player-moves.html#deaths-door">DEATH&#x27;S DOOR</a></li></ul></li>
+<li class="has-sections"><a href="harm-healing.html">Harm &amp; Healing</a><ul class="nav-sections"><li class="nav-section"><a href="harm-healing.html#hit-points-and-damage">Hit points and damage</a></li><li class="nav-section"><a href="harm-healing.html#debilities">Debilities</a></li><li class="nav-section"><a href="harm-healing.html#problematic-wounds">Problematic wounds</a></li><li class="nav-section"><a href="harm-healing.html#death-and-dying">Death and dying</a></li></ul></li>
+<li class="has-sections"><a href="first-adventure.html">First Adventure</a><ul class="nav-sections"><li class="nav-section"><a href="first-adventure.html#structure">Structure</a></li><li class="nav-section"><a href="first-adventure.html#background">Background</a></li><li class="nav-section"><a href="first-adventure.html#setup-questions">Setup questions</a></li><li class="nav-section"><a href="first-adventure.html#setting-the-scene">Setting the scene</a></li><li class="nav-section"><a href="first-adventure.html#dropping-the-hook">Dropping the hook</a></li><li class="nav-section"><a href="first-adventure.html#heading-out">Heading out</a></li></ul></li>
+<li class="has-sections"><a href="threats.html">Threats</a><ul class="nav-sections"><li class="nav-section"><a href="threats.html#when-to-write-up-threats">When to write up threats</a></li><li class="nav-section"><a href="threats.html#writing-a-threat">Writing a threat</a></li><li class="nav-section"><a href="threats.html#example-threats">Example threats</a></li><li class="nav-section"><a href="threats.html#updating">Updating</a></li></ul></li>
+<li class="has-sections"><a href="expeditions.html">Expeditions</a><ul class="nav-sections"><li class="nav-section"><a href="expeditions.html#preparations">Preparations</a></li><li class="nav-section"><a href="expeditions.html#running-the-journey">Running the journey</a></li><li class="nav-section"><a href="expeditions.html#player-moves">Player moves</a></li><li class="nav-section"><a href="expeditions.html#going-home">Going home</a></li><li class="nav-section"><a href="expeditions.html#what-to-prep">What to prep</a></li></ul></li>
+<li class="has-sections"><a href="sites.html">Sites</a><ul class="nav-sections"><li class="nav-section"><a href="sites.html#environmental-storytelling">Environmental storytelling</a></li><li class="nav-section"><a href="sites.html#running-sites">Running sites</a></li><li class="nav-section"><a href="sites.html#exploring-sites">Exploring sites</a></li><li class="nav-section"><a href="sites.html#creating-sites">Creating sites</a></li><li class="nav-section"><a href="sites.html#the-green-lords-tomb">THE GREEN LORD&#x27;S TOMB</a></li></ul></li>
+<li class="has-sections"><a href="dangers.html">Dangers</a><ul class="nav-sections"><li class="nav-section"><a href="dangers.html#hazards">Hazards</a></li><li class="nav-section"><a href="dangers.html#monsters">Monsters</a></li><li class="nav-section"><a href="dangers.html#running-combat">Running combat</a></li></ul></li>
+<li class="has-sections"><a href="discoveries.html">Discoveries</a><ul class="nav-sections"><li class="nav-section"><a href="discoveries.html#clues">Clues</a></li><li class="nav-section"><a href="discoveries.html#sites">Sites</a></li><li class="nav-section"><a href="discoveries.html#encounters">Encounters</a></li><li class="nav-section"><a href="discoveries.html#opportunities">Opportunities</a></li><li class="nav-section"><a href="discoveries.html#artifacts">Artifacts</a></li><li class="nav-section"><a href="discoveries.html#arcana">Arcana</a></li></ul></li>
+<li class="has-sections"><a href="npcs-followers.html">NPCs &amp; Followers</a><ul class="nav-sections"><li class="nav-section"><a href="npcs-followers.html#npcs-in-play">NPCs in play</a></li><li class="nav-section"><a href="npcs-followers.html#creating-npcs">Creating NPCs</a></li><li class="nav-section"><a href="npcs-followers.html#follower-moves">Follower moves</a></li><li class="nav-section"><a href="npcs-followers.html#order-followers">ORDER FOLLOWERS</a></li><li class="nav-section"><a href="npcs-followers.html#strengthen-your-bond">STRENGTHEN YOUR BOND</a></li><li class="nav-section"><a href="npcs-followers.html#followers-in-play">Followers in play</a></li><li class="nav-section"><a href="npcs-followers.html#creating-followers">Creating followers</a></li><li class="nav-section"><a href="npcs-followers.html#updating-followers">Updating followers</a></li><li class="nav-section"><a href="npcs-followers.html#losing-followers">Losing followers</a></li></ul></li>
+<li class="has-sections"><a href="homefront.html">Homefront</a><ul class="nav-sections"><li class="nav-section"><a href="homefront.html#bringing-the-village-to-life">Bringing the village to life</a></li><li class="nav-section"><a href="homefront.html#running-the-homefront">Running the homefront</a></li><li class="nav-section"><a href="homefront.html#aftermath">Aftermath</a></li><li class="nav-section"><a href="homefront.html#the-steading-playbook">The steading playbook</a></li><li class="nav-section"><a href="homefront.html#seasons-change">Seasons Change</a></li><li class="nav-section"><a href="homefront.html#player-moves">Player moves</a></li><li class="nav-section"><a href="homefront.html#bolster">BOLSTER</a></li><li class="nav-section"><a href="homefront.html#convalesce">CONVALESCE</a></li><li class="nav-section"><a href="homefront.html#deploy">DEPLOY</a></li><li class="nav-section"><a href="homefront.html#level-up">LEVEL UP</a></li><li class="nav-section"><a href="homefront.html#make-a-plan">MAKE A PLAN</a></li><li class="nav-section"><a href="homefront.html#meet-with-disaster">MEET WITH DISASTER</a></li><li class="nav-section"><a href="homefront.html#muster">MUSTER</a></li><li class="nav-section"><a href="homefront.html#pull-together">PULL TOGETHER</a></li><li class="nav-section"><a href="homefront.html#trade-barter">TRADE &amp; BARTER</a></li><li class="nav-section"><a href="homefront.html#what-to-prep">What to prep</a></li></ul></li>
+<li><a href="writing-moves-love-letters.html">Writing Moves &amp; Love Letters</a></li>
+<li class="has-sections"><a href="the-game-ongoing.html">The Game Ongoing</a><ul class="nav-sections"><li class="nav-section"><a href="the-game-ongoing.html#ending-a-session">Ending a session</a></li><li class="nav-section"><a href="the-game-ongoing.html#between-sessions">Between sessions</a></li><li class="nav-section"><a href="the-game-ongoing.html#starting-a-session">Starting a session</a></li><li class="nav-section"><a href="the-game-ongoing.html#pacing">Pacing</a></li><li class="nav-section"><a href="the-game-ongoing.html#advancement">Advancement</a></li><li class="nav-section"><a href="the-game-ongoing.html#retiring-pcs">Retiring PCs</a></li><li class="nav-section"><a href="the-game-ongoing.html#new-pcs">New PCs</a></li><li class="nav-section"><a href="the-game-ongoing.html#conflict-between-pcs">Conflict between PCs</a></li><li class="nav-section"><a href="the-game-ongoing.html#time-skips">Time skips</a></li><li class="nav-section"><a href="the-game-ongoing.html#shake-ups">Shake-ups</a></li><li class="nav-section"><a href="the-game-ongoing.html#ending-your-game">Ending your game</a></li></ul></li>
+<li><a href="acknowledgements.html">ACKNOWLEDGEMENTS</a></li>
+<li><a href="mediography.html">MEDIOGRAPHY</a></li>
+<li class="nav-book-label">Adventures</li>
+<li class="nav-hub"><a href="adventures.html">Adventures</a></li>
+<li class="nav-adventure"><a href="../adventures/Sealed-Cave.html" data-nav-slug="the-sealed-cave">The Sealed Cave</a></li>
+<li class="nav-adventure"><a href="../adventures/Underfalls.html" data-nav-slug="underfalls">Underfalls</a></li>
+<li class="nav-adventure"><a href="../adventures/Vasilyas-Grove.html" data-nav-slug="vasilyas-grove">Vasilya’s Grove</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-foot"><span class="sidebar-credit">Text from <em>Stonetop</em> by Jeremy Strandberg, <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">CC BY-SA 4.0</a></span><a class="sidebar-github" href="https://github.com/Bryan-Legend/stonetop-wiki-generator">GitHub</a></div>
+    </aside>
+    <div class="main-wrap">
+      <div class="content-scroll" id="main">
+        <main class="content">
+          <p>The basic moves are the ones that every player and PC can use, the ones that get used most often, and the ones that drive most of the game.</p>
+<p>Each move has a <strong>trigger</strong>, which tells us when the move kicks in. The trigger is almost always fictional; the player declares that their character does something that meets the trigger, and the rest of the move tells us how to resolve that course of action.</p>
+<p>Players might trigger a move intentionally, describing actions that they know meet the trigger. Or, they might also say &quot;I want to Clash&quot; or &quot;I Defend.&quot; That&#x27;s fine. But when they do, it&#x27;s your job to draw the fiction out of them. &quot;Cool, what do you do?&quot; &quot;Okay, great, what&#x27;s that look like?&quot; If you can&#x27;t picture it, ask for more detail. <strong>To do it, they have to do it.</strong></p>
+<p>The opposite is also true: <strong>if they do it, they have to do it</strong>. When they say that they run past the crinwin and you deem it dangerous, high-stakes, and chancy, they&#x27;re Defying Danger. They can back out (&quot;Oh, I didn&#x27;t realize, I don&#x27;t want to do that&quot;), but if they carry on, the move triggers and they need to roll.</p>
+<p>It&#x27;s everyone&#x27;s job to watch for moves getting triggered, even if it&#x27;s usually you who makes the call. Any player can, at any time, say &quot;isn&#x27;t that Defend?&quot; and if the table agrees, then the triggering player makes with the dice. If there&#x27;s disagreement about whether a move is getting triggered, or which move is getting triggered, talk it out, ask questions, and remember to follow your principles and pursue your agenda.</p>
+<p>When a move says to &quot;roll +[STAT],&quot; that means: roll <button type="button" class="dice-roll" data-dice="2d6" title="Click to roll 2d6">2d6</button> and add whichever stat is indicated (STR, DEX, etc.). A result of a 10+ is a strong hit; a 7-9 is a weak hit (but still a hit). The basic moves all say what happens on a 10+ or a 7-9.</p>
+<p>On a 6 or less, it&#x27;s a miss. That means:</p>
+<ul class="bullets"><li>They mark XP</li><li>You make a <a class="wiki-link" href="running-the-game.html#hard-gm-moves" data-slug="running-the-game" data-fragment="hard-gm-moves" ><strong>hard GM move</strong></a> Your hard move might reflect the PC screwing up, but it could also reflect something preventing them from succeeding or even attempting the action they declared. It could even reflect them doing what they set out to do, but with terrible consequences.</li></ul>
+<p>The basic moves don&#x27;t say what happens on a 6-; this is just how they work.</p>
+<h2 id="advantage-and-disadvantage">Advantage and disadvantage</h2>
+<p>When a player <strong><em>has advantage on a roll</em></strong>, they roll an extra die and discard the lowest. On most moves, that means rolling <button type="button" class="dice-roll" data-dice="3d6" title="Click to roll 3d6">3d6</button> and totaling the two highest dice.</p>
+<p>When a player <strong><em>has disadvantage on a roll</em></strong>, they roll an extra die and discard the highest. On most moves, that means rolling <button type="button" class="dice-roll" data-dice="3d6" title="Click to roll 3d6">3d6</button> and totaling the two lowest dice.</p>
+<p>When a player <strong><em>has both advantage</em></strong></p>
+<p><strong><em>and disadvantage on a roll</em></strong>, they can-</p>
+<p>cel each other out.</p>
+<p> for a full explanation of advantage and disadvantage.</p>
+<div class="move-block" id="defy-danger"><h3 class="move-name">DEFY DANGER</h3><p class="move-trigger">When <strong><em>danger looms, the stakes are high, and you do something chancy</em></strong>, check if another move applies. If not, roll...</p><ul class="ellipsis"><li>+STR to power through or test your might</li><li>+DEX to employ speed, agility, or finesse</li><li>+CON to endure or hold steady</li><li>+INT to apply expertise or enact a clever plan</li><li>+WIS to exert willpower or rely on your senses</li><li>+CHA to charm, bluff, impress, or fit in <strong>On a 10+</strong>, you pull it off as well as one could hope; <strong>on a 7-9</strong>, you can do it, but the GM will present a lesser success, a cost, or a consequence (and maybe a choice between them, or a chance to back down).</li></ul>
+<p>If a PC&#x27;s action could trigger both Defy Danger and another move (like swinging a hatchet at the drake that&#x27;s chewing on their leg), then the other move takes precedence (in this case, Clash).</p>
+<p>Don&#x27;t call for Defy Danger just because you think &quot;they should have to roll.&quot; If a character does something chancy, but there&#x27;s no looming danger or the stakes just aren&#x27;t that high, then don&#x27;t roll. Just make a call and say what happens, following your principles and agenda.</p>
+<p>When you call for Defy Danger, say what the danger and/or the stakes are. &quot;That sounds like Defy Danger, the danger is that it&#x27;ll notice before you can stab it.&quot;</p>
+<p>Or &quot;I think that&#x27;s Defy Danger, and on a miss, you&#x27;ll freeze up with fear.&quot; If you can&#x27;t articulate the danger or the stakes, they&#x27;re not Defying Danger.</p>
+<p>If it&#x27;s unclear which stat they&#x27;re using, ask questions until it is. If it could go either way, say what you&#x27;re thinking and let the player pick. &quot;That could either be testing your might or enduring, so STR or CON, your choice.&quot;</p>
+<p>Don&#x27;t suffer nonsense. If you say &quot;an arrow is flying at you, what do you do?&quot; and they reply with something like &quot;I flash a smile at the arrow and charm it into missing me,&quot; they aren&#x27;t Defying Danger—they&#x27;re taking an arrow in the face. <strong>Tell them the consequences and ask</strong> if they still want to do that.</p>
+<p>On a 10+, they do it as well as one could hope. Describe what happens (or ask them to). Often, you&#x27;ll give them an opportunity to act. But if the danger was particularly dire or their action particular desperate (or reckless), then maybe the best one could hope for is simply avoiding the worst of it.</p>
+<p>On a 7-9, present a lesser success, cost, or consequence. There should be something obvious, or else they wouldn&#x27;t be Defying</p>
+<p>Danger.</p>
+<ul class="bullets"><li><strong>Lesser success</strong>: they get most of what they wanted but not all of it. &quot;You leap across the pit, but end up hanging halfoff. It&#x27;ll take time to pull yourself up.&quot;</li><li><strong>Cost</strong>: they do it, but they lose or suffer something in the process. &quot;You leap across the pit, but land badly and twist your ankle.&quot;</li><li><strong>Consequence</strong>: they do it, but with an unwelcome outcome. &quot;You leap across the pit, but the platform crumbles as you jump. No going back that way!&quot;</li></ul>
+<p>Consider giving them a choice between two or more lesser successes/costs/consequences, and/or the chance to back down and not do the thing after all. Players often feel better about adversity that they choose than they feel about adversity imposed upon them. Just be sure to make the bad options proportional.</p>
+<p>Remember: a 7-9 is still fundamentally a success. Don&#x27;t make the lesser success, cost, or consequence so bad that they&#x27;d have been better off doing nothing.</p>
+<p>On a 6-, though? Go nuts. The danger comes to bear before they can act, or as they act. Or, their action is successful but things get much worse as a result. Do something that flows naturally from the fiction and your prep. <strong>Let things burn.</strong></p></div>
+<hr>
+<p><em>Caradoc is hanging from a tree, his grip slipping. He swings his legs up around the bough, then pulls himself up. &quot;Yeah,</em></p>
+<p><em>that&#x27;s Defying Danger—the danger is</em></p>
+<p><em>that you fall like 80 feet. Sounds like</em></p>
+<p><em>testing your might, so +STR?&quot; &quot;Sounds right,&quot; he says, and rolls. On</em></p>
+<p><em>a 7-9, I&#x27;ll go with a cost and have him mark</em> weakened <em>from fear and fatigue.</em></p>
+<p><em>But, no, he rolls a 10, so I say &quot;Cool, you</em></p>
+<p><em>do it, just like you said.&quot; Then</em> <strong><em>I offer an opportunity</em></strong><em>. &quot;It takes a moment to catch your breath, but from here it&#x27;s an easy climb up to the nest. What do you do?&quot;</em></p>
+<hr>
+<p><em>Blodwen freezes, hearing the trills of</em></p>
+<p><em>drakes as they encircle her in the grass.</em></p>
+<p><em>She pulls out a clay pot, then tosses it,</em></p>
+<p><em>hoping to distract them. &quot;Clever! Sounds like Defying Danger with INT.&quot; She rolls a 7 and I give her a</em></p>
+<p><em>choice: &quot;They take the bait, but you&#x27;re not</em></p>
+<p><em>free and clear yet. You can either mark off 2 more uses of supplies and huck more</em></p>
+<p><em>stuff past them, to draw them away. Or</em></p>
+<p><em>you can try to slip away now, Defying Danger with DEX. What do you do?&quot;</em></p>
+<hr>
+<p><em>Rhianna rushes past the crinwin. &quot;I</em></p>
+<p><em>think you&#x27;re Defying Danger here, with</em></p>
+<p><em>DEX to rely on speed.&quot; On a 10+ she&#x27;ll</em></p>
+<p><em>get past them, no problem, and make it</em></p>
+<p><em>to the mouth of the cave.</em></p>
+<p><em>But she gets a 9 and I opt for a consequence: &quot;As you rush past them, a couple turn and tackle you.&quot; Rhianna&#x27;s player calls shenanigans—a 7-9 should still be</em></p>
+<p><em>fundamentally successful. &quot;Oh, right!&quot; I</em></p>
+<p><em>say. &quot;You get to the mouth of the cave, but two crinwin are bounding after you,</em></p>
+<p><em>hot on your tail, what do you do?&quot;</em></p>
+<hr>
+<div class="move-block" id="aid"><h3 class="move-name">AID</h3><p class="move-trigger">When you <strong><em>help someone who has not yet rolled</em></strong>, the GM picks 1:</p><ul class="bullets"><li>They can accomplish more than they could alone</li><li>They gain advantage on their roll.</li></ul>
+<p>Either way, you are exposed to any risk, cost, or consequence associated with their roll.</p>
+<p>Invoke this move when one PC triggers a move and another PC (or follower) assists, or if two or more characters make the same move at once.</p>
+<p>As with any move: to do it, they have to do it. If a player says something vague like &quot;yeah, I&#x27;ll Aid!&quot; or &quot;can I help?&quot; then say &quot;sure, how do you help?&quot; If they can&#x27;t come up with something plausible, then Aid doesn&#x27;t trigger.</p>
+<p>Choose &quot;they can accomplish more than they could alone&quot; if the main move would be impossible without help, or if you think the Aid makes the main move take less time or have greater effect. Choose &quot;they gain advantage on their roll&quot; if the first PC <em>could</em> do it alone but the Aid makes it easier.</p>
+<p>Clarify the player&#x27;s intent and approach if you&#x27;re unsure which option applies.</p>
+<p>Involve both characters in any negative results of the move. Even on a 10+ with no obvious consequence, consider making a soft move at the Aiding character to show how their Aid put them at risk.</p>
+<p><strong>Optional technique</strong>: when Aid grants advantage, have the helping player roll the extra <button type="button" class="dice-roll" data-dice="d6" title="Click to roll d6">d6</button>. It makes them feel more involved!</p></div>
+<hr>
+<p><em>The PCs are investigating the clearing where Pryder and Rheinal were attacked.</em></p>
+<p><em>Vahid pokes around, looking for clues. &quot;Sounds like you&#x27;re Seeking Insight,&quot; I say.</em></p>
+<p><em>Rhianna says she&#x27;ll have her crew look</em></p>
+<p><em>around, too. &quot;Especially Lowri, he&#x27;s the best tracker. Should I Seek Insight, too?&quot;</em></p>
+<p><em>&quot;No, let&#x27;s say that he&#x27;s Aiding Vahid,&quot; I say.</em></p>
+<p><em>&quot;Are y&#x27;all splitting up the clearing, to work</em></p>
+<p><em>more quickly? Or, like working together, kicking ideas around, giving him advantage?&quot;</em></p>
+<p><em>&quot;How much time could we save?&quot; Rhianna asks. I tell her that it&#x27;d save maybe half an</em></p>
+<p><em>hour. &quot;Hmm. No, let&#x27;s be thorough. I&#x27;ll have</em></p>
+<p><em>Lowri back Vahid up and advise.&quot;</em></p>
+<p><em>&quot;Okay! Vahid, roll to Seek Insight with advantage.&quot;</em></p>
+<hr>
+<p><em>Caradoc is pinned by a nailadd—a giant spider—and it&#x27;s about to bite him with those venomous jaws. He twists and shoves</em></p>
+<p><em>it, trying to get free, and we&#x27;ve all agreed</em></p>
+<p><em>that this is Defying Danger with STR.</em></p>
+<p><em>&quot;Can I help?&quot; asks Blodwen.</em></p>
+<p><em>&quot;Sure, what do you do to help?&quot;</em></p>
+<p><em>&quot;I&#x27;ll move in and start yelling at it, poking it with my staff. I don&#x27;t want to hurt it, though!&quot;</em></p>
+<p><em>(Blodwen&#x27;s got a soft spot for critters.)</em></p>
+<p><em>&quot;Riiight, no hurting the giant spider. Roll</em></p>
+<p><em>with advantage, Caradoc.&quot; He gets an 8,</em></p>
+<p><em>and I pick a cost that involves Blodwen.</em></p>
+<p><em>&quot;Caradoc, you hear yelling and feel the thing shift, and manage to roll free. But as you do, you see it knock Blodwen&#x27;s staff from her grip.</em></p>
+<p><em>It&#x27;s about to pounce on her. What do you do?&quot;</em></p>
+<hr>
+<p><em>Rhianna yells &quot;bring it down!&quot; and she, Garet, and Eira (her crew members) start peppering the drake with arrows. That&#x27;s Let Fly with her crew providing Aid. Rhianna absolutely could make the move on her own, so gets to roll with advantage.</em></p>
+<p><em>Alas, she still gets a 6. &quot;Roll damage anyhow,&quot; I say, &quot;but even if you bring it down, it rushes in and bashes you with its bony</em></p>
+<p><em>crest for <button type="button" class="dice-roll" data-dice="d8+2" title="Click to roll d8+2">d8+2</button></em> forceful <em>damage, tossing you</em></p>
+<p><em>aside, and then it claws either Eira or Garet for another <button type="button" class="dice-roll" data-dice="d8+2" title="Click to roll d8+2">d8+2</button>,</em> messy <em>and 1 piercing.</em></p>
+<p><em>Who does it get?&quot; &quot;I have to pick?&quot;</em></p>
+<p><em>&quot;Yup.&quot;</em></p>
+<hr>
+<p><em>Blodwen has called up a wind spirit and is asking it to scout the crumbling ruins.</em></p>
+<p><em>&quot;You&#x27;re going to have to roll +CHA for</em></p>
+<p><em>Persuade,&quot; I say.</em></p>
+<p><em>&quot;Can I help? asks Vahid. I ask him how he does it. &quot;Maybe I know something about these spirits, like what motivates them?&quot; But that&#x27;s</em></p>
+<p><em>not Aiding, that&#x27;s Knowing Things. Maybe</em></p>
+<p><em>he does Know Things and uses what I tell</em></p>
+<p><em>him to Aid, but he&#x27;s not Aiding now!</em></p>
+<hr>
+<p><em>The chamber collapses, pinning Blodwen under a pile of debris and timber. Caradoc staggers over and pries up one of the timbers. &quot;You&#x27;re still stuck under a bunch of rubble, though, Blodwen. If you want to dig free, that&#x27;d be Defying Danger with STR.</em></p>
+<p><em>The danger is that you can&#x27;t get free before</em></p>
+<p><em>Caradoc&#x27;s strength gives out.&quot;</em></p>
+<p><em>Caradoc asks if he&#x27;s Aiding. &quot;You are!&quot; I say.</em></p>
+<p><em>&quot;You&#x27;re giving her the chance to try to get free. But she&#x27;s not going to get advantage, if</em></p>
+<p><em>that&#x27;s what you mean.&quot;</em></p>
+<div class="move-block" id="clash"><h3 class="move-name">CLASH</h3><p class="move-trigger">When you <strong><em>fight in melee or close quarters</em></strong>, roll +STR: <strong>on a 10+</strong>, your maneuver works as expected (deal your damage) and pick 1:</p><ul class="bullets"><li>Avoid, prevent, or counter your enemy&#x27;s attack</li><li>Strike hard and fast, for <button type="button" class="dice-roll" data-dice="1d6" title="Click to roll 1d6">1d6</button> extra damage, but suffer your enemy&#x27;s attack</li></ul>
+<p><strong>On a 7-9</strong>, your maneuver works, mostly (deal your damage), but you suffer your enemy&#x27;s attack.</p>
+<p>This move covers an exchange of hand-tohand combat: a PC tries to hurt or subdue a foe, and the foe is either actively trying to hurt/subdue them back, or is able and willing to start. If the foe can&#x27;t or won&#x27;t fight back, it&#x27;s not Clash—the PC just deals damage (or murders them outright).</p>
+<p>If you announce an attack (&quot;it leaps at you, what do you do?&quot;) and the character reacts by both defending themselves and striking back, then that&#x27;s Clash. They don&#x27;t usually need to Defy Danger first, unless they were already in a precarious position.</p>
+<p>If a player says something like &quot;I attack&quot; or &quot;I stab it,&quot; probe for more detail. It&#x27;s easier to resolve this move when you can picture their maneuver and understand its intent.</p>
+<p>If their attack just wouldn&#x27;t work, then Clash doesn&#x27;t trigger. Instead, <strong>tell them the requirements</strong> (&quot;you need to get inside his guard first&quot;) or <strong>reveal an unwelcome truth</strong> (&quot;your spear goes right through, it&#x27;s like stabbing mist&quot;) or <strong>put them in a spot</strong> (&quot;it swats your spear aside and jabs at your throat, what do you do?&quot;).</p>
+<p>On a 7+, their maneuver works (or mostly works, on a 7-9) and they&#x27;ve got a chance to hurt their foe—the damage roll tells us how much. Even if they don&#x27;t drop their foe (or get through its armor), their maneuver still basically works. The fictional situation should change to reflect that!</p>
+<p>&quot;Suffer your enemy&#x27;s attack,&quot; doesn&#x27;t just mean taking damage. It means that you use the enemy to make an aggressive, hard GM move against the character. You can <strong>hurt them</strong> (&quot;it smashes your helmet and the world is spinning—take <button type="button" class="dice-roll" data-dice="1d8+3" title="Click to roll 1d8+3">1d8+3</button> damage and mark <em>dazed</em>&quot;), but you can also <strong>put them in a spot</strong> (&quot;you stab it, but it smashes you against the railing for <button type="button" class="dice-roll" data-dice="1d6" title="Click to roll 1d6">1d6</button> damage, and the railing cracks and starts to give&quot;), or <strong>use up their resources</strong> (&quot;you stab it, but it bucks and twists and your spear goes flying&quot;), or make any other GM move that makes sense—especially one of the monster&#x27;s moves! If the move would potentially hurt the PC, rough them up, or take them out, then deal damage as part of the move.</p>
+<p>When a PC deals damage and suffers an enemy&#x27;s attack, have the player roll damage before you decide what the enemy&#x27;s attack looks like. If you know you&#x27;re going to do something that deals damage to the PC, you can roll (or have the player roll) the monster&#x27;s damage before deciding on your move. Let the damage dealt (plus armor, tags, and whether each combatant is left standing) inform the move that you make.</p>
+<p>On a 6-, the obvious result is that the player&#x27;s maneuver fails and they suffer the enemy&#x27;s attack. But you can make any move that follows your principles. Maybe they strike a killing blow, but the monster falls and crushes a follower! Maybe they cut down this foe but the next one clocks them on the head and the PC is captured.</p>
+<p>When a character&#x27;s attack could feasibly hurt multiple foes—because of the <em>area</em> tag, because they describe it in a way that makes sense, etc.—then they roll to Clash just once for the whole group, but they roll damage separately for each individual foe.</p>
+<p>When multiple PCs and/or followers attack a foe at once, one of them Clashes while the others Aid.</p></div>
+<hr>
+<p><em>The nailadd lets Caradoc go and pounces on</em></p>
+<p><em>Blodwen, biting her with paralytic venom. Caradoc&#x27;s like &quot;I attack! Clash?&quot;</em></p>
+<p><em>&quot;Probably, yeah. What&#x27;s this look like?&quot;</em></p>
+<p><em>&quot;I roll to my feet, pick up my shield and rush in to bash it off her.&quot;</em></p>
+<p><em>Blodwen asks if it&#x27;s even Clash, since it&#x27;s fo-</em></p>
+<p><em>cused on her. &quot;Yeah,&quot; I say, &quot;it just poisoned</em></p>
+<p><em>you, and it&#x27;s super quick. I think it&#x27;s able to</em></p>
+<p><em>defend itself from Caradoc.&quot;</em></p>
+<p><em>So Caradoc rolls +STR and gets an 11, wisely choosing to avoid the enemy&#x27;s attack.</em></p>
+<p><em>Alas, his damage is only a 2, not enough to get past the spider&#x27;s armor. &quot;So, nothing</em></p>
+<p><em>happens?&quot; he asks. &quot;It doesn&#x27;t take damage, but your maneuver works. You bash it clear off of Blodwen, and it flops on its back, flailing for a bit while it tries to right itself. What do you do?&quot;</em></p>
+<hr>
+<p><em>The crinwin has Rhianna pinned, making these weird cooing noises as it tries to choke her. &quot;I push it back with one hand and pull my knife with the other. Stab stab.&quot; That&#x27;s</em></p>
+<p><em>fighting in close quarters, so she rolls +STR</em></p>
+<p><em>to Clash. She gets a 12!</em></p>
+<hr>
+<p>When multiple combatants deal damage to a single foe, roll one combatant&#x27;s damage (usually the best one) and add +1 damage for each capable attacker after the first. Apply tags from all attackers as they make sense.</p>
+<p>See also <a class="wiki-link" href="dangers.html#running-combat" data-slug="dangers" data-fragment="running-combat" ><strong>Running combat</strong></a>, especially <a class="wiki-link" href="dangers.html#foes-they-cant-hurt" data-slug="dangers" data-fragment="foes-they-cant-hurt" ><strong>Foes they can&#x27;t hurt</strong></a>, <a class="wiki-link" href="dangers.html#multiple-combatants" data-slug="dangers" data-fragment="multiple-combatants" ><strong>Multiple combatants</strong></a>, and <a class="wiki-link" href="dangers.html#keeping-fights-interesting" data-slug="dangers" data-fragment="keeping-fights-interesting" ><strong>Keeping fights interesting</strong></a>.</p>
+<p><em>&quot;Do you avoid its attack? Or do extra damage?&quot; She opts for the extra damage and rolls a <button type="button" class="dice-roll" data-dice="d8" title="Click to roll d8">d8</button> (her damage die) plus a <button type="button" class="dice-roll" data-dice="d6" title="Click to roll d6">d6</button>, for 7 damage total. That&#x27;s enough to drop it, but she also suffers the crinwin&#x27;s attack. I con-</em></p>
+<p><em>sider having it</em> <strong><em>hurt her</em></strong><em>, bashing her head</em></p>
+<p><em>with a rock while she stabs it, but decide to</em></p>
+<p><strong><em>reveal an unwelcome truth</em></strong> <em>instead.</em></p>
+<p><em>&quot;So, you stab it like five or six times, its cold black blood pouring over you. But crinwin</em></p>
+<p><em>are cowardly, right? A good stab should</em></p>
+<p><em>have sent this thing running. This one? It</em></p>
+<p><em>keeps choking you, making those coo-cooing</em></p>
+<p><em>noises, not blinking or flinching until it bleeds out. Take a <button type="button" class="dice-roll" data-dice="d6" title="Click to roll d6">d6</button> damage, and what&#x27;s going through your head right now?&quot;</em></p>
+<hr>
+<p><em>The swyn locked eyes with Vahid and tried</em></p>
+<p><em>to crush his will, but Vahid resisted and has</em></p>
+<p><em>successfully pretended otherwise. &quot;It slithers closer,&quot; I tell him. &quot;It hisses,&#x27;Commme with</em></p>
+<p><em>meee,&#x27; and turns to go, what do you do?&quot; &quot;I&#x27;ve got my lantern out, right? I smash it</em></p>
+<p><em>in the face. Clash?&quot;</em></p>
+<p><em>The swyn thought Vahid was under its sway and is not expecting an attack. &quot;No, no</em></p>
+<p><em>Clash. Just deal your damage!&quot;</em></p>
+<div class="move-block" id="defend"><h3 class="move-name">DEFEND</h3><p class="move-trigger">When you <strong><em>take up a defensive stance</em></strong> or <strong><em>jump in to protect others</em></strong>, roll +CON: <strong>on a 10+</strong>, hold 3 Readiness (or 4 if you bear a shield); <strong>on a 7-9</strong>, hold 1 Readiness (or 2 with a shield). You can spend Readiness 1-for-1 to:</p><ul class="bullets"><li>Suffer an attack&#x27;s damage/effects instead of your ward</li><li>Halve an attack&#x27;s effect or damage</li><li>Draw all attention from your ward to yourself</li><li>Strike back at an attacker (deal your damage, with disadvantage)</li></ul>
+<p>When you <strong><em>go on the offense, cease to</em></strong></p>
+<p><strong><em>focus on defense, or the threat passes</em></strong>,</p>
+<p>lose any Readiness that you hold.</p>
+<p>This move can trigger proactively or reactively.</p>
+<p><strong>Proactively</strong>: there&#x27;s danger afoot but no imminent, in-process attack. They ready themselves to receive and repel danger:</p>
+<p>planting their feet, raising shield and spear, eyes sharp, etc. Maybe they step near/in front of the person they mean to Defend.</p>
+<p>Maybe they dig in to hold a position or protect some valuable item. Maybe they&#x27;re just Defending themselves.</p>
+<p><strong>Reactively</strong>: you&#x27;ve made a move that establishes a specific, imminent attack against one character, and another character&#x27;s player says something like &quot;I step in front of them!&quot; or &quot;I tackle them out of the way.&quot;</p>
+<p>This version only works when they protect someone (or maybe something) else. If they&#x27;re reactively protecting themselves, that&#x27;s Defy Danger or maybe Clash.</p>
+<p>A character <em>can</em> jump in to Defend another after you&#x27;ve already described an attack landing, as long as everyone agrees that, yeah, they could have done that.</p>
+<p>On a 7+, the player holds Readiness and can spend it to do one of the listed options, no roll required. Players can spend Readiness multiple times in response to a single attack, but can only pick each option once against any given attack. Remember to <strong>begin and end with the fiction</strong>—ask the player what it looks like when they spend their Readiness.</p>
+<p>Players can spend Readiness only in ways that make sense. They can&#x27;t interrupt an attack that they can&#x27;t perceive, or strike back at a foe that&#x27;s out of reach.</p>
+<p>Halving an attack&#x27;s damage/effects reduces the damage before applying armor. Work with the player to determine what halving the effect means. Maybe they stagger instead of falling, or maybe the tentacle grabs just one arm instead of fully ensnaring them.</p>
+<p>If they strike back at an attacker, any tags on their damage (like <em>forceful</em> or <em>messy</em>) apply. This option won&#x27;t, by itself, stop or prevent the attack, even if they drop the attacker. They&#x27;re spending Readiness in <em>response</em> to the attack, not before it.</p>
+<p>Players can trigger other moves while they hold Readiness, and spend it in response to those moves&#x27; outcomes. That&#x27;s the point!</p>
+<p>But if they get aggressive or give up their defensive stance, the Readiness is lost.</p>
+<p>When someone Defends proactively and rolls a 6-, escalate the situation aggressively. If they Defend <em>reactively</em> and get a 6-, well, your hard move will probably be pretty obvious.</p></div>
+<hr>
+<p><em>Rheinal (an NPC) gets pounced on by a nailadd, and Vahid tries to save him. &quot;I grab him and pull him behind me.&quot; That&#x27;s</em></p>
+<p><em>Defend! Vahid rolls an 8, and spends his 1 Readiness immediately.</em></p>
+<p><em>&quot;It&#x27;s going to tackle him, do <button type="button" class="dice-roll" data-dice="1d8" title="Click to roll 1d8">1d8</button> damage, and</em></p>
+<p><em>pump him full of poison,&quot; I say. &quot;If you want to save him, you could either take the blow, or halve the damage/effect.&quot; He asks if he can roll the damage before deciding and I&#x27;m like &quot;Of course!&quot; He rolls a 5, and chooses to suffer the attack in Rheinal&#x27;s place, poison and all.</em></p>
+<hr>
+<p><em>Caradoc trips while running from a drake, and Rhianna turns and starts yelling at it, getting between them. &quot;Sounds like you&#x27;re</em></p>
+<p>Defending Caradoc, yeah?&quot;</p>
+<p><em>&quot;Yup. I promised his ma I&#x27;d bring him home</em></p>
+<p><em>safe.&quot; She rolls a 7, spending her Readiness</em></p>
+<p><em>to draw attention from her ward to herself.</em></p>
+<p><em>&quot;I&#x27;m yelling, clanging my spear and knife,</em></p>
+<p><em>and circling so it&#x27;s not looking at Caradoc.&quot;</em></p>
+<p><em>&quot;Cool! Caradoc, that drake was right on</em></p>
+<p><em>you, but it just turned to hiss at Rhianna.</em></p>
+<p><em>You&#x27;re able to get to your feet, what do you</em></p>
+<p><em>do?&quot; He, of course, decides to stab it (and Rhianna curses under her breath).</em></p>
+<hr>
+<p><em>Blodwen approaches Wynfor, who&#x27;s got</em></p>
+<p><em>this creepy, beatific look on his face. Vahid&#x27;s</em></p>
+<p><em>hanging back, guarding the door. He rolled Defend, and is holding 1 Readiness.</em></p>
+<p><em>When Wynfor stabs Blodwen out of the blue, Vahid is like, &quot;I spend Readiness to halve the damage!&quot; But I don&#x27;t think so. He&#x27;s by the</em></p>
+<p><em>door, 3 or 4 paces away, and Wynfor knifed</em></p>
+<p><em>Blodwen with no warning. &quot;Keep your</em></p>
+<p><em>Readiness,&quot; I say, &quot;but you weren&#x27;t in posi-</em></p>
+<p><em>tion to protect Blodwen from Wynfor at all.&quot;</em></p>
+<hr>
+<p><em>Blodwen is tending to Pryder&#x27;s wounds when Caradoc hears a strange motley of</em></p>
+<p><em>animal noises approaching—crinwin! He gulps, moves to the entrance, and hoists his shield and spear. That&#x27;s a defensive position, for sure, so he rolls +CON to Defend. He</em></p>
+<p><em>gets a 10+, and holds 3 Readiness, +1 for his shield.</em></p>
+<p><em>&quot;The first two crinwin rush you, one bounding at your face and the other going low! What do</em></p>
+<p><em>you do?&quot; He holds his ground, shield up, stabbing as they get near. That&#x27;s fighting in melee, so a Clash. &quot;Do I keep my Readiness?&quot; he asks,</em></p>
+<p><em>and yeah, I think he does—he&#x27;s fighting, but</em></p>
+<p><em>defensively. (If he&#x27;d rushed out to meet them,</em></p>
+<p><em>then no, his Readiness would be gone).</em></p>
+<p><em>Alas, he rolls a 4 to Clash so I</em> <strong><em>put him a spot</em></strong><em>, and hard: &quot;The first one bowls you over while the second grabs your leg and bites down, hard! That&#x27;ll be <button type="button" class="dice-roll" data-dice="d6+1" title="Click to roll d6+1">d6+1</button> damage.&quot; He</em></p>
+<p><em>rolls 5 damage, but spends 1 Readiness to</em></p>
+<p><em>halve the attack&#x27;s damage and effects. That</em></p>
+<p><em>becomes 3 damage, less 1 for his armor. &quot;What&#x27;s this look like, then?&quot; I ask &quot;How are the effects halved?&quot;</em></p>
+<p><em>&quot;I think I keep my feet, but the first one is hanging on my shield while the other one</em></p>
+<p><em>chomps my ankle. And, yeah, I&#x27;ll spend one more Readiness to strike back, bashing the one on my shield the against door frame.</em></p>
+<p>Cool?&quot;</p>
+<p><em>Very cool. He deals his damage (with disadvantage), and he&#x27;s still got 2 Readiness left.</em></p>
+<p><em>&quot;Okay, Blodwen, while this is going on...&quot;</em></p>
+<div class="move-block" id="interfere"><h3 class="move-name">INTERFERE</h3><p class="move-trigger">When you try to foil another PC&#x27;s action and neither of you back down, roll...</p><ul class="ellipsis"><li>+STR to power through or test your might</li><li>+DEX to employ speed, agility, or finesse</li><li>+CON to endure or hold steady</li><li>+INT to apply expertise or enact a clever plan</li><li>+WIS to exert willpower or rely on your senses</li><li>+CHA to charm, bluff, impress, or fit in <strong>On a 10+</strong>, they pick 1 from the list below; <strong>on a 7-9</strong>, they pick 1 from the list below but you are left off-balance, exposed, or otherwise vulnerable.</li></ul>
+<ul class="bullets"><li>Do it anyway, but with disadvantage on their (next) roll</li><li>Relent, change course, or otherwise allow their move to be foiled Invoke this move when a PC acts, another PC tries to stop them, and the first PC persists. Stop and discuss the situation, giving both players the chance to back off.</li></ul>
+<p>Either player can relent without going to the dice.</p>
+<p>On a 7+, the initial player (the one being interfered with) chooses: act anyway with disadvantage on their next roll, or relent.</p>
+<p>If they choose to act, but doing so doesn&#x27;t trigger a move, then they take disadvantage on their next roll—even if that roll is unrelated. Ask the acting player why the disadvantage lingers. Maybe they&#x27;re angry or distracted, or doubting themselves.</p>
+<p>On a 7-9, the Interfering character is off-balance, exposed, or vulnerable. Give the other PC an opportunity to retaliate.</p>
+<p>If that&#x27;s impossible or unlikely, put the Interfering character in a spot and/or shift the spotlight to someone else.</p>
+<p>On a 6-, the obvious outcome is that they fail to prevent the initial PC&#x27;s action. The initial PC does what they started doing,</p>
+<p>and either that triggers a player move or you say what happens. Don&#x27;t let the initial PC back down now! They committed, or else Interfere wouldn&#x27;t have been rolled.</p>
+<p>Technically, though, a 6- to Interfere means you get to make a hard GM move.</p>
+<p>Maybe the Interfering PC foils the initial action after all, but doing so makes things much, much worse.</p>
+<p>To be clear: Interfere doesn&#x27;t apply against monsters or most NPCs. It might apply against followers, when they&#x27;re acting on another PC&#x27;s orders, but you&#x27;ll need to figure that out case-by-case.</p></div>
+<hr>
+<p><em>Wynfor just stabbed Blodwen, to everyone&#x27;s surprise, and Rhianna reacts: &quot;Oh screw</em></p>
+<p><em>this. I shoot him. In the leg.&quot;</em></p>
+<p><em>Even though Blodwen just got stabbed by the glassy-eyed boy, she says, &quot;RHIANNA, NO!&quot; and puts her hand up to stop her. I ask Rhianna if she shoots. If she does, Blodwen</em></p>
+<p><em>will be Interfering.</em></p>
+<p><em>But Rhianna holds her shot. &quot;I&#x27;ve still got</em></p>
+<p><em>my bow drawn, though. &#x27;Back off, kid,</em></p>
+<p><em>and drop the knife. I&#x27;d rather not have to explain a hole in your leg to your ma.&#x27;&quot;</em></p>
+<hr>
+<p><em>Caradoc is still hearing the swyn&#x27;s voice, hissing bad ideas in his head, and Rhianna just gave him a dressing down. I lean in and say &quot;Sssseee? Contempt! Shhhow her what you&#x27;re made ovvv.&quot; I offer him an XP if he attacks Rhianna, and he goes for it.</em></p>
+<p><em>&quot;I growl and swing my shield at her, like</em></p>
+<p><em>SHUT UP! Clash?&quot; &quot;Probably, but hold on. Rhianna, Caradoc is attacking you, what do you do?&quot; &quot;What? No. I step back, dodging that shield and kicking his leg out from under him.&quot;</em></p>
+<p><em>Caradoc doesn&#x27;t back down and neither does Rhianna, so she rolls +DEX to Interfere.</em></p>
+<p><em>She gets a 7. Caradoc can either Clash with disadvantage or let his attack be foiled. He</em></p>
+<p><em>lets it be foiled, but Rhianna&#x27;s off-balance and/or vulnerable.</em></p>
+<p><em>&quot;Rhianna, you kick Caradoc&#x27;s leg out but he tumbles into you. You both fall, him on top.</em></p>
+<p><em>Caradoc, you&#x27;re on your back, Rhianna under</em></p>
+<p><em>you, her face right by your elbow, and that voice hissing &#x27;ssstrike her!&#x27; What do you do?&quot;</em></p>
+<hr>
+<p><em>Rhianna falls back and walks with Vahid for a bit. &quot;Vahid, what&#x27;s up with you and Eira? You&#x27;re creeping her out.&quot; Vahid is</em></p>
+<p><em>evasive and Rhianna&#x27;s like &quot;Yeah, I stop</em></p>
+<p><em>and peer through your enigmatic old man</em></p>
+<p><em>routine. Seek Insight?&quot;</em></p>
+<p><em>&quot;Sure,&quot; I say. Vahid asks if there&#x27;s anything he can do about that. &quot;You can Interfere.</em></p>
+<p><em>But tell us what that looks like.&quot;</em></p>
+<p><em>&quot;I smile awkwardly and say something about being a lonely old man looking at a</em></p>
+<p><em>pretty younger woman, even though that&#x27;s</em></p>
+<p><em>not what&#x27;s going on at all.&quot; Interesting! We agree that he&#x27;s Interfering and rolls +CHA.</em></p>
+<p><em>He rolls a 4.</em></p>
+<p><em>I consider</em> <strong><em>turning his move back on him</em></strong> <em>and giving Rhianna advantage to Seek Insight. But I&#x27;d rather let this issue simmer, so I</em> <strong><em>announce trouble</em></strong> <em>and cut the</em></p>
+<p><em>conversation short. &quot;Rhianna, he gives you</em></p>
+<p><em>that bogus line but before you can process it, Garet yells &#x27;DRAKES!&#x27; and there&#x27;s a snarl</em></p>
+<p><em>and shouting up ahead, what do you do?&quot;</em></p>
+<hr>
+<p><em>Thornthumb offers Blodwen a pretty flower, and she goes to take it. Vahid Interferes, trying to slap it from the spriggan&#x27;s&#x27;hand. He gets a 10, but Blodwen decides to take the flower anyhow. &quot;I think he knocks it out of</em></p>
+<p>my <em>hand, and I&#x27;m like &#x27;Vahid! Apologize!&#x27;&quot;</em></p>
+<p><em>Vahid clenches his jaw and apologizes, then stomps off. Thornthumb grins as he goes.</em></p>
+<p><em>Because she acted despite Vahid&#x27;s 10+ to</em></p>
+<p><em>Interfere, Blodwen has disadvantage on her</em></p>
+<p><em>next roll. I ask her why she thinks that is.</em></p>
+<p><em>&quot;I&#x27;m disturbed,&quot; she says. &quot;I&#x27;m telling myself that the flower was just a sweet gesture, but I keep thinking about Thornthumb&#x27;s grin and wondering if Vahid was right.&quot;</em></p>
+<div class="move-block" id="know-things"><h3 class="move-name">KNOW THINGS</h3><p class="move-trigger">When you <strong><em>consult your accumulated knowledge</em></strong>, roll +INT: <strong>on a 10+</strong>, the GM will tell you something interesting and useful about the topic at hand; <strong>on a 7-9</strong>, the GM will tell you something interesting—it&#x27;s on you to make it useful; <strong>either way</strong>, the GM might ask &quot;how do you know this?&quot; When a player asks you what/if they know about something, ask them if they want to Know Things. You can also prompt them: &quot;You might know about this as a tanner&#x27;s apprentice, want to Know Things?&quot; Don&#x27;t have players Know Things to recall common knowledge (like the fact that the roads are relatively safe) or to remember details that they&#x27;ve simply forgotten (like how Seren told everyone in session 2 that Fae can&#x27;t abide the touch of iron). Just remind them of the truth and move on. If it&#x27;s unclear what they&#x27;re Knowing Things about, or what they hope to learn, then ask! It&#x27;ll make the move much easier to resolve. Players don&#x27;t have to explain how they&#x27;d know about a topic before rolling. They can roll, and then you tell them something interesting and/or useful and ask them &quot;how do you know this?&quot; The stories your players come up with can be pure gold. If there&#x27;s really no way a character would know about a topic, then say so. &quot;No, this is just beyond your experience.&quot; But do so sparingly! The game is better when players Know Things freely, even if it&#x27;s a stretch. On a 10+, tell them something interesting and useful (and true) about the subject. It should suggest a clear course of action, or rule one out, or both. It can help to start with &quot;the interesting thing is ____&quot; (giving some background info) &quot;and the useful thing is ____&quot; (adding that extra, useful detail). If you&#x27;re unsure whether you&#x27;ve given them something useful, ask! On a 7-9, you owe them something interesting, but it&#x27;s on them to make it useful. If you&#x27;re stuck for ideas, try one of these:</p><ul class="bullets"><li><strong>Think of something useful/actionable</strong>, but tell them something that only <em>hints</em> at that info without spelling it out.</li><li><strong>Reveal two useful but contradictory things</strong>, without deciding which one is true until put to the test. When the PCs act on the info, look to the Die of Fate or the results of their moves to decide which one is true.</li><li><strong>Tell them something useful that they can&#x27;t easily act on</strong>. &quot;Their plumage is quite valuable to southern merchants, and live young even more so! But this one&#x27;s rushing at you right now. What do you do?&quot;</li></ul>
+<p>Feel free to ask players for input on the answers, especially on topics you haven&#x27;t prepped. &quot;Sure, you tell me. How <em>do</em> these drakes hunt, and how can you use that to your advantage?&quot;</p>
+<p>If multiple players want to Know Things on the same topic, then have one player roll while another Aids. Discourage players from Knowing Things on the same topic multiple times. If they try, use a GM move to push the scene along.</p>
+<p>On a 6-, you might <strong>put them in a spot</strong> while they ponder, or <strong>introduce a danger</strong> (suddenly: hagrs!). You might <strong>reveal an unwelcome truth</strong>, or ask the player to do so. You might <strong>offer an opportunity</strong> with a significant (maybe unseen) cost. You might <strong>demonstrate a downside</strong> to their sheltered upbringing and say they just don&#x27;t know, or <strong>tell them the requirements</strong> (&quot;you&#x27;ll need to talk to Seren about this&quot;).</p></div>
+<hr>
+<p><em>The PCs have been following the trail for a few hours. Rhianna asks &quot;Is there anything out this way? My crew and I are hunters, we know the Woods pretty well.&quot;</em></p>
+<p><em>&quot;You&#x27;re not far from the Red Grove,&quot; I say, because that&#x27;s common knowledge. She asks if there&#x27;s anything else. &quot;Sounds like Knowing Things. Are you looking for more info about the Red Grove, or what?&quot; She wants to know about other points of interest: ruins,</em></p>
+<p><em>lairs, that sort of thing. &quot;Cool, roll +INT.&quot; On a 6-, I&#x27;d probably have the feathered</em></p>
+<p><em>drakes from my notes show up. But she gets an 11, so I make with the info. &quot;There&#x27;s a</em></p>
+<p><em>big Maker-ruin, maybe another day&#x27;s march this direction. It&#x27;s mostly buried, and it&#x27;d be a long way for crinwin to drag a boy as big as Pryder. But it&#x27;s the most notable landmark you can think of. And it&#x27;s big enough to hold a crinwin nest and some human captives. Is</em></p>
+<p><em>that sufficiently useful?&quot; I ask.</em></p>
+<p><em>&quot;Yeah. Definitely.&quot; says Rhianna. &quot;That&#x27;s</em></p>
+<p><em>probably where they&#x27;re headed, then.&quot;</em></p>
+<p><em>&quot;How do you know about the ruin?&quot; I ask.</em></p>
+<p><em>&quot;Oh, I think pa and I tracked a rabid wolf this way when I was a kid. Found it dead, near the ruin, but we got spooked and left.&quot;</em></p>
+<hr>
+<p>You can, on a 6-, <strong>turn their move back on them</strong> and tell them something that they believe to be true but that will get them into trouble if they act on it. This only works if the players are all on board, because the players know that they rolled a miss. Be careful, and don&#x27;t overdo it. You can almost always do something more interesting than lie.</p>
+<p><em>Vahid Knows Things about this plant-man they just caught stealing from their camp.</em></p>
+<p><em>On a 10+, I plan on telling him that this is a Fae, and that Fae are bound to keep their</em></p>
+<p><em>word and repay debts.</em></p>
+<p><em>Alas, Vahid gets a 6. I decide to tell him</em></p>
+<p><em>something interesting anyway,</em> <strong><em>asking a</em></strong></p>
+<p><strong><em>provocative question</em></strong> <em>as I do. &quot;Oh, yeah,</em></p>
+<p><em>you&#x27;ve met this jerk before, not long after</em></p>
+<p><em>you got to Stonetop. He&#x27;s a Fae, a thief named Thornthumb. How did he trick you</em></p>
+<p><em>that one time, and what did he steal?&quot;</em></p>
+<hr>
+<p><em>Blodwen is wondering how they can free Wynfor&#x27;s mind from the swyn&#x27;s influence.</em></p>
+<p><em>She Knows Things and gets a 9.</em></p>
+<p><em>&quot;There&#x27;s an herb,&quot; I say, &quot;uh… moonwort. It</em></p>
+<p><em>clears the mind of enchantment. Or is that</em></p>
+<p><em>silverwort? Shoot, one clears the mind, the other makes you see things, but you can&#x27;t recall which is which. How&#x27;d you learn this?&quot;</em></p>
+<p><em>&quot;Oh, from Gwendyl. But she&#x27;s not the best teacher, and I haven&#x27;t had a reason to use either herb. I can use supplies to have some, right? I&#x27;ve got an herb garden back home.&quot;</em></p>
+<p><em>&quot;Sure,&quot; I say. &quot;But which one?&quot; And unless</em></p>
+<p><em>she does something clever, I&#x27;ll wait until she gives some to Wynfor, then have her roll the Die of Fate. On a 4+, she guesses right!</em></p>
+<div class="move-block" id="let-fly"><h3 class="move-name">LET FLY</h3><p class="move-trigger">When you <strong><em>take an easy shot with a ranged weapon</em></strong>, deal your damage. If <strong><em>the shot is tricky or you&#x27;re under pressure</em></strong>, first roll +DEX: <strong>on a 10+</strong>, you have a clear shot, deal your damage; <strong>on a 7-9</strong>, pick 1:</p><ul class="bullets"><li>Deal your damage, but deplete your ammo (mark the next status by your weapon; don&#x27;t pick this if your weapon lacks such statuses)</li><li>Hold steady and wait for a clear shot; when the moment arrives (GM&#x27;s call), deal your damage</li><li>Move to get a clear shot—exposing yourself to danger or giving up some advantage (GM says how)—then deal your damage</li><li>Rush the shot and deal your damage, leading to a cost or complication of the GM&#x27;s choice What counts as an &quot;easy&quot; shot varies based on the character and the situation. A deadeye Ranger can just roll damage to shoot a clueless foe from cover. But a Seeker who&#x27;s never killed would be &quot;under pressure&quot; and need to roll +DEX.</li></ul>
+<p>Like Clash, Let Fly triggers only if there&#x27;s a real chance of harming the target. If there isn&#x27;t, and they shoot anyway, then <strong>reveal an unwelcome truth</strong>, <strong>tell them the consequences</strong>, or <strong>put them in a spot</strong>.</p>
+<p>If a shot is feasible but really hard, then <strong>tell them the requirements</strong> (&quot;you&#x27;ll need time to line it up&quot;) and/or <strong>the consequences</strong> (&quot;and on a 6-, you&#x27;ll hit the hostage&quot;).</p>
+<p>Should a PC manage to attack multiple foes at once, they roll to Let Fly one time but roll damage separately for each target.</p>
+<p>The roll +DEX tells us whether the PC gets a clear shot or what&#x27;s required to get one. The damage roll (and the foe&#x27;s armor and HP) tells us how effective the shot is.</p>
+<p>If the damage is negligible, it&#x27;s just a graze.</p>
+<p>If the damage is negated, then it bounces off armor or the target evades it.</p>
+<p>Regardless of the damage dealt, say how the foe reacts. Do they howl in pain? Dive for cover? Often, you&#x27;ll <strong>offer an opportunity</strong> to the PC(s) as a result. Some foes, though, are too tough to flinch (even when they take a solid hit), and that&#x27;s a nice, scary twist.</p>
+<p>On a 7-9, figure out what their choice looks like in the fiction. If you can&#x27;t make it make sense, ask them to pick a different option.</p>
+<ul class="bullets"><li><strong>Deplete your ammo</strong>: They take a few shots, or just find that they&#x27;re running low. The ammo can&#x27;t be easily recovered.</li><li><strong>Hold steady and wait</strong>: Move the spotlight and resolve the actions of one or more other PCs. When it feels right, cut back to this player with something like &quot;he steps clear, deal your damage!&quot; But if things change and the shot no longer makes sense, that&#x27;s the risk of waiting!</li><li><strong>Move to get a clear shot</strong>: Say where they need to go, and make it matter. Follow up with a soft GM move that highlights the danger they&#x27;re now in or the positions they just gave up.</li><li><strong>Rush the shot</strong>: Make a GM move that flows from their attack. <strong>Use up their resources</strong> (the spear breaks), <strong>announce trouble</strong> (the target drops a torch, fires start), <strong>put someone in a spot</strong> (the shot startles an ally, a foe attacks them), <strong>show a downside</strong> of rushing (they roll damage with disadvantage), etc.</li></ul>
+<p>Warn the player if you think that their choice would involve them Defying Danger before they deal damage (for example, because they&#x27;d need to dodge past foes or hold steady while under fire), or if their choice would lead to unavoidable consequences (a hard GM move). Give them a chance to change their mind.</p></div>
+<hr>
+<p><em>Rhianna rolls to her knees and sees that the feathered drake has just sliced Garet open. &quot;I</em></p>
+<p><em>nock, draw, and shoot it,&quot; she says. &quot;Vahid&#x27;s right there,&quot; I say. &quot;You miss, you&#x27;ll hit him. You still take the shot?&quot; I&#x27;m</em> <strong><em>telling the consequences and asking</em></strong><em>. She shoots, and gets a 10, but does only 2 damage. With the drake&#x27;s 1 armor, it&#x27;s just a scratch. &quot;But the good news is that you got its attention.</em></p>
+<p><em>It looks up from Garet and hisses. Vahid,</em></p>
+<p><em>you&#x27;re right there, what do you do?&quot;</em></p>
+<hr>
+<p><em>The nailadd is about to pounce on Vahid, but Caradoc asks if he can throw his spear at it.</em></p>
+<p><em>&quot;Sure,&quot; I say. &quot;But it&#x27;s a tricky shot, you&#x27;ll have to roll to Let Fly.&quot;</em></p>
+<p><em>Caradoc rolls a 7. &quot;I can&#x27;t use up ammo. I don&#x27;t have time to wait. Can I move to get the shot?&quot; Sure he can, but the thing will have pounced on Vahid by then. &quot;I guess I&#x27;ll</em></p>
+<p><em>rush it, then.&quot; He rolls 4 damage, enough to</em></p>
+<p><em>hurt the spider but not drop it.</em></p>
+<p><em>&quot;Okay, cool, your spear knocks it out of the air. Vahid, it lands in a tumble to your right, the spear sticking out of it, and it&#x27;s struggling to right itself. But I think when</em></p>
+<p><em>Caradoc threw his spear, it went right in</em></p>
+<p><em>front of Eira as she was running and she,</em></p>
+<p><em>like, skidded, stumbled, and fell. And oh</em></p>
+<p><em>crap, here comes another one bounding after</em></p>
+<p><em>her. Vahid, what do you do?&quot;</em></p>
+<hr>
+<p>On a 6-, you get to decide what happens and it&#x27;s almost certainly bad. Don&#x27;t assume that their shot misses! They might get interrupted before taking the shot, or they might take the shot (and even hit) but something bad happens as a result. If an ally or bystander was nearby, they might get hit instead.</p>
+<p><em>Blodwen fishes out a broken road-stone.</em></p>
+<p><em>&quot;These things can hurt evil spirits, right? I huck it!&quot; Her target is a flitting, intangible</em></p>
+<p><em>shadow in bad lighting, so I</em> <strong><em>tell her the</em></strong></p>
+<p><strong><em>requirements</em></strong><em>: she&#x27;ll need to get closer to even have a chance. &quot;Sure,&quot; she says. She moves in and gets an 8 to Let Fly. &quot;Hmm.. Guess I&#x27;ll hold steady and wait for my shot. Maybe it like darts away as I&#x27;m about to throw?&quot;</em></p>
+<p><em>&quot;Totally! Your eyes are darting around,</em></p>
+<p><em>looking for it, when Caradoc, it lunges out of the darkness at you, what do you do?&quot; He</em></p>
+<p><em>scrambles back, Defying Danger and getting a 10. &quot;Blodwen, there it is, take your shot!&quot;</em></p>
+<p><em>&quot;Okay! Do I need to roll +DEX again?&quot;</em></p>
+<p><em>Nope, she already did that. Her shot is now clear, so she can just throw the stone and roll</em></p>
+<p><em>her damage.</em></p>
+<hr>
+<p><em>Rhianna and her crew have snuck up on the dig site. The three crinwin haven&#x27;t noticed them, and she signals her crew to shoot.</em></p>
+<p><em>&quot;Cool, since there&#x27;s like six of you, you can get all three of them for sure. Roll to Let Fly</em></p>
+<p><em>once for the whole volley.&quot;</em></p>
+<p><em>&quot;Do we even need to roll?&quot; she asks. &quot;We&#x27;re</em></p>
+<p><em>professional hunters, and they don&#x27;t know</em></p>
+<p><em>we&#x27;re here. Seems like easy shooting to me.&quot;</em></p>
+<p><em>&quot;Huh. I suppose. Yeah, just roll your crew&#x27;s</em></p>
+<p><em>damage then, once per crinwin. And add +1 for outnumbering them.&quot;</em></p>
+<p>PERSUADE (vs. NPCs)</p>
+<p>When you <strong><em>press or entice an NPC</em></strong>, say what you want them to do (or not do). If they <strong><em>have reason to resist</em></strong>, roll</p>
+<p>+CHA: <strong>on a 10+</strong>, they either do as you want or reveal the easiest way to convince them; <strong>on a 7-9</strong>, they reveal something you can do to convince them, though it&#x27;ll likely be costly, tricky, or distasteful.</p>
+<p>This version of Persuade triggers when a PC tries to convince an NPC to do something. If you, as the NPC, put up resistance and the PC persists, it&#x27;s Persuade. Clarify what they want the NPC to do/not do, and challenge their approach if it doesn&#x27;t make sense. &quot;How would she know you want her to do that? Do you, like, ask?&quot;</p>
+<p>Once the goal is set, decide if the NPC has reason to resist. Consider their instinct, personality, background, wants, needs, fears, etc. If they&#x27;ve no reason to resist, they do it. But if the NPC has a reason (even an irrational one), then call for the roll.</p>
+<p>On a 10+, weigh the PC&#x27;s approach against the NPC&#x27;s resistance. If the resistance was weak or the PC&#x27;s approach is strong, just have the NPC do it. But if you don&#x27;t think the PC&#x27;s approach would cut it, reveal the easiest way the PC could convince them.</p>
+<p>On a 7-9, the NPC isn&#x27;t convinced yet but they&#x27;ll reveal a way they could be. You don&#x27;t <em>have</em> to make the requirement tricky, costly, or distasteful, but its more fun if you do.</p>
+<p>Things that might convince an NPC include:</p>
+<ul class="bullets"><li>A promise/oath/vow</li><li>A chance to do it safely/freely/discreetly</li><li>Appeasing or appealing to their ego/ honor/conscience/fears</li><li>A convincing deception</li><li>A better/fair/excessive offer</li><li>Helping them/doing it with them</li><li>Violence (or a credible threat thereof)</li><li>Something they want or need (coin/ food/booze/etc.)</li><li>Assurance/proof/corroboration</li><li>Pressure/permission/help from ____</li><li>Or anything else that makes sense Reveal how the NPC can be convinced via their words or reactions, and/or as insights that occur to the PC. It doesn&#x27;t have to be easy, or even plausible, but the revelation has to be true.</li></ul>
+<p>It&#x27;s okay to offer two or more alternatives on how the NPC could be convinced.</p>
+<p>&quot;He&#x27;s waiting for a bribe; a few coppers would do it. Or you could rough him up a bit, you&#x27;re pretty sure that&#x27;d work, too.&quot;</p>
+<p>On a 6-, you might make it clear that the NPC won&#x27;t be swayed, interrupt the conversation, and/or end the scene. Or, you might have the NPC comply but with complications (treachery, overzealousness, misunderstanding, etc.). Or maybe the whole interaction offends someone else, upsets the social order, or otherwise generates chaos. Your <a class="wiki-link" href="threats.html" data-slug="threats" ><strong>threat</strong></a> and <strong>homefront</strong> <a class="wiki-link" href="homefront.html#moves" data-slug="homefront" data-fragment="moves" >moves</a> will be helpful here.</p>
+<hr>
+<p><em>The PCs just killed a bunch of crinwin, only</em></p>
+<p><em>to see more pale, unblinking eyes staring down at them. &quot;Ugh,&quot; says Rhianna, &quot;we barely took care of this lot. I try to scare</em></p>
+<p><em>them off. Persuade?&quot; &quot;Cool. What do you do, exactly?&quot;</em></p>
+<p><em>&quot;I hoist the nearest crinwin corpse by its head. Glare out at the other crinwin. Then</em></p>
+<p><em>I&#x27;ll saw its head off, start yelling, and chuck</em></p>
+<p><em>the head into the woods. And keep yelling.&quot;</em></p>
+<p><em>Yikes! And yet, the crinwin outnumber</em></p>
+<p><em>them and the PCs are pretty beaten-up, so I think they have reason to resist. Rhianna rolls +CHA and gets an 11. I think that</em></p>
+<p><em>little display was plenty, so I say &quot;They</em></p>
+<p><em>scamper right off and you&#x27;re left standing</em></p>
+<p><em>there, covered in black blood. Caradoc, how</em></p>
+<p><em>are you feeling about Rhianna right now?&quot;</em></p>
+<hr>
+<p><em>Caradoc is keeping watch with Garet, and he pries a bit. &quot;&#x27;You&#x27;ve been with Rhianna&#x27;s</em></p>
+<p><em>crew for a long time, right? You ever seen anything like… uh, like that?&#x27; I&#x27;m trying</em></p>
+<p><em>to get him talking, maybe learn something about Rhianna&#x27;s past. Persuade?&quot;</em></p>
+<p><em>I consider making him roll, but I realize</em></p>
+<p><em>that Garet&#x27;s got no real reason to resist.</em></p>
+<p><em>&quot;Sure, but don&#x27;t bother rolling, he&#x27;s happy to talk. Rhianna, what&#x27;s a good story for him to tell Caradoc? Like, a time you did</em></p>
+<p><em>something bloody and ruthless?&quot;</em></p>
+<hr>
+<p><em>Blodwen crouches down to eye-level with Nia, keeping her distance and holding out some flatbread. &quot;Hey. Hey, are you hungry?&quot;</em></p>
+<p><em>I&#x27;m sure she&#x27;s enticing the girl to do something, but I&#x27;m not sure what. &quot;Are you, like, trying to get her to come out from the corner?&quot;</em></p>
+<hr>
+<p><em>&quot;More like I&#x27;m trying to get her to trust me and start talking.&quot; Nia is terrified, which is cause to resist, so Blodwen rolls. She gets a 10, and I think about Nia and look at the list of things that could convince her. I think appeasing her fears would do it.</em></p>
+<p><em>&quot;Her eyes lock on the flatbread, and she swallows, but then her eyes dart to Caradoc,</em></p>
+<p><em>then Rhianna, then her crew. She&#x27;s scared</em></p>
+<p><em>of the warriors. You bet she&#x27;d calm down if they were gone.&quot; Blodwen asks the others to step outside, and they agree. &quot;Cool. As soon</em></p>
+<p><em>as they leave, the girl snatches the bread and wolfs it down, staring at you. Then she gulps, and says &#x27;More?&#x27; What do you do?&quot;</em></p>
+<hr>
+<p><em>Vahid is up in Gordin&#x27;s Delve, selling a sphere of silver filigree. Mutra the Teeth has offered two handfuls of silver for it. &quot;Why, this is worth a purse of silver at least,&quot; says Vahid. &quot;I could get two handfuls just by</em></p>
+<p><em>melting it down.&quot;</em></p>
+<p><em>&quot;Sounds like you&#x27;re pressing him into giving</em></p>
+<p><em>you more coin for it, yeah? He&#x27;s definitely got reason to resist, so roll to Persuade.&quot; On a 10+, I think Mutra would ask for more</em></p>
+<p><em>info about the sphere&#x27;s provenance, and give</em></p>
+<p><em>up the silver for the truth or a convincing</em></p>
+<p><em>lie. And on a miss, I think I&#x27;d</em> <strong><em>reveal an unwelcome truth</em></strong><em>, saying that Mutra says no deal but Vahid suspects that he&#x27;ll send thugs to try and steal the sphere later.</em></p>
+<p><em>But Vahid gets an 8, and I go for something</em></p>
+<p><em>distasteful. &quot;Fah! You&#x27;d barely get a single handful if you melted thhhis down. But I tell you what… I&#x27;ll pay two handfuls now, and if you show my man Gunthhher where</em></p>
+<p><em>you found thhhis beauty, I&#x27;ll givvve you the</em></p>
+<p><em>rest of a purse of silver on his safe return.&quot;</em></p>
+<p><em>He smiles with his too-sharp teeth. &quot;Do we</em></p>
+<p><em>havvve a deal?&quot;</em></p>
+<p>PERSUADE (vs. PCs)</p>
+<p>When you <strong><em>press or entice a PC and they resist</em></strong>, ask their player: &quot;Could I possibly get you to do this, yes or no?&quot;</p>
+<p>If they say &quot;no,&quot; let it drop.</p>
+<p>If they say &quot;yes,&quot; you can roll +CHA:</p>
+<p><strong>on a 10+</strong>, they mark XP if they do what you want, and if they don&#x27;t, they must say how you could convince them; <strong>on a 7-9</strong>, they mark XP if they do what you want (but can refuse or make a counter-offer if they like).</p>
+<p>When one PC wants another PC to do something, and the other PC is putting up resistance, invoke this move.</p>
+<p>The first part of the move—where the first player asks if they could possibly convince the other player&#x27;s character—is crucial. It prevents the mechanics from pressuring a player into doing something that they don&#x27;t think their character would do.</p>
+<p>If the answer is &quot;no,&quot; ask the target player how the first character can tell. Is it clear in their eyes? Do they say something? Do they walk away? &quot;What&#x27;s this look like?&quot; If the first character keeps pressuring them, call a time out and tell their player that they need to let it drop—they&#x27;re being rude, not respecting their fellow player, and ignoring the rules of the game.</p>
+<p>If the answer is &quot;yes,&quot; then ask the first player (the one whose character is doing the pressing/enticing) if they want to roll. If they roll, cool. If they don&#x27;t roll, they need to let it drop.</p>
+<p>On a 10+, the target player marks XP if they do what&#x27;s being asked of them without any further convincing. If they refuse, they must reveal how they could be convinced. They can make this revelation in-character (&quot;I&#x27;ll do this, Rhianna, but only if you promise that no one gets killed&quot;) or described as insight (&quot;My eyes dart to Vahid, and I think you&#x27;d realize that I won&#x27;t answer with him in the room&quot;) or discussed player-to-player (&quot;I&#x27;ll agree to stay, but only if you promise to bring that thing&#x27;s corpse home for me to study&quot;).</p>
+<p>On a 7-9, the target player marks XP if they do what&#x27;s being asked of them without any further convincing. They don&#x27;t mark XP if they make a counter-offer (even if they eventually agree to it).</p>
+<p>On a 6-, you might <strong>turn their move back on them</strong> and let the targeted player ask how they could get the Persuading character to do something. Or you could interrupt the conversation with some other move, like <strong>introducing a threat</strong> or <strong>changing the environment</strong>. Don&#x27;t presume actions or reactions from either player, and don&#x27;t tell them how they feel. If you&#x27;re stumped, query the table (particularly the targeted player) for ideas.</p>
+<h2 id="persuade-or-interfere">Persuade or Interfere?</h2>
+<p>Use Persuade when one PC tries to get another PC to <em>agree</em> to a course of action. Use Interfere when one PC has <em>initiated</em> a course of action, and another PC tries to stop or foil them.</p>
+<p>If one PC Persuades another, the other PC can Interfere with that attempt at persuasion (by exercising willpower, bluffing, etc.).</p>
+<hr>
+<p><em>The swyn is dead, the children rescued, and they&#x27;re getting ready to head home. But Vahid doesn&#x27;t want to go. &quot;There&#x27;s so much here to</em></p>
+<p><em>learn! We can&#x27;t just leave!&quot; Rhianna is resisting, so I direct Vahid&#x27;s player to this move. He asks her player if he</em></p>
+<p><em>could possibly convince her.</em></p>
+<p><em>Rhianna&#x27;s player very quickly says &quot;No.&quot; I</em></p>
+<p><em>ask what that looks like, how Vahid can tell</em></p>
+<p><em>she won&#x27;t budge. &quot;Oh I lose it. &#x27;Dammit it, Vahid. We&#x27;re going and that&#x27;s final!&quot;</em></p>
+<p><em>Vahid replies with &quot;Fine. Leave then. But I&#x27;m staying. I can make my own way home.&quot;</em></p>
+<p><em>Rhianna sighs, pinches the bridge of her nose, and very calmly says. &quot;No, Vahid. You won&#x27;t. You will get lost. And die. Please come with us.&quot; So now</em> she <em>is pressing</em> him<em>.</em></p>
+<p><em>But Vahid doesn&#x27;t cave. &quot;You could convince me,&quot; he says, &quot;But you&#x27;ll have to roll. And I&#x27;ll Interfere by being stubborn as hell.&quot;</em></p>
+<p><em>Rhianna says she&#x27;ll roll Persuade, and Vahid rolls to Interfere (with WIS, for willpower).</em></p>
+<p><em>He gets an 11, and Rhianna decides to keep</em></p>
+<hr>
+<p><em>pressuring him and roll with disadvantage.</em></p>
+<p><em>&quot;I Aid,&quot; says Blodwen. &quot;I step up behind Rhianna and give him the doe eyes. &#x27;Vahid.</em></p>
+<p><em>Please.&#x27;&quot; We agree that this would help, and the advantage from her Aid cancels out the</em></p>
+<p><em>disadvantage from Vahid Interfering. &quot;Okay, so I&#x27;m rolling +CHA, then? That&#x27;s it?&quot; It is, and she gets a 10. If Vahid agrees</em></p>
+<p><em>to come now, with no more discussion, he&#x27;ll</em></p>
+<p><em>mark XP. But if he refuses, he has to reveal</em></p>
+<p><em>how they could convince him.</em></p>
+<p><em>&quot;Okay, okay…I&#x27;ll come. But only if you let me put sanctifying marks on the entrances.</em></p>
+<p><em>And promise me that we&#x27;ll come back to explore this place. And don&#x27;t tell anyone else</em></p>
+<p><em>about it. Deal?&quot;</em></p>
+<p><em>I clarify that he&#x27;s revealing how they can con-</em></p>
+<p><em>vince him, rather than agreeing outright. If</em></p>
+<p><em>he wants the XP, he has to just agree without</em></p>
+<p><em>those caveats. &quot;Yup!&quot; he says.</em></p>
+<p><em>&quot;Fine,&quot; sighs Rhianna. &quot;You&#x27;ve got ten minutes. Go make your marks. Blodwen,</em></p>
+<p><em>keep an eye on him.&quot;</em></p>
+<div class="move-block" id="seek-insight"><h3 class="move-name">SEEK INSIGHT</h3><p class="move-trigger">When you <strong><em>study a situation or person</em></strong>, looking to the GM for insight, roll +WIS: <strong>on a 10+</strong>, ask the GM 3 questions from the list below; <strong>on a 7-9</strong>, ask 1; <strong>either way</strong>, take advantage on your next move to act on the answers.</p><ul class="questions"><li>What happened here recently?</li><li>What is about to happen?</li><li>What should I be on the lookout for?</li><li>What here is useful or valuable to me?</li><li>Who or what is really in control here?</li><li>What here is not what it appears to be?</li></ul>
+<p>Seek Insight triggers when a character does something to gain <em>insight</em>. Don&#x27;t call for the move just because a player asks what they see or hear. Call for it when they look to you to put the pieces together, or to reveal more than what&#x27;s obvious.</p>
+<p>The PC must actually <strong><em>study a situation or person</em></strong>. If the player just says that they Seek Insight, ask what that looks like. It could be subtle (&quot;I scan his office while they talk&quot;) or overt (&quot;I toss the room—taking books off shelves, looking in those pots, tapping the walls, etc.&quot;), but it has to be <em>something</em>.</p>
+<p>On a 7+, the player asks one or more questions from the list. The list drives players to ask meaningful questions, ones that grant insight rather than just detail. No need to be a stickler about it, though. If they ask a good question that&#x27;s not on the list, feel free to answer it. Or, accept their question but <em>answer</em> a question from the list.</p>
+<p>Answer honestly, generously, and helpfully.</p>
+<p>Rely on your prep and sense of the fiction to guide you. You&#x27;ll often need to make up details on the fly. These details become true parts of the fiction!</p>
+<p>If you&#x27;re unsure how to answer, ask the player for guidance. &quot;Well, the old coins are obviously valuable, but what sort of thing were you looking for?&quot;</p>
+<p><strong>Begin and end with the fiction!</strong> Don&#x27;t just say that Siowan is about to betray them;</p>
+<p>describe how Siowan&#x27;s acting nervous, glancing at the door like someone&#x27;s about to burst in. Alternately: give them a direct, simple answer and then ask <em>them</em> what details led them to that conclusion.</p>
+<p>Adjust your answers to reflect the fiction.</p>
+<p>The move isn&#x27;t magic; it doesn&#x27;t let PCs know things that they couldn&#x27;t. A quick scan of the room from the entrance should give less-specific and less-useful insights than if they get in there and interact.</p>
+<p>The best answer is often the obvious one.</p>
+<p>&quot;What&#x27;s valuable? The coins. Everything else is junk.&quot; Sometimes, the only honest answer is &quot;nothing.&quot; &quot;There&#x27;s nothing to be on the lookout for. This place is quite safe.&quot;</p>
+<p>&quot;No one&#x27;s in control. It&#x27;s a damn freefor-all.&quot; Such answers remove doubt and clarify the situation (and the PC still gets advantage to act on the answer).</p>
+<p>On a 10+, the player gets advantage on only one roll, the first one that acts on any of the answers. If they ask three questions, they get advantage once, not thrice.</p>
+<p>On a 6- during a tense, dangerous scene, your move will often involve the character getting interrupted or surprised as they study the situation.</p>
+<p>When they get a 6- to Seek Insight in a &quot;safe&quot; situation, you might use your move to <strong>announce trouble</strong> that wasn&#x27;t there before. You might <strong>reveal an unwelcome truth</strong> or <strong>advance towards impending doom</strong>, deciding that something bad happened off-camera before they got here. Or you might <strong>use up their resources</strong> and say how they learn nothing but their torches are running low.</p></div>
+<hr>
+<p><em>The PCs are staring up at a crinwin nest.</em></p>
+<p><em>They ask about its size (&quot;big as a house&quot;), the tree it&#x27;s in (&quot;like a sequoia redwood&quot;) and if there&#x27;s movement in the nest (&quot;nope&quot;). Then Rhianna asks &quot;Any recent activity? We&#x27;ll look for tracks and whatnot.&quot; That seems like Seek Insight to me. Rhianna agrees.</em></p>
+<p><em>She rolls +WIS (with advantage from her crew Aiding) and gets a 10. &quot;Is the nest still active? Any signs of recent activity?&quot; she asks.</em></p>
+<p><em>I direct her to ask a question from the list.</em></p>
+<p><em>&quot;Oh, yeah. Um, what should I be on the</em></p>
+<p><em>lookout for? Like, are any crinwin still around?&quot; I say no, nothing to be on the lookout for. The nest is unoccupied, damaged even. Garet (from her crew) calls her over and shows her the crinwin bodies he found,</em></p>
+<p><em>rotting away in the brush.</em></p>
+<p><em>&quot;Whoa. Uh… what happened here recently?&quot;</em></p>
+<p><em>They find more crinwin corpses, and some</em></p>
+<p><em>that look like they killed each other. &quot;A few months old, at least. But not enough corpses for a full nest. And you find signs of crinwin</em></p>
+<p><em>dragging off other crinwin, in the same</em></p>
+<p><em>general direction they carried off Pryder.&quot;</em></p>
+<p><em>&quot;What the hell?&quot; spits Rhianna. &quot;Um…</em></p>
+<p><em>who or what is really in control here? Like, who or what is behind this?&quot;</em></p>
+<hr>
+<p>Don&#x27;t remove a player&#x27;s agency on a 6-. You might <strong>turn their move back on them</strong> and feed them false information or a bad idea, but only do so if the player is onboard and enjoys the dramatic irony. Likewise, don&#x27;t presume that the PC acts contrary to how the player triggered the move. If they said they were scanning the room, don&#x27;t say that they stepped inside and sprung a trap.</p>
+<p><em>I know that Sajra the swyn (a giant,</em></p>
+<p><em>hypnotic, monkey-headed snake) is behind</em></p>
+<p><em>the attack, but I don&#x27;t see how Rhianna could deduce that. I give her as useful of an answer as I think the evidence could allow: &quot;Down the path, you find a… drake scale? But bigger, flatter, with a golden shimmer to it.&quot;</em></p>
+<p><em>She asks if she recognizes it. &quot;I don&#x27;t know,&quot;</em></p>
+<p><em>I say, &quot;sounds like you&#x27;re Knowing Things?&quot; And she agrees, and rolls with advantage for following up on an answer.</em></p>
+<hr>
+<p><em>A Fae named Thornthumb is telling them</em></p>
+<p><em>about the swyn&#x27;s lair, but his eyes linger on</em></p>
+<p><em>Vahid&#x27;s pack (where the Mindgem is). Vahid doesn&#x27;t like that one bit. &quot;I size him up, trying to figure out what he&#x27;s up to.&quot; That&#x27;s</em></p>
+<p><em>Seeking Insight, but he gets a 3.</em></p>
+<p><em>I</em> <strong><em>turn his move back on him</em></strong><em>, revealing something valuable to the Fae. &quot;You, like, go to pick up your pack, but drop it and the Mindgem falls out!&quot; But Vahid&#x27;s player isn&#x27;t having it. He wasn&#x27;t touching his pack, and the Mindgem is packed at the very bottom.</em></p>
+<p><em>&quot;Shoot, you&#x27;re right. How about this? Before you can get a read on him, he like bounds off</em></p>
+<p><em>through the brush, beckoning you to follow. &#x27;Show you the way, safe and secret,&#x27; he says!&quot;</em></p>
+<p><em>But something about his smile still unnerves you, Vahid. What do you all do?&quot;</em></p>
+<h2 id="special-moves">Special moves</h2>
+<p>These moves are always in play, but they either affect other moves or are triggered by very specific circumstances.</p>
+<div class="move-block" id="advantage-disadvantage"><h3 class="move-name">ADVANTAGE/DISADVANTAGE</h3><p class="move-trigger">When you <strong><em>make a roll with advantage</em></strong>, roll an extra die and discard the lowest result. When you <strong><em>make a roll with disadvantage</em></strong>, roll an extra die and discard the highest result. When you <strong><em>make a roll with both advantage and disadvantage</em></strong>, they cancel each other out. If you <strong><em>have advantage/disadvantage on a damage roll</em></strong>, roll the main die twice and discard the lower/higher result. Then add any bonus dice that apply. Advantage usually means: roll <button type="button" class="dice-roll" data-dice="3d6" title="Click to roll 3d6">3d6</button> and keep the two highest dice. Disadvantage usually means: roll <button type="button" class="dice-roll" data-dice="3d6" title="Click to roll 3d6">3d6</button> and keeping the two lowest dice. If there&#x27;s a tie for lowest or highest, discard one of them; it doesn&#x27;t matter which. For damage rolls, advantage/disadvantage apply only to the &quot;main&quot; die. If a player gets any bonus damage dice, those dice get added after you pick the highest/lowest die. For example, the Heavy (who has advantage when they deal damage) rolls a 10+ to Clash, and chooses to strike hard and fast for +<button type="button" class="dice-roll" data-dice="1d6" title="Click to roll 1d6">1d6</button> damage. They roll <button type="button" class="dice-roll" data-dice="2d10" title="Click to roll 2d10">2d10</button>, deal damage equal to the highest of those two dice, and deal +<button type="button" class="dice-roll" data-dice="1d6" title="Click to roll 1d6">1d6</button> damage on top of that. Advantage/disadvantage don&#x27;t &quot;stack.&quot; They&#x27;re binary—either you have them, or you don&#x27;t. For example, if someone Seeks Insight and gets a 7+, they get advantage on their next roll to act on the answer. If someone also Aids them on that roll, they can&#x27;t get advantage again. They roll <button type="button" class="dice-roll" data-dice="3d6" title="Click to roll 3d6">3d6</button> and discard the lowest die. If someone has both advantage and disadvantage on the same roll, the two cancel each other out and the roll is made normally. By default, it doesn&#x27;t matter if you have multiple sources of advantage vs. a single source of disadvantage (or vice versa). But if you and your players really want to get into counting how many instances of advantage or disadvantage a player has, you can. It won&#x27;t break the game, but it might slow it down. Players might have advantage on a roll because...</p><ul class="ellipsis"><li>a move (like Aid or Seek Insight) says they do;</li><li>some sort of equipment or arcana gives them advantage; or</li><li>you <strong>offer an opportunity</strong> to make a particular roll with advantage (but see the sidebar on the opposite page).</li></ul>
+<p>Players might have disadvantage on a roll because...</p>
+<ul class="ellipsis"><li>a move (like Interfere) says they do;</li><li>they have marked a <a class="wiki-link" href="harm-healing.html" data-slug="harm-healing" ><strong>debility</strong></a> and roll one of the affected stats;</li><li>some sort of equipment or arcana imposes disadvantage; or</li><li>you <strong>reveal a downside</strong> or <strong>tell them the consequences</strong>, and it involves rolling with disadvantage (but see the sidebar on the opposite page).</li></ul></div>
+<h2 id="adjusting-difficulty">Adjusting difficulty</h2>
+<p>In many RPGs, the GM routinely applies bonuses or penalties to player rolls to reflect the difficulty or ease of their tasks. In <em>Stonetop</em>, you can apply advantage or disadvantage &quot;on the fly&quot; to do the same thing, but do so sparingly—it undercuts the impact of moves, arcana, and debilities that specifically grant advantage or disadvantage.</p>
+<p>If a character&#x27;s action seems particularly easy or difficult, consider these instead of advantage or disadvantage:</p>
+<p><strong>Are they even triggering a move?</strong></p>
+<p>Can you just say that they do it, or know it, or figure it out? &quot;No, don&#x27;t Clash, just deal damage.&quot; Or, can you just say &quot;no&quot; and <strong>tell them the requirements</strong> for making it work?</p>
+<p>&quot;You can&#x27;t make that jump with all your gear, you&#x27;ll need to drop down to a light load first.&quot;</p>
+<p><strong>Can you adjust the risks?</strong> If they have a strong position, make it clear that the risks are less. &quot;Suffering his attack just means that he&#x27;ll get inside your guard.&quot; If they&#x27;re in a desperate position, tell them just how bad it could get. &quot;On a 7-9, you&#x27;ll have one last chance to catch the ledge, but on a 6- you&#x27;re rolling Death&#x27;s Door.&quot;</p>
+<p><strong>Can you adjust the scope?</strong> If things are easy for the PC, let a single roll accomplish more, or reveal more, etc.</p>
+<p>If things are hard, break the action down into smaller moves, each of which can only accomplish part of their goal.</p>
+<div class="move-block" id="burn-brightly"><h3 class="move-name">BURN BRIGHTLY</h3><p class="move-trigger">When you <strong><em>have enough XP to Level Up</em></strong> (6 + twice your current level), you may spend 2 XP after any roll you make to add +1 to that roll (max +1 per roll). PCs can&#x27;t <a class="wiki-link" href="homefront.html#level-up" data-slug="homefront" data-fragment="level-up" ><strong>Level Up</strong></a> while on an expedition, which means they might end up accumulating surplus XP. This move lets them spend some of that XP to ensure success. The fact that PCs can Burn Brightly helps slow the rate at which PCs can level up, and it helps prevent &quot;double-leveling.&quot; It also subtly tips things in the players&#x27; favor once they&#x27;ve been in the field for a long time and suffered a number of setbacks. Keep an eye out for players rolling 6s or 9s, and ask the player if they have enough XP to Burn Brightly. If they have enough, they&#x27;ll probably do it. Players will most often Burn Brightly when they roll <button type="button" class="dice-roll" data-dice="2d6" title="Click to roll 2d6">2d6</button> for a move, but they can use it on any roll—including damage rolls or even the Die of Fate. A player can Burn Brightly only on a roll they make themselves; they can&#x27;t spend their surplus XP to improve another player&#x27;s roll.</p></div>
+<div class="move-block" id="end-of-session"><h3 class="move-name">END OF SESSION</h3><p class="move-trigger">When a <strong><em>session ends</em></strong>, point out how you demonstrated or struggled with your instinct. If you can, mark XP. Say how your relationship with or opinion of a PC, NPC, or group has changed. If you can, mark XP. Answer these questions as a group. For each &quot;yes,&quot; everyone marks XP.</p><ul class="questions"><li>Did we learn more about the world or its history?</li><li>Did we defeat a threat to Stonetop or the region?</li><li>Did we improve our standing with our neighbors?</li><li>Did we make a lasting improvement to Stonetop, or tangible progress towards doing so?</li></ul>
+<p>Praise something about the session (in the fiction or around the table) that you enjoyed or appreciated.</p>
+<p>Finally, offer up a wish for future sessions: more __, less __, a chance to __, handling __ in a different way, etc.</p>
+<p>Wishes can be about what happens in the fiction or around the table. The GM will take notes.</p>
+<p>The End of Session move is a ritual. It helps your group reflect on the session and improve your game.</p>
+<p>Players can point out any moment where their PC&#x27;s instinct was reflected in play, for good or for ill, intentionally or not. If no one objects, the player marks XP. (Max 1 XP per session, even if their instinct came up more than once.)</p>
+<p>Each player can then note how things have changed between them and someone else.</p>
+<p>The change need not be reciprocal, or even rational, but it should feel genuine. If no one objects, the player marks XP. (Max 1 XP per session, even if multiple relations changed.)</p>
+<p>Other players can offer suggestions, ask questions, or challenge assertions. The goal is for everyone to reflect on the session, and to reward players for getting into character; the goal isn&#x27;t to wheedle for XP.</p>
+<p>For the four questions, discuss them as a group. Everyone (including you, the GM) has to agree that a question is answered &quot;yes.&quot; If anyone dissents, no XP for that question. It&#x27;s good to ask for specific examples of each &quot;yes,&quot; just to make sure that everyone is on the same page.</p>
+<p>After answering the questions, each player (including you, the GM) should point out something they liked: a player&#x27;s clever idea, a bit of roleplaying, the lack of fights, learning where the Forest Folk went, when Bob called &quot;time out&quot; and checked in with everyone, etc.</p>
+<p>Lastly, each player (including you) should offer a wish for future sessions. Wishes might express...</p>
+<ul class="ellipsis"><li>a player&#x27;s hopes for what happens (&quot;I&#x27;d like a chance to take down Iwan&quot;);</li><li>a request for specific scenes (&quot;I&#x27;d love to see Caradoc and Andras bond a bit&quot;);</li><li>a desire to do things differently (&quot;Can we try to speak in-character more?&quot;);</li><li>feedback on your GMing (&quot;I&#x27;d like more detail about our surroundings when fights break out&quot;); and/or</li><li>anything else about the game, really.</li></ul>
+<p>Take notes, ask for clarification, and do your best to make those wishes come true.</p></div>
+<div class="move-block" id="deaths-door"><h3 class="move-name">DEATH&#x27;S DOOR</h3><p class="move-trigger">When you <strong><em>are dying</em></strong>, you glimpse the Last Door and the Lady of Crows (describe them). Then, roll +nothing: <strong>on a 10+</strong>, you wrest yourself back to the realm of the living—return to 1 HP but say how your brush with death has marked you; <strong>on a 7-9</strong>, the Lady waves you off—you&#x27;re no longer dying but you&#x27;re out of the action; <strong>on a 6-</strong>, your time has come—choose 1:</p><ul class="bullets"><li>Make one last move as if you rolled a 12+, then step through the Last Door</li><li>Refuse to go; gain the Revenant or Ghost insert</li><li>Call on one of the Things Below by name and beseech it to intercede; gain the Thrall insert This move is discussed in detail on page</li></ul>
+<p>245, in the <strong>Harm and Healing</strong> chapter.</p></div>
+<h2 id="other-player-moves">Other player moves</h2>
+<p>Other player moves are discussed in detail elsewhere:</p>
+<h3 id="follower-moves">Follower moves</h3>
+<ul class="bullets"><li>Order Followers 462</li><li>Strengthen Your Bond 464</li></ul>
+<h3 id="expedition-moves">Expedition moves</h3>
+<ul class="bullets"><li>Chart a Course 302</li><li>Outfit 306</li><li>Requisition 308</li><li>Have What You Need 326</li><li>Recover 328</li><li>Forage 336</li><li>Keep Company 332</li><li>Make Camp 334</li><li>Struggle as One 328</li><li>Return Triumphant 339</li></ul>
+<h3 id="homefront-moves">Homefront moves</h3>
+<ul class="bullets"><li>Bolster 524</li><li>Convalesce 249</li><li>Deploy 526</li><li>Level Up 528</li><li>Make a Plan 530</li><li>Meet With Disaster 532</li><li>Muster 534</li><li>Pull Together 536</li><li>Seasons Change 517</li><li>Trade &amp; Barter 540</li></ul>
+<p>If a character does something that could meet the trigger for more than one player move, use whichever one seems most applicable to the current situation. In general, a more-specific move takes precedence over a more-general move, and everything takes precedence over Defy Danger.</p>
+<p>Discuss it with your players and come to a consensus if you can, or make a call if you can&#x27;t.</p>
+<h2 id="custom-moves">Custom moves</h2>
+<p><em>Book II: The Wider World and Other Wonders</em> contains dozens of custom moves that you can use in your game. These moves apply only to specific game or setting elements, and only if you choose to use them.</p>
+<p>Most custom moves are unnamed; they&#x27;re simply presented as part of a setting element&#x27;s description.</p>
+<p>For example, the <strong>Makers&#x27; Roads</strong> (<em>Book II</em>, <a class="wiki-link" href="the-makers-roads.html" data-slug="the-makers-roads" >The Makers&#x27; Roads</a>) have a few custom moves. Here&#x27;s one, related to their wards against violence:</p>
+<p>When you <strong><em>attempt to commit violence upon the road</em></strong>, or to harm the road or anything upon it, you hesitate. If you will yourself to continue, lose <button type="button" class="dice-roll" data-dice="1d4" title="Click to roll 1d4">1d4</button> HP and roll +WIS: <strong>on a 10+</strong>, go for it;</p>
+<p><strong>on a 7-9</strong>, you act but have disadvantage on any rolls to commit violence (including damage); <strong>on a 6-</strong>, you fail to act and mark <em>dazed</em>.</p>
+<p>This is an example of a custom move that establishes how something works. It says what happens if a PC tries to fight on the roads, and what the possible outcomes are.</p>
+<p>And while a custom move like this doesn&#x27;t directly apply to NPCs or monsters, you can use it as a guide for how they might be affected. Most folks will fail to fight on the roads, but a strong-willed NPC might force themselves to do so.</p>
+<p>Note that a PC can <a class="wiki-link" href="npcs-followers.html#order-followers" data-slug="npcs-followers" data-fragment="order-followers" ><strong>Order Followers</strong></a> to trigger a custom move. As usual, the PC&#x27;s player rolls for the move and makes any decisions on the follower&#x27;s behalf.</p>
+<p>Here&#x27;s another custom move related to the roads, specifically to the Crossroads. This one establishes that something is possible (calling up the dead), as well as some of the stakes, risks, and potential benefits or consequences.</p>
+<p>When you <strong><em>stand at the Crossroads under the new moon and call the departed by name</em></strong>, roll and add…</p>
+<ul class="ellipsis"><li>+1 if you are tied to them by blood;</li><li>+1 if you bear a possession of theirs; and/or</li><li>+1 if you offer food or drink that they loved in life.</li></ul>
+<p><strong>On a 10+</strong>, their shade appears but pick 1; <strong>on a 7-9</strong>, their shade appears but pick 2:</p>
+<ul class="bullets"><li>They are deranged, confused, muddled, unreasonable</li><li>They have no intention of returning peacefully to their rest</li><li>Something slips through the Last Door with them—a dool spirit, a gwyllgi, an unbound wraith, etc.</li></ul>
+<p>If a custom move doesn&#x27;t say what happens on a 6-, it follows the standard rules: the player marks XP and you make a hard GM move, that fits the established situation.</p>
+<p>Here&#x27;s another a custom move, associated with an artifact. There&#x27;s no <button type="button" class="dice-roll" data-dice="2d6" title="Click to roll 2d6">2d6</button> roll on this one; the move just says what happens!</p>
+<p>When you <strong><em>strike an entity of darkness, chaos, or death with a shattered road-</em></strong></p>
+<p><strong><em>stone</em></strong> (<em>hand</em>, <em>thrown</em>, <em>crude</em>), it takes</p>
+<h2><button type="button" class="dice-roll" data-dice="1d8" title="Click to roll 1d8">1d8</button> <span class="roll-label">damage (ignores armor) but the stone then crumbles to dust.</span></h2>
+<p>And here&#x27;s one last example of a custom move, this one associated with a danger—the mysterious nosgalau that lure travelers from the roads at night:</p>
+<p>When you <strong><em>hear the call of the nosgalau</em></strong>, say whose voice you hear on the wind and why you feel compelled to join them. Then, roll +WIS: <strong>on a 10+</strong>, say how you see through the deception, and you&#x27;ll never hear their call again; <strong>on a 7-9</strong>, either mark XP and follow the call, or tell us how you detect the lie this one time; <strong>on a 6-</strong>, you heed the call and go to the nosgalau, unless your allies restrain you.</p>
+<p>Notice how this move is reactive. The players don&#x27;t choose to trigger it, you do! You make a GM move like <strong>announce trouble</strong> (&quot;You&#x27;ve been watching the lights far out in the Flats, when the wind shifts and you hear a faint whispering…&quot;), and that triggers the move. Most custom moves that work like this are related to dangers, and reflect a particularly nasty or subtle effect.</p>
+<p>Also notice how the move above resolves a situation in a specific, thematic way. You don&#x27;t have to try to lure the PCs off the road and hope the players play along. The move asserts that the PC is compelled to leave the road, and asks their player to tell us how and why. The roll then tells us whether the PC sees through the deception or not. It ensures that even the wariest player&#x27;s PC might fall prey to the nosgalau, while inviting them to reveal something about their character in the process. Pretty neat, huh?</p>
+<p>Reveal a custom move&#x27;s text to the players as soon as it&#x27;s relevant to them. Players should know that the move is in play and how it works, so that they can choose to engage with it (or avoid it). Toss a copy of the move onto the table or into the group chat, and ask a player to read it aloud. Or just read it aloud yourself.</p>
+<p>&quot;As soon as it&#x27;s relevant&quot; will vary from case to case. You probably want to share the &quot;When you <strong><em>attempt to commit violence upon the road</em></strong>…&quot; move as soon as the PCs set out, and remind them of it when they encounter a monster or NPC. But you might not reveal &quot;When you <strong><em>hear the call of the nosgalau</em></strong>…&quot; until it gets triggered.</p>
+<p>If you don&#x27;t think that the workings of a custom move would be apparent to the PCs, then don&#x27;t reveal it to them right away. Maybe just <strong>hint at more than meets the eye</strong> or otherwise suggest that there&#x27;s more to learn, and see what they do.</p>
+<hr>
+<p><em>Vahid and Caradoc have stopped at the Crossroads. I mention the nearby dool trees and the uncanny feeling about the</em></p>
+<p><em>place, and sure enough, Vahid decides to Know Things. On a 10+, I&#x27;d give him the full custom move from the previous page. But he gets a 7, so I just tell him the trigger. &quot;You&#x27;ve heard stories that one can summon a dead soul by calling their</em></p>
+<p><em>name at the Crossroads, under the new</em></p>
+<p><em>moon,&quot; I say. &quot;But if you want to know</em></p>
+<p><em>more about how that works, you&#x27;ll need</em></p>
+<p><em>to do some research. Or try it out. There</em></p>
+<p><em>is a new moon tonight…&quot;</em></p>
+<hr>
+<p>For guidance on <strong>writing your own custom moves</strong>, <a class="wiki-link" href="writing-moves-love-letters.html" data-slug="writing-moves-love-letters" >Writing Moves &amp; Love Letters</a>.</p>
+        </main>
+      </div>
+    </div>
+  </div>
+  <div id="wiki-preview" class="wiki-preview" hidden></div>
+  <div id="dice-toast" class="dice-toast" hidden></div>
+  <script src="../js/wiki.js"></script>
+</body>
+</html>

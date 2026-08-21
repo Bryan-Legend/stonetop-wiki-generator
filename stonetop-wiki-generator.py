@@ -39,12 +39,21 @@ ADVENTURES_HUB_SLUG = "adventures"
 
 # Project credit in the wiki sidebar footer.
 GITHUB_PROJECT_URL = "https://github.com/Bryan-Legend/stonetop-wiki-generator"
+LICENSE_URL = "https://creativecommons.org/licenses/by-sa/4.0/"
 
 
 def sidebar_foot_html() -> str:
-    """Sticky footer under the topic nav (GitHub project link)."""
+    """Sticky footer under the topic nav (attribution + GitHub project link).
+
+    CC BY-SA 4.0 requires attribution and a license notice on the shared work,
+    so the credit line ships on every page, not just the home page.
+    """
     return (
         f'<div class="sidebar-foot">'
+        f'<span class="sidebar-credit">'
+        f'Text from <em>Stonetop</em> by Jeremy Strandberg, '
+        f'<a href="{html.escape(LICENSE_URL)}" rel="license">CC BY-SA 4.0</a>'
+        f"</span>"
         f'<a class="sidebar-github" href="{html.escape(GITHUB_PROJECT_URL)}">'
         f"GitHub</a>"
         f"</div>"
@@ -6103,6 +6112,16 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
             "Default: every book PDF found in the input folder."
         ),
     )
+    p.add_argument(
+        "--maps",
+        action="store_true",
+        help=(
+            "Include the Maps page and its images. Off by default: the books' "
+            "TEXT is CC BY-SA 4.0 but the artwork (maps included) is "
+            "© Lucie Arnoux, so map images must not be published. Use this "
+            "only for a local, unpublished build."
+        ),
+    )
     return p.parse_args(argv)
 
 
@@ -7144,19 +7163,6 @@ def adventures_hub_html(
     )
 
 
-def related_adventures_html(adv_arts: list[dict], *, root_prefix: str = "../") -> str:
-    """Back-link strip for a wiki page an adventure references."""
-    links = " · ".join(
-        f'<a class="wiki-link" href="{html.escape(root_prefix + a["href"])}" '
-        f'data-slug="{html.escape(a["slug"])}">{html.escape(a["title"])}</a>'
-        for a in adv_arts
-    )
-    label = "Adventure" if len(adv_arts) == 1 else "Adventures"
-    return (
-        f'<p class="related-adventures"><span class="ra-label">{label}</span>'
-        f"{links}</p>\n"
-    )
-
 
 def ensure_wiki_chrome(out: Path) -> None:
     """
@@ -7369,6 +7375,12 @@ def main(argv: list[str] | None = None) -> None:
         book_articles = expand_arcana_articles(doc, book_articles)
         articles.extend(book_articles)
 
+    # The books' text is CC BY-SA 4.0, but "all artwork herein is
+    # © 2026 by Lucie Arnoux" — maps are artwork. Drop the Maps page (and its
+    # image extraction) unless a local build explicitly asks for it.
+    if not args.maps:
+        articles = [a for a in articles if a.get("kind") != "maps"]
+
     # Adventure sheets already under <out>/adventures/ — index only, no copy.
     adventures = discover_adventures(out)
     adv_arts = adventure_articles(adventures)
@@ -7380,11 +7392,12 @@ def main(argv: list[str] | None = None) -> None:
     for art in adv_arts:
         if art.get("adventure"):
             art["adventure"]["slug"] = art["slug"]
-    # … but the campaign's own material leads the sidebar and home page.
+    # … and the campaign's own material trails the book material, so the
+    # sidebar and home page lead with the wiki proper.
     if adv_arts:
-        articles = adv_arts + [
+        articles = [
             a for a in articles if a.get("book") != ADVENTURES_BOOK_ID
-        ]
+        ] + adv_arts
 
     print("Articles:")
     last_book = None
@@ -7556,13 +7569,6 @@ def main(argv: list[str] | None = None) -> None:
         for a in articles
         if a.get("book") != ADVENTURES_BOOK_ID
     }
-    adv_by_page: dict[str, list[dict]] = {}
-    for art in adv_arts:
-        for ref, _title in _adv_wiki_refs(art.get("adventure") or {}, titles_by_slug):
-            adv_by_page.setdefault(ref, []).append(art)
-    if adv_by_page:
-        print(f"  Adventure back-links on {len(adv_by_page)} wiki pages")
-
     print("Building pages…")
     search_docs: list[dict] = []
     for art in articles:
@@ -7718,9 +7724,6 @@ def main(argv: list[str] | None = None) -> None:
                     f'data-slug="{hub}">← All {hub_title}</a>{card_no}</p>\n'
                     + body
                 )
-            # "Adventures: Vasilya's Grove" strip for pages a sheet references
-            if adv_by_page.get(slug):
-                body = related_adventures_html(adv_by_page[slug]) + body
             page_html = page_shell(
                 display_title(art),
                 slug,

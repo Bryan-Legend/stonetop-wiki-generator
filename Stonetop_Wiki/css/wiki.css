@@ -1,4 +1,4 @@
-/* Stonetop Wiki (Book I & Book II) — near-black ground, warm brown headings, blue links */
+/* Stonetop Wiki (Book I & Book II) — near-black ground, warm brown headings and links */
 @font-face {
   font-family: "Source Serif 4";
   font-style: normal;
@@ -55,9 +55,9 @@
   --accent-rgb: 212, 165, 116;
   --accent-deep: #a67c4a;
   --accent-soft: #1a1a1a;
-  --link: #7aa2f7;
-  --link-rgb: 122, 162, 247;
-  --link-hover: #c0caf5;
+  --link: #e0b888;
+  --link-rgb: 224, 184, 136;
+  --link-hover: #f0d0a0;
   --quote: #c8c8c8;
   --ok: #9ece6a;
   --danger: #f7768e;
@@ -172,6 +172,16 @@ html, body {
   margin-top: 0.35rem;
   border-top: 1px solid var(--rule);
 }
+/* CC BY-SA 4.0 attribution — required on every page that carries book text */
+.sidebar-credit {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--muted);
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+.sidebar-credit a { color: var(--muted); }
+.sidebar-credit a:hover { color: var(--link-hover); }
 .sidebar-github {
   display: inline-flex;
   align-items: center;

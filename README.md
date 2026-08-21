@@ -1,26 +1,24 @@
 # Stonetop Wiki Generator
 
-Generate a **static, offline wiki** from the *Stonetop* PDFs.
+Generate a **static, hyperlinked wiki** from the *Stonetop* PDFs.
+
+**Read it online: <https://stonetop-wiki.github.io/>**
 
 The wiki includes:
 
 - Articles (moves, places, peoples, powers, …)
 - Minor & major arcana as interactive cards (checkboxes for unlocks / progress / consequences)
-- Map views with a waypoint pin label editor
 - Full-text search, hover previews, and dice rollers
 - Deep links between page references and monster/stat blocks
 - Adventure sheets under `Stonetop_Wiki/adventures/` with dice rollers, hp trackers, & deep linking rich popups
 
-> **This repository does not include the Stonetop PDFs, extracted book text, or map art.**  
-> You need a legal copy of the PDFs from [the official Stonetop store](https://plusoneexp.com/collections/stonetop).
-
-## Screenshots
-
-![Wiki screenshot — gazetteer columns with a monster hover preview](docs/wiki-screenshot-1.png)
-
-![Wiki screenshot — search results and a dice roll](docs/wiki-screenshot-2.png)
-
-![Wiki screenshot — adventure sheet with a page hover preview](docs/wiki-screenshot-3.png)
+> **The book text in this repository is published under CC BY-SA 4.0** — both books state
+> *"All text herein is released under a CC BY-SA 4.0 license."*
+>
+> **Artwork is not.** The same page states *"All artwork herein is © 2026 by Lucie Arnoux."*
+> Maps are artwork, so builds omit them by default and no illustration is committed here.
+> The PDFs themselves are not redistributed — get them from
+> [the official Stonetop store](https://plusoneexp.com/collections/stonetop).
 
 ## Requirements
 
@@ -59,6 +57,7 @@ python stonetop-wiki-generator.py --input /path/to/folder-with-pdfs
 | `-i` / `--input` | Folder containing the 1-up book PDFs. Optional: `Maps/`. | current working directory |
 | `-o` / `--output` | Wiki folder. Chrome and adventures stay in place; only book-derived files are written. | `Stonetop_Wiki/` |
 | `--books book1 book2` | Build only the listed books (faster while iterating). | every book PDF found |
+| `--maps` | Include the Maps page and its images. **Local builds only** — map art is © Lucie Arnoux, not CC BY-SA. | off |
 
 ```bash
 # From a folder that holds the PDFs:
@@ -82,9 +81,8 @@ python -m http.server 8000
 
 Drop HTML sheets in `Stonetop_Wiki/adventures/` (or a subfolder of variants). Each build:
 
-- lists them in the **Adventures** sidebar group and on the home page
+- lists them in an **Adventures** group at the foot of the sidebar and home page
 - builds an Adventures hub and full-text search entries
-- adds a back-link strip on every wiki page a sheet references via `data-slug="…"`
 
 Sheets should link wiki pages as `../pages/<slug>.html` and set `data-wiki-root="../"`. Shared chrome: `adventure.css` and `adventure.js` in the same folder.
 
@@ -95,6 +93,26 @@ Sheets should link wiki pages as `../pages/<slug>.html` and set `data-wiki-root=
 
 ## License
 
-The **generator code** and redistributable wiki chrome in this repository are MIT (see [LICENSE](LICENSE)).
+**Generator code** and the wiki chrome (CSS/JS/templates) are MIT — see [LICENSE](LICENSE).
 
-*Stonetop* and its text/art are © their respective owners (Jeremy Strandberg / the Stonetop team). This project only turns a PDF you own into a personal reference wiki. Do not redistribute the PDFs, the extracted text, or a built wiki that contains the book’s content. Not affiliated with the official Stonetop publishers.
+**Book text** (everything under `Stonetop_Wiki/pages/`, plus the generated index and search
+data) is from *Stonetop* and *Stonetop: The Wider World and Other Wonders*, written by
+Jeremy Strandberg and published by Lampblack & Brimstone. Both books' copyright pages
+(second printing, July 2026) state:
+
+> All text herein is released under a CC BY-SA 4.0 license.
+> Some concepts and procedures are derived from Dungeon World, by Sage LaTorra & Adam Koebel,
+> released under a CC BY license.
+> All artwork herein is © 2026 by Lucie Arnoux.
+
+That text is reproduced here under
+[CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), reflowed from the PDFs into
+HTML, and **this edition is shared under the same license**. Every generated page carries the
+attribution and license link in its footer.
+
+**Artwork is excluded.** Illustrations and maps remain © 2026 Lucie Arnoux and are not
+redistributable, so `--maps` is off by default and `Stonetop_Wiki/images/maps/` is
+gitignored. The only images shipped are category icons from
+[game-icons.net](https://game-icons.net) (CC BY 3.0). The source PDFs are not redistributed.
+
+Not affiliated with or endorsed by Lampblack & Brimstone.
