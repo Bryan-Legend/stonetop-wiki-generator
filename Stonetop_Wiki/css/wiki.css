@@ -1774,6 +1774,23 @@ li.check-item input.wiki-check:checked + span {
   max-width: 40rem;
   margin: 0;
 }
+/* Caveat under the home lede: the extraction is imperfect, PRs welcome. */
+.index-hero p.index-note {
+  margin: 0.9rem 0 0;
+  padding: 0.7rem 0.9rem;
+  max-width: 40rem;
+  background: var(--bg-elev);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent-deep);
+  border-radius: var(--radius);
+  color: var(--muted);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+.index-hero p.index-note strong { color: var(--accent); }
+.index-hero p.index-note a { color: var(--link); }
+.index-hero p.index-note a:hover { color: var(--link-hover); }
+
 .index-hero p.lede em {
   font-style: italic;
   color: var(--ink);

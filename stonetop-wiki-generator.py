@@ -40,6 +40,7 @@ ADVENTURES_HUB_SLUG = "adventures"
 # Project credit in the wiki sidebar footer.
 GITHUB_PROJECT_URL = "https://github.com/Bryan-Legend/stonetop-wiki-generator"
 LICENSE_URL = "https://creativecommons.org/licenses/by-sa/4.0/"
+ISSUES_URL = GITHUB_PROJECT_URL.rstrip("/") + "/issues"
 
 
 def sidebar_foot_html() -> str:
@@ -7248,6 +7249,7 @@ def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> 
         lede_books = ", ".join(labels[:-1]) + " and " + labels[-1]
     else:
         lede_books = labels[0]
+    issues_url = html.escape(ISSUES_URL)
 
     html_out = f"""<!DOCTYPE html>
 <html lang="en">
@@ -7284,6 +7286,10 @@ def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> 
           {lede_books}.
           Page numbers are links; dice expressions roll on click; hover a link for a preview
           (full stat blocks when deep-linked). Scroll sideways through columns on topic pages.</p>
+          <p class="index-note">These pages are extracted from the books' PDFs automatically, so
+          <strong>expect defects</strong> — mangled tables, dropped or duplicated text, wrong
+          headings, broken links. If you spot one, or want to help fix them,
+          <a href="{issues_url}">open an issue or a pull request on GitHub</a>.</p>
         </div>
         {cards_html}
         </main>
