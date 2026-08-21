@@ -1,34 +1,27 @@
-# Publishes Stonetop_Wiki/ as the site root, so URLs are /adventures/Foo.html
-# rather than /stonetop-wiki-generator/Stonetop_Wiki/adventures/Foo.html.
+# Builds the public site and publishes it to the org's user-page repo,
+# stonetop-wiki/stonetop-wiki.github.io, which serves it at the domain root:
+#   https://stonetop-wiki.github.io/adventures/Vasilyas-Grove.html
 #
 # Only tracked files are deployed. The book-derived wiki (pages/, index.html,
 # js/search-index.js, js/previews-data.js, images/maps/) is gitignored and is
 # NOT published — the public site is the adventure sheets plus shared chrome.
-name: Deploy wiki to Pages
+name: Deploy site
 
 on:
   push:
     branches: [master]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 concurrency:
-  group: pages
+  group: site-deploy
   cancel-in-progress: false
 
 jobs:
   deploy:
     runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/configure-pages@v5
+      - uses: actions/checkout@v5
+
       - name: Assemble site
         # Stonetop_Wiki/index.html is generated + gitignored, so the published
         # root comes from site/index.html instead of being committed into the
@@ -37,8 +30,20 @@ jobs:
           mkdir -p _site
           cp -r Stonetop_Wiki/. _site/
           cp site/index.html _site/index.html
-      - uses: actions/upload-pages-artifact@v3
-        with:
-          path: _site
-      - id: deployment
-        uses: actions/deploy-pages@v4
+          touch _site/.nojekyll
+
+      - name: Publish to stonetop-wiki.github.io
+        env:
+          DEPLOY_KEY: ${{ secrets.SITE_DEPLOY_KEY }}
+        run: |
+          mkdir -p ~/.ssh
+          printf '%s\n' "$DEPLOY_KEY" > ~/.ssh/id_ed25519
+          chmod 600 ~/.ssh/id_ed25519
+          ssh-keyscan -t ed25519 github.com >> ~/.ssh/known_hosts 2>/dev/null
+          cd _site
+          git init -q -b main
+          git config user.name "stonetop-wiki-generator"
+          git config user.email "actions@github.com"
+          git add -A
+          git commit -qm "Deploy ${GITHUB_SHA::7} from ${GITHUB_REPOSITORY}"
+          git push -qf git@github.com:stonetop-wiki/stonetop-wiki.github.io.git main
