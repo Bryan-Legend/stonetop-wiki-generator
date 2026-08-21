@@ -6,6 +6,9 @@ Stonetop_Wiki/images/maps/
 # (The extracted TEXT — pages/, index.html, previews-data.js, search-index.js —
 # is CC BY-SA 4.0 and IS published; see README "License".)
 
+# Local build bookkeeping (tells the next build which root files it owns)
+Stonetop_Wiki/.build-manifest
+
 # Legacy build folder name
 Book_II_Wiki/
 

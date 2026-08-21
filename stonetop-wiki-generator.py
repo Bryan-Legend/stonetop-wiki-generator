@@ -20,6 +20,7 @@ Book I page and an explicit "Book II, page 270" resolves to the other.
 from __future__ import annotations
 
 import argparse
+import datetime
 import html
 import json
 import os
@@ -59,6 +60,71 @@ def sidebar_foot_html() -> str:
         f"GitHub</a>"
         f"</div>"
     )
+
+
+BUILD_MANIFEST = ".build-manifest"
+SITE_BASE_URL = "https://stonetop-wiki.github.io"
+
+
+def read_build_manifest(out: Path) -> list[str]:
+    """Root-level files the previous build wrote (safe to delete and rewrite)."""
+    try:
+        text = (out / BUILD_MANIFEST).read_text(encoding="utf-8")
+    except OSError:
+        return []
+    names = []
+    for line in text.splitlines():
+        line = line.strip()
+        # Never let a stale manifest escape the wiki root.
+        if line and not line.startswith("#") and "/" not in line and line != "..":
+            names.append(line)
+    return names
+
+
+def write_build_manifest(out: Path, names: list[str]) -> None:
+    header = [
+        "# Files this build owns; the next build deletes and rewrites them.",
+        "# Anything not listed here (CNAME, site-verification pages) is left alone.",
+    ]
+    (out / BUILD_MANIFEST).write_text(
+        "\n".join(header + sorted(set(names))) + "\n", encoding="utf-8"
+    )
+
+
+def write_sitemap(out: Path, articles: list[dict], *, base_url: str) -> None:
+    """sitemap.xml covering every wiki page and adventure sheet."""
+    base = base_url.rstrip("/")
+    locs = [base + "/"]
+    for art in articles:
+        href = art.get("href") or (art["slug"] + ".html")
+        locs.append(base + "/" + href)
+        for var in (art.get("adventure") or {}).get("variants") or []:
+            locs.append(base + "/" + var["href"])
+    locs = list(dict.fromkeys(locs))
+    today = datetime.date.today().isoformat()
+    rows = [
+        "  <url><loc>" + html.escape(u) + "</loc>"
+        "<lastmod>" + today + "</lastmod></url>"
+        for u in locs
+    ]
+    doc = (
+        ['<?xml version="1.0" encoding="UTF-8"?>']
+        + ['<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">']
+        + rows
+        + ["</urlset>", ""]
+    )
+    (out / "sitemap.xml").write_text("\n".join(doc), encoding="utf-8")
+    print("  Sitemap: " + str(len(locs)) + " URLs")
+
+
+def write_robots(out: Path, *, base_url: str) -> None:
+    lines = [
+        "User-agent: *",
+        "Allow: /",
+        "Sitemap: " + base_url.rstrip("/") + "/sitemap.xml",
+        "",
+    ]
+    (out / "robots.txt").write_text("\n".join(lines), encoding="utf-8")
 
 
 def resolve_adventures_dir(out: Path) -> Path | None:
@@ -6114,6 +6180,15 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         ),
     )
     p.add_argument(
+        "--base-url",
+        default=SITE_BASE_URL,
+        metavar="URL",
+        help=(
+            "Absolute site root used for sitemap.xml and robots.txt. "
+            f"Default: {SITE_BASE_URL}"
+        ),
+    )
+    p.add_argument(
         "--maps",
         action="store_true",
         help=(
@@ -7351,11 +7426,13 @@ def main(argv: list[str] | None = None) -> None:
     for sub in ("css", "js", "images", "images/icons", "images/maps"):
         (out / sub).mkdir(parents=True, exist_ok=True)
 
-    # Only wipe book-generated HTML; leave chrome and adventures/ alone.
-    # Pages sit at the wiki root now, beside index.html (which is rewritten).
-    for old in out.glob("*.html"):
+    # Only wipe files THIS generator wrote last time. Pages now sit at the wiki
+    # root, so a blind *.html sweep would also delete hand-added root files —
+    # Google/Bing site-verification pages, CNAME, a hand-written robots.txt.
+    # The manifest records what the build owns; everything else is left alone.
+    for name in read_build_manifest(out):
         try:
-            old.unlink()
+            (out / name).unlink()
         except OSError:
             pass
 
@@ -7835,6 +7912,13 @@ def main(argv: list[str] | None = None) -> None:
     )
     print(f"  Search index: {len(search_docs)} pages, {len(search_json)//1024} KB")
     write_index_custom(articles, previews, out / "index.html")
+
+    page_files = ["index.html"] + [
+        f"{a['slug']}.html" for a in articles if not a.get("href")
+    ]
+    write_sitemap(out, articles, base_url=args.base_url)
+    write_robots(out, base_url=args.base_url)
+    write_build_manifest(out, page_files + ["sitemap.xml", "robots.txt"])
     print(f"Done. Open {out / 'index.html'}")
 
 
