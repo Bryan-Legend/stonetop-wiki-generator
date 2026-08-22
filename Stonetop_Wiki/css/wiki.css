@@ -704,14 +704,24 @@ h3 .book-icon,
   overflow: hidden;
   width: 100%;
 }
-.value-table-head {
-  padding: 0.35rem 0.5rem;
+.value-table-head th {
+  padding: 0.35rem 0.45rem;
+  border: none;
   border-bottom: 1px solid var(--rule);
   background: rgba(var(--accent-rgb), 0.09);
   font-family: var(--font-serif);
   color: var(--accent);
   font-weight: 700;
   font-size: 0.92rem;
+  text-align: left;
+  white-space: normal;
+  width: auto;
+}
+/* "value" sits over the value column, as it does in the books */
+.value-table-head th.vth-val {
+  text-align: right;
+  white-space: nowrap;
+  width: 2.75rem;
 }
 .value-table table {
   width: 100%;
@@ -1717,9 +1727,14 @@ li.check-item input.wiki-check:checked + span {
 .wiki-preview .pv-full .move-name {
   font-size: 1.1rem;
 }
-.wiki-preview .pv-full .value-table-head,
+.wiki-preview .pv-full .value-table-head th,
 .wiki-preview .pv-full .roll-table-head {
   background: transparent;
+  padding-left: 0;
+  padding-right: 0;
+}
+/* keep the cells flush with the head they're aligned under */
+.wiki-preview .pv-full .value-table td {
   padding-left: 0;
   padding-right: 0;
 }

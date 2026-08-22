@@ -2637,10 +2637,18 @@ def render_value_table(
     notes_html = "".join(
         f'<div class="value-note">{html.escape(nt)}</div>' for nt in (notes or [])
     )
+    # The books set the head in two columns — the category on the left, the
+    # word "value" over the value column — so split the title back apart and
+    # put it in a header row, where it lines up with the values beneath it.
+    head_name = re.sub(r"\s*value\s*$", "", title, flags=re.I).strip()
     return (
         f'<div class="value-table">'
-        f'<div class="value-table-head">{html.escape(title)}</div>'
-        f"<table><tbody>{''.join(body)}</tbody></table>"
+        f"<table>"
+        f'<thead><tr class="value-table-head">'
+        f"<th>{html.escape(head_name)}</th>"
+        f'<th class="vth-val">Value</th>'
+        f"</tr></thead>"
+        f"<tbody>{''.join(body)}</tbody></table>"
         f"{notes_html}"
         f"</div>"
     )
