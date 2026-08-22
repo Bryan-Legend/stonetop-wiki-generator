@@ -1242,17 +1242,17 @@
     var el = document.getElementById(id);
     if (!el) return;
     var scroll = document.querySelector(".content-scroll");
-    if (scroll) {
-      // Place the element near the left of the scroll viewport
-      var elRect = el.getBoundingClientRect();
-      var scRect = scroll.getBoundingClientRect();
-      var delta = elRect.left - scRect.left - 24;
-      scroll.scrollLeft += delta;
-      // Vertical alignment within the column pane
-      var vDelta = elRect.top - scRect.top - 16;
-      if (Math.abs(vDelta) > 8) {
-        // columns are fixed height; element is already in-flow vertically per column
-      }
+    var elRect, scRect;
+    if (scroll && scroll.scrollWidth > scroll.clientWidth + 2) {
+      // Multi-column pane: place the element near the left of the viewport
+      elRect = el.getBoundingClientRect();
+      scRect = scroll.getBoundingClientRect();
+      scroll.scrollLeft += elRect.left - scRect.left - 24;
+    } else if (scroll && scroll.scrollHeight > scroll.clientHeight + 2) {
+      // One column, scrolling vertically (phones)
+      elRect = el.getBoundingClientRect();
+      scRect = scroll.getBoundingClientRect();
+      scroll.scrollTop += elRect.top - scRect.top - 16;
     } else {
       el.scrollIntoView({ block: "start", inline: "nearest" });
     }

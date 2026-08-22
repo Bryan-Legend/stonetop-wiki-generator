@@ -957,8 +957,28 @@ body:has(.index-grid) .content {
   padding: 1rem 1.25rem 2rem;
 }
 
+/*
+ * Phones: one column fits, so the horizontal "scroll of pages" has nothing
+ * left to page through — read it top-to-bottom instead. The maps strip and
+ * the index keep their own layouts (both are more specific than these).
+ */
 @media (max-width: 700px) {
   .content { --col-w: min(360px, calc(100vw - 2rem)); }
+  .content-scroll {
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+  .content:not(.maps-page) {
+    width: auto;
+    max-width: 100%;
+    height: auto;
+    min-height: 100%;
+    columns: 1;
+    column-width: auto;
+    column-rule: none;
+    padding-bottom: 2.5rem;
+  }
 }
 
 /* Wiki links */
