@@ -605,11 +605,12 @@ def book_icon_img_html(rel_path: str, *, rel_prefix: str = "") -> str:
 # are chapter-title continuations like "Aratis, " / "the Lawkeeper").
 # Book I sets *section* headings at 20pt and playbook titles at 24pt — the same
 # size as its chapter titles, which the running-header/article-title guards
-# drop anyway — so only the decorative 32pt+ type is furniture there. Book I
-# headings also wrap across lines ("The" / "conversation").
+# drop anyway — so only the decorative 32pt+ type is furniture there. Section
+# headings in both books wrap across lines ("The" / "conversation",
+# "Should the players" / "read this?").
 BOOK_TYPE_STYLE: dict[str, dict] = {
     "book1": {"heading_max_size": 28.0, "merge_wrapped_headings": True},
-    "book2": {"heading_max_size": 16.0, "merge_wrapped_headings": False},
+    "book2": {"heading_max_size": 16.0, "merge_wrapped_headings": True},
 }
 
 
@@ -784,6 +785,32 @@ def extract_page_rich(
                 lines[-1].append(s)
             else:
                 lines.append([s])
+        # A section head and its gloss can share a baseline (the Ages of the
+        # World timeline: "Time of Cataclysm" + "Centuries ago, over a span of
+        # decades."). Peel the heading type off so it still reads as a heading
+        # instead of being outvoted by the smaller type beside it.
+        split: list[list[dict]] = []
+        for group in lines:
+            group.sort(key=lambda s: s["x"])
+            k = 0
+            while k < len(group) and group[k]["font"].startswith("Avara"):
+                k += 1
+            rest = "".join(g["text"] for g in group[k:]).strip()
+            if (
+                0 < k < len(group)
+                and group[0]["size"] >= 11
+                and not any(g["font"].startswith("Avara") for g in group[k:])
+                # A parenthetical qualifier belongs to the heading itself
+                # ("7 GM moves (optional)"); a gloss is its own line.
+                and not rest.startswith("(")
+                and len(rest) >= 12
+            ):
+                split.append(group[:k])
+                split.append(group[k:])
+            else:
+                split.append(group)
+        lines = split
+
         recs: list[dict] = []
         for group in lines:
             group.sort(key=lambda s: s["x"])
@@ -962,6 +989,8 @@ def extract_page_rich(
     def emit_region(recs: list[dict], col_x0: float, in_box: bool) -> list[str]:
         out: list[str] = []
         prev_y: float | None = None
+        head_size: float | None = None  # type size of the last heading emitted
+        head_x: float | None = None  # its left edge (continuations hang left)
         table = state.get("table") if not in_box else None
 
         def flush_table(keep_open: bool = False):
@@ -1075,15 +1104,33 @@ def extract_page_rich(
                 if dtext.isdigit():
                     continue
                 # Big headings often wrap ("The" / "conversation"); a heading
-                # line opening lowercase continues the one above it.
+                # line opening lowercase continues the one above it. So does a
+                # capitalized one that hangs to the left of the stat name above
+                # it, same size, on the very next baseline — stat names are set
+                # with a hanging indent and run to three lines ("Hec'tumel, Pale
+                # Serpent!" / "Slitherer In Darkness!" / "Death Is Its Eyes!").
+                # The chapter TOC that opens a Book I chapter is centered 12pt
+                # type on 18pt leading, so it fails both the size and the gap.
                 if (
                     style["merge_wrapped_headings"]
                     and out
                     and out[-1].startswith((M_H2, M_H3))
-                    and dtext[:1].islower()
+                    and (
+                        dtext[:1].islower()
+                        or (
+                            head_size is not None
+                            and head_x is not None
+                            and rec["size"] < 11
+                            and abs(rec["size"] - head_size) <= 0.6
+                            and gap <= 1.35 * rec["size"]
+                            and rec["x"] < head_x - 2
+                        )
+                    )
                 ):
                     out[-1] = out[-1].rstrip() + " " + dtext
                     continue
+                head_size = rec["size"]
+                head_x = rec["x"]
                 if rec["size"] >= 11:
                     out.append(M_H2 + dtext)
                 else:
@@ -1256,6 +1303,67 @@ def extract_page_rich(
             result.append(M_BOX)
             result.extend(inner)
             result.append(M_ENDBOX)
+
+    # A page whose body text sits entirely on one side of the gutter is a
+    # single column set beside a full-height illustration, and its lines run
+    # ragged — they can start left of the gutter and reach well past it (The
+    # Time of Cataclysm). Splitting those at mid-page deals half of each line
+    # to each column and scrambles the reading order, so move the gutter to
+    # the edge of the text instead; page furniture stays on the empty side.
+    if not single_column:
+        # Body type only, and enough of it to tell a column from a title page
+        body = [
+            s
+            for s in spans
+            if 60 <= s["y"] <= page_h - 40 and s["size"] <= 11.5
+        ]
+        if len(body) >= 8:
+            near = [s for s in body if (s["x"] + s["x1"]) / 2 < gutter]
+            far = [s for s in body if (s["x"] + s["x1"]) / 2 >= gutter]
+            # The block as a whole has to sit off to one side. Type centered
+            # on the gutter is a chapter TOC, not a column beside a picture.
+            mid = (
+                min(s["x"] for s in body) + max(s["x1"] for s in body)
+            ) / 2
+            stray = max(2, 0.04 * len(body))
+            if far and mid > gutter + 30 and len(near) <= stray:
+                gutter = min(min(s["x"] for s in far) - 4, gutter)
+            elif near and mid < gutter - 30 and len(far) <= stray:
+                gutter = max(max(s["x1"] for s in near) + 4, gutter)
+
+    # Text set to the full measure (the mediography, an appendix table) runs
+    # straight through mid-page, so splitting spans there interleaves halves
+    # of every line. Tell it from a real two-column page by the break: on two
+    # columns a shared baseline carries a line that stops short of the gutter
+    # and another that starts past it, while a full-measure line crosses it
+    # unbroken. Page furniture aside, one kind or the other holds a page.
+    rows: list[list[dict]] = []
+    for sp in sorted(spans, key=lambda sp: (sp["y"], sp["x"])):
+        if rows and abs(sp["y"] - rows[-1][0]["y"]) <= 4.5:
+            rows[-1].append(sp)
+        else:
+            rows.append([sp])
+    for row in rows:
+        row.sort(key=lambda sp: sp["x"])
+
+    if not single_column:
+        two_col = False
+        crossing = 0
+        for row in rows:
+            segs: list[list[float]] = []  # [x0, x1] per unbroken run
+            for sp in row:
+                if segs and sp["x"] - segs[-1][1] <= 8.0:
+                    segs[-1][1] = max(segs[-1][1], sp["x1"])
+                else:
+                    segs.append([sp["x"], sp["x1"]])
+            if any(x1 <= gutter for _, x1 in segs) and any(
+                x0 >= gutter for x0, _ in segs
+            ):
+                two_col = True
+                break
+            crossing += sum(1 for x0, x1 in segs if x0 < gutter < x1)
+        if not two_col and crossing >= 3:
+            gutter = page.rect.width + 1
 
     cols: list[list[dict]] = [[], []]
     for s in spans:
@@ -1450,8 +1558,14 @@ def looks_like_tag_line(line: str) -> bool:
         return False
     first = parts[0].lower().split()[0] if parts[0] else ""
     # Primary org type is enough (e.g. "Horde, hardy" or even "Solitary")
+    # — but only when the line reads like a tag list, not prose that happens
+    # to open on an org word ("group to answer during play. When you…").
     if first in ORG_TAGS:
-        return True
+        if len(parts) > 1:
+            return True
+        words = parts[0].split()
+        if len(words) <= 3 and not re.search(r"[.!?]", parts[0]):
+            return True
     hits = 0
     for p in parts:
         tok = p.lower().split()
@@ -1501,6 +1615,13 @@ def should_join(a: str, b: str) -> bool:
         if _is_item_tag_line(a) and (
             _is_item_tag_line(b)
             or _is_pure_arcana_tag_line(strip_markers(_defmt(b)))
+        ):
+            return True
+        # Prose left dangling on "see" carries on into the next line, even
+        # when that line is italic enough to read as a tag list
+        # ("…on how to play or run it, see" + "Book I: Stonetop.")
+        if not _is_item_tag_line(a) and re.search(
+            r"\bsee\s*$", _defmt(a), re.I
         ):
             return True
         return False
@@ -1571,7 +1692,12 @@ def should_join(a: str, b: str) -> bool:
         )
     )
     if (
-        re.search(r"\(pages?\s+[\d,\s\-–—]+\)", a, re.I)
+        # …and a's own ref closes it out, so a reads as a finished entry
+        # rather than a sentence still in flight ("…up from the Flats
+        # (page 126), bringing the last of the Tempest" + "Lords low…")
+        re.search(
+            r"\(pages?\s+[\d,\s\-–—]+\)[.,\s]*$", a, re.I
+        )
         and re.search(r"\(pages?\s+[\d,\s\-–—]+\)", b, re.I)
         and b[0:1].isupper()
         and not a.endswith((",", ";", ":", "—", "-"))
@@ -1762,6 +1888,22 @@ def should_join(a: str, b: str) -> bool:
     # Soft wrap mid multi-word proper name onto capital + continuing prose:
     # "meadows of the Huffel" + "Peaks (page 236). The petals are edible..."
     # "runes of the Green" + "Lords (page 210). Fae magic..."
+    # A proper name split across the break and continuing into its page ref
+    # ("…the servants of the Stone" + "Lords (page 382) rebelled…"). The first
+    # line can be short enough to read as a heading, so this runs ahead of the
+    # heading guard below — but only when it ends on a capitalized word that
+    # follows a lowercase one, i.e. it really is running prose.
+    if (
+        b[0:1].isupper()
+        and not looks_like_heading(b)
+        and re.search(r"\b[a-z]+\s+[A-Z][A-Za-z'’\-]*$", a)
+        and re.match(
+            r"^[A-Z][A-Za-z'’\-]*(?:\s+[A-Z][A-Za-z'’\-]*){0,3}\s+"
+            r"\((?:see\s+)?pages?\s+\d",
+            b,
+        )
+    ):
+        return True
     # (last word is not a cont_last preposition, so the rule above misses it)
     if (
         b[0:1].isupper()
