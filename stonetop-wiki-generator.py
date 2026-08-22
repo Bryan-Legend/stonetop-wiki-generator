@@ -409,7 +409,7 @@ M_ICON = "\x02ICON "  # category icon (payload: rel path under images/)
 
 MARKER_RE = re.compile(r"^\x02[A-Z0-9]+ ?")
 VAL_TOKEN_RE = re.compile(
-    r"^(\d{1,2}\*?|\+\d{1,2}|free|\d{1,2} or \d{1,2})$", re.I
+    r"^(\d{1,2}\*?|\+\d{1,2}\*?|free|\d{1,2} or \d{1,2})$", re.I
 )
 
 # Inline formatting sentinels carried through the pipeline and turned into
@@ -963,6 +963,18 @@ def extract_page_rich(
             ):
                 has_value = True
                 val_text = last["text"].strip()
+            # Book I's gear lists (common/special items) set their table
+            # headers in 9pt Fell — the same size the books use for inline
+            # small-caps cross-refs — so size alone can't tell them apart.
+            # A header opens in Fell and closes with a Fell "value" sitting
+            # over the value column; a stray Caslon footnote marker in
+            # between is fine ("bronze weapons* value").
+            fell_spans = [g for g in text_spans if "FellType" in g["font"]]
+            fell_head = (
+                len(fell_spans) >= 2
+                and fell_spans[0] is text_spans[0]
+                and fell_spans[-1]["text"].strip().lower() == "value"
+            )
             recs.append(
                 {
                     "y": y_top,
@@ -977,6 +989,7 @@ def extract_page_rich(
                     "bold_lead": "Bold" in text_spans[0]["font"],
                     "all_bold": all("Bold" in g["font"] for g in text_spans),
                     "bold_prefix": _lead_bold_prefix(text_spans, text),
+                    "fell_head": fell_head,
                     "icon_xref": icon_xref,
                 }
             )
@@ -1035,6 +1048,13 @@ def extract_page_rich(
                     idx += 1
                     continue
                 emitted_hr_ys.append(y_hr)
+                # A hairline drawn directly under a value-table header
+                # underlines it (Book I's gear lists rule every header);
+                # it opens the table rather than ending it.
+                if table is not None and not table["rows"]:
+                    prev_y = rec["y"]
+                    idx += 1
+                    continue
                 close_table()
                 # Don't stack HRs back-to-back within a column either
                 if not (out and out[-1] == M_HR):
@@ -1090,7 +1110,9 @@ def extract_page_rich(
             is_avara = font.startswith("Avara")
             # Fell Type at ~12pt marks table headers; at 9pt it's just
             # small-caps styling inside prose ("terrain", "encounter")
-            is_fell = "FellType" in font and rec["size"] >= 10.5
+            is_fell = "FellType" in font and (
+                rec["size"] >= 10.5 or rec.get("fell_head")
+            )
 
             # Headings end any open table
             if is_avara or is_fell:
@@ -1168,14 +1190,28 @@ def extract_page_rich(
                         table["rows"][-1] = (prev_item + " " + item, rec["val"])
                     else:
                         table["rows"].append((item, rec["val"]))
+                    table["in_note"] = False
                     state["table"] = table
                     continue
                 if dtext.startswith("*"):
                     table["notes"].append(dtext)
+                    table["in_note"] = True
                     continue
                 indent = rec["x"] - col_x0
                 wrapish = indent >= 7 or dtext[:1].islower() or dtext[:1] in "(◇"
-                if table["rows"] and wrapish and not rec["bullet"]:
+                # A dingbat opening an indented continuation is an inventory
+                # diamond, not a checkbox — value tables carry no checklists
+                # ("butcher for" / "◇ provisions (◇◇◇◇◇◇ uses)").
+                bulleted = bool(rec["bullet"]) and not (
+                    rec["bullet"] == "check" and indent >= 7
+                )
+                # A footnote wraps too ("* +1 if sold/traded on to anyone
+                # other than" / "mammoth herders") — the second line belongs
+                # to the note, not to the row above it.
+                if table.get("in_note") and wrapish and not bulleted:
+                    table["notes"][-1] += " " + dtext
+                    continue
+                if table["rows"] and wrapish and not bulleted:
                     it, val = table["rows"][-1]
                     table["rows"][-1] = (it + " " + dtext, val)
                     continue
@@ -1190,11 +1226,11 @@ def extract_page_rich(
                     out.append(M_VA + dtext)
                     continue
                 # flush line, no value: keep as a blank-value row only if the
-                # table clearly continues right after
+                # table clearly continues right after. A table can open on one
+                # (a group label like "Ivory" over its priced varieties).
                 if (
-                    table["rows"]
-                    and idx < n_recs
-                    and recs[idx]["has_value"]
+                    idx < n_recs
+                    and recs[idx].get("has_value")
                     and recs[idx]["val_x"] - col_x0 > 100
                     and not rec["bullet"]
                 ):
