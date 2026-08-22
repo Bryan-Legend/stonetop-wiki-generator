@@ -590,12 +590,9 @@ html, body {
   font-weight: 700;
   color: var(--accent);
   margin: 0.95rem 0 0.4rem;
-  border-bottom: none;
+  /* Same rule as <hr>: full-width hairline in --rule at 90% */
+  border-bottom: 1px solid color-mix(in srgb, var(--rule) 90%, transparent);
   padding-bottom: .32rem;
-  background-image: linear-gradient(var(--accent), var(--accent));
-  background-size: 2.4rem 2px;
-  background-repeat: no-repeat;
-  background-position: left bottom;
   break-after: avoid;
   break-inside: avoid;
 }
@@ -1710,12 +1707,8 @@ li.check-item input.wiki-check:checked + span {
   margin: 0 0 0.4rem;
   font-family: var(--font-serif);
   font-size: 1.05rem;
-  border-bottom: none;
+  border-bottom: 1px solid color-mix(in srgb, var(--rule) 90%, transparent);
   padding-bottom: 0.3rem;
-  background-image: linear-gradient(var(--accent), var(--accent));
-  background-size: 2.4rem 2px;
-  background-repeat: no-repeat;
-  background-position: left bottom;
   color: var(--accent);
 }
 /* Named moves / section heads inside arcana cards — same as page view. */

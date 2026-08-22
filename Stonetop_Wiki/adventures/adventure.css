@@ -212,12 +212,9 @@
       font-size: 1.05rem;
       color: var(--accent);
       margin: 1.2rem 0 0.4rem;
-      border-bottom: none;
+      /* Matches the wiki page rule: full-width hairline in --rule at 90% */
+      border-bottom: 1px solid color-mix(in srgb, var(--rule) 90%, transparent);
       padding-bottom: 0.32rem;
-      background-image: linear-gradient(var(--accent), var(--accent));
-      background-size: 2.4rem 2px;
-      background-repeat: no-repeat;
-      background-position: left bottom;
     }
     h3 {
       font-family: var(--font-serif);
