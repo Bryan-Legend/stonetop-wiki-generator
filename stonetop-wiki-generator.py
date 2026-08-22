@@ -1932,6 +1932,39 @@ def should_join(a: str, b: str) -> bool:
     return False
 
 
+# Every word the books set on one line, hyphens included, counted across the
+# whole build. Used to tell a soft line-break hyphen from a compound one.
+BOOK_TOKENS: dict[str, int] = {}
+
+WORD_RE = re.compile(r"[A-Za-z][A-Za-z'\-]*[A-Za-z]")
+
+
+def index_book_tokens(docs) -> None:
+    BOOK_TOKENS.clear()
+    for doc in docs:
+        for page in doc:
+            for w in WORD_RE.findall(normalize_text(page.get_text())):
+                k = w.lower()
+                BOOK_TOKENS[k] = BOOK_TOKENS.get(k, 0) + 1
+
+
+def hyphen_is_compound(body: str, rest: str) -> bool:
+    """True when the book prints this wrapped word hyphenated elsewhere.
+
+    A line-end hyphen is ambiguous: "crys-" + "tal" is a soft wrap to undo,
+    while "rock-" + "cut" is a compound to keep. Let the book settle it — the
+    hyphenated form attested in running text, the joined form never.
+    """
+    if not BOOK_TOKENS:
+        return False
+    a = re.search(r"([A-Za-z][A-Za-z'\-]*)-$", strip_markers(_defmt(body)))
+    b = re.match(r"([A-Za-z][A-Za-z'\-]*)", strip_markers(_defmt(rest)))
+    if not a or not b:
+        return False
+    x, y = a.group(1).lower(), b.group(1).lower()
+    return bool(BOOK_TOKENS.get(x + "-" + y)) and not BOOK_TOKENS.get(x + y)
+
+
 def merge_wrapped_lines(lines: list[str]) -> list[str]:
     if not lines:
         return []
@@ -1950,8 +1983,12 @@ def merge_wrapped_lines(lines: list[str]) -> list[str]:
             elif body.endswith("-") and not body.endswith("--"):
                 lead, rest = _split_leading_fmt(nxt)
                 if rest[:1].islower():
-                    # Soft-hyphen wrap; cancel the format seam so it's one run.
-                    buf = body[:-1] + _cancel_fmt_seam(tail, lead) + rest
+                    if hyphen_is_compound(body, rest):
+                        # Compound the book hyphenates in running text too
+                        buf = body + _cancel_fmt_seam(tail, lead) + rest
+                    else:
+                        # Soft wrap; cancel the seam so it reads as one run.
+                        buf = body[:-1] + _cancel_fmt_seam(tail, lead) + rest
                 else:
                     # Capital after the hyphen → real compound; keep it, glue.
                     buf = buf + nxt
@@ -4909,7 +4946,10 @@ def _is_item_tag_line(line: str) -> bool:
     # (diamonds are not italic; exclude them from the coverage denominator)
     bare_for_ratio = re.sub(r"[◇\s,]+", " ", bare_stripped).strip()
     ratio_den = max(len(bare_for_ratio), 1)
-    if ital_chars >= max(3, int(0.50 * ratio_den)):
+    # Tags are italic end to end. Half-italic lines are prose carrying an
+    # italic run — a move trigger wrapping mid-sentence ("*promise they've
+    # made*, gain advantage") reads as two short tags otherwise.
+    if ital_chars >= max(3, int(0.85 * ratio_den)):
         # Reject italic prose sentences ("When you…", long period-ended text)
         if re.match(
             r"^(When |Whenever |The |If |Pick |For |See |Consider |Most |Some )",
@@ -7678,6 +7718,10 @@ def main(argv: list[str] | None = None) -> None:
         # Arcana appendices (Book II) become a hub + one page per arcanum.
         book_articles = expand_arcana_articles(doc, book_articles)
         articles.extend(book_articles)
+
+    # Both books inform the decision — a compound wrapped in one is often set
+    # in running text in the other ("person-like", "maker-ruin").
+    index_book_tokens(docs.values())
 
     # The books' text is CC BY-SA 4.0, but "all artwork herein is
     # © 2026 by Lucie Arnoux" — maps are artwork. Drop the Maps page (and its
