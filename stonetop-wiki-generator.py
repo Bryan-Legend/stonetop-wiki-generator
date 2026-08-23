@@ -68,6 +68,16 @@ SITE_BASE_URL = "https://stonetop-wiki.github.io"
 
 SITE_NAME = "Stonetop Wiki"
 
+# Cloudflare Web Analytics beacon, injected into every generated page's <head>.
+# Kept as a plain constant (not inlined) because the token payload contains
+# braces that an f-string template would swallow.
+ANALYTICS_HTML = (
+    "  <!-- Cloudflare Web Analytics -->"
+    "<script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' "
+    "data-cf-beacon='{\"token\": \"4536408101e64ba59733ed69779dd45c\"}'></script>"
+    "<!-- End Cloudflare Web Analytics -->"
+)
+
 
 _DESC_PAGE_RE = re.compile(
     r"\s*\((?:see\s+)?(?:Book\s+[IVXLC]+,\s*)?pages?\s*"
@@ -7129,6 +7139,7 @@ def page_shell(
   <link rel="icon" href="{rel_prefix}images/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="{rel_prefix}images/favicon.ico" sizes="16x16 32x32 48x48 64x64">
   <link rel="stylesheet" href="{rel_prefix}css/wiki.css">
+{ANALYTICS_HTML}
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -7637,6 +7648,7 @@ def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> 
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="images/favicon.ico" sizes="16x16 32x32 48x48 64x64">
   <link rel="stylesheet" href="css/wiki.css">
+{ANALYTICS_HTML}
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
