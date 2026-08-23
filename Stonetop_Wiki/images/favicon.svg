@@ -1,9 +1,9 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="Stonetop Wiki">
   <title>Stonetop Wiki</title>
   <!-- Menhir. Same silhouette as .site-title::before in css/wiki.css — keep the two in sync.
-       Transparent ground; stone is --accent (#d4a574), baked in because linked SVGs
+       Transparent ground; stone is --head (#cfbea2), baked in because linked SVGs
        don't inherit the page's custom properties. -->
   <g transform="translate(3.92 -0.489) scale(1.51 0.906)">
-    <path fill="#d4a574" d="M5.6 2.2 10.6 3.4 12.6 31.6 8.2 34.2 3.4 31.4 4.6 7.2z"/>
+    <path fill="#cfbea2" d="M5.6 2.2 10.6 3.4 12.6 31.6 8.2 34.2 3.4 31.4 4.6 7.2z"/>
   </g>
 </svg>

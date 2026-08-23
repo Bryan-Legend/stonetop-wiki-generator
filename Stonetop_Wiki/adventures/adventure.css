@@ -1,7 +1,16 @@
 :root {
-      /* Palette, type, and card chrome come from ../css/wiki.css */
+      /* Palette, faces, and card chrome come from ../css/wiki.css */
       --nav-w: 13.5rem;
       --map-w: 39rem;
+      /* Type scale. Every font-size in this sheet is one of these seven steps —
+         it had grown fifteen ad-hoc values between 0.72rem and 1.72rem. */
+      --fs-micro: 0.72rem; /* tracked micro-labels: nav groups, tags */
+      --fs-xs: 0.8rem;     /* secondary chrome: sub-nav, footer, map stat lines */
+      --fs-sm: 0.88rem;    /* dense body: stat lines, meta, readouts, kickers */
+      --fs-base: 0.9375rem;/* 15px — body copy, read-aloud, map headings */
+      --fs-lg: 1.1rem;     /* h3, nav title */
+      --fs-xl: 1.25rem;    /* h2 */
+      --fs-2xl: 1.7rem;    /* h1 */
     }
     html, body {
       height: auto !important;
@@ -11,7 +20,8 @@
     * { box-sizing: border-box; }
     body.adventure {
       margin: 0;
-      font: 15px/1.45 var(--font-sans);
+      font: var(--fs-base)/1.5 var(--font-sans);
+      letter-spacing: var(--track-text);
       color: var(--ink);
     }
     a, a.wiki-link { color: var(--link); }
@@ -40,7 +50,7 @@
       height: 100vh;
       overflow-y: auto;
       padding: 1rem 0.75rem 1.5rem;
-      background: var(--bg-elev);
+      background: var(--bg);
       border-right: 1px solid var(--rule);
       box-shadow: inset -1px 0 0 rgba(var(--accent-rgb), 0.08), inset 0 2px 0 var(--accent-deep);
       z-index: 20;
@@ -48,9 +58,11 @@
     .adv-nav .nav-title {
       display: block;
       font-family: var(--font-serif);
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: var(--accent);
+      font-size: var(--fs-lg);
+      font-weight: 400;
+      font-synthesis-weight: none;
+      letter-spacing: var(--track-display);
+      color: var(--head);
       margin: 0 0 0.65rem;
       padding: 0 0.35rem 0.5rem;
       border-bottom: 1px solid var(--rule);
@@ -61,7 +73,7 @@
       display: block;
       margin: -0.35rem 0 0.55rem;
       padding: 0.15rem 0.4rem 0.45rem;
-      font-size: 0.78rem;
+      font-size: var(--fs-xs);
       color: var(--muted);
       text-decoration: none;
       border: none;
@@ -83,7 +95,7 @@
       color: var(--quote);
       text-decoration: none;
       border-radius: 4px;
-      font-size: 0.86rem;
+      font-size: var(--fs-sm);
       border: none;
       border-bottom: none;
     }
@@ -93,16 +105,17 @@
     }
     .adv-nav a.nav-sub {
       padding-left: 0.9rem;
-      font-size: 0.8rem;
+      font-size: var(--fs-xs);
       color: var(--muted);
     }
     .adv-nav .nav-label {
       display: block;
       margin: 0.75rem 0.4rem 0.25rem;
-      font-size: 0.68rem;
-      font-weight: 700;
+      font-family: var(--font-serif);
+      font-size: var(--fs-micro);
+      font-weight: 400;
+      font-synthesis-weight: none;
       letter-spacing: 0.06em;
-      text-transform: uppercase;
       color: var(--muted);
     }
     .adv-nav a.is-current {
@@ -124,7 +137,7 @@
       border-bottom: none;
       border-radius: 4px;
       padding: 0.28rem 0.4rem;
-      font-size: 0.8rem;
+      font-size: var(--fs-xs);
       line-height: 1.2;
       color: var(--muted);
     }
@@ -135,7 +148,7 @@
     }
     .adv-nav .sidebar-github:hover {
       background: var(--accent-soft);
-      color: var(--accent);
+      color: var(--head);
     }
 
     /* Main column — cap width so prose stays readable on wide screens */
@@ -171,10 +184,10 @@
     }
     .adv-map > h2 {
       margin-top: 0;
-      font-size: 0.95rem;
+      font-size: var(--fs-base);
     }
     .adv-map .statline {
-      font-size: 0.8rem;
+      font-size: var(--fs-xs);
       margin: 0.35rem 0 0;
     }
     .site-map-wrap {
@@ -200,35 +213,49 @@
     }
     h1 {
       font-family: var(--font-serif);
-      font-size: 1.5rem;
-      color: var(--accent);
-      margin: 0 0 0.3rem;
+      font-size: var(--fs-2xl);
+      font-weight: 400;
+      font-synthesis-weight: none;
+      letter-spacing: var(--track-display);
+      line-height: var(--lh-display);
+      color: var(--head);
+      margin: 0 0 0.35rem;
     }
-    .meta { color: var(--muted); font-size: 0.9rem; }
+    .meta { color: var(--muted); font-size: var(--fs-sm); }
     .meta strong { color: var(--ink); }
-    nav.links { margin-top: 0.4rem; font-size: 0.85rem; }
+    nav.links { margin-top: 0.4rem; font-size: var(--fs-sm); }
     h2 {
       font-family: var(--font-serif);
-      font-size: 1.05rem;
-      color: var(--accent);
-      margin: 1.2rem 0 0.4rem;
+      font-size: var(--fs-xl);
+      font-weight: 400;
+      font-synthesis-weight: none;
+      letter-spacing: var(--track-display);
+      line-height: var(--lh-display);
+      color: var(--head);
+      margin: 1.2rem 0 0.45rem;
       /* Matches the wiki page rule: full-width hairline in --rule at 90% */
       border-bottom: 1px solid color-mix(in srgb, var(--rule) 90%, transparent);
       padding-bottom: 0.32rem;
     }
     h3 {
       font-family: var(--font-serif);
-      font-size: 0.98rem;
+      font-size: var(--fs-lg);
+      font-weight: 400;
+      font-synthesis-weight: none;
+      letter-spacing: var(--track-display);
+      line-height: var(--lh-display);
       color: var(--ink);
-      margin: 0.75rem 0 0.25rem;
+      margin: 0.75rem 0 0.28rem;
     }
     p, li { margin: 0.25rem 0; }
     ul, ol { padding-left: 1.15rem; margin: 0.3rem 0; }
     /* Room cards — flat panel; title uses arcana face-label sans treatment */
     .room {
-      background: var(--bg-elev);
+      background: var(--panel);
+      background-image: var(--card-wash);
       border: 1px solid var(--rule);
-      border-radius: var(--radius);
+      border-radius: var(--radius-panel);
+      box-shadow: var(--shadow-panel);
       padding: 0.65rem 0.95rem 0.85rem;
       margin: 0.85rem 0 1.05rem;
       scroll-margin-top: 0.75rem;
@@ -240,12 +267,12 @@
       border: none;
       border-bottom: 1px solid var(--rule);
       background-image: none;
-      font-family: var(--font-sans);
-      font-size: 0.78rem;
-      font-weight: 700;
+      font-family: var(--font-serif);
+      font-size: var(--fs-sm);
+      font-weight: 400;
+      font-synthesis-weight: none;
       letter-spacing: 0.08em;
-      text-transform: uppercase;
-      color: var(--accent);
+      color: var(--head);
       line-height: 1.3;
     }
     .deal {
@@ -253,15 +280,33 @@
       border-left: 3px solid var(--accent);
       padding: 0.4rem 0.6rem;
       margin: 0.4rem 0;
-      font-size: 0.9rem;
+      font-size: var(--fs-sm);
     }
+    /* Read-aloud: parchment on a 4px rule of the same, set in Vollkorn. Roman
+       only, so nothing here asks for italic — the serif against the sans body
+       is the signal, at the same size as body copy. */
     .gm-line {
-      border-left: 3px solid var(--ok);
-      padding: 0.35rem 0.6rem;
-      margin: 0.4rem 0;
-      color: var(--ok);
-      font-style: italic;
+      border-left: 4px solid var(--read-aloud);
+      padding: 0.3rem 0.75rem;
+      margin: 0.45rem 0;
+      color: var(--read-aloud);
+      font-family: var(--font-quote);
+      font-size: var(--fs-base);
+      line-height: 1.3;
+      letter-spacing: 0;
     }
+    /* Read-aloud runs dimmer than body copy, and --link is within a few points
+       of --quote — so a link inside one needs to sit brighter than its
+       surroundings rather than dimmer, as it does in normal prose. */
+    .gm-line a.wiki-link {
+      color: var(--ink);
+      text-decoration-color: rgba(238, 232, 223, .55);
+    }
+    .gm-line a.wiki-link:hover {
+      color: var(--link-hover);
+      text-decoration-color: var(--link-hover);
+    }
+
     .dialog-lines {
       margin: 0.35rem 0 0.6rem 1.1rem;
       padding-left: 0.65rem;
@@ -269,7 +314,7 @@
     }
     .dialog-lines .gm-line {
       margin: 0.3rem 0;
-      font-size: 0.92rem;
+      font-size: var(--fs-sm);
       color: var(--quote);
       border-left-color: var(--muted);
     }
@@ -281,9 +326,9 @@
     .tag {
       display: inline-block;
       background: var(--accent-soft);
-      color: var(--accent);
+      color: var(--head);
       border: 1px solid var(--rule);
-      font-size: 0.72rem;
+      font-size: var(--fs-micro);
       font-weight: 600;
       padding: 0.08rem 0.35rem;
       border-radius: 3px;
@@ -291,8 +336,8 @@
     }
     .tag.danger { color: var(--danger); border-color: #5a3028; }
     .statline {
-      font-size: 0.88rem;
-      color: var(--quote);
+      font-size: var(--fs-sm);
+      color: var(--ink);
       margin: 0.25rem 0 0.4rem;
     }
 
@@ -300,12 +345,12 @@
     .enemy-block {
       margin: 0.45rem 0 0.55rem;
       padding: 0.45rem 0.55rem;
-      background: var(--bg-elev);
+      background: var(--panel);
       background-image: var(--card-wash);
       border: 1px solid var(--rule);
       border-left: 3px solid var(--accent);
-      border-radius: var(--radius);
-      box-shadow: var(--shadow-soft);
+      border-radius: var(--radius-panel);
+      box-shadow: var(--shadow-panel);
     }
     .enemy-row {
       display: flex;
@@ -319,12 +364,15 @@
     .enemy-meta {
       flex: 1 1 10rem;
       min-width: 8rem;
-      font-size: 0.88rem;
+      font-size: var(--fs-sm);
       color: var(--ink);
     }
     .enemy-meta .enemy-name {
-      font-weight: 600;
-      color: var(--accent);
+      font-family: var(--font-serif);
+      font-weight: 400;
+      font-synthesis-weight: none;
+      letter-spacing: var(--track-display);
+      color: var(--head);
       margin-right: 0.35rem;
     }
     .hp-tracker {
@@ -368,20 +416,20 @@
     .hp-readout {
       font-variant-numeric: tabular-nums;
       font-weight: 700;
-      font-size: 0.9rem;
-      color: var(--ok);
+      font-size: var(--fs-sm);
+      color: var(--head);
       min-width: 2.6rem;
       text-align: right;
     }
     .hp-readout.is-down { color: var(--danger); }
-    .hp-readout.is-full { color: var(--ok); }
+    .hp-readout.is-full { color: var(--head); }
 
     footer,
     footer.adv-credit {
       margin-top: 1.5rem;
       padding-top: 0.55rem;
       border-top: 1px solid var(--rule);
-      font-size: 0.78rem;
+      font-size: var(--fs-xs);
       color: var(--muted);
       font-style: italic;
     }
@@ -421,8 +469,9 @@
     @media print {
       :root {
         --ink: #1c1410; --muted: #5c4a3a; --rule: #c4a574; --bg: #fff;
-        --card: #f7f1e8; --accent: #6b4423; --accent-soft: #efe6d8;
-        --ok: #2d5a2d; --link: #4a3018; --danger: #8b3a2a;
+        --card: #f7f1e8; --accent: #5d142b; --accent-soft: #efe6d8;
+        --link: #4a3018; --danger: #8b3a2a;
+        --read-aloud: #5c4a3a; --head: #5d142b;
       }
       .adv-nav, .dice-toast, .wiki-preview { display: none !important; }
       body.has-map .adv-map {

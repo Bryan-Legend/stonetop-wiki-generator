@@ -2226,7 +2226,12 @@ class AnchorRegistry:
         self.used: set[str] = set()
         self.sections: list[dict] = []  # {id, name, norm}
 
-    def add(self, name: str) -> str:
+    def add(self, name: str, *, caps_label: bool = False) -> str:
+        """``caps_label`` marks a heading the book prints in full caps (a move).
+
+        The name itself is retitled for display before it gets here, so the
+        casing can no longer be recovered from the string — record it.
+        """
         base = slugify_id(name)
         sid = base
         n = 2
@@ -2235,7 +2240,12 @@ class AnchorRegistry:
             n += 1
         self.used.add(sid)
         self.sections.append(
-            {"id": sid, "name": name, "norm": normalize_section_key(name)}
+            {
+                "id": sid,
+                "name": name,
+                "norm": normalize_section_key(name),
+                "caps": caps_label,
+            }
         )
         return sid
 
@@ -2621,7 +2631,7 @@ def render_roll_table(
         f'<div class="roll-table"{id_attr}>'
         f'<div class="roll-table-head">'
         f"{dice_button(dice)}"
-        f' <span class="roll-label">{html.escape(label)}</span>'
+        f' <span class="roll-label">{html.escape(titlecase_name(label))}</span>'
         f"</div>"
         f'<table><tbody>{"".join(rows)}</tbody></table>'
         f"</div>"
@@ -2650,7 +2660,9 @@ def render_value_table(
     # The books set the head in two columns — the category on the left, the
     # word "value" over the value column — so split the title back apart and
     # put it in a header row, where it lines up with the values beneath it.
-    head_name = re.sub(r"\s*value\s*$", "", title, flags=re.I).strip()
+    head_name = smart_title(
+        re.sub(r"\s*value\s*$", "", title, flags=re.I).strip()
+    )
     return (
         f'<div class="value-table">'
         f"<table>"
@@ -2821,7 +2833,8 @@ def render_stat_block(
     id_attr = f' id="{html.escape(anchor_id)}"' if anchor_id else ""
     parts = [
         f'<div class="stat-block"{id_attr}>'
-        f'<h3 class="stat-name">{icon_html}{html.escape(name)}</h3>'
+        f'<h3 class="stat-name">{icon_html}'
+        f'{html.escape(titlecase_name(name))}</h3>'
     ]
     if tags:
         parts.append(f'<p class="stat-tags">{rr(tags)}</p>')
@@ -2849,7 +2862,7 @@ def render_stat_block(
             f'<div class="roll-table roll-table-inline">'
             f'<div class="roll-table-head">'
             f"{dice_button(dice_s)}"
-            f' <span class="roll-label">{html.escape(label_s)}</span>'
+            f' <span class="roll-label">{html.escape(titlecase_name(label_s))}</span>'
             f"</div>"
             f"<table><tbody>{rows_html}</tbody></table>"
             f"</div>"
@@ -3021,10 +3034,17 @@ def match_toc_to_sections(
             sn = sec.get("norm") or normalize_section_key(sname)
             if not sn:
                 continue
-            sec_letters = [c for c in sname if c.isalpha()]
-            sec_caps = bool(sec_letters) and (
-                sum(1 for c in sec_letters if c.isupper()) / len(sec_letters) >= 0.6
-            )
+            # Moves declare this: they are retitled for display, so the caps
+            # can't be counted off the string any more. Fall back to counting
+            # for sections that predate the flag.
+            if "caps" in sec:
+                sec_caps = bool(sec["caps"])
+            else:
+                sec_letters = [c for c in sname if c.isalpha()]
+                sec_caps = bool(sec_letters) and (
+                    sum(1 for c in sec_letters if c.isupper()) / len(sec_letters)
+                    >= 0.6
+                )
             # Don't let "TRADE &" latch onto prose like "Trade with Gordin's…"
             if toc_caps and not sec_caps:
                 continue
@@ -3376,10 +3396,11 @@ def _render_artifact_block_rich(
             else:
                 paras[-1] = (prev + " " + L, pn)
 
-    hid = anchors.add(title.rstrip(":"))
+    disc_name = titlecase_name(title.rstrip(":"))
+    hid = anchors.add(disc_name)
     parts = [
         f'<div class="discovery-block" id="{html.escape(hid)}">',
-        f'<h3 class="discovery-name">{html.escape(title.rstrip(":"))}</h3>',
+        f'<h3 class="discovery-name">{html.escape(disc_name)}</h3>',
     ]
     if tags:
         parts.append(f'<p class="discovery-tags">{link_fn(tags)}</p>')
@@ -3460,7 +3481,8 @@ def try_parse_improvement_block(
         return None
 
     block_start = j
-    hid = anchors.add(title or "Steading improvement")
+    title = titlecase_label(title)
+    hid = anchors.add(title or "Steading improvement", caps_label=True)
     parts = [f'<div class="steading-improvement" id="{html.escape(hid)}">']
     if kind or starts_si:
         parts.append('<p class="si-kind">Steading improvement</p>')
@@ -3761,11 +3783,12 @@ def structure_html(
                         body_parts.append(_defmt(L2))
                     j += 1
                 if ic:
-                    hid = anchors.add(bare.rstrip(":"))
+                    haz_name = titlecase_name(bare.rstrip(":"))
+                    hid = anchors.add(haz_name, caps_label=True)
                     parts_h = [
                         f'<div class="hazard-block" id="{html.escape(hid)}">',
                         f'<h3 class="stat-name">{ic}'
-                        f"{html.escape(bare.rstrip(':'))}</h3>",
+                        f"{html.escape(haz_name)}</h3>",
                     ]
                     bi = 0
                     while bi < len(body_parts):
@@ -4281,7 +4304,8 @@ def structure_html(
             # No entries found — fall through as heading
             out.append(
                 f"<h2>{dice_button(dice)} "
-                f'<span class="roll-label">{html.escape(label or "")}</span></h2>'
+                f'<span class="roll-label">'
+                f'{html.escape(titlecase_name(label or ""))}</span></h2>'
             )
             continue
 
@@ -4534,8 +4558,8 @@ def structure_html(
             and peek(1)
             and strip_markers(peek(1)).lstrip().startswith("When ")
         ):
-            name = line.strip()
-            hid = anchors.add(name)
+            name = titlecase_label(line.strip())
+            hid = anchors.add(name, caps_label=True)
             i += 1
             inner: list[str] = []
             while i < n:
@@ -5741,7 +5765,8 @@ def structure_minor_arcana_html(
         named = _arcana_named_move(_arcana_content(raw))
         if named and not re.match(r"^When", named[0], re.I):
             name, mtags, trig = named
-            hid = anchors.add(name.title() if name.isupper() else name)
+            name = titlecase_label(name)
+            hid = anchors.add(name)
             label = html.escape(name)
             if mtags:
                 label += f' <span class="arcana-sub-tags">({html.escape(mtags)})</span>'
@@ -5936,6 +5961,7 @@ def _arcana_title_line(
     If *name* is empty, only the face label is shown (major reverse side).
     """
     id_attr = f' id="{html.escape(hid)}"' if hid else ""
+    name = titlecase_name(name or "")
     face = f'<span class="arcana-title-face">{html.escape(face_label)}</span>'
     if not (name or "").strip():
         return f"<{tag}{id_attr} class=\"arcana-title-line\">{face}</{tag}>"
@@ -5946,6 +5972,101 @@ def _arcana_title_line(
         f"{face}"
         f"</{tag}>"
     )
+
+
+# Words that stay lowercase inside a title, unless they lead it.
+_TITLE_MINOR = {
+    "a", "an", "and", "as", "at", "but", "by", "for", "from", "in", "into",
+    "nor", "of", "off", "on", "onto", "or", "over", "the", "to", "up", "upon",
+    "with", "vs",
+}
+
+
+def smart_title(text: str) -> str:
+    """Title-case ``text``, lowercasing minor words.
+
+    ``str.title()`` can't do this job: it capitalises after an apostrophe
+    ("STORM'S" -> "Storm'S") and capitalises every minor word ("Arms And Armor").
+    """
+    if not text:
+        return text
+
+    def recase(m: "re.Match[str]") -> str:
+        word = m.group(0).lower()
+        if word in _TITLE_MINOR:
+            return word
+        return word[:1].upper() + word[1:]
+
+    # Hyphens split words ("STORM-BRINGER" -> "Storm-Bringer"); apostrophes don't.
+    out = re.sub(r"[A-Za-z][A-Za-z'’]*", recase, text)
+    # First and last words are capitalised even when minor — "The Flesh …",
+    # and "APPENDIX A" must not become "Appendix a".
+    out = out[:1].upper() + out[1:]
+    words = list(re.finditer(r"[A-Za-z][A-Za-z'’]*", out))
+    if words:
+        last = words[-1]
+        out = (
+            out[: last.start()]
+            + last.group(0)[:1].upper()
+            + last.group(0)[1:]
+            + out[last.end() :]
+        )
+    return out
+
+
+def titlecase_label(text: str) -> str:
+    """Recase a label whose casing carries no information.
+
+    Headings render in a small-caps display face, which draws lowercase letters
+    as small capitals. Either extreme loses the effect: the books set move names
+    and arcana powers in full caps ("CHART A COURSE"), which comes out as
+    unbroken full caps, and roll-table labels in full lower case ("why they
+    might care"), which comes out as unbroken small caps with no lead capital.
+    Both are retitled; genuinely mixed-case input is left alone.
+    """
+    if not text:
+        return text
+    letters = [c for c in text if c.isalpha()]
+    if not letters:
+        return text
+    if all(c.isupper() for c in letters) or all(c.islower() for c in letters):
+        return smart_title(text)
+    # A shouted label can lead a mixed-case line: stat blocks name a creature
+    # then gloss it ("ANDALAU OF THE FLUTE, dancing wind spirit"), and appendix
+    # titles prefix a section ("APPENDIX A: Ages of the World"). Only the label
+    # is shouted, so retitle up to the separator and leave the rest.
+    for mark in (",", ":"):
+        head, sep, tail = text.partition(mark)
+        head_letters = [c for c in head if c.isalpha()]
+        if sep and head_letters and all(c.isupper() for c in head_letters):
+            return smart_title(head) + sep + tail
+    return text
+
+
+def titlecase_name(text: str) -> str:
+    """Recase a *name* — a card face, creature, or discovery.
+
+    Same as :func:`titlecase_label`, plus sentence case. The books write many
+    names as a sentence ("A giant's dormitory", "Spitting drake", "The village
+    of Stonetop"); in a small-caps face that draws one full capital followed by
+    a long run of small capitals. Names read better in title case, so a name
+    holding a lowercase word that a title would capitalise is retitled. A name
+    that is already title case has no such word and is left alone.
+    """
+    # Retitle a shouted label first, then judge the result: a stat block can be
+    # both shouted and under-capitalised ("ANDALAU OF THE FLUTE, dancing wind
+    # spirit"), and the gloss should be titled like any other name's.
+    text = titlecase_label(text)
+    # Under-capitalised if some word that a title would capitalise is lowercase.
+    # A proper noun alone doesn't make a name title-cased ("The village of
+    # Stonetop"), and a name that is already title case has no such word
+    # ("Hec'tumel, Pale Serpent" — "Pale" and "Serpent" are both capitalised).
+    words = re.findall(r"[A-Za-z][A-Za-z'’]*", text)
+    if len(words) < 2:
+        return text
+    if any(w[:1].islower() and w.lower() not in _TITLE_MINOR for w in words[1:]):
+        return smart_title(text)
+    return text
 
 
 def _arcana_named_move(text: str):
@@ -6102,7 +6223,8 @@ def structure_major_arcana_html(
             named = _arcana_named_move(_arcana_content(raw))
             if named:
                 name, mtags, trigger = named
-                hid = anchors.add(name.title() if name.isupper() else name)
+                name = titlecase_label(name)
+                hid = anchors.add(name)
                 label = html.escape(name)
                 if mtags:
                     label += (
@@ -6567,6 +6689,7 @@ def articles_from_toc(
         if low in ("contents", "index") or low.startswith("index"):
             continue
         kind = "maps" if low == "maps" else "article"
+        title = titlecase_name(title)
         base_slug = slugify(title)
         articles.append(
             {

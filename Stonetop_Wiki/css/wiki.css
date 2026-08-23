@@ -1,4 +1,24 @@
-/* Stonetop Wiki (Book I & Book II) — near-black ground, warm brown headings and links */
+/* Stonetop Wiki (Book I & Book II) — near-black ground, parchment headings and
+   links, deep wine for structure. Display face is Awery SmallCaps. */
+@font-face {
+  /* Quoted / read-aloud voice. Variable weight — the axis runs 400-900. Roman
+     only, so nothing here should ask for italic. */
+  font-family: "Vollkorn";
+  font-style: normal;
+  font-weight: 400 900;
+  font-display: swap;
+  src: url("fonts/vollkorn-variable.woff2") format("woff2-variations"),
+       url("fonts/vollkorn-variable.woff2") format("woff2");
+}
+@font-face {
+  /* Display face for headings — single weight, all small-caps.
+     Lacks — – …, so the stack below supplies those glyphs. */
+  font-family: "Awery SmallCaps";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("fonts/awery-smallcaps.woff2") format("woff2");
+}
 @font-face {
   font-family: "Source Serif 4";
   font-style: normal;
@@ -43,36 +63,72 @@
 }
 
 :root {
-  /* Near-black workbench, warm brown accent */
-  --bg: #0a0a0a;
-  --bg-page: #0e0e0e;
-  --bg-elev: #141414;
-  --bg-hover: #1a1a1a;
-  --ink: #e1e1e1;
-  --muted: #787878;
-  --rule: #3c3c41;
-  --accent: #d4a574;
-  --accent-rgb: 212, 165, 116;
-  --accent-deep: #a67c4a;
-  --accent-soft: #1a1a1a;
-  --link: #e0b888;
-  --link-rgb: 224, 184, 136;
-  --link-hover: #f0d0a0;
-  --quote: #c8c8c8;
-  --ok: #9ece6a;
-  --danger: #f7768e;
+  /* Warm near-black ground under parchment type. Only two hues carry meaning:
+     the #cfbea2 parchment of headings, links and icons, and the #5d142b wine
+     that does every structural job — bands, fills, rules, washes. */
+  --bg: #0b0909;
+  --bg-page: #100e0e;
+  --bg-elev: #1c1a1a;
+  --bg-hover: #272220;
+  --ink: #eee8df;
+  --muted: #9f8475;
+  --rule: #3f3128;
+  /* Structural accent — bands, fills, rules, washes. Never type: it has almost
+     no luminance over --bg and is unreadable as a text colour. */
+  --accent: #5d142b;
+  --accent-rgb: 93, 20, 43;
+  /* Headings and titles, kept separate from --accent so type and structure
+     never share a colour. Links are built on this same heading tone. */
+  --head: #cfbea2;
+  --head-rgb: 207, 190, 162;
+  --accent-deep: #410d1e;
+  --accent-soft: #1c1a1a;
+  --link: var(--head);
+  --link-rgb: var(--head-rgb);
+  --link-hover: #ece0c8;
+  --quote: #d7c4a9;
+  --danger: #d52727;
+  /* Read-aloud voice: --quote text on a 4px rule of the same, set in
+     --font-quote. The face and the rule mark it, not a colour. */
+  --read-aloud: var(--quote);
   --card: var(--bg-elev);
   --sidebar-w: 13.125rem; /* was 17.5rem; −25% */
-  --font-serif: "Source Serif 4", "Palatino Linotype", Palatino, "Iowan Old Style", Georgia, serif;
+  /* Headings & titles. Source Serif 4 backstops the glyphs Awery lacks. */
+  --font-serif: "Awery SmallCaps", "Source Serif 4", "Palatino Linotype", Palatino, Georgia, serif;
+  /* Quoted text gets its own face rather than an italic of the body. */
+  --font-quote: "Vollkorn", "Source Serif 4", Georgia, serif;
+  --font-serif-text: "Source Serif 4", "Palatino Linotype", Palatino, "Iowan Old Style", Georgia, serif;
   --font-sans: "Source Sans 3", "Segoe UI", system-ui, -apple-system, sans-serif;
   --radius: 4px;
   --shadow: 0 12px 36px rgba(0, 0, 0, .62);
   --shadow-soft: 0 2px 10px rgba(0, 0, 0, .4);
-  /* Arcana-style top wash used on cards/blocks across the wiki */
-  --card-wash: linear-gradient(180deg, rgba(var(--accent-rgb), 0.11), transparent 2.75rem);
-  --card-wash-deep: linear-gradient(180deg, rgba(var(--accent-rgb), 0.16), transparent 3.25rem);
+  /* Panel skin: flat #0d0b0c ground, 1px border, 6px radius, and an even
+     0 0 10px #000 that lifts a panel without implying a light source. Over it
+     sits a wine wash that falls off from the top edge — the stops below run
+     #6e3331 → #482b33 as it fades. Stops are in rem, not %, so a short block
+     and a tall one look like the same material. */
+  --panel: #0d0b0c;
+  --radius-panel: 6px;
+  --shadow-panel: 0 0 10px #000;
+  --card-wash: linear-gradient(180deg,
+    rgba(110, 51, 49, 0.42) 0,
+    rgba(94, 48, 51, 0.31) 1.1rem,
+    rgba(108, 48, 52, 0.20) 2.2rem,
+    rgba(72, 43, 51, 0.10) 3.8rem,
+    transparent 6rem);
+  --card-wash-deep: linear-gradient(180deg,
+    rgba(110, 51, 49, 0.50) 0,
+    rgba(94, 48, 51, 0.36) 1.4rem,
+    rgba(108, 48, 52, 0.24) 2.8rem,
+    rgba(72, 43, 51, 0.12) 4.6rem,
+    transparent 7rem);
   --text: 13px;  /* sidebar / chrome */
   --content: 15px;  /* article body */
+  /* Prose takes a little tracking; small-caps headings want more. Headings run
+     at weight 400 — Awery ships one weight. */
+  --track-text: 0.02em;
+  --track-display: 0.045em;
+  --lh-display: 1.15;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -104,7 +160,8 @@ html {
 
 body {
   margin: 0;
-  font: 16px/1.55 var(--font-sans);
+  font: 16px/1.5 var(--font-sans);
+  letter-spacing: var(--track-text);
   color: var(--ink);
   background-color: var(--bg);
   background-image:
@@ -114,7 +171,7 @@ body {
 }
 
 ::selection {
-  background: rgba(var(--accent-rgb), 0.32);
+  background: rgba(var(--accent-rgb), 0.6);
   color: var(--ink);
 }
 
@@ -123,7 +180,7 @@ body {
   left: -9999px;
   top: 0;
   background: var(--accent);
-  color: #111;
+  color: var(--head);
   padding: .5rem 1rem;
   z-index: 100;
 }
@@ -149,7 +206,7 @@ html, body {
   height: 100%;
   max-height: 100vh;
   overflow: auto;
-  background: var(--bg-elev);
+  background: var(--bg-page);
   border-right: 1px solid var(--rule);
   box-shadow: inset -1px 0 0 rgba(var(--accent-rgb), 0.08);
   flex-shrink: 0;
@@ -162,7 +219,7 @@ html, body {
   box-shadow: inset 0 2px 0 var(--accent-deep);
   position: sticky;
   top: 0;
-  background: color-mix(in srgb, var(--bg-elev) 92%, #000 8%);
+  background: color-mix(in srgb, var(--bg-page) 92%, #000 8%);
   z-index: 1;
 }
 
@@ -193,7 +250,7 @@ html, body {
   letter-spacing: 0.02em;
 }
 .sidebar-github:hover {
-  color: var(--accent);
+  color: var(--head);
 }
 .sidebar-github::before {
   content: "";
@@ -209,10 +266,11 @@ html, body {
 
 .site-title {
   font-family: var(--font-serif);
-  font-size: 1.18rem;
-  font-weight: 700;
-  letter-spacing: 0.015em;
-  color: var(--accent);
+  font-size: 1.3rem;
+  font-weight: 400;
+  letter-spacing: var(--track-display);
+  line-height: var(--lh-display);
+  color: var(--head);
   text-decoration: none;
   display: flex;
   align-items: center;
@@ -224,7 +282,7 @@ html, body {
   width: 0.5rem;
   height: 1.05rem;
   flex-shrink: 0;
-  background: var(--accent);
+  background: var(--head);
   /* Filled menhir — same silhouette as images/favicon.svg; keep the two in sync */
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13.89 28.99'%3E%3Cpath fill='black' d='M3.32 0 10.87 1.09 13.89 26.64 7.25 28.99 0 26.46 1.81 4.53z'/%3E%3C/svg%3E") center / contain no-repeat;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13.89 28.99'%3E%3Cpath fill='black' d='M3.32 0 10.87 1.09 13.89 26.64 7.25 28.99 0 26.46 1.81 4.53z'/%3E%3C/svg%3E") center / contain no-repeat;
@@ -245,7 +303,7 @@ html, body {
 }
 .nav-filter::placeholder { color: var(--muted); opacity: 0.85; }
 .nav-filter:focus {
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--head);
   outline-offset: 1px;
   border-color: var(--accent-deep);
 }
@@ -260,18 +318,20 @@ html, body {
   overflow-y: auto;
   border: 1px solid var(--rule);
   border-top: 2px solid var(--accent);
-  border-radius: var(--radius);
-  background: var(--bg-elev);
-  box-shadow: var(--shadow);
+  border-radius: var(--radius-panel);
+  background: var(--panel);
+  background-image: var(--card-wash);
+  box-shadow: var(--shadow-panel);
 }
 .search-results[hidden] { display: none; }
 .search-results-meta {
   margin: 0;
   padding: 0.35rem 0.55rem;
+  font-family: var(--font-serif);
   font-size: var(--text);
-  font-weight: 600;
+  font-weight: 400;
+  font-synthesis-weight: none;
   letter-spacing: 0.04em;
-  text-transform: uppercase;
   color: var(--muted, #6b6560);
   border-bottom: 1px solid var(--rule);
   position: sticky;
@@ -293,7 +353,7 @@ html, body {
   display: block;
   font-size: var(--text);
   font-weight: 600;
-  color: var(--accent);
+  color: var(--head);
   margin: 0 0 0.15rem;
 }
 .search-hit-where {
@@ -309,7 +369,7 @@ html, body {
   color: var(--quote);
 }
 .search-hit-snippet mark {
-  background: rgba(var(--accent-rgb), 0.32);
+  background: rgba(var(--accent-rgb), 0.62);
   color: inherit;
   padding: 0 0.1em;
   border-radius: 2px;
@@ -337,10 +397,10 @@ html, body {
 }
 .toc li a:hover {
   background: var(--bg-hover);
-  color: var(--accent);
+  color: var(--head);
 }
 .toc li.current a {
-  color: var(--accent);
+  color: var(--head);
   border-left-color: var(--accent);
   background: color-mix(in srgb, var(--accent) 12%, var(--bg-hover));
   font-weight: 600;
@@ -352,7 +412,7 @@ html, body {
 }
 .toc li.nav-arcana.current a,
 .toc li.nav-arcana a:hover {
-  color: var(--accent);
+  color: var(--head);
 }
 .toc li.nav-hub a {
   font-weight: 600;
@@ -365,8 +425,7 @@ html, body {
   font-size: 0.72rem;
   font-weight: 700;
   letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--accent);
+  color: var(--head);
   border-top: 1px solid var(--rule);
   pointer-events: none;
 }
@@ -396,7 +455,7 @@ html, body {
   border-radius: 3px;
 }
 .toc li.nav-section a:hover {
-  color: var(--accent);
+  color: var(--head);
   background: var(--bg-hover);
 }
 .toc li.current ul.nav-sections {
@@ -427,20 +486,21 @@ html, body {
 /* Number printed on the physical arcana card */
 .arcana-card-no {
   margin-left: auto;
+  font-family: var(--font-serif);
+  font-synthesis-weight: none;
   color: var(--muted, #6b6560);
   letter-spacing: 0.06em;
-  text-transform: uppercase;
   white-space: nowrap;
 }
 /* Card number badge — top-right of the arcana hover popup (out of flow) */
 .arcana-preview-no {
   margin: 0;
   padding: 0;
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
   font-size: 11px;
-  font-weight: 700;
+  font-weight: 400;
+  font-synthesis-weight: none;
   letter-spacing: 0.08em;
-  text-transform: uppercase;
   color: var(--muted);
   line-height: 1.3;
   white-space: nowrap;
@@ -495,7 +555,6 @@ html, body {
   font-family: var(--font-serif);
   font-size: 0.85em;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
   color: var(--muted, #6b6560);
 }
 
@@ -504,11 +563,11 @@ html, body {
   margin: 0 0 0.65rem;
   padding: 0.35rem 0.55rem;
   font-size: var(--text);
-  background: var(--bg-elev);
+  background: var(--panel);
   background-image: var(--card-wash);
   border: 1px solid var(--rule);
   border-left: 3px solid var(--accent);
-  border-radius: var(--radius);
+  border-radius: var(--radius-panel);
   break-inside: avoid;
 }
 
@@ -532,7 +591,7 @@ html, body {
   z-index: 30;
   background: var(--bg-elev);
   border: 1px solid var(--rule);
-  color: var(--accent);
+  color: var(--head);
   font-size: 1.25rem;
   padding: .25rem .55rem;
   border-radius: var(--radius);
@@ -576,20 +635,23 @@ html, body {
 
 .content h1 {
   font-family: var(--font-serif);
-  font-size: 1.4rem;
-  font-weight: 700;
-  letter-spacing: 0.01em;
-  color: var(--accent);
-  margin: 0.5rem 0 0.45rem;
+  font-size: 1.62rem;
+  font-weight: 400;
+  letter-spacing: var(--track-display);
+  line-height: var(--lh-display);
+  color: var(--head);
+  margin: 0.5rem 0 0.5rem;
 }
 .content h1:first-child { display: none; }
 
 .content h2 {
   font-family: var(--font-serif);
-  font-size: 1.08rem;
-  font-weight: 700;
-  color: var(--accent);
-  margin: 0.95rem 0 0.4rem;
+  font-size: 1.24rem;
+  font-weight: 400;
+  letter-spacing: var(--track-display);
+  line-height: var(--lh-display);
+  color: var(--head);
+  margin: 0.95rem 0 0.45rem;
   /* Same rule as <hr>: full-width hairline in --rule at 90% */
   border-bottom: 1px solid color-mix(in srgb, var(--rule) 90%, transparent);
   padding-bottom: .32rem;
@@ -599,10 +661,12 @@ html, body {
 
 .content h3 {
   font-family: var(--font-serif);
-  font-size: 0.98rem;
-  font-weight: 600;
-  color: color-mix(in srgb, var(--accent) 72%, var(--ink));
-  margin: 0.7rem 0 0.3rem;
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: var(--track-display);
+  line-height: var(--lh-display);
+  color: var(--head);
+  margin: 0.7rem 0 0.32rem;
   break-after: avoid;
   break-inside: avoid;
 }
@@ -616,10 +680,10 @@ html, body {
   vertical-align: -0.15em;
   margin-right: 0.3em;
   object-fit: contain;
-  /* white → near-black → warm accent brown matching --accent (#d4a574) */
+  /* white → near-black → parchment matching --head (#cfbea2) */
   filter: brightness(0) saturate(100%)
-    invert(77%) sepia(28%) saturate(650%) hue-rotate(346deg)
-    brightness(95%) contrast(92%);
+    invert(100%) sepia(100%) saturate(767%) hue-rotate(311deg)
+    brightness(100%) contrast(62%);
   opacity: 0.95;
 }
 h2 .book-icon,
@@ -630,8 +694,12 @@ h3 .book-icon,
 }
 
 .content h4 {
-  font-size: 0.92rem;
-  color: var(--quote);
+  font-family: var(--font-serif);
+  font-size: 1rem;
+  font-weight: 400;
+  letter-spacing: var(--track-display);
+  line-height: var(--lh-display);
+  color: var(--head);
   margin: 0.55rem 0 0.25rem;
 }
 
@@ -645,9 +713,12 @@ h3 .book-icon,
 
 .content blockquote {
   margin: 0.5rem 0;
-  padding: 0.35rem 0.65rem;
+  padding: 0.4rem 0.7rem;
+  border: 1px solid var(--rule);
   border-left: 3px solid var(--accent);
-  background: var(--bg-elev);
+  border-radius: var(--radius-panel);
+  background: var(--panel);
+  background-image: var(--card-wash);
   color: var(--quote);
   break-inside: avoid;
 }
@@ -660,7 +731,7 @@ h3 .book-icon,
   border-radius: 3px;
 }
 
-.content strong { color: #f3f3f3; }
+.content strong { color: #f7f3e8; }
 
 .content hr {
   border: none;
@@ -686,7 +757,7 @@ h3 .book-icon,
 }
 .content th {
   background: var(--bg-elev);
-  color: var(--accent);
+  color: var(--head);
   font-family: var(--font-serif);
   white-space: nowrap;
   width: 2.4rem;
@@ -696,11 +767,11 @@ h3 .book-icon,
 .value-table {
   break-inside: avoid;
   margin: 0.45rem 0 0.65rem;
-  background: var(--bg-elev);
+  background: var(--panel);
   background-image: var(--card-wash);
   border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-panel);
   overflow: hidden;
   width: 100%;
 }
@@ -710,9 +781,9 @@ h3 .book-icon,
   border-bottom: 1px solid var(--rule);
   background: rgba(var(--accent-rgb), 0.09);
   font-family: var(--font-serif);
-  color: var(--accent);
+  color: var(--head);
   font-weight: 700;
-  font-size: 0.92rem;
+  font-size: 0.98rem;
   text-align: left;
   white-space: normal;
   width: auto;
@@ -740,7 +811,7 @@ h3 .book-icon,
   text-align: right;
   white-space: nowrap;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--head);
   width: 2.75rem;
   font-variant-numeric: tabular-nums;
 }
@@ -765,7 +836,7 @@ h3 .book-icon,
 }
 .content ul.bullets li::marker,
 .content ul.questions li::marker {
-  color: var(--accent);
+  color: var(--head);
 }
 .content ul.ellipsis {
   list-style: none;
@@ -792,16 +863,16 @@ h3 .book-icon,
   padding: 0.55rem 0.7rem 0.6rem;
   border: 1px solid var(--rule);
   border-top: 3px solid var(--accent);
-  border-radius: var(--radius);
-  background: var(--bg-elev);
+  border-radius: var(--radius-panel);
+  background: var(--panel);
   background-image: var(--card-wash);
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--shadow-panel);
   width: 100%;
   font-size: var(--text);
 }
 .infobox h4 {
   margin: 0.45rem 0 0.1rem;
-  color: var(--accent);
+  color: var(--head);
   font-family: var(--font-serif);
   font-size: 0.92rem;
 }
@@ -819,11 +890,11 @@ h3 .book-icon,
 .roll-table {
   break-inside: avoid;
   margin: 0.45rem 0 0.65rem;
-  background: var(--bg-elev);
+  background: var(--panel);
   background-image: var(--card-wash);
   border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-panel);
   overflow: hidden;
   width: 100%;
 }
@@ -835,11 +906,11 @@ h3 .book-icon,
   border-bottom: 1px solid var(--rule);
   background: rgba(var(--accent-rgb), 0.09);
   font-family: var(--font-serif);
-  color: var(--accent);
+  color: var(--head);
   font-weight: 700;
-  font-size: 0.92rem;
+  font-size: 0.98rem;
 }
-.roll-table .roll-label { color: var(--accent); }
+.roll-table .roll-label { color: var(--head); }
 .roll-table table { margin: 0; border: none; }
 .roll-table th, .roll-table td { border-left: none; border-right: none; }
 .roll-table tr:last-child th,
@@ -852,7 +923,7 @@ h3 .book-icon,
   animation: roll-hit-flash 0.7s ease-out;
 }
 .roll-table tr.roll-hit > th {
-  color: var(--accent);
+  color: var(--head);
   box-shadow: inset 3px 0 0 var(--accent);
 }
 @keyframes roll-hit-flash {
@@ -876,12 +947,12 @@ h3 .book-icon,
   break-inside: avoid;
   margin: 0.4rem 0 0.55rem;
   padding: 0.45rem 0.6rem 0.5rem;
-  background: var(--bg-elev);
+  background: var(--panel);
   background-image: var(--card-wash);
   border: 1px solid var(--rule);
   border-left: 3px solid var(--accent);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-panel);
   font-size: var(--text);
   line-height: 1.28;
   width: 100%;
@@ -889,7 +960,7 @@ h3 .book-icon,
 .hazard-block .stat-name {
   font-family: var(--font-serif);
   font-size: 0.98rem;
-  color: var(--accent);
+  color: var(--head);
   margin: 0 0 0.25rem;
   border: none;
   padding: 0;
@@ -908,7 +979,7 @@ h3 .book-icon,
 .stat-block .stat-name {
   font-family: var(--font-serif);
   font-size: 0.98rem;
-  color: var(--accent);
+  color: var(--head);
   margin: 0 0 0.15rem;
   border: none;
   padding: 0;
@@ -933,7 +1004,7 @@ h3 .book-icon,
 }
 .stat-block .stat-note {
   margin: 0.25rem 0 0;
-  color: var(--quote);
+  color: var(--ink);
   font-size: var(--text);
 }
 /* Deep-link :target — scroll still works; no outline flash on jump */
@@ -997,7 +1068,7 @@ a.wiki-link {
   /* A real underline, at the font's own position and weight — a border sits
      at the bottom of the inline box, a whole line-height below the text. */
   text-decoration: underline;
-  text-decoration-color: rgba(var(--link-rgb), .5);
+  text-decoration-color: rgba(var(--link-rgb), .62);
   transition: color .12s, text-decoration-color .12s, background .12s;
 }
 a.wiki-link:hover {
@@ -1014,11 +1085,13 @@ a.wiki-link strong {
 button.dice-roll {
   display: inline;
   font: inherit;
+  font-family: var(--font-serif);
   font-variant-numeric: tabular-nums;
-  font-weight: 600;
-  color: #0a0a0a;
-  background: linear-gradient(180deg, #ffdb8d, #e0af68 55%, #c4924a);
-  border: 1px solid #c4924a;
+  font-weight: 400;
+  font-synthesis-weight: none;
+  color: var(--head);
+  background: linear-gradient(180deg, #7a2038, #5d142b 55%, #410d1e);
+  border: 1px solid #410d1e;
   border-radius: 3px;
   padding: .05em .4em;
   margin: 0 .1em;
@@ -1112,7 +1185,7 @@ body.pins-adding .map-canvas { cursor: crosshair; }
 }
 .map-add[aria-pressed="true"] {
   background: var(--accent);
-  color: var(--bg);
+  color: var(--head);
   border-color: var(--accent);
 }
 .map-colors { display: flex; gap: 0.3rem; }
@@ -1215,7 +1288,7 @@ body.pins-adding .map-canvas { cursor: crosshair; }
   opacity: 1;
 }
 .dice-toast .result {
-  color: var(--accent);
+  color: var(--head);
   font-weight: 700;
   font-size: 1.2em;
   margin-left: .35rem;
@@ -1226,9 +1299,10 @@ body.pins-adding .map-canvas { cursor: crosshair; }
   break-inside: avoid;
   margin: 0.5rem 0 1.25rem;
   border: 1px solid var(--rule);
-  border-radius: calc(var(--radius) + 2px);
-  background: var(--bg-elev);
-  box-shadow: var(--shadow);
+  border-radius: var(--radius-panel);
+  /* The wash sits on .arcana-front, so the card itself is just the panel ground. */
+  background: var(--panel);
+  box-shadow: var(--shadow-panel);
   overflow: hidden;
   max-width: 36rem;
 }
@@ -1259,13 +1333,13 @@ h3.arcana-title-line,
   border: none;
   border-bottom: none;
   background-image: none;
-  font-family: var(--font-sans);
-  font-size: var(--text);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  line-height: 1.35;
-  color: var(--accent);
+  font-family: var(--font-serif);
+  font-size: 1.24rem;
+  font-weight: 400;
+  font-synthesis-weight: none;
+  letter-spacing: var(--track-display);
+  line-height: var(--lh-display);
+  color: var(--head);
   break-after: avoid;
   break-inside: avoid;
 }
@@ -1286,20 +1360,22 @@ h3.arcana-title-line,
 /* Legacy class names (pre-title-line) — keep readable if any old HTML remains */
 .arcana-face-label {
   margin: 0 0 0.35rem;
-  font-family: var(--font-sans);
-  font-size: var(--text);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  color: var(--accent);
+  font-family: var(--font-serif);
+  font-size: 1.24rem;
+  font-weight: 400;
+  font-synthesis-weight: none;
+  letter-spacing: var(--track-display);
+  line-height: var(--lh-display);
+  color: var(--head);
 }
 .arcana-discovery,
 .arcana-power-name {
   margin: 0 0 0.45rem;
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
   font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--accent);
+  font-weight: 400;
+  font-synthesis-weight: none;
+  color: var(--head);
 }
 .arcana-tags {
   margin: 0 0 0.55rem;
@@ -1344,7 +1420,7 @@ h3.arcana-title-line,
 .arcana-sub {
   margin: 0.75rem 0 0.35rem;
   font-size: 1rem;
-  color: var(--accent);
+  color: var(--head);
 }
 .arcana-note {
   margin: 0.35rem 0 0;
@@ -1371,8 +1447,11 @@ h3.arcana-title-line,
   font-size: var(--text);
 }
 .arcana-track .track-label {
-  font-weight: 700;
-  color: var(--accent);
+  font-family: var(--font-serif);
+  font-weight: 400;
+  font-synthesis-weight: none;
+  letter-spacing: var(--track-display);
+  color: var(--head);
   margin-right: 0.25rem;
 }
 .arcana-track .track-steps {
@@ -1451,18 +1530,19 @@ h3.arcana-title-line,
   padding: 0.65rem 0.8rem 0.75rem;
   border: 1px solid var(--rule);
   border-left: 3px solid var(--accent);
-  border-radius: var(--radius);
-  background: var(--bg-elev);
+  border-radius: var(--radius-panel);
+  background: var(--panel);
   background-image: var(--card-wash);
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--shadow-panel);
 }
 .si-kind {
   margin: 0 0 0.2rem;
+  font-family: var(--font-serif);
   font-size: var(--text);
-  font-weight: 700;
+  font-weight: 400;
+  font-synthesis-weight: none;
   letter-spacing: 0.06em;
-  text-transform: uppercase;
-  color: var(--accent);
+  color: var(--head);
 }
 .si-title {
   margin: 0 0 0.4rem;
@@ -1478,6 +1558,9 @@ h3.arcana-title-line,
   color: var(--muted, #6b6560);
   font-size: var(--text);
 }
+/* Not converted to the display face: this is a full lead-in sentence, not a
+   label, and 15 words of small caps lose the ascender/descender shapes that
+   make a line scannable. */
 .si-requires {
   margin: 0.45rem 0 0.3rem;
   font-weight: 600;
@@ -1521,12 +1604,12 @@ li.check-item input.wiki-check:checked + span {
   break-inside: avoid;
   margin: 0.5rem 0 0.7rem;
   padding: 0.5rem 0.65rem 0.55rem;
-  background: var(--bg-elev);
+  background: var(--panel);
   background-image: var(--card-wash);
   border: 1px solid var(--rule);
   border-left: 3px solid var(--link);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-panel);
   width: 100%;
   font-size: var(--text);
   line-height: 1.35;
@@ -1548,7 +1631,7 @@ li.check-item input.wiki-check:checked + span {
 .discovery-block > p { margin: 0.25rem 0; }
 .discovery-block .discovery-note {
   margin: 0.3rem 0 0;
-  color: var(--quote);
+  color: var(--ink);
 }
 .discovery-block > :last-child { margin-bottom: 0; }
 
@@ -1559,10 +1642,10 @@ li.check-item input.wiki-check:checked + span {
   padding: 0.55rem 0.7rem 0.65rem;
   border: 1px solid var(--rule);
   border-left: 3px solid var(--link);
-  border-radius: var(--radius);
-  background: var(--bg-elev);
+  border-radius: var(--radius-panel);
+  background: var(--panel);
   background-image: var(--card-wash);
-  box-shadow: var(--shadow-soft);
+  box-shadow: var(--shadow-panel);
   width: 100%;
 }
 .move-block .move-name {
@@ -1571,14 +1654,14 @@ li.check-item input.wiki-check:checked + span {
   font-size: 0.98rem;
   font-weight: 700;
   letter-spacing: 0.05em;
-  color: var(--accent);
+  color: var(--head);
   border: none;
   padding: 0;
 }
 .move-block .move-trigger {
   margin: 0 0 0.35rem;
   font-style: italic;
-  color: var(--quote);
+  color: var(--ink);
 }
 .move-block > ul {
   margin: 0.25rem 0 0.35rem;
@@ -1595,12 +1678,12 @@ li.check-item input.wiki-check:checked + span {
   width: min(36rem, calc(100vw - 1.5rem));
   max-height: min(28rem, calc(100vh - 2rem));
   overflow: auto;
-  background: var(--bg-elev);
+  background: var(--panel);
   background-image: var(--card-wash-deep);
   border: 1px solid var(--rule);
   border-top: 2px solid var(--accent);
-  border-radius: calc(var(--radius) + 2px);
-  box-shadow: var(--shadow);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-panel);
   pointer-events: none;
   opacity: 0;
   transform: translateY(4px);
@@ -1628,17 +1711,18 @@ li.check-item input.wiki-check:checked + span {
   font-family: var(--font-serif);
   font-size: 1.25rem;
   font-weight: 700;
-  color: var(--accent);
-  padding: .85rem 1rem .4rem;
+  color: var(--head);
+  padding: .55rem .9rem .3rem;
   margin: 0;
 }
 .wiki-preview .pv-body {
   display: flex;
   gap: .9rem;
-  padding: .35rem 1rem 1rem;
+  /* same box as .pv-full below, so simple and deep-link previews agree */
+  padding: .3rem .9rem .85rem;
   /* match main content type */
   font-size: var(--text);
-  color: var(--quote);
+  color: var(--ink);
   line-height: 1.4;
 }
 .wiki-preview .pv-thumb {
@@ -1663,10 +1747,10 @@ li.check-item input.wiki-check:checked + span {
   font-size: var(--text);
   font-weight: 600;
   color: var(--muted);
-  text-transform: uppercase;
   letter-spacing: 0.04em;
   margin-left: 0.35rem;
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
+  font-synthesis-weight: none;
 }
 /* Full section/stat-block deep-link preview */
 .wiki-preview .pv-full {
@@ -1732,6 +1816,8 @@ li.check-item input.wiki-check:checked + span {
   background: transparent;
   padding-left: 0;
   padding-right: 0;
+  /* .stat-name/.discovery-name/.move-name step up to 1.1rem here — match. */
+  font-size: 1.1rem;
 }
 /* keep the cells flush with the head they're aligned under */
 .wiki-preview .pv-full .value-table td {
@@ -1746,7 +1832,7 @@ li.check-item input.wiki-check:checked + span {
   font-size: 1.05rem;
   border-bottom: 1px solid color-mix(in srgb, var(--rule) 90%, transparent);
   padding-bottom: 0.3rem;
-  color: var(--accent);
+  color: var(--head);
 }
 /* Named moves / section heads inside arcana cards — same as page view. */
 .wiki-preview .pv-full h3.arcana-sub {
@@ -1758,7 +1844,7 @@ li.check-item input.wiki-check:checked + span {
   font-family: var(--font-serif);
   font-size: 1rem;
   font-weight: 700;
-  color: var(--accent);
+  color: var(--head);
   letter-spacing: normal;
   text-transform: none;
 }
@@ -1770,13 +1856,14 @@ li.check-item input.wiki-check:checked + span {
   border: none;
   border-bottom: none;
   background-image: none;
-  font-family: var(--font-sans);
-  font-size: var(--text);
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  line-height: 1.35;
-  color: var(--accent);
+  font-family: var(--font-serif);
+  /* names/table heads step up to 1.1rem in a preview; the face heading leads. */
+  font-size: 1.28rem;
+  font-weight: 400;
+  font-synthesis-weight: none;
+  letter-spacing: var(--track-display);
+  line-height: var(--lh-display);
+  color: var(--head);
 }
 .wiki-preview .pv-full p { margin: 0.35rem 0; }
 .wiki-preview .pv-full ul { margin: 0.3rem 0; padding-left: 1.1rem; }
@@ -1817,7 +1904,7 @@ li.check-item input.wiki-check:checked + span {
   font-size: 0.92rem;
   line-height: 1.5;
 }
-.index-hero p.index-note strong { color: var(--accent); }
+.index-hero p.index-note strong { color: var(--head); }
 
 /* Licensing statement — say it before anyone has to ask. */
 .index-hero p.index-license {
@@ -1838,7 +1925,7 @@ li.check-item input.wiki-check:checked + span {
   color: var(--ink);
 }
 .index-hero p.lede strong {
-  color: var(--accent);
+  color: var(--head);
   font-weight: 700;
 }
 .index-grid {
@@ -1849,11 +1936,11 @@ li.check-item input.wiki-check:checked + span {
 }
 .index-card {
   display: block;
-  background: var(--bg-elev);
+  background: var(--panel);
   background-image: var(--card-wash);
   border: 1px solid var(--rule);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow-soft);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-panel);
   padding: .8rem .95rem .85rem;
   text-decoration: none;
   color: var(--ink);
@@ -1868,7 +1955,7 @@ li.check-item input.wiki-check:checked + span {
 }
 .index-card .card-title {
   font-family: var(--font-serif);
-  color: var(--accent);
+  color: var(--head);
   font-weight: 700;
   font-size: 1.02rem;
   letter-spacing: 0.01em;
@@ -1926,4 +2013,54 @@ li.check-item input.wiki-check:checked + span {
     box-shadow: none;
     font-weight: inherit;
   }
+}
+
+/* ---------------------------------------------------------------------------
+ * Display face normalisation (Awery SmallCaps)
+ *
+ * Awery ships a single weight, so every `font-weight: 600/700` above would be
+ * rendered as synthetic (smeared) bold, so every rule here sets weight 400 and
+ * turns synthesis off, which also stops the fallback serif reintroducing it.
+ * Small caps also need looser tracking
+ * than lowercase, so labels that carried none get the display default.
+ * Rules that already set a deliberate tracking (kickers at 0.12em) keep it.
+ * ------------------------------------------------------------------------ */
+.site-title,
+.toc li.nav-book-label,
+.adv-refs-label,
+.related-adventures .ra-label,
+.content h1,
+.content h2,
+.content h3,
+.content h4,
+.content th,
+.value-table-head th,
+.infobox h4,
+.roll-table-head,
+.hazard-block .stat-name,
+.stat-block .stat-name,
+.dice-toast,
+.si-title,
+.discovery-block .discovery-name,
+.move-block .move-name,
+.wiki-preview .pv-title,
+.wiki-preview .pv-full h2,
+.wiki-preview .pv-full h3,
+.index-card .card-title {
+  font-weight: 400;
+  font-synthesis-weight: none;
+}
+
+.content th,
+.value-table-head th,
+.infobox h4,
+.roll-table-head,
+.hazard-block .stat-name,
+.stat-block .stat-name,
+.dice-toast,
+.discovery-block .discovery-name,
+.wiki-preview .pv-title,
+.wiki-preview .pv-full h2,
+.wiki-preview .pv-full h3 {
+  letter-spacing: var(--track-display);
 }
