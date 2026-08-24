@@ -168,6 +168,7 @@ body {
     radial-gradient(ellipse 90% 55% at 0% 0%, rgba(var(--accent-rgb), 0.07), transparent 46%),
     radial-gradient(ellipse 70% 50% at 100% 100%, rgba(var(--link-rgb), 0.06), transparent 52%);
   min-height: 100vh;
+  min-height: 100dvh;
 }
 
 ::selection {
@@ -188,6 +189,10 @@ body {
 
 html, body {
   height: 100%;
+  /* Phones: the URL bar overlays the viewport, so 100%/100vh is taller than
+     what you can actually see and the last line is clipped below the fold
+     (nothing scrolls it into view — html/body are overflow:hidden). */
+  height: 100dvh;
   overflow: hidden;
 }
 
@@ -195,6 +200,7 @@ html, body {
   display: flex;
   height: 100%;
   min-height: 100vh;
+  min-height: 100dvh;
   overflow: hidden;
 }
 
@@ -205,6 +211,7 @@ html, body {
   width: var(--sidebar-w);
   height: 100%;
   max-height: 100vh;
+  max-height: 100dvh;
   overflow: auto;
   background: var(--bg-page);
   border-right: 1px solid var(--rule);
@@ -1058,7 +1065,8 @@ body:has(.index-grid) .content {
     columns: 1;
     column-width: auto;
     column-rule: none;
-    padding-bottom: 2.5rem;
+    /* clear the home indicator / gesture bar under the last line */
+    padding-bottom: calc(2.5rem + env(safe-area-inset-bottom));
   }
 }
 
@@ -1985,6 +1993,9 @@ li.check-item input.wiki-check:checked + span {
   }
   .sidebar.open { transform: translateX(0); }
   .sidebar-toggle { display: inline-block; }
+  /* The open drawer slides in under the fixed toggle — the hamburger would
+     sit on top of the sidebar's own head. Hide it; tapping the scrim closes. */
+  body.sidebar-open .sidebar-toggle { display: none; }
   .main-wrap { padding: 0; }
   .content:not(.maps-page),
   body:has(.index-grid) .content { padding-top: 2.85rem; }
