@@ -162,6 +162,10 @@ body {
   margin: 0;
   font: 16px/1.5 var(--font-sans);
   letter-spacing: var(--track-text);
+  /* Awery ships one weight, so asking it for bold gets a smeared synthetic
+     face. Nothing may fake a weight; the text faces all carry real bolds,
+     and display type separates itself by size and color instead. */
+  font-synthesis-weight: none;
   color: var(--ink);
   background-color: var(--bg);
   background-image:
@@ -429,8 +433,8 @@ html, body {
   margin: 0.85rem 0 0.35rem;
   padding: 0.45rem 0.9rem 0.25rem;
   font-family: var(--font-serif);
-  font-size: 0.72rem;
-  font-weight: 700;
+  font-size: 0.82rem;
+  font-weight: 400;
   letter-spacing: 0.12em;
   color: var(--head);
   border-top: 1px solid var(--rule);
@@ -666,17 +670,29 @@ html, body {
   break-inside: avoid;
 }
 
-/* "GM moves for villains:" — the threat type's icon leads the line */
+/* "GM moves for villains:" — the threat type's icon leads the line.
+   Styled as a heading rather than as bold body: Awery has one weight. */
 .content p.threat-moves {
-  margin-top: 0.7rem;
-  color: var(--head);
+  margin: 0.7rem 0 0.32rem;
   font-family: var(--font-serif);
+  font-size: 1.1rem;
+  font-weight: 400;
+  letter-spacing: var(--track-display);
+  line-height: var(--lh-display);
+  color: var(--head);
+  break-after: avoid;
+}
+.content p.threat-moves strong,
+.content p.threat-moves em {
+  font-weight: 400;
+  font-style: normal;
+  color: inherit;
 }
 .content p.threat-moves .book-icon {
-  width: 1.35em;
-  height: 1.35em;
-  vertical-align: -0.25em;
-  margin-right: 0.35em;
+  width: 1.15em;
+  height: 1.15em;
+  vertical-align: -0.15em;
+  margin-right: 0.3em;
   opacity: 1;
 }
 
@@ -822,8 +838,8 @@ h3 .book-icon,
   background: rgba(var(--accent-rgb), 0.09);
   font-family: var(--font-serif);
   color: var(--head);
-  font-weight: 700;
-  font-size: 0.98rem;
+  font-weight: 400;
+  font-size: 1.05rem;
   text-align: left;
   white-space: normal;
   width: auto;
@@ -952,8 +968,8 @@ h3 .book-icon,
   background: rgba(var(--accent-rgb), 0.09);
   font-family: var(--font-serif);
   color: var(--head);
-  font-weight: 700;
-  font-size: 0.98rem;
+  font-weight: 400;
+  font-size: 1.05rem;
 }
 .roll-table .roll-label { color: var(--head); }
 .roll-table table { margin: 0; border: none; }
@@ -1335,7 +1351,7 @@ body.pins-adding .map-canvas { cursor: crosshair; }
 }
 .dice-toast .result {
   color: var(--head);
-  font-weight: 700;
+  font-weight: 400;
   font-size: 1.2em;
   margin-left: .35rem;
 }
@@ -1593,9 +1609,9 @@ h3.arcana-title-line,
 .si-title {
   margin: 0 0 0.4rem;
   font-family: var(--font-serif);
-  font-size: 1.05rem;
-  font-weight: 700;
-  color: var(--ink);
+  font-size: 1.12rem;
+  font-weight: 400;
+  color: var(--head);
   letter-spacing: 0.02em;
 }
 .si-blurb {
@@ -1697,8 +1713,8 @@ li.check-item input.wiki-check:checked + span {
 .move-block .move-name {
   margin: 0 0 0.3rem;
   font-family: var(--font-serif);
-  font-size: 0.98rem;
-  font-weight: 700;
+  font-size: 1.08rem;
+  font-weight: 400;
   letter-spacing: 0.05em;
   color: var(--head);
   border: none;
@@ -1756,7 +1772,7 @@ li.check-item input.wiki-check:checked + span {
 .wiki-preview .pv-title {
   font-family: var(--font-serif);
   font-size: 1.25rem;
-  font-weight: 700;
+  font-weight: 400;
   color: var(--head);
   padding: .55rem .9rem .3rem;
   margin: 0;
@@ -1791,12 +1807,11 @@ li.check-item input.wiki-check:checked + span {
 }
 .wiki-preview .pv-kind {
   font-size: var(--text);
-  font-weight: 600;
+  font-weight: 400;
   color: var(--muted);
   letter-spacing: 0.04em;
   margin-left: 0.35rem;
   font-family: var(--font-serif);
-  font-synthesis-weight: none;
 }
 /* Full section/stat-block deep-link preview */
 .wiki-preview .pv-full {
@@ -1888,8 +1903,8 @@ li.check-item input.wiki-check:checked + span {
   border-bottom: none;
   background-image: none;
   font-family: var(--font-serif);
-  font-size: 1rem;
-  font-weight: 700;
+  font-size: 1.08rem;
+  font-weight: 400;
   color: var(--head);
   letter-spacing: normal;
   text-transform: none;
@@ -2002,8 +2017,8 @@ li.check-item input.wiki-check:checked + span {
 .index-card .card-title {
   font-family: var(--font-serif);
   color: var(--head);
-  font-weight: 700;
-  font-size: 1.02rem;
+  font-weight: 400;
+  font-size: 1.1rem;
   letter-spacing: 0.01em;
   margin: 0 0 .4rem;
 }

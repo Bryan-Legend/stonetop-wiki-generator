@@ -923,21 +923,48 @@
       } catch (e) {}
     }
 
+    /* The page you are on has to be findable in the nav. The saved position
+       belongs to the page you came from, so it can leave the current entry
+       off-screen entirely — reveal it when it is, and otherwise leave the
+       sidebar where the reader left it. */
+    function revealCurrent() {
+      var li = el.querySelector(".toc li.current");
+      if (!li) return;
+      var mark = li.querySelector("a") || li;
+      var box = el.getBoundingClientRect();
+      var r = mark.getBoundingClientRect();
+      if (!r.height) return; // hidden (filtered, or off-canvas on mobile)
+      var head = el.querySelector(".sidebar-head");
+      // The head is sticky, so it covers the top of the scrolled content
+      var inset = head ? head.getBoundingClientRect().height : 0;
+      var top = r.top - box.top + el.scrollTop;
+      var seenTop = el.scrollTop + inset;
+      var seenBottom = el.scrollTop + el.clientHeight;
+      if (top >= seenTop && top + r.height <= seenBottom) return;
+      var room = el.clientHeight - inset - r.height;
+      var target = top - inset - (room > 0 ? room / 2 : 0);
+      var most = el.scrollHeight - el.clientHeight;
+      el.scrollTop = Math.max(0, Math.min(target, most));
+    }
+
     function restoreScroll() {
+      var y = null;
       try {
         var raw = sessionStorage.getItem(KEY);
-        if (raw == null || raw === "") return;
-        var y = parseInt(raw, 10);
-        if (!isFinite(y) || y < 0) return;
-        el.scrollTop = y;
-        // Layout/fonts can shift — re-apply after paint
-        requestAnimationFrame(function () {
-          el.scrollTop = y;
-        });
-        setTimeout(function () {
-          el.scrollTop = y;
-        }, 50);
+        if (raw != null && raw !== "") {
+          var n = parseInt(raw, 10);
+          if (isFinite(n) && n >= 0) y = n;
+        }
       } catch (e) {}
+
+      function settle() {
+        if (y != null) el.scrollTop = y;
+        revealCurrent();
+      }
+      settle();
+      // Layout/fonts can shift — re-apply after paint
+      requestAnimationFrame(settle);
+      setTimeout(settle, 50);
     }
 
     restoreScroll();
