@@ -2413,6 +2413,34 @@ def _strip_link_label_noise(label: str) -> str:
     return s.strip(" ,;:-")
 
 
+def _singular_forms(word: str) -> list[str]:
+    """Every plausible English singular for the last word of a name.
+
+    More than one reading can be plausible from the spelling alone —
+    "magpies" is "magpie" + s, not "magp" + ies — so the caller tries them
+    all against the sections it knows about rather than committing to one.
+    """
+    w = word.lower()
+    out: list[str] = []
+
+    def add(x: str) -> None:
+        if x and x != w and x not in out:
+            out.append(x)
+
+    if len(w) <= 2:
+        return out
+    # vortices → vortex, indices → index, matrices → matrix
+    if w.endswith("ices") and len(w) > 5:
+        add(w[:-4] + "ex")
+        add(w[:-4] + "ix")
+    if w.endswith("s") and not w.endswith("ss"):
+        add(w[:-1])  # the plain plural, under every other reading
+    one = _singularize_word(word)
+    if one:
+        add(one)
+    return out
+
+
 def _singularize_word(word: str) -> str | None:
     """Best-effort English singular for the last word of a monster name."""
     w = word.lower()
@@ -2458,8 +2486,8 @@ def _section_match_keys(label: str) -> list[str]:
         if not words:
             continue
         last = words[-1]
-        stem = _singularize_word(last)
-        if stem and stem != last:
+        stems = _singular_forms(last)
+        for stem in stems:
             add(" ".join(words[:-1] + [stem]) if len(words) > 1 else stem)
         # pluralize if singular
         if not last.endswith("s"):
@@ -2475,7 +2503,7 @@ def _section_match_keys(label: str) -> list[str]:
         # last word alone (wolves → wolf already handled; "kleztigr")
         if len(words) > 1:
             add(last)
-            if stem:
+            for stem in stems:
                 add(stem)
     # Trailing phrases: "they suffer the forest s wrath" → "forest s wrath"
     base_words = base.split()
@@ -2486,6 +2514,17 @@ def _section_match_keys(label: str) -> list[str]:
                 if len(tail) >= 8:
                     add(tail)
     return keys
+
+
+# Words a reference can end on that name nothing, so they must never be
+# matched against the tail or head of a section title.
+_PARTIAL_STOPWORDS = {
+    "them", "they", "this", "that", "these", "those", "your", "yours",
+    "their", "theirs", "here", "there", "then", "than", "with", "from",
+    "into", "onto", "upon", "also", "just", "only", "even", "both",
+    "some", "such", "each", "every", "other", "more", "most", "none",
+    "when", "what", "which", "where", "while", "they're", "it's",
+}
 
 
 def resolve_section_fragment(
@@ -2534,6 +2573,33 @@ def resolve_section_fragment(
                 return hit
         if target_slug and (target_slug, compact) in by_slug:
             return by_slug[(target_slug, compact)]
+
+    # A reference often carries only part of the printed name — the books
+    # shorten one once it has been introduced ("Ferocedes" for the stat block
+    # titled "Ferocedes Ogran"), and a label picked out of running prose can
+    # start mid-name ("Together" out of "Pull Together"). Match on either end,
+    # but only where exactly one section fits, so a shared word ("Fire Vortex"
+    # / "Fire Elemental") never picks a side.
+    if target_slug:
+        # A lone word pulled out of a longer label is too thin to match on:
+        # "in advance" reduces to "advance", which would claim "Advance
+        # towards impending doom". A one-word label is the label itself.
+        multiword = len(normalize_section_key(label).split()) > 1
+        for k in keys:
+            if not k or len(k) < 4:
+                continue
+            if multiword and " " not in k:
+                continue
+            if k in _PARTIAL_STOPWORDS:
+                continue  # "them" is not a reference to anything
+            fits = {
+                sid
+                for (slug_k, norm_k), sid in by_slug.items()
+                if slug_k == target_slug
+                and (norm_k.startswith(k + " ") or norm_k.endswith(" " + k))
+            }
+            if len(fits) == 1:
+                return fits.pop()
     return None
 
 
@@ -2801,9 +2867,14 @@ def linkify_pages(
         # Keep possessive inside the link: "Stone Lords'"
         disp = html.escape(B_ON + disp_inner + B_OFF) + html.escape(poss)
         if art["slug"] == current_slug:
-            frag = frag or (
-                (_PAGE_SECTIONS.get((art["slug"], pages[0])) or {}).get("id")
-            )
+            # The bold text names the thing being referenced. Where the name
+            # matched nothing, only a section that *opens* on the cited page
+            # is worth linking; one that merely runs through it is a different
+            # subject ("Ferocedes" is not "Star-mole").
+            if not frag:
+                sec = _PAGE_SECTIONS.get((art["slug"], pages[0]))
+                if sec and sec.get("opens_here"):
+                    frag = sec["id"]
             if frag:
                 return store(
                     f'<a class="wiki-link" href="#{frag}" '
@@ -6992,8 +7063,11 @@ def build_page_section_map(
                     break
         if not marks:
             continue
-        # A page ref points at where the material starts, so a section opening
-        # on that page wins over the one still running down it.
+        # A page ref points at where the material starts, so a section
+        # opening on that page wins over the one still running down it. The
+        # two are not equally good evidence, though: "opens here" is close to
+        # certain, "runs through here" is a guess. Callers that already have a
+        # name to go on only accept the former.
         starts: dict[int, dict] = {}
         for page, sec in marks:
             starts.setdefault(page, sec)
@@ -7003,9 +7077,11 @@ def build_page_section_map(
             while mi < len(marks) and marks[mi][0] <= p:
                 current = marks[mi][1]
                 mi += 1
-            sec = starts.get(p) or current
+            sec = starts.get(p)
             if sec:
-                out[(slug, p)] = sec
+                out[(slug, p)] = dict(sec, opens_here=True)
+            elif current:
+                out[(slug, p)] = dict(current, opens_here=False)
     return out
 
 

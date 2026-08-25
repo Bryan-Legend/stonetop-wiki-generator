@@ -1521,14 +1521,12 @@ h3.arcana-title-line,
   flex-wrap: wrap;
   gap: 0.3rem;
 }
+/* The checkbox is already a box; the track needs no frame around each one. */
 .arcana-track .track-step {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.2rem 0.35rem;
-  border: 1px solid var(--rule);
-  border-radius: 0.35rem;
-  background: var(--bg);
+  padding: 0.1rem;
   cursor: pointer;
   line-height: 1;
 }
@@ -1751,8 +1749,9 @@ li.check-item input.wiki-check:checked + span {
   transform: translateY(4px);
   transition: opacity .12s ease, transform .12s ease;
 }
+/* An arcanum's card runs long, so it gets more height — but the same width
+   as every other preview. */
 .wiki-preview.pv-arcana {
-  width: min(28rem, calc(100vw - 1.5rem));
   max-height: min(80vh, 42rem);
 }
 .wiki-preview.visible {
