@@ -624,6 +624,90 @@ BOOK_TYPE_STYLE: dict[str, dict] = {
 }
 
 
+# Display faces the maps letter their labels in (the body is ACaslon/Avara).
+MAP_LABEL_FONTS = ("FellType", "FeltTip")
+
+
+def map_label_spans(page: fitz.Page) -> set:
+    """Keys of text spans that belong to a picture, not to the article.
+
+    Map lettering is stroked and then filled, so every label is drawn twice at
+    identical coordinates; body type never is. That alone isn't enough (Book
+    II's running heads are double-printed too), so a label also has to sit
+    inside an illustration and be set in one of the map faces. Once five of
+    those turn up on a page the picture really is a map, and the rest of the
+    double-printed type inside it goes as well — the title curving across the
+    spread ("The World's End", one span per glyph) and italic asides like
+    "to Lygos and other points south".
+
+    Without this the region maps bleed into the prose: Book I's *The setting*
+    picks up "M o f a n g" and "e h T", and Book II's *Makers* scatters
+    "R i m e / L o r / d s" through the site table.
+    """
+    try:
+        pics = [
+            info["bbox"]
+            for info in page.get_image_info()
+            if info["bbox"][2] - info["bbox"][0] >= 100
+            and info["bbox"][3] - info["bbox"][1] >= 100
+        ]
+    except Exception:
+        return set()
+    if not pics:
+        return set()
+
+    counts: dict = defaultdict(int)
+    recs: dict = {}
+    for b in page.get_text("dict").get("blocks", []):
+        if b.get("type") != 0:
+            continue
+        for ln in b.get("lines", []):
+            for s in ln.get("spans", []):
+                txt = (s.get("text") or "").strip()
+                if not txt:
+                    continue
+                bb = s["bbox"]
+                key = (round(bb[0], 1), round(bb[1], 1), txt)
+                counts[key] += 1
+                recs[key] = s
+
+    # A label sits *on* the picture if its middle does — the spreads bleed off
+    # the page, so the last glyph of a label ("Mofang", "mountains") hangs past
+    # the image box and full containment would leave it stranded in the prose.
+    def on(bbox, pic) -> bool:
+        cx, cy = (bbox[0] + bbox[2]) / 2, (bbox[1] + bbox[3]) / 2
+        return pic[0] - 6 <= cx <= pic[2] + 6 and pic[1] - 6 <= cy <= pic[3] + 6
+
+    def in_map_face(span) -> bool:
+        return any(f in (span.get("font") or "") for f in MAP_LABEL_FONTS)
+
+    inside = [
+        key
+        for key, n in counts.items()
+        if n >= 2 and any(on(recs[key]["bbox"], p) for p in pics)
+    ]
+    labels = {k for k in inside if in_map_face(recs[k])}
+    if not labels:
+        return set()
+
+    # Pictures that letter themselves. A tinted panel behind a sidebar is an
+    # image too, but nothing is double-printed on it, so it never qualifies and
+    # its body text is safe.
+    lettered = [p for p in pics if any(on(recs[k]["bbox"], p) for k in labels)]
+    if len(labels) >= 5:
+        # Five labels in and it really is a map: the rest of its double-printed
+        # layer goes too — the title curving across the spread, italic asides.
+        labels |= {k for k in inside if any(on(recs[k]["bbox"], p) for p in lettered)}
+    # Ornament set in the same face but printed once — the rules flanking the
+    # sample card's "minor arcanum" — is part of the picture as well.
+    labels |= {
+        k
+        for k, s in recs.items()
+        if in_map_face(s) and any(on(s["bbox"], p) for p in lettered)
+    }
+    return labels
+
+
 def extract_page_rich(
     page: fitz.Page,
     article_title: str = "",
@@ -656,6 +740,8 @@ def extract_page_rich(
     page_h = page.rect.height
     cy0, cy1 = y_clip if y_clip else (float("-inf"), float("inf"))
 
+    map_labels = map_label_spans(page)
+
     spans: list[dict] = []
     seen_spans: set = set()
     for b in page.get_text("dict").get("blocks", []):
@@ -669,6 +755,8 @@ def extract_page_rich(
                 x0, y0, x1, y1 = s["bbox"]
                 if not (cy0 <= y0 < cy1):
                     continue
+                if (round(x0, 1), round(y0, 1), txt.strip()) in map_labels:
+                    continue  # lettering on the artwork, not the article
                 # Some headers are double-printed at identical coordinates
                 key = (round(x0), round(y0), txt.strip())
                 if key in seen_spans:
@@ -713,8 +801,14 @@ def extract_page_rich(
                     diamonds.append(r)
                 elif 5.5 <= w <= 7.5:
                     diamonds.append(r)
-            elif 7 <= ni <= 10:
-                boxes_sq.append(r)  # open-square checkbox
+            elif 7 <= ni <= 10 and sum(
+                1 for it in dr["items"] if it[0] in ("l", "re")
+            ) >= 2:
+                # Open-square checkbox — a box has straight sides. Illustration
+                # detail at this size is drawn entirely in Béziers (the eyes in
+                # the playbook portraits beside "The characters"), and without
+                # this it turns three playbook blurbs into a checklist.
+                boxes_sq.append(r)
         elif w <= 4.5 and h <= 6.5 and 5 <= ni <= 9:
             tails.append(r)  # flourish on the question spiral
         elif w >= 40 and h <= 1.5 and ni <= 3:
@@ -6705,6 +6799,50 @@ def articles_from_toc(
     return articles
 
 
+# Chapters the PDF outline files as siblings but the book treats as sections
+# of the chapter above them. Book I's opening chapter is the case: it points
+# the players at "the first few chapters of this book: Welcome to Stonetop
+# (this chapter), Playing the Game …" — and Expectations / The Setting / Why
+# Play? are set as 20pt section headings inside it, not as chapter openers.
+# Keyed by book, then by host chapter title (titlecased, as ``articles_from_toc``
+# leaves them).
+CHAPTER_MERGES: dict[str, dict[str, list[str]]] = {
+    "book1": {
+        "Welcome to Stonetop": ["Expectations", "The Setting", "Why Play?"],
+    },
+}
+
+
+def merge_chapter_sections(articles: list[dict], book: str) -> list[dict]:
+    """Fold ``CHAPTER_MERGES`` sub-chapters into the chapter that hosts them.
+
+    The host's page range grows to cover them, and their titles are kept on
+    ``toc_labels`` so the sidebar still deep-links each one (the merged page
+    has no printed chapter TOC of its own to harvest).
+    """
+    plan = CHAPTER_MERGES.get(book)
+    if not plan:
+        return articles
+
+    by_title = {a["title"]: a for a in articles}
+    absorbed: set[int] = set()
+    for host_title, section_titles in plan.items():
+        host = by_title.get(host_title)
+        if not host:
+            continue
+        taken = [by_title[t] for t in section_titles if t in by_title]
+        if not taken:
+            continue
+        host["end_page"] = taken[-1]["end_page"] or host["end_page"]
+        host["toc_labels"] = [a["title"] for a in taken]
+        absorbed.update(id(a) for a in taken)
+        print(
+            f"  Merged into {host['slug']}: "
+            + ", ".join(a["slug"] for a in taken)
+        )
+    return [a for a in articles if id(a) not in absorbed]
+
+
 BOOK_SLUG_SUFFIX = {
     "book1": "-book-i",
     "book2": "-book-ii",
@@ -7894,6 +8032,7 @@ def main(argv: list[str] | None = None) -> None:
         for art in book_articles:
             art["book_title"] = book.get("title") or book["label"]
         finalize_article_ranges(book_articles, doc.page_count)
+        book_articles = merge_chapter_sections(book_articles, bid)
         # Arcana appendices (Book II) become a hub + one page per arcanum.
         book_articles = expand_arcana_articles(doc, book_articles)
         articles.extend(book_articles)
@@ -8048,6 +8187,8 @@ def main(argv: list[str] | None = None) -> None:
                 # Book I sets its chapter-opener TOCs in heading type.
                 allow_markers=(book_id == "book1"),
             )
+            # A merged chapter has no printed TOC — it brings its own labels.
+            toc_labels = toc_labels or art.get("toc_labels") or []
             lines_cache[slug] = lines
             toc_cache[slug] = toc_labels
             _body, _ex, sections = article_html_from_pdf(

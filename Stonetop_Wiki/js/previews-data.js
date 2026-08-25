@@ -4209,27 +4209,7 @@ window.WIKI_PREVIEWS = {
       },
       "sites": {
         "name": "Sites",
-        "html": "<h2 id=\"sites\">Sites</h2>\n<p>Signs of these ancient civilizations litter the region, many of them surprisingly well-preserved. Some of these ruins are familiar and widely used today, but many are forgotten, avoided, or shunned. For while they contain many wonders of the past, they also hold ancient dangers. Plenty of them are <a class=\"wiki-link\" href=\"death-and-the-undying.html\" data-slug=\"death-and-the-undying\" ><strong>haunted</strong></a>, or corrupted by the <a class=\"wiki-link\" href=\"the-things-below.html\" data-slug=\"the-things-below\" ><strong>Things Below</strong></a>.</p>\n<p>Create a site based on the type(s) of Makers who left it. Pick the creators based on where the site is located, or roll if you&#x27;re unsure.</p>\n<h3 id=\"f\" class=\"table-heading\">F</h3>\n<h3 id=\"o\" class=\"table-heading\">o</h3>\n<h3 id=\"r\" class=\"table-heading\">r</h3>\n<div class=\"roll-table\" id=\"makers-site-locations\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d6\" title=\"Click to roll 1d6\">1d6</button> <span class=\"roll-label\">Makers &amp; Site Locations</span></div><table><tbody><tr><th scope=\"row\">1</th><td>The <a class=\"wiki-link\" href=\"forge-lords.html\" data-slug=\"forge-lords\" >Forge Lords</a>:</td></tr></tbody></table></div>\n<ul class=\"bullets\"><li>The <a class=\"wiki-link\" href=\"huffel-peaks.html\" data-slug=\"huffel-peaks\" ><strong>Huffel Peaks</strong></a></li><li><a class=\"wiki-link\" href=\"gordins-delve.html\" data-slug=\"gordins-delve\" ><strong>Gordin&#x27;s Delve</strong></a></li><li>Western edge of the <a class=\"wiki-link\" href=\"the-flats.html\" data-slug=\"the-flats\" ><strong>Flats</strong></a></li></ul>\n<p>2 The <a class=\"wiki-link\" href=\"green-lords.html\" data-slug=\"green-lords\" ><strong>Green Lords</strong></a>:</p>\n<ul class=\"bullets\"><li>The <a class=\"wiki-link\" href=\"the-great-wood.html\" data-slug=\"the-great-wood\" ><strong>Great Wood</strong></a></li><li><a class=\"wiki-link\" href=\"ferriers-fen.html\" data-slug=\"ferriers-fen\" ><strong>Ferrier&#x27;s Fen</strong></a></li><li>The <a class=\"wiki-link\" href=\"the-foothills.html\" data-slug=\"the-foothills\" ><strong>Foothills</strong></a></li></ul>\n<h3 id=\"r-i-m-e\" class=\"table-heading\">R i m e</h3>\n<h3 id=\"t-e\" class=\"table-heading\">T e</h3>\n<h3 id=\"g-m-p\" class=\"table-heading\">g m p</h3>\n<h3 id=\"es\" class=\"table-heading\">es</h3>\n<h3 id=\"e-t\" class=\"table-heading\">e t</h3>\n<h3 id=\"l-o-r\" class=\"table-heading\">L o r</h3>\n<h3 id=\"d-s\" class=\"table-heading\">d s</h3>\n<h3 id=\"l\" class=\"table-heading\">L</h3>\n<h3 id=\"o-2\" class=\"table-heading\">o</h3>\n<h3 id=\"r-2\" class=\"table-heading\">r</h3>\n<h3 id=\"d\" class=\"table-heading\">d</h3>\n<p>3 The <a class=\"wiki-link\" href=\"rime-lords.html#rime-lord\" data-slug=\"rime-lords\" data-fragment=\"rime-lord\" >Rime Lords</a>:</p>\n<h3 id=\"s\" class=\"table-heading\">s</h3>\n<ul class=\"bullets\"><li>The <a class=\"wiki-link\" href=\"the-whitefang-mountains.html\" data-slug=\"the-whitefang-mountains\" ><strong>Whitefang Mountains</strong></a></li><li>The <a class=\"wiki-link\" href=\"the-foothills.html\" data-slug=\"the-foothills\" ><strong>Foothills</strong></a></li></ul>\n<p>4 The <a class=\"wiki-link\" href=\"stone-lords.html\" data-slug=\"stone-lords\" ><strong>Stone Lords</strong></a>:</p>\n<ul class=\"bullets\"><li>The <a class=\"wiki-link\" href=\"the-steplands.html\" data-slug=\"the-steplands\" ><strong>Steplands</strong></a></li><li>The <a class=\"wiki-link\" href=\"south-manmarch.html\" data-slug=\"south-manmarch\" ><strong>South Manmarch</strong></a></li><li>South arm of the <a class=\"wiki-link\" href=\"huffel-peaks.html\" data-slug=\"huffel-peaks\" ><strong>Huffel Peaks</strong></a></li><li>Southern edge of the <a class=\"wiki-link\" href=\"the-flats.html\" data-slug=\"the-flats\" ><strong>Flats</strong></a></li></ul>\n<h3 id=\"d-s-2\" class=\"table-heading\">d s</h3>\n<h3 id=\"l-o-r-2\" class=\"table-heading\">L o r</h3>\n<h3 id=\"g-r\" class=\"table-heading\">G r</h3>\n<h3 id=\"n\" class=\"table-heading\">n</h3>\n<h3 id=\"l-2\" class=\"table-heading\">L</h3>\n<h3 id=\"o-3\" class=\"table-heading\">o</h3>\n<h3 id=\"r-3\" class=\"table-heading\">r</h3>\n<h3 id=\"d-2\" class=\"table-heading\">d</h3>\n<h3 id=\"s-2\" class=\"table-heading\">s</h3>\n<h3 id=\"s-t\" class=\"table-heading\">S t</h3>\n<h3 id=\"o-n\" class=\"table-heading\">o n</h3>\n<h3 id=\"e-l\" class=\"table-heading\">e L</h3>\n<h3 id=\"o-r-d\" class=\"table-heading\">o r d</h3>\n<h3 id=\"s-3\" class=\"table-heading\">s</h3>\n<p>5 The <a class=\"wiki-link\" href=\"tempest-lords.html\" data-slug=\"tempest-lords\" ><strong>Tempest Lords</strong></a>:</p>\n<ul class=\"bullets\"><li>Along the <a class=\"wiki-link\" href=\"the-dread-river.html\" data-slug=\"the-dread-river\" ><strong>Dread River</strong></a></li><li>The <a class=\"wiki-link\" href=\"the-flats.html\" data-slug=\"the-flats\" ><strong>Flats</strong></a></li><li>The <a class=\"wiki-link\" href=\"the-ruined-tower.html\" data-slug=\"the-ruined-tower\" ><strong>Ruined Tower</strong></a></li><li>Anywhere you want (their skyislands flew far and wide)</li></ul>\n<p>6 Multiple Makers:</p>\n<ul class=\"bullets\"><li>Along the <a class=\"wiki-link\" href=\"the-makers-roads.html\" data-slug=\"the-makers-roads\" ><strong>Makers&#x27; Roads</strong></a></li><li>Along the <a class=\"wiki-link\" href=\"the-dread-river.html\" data-slug=\"the-dread-river\" ><strong>Dread River</strong></a></li><li>Along borders between regions</li></ul>\n<h3 id=\"s-4\" class=\"table-heading\">s</h3>\n<h3 id=\"d-3\" class=\"table-heading\">d</h3>\n<h3 id=\"r-4\" class=\"table-heading\">r</h3>\n<h3 id=\"o-4\" class=\"table-heading\">o</h3>\n<h3 id=\"l-3\" class=\"table-heading\">L</h3>\n<h3 id=\"t\" class=\"table-heading\">t</h3>\n<h3 id=\"s-5\" class=\"table-heading\">s</h3>\n<h3 id=\"e\" class=\"table-heading\">e</h3>\n<h3 id=\"p\" class=\"table-heading\">p</h3>\n<h3 id=\"m\" class=\"table-heading\">m</h3>\n<h3 id=\"e-2\" class=\"table-heading\">e</h3>\n<h3 id=\"t-2\" class=\"table-heading\">T</h3>",
-        "kind": "section"
-      },
-      "r": {
-        "name": "r",
-        "html": "<h3 id=\"r\" class=\"table-heading\">r</h3>\n<div class=\"roll-table\" id=\"makers-site-locations\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d6\" title=\"Click to roll 1d6\">1d6</button> <span class=\"roll-label\">Makers &amp; Site Locations</span></div><table><tbody><tr><th scope=\"row\">1</th><td>The <a class=\"wiki-link\" href=\"forge-lords.html\" data-slug=\"forge-lords\" >Forge Lords</a>:</td></tr></tbody></table></div>\n<ul class=\"bullets\"><li>The <a class=\"wiki-link\" href=\"huffel-peaks.html\" data-slug=\"huffel-peaks\" ><strong>Huffel Peaks</strong></a></li><li><a class=\"wiki-link\" href=\"gordins-delve.html\" data-slug=\"gordins-delve\" ><strong>Gordin&#x27;s Delve</strong></a></li><li>Western edge of the <a class=\"wiki-link\" href=\"the-flats.html\" data-slug=\"the-flats\" ><strong>Flats</strong></a></li></ul>\n<p>2 The <a class=\"wiki-link\" href=\"green-lords.html\" data-slug=\"green-lords\" ><strong>Green Lords</strong></a>:</p>\n<ul class=\"bullets\"><li>The <a class=\"wiki-link\" href=\"the-great-wood.html\" data-slug=\"the-great-wood\" ><strong>Great Wood</strong></a></li><li><a class=\"wiki-link\" href=\"ferriers-fen.html\" data-slug=\"ferriers-fen\" ><strong>Ferrier&#x27;s Fen</strong></a></li><li>The <a class=\"wiki-link\" href=\"the-foothills.html\" data-slug=\"the-foothills\" ><strong>Foothills</strong></a></li></ul>",
-        "kind": "section"
-      },
-      "d": {
-        "name": "d",
-        "html": "<h3 id=\"d\" class=\"table-heading\">d</h3>\n<p>3 The <a class=\"wiki-link\" href=\"rime-lords.html#rime-lord\" data-slug=\"rime-lords\" data-fragment=\"rime-lord\" >Rime Lords</a>:</p>",
-        "kind": "section"
-      },
-      "s": {
-        "name": "s",
-        "html": "<h3 id=\"s\" class=\"table-heading\">s</h3>\n<ul class=\"bullets\"><li>The <a class=\"wiki-link\" href=\"the-whitefang-mountains.html\" data-slug=\"the-whitefang-mountains\" ><strong>Whitefang Mountains</strong></a></li><li>The <a class=\"wiki-link\" href=\"the-foothills.html\" data-slug=\"the-foothills\" ><strong>Foothills</strong></a></li></ul>\n<p>4 The <a class=\"wiki-link\" href=\"stone-lords.html\" data-slug=\"stone-lords\" ><strong>Stone Lords</strong></a>:</p>\n<ul class=\"bullets\"><li>The <a class=\"wiki-link\" href=\"the-steplands.html\" data-slug=\"the-steplands\" ><strong>Steplands</strong></a></li><li>The <a class=\"wiki-link\" href=\"south-manmarch.html\" data-slug=\"south-manmarch\" ><strong>South Manmarch</strong></a></li><li>South arm of the <a class=\"wiki-link\" href=\"huffel-peaks.html\" data-slug=\"huffel-peaks\" ><strong>Huffel Peaks</strong></a></li><li>Southern edge of the <a class=\"wiki-link\" href=\"the-flats.html\" data-slug=\"the-flats\" ><strong>Flats</strong></a></li></ul>",
-        "kind": "section"
-      },
-      "s-3": {
-        "name": "s",
-        "html": "<h3 id=\"s-3\" class=\"table-heading\">s</h3>\n<p>5 The <a class=\"wiki-link\" href=\"tempest-lords.html\" data-slug=\"tempest-lords\" ><strong>Tempest Lords</strong></a>:</p>\n<ul class=\"bullets\"><li>Along the <a class=\"wiki-link\" href=\"the-dread-river.html\" data-slug=\"the-dread-river\" ><strong>Dread River</strong></a></li><li>The <a class=\"wiki-link\" href=\"the-flats.html\" data-slug=\"the-flats\" ><strong>Flats</strong></a></li><li>The <a class=\"wiki-link\" href=\"the-ruined-tower.html\" data-slug=\"the-ruined-tower\" ><strong>Ruined Tower</strong></a></li><li>Anywhere you want (their skyislands flew far and wide)</li></ul>\n<p>6 Multiple Makers:</p>\n<ul class=\"bullets\"><li>Along the <a class=\"wiki-link\" href=\"the-makers-roads.html\" data-slug=\"the-makers-roads\" ><strong>Makers&#x27; Roads</strong></a></li><li>Along the <a class=\"wiki-link\" href=\"the-dread-river.html\" data-slug=\"the-dread-river\" ><strong>Dread River</strong></a></li><li>Along borders between regions</li></ul>",
+        "html": "<h2 id=\"sites\">Sites</h2>\n<p>Signs of these ancient civilizations litter the region, many of them surprisingly well-preserved. Some of these ruins are familiar and widely used today, but many are forgotten, avoided, or shunned. For while they contain many wonders of the past, they also hold ancient dangers. Plenty of them are <a class=\"wiki-link\" href=\"death-and-the-undying.html\" data-slug=\"death-and-the-undying\" ><strong>haunted</strong></a>, or corrupted by the <a class=\"wiki-link\" href=\"the-things-below.html\" data-slug=\"the-things-below\" ><strong>Things Below</strong></a>.</p>\n<p>Create a site based on the type(s) of Makers who left it. Pick the creators based on where the site is located, or roll if you&#x27;re unsure.</p>\n<div class=\"roll-table\" id=\"makers-site-locations\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d6\" title=\"Click to roll 1d6\">1d6</button> <span class=\"roll-label\">Makers &amp; Site Locations</span></div><table><tbody><tr><th scope=\"row\">1</th><td>The <a class=\"wiki-link\" href=\"forge-lords.html\" data-slug=\"forge-lords\" >Forge Lords</a>:</td></tr></tbody></table></div>\n<ul class=\"bullets\"><li>The <a class=\"wiki-link\" href=\"huffel-peaks.html\" data-slug=\"huffel-peaks\" ><strong>Huffel Peaks</strong></a></li><li><a class=\"wiki-link\" href=\"gordins-delve.html\" data-slug=\"gordins-delve\" ><strong>Gordin&#x27;s Delve</strong></a></li><li>Western edge of the <a class=\"wiki-link\" href=\"the-flats.html\" data-slug=\"the-flats\" ><strong>Flats</strong></a></li></ul>\n<p>2 The <a class=\"wiki-link\" href=\"green-lords.html\" data-slug=\"green-lords\" ><strong>Green Lords</strong></a>:</p>\n<ul class=\"bullets\"><li>The <a class=\"wiki-link\" href=\"the-great-wood.html\" data-slug=\"the-great-wood\" ><strong>Great Wood</strong></a></li><li><a class=\"wiki-link\" href=\"ferriers-fen.html\" data-slug=\"ferriers-fen\" ><strong>Ferrier&#x27;s Fen</strong></a></li><li>The <a class=\"wiki-link\" href=\"the-foothills.html\" data-slug=\"the-foothills\" ><strong>Foothills</strong></a></li></ul>\n<p>3 The <a class=\"wiki-link\" href=\"rime-lords.html\" data-slug=\"rime-lords\" ><strong>Rime Lords</strong></a>:</p>\n<ul class=\"bullets\"><li>The <a class=\"wiki-link\" href=\"the-whitefang-mountains.html\" data-slug=\"the-whitefang-mountains\" ><strong>Whitefang Mountains</strong></a></li><li>The <a class=\"wiki-link\" href=\"the-foothills.html\" data-slug=\"the-foothills\" ><strong>Foothills</strong></a></li></ul>\n<p>4 The <a class=\"wiki-link\" href=\"stone-lords.html\" data-slug=\"stone-lords\" ><strong>Stone Lords</strong></a>:</p>\n<ul class=\"bullets\"><li>The <a class=\"wiki-link\" href=\"the-steplands.html\" data-slug=\"the-steplands\" ><strong>Steplands</strong></a></li><li>The <a class=\"wiki-link\" href=\"south-manmarch.html\" data-slug=\"south-manmarch\" ><strong>South Manmarch</strong></a></li><li>South arm of the <a class=\"wiki-link\" href=\"huffel-peaks.html\" data-slug=\"huffel-peaks\" ><strong>Huffel Peaks</strong></a></li><li>Southern edge of the <a class=\"wiki-link\" href=\"the-flats.html\" data-slug=\"the-flats\" ><strong>Flats</strong></a></li></ul>\n<p>5 The <a class=\"wiki-link\" href=\"tempest-lords.html\" data-slug=\"tempest-lords\" ><strong>Tempest Lords</strong></a>:</p>\n<ul class=\"bullets\"><li>Along the <a class=\"wiki-link\" href=\"the-dread-river.html\" data-slug=\"the-dread-river\" ><strong>Dread River</strong></a></li><li>The <a class=\"wiki-link\" href=\"the-flats.html\" data-slug=\"the-flats\" ><strong>Flats</strong></a></li><li>The <a class=\"wiki-link\" href=\"the-ruined-tower.html\" data-slug=\"the-ruined-tower\" ><strong>Ruined Tower</strong></a></li><li>Anywhere you want (their skyislands flew far and wide)</li></ul>\n<p>6 Multiple Makers:</p>\n<ul class=\"bullets\"><li>Along the <a class=\"wiki-link\" href=\"the-makers-roads.html\" data-slug=\"the-makers-roads\" ><strong>Makers&#x27; Roads</strong></a></li><li>Along the <a class=\"wiki-link\" href=\"the-dread-river.html\" data-slug=\"the-dread-river\" ><strong>Dread River</strong></a></li><li>Along borders between regions</li></ul>",
         "kind": "section"
       },
       "true-nature": {
@@ -4240,191 +4220,6 @@ window.WIKI_PREVIEWS = {
       "runes-glyphs": {
         "name": "Runes & glyphs",
         "html": "<h2 id=\"runes-glyphs\">Runes &amp; glyphs</h2>\n<p>Ancient writing often adorns Maker-ruins and artifacts. Most of these runes and glyphs are mundane (names, labels, memorials, directions, warnings, etc). But some Maker-marks brim with power. They bind spirits, channel energy, anchor magical effects. Many <a class=\"wiki-link\" href=\"minor-truth-seeds.html\" data-slug=\"minor-truth-seeds\" ><strong>minor arcana</strong></a> feature such writing, which PCs must decipher in order to unlock the arcana&#x27;s secrets.</p>\n<p>If a PC is literate and has some justification (such as the Well Versed move with &quot;the Makers and their arts&quot; as a topic), then they can Know Things to decipher Maker runes and glyphs: <strong>on a 10+</strong>, tell them the full meaning; <strong>on a 7-9</strong>, give them a vague sense of the text&#x27;s meaning, or a few possible translations, and a way to learn more;</p>\n<p><strong>on a 6-</strong>, maybe tell them what&#x27;s required to translate the text, and/or interrupt the scene with trouble.</p>\n<p>Other PCs can Know Things about Maker runes and glyphs, but at best they can discern a few words and recognize the magical vs. the mundane. Focus instead on who could help them translate the runes, or who might find them valuable, or places and artifacts that bear similar markings, and what the PC knows about them.</p>\n<p>If the PCs can&#x27;t immediately decipher the Markings, then maybe they could…</p>\n<ul class=\"ellipsis\"><li>show the writing to a learned elder back home;</li><li>Spend a few weeks referencing their collection of Books and Scrolls (if they have one);</li><li>confer with an <a class=\"wiki-link\" href=\"lygos-and-the-south.html#antiquarian\" data-slug=\"lygos-and-the-south\" data-fragment=\"antiquarian\" ><strong>antiquarian</strong></a>, probably in <a class=\"wiki-link\" href=\"gordins-delve.html\" data-slug=\"gordins-delve\" ><strong>Gordin&#x27;s Delve</strong></a> or <a class=\"wiki-link\" href=\"marshedge.html\" data-slug=\"marshedge\" ><strong>Marshedge</strong></a>;</li><li>convince the monks up in <a class=\"wiki-link\" href=\"barrier-pass.html\" data-slug=\"barrier-pass\" ><strong>Barrier Pass</strong></a> to help;</li><li>seek aid from a <a class=\"wiki-link\" href=\"hillfolk.html#spirit-talker\" data-slug=\"hillfolk\" data-fragment=\"spirit-talker\" ><strong>spirit-talker</strong></a> or <a class=\"wiki-link\" href=\"hillfolk.html#hdour\" data-slug=\"hillfolk\" data-fragment=\"hdour\" ><strong>hdour</strong></a>;</li><li>make a deal with a <a class=\"wiki-link\" href=\"spirits-of-the-wild.html\" data-slug=\"spirits-of-the-wild\" ><strong>spirit of the wild</strong></a>, <a class=\"wiki-link\" href=\"fae.html\" data-slug=\"fae\" ><strong>Fae</strong></a>, <a class=\"wiki-link\" href=\"ustrina.html\" data-slug=\"ustrina\" ><strong>Ustrina</strong></a>, etc.;</li><li>find an intact <a class=\"wiki-link\" href=\"green-lords.html\" data-slug=\"green-lords\" ><strong>Green Lord</strong></a> tomb and beseech its mummified occupant to help; or</li><li>conjure the shade of a Maker or <a class=\"wiki-link\" href=\"barrow-builders.html\" data-slug=\"barrow-builders\" ><strong>Barrow Builder</strong></a>, perhaps at the <a class=\"wiki-link\" href=\"the-makers-roads.html#the-crossroads\" data-slug=\"the-makers-roads\" data-fragment=\"the-crossroads\" ><strong>Crossroads</strong></a>, and bargain for their service.</li></ul>\n<p>The Tempest Lords used ideographic glyphs (ideas, not sounds). The other Makers&#x27; writing was phonetic; just how distinct their alphabets were is up for you and your group to decide.</p>",
-        "kind": "section"
-      },
-      "f": {
-        "name": "F",
-        "html": "",
-        "kind": "section"
-      },
-      "o": {
-        "name": "o",
-        "html": "",
-        "kind": "section"
-      },
-      "r-i-m-e": {
-        "name": "R i m e",
-        "html": "",
-        "kind": "section"
-      },
-      "t-e": {
-        "name": "T e",
-        "html": "",
-        "kind": "section"
-      },
-      "g-m-p": {
-        "name": "g m p",
-        "html": "",
-        "kind": "section"
-      },
-      "es": {
-        "name": "es",
-        "html": "",
-        "kind": "section"
-      },
-      "e-t": {
-        "name": "e t",
-        "html": "",
-        "kind": "section"
-      },
-      "l-o-r": {
-        "name": "L o r",
-        "html": "",
-        "kind": "section"
-      },
-      "d-s": {
-        "name": "d s",
-        "html": "",
-        "kind": "section"
-      },
-      "l": {
-        "name": "L",
-        "html": "",
-        "kind": "section"
-      },
-      "o-2": {
-        "name": "o",
-        "html": "",
-        "kind": "section"
-      },
-      "r-2": {
-        "name": "r",
-        "html": "",
-        "kind": "section"
-      },
-      "d-s-2": {
-        "name": "d s",
-        "html": "",
-        "kind": "section"
-      },
-      "l-o-r-2": {
-        "name": "L o r",
-        "html": "",
-        "kind": "section"
-      },
-      "g-r": {
-        "name": "G r",
-        "html": "",
-        "kind": "section"
-      },
-      "n": {
-        "name": "n",
-        "html": "",
-        "kind": "section"
-      },
-      "l-2": {
-        "name": "L",
-        "html": "",
-        "kind": "section"
-      },
-      "o-3": {
-        "name": "o",
-        "html": "",
-        "kind": "section"
-      },
-      "r-3": {
-        "name": "r",
-        "html": "",
-        "kind": "section"
-      },
-      "d-2": {
-        "name": "d",
-        "html": "",
-        "kind": "section"
-      },
-      "s-2": {
-        "name": "s",
-        "html": "",
-        "kind": "section"
-      },
-      "s-t": {
-        "name": "S t",
-        "html": "",
-        "kind": "section"
-      },
-      "o-n": {
-        "name": "o n",
-        "html": "",
-        "kind": "section"
-      },
-      "e-l": {
-        "name": "e L",
-        "html": "",
-        "kind": "section"
-      },
-      "o-r-d": {
-        "name": "o r d",
-        "html": "",
-        "kind": "section"
-      },
-      "s-4": {
-        "name": "s",
-        "html": "",
-        "kind": "section"
-      },
-      "d-3": {
-        "name": "d",
-        "html": "",
-        "kind": "section"
-      },
-      "r-4": {
-        "name": "r",
-        "html": "",
-        "kind": "section"
-      },
-      "o-4": {
-        "name": "o",
-        "html": "",
-        "kind": "section"
-      },
-      "l-3": {
-        "name": "L",
-        "html": "",
-        "kind": "section"
-      },
-      "t": {
-        "name": "t",
-        "html": "",
-        "kind": "section"
-      },
-      "s-5": {
-        "name": "s",
-        "html": "",
-        "kind": "section"
-      },
-      "e": {
-        "name": "e",
-        "html": "",
-        "kind": "section"
-      },
-      "p": {
-        "name": "p",
-        "html": "",
-        "kind": "section"
-      },
-      "m": {
-        "name": "m",
-        "html": "",
-        "kind": "section"
-      },
-      "e-2": {
-        "name": "e",
-        "html": "",
-        "kind": "section"
-      },
-      "t-2": {
-        "name": "T",
-        "html": "",
         "kind": "section"
       }
     }
@@ -5601,22 +5396,22 @@ window.WIKI_PREVIEWS = {
       },
       "questions": {
         "name": "Questions",
-        "html": "<h2 id=\"questions\">Questions</h2>\n<ul class=\"questions\"><li>Which one of you has braved these ruins before? What kept you from going very far?</li><li>What wondrous trinket back in Stonetop supposedly came from here? Who has it now, and what do they use it for?</li><li>What marvel is said to lie below the Ruined Tower? From whom did you hear such tales?</li><li>When the nightmares come and you dream of the tower&#x27;s fall, are you one of the doomed defenders? Or part of the slavering horde?</li></ul>\n<p>the tower itself shallow crater</p>",
+        "html": "<h2 id=\"questions\">Questions</h2>\n<ul class=\"questions\"><li>Which one of you has braved these ruins before? What kept you from going very far?</li><li>What wondrous trinket back in Stonetop supposedly came from here? Who has it now, and what do they use it for?</li><li>What marvel is said to lie below the Ruined Tower? From whom did you hear such tales?</li><li>When the nightmares come and you dream of the tower&#x27;s fall, are you one of the doomed defenders? Or part of the slavering horde?</li></ul>\n<p>the tower itself</p>",
         "kind": "section"
       },
       "hooks": {
         "name": "Hooks",
-        "html": "<h2 id=\"hooks\">Hooks</h2>\n<ul class=\"bullets\"><li>Bandits squat in the ruins, and find an artifact that makes them extra dangerous.</li><li>A sorcerer is raising her demonic child in the tower&#x27;s depths.</li><li>A drunk wanderer claims to have explored the depths, but his friends didn&#x27;t make it out.</li><li>A southern scholar plans to delve the tower and seeks local help.</li><li>Frequent earthquakes coincide with terrible nightmares, especially for those touched by violence. The nightmares feature the tower, its fall, or the tunnels below.</li></ul>\n<p>upper tunnels the depths</p>",
+        "html": "<h2 id=\"hooks\">Hooks</h2>\n<ul class=\"bullets\"><li>Bandits squat in the ruins, and find an artifact that makes them extra dangerous.</li><li>A sorcerer is raising her demonic child in the tower&#x27;s depths.</li><li>A drunk wanderer claims to have explored the depths, but his friends didn&#x27;t make it out.</li><li>A southern scholar plans to delve the tower and seeks local help.</li><li>Frequent earthquakes coincide with terrible nightmares, especially for those touched by violence. The nightmares feature the tower, its fall, or the tunnels below.</li></ul>",
         "kind": "section"
       },
       "getting-there": {
         "name": "Getting there",
-        "html": "<h2 id=\"getting-there\">Getting there</h2>\n<p>To get there from Stonetop, take the West</p>\n<p>Road 3-4 hours to the <a class=\"wiki-link\" href=\"the-makers-roads.html#the-crossroads\" data-slug=\"the-makers-roads\" data-fragment=\"the-crossroads\" ><strong>Crossroads</strong></a>. From there, it&#x27;s 5-6 hours southwest across the <a class=\"wiki-link\" href=\"the-flats.html\" data-slug=\"the-flats\" ><strong>Flats</strong></a>.</p>\n<ul class=\"check-list\" data-check-list=\"the-ruined-tower-1\"><li class=\"check-item\"><label for=\"the-ruined-tower-1-0\"><input type=\"checkbox\" class=\"wiki-check\" id=\"the-ruined-tower-1-0\" data-check-id=\"the-ruined-tower-1-0\"> <span>It&#x27;ll take at least a day each way, and a corresponding amount of supplies</span></label></li><li class=\"check-item\"><label for=\"the-ruined-tower-1-1\"><input type=\"checkbox\" class=\"wiki-check\" id=\"the-ruined-tower-1-1\" data-check-id=\"the-ruined-tower-1-1\"> <span>You&#x27;ll need to bring light sources (if you intend to explore the tunnels)</span></label></li><li class=\"check-item\"><label for=\"the-ruined-tower-1-2\"><input type=\"checkbox\" class=\"wiki-check\" id=\"the-ruined-tower-1-2\" data-check-id=\"the-ruined-tower-1-2\"> <span>You need to watch out for <a class=\"wiki-link\" href=\"the-makers-roads.html#the-nosgalau\" data-slug=\"the-makers-roads\" data-fragment=\"the-nosgalau\" ><strong>nosgalau</strong></a> and other <a class=\"wiki-link\" href=\"dangers.html\" data-slug=\"dangers\" ><strong>dangers</strong></a> of the Flats</span></label></li><li class=\"check-item\"><label for=\"the-ruined-tower-1-3\"><input type=\"checkbox\" class=\"wiki-check\" id=\"the-ruined-tower-1-3\" data-check-id=\"the-ruined-tower-1-3\"> <span>If there have been heavy snows, you must wait until the thaw, or…</span></label></li><li class=\"check-item\"><label for=\"the-ruined-tower-1-4\"><input type=\"checkbox\" class=\"wiki-check\" id=\"the-ruined-tower-1-4\" data-check-id=\"the-ruined-tower-1-4\"> <span>You&#x27;ll need snowshoes, and…</span></label></li><li class=\"check-item\"><label for=\"the-ruined-tower-1-5\"><input type=\"checkbox\" class=\"wiki-check\" id=\"the-ruined-tower-1-5\" data-check-id=\"the-ruined-tower-1-5\"> <span>The way will still be grueling; you risk exhausting yourselves and/or your gear outer ruins</span></label></li></ul>",
+        "html": "<h2 id=\"getting-there\">Getting there</h2>\n<p>To get there from Stonetop, take the West</p>\n<p>Road 3-4 hours to the <a class=\"wiki-link\" href=\"the-makers-roads.html#the-crossroads\" data-slug=\"the-makers-roads\" data-fragment=\"the-crossroads\" ><strong>Crossroads</strong></a>. From there, it&#x27;s 5-6 hours southwest across the <a class=\"wiki-link\" href=\"the-flats.html\" data-slug=\"the-flats\" ><strong>Flats</strong></a>.</p>\n<ul class=\"check-list\" data-check-list=\"the-ruined-tower-1\"><li class=\"check-item\"><label for=\"the-ruined-tower-1-0\"><input type=\"checkbox\" class=\"wiki-check\" id=\"the-ruined-tower-1-0\" data-check-id=\"the-ruined-tower-1-0\"> <span>It&#x27;ll take at least a day each way, and a corresponding amount of supplies</span></label></li><li class=\"check-item\"><label for=\"the-ruined-tower-1-1\"><input type=\"checkbox\" class=\"wiki-check\" id=\"the-ruined-tower-1-1\" data-check-id=\"the-ruined-tower-1-1\"> <span>You&#x27;ll need to bring light sources (if you intend to explore the tunnels)</span></label></li><li class=\"check-item\"><label for=\"the-ruined-tower-1-2\"><input type=\"checkbox\" class=\"wiki-check\" id=\"the-ruined-tower-1-2\" data-check-id=\"the-ruined-tower-1-2\"> <span>You need to watch out for <a class=\"wiki-link\" href=\"the-makers-roads.html#the-nosgalau\" data-slug=\"the-makers-roads\" data-fragment=\"the-nosgalau\" ><strong>nosgalau</strong></a> and other <a class=\"wiki-link\" href=\"dangers.html\" data-slug=\"dangers\" ><strong>dangers</strong></a> of the Flats</span></label></li><li class=\"check-item\"><label for=\"the-ruined-tower-1-3\"><input type=\"checkbox\" class=\"wiki-check\" id=\"the-ruined-tower-1-3\" data-check-id=\"the-ruined-tower-1-3\"> <span>If there have been heavy snows, you must wait until the thaw, or…</span></label></li><li class=\"check-item\"><label for=\"the-ruined-tower-1-4\"><input type=\"checkbox\" class=\"wiki-check\" id=\"the-ruined-tower-1-4\" data-check-id=\"the-ruined-tower-1-4\"> <span>You&#x27;ll need snowshoes, and…</span></label></li><li class=\"check-item\"><label for=\"the-ruined-tower-1-5\"><input type=\"checkbox\" class=\"wiki-check\" id=\"the-ruined-tower-1-5\" data-check-id=\"the-ruined-tower-1-5\"> <span>The way will still be grueling; you risk exhausting yourselves and/or your gear</span></label></li></ul>",
         "kind": "section"
       },
       "areas": {
         "name": "Areas",
-        "html": "<h2 id=\"areas\">Areas</h2>\n<ul class=\"bullets\"><li><strong>Overgrown berm</strong>, about 15-20&#x27; tall, encircling the tower ~3/4 mile out. Huge dressed stones poke out, similar to the <a class=\"wiki-link\" href=\"the-village-of-stonetop.html\" data-slug=\"the-village-of-stonetop\" ><strong>Old Wall</strong></a>.</li><li><strong>Outer ruins</strong> between the berm and the tower. Once a thriving town, now just a jumble of ruins mostly swallowed by the prairie.</li><li><strong>A shallow crater</strong>, stretching ~400&#x27; from the tower&#x27;s northeast edge. Grass/soil/ mud/standing water cover glassy, slaglike bedrock.</li><li><strong>The tower itself</strong>: ~300&#x27; across. Northeast third is mostly rubble, but to the south and west a few floors remain, with walls ~200&#x27; tall.</li><li><strong>The upper tunnels</strong> start ~100&#x27; below the surface. Heavily looted, very haunted, mostly maintained by a ghostly Forge Lord and his <strong>patchwork constructs</strong>.</li><li><strong>The depths</strong> are even further down, a warren of chambers, halls, stairs, chutes, and burrows, all in various states of repair. Full of infrastructure, artifacts, experiments, prisons, and vitrified horrors.</li></ul>\n<p>overgrown berm</p>",
+        "html": "<h2 id=\"areas\">Areas</h2>\n<ul class=\"bullets\"><li><strong>Overgrown berm</strong>, about 15-20&#x27; tall, encircling the tower ~3/4 mile out. Huge dressed stones poke out, similar to the <a class=\"wiki-link\" href=\"the-village-of-stonetop.html\" data-slug=\"the-village-of-stonetop\" ><strong>Old Wall</strong></a>.</li><li><strong>Outer ruins</strong> between the berm and the tower. Once a thriving town, now just a jumble of ruins mostly swallowed by the prairie.</li><li><strong>A shallow crater</strong>, stretching ~400&#x27; from the tower&#x27;s northeast edge. Grass/soil/ mud/standing water cover glassy, slaglike bedrock.</li><li><strong>The tower itself</strong>: ~300&#x27; across. Northeast third is mostly rubble, but to the south and west a few floors remain, with walls ~200&#x27; tall.</li><li><strong>The upper tunnels</strong> start ~100&#x27; below the surface. Heavily looted, very haunted, mostly maintained by a ghostly Forge Lord and his <strong>patchwork constructs</strong>.</li><li><strong>The depths</strong> are even further down, a warren of chambers, halls, stairs, chutes, and burrows, all in various states of repair. Full of infrastructure, artifacts, experiments, prisons, and vitrified horrors.</li></ul>",
         "kind": "section"
       },
       "aboveground": {
@@ -10300,17 +10095,10 @@ window.WIKI_PREVIEWS = {
     "excerpt": "Stonetop is a hearth fantasy role-playing game, set in an iron age that never was.\n\nIt's meant for 3-5 people to play over multiple sessions. Expect each session to last 3-5 hours.\n\nDecide which of you will be the game master, or GM for short. Everyone else is a player. Each player controls and portrays a player character (or PC), one of the heroes of the village of Stonetop. The GM controls and portrays the world around them.",
     "image": null,
     "book": "book1",
-    "sections": {}
-  },
-  "expectations": {
-    "title": "Expectations",
-    "excerpt": "Stonetop works best with 3-5 people: the GM and 2-4 players. With just one player, some of the mechanics and procedures fall flat. With 5 or more players, it becomes increasingly hard to share the spotlight, make decisions, and keep things coherent.\n\nIt's best if the players are consistent from session to session. Players have a lot of input into the fictional world, and they decide together how to deploy their village's resources and what projects to pursue. When you have different players each session, it's hard to keep everyone on the same page.",
-    "image": null,
-    "book": "book1",
     "sections": {
-      "welcome-to-stonetop": {
-        "name": "Welcome to Stonetop",
-        "html": "<h3 id=\"welcome-to-stonetop\">Welcome to Stonetop</h3>\n<p><em>Stonetop</em> works best with 3-5 people: the GM and 2-4 players. With just one player, some of the mechanics and procedures fall flat. With 5 or more players, it becomes increasingly hard to share the spotlight, make decisions, and keep things coherent.</p>\n<p>It&#x27;s best if the players are consistent from session to session. Players have a lot of input into the fictional world, and they decide together how to deploy their village&#x27;s resources and what projects to pursue. When you have different players each session, it&#x27;s hard to keep everyone on the same page.</p>",
+      "expectations": {
+        "name": "Expectations",
+        "html": "<h2 id=\"expectations\">Expectations</h2>\n<p><em>Stonetop</em> works best with 3-5 people: the GM and 2-4 players. With just one player, some of the mechanics and procedures fall flat. With 5 or more players, it becomes increasingly hard to share the spotlight, make decisions, and keep things coherent.</p>\n<p>It&#x27;s best if the players are consistent from session to session. Players have a lot of input into the fictional world, and they decide together how to deploy their village&#x27;s resources and what projects to pursue. When you have different players each session, it&#x27;s hard to keep everyone on the same page.</p>",
         "kind": "section"
       },
       "premise": {
@@ -10330,12 +10118,7 @@ window.WIKI_PREVIEWS = {
       },
       "dice-notation": {
         "name": "Dice notation",
-        "html": "<h2 id=\"dice-notation\">Dice notation</h2>\n<p>If you&#x27;re unfamiliar:</p>\n<ul class=\"bullets\"><li>A &quot;<button type=\"button\" class=\"dice-roll\" data-dice=\"d6\" title=\"Click to roll d6\">d6</button>&quot; is a six-sided die, a &quot;<button type=\"button\" class=\"dice-roll\" data-dice=\"d10\" title=\"Click to roll d10\">d10</button>&quot; is a ten-sided die, etc.</li><li>&quot;Roll <button type=\"button\" class=\"dice-roll\" data-dice=\"2d6\" title=\"Click to roll 2d6\">2d6</button>&quot; means: &quot;Roll two sixsided dice and add the result.&quot;</li><li>&quot;Roll <button type=\"button\" class=\"dice-roll\" data-dice=\"d10+1\" title=\"Click to roll d10+1\">d10+1</button>&quot; means: &quot;Roll one ten-sided die and add one to the result.&quot;</li></ul>\n<p>The expedition will take one or more sessions to resolve. When the PCs have met their goals, or failed to do so, they&#x27;ll return home.</p>\n<p>You&#x27;ll explore how the village reacts to their return (and their success or failure), and how the PCs settle back into normal life.</p>\n<p>If your group keeps playing, then future sessions will skip forward a bit in time.</p>\n<p>The game will help you identify the next interesting situation—the next challenge, crisis, or opportunity that needs to be dealt with in play. The situation will likely lead to another expedition, which again will take one or more sessions to resolve.</p>\n<p>Between sessions, the GM will likely want to spend 1-2 hours updating their notes and preparing for the next session. Players will occasionally need to select new options for their characters, or think about what they want to do next, or answer the GM&#x27;s questions.</p>\n<p>Eventually, your group will decide to stop playing. If interest wanes or real life interferes, the game might just fizzle out—and that&#x27;s okay. But hopefully, you&#x27;ll be able to bring your game to a satisfying conclusion.</p>\n<p>See <a class=\"wiki-link\" href=\"the-game-ongoing.html#ending-your-game\" data-slug=\"the-game-ongoing\" data-fragment=\"ending-your-game\" ><strong>Ending your game</strong></a> for advice on this.</p>\n<h3 id=\"welcome-to-stonetop-2\">Welcome to Stonetop</h3>",
-        "kind": "section"
-      },
-      "welcome-to-stonetop-2": {
-        "name": "Welcome to Stonetop",
-        "html": "<h3 id=\"welcome-to-stonetop-2\">Welcome to Stonetop</h3>",
+        "html": "<h2 id=\"dice-notation\">Dice notation</h2>\n<p>If you&#x27;re unfamiliar:</p>\n<ul class=\"bullets\"><li>A &quot;<button type=\"button\" class=\"dice-roll\" data-dice=\"d6\" title=\"Click to roll d6\">d6</button>&quot; is a six-sided die, a &quot;<button type=\"button\" class=\"dice-roll\" data-dice=\"d10\" title=\"Click to roll d10\">d10</button>&quot; is a ten-sided die, etc.</li><li>&quot;Roll <button type=\"button\" class=\"dice-roll\" data-dice=\"2d6\" title=\"Click to roll 2d6\">2d6</button>&quot; means: &quot;Roll two sixsided dice and add the result.&quot;</li><li>&quot;Roll <button type=\"button\" class=\"dice-roll\" data-dice=\"d10+1\" title=\"Click to roll d10+1\">d10+1</button>&quot; means: &quot;Roll one ten-sided die and add one to the result.&quot;</li></ul>\n<p>The expedition will take one or more sessions to resolve. When the PCs have met their goals, or failed to do so, they&#x27;ll return home.</p>\n<p>You&#x27;ll explore how the village reacts to their return (and their success or failure), and how the PCs settle back into normal life.</p>\n<p>If your group keeps playing, then future sessions will skip forward a bit in time.</p>\n<p>The game will help you identify the next interesting situation—the next challenge, crisis, or opportunity that needs to be dealt with in play. The situation will likely lead to another expedition, which again will take one or more sessions to resolve.</p>\n<p>Between sessions, the GM will likely want to spend 1-2 hours updating their notes and preparing for the next session. Players will occasionally need to select new options for their characters, or think about what they want to do next, or answer the GM&#x27;s questions.</p>\n<p>Eventually, your group will decide to stop playing. If interest wanes or real life interferes, the game might just fizzle out—and that&#x27;s okay. But hopefully, you&#x27;ll be able to bring your game to a satisfying conclusion.</p>\n<p>See <a class=\"wiki-link\" href=\"the-game-ongoing.html#ending-your-game\" data-slug=\"the-game-ongoing\" data-fragment=\"ending-your-game\" ><strong>Ending your game</strong></a> for advice on this.</p>",
         "kind": "section"
       },
       "content": {
@@ -10347,48 +10130,15 @@ window.WIKI_PREVIEWS = {
         "name": "Materials",
         "html": "<h2 id=\"materials\">Materials</h2>\n<p>To play this game face-to-face, you&#x27;ll need printed materials (playbooks, inserts, and reference sheets), plus pencils to write with. If you play online, you&#x27;ll need digital versions of the same.</p>\n<p>You&#x27;ll also need dice. <em>Stonetop</em> uses the many-sided dice common to roleplaying games. As a player, you&#x27;ll need at least <button type=\"button\" class=\"dice-roll\" data-dice=\"3d6\" title=\"Click to roll 3d6\">3d6</button> and ideally one each of a <button type=\"button\" class=\"dice-roll\" data-dice=\"d4\" title=\"Click to roll d4\">d4</button>, <button type=\"button\" class=\"dice-roll\" data-dice=\"d8\" title=\"Click to roll d8\">d8</button>, <button type=\"button\" class=\"dice-roll\" data-dice=\"d10\" title=\"Click to roll d10\">d10</button>, and <button type=\"button\" class=\"dice-roll\" data-dice=\"d12\" title=\"Click to roll d12\">d12</button>. The GM doesn&#x27;t generally roll dice during play, but they&#x27;ll want a <button type=\"button\" class=\"dice-roll\" data-dice=\"d6\" title=\"Click to roll d6\">d6</button> and a <button type=\"button\" class=\"dice-roll\" data-dice=\"d12\" title=\"Click to roll d12\">d12</button> for rolling on the inspirational tables in <em>Book II: The Wider World and Other Wonders</em>.</p>",
         "kind": "section"
-      }
-    }
-  },
-  "the-setting": {
-    "title": "The Setting",
-    "excerpt": "Stonetop e G r e a t W e F l a t s ds an pl te\n\nThe Forest Folk disappeared ten years ago, and no one knows why. Perhaps the Fae—magical, fickle beings of the Great Wood—had something to do with it?\n\nHorrid little crinwin also lurk in the Great Wood. They've grown bolder and more numerous since the Forest Folk left.",
-    "image": null,
-    "book": "book1",
-    "sections": {
-      "welcome-to-stonetop": {
-        "name": "Welcome to Stonetop",
-        "html": "<h3 id=\"welcome-to-stonetop\">Welcome to Stonetop</h3>\n<p>Barrier</p>\n<p>Pass</p>",
-        "kind": "section"
       },
-      "t": {
-        "name": "T",
-        "html": "<h2 id=\"t\">T</h2>\n<p>Gordin&#x27;s</p>\n<p>Delve</p>\n<p>T h</p>\n<p>The village of Stonetop…</p>\n<ul class=\"ellipsis\"><li><strong>is home to around 300 folks</strong>. It&#x27;s a nice place, though poor. People look out for each other.</li><li><strong>is built around a massive standing stone</strong> of unknown origin, carved with faint runes. Lightning strikes the Stone often.</li><li><strong>stands at edge of the Great Wood.</strong> Villagers hunt and trap but—per a compact with the Forest Folk—never fell a living tree.</li><li><strong>lies in the World&#x27;s End</strong>, a sparsely populated region, dotted with ruins. The nearest settlement is days away.</li></ul>\n<p>Tor&#x27;s</p>\n<p>Fist</p>\n<p>M o f a n g</p>\n<p>W h i t e</p>",
-        "kind": "section"
-      },
-      "s-l-d-o-r": {
-        "name": "' s l d o r",
-        "html": "<h2 id=\"s-l-d-o-r\">&#x27; s l d o r</h2>",
-        "kind": "section"
-      },
-      "w": {
-        "name": "W",
-        "html": "<h2 id=\"w\">W</h2>\n<p>T h</p>\n<p>Stonetop e G r e a t W e F l a t s ds an pl te</p>\n<p>S</p>",
+      "the-setting": {
+        "name": "The setting",
+        "html": "<h2 id=\"the-setting\">The setting</h2>\n<p>The village of Stonetop…</p>\n<ul class=\"ellipsis\"><li><strong>is home to around 300 folks</strong>. It&#x27;s a nice place, though poor. People look out for each other.</li><li><strong>is built around a massive standing stone</strong> of unknown origin, carved with faint runes. Lightning strikes the Stone often.</li><li><strong>stands at edge of the Great Wood.</strong> Villagers hunt and trap but—per a compact with the Forest Folk—never fell a living tree.</li><li><strong>lies in the World&#x27;s End</strong>, a sparsely populated region, dotted with ruins. The nearest settlement is days away.</li></ul>",
         "kind": "section"
       },
       "neighbors": {
         "name": "Neighbors",
-        "html": "<h2 id=\"neighbors\">Neighbors</h2>\n<p>The <strong>Forest Folk</strong> disappeared ten years ago, and no one knows why. Perhaps the <strong>Fae</strong>—magical, fickle beings of the Great Wood—had something to do with it?</p>\n<p>Horrid little <strong>crinwin</strong> also lurk in the Great Wood. They&#x27;ve grown bolder and more numerous since the Forest Folk left.</p>\n<p><strong>Gordin&#x27;s Delve</strong> is the closest settlement, a mining town four days to the west.</p>\n<p><strong>Barrier Pass</strong> is a few days north, in the mountains; stoic, grim, unwelcoming.</p>\n<p>n s t a i o u n</p>",
-        "kind": "section"
-      },
-      "e-n-d": {
-        "name": "E n d",
-        "html": "<h2 id=\"e-n-d\">E n d</h2>\n<p>W o o d</p>\n<p>Ferrier&#x27;s</p>\n<p>Fen</p>\n<p>Marshedge</p>\n<p><em>to Lygos and other points south</em> The <strong>Hillfolk</strong> are nomads who roam the rugged Steplands to the south and the Flats to the west. They hold the mining folk of Gordin&#x27;s Delve in contempt.</p>\n<p><strong>Marshedge</strong> is a sizeable town about ten days&#x27; march south and east.</p>\n<p>There&#x27;s no empire, no kings or nobles—at least not around here. More &quot;civilized&quot;</p>\n<p>towns and cities lie farther to the south.</p>\n<p>Lygos is the closest such city.</p>\n<h3 id=\"welcome-to-stonetop-2\">Welcome to Stonetop</h3>",
-        "kind": "section"
-      },
-      "welcome-to-stonetop-2": {
-        "name": "Welcome to Stonetop",
-        "html": "<h3 id=\"welcome-to-stonetop-2\">Welcome to Stonetop</h3>",
+        "html": "<h2 id=\"neighbors\">Neighbors</h2>\n<p>The <strong>Forest Folk</strong> disappeared ten years ago, and no one knows why. Perhaps the <strong>Fae</strong>—magical, fickle beings of the Great Wood—had something to do with it?</p>\n<p>Horrid little <strong>crinwin</strong> also lurk in the Great Wood. They&#x27;ve grown bolder and more numerous since the Forest Folk left.</p>\n<p><strong>Gordin&#x27;s Delve</strong> is the closest settlement, a mining town four days to the west.</p>\n<p><strong>Barrier Pass</strong> is a few days north, in the mountains; stoic, grim, unwelcoming.</p>\n<p>The <strong>Hillfolk</strong> are nomads who roam the rugged Steplands to the south and the Flats to the west. They hold the mining folk of Gordin&#x27;s Delve in contempt.</p>\n<p><strong>Marshedge</strong> is a sizeable town about ten days&#x27; march south and east.</p>\n<p>There&#x27;s no empire, no kings or nobles—at least not around here. More &quot;civilized&quot;</p>\n<p>towns and cities lie farther to the south.</p>\n<p>Lygos is the closest such city.</p>",
         "kind": "section"
       },
       "the-makers": {
@@ -10398,35 +10148,17 @@ window.WIKI_PREVIEWS = {
       },
       "other-things-of-note": {
         "name": "Other things of note",
-        "html": "<h2 id=\"other-things-of-note\">Other things of note</h2>\n<p><strong>The PCs are all human</strong>. Strange peoples (like the Forest Folk, the Fae, or the mask-wearing Ustrina from beyond Gordin&#x27;s Delve) exist but are poorly understood.</p>\n<p><strong>Wise folk whisper of the Things Below</strong>, primeval entities of darkness, corruption, and ruin. Their power taints all that it touches.</p>\n<p><strong>People are terrified of deep water</strong>. Evil dwells there. Evil that will drag you to your doom. Everyone knows this.</p>\n<p><strong>Magic is not common</strong>, nor easy, nor safe.</p>\n<p>It can be borrowed from spirits or gods or Things Below, or wrested from the forgotten lore of the Makers. But it is not to be trifled with.</p>\n<p><strong>Iron is the most common metal</strong>. Good steel is hard to find. Bronze tools and weapons are common enough, but oldfashioned and laden with superstition.</p>\n<h3 id=\"welcome-to-stonetop-3\">Welcome to Stonetop</h3>",
-        "kind": "section"
-      },
-      "welcome-to-stonetop-3": {
-        "name": "Welcome to Stonetop",
-        "html": "<h3 id=\"welcome-to-stonetop-3\">Welcome to Stonetop</h3>",
+        "html": "<h2 id=\"other-things-of-note\">Other things of note</h2>\n<p><strong>The PCs are all human</strong>. Strange peoples (like the Forest Folk, the Fae, or the mask-wearing Ustrina from beyond Gordin&#x27;s Delve) exist but are poorly understood.</p>\n<p><strong>Wise folk whisper of the Things Below</strong>, primeval entities of darkness, corruption, and ruin. Their power taints all that it touches.</p>\n<p><strong>People are terrified of deep water</strong>. Evil dwells there. Evil that will drag you to your doom. Everyone knows this.</p>\n<p><strong>Magic is not common</strong>, nor easy, nor safe.</p>\n<p>It can be borrowed from spirits or gods or Things Below, or wrested from the forgotten lore of the Makers. But it is not to be trifled with.</p>\n<p><strong>Iron is the most common metal</strong>. Good steel is hard to find. Bronze tools and weapons are common enough, but oldfashioned and laden with superstition.</p>",
         "kind": "section"
       },
       "the-characters": {
         "name": "The characters",
-        "html": "<h2 id=\"the-characters\">The characters</h2>\n<p>As a player, you&#x27;ll pick a playbook for your character. Each represents a local hero, with deep ties to the community.</p>\n<p><strong>The Blessed</strong> is a nature priest who speaks to spirits and beasts. Works subtle magics via sacred markings and materials.</p>\n<p><strong>The Fox</strong> is clever, quick, skillful. Not above bending the</p>\n<ul class=\"check-list\" data-check-list=\"the-setting-1\"><li class=\"check-item\"><label for=\"the-setting-1-0\"><input type=\"checkbox\" class=\"wiki-check\" id=\"the-setting-1-0\" data-check-id=\"the-setting-1-0\"> <span>rules and fighting dirty. Can be quite the charmer.</span></label></li><li class=\"check-item\"><label for=\"the-setting-1-1\"><input type=\"checkbox\" class=\"wiki-check\" id=\"the-setting-1-1\" data-check-id=\"the-setting-1-1\"> <span><strong>The Heavy</strong> isn&#x27;t just any violent individual, they&#x27;re <em>our</em></span></label></li><li class=\"check-item\"><label for=\"the-setting-1-2\"><input type=\"checkbox\" class=\"wiki-check\" id=\"the-setting-1-2\" data-check-id=\"the-setting-1-2\"> <span>violent individual. A champion, yes, but a liability, too.</span></label></li></ul>\n<p><strong>The Judge</strong> settles disputes, keeps the chronicle, and stands as a divine bulwark against chaos. Insightful and tough, not necessarily persuasive.</p>\n<p><strong>The Lightbearer</strong> invokes divine power via flame and candle. A beacon of hope, charity, and mercy. No great warrior, but a fiery foe of the dark.</p>\n<p><strong>The Marshal</strong> leads the militia and a crew of followers. Makes choices about who lives and who dies.</p>",
+        "html": "<h2 id=\"the-characters\">The characters</h2>\n<p>As a player, you&#x27;ll pick a playbook for your character. Each represents a local hero, with deep ties to the community.</p>\n<p><strong>The Blessed</strong> is a nature priest who speaks to spirits and beasts. Works subtle magics via sacred markings and materials.</p>\n<p><strong>The Fox</strong> is clever, quick, skillful. Not above bending the rules and fighting dirty. Can be quite the charmer.</p>\n<p><strong>The Heavy</strong> isn&#x27;t just any violent individual, they&#x27;re <em>our</em> violent individual. A champion, yes, but a liability, too.</p>\n<p><strong>The Judge</strong> settles disputes, keeps the chronicle, and stands as a divine bulwark against chaos. Insightful and tough, not necessarily persuasive.</p>\n<p><strong>The Lightbearer</strong> invokes divine power via flame and candle. A beacon of hope, charity, and mercy. No great warrior, but a fiery foe of the dark.</p>\n<p><strong>The Marshal</strong> leads the militia and a crew of followers. Makes choices about who lives and who dies.</p>\n<p><strong>The Ranger</strong> is at home in the wild. A resourceful guide and deadly hunter.</p>\n<p><strong>The Seeker</strong> collects lost lore and power. Has potent artifacts that might well lead to their ruin.</p>\n<p><strong>The Would-be Hero</strong> is full of fear and anger, and in over their head, but they just might outshine us all.</p>",
         "kind": "section"
       },
-      "e-h": {
-        "name": "e h",
-        "html": "",
-        "kind": "section"
-      }
-    }
-  },
-  "why-play": {
-    "title": "Why Play?",
-    "excerpt": "The Ranger is at home in the wild. A resourceful guide and deadly hunter.\n\nThe Seeker collects lost lore and power. Has potent artifacts that might well lead to their ruin.\n\nThe Would-be Hero is full of fear and anger, and in over their head, but they just might outshine us all.",
-    "image": null,
-    "book": "book1",
-    "sections": {
-      "welcome-to-stonetop": {
-        "name": "Welcome to Stonetop",
-        "html": "<h3 id=\"welcome-to-stonetop\">Welcome to Stonetop</h3>\n<p>Because the characters of Stonetop are awesome and compelling, capable of epic deeds and yet fallible and human.</p>\n<p>Because the world of Stonetop is rich and mysterious, familiar and fantastic. You and your friends get to both explore this world and help create it.</p>\n<p>Because adventures are fun, but they&#x27;re more meaningful when you undertake them on behalf of your kith and kin.</p>\n<p>Because here, in the real world, our communities are often fractured, broken, disconnected. Because maybe you want to imagine a community that works, one that pulls together and struggles together and looks out for its own. Because play is practice, and practice is how you change yourself, how you change your world.</p>\n<p>Because Stonetop itself is a good place, a place worth fighting for.</p>\n<p>And if you don&#x27;t fight for it, who will?</p>",
+      "why-play": {
+        "name": "Why play?",
+        "html": "<h2 id=\"why-play\">Why play?</h2>\n<p>Because the characters of Stonetop are awesome and compelling, capable of epic deeds and yet fallible and human.</p>\n<p>Because the world of Stonetop is rich and mysterious, familiar and fantastic. You and your friends get to both explore this world and help create it.</p>\n<p>Because adventures are fun, but they&#x27;re more meaningful when you undertake them on behalf of your kith and kin.</p>\n<p>Because here, in the real world, our communities are often fractured, broken, disconnected. Because maybe you want to imagine a community that works, one that pulls together and struggles together and looks out for its own. Because play is practice, and practice is how you change yourself, how you change your world.</p>\n<p>Because Stonetop itself is a good place, a place worth fighting for.</p>\n<p>And if you don&#x27;t fight for it, who will?</p>",
         "kind": "section"
       }
     }
@@ -11062,7 +10794,7 @@ window.WIKI_PREVIEWS = {
       },
       "minor-arcana": {
         "name": "Minor arcana",
-        "html": "<h2 id=\"minor-arcana\">Minor arcana</h2>\n<p>Each minor arcanum is represented by a little card. You can see an example below.</p>\n<p>The front side, as seen in the example below, shows what you can tell about the arcanum at a glance or with a little study.</p>\n<p>It also says what&#x27;s required to unlock the arcanum&#x27;s mysteries.</p>\n<p>Unlocking a minor arcanum&#x27;s mysteries often requires significant time, usually spent between expeditions. Don&#x27;t be surprised if the GM asks you what chores or obligations go unmet as you pursue this magical power.</p>\n<p>. minor arcanum.</p>\n<div class=\"discovery-block\" id=\"an-old-scroll-case\"><h3 class=\"discovery-name\">An Old Scroll Case</h3><p class=\"discovery-tags\">◇, fragile</p><p><strong>Laoj Davith&#x27;s Galvanic</strong> from the scroll, but…</p></div>\n<ul class=\"check-list\" data-check-list=\"playing-the-game-4\"><li class=\"check-item\"><label for=\"playing-the-game-4-0\"><input type=\"checkbox\" class=\"wiki-check\" id=\"playing-the-game-4-0\" data-check-id=\"playing-the-game-4-0\"> <span>... you must translate the letter.</span></label></li><li class=\"check-item\"><label for=\"playing-the-game-4-1\"><input type=\"checkbox\" class=\"wiki-check\" id=\"playing-the-game-4-1\" data-check-id=\"playing-the-game-4-1\"> <span>... it&#x27;ll take a few weeks of dedicated study.</span></label></li><li class=\"check-item\"><label for=\"playing-the-game-4-2\"><input type=\"checkbox\" class=\"wiki-check\" id=\"playing-the-game-4-2\" data-check-id=\"playing-the-game-4-2\"> <span>... you&#x27;ll use up one of the aetherium ingots (or another source of aetherium).</span></label></li><li class=\"check-item\"><label for=\"playing-the-game-4-3\"><input type=\"checkbox\" class=\"wiki-check\" id=\"playing-the-game-4-3\" data-check-id=\"playing-the-game-4-3\"> <span>... you risk electrocuting yourself and/ or using up the other ingot.</span></label></li></ul>\n<p>front</p>\n<p>When a requirement says that &quot;you risk</p>\n<p>___,&quot; then you&#x27;ll be <a class=\"wiki-link\" href=\"player-moves.html\" data-slug=\"player-moves\" ><strong>Defying Danger</strong></a> unless you can come up with some way of eliminating that risk. Learning magic is rarely easy or safe.</p>\n<p>Meet the requirements, and you unlock its mysteries. You gain whatever move and/or follower appears on the back of the card.</p>\n<p>You can share a minor arcanum with another PC or even an NPC, as long as it makes sense to do so. Work with the GM to identify how the requirements change for them unlocking the arcanum&#x27;s mysteries.</p>\n<p>. minor arcanum.</p>\n<h3 id=\"laoj-daviths-galvanic-infusion\">Laoj Davith&#x27;s Galvanic Infusion</h3>\n<p>When you <strong><em>touch a piece of aetherium and draw its power into yourself</em></strong>, roll +CON:</p>\n<p><strong>on a 7+</strong>, you absorb the power and gain</p>",
+        "html": "<h2 id=\"minor-arcana\">Minor arcana</h2>\n<p>Each minor arcanum is represented by a little card. You can see an example below.</p>\n<p>The front side, as seen in the example below, shows what you can tell about the arcanum at a glance or with a little study.</p>\n<p>It also says what&#x27;s required to unlock the arcanum&#x27;s mysteries.</p>\n<p>Unlocking a minor arcanum&#x27;s mysteries often requires significant time, usually spent between expeditions. Don&#x27;t be surprised if the GM asks you what chores or obligations go unmet as you pursue this magical power.</p>\n<div class=\"discovery-block\" id=\"an-old-scroll-case\"><h3 class=\"discovery-name\">An Old Scroll Case</h3><p class=\"discovery-tags\">◇, fragile</p><p><strong>Laoj Davith&#x27;s Galvanic</strong> from the scroll, but…</p></div>\n<ul class=\"check-list\" data-check-list=\"playing-the-game-4\"><li class=\"check-item\"><label for=\"playing-the-game-4-0\"><input type=\"checkbox\" class=\"wiki-check\" id=\"playing-the-game-4-0\" data-check-id=\"playing-the-game-4-0\"> <span>... you must translate the letter.</span></label></li><li class=\"check-item\"><label for=\"playing-the-game-4-1\"><input type=\"checkbox\" class=\"wiki-check\" id=\"playing-the-game-4-1\" data-check-id=\"playing-the-game-4-1\"> <span>... it&#x27;ll take a few weeks of dedicated study.</span></label></li><li class=\"check-item\"><label for=\"playing-the-game-4-2\"><input type=\"checkbox\" class=\"wiki-check\" id=\"playing-the-game-4-2\" data-check-id=\"playing-the-game-4-2\"> <span>... you&#x27;ll use up one of the aetherium ingots (or another source of aetherium).</span></label></li><li class=\"check-item\"><label for=\"playing-the-game-4-3\"><input type=\"checkbox\" class=\"wiki-check\" id=\"playing-the-game-4-3\" data-check-id=\"playing-the-game-4-3\"> <span>... you risk electrocuting yourself and/ or using up the other ingot.</span></label></li></ul>\n<p>When a requirement says that &quot;you risk</p>\n<p>___,&quot; then you&#x27;ll be <a class=\"wiki-link\" href=\"player-moves.html\" data-slug=\"player-moves\" ><strong>Defying Danger</strong></a> unless you can come up with some way of eliminating that risk. Learning magic is rarely easy or safe.</p>\n<p>Meet the requirements, and you unlock its mysteries. You gain whatever move and/or follower appears on the back of the card.</p>\n<p>You can share a minor arcanum with another PC or even an NPC, as long as it makes sense to do so. Work with the GM to identify how the requirements change for them unlocking the arcanum&#x27;s mysteries.</p>\n<h3 id=\"laoj-daviths-galvanic-infusion\">Laoj Davith&#x27;s Galvanic Infusion</h3>\n<p>When you <strong><em>touch a piece of aetherium and draw its power into yourself</em></strong>, roll +CON:</p>\n<p><strong>on a 7+</strong>, you absorb the power and gain</p>",
         "kind": "section"
       },
       "laoj-daviths-galvanic-infusion": {
@@ -11227,12 +10959,12 @@ window.WIKI_PREVIEWS = {
       },
       "inventory-2": {
         "name": "Inventory",
-        "html": "<h2 id=\"inventory-2\">Inventory</h2>\n<p>When you <strong>Outfit</strong> for an expedition, you&#x27;ll fill out your Inventory insert.</p>\n<p>Mark the ◇, ◇◇, or next to an item to indicate you are carrying it.</p>\n<p>Every PC has the same Inventory insert.</p>\n<p>Items that are printed on the insert are commonly available in Stonetop, things that any PC has access to if they need it. You might not own a shovel yourself, but you know someone who does, someone willing to loan it to you or trade you for it. The GM might ask where you got it, but if it&#x27;s printed on the insert, you can acquire it, no problem.</p>\n<p>The insert also has blank spaces, where you can write in other common items or <strong>special possessions</strong>.</p>\n<p>), mark 7-9</p>\n<h3 id=\"below-small-items\">◇ below. Small items</h3>\n<p>Fit in a pocket, pouch, or boot.</p>\n<p>When you equal to 4+Prosperity. <strong><em>Outfit</em></strong>, mark below</p>\n<p>◇ ) items. <strong>Undefined</strong></p>\n<p>When you move Have What You Need</p>\n<ul>\n<li>from here to items below,, or expend supplies to mark an additional.</li>\n</ul>\n<ul class=\"check-list\" data-check-list=\"playing-the-game-11\"><li class=\"check-item\"><label for=\"playing-the-game-11-0\"><input type=\"checkbox\" class=\"wiki-check\" id=\"playing-the-game-11-0\" data-check-id=\"playing-the-game-11-0\"> <span><strong>Knife</strong> or <strong>dagger</strong>, iron (</span></label></li><li class=\"check-item\"><label for=\"playing-the-game-11-1\"><input type=\"checkbox\" class=\"wiki-check\" id=\"playing-the-game-11-1\" data-check-id=\"playing-the-game-11-1\"> <span><strong>Sling</strong> (<em>near hand</em>) , <em>reload</em>, <em>awkward</em> ◇ low ammo, all out),</span></label></li><li class=\"check-item\"><label for=\"playing-the-game-11-2\"><input type=\"checkbox\" class=\"wiki-check\" id=\"playing-the-game-11-2\" data-check-id=\"playing-the-game-11-2\"> <span><strong>Rushlight</strong> ◇</span></label></li><li class=\"check-item\"><label for=\"playing-the-game-11-3\"><input type=\"checkbox\" class=\"wiki-check\" id=\"playing-the-game-11-3\" data-check-id=\"playing-the-game-11-3\"> <span>minutes, (lasts ~15-30 <em>close</em>, <em>crude</em></span></label></li><li class=\"check-item\"><label for=\"playing-the-game-11-4\"><input type=\"checkbox\" class=\"wiki-check\" id=\"playing-the-game-11-4\" data-check-id=\"playing-the-game-11-4\"> <span><strong>Tinderbox</strong> )</span></label></li><li class=\"check-item\"><label for=\"playing-the-game-11-5\"><input type=\"checkbox\" class=\"wiki-check\" id=\"playing-the-game-11-5\" data-check-id=\"playing-the-game-11-5\"> <span><strong>Needle &amp; thread</strong> (<em>slow</em>)</span></label></li><li class=\"check-item\"><label for=\"playing-the-game-11-6\"><input type=\"checkbox\" class=\"wiki-check\" id=\"playing-the-game-11-6\" data-check-id=\"playing-the-game-11-6\"> <span><strong>Handful of coppers</strong></span></label></li><li class=\"check-item\"><label for=\"playing-the-game-11-7\"><input type=\"checkbox\" class=\"wiki-check\" id=\"playing-the-game-11-7\" data-check-id=\"playing-the-game-11-7\"> <span><strong>Whisk</strong> k</span></label></li></ul>",
+        "html": "<h2 id=\"inventory-2\">Inventory</h2>\n<p>When you <strong>Outfit</strong> for an expedition, you&#x27;ll fill out your Inventory insert.</p>\n<p>Mark the ◇, ◇◇, or next to an item to indicate you are carrying it.</p>\n<p>Every PC has the same Inventory insert.</p>\n<p>Items that are printed on the insert are commonly available in Stonetop, things that any PC has access to if they need it. You might not own a shovel yourself, but you know someone who does, someone willing to loan it to you or trade you for it. The GM might ask where you got it, but if it&#x27;s printed on the insert, you can acquire it, no problem.</p>\n<p>The insert also has blank spaces, where you can write in other common items or <strong>special possessions</strong>.</p>\n<p>), mark 7-9</p>\n<h3 id=\"below-small-items\">◇ below. Small items</h3>\n<p>Fit in a pocket, pouch, or boot.</p>\n<p>When you equal to 4+Prosperity. <strong><em>Outfit</em></strong>, mark below</p>\n<p>◇ ) items. <strong>Undefined</strong></p>\n<p>When you move Have What You Need</p>\n<ul>\n<li>from here to items below,, or expend supplies to mark an additional.</li>\n</ul>\n<p>Knife or dagger, iron (</p>\n<p>Sling (near hand)</p>\n<p>, <em>reload</em>, <em>awkward</em></p>\n<p>◇ low ammo, all out),</p>\n<p>Rushlight ◇ minutes, (lasts ~15-30</p>\n<p><em>close</em>, <em>crude</em></p>\n<p>Tinderbox )</p>\n<p>Needle &amp; thread (slow)</p>\n<p>Handful of coppers</p>\n<p>Whisk k</p>",
         "kind": "section"
       },
       "below-small-items": {
         "name": "◇ below. Small items",
-        "html": "<h3 id=\"below-small-items\">◇ below. Small items</h3>\n<p>Fit in a pocket, pouch, or boot.</p>\n<p>When you equal to 4+Prosperity. <strong><em>Outfit</em></strong>, mark below</p>\n<p>◇ ) items. <strong>Undefined</strong></p>\n<p>When you move Have What You Need</p>\n<ul>\n<li>from here to items below,, or expend supplies to mark an additional.</li>\n</ul>\n<ul class=\"check-list\" data-check-list=\"playing-the-game-11\"><li class=\"check-item\"><label for=\"playing-the-game-11-0\"><input type=\"checkbox\" class=\"wiki-check\" id=\"playing-the-game-11-0\" data-check-id=\"playing-the-game-11-0\"> <span><strong>Knife</strong> or <strong>dagger</strong>, iron (</span></label></li><li class=\"check-item\"><label for=\"playing-the-game-11-1\"><input type=\"checkbox\" class=\"wiki-check\" id=\"playing-the-game-11-1\" data-check-id=\"playing-the-game-11-1\"> <span><strong>Sling</strong> (<em>near hand</em>) , <em>reload</em>, <em>awkward</em> ◇ low ammo, all out),</span></label></li><li class=\"check-item\"><label for=\"playing-the-game-11-2\"><input type=\"checkbox\" class=\"wiki-check\" id=\"playing-the-game-11-2\" data-check-id=\"playing-the-game-11-2\"> <span><strong>Rushlight</strong> ◇</span></label></li><li class=\"check-item\"><label for=\"playing-the-game-11-3\"><input type=\"checkbox\" class=\"wiki-check\" id=\"playing-the-game-11-3\" data-check-id=\"playing-the-game-11-3\"> <span>minutes, (lasts ~15-30 <em>close</em>, <em>crude</em></span></label></li><li class=\"check-item\"><label for=\"playing-the-game-11-4\"><input type=\"checkbox\" class=\"wiki-check\" id=\"playing-the-game-11-4\" data-check-id=\"playing-the-game-11-4\"> <span><strong>Tinderbox</strong> )</span></label></li><li class=\"check-item\"><label for=\"playing-the-game-11-5\"><input type=\"checkbox\" class=\"wiki-check\" id=\"playing-the-game-11-5\" data-check-id=\"playing-the-game-11-5\"> <span><strong>Needle &amp; thread</strong> (<em>slow</em>)</span></label></li><li class=\"check-item\"><label for=\"playing-the-game-11-6\"><input type=\"checkbox\" class=\"wiki-check\" id=\"playing-the-game-11-6\" data-check-id=\"playing-the-game-11-6\"> <span><strong>Handful of coppers</strong></span></label></li><li class=\"check-item\"><label for=\"playing-the-game-11-7\"><input type=\"checkbox\" class=\"wiki-check\" id=\"playing-the-game-11-7\" data-check-id=\"playing-the-game-11-7\"> <span><strong>Whisk</strong> k</span></label></li></ul>",
+        "html": "<h3 id=\"below-small-items\">◇ below. Small items</h3>\n<p>Fit in a pocket, pouch, or boot.</p>\n<p>When you equal to 4+Prosperity. <strong><em>Outfit</em></strong>, mark below</p>\n<p>◇ ) items. <strong>Undefined</strong></p>\n<p>When you move Have What You Need</p>\n<ul>\n<li>from here to items below,, or expend supplies to mark an additional.</li>\n</ul>\n<p>Knife or dagger, iron (</p>\n<p>Sling (near hand)</p>\n<p>, <em>reload</em>, <em>awkward</em></p>\n<p>◇ low ammo, all out),</p>\n<p>Rushlight ◇ minutes, (lasts ~15-30</p>\n<p><em>close</em>, <em>crude</em></p>\n<p>Tinderbox )</p>\n<p>Needle &amp; thread (slow)</p>\n<p>Handful of coppers</p>\n<p>Whisk k</p>",
         "kind": "section"
       },
       "load": {
@@ -13318,7 +13050,7 @@ window.WIKI_PREVIEWS = {
       },
       "what-to-prep": {
         "name": "What to prep",
-        "html": "<h2 id=\"what-to-prep\">What to prep</h2>\n<p>If you know that an expedition is in the PCs&#x27; future, there&#x27;s plenty you can prepare in advance. You don&#x27;t <em>need</em> to prepare these things, but prep can help make the journey go more smoothly in play.</p>\n<p>First, <strong>chart the course</strong>. Look at where they&#x27;re going, their likely route(s), and make your choices for the Chart a Course move. Write them down with little check boxes next to them, so you can tick them off as you present them in play.</p>\n<p>Next, <strong>draw a map</strong> of the route that you expect them to take or the area you expect them to traverse. Grab a map of the vicinity around Stonetop or the World&#x27;s End region and highlight or add the points of interest relevant to the journey. Consider making a more zoomed-in map for areas that aren&#x27;t very well detailed on the regional map.</p>\n<p><strong>Identify your points of interest</strong>, including…</p>\n<ul class=\"ellipsis\"><li>any landmark that has not yet been seen in play (or that has changed since the PCs&#x27; last visit);</li><li>any specific places where you plan to frame a scene and make a GM move; and...</li><li>the journey&#x27;s destination.</li></ul>\n<p>Then identify the <strong>legs of travel</strong> between each point of interest. Note how long the leg will likely take.</p>\n<p>For each leg of travel or point of interest, make a few notes:</p>\n<ul class=\"bullets\"><li>A brief description, no more than a sentence.</li><li>2-3 impressions, ideally hitting senses other than visual.</li><li>Some questions you want to ask of the players.</li><li>Any challenges (from Chart a Course) that you plan to introduce there.</li><li>Any other dangers or discoveries you expect to be encountered there.</li></ul>\n<p>For regions or locations described in <em>Book II</em>, you can either copy the relevant details or just add a page reference to your notes (and maybe bookmark the page). Feel free to add questions or other details of your own devising!</p>\n<p>Prepare up to 7 <strong>potential encounters</strong>—dangers, discoveries, or events that you can drop into the journey in response to a player move or just to break things up. Use the region&#x27;s dangers and discoveries in <em>Book II</em> for guidance and inspiration.</p>\n<p>For each encounter, limit yourself to 1-3 sentences but try to tie them into a larger story. For creatures, include a disposition or activity—what are they up to and how are they likely to react to the characters? For any encounter, use it to show the characters (and more importantly, the players) the bigger picture. For example, don&#x27;t just have them encounter a random hagr; have them encounter a hagr who is sullenly building a new home for itself because the Mother of Spiders and her brood chased it out of its old home.</p>\n<p>Consider making a Die of Fate table for the <a class=\"wiki-link\" href=\"#weather-7\" data-slug=\"expeditions\" data-fragment=\"weather-7\"><strong>weather</strong></a>, for events while they <a class=\"wiki-link\" href=\"#make-camp\" data-slug=\"expeditions\" data-fragment=\"make-camp\"><strong>Make Camp</strong></a>, or for encounters they might have while traveling through a <strong>perilous area</strong>.</p>\n<p>Create each <a class=\"wiki-link\" href=\"sites.html\" data-slug=\"sites\" ><strong>site</strong></a>, <a class=\"wiki-link\" href=\"dangers.html\" data-slug=\"dangers\" ><strong>danger</strong></a>, <a class=\"wiki-link\" href=\"discoveries.html\" data-slug=\"discoveries\" ><strong>discovery</strong></a>, and <a class=\"wiki-link\" href=\"npcs-followers.html\" data-slug=\"npcs-followers\" ><strong>NPC</strong></a> they are likely to encounter, in as much or as little detail as you feel valuable and appropriate.</p>\n<p>Finally, write up any <a class=\"wiki-link\" href=\"npcs-followers.html\" data-slug=\"npcs-followers\" ><strong>followers</strong></a> or other NPCs that you expect to join the party.</p>\n<hr>\n<p><em>Let&#x27;s think back to the first adventure.</em></p>\n<p><em>Crinwin (in service to a hypnotic, childcollecting swyn) are going to abduct Pryder.</em></p>\n<p><em>Rheinal, Pryder&#x27;s father, will stagger back into town, injured and covered in crinwin</em></p>\n<p><em>blood. I expect the PCs to track the crinwin</em></p>\n<p><em>and try to rescue Pryder.</em></p>\n<p><em>I Chart a Course in advance, writing down</em></p>\n<p><em>these requirements:</em></p>\n<p>O You must first travel to the scene of Pryder&#x27;s abduction, and follow the tracks from there O You&#x27;ll need to bring a decent tracker O It&#x27;ll probably take at least a day there and back, maybe more O You risk getting lost (losing the trail)</p>\n<p>O You&#x27;ll need to watch out for crinwin (obviously) and other dangers of the Wood like nailadd, feathered drakes, and Fae O You risk drawing the attention of crinwin <em>Next, I zoom in a little on the &quot;Vicinity&quot;</em></p>\n<p><em>map and expand it a little, showing the path that the crinwin took and the nearby</em></p>\n<p><em>landmarks (the Red Grove).</em></p>\n<p>Stonetop</p>\n<p>Pryder&#x27;s abduction</p>\n<p>X</p>\n<hr>\n<p><em>I list my points of interest and legs of travel:</em></p>\n<p>* The Stream. <em>It&#x27;ll be the first time they cross the Stream in play. I note its page number in the almanac and skim it.</em></p>\n<p>* The Great Wood (~1 hour). <em>This will be the first time exploring the Wood in play. I crib impressions and questions</em></p>\n<p><em>from the almanac, and add &quot;What sign of a warm, early spring do you notice?&quot;</em></p>\n<p>* Scene of Pryder&#x27;s abduction. <em>I jot down some impressions (&quot;Blood on the stone that hit Rheinal&quot; and &quot;Pryder&#x27;s</em></p>\n<p><em>crinwin-charm, discarded in the brush&quot;).</em></p>\n<p><em>I&#x27;ll ad-lib any investigation that they do, but this is where they&#x27;ll find the trail.</em></p>\n<p>* Following the trail (~5 hours). <em>More travel through the Great Wood. They risk getting lost here. They&#x27;ll pass by the Red Grove, so I skim the entry in</em> Book II<em>, but I doubt they&#x27;ll go there.</em></p>\n<p>* Camp site. <em>Not a specific location, but they&#x27;ll need to Make Camp. I&#x27;ll play the</em></p>\n<p><em>location by ear, but they&#x27;ll need to watch</em></p>\n<p><em>out for crinwin or other dangers.</em></p>\n<p>Red Grove Swyn&#x27;s</p>\n<p>XLair</p>\n<hr>\n<p>* More trail (4-5 hours). <em>I&#x27;ll ask some questions like &quot;What&#x27;s the worst part of hiking through the forest?&quot; and &quot;What do you find yourself missing from home?&quot;</em></p>\n<p>* Old Crinwin Nest. <em>Like a giant wasp</em></p>\n<p><em>hive, torn apart by crinwin under Sajra&#x27;s sway; signs of crinwin killing</em></p>\n<p><em>each other.</em></p>\n<p>* More trail (4-5 hours). <em>They&#x27;re getting closer, so they risk drawing attention of</em></p>\n<p><em>crinwin as they travel.</em></p>\n<p>* The Swyn&#x27;s Lair. <em>An old Green Lord barrow. I&#x27;ll work this up as a full-fledged site for them to explore.</em></p>\n<p><em>For possible encounters, I review the Great</em></p>\n<p><em>Wood entry in</em> Book II <em>and come up with:</em></p>\n<p>* Three feathered drakes roaming the area, hunting deer &amp; wisents;</p>\n<p>catch the PCs&#x27; scent and think they look slow and tasty.</p>\n<p>* The crinwin that Rheinal wounded, dead and abandoned by the others.</p>\n<p>* A grumpy Fae named Thornthumb;</p>\n<p>kicked out of the Maker-tomb by (and lost his hoard to) the swyn;</p>\n<p>tries to steal from PCs; willing to help against swyn but will ultimately swindle/betray them.</p>\n<p>* An old Maker-ruin just off the tracks;</p>\n<p>old Forest Folk glyphs on trees/rocks nearby; half-dozen crinwin are excavating it on Sajra&#x27;s behalf</p>\n<p>* Crinwin, loyal to Sajra the Swyn, on patrol or keeping watch.</p>\n<hr>\n<p><em>I put sticky flags in</em> Book II <em>by the entries for feathered drakes, crinwin, nailadd, and swyn. I write up Thornthumb using the steps for</em> <strong><em>&quot;Creating Fae&quot;</em></strong> <em>(</em>Book II<em>, <a class=\"wiki-link\" href=\"fae.html\" data-slug=\"fae\" >Fae</a>).</em></p>\n<p><em>I create the swyn&#x27;s lair as a</em> <strong><em>site</em></strong> <em><a class=\"wiki-link\" href=\"sites.html\" data-slug=\"sites\" >Sites</a> and make notes about the abandoned crinwin nest and the older Maker-ruins. I pick</em></p>\n<p><em>dangers and discoveries for each.</em></p>\n<p><em>I make notes on portraying NPCs (Rheinal,</em></p>\n<p><em>Pryder, Wynfor, etc.). Rheinal might join the PCs, and he&#x27;ll take orders, so I write him up</em></p>\n<p><em>as a follower. I&#x27;m ready to go.</em></p>",
+        "html": "<h2 id=\"what-to-prep\">What to prep</h2>\n<p>If you know that an expedition is in the PCs&#x27; future, there&#x27;s plenty you can prepare in advance. You don&#x27;t <em>need</em> to prepare these things, but prep can help make the journey go more smoothly in play.</p>\n<p>First, <strong>chart the course</strong>. Look at where they&#x27;re going, their likely route(s), and make your choices for the Chart a Course move. Write them down with little check boxes next to them, so you can tick them off as you present them in play.</p>\n<p>Next, <strong>draw a map</strong> of the route that you expect them to take or the area you expect them to traverse. Grab a map of the vicinity around Stonetop or the World&#x27;s End region and highlight or add the points of interest relevant to the journey. Consider making a more zoomed-in map for areas that aren&#x27;t very well detailed on the regional map.</p>\n<p><strong>Identify your points of interest</strong>, including…</p>\n<ul class=\"ellipsis\"><li>any landmark that has not yet been seen in play (or that has changed since the PCs&#x27; last visit);</li><li>any specific places where you plan to frame a scene and make a GM move; and...</li><li>the journey&#x27;s destination.</li></ul>\n<p>Then identify the <strong>legs of travel</strong> between each point of interest. Note how long the leg will likely take.</p>\n<p>For each leg of travel or point of interest, make a few notes:</p>\n<ul class=\"bullets\"><li>A brief description, no more than a sentence.</li><li>2-3 impressions, ideally hitting senses other than visual.</li><li>Some questions you want to ask of the players.</li><li>Any challenges (from Chart a Course) that you plan to introduce there.</li><li>Any other dangers or discoveries you expect to be encountered there.</li></ul>\n<p>For regions or locations described in <em>Book II</em>, you can either copy the relevant details or just add a page reference to your notes (and maybe bookmark the page). Feel free to add questions or other details of your own devising!</p>\n<p>Prepare up to 7 <strong>potential encounters</strong>—dangers, discoveries, or events that you can drop into the journey in response to a player move or just to break things up. Use the region&#x27;s dangers and discoveries in <em>Book II</em> for guidance and inspiration.</p>\n<p>For each encounter, limit yourself to 1-3 sentences but try to tie them into a larger story. For creatures, include a disposition or activity—what are they up to and how are they likely to react to the characters? For any encounter, use it to show the characters (and more importantly, the players) the bigger picture. For example, don&#x27;t just have them encounter a random hagr; have them encounter a hagr who is sullenly building a new home for itself because the Mother of Spiders and her brood chased it out of its old home.</p>\n<p>Consider making a Die of Fate table for the <a class=\"wiki-link\" href=\"#weather-7\" data-slug=\"expeditions\" data-fragment=\"weather-7\"><strong>weather</strong></a>, for events while they <a class=\"wiki-link\" href=\"#make-camp\" data-slug=\"expeditions\" data-fragment=\"make-camp\"><strong>Make Camp</strong></a>, or for encounters they might have while traveling through a <strong>perilous area</strong>.</p>\n<p>Create each <a class=\"wiki-link\" href=\"sites.html\" data-slug=\"sites\" ><strong>site</strong></a>, <a class=\"wiki-link\" href=\"dangers.html\" data-slug=\"dangers\" ><strong>danger</strong></a>, <a class=\"wiki-link\" href=\"discoveries.html\" data-slug=\"discoveries\" ><strong>discovery</strong></a>, and <a class=\"wiki-link\" href=\"npcs-followers.html\" data-slug=\"npcs-followers\" ><strong>NPC</strong></a> they are likely to encounter, in as much or as little detail as you feel valuable and appropriate.</p>\n<p>Finally, write up any <a class=\"wiki-link\" href=\"npcs-followers.html\" data-slug=\"npcs-followers\" ><strong>followers</strong></a> or other NPCs that you expect to join the party.</p>\n<hr>\n<p><em>Let&#x27;s think back to the first adventure.</em></p>\n<p><em>Crinwin (in service to a hypnotic, childcollecting swyn) are going to abduct Pryder.</em></p>\n<p><em>Rheinal, Pryder&#x27;s father, will stagger back into town, injured and covered in crinwin</em></p>\n<p><em>blood. I expect the PCs to track the crinwin</em></p>\n<p><em>and try to rescue Pryder.</em></p>\n<p><em>I Chart a Course in advance, writing down</em></p>\n<p><em>these requirements:</em></p>\n<p>O You must first travel to the scene of Pryder&#x27;s abduction, and follow the tracks from there O You&#x27;ll need to bring a decent tracker O It&#x27;ll probably take at least a day there and back, maybe more O You risk getting lost (losing the trail)</p>\n<p>O You&#x27;ll need to watch out for crinwin (obviously) and other dangers of the Wood like nailadd, feathered drakes, and Fae O You risk drawing the attention of crinwin <em>Next, I zoom in a little on the &quot;Vicinity&quot;</em></p>\n<p><em>map and expand it a little, showing the path that the crinwin took and the nearby</em></p>\n<p><em>landmarks (the Red Grove).</em></p>\n<hr>\n<p><em>I list my points of interest and legs of travel:</em></p>\n<p>* The Stream. <em>It&#x27;ll be the first time they cross the Stream in play. I note its page number in the almanac and skim it.</em></p>\n<p>* The Great Wood (~1 hour). <em>This will be the first time exploring the Wood in play. I crib impressions and questions</em></p>\n<p><em>from the almanac, and add &quot;What sign of a warm, early spring do you notice?&quot;</em></p>\n<p>* Scene of Pryder&#x27;s abduction. <em>I jot down some impressions (&quot;Blood on the stone that hit Rheinal&quot; and &quot;Pryder&#x27;s</em></p>\n<p><em>crinwin-charm, discarded in the brush&quot;).</em></p>\n<p><em>I&#x27;ll ad-lib any investigation that they do, but this is where they&#x27;ll find the trail.</em></p>\n<p>* Following the trail (~5 hours). <em>More travel through the Great Wood. They risk getting lost here. They&#x27;ll pass by the Red Grove, so I skim the entry in</em> Book II<em>, but I doubt they&#x27;ll go there.</em></p>\n<p>* Camp site. <em>Not a specific location, but they&#x27;ll need to Make Camp. I&#x27;ll play the</em></p>\n<p><em>location by ear, but they&#x27;ll need to watch</em></p>\n<p><em>out for crinwin or other dangers.</em></p>\n<hr>\n<p>* More trail (4-5 hours). <em>I&#x27;ll ask some questions like &quot;What&#x27;s the worst part of hiking through the forest?&quot; and &quot;What do you find yourself missing from home?&quot;</em></p>\n<p>* Old Crinwin Nest. <em>Like a giant wasp</em></p>\n<p><em>hive, torn apart by crinwin under Sajra&#x27;s sway; signs of crinwin killing</em></p>\n<p><em>each other.</em></p>\n<p>* More trail (4-5 hours). <em>They&#x27;re getting closer, so they risk drawing attention of</em></p>\n<p><em>crinwin as they travel.</em></p>\n<p>* The Swyn&#x27;s Lair. <em>An old Green Lord barrow. I&#x27;ll work this up as a full-fledged site for them to explore.</em></p>\n<p><em>For possible encounters, I review the Great</em></p>\n<p><em>Wood entry in</em> Book II <em>and come up with:</em></p>\n<p>* Three feathered drakes roaming the area, hunting deer &amp; wisents;</p>\n<p>catch the PCs&#x27; scent and think they look slow and tasty.</p>\n<p>* The crinwin that Rheinal wounded, dead and abandoned by the others.</p>\n<p>* A grumpy Fae named Thornthumb;</p>\n<p>kicked out of the Maker-tomb by (and lost his hoard to) the swyn;</p>\n<p>tries to steal from PCs; willing to help against swyn but will ultimately swindle/betray them.</p>\n<p>* An old Maker-ruin just off the tracks;</p>\n<p>old Forest Folk glyphs on trees/rocks nearby; half-dozen crinwin are excavating it on Sajra&#x27;s behalf</p>\n<p>* Crinwin, loyal to Sajra the Swyn, on patrol or keeping watch.</p>\n<hr>\n<p><em>I put sticky flags in</em> Book II <em>by the entries for feathered drakes, crinwin, nailadd, and swyn. I write up Thornthumb using the steps for</em> <strong><em>&quot;Creating Fae&quot;</em></strong> <em>(</em>Book II<em>, <a class=\"wiki-link\" href=\"fae.html\" data-slug=\"fae\" >Fae</a>).</em></p>\n<p><em>I create the swyn&#x27;s lair as a</em> <strong><em>site</em></strong> <em><a class=\"wiki-link\" href=\"sites.html\" data-slug=\"sites\" >Sites</a> and make notes about the abandoned crinwin nest and the older Maker-ruins. I pick</em></p>\n<p><em>dangers and discoveries for each.</em></p>\n<p><em>I make notes on portraying NPCs (Rheinal,</em></p>\n<p><em>Pryder, Wynfor, etc.). Rheinal might join the PCs, and he&#x27;ll take orders, so I write him up</em></p>\n<p><em>as a follower. I&#x27;m ready to go.</em></p>",
         "kind": "section"
       }
     }
@@ -13686,12 +13418,12 @@ window.WIKI_PREVIEWS = {
       },
       "interior": {
         "name": "Interior",
-        "html": "<h2 id=\"interior\">Interior</h2>\n<p>White marble construction. Scrollwork and bas relief of plants/chimerae, often marred or busted. Dark unless otherwise noted, but marble reflects/amplifies light.</p>\n<ul class=\"bullets\"><li>Damp, cool air</li><li>Wooden archways, like they grew there</li><li>Crudely carved graffiti (vulgar images, curses in Green Lord script)</li><li>Lazy, sluggish wasps</li><li>Distant echoes of voices/animal noises <strong>Hallways</strong> are 10 feet wide and lined with burial niches: 8 to 24 per hall, human-sized but a few larger. No bodies, but some have displays of junk (bones, potsherds, rocks, maybe a bit of Value</li></ul>\n<p>1 finery with some flaw), set up by the crinwin to mimic Sajra&#x27;s horde.</p>\n<h3 id=\"entrance-chamber-a\">Entrance chamber (A)</h3>\n<p>Dimly lit from outside. Soil and debris piled nearly 4 feet high at entrance, sloping down into the room. Beyond, the floor is filthy, muddy.</p>\n<ul class=\"bullets\"><li>Thick layer of leaf litter, slick underfoot</li><li>Plants/shrubs/saplings growing in soil</li><li>Moss/lichen/vines on the walls, especially near the entrance <strong>Tracks</strong>: Crinwin tracks in dirt, signs of them dragging Pryder towards central chamber (C). Faint, wavy marks in dirt, like a big snake trail, from Sajra going to/ from shrine (E).</li></ul>\n<p>north</p>\n<p>A s</p>\n<p>C t D</p>\n<p>F G s s</p>\n<h3 id=\"collapsed-hallway-b\">Collapsed hallway (B)</h3>\n<p>Caved in when Fae sacked tomb. Eight <strong>mummified servants</strong> (<em>Book II</em>, <a class=\"wiki-link\" href=\"green-lords.html\" data-slug=\"green-lords\" >Green Lords</a>) trapped in the rubble. Crinwin have dug out a tunnel that they/Sajra can squeeze through; also leads outside (via one of the burrows). Sajra&#x27;s trail can be spotted.</p>\n<hr>\n<h3 id=\"central-chamber-c\">Central Chamber (C)</h3>\n<p>Ceilings vaulted to 20 feet, coated in soot.</p>\n<p>Very faded scorch marks on floor. Empty burial niches line walls. Large (smashed, empty) sarcophagi; one in SE corner most intact, stuffed with bones, snail shells, bug husks, and a huge snake skin (Sajra&#x27;s).</p>\n<p>A small channel, set into the floor, carries water from the shrine (E), through this chamber, into the mossy chamber (D).</p>\n<ul class=\"bullets\"><li><strong>Broken statue</strong> (◇◇ ): Mixed with rubble of NW sarcophagus. Crinwin dragged it here from the shrine (E). An icon of the Green s Lords&#x27; version of B Danu (?).</li></ul>\n<p>s</p>\n<p>E</p>\n<p>10 feet</p>\n<hr>\n<h3 id=\"mossy-chamber-d\">Mossy Chamber (D)</h3>\n<p>Dimly lit by glowing makerglass, flush in the ceiling (gouges from crinwin trying to remove it). Crazy-quilt patterns of colored moss cover walls, floor, ceiling. Channel in floor enters from east, encircles chamber, irrigating soil under the mossy carpet.</p>\n<ul class=\"bullets\"><li>Trilling frog song as they approach</li><li>Hushed quiet as they enter</li><li>Trickle of running water just audible</li><li>Damp, earthy smell</li><li>Soft spring of moss carpet underfoot</li><li>Colors of the moss seeming to shift, almost making pictures; nope, it&#x27;s gone</li></ul>\n<p><strong>Moss spirits</strong> (<em>horde</em>, <em>spirits</em>, <em>vain</em>, <em>moody</em>):</p>\n<p><strong>Instinct</strong> to express themselves visually.</p>\n<p><strong>Notes:</strong> Fret over Thornthumb. Sajra is a boor, crinwin are vile, and you clearly just don&#x27;t understand their work.</p>\n<p><strong>Trapdoor</strong> (T): A moss-covered slab in the floor pulls up, reveals a hole and the secret tunnel. Crinwin haven&#x27;t found it.</p>\n<p><strong>Critters</strong>: Ants, snails, frogs, moths, gnats.</p>\n<p>Wasps/crinwin often prey on them.</p>\n<hr>\n<h3 id=\"shrine-e\">Shrine (E)</h3>\n<p><strong>Rectangular pool</strong>: spring-fed, a foot deep, and glows gently (glow fades when water leaves pool). Channel set into floor carries water to west. An altar dominates the east wall, but the icons have been replaced by items from Sajra&#x27;s hoard.</p>\n<ul class=\"bullets\"><li>Noticeably cooler air</li><li>Spring water bubbling up through silt</li><li>Light patterns dancing on ceiling/walls <strong>Sajra&#x27;s hoard</strong>: Finely made worked goods on altar and shelves lining walls (<em>immobile</em>, <em>beautiful</em>, Value 4 total). PCs promised Thornthumb they wouldn&#x27;t steal anything.</li></ul>\n<ul class=\"questions\"><li>What thing of shiny, worked beauty catches your eye?</li><li>What about the collected objects feels tawdry, desperate?</li></ul>\n<div class=\"stat-block\" id=\"wynfor-tiwlip-small-entranced\"><h3 class=\"stat-name\">Wynfor &amp; Tiwlip (Small, Entranced,</h3><p class=\"stat-tags\">Spirit of the spring (solitary, spirit, anxious): Instinct to fuss over everything.</p><p class=\"stat-stats\">docile): HP 3; Damage bronze knife <button type=\"button\" class=\"dice-roll\" data-dice=\"d4\" title=\"Click to roll d4\">d4</button> (hand); Instinct to bask in Sajra&#x27;s presence. Notes: Ill-fitting silks. Asleep or gazing at pool. Ignore PCs unless they try to take them or hoard. Then stab &#x27;em.</p><p class=\"stat-note\">Pile of furs in northeast corner serve as a bed for the kids. A fine (though chipped) ceramic urn serves as a chamber pot (the crinwin empty it as needed). Kids eat nasty stuff that the crinwin forage; don&#x27;t like it, but Sajra tells them to eat.</p><p class=\"stat-note\">Notes: Mile-a-minute whisper. Asks questions, won&#x27;t wait for replies. Hates Sajra but frets over its opinion. Easily upset, then insults herself.</p><p class=\"stat-note\">Sajra is unlikely to be here when the PCs are. See Sajra the Swyn (next page).</p></div>\n<div class=\"stat-block\" id=\"pryders-hallway-f\"><h3 class=\"stat-name\">Pryder&#x27;s Hallway (F)</h3><p class=\"stat-stats\">HP 0 of 6; Damage <button type=\"button\" class=\"dice-roll\" data-dice=\"d6\" title=\"Click to roll d6\">d6</button> if armed; Instinct to see the good in things. Notes: Asleep per Sajra&#x27;s command. Head wound, cuts/ bruises, feverish. Slow, tires quickly, but mind is free.</p><p class=\"stat-note\">Pryder sleeps here in a burial niche. <button type=\"button\" class=\"dice-roll\" data-dice=\"1d4+2\" title=\"Click to roll 1d4+2\">1d4+2</button> &quot;new&quot; crinwin (the ones who brought him here) keep watch. <button type=\"button\" class=\"dice-roll\" data-dice=\"1d4\" title=\"Click to roll 1d4\">1d4</button> &quot;trusted&quot; crinwin look on from near great hall (G).</p><p class=\"stat-note\">Pryder (woods-wise, handsome, concussed):</p></div>\n<h3 id=\"great-hall-g\">Great hall (G)</h3>\n<p>Three 20-foot-tall pillars (trees, basically).</p>\n<p>Fourth pillar &amp; wall/ceiling collapsed long ago. Stairwell yawns in center of room, goes down to <strong>intact inner tomb</strong>.</p>\n<ul class=\"bullets\"><li>Rotting cabbage/egg smell, but worse</li><li>Large bas reliefs, all vandalized/marred</li><li>Sagging ceiling, roots hanging down through cracks in white stone Crinwin nests hug the pillars up near the ceiling (easy to miss). If alarm hasn&#x27;t been raised, then: 3-6 &quot;trusted&quot; crinwin sleep in nests, 1-4 spy on Pryder&#x27;s hall (F), and 0-5 are here doing <strong>crinwin stuff</strong>.</li></ul>\n<p><strong>Wasps</strong>: Colonizing crinwin nests, pillars.</p>\n<p>Swarm if agitated. See <em>Book II</em>, <a class=\"wiki-link\" href=\"crinwin.html\" data-slug=\"crinwin\" >Crinwin</a>.</p>\n<p><strong>Unstable pillars</strong>: Advance this each time a pillar is struck, or as a GM move.</p>\n<ul class=\"check-list\" data-check-list=\"sites-7\"><li class=\"check-item\"><label for=\"sites-7-0\"><input type=\"checkbox\" class=\"wiki-check\" id=\"sites-7-0\" data-check-id=\"sites-7-0\"> <span>Pillar cracks/buckles, dirt pours down</span></label></li><li class=\"check-item\"><label for=\"sites-7-1\"><input type=\"checkbox\" class=\"wiki-check\" id=\"sites-7-1\" data-check-id=\"sites-7-1\"> <span>Stones fall (<button type=\"button\" class=\"dice-roll\" data-dice=\"1d6+1\" title=\"Click to roll 1d6+1\">1d6+1</button> damage, <em>forceful</em>)</span></label></li><li class=\"check-item\"><label for=\"sites-7-2\"><input type=\"checkbox\" class=\"wiki-check\" id=\"sites-7-2\" data-check-id=\"sites-7-2\"> <span>Pillar breaks, big stone slabs fall (<button type=\"button\" class=\"dice-roll\" data-dice=\"1d8+3\" title=\"Click to roll 1d8+3\">1d8+3</button> damage, <em>area</em>, <em>forceful</em>)</span></label></li><li class=\"check-item\"><label for=\"sites-7-3\"><input type=\"checkbox\" class=\"wiki-check\" id=\"sites-7-3\" data-check-id=\"sites-7-3\"> <span><strong>Impending doom</strong>: Ceiling collapses, burying anyone still inside (Death&#x27;s Door); connecting tunnels blocked off</span></label></li></ul>\n<hr>\n<h3 id=\"crinwin\">Crinwin</h3>\n<p>See <em>Book II</em>, <a class=\"wiki-link\" href=\"crinwin.html\" data-slug=\"crinwin\" >Crinwin</a>. ~30 crinwin total, about half are &quot;trusted&quot; (replace <em>cautious</em> with <em>zealous</em>). &quot;New&quot; crinwin flee if half their numbers are lost; &quot;trusted&quot; crinwin fight to death.</p>\n<div class=\"roll-table bare-numbered\"><table><tbody>\n<tr><th scope=\"row\">4</th><td>sentries outside. 4-10 total watching Pryder in hallway (F). 3-6 asleep outside.</td></tr>\n<tr><th scope=\"row\">3-6</th><td>sleeping in great hall (G). 10-15 off foraging or away on tasks. Up to 5 others doing crinwin stuff (see below).</td></tr>\n</tbody></table></div>\n<p><strong>If alerted to intruders</strong>: 2-3 keep tabs while others rally near entrance hall (A).</p>\n<p>Once ~10 have gathered (10-20 minutes), mimic Tiwlip/Wynfor calling for help to lure PCs to entrance, then swarm them.</p>\n<p><strong>If Sajra, its hoard, or kids are threatened</strong>:</p>\n<p>Nearby crinwin raise the alarm and attack.</p>\n<p><strong>If caught unawares</strong>, will be doing <strong>crinwin stuff</strong>: eating/processing food, expanding or repairing nests, fighting over junk, bullying each other, mimicking Sajra or the kids, talking/singing in their voices.</p>\n<hr>\n<h3 id=\"sajra-the-swyn\">Sajra the Swyn</h3>\n<p>See <em>Book II</em>, <a class=\"wiki-link\" href=\"green-lords.html\" data-slug=\"green-lords\" >Green Lords</a>. When the PCs first approach the tomb, call for Die of Fate.</p>\n<div class=\"roll-table\" id=\"sajras-disposition\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d6\" title=\"Click to roll 1d6\">1d6</button> <span class=\"roll-label\">Sajra&#x27;s Disposition</span></div><table><tbody><tr><th scope=\"row\">1-3</th><td>In shrine (E), alert.</td></tr><tr><th scope=\"row\">4-5</th><td>Not in tomb, off hunting. Will be back in <button type=\"button\" class=\"dice-roll\" data-dice=\"1d6\" title=\"Click to roll 1d6\">1d6</button> hours, or 30-60 min after crinwin start &quot;wolf howling.&quot;</td></tr><tr><th scope=\"row\">6</th><td>In shrine (E), asleep, digesting a big meal. Sluggish, slow to react. Uses tunnels to flank. Targets loners/small groups. Prioritizes itself, then its ego, then its hoard/lair/kids; crinwin are expendable.</td></tr></tbody></table></div>",
+        "html": "<h2 id=\"interior\">Interior</h2>\n<p>White marble construction. Scrollwork and bas relief of plants/chimerae, often marred or busted. Dark unless otherwise noted, but marble reflects/amplifies light.</p>\n<ul class=\"bullets\"><li>Damp, cool air</li><li>Wooden archways, like they grew there</li><li>Crudely carved graffiti (vulgar images, curses in Green Lord script)</li><li>Lazy, sluggish wasps</li><li>Distant echoes of voices/animal noises <strong>Hallways</strong> are 10 feet wide and lined with burial niches: 8 to 24 per hall, human-sized but a few larger. No bodies, but some have displays of junk (bones, potsherds, rocks, maybe a bit of Value</li></ul>\n<p>1 finery with some flaw), set up by the crinwin to mimic Sajra&#x27;s horde.</p>\n<h3 id=\"entrance-chamber-a\">Entrance chamber (A)</h3>\n<p>Dimly lit from outside. Soil and debris piled nearly 4 feet high at entrance, sloping down into the room. Beyond, the floor is filthy, muddy.</p>\n<ul class=\"bullets\"><li>Thick layer of leaf litter, slick underfoot</li><li>Plants/shrubs/saplings growing in soil</li><li>Moss/lichen/vines on the walls, especially near the entrance <strong>Tracks</strong>: Crinwin tracks in dirt, signs of them dragging Pryder towards central chamber (C). Faint, wavy marks in dirt, like a big snake trail, from Sajra going to/ from shrine (E).</li></ul>\n<h3 id=\"collapsed-hallway-b\">Collapsed hallway (B)</h3>\n<p>Caved in when Fae sacked tomb. Eight <strong>mummified servants</strong> (<em>Book II</em>, <a class=\"wiki-link\" href=\"green-lords.html\" data-slug=\"green-lords\" >Green Lords</a>) trapped in the rubble. Crinwin have dug out a tunnel that they/Sajra can squeeze through; also leads outside (via one of the burrows). Sajra&#x27;s trail can be spotted.</p>\n<hr>\n<h3 id=\"central-chamber-c\">Central Chamber (C)</h3>\n<p>Ceilings vaulted to 20 feet, coated in soot.</p>\n<p>Very faded scorch marks on floor. Empty burial niches line walls. Large (smashed, empty) sarcophagi; one in SE corner most intact, stuffed with bones, snail shells, bug husks, and a huge snake skin (Sajra&#x27;s).</p>\n<p>A small channel, set into the floor, carries water from the shrine (E), through this chamber, into the mossy chamber (D).</p>\n<ul class=\"bullets\"><li><strong>Broken statue</strong> (◇◇ ): Mixed with rubble of NW sarcophagus. Crinwin dragged it here from the shrine (E). An icon of the Green Lords&#x27; version of Danu (?).</li></ul>\n<p>10 feet</p>\n<hr>\n<h3 id=\"mossy-chamber-d\">Mossy Chamber (D)</h3>\n<p>Dimly lit by glowing makerglass, flush in the ceiling (gouges from crinwin trying to remove it). Crazy-quilt patterns of colored moss cover walls, floor, ceiling. Channel in floor enters from east, encircles chamber, irrigating soil under the mossy carpet.</p>\n<ul class=\"bullets\"><li>Trilling frog song as they approach</li><li>Hushed quiet as they enter</li><li>Trickle of running water just audible</li><li>Damp, earthy smell</li><li>Soft spring of moss carpet underfoot</li><li>Colors of the moss seeming to shift, almost making pictures; nope, it&#x27;s gone</li></ul>\n<p><strong>Moss spirits</strong> (<em>horde</em>, <em>spirits</em>, <em>vain</em>, <em>moody</em>):</p>\n<p><strong>Instinct</strong> to express themselves visually.</p>\n<p><strong>Notes:</strong> Fret over Thornthumb. Sajra is a boor, crinwin are vile, and you clearly just don&#x27;t understand their work.</p>\n<p><strong>Trapdoor</strong> (T): A moss-covered slab in the floor pulls up, reveals a hole and the secret tunnel. Crinwin haven&#x27;t found it.</p>\n<p><strong>Critters</strong>: Ants, snails, frogs, moths, gnats.</p>\n<p>Wasps/crinwin often prey on them.</p>\n<hr>\n<h3 id=\"shrine-e\">Shrine (E)</h3>\n<p><strong>Rectangular pool</strong>: spring-fed, a foot deep, and glows gently (glow fades when water leaves pool). Channel set into floor carries water to west. An altar dominates the east wall, but the icons have been replaced by items from Sajra&#x27;s hoard.</p>\n<ul class=\"bullets\"><li>Noticeably cooler air</li><li>Spring water bubbling up through silt</li><li>Light patterns dancing on ceiling/walls <strong>Sajra&#x27;s hoard</strong>: Finely made worked goods on altar and shelves lining walls (<em>immobile</em>, <em>beautiful</em>, Value 4 total). PCs promised Thornthumb they wouldn&#x27;t steal anything.</li></ul>\n<ul class=\"questions\"><li>What thing of shiny, worked beauty catches your eye?</li><li>What about the collected objects feels tawdry, desperate?</li></ul>\n<div class=\"stat-block\" id=\"wynfor-tiwlip-small-entranced\"><h3 class=\"stat-name\">Wynfor &amp; Tiwlip (Small, Entranced,</h3><p class=\"stat-tags\">Spirit of the spring (solitary, spirit, anxious): Instinct to fuss over everything.</p><p class=\"stat-stats\">docile): HP 3; Damage bronze knife <button type=\"button\" class=\"dice-roll\" data-dice=\"d4\" title=\"Click to roll d4\">d4</button> (hand); Instinct to bask in Sajra&#x27;s presence. Notes: Ill-fitting silks. Asleep or gazing at pool. Ignore PCs unless they try to take them or hoard. Then stab &#x27;em.</p><p class=\"stat-note\">Pile of furs in northeast corner serve as a bed for the kids. A fine (though chipped) ceramic urn serves as a chamber pot (the crinwin empty it as needed). Kids eat nasty stuff that the crinwin forage; don&#x27;t like it, but Sajra tells them to eat.</p><p class=\"stat-note\">Notes: Mile-a-minute whisper. Asks questions, won&#x27;t wait for replies. Hates Sajra but frets over its opinion. Easily upset, then insults herself.</p><p class=\"stat-note\">Sajra is unlikely to be here when the PCs are. See Sajra the Swyn (next page).</p></div>\n<div class=\"stat-block\" id=\"pryders-hallway-f\"><h3 class=\"stat-name\">Pryder&#x27;s Hallway (F)</h3><p class=\"stat-stats\">HP 0 of 6; Damage <button type=\"button\" class=\"dice-roll\" data-dice=\"d6\" title=\"Click to roll d6\">d6</button> if armed; Instinct to see the good in things. Notes: Asleep per Sajra&#x27;s command. Head wound, cuts/ bruises, feverish. Slow, tires quickly, but mind is free.</p><p class=\"stat-note\">Pryder sleeps here in a burial niche. <button type=\"button\" class=\"dice-roll\" data-dice=\"1d4+2\" title=\"Click to roll 1d4+2\">1d4+2</button> &quot;new&quot; crinwin (the ones who brought him here) keep watch. <button type=\"button\" class=\"dice-roll\" data-dice=\"1d4\" title=\"Click to roll 1d4\">1d4</button> &quot;trusted&quot; crinwin look on from near great hall (G).</p><p class=\"stat-note\">Pryder (woods-wise, handsome, concussed):</p></div>\n<h3 id=\"great-hall-g\">Great hall (G)</h3>\n<p>Three 20-foot-tall pillars (trees, basically).</p>\n<p>Fourth pillar &amp; wall/ceiling collapsed long ago. Stairwell yawns in center of room, goes down to <strong>intact inner tomb</strong>.</p>\n<ul class=\"bullets\"><li>Rotting cabbage/egg smell, but worse</li><li>Large bas reliefs, all vandalized/marred</li><li>Sagging ceiling, roots hanging down through cracks in white stone Crinwin nests hug the pillars up near the ceiling (easy to miss). If alarm hasn&#x27;t been raised, then: 3-6 &quot;trusted&quot; crinwin sleep in nests, 1-4 spy on Pryder&#x27;s hall (F), and 0-5 are here doing <strong>crinwin stuff</strong>.</li></ul>\n<p><strong>Wasps</strong>: Colonizing crinwin nests, pillars.</p>\n<p>Swarm if agitated. See <em>Book II</em>, <a class=\"wiki-link\" href=\"crinwin.html\" data-slug=\"crinwin\" >Crinwin</a>.</p>\n<p><strong>Unstable pillars</strong>: Advance this each time a pillar is struck, or as a GM move.</p>\n<ul class=\"check-list\" data-check-list=\"sites-7\"><li class=\"check-item\"><label for=\"sites-7-0\"><input type=\"checkbox\" class=\"wiki-check\" id=\"sites-7-0\" data-check-id=\"sites-7-0\"> <span>Pillar cracks/buckles, dirt pours down</span></label></li><li class=\"check-item\"><label for=\"sites-7-1\"><input type=\"checkbox\" class=\"wiki-check\" id=\"sites-7-1\" data-check-id=\"sites-7-1\"> <span>Stones fall (<button type=\"button\" class=\"dice-roll\" data-dice=\"1d6+1\" title=\"Click to roll 1d6+1\">1d6+1</button> damage, <em>forceful</em>)</span></label></li><li class=\"check-item\"><label for=\"sites-7-2\"><input type=\"checkbox\" class=\"wiki-check\" id=\"sites-7-2\" data-check-id=\"sites-7-2\"> <span>Pillar breaks, big stone slabs fall (<button type=\"button\" class=\"dice-roll\" data-dice=\"1d8+3\" title=\"Click to roll 1d8+3\">1d8+3</button> damage, <em>area</em>, <em>forceful</em>)</span></label></li><li class=\"check-item\"><label for=\"sites-7-3\"><input type=\"checkbox\" class=\"wiki-check\" id=\"sites-7-3\" data-check-id=\"sites-7-3\"> <span><strong>Impending doom</strong>: Ceiling collapses, burying anyone still inside (Death&#x27;s Door); connecting tunnels blocked off</span></label></li></ul>\n<hr>\n<h3 id=\"crinwin\">Crinwin</h3>\n<p>See <em>Book II</em>, <a class=\"wiki-link\" href=\"crinwin.html\" data-slug=\"crinwin\" >Crinwin</a>. ~30 crinwin total, about half are &quot;trusted&quot; (replace <em>cautious</em> with <em>zealous</em>). &quot;New&quot; crinwin flee if half their numbers are lost; &quot;trusted&quot; crinwin fight to death.</p>\n<div class=\"roll-table bare-numbered\"><table><tbody>\n<tr><th scope=\"row\">4</th><td>sentries outside. 4-10 total watching Pryder in hallway (F). 3-6 asleep outside.</td></tr>\n<tr><th scope=\"row\">3-6</th><td>sleeping in great hall (G). 10-15 off foraging or away on tasks. Up to 5 others doing crinwin stuff (see below).</td></tr>\n</tbody></table></div>\n<p><strong>If alerted to intruders</strong>: 2-3 keep tabs while others rally near entrance hall (A).</p>\n<p>Once ~10 have gathered (10-20 minutes), mimic Tiwlip/Wynfor calling for help to lure PCs to entrance, then swarm them.</p>\n<p><strong>If Sajra, its hoard, or kids are threatened</strong>:</p>\n<p>Nearby crinwin raise the alarm and attack.</p>\n<p><strong>If caught unawares</strong>, will be doing <strong>crinwin stuff</strong>: eating/processing food, expanding or repairing nests, fighting over junk, bullying each other, mimicking Sajra or the kids, talking/singing in their voices.</p>\n<hr>\n<h3 id=\"sajra-the-swyn\">Sajra the Swyn</h3>\n<p>See <em>Book II</em>, <a class=\"wiki-link\" href=\"green-lords.html\" data-slug=\"green-lords\" >Green Lords</a>. When the PCs first approach the tomb, call for Die of Fate.</p>\n<div class=\"roll-table\" id=\"sajras-disposition\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d6\" title=\"Click to roll 1d6\">1d6</button> <span class=\"roll-label\">Sajra&#x27;s Disposition</span></div><table><tbody><tr><th scope=\"row\">1-3</th><td>In shrine (E), alert.</td></tr><tr><th scope=\"row\">4-5</th><td>Not in tomb, off hunting. Will be back in <button type=\"button\" class=\"dice-roll\" data-dice=\"1d6\" title=\"Click to roll 1d6\">1d6</button> hours, or 30-60 min after crinwin start &quot;wolf howling.&quot;</td></tr><tr><th scope=\"row\">6</th><td>In shrine (E), asleep, digesting a big meal. Sluggish, slow to react. Uses tunnels to flank. Targets loners/small groups. Prioritizes itself, then its ego, then its hoard/lair/kids; crinwin are expendable.</td></tr></tbody></table></div>",
         "kind": "section"
       },
       "entrance-chamber-a": {
         "name": "Entrance chamber (A)",
-        "html": "<h3 id=\"entrance-chamber-a\">Entrance chamber (A)</h3>\n<p>Dimly lit from outside. Soil and debris piled nearly 4 feet high at entrance, sloping down into the room. Beyond, the floor is filthy, muddy.</p>\n<ul class=\"bullets\"><li>Thick layer of leaf litter, slick underfoot</li><li>Plants/shrubs/saplings growing in soil</li><li>Moss/lichen/vines on the walls, especially near the entrance <strong>Tracks</strong>: Crinwin tracks in dirt, signs of them dragging Pryder towards central chamber (C). Faint, wavy marks in dirt, like a big snake trail, from Sajra going to/ from shrine (E).</li></ul>\n<p>north</p>\n<p>A s</p>\n<p>C t D</p>\n<p>F G s s</p>",
+        "html": "<h3 id=\"entrance-chamber-a\">Entrance chamber (A)</h3>\n<p>Dimly lit from outside. Soil and debris piled nearly 4 feet high at entrance, sloping down into the room. Beyond, the floor is filthy, muddy.</p>\n<ul class=\"bullets\"><li>Thick layer of leaf litter, slick underfoot</li><li>Plants/shrubs/saplings growing in soil</li><li>Moss/lichen/vines on the walls, especially near the entrance <strong>Tracks</strong>: Crinwin tracks in dirt, signs of them dragging Pryder towards central chamber (C). Faint, wavy marks in dirt, like a big snake trail, from Sajra going to/ from shrine (E).</li></ul>",
         "kind": "section"
       },
       "collapsed-hallway-b": {
@@ -13701,7 +13433,7 @@ window.WIKI_PREVIEWS = {
       },
       "central-chamber-c": {
         "name": "Central Chamber (C)",
-        "html": "<h3 id=\"central-chamber-c\">Central Chamber (C)</h3>\n<p>Ceilings vaulted to 20 feet, coated in soot.</p>\n<p>Very faded scorch marks on floor. Empty burial niches line walls. Large (smashed, empty) sarcophagi; one in SE corner most intact, stuffed with bones, snail shells, bug husks, and a huge snake skin (Sajra&#x27;s).</p>\n<p>A small channel, set into the floor, carries water from the shrine (E), through this chamber, into the mossy chamber (D).</p>\n<ul class=\"bullets\"><li><strong>Broken statue</strong> (◇◇ ): Mixed with rubble of NW sarcophagus. Crinwin dragged it here from the shrine (E). An icon of the Green s Lords&#x27; version of B Danu (?).</li></ul>\n<p>s</p>\n<p>E</p>\n<p>10 feet</p>\n<hr>",
+        "html": "<h3 id=\"central-chamber-c\">Central Chamber (C)</h3>\n<p>Ceilings vaulted to 20 feet, coated in soot.</p>\n<p>Very faded scorch marks on floor. Empty burial niches line walls. Large (smashed, empty) sarcophagi; one in SE corner most intact, stuffed with bones, snail shells, bug husks, and a huge snake skin (Sajra&#x27;s).</p>\n<p>A small channel, set into the floor, carries water from the shrine (E), through this chamber, into the mossy chamber (D).</p>\n<ul class=\"bullets\"><li><strong>Broken statue</strong> (◇◇ ): Mixed with rubble of NW sarcophagus. Crinwin dragged it here from the shrine (E). An icon of the Green Lords&#x27; version of Danu (?).</li></ul>\n<p>10 feet</p>\n<hr>",
         "kind": "section"
       },
       "mossy-chamber-d": {
@@ -14087,12 +13819,12 @@ window.WIKI_PREVIEWS = {
       },
       "placing-arcana": {
         "name": "Placing arcana",
-        "html": "<h2 id=\"placing-arcana\">Placing arcana</h2>\n<p>Be thoughtful about how often you introduce new arcana. Between unlocking them, using them, and dealing with their consequences, they can have a huge impact on the game.</p>\n<p>Give the players too many and they&#x27;ll be overwhelmed with options. Give them too few, and you&#x27;ll be missing out on a fun part of <em>Stonetop</em>. Don&#x27;t be stingy with arcana, but don&#x27;t hand them out like candy, either!</p>\n<p>Most arcana are <a class=\"wiki-link\" href=\"#artifacts\" data-slug=\"discoveries\" data-fragment=\"artifacts\"><strong>artifacts</strong></a>;</p>\n<p>place them as such. Try to place them in a way that implies a story or at least illuminates part of the setting.</p>\n<p>. minor arcanum.</p>\n<div class=\"discovery-block\" id=\"a-half-buried-plaque\"><h3 class=\"discovery-name\">A Half-Buried Plaque</h3><p class=\"discovery-tags\">◇◇, cumbersome, magical</p></div>\n<ul class=\"check-list\" data-check-list=\"discoveries-1\"><li class=\"check-item\"><label for=\"discoveries-1-0\"><input type=\"checkbox\" class=\"wiki-check\" id=\"discoveries-1-0\" data-check-id=\"discoveries-1-0\"> <span>… you must first dig up &amp; clean the plate.</span></label></li><li class=\"check-item\"><label for=\"discoveries-1-1\"><input type=\"checkbox\" class=\"wiki-check\" id=\"discoveries-1-1\" data-check-id=\"discoveries-1-1\"> <span>… you must decipher the Maker-runes.</span></label></li><li class=\"check-item\"><label for=\"discoveries-1-2\"><input type=\"checkbox\" class=\"wiki-check\" id=\"discoveries-1-2\" data-check-id=\"discoveries-1-2\"> <span>… it&#x27;ll take a few weeks of study.</span></label></li><li class=\"check-item\"><label for=\"discoveries-1-3\"><input type=\"checkbox\" class=\"wiki-check\" id=\"discoveries-1-3\" data-check-id=\"discoveries-1-3\"> <span>… you risk harm to your voice, your hearing, and/or your neighbors as you practice.</span></label></li></ul>\n<p>front</p>\n<hr>\n<p><em>Caradoc and Vahid take a short trip to the</em></p>\n<p><em>Ruined Tower in early autumn, to poke</em></p>\n<p><em>around and see what they find. Caradoc spends a few hours scouting out the outer</em></p>\n<p><em>ruins, Seeking Insight. He asks, &quot;What here</em></p>\n<p><em>is useful or valuable to me?&quot;</em></p>\n<p><em>The Ruined Tower entry in</em> Book II <em>includes a number of discovery tables for the outer</em></p>\n<p><em>ruins, including one for &quot;something valuable.&quot;</em></p>\n<p><em>I roll and get &quot;a half-buried plaque, or some other artifact of the Tempest Lords.&quot; The half-buried plaque seems like a perfect thing to find in the blasted rubble around the Tower.</em></p>\n<hr>\n<p>. minor arcanum.</p>\n<h3 id=\"thunderous-bellow\">Thunderous Bellow</h3>\n<p>When you <strong><em>channel the storm primeval and utter a thunderous bellow</em></strong>, take <button type=\"button\" class=\"dice-roll\" data-dice=\"1d6\" title=\"Click to roll 1d6\">1d6</button> damage (ignores armor) and roll +CON:</p>\n<p><strong>on a 10+</strong>, everyone nearby (except you) must choose 2; <strong>on a 7-9</strong>, everyone nearby (except you) must choose 1.</p>\n<ul class=\"bullets\"><li>Drop what they&#x27;re carrying and cover their ears</li><li>Be deafened and disoriented for a few moments</li><li>Stagger a few steps away from you back <em>I pause to consider whether I want to add this arcanum to the game. It&#x27;s right up Vahid&#x27;s alley, and while he has a few stilllocked arcana, he can&#x27;t easily act on them just yet (one requires that he suffer a terrible burn; another needs Rhianna&#x27;s help and she&#x27;s busy; the third involves finding pieces of the Mindgem&#x27;s body and he has no leads.) This is an arcanum he could act on now, and one that I think would be fun to see in play.</em></li></ul>\n<p><em>&quot;Okay,&quot; I tell Caradoc, &quot;In the rubble near</em></p>\n<p><em>the tower, you find this bronze plate poking</em></p>\n<p><em>out of the soil…&quot;</em></p>\n<p>Some arcana are <a class=\"wiki-link\" href=\"sites.html\" data-slug=\"sites\" ><strong>sites</strong></a>, or part of one. Place them where they make sense, and feel free to tweak the details on the front of the card. The &quot;runes around a ruined hall&quot; arcanum describes a throne room, but maybe a smithy makes more sense in your game?</p>\n<p>A few arcana represent tales or specific encounters. Present these to the PCs as <a class=\"wiki-link\" href=\"#clues\" data-slug=\"discoveries\" data-fragment=\"clues\"><strong>clues</strong></a>, <a class=\"wiki-link\" href=\"#encounters\" data-slug=\"discoveries\" data-fragment=\"encounters\"><strong>encounters</strong></a>, or <a class=\"wiki-link\" href=\"#opportunities\" data-slug=\"discoveries\" data-fragment=\"opportunities\"><strong>opportunities</strong></a>.</p>\n<p>Again, feel free to modify the specifics on the front of the card to meet your needs.</p>\n<p>A handful of arcana—notably <strong>Storm Marking</strong>s and the <strong>Ineffable Words</strong> (<em>Book II</em>, pages</p>\n<p>566 and 568)—represent a PC being infused with magical power. Offer these as opportunities, or even inflict them as consequences when the PCs are exposed to truly potent magic.</p>",
+        "html": "<h2 id=\"placing-arcana\">Placing arcana</h2>\n<p>Be thoughtful about how often you introduce new arcana. Between unlocking them, using them, and dealing with their consequences, they can have a huge impact on the game.</p>\n<p>Give the players too many and they&#x27;ll be overwhelmed with options. Give them too few, and you&#x27;ll be missing out on a fun part of <em>Stonetop</em>. Don&#x27;t be stingy with arcana, but don&#x27;t hand them out like candy, either!</p>\n<p>Most arcana are <a class=\"wiki-link\" href=\"#artifacts\" data-slug=\"discoveries\" data-fragment=\"artifacts\"><strong>artifacts</strong></a>;</p>\n<p>place them as such. Try to place them in a way that implies a story or at least illuminates part of the setting.</p>\n<div class=\"discovery-block\" id=\"a-half-buried-plaque\"><h3 class=\"discovery-name\">A Half-Buried Plaque</h3><p class=\"discovery-tags\">◇◇, cumbersome, magical</p></div>\n<ul class=\"check-list\" data-check-list=\"discoveries-1\"><li class=\"check-item\"><label for=\"discoveries-1-0\"><input type=\"checkbox\" class=\"wiki-check\" id=\"discoveries-1-0\" data-check-id=\"discoveries-1-0\"> <span>… you must first dig up &amp; clean the plate.</span></label></li><li class=\"check-item\"><label for=\"discoveries-1-1\"><input type=\"checkbox\" class=\"wiki-check\" id=\"discoveries-1-1\" data-check-id=\"discoveries-1-1\"> <span>… you must decipher the Maker-runes.</span></label></li><li class=\"check-item\"><label for=\"discoveries-1-2\"><input type=\"checkbox\" class=\"wiki-check\" id=\"discoveries-1-2\" data-check-id=\"discoveries-1-2\"> <span>… it&#x27;ll take a few weeks of study.</span></label></li><li class=\"check-item\"><label for=\"discoveries-1-3\"><input type=\"checkbox\" class=\"wiki-check\" id=\"discoveries-1-3\" data-check-id=\"discoveries-1-3\"> <span>… you risk harm to your voice, your hearing, and/or your neighbors as you practice.</span></label></li></ul>\n<hr>\n<p><em>Caradoc and Vahid take a short trip to the</em></p>\n<p><em>Ruined Tower in early autumn, to poke</em></p>\n<p><em>around and see what they find. Caradoc spends a few hours scouting out the outer</em></p>\n<p><em>ruins, Seeking Insight. He asks, &quot;What here</em></p>\n<p><em>is useful or valuable to me?&quot;</em></p>\n<p><em>The Ruined Tower entry in</em> Book II <em>includes a number of discovery tables for the outer</em></p>\n<p><em>ruins, including one for &quot;something valuable.&quot;</em></p>\n<p><em>I roll and get &quot;a half-buried plaque, or some other artifact of the Tempest Lords.&quot; The half-buried plaque seems like a perfect thing to find in the blasted rubble around the Tower.</em></p>\n<hr>\n<h3 id=\"thunderous-bellow\">Thunderous Bellow</h3>\n<p>When you <strong><em>channel the storm primeval and utter a thunderous bellow</em></strong>, take <button type=\"button\" class=\"dice-roll\" data-dice=\"1d6\" title=\"Click to roll 1d6\">1d6</button> damage (ignores armor) and roll +CON:</p>\n<p><strong>on a 10+</strong>, everyone nearby (except you) must choose 2; <strong>on a 7-9</strong>, everyone nearby (except you) must choose 1.</p>\n<ul class=\"bullets\"><li>Drop what they&#x27;re carrying and cover their ears</li><li>Be deafened and disoriented for a few moments</li><li>Stagger a few steps away from you <em>I pause to consider whether I want to add this arcanum to the game. It&#x27;s right up Vahid&#x27;s alley, and while he has a few stilllocked arcana, he can&#x27;t easily act on them just yet (one requires that he suffer a terrible burn; another needs Rhianna&#x27;s help and she&#x27;s busy; the third involves finding pieces of the Mindgem&#x27;s body and he has no leads.) This is an arcanum he could act on now, and one that I think would be fun to see in play.</em></li></ul>\n<p><em>&quot;Okay,&quot; I tell Caradoc, &quot;In the rubble near</em></p>\n<p><em>the tower, you find this bronze plate poking</em></p>\n<p><em>out of the soil…&quot;</em></p>\n<p>Some arcana are <a class=\"wiki-link\" href=\"sites.html\" data-slug=\"sites\" ><strong>sites</strong></a>, or part of one. Place them where they make sense, and feel free to tweak the details on the front of the card. The &quot;runes around a ruined hall&quot; arcanum describes a throne room, but maybe a smithy makes more sense in your game?</p>\n<p>A few arcana represent tales or specific encounters. Present these to the PCs as <a class=\"wiki-link\" href=\"#clues\" data-slug=\"discoveries\" data-fragment=\"clues\"><strong>clues</strong></a>, <a class=\"wiki-link\" href=\"#encounters\" data-slug=\"discoveries\" data-fragment=\"encounters\"><strong>encounters</strong></a>, or <a class=\"wiki-link\" href=\"#opportunities\" data-slug=\"discoveries\" data-fragment=\"opportunities\"><strong>opportunities</strong></a>.</p>\n<p>Again, feel free to modify the specifics on the front of the card to meet your needs.</p>\n<p>A handful of arcana—notably <strong>Storm Marking</strong>s and the <strong>Ineffable Words</strong> (<em>Book II</em>, pages</p>\n<p>566 and 568)—represent a PC being infused with magical power. Offer these as opportunities, or even inflict them as consequences when the PCs are exposed to truly potent magic.</p>",
         "kind": "section"
       },
       "thunderous-bellow": {
         "name": "Thunderous Bellow",
-        "html": "<h3 id=\"thunderous-bellow\">Thunderous Bellow</h3>\n<p>When you <strong><em>channel the storm primeval and utter a thunderous bellow</em></strong>, take <button type=\"button\" class=\"dice-roll\" data-dice=\"1d6\" title=\"Click to roll 1d6\">1d6</button> damage (ignores armor) and roll +CON:</p>\n<p><strong>on a 10+</strong>, everyone nearby (except you) must choose 2; <strong>on a 7-9</strong>, everyone nearby (except you) must choose 1.</p>\n<ul class=\"bullets\"><li>Drop what they&#x27;re carrying and cover their ears</li><li>Be deafened and disoriented for a few moments</li><li>Stagger a few steps away from you back <em>I pause to consider whether I want to add this arcanum to the game. It&#x27;s right up Vahid&#x27;s alley, and while he has a few stilllocked arcana, he can&#x27;t easily act on them just yet (one requires that he suffer a terrible burn; another needs Rhianna&#x27;s help and she&#x27;s busy; the third involves finding pieces of the Mindgem&#x27;s body and he has no leads.) This is an arcanum he could act on now, and one that I think would be fun to see in play.</em></li></ul>\n<p><em>&quot;Okay,&quot; I tell Caradoc, &quot;In the rubble near</em></p>\n<p><em>the tower, you find this bronze plate poking</em></p>\n<p><em>out of the soil…&quot;</em></p>\n<p>Some arcana are <a class=\"wiki-link\" href=\"sites.html\" data-slug=\"sites\" ><strong>sites</strong></a>, or part of one. Place them where they make sense, and feel free to tweak the details on the front of the card. The &quot;runes around a ruined hall&quot; arcanum describes a throne room, but maybe a smithy makes more sense in your game?</p>\n<p>A few arcana represent tales or specific encounters. Present these to the PCs as <a class=\"wiki-link\" href=\"#clues\" data-slug=\"discoveries\" data-fragment=\"clues\"><strong>clues</strong></a>, <a class=\"wiki-link\" href=\"#encounters\" data-slug=\"discoveries\" data-fragment=\"encounters\"><strong>encounters</strong></a>, or <a class=\"wiki-link\" href=\"#opportunities\" data-slug=\"discoveries\" data-fragment=\"opportunities\"><strong>opportunities</strong></a>.</p>\n<p>Again, feel free to modify the specifics on the front of the card to meet your needs.</p>\n<p>A handful of arcana—notably <strong>Storm Marking</strong>s and the <strong>Ineffable Words</strong> (<em>Book II</em>, pages</p>\n<p>566 and 568)—represent a PC being infused with magical power. Offer these as opportunities, or even inflict them as consequences when the PCs are exposed to truly potent magic.</p>",
+        "html": "<h3 id=\"thunderous-bellow\">Thunderous Bellow</h3>\n<p>When you <strong><em>channel the storm primeval and utter a thunderous bellow</em></strong>, take <button type=\"button\" class=\"dice-roll\" data-dice=\"1d6\" title=\"Click to roll 1d6\">1d6</button> damage (ignores armor) and roll +CON:</p>\n<p><strong>on a 10+</strong>, everyone nearby (except you) must choose 2; <strong>on a 7-9</strong>, everyone nearby (except you) must choose 1.</p>\n<ul class=\"bullets\"><li>Drop what they&#x27;re carrying and cover their ears</li><li>Be deafened and disoriented for a few moments</li><li>Stagger a few steps away from you <em>I pause to consider whether I want to add this arcanum to the game. It&#x27;s right up Vahid&#x27;s alley, and while he has a few stilllocked arcana, he can&#x27;t easily act on them just yet (one requires that he suffer a terrible burn; another needs Rhianna&#x27;s help and she&#x27;s busy; the third involves finding pieces of the Mindgem&#x27;s body and he has no leads.) This is an arcanum he could act on now, and one that I think would be fun to see in play.</em></li></ul>\n<p><em>&quot;Okay,&quot; I tell Caradoc, &quot;In the rubble near</em></p>\n<p><em>the tower, you find this bronze plate poking</em></p>\n<p><em>out of the soil…&quot;</em></p>\n<p>Some arcana are <a class=\"wiki-link\" href=\"sites.html\" data-slug=\"sites\" ><strong>sites</strong></a>, or part of one. Place them where they make sense, and feel free to tweak the details on the front of the card. The &quot;runes around a ruined hall&quot; arcanum describes a throne room, but maybe a smithy makes more sense in your game?</p>\n<p>A few arcana represent tales or specific encounters. Present these to the PCs as <a class=\"wiki-link\" href=\"#clues\" data-slug=\"discoveries\" data-fragment=\"clues\"><strong>clues</strong></a>, <a class=\"wiki-link\" href=\"#encounters\" data-slug=\"discoveries\" data-fragment=\"encounters\"><strong>encounters</strong></a>, or <a class=\"wiki-link\" href=\"#opportunities\" data-slug=\"discoveries\" data-fragment=\"opportunities\"><strong>opportunities</strong></a>.</p>\n<p>Again, feel free to modify the specifics on the front of the card to meet your needs.</p>\n<p>A handful of arcana—notably <strong>Storm Marking</strong>s and the <strong>Ineffable Words</strong> (<em>Book II</em>, pages</p>\n<p>566 and 568)—represent a PC being infused with magical power. Offer these as opportunities, or even inflict them as consequences when the PCs are exposed to truly potent magic.</p>",
         "kind": "section"
       },
       "identifying-arcana": {
@@ -14583,7 +14315,7 @@ window.WIKI_PREVIEWS = {
       },
       "1-determine-whats-happened": {
         "name": "1 Determine what's happened",
-        "html": "<h2 id=\"1-determine-whats-happened\">1 Determine what&#x27;s happened</h2>\n<p>As the PCs head for home, take a few minutes to consider how things have been going while the PCs were away. Think about the following.</p>\n<p><strong>How long were the PCs gone?</strong> What have folks been up to or dealing with? How&#x27;s morale been? Who&#x27;s been worried sick, or resentful, or stepping up while the PCs were away? If the PCs were gone longer than expected, how did folks react to their delay?</p>\n<p><strong>If anyone on the expedition was wounded or didn&#x27;t make it home</strong>, who will be most upset or affected by that?</p>\n<p><strong>What sort of work has been going on?</strong></p>\n<p>Refer to the Stonetop impressions (Book</p>\n<p><em>II</em>, <a class=\"wiki-link\" href=\"why-play.html\" data-slug=\"why-play\" >Why Play?</a>) for ideas.</p>\n<p><strong>Did the PCs Requisition any town assets?</strong></p>\n<p>How did the lack of those assets at home affect people&#x27;s lives (if at all)?</p>\n<p>Before they left, <strong>did the PCs trigger any moves that took time to resolve</strong> (like Pull Together)? Resolve them now and think about how you&#x27;ll show the results, or make note of when and how you&#x27;ll resolve them later.</p>\n<p><strong>Did any threats advance towards their impending dooms?</strong> If so, how will you reveal those grim portents to the PCs?</p>\n<p>Take notes! If the return home happens mid-session, take a break to gather your thoughts. Make a list of details you want to establish in the upcoming scenes.</p>\n<hr>\n<p><em>It&#x27;s the summer following the PCs&#x27; first adventure. They&#x27;ve gone back to explore the Green Lord&#x27;s tomb. On the way</em></p>\n<p><em>home, Garet (one of Rhianna&#x27;s crew)</em></p>\n<p><em>was mauled by a drake. They pushed</em></p>\n<p><em>on, trying to avoid crinwin, but Garet didn&#x27;t make it; he&#x27;s dead.</em></p>\n<p><em>As the PCs near home, we take a break</em></p>\n<p><em>and I think about what&#x27;s happened.</em></p>\n<p><em>They&#x27;ve been gone for four days. Things</em></p>\n<p><em>were quiet when they left, except that</em></p>\n<p><em>Rhianna had been drilling the militia on readiness and told them to run some patrols while they were gone. I think they&#x27;ll encounter one of those on the way</em></p>\n<p><em>home. Otherwise, folks would be doing typical summertime stuff.</em></p>\n<p><em>The PCs didn&#x27;t Requisition any town assets, and I&#x27;ve got no homefront threats with impending dooms. But before they left, Blodwen asked Seren to talk some</em></p>\n<p><em>sense into Tegwen, triggering Order Followers (Seren was Persuading on Blodwen&#x27;s behalf). We didn&#x27;t resolve it at the time, so I ask Blodwen to roll now.</em></p>\n<p><em>She gets a 4. Tegwen will not, in fact, be</em></p>\n<p><em>seeing sense. I make a quick list:</em></p>\n<ul>\n<li>Garet had sister: Cerys (widow, kids Wini &amp; Hewyl, 12 and 9) • Patrols in Wood, by the Stream • Haymaking, weeding, plowing the fallows • Seren&#x27;s 4 to Persuade Tegwen</li>\n</ul>\n<hr>",
+        "html": "<h2 id=\"1-determine-whats-happened\">1 Determine what&#x27;s happened</h2>\n<p>As the PCs head for home, take a few minutes to consider how things have been going while the PCs were away. Think about the following.</p>\n<p><strong>How long were the PCs gone?</strong> What have folks been up to or dealing with? How&#x27;s morale been? Who&#x27;s been worried sick, or resentful, or stepping up while the PCs were away? If the PCs were gone longer than expected, how did folks react to their delay?</p>\n<p><strong>If anyone on the expedition was wounded or didn&#x27;t make it home</strong>, who will be most upset or affected by that?</p>\n<p><strong>What sort of work has been going on?</strong></p>\n<p>Refer to the Stonetop impressions (Book</p>\n<p><em>II</em>, <a class=\"wiki-link\" href=\"welcome-to-stonetop.html\" data-slug=\"welcome-to-stonetop\" >Welcome to Stonetop</a>) for ideas.</p>\n<p><strong>Did the PCs Requisition any town assets?</strong></p>\n<p>How did the lack of those assets at home affect people&#x27;s lives (if at all)?</p>\n<p>Before they left, <strong>did the PCs trigger any moves that took time to resolve</strong> (like Pull Together)? Resolve them now and think about how you&#x27;ll show the results, or make note of when and how you&#x27;ll resolve them later.</p>\n<p><strong>Did any threats advance towards their impending dooms?</strong> If so, how will you reveal those grim portents to the PCs?</p>\n<p>Take notes! If the return home happens mid-session, take a break to gather your thoughts. Make a list of details you want to establish in the upcoming scenes.</p>\n<hr>\n<p><em>It&#x27;s the summer following the PCs&#x27; first adventure. They&#x27;ve gone back to explore the Green Lord&#x27;s tomb. On the way</em></p>\n<p><em>home, Garet (one of Rhianna&#x27;s crew)</em></p>\n<p><em>was mauled by a drake. They pushed</em></p>\n<p><em>on, trying to avoid crinwin, but Garet didn&#x27;t make it; he&#x27;s dead.</em></p>\n<p><em>As the PCs near home, we take a break</em></p>\n<p><em>and I think about what&#x27;s happened.</em></p>\n<p><em>They&#x27;ve been gone for four days. Things</em></p>\n<p><em>were quiet when they left, except that</em></p>\n<p><em>Rhianna had been drilling the militia on readiness and told them to run some patrols while they were gone. I think they&#x27;ll encounter one of those on the way</em></p>\n<p><em>home. Otherwise, folks would be doing typical summertime stuff.</em></p>\n<p><em>The PCs didn&#x27;t Requisition any town assets, and I&#x27;ve got no homefront threats with impending dooms. But before they left, Blodwen asked Seren to talk some</em></p>\n<p><em>sense into Tegwen, triggering Order Followers (Seren was Persuading on Blodwen&#x27;s behalf). We didn&#x27;t resolve it at the time, so I ask Blodwen to roll now.</em></p>\n<p><em>She gets a 4. Tegwen will not, in fact, be</em></p>\n<p><em>seeing sense. I make a quick list:</em></p>\n<ul>\n<li>Garet had sister: Cerys (widow, kids Wini &amp; Hewyl, 12 and 9) • Patrols in Wood, by the Stream • Haymaking, weeding, plowing the fallows • Seren&#x27;s 4 to Persuade Tegwen</li>\n</ul>\n<hr>",
         "kind": "section"
       },
       "2-play-out-the-return": {
@@ -26484,31 +26216,8 @@ window.WIKI_PAGE_MAP = {
         "lore": "lore",
         "questions": "questions",
         "sites": "sites",
-        "f": "f",
-        "o": "o-4",
-        "r": "r-4",
         "makers site locations": "makers-site-locations",
         "makers & site locations": "makers-site-locations",
-        "r i m e": "r-i-m-e",
-        "t e": "t-e",
-        "g m p": "g-m-p",
-        "es": "es",
-        "e t": "e-t",
-        "l o r": "l-o-r-2",
-        "d s": "d-s-2",
-        "l": "l-3",
-        "d": "d-3",
-        "s": "s-5",
-        "g r": "g-r",
-        "n": "n",
-        "s t": "s-t",
-        "o n": "o-n",
-        "e l": "e-l",
-        "o r d": "o-r-d",
-        "t": "t-2",
-        "e": "e-2",
-        "p": "p",
-        "m": "m",
         "true nature": "true-nature",
         "runes glyphs": "runes-glyphs",
         "runes & glyphs": "runes-glyphs"
@@ -26522,31 +26231,8 @@ window.WIKI_PAGE_MAP = {
         "lore": "lore",
         "questions": "questions",
         "sites": "sites",
-        "f": "f",
-        "o": "o-4",
-        "r": "r-4",
         "makers site locations": "makers-site-locations",
         "makers & site locations": "makers-site-locations",
-        "r i m e": "r-i-m-e",
-        "t e": "t-e",
-        "g m p": "g-m-p",
-        "es": "es",
-        "e t": "e-t",
-        "l o r": "l-o-r-2",
-        "d s": "d-s-2",
-        "l": "l-3",
-        "d": "d-3",
-        "s": "s-5",
-        "g r": "g-r",
-        "n": "n",
-        "s t": "s-t",
-        "o n": "o-n",
-        "e l": "e-l",
-        "o r d": "o-r-d",
-        "t": "t-2",
-        "e": "e-2",
-        "p": "p",
-        "m": "m",
         "true nature": "true-nature",
         "runes glyphs": "runes-glyphs",
         "runes & glyphs": "runes-glyphs"
@@ -26560,31 +26246,8 @@ window.WIKI_PAGE_MAP = {
         "lore": "lore",
         "questions": "questions",
         "sites": "sites",
-        "f": "f",
-        "o": "o-4",
-        "r": "r-4",
         "makers site locations": "makers-site-locations",
         "makers & site locations": "makers-site-locations",
-        "r i m e": "r-i-m-e",
-        "t e": "t-e",
-        "g m p": "g-m-p",
-        "es": "es",
-        "e t": "e-t",
-        "l o r": "l-o-r-2",
-        "d s": "d-s-2",
-        "l": "l-3",
-        "d": "d-3",
-        "s": "s-5",
-        "g r": "g-r",
-        "n": "n",
-        "s t": "s-t",
-        "o n": "o-n",
-        "e l": "e-l",
-        "o r d": "o-r-d",
-        "t": "t-2",
-        "e": "e-2",
-        "p": "p",
-        "m": "m",
         "true nature": "true-nature",
         "runes glyphs": "runes-glyphs",
         "runes & glyphs": "runes-glyphs"
@@ -26598,31 +26261,8 @@ window.WIKI_PAGE_MAP = {
         "lore": "lore",
         "questions": "questions",
         "sites": "sites",
-        "f": "f",
-        "o": "o-4",
-        "r": "r-4",
         "makers site locations": "makers-site-locations",
         "makers & site locations": "makers-site-locations",
-        "r i m e": "r-i-m-e",
-        "t e": "t-e",
-        "g m p": "g-m-p",
-        "es": "es",
-        "e t": "e-t",
-        "l o r": "l-o-r-2",
-        "d s": "d-s-2",
-        "l": "l-3",
-        "d": "d-3",
-        "s": "s-5",
-        "g r": "g-r",
-        "n": "n",
-        "s t": "s-t",
-        "o n": "o-n",
-        "e l": "e-l",
-        "o r d": "o-r-d",
-        "t": "t-2",
-        "e": "e-2",
-        "p": "p",
-        "m": "m",
         "true nature": "true-nature",
         "runes glyphs": "runes-glyphs",
         "runes & glyphs": "runes-glyphs"
@@ -26636,31 +26276,8 @@ window.WIKI_PAGE_MAP = {
         "lore": "lore",
         "questions": "questions",
         "sites": "sites",
-        "f": "f",
-        "o": "o-4",
-        "r": "r-4",
         "makers site locations": "makers-site-locations",
         "makers & site locations": "makers-site-locations",
-        "r i m e": "r-i-m-e",
-        "t e": "t-e",
-        "g m p": "g-m-p",
-        "es": "es",
-        "e t": "e-t",
-        "l o r": "l-o-r-2",
-        "d s": "d-s-2",
-        "l": "l-3",
-        "d": "d-3",
-        "s": "s-5",
-        "g r": "g-r",
-        "n": "n",
-        "s t": "s-t",
-        "o n": "o-n",
-        "e l": "e-l",
-        "o r d": "o-r-d",
-        "t": "t-2",
-        "e": "e-2",
-        "p": "p",
-        "m": "m",
         "true nature": "true-nature",
         "runes glyphs": "runes-glyphs",
         "runes & glyphs": "runes-glyphs"
@@ -26674,31 +26291,8 @@ window.WIKI_PAGE_MAP = {
         "lore": "lore",
         "questions": "questions",
         "sites": "sites",
-        "f": "f",
-        "o": "o-4",
-        "r": "r-4",
         "makers site locations": "makers-site-locations",
         "makers & site locations": "makers-site-locations",
-        "r i m e": "r-i-m-e",
-        "t e": "t-e",
-        "g m p": "g-m-p",
-        "es": "es",
-        "e t": "e-t",
-        "l o r": "l-o-r-2",
-        "d s": "d-s-2",
-        "l": "l-3",
-        "d": "d-3",
-        "s": "s-5",
-        "g r": "g-r",
-        "n": "n",
-        "s t": "s-t",
-        "o n": "o-n",
-        "e l": "e-l",
-        "o r d": "o-r-d",
-        "t": "t-2",
-        "e": "e-2",
-        "p": "p",
-        "m": "m",
         "true nature": "true-nature",
         "runes glyphs": "runes-glyphs",
         "runes & glyphs": "runes-glyphs"
@@ -39547,103 +39141,185 @@ window.WIKI_PAGE_MAP = {
     "7": {
       "slug": "welcome-to-stonetop",
       "title": "Welcome to Stonetop",
-      "sections": {}
-    },
-    "8": {
-      "slug": "expectations",
-      "title": "Expectations",
       "sections": {
-        "welcome to stonetop": "welcome-to-stonetop-2",
+        "expectations": "expectations",
         "premise": "premise",
         "commitment": "commitment",
         "structure": "structure",
         "dice notation": "dice-notation",
         "content": "content",
-        "materials": "materials"
+        "materials": "materials",
+        "setting": "the-setting",
+        "the setting": "the-setting",
+        "neighbors": "neighbors",
+        "makers": "the-makers",
+        "the makers": "the-makers",
+        "other things of note": "other-things-of-note",
+        "characters": "the-characters",
+        "the characters": "the-characters",
+        "why play": "why-play",
+        "why play?": "why-play"
+      }
+    },
+    "8": {
+      "slug": "welcome-to-stonetop",
+      "title": "Welcome to Stonetop",
+      "sections": {
+        "expectations": "expectations",
+        "premise": "premise",
+        "commitment": "commitment",
+        "structure": "structure",
+        "dice notation": "dice-notation",
+        "content": "content",
+        "materials": "materials",
+        "setting": "the-setting",
+        "the setting": "the-setting",
+        "neighbors": "neighbors",
+        "makers": "the-makers",
+        "the makers": "the-makers",
+        "other things of note": "other-things-of-note",
+        "characters": "the-characters",
+        "the characters": "the-characters",
+        "why play": "why-play",
+        "why play?": "why-play"
       }
     },
     "9": {
-      "slug": "expectations",
-      "title": "Expectations",
+      "slug": "welcome-to-stonetop",
+      "title": "Welcome to Stonetop",
       "sections": {
-        "welcome to stonetop": "welcome-to-stonetop-2",
+        "expectations": "expectations",
         "premise": "premise",
         "commitment": "commitment",
         "structure": "structure",
         "dice notation": "dice-notation",
         "content": "content",
-        "materials": "materials"
+        "materials": "materials",
+        "setting": "the-setting",
+        "the setting": "the-setting",
+        "neighbors": "neighbors",
+        "makers": "the-makers",
+        "the makers": "the-makers",
+        "other things of note": "other-things-of-note",
+        "characters": "the-characters",
+        "the characters": "the-characters",
+        "why play": "why-play",
+        "why play?": "why-play"
       }
     },
     "10": {
-      "slug": "the-setting",
-      "title": "The Setting",
+      "slug": "welcome-to-stonetop",
+      "title": "Welcome to Stonetop",
       "sections": {
-        "welcome to stonetop": "welcome-to-stonetop-3",
-        "e h": "e-h",
-        "t": "t",
-        "s l d o r": "s-l-d-o-r",
-        "' s l d o r": "s-l-d-o-r",
-        "w": "w",
+        "expectations": "expectations",
+        "premise": "premise",
+        "commitment": "commitment",
+        "structure": "structure",
+        "dice notation": "dice-notation",
+        "content": "content",
+        "materials": "materials",
+        "setting": "the-setting",
+        "the setting": "the-setting",
         "neighbors": "neighbors",
-        "e n d": "e-n-d",
         "makers": "the-makers",
         "the makers": "the-makers",
         "other things of note": "other-things-of-note",
         "characters": "the-characters",
-        "the characters": "the-characters"
+        "the characters": "the-characters",
+        "why play": "why-play",
+        "why play?": "why-play"
       }
     },
     "11": {
-      "slug": "the-setting",
-      "title": "The Setting",
+      "slug": "welcome-to-stonetop",
+      "title": "Welcome to Stonetop",
       "sections": {
-        "welcome to stonetop": "welcome-to-stonetop-3",
-        "e h": "e-h",
-        "t": "t",
-        "s l d o r": "s-l-d-o-r",
-        "' s l d o r": "s-l-d-o-r",
-        "w": "w",
+        "expectations": "expectations",
+        "premise": "premise",
+        "commitment": "commitment",
+        "structure": "structure",
+        "dice notation": "dice-notation",
+        "content": "content",
+        "materials": "materials",
+        "setting": "the-setting",
+        "the setting": "the-setting",
         "neighbors": "neighbors",
-        "e n d": "e-n-d",
         "makers": "the-makers",
         "the makers": "the-makers",
         "other things of note": "other-things-of-note",
         "characters": "the-characters",
-        "the characters": "the-characters"
+        "the characters": "the-characters",
+        "why play": "why-play",
+        "why play?": "why-play"
       }
     },
     "12": {
-      "slug": "the-setting",
-      "title": "The Setting",
+      "slug": "welcome-to-stonetop",
+      "title": "Welcome to Stonetop",
       "sections": {
-        "welcome to stonetop": "welcome-to-stonetop-3",
-        "e h": "e-h",
-        "t": "t",
-        "s l d o r": "s-l-d-o-r",
-        "' s l d o r": "s-l-d-o-r",
-        "w": "w",
+        "expectations": "expectations",
+        "premise": "premise",
+        "commitment": "commitment",
+        "structure": "structure",
+        "dice notation": "dice-notation",
+        "content": "content",
+        "materials": "materials",
+        "setting": "the-setting",
+        "the setting": "the-setting",
         "neighbors": "neighbors",
-        "e n d": "e-n-d",
         "makers": "the-makers",
         "the makers": "the-makers",
         "other things of note": "other-things-of-note",
         "characters": "the-characters",
-        "the characters": "the-characters"
+        "the characters": "the-characters",
+        "why play": "why-play",
+        "why play?": "why-play"
       }
     },
     "13": {
-      "slug": "why-play",
-      "title": "Why Play?",
+      "slug": "welcome-to-stonetop",
+      "title": "Welcome to Stonetop",
       "sections": {
-        "welcome to stonetop": "welcome-to-stonetop"
+        "expectations": "expectations",
+        "premise": "premise",
+        "commitment": "commitment",
+        "structure": "structure",
+        "dice notation": "dice-notation",
+        "content": "content",
+        "materials": "materials",
+        "setting": "the-setting",
+        "the setting": "the-setting",
+        "neighbors": "neighbors",
+        "makers": "the-makers",
+        "the makers": "the-makers",
+        "other things of note": "other-things-of-note",
+        "characters": "the-characters",
+        "the characters": "the-characters",
+        "why play": "why-play",
+        "why play?": "why-play"
       }
     },
     "14": {
-      "slug": "why-play",
-      "title": "Why Play?",
+      "slug": "welcome-to-stonetop",
+      "title": "Welcome to Stonetop",
       "sections": {
-        "welcome to stonetop": "welcome-to-stonetop"
+        "expectations": "expectations",
+        "premise": "premise",
+        "commitment": "commitment",
+        "structure": "structure",
+        "dice notation": "dice-notation",
+        "content": "content",
+        "materials": "materials",
+        "setting": "the-setting",
+        "the setting": "the-setting",
+        "neighbors": "neighbors",
+        "makers": "the-makers",
+        "the makers": "the-makers",
+        "other things of note": "other-things-of-note",
+        "characters": "the-characters",
+        "the characters": "the-characters",
+        "why play": "why-play",
+        "why play?": "why-play"
       }
     },
     "15": {
