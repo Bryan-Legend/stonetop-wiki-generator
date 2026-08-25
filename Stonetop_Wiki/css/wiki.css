@@ -666,6 +666,36 @@ html, body {
   break-inside: avoid;
 }
 
+/* "GM moves for villains:" — the threat type's icon leads the line */
+.content p.threat-moves {
+  margin-top: 0.7rem;
+  color: var(--head);
+  font-family: var(--font-serif);
+}
+.content p.threat-moves .book-icon {
+  width: 1.35em;
+  height: 1.35em;
+  vertical-align: -0.25em;
+  margin-right: 0.35em;
+  opacity: 1;
+}
+
+/* Numbered steps — the book prints the number on a rounded plaque */
+.content h2 .step-badge {
+  display: inline-block;
+  min-width: 1.9em;
+  margin-right: 0.15em;
+  padding: 0.05em 0.4em;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  color: var(--head);
+  font-size: 0.82em;
+  letter-spacing: 0.02em;
+  text-align: center;
+  vertical-align: 0.08em;
+}
+
 .content h3 {
   font-family: var(--font-serif);
   font-size: 1.1rem;
@@ -739,6 +769,9 @@ h3 .book-icon,
 }
 
 .content strong { color: #f7f3e8; }
+/* A quoted passage is set in its own voice; bold inside it emphasises within
+   that voice rather than jumping back to the body's brighter ink. */
+.content blockquote strong { color: inherit; }
 
 .content hr {
   border: none;
@@ -844,6 +877,11 @@ h3 .book-icon,
 .content ul.bullets li::marker,
 .content ul.questions li::marker {
   color: var(--head);
+}
+/* Further paragraphs of a list item — the book indents them to the item's
+   text, so they stay inside the <li> rather than ending the list. */
+.content li > p.li-cont {
+  margin: 0.35rem 0 0;
 }
 .content ul.ellipsis {
   list-style: none;

@@ -358,6 +358,9 @@ def normalize_text(s: str) -> str:
     s = s.replace("\u2013", "–").replace("\u2014", "—")
     s = s.replace("\u00ad", "")  # soft hyphen
     s = s.replace("\ufeff", "").replace("\u200b", "").replace("\u200c", "")
+    # Object replacement char: the PDF's stand-in for an inline image (the
+    # threat-type icons), never text. Left in, it renders as an OBJ tofu.
+    s = s.replace("\ufffc", "")
     s = s.replace("ä", "•")  # PDF dingbat often extracted as ä
     s = re.sub(r"[ \t]+", " ", s)
     return s.strip()
@@ -401,6 +404,9 @@ def is_fully_pairwise_doubled(line: str) -> bool:
 M_B = "\x02B "        # spiral bullet item
 M_B2 = "\x02B2 "      # nested (tier-2) bullet under a People-style entry
 M_Q = "\x02Q "        # question-spiral bullet item
+M_BC = "\x02BC "      # further paragraph of the list item above it
+# Marks a checkbox item while a hazard card's body is being gathered.
+CHECK_PART = "\x01C"
 M_E = "\x02E "        # ellipsis ("...") list item
 M_C = "\x02C "        # checkbox item
 M_H2 = "\x02H2 "      # Avara-Bold section heading
@@ -574,6 +580,24 @@ ICON_XREF_TO_NAME: dict[int, str] = {
     7479: "construct",
     7548: "aberration",
 }
+
+
+# Book I's threat chapter anchors an icon above each type's move list, but
+# the placeholder exported empty (a bare U+FFFC on its own line, printing
+# nothing). These stand in for it, keyed by the type as the book names it in
+# "GM moves for <type>:". Beasts reuse the icon the bestiary already uses.
+THREAT_TYPE_ICONS: dict[str, str] = {
+    "afflictions": "affliction",
+    "beasts": "beast",
+    "institutions": "institution",
+    "macguffins": "macguffin",
+    "magical entities": "magical-entity",
+    "rabble": "rabble",
+    "villains": "villain",
+    "wildcards": "wildcard",
+}
+
+THREAT_MOVES_RE = re.compile(r"^GM moves for\s+(.+?)\s*:\s*$", re.I)
 
 
 def resolve_book_icon(xref: int, icon_dir: Path | None = None) -> str | None:
@@ -780,6 +804,7 @@ def extract_page_rich(
     diamonds: list = []
     boxes_sq: list = []
     hrules: list = []  # horizontal rules (hairlines)
+    badges: list = []  # rounded plaques the numbered steps sit in
     box_rect = None
     for dr in page.get_drawings():
         r = dr["rect"]
@@ -813,10 +838,52 @@ def extract_page_rich(
             tails.append(r)  # flourish on the question spiral
         elif w >= 40 and h <= 1.5 and ni <= 3:
             hrules.append(r)
+        elif 15 <= w <= 45 and 15 <= h <= 25 and ni == 22:
+            badges.append(r)  # numbered-step badge behind a heading
         elif first_page and 110 <= w <= 320 and h >= 90 and box_rect is None:
             box_rect = r
     spirals = _dedupe_rects(spirals)
     diamonds = _dedupe_rects(diamonds)
+    badges = _dedupe_rects(badges)
+
+    # Numbered steps ("4 & 5  NPC connections") print their numbers on a
+    # rounded plaque, the "&" between them a few points smaller and a
+    # baseline lower — three separate lines as far as clustering is
+    # concerned. Fuse whatever sits on a plaque into one span so the number
+    # reads as a unit and stays with the heading beside it.
+    for plaque in badges:
+        on_it = [
+            sp
+            for sp in spans
+            if plaque.x0 - 1 <= (sp["x"] + sp["x1"]) / 2 <= plaque.x1 + 1
+            and plaque.y0 - 4 <= sp["y"] <= plaque.y1 + 1
+        ]
+        if not on_it:
+            continue
+        on_it.sort(key=lambda sp: sp["x"])
+        # The number is set in the heading face. Anything else on the plaque
+        # is ornament (Book II's appendix sets a big Caslon numeral behind
+        # each one) and goes with it rather than into the heading.
+        numerals = [sp for sp in on_it if "Avara" in sp["font"]] or on_it
+        biggest = max(numerals, key=lambda sp: sp["size"])
+        label = " ".join(
+            sp["text"].strip() for sp in numerals if sp["text"].strip()
+        )
+        keep = {id(sp) for sp in on_it}
+        spans = [sp for sp in spans if id(sp) not in keep]
+        spans.append(
+            {
+                "x": numerals[0]["x"],
+                "y": biggest["y"],
+                "x1": numerals[-1]["x1"],
+                "text": label,
+                "font": biggest["font"],
+                "size": biggest["size"],
+                "badge": label,
+            }
+        )
+    if badges:
+        spans.sort(key=lambda sp: (sp["y"], sp["x"]))
     boxes_sq = _dedupe_rects(boxes_sq)
     hrules = _dedupe_rects(hrules)
 
@@ -1093,6 +1160,9 @@ def extract_page_rich(
                     "bold_lead": "Bold" in text_spans[0]["font"],
                     "all_bold": all("Bold" in g["font"] for g in text_spans),
                     "bold_prefix": _lead_bold_prefix(text_spans, text),
+                    "badge": next(
+                        (g["badge"] for g in text_spans if g.get("badge")), None
+                    ),
                     "fell_head": fell_head,
                     "icon_xref": icon_xref,
                 }
@@ -1143,6 +1213,15 @@ def extract_page_rich(
         idx = 0
         n_recs = len(recs)
         entry_active = False  # inside a People-style entry (for tier-2 bullets)
+        # Left edges: the region's margin, and the line before this one — a
+        # list item's further paragraphs sit at its body indent, not the margin.
+        base_x = min(
+            (r["x"] for r in recs if r.get("x") is not None), default=0.0
+        )
+        prev_x: float | None = None
+        cur_x: float | None = None
+        list_kind: str | None = None  # marker of the list item in progress
+        list_bold_lead = False  # …and whether it opened on a bold lead-in
         while idx < n_recs:
             rec = recs[idx]
             if rec.get("hr"):
@@ -1189,6 +1268,7 @@ def extract_page_rich(
             y = rec["y"]
             gap = (y - prev_y) if prev_y is not None else 999.0
             prev_y = y
+            prev_x, cur_x = cur_x, rec.get("x")
             idx += 1
 
             # Page furniture
@@ -1211,7 +1291,11 @@ def extract_page_rich(
             state["last_line"] = dtext
 
             font = rec["font"]
-            is_avara = font.startswith("Avara")
+            # A numbered plaque only ever sits beside a step heading, so it
+            # settles the question even when the heading is short enough for
+            # a trailing gloss to outvote it ("6 Stakes (optional)" is mostly
+            # Caslon by character count).
+            is_avara = font.startswith("Avara") or bool(rec.get("badge"))
             # Fell Type at ~12pt marks table headers; at 9pt it's just
             # small-caps styling inside prose ("terrain", "encounter")
             is_fell = "FellType" in font and (
@@ -1254,13 +1338,35 @@ def extract_page_rich(
                     )
                 ):
                     out[-1] = out[-1].rstrip() + " " + dtext
+                    heads = state.get("head_pages")
+                    if heads:  # keep the page map on the whole heading
+                        heads[-1] = (heads[-1][0], heads[-1][1] + " " + dtext)
                     continue
                 head_size = rec["size"]
                 head_x = rec["x"]
-                if rec["size"] >= 11:
-                    out.append(M_H2 + dtext)
+                head_text = dtext
+                plaque = rec.get("badge")
+                if plaque:
+                    # The number sits on a lower baseline than the title, so
+                    # it can cluster either side of it ("Stakes 6 (optional)").
+                    rest = re.sub(
+                        r"\s{2,}", " ", dtext.replace(plaque, "", 1).strip()
+                    )
+                    if rest:  # "4 & 5" \x03 "NPC connections"
+                        head_text = plaque + "\x03" + rest
+                # A plaque marks a numbered step, always a section heading —
+                # the dominant type size can say otherwise when a gloss
+                # outweighs the title ("6 Stakes (optional)").
+                if rec["size"] >= 11 or plaque:
+                    out.append(M_H2 + head_text)
                 else:
-                    out.append(M_H3 + dtext)
+                    out.append(M_H3 + head_text)
+                # Remember which printed page each heading opened on, so a
+                # "see page 18" inside the same article can name the section
+                # the reader is being sent to.
+                state.setdefault("head_pages", []).append(
+                    (page.number + 1, dtext)
+                )
                 continue
 
             if is_fell:
@@ -1349,9 +1455,11 @@ def extract_page_rich(
 
             if rec["bullet"] == "check":
                 out.append(M_C + _marked(text))
+                list_kind = M_C
                 continue
             if rec["bullet"] == "stat":
                 out.append("• " + _marked(text))
+                list_kind = None
                 continue
             if rec["bullet"] in ("b", "q"):
                 marker = M_Q if rec["bullet"] == "q" else M_B
@@ -1359,11 +1467,14 @@ def extract_page_rich(
                     marker = M_B2  # sub-bullet of the current entry
                 if re.match(r"^(\.\.\.|…)", dtext):
                     marker = M_E
-                    text = re.sub(r"^[\x04\x06]*(\.\.\.|…)\s*", "", text)
+                    text = re.sub(r"^[\x04-\x07]*(?:\.\.\.|…)[\x04-\x07]*\s*", "", text)
                 out.append(marker + _marked(text))
+                list_kind = marker
+                list_bold_lead = text.lstrip().startswith(B_ON)
                 continue
             if re.match(r"^(\.\.\.|…)\s*\S", dtext):
-                out.append(M_E + re.sub(r"^[\x04\x06]*(\.\.\.|…)\s*", "", text))
+                out.append(M_E + re.sub(r"^[\x04-\x07]*(?:\.\.\.|…)[\x04-\x07]*\s*", "", text))
+                list_kind = M_E
                 continue
 
             # People/Places-style entry: bold lead-in on a hanging indent
@@ -1385,6 +1496,7 @@ def extract_page_rich(
             ):
                 out.append(M_B + _marked(text))
                 entry_active = True
+                list_kind = M_B
                 continue
 
             # Bold labels inside the info box ("Resources", "Defenses +1")
@@ -1406,7 +1518,7 @@ def extract_page_rich(
                 )
                 and (
                     out[-1][:3] in (M_B, M_Q, M_E, M_C)
-                    or out[-1].startswith((M_B2, "• "))
+                    or out[-1].startswith((M_B2, M_BC, "• "))
                 )
             ):
                 body_p, tail_p = _split_trailing_fmt(out[-1])
@@ -1424,7 +1536,62 @@ def extract_page_rich(
                     out[-1] = out[-1] + " " + text
                 continue
 
+            # An example of play or read-aloud passage, set italic end to
+            # end. Its wrapped lines are ordinary prose and can break the
+            # line-joining heuristics in ways nothing recovers from — a new
+            # sentence mid-paragraph reads exactly like a new paragraph
+            # ("…WHOOMP WHOOMP WHOOMP!" + "Rhianna, there's a banging at your
+            # door"). The page says which it is: 10.8pt of leading inside a
+            # paragraph, 21.6pt between them.
+            if (
+                out
+                and not out[-1].startswith("\x02")
+                and gap <= 13.5
+                and prev_x is not None
+                and abs(rec["x"] - prev_x) <= 1.5
+                and italic_coverage(text) >= 0.9
+                and italic_coverage(out[-1]) >= 0.9
+            ):
+                body_i, tail_i = _split_trailing_fmt(out[-1])
+                lead_i, rest_i = _split_leading_fmt(text)
+                if (
+                    body_i.endswith("-")
+                    and not body_i.endswith(("–", "—", "--"))
+                    and rest_i[:1].islower()
+                ):
+                    out[-1] = body_i[:-1] + _cancel_fmt_seam(tail_i, lead_i) + rest_i
+                else:
+                    out[-1] = out[-1] + " " + text
+                continue
+
+            # A further paragraph of the question above. Getting Started
+            # answers each bolded question inline and then runs on for a
+            # paragraph or two — "No, they don't add their STR or DEX to
+            # their damage rolls." belongs to the question, and the book
+            # indents it to the answer to say so. It reads as a stray
+            # aside once the list closes around it.
+            #
+            # The indent is all the evidence there is (a paragraph that
+            # really ends the list dedents to the column margin), and it is
+            # not always visible: a column made up entirely of Q&A has no
+            # margin type to measure against. So this stays narrow — a
+            # bolded question spiral, which is the shape that answers at
+            # this length, and never the plainer lists whose neighbours are
+            # ordinary prose.
+            if (
+                out
+                and prev_x is not None
+                and gap > 13.5  # a paragraph break, not a wrapped line
+                and rec["x"] >= prev_x - 1.0
+                and list_kind == M_Q
+                and list_bold_lead
+                and out[-1].startswith((M_Q, M_BC))
+            ):
+                out.append(M_BC + text)
+                continue
+
             entry_active = False  # a plain paragraph ends the current entry
+            list_kind = None
             out.append(text)
 
         # A table still open at column end may continue in the next column
@@ -1748,6 +1915,7 @@ def looks_like_value_header(line: str) -> bool:
 def should_join(a: str, b: str) -> bool:
     # Analyze on de-tokenized text (keeps \x02 markers, drops inline
     # bold/italic sentinels); merge_wrapped_lines concatenates the originals.
+    raw_a, raw_b = a, b
     # Item tag lines are italic in the PDF — check BEFORE stripping sentinels.
     if _is_item_tag_line(a) or _is_item_tag_line(b):
         # Allow joining two consecutive tag wrap lines (", close, thrown," +
@@ -1757,12 +1925,20 @@ def should_join(a: str, b: str) -> bool:
             or _is_pure_arcana_tag_line(strip_markers(_defmt(b)))
         ):
             return True
-        # Prose left dangling on "see" carries on into the next line, even
-        # when that line is italic enough to read as a tag list
-        # ("…on how to play or run it, see" + "Book I: Stonetop.")
+        # Prose left dangling on a connector carries on into the next line,
+        # even when that line is italic enough to read as a tag list
+        # ("…on how to play or run it, see" + "Book I: Stonetop.", or the
+        # read-aloud's "The goal is to" + "make the game enjoyable, …").
         if not _is_item_tag_line(a) and re.search(
-            r"\bsee\s*$", _defmt(a), re.I
+            r"\b(?:see|of|and|or|the|to|a|an|with|for|that|than|but|in|on|at|by)"
+            r"\s*$",
+            _defmt(a),
+            re.I,
         ):
+            return True
+        # Prose that *lists* tags rather than tagging an item closes with the
+        # list itself ("*thrown*, *warm*," + "etc. are fictional cues").
+        if _is_item_tag_line(a) and re.match(r"^etc\.", _defmt(b), re.I):
             return True
         return False
     a = _defmt(a)
@@ -1772,7 +1948,7 @@ def should_join(a: str, b: str) -> bool:
     if b.startswith("\x02"):
         return False
     if a.startswith("\x02"):
-        if a[:3] in (M_B, M_Q, M_E, M_C) or a.startswith(M_B2):
+        if a[:3] in (M_B, M_Q, M_E, M_C) or a.startswith((M_B2, M_BC)):
             a = strip_markers(a)
         else:
             return False
@@ -1812,9 +1988,9 @@ def should_join(a: str, b: str) -> bool:
         return True
     # Split mid page-ref BEFORE heading heuristics — otherwise
     # "… (page" + "436), especially…" is rejected as a short "heading".
-    if re.search(r"\(pages?\s*$", a, re.I) and re.match(r"^\d", b):
+    if re.search(r"\((?:see\s+)?pages?\s*$", a, re.I) and re.match(r"^\d", b):
         return True
-    if re.search(r"\(pages?\s+\d*$", a, re.I) and re.match(
+    if re.search(r"\((?:see\s+)?pages?\s+\d*$", a, re.I) and re.match(
         r"^[\d,\s\-–—)]", b
     ):
         return True
@@ -1866,6 +2042,30 @@ def should_join(a: str, b: str) -> bool:
         and not b.startswith(("•", "·"))
     ):
         return True
+    # A set-off italic passage doesn't run on into the roman prose beneath it
+    # — the crinwin's song ends at "gray of skin", it doesn't carry into
+    # "They've always been there, in the Wood". A lowercase follow-on is
+    # still a wrap of the same sentence.
+    if (
+        b[0:1].isupper()
+        and italic_coverage(raw_a) >= 0.9
+        and italic_coverage(raw_b) < 0.5
+    ):
+        return False
+    # A proper name split across the break. A capitalized word introduced by
+    # "the" ("…the Highway crosses the West" + "Road a few miles from town"),
+    # or a possessive ("…between Stonetop and Gordin’s" + "Delve. The
+    # Highway…") — neither ends a sentence, so the wrap carries on however the
+    # next line's capital reads.
+    if (
+        b[0:1].isupper()
+        and not a.endswith((".", "!", "?", ":", ";"))
+        and (
+            re.search(r"\b[Tt]he\s+[A-Z][A-Za-z'’\-]*$", a)
+            or re.search(r"[A-Za-z][’']s$", a)
+        )
+    ):
+        return True
     if looks_like_heading(b) and len(b) < 40:
         return False
     if ROLL_HEADER_RE.match(b) or ROLL_HEADER_DICE_ONLY.match(b):
@@ -1901,6 +2101,30 @@ def should_join(a: str, b: str) -> bool:
         return True
     # Ends with (page N) — still often mid-sentence
     if re.search(r"\(pages?\s+\d+\)$", a, re.I):
+        return True
+    # Semicolons chain clauses of one sentence, and the book breaks the line
+    # at them ("…then PCs won't torture anyone;" + "monsters and NPCs won't…").
+    # A capitalized follow-on is a new paragraph, so require the lowercase —
+    # and a bold opener means a move's next outcome ("**on a 6-**, your light
+    # snuffs out"), which is its own line however the one above it ended.
+    if (
+        a.endswith(";")
+        and b[0:1].islower()
+        and not raw_b.lstrip().startswith(B_ON)
+    ):
+        return True
+    # A colon inside a title splits the title, not the sentence: the run is
+    # italic on both sides of the break ("…read the rest of this book and
+    # *Book II:*" + "*The Wider World and Other Wonders*.").
+    if (
+        a.endswith(":")
+        and raw_a.rstrip().endswith(I_OFF)
+        and raw_b.lstrip().startswith(I_ON)
+    ):
+        return True
+    # A closing quote that isn't closing a sentence carries on
+    # ("More \"civilized\"" + "towns and cities lie farther to the south.").
+    if a.endswith('"') and a[-2:-1] not in ".!?" and b[0:1].islower():
         return True
     # Soft wrap: previous doesn't end sentence, next continues lowercase
     if a[-1] in ".!?:;…\"":
@@ -2364,6 +2588,15 @@ def _book_id_from_token(token: str) -> str | None:
 # lookups prefer the article from the book being rendered.
 _TITLE_INDEX: dict[str, list[dict]] = {}
 
+# (slug, printed page) → the section that page falls in, for in-article page
+# refs. Populated by set_page_sections(); see build_page_section_map().
+_PAGE_SECTIONS: dict[tuple[str, int], dict] = {}
+
+
+def set_page_sections(mapping: dict[tuple[str, int], dict]) -> None:
+    _PAGE_SECTIONS.clear()
+    _PAGE_SECTIONS.update(mapping)
+
 
 def set_title_index(articles: list[dict]) -> None:
     _TITLE_INDEX.clear()
@@ -2458,7 +2691,19 @@ def linkify_pages(
                     f'data-fragment="{frag}">'
                     f"{html.escape(label)}</a>"
                 )
-            return html.escape(label) if label else ""
+            # No label to hang the link on ("…use an adventure starter, see
+            # page 22.") — name the section that page falls in, the way a
+            # cross-article ref names the article it points to. Without this
+            # the printed ref resolves to nothing and is dropped, leaving the
+            # sentence to close on a bare ", .".
+            sec = _PAGE_SECTIONS.get((art["slug"], page))
+            if sec:
+                return (
+                    f'<a class="wiki-link" href="#{sec["id"]}" '
+                    f'data-slug="{art["slug"]}" data-fragment="{sec["id"]}">'
+                    f'{html.escape(label or sec["name"])}</a>'
+                )
+            return html.escape(label) if label else f"page {page}"
         text_out = label if label else art["title"]
         href = f"{art['slug']}.html"
         if frag:
@@ -2556,6 +2801,9 @@ def linkify_pages(
         # Keep possessive inside the link: "Stone Lords'"
         disp = html.escape(B_ON + disp_inner + B_OFF) + html.escape(poss)
         if art["slug"] == current_slug:
+            frag = frag or (
+                (_PAGE_SECTIONS.get((art["slug"], pages[0])) or {}).get("id")
+            )
             if frag:
                 return store(
                     f'<a class="wiki-link" href="#{frag}" '
@@ -2577,6 +2825,18 @@ def linkify_pages(
         r"(?P<poss>(?:'|’)s?)?"
         r"\s*\(?\s*(?:see\s+)?"
         r"pages?\s+(?P<pg>[\d,\s\-–—]+)\)",
+        repl_bold_pageref,
+        work,
+        flags=re.IGNORECASE,
+    )
+
+    # Same, but with the ref trailing the phrase instead of bracketing it:
+    # "use an **adventure starter**, see page 22." The explicit "see" keeps
+    # this off unrelated neighbours ("**Danu**, page 30" stays as printed).
+    work = re.sub(
+        r"\x04(?P<t>[^\x04\x05]*?)\x05"
+        r"(?P<poss>(?:'|’)s?)?"
+        r"\s*,\s*see\s+pages?\s+(?P<pg>[\d,\s\-–—]+)",
         repl_bold_pageref,
         work,
         flags=re.IGNORECASE,
@@ -2644,7 +2904,11 @@ def linkify_pages(
 
     def repl_bare(m: re.Match) -> str:
         pages = parse_page_nums(m.group(1))
-        return store(links_for_pages(pages))
+        # The link carries a name, not a page number, so keep the printed
+        # lead-in: "See page 87 for more on coins" → "See Coins for more…".
+        lead = re.match(r"see\s+", m.group(0), re.I)
+        prefix = html.escape(lead.group(0)) if lead else ""
+        return store(prefix + links_for_pages(pages))
 
     work = BARE_PAGE_RE.sub(repl_bare, work)
 
@@ -3181,8 +3445,13 @@ def extract_article_lines(
     *,
     icon_dir: Path | None = None,
     book_style: str = "book2",
+    head_pages_out: list | None = None,
 ) -> list[str]:
-    """Rich (span/drawing-aware) line extraction for an article page range."""
+    """Rich (span/drawing-aware) line extraction for an article page range.
+
+    ``head_pages_out``, when given, collects ``(printed_page, heading)`` pairs
+    in document order — see ``build_section_index``.
+    """
     raw: list[str] = []
     state: dict = {"book_style": book_style}
     if icon_dir is not None:
@@ -3200,6 +3469,8 @@ def extract_article_lines(
             )
         )
         first = False
+    if head_pages_out is not None:
+        head_pages_out.extend(state.get("head_pages") or [])
     return merge_wrapped_lines(raw)
 
 
@@ -3752,6 +4023,10 @@ def structure_html(
                 continue
             if line.startswith(M_H2):
                 txt = line[len(M_H2):].strip()
+                # A numbered step carries its plaque as "4 & 5\x03NPC…"
+                plaque, _, rest = txt.partition("\x03")
+                if rest:
+                    txt = f"{plaque} {rest}"
                 if (
                     is_running_header(txt, article_title, near_page_top=True)
                     or normalize_text(txt).lower()
@@ -3762,10 +4037,13 @@ def structure_html(
                     continue
                 hid = anchors.add(txt.rstrip(":"))
                 ic = take_icon_html()
-                out.append(
-                    f'<h2 id="{html.escape(hid)}">'
-                    f"{ic}{html.escape(txt.rstrip(':'))}</h2>"
+                label = (
+                    f'<span class="step-badge">{html.escape(plaque)}</span> '
+                    + html.escape(rest.rstrip(":"))
+                    if rest
+                    else html.escape(txt.rstrip(":"))
                 )
+                out.append(f'<h2 id="{html.escape(hid)}">{ic}{label}</h2>')
                 i += 1
                 continue
             if line.startswith(M_TH):
@@ -3868,7 +4146,11 @@ def structure_html(
                     plain2 = _defmt(L2) if not L2.startswith("\x02") else strip_markers(L2)
                     if looks_like_roll_header(plain2):
                         break
-                    if L2.startswith((M_B, M_B2, M_Q, M_E)):
+                    if L2.startswith(M_C):
+                        # A countdown printed inside the card ("He grows
+                        # annoyed" … "Impending doom: He casts you out").
+                        body_parts.append(CHECK_PART + L2[len(M_C):].strip())
+                    elif L2.startswith((M_B, M_B2, M_Q, M_E)):
                         for pref in (M_B2, M_Q, M_E, M_B):
                             if L2.startswith(pref):
                                 body_parts.append("• " + L2[len(pref):].strip())
@@ -3886,6 +4168,23 @@ def structure_html(
                     ]
                     bi = 0
                     while bi < len(body_parts):
+                        if body_parts[bi].startswith(CHECK_PART):
+                            items_c: list[str] = []
+                            while bi < len(body_parts) and body_parts[
+                                bi
+                            ].startswith(CHECK_PART):
+                                items_c.append(
+                                    body_parts[bi][len(CHECK_PART):].strip()
+                                )
+                                bi += 1
+                            parts_h.append(
+                                render_check_list(
+                                    items_c,
+                                    lambda t: render_rich_text(t, link),
+                                    next_check_id(current_slug or "chk"),
+                                )
+                            )
+                            continue
                         if body_parts[bi].startswith("• "):
                             items_h: list[str] = []
                             while bi < len(body_parts) and body_parts[bi].startswith(
@@ -3977,10 +4276,20 @@ def structure_html(
                 # bullet run, possibly with tier-2 items nested under entries
                 items: list[tuple[int, str]] = []
                 while i < n and (
-                    lines[i][:3] == M_B or lines[i].startswith(M_B2)
+                    lines[i][:3] == M_B
+                    or lines[i].startswith(M_B2)
+                    or (items and lines[i].startswith(M_BC))
                 ):
                     L = lines[i]
-                    if L.startswith(M_B2):
+                    if L.startswith(M_BC):
+                        lvl_prev, body_prev = items[-1]
+                        items[-1] = (
+                            lvl_prev,
+                            body_prev
+                            + ""
+                            + L[len(M_BC):].strip(),
+                        )
+                    elif L.startswith(M_B2):
                         items.append((2, L[len(M_B2):].strip()))
                     else:
                         items.append((1, L[3:].strip()))
@@ -3989,7 +4298,11 @@ def structure_html(
                 open_li = False
                 open_sub = False
                 for lvl, it in items:
-                    h = render_rich_text(it, link)
+                    head_it, *cont_it = it.split("")
+                    h = render_rich_text(head_it, link) + "".join(
+                        f'<p class="li-cont">{render_rich_text(c, link)}</p>'
+                        for c in cont_it
+                    )
                     if lvl == 1:
                         if open_sub:
                             parts.append("</ul>")
@@ -4016,14 +4329,26 @@ def structure_html(
             if line[:3] in (M_Q, M_E):
                 kind3 = line[:3]
                 cls = {M_Q: "questions", M_E: "ellipsis"}[kind3]
-                items_q = []
-                while i < n and lines[i][:3] == kind3:
-                    items_q.append(lines[i][3:].strip())
+                items_q: list[list[str]] = []
+                while i < n and (
+                    lines[i][:3] == kind3
+                    or (items_q and lines[i].startswith(M_BC))
+                ):
+                    if lines[i].startswith(M_BC):
+                        items_q[-1].append(lines[i][len(M_BC):].strip())
+                    else:
+                        items_q.append([lines[i][3:].strip()])
                     i += 1
                 out.append(
                     f'<ul class="{cls}">'
                     + "".join(
-                        f"<li>{render_rich_text(it, link)}</li>"
+                        "<li>"
+                        + render_rich_text(it[0], link)
+                        + "".join(
+                            f'<p class="li-cont">{render_rich_text(c, link)}</p>'
+                            for c in it[1:]
+                        )
+                        + "</li>"
                         for it in items_q
                     )
                     + "</ul>"
@@ -4704,6 +5029,19 @@ def structure_html(
             out.append(block)
             continue
 
+        # --- "GM moves for villains:" — the threat type's own icon ---
+        m_threat = THREAT_MOVES_RE.match(strip_markers(line).strip())
+        if m_threat:
+            icon_name = THREAT_TYPE_ICONS.get(m_threat.group(1).lower())
+            if icon_name:
+                out.append(
+                    '<p class="threat-moves">'
+                    + book_icon_img_html(f"icons/{icon_name}.svg")
+                    + f"{link(orig_line)}</p>"
+                )
+                i += 1
+                continue
+
         # --- Heading ---
         # In rich mode real headings arrive as markers; only ALL-CAPS move
         # names (set in body font, e.g. "ASK AROUND") still need this path.
@@ -4796,6 +5134,27 @@ def structure_html(
                     f"<td>{link(body)}</td></tr>"
                 )
             out.append("</tbody></table></div>")
+            continue
+
+        # --- Set-off italic passage (example of play, read-aloud text) ---
+        if is_set_off_italic(orig_line):
+            quoted = [orig_line]
+            i += 1
+            # Once a passage is running, a short italic paragraph belongs to
+            # it ("And we go from there.") — length only decides whether an
+            # italic line can open one.
+            while i < n and (
+                is_set_off_italic(lines[i])
+                or (
+                    not lines[i].startswith("\x02")
+                    and italic_coverage(lines[i]) >= 0.9
+                    and not _is_item_tag_line(lines[i])
+                )
+            ):
+                quoted.append(lines[i])
+                i += 1
+            inner = "".join(f"<p>{link(q)}</p>" for q in quoted)
+            out.append(f"<blockquote>{inner}</blockquote>")
             continue
 
         # --- Regular paragraph (preserve inline bold/italic formatting) ---
@@ -5090,6 +5449,37 @@ def _is_pure_arcana_tag_line(line: str) -> bool:
     return True
 
 
+def italic_coverage(line: str) -> float:
+    """Share of the line's characters that sit inside an italic run."""
+    bare = strip_markers(_defmt(line)).strip()
+    if not bare:
+        return 0.0
+    ital = sum(
+        len(c)
+        for c in re.findall(re.escape(I_ON) + r"([^\x07]*)" + re.escape(I_OFF), line)
+    )
+    return ital / len(bare)
+
+
+def is_set_off_italic(line: str) -> bool:
+    """Is this paragraph one of the book's set-off italic passages?
+
+    Both books italicize whole paragraphs to hold them apart from the rules
+    around them — the examples of play, the read-aloud text the GM speaks to
+    the table, the odd song. They read as quotations and belong in a
+    ``<blockquote>``. An italic run *inside* a sentence doesn't qualify, nor
+    does an item's tag list, which is italic end to end for other reasons.
+    """
+    if not line or line.startswith("\x02"):
+        return False
+    bare = strip_markers(_defmt(line)).strip()
+    if len(bare) < 60:
+        return False
+    if _is_item_tag_line(line) or _is_pure_arcana_tag_line(bare):
+        return False
+    return italic_coverage(line) >= 0.9
+
+
 def _is_item_tag_line(line: str) -> bool:
     """
     Item / treasure tag line as printed in Book II.
@@ -5130,6 +5520,25 @@ def _is_item_tag_line(line: str) -> bool:
         ):
             return False
         if plain_nod.endswith((".", "!", "…")) and len(plain_nod) > 48:
+            return False
+        # Book I's read-aloud text is italic end to end as well, and its
+        # wrapped lines break at commas into fragments that are each tag-sized
+        # ("*This game is collaborative, with each of*"). Prose gives itself
+        # away where a tag list never would: quotation marks, contractions,
+        # first/second-person pronouns, or a line left hanging on a connector.
+        if re.search(r"[\"“”]", plain_nod):
+            return False
+        if re.search(r"\b\w+[’'](?:s|t|re|ve|ll|d|m)\b", plain_nod):
+            return False
+        if re.search(
+            r"\b(?:we|us|our|you|your|i|my|they|their|them)\b", plain_nod, re.I
+        ):
+            return False
+        if re.search(
+            r"\b(?:of|and|or|the|to|a|an|with|for|that|than|but|in|on|at|by)$",
+            plain_nod,
+            re.I,
+        ):
             return False
         parts = [p.strip() for p in re.split(r"[,;]", plain_nod) if p.strip()]
         if not parts:
@@ -6550,6 +6959,56 @@ def article_html_from_pdf(
     return body, excerpt, sections
 
 
+def build_page_section_map(
+    per_slug_sections: dict[str, list[dict]],
+    head_pages_by_slug: dict[str, list],
+    articles: list[dict],
+) -> dict[tuple[str, int], dict]:
+    """``(slug, printed_page) → the section that page falls in``.
+
+    Extraction records which page each heading opened on; structuring turns
+    those headings into anchored sections, in the same order. Walking the two
+    together says which section is current on any page of the article, which
+    is what an in-article "see page 18" needs in order to name its target.
+    """
+    out: dict[tuple[str, int], dict] = {}
+    for art in articles:
+        slug = art["slug"]
+        sections = per_slug_sections.get(slug) or []
+        heads = head_pages_by_slug.get(slug) or []
+        if not sections or not heads:
+            continue
+        # Pair headings with sections in document order; a heading the
+        # structurer dropped or renamed simply doesn't pair.
+        marks: list[tuple[int, dict]] = []
+        s = 0
+        for page, text in heads:
+            key = normalize_section_key(text)
+            for j in range(s, len(sections)):
+                sec = sections[j]
+                if (sec.get("norm") or normalize_section_key(sec["name"])) == key:
+                    marks.append((page, sec))
+                    s = j + 1
+                    break
+        if not marks:
+            continue
+        # A page ref points at where the material starts, so a section opening
+        # on that page wins over the one still running down it.
+        starts: dict[int, dict] = {}
+        for page, sec in marks:
+            starts.setdefault(page, sec)
+        current: dict | None = None
+        mi = 0
+        for p in range(art.get("start_page") or 0, (art.get("end_page") or 0) + 1):
+            while mi < len(marks) and marks[mi][0] <= p:
+                current = marks[mi][1]
+                mi += 1
+            sec = starts.get(p) or current
+            if sec:
+                out[(slug, p)] = sec
+    return out
+
+
 def build_section_index(
     per_slug_sections: dict[str, list[dict]],
     articles: list[dict],
@@ -6635,19 +7094,19 @@ def resolve_unique_section(
 # Book II first (setting), Book I last (rules) so the sidebar ends with rules.
 BOOKS: list[dict] = [
     {
+        "id": "book1",
+        "label": "Book I",
+        "title": "Book I — Stonetop",
+        "filename": "Book_I_-_Stonetop_(1-up)_-_2nd_printing.pdf",
+        "slug_prefix": "",
+    },
+    {
         "id": "book2",
         "label": "Book II",
         "title": "Book II — The Wider World",
         "filename": (
             "Book_II_-_The_Wider_World_and_Other_Wonders_(1-up)_-_2nd_printing.pdf"
         ),
-        "slug_prefix": "",
-    },
-    {
-        "id": "book1",
-        "label": "Book I",
-        "title": "Book I — Stonetop",
-        "filename": "Book_I_-_Stonetop_(1-up)_-_2nd_printing.pdf",
         "slug_prefix": "",
     },
 ]
@@ -8114,6 +8573,7 @@ def main(argv: list[str] | None = None) -> None:
     lines_cache: dict[str, list[str]] = {}
     toc_cache: dict[str, list[str]] = {}
     sections_by_slug: dict[str, list[dict]] = {}
+    head_pages_by_slug: dict[str, list] = {}
     for art in articles:
         slug = art["slug"]
         book_id = art.get("book") or "book2"
@@ -8173,6 +8633,7 @@ def main(argv: list[str] | None = None) -> None:
                 current_book=book_id,
             )
         else:
+            head_pages: list = []
             lines = extract_article_lines(
                 doc,
                 art["start_page"],
@@ -8180,13 +8641,25 @@ def main(argv: list[str] | None = None) -> None:
                 art["title"],
                 icon_dir=icon_dir,
                 book_style=book_id,
+                head_pages_out=head_pages,
             )
+            raw_lines = lines
             toc_labels, lines = split_chapter_toc(
                 lines,
                 art["title"],
                 # Book I sets its chapter-opener TOCs in heading type.
                 allow_markers=(book_id == "book1"),
             )
+            # Book I sets its chapter-opener TOC in heading type, so the TOC
+            # entries were recorded as headings too. split_chapter_toc peels
+            # them off the front; drop the same count from the page map, or
+            # every ref would resolve against the table of contents.
+            peeled = sum(
+                1
+                for ln in raw_lines[: len(raw_lines) - len(lines)]
+                if ln.startswith((M_H2, M_H3))
+            )
+            head_pages_by_slug[slug] = head_pages[peeled:]
             # A merged chapter has no printed TOC — it brings its own labels.
             toc_labels = toc_labels or art.get("toc_labels") or []
             lines_cache[slug] = lines
@@ -8218,6 +8691,10 @@ def main(argv: list[str] | None = None) -> None:
             f"  Chapter section nav: {len(section_navs)} pages, "
             f"{sum(len(v) for v in section_navs.values())} deep links"
         )
+
+    set_page_sections(
+        build_page_section_map(sections_by_slug, head_pages_by_slug, articles)
+    )
 
     # One section index per book, so a "page N" ref resolves to a section in
     # the book it was printed in.
