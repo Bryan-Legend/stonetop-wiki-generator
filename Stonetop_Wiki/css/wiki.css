@@ -425,6 +425,11 @@ html, body {
 .toc li.nav-arcana a:hover {
   color: var(--head);
 }
+/* A split chapter's handouts sit under their hub, indented like the arcana
+   but in the reading colour — they are chapters in their own right. */
+.toc li.nav-part a {
+  padding-left: 1.35rem;
+}
 .toc li.nav-hub a {
   font-weight: 600;
 }
@@ -1097,6 +1102,19 @@ body:has(.index-grid) .content {
   column-width: auto;
   columns: 1;
   padding: 1rem 1.25rem 2rem;
+}
+/* The home page scrolls the document rather than a pane, so the sidebar has
+   to hold itself against the viewport — left stretched, it scrolls away with
+   the cards. Above the drawer breakpoint only: below it the sidebar is a
+   fixed off-canvas panel and must stay one. */
+@media (min-width: 861px) {
+  body:has(.index-grid) .sidebar {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    height: 100vh;
+    height: 100dvh;
+  }
 }
 
 /*

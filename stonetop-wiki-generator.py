@@ -6635,7 +6635,9 @@ def titlecase_name(text: str) -> str:
     # A proper noun alone doesn't make a name title-cased ("The village of
     # Stonetop"), and a name that is already title case has no such word
     # ("Hec'tumel, Pale Serpent" — "Pale" and "Serpent" are both capitalised).
-    words = re.findall(r"[A-Za-z][A-Za-z'’]*", text)
+    # A hyphenated compound counts as one word: the book writes "The Would-be
+    # Hero", and its lowercase tail is the spelling, not a missing capital.
+    words = re.findall(r"[A-Za-z][A-Za-z'’\-]*", text)
     if len(words) < 2:
         return text
     if any(w[:1].islower() and w.lower() not in _TITLE_MINOR for w in words[1:]):
@@ -7378,6 +7380,97 @@ def merge_chapter_sections(articles: list[dict], book: str) -> list[dict]:
     return [a for a in articles if id(a) not in absorbed]
 
 
+# Chapters the book prints as one run of pages but which read as a shelf of
+# separate documents rather than a single article: nine playbooks, nine
+# inserts, and the steading playbook, each a handout in its own right and
+# sixty pages of scrolling when they share a page. The PDF's own outline says
+# where each begins.
+CHAPTER_SPLITS: dict[str, set[str]] = {
+    "book1": {"Playbooks & Inserts"},
+}
+
+
+def split_chapter_articles(
+    toc: list[tuple[int, str, int]], articles: list[dict], book: str
+) -> list[dict]:
+    """Break the chapters in ``CHAPTER_SPLITS`` into a hub plus a page each.
+
+    The chapter's level-2 entries are shelves, not documents: where one has
+    entries beneath it those become the pages ("Playbooks" → the nine
+    playbooks), and where it has none the entry is a page itself (the steading
+    playbook). The hub keeps the chapter's opening pages and lists its parts.
+    """
+    names = CHAPTER_SPLITS.get(book)
+    if not names:
+        return articles
+
+    out: list[dict] = []
+    for art in articles:
+        end = art.get("end_page") or art["start_page"]
+        if art["title"] not in names or art.get("kind") != "article":
+            out.append(art)
+            continue
+
+        inner = [
+            (lvl, t.strip(), pg)
+            for lvl, t, pg in toc
+            if lvl >= 2 and art["start_page"] <= pg <= end
+        ]
+        shelves = [
+            (titlecase_name(t), pg)
+            for i, (lvl, t, pg) in enumerate(inner)
+            if lvl == 2 and i + 1 < len(inner) and inner[i + 1][0] > lvl
+        ]
+        starts = [
+            (titlecase_name(t), pg)
+            for i, (lvl, t, pg) in enumerate(inner)
+            if not (lvl == 2 and i + 1 < len(inner) and inner[i + 1][0] > lvl)
+        ]
+        if not starts:
+            out.append(art)
+            continue
+        # The hub runs to the first handout, absorbing the chapter opener and
+        # whatever shelf heading it opens under. A shelf that starts later
+        # ("Inserts", after the playbooks) has its own introduction to carry,
+        # so it becomes a page too rather than trailing the playbook above it.
+        hub_end = starts[0][1] - 1
+        starts.extend((t, pg) for t, pg in shelves if pg > hub_end)
+        starts.sort(key=lambda pair: pair[1])
+
+        children: list[dict] = []
+        for i, (title, pg) in enumerate(starts):
+            children.append(
+                {
+                    "title": title,
+                    "slug": slugify(title),
+                    "start_page": pg,
+                    "end_page": (
+                        starts[i + 1][1] - 1 if i + 1 < len(starts) else end
+                    ),
+                    "kind": "article",
+                    "hub_slug": art["slug"],
+                    "book": art.get("book"),
+                    "book_label": art.get("book_label", ""),
+                    "book_title": art.get("book_title", ""),
+                }
+            )
+
+        hub = {
+            **art,
+            "end_page": starts[0][1] - 1,
+            "children": [
+                {"title": c["title"], "slug": c["slug"]} for c in children
+            ],
+        }
+        out.append(hub)
+        out.extend(children)
+        print(
+            f"  Split {art['title']}: {len(children)} pages "
+            f"({starts[0][1]}-{end})"
+        )
+    return out
+
+
 BOOK_SLUG_SUFFIX = {
     "book1": "-book-i",
     "book2": "-book-ii",
@@ -7763,6 +7856,22 @@ def extract_section_html_blocks(body: str, section_meta: list[dict]) -> dict[str
     return out
 
 
+def chapter_parts_html(art: dict) -> str:
+    """Index of a split chapter's pages, appended to the hub's own opening."""
+    kids = art.get("children") or []
+    if not kids:
+        return ""
+    items = "".join(
+        f'<li><a class="wiki-link" href="{html.escape(c["slug"])}.html" '
+        f'data-slug="{html.escape(c["slug"])}">{html.escape(c["title"])}</a></li>'
+        for c in kids
+    )
+    return (
+        f'<div class="arcana-index"><h2>In this chapter</h2>'
+        f"<ul>{items}</ul></div>"
+    )
+
+
 def arcana_hub_html(art: dict) -> str:
     """Index body for Minor/Major Arcana hub pages."""
     kids = art.get("children") or []
@@ -7842,7 +7951,14 @@ def build_nav_items(
     multi_book = len({a.get("book") for a in articles if a.get("book")}) > 1
     items: list[str] = []
     last_book: str | None = None
+    # A split chapter's handouts are listed under their hub, not beside it.
+    parts_by_hub: dict[str, list[dict]] = {}
     for art in articles:
+        if art.get("hub_slug") and art.get("kind") == "article":
+            parts_by_hub.setdefault(art["hub_slug"], []).append(art)
+    for art in articles:
+        if art.get("hub_slug") and art.get("kind") == "article":
+            continue
         book = art.get("book")
         if multi_book and book != last_book:
             label = art.get("book_label") or book or ""
@@ -7852,15 +7968,18 @@ def build_nav_items(
                 )
             last_book = book
 
+        parts = parts_by_hub.get(art["slug"]) or []
         classes: list[str] = []
         if art.get("kind") == "arcana":
             classes.append("nav-arcana")
-        elif art.get("kind") in ("arcana-hub", "adventures-hub"):
+        elif art.get("kind") in ("arcana-hub", "adventures-hub") or art.get(
+            "children"
+        ):
             classes.append("nav-hub")
         elif art.get("kind") == "adventure":
             classes.append("nav-adventure")
         secs = section_navs.get(art["slug"]) or []
-        if secs:
+        if secs or parts:
             classes.append("has-sections")
         if current_slug is not None and art["slug"] == current_slug:
             classes.append("current")
@@ -7884,6 +8003,24 @@ def build_nav_items(
             items.append(
                 f"<li{cls_attr}>{link}"
                 f'<ul class="nav-sections">{sub}</ul></li>'
+            )
+            continue
+        if parts:
+            sub = []
+            for part in parts:
+                p_cls = (
+                    "nav-section current"
+                    if part["slug"] == current_slug
+                    else "nav-section"
+                )
+                sub.append(
+                    f'<li class="{p_cls}">'
+                    f'<a href="{href_prefix}{html.escape(part["slug"])}.html">'
+                    f"{html.escape(nav_label(part))}</a></li>"
+                )
+            items.append(
+                f"<li{cls_attr}>{link}"
+                f'<ul class="nav-sections">{"".join(sub)}</ul></li>'
             )
             continue
         if secs:
@@ -8395,7 +8532,11 @@ def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> 
     for book, label in books_present:
         cards = []
         for art in articles:
-            if art.get("book") != book or art.get("kind") == "arcana":
+            if (
+                art.get("book") != book
+                or art.get("kind") == "arcana"
+                or art.get("hub_slug")
+            ):
                 continue
             pv = previews.get(art["slug"], {})
             excerpt = strip_page_refs(pv.get("excerpt") or "")
@@ -8568,6 +8709,8 @@ def main(argv: list[str] | None = None) -> None:
             art["book_title"] = book.get("title") or book["label"]
         finalize_article_ranges(book_articles, doc.page_count)
         book_articles = merge_chapter_sections(book_articles, bid)
+        # Playbooks & Inserts (Book I) becomes a hub + a page per handout.
+        book_articles = split_chapter_articles(toc, book_articles, bid)
         # Arcana appendices (Book II) become a hub + one page per arcanum.
         book_articles = expand_arcana_articles(doc, book_articles)
         articles.extend(book_articles)
@@ -8926,6 +9069,21 @@ def main(argv: list[str] | None = None) -> None:
                     lookups=lookups,
                     section_indexes=section_indexes,
                     current_book=book_id,
+                )
+            # A split chapter: the hub lists its parts, and each part links
+            # back the way an arcanum does.
+            if art.get("children") and art.get("kind") == "article":
+                body = body + "\n" + chapter_parts_html(art)
+            elif art.get("hub_slug") and art.get("kind") == "article":
+                hub = art["hub_slug"]
+                hub_art = next(
+                    (a for a in articles if a["slug"] == hub), None
+                )
+                back = (hub_art or {}).get("title") or "chapter"
+                body = (
+                    f'<p class="arcana-back"><a class="wiki-link" '
+                    f'href="{hub}.html" data-slug="{hub}">'
+                    f"← {html.escape(back)}</a></p>\n" + body
                 )
             # Keep pure card HTML for hover previews (before nav chrome)
             if art.get("kind") == "arcana":
