@@ -58,6 +58,11 @@ def sidebar_foot_html() -> str:
         f"</span>"
         f'<a class="sidebar-github" href="{html.escape(GITHUB_PROJECT_URL)}">'
         f"GitHub</a>"
+        f'<button type="button" class="sound-toggle" id="sound-toggle" '
+        f'aria-pressed="true" title="Dice sound">'
+        f'<span class="sound-on" aria-hidden="true">\U0001f50a</span>'
+        f'<span class="sound-off" aria-hidden="true">\U0001f507</span>'
+        f'<span class="sound-label">Dice sound</span></button>'
         f"</div>"
     )
 
@@ -422,6 +427,15 @@ M_ENDBOX = "\x02ENDBOX"
 M_MARK = "\x02MARK "  # progress-mark track (payload: count of marks)
 M_HR = "\x02HR"       # horizontal rule (column separator line)
 M_ICON = "\x02ICON "  # category icon (payload: rel path under images/)
+# Playbook character sheets (Book I pp. 105-140). The nine sheets are set to
+# one rigid template, and these carry the parts of it that plain flow loses.
+M_C2 = "\x02C2 "      # checkbox item indented under the move above it
+M_CX = "\x02CX "      # checkbox printed already ticked (a starting move)
+M_CX2 = "\x02CX2 "    # ...indented as well
+M_STATS = "\x02STATS "  # the stat block (payload: JSON)
+M_WRITE = "\x02WRITE "  # full-measure write-in box (payload: printed label)
+M_STEP = "\x02STEP "  # numbered step of a walkthrough (payload: n \x03 text)
+M_BAND = "\x02BAND"   # full-measure rule: end of a banded region
 
 MARKER_RE = re.compile(r"^\x02[A-Z0-9]+ ?")
 VAL_TOKEN_RE = re.compile(
@@ -732,6 +746,169 @@ def map_label_spans(page: fitz.Page) -> set:
     return labels
 
 
+# ---------------------------------------------------------------------------
+# Playbook character sheets (Book I pp. 105-140)
+#
+# The nine sheets share one rigid four-page template: front (background,
+# instinct, appearance, name box), stats + moves, special possessions + more
+# moves, then the playbook's own sections and the introductions walkthrough.
+# Column flow alone can't read them: the sheet is banded, and a band's two
+# columns belong to that band only. Reading the page as two full-height
+# columns deals the top band's right half into the middle of the bottom
+# band's left one, which is how Special Possessions ended up buried in the
+# move list and half the stat block landed between two moves.
+# ---------------------------------------------------------------------------
+
+# The six stats, in printed order, with the debility that dims each pair.
+PLAYBOOK_STATS: tuple[tuple[str, str], ...] = (
+    ("Strength", "STR"),
+    ("Dexterity", "DEX"),
+    ("Intelligence", "INT"),
+    ("Wisdom", "WIS"),
+    ("Constitution", "CON"),
+    ("Charisma", "CHA"),
+)
+PLAYBOOK_DEBILITIES: tuple[tuple[str, tuple[str, str]], ...] = (
+    ("weakened", ("STR", "DEX")),
+    ("dazed", ("INT", "WIS")),
+    ("miserable", ("CON", "CHA")),
+)
+# Second row of the stat block. HP carries the sheet's own cap, so it is read
+# off the page rather than fixed here.
+PLAYBOOK_TRACKS: tuple[str, ...] = ("Damage", "HP", "Armor", "XP", "Level")
+
+
+def playbook_band_ys(page: fitz.Page) -> list[float]:
+    """Y of every full-measure rule on the page — the sheet's band breaks.
+
+    The rule is a hairline on some pages and a rough 2pt band on others, and
+    it is drawn as vector art on some and as an image on others; where it is
+    art it comes in overlapping pieces that bleed off the page. What tells it
+    from the column hairlines above every section head is that it is *one*
+    run across the whole measure, where a pair of column rules sharing a
+    baseline leaves the gutter open between them.
+    """
+    segs: list[tuple[float, float, float]] = []
+    for dr in page.get_drawings():
+        r = dr["rect"]
+        if r.height <= 4.5 and r.width >= 100:
+            segs.append((r.y0, r.x0, r.x1))
+    try:
+        for info in page.get_image_info():
+            b = info["bbox"]
+            if (b[3] - b[1]) <= 4.5 and (b[2] - b[0]) >= 100:
+                segs.append((b[1], b[0], b[2]))
+    except Exception:
+        pass
+    segs.sort()
+    clusters: list[list[tuple[float, float, float]]] = []
+    for seg in segs:
+        if clusters and abs(seg[0] - clusters[-1][0][0]) <= 3.0:
+            clusters[-1].append(seg)
+        else:
+            clusters.append([seg])
+    out: list[float] = []
+    for cl in clusters:
+        runs: list[list[float]] = []
+        for _, x0, x1 in sorted(cl, key=lambda t: t[1]):
+            if runs and x0 - runs[-1][1] <= 5.0:
+                runs[-1][1] = max(runs[-1][1], x1)
+            else:
+                runs.append([x0, x1])
+        if any(hi - lo >= 300 for lo, hi in runs):
+            out.append(sum(t[0] for t in cl) / len(cl))
+    return out
+
+
+def playbook_stat_block(spans: list[dict], page_h: float) -> tuple[dict, set] | None:
+    """Read the stat block off page 2 of a sheet.
+
+    Returns the block and the ids of the spans it consumed, or None when this
+    page has no stat block. Everything but the damage die, the HP cap and the
+    score line is fixed by the game, so those three are all that is read.
+    """
+    head = next(
+        (
+            sp
+            for sp in spans
+            if sp["text"].strip() == "Stats"
+            and sp["font"].startswith("Avara")
+            and sp["y"] < 120
+        ),
+        None,
+    )
+    if head is None:
+        return None
+    # The block runs from its heading to the "Moves" head under it.
+    end = next(
+        (
+            sp["y"]
+            for sp in spans
+            if sp["text"].strip() == "Moves"
+            and sp["font"].startswith("Avara")
+            and sp["y"] > head["y"]
+        ),
+        head["y"] + 150.0,
+    )
+    band = [sp for sp in spans if head["y"] - 2 <= sp["y"] < end - 2]
+    text = {sp["text"].strip() for sp in band}
+
+    gloss = next(
+        (t for t in text if t.startswith("Assign these scores")), ""
+    )
+    die = next(
+        (t for t in text if re.fullmatch(r"d\d+", t)), ""
+    )
+    hp = next(
+        (t for t in text if re.fullmatch(r"HP \(max \d+\)", t)), "HP"
+    )
+    # Only claim the block when it really is one — all six stats present.
+    if not all(
+        any(sp["text"].strip() == name for sp in band)
+        for name, _ in PLAYBOOK_STATS
+    ):
+        return None
+    block = {
+        "gloss": gloss,
+        "die": die,
+        "hp": hp,
+        "stats": [list(pair) for pair in PLAYBOOK_STATS],
+        "debilities": [[n, list(p)] for n, p in PLAYBOOK_DEBILITIES],
+        "tracks": list(PLAYBOOK_TRACKS),
+    }
+    return block, {id(sp) for sp in band}
+
+
+def playbook_write_box(
+    page: fitz.Page, spans: list[dict]
+) -> tuple[str, set] | None:
+    """The sheet's write-in box ("I am called...") and the spans inside it."""
+    best = None
+    for dr in page.get_drawings():
+        r = dr["rect"]
+        if 100 <= r.width <= 350 and 18 <= r.height <= 70 and len(dr["items"]) >= 20:
+            if best is None or r.height > best.height:
+                best = r
+    if best is None:
+        return None
+    inside = [
+        sp
+        for sp in spans
+        if best.x0 - 2 <= sp["x"] and sp["x1"] <= best.x1 + 4
+        and best.y0 - 2 <= sp["y"] and sp["y"] <= best.y1 + 4
+        # The box sits in the bottom corner, where the folio sits too.
+        and not sp["text"].strip().isdigit()
+    ]
+    if not inside:
+        return None
+    label = " ".join(
+        sp["text"].strip() for sp in sorted(inside, key=lambda sp: (sp["y"], sp["x"]))
+    ).strip()
+    if not label:
+        return None
+    return label, {id(sp) for sp in inside}
+
+
 def extract_page_rich(
     page: fitz.Page,
     article_title: str = "",
@@ -752,6 +929,8 @@ def extract_page_rich(
     """
     if state is None:
         state = {}
+    # Playbook sheets are banded and pre-printed; see playbook_band_ys().
+    playbook = bool(state.get("playbook"))
     style = (
         BOOK_TYPE_STYLE.get(state.get("book_style") or "book2")
         or BOOK_TYPE_STYLE["book2"]
@@ -838,8 +1017,11 @@ def extract_page_rich(
             tails.append(r)  # flourish on the question spiral
         elif w >= 40 and h <= 1.5 and ni <= 3:
             hrules.append(r)
-        elif 15 <= w <= 45 and 15 <= h <= 25 and ni == 22:
-            badges.append(r)  # numbered-step badge behind a heading
+        elif 11 <= w <= 45 and 12 <= h <= 25 and ni == 22:
+            # Numbered-step plaque. Chapters set them at 15-45pt behind a
+            # heading; the playbooks' introductions walkthrough uses the same
+            # plaque two points smaller, beside body copy.
+            badges.append(r)
         elif first_page and 110 <= w <= 320 and h >= 90 and box_rect is None:
             box_rect = r
     spirals = _dedupe_rects(spirals)
@@ -886,6 +1068,15 @@ def extract_page_rich(
         spans.sort(key=lambda sp: (sp["y"], sp["x"]))
     boxes_sq = _dedupe_rects(boxes_sq)
     hrules = _dedupe_rects(hrules)
+    if playbook and badges:
+        # Each step of a walkthrough is ruled off, and its plaque is stamped
+        # over that rule. The step already reads as its own item, and the
+        # rule lands between the step and its second line.
+        hrules = [
+            r
+            for r in hrules
+            if not any(abs(r.y0 - b.y0) <= 3.5 for b in badges)
+        ]
 
     # Small category icons (beast / undead / solitary / treasure / …)
     icons: list[dict] = []
@@ -934,6 +1125,22 @@ def extract_page_rich(
         else:
             box_rect = None
 
+    # The sheet's pre-printed furniture: the stat block and the name box are
+    # laid out as art with type dropped into it, so they are read whole and
+    # taken out of the flow rather than left to wrap as paragraphs.
+    stats_json = ""
+    write_label = ""
+    if playbook:
+        found = playbook_stat_block(spans, page_h)
+        if found is not None:
+            block, used = found
+            stats_json = json.dumps(block, ensure_ascii=False)
+            spans = [sp for sp in spans if id(sp) not in used]
+        found_box = playbook_write_box(page, spans)
+        if found_box is not None:
+            write_label, used = found_box
+            spans = [sp for sp in spans if id(sp) not in used]
+
     def build_lines(region: list[dict], x_lo: float, x_hi: float) -> list[dict]:
         """Cluster spans into visual lines, attach glyph markers."""
         # Only glyphs inside this region's x-range may mark its lines —
@@ -969,7 +1176,7 @@ def extract_page_rich(
             rest = "".join(g["text"] for g in group[k:]).strip()
             if (
                 0 < k < len(group)
-                and group[0]["size"] >= 11
+                and group[0]["size"] >= (9.5 if playbook else 11)
                 and not any(g["font"].startswith("Avara") for g in group[k:])
                 # A parenthetical qualifier belongs to the heading itself
                 # ("7 GM moves (optional)"); a gloss is its own line.
@@ -992,12 +1199,15 @@ def extract_page_rich(
             text_spans = []
             bullet = None
             ding = 0
+            ding_x = None
             for g in group:
                 f = g["font"]
                 if "Dingbat" in f or "Wingdings" in f:
                     ding += len(g["text"].strip())
                     if not text_spans and g["text"].strip():
                         bullet = "stat" if "ITC" in f else "check"
+                        if ding_x is None:
+                            ding_x = g["x"]
                     continue
                 text_spans.append(g)
             if not text_spans:
@@ -1026,6 +1236,19 @@ def extract_page_rich(
                 (d for d in r_diamonds if abs((d.y0 + d.y1) / 2 - y_c) <= 4.0),
                 key=lambda d: d.x0,
             )
+            # A playbook's starting moves come pre-marked: a ZapfDingbats
+            # tick drawn inside the checkbox. Read as a bullet it turns the
+            # move into a bulleted aside, so look for the box around it.
+            checked = False
+            if playbook and bullet == "stat" and ding_x is not None:
+                for r in r_checks:
+                    if (
+                        abs((r.y0 + r.y1) / 2 - y_c) <= 5.5
+                        and r.x0 - 2.5 <= ding_x <= r.x1 + 2.5
+                    ):
+                        bullet = "check"
+                        checked = True
+                        break
             if bullet is None:
                 for r in r_checks:
                     if (
@@ -1035,6 +1258,20 @@ def extract_page_rich(
                     ):
                         bullet = "check"
                         break
+            # The item's own box is the leftmost one on its line — a move
+            # that can be taken more than once prints two or three, and only
+            # the first says where the item hangs.
+            check_x = None
+            if bullet == "check":
+                row_checks = [
+                    r
+                    for r in r_checks
+                    if abs((r.y0 + r.y1) / 2 - y_c) <= 5.5
+                    and r.x0 <= first_x + 2
+                    and first_x - r.x0 <= 30
+                ]
+                if row_checks:
+                    check_x = min(r.x0 for r in row_checks)
             if bullet is None:
                 for r in r_spirals:
                     if (
@@ -1154,9 +1391,13 @@ def extract_page_rich(
                     "font": dom_font,
                     "size": dom_size,
                     "bullet": bullet,
+                    "check_x": check_x,
+                    "checked": checked,
                     "has_value": has_value,
                     "val": val_text,
                     "val_x": last["x"] if has_value else 0.0,
+                    "lead_font": text_spans[0]["font"],
+                    "lead_size": text_spans[0]["size"],
                     "bold_lead": "Bold" in text_spans[0]["font"],
                     "all_bold": all("Bold" in g["font"] for g in text_spans),
                     "bold_prefix": _lead_bold_prefix(text_spans, text),
@@ -1296,6 +1537,29 @@ def extract_page_rich(
             # a trailing gloss to outvote it ("6 Stakes (optional)" is mostly
             # Caslon by character count).
             is_avara = font.startswith("Avara") or bool(rec.get("badge"))
+            # A sheet sets its section heads ("Stats", "Moves", "Special
+            # possessions") two points below the chapter threshold, and the
+            # qualifier beside them is longer than the head itself, so the
+            # dominant face is Caslon. The face the line opens in tells it.
+            sheet_head = (
+                playbook
+                and str(rec.get("lead_font", "")).startswith("Avara")
+                and float(rec.get("lead_size") or 0) >= 9.5
+                and not rec.get("badge")
+            )
+            is_avara = is_avara or sheet_head
+            # A plaque beside body type is a step of the introductions
+            # walkthrough, not a section heading.
+            if playbook and rec.get("badge") and not font.startswith("Avara"):
+                num = rec["badge"]
+                body = text
+                cut = body.find(num)
+                if cut >= 0:
+                    body = body[:cut] + body[cut + len(num):]
+                out.append(M_STEP + num + "\x03" + body.strip())
+                entry_active = False
+                list_kind = None
+                continue
             # Fell Type at ~12pt marks table headers; at 9pt it's just
             # small-caps styling inside prose ("terrain", "encounter")
             is_fell = "FellType" in font and (
@@ -1357,7 +1621,7 @@ def extract_page_rich(
                 # A plaque marks a numbered step, always a section heading —
                 # the dominant type size can say otherwise when a gloss
                 # outweighs the title ("6 Stakes (optional)").
-                if rec["size"] >= 11 or plaque:
+                if rec["size"] >= 11 or plaque or sheet_head:
                     out.append(M_H2 + head_text)
                 else:
                     out.append(M_H3 + head_text)
@@ -1454,7 +1718,16 @@ def extract_page_rich(
                 return t
 
             if rec["bullet"] == "check":
-                out.append(M_C + _marked(text))
+                # On a sheet, a box indented past the column margin marks a
+                # move that hangs under the one above it (Borrow Power and
+                # Call the Spirits under Spirit Tongue).
+                sub = False
+                if playbook and rec.get("check_x") is not None:
+                    sub = (rec["check_x"] - col_x0) >= 5.0
+                if playbook and rec.get("checked"):
+                    out.append((M_CX2 if sub else M_CX) + _marked(text))
+                else:
+                    out.append((M_C2 if sub else M_C) + _marked(text))
                 list_kind = M_C
                 continue
             if rec["bullet"] == "stat":
@@ -1672,21 +1945,42 @@ def extract_page_rich(
         if not two_col and crossing >= 3:
             gutter = page.rect.width + 1
 
-    cols: list[list[dict]] = [[], []]
-    for s in spans:
-        cols[0 if s["x"] < gutter else 1].append(s)
-    for ci, col in enumerate(cols):
-        if not col:
+    # A playbook page is banded by full-measure rules, and each band's two
+    # columns belong to that band alone: read as two full-height columns, the
+    # top band's right half lands in the middle of the bottom band's left one.
+    bands: list[tuple[float, float]] = [(float("-inf"), float("inf"))]
+    if playbook:
+        cuts = [y for y in playbook_band_ys(page) if 20.0 < y < page_h - 20.0]
+        edges = [float("-inf")] + sorted(cuts) + [float("inf")]
+        bands = [(lo, hi) for lo, hi in zip(edges, edges[1:])]
+
+    if stats_json:
+        result.append(M_STATS + stats_json)
+
+    for bi, (band_lo, band_hi) in enumerate(bands):
+        band_spans = [sp for sp in spans if band_lo <= sp["y"] < band_hi]
+        if not band_spans:
             continue
-        col_x0 = min(s["x"] for s in col)
-        x_lo, x_hi = (0.0, gutter) if ci == 0 else (gutter, page.rect.width)
-        recs = build_lines(col, x_lo, x_hi)
-        # resume a table that carried over from the previous column/page
-        carried = state.get("table")
-        result.extend(emit_region(recs, col_x0, False))
-        # if the carried table produced no continuation rows, drop the state
-        if carried is not None and state.get("table") is carried:
-            state.pop("table", None)
+        if bi and result and result[-1] != M_BAND:
+            result.append(M_BAND)
+        cols: list[list[dict]] = [[], []]
+        for sp in band_spans:
+            cols[0 if sp["x"] < gutter else 1].append(sp)
+        for ci, col in enumerate(cols):
+            if not col:
+                continue
+            col_x0 = min(sp["x"] for sp in col)
+            x_lo, x_hi = (0.0, gutter) if ci == 0 else (gutter, page.rect.width)
+            recs = build_lines(col, x_lo, x_hi)
+            # resume a table that carried over from the previous column/page
+            carried = state.get("table")
+            result.extend(emit_region(recs, col_x0, False))
+            # if the carried table produced no continuation rows, drop the state
+            if carried is not None and state.get("table") is carried:
+                state.pop("table", None)
+
+    if write_label:
+        result.append(M_WRITE + write_label)
 
     # Collapse any remaining consecutive HRs from within a single column
     cleaned: list[str] = []
@@ -3508,6 +3802,106 @@ def match_toc_to_sections(
     return out
 
 
+def is_playbook_range(doc: fitz.Document, start_page: int, end_page: int) -> bool:
+    """True for the nine playbook character sheets.
+
+    What marks a sheet is its stat block: one page carrying all six scores,
+    labelled the way only the sheet labels them. The chapters talk about
+    stats and special possessions too, so the words alone are not enough —
+    "Playing the Game" heads a section with each of them.
+    """
+    want = {"(STR)", "(DEX)", "(INT)", "(WIS)", "(CON)", "(CHA)"}
+    for pno in range(start_page - 1, min(end_page, doc.page_count)):
+        if pno < 0:
+            continue
+        try:
+            blocks = doc[pno].get_text("dict").get("blocks", [])
+        except Exception:
+            continue
+        seen: set[str] = set()
+        for b in blocks:
+            for ln in b.get("lines", []):
+                for sp in ln.get("spans", []):
+                    t = (sp.get("text") or "").strip()
+                    if t in want:
+                        seen.add(t)
+        if seen >= want:
+            return True
+    return False
+
+
+def _sheet_move_item(line: str) -> bool:
+    """True for a move on a sheet — a checkbox item named in full caps."""
+    if not line.startswith((M_C, M_C2, M_CX, M_CX2)):
+        return False
+    body = strip_markers(line)
+    lead = re.match(r"^[A-Z][A-Z0-9'’&\-\. ]{2,}", _defmt(body).strip())
+    return bool(lead and _is_all_caps_label(lead.group(0).strip()))
+
+
+def merge_playbook_steps(lines: list[str]) -> list[str]:
+    """Fold a step's wrapped lines back into the step.
+
+    A numbered step is body copy with a plaque beside its first line, so the
+    lines under it come through as loose paragraphs. The step ends where the
+    next one starts, or at the list of questions it introduces.
+    """
+    out: list[str] = []
+    for line in lines:
+        if (
+            out
+            and out[-1].startswith(M_STEP)
+            and line
+            and not MARKER_RE.match(line)
+        ):
+            out[-1] = out[-1].rstrip() + " " + line.lstrip()
+            continue
+        out.append(line)
+    return out
+
+
+def reorder_playbook_lines(lines: list[str]) -> list[str]:
+    """Put Special Possessions ahead of the moves, and the moves in one run.
+
+    The sheet prints the possessions across the top of its third page, which
+    drops them into the middle of a move list that runs from the foot of page
+    two to the foot of page three. On paper the bands keep them apart; in a
+    single column they have to be moved.
+    """
+    def head_at(i: int) -> str:
+        ln = lines[i]
+        for m in (M_H2, M_H3):
+            if ln.startswith(m):
+                return _defmt(ln[len(m):]).strip()
+        return ""
+
+    moves_i = next(
+        (i for i in range(len(lines)) if head_at(i).lower() == "moves"), -1
+    )
+    poss_i = next(
+        (
+            i
+            for i in range(len(lines))
+            if head_at(i).lower().startswith("special possession")
+        ),
+        -1,
+    )
+    if moves_i < 0 or poss_i < 0 or poss_i < moves_i:
+        return lines
+    # The block runs to the first move that follows it.
+    end = next(
+        (i for i in range(poss_i + 1, len(lines)) if _sheet_move_item(lines[i])),
+        -1,
+    )
+    if end < 0:
+        return lines
+    block = [ln for ln in lines[poss_i:end] if ln != M_BAND]
+    while block and block[-1] == M_HR:
+        block.pop()
+    rest = lines[:poss_i] + lines[end:]
+    return rest[:moves_i] + block + rest[moves_i:]
+
+
 def extract_article_lines(
     doc: fitz.Document,
     start_page: int,
@@ -3517,6 +3911,7 @@ def extract_article_lines(
     icon_dir: Path | None = None,
     book_style: str = "book2",
     head_pages_out: list | None = None,
+    playbook: bool | None = None,
 ) -> list[str]:
     """Rich (span/drawing-aware) line extraction for an article page range.
 
@@ -3524,7 +3919,11 @@ def extract_article_lines(
     in document order — see ``build_section_index``.
     """
     raw: list[str] = []
-    state: dict = {"book_style": book_style}
+    if playbook is None:
+        playbook = book_style == "book1" and is_playbook_range(
+            doc, start_page, end_page
+        )
+    state: dict = {"book_style": book_style, "playbook": playbook}
     if icon_dir is not None:
         state["icon_dir"] = Path(icon_dir)
     first = True
@@ -3542,7 +3941,12 @@ def extract_article_lines(
         first = False
     if head_pages_out is not None:
         head_pages_out.extend(state.get("head_pages") or [])
-    return merge_wrapped_lines(raw)
+    lines = merge_wrapped_lines(raw)
+    if playbook:
+        lines = reorder_playbook_lines(lines)
+        lines = merge_playbook_steps(lines)
+        lines = [ln for ln in lines if ln != M_BAND]
+    return lines
 
 
 def _is_all_caps_label(line: str) -> bool:
@@ -3657,6 +4061,231 @@ def render_check_list(
     return (
         f'<ul class="check-list" data-check-list="{html.escape(list_id)}">'
         f'{"".join(rows)}</ul>'
+    )
+
+
+def _field(
+    key: str,
+    cls: str,
+    placeholder: str = "",
+    aria: str = "",
+    span: tuple[int, int] | None = None,
+    default: str = "",
+    sign: bool = False,
+) -> str:
+    """A write-in box that remembers what the reader typed.
+
+    ``span`` makes it a spinbox over that range. The steppers are ours rather
+    than the browser's: a stat is written "+1" and "+0" on the sheet, and a
+    native number input will not hold a leading plus. ``default`` is what the
+    box falls back to when it is emptied — nothing in the stat block is ever
+    left blank.
+    """
+    ph = (
+        f' placeholder="{html.escape(placeholder)}"' if placeholder else ""
+    )
+    lab = f' aria-label="{html.escape(aria)}"' if aria else ""
+    dflt = f' data-default="{html.escape(default)}"' if default else ""
+    val = f' value="{html.escape(default)}"' if default else ""
+    box = (
+        f'<input type="text" class="wiki-field {html.escape(cls)}" '
+        f'data-field-key="{html.escape(key)}"{dflt}{val}{ph}{lab} '
+        f'autocomplete="off"'
+    )
+    if span is None:
+        return box + ">"
+    box += (
+        f' inputmode="numeric" role="spinbutton"'
+        f' data-spin-min="{span[0]}" data-spin-max="{span[1]}"'
+        f'{" data-spin-sign=\"1\"" if sign else ""}'
+        f' aria-valuemin="{span[0]}" aria-valuemax="{span[1]}">'
+    )
+    return (
+        f'<span class="pb-spin">{box}'
+        f'<span class="pb-spin-btns" aria-hidden="true">'
+        f'<button type="button" class="pb-spin-step" data-step="1" '
+        f'tabindex="-1">\u25b4</button>'
+        f'<button type="button" class="pb-spin-step" data-step="-1" '
+        f'tabindex="-1">\u25be</button>'
+        f"</span></span>"
+    )
+
+
+# What each numeric box on a sheet can hold, and what it starts at. Damage is
+# missing on purpose: it holds a die expression ("d6", "d8+1"), not a number.
+# HP has no entry either — its range and its start are the sheet's own cap.
+PLAYBOOK_SPANS: dict[str, tuple[int, int]] = {
+    "stat": (-3, 5),
+    "Armor": (0, 10),
+    "XP": (0, 99),
+    "Level": (1, 10),
+}
+# A fresh sheet: no stat assigned yet, full health, first level.
+PLAYBOOK_DEFAULTS: dict[str, str] = {
+    "stat": "+0",
+    "Armor": "0",
+    "XP": "0",
+    "Level": "1",
+}
+
+
+def render_playbook_stats(block: dict, slug: str, link_fn) -> str:
+    """The stat block off the top of a sheet's second page.
+
+    Six scores over three debilities over five tracks. The debility sits on a
+    bracket under the pair of stats it dims, the way the sheet prints it, and
+    ticking it marks both of them.
+    """
+    stats = block.get("stats") or []
+    debs = block.get("debilities") or []
+    tracks = block.get("tracks") or []
+    # The name is clipped to the cell, so the abbreviation under it is what
+    # carries the roll — it never truncates.
+    cells = "".join(
+        f'<div class="pb-stat" data-stat="{html.escape(abbr)}">'
+        f'<span class="pb-stat-name" title="{html.escape(name)}">'
+        f"{html.escape(name)}</span>"
+        + _field(
+            f"{slug}:stat-{abbr.lower()}",
+            "pb-stat-box",
+            aria=name,
+            span=PLAYBOOK_SPANS["stat"],
+            default=PLAYBOOK_DEFAULTS["stat"],
+            sign=True,
+        )
+        + f'<button type="button" class="pb-stat-abbr pb-roll" '
+        f'data-roll-stat="{html.escape(abbr)}" '
+        f'title="Roll +{html.escape(abbr)}">'
+        f"({html.escape(abbr)})</button></div>"
+        for name, abbr in stats
+    )
+    debils = "".join(
+        f'<label class="pb-debility" data-stats="{html.escape(" ".join(pair))}">'
+        f'<input type="checkbox" class="wiki-check pb-debility-box" '
+        f'id="{html.escape(slug)}-deb-{html.escape(name)}" '
+        f'data-check-id="{html.escape(slug)}-deb-{html.escape(name)}">'
+        f'<span class="pb-debility-name">{html.escape(name)}</span></label>'
+        for name, pair in debs
+    )
+    row2 = []
+    for label in tracks:
+        # Damage and HP carry the sheet's own die and cap.
+        printed = ""
+        shown = label
+        if label == "Damage":
+            printed = block.get("die") or ""
+        elif label == "HP":
+            shown = block.get("hp") or "HP"
+        span = PLAYBOOK_SPANS.get(label)
+        default = PLAYBOOK_DEFAULTS.get(label, "")
+        if label == "Damage":
+            # A die, not a number — no steppers, but never blank either.
+            default = printed
+        elif label == "HP":
+            # The sheet prints the cap in the label ("HP (max 18)"); a fresh
+            # character is at it.
+            cap = re.search(r"\d+", shown)
+            top = int(cap.group(0)) if cap else 20
+            span = (0, top)
+            default = str(top)
+        box = _field(
+            f"{slug}:track-{label.lower()}",
+            "pb-track-box",
+            aria=shown,
+            span=span,
+            default=default,
+        )
+        if label == "Damage":
+            # The damage box holds a die, so its label rolls it.
+            name_html = (
+                f'<button type="button" class="pb-track-name pb-roll" '
+                f'data-roll-damage="{html.escape(printed)}" '
+                f'title="Roll damage">{html.escape(shown)}</button>'
+            )
+        else:
+            name_html = (
+                f'<span class="pb-track-name">{html.escape(shown)}</span>'
+            )
+        row2.append(f'<div class="pb-track">{box}{name_html}</div>')
+    gloss = block.get("gloss") or ""
+    gloss_html = (
+        f'<p class="pb-stats-gloss">{link_fn(gloss)}</p>' if gloss else ""
+    )
+    return (
+        '<section class="pb-stats">'
+        '<h2 id="stats">Stats</h2>'
+        f"{gloss_html}"
+        f'<div class="pb-stat-grid">{cells}</div>'
+        f'<div class="pb-debilities">{debils}</div>'
+        f'<div class="pb-track-grid">{"".join(row2)}</div>'
+        "</section>"
+    )
+
+
+def render_playbook_write(label: str, key: str) -> str:
+    """The sheet's ruled name box ("I am called…")."""
+    return (
+        '<div class="pb-write">'
+        f'<span class="pb-write-label">{html.escape(label)}</span>'
+        + _field(key, "pb-write-box", aria=label)
+        + "</div>"
+    )
+
+
+def render_playbook_steps(steps: list[tuple[str, str]], link_fn) -> str:
+    """The introductions walkthrough — a numbered step per plaque."""
+    if not steps:
+        return ""
+    rows = "".join(
+        f'<li class="pb-step"><span class="step-badge">{html.escape(num)}</span>'
+        f"<div>{link_fn(text)}</div></li>"
+        for num, text in steps
+    )
+    return f'<ol class="pb-steps">{rows}</ol>'
+
+
+def render_sheet_checks(items: list[dict], link_fn, list_id: str) -> str:
+    """A sheet's checkbox list — moves, possessions, appearance, names.
+
+    Two things set it apart from an ordinary checklist: an item can hang
+    under the one above it (Borrow Power under Spirit Tongue), and an item
+    can come pre-marked, which on a sheet means a move you start with rather
+    than one you may take. Those are printed, not chosen, so they are ticked
+    and locked.
+    """
+    if not items:
+        return ""
+    rows = []
+    for idx, item in enumerate(items):
+        body = link_fn(item["text"])
+        cont = "".join(
+            f'<p class="li-cont">{link_fn(c)}</p>'
+            for c in (item.get("cont") or [])
+        )
+        cls = "check-item"
+        if item.get("sub"):
+            cls += " is-sub"
+        if item.get("fixed"):
+            rows.append(
+                f'<li class="{cls} is-fixed">'
+                f'<span class="check-fixed" role="img" '
+                f'aria-label="You start with this">'
+                f'<input type="checkbox" checked disabled tabindex="-1"></span>'
+                f"<span>{body}</span>{cont}</li>"
+            )
+            continue
+        cid = f"{list_id}-{idx}"
+        rows.append(
+            f'<li class="{cls}">'
+            f'<label for="{html.escape(cid)}">'
+            f'<input type="checkbox" class="wiki-check" id="{html.escape(cid)}" '
+            f'data-check-id="{html.escape(cid)}"> '
+            f"<span>{body}</span>"
+            f"</label>{cont}</li>"
+        )
+    return (
+        f'<ul class="check-list sheet-checks" '
+        f'data-check-list="{html.escape(list_id)}">{"".join(rows)}</ul>'
     )
 
 
@@ -4425,18 +5054,91 @@ def structure_html(
                     + "</ul>"
                 )
                 continue
-            if line.startswith(M_C):
-                items = []
-                while i < n and lines[i].startswith(M_C):
-                    items.append(lines[i][len(M_C):].strip())
-                    i += 1
+            if line.startswith(M_STATS):
+                try:
+                    block = json.loads(line[len(M_STATS):])
+                except Exception:
+                    block = None
+                if block:
+                    out.append(
+                        render_playbook_stats(
+                            block,
+                            current_slug or "playbook",
+                            lambda t: render_rich_text(t, link),
+                        )
+                    )
+                i += 1
+                continue
+            if line.startswith(M_WRITE):
+                label = line[len(M_WRITE):].strip()
                 out.append(
-                    render_check_list(
-                        items,
-                        lambda t: render_rich_text(t, link),
-                        next_check_id(current_slug or "chk"),
+                    render_playbook_write(
+                        label,
+                        f"{current_slug or 'playbook'}:write-{slugify_id(label)}",
                     )
                 )
+                i += 1
+                continue
+            if line.startswith(M_STEP):
+                steps: list[tuple[str, str]] = []
+                while i < n and lines[i].startswith(M_STEP):
+                    num, _, txt = lines[i][len(M_STEP):].partition("\x03")
+                    steps.append((num.strip(), txt.strip()))
+                    i += 1
+                out.append(
+                    render_playbook_steps(
+                        steps, lambda t: render_rich_text(t, link)
+                    )
+                )
+                continue
+            if line.startswith((M_C, M_C2, M_CX, M_CX2)):
+                # A sheet's checkbox items carry state the plain list can't:
+                # indent (a move that hangs under another) and a printed tick
+                # (a move you start with).
+                sheet_items: list[dict] = []
+                while i < n and lines[i].startswith((M_C, M_C2, M_CX, M_CX2)):
+                    cur = lines[i]
+                    for marker, sub, fixed in (
+                        (M_CX2, True, True),
+                        (M_CX, False, True),
+                        (M_C2, True, False),
+                        (M_C, False, False),
+                    ):
+                        if cur.startswith(marker):
+                            sheet_items.append(
+                                {
+                                    "text": cur[len(marker):].strip(),
+                                    "sub": sub,
+                                    "fixed": fixed,
+                                }
+                            )
+                            break
+                    i += 1
+                # A move that hangs under another carries its body with it,
+                # or the indent would apply to the name alone.
+                if sheet_items and sheet_items[-1]["sub"]:
+                    conts: list[str] = []
+                    while i < n and lines[i] and not MARKER_RE.match(lines[i]):
+                        conts.append(lines[i])
+                        i += 1
+                    if conts:
+                        sheet_items[-1]["cont"] = conts
+                if any(it["sub"] or it["fixed"] for it in sheet_items):
+                    out.append(
+                        render_sheet_checks(
+                            sheet_items,
+                            lambda t: render_rich_text(t, link),
+                            next_check_id(current_slug or "chk"),
+                        )
+                    )
+                else:
+                    out.append(
+                        render_check_list(
+                            [it["text"] for it in sheet_items],
+                            lambda t: render_rich_text(t, link),
+                            next_check_id(current_slug or "chk"),
+                        )
+                    )
                 continue
             # Unknown marker — strip and reprocess as plain text
             lines[i] = strip_markers(line)
@@ -8606,20 +9308,33 @@ def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> 
     </aside>
     <div class="main-wrap">
       <div class="content-scroll" id="main">
-        <main class="content">
+        <main class="content"><h1 class="page-title">Stonetop Wiki</h1>
+        {cards_html}
         <div class="index-hero">
           <p class="lede">A static, hyperlinked wiki for <em>Stonetop</em>
           {lede_books}.
           Page numbers are links; dice expressions roll on click; hover a link for a preview
           (full stat blocks when deep-linked).</p>
+          <p class="index-vtt"><strong>It remembers.</strong> Tick a checkbox, answer a question,
+          fill in a blank, assign your stats — the wiki keeps all of it, so a playbook is a
+          character sheet you can actually play off, and a danger's countdown or a steading's
+          improvements stay marked between sessions. Every question mark and every fill-in-the-blank
+          in the books takes a note, and the playbooks roll: click a stat to roll +that stat, or the
+          damage die to roll damage. Mark a debility and its two stats roll with disadvantage on
+          their own.</p>
+          <p class="index-vtt-note">All of it lives in <strong>your own browser</strong>
+          (<code>localStorage</code>) — nothing is uploaded, nothing is shared between people or
+          devices, and clearing your browser's site data clears it. Two players at one table each
+          keep their own copy.</p>
           <p class="index-note">These pages are extracted from the books' PDFs automatically, so
           <strong>expect defects</strong> — mangled tables, dropped or duplicated text, wrong
           headings, broken links. If you spot one, or want to help fix them,
           <a href="{issues_url}">open an issue or a pull request on GitHub</a>.</p>
           <p class="index-license">The books' <strong>text</strong> is by
-          Jeremy Strandberg under <a href="{license_url}" rel="license">CC BY-SA 4.0</a></p>
+          Jeremy Strandberg under <a href="{license_url}" rel="license">CC BY-SA 4.0</a>.
+          Dice sounds by <a href="https://opengameart.org/content/wooden-dice-on-wodden-table-roll">Wuzzy</a>,
+          <a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="license">CC0</a>.</p>
         </div>
-        {cards_html}
         </main>
       </div>
     </div>
@@ -8948,6 +9663,10 @@ def main(argv: list[str] | None = None) -> None:
                 search_text = adv["text"]
             else:
                 body = adventures_hub_html(adv_arts[1:], titles_by_slug)
+                body = (
+                    f'<h1 class="page-title">'
+                    f'{html.escape(art["title"])}</h1>\n' + body
+                )
                 n = len(adv_arts) - 1
                 excerpt = (
                     f"{n} campaign adventure sheet{'' if n == 1 else 's'} — "
@@ -9011,6 +9730,10 @@ def main(argv: list[str] | None = None) -> None:
             )
         elif art.get("kind") == "arcana-hub":
             body = arcana_hub_html(art)
+            body = (
+                f'<h1 class="page-title">'
+                f'{html.escape(art["title"])}</h1>\n' + body
+            )
             excerpt = (
                 f"Index of {len(art.get('children') or [])} individual arcana entries."
             )
@@ -9080,11 +9803,15 @@ def main(argv: list[str] | None = None) -> None:
                     (a for a in articles if a["slug"] == hub), None
                 )
                 back = (hub_art or {}).get("title") or "chapter"
-                body = (
-                    f'<p class="arcana-back"><a class="wiki-link" '
-                    f'href="{hub}.html" data-slug="{hub}">'
-                    f"← {html.escape(back)}</a></p>\n" + body
-                )
+                # A character sheet is a handout: it opens with the name of
+                # the class alone, with no way back to the chapter — the
+                # sidebar already carries that.
+                if 'class="pb-stats"' not in body:
+                    body = (
+                        f'<p class="arcana-back"><a class="wiki-link" '
+                        f'href="{hub}.html" data-slug="{hub}">'
+                        f"← {html.escape(back)}</a></p>\n" + body
+                    )
             # Keep pure card HTML for hover previews (before nav chrome)
             if art.get("kind") == "arcana":
                 card_preview_html = body
@@ -9106,6 +9833,22 @@ def main(argv: list[str] | None = None) -> None:
                     f'data-slug="{hub}">← All {hub_title}</a>{card_no}</p>\n'
                     + body
                 )
+            # Every page opens with its own title. An arcanum is the exception:
+            # the card carries its name on its face, in its own type.
+            if art.get("kind") != "arcana" and body:
+                cls = "page-title"
+                if 'class="pb-stats"' in body:
+                    cls += " pb-title"
+                head = (
+                    f'<h1 class="{cls}">'
+                    f'{html.escape(art.get("title") or "")}</h1>'
+                )
+                # A back-link is chrome above the title, not part of the page.
+                lead, sep, rest = body.partition("</p>\n")
+                if sep and 'class="arcana-back"' in lead:
+                    body = lead + sep + head + "\n" + rest
+                else:
+                    body = head + "\n" + body
             page_html = page_shell(
                 display_title(art),
                 slug,
@@ -9114,6 +9857,13 @@ def main(argv: list[str] | None = None) -> None:
                 rel_prefix="",
                 section_navs=section_navs,
                 description=excerpt,
+                # A character sheet reads differently: a ticked box there
+                # means a move you have, not one you are done with.
+                content_class=(
+                    "content playbook"
+                    if 'class="pb-stats"' in body
+                    else "content"
+                ),
             )
 
         section_blocks: dict[str, dict] = {}

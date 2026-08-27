@@ -88,6 +88,12 @@
   --link-hover: #ece0c8;
   --quote: #d7c4a9;
   --danger: #d52727;
+  /* The GM's own writing — answers typed into questions and blanks. The --accent
+     wine, lifted until it carries as type over --bg (the structural value is
+     unreadable there); it stays the only hue in the wiki that is neither
+     parchment nor ink, so a note never reads as part of the book. */
+  --answer: #c4677f;
+  --answer-rgb: 196, 103, 127;
   /* Read-aloud voice: --quote text on a 4px rule of the same, set in
      --font-quote. The face and the rule mark it, not a colour. */
   --read-aloud: var(--quote);
@@ -658,7 +664,12 @@ html, body {
   color: var(--head);
   margin: 0.5rem 0 0.5rem;
 }
-.content h1:first-child { display: none; }
+.content h1.page-title {
+  margin: 0 0 .5rem;
+  padding-bottom: .3rem;
+  border-bottom: 1px solid color-mix(in srgb, var(--rule) 90%, transparent);
+  break-after: avoid;
+}
 
 .content h2 {
   font-family: var(--font-serif);
@@ -1957,9 +1968,11 @@ li.check-item input.wiki-check:checked + span {
 
 
 /* Index */
+/* The prose now sits under the cards, so it is a footer, not a hero. */
 .index-hero {
-  padding: 1.15rem 0 1.6rem;
-  margin-bottom: 0.35rem;
+  padding: 1.4rem 0 1.6rem;
+  margin-top: 0.6rem;
+  border-top: 1px solid var(--rule);
   max-width: 44rem;
 }
 .index-hero p.lede {
@@ -2145,3 +2158,639 @@ li.check-item input.wiki-check:checked + span {
 .wiki-preview .pv-full h3 {
   letter-spacing: var(--track-display);
 }
+
+/* ---------- Clickable questions & blanks (GM answer notes) ----------
+   Every "?" and every fill-in-the-blank in the article body is a click
+   target (see wiki.js). The question mark carries a dotted underline so it
+   reads as something to click; the answer it holds is set inline in wine
+   italics — the one hue in the wiki that is neither parchment nor ink, so
+   the GM's writing never reads as part of the book. */
+
+.wiki-q,
+.wiki-blank,
+.wiki-answer {
+  cursor: pointer;
+  border-radius: 2px;
+  /* Widen the hit area without moving a single glyph of the book's type. */
+  padding: 0 .15em;
+  margin: 0 -.15em;
+  transition: background-color .12s ease, color .12s ease;
+}
+.wiki-q:hover,
+.wiki-blank:hover,
+.wiki-q:focus-visible,
+.wiki-blank:focus-visible {
+  background: rgba(var(--head-rgb), .16);
+  color: var(--head);
+  outline: none;
+}
+.wiki-q:focus-visible,
+.wiki-blank:focus-visible,
+.wiki-answer:focus-visible {
+  box-shadow: 0 0 0 1px rgba(var(--head-rgb), .55);
+  outline: none;
+}
+
+/* The standing cue: a question mark you can answer is underlined like a link. */
+.wiki-q {
+  text-decoration: underline dotted rgba(var(--head-rgb), .6);
+  text-underline-offset: 2px;
+  text-decoration-thickness: 1px;
+}
+.wiki-q:hover {
+  text-decoration-color: var(--head);
+}
+/* Answered, it turns wine to match the note hanging off it. */
+.wiki-q.has-note {
+  color: var(--answer);
+  font-weight: 700;
+  text-decoration-color: rgba(var(--answer-rgb), .7);
+}
+.wiki-q.has-note:hover {
+  background: rgba(var(--answer-rgb), .16);
+  color: var(--answer);
+  text-decoration-color: var(--answer);
+}
+
+/* The answer, once the editor loses focus: inline, wine, italic. */
+.wiki-answer {
+  color: var(--answer);
+  font-style: italic;
+  white-space: pre-wrap;
+  margin-left: .18em;
+  border-bottom: 1px dotted rgba(var(--answer-rgb), .45);
+}
+.wiki-answer:hover {
+  background: rgba(var(--answer-rgb), .14);
+  border-bottom-color: var(--answer);
+}
+
+/* An empty blank keeps the book's underscores, on the faint wash of a field
+   waiting to be filled — the standing cue that it, too, is clickable. */
+.wiki-blank {
+  background: rgba(var(--head-rgb), .07);
+  letter-spacing: .02em;
+}
+/* A filled blank is the GM's writing, so it reads like any other answer. */
+.wiki-blank.is-filled {
+  color: var(--answer);
+  font-style: italic;
+  background: none;
+  border-bottom: 1px dotted rgba(var(--answer-rgb), .45);
+  letter-spacing: 0;
+}
+.wiki-blank.is-filled:hover {
+  background: rgba(var(--answer-rgb), .14);
+  color: var(--answer);
+  border-bottom-color: var(--answer);
+}
+.wiki-blank.is-editing {
+  padding: 0;
+  background: none;
+}
+/* Typing looks like what it becomes: wine italics either way. */
+.wiki-blank-input {
+  font: inherit;
+  font-style: italic;
+  color: var(--answer);
+  background: rgba(var(--answer-rgb), .10);
+  border: none;
+  border-bottom: 1px solid rgba(var(--answer-rgb), .7);
+  border-radius: 2px 2px 0 0;
+  padding: 0 .2em;
+  min-width: 4ch;
+  max-width: 100%;
+}
+.wiki-blank-input:focus { outline: none; }
+
+/* The note box: same panel skin as the rest of the wiki's furniture. */
+.wiki-note {
+  display: flex;
+  align-items: flex-start;
+  gap: .35rem;
+  margin: .3rem 0 .45rem;
+  padding: .3rem .35rem;
+  background: var(--panel);
+  border: 1px solid rgba(var(--answer-rgb), .28);
+  border-left: 3px solid rgba(var(--answer-rgb), .6);
+  border-radius: var(--radius);
+  break-inside: avoid;
+}
+.wiki-note-input {
+  flex: 1;
+  min-width: 0;
+  resize: none;
+  overflow: hidden;
+  font-family: inherit;
+  font-style: italic;
+  font-size: 1em;
+  line-height: 1.35;
+  color: var(--answer);
+  background: transparent;
+  border: none;
+  padding: 0;
+}
+.wiki-note-input:focus { outline: none; }
+.wiki-note-input::placeholder {
+  color: var(--muted);
+  opacity: .8;
+  font-family: var(--font-sans);
+  font-size: .9em;
+}
+.wiki-note-del {
+  flex: none;
+  line-height: 1;
+  font-size: 1rem;
+  color: var(--muted);
+  background: none;
+  border: none;
+  padding: 0 .15rem;
+  cursor: pointer;
+}
+.wiki-note-del:hover { color: var(--danger); }
+
+@media print {
+  .wiki-q, .wiki-blank { background: none; }
+  .wiki-q { text-decoration: none; }
+  .wiki-answer, .wiki-blank.is-filled { color: #5d142b; background: none; }
+  .wiki-note-del { display: none; }
+  .wiki-note { border-color: #999; }
+  .wiki-note-input { color: #000; }
+}
+
+/* ---------- Playbook character sheets ----------
+   The nine sheets are forms, not articles: boxes to write in, a stat block
+   that dims in pairs when a debility is marked, moves you tick to say you
+   have them. Everything the reader fills in is set in the same wine italics
+   as an answer note, so their hand is never mistaken for the book's. */
+
+/* A ticked box on a sheet means a move you *have*. Striking it through (the
+   reading the rest of the wiki gives a checklist) says the opposite. */
+.content.playbook li.check-item input.wiki-check:checked + span {
+  text-decoration: none;
+  opacity: 1;
+  color: var(--head);
+}
+.content.playbook li.check-item input.wiki-check:checked + span strong {
+  color: var(--answer);
+}
+.content.playbook li.check-item:has(input.wiki-check:checked) {
+  border-left: 2px solid rgba(var(--answer-rgb), .8);
+  margin-left: -.5rem;
+  padding-left: calc(.5rem - 2px);
+}
+
+/* A move that hangs under another (Borrow Power under Spirit Tongue). */
+.content li.check-item.is-sub {
+  position: relative;
+  margin-left: 1.15rem;
+}
+.content li.check-item.is-sub::before {
+  content: "";
+  position: absolute;
+  margin: .55rem 0 0 -.75rem;
+  width: .5rem;
+  border-top: 1px solid rgba(var(--head-rgb), .35);
+}
+.content ul.sheet-checks {
+  list-style: none;
+  margin: .15rem 0 .35rem;
+  padding: 0;
+}
+
+/* A move printed already ticked — one you start with, not one you choose. */
+.content li.check-item.is-fixed {
+  display: flex;
+  align-items: flex-start;
+  gap: .45rem;
+  line-height: 1.35;
+}
+.content li.check-item.is-fixed .check-fixed input {
+  margin: .2rem 0 0;
+  width: 1rem;
+  height: 1rem;
+  accent-color: var(--answer);
+  opacity: 1;
+  cursor: default;
+}
+.content li.check-item.is-fixed > span:last-child strong {
+  color: var(--answer);
+}
+
+/* ----- write-in boxes -----
+   These sit on the page permanently, the way the sheet prints them, so they
+   are set in the display face rather than in the italics an answer note uses
+   to mark a passing aside. */
+.wiki-field {
+  font: inherit;
+  font-family: var(--font-serif);
+  font-style: normal;
+  letter-spacing: var(--track-display);
+  color: var(--answer);
+  background: rgba(var(--answer-rgb), .07);
+  border: 1px solid rgba(var(--head-rgb), .3);
+  border-radius: var(--radius);
+  padding: .12rem .3rem;
+  min-width: 0;
+  transition: border-color .12s ease, background-color .12s ease;
+}
+.wiki-field::placeholder {
+  color: var(--muted);
+  font-style: normal;
+  opacity: .75;
+}
+.wiki-field:hover { border-color: rgba(var(--head-rgb), .55); }
+.wiki-field:focus {
+  outline: none;
+  border-color: var(--answer);
+  background: rgba(var(--answer-rgb), .12);
+}
+
+/* "I am called…" — the ruled box in the corner of the sheet's first page. */
+.pb-write {
+  display: flex;
+  align-items: baseline;
+  gap: .5rem;
+  margin: .7rem 0 .5rem;
+  padding: .45rem .55rem;
+  background: var(--panel);
+  border: 1px solid rgba(var(--head-rgb), .4);
+  border-radius: 10px;
+  break-inside: avoid;
+}
+.pb-write-label {
+  flex: none;
+  font-family: var(--font-serif);
+  letter-spacing: var(--track-display);
+  color: var(--head);
+}
+.pb-write-box {
+  flex: 1;
+  min-width: 4rem;
+  font-size: 1.05em;
+}
+
+/* ----- the stat block ----- */
+.pb-stats {
+  margin: .6rem 0 .8rem;
+  break-inside: avoid;
+}
+.pb-stats > h2 { margin-top: 0; }
+.pb-stats-gloss {
+  margin: .25rem 0 .5rem;
+  font-size: .95em;
+  color: var(--muted);
+}
+.pb-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: .3rem;
+}
+.pb-stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .16rem;
+  padding: .3rem .15rem .25rem;
+  background: var(--panel);
+  border: 1px solid rgba(var(--head-rgb), .28);
+  border-radius: var(--radius-panel);
+  text-align: center;
+  transition: border-color .14s ease, opacity .14s ease;
+}
+.pb-stat-name {
+  font-size: .72em;
+  font-weight: 700;
+  letter-spacing: 0;
+  color: var(--head);
+  line-height: 1.1;
+}
+.pb-stat-abbr {
+  font-size: .72em;
+  color: var(--muted);
+  letter-spacing: .04em;
+}
+.pb-stat-box,
+.pb-track-box {
+  width: 100%;
+  text-align: center;
+  font-size: 1.1em;
+  font-style: normal;
+  padding: .18rem .1rem;
+}
+
+/* A stat dimmed by a marked debility: the sheet brackets the pair, so the
+   bracket lights and both boxes go wine-edged and dim. */
+.pb-stat.is-debilitated {
+  border-color: rgba(var(--answer-rgb), .8);
+  background: rgba(var(--answer-rgb), .1);
+}
+.pb-stat.is-debilitated .pb-stat-name,
+.pb-stat.is-debilitated .pb-stat-abbr {
+  color: var(--answer);
+}
+.pb-stat.is-debilitated .pb-stat-box {
+  opacity: .75;
+  text-decoration: line-through;
+  text-decoration-color: rgba(var(--answer-rgb), .7);
+}
+
+/* The three debilities, each on a bracket under the pair it dims. */
+.pb-debilities {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: .3rem;
+  margin-top: .1rem;
+}
+.pb-debility {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .35rem;
+  padding: .5rem .2rem .1rem;
+  position: relative;
+  cursor: pointer;
+  font-size: .85em;
+  font-style: italic;
+  color: var(--muted);
+}
+/* The bracket itself: a rule across the pair, dropping a tick at each end. */
+.pb-debility::before {
+  content: "";
+  position: absolute;
+  top: .18rem;
+  left: 8%;
+  right: 8%;
+  height: .28rem;
+  border: 1px solid rgba(var(--head-rgb), .3);
+  border-bottom: none;
+  border-radius: 3px 3px 0 0;
+  transition: border-color .14s ease;
+}
+.pb-debility input {
+  width: .95rem;
+  height: .95rem;
+  margin: 0;
+  accent-color: var(--answer);
+  cursor: pointer;
+}
+.pb-debility:hover::before { border-color: rgba(var(--head-rgb), .6); }
+.pb-debility.is-on { color: var(--answer); }
+.pb-debility.is-on::before { border-color: var(--answer); }
+
+.pb-track-grid {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: .3rem;
+  margin-top: .45rem;
+}
+.pb-track {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .16rem;
+  padding: .3rem .15rem .25rem;
+  background: var(--panel);
+  border: 1px solid rgba(var(--head-rgb), .28);
+  border-radius: var(--radius-panel);
+}
+.pb-track-name {
+  font-size: .78em;
+  font-weight: 700;
+  color: var(--head);
+  text-align: center;
+  line-height: 1.1;
+}
+
+/* ----- the introductions walkthrough ----- */
+.content ol.pb-steps {
+  list-style: none;
+  margin: .35rem 0 .6rem;
+  padding: 0;
+  counter-reset: none;
+}
+.content li.pb-step {
+  display: flex;
+  align-items: flex-start;
+  gap: .5rem;
+  margin: .3rem 0;
+  break-inside: avoid;
+}
+.content li.pb-step > div { flex: 1; min-width: 0; }
+/* The chapter walkthroughs badge a heading; a sheet badges a list item. */
+.content li.pb-step > .step-badge {
+  flex: none;
+  display: inline-block;
+  min-width: 1.7em;
+  margin-top: .06rem;
+  padding: .05em .4em;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--accent) 16%, transparent);
+  color: var(--head);
+  font-family: var(--font-serif);
+  font-size: .85em;
+  text-align: center;
+}
+
+@media print {
+  .wiki-field {
+    background: none;
+    border: none;
+    border-bottom: 1px solid #999;
+    color: #000;
+  }
+  .pb-stat, .pb-track, .pb-write { border-color: #999; }
+}
+
+/* ---------- Playbook sheets: spinboxes, roll buttons, the class name ---- */
+
+/* A sheet's title is the name of the class, and it carries the page. */
+.content.playbook h1.pb-title {
+  font-size: 1.75rem;
+}
+
+/* Six cells of equal, fixed width — minmax(0,…) so a long name shrinks the
+   box instead of stretching the grid, and is clipped rather than wrapped. */
+.pb-stat-grid {
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+}
+.pb-stat { min-width: 0; }
+.pb-stat-name {
+  max-width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Spinboxes. The steppers are ours, not the browser's — a stat is written
+   "+1" on the sheet, and a native number input will not hold a leading plus.
+   They surface on hover/focus so a row of six still reads as a stat line
+   rather than as a form. */
+.pb-spin {
+  position: relative;
+  display: block;
+  width: 100%;
+}
+.pb-spin .wiki-field {
+  font-variant-numeric: tabular-nums;
+}
+.pb-spin-btns {
+  position: absolute;
+  top: 1px;
+  right: 1px;
+  bottom: 1px;
+  display: flex;
+  flex-direction: column;
+  width: .95rem;
+  opacity: 0;
+  transition: opacity .12s ease;
+  pointer-events: none;
+}
+.pb-spin:hover .pb-spin-btns,
+.pb-spin:focus-within .pb-spin-btns {
+  opacity: 1;
+  pointer-events: auto;
+}
+.pb-spin-step {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  font-size: .62rem;
+  line-height: 1;
+  color: var(--head);
+  background: rgba(var(--accent-rgb), .85);
+  border: none;
+  cursor: pointer;
+}
+.pb-spin-step:first-child { border-radius: 0 3px 0 0; }
+.pb-spin-step:last-child { border-radius: 0 0 3px 0; }
+.pb-spin-step:hover { background: var(--accent); }
+/* Nothing hovers on a touch screen, so the steppers stay up there. */
+@media (hover: none) {
+  .pb-spin-btns { opacity: 1; pointer-events: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .pb-spin-btns { transition: none; }
+}
+
+/* The abbreviation under a stat, and the Damage label, roll. */
+.pb-roll {
+  font: inherit;
+  color: var(--muted);
+  background: none;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  padding: 0 .28em;
+  cursor: pointer;
+  transition: background-color .12s ease, color .12s ease, border-color .12s ease;
+}
+.pb-stat-abbr.pb-roll {
+  font-size: .72em;
+  letter-spacing: .04em;
+}
+.pb-track-name.pb-roll {
+  font-size: .78em;
+  font-weight: 700;
+  color: var(--head);
+}
+.pb-roll:hover,
+.pb-roll:focus-visible {
+  color: var(--head);
+  background: rgba(var(--accent-rgb), .45);
+  border-color: #410d1e;
+  outline: none;
+}
+.pb-roll.rolling { animation: dice-pulse .35s ease; }
+
+/* The whole box is the hit area — a stat is a thing you click to roll, and
+   aiming at a six-character label under it is fiddly at the table. The box
+   you type in keeps its own cursor, and its steppers keep their own click. */
+.pb-stat,
+.pb-track:has(.pb-roll) {
+  cursor: pointer;
+}
+.pb-stat .wiki-field,
+.pb-track .wiki-field {
+  cursor: text;
+}
+.pb-stat:hover,
+.pb-track:has(.pb-roll):hover {
+  border-color: rgba(var(--head-rgb), .55);
+}
+.pb-stat:hover .pb-roll,
+.pb-track:has(.pb-roll):hover .pb-roll {
+  color: var(--head);
+  background: rgba(var(--accent-rgb), .45);
+  border-color: #410d1e;
+}
+.pb-stat.is-debilitated .pb-stat-abbr.pb-roll { color: var(--answer); }
+.pb-stat.is-debilitated .pb-stat-abbr.pb-roll:hover { color: var(--head); }
+
+/* The aside after a roll: why it was made that way, and what was discarded. */
+.dice-toast .roll-note {
+  margin-left: .5rem;
+  font-size: .8em;
+  color: var(--answer);
+  font-style: italic;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pb-roll { transition: none; }
+  .pb-roll.rolling { animation: none; }
+}
+
+/* ---------- The index's "it remembers" note ---------- */
+.index-hero p.index-vtt {
+  margin: 0.9rem 0 0;
+  max-width: 40rem;
+  color: var(--ink);
+  font-size: 0.98rem;
+  line-height: 1.55;
+}
+.index-hero p.index-vtt strong { color: var(--head); }
+.index-hero p.index-vtt-note {
+  margin: 0.55rem 0 0;
+  max-width: 40rem;
+  color: var(--muted);
+  font-size: 0.88rem;
+  line-height: 1.5;
+}
+.index-hero p.index-vtt-note strong { color: var(--quote); }
+.index-hero p.index-vtt-note code {
+  font-size: 0.92em;
+  color: var(--quote);
+}
+/* The home page's own title leads the page, with nothing above it. */
+main.content > h1.page-title:first-child {
+  margin-top: 0;
+  font-size: 2rem;
+}
+
+/* ---------- Dice sound toggle ---------- */
+.sound-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: .4rem;
+  margin-top: .5rem;
+  padding: .2rem .45rem .2rem .3rem;
+  font-family: var(--font-sans);
+  font-size: .72rem;
+  letter-spacing: .02em;
+  color: var(--muted);
+  background: none;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+  cursor: pointer;
+}
+.sound-toggle:hover {
+  color: var(--head);
+  border-color: var(--rule);
+}
+.sound-toggle .sound-off { display: none; }
+.sound-toggle.is-off .sound-on { display: none; }
+.sound-toggle.is-off .sound-off { display: inline; }
+.sound-toggle.is-off { color: var(--muted); opacity: .8; }
+.sound-toggle .sound-label { line-height: 1; }

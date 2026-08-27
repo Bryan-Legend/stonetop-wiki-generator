@@ -122,6 +122,11 @@
   let toastTimer = null;
 
   function showDiceResult(result) {
+    if (window.stonetopRollSound) {
+      window.stonetopRollSound(
+        (result.parts || []).length + (result.dropped || []).length
+      );
+    }
     if (!toast) return;
     var detail = "";
     if (result.parts.length > 1 || result.mod) {
@@ -134,6 +139,17 @@
       }
       detail = " (" + bits + ")";
     }
+    // A die discarded for advantage/disadvantage is still shown, but out of
+    // the sum — inside it, a struck 6 reads as another die that was counted.
+    var aside = (result.dropped || []).length
+      ? "dropped " + result.dropped.join(", ")
+      : "";
+    if (result.note) {
+      aside = aside ? result.note + " · " + aside : result.note;
+    }
+    var note = aside
+      ? ' <span class="roll-note">' + escapeHtml(aside) + "</span>"
+      : "";
     toast.innerHTML =
       '<span class="label">' +
       result.expr +
@@ -141,7 +157,8 @@
       detail +
       ' → <span class="result">' +
       result.total +
-      "</span>";
+      "</span>" +
+      note;
     toast.hidden = false;
     // force reflow
     void toast.offsetWidth;
@@ -152,7 +169,7 @@
       setTimeout(function () {
         toast.hidden = true;
       }, 250);
-    }, 2200);
+    }, 4400);
   }
 
   // When a roll-table's own dice button is rolled, highlight the row whose
@@ -195,6 +212,197 @@
     showDiceResult(result);
     highlightRollRow(btn, result.total);
   });
+
+  /* ---------- The sound of the dice ----------
+     Four takes of wooden dice thrown on a wooden table, by Wuzzy, CC0 (see
+     audio/CREDITS.md). One is picked at random and detuned a little each
+     time, so a run of rolls never sounds like the same recording twice.
+
+     They are decoded through Web Audio where that works: it starts on the
+     frame you ask rather than whenever the element gets round to it, and two
+     rolls can overlap. But fetch() cannot read a file:// URL, and the wiki is
+     just as often opened from disk as served — so off a disk it falls back to
+     <audio> elements, which load local files perfectly well. (previews-data.js
+     dodges the same rule by loading as a script rather than as JSON.)
+
+     Nothing loads until the reader first touches the page, and a browser will
+     not make a sound before then anyway — which a roll is. */
+  (function () {
+    var KEY = "stonetop-wiki-sound";
+    var FILES = ["dice-1.mp3", "dice-2.mp3", "dice-3.mp3", "dice-4.mp3"];
+    var VOLUME = 0.25; // both paths read this, so they never drift apart
+    var ctx = null;
+    var buffers = null;
+    var loading = false;
+    var els = null; // <audio> fallback, for file:// and for a failed decode
+    var last = -1;
+    var on = true;
+    // Off a disk there is no point trying Web Audio: fetch refuses file://.
+    var fromDisk = location.protocol === "file:";
+    try {
+      on = localStorage.getItem(KEY) !== "off";
+    } catch (e) {}
+
+    function audio() {
+      if (ctx) return ctx;
+      var AC = window.AudioContext || window.webkitAudioContext;
+      if (!AC) return null;
+      try {
+        ctx = new AC();
+      } catch (e) {
+        ctx = null;
+      }
+      return ctx;
+    }
+
+    function load(ac) {
+      if (buffers || loading) return;
+      loading = true;
+      var base = SCRIPT_BASE || wikiRootPrefix();
+      var got = [];
+      var pending = FILES.length;
+      FILES.forEach(function (name, i) {
+        fetch(base + "audio/" + name)
+          .then(function (r) {
+            return r.ok ? r.arrayBuffer() : Promise.reject();
+          })
+          .then(function (data) {
+            return new Promise(function (ok, no) {
+              // Safari still wants the callback form.
+              var p = ac.decodeAudioData(data, ok, no);
+              if (p && p.then) p.then(ok, no);
+            });
+          })
+          .then(function (buf) {
+            got[i] = buf;
+          })
+          .catch(function () {})
+          .then(function () {
+            if (--pending === 0) {
+              buffers = got.filter(Boolean);
+              loading = false;
+              // Nothing decoded — a stricter browser, or a bad path. The
+              // elements will manage where the fetch would not.
+              if (!buffers.length) loadElements();
+            }
+          });
+      });
+    }
+
+    function audioUrl(name) {
+      return (SCRIPT_BASE || wikiRootPrefix()) + "audio/" + name;
+    }
+
+    /** The fallback: one preloaded element per take, cloned to play. */
+    function loadElements() {
+      if (els) return;
+      els = [];
+      FILES.forEach(function (name) {
+        try {
+          var a = new Audio(audioUrl(name));
+          a.preload = "auto";
+          a.load();
+          els.push(a);
+        } catch (e) {}
+      });
+    }
+
+    function pick(n) {
+      var i = Math.floor(Math.random() * n);
+      if (n > 1 && i === last) i = (i + 1) % n;
+      last = i;
+      return i;
+    }
+
+    function playElement() {
+      loadElements();
+      if (!els.length) return;
+      // A clone per roll, so two rolls in quick succession do not cut each
+      // other off. The file is in the cache by now, so it starts at once.
+      var a = els[pick(els.length)].cloneNode();
+      a.volume = VOLUME;
+      // Vary the pitch with the speed, the way a real throw does — the
+      // default is to hold the pitch, which sounds like a tape edit.
+      a.preservesPitch = false;
+      a.mozPreservesPitch = false;
+      a.webkitPreservesPitch = false;
+      a.playbackRate = 0.94 + Math.random() * 0.14;
+      var p = a.play();
+      if (p && p.catch) p.catch(function () {});
+    }
+
+    function play() {
+      if (!on) return;
+      if (fromDisk) {
+        playElement();
+        return;
+      }
+      var ac = audio();
+      if (!ac) {
+        playElement();
+        return;
+      }
+      if (ac.state === "suspended" && ac.resume) ac.resume();
+      if (!buffers) {
+        load(ac);
+        playElement(); // don't lose the first roll of a session
+        return;
+      }
+      if (!buffers.length) {
+        playElement();
+        return;
+      }
+      var i = pick(buffers.length);
+
+      var src = ac.createBufferSource();
+      src.buffer = buffers[i];
+      // A throw is never quite the same twice.
+      src.playbackRate.value = 0.94 + Math.random() * 0.14;
+      var vol = ac.createGain();
+      vol.gain.value = VOLUME;
+      src.connect(vol);
+      vol.connect(ac.destination);
+      src.start();
+    }
+
+    window.stonetopRollSound = play;
+
+    /* Warm the samples on the first hint of interest, so the first roll of a
+       session lands with the rest. */
+    function warm() {
+      if (!on) return;
+      if (fromDisk) {
+        loadElements();
+        return;
+      }
+      if (buffers || loading) return;
+      var ac = audio();
+      if (ac) load(ac);
+      else loadElements();
+    }
+    ["pointerdown", "keydown"].forEach(function (ev) {
+      document.addEventListener(ev, warm, { once: true, passive: true });
+    });
+
+    var btn = document.getElementById("sound-toggle");
+    function paint() {
+      if (!btn) return;
+      btn.setAttribute("aria-pressed", on ? "true" : "false");
+      btn.classList.toggle("is-off", !on);
+      btn.title = on ? "Dice sound on" : "Dice sound off";
+    }
+    paint();
+    if (btn) {
+      btn.addEventListener("click", function () {
+        on = !on;
+        try {
+          localStorage.setItem(KEY, on ? "on" : "off");
+        } catch (e) {}
+        paint();
+        if (on) play();
+      });
+    }
+  })();
 
   /* ---------- Hover previews ---------- */
   const bubble = document.getElementById("wiki-preview");
@@ -1319,6 +1527,687 @@
       { passive: false }
     );
   });
+
+  /* ---------- Clickable questions & blanks (GM answer notes) ----------
+     Every "?" in the article body, and every run of underscores the book sets
+     as a fill-in-the-blank, becomes a click target. Clicking a "?" opens a
+     note box under the question; clicking a blank turns it into an inline
+     field you type the answer into. Both persist in localStorage, keyed by a
+     hash of the containing block's text, so a wiki rebuild keeps the answers. */
+  (function () {
+    var KEY = "stonetop-wiki-notes";
+    /* A question mark, or two-plus underscores (the book's blank line). */
+    var TARGET_RE = /\?|_{2,}/g;
+    /* Never rewrite type that is already interactive, code-ish, or chrome. */
+    var SKIP_SEL =
+      "a,button,input,textarea,select,script,style,code,pre,kbd," +
+      ".sidebar,nav,.toc,.search-results,.wiki-preview,.dice-toast," +
+      ".wiki-note,.wiki-q,.wiki-blank,.wiki-answer,.map-pin,.adv-map";
+    var HOST_SEL =
+      "li,td,th,dd,dt,blockquote,figcaption,p,h1,h2,h3,h4,h5,h6,div,section,article";
+    /* Hosts a note is appended inside of; anything else gets it as a sibling. */
+    var HOST_INSIDE = /^(LI|TD|TH|DD|BLOCKQUOTE|DIV|SECTION|ARTICLE|FIGCAPTION)$/;
+
+    function loadAll() {
+      try {
+        return JSON.parse(localStorage.getItem(KEY) || "{}") || {};
+      } catch (e) {
+        return {};
+      }
+    }
+    function saveAll(o) {
+      try {
+        localStorage.setItem(KEY, JSON.stringify(o));
+      } catch (e) {}
+    }
+    function setNote(key, val) {
+      var s = loadAll();
+      if (val && val.trim()) s[key] = val;
+      else delete s[key];
+      saveAll(s);
+    }
+    function getNote(key) {
+      var v = loadAll()[key];
+      return typeof v === "string" ? v : "";
+    }
+
+    function pageSlug() {
+      var m = String(location.pathname || "")
+        .replace(/\\/g, "/")
+        .match(/([^\/#?]+)\.html/i);
+      var slug = m ? m[1] : "index";
+      /* Adventure sheets live in their own folder and can share a slug with a
+         book page, so qualify them. */
+      if (/\/adventures\//i.test(location.pathname)) slug = "adventures/" + slug;
+      return slug;
+    }
+
+    /* djb2 - stable across rebuilds as long as the block's words don't change. */
+    function hash(str) {
+      var h = 5381,
+        i = str.length;
+      while (i) h = ((h * 33) ^ str.charCodeAt(--i)) >>> 0;
+      return h.toString(36);
+    }
+    function normalize(s) {
+      return String(s || "").replace(/\s+/g, " ").trim().slice(0, 400);
+    }
+
+    var root =
+      document.querySelector("main.content") ||
+      document.querySelector("main") ||
+      (document.body && document.body.classList.contains("adventure")
+        ? document.body
+        : null);
+    if (!root) return;
+
+    var slug = pageSlug();
+    var notes = loadAll();
+    var blockHashes = new WeakMap();
+    var blockCounts = new WeakMap();
+
+    function blockOf(node) {
+      var el = node.parentElement;
+      while (el && el !== root && !el.matches(HOST_SEL)) el = el.parentElement;
+      return el || root;
+    }
+    function hashOf(block) {
+      var h = blockHashes.get(block);
+      if (!h) {
+        h = hash(normalize(block.textContent));
+        blockHashes.set(block, h);
+      }
+      return h;
+    }
+    function nextKey(block, kind) {
+      var n = blockCounts.get(block) || 0;
+      blockCounts.set(block, n + 1);
+      return slug + "#" + hashOf(block) + ":" + kind + n;
+    }
+    function sel(key) {
+      return '[data-note-key="' + key.replace(/["\\]/g, "\\$&") + '"]';
+    }
+
+    /* ----- markers ----- */
+
+    function makeMarker(kind, raw, key) {
+      var s = document.createElement("span");
+      s.className = kind === "q" ? "wiki-q" : "wiki-blank";
+      s.setAttribute("data-note-key", key);
+      s.setAttribute("role", "button");
+      s.setAttribute("tabindex", "0");
+      var val = notes[key];
+      if (kind === "q") {
+        s.textContent = raw;
+        s.title = val ? "Your note - click to edit" : "Click to answer or note";
+        if (val) s.classList.add("has-note");
+      } else {
+        s.setAttribute("data-blank", raw);
+        if (val) {
+          s.textContent = val;
+          s.classList.add("is-filled");
+          s.title = "Click to edit";
+        } else {
+          s.textContent = raw;
+          s.title = "Click to fill in";
+        }
+      }
+      return s;
+    }
+
+    /* ----- blanks: edit in place ----- */
+
+    function editBlank(span) {
+      if (span.classList.contains("is-editing")) return;
+      var key = span.getAttribute("data-note-key");
+      var blank = span.getAttribute("data-blank") || "___";
+      var before = span.classList.contains("is-filled") ? span.textContent : "";
+      var input = document.createElement("input");
+      input.type = "text";
+      input.className = "wiki-blank-input";
+      input.value = before;
+      span.textContent = "";
+      span.classList.add("is-editing");
+      span.appendChild(input);
+
+      function size() {
+        input.size = Math.max(input.value.length + 1, blank.length + 1, 6);
+      }
+      size();
+      input.focus();
+      input.select();
+
+      var done = false;
+      function finish(save) {
+        if (done) return;
+        done = true;
+        var val = save ? input.value.trim() : before;
+        span.classList.remove("is-editing");
+        span.textContent = val || blank;
+        span.classList.toggle("is-filled", !!val);
+        span.title = val ? "Click to edit" : "Click to fill in";
+        if (save) setNote(key, val);
+      }
+      input.addEventListener("input", size);
+      input.addEventListener("keydown", function (e) {
+        if (e.key === "Enter") {
+          e.preventDefault();
+          finish(true);
+        } else if (e.key === "Escape") {
+          e.preventDefault();
+          finish(false);
+        }
+      });
+      input.addEventListener("blur", function () {
+        finish(true);
+      });
+    }
+
+    /* ----- question marks: a note box while you type, inline text after -----
+       The box is only ever the editor. As soon as it loses focus the answer
+       collapses into the sentence itself, set in wine italics beside the
+       question it answers. */
+
+    function autoGrow(ta) {
+      ta.style.height = "auto";
+      ta.style.height = Math.max(ta.scrollHeight, 22) + "px";
+    }
+
+    function answerOf(key) {
+      return root.querySelector(".wiki-answer" + sel(key));
+    }
+
+    /** Show the saved answer inline after its question mark (or clear it). */
+    function renderAnswer(mark, key) {
+      var val = getNote(key).trim();
+      var el = answerOf(key);
+      if (!val) {
+        if (el) el.remove();
+        mark.classList.remove("has-note");
+        mark.title = "Click to answer or note";
+        return null;
+      }
+      if (!el) {
+        el = document.createElement("span");
+        el.className = "wiki-answer";
+        el.setAttribute("data-note-key", key);
+        el.setAttribute("role", "button");
+        el.setAttribute("tabindex", "0");
+        mark.parentNode.insertBefore(el, mark.nextSibling);
+      }
+      el.textContent = val;
+      el.title = "Your note - click to edit";
+      mark.classList.add("has-note");
+      mark.title = "Your note - click to edit";
+      return el;
+    }
+
+    function createNote(mark, key, focus) {
+      var host = mark.closest(HOST_SEL) || root;
+      /* The inline answer and its editor never show at once. */
+      var inline = answerOf(key);
+      if (inline) inline.remove();
+      var box = document.createElement("div");
+      box.className = "wiki-note";
+      box.setAttribute("data-note-key", key);
+
+      var ta = document.createElement("textarea");
+      ta.className = "wiki-note-input";
+      ta.rows = 1;
+      ta.placeholder = "Answer / note...";
+      ta.value = getNote(key);
+
+      var del = document.createElement("button");
+      del.type = "button";
+      del.className = "wiki-note-del";
+      del.title = "Delete note";
+      del.setAttribute("aria-label", "Delete note");
+      del.textContent = "\u00d7";
+
+      box.appendChild(ta);
+      box.appendChild(del);
+      if (HOST_INSIDE.test(host.tagName)) host.appendChild(box);
+      else host.parentNode.insertBefore(box, host.nextSibling);
+      autoGrow(ta);
+
+      ta.addEventListener("input", function () {
+        autoGrow(ta);
+        setNote(key, ta.value);
+        mark.classList.toggle("has-note", !!ta.value.trim());
+      });
+      ta.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+          e.preventDefault();
+          ta.blur();
+        }
+      });
+      /* Taking the box out from under a focused textarea fires blur mid-removal,
+         so the teardown has to be idempotent. */
+      var closed = false;
+      function closeEditor() {
+        if (closed) return;
+        closed = true;
+        box.remove();
+        renderAnswer(mark, key);
+      }
+      box.close = closeEditor;
+
+      ta.addEventListener("blur", closeEditor);
+      /* Keep the textarea's blur from removing the box before the click lands. */
+      del.addEventListener("mousedown", function (e) {
+        e.preventDefault();
+      });
+      del.addEventListener("click", function (e) {
+        e.stopPropagation();
+        setNote(key, "");
+        closeEditor();
+      });
+      if (focus) ta.focus();
+      return box;
+    }
+
+    /** Click a question mark (or its answer): open the editor, or close it. */
+    function toggleNote(mark) {
+      var key = mark.getAttribute("data-note-key");
+      var open = root.querySelector(".wiki-note" + sel(key));
+      if (open) {
+        if (open.close) open.close();
+        else open.remove();
+        return;
+      }
+      createNote(mark, key, true);
+    }
+
+    function markFor(key) {
+      return root.querySelector(".wiki-q" + sel(key));
+    }
+
+    /* ----- walk the article and wrap every target ----- */
+
+    function collectTextNodes() {
+      var out = [];
+      var walker = document.createTreeWalker(root, NodeFilter.SHOW_TEXT, {
+        acceptNode: function (n) {
+          var v = n.nodeValue;
+          if (!v || (v.indexOf("?") < 0 && v.indexOf("__") < 0))
+            return NodeFilter.FILTER_REJECT;
+          var el = n.parentElement;
+          while (el && el !== root) {
+            if (el.matches(SKIP_SEL)) return NodeFilter.FILTER_REJECT;
+            el = el.parentElement;
+          }
+          return NodeFilter.FILTER_ACCEPT;
+        },
+      });
+      var n;
+      while ((n = walker.nextNode())) out.push(n);
+      return out;
+    }
+
+    collectTextNodes().forEach(function (tn) {
+      var text = tn.nodeValue;
+      var block = blockOf(tn);
+      var frag = document.createDocumentFragment();
+      var last = 0;
+      var m;
+      TARGET_RE.lastIndex = 0;
+      while ((m = TARGET_RE.exec(text))) {
+        if (m.index > last)
+          frag.appendChild(document.createTextNode(text.slice(last, m.index)));
+        var kind = m[0] === "?" ? "q" : "b";
+        frag.appendChild(makeMarker(kind, m[0], nextKey(block, kind)));
+        last = m.index + m[0].length;
+      }
+      if (!last) return;
+      if (last < text.length)
+        frag.appendChild(document.createTextNode(text.slice(last)));
+      tn.parentNode.replaceChild(frag, tn);
+    });
+
+    /* Answers saved earlier read as part of the page, not as open editors. */
+    root.querySelectorAll(".wiki-q.has-note").forEach(function (q) {
+      renderAnswer(q, q.getAttribute("data-note-key"));
+    });
+
+    /** The question mark, its inline answer, and a blank all open an editor. */
+    function activate(el) {
+      if (el.classList.contains("wiki-blank")) {
+        editBlank(el);
+        return;
+      }
+      var mark = el.classList.contains("wiki-answer")
+        ? markFor(el.getAttribute("data-note-key"))
+        : el;
+      if (mark) toggleNote(mark);
+    }
+
+    root.addEventListener("click", function (e) {
+      var el = e.target.closest && e.target.closest(".wiki-q,.wiki-blank,.wiki-answer");
+      if (!el || !root.contains(el)) return;
+      if (el.classList.contains("is-editing")) return;
+      e.preventDefault();
+      e.stopPropagation();
+      activate(el);
+    });
+
+    root.addEventListener("keydown", function (e) {
+      if (e.key !== "Enter" && e.key !== " ") return;
+      var el = e.target.closest && e.target.closest(".wiki-q,.wiki-blank,.wiki-answer");
+      if (!el || el.classList.contains("is-editing")) return;
+      e.preventDefault();
+      activate(el);
+    });
+  })();
+
+  /* ---------- Playbook sheets: write-in boxes and debilities ----------
+     The sheet's boxes (stats, damage, HP, the name box) keep what you type
+     in the same store the answer notes use — it is the same kind of thing,
+     the reader's own hand over the book's. The three debilities are ordinary
+     wiki checkboxes, so they persist with every other check on the page; all
+     this adds is the link the sheet draws between a debility and the pair of
+     stats it dims. */
+  (function () {
+    var KEY = "stonetop-wiki-notes";
+
+    function loadAll() {
+      try {
+        return JSON.parse(localStorage.getItem(KEY) || "{}") || {};
+      } catch (e) {
+        return {};
+      }
+    }
+    function saveField(key, val) {
+      try {
+        var s = loadAll();
+        if (val && val.trim()) s[key] = val;
+        else delete s[key];
+        localStorage.setItem(KEY, JSON.stringify(s));
+      } catch (e) {}
+    }
+
+    /* A box on a sheet is never left blank: emptied, it falls back to what
+       the sheet starts at (no stat assigned, full health, first level). */
+    function fallback(input) {
+      return input.getAttribute("data-default") || "";
+    }
+
+    /** Written the way the sheet writes it: a stat always carries its sign. */
+    function format(input, n) {
+      if (input.getAttribute("data-spin-sign") && n >= 0) return "+" + n;
+      return String(n);
+    }
+
+    function bounds(input) {
+      var lo = parseInt(input.getAttribute("data-spin-min"), 10);
+      var hi = parseInt(input.getAttribute("data-spin-max"), 10);
+      return [isFinite(lo) ? lo : -99, isFinite(hi) ? hi : 99];
+    }
+
+    /** Settle what was typed into a number in range — or the default. */
+    function normalize(input, save) {
+      var raw = String(input.value || "").replace(/[\u2212\u2013\u2014]/g, "-");
+      var n = parseInt(raw.replace(/[^\d-]/g, ""), 10);
+      if (!isFinite(n)) {
+        input.value = fallback(input);
+      } else {
+        var b = bounds(input);
+        n = Math.max(b[0], Math.min(b[1], n));
+        input.value = format(input, n);
+      }
+      input.setAttribute("aria-valuenow", input.value);
+      if (save) saveField(input.getAttribute("data-field-key"), input.value);
+    }
+
+    function step(input, by) {
+      var raw = String(input.value || "").replace(/[\u2212\u2013\u2014]/g, "-");
+      var n = parseInt(raw.replace(/[^\d-]/g, ""), 10);
+      if (!isFinite(n)) n = 0;
+      var b = bounds(input);
+      input.value = format(input, Math.max(b[0], Math.min(b[1], n + by)));
+      input.setAttribute("aria-valuenow", input.value);
+      saveField(input.getAttribute("data-field-key"), input.value);
+    }
+
+    var fields = document.querySelectorAll("input.wiki-field[data-field-key]");
+    if (fields.length) {
+      var saved = loadAll();
+      fields.forEach(function (input) {
+        var key = input.getAttribute("data-field-key");
+        if (!key) return;
+        var spin = input.hasAttribute("data-spin-min");
+        if (typeof saved[key] === "string") input.value = saved[key];
+        if (!input.value) input.value = fallback(input);
+        if (spin) normalize(input, false);
+
+        input.addEventListener("input", function () {
+          /* Save what is being typed; settle it when the box is left. */
+          saveField(key, input.value);
+        });
+        input.addEventListener("blur", function () {
+          if (spin) normalize(input, true);
+          else if (!input.value) {
+            input.value = fallback(input);
+            saveField(key, input.value);
+          }
+        });
+        if (!spin) return;
+        input.addEventListener("keydown", function (e) {
+          if (e.key === "ArrowUp") {
+            e.preventDefault();
+            step(input, 1);
+          } else if (e.key === "ArrowDown") {
+            e.preventDefault();
+            step(input, -1);
+          } else if (e.key === "Enter") {
+            normalize(input, true);
+          }
+        });
+      });
+    }
+
+    document.addEventListener("click", function (e) {
+      var btn = e.target.closest && e.target.closest(".pb-spin-step");
+      if (!btn) return;
+      e.preventDefault();
+      var input = btn.closest(".pb-spin").querySelector("input.wiki-field");
+      if (input) step(input, parseInt(btn.getAttribute("data-step"), 10) || 0);
+    });
+    /* mousedown default would blur the box mid-step */
+    document.addEventListener("mousedown", function (e) {
+      if (e.target.closest && e.target.closest(".pb-spin-step")) {
+        e.preventDefault();
+      }
+    });
+
+    /* ----- rolling off the sheet -----
+       A stat rolls 2d6 plus what is in its box. A debility means the roll is
+       made with disadvantage — an extra die, the highest discarded — so a
+       marked debility rolls the stats it brackets that way without the
+       reader having to remember. */
+
+    function d6() {
+      return 1 + Math.floor(Math.random() * 6);
+    }
+
+    /** The debility marked against this stat, if any. */
+    function debilityOn(abbr) {
+      var found = null;
+      document.querySelectorAll(".pb-debility[data-stats]").forEach(function (l) {
+        if (found) return;
+        var names = (l.getAttribute("data-stats") || "").split(/\s+/);
+        var box = l.querySelector("input[type=checkbox]");
+        if (names.indexOf(abbr) >= 0 && box && box.checked) {
+          var name = l.querySelector(".pb-debility-name");
+          found = name ? name.textContent.trim() : "debilitated";
+        }
+      });
+      return found;
+    }
+
+    function rollStat(btn) {
+      var cell = btn.closest(".pb-stat");
+      if (!cell) return;
+      var abbr = cell.getAttribute("data-stat") || "";
+      var input = cell.querySelector("input.wiki-field");
+      var mod = parseInt((input && input.value) || "0", 10);
+      if (!isFinite(mod)) mod = 0;
+      var deb = debilityOn(abbr);
+      var rolls = [d6(), d6()];
+      var dropped = [];
+      if (deb) {
+        rolls.push(d6());
+        var hi = 0;
+        for (var i = 1; i < rolls.length; i++) {
+          if (rolls[i] > rolls[hi]) hi = i;
+        }
+        dropped = rolls.splice(hi, 1);
+      }
+      var total = rolls[0] + rolls[1] + mod;
+      showDiceResult({
+        expr: "roll +" + abbr,
+        parts: rolls,
+        dropped: dropped,
+        mod: mod,
+        total: total,
+        note: deb ? "disadvantage — " + deb : "",
+      });
+    }
+
+    function rollDamage(btn) {
+      var track = btn.closest(".pb-track");
+      var input = track && track.querySelector("input.wiki-field");
+      var expr = ((input && input.value) || "").trim();
+      if (!expr) expr = btn.getAttribute("data-roll-damage") || "";
+      var result = rollDice(expr);
+      if (!result) return;
+      result.expr = "damage " + result.expr;
+      showDiceResult(result);
+    }
+
+    document.addEventListener("click", function (e) {
+      if (!e.target.closest) return;
+      var btn = e.target.closest(".pb-roll");
+      if (!btn) {
+        // Anywhere in the box rolls it — everything but the box you type in
+        // and the steppers beside it.
+        if (e.target.closest("input, .pb-spin-step, a")) return;
+        var cell = e.target.closest(".pb-stat, .pb-track");
+        btn = cell && cell.querySelector(".pb-roll");
+        if (!btn) return;
+      }
+      e.preventDefault();
+      btn.classList.remove("rolling");
+      void btn.offsetWidth;
+      btn.classList.add("rolling");
+      if (btn.hasAttribute("data-roll-stat")) rollStat(btn);
+      else rollDamage(btn);
+    });
+
+    /* A marked debility dims the two stats the sheet brackets under it. */
+    var debs = document.querySelectorAll(".pb-debility[data-stats]");
+    if (!debs.length) return;
+
+    function linkedCells(label) {
+      var names = (label.getAttribute("data-stats") || "").split(/\s+/);
+      var cells = [];
+      names.forEach(function (n) {
+        if (!n) return;
+        var cell = document.querySelector(
+          '.pb-stat[data-stat="' + n.replace(/["\\]/g, "\\$&") + '"]'
+        );
+        if (cell) cells.push(cell);
+      });
+      return cells;
+    }
+
+    function sync(label) {
+      var box = label.querySelector("input[type=checkbox]");
+      var on = !!(box && box.checked);
+      label.classList.toggle("is-on", on);
+      linkedCells(label).forEach(function (cell) {
+        cell.classList.toggle("is-debilitated", on);
+      });
+    }
+
+    debs.forEach(function (label) {
+      var box = label.querySelector("input[type=checkbox]");
+      if (!box) return;
+      box.addEventListener("change", function () {
+        sync(label);
+      });
+      /* bindWikiChecks restores the saved state after this module runs. */
+      setTimeout(function () {
+        sync(label);
+      }, 0);
+      sync(label);
+    });
+  })();
+
+  /* ---------- One measure for every page ----------
+     .content is a column-fill:auto multicol sized width:max-content. The
+     browser picks the column count off its own estimate of that width and
+     then stretches the columns to fill the box, so the measure drifts above
+     the --col-w the design asks for — a short insert lands as a single 691px
+     column, a playbook as four 450px ones. Size the box to an exact multiple
+     of the intended column instead, and the text reads the same width
+     everywhere. */
+  (function () {
+    var main = document.querySelector("main.content");
+    if (!main || main.classList.contains("maps-page")) return;
+    // The home page flows down its own grid, and an arcanum is one card at a
+    // fixed size. Neither is an article set to a measure.
+    if (main.querySelector(".index-hero, .arcana-card")) return;
+
+    function fit() {
+      var cs = window.getComputedStyle(main);
+      var colw = parseFloat(cs.columnWidth);
+      var gap = parseFloat(cs.columnGap) || 0;
+      if (!isFinite(colw) || colw <= 0) return;
+      // The box is border-box, so its padding is inside the width we set. Left
+      // out, the last column has nowhere to go and the rest stretch to cover.
+      var pad =
+        (parseFloat(cs.paddingLeft) || 0) + (parseFloat(cs.paddingRight) || 0);
+      function widthFor(n) {
+        return n * (colw + gap) - gap + pad + "px";
+      }
+
+      // Lay the article out as one ordinary column to learn its true height.
+      var style = main.style;
+      var keep = [style.width, style.height, style.columnWidth, style.columnCount];
+      style.width = widthFor(1);
+      style.height = "auto";
+      style.columnWidth = "auto";
+      style.columnCount = "1";
+      var need = main.scrollHeight;
+      style.columnWidth = keep[2];
+      style.columnCount = keep[3];
+      style.height = keep[1];
+
+      var box = main.clientHeight || main.getBoundingClientRect().height;
+      if (!box) {
+        style.width = keep[0];
+        return;
+      }
+      var n = Math.max(1, Math.ceil(need / box));
+      style.width = widthFor(n);
+      // Blocks that may not break (stat blocks, move cards) take more room in
+      // columns than they do in one flow, so the estimate runs short. Add the
+      // columns the overflow actually asks for, rather than one at a time.
+      for (var i = 0; i < 6; i++) {
+        var over = main.scrollWidth - main.clientWidth;
+        if (over <= 2) break;
+        n += Math.max(1, Math.ceil(over / (colw + gap)));
+        style.width = widthFor(n);
+      }
+    }
+
+    fit();
+    var t = null;
+    window.addEventListener("resize", function () {
+      clearTimeout(t);
+      t = setTimeout(fit, 120);
+    });
+  })();
 
   // Prefetch previews
   loadPreviews();
