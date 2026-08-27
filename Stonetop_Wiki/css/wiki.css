@@ -1373,10 +1373,33 @@ body.pins-adding .map-canvas { cursor: crosshair; }
   transition: transform .25s ease, opacity .25s ease;
   opacity: 0;
   pointer-events: none;
+  /* Pinned at the halfway mark, the box could only ever use the half of the
+     screen to the right of it — on a phone that squeezed a disadvantaged roll
+     into a tall, narrow pill. Let it size to its text and take nearly the
+     whole width when it has to. */
+  width: max-content;
+  max-width: min(92vw, 42rem);
+  text-align: center;
 }
 .dice-toast.show {
   transform: translateX(-50%) translateY(0);
   opacity: 1;
+}
+/* On a phone a roll with an aside wants two lines, and a 999px radius on a
+   two-line box reads as a lozenge rather than a label. */
+@media (max-width: 640px) {
+  .dice-toast {
+    max-width: 94vw;
+    border-radius: 1.1rem;
+    padding: .55rem .85rem;
+    font-size: 1rem;
+    line-height: 1.35;
+  }
+  .dice-toast .roll-note {
+    display: block;
+    margin-left: 0;
+    margin-top: .1rem;
+  }
 }
 .dice-toast .result {
   color: var(--head);
