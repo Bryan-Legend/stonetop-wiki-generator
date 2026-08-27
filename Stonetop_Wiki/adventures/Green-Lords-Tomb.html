@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Green Lord’s Tomb</title>
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="../images/favicon.ico" sizes="16x16 32x32 48x48 64x64" />
+  <link rel="stylesheet" href="../css/wiki.css" />
+  <link rel="stylesheet" href="adventure.css" />
+  <style>
+    /* SVG theme only — layout is body.has-map + aside.adv-map in adventure.css */
+    .site-map-svg .map-wall {
+      fill: var(--ink);
+    }
+    .site-map-svg .map-floor {
+      fill: var(--bg);
+    }
+    .site-map-svg .map-edge {
+      fill: none;
+      stroke: var(--rule);
+      stroke-width: 10;
+      stroke-linecap: round;
+    }
+    .site-map-svg .map-edge-thin {
+      stroke-width: 2;
+    }
+    .site-map-svg .map-edge-tight {
+      stroke-width: 2;
+      stroke-dasharray: 4 3;
+    }
+    .site-map-svg .map-water {
+      fill: none;
+      stroke: var(--link);
+      stroke-width: 2.5;
+      opacity: 0.85;
+    }
+    .site-map-svg .map-node {
+      fill: var(--bg-elev);
+      stroke: var(--accent);
+      stroke-width: 1.5;
+      transition: fill 0.12s ease, stroke 0.12s ease;
+    }
+    .site-map-svg .map-node-out {
+      stroke: var(--muted);
+    }
+    .site-map-svg .map-node-danger {
+      stroke: var(--danger);
+    }
+    .site-map-svg a:hover .map-node,
+    .site-map-svg a:focus .map-node {
+      fill: var(--accent-soft);
+      stroke: var(--link-hover);
+    }
+    .site-map-svg a:hover .map-node-danger,
+    .site-map-svg a:focus .map-node-danger {
+      stroke: var(--danger);
+    }
+    .site-map-svg .map-num {
+      fill: var(--accent);
+      font-family: var(--font-serif);
+      font-size: 11px;
+      font-weight: 700;
+      text-anchor: middle;
+      pointer-events: none;
+    }
+    .site-map-svg .map-label {
+      fill: var(--quote);
+      font-family: var(--font-sans);
+      font-size: 9px;
+      text-anchor: middle;
+      pointer-events: none;
+    }
+    .site-map-svg a:hover .map-label,
+    .site-map-svg a:focus .map-label {
+      fill: var(--ink);
+    }
+    .site-map-svg a:focus {
+      outline: none;
+    }
+    .site-map-svg a:focus .map-node {
+      stroke-width: 2.5;
+    }
+    .site-map-svg .map-letter {
+      fill: var(--head);
+      font-family: var(--font-serif);
+      font-size: 13px;
+      font-weight: 700;
+      text-anchor: middle;
+      pointer-events: none;
+    }
+    .site-map-svg .map-micro {
+      fill: var(--muted);
+      font-family: var(--font-sans);
+      font-size: 8px;
+      text-anchor: middle;
+      pointer-events: none;
+    }
+    .site-map-svg .map-stairs {
+      fill: none;
+      stroke: var(--accent);
+      stroke-width: 1.2;
+    }
+    .site-map-svg .map-rubble {
+      fill: var(--bg-elev);
+      stroke: var(--danger);
+      stroke-width: 1.5;
+      stroke-dasharray: 3 2;
+    }
+    .exits {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin: 0.35rem 0 0.5rem;
+    }
+    .exits a { margin-right: 0.15rem; }
+    .goals li { margin: 0.2rem 0; }
+  </style>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4536408101e64ba59733ed69779dd45c"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body class="adventure has-map" data-wiki-root="../" data-hp-storage="green-lords-tomb-hp">
+<div class="adv-layout">
+
+  <nav class="adv-nav" aria-label="Adventure">
+    <a class="nav-title" href="#top">Green Lord’s Tomb</a>
+    <a class="nav-wiki-home" href="../index.html">← Wiki</a>
+    <span class="nav-label">Prep</span>
+    <ul>
+      <li><a href="#truth">Truth</a></li>
+      <li><a href="#hooks">This table</a></li>
+      <li><a href="#thornthumb">Thornthumb</a></li>
+      <li><a href="#interior-rule">Interior</a></li>
+      <li><a href="#crinwin-tactics">Crinwin</a></li>
+      <li><a href="#sajra">Sajra</a></li>
+    </ul>
+    <span class="nav-label">Areas</span>
+    <ul>
+      <li><a href="#room-1">1 Hill</a></li>
+      <li><a href="#room-2">2 A Entrance</a></li>
+      <li><a href="#room-3">3 B Collapse</a></li>
+      <li><a href="#room-4">4 C Central</a></li>
+      <li><a href="#room-5">5 D Mossy</a></li>
+      <li><a href="#room-6">6 E Shrine</a></li>
+      <li><a href="#room-7">7 F Pryder</a></li>
+      <li><a href="#room-8">8 G Great Hall</a></li>
+      <li><a href="#room-9">9 Inner tomb</a></li>
+      <li><a class="nav-sub" href="#inner-ante">Antechamber</a></li>
+      <li><a class="nav-sub" href="#inner-humility">Humility</a></li>
+      <li><a class="nav-sub" href="#inner-gratitude">Gratitude</a></li>
+      <li><a class="nav-sub" href="#inner-offerings">Offerings</a></li>
+      <li><a class="nav-sub" href="#inner-vault">Vault / afterlife</a></li>
+    </ul>
+    <span class="nav-label">Payoffs</span>
+    <ul>
+      <li><a href="#payoffs">Kids, hoard, home</a></li>
+    </ul>
+    <span class="nav-label">Wiki</span>
+    <ul>
+      <li><a href="../sites.html#the-green-lords-tomb-2" class="wiki-link" data-slug="sites" data-fragment="the-green-lords-tomb-2">Book write-up</a></li>
+      <li><a href="../green-lords.html#swyn" class="wiki-link" data-slug="green-lords" data-fragment="swyn">Swyn</a></li>
+      <li><a href="../crinwin.html" class="wiki-link" data-slug="crinwin">Crinwin</a></li>
+      <li><a href="../dangers.html#the-almtakers-guardian-fae" class="wiki-link" data-slug="dangers" data-fragment="the-almtakers-guardian-fae">Almtakers</a></li>
+      <li><a href="../green-lords.html#mummified-green-lord" class="wiki-link" data-slug="green-lords" data-fragment="mummified-green-lord">Mummy</a></li>
+      <li><a href="../fae.html" class="wiki-link" data-slug="fae">Fae</a></li>
+    </ul>
+    <div class="sidebar-foot">
+      <a class="sidebar-github" href="https://github.com/Bryan-Legend/stonetop-wiki-generator">GitHub</a>
+    </div>
+  </nav>
+
+  <div class="adv-main" id="top">
+
+<header>
+  <h1>The Green Lord’s Tomb</h1>
+  <p class="meta">
+    <strong>Sajra the swyn’s lair</strong> ·
+    1½ days into the
+    <a href="../the-great-wood.html" class="wiki-link" data-slug="the-great-wood">Great Wood</a>
+    · Book I pp. 371–377
+  </p>
+  <nav class="links">
+    <a href="../green-lords.html" class="wiki-link" data-slug="green-lords">Green Lords</a> ·
+    <a href="../crinwin.html" class="wiki-link" data-slug="crinwin">Crinwin</a> ·
+    <a href="../forest-folk.html#glyphs-and-pictograms" class="wiki-link" data-slug="forest-folk" data-fragment="glyphs-and-pictograms">Folk glyphs</a> ·
+    <a href="../fae.html" class="wiki-link" data-slug="fae">Fae</a>
+  </nav>
+</header>
+
+<section id="truth">
+  <h2>Truth</h2>
+  <p>
+    A dome-tomb of the
+    <a href="../green-lords.html" class="wiki-link" data-slug="green-lords">Green Lords</a>,
+    mostly intact, wearing a hill and three old oaks. Forest Folk left offerings here.
+    A Fae named Thornthumb lived in the outer halls for centuries until last autumn, when
+    <a href="../green-lords.html#swyn" class="wiki-link" data-slug="green-lords" data-fragment="swyn">Sajra the swyn</a>
+    took his mind, his hoard, and the tomb. Sajra collects beautiful things — including children.
+  </p>
+  <p>
+    Inner vault still holds a
+    <a href="../green-lords.html#mummified-green-lord" class="wiki-link" data-slug="green-lords" data-fragment="mummified-green-lord">mummified Green Lord</a>,
+    warded by loyal Fae. Sajra wants that vault. The kids are in the shrine. Pryder is not yet enthralled.
+  </p>
+  <div class="gm-line">
+    “The hill looks like a hill until the oaks, and the oaks look like oaks until the singing.
+    Two children’s voices. Too many mouths.”
+  </div>
+</section>
+
+<section id="hooks">
+  <h2>This table</h2>
+  <p class="statline">
+    Book names: <strong>Tiwlip</strong> (Woods child, last winter), <strong>Wynfor</strong> (Stonetop raid), <strong>Pryder</strong> (just taken).
+    Swap for whoever this village has already lost.
+  </p>
+  <ul class="goals">
+    <li><strong>Sven:</strong> children in a monster’s collection. Violence against the innocent is the whole wound.</li>
+    <li><strong>Dagmar:</strong> 1½ days is ground he knows. Folk glyphs, wasp-hum, the unwholesome thing he’s been smelling in the Wood.</li>
+    <li><strong>Geralt:</strong> a Maker tomb with a living hoard and a sealed inner vault. Power, if he can get past the Fae.</li>
+    <li><strong>Homefront:</strong> crinwin have already raided. Leave Sajra and the next child goes before harvest.</li>
+  </ul>
+</section>
+
+<section id="thornthumb">
+  <h2>Thornthumb</h2>
+  <p class="statline">
+    Displaced Fae · plant-sway · collector · oathbound to stay away from the tomb, Sajra, its servants, and its possessions.
+    Instinct: to get his hoard back without breaking the oath.
+  </p>
+  <p>
+    If they have not met him, he can find them on the march or at the tree-line. He will help against Sajra.
+    He will also swindle them. The book assumes they already promised not to steal from the hoard — treat that as a Fae oath if they said it.
+  </p>
+  <div class="dialog-lines">
+    <div class="gm-line">“I am not allowed the hill. You are. Bring me what was mine and I will name every hole in the stone.”</div>
+    <div class="gm-line">“The snake thinks it is a king. It is a magpie with a long belly.”</div>
+  </div>
+</section>
+
+<section id="interior-rule">
+  <h2>Site rule — interior</h2>
+  <p class="statline">True in A–G. White marble, plant-and-chimera scrollwork, often marred. Dark, but the stone throws light.</p>
+  <ul>
+    <li>Damp, cool. Wooden archways that grew there. Crude graffiti in Green Lord script. Lazy wasps. Distant voices that might be kids, or crinwin.</li>
+    <li><strong>Halls</strong> 10 feet wide, burial niches 8–24 per hall. No bodies. Some niches hold junk shrines (bones, potsherds, flawed Value 1 finery) — crinwin aping Sajra.</li>
+    <li><strong>Burrows (S)</strong> on the map: 18 inches. Sajra and crinwin only. Kids or Thornthumb could squeeze. PCs and Pryder cannot.</li>
+  </ul>
+</section>
+
+<section id="crinwin-tactics">
+  <h2>Crinwin (~30)</h2>
+  <p class="statline">
+    <a href="../crinwin.html" class="wiki-link" data-slug="crinwin">Crinwin</a>
+    horde · small, hoarder, stealthy · HP 3 · Armor 1 (reflexes) ·
+    claws/rocks/choke
+    <button type="button" class="dice-roll" data-dice="d6" title="Click to roll d6">d6</button>
+    (hand) · climbs like a squirrel · instinct: to covet.
+    Half are <em>trusted</em> (replace <em>cautious</em> with <em>zealous</em>). New flee at half lost; trusted fight to death.
+  </p>
+  <ul>
+    <li>4 sentries outside · 4–10 on Pryder in F · 3–6 asleep outside · 3–6 asleep in G · 10–15 off foraging · up to 5 doing crinwin stuff.</li>
+    <li><strong>Alerted:</strong> 2–3 keep tabs; rest rally at A. In 10–20 minutes, once ~10 have gathered: mimic Tiwlip/Wynfor crying for help, lure to A, swarm.</li>
+    <li><strong>Sajra / hoard / kids threatened:</strong> nearby crinwin alarm and attack.</li>
+    <li><strong>Unaware:</strong> eating, nest-work, fighting over junk, bullying, mimicking Sajra or the kids.</li>
+  </ul>
+  <p>
+    <strong>Wasps</strong>
+    (<a href="../crinwin.html#wasps" class="wiki-link" data-slug="crinwin" data-fragment="wasps">crinwin.html</a>):
+    swarm =
+    <button type="button" class="dice-roll" data-dice="1d4" title="Click to roll 1d4">1d4</button>
+    (ignores armor) and writhing; anything else is Defy Danger +CON.
+    Each later swarm hit steps the die up (max d10). Flee: roll +CON; 7+ escape and pick 1 (10+) or 2 (7–9): take swarm damage · mark a debility · run into another danger.
+  </p>
+  <div class="enemy-block">
+    <div class="enemy-row" data-hp-id="crin-1" data-hp-max="3">
+      <div class="enemy-meta"><span class="enemy-name">Crinwin 1</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="crin-2" data-hp-max="3">
+      <div class="enemy-meta"><span class="enemy-name">Crinwin 2</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="crin-3" data-hp-max="3">
+      <div class="enemy-meta"><span class="enemy-name">Crinwin 3</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="crin-4" data-hp-max="3">
+      <div class="enemy-meta"><span class="enemy-name">Crinwin 4</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="crin-5" data-hp-max="3">
+      <div class="enemy-meta"><span class="enemy-name">Crinwin 5</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="crin-6" data-hp-max="3">
+      <div class="enemy-meta"><span class="enemy-name">Crinwin 6</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+  </div>
+</section>
+
+<section id="sajra">
+  <h2>Sajra the Swyn</h2>
+  <p class="statline">
+    <a href="../green-lords.html#swyn" class="wiki-link" data-slug="green-lords" data-fragment="swyn">Swyn</a>
+    · solitary, large, construct, corrupted, stealthy, magical, devious, cautious, hoarder ·
+    HP 20 · Armor 4 (resilience), 2 vs bronze ·
+    bite &amp; constriction
+    <button type="button" class="dice-roll" data-dice="d10+3" title="Click to roll d10+3">d10+3</button>
+    (hand, close, forceful, grabby) · instinct: to indulge its ego.
+  </p>
+  <p>
+    First time they approach the hill, roll the
+    <a href="../playing-the-game.html#the-die-of-fate" class="wiki-link" data-slug="playing-the-game" data-fragment="the-die-of-fate">Die of Fate</a>:
+  </p>
+  <div class="roll-table" id="sajras-disposition">
+    <div class="roll-table-head">
+      <button type="button" class="dice-roll" data-dice="1d6" title="Click to roll 1d6">1d6</button>
+      <span class="roll-label">Sajra’s disposition</span>
+    </div>
+    <table><tbody>
+      <tr><th scope="row">1–3</th><td>In shrine (E), alert.</td></tr>
+      <tr><th scope="row">4–5</th><td>Off hunting. Back in <button type="button" class="dice-roll" data-dice="1d6" title="Click to roll 1d6">1d6</button> hours, or 30–60 min after wolf-howls.</td></tr>
+      <tr><th scope="row">6</th><td>In shrine (E), asleep on a big meal. Sluggish.</td></tr>
+    </tbody></table>
+  </div>
+  <ul>
+    <li>Uses burrows to flank. Hits loners and small groups.</li>
+    <li>Priority: itself, then ego, then hoard / lair / kids. Crinwin are expendable.</li>
+    <li>Compel against their will: they mark XP if they obey. Resist = Defy Danger.</li>
+  </ul>
+  <div class="enemy-block">
+    <div class="enemy-row" data-hp-id="sajra" data-hp-max="20">
+      <div class="enemy-meta"><span class="enemy-name">Sajra</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+  </div>
+</section>
+
+<article class="room" id="room-1">
+  <h2>Hill</h2>
+  <span class="tag">Approach</span>
+  <span class="tag">Exterior</span>
+  <div class="gm-line">
+    “A wide low hill in last year’s grass. Three bare oaks. Briar. Worked stone in the dirt if you look.
+    Children singing — the same two voices, over and over, from too many throats.”
+  </div>
+  <ul>
+    <li><strong>Ask:</strong> Dagmar, you know this song — what is it? Geralt, how do you know that’s crinwin and not the kids?</li>
+    <li><strong>Folk glyphs</strong> on the surrounding trees, faint:
+      <a href="../forest-folk.html#glyphs-and-pictograms" class="wiki-link" data-slug="forest-folk" data-fragment="glyphs-and-pictograms">reverence</a>,
+      <em>premnitsi</em> (“the receivers”), <em>istina</em> (“truth,” or… “oracle?”).</li>
+    <li>Rotting cabbage, bad eggs. Hum that isn’t bees. Papery nests in the oaks.</li>
+  </ul>
+  <h3>Sentries</h3>
+  <p class="statline">4 on watch in the oaks, often “singing.” <button type="button" class="dice-roll" data-dice="1d4+2" title="Click to roll 1d4+2">1d4+2</button> asleep in nests. <button type="button" class="dice-roll" data-dice="1d6-1" title="Click to roll 1d6-1">1d6-1</button> others outside doing crinwin stuff.</p>
+  <ul>
+    <li><strong>Notice PCs:</strong> stop singing, bird-call. Others hide. Sleepers wake and stay put.</li>
+    <li><strong>Poke around:</strong> watch, sneak closer, keep bird-calling.</li>
+    <li><strong>Try to enter:</strong> wolf-howls. Answers from the Wood. Inside goes on alert. ~30 min later <button type="button" class="dice-roll" data-dice="1d6+9" title="Click to roll 1d6+9">1d6+9</button> crinwin come back.</li>
+    <li><strong>Attack sentries:</strong> flee into canopy, or into the tomb. Keep hounding → howls.</li>
+    <li><strong>Molest a nest:</strong> crinwin burst, wasps swarm, daze/confound, flee.</li>
+  </ul>
+  <h3>Ways in</h3>
+  <ul>
+    <li><strong>Main (north):</strong> briar ditch, 15-foot arch half-full of soil. Cut the briar, or take <button type="button" class="dice-roll" data-dice="1d4" title="Click to roll 1d4">1d4</button> scratches and risk a nest. → A.</li>
+    <li><strong>Secret (west):</strong> 30 feet past the tree line, under a boulder, glamour and brush. Tight with a light load. Trapdoor T in D. Sajra does not know.</li>
+    <li><strong>Burrows:</strong> 18 inches, only when you’re on top of them. Not for PCs.</li>
+  </ul>
+  <p class="exits">
+    Exits →
+    <a href="#room-2">A Entrance</a>
+    <a href="#room-5">D secret</a>
+  </p>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>Briar arch, north face → <a href="#room-2">A Entrance</a>:</em>
+    “Soil to the knees. Daylight dies two steps in. The marble still throws what light you brought.”
+  </div>
+  <div class="gm-line">
+    <em>West boulder, packs off → <a href="#room-5">D Mossy</a>:</em>
+    “A squeeze under stone that shouldn’t be this smooth. Then moss, and a slab that lifts.”
+  </div>
+</article>
+
+<article class="room" id="room-2">
+  <h2>A · Entrance</h2>
+  <span class="tag">Threshold</span>
+  <div class="gm-line">
+    “Debris piled four feet at the arch, sloping down. Leaf litter slick underfoot. Saplings in the dirt.
+    Beyond, the floor is mud. The white stone still wants to be a hall.”
+  </div>
+  <ul>
+    <li>Moss and vines on the walls near the light.</li>
+    <li><strong>Tracks:</strong> crinwin, and a drag-trail toward C (Pryder). Faint S-curve in the dirt — Sajra, to and from E.</li>
+    <li>If they’re alerted, this is where they rally and fake the kids’ voices.</li>
+  </ul>
+  <p class="exits">
+    Exits →
+    <a href="#room-1">Hill</a>
+    <a href="#room-4">C Central</a>
+    <a href="#room-3">B squeeze</a>
+  </p>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>Back through the briar → <a href="#room-1">Hill</a>:</em>
+    “Daylight, wasp-hum, and the oaks pretending to be just oaks.”
+  </div>
+  <div class="gm-line">
+    <em>South, the cross of halls → <a href="#room-4">C Central</a>:</em>
+    “Vaulted dark, soot on the ceiling, water ticking in a floor-channel.”
+  </div>
+  <div class="gm-line">
+    <em>Northeast rubble, if they squeeze → <a href="#room-3">B Collapse</a>:</em>
+    “Stone that fell a long time ago, and something wrapped in linen under it.”
+  </div>
+</article>
+
+<article class="room" id="room-3">
+  <h2>B · Collapse</h2>
+  <span class="tag danger">Rubble</span>
+  <span class="tag">Burrow</span>
+  <div class="gm-line">
+    “The outer ring caved when the Fae sacked the tomb. Rubble. Linen. A hole an animal could use.”
+  </div>
+  <p>
+    Eight
+    <a href="../green-lords.html#mummified-servant" class="wiki-link" data-slug="green-lords" data-fragment="mummified-servant">mummified servants</a>
+    trapped in the fall. Crinwin/Sajra squeeze-tunnel through, and out via a burrow. Sajra’s trail is here if you look.
+  </p>
+  <p class="statline">
+    Horde, spirit, undead · HP 11 · Armor 0 · choke
+    <button type="button" class="dice-roll" data-dice="d6" title="Click to roll d6">d6</button>
+    (hand, grabby) or spear
+    <button type="button" class="dice-roll" data-dice="d6" title="Click to roll d6">d6</button>
+    (close, 1 piercing) · +1d4 from fire · regenerate unless burned or jars destroyed · instinct: destroy intruders.
+  </p>
+  <div class="enemy-block">
+    <div class="enemy-row" data-hp-id="servant-1" data-hp-max="11">
+      <div class="enemy-meta"><span class="enemy-name">Servant 1</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="servant-2" data-hp-max="11">
+      <div class="enemy-meta"><span class="enemy-name">Servant 2</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+  </div>
+  <ul>
+    <li><strong>Leave the rubble:</strong> they stay dead. The squeeze is still a crinwin/Sajra flank.</li>
+    <li><strong>Dig them out / fire / loud collapse:</strong> one or more animate. Hem in, cut escape, keep fighting in pieces.</li>
+  </ul>
+  <p class="exits">
+    Exits →
+    <a href="#room-2">A squeeze</a>
+    <a href="#room-6">E squeeze</a>
+    <a href="#room-1">Hill burrow</a>
+  </p>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>Back along the ring → <a href="#room-2">A Entrance</a>:</em>
+    “Mud and leaf-litter again. The arch is a pale coin of daylight.”
+  </div>
+  <div class="gm-line">
+    <em>East squeeze toward water-sound → <a href="#room-6">E Shrine</a>:</em>
+    “Cooler air. A pool throwing light on the ceiling.”
+  </div>
+</article>
+
+<article class="room" id="room-4">
+  <h2>C · Central</h2>
+  <span class="tag">Crossroads</span>
+  <div class="gm-line">
+    “Twenty feet of sooty vault. Scorch on the floor, very old. Empty niches. Four smashed sarcophagi.
+    A thin channel of water ticks west through the stone.”
+  </div>
+  <ul>
+    <li><strong>SE sarcophagus</strong> most intact: bones, snail shells, bug husks, a huge snakeskin (Sajra’s).</li>
+    <li><strong>Broken statue</strong> (◇◇) in the NW rubble — dragged from E. Green Lords’
+      <a href="../danu-the-earth-mother.html" class="wiki-link" data-slug="danu-the-earth-mother">Danu</a>, maybe.</li>
+    <li>Water comes from E, crosses here, goes to D. Follow it either way.</li>
+    <li>Rebel Fae burned the chief servants here. That’s the soot.</li>
+  </ul>
+  <p class="exits">
+    Exits →
+    <a href="#room-2">A north</a>
+    <a href="#room-5">D west</a>
+    <a href="#room-6">E east</a>
+    <a href="#room-8">G south</a>
+  </p>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>North, toward daylight → <a href="#room-2">A Entrance</a>:</em>
+    “Mud again, and a coin of sky.”
+  </div>
+  <div class="gm-line">
+    <em>West, following the water → <a href="#room-5">D Mossy</a>:</em>
+    “Frog-song cuts off. The floor goes soft and green.”
+  </div>
+  <div class="gm-line">
+    <em>East, against the current → <a href="#room-6">E Shrine</a>:</em>
+    “Cooler. Light on the water. Something expensive on an altar that isn’t an altar anymore.”
+  </div>
+  <div class="gm-line">
+    <em>South, the cabbage-smell worse → <a href="#room-8">G Great Hall</a>:</em>
+    “Pillars like trees. A hole in the floor that wants to be stairs.”
+  </div>
+</article>
+
+<article class="room" id="room-5">
+  <h2>D · Mossy chamber</h2>
+  <span class="tag">Talk</span>
+  <span class="tag">Secret</span>
+  <div class="gm-line">
+    “Makerglass in the ceiling, glowing, gouged where crinwin tried to steal it.
+    Moss in crazy-quilt colors over everything. The channel rings the room and feeds the carpet.”
+  </div>
+  <ul>
+    <li>Frog-song as they approach; hush when they enter. Earth-smell. Soft underfoot. Pictures in the moss that aren’t there when you look again.</li>
+    <li><strong>Trapdoor T:</strong> moss-covered slab. Secret tunnel west to the boulder. Crinwin have not found it.</li>
+    <li>Ants, snails, frogs, moths, gnats. Wasps and crinwin hunt them.</li>
+  </ul>
+  <h3>Moss spirits</h3>
+  <p class="statline">horde, spirits, vain, moody · instinct: to express themselves visually. Fret over Thornthumb. Sajra is a boor. Crinwin are vile. You clearly don’t understand the work.</p>
+  <div class="dialog-lines">
+    <div class="gm-line">“He kept the light. The snake does not keep the light. The snake sits in it.”</div>
+    <div class="gm-line">“Do not step there. That was a year. That was a good year.”</div>
+  </div>
+  <p class="exits">
+    Exits →
+    <a href="#room-4">C east</a>
+    <a href="#room-7">F south</a>
+    <a href="#room-1">Hill secret</a>
+  </p>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>East along the water → <a href="#room-4">C Central</a>:</em>
+    “The moss ends. Soot and smashed stone.”
+  </div>
+  <div class="gm-line">
+    <em>South along the outer ring → <a href="#room-7">F Pryder</a>:</em>
+    “Niches. A boy breathing wrong. Eyes in the dark that are not his.”
+  </div>
+  <div class="gm-line">
+    <em>Trapdoor, west tunnel → <a href="#room-1">Hill</a>:</em>
+    “Stone, then roots, then the underside of a boulder and the Wood.”
+  </div>
+</article>
+
+<article class="room" id="room-6">
+  <h2>E · Shrine</h2>
+  <span class="tag danger">Sajra</span>
+  <span class="tag">Kids</span>
+  <div class="gm-line">
+    “A rectangular pool, a foot of spring-water, glowing until it leaves the basin.
+    Cool air. Light crawling the ceiling. The east altar is a shelf of stolen pretty things.”
+  </div>
+  <ul>
+    <li><strong>Hoard:</strong> worked goods, altar and wall-shelves. <em>Immobile, beautiful,</em> Value 4. If they promised Thornthumb, that’s an oath.</li>
+    <li>Ask: what shiny thing catches your eye? What about the pile feels tawdry?</li>
+    <li>Furs in the NE corner (bed). Chipped ceramic urn (chamber pot). Kids eat what crinwin forage because Sajra said to.</li>
+    <li>Sajra is probably not here — <a href="#sajra">disposition</a>. If it is, this is its den.</li>
+  </ul>
+  <h3>Wynfor &amp; Tiwlip</h3>
+  <p class="statline">
+    small, entranced, docile · HP 3 · bronze knife
+    <button type="button" class="dice-roll" data-dice="d4" title="Click to roll d4">d4</button>
+    (hand) · instinct: bask in Sajra’s presence.
+    Ill-fitting silks. Asleep or staring at the pool. Ignore PCs until someone takes <em>them</em> or the hoard — then they stab.
+  </p>
+  <div class="enemy-block">
+    <div class="enemy-row" data-hp-id="wynfor" data-hp-max="3">
+      <div class="enemy-meta"><span class="enemy-name">Wynfor</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="tiwlip" data-hp-max="3">
+      <div class="enemy-meta"><span class="enemy-name">Tiwlip</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+  </div>
+  <ul>
+    <li><strong>Carry them out gently:</strong> they go limp, then fight at the threshold if Sajra’s suggestion still holds. Break it with time, a spirit, or by putting Sajra down.</li>
+    <li><strong>Hurt them:</strong> Sven will not forgive the table. Crinwin alarm. Sajra’s ego is wounded even if it’s hunting.</li>
+  </ul>
+  <h3>Spirit of the spring</h3>
+  <p class="statline">solitary, spirit, anxious · instinct: fuss over everything. Mile-a-minute whisper. Questions, no waiting. Hates Sajra, frets over its opinion. Upsets herself and insults herself.</p>
+  <div class="dialog-lines">
+    <div class="gm-line">“Is it coming back? Don’t tell it I asked. I didn’t ask. The pool is fine. The pool is not fine.”</div>
+    <div class="gm-line">“The statue went west. They dragged her. I should have — I didn’t. I’m sorry. I’m not sorry.”</div>
+  </div>
+  <p class="exits">
+    Exits →
+    <a href="#room-4">C west</a>
+    <a href="#room-8">G south</a>
+    <a href="#room-3">B squeeze</a>
+  </p>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>West, the water leaving → <a href="#room-4">C Central</a>:</em>
+    “Glow dies in the channel. Soot and the broken goddess in the rubble.”
+  </div>
+  <div class="gm-line">
+    <em>South along the ring → <a href="#room-8">G Great Hall</a>:</em>
+    “The cabbage-smell thickens. Pillars. Nests you might miss until they move.”
+  </div>
+</article>
+
+<article class="room" id="room-7">
+  <h2>F · Pryder’s hall</h2>
+  <span class="tag">Rescue</span>
+  <div class="gm-line">
+    “A burial niche with a boy in it. Breathing. Hot. The hall has too many small shadows, and some of them are watching other shadows.”
+  </div>
+  <p class="statline">
+    <button type="button" class="dice-roll" data-dice="1d4+2" title="Click to roll 1d4+2">1d4+2</button>
+    “new” crinwin (the ones who brought him) on watch.
+    <button type="button" class="dice-roll" data-dice="1d4" title="Click to roll 1d4">1d4</button>
+    “trusted” looking on from G.
+  </p>
+  <h3>Pryder</h3>
+  <p class="statline">
+    woods-wise, handsome, concussed · HP 0 of 6 ·
+    <button type="button" class="dice-roll" data-dice="d6" title="Click to roll d6">d6</button>
+    if armed · instinct: see the good in things.
+    Asleep on Sajra’s command. Head wound, fever. Slow, tires fast, <em>mind is free</em>.
+  </p>
+  <div class="enemy-block">
+    <div class="enemy-row" data-hp-id="pryder" data-hp-max="6">
+      <div class="enemy-meta"><span class="enemy-name">Pryder</span> (start him at 0)</div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+  </div>
+  <ul>
+    <li><strong>Wake him:</strong> he knows he’s not supposed to. He will try. He can walk if helped. He will name the shrine, the snake, the other two kids.</li>
+    <li><strong>Fight here:</strong> new crinwin jealous; trusted want the credit. They may howl rather than die quietly.</li>
+    <li>He does not fit the burrows. Out through A, or the secret in D.</li>
+  </ul>
+  <p class="exits">
+    Exits →
+    <a href="#room-5">D north</a>
+    <a href="#room-8">G east</a>
+  </p>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>North, moss-smell → <a href="#room-5">D Mossy</a>:</em>
+    “Green underfoot. The glow in the ceiling like a held breath.”
+  </div>
+  <div class="gm-line">
+    <em>East, toward the pillars → <a href="#room-8">G Great Hall</a>:</em>
+    “Trusted crinwin were already looking this way.”
+  </div>
+</article>
+
+<article class="room" id="room-8">
+  <h2>G · Great hall</h2>
+  <span class="tag danger">Nests</span>
+  <span class="tag">Stairs</span>
+  <div class="gm-line">
+    “Three pillars that are trees, twenty feet. A fourth already down, and the wall and ceiling with it.
+    Roots through cracks in the white stone. The smell is cabbage and eggs and worse.
+    Stairs in the middle of the floor, going down.”
+  </div>
+  <ul>
+    <li>Bas-reliefs all vandalized. Nests hug the pillars near the ceiling — easy to miss.</li>
+    <li>If no alarm: 3–6 trusted asleep in nests, 1–4 spying on F, 0–5 doing crinwin stuff.</li>
+    <li>Wasps in the nests and pillars. Agitate → swarm.</li>
+  </ul>
+  <h3>Unstable pillars</h3>
+  <p class="statline">Advance a box each time a pillar is struck, or as a GM move.</p>
+  <ul class="check-list" data-check-list="glt-pillars">
+    <li class="check-item"><label for="glt-p0"><input type="checkbox" class="wiki-check" id="glt-p0" data-check-id="glt-p0"> <span>Pillar cracks/buckles, dirt pours down</span></label></li>
+    <li class="check-item"><label for="glt-p1"><input type="checkbox" class="wiki-check" id="glt-p1" data-check-id="glt-p1"> <span>Stones fall (<button type="button" class="dice-roll" data-dice="1d6+1" title="Click to roll 1d6+1">1d6+1</button> damage, <em>forceful</em>)</span></label></li>
+    <li class="check-item">
+      <label for="glt-p2"><input type="checkbox" class="wiki-check" id="glt-p2" data-check-id="glt-p2"> <span></span></label>
+      <label for="glt-p3"><input type="checkbox" class="wiki-check" id="glt-p3" data-check-id="glt-p3"> <span>Pillar breaks, big slabs (<button type="button" class="dice-roll" data-dice="1d8+3" title="Click to roll 1d8+3">1d8+3</button> damage, <em>area</em>, <em>forceful</em>)</span></label>
+    </li>
+    <li class="check-item"><label for="glt-p4"><input type="checkbox" class="wiki-check" id="glt-p4" data-check-id="glt-p4"> <span><strong>Doom:</strong> ceiling buries anyone still inside (Death’s Door); connecting tunnels blocked</span></label></li>
+  </ul>
+  <p class="exits">
+    Exits →
+    <a href="#room-4">C north</a>
+    <a href="#room-7">F west</a>
+    <a href="#room-6">E east</a>
+    <a href="#room-9">Inner down</a>
+  </p>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>North → <a href="#room-4">C Central</a>:</em>
+    “The soot-vault. Water in the floor, ticking.”
+  </div>
+  <div class="gm-line">
+    <em>West → <a href="#room-7">F Pryder</a>:</em>
+    “The niche. The boy. The small jealous things.”
+  </div>
+  <div class="gm-line">
+    <em>East → <a href="#room-6">E Shrine</a>:</em>
+    “Cooler air and stolen shine on the water.”
+  </div>
+  <div class="gm-line">
+    <em>Stairs down → <a href="#room-9">Inner tomb</a>:</em>
+    “White marble that was never sacked. The air changes. Iron on your belt feels loud.”
+  </div>
+</article>
+
+<article class="room" id="room-9">
+  <h2>Inner tomb</h2>
+  <span class="tag">Linear</span>
+  <span class="tag">Fae wards</span>
+  <p class="statline">Below G. The book leaves this for later; the moves live here so you are not flipping chapters. Kids first is enough for a session.</p>
+
+  <h3 id="inner-ante">Antechamber</h3>
+  <div class="gm-line">
+    “Hexagon, twenty feet. Featureless white. No soot. No graffiti. Your iron hums like a lie.”
+  </div>
+  <ul>
+    <li><strong>Iron or steel on them:</strong> the way to Humility will not open. Leave it here, or go back up.</li>
+    <li>No fight. The ward is the door.</li>
+  </ul>
+
+  <h3 id="inner-humility">Hall of Humility</h3>
+  <p>
+    When you <strong>enter the Hall of Humility</strong>, choose 1:
+  </p>
+  <ul>
+    <li>Tell a moment that left you humbled and small before the natural world → proceed to Gratitude.</li>
+    <li>Tell a personal triumph, pride, self-satisfaction → you exit into the antechamber.</li>
+  </ul>
+  <p>Skip, force, mock it: the hall puts them back in the antechamber, iron or no. Repeat until they choose.</p>
+
+  <h3 id="inner-gratitude">Hall of Gratitude</h3>
+  <p>
+    Shifting tableau: ancient people living and learning at the feet of tall magnificent beings.
+    When you <strong>enter the Hall of Gratitude</strong>, roll +WIS.
+  </p>
+  <ul>
+    <li><strong>10+:</strong> witness someone learning a skill now taken for granted — describe it — then Offerings.</li>
+    <li><strong>7–9:</strong> you are living one of those lives. Describe the task for the Makers, and how you know it isn’t yours. Mark <em>dazed</em>. Offerings.</li>
+    <li><strong>6−:</strong> savagery, sickness, hunger, want. Tell a hardship you suffer most cruelly. Mark all three debilities. Tell how you find yourself. Offerings.</li>
+  </ul>
+
+  <h3 id="inner-offerings">Hall of Offerings</h3>
+  <div class="gm-line">
+    “Two of them. Twelve feet, wood-skin, goat legs, antlers, no mouths, three white eyes.
+    They plant those trunk-arms and swing forward. Creaking wood.
+    Something that was on your left is on your right.”
+  </div>
+  <p class="statline">
+    <a href="../dangers.html#the-almtakers-guardian-fae" class="wiki-link" data-slug="dangers" data-fragment="the-almtakers-guardian-fae">Almtakers</a>
+    · group, large, Fae, magical, organized · HP 14 · Armor 5 (resilience, skill), 2 vs iron ·
+    powerful blows
+    <button type="button" class="dice-roll" data-dice="d6+3" title="Click to roll d6+3">d6+3</button>
+    w/ disadvantage (close, reach, forceful) ·
+    <a href="../fae.html#injury" class="wiki-link" data-slug="fae" data-fragment="injury">Fae nature</a>,
+    telepathic, cannot lie · warp local time and space · instinct: protect its master.
+  </p>
+  <div class="enemy-block">
+    <div class="enemy-row" data-hp-id="almtaker-1" data-hp-max="14">
+      <div class="enemy-meta"><span class="enemy-name">Almtaker 1</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="almtaker-2" data-hp-max="14">
+      <div class="enemy-meta"><span class="enemy-name">Almtaker 2</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+  </div>
+  <ul>
+    <li>They want an offering, a vow of peace and respect, then they judge.</li>
+    <li><strong>Know Things:</strong> interesting — Folk called them Priemnitsi, “Receivers,” for a great oracle. Useful — gifts <em>new since the Green Lords</em> (or vivid memories of such) land well. This place is out of time.</li>
+    <li><strong>Deceive them</strong> (even with true words): roll +WIS. 10+ they don’t see it; 7–9 they probe — come clean or double down; 6− they have you.</li>
+    <li>Moves: lock eyes and teleport you away · act in tandem · require an oath · wasting curse on oath-breakers.</li>
+    <li>They loathe fighting. If they do, they fight as a pair.</li>
+    <li>Portal here to the false afterlife — only if they let you, or you force it.</li>
+  </ul>
+  <div class="dialog-lines">
+    <div class="gm-line">“What do you bring. What do you bring.”</div>
+    <div class="gm-line">“Peace. Respect. Say it. Mean it.”</div>
+    <div class="gm-line">“The master dreams. Do not wake the master.”</div>
+  </div>
+
+  <h3 id="inner-vault">Burial vault &amp; afterlife</h3>
+  <p>
+    Vault is <strong>sealed</strong> — no physical door. Body, canopic jars, grave goods inside.
+    Spirit lives in a
+    <a href="../fae.html" class="wiki-link" data-slug="fae">Fae domain</a>:
+    dusty halls, feral gardens, discarded wealth, surly bound Fae. The Green Lord’s soul swings from boredom to manic fits; the Fae on hand cobble threadbare glamour of half-remembered deeds.
+    Theme: promises, deals, loopholes. Time does not behave.
+  </p>
+  <p class="statline">
+    <a href="../green-lords.html#mummified-green-lord" class="wiki-link" data-slug="green-lords" data-fragment="mummified-green-lord">Mummified Green Lord</a>
+    · HP 24 · Armor 4 (wards), 0 vs fire ·
+    mighty blows
+    <button type="button" class="dice-roll" data-dice="d10+2" title="Click to roll d10+2">d10+2</button>
+    (hand, close, forceful) · tethered to jars, senses the whole tomb · instinct: preserve its glorious afterlife.
+  </p>
+  <div class="enemy-block">
+    <div class="enemy-row" data-hp-id="green-lord" data-hp-max="24">
+      <div class="enemy-meta"><span class="enemy-name">Green Lord</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+  </div>
+  <ul>
+    <li>It does not want to leave the dream. Threaten the afterlife, the jars, or the corpse, and it will inhabit the body.</li>
+    <li>Regenerates even from fire unless the canopic jars are destroyed.</li>
+    <li>Twist living things with a gesture. Wield plants and beasts in the tomb as limbs.</li>
+  </ul>
+  <p class="exits">
+    Exits →
+    <a href="#room-8">G stairs up</a>
+  </p>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>Stairs up → <a href="#room-8">G Great Hall</a>:</em>
+    “Soot and wasp-hum and the smell you had almost forgotten. Iron is just iron again.”
+  </div>
+</article>
+
+<section id="payoffs">
+  <h2>Payoffs</h2>
+  <ul>
+    <li><strong>Kids out:</strong> fever, silk, Sajra’s voice still in two of them for a while. Homefront: a debt, a feast, a fear that the Wood takes children.</li>
+    <li><strong>Sajra dead:</strong> trusted crinwin may fight on; new ones scatter and become a pest threat. Thornthumb wants in. The spring-spirit weeps and thanks them in the same breath.</li>
+    <li><strong>Sajra fled:</strong> it will collect somewhere else. Next season, another child, or a hunter who doesn’t come back.</li>
+    <li><strong>Hoard:</strong> Value 4 if they can move it. Oath to Thornthumb if they swore one. Fence it in Gordin’s Delve and you buy a different kind of trouble.</li>
+    <li><strong>Left the inner tomb:</strong> correct for a first pass. It waits. Geralt will think about it.</li>
+    <li><strong>Collapsed G:</strong> inner tomb buried with them or without them. Doom as written.</li>
+  </ul>
+  <div class="gm-line">
+    “The Wood is louder on the way home. Every bird is a bird until it isn’t.
+    Behind you the hill is a hill again, if you don’t look at the stone in the grass.”
+  </div>
+</section>
+
+  </div><!-- .adv-main -->
+
+<aside class="adv-map" id="map" aria-label="Site map">
+  <h2>Map</h2>
+  <div class="site-map-wrap">
+    <svg class="site-map-svg" viewBox="0 0 400 500" role="img" aria-label="Green Lord’s Tomb site map">
+      <title>Green Lord’s Tomb</title>
+      <defs>
+        <pattern id="glt-hatch" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(35)">
+          <line x1="0" y1="0" x2="0" y2="6" stroke="var(--danger)" stroke-width="1.2" />
+        </pattern>
+      </defs>
+
+      <!-- Tomb wall + floor -->
+      <circle class="map-wall" cx="200" cy="248" r="168" />
+      <circle class="map-floor" cx="200" cy="248" r="154" />
+
+      <!-- Cross corridors (under nodes) -->
+      <line class="map-edge" x1="200" y1="128" x2="200" y2="368" />
+      <line class="map-edge" x1="78" y1="248" x2="322" y2="248" />
+      <!-- Outer ring: D–F–G and E–G -->
+      <line class="map-edge" x1="78" y1="278" x2="95" y2="348" />
+      <line class="map-edge" x1="125" y1="350" x2="158" y2="360" />
+      <line class="map-edge" x1="242" y1="360" x2="318" y2="278" />
+      <!-- Collapse squeeze through B (dashed) -->
+      <path class="map-edge map-edge-tight" d="M 240 128 C 270 118, 300 130, 318 218" />
+
+      <!-- Water E → C → D -->
+      <path class="map-water" d="M 322 248 H 78" />
+      <circle class="map-water" cx="78" cy="248" r="14" />
+      <path class="map-water" d="M 300 236 c 8 4, 12 12, 8 20" />
+
+      <!-- Main entrance Hill → A -->
+      <line class="map-edge map-edge-thin" x1="200" y1="42" x2="200" y2="100" />
+      <!-- Secret Hill → D -->
+      <path class="map-edge map-edge-tight" d="M 150 28 C 40 40, 20 180, 42 248" />
+      <!-- Stairs G → Inner -->
+      <line class="map-edge map-edge-thin" x1="200" y1="400" x2="200" y2="450" />
+
+      <!-- Burrows -->
+      <line class="map-edge map-edge-tight" x1="318" y1="130" x2="362" y2="92" />
+      <line class="map-edge map-edge-tight" x1="70" y1="372" x2="28" y2="410" />
+      <line class="map-edge map-edge-tight" x1="268" y1="400" x2="300" y2="430" />
+      <line class="map-edge map-edge-tight" x1="330" y1="300" x2="368" y2="330" />
+      <text class="map-micro" x="355" y="84">S</text>
+      <text class="map-micro" x="22" y="424">S</text>
+      <text class="map-micro" x="308" y="444">S</text>
+      <text class="map-micro" x="378" y="344">S</text>
+      <text class="map-micro" x="48" y="120">secret</text>
+
+      <!-- North -->
+      <text class="map-micro" x="200" y="88">N</text>
+      <polygon points="200,74 196,84 204,84" fill="var(--muted)" />
+
+      <!-- 1 Hill -->
+      <a href="#room-1">
+        <rect class="map-node map-node-out" x="150" y="8" width="100" height="34" rx="6" />
+        <text class="map-letter" x="200" y="22">1</text>
+        <text class="map-label" x="200" y="34">Hill</text>
+      </a>
+
+      <!-- 2 A Entrance -->
+      <a href="#room-2">
+        <rect class="map-node" x="160" y="100" width="80" height="48" rx="6" />
+        <text class="map-letter" x="200" y="118">A</text>
+        <text class="map-label" x="200" y="132">Entrance</text>
+      </a>
+
+      <!-- 3 B Collapse -->
+      <a href="#room-3">
+        <rect class="map-rubble" x="248" y="112" width="78" height="50" rx="6" />
+        <rect fill="url(#glt-hatch)" x="248" y="112" width="78" height="50" rx="6" pointer-events="none" />
+        <text class="map-letter" x="287" y="132">B</text>
+        <text class="map-label" x="287" y="146">Collapse</text>
+      </a>
+
+      <!-- 4 C Central -->
+      <a href="#room-4">
+        <circle class="map-node" cx="200" cy="248" r="40" />
+        <text class="map-letter" x="200" y="244">C</text>
+        <text class="map-label" x="200" y="258">Central</text>
+      </a>
+
+      <!-- 5 D Mossy -->
+      <a href="#room-5">
+        <rect class="map-node" x="42" y="218" width="72" height="60" rx="6" />
+        <text class="map-letter" x="78" y="240">D</text>
+        <text class="map-label" x="78" y="254">Mossy</text>
+        <text class="map-micro" x="58" y="268">T</text>
+      </a>
+
+      <!-- 6 E Shrine -->
+      <a href="#room-6">
+        <rect class="map-node map-node-danger" x="286" y="218" width="72" height="60" rx="6" />
+        <text class="map-letter" x="322" y="240">E</text>
+        <text class="map-label" x="322" y="254">Shrine</text>
+      </a>
+
+      <!-- 7 F Pryder -->
+      <a href="#room-7">
+        <rect class="map-node" x="58" y="322" width="66" height="50" rx="6" />
+        <text class="map-letter" x="91" y="342">F</text>
+        <text class="map-label" x="91" y="356">Pryder</text>
+      </a>
+
+      <!-- 8 G Great Hall -->
+      <a href="#room-8">
+        <rect class="map-node" x="155" y="328" width="90" height="72" rx="6" />
+        <text class="map-letter" x="200" y="350">G</text>
+        <text class="map-label" x="200" y="364">Great Hall</text>
+        <!-- stairs -->
+        <rect class="map-stairs" x="188" y="372" width="24" height="18" />
+        <line class="map-stairs" x1="188" y1="377" x2="212" y2="377" />
+        <line class="map-stairs" x1="188" y1="382" x2="212" y2="382" />
+        <line class="map-stairs" x1="188" y1="387" x2="212" y2="387" />
+      </a>
+
+      <!-- 9 Inner -->
+      <a href="#room-9">
+        <rect class="map-node map-node-danger" x="150" y="450" width="100" height="36" rx="6" />
+        <text class="map-letter" x="200" y="466">9</text>
+        <text class="map-label" x="200" y="478">Inner tomb</text>
+      </a>
+    </svg>
+  </div>
+  <p class="statline">
+    North arch is the door. Dashed = squeeze, secret, or burrow (S).
+    Water runs E → C → D. Stairs in G go down.
+  </p>
+</aside>
+
+</div><!-- .adv-layout -->
+
+<div id="wiki-preview" class="wiki-preview" hidden></div>
+<div id="dice-toast" class="dice-toast" hidden></div>
+<script src="../js/wiki.js"></script>
+<script src="adventure.js"></script>
+</body>
+</html>

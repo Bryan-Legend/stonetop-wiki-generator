@@ -220,6 +220,22 @@ def resolve_adventures_dir(out: Path) -> Path | None:
 
 # Mid-page gutter for typical Stonetop 1-up pages (~396pt wide, 2 columns)
 DEFAULT_GUTTER = 198
+# Scale / compass type sitting on a dungeon map image (Book I Sites p. 373).
+MAP_SCALE_RE = re.compile(
+    r"^\d+\s*(?:feet|foot|ft|yd|m|mi|paces?)\.?$", re.I
+)
+MAP_COMPASS = {"N", "S", "E", "W", "NORTH", "SOUTH", "EAST", "WEST"}
+
+
+def _span_mid_x(sp: dict) -> float:
+    """Horizontal centre — column assignment uses this, not x0.
+
+    Right-column type often starts a fraction of a point left of mid-page
+    (Book I Sites: 'Exterior' at x=197.8 with gutter 198). Using the left
+    edge dumps that whole column into the left one, and build_lines then
+    glues same-baseline pairs ('As they approach Exterior').
+    """
+    return (sp["x"] + sp["x1"]) / 2
 
 # Monster/creature tag words commonly used in Stonetop stat blocks
 ORG_TAGS = {"horde", "group", "solitary"}
@@ -743,6 +759,30 @@ def map_label_spans(page: fitz.Page) -> set:
         for k, s in recs.items()
         if in_map_face(s) and any(on(s["bbox"], p) for p in lettered)
     }
+    # Dungeon-plan images (the Green Lord's Tomb on Sites p. 373) letter
+    # room keys and a scale. The scale often sits a few points past the
+    # image box; overlap with padding catches it without eating captions.
+    for pic in pics:
+        pw, ph = pic[2] - pic[0], pic[3] - pic[1]
+        if pw < 150 or ph < 150:
+            continue
+        pad = 16.0
+        for key, s in recs.items():
+            bb = s["bbox"]
+            if (
+                bb[2] < pic[0] - pad
+                or bb[0] > pic[2] + pad
+                or bb[3] < pic[1] - pad
+                or bb[1] > pic[3] + pad
+            ):
+                continue
+            txt = key[2].strip()
+            if (
+                len(txt) <= 2
+                or txt.upper() in MAP_COMPASS
+                or MAP_SCALE_RE.match(txt)
+            ):
+                labels.add(key)
     return labels
 
 
@@ -1931,14 +1971,21 @@ def extract_page_rich(
         crossing = 0
         for row in rows:
             segs: list[list[float]] = []  # [x0, x1] per unbroken run
+            last_mid: float | None = None
             for sp in row:
-                if segs and sp["x"] - segs[-1][1] <= 8.0:
+                mid = _span_mid_x(sp)
+                # Never glue a left-col span to a right-col one, even when
+                # the gap at the gutter is under 8pt (Sites example notes).
+                same_side = last_mid is None or (last_mid < gutter) == (
+                    mid < gutter
+                )
+                if segs and same_side and sp["x"] - segs[-1][1] <= 8.0:
                     segs[-1][1] = max(segs[-1][1], sp["x1"])
                 else:
                     segs.append([sp["x"], sp["x1"]])
-            if any(x1 <= gutter for _, x1 in segs) and any(
-                x0 >= gutter for x0, _ in segs
-            ):
+                last_mid = mid
+            mids = [_span_mid_x(sp) for sp in row]
+            if any(m < gutter for m in mids) and any(m >= gutter for m in mids):
                 two_col = True
                 break
             crossing += sum(1 for x0, x1 in segs if x0 < gutter < x1)
@@ -1965,7 +2012,7 @@ def extract_page_rich(
             result.append(M_BAND)
         cols: list[list[dict]] = [[], []]
         for sp in band_spans:
-            cols[0 if sp["x"] < gutter else 1].append(sp)
+            cols[0 if _span_mid_x(sp) < gutter else 1].append(sp)
         for ci, col in enumerate(cols):
             if not col:
                 continue
@@ -2064,6 +2111,38 @@ def looks_like_roll_header(line: str) -> bool:
         if len(label) <= 40 and "(" not in label:
             return True
     return False
+
+
+def looks_like_inline_creature(line: str) -> bool:
+    """GM-note creature line: ``Wynfor & Tiwlip (small, entranced, docile):``.
+
+    Sites' example write-up sets these in body type, so they never arrive as
+    ``M_H3``. Without this they get swallowed by the previous stat block.
+    """
+    m = re.match(r"^(.+?)\(([^)]+)\):\s*(.*)$", (line or "").strip())
+    if not m:
+        return False
+    name, paren, rest = m.group(1).strip(), m.group(2), m.group(3)
+    if len(name) < 2 or len(name) > 70:
+        return False
+    tags = [t.strip() for t in paren.split(",") if t.strip()]
+    if not tags:
+        return False
+
+    def _tagok(t: str) -> bool:
+        tl = t.lower()
+        if any(ch.isdigit() for ch in t):
+            return False
+        if tl in TAG_WORDS or tl.rstrip("s") in TAG_WORDS:
+            return True
+        return bool(re.fullmatch(r"[a-z][a-z\-]*", tl))
+
+    if not all(_tagok(t) for t in tags):
+        return False
+    rs = rest.strip()
+    if not rs:
+        return True
+    return bool(re.match(r"^(HP|Instinct|Damage|Armor|Notes)\b", rs, re.I))
 
 
 def looks_like_heading(line: str) -> bool:
@@ -2366,6 +2445,9 @@ def should_join(a: str, b: str) -> bool:
         return False
     if ENTRY_RE.match(b):
         return False
+    # Unclosed parenthesis: "Wynfor & Tiwlip (small, entranced," + "docile): HP 3"
+    if a.count("(") > a.count(")") and a.endswith((",", "-")):
+        return True
     if looks_like_tag_line(b) or HP_LINE_RE.search(b):
         return False
     if b.startswith(("•", "·")):
@@ -2578,6 +2660,10 @@ def should_join(a: str, b: str) -> bool:
             b,
         ):
             return True
+        # A finished-looking list line shouldn't swallow the next paragraph
+        # ("…animal noises" + "Hallways are 10 feet wide…").
+        if re.match(r"^[A-Z][A-Za-z]+s?\s+(?:are|is|was|were)\b", b):
+            return False
         if lowerish >= 2 and len(b) >= 30:
             return True
         # Short wrap shard with a page ref and a little more prose
@@ -4788,6 +4874,12 @@ def structure_html(
                     c = strip_markers(cand)
                     if c.startswith("• "):
                         continue
+                    # A later named creature is not this heading's stat line
+                    # (Sites: "Pryder's hallway (F)" then "Pryder (woods-wise…): HP").
+                    if looks_like_inline_creature(c) and not c.lower().startswith(
+                        bare[:8].lower()
+                    ):
+                        break
                     low = c.lower()
                     if (
                         HP_LINE_RE.search(c)
@@ -5410,6 +5502,10 @@ def structure_html(
                             or looks_like_value_header(nxt)
                         ):
                             break
+                        # A finished sentence plus a new capital is the next
+                        # paragraph, not a wrap (Sites: Sajra's 6 + tactics).
+                        if body.rstrip().endswith((".", "!", "?")) and nxt[:1].isupper():
+                            break
                         # Always glue non-entry lines into the current row
                         # (wrapped descriptions; e.g. wonder #9's second sentence).
                         if nxt.endswith("-") and not nxt.endswith(("–", "—", "--")):
@@ -5535,29 +5631,39 @@ def structure_html(
         }
         dp1, dp2 = _defmt(peek(1)), _defmt(peek(2))
         is_creature_start = i in forced_creature or (
-            len(line) <= 48
-            and not line.endswith(".")
-            and line.lower() not in _not_creature
+            line.lower() not in _not_creature
             and not looks_like_value_header(line)
             and not VALUE_ROW_RE.match(line)
             and (
-                (
-                    looks_like_tag_line(dp1)
-                    and (
-                        HP_LINE_RE.search(dp2)
-                        or HP_LINE_RE.search(dp1)
-                        or dp2.lower().startswith("damage")
-                    )
-                )
-                # tags may be missing; name then HP
+                looks_like_inline_creature(line)
                 or (
-                    HP_LINE_RE.search(dp1)
-                    and not looks_like_heading(dp1)
+                    len(line) <= 48
+                    and not line.endswith(".")
+                    and (
+                        (
+                            looks_like_tag_line(dp1)
+                            and (
+                                HP_LINE_RE.search(dp2)
+                                or HP_LINE_RE.search(dp1)
+                                or dp2.lower().startswith("damage")
+                            )
+                        )
+                        # tags may be missing; name then HP
+                        or (
+                            HP_LINE_RE.search(dp1)
+                            and not looks_like_heading(dp1)
+                        )
+                    )
                 )
             )
         )
         if is_creature_start:
             name = line
+            inline_rest = ""
+            if looks_like_inline_creature(line) and ":" in line:
+                name, inline_rest = line.split(":", 1)
+                name = name.strip()
+                inline_rest = inline_rest.strip()
             # "Ferocedes Ogran, ghostly" → name + leading tags
             extra_tags: list[str] = []
             m_name = re.match(
@@ -5575,6 +5681,8 @@ def structure_html(
             creature_icon = take_icon_html()
             i += 1
             block_lines: list[str] = []
+            if inline_rest:
+                block_lines.append(inline_rest)
             tag_prefix = list(extra_tags)  # folded into first real tag line
             # Boundaries: horizontal rules and the next creature's icon/heading.
             # Trailing bullets, checklists, Questions, in-card roll tables, and
@@ -5647,6 +5755,20 @@ def structure_html(
                 if L.startswith("\x02"):
                     break
                 plain = _defmt(L)
+                # Next GM-note creature (Sites: Spirit of the spring after
+                # Wynfor & Tiwlip) — don't swallow it into this card.
+                if block_lines and looks_like_inline_creature(plain):
+                    break
+                # Room-key / labeled note, not this creature
+                # ("Trapdoor (T):", "Critters: Ants, snails…").
+                if block_lines and (
+                    re.match(r"^[A-Z][A-Za-z][^:]{0,40}\([A-Z0-9]\):", plain)
+                    or re.match(
+                        r"^(Trapdoor|Critters|Tracks|Wasps|Burrows|Hallways)\b",
+                        plain,
+                    )
+                ):
+                    break
                 if tag_prefix and (
                     looks_like_tag_line(plain)
                     or HP_LINE_RE.search(plain)
@@ -5703,6 +5825,11 @@ def structure_html(
                                 break
                             if looks_like_roll_header(nxt_e) or looks_like_heading(
                                 nxt_e
+                            ):
+                                break
+                            if (
+                                body_e.rstrip().endswith((".", "!", "?"))
+                                and nxt_e[:1].isupper()
                             ):
                                 break
                             body_e = body_e + " " + nxt_e
@@ -5859,7 +5986,13 @@ def structure_html(
             if normalize_text(cleaned_h).lower() == normalize_text(article_title).lower():
                 i += 1
                 continue
-            level = "h2" if len(cleaned_h) < 40 else "h3"
+            # Rich mode already turned real Avara heads into M_H2. ALL-CAPS
+            # that remain are GM-note labels (DENIZENS, THE GREEN LORD'S TOMB)
+            # — h3 so they don't steal the chapter TOC.
+            if _is_all_caps_label(cleaned_h):
+                level = "h3"
+            else:
+                level = "h2" if len(cleaned_h) < 40 else "h3"
             hid = anchors.add(cleaned_h.rstrip(":"))
             out.append(
                 f'<{level} id="{html.escape(hid)}">'
