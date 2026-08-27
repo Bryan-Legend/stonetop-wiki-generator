@@ -1,6 +1,6 @@
-/* Shared Stonetop adventure sheet behavior.
- * Sheets live under Stonetop_Wiki/adventures/. Expect body.adventure with:
- *   data-wiki-root="../"   (wiki root = parent of adventures/)
+/* Shared Stonetop adventure-site sheet behavior.
+ * Sheets live under Stonetop_Wiki/sites/. Expect body.site-sheet with:
+ *   data-wiki-root="../"   (wiki root = parent of sites/)
  *   data-hp-storage="unique-key-for-localStorage"
  *
  * Wiki hover popups come from wiki.js + previews-data.js. When those data
@@ -49,7 +49,7 @@
 
   /* ---- Sidebar jump: mark nav only (no section outline) ---- */
   function clearNavCurrent() {
-    document.querySelectorAll(".adv-nav a.is-current").forEach(function (a) {
+    document.querySelectorAll(".site-nav a.is-current").forEach(function (a) {
       a.classList.remove("is-current");
     });
   }
@@ -60,13 +60,13 @@
     var id = hash.replace(/^#/, "");
     if (!id) return;
     document
-      .querySelectorAll('.adv-nav a[href="#' + id + '"]')
+      .querySelectorAll('.site-nav a[href="#' + id + '"]')
       .forEach(function (a) {
         a.classList.add("is-current");
       });
   }
 
-  document.querySelectorAll('.adv-nav a[href^="#"]').forEach(function (a) {
+  document.querySelectorAll('.site-nav a[href^="#"]').forEach(function (a) {
     a.addEventListener("click", function () {
       var href = a.getAttribute("href") || "";
       if (bubble) {
@@ -88,7 +88,7 @@
   /* ---- HP trackers ---- */
   var STORAGE_KEY =
     (body && body.getAttribute("data-hp-storage")) ||
-    "stonetop-adventure-hp";
+    "stonetop-site-hp";
   var state = {};
   try {
     state = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}") || {};

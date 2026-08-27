@@ -281,7 +281,7 @@ html, body {
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3E%3Cpath fill-rule='evenodd' d='M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z'/%3E%3C/svg%3E") center / contain no-repeat;
 }
 
-.site-title {
+.wiki-title {
   font-family: var(--font-serif);
   font-size: 1.3rem;
   font-weight: 400;
@@ -294,7 +294,7 @@ html, body {
   gap: 0.48rem;
   margin-bottom: .65rem;
 }
-.site-title::before {
+.wiki-title::before {
   content: "";
   width: 0.5rem;
   height: 1.05rem;
@@ -304,8 +304,8 @@ html, body {
   -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13.89 28.99'%3E%3Cpath fill='black' d='M3.32 0 10.87 1.09 13.89 26.64 7.25 28.99 0 26.46 1.81 4.53z'/%3E%3C/svg%3E") center / contain no-repeat;
   mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 13.89 28.99'%3E%3Cpath fill='black' d='M3.32 0 10.87 1.09 13.89 26.64 7.25 28.99 0 26.46 1.81 4.53z'/%3E%3C/svg%3E") center / contain no-repeat;
 }
-.site-title:hover { color: var(--link-hover); }
-.site-title:hover::before { background: var(--link-hover); }
+.wiki-title:hover { color: var(--link-hover); }
+.wiki-title:hover::before { background: var(--link-hover); }
 
 .nav-filter {
   width: 100%;
@@ -539,39 +539,39 @@ html, body {
   padding-right: 7.5rem;
 }
 
-/* --- Adventures (sheets under adventures/) --- */
-.toc li.nav-adventure > a {
+/* --- Sites (sheets under sites/) --- */
+.toc li.nav-site > a {
   font-weight: 600;
 }
 
-.adventure-list {
+.site-list {
   margin: 0.5rem 0 0;
 }
-.adventure-card {
+.site-card {
   break-inside: avoid;
   margin: 0 0 1rem;
   padding: 0 0 0.75rem;
   border-bottom: 1px solid var(--rule);
 }
-.adventure-card:last-child {
+.site-card:last-child {
   border-bottom: none;
 }
-.adventure-card h2 {
+.site-card h2 {
   margin-top: 0;
 }
-.adventure-card .adv-excerpt {
+.site-card .site-excerpt {
   color: var(--muted, #6b6560);
 }
-.adventure-card .adv-variants,
-.adventure-card .adv-refs {
+.site-card .site-variants,
+.site-card .site-refs {
   font-size: var(--text);
   margin: 0.3rem 0 0;
 }
-.adventure-card .adv-refs {
+.site-card .site-refs {
   color: var(--muted, #6b6560);
 }
-.adv-refs-label,
-.related-adventures .ra-label {
+.site-refs-label,
+.related-sites .ra-label {
   display: inline-block;
   margin-right: 0.4rem;
   font-family: var(--font-serif);
@@ -580,8 +580,8 @@ html, body {
   color: var(--muted, #6b6560);
 }
 
-/* "Adventures · Vasilya's Grove" strip atop a referenced wiki page */
-.related-adventures {
+/* "Sites · Vasilya’s Grove" strip atop a referenced wiki page */
+.related-sites {
   margin: 0 0 0.65rem;
   padding: 0.35rem 0.55rem;
   font-size: var(--text);
@@ -1085,6 +1085,55 @@ h3 .book-icon,
   font-size: var(--text);
 }
 /* Deep-link :target — scroll still works; no outline flash on jump */
+
+/* --- Section links -------------------------------------------------------
+   The § after a heading copies a link to that section (the heading itself
+   does too). It is held back until the heading is hovered so it does not
+   litter a page being read; where nothing hovers it simply stays out, since
+   a tap on the heading copies just as well.
+   ------------------------------------------------------------------------ */
+.section-link {
+  margin-left: 0.3em;
+  font-family: var(--font-serif);
+  font-size: 0.8em;
+  font-weight: 400;
+  line-height: 1;
+  color: var(--accent);
+  text-decoration: none;
+  opacity: 0;
+  transition: opacity 0.15s ease, color 0.15s ease;
+}
+.content h2:hover > .section-link,
+.content h3:hover > .section-link,
+.site-main h2:hover > .section-link,
+.site-main h3:hover > .section-link,
+.section-link:focus-visible {
+  opacity: 0.7;
+}
+.section-link:hover {
+  opacity: 1;
+  color: var(--link-hover);
+}
+/* A copied heading flashes once, so it is plain which link was taken. */
+.link-copied {
+  animation: section-link-flash 0.9s ease-out;
+  border-radius: 2px;
+}
+@keyframes section-link-flash {
+  from { background: rgba(var(--accent-rgb), 0.42); }
+  to   { background: transparent; }
+}
+@media (hover: none) {
+  /* No hover to reveal it, and a heading is a wide enough target on its own. */
+  .section-link { display: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .link-copied { animation: none; }
+}
+@media print {
+  .section-link { display: none; }
+}
+
 
 /* Images flow into the rightmost columns after text */
 
@@ -2142,10 +2191,10 @@ li.check-item input.wiki-check:checked + span {
  * than lowercase, so labels that carried none get the display default.
  * Rules that already set a deliberate tracking (kickers at 0.12em) keep it.
  * ------------------------------------------------------------------------ */
-.site-title,
+.wiki-title,
 .toc li.nav-book-label,
-.adv-refs-label,
-.related-adventures .ra-label,
+.site-refs-label,
+.related-sites .ra-label,
 .content h1,
 .content h2,
 .content h3,

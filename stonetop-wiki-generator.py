@@ -8,7 +8,7 @@ Usage:
 ``--input`` is a folder containing the Book I and/or Book II 1-up PDFs (and
 optionally ``Maps/`` campaign sheets); see ``BOOKS``. ``--output`` is the wiki
 folder (default ``Stonetop_Wiki/``). Static chrome (``css/``, ``js/wiki.js``,
-``images/icons/``) and optional ``adventures/`` sheets already live there —
+``images/icons/``) and optional ``sites/`` sheets already live there —
 the generator only writes book-derived files (``<slug>.html`` pages, search/preview
 indexes, map images, ``index.html``).
 
@@ -32,11 +32,13 @@ from pathlib import Path
 import fitz  # PyMuPDF
 
 
-# Adventure sheets live in the wiki output under adventures/ (not copied).
-ADVENTURES_OUT_DIRNAME = "adventures"
-ADVENTURES_BOOK_ID = "adventures"
-ADVENTURES_LABEL = "Adventures"
-ADVENTURES_HUB_SLUG = "adventures"
+# Adventure-site sheets live in the wiki output under sites/ (not copied).
+SITES_OUT_DIRNAME = "sites"
+SITES_BOOK_ID = "sites"
+SITES_LABEL = "Sites"
+# Book I has its own "Sites" chapter (p. 345), which claims the plain slug —
+# the campaign hub takes a qualified one.
+SITES_HUB_SLUG = "campaign-sites"
 
 # Project credit in the wiki sidebar footer.
 GITHUB_PROJECT_URL = "https://github.com/Bryan-Legend/stonetop-wiki-generator"
@@ -171,13 +173,13 @@ def write_build_manifest(out: Path, names: list[str]) -> None:
 
 
 def write_sitemap(out: Path, articles: list[dict], *, base_url: str) -> None:
-    """sitemap.xml covering every wiki page and adventure sheet."""
+    """sitemap.xml covering every wiki page and site sheet."""
     base = base_url.rstrip("/")
     locs = [base + "/"]
     for art in articles:
         href = art.get("href") or (art["slug"] + ".html")
         locs.append(base + "/" + href)
-        for var in (art.get("adventure") or {}).get("variants") or []:
+        for var in (art.get("site") or {}).get("variants") or []:
             locs.append(base + "/" + var["href"])
     locs = list(dict.fromkeys(locs))
     today = datetime.date.today().isoformat()
@@ -206,9 +208,9 @@ def write_robots(out: Path, *, base_url: str) -> None:
     (out / "robots.txt").write_text("\n".join(lines), encoding="utf-8")
 
 
-def resolve_adventures_dir(out: Path) -> Path | None:
-    """Return ``<out>/adventures/`` if present (sheets are edited in place)."""
-    candidate = out / ADVENTURES_OUT_DIRNAME
+def resolve_sites_dir(out: Path) -> Path | None:
+    """Return ``<out>/sites/`` if present (sheets are edited in place)."""
+    candidate = out / SITES_OUT_DIRNAME
     if candidate.is_dir():
         return candidate
     return None
@@ -3047,9 +3049,9 @@ def set_page_sections(mapping: dict[tuple[str, int], dict]) -> None:
 def set_title_index(articles: list[dict]) -> None:
     _TITLE_INDEX.clear()
     for art in articles:
-        # Adventure sheets live in adventures/ — never a target for the
+        # Site sheets live in sites/ — never a target for the
         # "page N" / bare-title linkers, which emit <slug>.html.
-        if art.get("book") == ADVENTURES_BOOK_ID:
+        if art.get("book") == SITES_BOOK_ID:
             continue
         t = (art.get("title") or "").strip()
         if not t:
@@ -8050,7 +8052,7 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         default=None,
         help=(
             "Wiki folder. Static chrome (css/, js/wiki.js, images/icons/) and "
-            "optional adventures/ live here and are left in place; the build "
+            "optional sites/ live here and are left in place; the build "
             "writes the page HTML, indexes, and map images. "
             "Default: <package>/Stonetop_Wiki."
         ),
@@ -8309,7 +8311,7 @@ def split_chapter_articles(
 BOOK_SLUG_SUFFIX = {
     "book1": "-book-i",
     "book2": "-book-ii",
-    ADVENTURES_BOOK_ID: "-adventure",
+    SITES_BOOK_ID: "-site",
 }
 
 
@@ -8807,12 +8809,12 @@ def build_nav_items(
         classes: list[str] = []
         if art.get("kind") == "arcana":
             classes.append("nav-arcana")
-        elif art.get("kind") in ("arcana-hub", "adventures-hub") or art.get(
+        elif art.get("kind") in ("arcana-hub", "sites-hub") or art.get(
             "children"
         ):
             classes.append("nav-hub")
-        elif art.get("kind") == "adventure":
-            classes.append("nav-adventure")
+        elif art.get("kind") == "site":
+            classes.append("nav-site")
         secs = section_navs.get(art["slug"]) or []
         if secs or parts:
             classes.append("has-sections")
@@ -8821,19 +8823,19 @@ def build_nav_items(
         cls_attr = f' class="{" ".join(classes)}"' if classes else ""
         art_slug = html.escape(art["slug"])
         if art.get("href"):
-            # Slug can't be read back out of an adventure's file name.
+            # Slug can't be read back out of a site sheet's file name.
             href = html.escape(root_prefix + art["href"])
             slug_attr = f' data-nav-slug="{art_slug}"'
         else:
             href = f"{href_prefix}{art_slug}.html"
             slug_attr = ""
         link = f'<a href="{href}"{slug_attr}>{html.escape(nav_label(art))}</a>'
-        if art.get("kind") == "adventure" and art.get("adventure", {}).get("variants"):
+        if art.get("kind") == "site" and art.get("site", {}).get("variants"):
             sub = "".join(
                 f'<li class="nav-section"><a href="'
                 f'{html.escape(root_prefix + v["href"])}">{html.escape(v["label"])}'
                 f"</a></li>"
-                for v in art["adventure"]["variants"]
+                for v in art["site"]["variants"]
             )
             items.append(
                 f"<li{cls_attr}>{link}"
@@ -8915,7 +8917,7 @@ def page_shell(
   <div class="layout">
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-head">
-        <a class="site-title" href="{rel_prefix}index.html">Stonetop Wiki</a>
+        <a class="wiki-title" href="{rel_prefix}index.html">Stonetop Wiki</a>
         <input type="search" id="nav-filter" class="nav-filter" placeholder="Search wiki…" autocomplete="off" aria-label="Search wiki">
         <div id="search-results" class="search-results" hidden></div>
       </div>
@@ -9064,51 +9066,51 @@ def maps_body_html(images: list[dict]) -> str:
     return f'{tools}<div class="maps-strip">{"".join(items)}</div>'
 
 
-# ----------------------------------------------------------------- Adventures
+# ---------------------------------------------------------------------- Sites
 #
-# Optional table sheets live in <out>/adventures/ (edited in place; not copied).
-# They link wiki pages as ../<slug>.html. The build indexes them for the sidebar,
-# home page, Adventures hub, full-text search, and back-links on referenced
-# wiki pages. Drop a new .html (or a folder of variants) and rebuild.
+# Optional table sheets (adventure sites) live in <out>/sites/ (edited in place;
+# not copied). They link wiki pages as ../<slug>.html. The build indexes them for
+# the sidebar, home page, Sites hub, full-text search, and back-links on
+# referenced wiki pages. Drop a new .html (or a folder of variants) and rebuild.
 
-# Shared chrome filenames, not adventure sheets
-ADVENTURE_SKIP_STEMS = {"index", "adventure"}
+# Shared chrome filenames, not site sheets
+SITE_SKIP_STEMS = {"index", "site"}
 
 # "Timber for the Inn — Gordin's Delve (One-Pager)" → variant "One-Pager"
-_ADV_VARIANT_RE = re.compile(r"\(([^()]{2,40})\)\s*$")
+_SITE_VARIANT_RE = re.compile(r"\(([^()]{2,40})\)\s*$")
 
 
-def _adv_strip_tags(fragment: str) -> str:
+def _site_strip_tags(fragment: str) -> str:
     text = re.sub(r"(?is)<(script|style)[^>]*>.*?</\1>", " ", fragment or "")
     text = re.sub(r"<[^>]+>", " ", text)
     return re.sub(r"\s+", " ", html.unescape(text)).strip()
 
 
-def _adv_find(raw: str, pattern: str) -> str:
+def _site_find(raw: str, pattern: str) -> str:
     m = re.search(pattern, raw, re.I | re.S)
-    return _adv_strip_tags(m.group(1)) if m else ""
+    return _site_strip_tags(m.group(1)) if m else ""
 
 
-def read_adventure_file(path: Path, href: str) -> dict:
+def read_site_file(path: Path, href: str) -> dict:
     """Title, variant label, excerpt, wiki refs and search text for one sheet."""
     raw = path.read_text(encoding="utf-8", errors="replace")
 
-    doc_title = _adv_find(raw, r"<title[^>]*>(.*?)</title>")
+    doc_title = _site_find(raw, r"<title[^>]*>(.*?)</title>")
     variant = ""
-    m = _ADV_VARIANT_RE.search(doc_title)
+    m = _SITE_VARIANT_RE.search(doc_title)
     if m:
         variant = m.group(1).strip()
-        doc_title = _ADV_VARIANT_RE.sub("", doc_title).strip(" —-·")
+        doc_title = _SITE_VARIANT_RE.sub("", doc_title).strip(" —-·")
     title = (
-        _adv_find(raw, r"<h1[^>]*>(.*?)</h1>")
+        _site_find(raw, r"<h1[^>]*>(.*?)</h1>")
         or doc_title
         or path.stem.replace("-", " ")
     )
 
     excerpt = (
-        _adv_find(raw, r'<p class="lede"[^>]*>(.*?)</p>')
-        or _adv_find(raw, r'<p class="meta"[^>]*>(.*?)</p>')
-        or _adv_find(raw, r"<p[^>]*>(.*?)</p>")
+        _site_find(raw, r'<p class="lede"[^>]*>(.*?)</p>')
+        or _site_find(raw, r'<p class="meta"[^>]*>(.*?)</p>')
+        or _site_find(raw, r"<p[^>]*>(.*?)</p>")
     )
     if len(excerpt) > 240:
         excerpt = excerpt[:237].rstrip(" ,;:—-") + "…"
@@ -9133,7 +9135,7 @@ def read_adventure_file(path: Path, href: str) -> dict:
     }
 
 
-def _adv_variant_label(sheet: dict, primary: dict) -> str:
+def _site_variant_label(sheet: dict, primary: dict) -> str:
     """Label for a variant link: the title's parenthetical, else the filename tail."""
     if sheet["variant"]:
         return sheet["variant"]
@@ -9146,23 +9148,23 @@ def _adv_variant_label(sheet: dict, primary: dict) -> str:
     return "Full write-up" if sheet is primary else stem.replace("-", " ")
 
 
-def discover_adventures(out: Path) -> list[dict]:
+def discover_sites(out: Path) -> list[dict]:
     """
-    Adventure sheets under ``<out>/adventures/``, in either shape:
+    Site sheets under ``<out>/sites/``, in either shape:
 
-      Vasilyas-Grove.html                          → one adventure
-      Some-Adventure/Some-Adventure.html           → one adventure whose folder
-      Some-Adventure/…-One-Pager.html                holds several variants
+      Vasilyas-Grove.html                          → one site
+      Some-Site/Some-Site.html                     → one site whose folder
+      Some-Site/…-One-Pager.html                     holds several variants
 
-    Hrefs are relative to the wiki root (e.g. ``adventures/Sealed-Cave.html``).
+    Hrefs are relative to the wiki root (e.g. ``sites/Sealed-Cave.html``).
     """
-    root = resolve_adventures_dir(out)
+    root = resolve_sites_dir(out)
     if root is None:
         return []
 
     def href_for(path: Path) -> str:
         rel = path.relative_to(root).as_posix()
-        return f"{ADVENTURES_OUT_DIRNAME}/{rel}"
+        return f"{SITES_OUT_DIRNAME}/{rel}"
 
     groups: list[list[Path]] = []
     for entry in sorted(root.iterdir(), key=lambda p: p.name.lower()):
@@ -9171,14 +9173,14 @@ def discover_adventures(out: Path) -> list[dict]:
         if entry.is_file():
             if (
                 entry.suffix.lower() in (".html", ".htm")
-                and entry.stem.lower() not in ADVENTURE_SKIP_STEMS
+                and entry.stem.lower() not in SITE_SKIP_STEMS
             ):
                 groups.append([entry])
         elif entry.is_dir():
             files = [
                 p
                 for p in entry.rglob("*.htm*")
-                if p.stem.lower() not in ADVENTURE_SKIP_STEMS
+                if p.stem.lower() not in SITE_SKIP_STEMS
             ]
             # Primary = the sheet named after its folder, else the shortest name.
             files.sort(
@@ -9191,9 +9193,9 @@ def discover_adventures(out: Path) -> list[dict]:
             if files:
                 groups.append(files)
 
-    adventures: list[dict] = []
+    sites: list[dict] = []
     for paths in groups:
-        sheets = [read_adventure_file(p, href_for(p)) for p in paths]
+        sheets = [read_site_file(p, href_for(p)) for p in paths]
         primary = sheets[0]
         links: list[str] = []
         for sheet in sheets:
@@ -9202,13 +9204,13 @@ def discover_adventures(out: Path) -> list[dict]:
                     links.append(slug)
         variants = (
             [
-                {"label": _adv_variant_label(s, primary), "href": s["href"]}
+                {"label": _site_variant_label(s, primary), "href": s["href"]}
                 for s in sheets
             ]
             if len(sheets) > 1
             else []
         )
-        adventures.append(
+        sites.append(
             {
                 "title": primary["title"],
                 # Sheets set apostrophes as ’ — slugify() only strips the
@@ -9221,75 +9223,75 @@ def discover_adventures(out: Path) -> list[dict]:
                 "text": "\n".join(s["text"] for s in sheets),
             }
         )
-    return adventures
+    return sites
 
 
-def adventure_articles(adventures: list[dict]) -> list[dict]:
-    """Hub + one nav/index entry per adventure, in article shape."""
-    if not adventures:
+def site_articles(sites: list[dict]) -> list[dict]:
+    """Hub + one nav/index entry per site, in article shape."""
+    if not sites:
         return []
     common = {
-        "book": ADVENTURES_BOOK_ID,
-        "book_label": ADVENTURES_LABEL,
-        "book_title": ADVENTURES_LABEL,
+        "book": SITES_BOOK_ID,
+        "book_label": SITES_LABEL,
+        "book_title": SITES_LABEL,
         "start_page": 0,
         "end_page": 0,
     }
     arts: list[dict] = [
         {
-            "title": ADVENTURES_LABEL,
-            "slug": ADVENTURES_HUB_SLUG,
-            "kind": "adventures-hub",
+            "title": SITES_LABEL,
+            "slug": SITES_HUB_SLUG,
+            "kind": "sites-hub",
             **common,
         }
     ]
-    for adv in adventures:
+    for site in sites:
         arts.append(
             {
-                "title": adv["title"],
-                "slug": adv["slug"],
-                "kind": "adventure",
-                "href": adv["href"],
-                "excerpt": adv["excerpt"],
-                "adventure": adv,
+                "title": site["title"],
+                "slug": site["slug"],
+                "kind": "site",
+                "href": site["href"],
+                "excerpt": site["excerpt"],
+                "site": site,
                 **common,
             }
         )
     return arts
 
 
-def _adv_wiki_refs(adv: dict, titles_by_slug: dict[str, str]) -> list[tuple[str, str]]:
-    """(slug, title) for the wiki pages an adventure links to, known ones only."""
-    links = adv.get("links") or []
+def _site_wiki_refs(site: dict, titles_by_slug: dict[str, str]) -> list[tuple[str, str]]:
+    """(slug, title) for the wiki pages a site sheet links to, known ones only."""
+    links = site.get("links") or []
     return [(s, titles_by_slug[s]) for s in links if s in titles_by_slug]
 
 
-def adventures_hub_html(
-    adv_arts: list[dict],
+def sites_hub_html(
+    site_arts: list[dict],
     titles_by_slug: dict[str, str],
     *,
     root_prefix: str = "",
 ) -> str:
-    """Body for the Adventures hub page: a card per adventure."""
+    """Body for the Sites hub page: a card per site."""
     cards: list[str] = []
-    for art in adv_arts:
-        adv = art["adventure"]
+    for art in site_arts:
+        site = art["site"]
         href = html.escape(root_prefix + art["href"])
         slug = html.escape(art["slug"])
         parts = [
             f'<h2 id="{slug}"><a class="wiki-link" href="{href}" '
             f'data-slug="{slug}">{html.escape(art["title"])}</a></h2>'
         ]
-        if adv["excerpt"]:
-            parts.append(f'<p class="adv-excerpt">{html.escape(adv["excerpt"])}</p>')
-        if adv["variants"]:
+        if site["excerpt"]:
+            parts.append(f'<p class="site-excerpt">{html.escape(site["excerpt"])}</p>')
+        if site["variants"]:
             links = " · ".join(
                 f'<a class="wiki-link" href="{html.escape(root_prefix + v["href"])}">'
                 f'{html.escape(v["label"])}</a>'
-                for v in adv["variants"]
+                for v in site["variants"]
             )
-            parts.append(f'<p class="adv-variants">{links}</p>')
-        refs = _adv_wiki_refs(adv, titles_by_slug)
+            parts.append(f'<p class="site-variants">{links}</p>')
+        refs = _site_wiki_refs(site, titles_by_slug)
         if refs:
             ref_links = " · ".join(
                 f'<a class="wiki-link" href="{html.escape(s)}.html" '
@@ -9297,17 +9299,17 @@ def adventures_hub_html(
                 for s, t in refs
             )
             parts.append(
-                f'<p class="adv-refs"><span class="adv-refs-label">Uses</span> '
+                f'<p class="site-refs"><span class="site-refs-label">Uses</span> '
                 f"{ref_links}</p>"
             )
-        cards.append(f'<section class="adventure-card">{"".join(parts)}</section>')
+        cards.append(f'<section class="site-card">{"".join(parts)}</section>')
 
     return (
-        "<p>Table adventure sheets — prep, room-by-room notes and stat "
+        "<p>Adventure sites — prep, room-by-room notes and stat "
         "blocks — under "
-        f"<code>{html.escape(ADVENTURES_OUT_DIRNAME)}/</code>. Each links into "
+        f"<code>{html.escape(SITES_OUT_DIRNAME)}/</code>. Each links into "
         "the rulebook pages.</p>"
-        f'<div class="adventure-list">{"".join(cards)}</div>'
+        f'<div class="site-list">{"".join(cards)}</div>'
     )
 
 
@@ -9375,7 +9377,7 @@ def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> 
                 continue
             pv = previews.get(art["slug"], {})
             excerpt = strip_page_refs(pv.get("excerpt") or "")
-            # Adventures sit in adventures/ — link to the sheet where it lives.
+            # Sites sit in sites/ — link to the sheet where it lives.
             href = art.get("href") or f'{art["slug"]}.html'
             cards.append(
                 f'<a class="index-card" href="{html.escape(href)}">'
@@ -9394,7 +9396,7 @@ def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> 
     labels = [
         f"<strong>{html.escape(label)}</strong>"
         for _b, label in books_present
-        if _b != ADVENTURES_BOOK_ID
+        if _b != SITES_BOOK_ID
     ]
     if len(labels) > 1:
         lede_books = ", ".join(labels[:-1]) + " and " + labels[-1]
@@ -9406,7 +9408,7 @@ def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> 
         "Stonetop Wiki",
         "A searchable web edition of Stonetop and The Wider World and Other "
         "Wonders by Jeremy Strandberg — moves, gear, threats, places, and "
-        "arcana, plus table-ready adventure sheets.",
+        "arcana, plus table-ready adventure sites.",
         "",
     )
 
@@ -9428,7 +9430,7 @@ def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> 
   <div class="layout">
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-head">
-        <a class="site-title" href="index.html">Stonetop Wiki</a>
+        <a class="wiki-title" href="index.html">Stonetop Wiki</a>
         <input type="search" id="nav-filter" class="nav-filter" placeholder="Search wiki…" autocomplete="off" aria-label="Search wiki">
         <div id="search-results" class="search-results" hidden></div>
       </div>
@@ -9573,28 +9575,28 @@ def main(argv: list[str] | None = None) -> None:
     if not args.maps:
         articles = [a for a in articles if a.get("kind") != "maps"]
 
-    # Adventure sheets already under <out>/adventures/ — index only, no copy.
-    adventures = discover_adventures(out)
-    adv_arts = adventure_articles(adventures)
-    articles.extend(adv_arts)
+    # Site sheets already under <out>/sites/ — index only, no copy.
+    sites = discover_sites(out)
+    site_arts = site_articles(sites)
+    articles.extend(site_arts)
 
-    # Book pages claim their slugs first (an adventure named after a chapter
-    # gets "-adventure" appended, not the other way round) …
+    # Book pages claim their slugs first (a site named after a chapter
+    # gets "-site" appended, not the other way round) …
     ensure_unique_slugs(articles)
-    for art in adv_arts:
-        if art.get("adventure"):
-            art["adventure"]["slug"] = art["slug"]
+    for art in site_arts:
+        if art.get("site"):
+            art["site"]["slug"] = art["slug"]
     # … and the campaign's own material trails the book material, so the
     # sidebar and home page lead with the wiki proper.
-    if adv_arts:
+    if site_arts:
         articles = [
-            a for a in articles if a.get("book") != ADVENTURES_BOOK_ID
-        ] + adv_arts
+            a for a in articles if a.get("book") != SITES_BOOK_ID
+        ] + site_arts
 
     print("Articles:")
     last_book = None
     for art in articles:
-        if art.get("book") == ADVENTURES_BOOK_ID:
+        if art.get("book") == SITES_BOOK_ID:
             continue  # listed separately below (no page range)
         if art.get("book") != last_book:
             last_book = art.get("book")
@@ -9608,15 +9610,15 @@ def main(argv: list[str] | None = None) -> None:
     n_arc = sum(1 for a in articles if a.get("kind") == "arcana")
     print(f"  (+ {n_arc} individual arcana pages)")
     print(f"  Total pages: {len(articles)}")
-    if adventures:
-        print(f"Adventures ({ADVENTURES_OUT_DIRNAME}/):")
-        for adv in adventures:
+    if sites:
+        print(f"Sites ({SITES_OUT_DIRNAME}/):")
+        for site in sites:
             extra = (
-                f"  [{', '.join(v['label'] for v in adv['variants'])}]"
-                if adv["variants"]
+                f"  [{', '.join(v['label'] for v in site['variants'])}]"
+                if site["variants"]
                 else ""
             )
-            print(f"  {adv['href']}{extra}")
+            print(f"  {site['href']}{extra}")
 
     # Page-number lookups stay per book: "page 270" means a different article
     # in Book I than in Book II.
@@ -9644,7 +9646,7 @@ def main(argv: list[str] | None = None) -> None:
     for art in articles:
         slug = art["slug"]
         book_id = art.get("book") or "book2"
-        if art["kind"] in ("adventure", "adventures-hub"):
+        if art["kind"] in ("site", "sites-hub"):
             sections_by_slug[slug] = []
             toc_cache[slug] = []
             continue
@@ -9774,12 +9776,12 @@ def main(argv: list[str] | None = None) -> None:
     n_sec = sum(len(v) for v in sections_by_slug.values())
     print(f"  Indexed {n_sec} sections/monsters across {len(sections_by_slug)} pages")
 
-    # Wiki page slug → adventures that reference it (back-links), and the
-    # titles the hub shows for the pages an adventure uses.
+    # Wiki page slug → sites that reference it (back-links), and the
+    # titles the hub shows for the pages a site uses.
     titles_by_slug = {
         a["slug"]: a["title"]
         for a in articles
-        if a.get("book") != ADVENTURES_BOOK_ID
+        if a.get("book") != SITES_BOOK_ID
     }
     print("Building pages…")
     search_docs: list[dict] = []
@@ -9787,22 +9789,22 @@ def main(argv: list[str] | None = None) -> None:
         slug = art["slug"]
         book_id = art.get("book") or "book2"
 
-        # Adventures: sheets live outside the wiki — index and preview them,
+        # Sites: sheets live outside the wiki — index and preview them,
         # but there is no page of our own to write.
-        if art["kind"] in ("adventure", "adventures-hub"):
-            if art["kind"] == "adventure":
-                adv = art["adventure"]
-                excerpt = adv["excerpt"]
-                search_text = adv["text"]
+        if art["kind"] in ("site", "sites-hub"):
+            if art["kind"] == "site":
+                site = art["site"]
+                excerpt = site["excerpt"]
+                search_text = site["text"]
             else:
-                body = adventures_hub_html(adv_arts[1:], titles_by_slug)
+                body = sites_hub_html(site_arts[1:], titles_by_slug)
                 body = (
                     f'<h1 class="page-title">'
                     f'{html.escape(art["title"])}</h1>\n' + body
                 )
-                n = len(adv_arts) - 1
+                n = len(site_arts) - 1
                 excerpt = (
-                    f"{n} campaign adventure sheet{'' if n == 1 else 's'} — "
+                    f"{n} campaign adventure site{'' if n == 1 else 's'} — "
                     "prep, rooms, stat blocks — kept beside the wiki."
                 )
                 (out / f"{slug}.html").write_text(
@@ -9822,13 +9824,13 @@ def main(argv: list[str] | None = None) -> None:
                 "title": art["title"],
                 "excerpt": excerpt,
                 "image": None,
-                "book": ADVENTURES_BOOK_ID,
+                "book": SITES_BOOK_ID,
                 "sections": {},
             }
             doc_entry = {
                 "slug": slug,
                 "title": art["title"],
-                "book": ADVENTURES_BOOK_ID,
+                "book": SITES_BOOK_ID,
                 "excerpt": (excerpt or "")[:280],
                 "text": f"{art['title']}\n{search_text}"[:80_000],
             }

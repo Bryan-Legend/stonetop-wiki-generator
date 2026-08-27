@@ -10,7 +10,7 @@ The wiki includes:
 - Minor & major arcana as interactive cards (checkboxes for unlocks / progress / consequences)
 - Full-text search, hover previews, and dice rollers
 - Deep links between page references and monster/stat blocks
-- Adventure sheets under `Stonetop_Wiki/adventures/` with dice rollers, hp trackers, & deep linking rich popups
+- Adventure sites under `Stonetop_Wiki/sites/` with dice rollers, hp trackers, & deep linking rich popups
 
 > **The book text in this repository is published under CC BY-SA 4.0** — both books state
 > *"All text herein is released under a CC BY-SA 4.0 license."*
@@ -55,7 +55,7 @@ python stonetop-wiki-generator.py --input /path/to/folder-with-pdfs
 | Flag | Meaning | Default |
 |------|---------|---------|
 | `-i` / `--input` | Folder containing the 1-up book PDFs. Optional: `Maps/`. | current working directory |
-| `-o` / `--output` | Wiki folder. Chrome and adventures stay in place; only book-derived files are written. | `Stonetop_Wiki/` |
+| `-o` / `--output` | Wiki folder. Chrome and sites stay in place; only book-derived files are written. | `Stonetop_Wiki/` |
 | `--books book1 book2` | Build only the listed books (faster while iterating). | every book PDF found |
 | `--maps` | Include the Maps page and its images. **Local builds only** — map art is © Lucie Arnoux, not CC BY-SA. | off |
 
@@ -77,19 +77,19 @@ cd Stonetop_Wiki
 python -m http.server 8000
 # then visit http://localhost:8000
 ```
-## Adventures
+## Sites
 
-Drop HTML sheets in `Stonetop_Wiki/adventures/` (or a subfolder of variants). Each build:
+Drop HTML sheets in `Stonetop_Wiki/sites/` (or a subfolder of variants). Each build:
 
-- lists them in an **Adventures** group at the foot of the sidebar and home page
-- builds an Adventures hub and full-text search entries
+- lists them in a **Sites** group at the foot of the sidebar and home page
+- builds a Sites hub and full-text search entries
 
-Sheets should link wiki pages as `../<slug>.html` and set `data-wiki-root="../"`. Shared chrome: `adventure.css` and `adventure.js` in the same folder.
+Sheets should link wiki pages as `../<slug>.html` and set `data-wiki-root="../"`. Shared chrome: `site.css` and `site.js` in the same folder.
 
-### Included play-tested Adventure Sites:
+### Included play-tested sites:
 
-- **[Vasilya’s Grove](https://stonetop-wiki.github.io/adventures/Vasilyas-Grove.html)**
-- **[Underfalls](https://stonetop-wiki.github.io/adventures/Underfalls.html)**
+- **[Vasilya’s Grove](https://stonetop-wiki.github.io/sites/Vasilyas-Grove.html)**
+- **[Underfalls](https://stonetop-wiki.github.io/sites/Underfalls.html)**
 
 ## License
 

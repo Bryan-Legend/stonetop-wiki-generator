@@ -1,10 +1,10 @@
 # Builds the public site and publishes it to the org's user-page repo,
 # stonetop-wiki/stonetop-wiki.github.io, which serves it at the domain root:
-#   https://stonetop-wiki.github.io/adventures/Vasilyas-Grove.html
+#   https://stonetop-wiki.github.io/sites/Vasilyas-Grove.html
 #
 # Only tracked files are deployed. The book-derived wiki (pages/, index.html,
 # js/search-index.js, js/previews-data.js, images/maps/) is gitignored and is
-# NOT published — the public site is the adventure sheets plus shared chrome.
+# NOT published — the public site is the adventure-site sheets plus shared chrome.
 name: Deploy site
 
 on:

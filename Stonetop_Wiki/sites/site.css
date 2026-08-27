@@ -18,7 +18,7 @@
       min-height: 0 !important;
     }
     * { box-sizing: border-box; }
-    body.adventure {
+    body.site-sheet {
       margin: 0;
       font: var(--fs-base)/1.5 var(--font-sans);
       letter-spacing: var(--track-text);
@@ -35,14 +35,14 @@
       background: rgba(var(--link-rgb), .12);
     }
 
-    .adv-layout {
+    .site-layout {
       display: flex;
       align-items: flex-start;
       min-height: 100vh;
     }
 
     /* Left nav */
-    .adv-nav {
+    .site-nav {
       position: fixed;
       top: 0;
       left: 0;
@@ -55,7 +55,7 @@
       box-shadow: inset -1px 0 0 rgba(var(--accent-rgb), 0.08), inset 0 2px 0 var(--accent-deep);
       z-index: 20;
     }
-    .adv-nav .nav-title {
+    .site-nav .nav-title {
       display: block;
       font-family: var(--font-serif);
       font-size: var(--fs-lg);
@@ -68,8 +68,8 @@
       border-bottom: 1px solid var(--rule);
       text-decoration: none;
     }
-    .adv-nav .nav-title:hover { color: var(--link-hover); }
-    .adv-nav .nav-wiki-home {
+    .site-nav .nav-title:hover { color: var(--link-hover); }
+    .site-nav .nav-wiki-home {
       display: block;
       margin: -0.35rem 0 0.55rem;
       padding: 0.15rem 0.4rem 0.45rem;
@@ -79,17 +79,17 @@
       border: none;
       border-bottom: 1px solid var(--rule);
     }
-    .adv-nav .nav-wiki-home:hover {
+    .site-nav .nav-wiki-home:hover {
       color: var(--link-hover);
       background: transparent;
     }
-    .adv-nav ul {
+    .site-nav ul {
       list-style: none;
       margin: 0;
       padding: 0;
     }
-    .adv-nav li { margin: 0; }
-    .adv-nav a {
+    .site-nav li { margin: 0; }
+    .site-nav a {
       display: block;
       padding: 0.28rem 0.4rem;
       color: var(--quote);
@@ -99,16 +99,16 @@
       border: none;
       border-bottom: none;
     }
-    .adv-nav a:hover {
+    .site-nav a:hover {
       color: var(--ink);
       background: var(--accent-soft);
     }
-    .adv-nav a.nav-sub {
+    .site-nav a.nav-sub {
       padding-left: 0.9rem;
       font-size: var(--fs-xs);
       color: var(--muted);
     }
-    .adv-nav .nav-label {
+    .site-nav .nav-label {
       display: block;
       margin: 0.75rem 0.4rem 0.25rem;
       font-family: var(--font-serif);
@@ -118,18 +118,18 @@
       letter-spacing: 0.06em;
       color: var(--muted);
     }
-    .adv-nav a.is-current {
+    .site-nav a.is-current {
       color: var(--ink);
       background: var(--accent-soft);
       box-shadow: inset 2px 0 0 var(--accent);
     }
     /* GitHub credit — same classes as wiki sidebar (icon styles in wiki.css) */
-    .adv-nav .sidebar-foot {
+    .site-nav .sidebar-foot {
       margin-top: 0.75rem;
       padding: 0.55rem 0 0.25rem;
       border-top: 1px solid var(--rule);
     }
-    .adv-nav .sidebar-github {
+    .site-nav .sidebar-github {
       display: inline-flex;
       align-items: center;
       gap: 0.4rem;
@@ -141,18 +141,18 @@
       line-height: 1.2;
       color: var(--muted);
     }
-    .adv-nav .sidebar-github::before {
+    .site-nav .sidebar-github::before {
       flex-shrink: 0;
       width: 0.85rem;
       height: 0.85rem;
     }
-    .adv-nav .sidebar-github:hover {
+    .site-nav .sidebar-github:hover {
       background: var(--accent-soft);
       color: var(--head);
     }
 
     /* Main column — cap width so prose stays readable on wide screens */
-    .adv-main {
+    .site-main {
       flex: 1;
       min-width: 0;
       width: 100%;
@@ -161,15 +161,15 @@
       padding: 1.25rem 1.5rem 2.5rem;
       box-sizing: border-box;
     }
-    body.has-map .adv-main {
+    body.has-map .site-main {
       margin-right: var(--map-w);
     }
 
-    /* Right map sidebar (opt-in: body.has-map + aside.adv-map) */
-    .adv-map {
+    /* Right map sidebar (opt-in: body.has-map + aside.site-map) */
+    .site-map {
       display: none;
     }
-    body.has-map .adv-map {
+    body.has-map .site-map {
       display: block;
       position: fixed;
       top: 0;
@@ -182,11 +182,11 @@
       border-left: 1px solid var(--rule);
       z-index: 20;
     }
-    .adv-map > h2 {
+    .site-map > h2 {
       margin-top: 0;
       font-size: var(--fs-base);
     }
-    .adv-map .statline {
+    .site-map .statline {
       font-size: var(--fs-xs);
       margin: 0.35rem 0 0;
     }
@@ -425,7 +425,7 @@
     .hp-readout.is-full { color: var(--head); }
 
     footer,
-    footer.adv-credit {
+    footer.site-credit {
       margin-top: 1.5rem;
       padding-top: 0.55rem;
       border-top: 1px solid var(--rule);
@@ -435,10 +435,10 @@
     }
 
     @media (max-width: 1100px) {
-      body.has-map .adv-main {
+      body.has-map .site-main {
         margin-right: 0;
       }
-      body.has-map .adv-map {
+      body.has-map .site-map {
         position: relative;
         width: 100%;
         height: auto;
@@ -448,8 +448,8 @@
       }
     }
     @media (max-width: 800px) {
-      .adv-layout { flex-direction: column; }
-      .adv-nav {
+      .site-layout { flex-direction: column; }
+      .site-nav {
         position: relative;
         width: 100%;
         height: auto;
@@ -457,14 +457,14 @@
         border-right: none;
         border-bottom: 1px solid var(--rule);
       }
-      .adv-main { margin-left: 0; max-width: none; }
-      body.has-map .adv-main { margin-right: 0; }
-      .adv-nav ul {
+      .site-main { margin-left: 0; max-width: none; }
+      body.has-map .site-main { margin-right: 0; }
+      .site-nav ul {
         display: flex;
         flex-wrap: wrap;
         gap: 0.15rem;
       }
-      .adv-nav .nav-label { width: 100%; }
+      .site-nav .nav-label { width: 100%; }
     }
     @media print {
       :root {
@@ -473,8 +473,8 @@
         --link: #4a3018; --danger: #8b3a2a;
         --read-aloud: #5c4a3a; --head: #5d142b;
       }
-      .adv-nav, .dice-toast, .wiki-preview { display: none !important; }
-      body.has-map .adv-map {
+      .site-nav, .dice-toast, .wiki-preview { display: none !important; }
+      body.has-map .site-map {
         position: relative;
         width: auto;
         height: auto;
@@ -482,7 +482,7 @@
         border: 1px solid var(--rule);
         break-inside: avoid;
       }
-      body.has-map .adv-main { margin-right: 0; }
+      body.has-map .site-main { margin-right: 0; }
       .room { break-inside: avoid; }
       button.dice-roll {
         background: none; border: none; color: inherit;

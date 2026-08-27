@@ -17,7 +17,7 @@
    * Prefix to reach the wiki root from the current document.
    *
    * Wiki pages sit at the wiki root beside index.html, so they need no prefix.
-   * Adventure sheets live in adventures/ and declare data-wiki-root="../".
+   * Site sheets live in sites/ and declare data-wiki-root="../".
    */
   function wikiRootPrefix() {
     var root =
@@ -37,8 +37,8 @@
     }
     if (previewsPromise) return previewsPromise;
     // Load as a script so previews work over file:// (fetch of JSON often fails there).
-    // Missing previews-data.js (e.g. adventure opened without a built wiki) → empty {}.
-    // Adventures load wiki.js from ../js/ and set data-wiki-root to the wiki root.
+    // Missing previews-data.js (e.g. a site sheet opened without a built wiki) → empty {}.
+    // Site sheets load wiki.js from ../js/ and set data-wiki-root to the wiki root.
     previewsPromise = new Promise(function (resolve) {
       function finish(obj) {
         previews =
@@ -121,6 +121,23 @@
   const toast = document.getElementById("dice-toast");
   let toastTimer = null;
 
+  /* The one toast: a roll's result, or a copied section link. */
+  function showToast(inner, ms) {
+    if (!toast) return;
+    toast.innerHTML = inner;
+    toast.hidden = false;
+    // force reflow
+    void toast.offsetWidth;
+    toast.classList.add("show");
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function () {
+      toast.classList.remove("show");
+      setTimeout(function () {
+        toast.hidden = true;
+      }, 250);
+    }, ms || 4400);
+  }
+
   function showDiceResult(result) {
     if (window.stonetopRollSound) {
       window.stonetopRollSound(
@@ -150,26 +167,16 @@
     var note = aside
       ? ' <span class="roll-note">' + escapeHtml(aside) + "</span>"
       : "";
-    toast.innerHTML =
+    showToast(
       '<span class="label">' +
-      result.expr +
-      "</span>" +
-      detail +
-      ' → <span class="result">' +
-      result.total +
-      "</span>" +
-      note;
-    toast.hidden = false;
-    // force reflow
-    void toast.offsetWidth;
-    toast.classList.add("show");
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(function () {
-      toast.classList.remove("show");
-      setTimeout(function () {
-        toast.hidden = true;
-      }, 250);
-    }, 4400);
+        result.expr +
+        "</span>" +
+        detail +
+        ' → <span class="result">' +
+        result.total +
+        "</span>" +
+        note
+    );
   }
 
   // When a roll-table's own dice button is rolled, highlight the row whose
@@ -212,6 +219,183 @@
     showDiceResult(result);
     highlightRollRow(btn, result.total);
   });
+
+  /* ------------------------------------------------------------------ *
+   * Section links
+   *
+   * Every heading in the article carries a § that copies a link to that
+   * section. Clicking the heading itself does the same — but not when the
+   * click ends a selection: headings are read aloud and copied as text at
+   * the table, and a drag across one must stay a drag.
+   *
+   * What lands on the clipboard is the published URL, which a page states
+   * in og:url, rather than the address bar's — the wiki is opened off a
+   * disk as often as it is served, and a link is copied to be pasted
+   * somewhere else, where a path into someone's Dropbox is no use.
+   * ------------------------------------------------------------------ */
+  (function () {
+    var body = document.body;
+    var root =
+      document.querySelector("main.content") ||
+      document.querySelector(".site-main") ||
+      (body && body.classList.contains("site-sheet") ? body : null);
+    if (!root) return;
+    // The home page's headings label card grids, not sections of an article.
+    if (root.querySelector(".index-grid")) return;
+
+    var pageUrl = (function () {
+      var og = document.querySelector('meta[property="og:url"]');
+      var stated = og ? og.getAttribute("content") || "" : "";
+      return stated || String(location.href).split("#")[0];
+    })();
+
+    function idSlug(text) {
+      return String(text || "")
+        .toLowerCase()
+        .replace(/[’']/g, "")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "")
+        .slice(0, 60);
+    }
+
+    /* What the link points at: the heading's own id, else the block it opens
+       (a sheet numbers its rooms on the <article>, not on the <h2>), else one
+       made from its words. Ids are handed out in document order, so a heading
+       gets the same one on every load and a copied link keeps working. */
+    function anchorId(h) {
+      if (h.id) return h.id;
+      var block = h.parentNode;
+      if (block && block !== root && block.id && block.firstElementChild === h) {
+        // A sheet numbers its rooms on the <article>, not on the <h2> — but
+        // the container the whole article sits in is not this heading's id.
+        return block.id;
+      }
+      // Sheets repeat a heading per room ("Exits"). Numbering those in
+      // document order would shift every link below a room added later, so
+      // name them for the block they sit in: room-3-exits.
+      var ctx = block && block.closest ? block.closest("[id]") : null;
+      var base = idSlug(h.textContent) || "section";
+      if (ctx && ctx !== root && ctx.id) base = ctx.id + "-" + base;
+      var id = base;
+      for (var n = 2; document.getElementById(id); n++) id = base + "-" + n;
+      h.id = id;
+      return id;
+    }
+
+    function legacyCopy(text) {
+      // navigator.clipboard is refused outside a secure context, and off a
+      // disk this wiki is exactly that.
+      var ta = document.createElement("textarea");
+      ta.value = text;
+      ta.setAttribute("readonly", "");
+      ta.style.position = "fixed";
+      ta.style.top = "-1000px";
+      ta.style.opacity = "0";
+      document.body.appendChild(ta);
+      ta.select();
+      var ok = false;
+      try {
+        ok = document.execCommand("copy");
+      } catch (err) {
+        ok = false;
+      }
+      document.body.removeChild(ta);
+      return ok
+        ? Promise.resolve()
+        : Promise.reject(new Error("copy refused"));
+    }
+
+    function copyText(text) {
+      var api =
+        navigator.clipboard && navigator.clipboard.writeText
+          ? navigator.clipboard.writeText(text)
+          : Promise.reject(new Error("no clipboard"));
+      return api.catch(function () {
+        return legacyCopy(text);
+      });
+    }
+
+    function copyLink(h) {
+      var id = anchorId(h);
+      var url = pageUrl + "#" + id;
+      copyText(url).then(
+        function () {
+          h.classList.remove("link-copied");
+          void h.offsetWidth;
+          h.classList.add("link-copied");
+          showToast(
+            '<span class="label">Link copied</span> ' +
+              '<span class="roll-note">#' +
+              escapeHtml(id) +
+              "</span>",
+            2600
+          );
+        },
+        function () {
+          // Nothing reached the clipboard — show the link to be taken by hand.
+          showToast(
+            '<span class="label">Copy this link</span> ' +
+              '<span class="roll-note">' +
+              escapeHtml(url) +
+              "</span>",
+            9000
+          );
+        }
+      );
+      // Put the section in the address bar without jumping the page to it.
+      try {
+        history.replaceState(null, "", "#" + id);
+      } catch (err) {
+        /* Some browsers refuse replaceState on file:// — the copy still stands. */
+      }
+    }
+
+    /* A hub card's heading is already a link to the thing itself, and an
+       arcanum's title belongs to its card face, not to a section. The § this
+       adds is an <a> of our own — it must not disqualify its own heading. */
+    function linkable(h) {
+      return (
+        !h.querySelector("a:not(.section-link)") && !h.closest(".arcana-card")
+      );
+    }
+
+    var heads = root.querySelectorAll("h2, h3");
+    for (var i = 0; i < heads.length; i++) {
+      var h = heads[i];
+      if (!linkable(h)) continue;
+      var mark = document.createElement("a");
+      mark.className = "section-link";
+      mark.href = "#" + anchorId(h);
+      mark.textContent = "§";
+      mark.title = "Copy link to this section";
+      mark.setAttribute(
+        "aria-label",
+        "Copy link to " + (h.textContent || "").trim()
+      );
+      h.appendChild(mark);
+    }
+
+    root.addEventListener("click", function (e) {
+      var mark = e.target.closest(".section-link");
+      var h = mark ? mark.parentNode : e.target.closest("h2, h3");
+      if (!h || !root.contains(h) || !linkable(h)) return;
+      if (!mark) {
+        // Inside the heading, everything else keeps its own click …
+        if (
+          e.target.closest(
+            "a, button, input, textarea, .wiki-q, .wiki-blank, .wiki-answer"
+          )
+        ) {
+          return;
+        }
+        // … and a selection ending on the heading stays a selection.
+        var sel = window.getSelection ? window.getSelection() : null;
+        if (sel && !sel.isCollapsed) return;
+      }
+      e.preventDefault();
+      copyLink(h);
+    });
+  })();
 
   /* ---------- The sound of the dice ----------
      Four takes of wooden dice thrown on a wooden table, by Wuzzy, CC0 (see
@@ -995,7 +1179,7 @@
         var a = li.querySelector(":scope > a");
         var href = a ? a.getAttribute("href") || "" : "";
         var slugMatch = href.match(/([^\/]+)\.html/i);
-        // Adventures carry their index slug explicitly — their file name
+        // Site sheets carry their index slug explicitly — their file name
         // doesn't have to match it.
         var slug = (a && a.getAttribute("data-nav-slug")) || "";
         if (!slug) slug = slugMatch ? slugMatch[1].toLowerCase() : "";
@@ -1055,8 +1239,8 @@
             ? "Book I"
             : hit.book === "book2"
               ? "Book II"
-              : hit.book === "adventures"
-                ? "Adventure"
+              : hit.book === "sites"
+                ? "Site"
                 : "";
         if (hit.titleHit && hit.textHit) where += (where ? " · " : "") + "title + text";
         else if (hit.titleHit) where += (where ? " · " : "") + "title";
@@ -1542,7 +1726,7 @@
     var SKIP_SEL =
       "a,button,input,textarea,select,script,style,code,pre,kbd," +
       ".sidebar,nav,.toc,.search-results,.wiki-preview,.dice-toast," +
-      ".wiki-note,.wiki-q,.wiki-blank,.wiki-answer,.map-pin,.adv-map";
+      ".wiki-note,.wiki-q,.wiki-blank,.wiki-answer,.map-pin,.site-map";
     var HOST_SEL =
       "li,td,th,dd,dt,blockquote,figcaption,p,h1,h2,h3,h4,h5,h6,div,section,article";
     /* Hosts a note is appended inside of; anything else gets it as a sibling. */
@@ -1576,9 +1760,9 @@
         .replace(/\\/g, "/")
         .match(/([^\/#?]+)\.html/i);
       var slug = m ? m[1] : "index";
-      /* Adventure sheets live in their own folder and can share a slug with a
+      /* Site sheets live in their own folder and can share a slug with a
          book page, so qualify them. */
-      if (/\/adventures\//i.test(location.pathname)) slug = "adventures/" + slug;
+      if (/\/sites\//i.test(location.pathname)) slug = "sites/" + slug;
       return slug;
     }
 
@@ -1596,7 +1780,7 @@
     var root =
       document.querySelector("main.content") ||
       document.querySelector("main") ||
-      (document.body && document.body.classList.contains("adventure")
+      (document.body && document.body.classList.contains("site-sheet")
         ? document.body
         : null);
     if (!root) return;

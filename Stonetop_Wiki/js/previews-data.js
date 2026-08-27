@@ -15446,39 +15446,39 @@ window.WIKI_PREVIEWS = {
     "number": 18,
     "arcana_type": "major"
   },
-  "adventures": {
-    "title": "Adventures",
-    "excerpt": "4 campaign adventure sheets — prep, rooms, stat blocks — kept beside the wiki.",
+  "campaign-sites": {
+    "title": "Sites",
+    "excerpt": "4 campaign adventure sites — prep, rooms, stat blocks — kept beside the wiki.",
     "image": null,
-    "book": "adventures",
+    "book": "sites",
     "sections": {}
   },
   "the-green-lords-tomb": {
     "title": "The Green Lord’s Tomb",
     "excerpt": "Sajra the swyn’s lair · 1½ days into the Great Wood · Book I pp. 371–377",
     "image": null,
-    "book": "adventures",
+    "book": "sites",
     "sections": {}
   },
   "the-sealed-cave": {
     "title": "The Sealed Cave",
     "excerpt": "Hills above Stonetop · Peacebond discovery · Glasbren",
     "image": null,
-    "book": "adventures",
+    "book": "sites",
     "sections": {}
   },
   "underfalls": {
     "title": "Underfalls",
     "excerpt": "A working Rime Lord shrine · hanging valley under the ice falls in the Whitefang Mountains , two days east of Barrier Pass · 10 nodes, one major arcanum",
     "image": null,
-    "book": "adventures",
+    "book": "sites",
     "sections": {}
   },
   "vasilyas-grove": {
     "title": "Vasilya’s Grove",
     "excerpt": "Corrupted Forest seed · deep Great Wood , east of the Stream , deep into the Wood",
     "image": null,
-    "book": "adventures",
+    "book": "sites",
     "sections": {}
   }
 };
