@@ -217,7 +217,9 @@ console.log("== no campaign configured: the wiki as it always was ==");
   chk("checks are shared", "shared", S.scopeOf("stonetop-wiki-checks"));
   chk("pins are shared", "shared", S.scopeOf("stonetop-wiki-map-pins"));
   chk("a new sheet's HP store is GM-only", "gm", S.scopeOf("kneeroot-hp"));
-  chk("the reader's own notes never travel", null, S.scopeOf("stonetop-wiki-notes"));
+  chk("answers and playbook boxes travel", "shared", S.scopeOf("stonetop-wiki-notes"));
+  chk("a character's own HP travels", "shared", S.scopeOf("stonetop-wiki-playbook-hp"));
+  chk("a monster's HP is the GM's", "gm", S.scopeOf("stonetop-wiki-monster-hp"));
   chk("nor the dice-sound setting", null, S.scopeOf("stonetop-wiki-sound"));
 }
 
@@ -273,17 +275,30 @@ console.log("\n== a player joins by clicking the link ==");
 }
 
 /* ------------------------------------------------------------------ */
+console.log("\n== the socket ==");
+{
+  const up = await until(() => gm.w.StonetopStore.pushing(), 15000);
+  chk("the GM's browser is pushed to, not polling", true, up);
+  chk("and reports itself connected", "ok", gm.w.StonetopStore.status());
+}
+
 console.log("\n== a tick travels between two browsers ==");
 const player = browser(WIKI_PAGE, "https://stonetop-wiki.github.io/marshedge.html");
 player.w.StonetopStore.connect(playerCfg);
 await until(() => player.w.StonetopStore.status() === "ok");
 {
+  const t0 = Date.now();
   tick(player, 0, true);
   const seen = await until(
     () => gm.w.document.querySelectorAll("input.wiki-check")[0].checked === true,
     15000
   );
+  const took = Date.now() - t0;
   chk("the player's tick repaints in the GM's browser", true, seen);
+  /* The debounce before a push is 400ms and the poll is 5s. Landing well
+     inside that is the proof it arrived over the socket rather than being
+     waited for. */
+  chk("it arrived over the socket, not the poll (" + took + "ms)", true, took < 3000);
 }
 
 /* ------------------------------------------------------------------ */
@@ -368,8 +383,13 @@ console.log("\n== enemy HP is the GM's alone ==");
 /* ------------------------------------------------------------------ */
 console.log("\n== a sheet opened on its own, with no wiki around it ==");
 {
+  /* The trackers live in wiki.js now — one implementation for the book pages
+     and the sheets alike. A sheet loads it from ../js/wiki.js, so this only
+     happens to a sheet copied out of the tree: site.js alone leaves the rows
+     unbuilt, and must not throw doing it. */
   const vc = new VirtualConsole();
-  vc.on("jsdomError", () => {});
+  const errors = [];
+  vc.on("jsdomError", (e) => errors.push(e.message));
   const dom = new JSDOM(SHEET_PAGE, {
     url: "file:///D:/sheets/Underfalls.html",
     runScripts: "outside-only",
@@ -388,12 +408,17 @@ console.log("\n== a sheet opened on its own, with no wiki around it ==");
       clear: () => box.clear(),
     },
   });
-  w.eval(SITE_JS); // site.js alone — wiki.js never loaded
-  w.document.dispatchEvent(new w.Event("DOMContentLoaded"));
-  const boxes = w.document.querySelectorAll(".hp-box");
-  chk("the tracker still works", 6, boxes.length);
-  boxes[1].dispatchEvent(new w.MouseEvent("click", { bubbles: true }));
-  chk("and still saves", 2, JSON.parse(box.get("underfalls-hp")).ogre);
+  let threw = null;
+  try {
+    w.eval(SITE_JS); // site.js alone — wiki.js never loaded
+    w.document.dispatchEvent(new w.Event("DOMContentLoaded"));
+  } catch (e) {
+    threw = e.message;
+  }
+  chk("site.js alone does not throw", null, threw);
+  chk("the sidebar nav still works", true, !!w.document.querySelector(".site-nav"));
+  chk("but there are no HP boxes without wiki.js", 0,
+      w.document.querySelectorAll(".hp-box").length);
 }
 
 /* ------------------------------------------------------------------ */

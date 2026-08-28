@@ -1,7 +1,5 @@
 # The Worker's name is the first label of its hostname:
 #   https://sync.stonetop-wiki.workers.dev
-# The D1 database below keeps the longer name — it is account-scoped and shows
-# up in `wrangler d1` commands, where "sync" alone would say nothing.
 name = "sync"
 main = "src/index.js"
 compatibility_date = "2026-01-01"
@@ -9,12 +7,23 @@ compatibility_date = "2026-01-01"
 # Origins allowed to call the Worker from a browser. The hosted wiki, plus
 # "null" — which is what a page opened straight off a disk sends. A null
 # origin is only ever answered for the GM token (see ALLOW_NULL_ORIGIN_GM in
-# src/index.js); the GM is the one who opens the wiki from Dropbox.
+# src/shared.js); the GM is the one who opens the wiki from Dropbox.
 [vars]
 ALLOWED_ORIGINS = "https://stonetop-wiki.github.io"
 
-[[d1_databases]]
-# The name the Worker knows the database by: src/index.js reads env.DB.
-binding = "DB"
-database_name = "stonetop-sync"
-database_id = "0f6f25c2-2f16-4dc2-af75-995b5365e97e"
+# One object per campaign, holding that campaign's SQLite storage and its open
+# WebSockets; one per address for the rate limit on campaign creation. There is
+# no shared database any more — see src/campaign.js.
+[[durable_objects.bindings]]
+name = "CAMPAIGN"
+class_name = "Campaign"
+
+[[durable_objects.bindings]]
+name = "RATE_LIMIT"
+class_name = "RateLimiter"
+
+# SQLite-backed classes: the only kind the Workers Free plan allows, and the
+# kind that gives each object its own SQL storage.
+[[migrations]]
+tag = "v1"
+new_sqlite_classes = ["Campaign", "RateLimiter"]

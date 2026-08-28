@@ -47,7 +47,8 @@
       [/^[a-z0-9-]+-hp$/, "gm"],
     ];
 
-    var POLL_OK = 5000; // while the tab is visible and the Worker answers
+    var POLL_OK = 5000; // no socket, tab visible, and the Worker answering
+    var POLL_IDLE = 60000; // socket up — a safety net, not the channel
     var POLL_SLOW = 30000; // after a few failures
     var POLL_COLD = 300000; // after many — a quiet dot, never an alert
     var PUSH_DEBOUNCE = 400;
@@ -63,6 +64,9 @@
     var failures = 0;
     var pushTimer = null;
     var pollTimer = null;
+    var socket = null;
+    var socketTimer = null;
+    var socketFailures = 0;
     var pushing = false;
     var pulling = false;
     var state = "off"; // off | ok | offline
@@ -423,9 +427,111 @@
       if (rows.length) saveBaseline();
     }
 
+    /* ---------- The socket ----------------------------------------------
+     *
+     * The campaign pushes changes down this as they land, so a tick crosses
+     * the table in the time it takes to travel rather than in the time it
+     * takes the next poll to come round. Everything it delivers goes through
+     * the same applyRows() the poll used — the merge never knew or cared how
+     * the rows arrived.
+     *
+     * The poll is kept, and it is not vestigial: it covers the socket being
+     * refused, dropped, or never available, and it is what runs while the
+     * socket is trying to come back. A browser that can only poll is a slower
+     * browser, not a broken one.
+     *
+     * A browser cannot set an Authorization header on a handshake, so the
+     * token rides in the subprotocol list — which, unlike a query parameter,
+     * keeps it out of the URL and so out of logs and referrers.
+     * ------------------------------------------------------------------- */
+
+    function socketUrl() {
+      return (
+        cfg.endpoint.replace(/^http/, "ws") +
+        "/v1/connect/" +
+        encodeURIComponent(cfg.campaign) +
+        "?since=" +
+        cursor
+      );
+    }
+
+    function openSocket() {
+      if (!cfg || socket || !window.WebSocket) return;
+      var ws;
+      try {
+        ws = new WebSocket(socketUrl(), ["stonetop.v1", "tok." + cfg.token]);
+      } catch (e) {
+        return; // the poll carries on
+      }
+      socket = ws;
+
+      ws.onopen = function () {
+        if (socket !== ws) return;
+        socketFailures = 0;
+        succeeded();
+        // Push anything this browser is still holding back.
+        queuePush();
+        // The socket is the live channel now; the poll drops to a heartbeat.
+        schedule();
+      };
+
+      ws.onmessage = function (ev) {
+        if (socket !== ws) return;
+        var msg;
+        try {
+          msg = JSON.parse(ev.data);
+        } catch (e) {
+          return;
+        }
+        if (!msg || msg.t !== "rows") return;
+        applyRows(msg.rows || []);
+        if (typeof msg.cursor === "number") setCursor(msg.cursor);
+        succeeded();
+      };
+
+      ws.onerror = function () {
+        /* onclose always follows; the reconnect is decided there. */
+      };
+
+      ws.onclose = function () {
+        if (socket !== ws) return;
+        socket = null;
+        socketFailures++;
+        if (!cfg) return;
+        /* Fall back to the poll at its usual pace and try the socket again,
+           widening the gap so a Worker that is genuinely down is not hammered
+           by four browsers. A pull happens on the way back regardless, so
+           nothing that arrived while it was down is missed. */
+        clearTimeout(socketTimer);
+        socketTimer = setTimeout(
+          openSocket,
+          Math.min(30000, 1000 * Math.pow(2, Math.min(socketFailures, 5)))
+        );
+        schedule();
+      };
+    }
+
+    function closeSocket() {
+      clearTimeout(socketTimer);
+      var ws = socket;
+      socket = null;
+      if (!ws) return;
+      try {
+        ws.close();
+      } catch (e) {}
+    }
+
+    function socketLive() {
+      return !!socket && socket.readyState === 1;
+    }
+
     /* ---------- The poll ---------- */
 
     function pollDelay() {
+      /* With the socket up this is only a safety net — something missed while
+         the socket was down, or a socket that has gone quiet without saying
+         so. Once a minute is plenty. */
+      if (socketLive()) return POLL_IDLE;
       if (failures === 0) return POLL_OK;
       return failures < 4 ? POLL_SLOW : POLL_COLD;
     }
@@ -456,22 +562,32 @@
       loadBaseline();
       registerLocalStores();
       setState("ok");
-      pull().then(function () {
-        // Anything this browser holds that the campaign has not heard about
-        // yet — the GM's own prep, most often — goes up after the first pull,
-        // so the campaign's state is merged with it rather than replaced.
-        queuePush();
-        schedule();
-      }, schedule);
+      socketFailures = 0;
+      pull().then(started, function () {
+        /* Even a failed first pull is worth a socket: the endpoint may be
+           reachable over one and not the other. */
+        started();
+      });
+    }
+
+    function started() {
+      // Anything this browser holds that the campaign has not heard about yet
+      // — the GM's own prep, most often — goes up after the first pull, so the
+      // campaign's state is merged with it rather than replaced.
+      queuePush();
+      openSocket();
+      schedule();
     }
 
     function stop() {
       clearTimeout(pollTimer);
       clearTimeout(pushTimer);
+      closeSocket();
       cursor = 0;
       etag = "";
       baseline = {};
       failures = 0;
+      socketFailures = 0;
       setState("off");
     }
 
@@ -663,6 +779,10 @@
       status: function () {
         return state;
       },
+      /* True while changes are being pushed rather than polled for. */
+      pushing: function () {
+        return socketLive();
+      },
       onStatus: function (fn) {
         statusSubs.push(fn);
         fn(state);
@@ -701,6 +821,8 @@
     document.addEventListener("visibilitychange", function () {
       if (document.visibilityState === "visible" && cfg) {
         failures = 0;
+        socketFailures = 0;
+        if (!socket) openSocket();
         tick();
       }
     });

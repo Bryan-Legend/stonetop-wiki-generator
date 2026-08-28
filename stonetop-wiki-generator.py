@@ -9471,7 +9471,9 @@ def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> 
           <p class="index-license">The books' <strong>text</strong> is by
           Jeremy Strandberg under <a href="{license_url}" rel="license">CC BY-SA 4.0</a>.
           Dice sounds by <a href="https://opengameart.org/content/wooden-dice-on-wodden-table-roll">Wuzzy</a>,
-          <a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="license">CC0</a>.</p>
+          <a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="license">CC0</a>.
+          Free data sync provided by
+          <a href="https://workers.cloudflare.com/">Cloudflare</a>.</p>
         </div>
         </main>
       </div>

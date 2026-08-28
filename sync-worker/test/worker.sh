@@ -4,7 +4,9 @@
 #   cd sync-worker && npx wrangler dev --local --port 8788   # in one shell
 #   bash test/worker.sh                                      # in another
 #
-# Run it from sync-worker/, so the cleanup at the end finds wrangler.toml.
+# Campaign creation is rate limited to 5/hour per address, and the check for
+# that spends the whole allowance — so it only runs when asked for:
+#   SYNC_TEST_RATELIMIT=1 bash test/worker.sh
 set -u
 # Defaults to the local `wrangler dev`. Point it at the deployed Worker to
 # check a fresh deploy: SYNC_ENDPOINT=https://sync.stonetop-wiki.workers.dev
@@ -99,7 +101,10 @@ RES=$(curl -s -X DELETE "$B/v1/state/$CID/underfalls-hp" -H "authorization: Bear
 chk "gm reset clears the store" "1" "$(echo "$RES" | python -c 'import sys,json;print(json.load(sys.stdin)["cleared"])')"
 
 echo "== validation =="
-chk "unknown store refused" "400" "$(curl -s -o /dev/null -w '%{http_code}' -X POST "$B/v1/state/$CID" -H "authorization: Bearer $GTOK" -H 'content-type: application/json' -d '{"patches":[{"store":"stonetop-wiki-notes","set":{"a":1}}]}')"
+# The dice-sound setting is a real key this browser holds and must never sync.
+chk "a store outside the registry is refused" "400" "$(curl -s -o /dev/null -w '%{http_code}' -X POST "$B/v1/state/$CID" -H "authorization: Bearer $GTOK" -H 'content-type: application/json' -d '{"patches":[{"store":"stonetop-wiki-sound","set":{"a":1}}]}')"
+# ...but the notes store, which carries answers and playbook boxes, is in it.
+chk "the notes store is accepted" "200" "$(curl -s -o /dev/null -w '%{http_code}' -X POST "$B/v1/state/$CID" -H "authorization: Bearer $GTOK" -H 'content-type: application/json' -d '{"patches":[{"store":"stonetop-wiki-notes","set":{"marshedge#h1:q0":"asked"}}]}')"
 chk "patches must be an array" "400" "$(curl -s -o /dev/null -w '%{http_code}' -X POST "$B/v1/state/$CID" -H "authorization: Bearer $GTOK" -H 'content-type: application/json' -d '{"patches":"nope"}')"
 BIG=$(python -c 'print("{\"patches\":[{\"store\":\"stonetop-wiki-checks\",\"set\":{" + ",".join("\"k%d\":true" % i for i in range(600)) + "}}]}")')
 chk "too many keys refused" "413" "$(curl -s -o /dev/null -w '%{http_code}' -X POST "$B/v1/state/$CID" -H "authorization: Bearer $GTOK" -H 'content-type: application/json' -d "$BIG")"
@@ -119,19 +124,19 @@ chk "oversized body refused" "413" "$(curl -s -o /dev/null -w '%{http_code}' -X 
 rm -f "$HUGE"
 
 echo "== rate limit on the one open endpoint =="
-code=""
-for i in 1 2 3 4 5 6; do
-  code=$(curl -s -o /dev/null -w '%{http_code}' -X POST "$B/v1/campaigns")
-  [ "$code" = "429" ] && break
-done
-chk "campaign creation is rate limited" "429" "$code"
-# Leave the local database re-runnable: the rate-limit check above just spent
-# this address's hourly allowance. Only for the local Worker — against the
-# deployed one, wait the hour out.
-case "$B" in
-  http://127.0.0.1:*|http://localhost:*)
-    CI=1 npx wrangler d1 execute stonetop-sync --local       --command "DELETE FROM creates" >/dev/null 2>&1 ;;
-esac
+# Tripping this costs the address its hourly allowance, and the counter now
+# lives in a Durable Object that expires on its own rather than a table we can
+# truncate — so it is opt-in.
+if [ "${SYNC_TEST_RATELIMIT:-0}" = "1" ]; then
+  code=""
+  for i in 1 2 3 4 5 6; do
+    code=$(curl -s -o /dev/null -w '%{http_code}' -X POST "$B/v1/campaigns")
+    [ "$code" = "429" ] && break
+  done
+  chk "campaign creation is rate limited" "429" "$code"
+else
+  echo "  skip  set SYNC_TEST_RATELIMIT=1 to spend this address's hourly allowance"
+fi
 
 echo
 echo "$pass passed, $fail failed"

@@ -3,15 +3,14 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "description": "Cloudflare Worker + D1 backing shared campaign state for the Stonetop wiki",
+  "description": "Cloudflare Worker + Durable Objects backing shared campaign state for the Stonetop wiki",
   "scripts": {
     "dev": "wrangler dev --local --port 8788",
     "deploy": "wrangler deploy",
-    "schema:local": "wrangler d1 execute stonetop-sync --local --file=./schema.sql",
-    "schema:remote": "wrangler d1 execute stonetop-sync --remote --file=./schema.sql",
     "test:worker": "bash test/worker.sh",
     "test:client": "node test/client.mjs",
-    "test": "bash test/worker.sh && node test/client.mjs"
+    "test:socket": "node test/socket.mjs",
+    "test": "bash test/worker.sh && node test/socket.mjs && node test/client.mjs"
   },
   "devDependencies": {
     "jsdom": "^29.1.1",
