@@ -2823,18 +2823,6 @@ li.check-item input.wiki-check:checked + span {
   line-height: 1.55;
 }
 .index-hero p.index-vtt strong { color: var(--head); }
-.index-hero p.index-vtt-note {
-  margin: 0.55rem 0 0;
-  max-width: 40rem;
-  color: var(--muted);
-  font-size: 0.88rem;
-  line-height: 1.5;
-}
-.index-hero p.index-vtt-note strong { color: var(--quote); }
-.index-hero p.index-vtt-note code {
-  font-size: 0.92em;
-  color: var(--quote);
-}
 /* The home page's own title leads the page, with nothing above it. */
 main.content > h1.page-title:first-child {
   margin-top: 0;
