@@ -3510,12 +3510,14 @@
     if (!Store) return;
 
     /* A character's HP is their own and the table watches it; a monster's is
-       the GM's, like the enemy HP on a site sheet. */
+       the GM's. An adventure-site sheet names its own store in
+       data-hp-storage, so the third one is not known until the page says. */
     var PLAYBOOK_STORE = "stonetop-wiki-playbook-hp";
     var MONSTER_STORE = "stonetop-wiki-monster-hp";
     var NOTES_STORE = "stonetop-wiki-notes";
 
     var trackers = [];
+    var watched = {};
 
     function slugOf() {
       var m = String(location.pathname || "")
@@ -3539,6 +3541,7 @@
         kids[i].classList.toggle("is-empty", n > cur);
         kids[i].setAttribute("aria-pressed", n <= cur ? "true" : "false");
       }
+      if (!t.readout) return;
       t.readout.textContent = cur + "/" + t.max;
       t.readout.classList.toggle("is-down", cur === 0);
       t.readout.classList.toggle("is-full", cur === t.max);
@@ -3578,22 +3581,38 @@
       paint(t);
     }
 
+    /**
+     * A tracker over one store key.
+     *
+     * The book pages have nowhere to put one, so it builds its own wrapper.
+     * A site sheet already prints the row — an .hp-boxes to fill and an
+     * .hp-readout beside it — so those are adopted where they stand and no
+     * wrapper is made. More than one row may carry the same id (an enemy that
+     * appears in two rooms): each becomes its own tracker over the same key,
+     * and they repaint together because every one of them reads the store.
+     */
     function build(opts) {
-      var el = document.createElement("div");
-      el.className = "hp-track";
-      el.setAttribute("role", "group");
-      el.setAttribute("aria-label", opts.label + " HP");
+      var el = null;
+      var boxes = opts.boxes;
+      var readout = opts.readout;
 
-      var boxes = document.createElement("span");
-      boxes.className = "hp-boxes";
+      if (!boxes) {
+        el = document.createElement("div");
+        el.className = "hp-track";
+        el.setAttribute("role", "group");
+        el.setAttribute("aria-label", opts.label + " HP");
 
-      var readout = document.createElement("button");
-      readout.type = "button";
-      readout.className = "hp-readout";
-      readout.title = "Click to reset to full";
+        boxes = document.createElement("span");
+        boxes.className = "hp-boxes";
 
-      el.appendChild(boxes);
-      el.appendChild(readout);
+        readout = document.createElement("button");
+        readout.type = "button";
+        readout.className = "hp-readout";
+
+        el.appendChild(boxes);
+        el.appendChild(readout);
+      }
+      if (readout) readout.title = "Click to reset to full";
 
       var t = {
         store: opts.store,
@@ -3604,25 +3623,27 @@
         boxes: boxes,
         readout: readout,
       };
-      readout.addEventListener("click", function () {
-        setHp(t, t.max);
-      });
+      if (readout) {
+        readout.addEventListener("click", function () {
+          setHp(t, t.max);
+        });
+      }
+      watch(t.store);
       render(t);
       trackers.push(t);
       return t;
     }
 
-    function repaint(store) {
-      trackers.forEach(function (t) {
-        if (t.store === store) paint(t);
+    /* One subscription per store, whichever stores this page turns out to use. */
+    function watch(store) {
+      if (watched[store]) return;
+      watched[store] = true;
+      Store.subscribe(store, function () {
+        trackers.forEach(function (t) {
+          if (t.store === store) paint(t);
+        });
       });
     }
-    Store.subscribe(PLAYBOOK_STORE, function () {
-      repaint(PLAYBOOK_STORE);
-    });
-    Store.subscribe(MONSTER_STORE, function () {
-      repaint(MONSTER_STORE);
-    });
 
     var slug = slugOf();
 
@@ -3672,6 +3693,32 @@
       /* Max HP lives in the notes store, so it can also arrive from another
          browser — which sets the box's value without firing either event. */
       Store.subscribe(NOTES_STORE, syncMax);
+    })();
+
+    /* ----- Adventure-site sheets -----
+       The sheets print their enemy rows in the page and name their store on
+       the body. They used to run their own copy of everything above; this is
+       all that is left of it. */
+    (function () {
+      var store =
+        document.body && document.body.getAttribute("data-hp-storage");
+      if (!store) return;
+      document
+        .querySelectorAll(".enemy-row[data-hp-id][data-hp-max]")
+        .forEach(function (row) {
+          var id = row.getAttribute("data-hp-id");
+          var max = parseInt(row.getAttribute("data-hp-max"), 10) || 0;
+          var boxes = row.querySelector(".hp-boxes");
+          if (!id || !max || !boxes) return;
+          build({
+            store: store,
+            key: id,
+            max: max,
+            label: id,
+            boxes: boxes,
+            readout: row.querySelector(".hp-readout"),
+          });
+        });
     })();
 
     /* ----- Monster and NPC stat blocks ----- */
