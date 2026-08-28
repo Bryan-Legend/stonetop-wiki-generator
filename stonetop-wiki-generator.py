@@ -9464,10 +9464,6 @@ def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> 
           in the books takes a note, and the playbooks roll: click a stat to roll +that stat, or the
           damage die to roll damage. Mark a debility and its two stats roll with disadvantage on
           their own.</p>
-          <p class="index-vtt-note">All of it lives in <strong>your own browser</strong>
-          (<code>localStorage</code>) — nothing is uploaded, nothing is shared between people or
-          devices, and clearing your browser's site data clears it. Two players at one table each
-          keep their own copy.</p>
           <p class="index-note">These pages are extracted from the books' PDFs automatically, so
           <strong>expect defects</strong> — mangled tables, dropped or duplicated text, wrong
           headings, broken links. If you spot one, or want to help fix them,
