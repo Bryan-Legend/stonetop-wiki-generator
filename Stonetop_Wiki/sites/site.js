@@ -89,17 +89,32 @@
   var STORAGE_KEY =
     (body && body.getAttribute("data-hp-storage")) ||
     "stonetop-site-hp";
-  var state = {};
-  try {
-    state = JSON.parse(localStorage.getItem(STORAGE_KEY) || "{}") || {};
-  } catch (e) {
-    state = {};
-  }
+
+  /* wiki.js owns the shared store: with a campaign configured, HP written
+     here reaches the GM's other browsers (and only theirs — enemy HP mid-fight
+     is the one thing the players are not shown). A sheet opened on its own,
+     without the wiki around it, falls back to plain localStorage and keeps
+     working exactly as it did. */
+  var Store = window.StonetopStore || {
+    get: function (key) {
+      try {
+        return JSON.parse(localStorage.getItem(key) || "{}") || {};
+      } catch (e) {
+        return {};
+      }
+    },
+    set: function (key, value) {
+      try {
+        localStorage.setItem(key, JSON.stringify(value));
+      } catch (e) {}
+    },
+    subscribe: function () {},
+  };
+
+  var state = Store.get(STORAGE_KEY);
 
   function save() {
-    try {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-    } catch (e) {}
+    Store.set(STORAGE_KEY, state);
   }
 
   function rowsFor(id) {
@@ -110,9 +125,13 @@
     var rows = rowsFor(id);
     if (!rows.length) return;
     var max = parseInt(rows[0].getAttribute("data-hp-max"), 10) || 0;
+    // An enemy the GM has not touched is simply absent from the store, and
+    // reads as unhurt. Writing that default back would make it look like an
+    // edit — and an edit the campaign has never heard of wins over what the
+    // campaign holds, which is how a freshly opened sheet used to heal
+    // everything the GM had already wounded.
     var cur = state[id];
     if (typeof cur !== "number" || cur < 0 || cur > max) cur = max;
-    state[id] = cur;
     rows.forEach(function (row) {
       var boxes = row.querySelectorAll(".hp-box");
       boxes.forEach(function (box, i) {
@@ -143,7 +162,6 @@
 
   function initTrackers() {
     var rows = document.querySelectorAll(".enemy-row[data-hp-id][data-hp-max]");
-    var seen = {};
     rows.forEach(function (row) {
       var id = row.getAttribute("data-hp-id");
       var max = parseInt(row.getAttribute("data-hp-max"), 10) || 0;
@@ -177,14 +195,21 @@
           setHp(id, max);
         });
       }
-      if (!seen[id]) {
-        seen[id] = true;
-        if (typeof state[id] !== "number") state[id] = max;
-      }
       paint(id);
     });
-    save();
   }
+
+  /* HP changed in another of the GM's browsers — repaint every tracker. */
+  Store.subscribe(STORAGE_KEY, function (next) {
+    if (next) state = next;
+    var seen = {};
+    document.querySelectorAll(".enemy-row[data-hp-id]").forEach(function (row) {
+      var id = row.getAttribute("data-hp-id");
+      if (seen[id]) return;
+      seen[id] = true;
+      paint(id);
+    });
+  });
 
   if (document.readyState === "loading") {
     document.addEventListener("DOMContentLoaded", initTrackers);

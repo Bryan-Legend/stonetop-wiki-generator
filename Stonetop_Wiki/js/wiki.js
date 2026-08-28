@@ -2,6 +2,710 @@
 (function () {
   "use strict";
 
+  /* ---------- StonetopStore: the table's shared state ----------------------
+   *
+   * Everything the wiki remembers — ticked steading improvements, danger
+   * countdowns, map pins, enemy HP — has always lived in this browser's
+   * localStorage, one private copy per person. This wraps those stores in one
+   * small interface (get / set / subscribe) and, when a campaign is
+   * configured, mirrors them through a Cloudflare Worker so everyone at the
+   * table sees the same board.
+   *
+   * localStorage stays the truth the page renders from; the network is the
+   * mirror. With no campaign configured — or with the Worker down, or the
+   * wiki opened off a disk with no connection — every one of these calls is
+   * exactly the localStorage it replaced, and the wiki behaves as it always
+   * did. Nothing here ever blocks a click: the local write has already
+   * happened by the time a push is even queued.
+   *
+   * See sync-worker/ and CAMPAIGN-SYNC-PLAN.md.
+   * --------------------------------------------------------------------- */
+  (function () {
+    var CONFIG_KEY = "stonetop-wiki-sync"; // endpoint + campaign + token; never synced
+    var CURSOR_KEY = "stonetop-wiki-sync-cursor";
+    var BASE_KEY = "stonetop-wiki-sync-base";
+
+    /* Which stores travel, and who may see them. Kept in step with the
+       Worker's own table (sync-worker/src/index.js) — the Worker is the one
+       that enforces it; this copy only saves a doomed round trip.
+
+       The HP pattern is open-ended because every adventure-site sheet names
+       its own store in data-hp-storage, so a new sheet joins the sync without
+       anyone editing a list. Enemy HP mid-fight is the one clearly
+       spoiler-bearing store; ticked improvements and danger clocks are better
+       seen by everyone. Anything not named here — the reader's own answer
+       notes, the dice-sound setting — stays private to the browser. */
+    var STORE_SCOPES = [
+      [/^stonetop-wiki-checks$/, "shared"],
+      [/^stonetop-wiki-map-pins$/, "shared"],
+      [/^[a-z0-9-]+-hp$/, "gm"],
+    ];
+
+    var POLL_OK = 5000; // while the tab is visible and the Worker answers
+    var POLL_SLOW = 30000; // after a few failures
+    var POLL_COLD = 300000; // after many — a quiet dot, never an alert
+    var PUSH_DEBOUNCE = 400;
+
+    var mem = {}; // store -> parsed object, the copy the page renders from
+    var baseline = {}; // store -> { key: JSON of the value the server last agreed }
+    var subs = {}; // store -> [fn]
+    var statusSubs = [];
+    var known = {}; // every syncable store this browser has seen
+    var cfg = null;
+    var cursor = 0;
+    var etag = "";
+    var failures = 0;
+    var pushTimer = null;
+    var pollTimer = null;
+    var pushing = false;
+    var pulling = false;
+    var state = "off"; // off | ok | offline
+    var joined = false; // a join link was consumed on this load
+
+    function has(o, k) {
+      return Object.prototype.hasOwnProperty.call(o, k);
+    }
+
+    function readJSON(key, fallback) {
+      try {
+        var raw = localStorage.getItem(key);
+        if (!raw) return fallback;
+        var v = JSON.parse(raw);
+        return v && typeof v === "object" ? v : fallback;
+      } catch (e) {
+        return fallback;
+      }
+    }
+
+    function writeJSON(key, value) {
+      try {
+        localStorage.setItem(key, JSON.stringify(value));
+      } catch (e) {
+        /* private mode, or a full quota — the page still works */
+      }
+    }
+
+    function scopeOf(store) {
+      for (var i = 0; i < STORE_SCOPES.length; i++) {
+        if (STORE_SCOPES[i][0].test(store)) return STORE_SCOPES[i][1];
+      }
+      return null;
+    }
+
+    /** True if this browser's role may both read and write that store. */
+    function syncs(store) {
+      var scope = scopeOf(store);
+      if (!scope) return false;
+      if (scope === "gm") return !!(cfg && cfg.role === "gm");
+      return true;
+    }
+
+    /* ---------- The interface the wiki uses ---------- */
+
+    function get(store) {
+      if (!has(mem, store)) {
+        mem[store] = readJSON(store, {}) || {};
+        if (scopeOf(store)) known[store] = true;
+      }
+      return mem[store];
+    }
+
+    /**
+     * Write a store. The local write is immediate and unconditional; the push
+     * is queued behind it and may never happen. opts.remote === false writes
+     * locally only — used when applying what the server just told us, so an
+     * incoming change does not bounce straight back out.
+     */
+    function set(store, value, opts) {
+      mem[store] = value && typeof value === "object" ? value : {};
+      if (scopeOf(store)) known[store] = true;
+      writeJSON(store, mem[store]);
+      if (!(opts && opts.remote === false)) queuePush();
+      notify(store);
+    }
+
+    function subscribe(store, fn) {
+      (subs[store] || (subs[store] = [])).push(fn);
+    }
+
+    function notify(store) {
+      (subs[store] || []).forEach(function (fn) {
+        try {
+          fn(get(store));
+        } catch (e) {
+          /* one bad listener must not stop the others */
+        }
+      });
+    }
+
+    /* ---------- Campaign identity ---------- */
+
+    function loadConfig() {
+      var c = readJSON(CONFIG_KEY, null);
+      if (!c || !c.endpoint || !c.campaign || !c.token) return null;
+      c.endpoint = String(c.endpoint).replace(/\/+$/, "");
+      c.role = c.role === "gm" ? "gm" : "player";
+      return c;
+    }
+
+    function saveConfig(c) {
+      cfg = c;
+      if (c) writeJSON(CONFIG_KEY, c);
+      else {
+        try {
+          localStorage.removeItem(CONFIG_KEY);
+        } catch (e) {}
+      }
+      setState(c ? "ok" : "off");
+    }
+
+    function setCursor(n) {
+      cursor = n || 0;
+      writeJSON(CURSOR_KEY, { cursor: cursor, campaign: cfg ? cfg.campaign : "" });
+    }
+
+    function loadCursor() {
+      var c = readJSON(CURSOR_KEY, null);
+      // A cursor belongs to one campaign; joining another starts from nothing.
+      cursor = c && cfg && c.campaign === cfg.campaign ? c.cursor || 0 : 0;
+    }
+
+    function saveBaseline() {
+      writeJSON(BASE_KEY, { campaign: cfg ? cfg.campaign : "", stores: baseline });
+    }
+
+    function loadBaseline() {
+      var b = readJSON(BASE_KEY, null);
+      baseline =
+        b && cfg && b.campaign === cfg.campaign && b.stores ? b.stores : {};
+    }
+
+    /* ---------- Diffing local against what the server last agreed ----------
+     *
+     * Every store is a flat map, so a patch is the keys whose value no longer
+     * matches the baseline, plus the keys that have gone. Sending the keys
+     * rather than the blob is what keeps two people ticking two different
+     * boxes in the same five seconds from overwriting each other. */
+
+    function stable(v) {
+      try {
+        return JSON.stringify(v);
+      } catch (e) {
+        return "";
+      }
+    }
+
+    function diffFor(store) {
+      var cur = get(store);
+      var base = baseline[store] || (baseline[store] = {});
+      var set_ = {};
+      var del = [];
+      var sent = {};
+      var n = 0;
+      var k;
+      for (k in cur) {
+        if (!has(cur, k)) continue;
+        var s = stable(cur[k]);
+        if (base[k] !== s) {
+          set_[k] = cur[k];
+          sent[k] = s;
+          n++;
+        }
+      }
+      for (k in base) {
+        if (has(base, k) && !has(cur, k)) {
+          del.push(k);
+          n++;
+        }
+      }
+      return n ? { store: store, set: set_, del: del, sent: sent } : null;
+    }
+
+    function collectPatches() {
+      var out = [];
+      Object.keys(known).forEach(function (store) {
+        if (!syncs(store)) return;
+        var d = diffFor(store);
+        if (d) out.push(d);
+      });
+      return out;
+    }
+
+    function commitPatches(patches) {
+      patches.forEach(function (p) {
+        var base = baseline[p.store] || (baseline[p.store] = {});
+        Object.keys(p.sent).forEach(function (k) {
+          base[k] = p.sent[k];
+        });
+        p.del.forEach(function (k) {
+          delete base[k];
+        });
+      });
+      saveBaseline();
+    }
+
+    /* ---------- Talking to the Worker ---------- */
+
+    function api(path, init) {
+      var opts = init || {};
+      opts.headers = Object.assign(
+        { authorization: "Bearer " + cfg.token },
+        opts.headers || {}
+      );
+      opts.cache = "no-store";
+      return fetch(cfg.endpoint + path, opts);
+    }
+
+    function setState(next) {
+      if (state === next) return;
+      state = next;
+      statusSubs.forEach(function (fn) {
+        try {
+          fn(state);
+        } catch (e) {}
+      });
+    }
+
+    function failed() {
+      failures++;
+      // Quiet, and only once it looks like more than a dropped packet.
+      if (failures >= 2) setState("offline");
+    }
+
+    function succeeded() {
+      failures = 0;
+      setState("ok");
+    }
+
+    function queuePush(delay) {
+      if (!cfg) return;
+      clearTimeout(pushTimer);
+      pushTimer = setTimeout(push, delay || PUSH_DEBOUNCE);
+    }
+
+    function push() {
+      if (!cfg) return;
+      // A push already in flight will look for anything new when it lands, so
+      // this one only has to make sure it does.
+      if (pushing) return queuePush();
+      var patches = collectPatches();
+      if (!patches.length) return;
+      pushing = true;
+      var body = JSON.stringify({
+        patches: patches.map(function (p) {
+          return { store: p.store, set: p.set, del: p.del };
+        }),
+      });
+      api("/v1/state/" + encodeURIComponent(cfg.campaign), {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: body,
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error("push " + res.status);
+          return res.json();
+        })
+        .then(function () {
+          commitPatches(patches);
+          // The cursor deliberately stays where it was. What comes back from
+          // a push is the campaign's sequence number, not this browser's
+          // place in it: skipping ahead to it would step over rows someone
+          // else wrote in between, and those rows would never be seen again.
+          // Reading our own rows back on the next poll costs one round trip
+          // and merges to nothing, since they already match the baseline.
+          succeeded();
+        })
+        .catch(function () {
+          // The local write already happened; nothing was committed, so the
+          // same patch re-forms from the same diff on the next attempt.
+          failed();
+        })
+        .then(function () {
+          pushing = false;
+          // Whatever is still unsent — an edit made while this was in flight,
+          // or the whole patch if it failed — goes on the next attempt, which
+          // widens with the same backoff as the poll.
+          if (collectPatches().length) {
+            queuePush(failures ? pollDelay() : PUSH_DEBOUNCE);
+          }
+        });
+    }
+
+    function pull() {
+      if (!cfg || pulling) return Promise.resolve();
+      pulling = true;
+      var headers = etag ? { "if-none-match": etag } : {};
+      return api(
+        "/v1/state/" + encodeURIComponent(cfg.campaign) + "?since=" + cursor,
+        { headers: headers }
+      )
+        .then(function (res) {
+          if (res.status === 304) {
+            etag = res.headers.get("etag") || etag;
+            succeeded();
+            return null;
+          }
+          if (!res.ok) throw new Error("pull " + res.status);
+          etag = res.headers.get("etag") || "";
+          return res.json();
+        })
+        .then(function (out) {
+          if (out) {
+            applyRows(out.rows || []);
+            setCursor(out.cursor || cursor);
+            succeeded();
+            // The server had more than one page of rows waiting.
+            if (out.more) {
+              pulling = false;
+              return pull();
+            }
+          }
+        })
+        .catch(function () {
+          failed();
+        })
+        .then(function () {
+          pulling = false;
+        });
+    }
+
+    /**
+     * Merge the server's rows into the local blobs.
+     *
+     * A key this browser has changed since its last agreed value is left
+     * alone — that edit is still queued to push, and it wins. Everything else
+     * is written through to localStorage and announced, so the page repaints
+     * without anyone reloading. A null value is a tombstone: something was
+     * deleted, and saying so is the only way to stop a peer that still holds
+     * the key from putting it back.
+     */
+    function applyRows(rows) {
+      var touched = {};
+      rows.forEach(function (r) {
+        if (!r || !r.store || typeof r.k !== "string") return;
+        if (!syncs(r.store)) return;
+        var cur = get(r.store);
+        var base = baseline[r.store] || (baseline[r.store] = {});
+        var localS = has(cur, r.k) ? stable(cur[r.k]) : undefined;
+        var pendingLocal = localS !== base[r.k];
+        if (r.v === null || r.v === undefined) {
+          delete base[r.k];
+          if (!pendingLocal && has(cur, r.k)) {
+            delete cur[r.k];
+            touched[r.store] = true;
+          }
+        } else {
+          var val;
+          try {
+            val = JSON.parse(r.v);
+          } catch (e) {
+            return;
+          }
+          // Re-serialised from the parsed value, so it compares equal to what
+          // this browser would write for the same thing.
+          base[r.k] = stable(val);
+          if (!pendingLocal) {
+            cur[r.k] = val;
+            touched[r.store] = true;
+          }
+        }
+      });
+      Object.keys(touched).forEach(function (store) {
+        writeJSON(store, mem[store]);
+        notify(store);
+      });
+      if (rows.length) saveBaseline();
+    }
+
+    /* ---------- The poll ---------- */
+
+    function pollDelay() {
+      if (failures === 0) return POLL_OK;
+      return failures < 4 ? POLL_SLOW : POLL_COLD;
+    }
+
+    function schedule() {
+      clearTimeout(pollTimer);
+      if (!cfg) return;
+      pollTimer = setTimeout(tick, pollDelay());
+    }
+
+    function tick() {
+      if (!cfg) return;
+      if (document.visibilityState === "hidden") {
+        // Nobody is looking. Wait for the tab to come back rather than
+        // spending a request every five seconds on an idle window.
+        schedule();
+        return;
+      }
+      pull().then(schedule, schedule);
+    }
+
+    function start() {
+      if (!cfg) {
+        setState("off");
+        return;
+      }
+      loadCursor();
+      loadBaseline();
+      registerLocalStores();
+      setState("ok");
+      pull().then(function () {
+        // Anything this browser holds that the campaign has not heard about
+        // yet — the GM's own prep, most often — goes up after the first pull,
+        // so the campaign's state is merged with it rather than replaced.
+        queuePush();
+        schedule();
+      }, schedule);
+    }
+
+    function stop() {
+      clearTimeout(pollTimer);
+      clearTimeout(pushTimer);
+      cursor = 0;
+      etag = "";
+      baseline = {};
+      failures = 0;
+      setState("off");
+    }
+
+    /** Every syncable store this browser already holds, whatever page it is on. */
+    function registerLocalStores() {
+      try {
+        for (var i = 0; i < localStorage.length; i++) {
+          var k = localStorage.key(i);
+          if (k && scopeOf(k)) known[k] = true;
+        }
+      } catch (e) {}
+    }
+
+    /* ---------- Joining ---------- */
+
+    function b64urlEncode(text) {
+      var bytes = new TextEncoder().encode(text);
+      var s = "";
+      for (var i = 0; i < bytes.length; i++) s += String.fromCharCode(bytes[i]);
+      return btoa(s).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "");
+    }
+
+    function b64urlDecode(text) {
+      var s = String(text).replace(/-/g, "+").replace(/_/g, "/");
+      while (s.length % 4) s += "=";
+      var bin = atob(s);
+      var bytes = new Uint8Array(bin.length);
+      for (var i = 0; i < bin.length; i++) bytes[i] = bin.charCodeAt(i);
+      return new TextDecoder().decode(bytes);
+    }
+
+    /**
+     * The whole of onboarding: the GM sends one link, a player clicks it once.
+     * Joining adopts the campaign's state rather than merging this browser's
+     * into it — whatever ticks and pins were sitting in a player's copy from
+     * reading the wiki on their own are not the campaign's.
+     */
+    function adopt() {
+      Object.keys(known).forEach(function (store) {
+        if (!scopeOf(store)) return;
+        mem[store] = {};
+        writeJSON(store, {});
+        notify(store);
+      });
+      baseline = {};
+      cursor = 0;
+      etag = "";
+      saveBaseline();
+      setCursor(0);
+    }
+
+    /** The campaign a join link names, or null if that is not one. */
+    function parseJoinLink(link) {
+      var m = String(link || "").match(/[#&]join=([A-Za-z0-9\-_]+)/);
+      if (!m) return null;
+      var parsed;
+      try {
+        parsed = JSON.parse(b64urlDecode(m[1]));
+      } catch (e) {
+        return null;
+      }
+      if (!parsed || !parsed.endpoint || !parsed.campaign || !parsed.token)
+        return null;
+      return {
+        endpoint: String(parsed.endpoint).replace(/\/+$/, ""),
+        campaign: String(parsed.campaign),
+        token: String(parsed.token),
+        role: parsed.role === "gm" ? "gm" : "player",
+      };
+    }
+
+    function consumeJoinHash() {
+      var parsed = parseJoinLink(location.hash || "");
+      if (!parsed) return false;
+      registerLocalStores();
+      saveConfig(parsed);
+      adopt();
+      // Take the token back out of the address bar before it reaches a
+      // screenshot, a bookmark, or the next person to borrow the laptop.
+      try {
+        history.replaceState(null, "", location.pathname + location.search);
+      } catch (e) {
+        /* some browsers refuse replaceState on file:// */
+      }
+      return true;
+    }
+
+    /** A link that carries everything a browser needs to join this campaign. */
+    function joinLink(role) {
+      if (!cfg) return "";
+      var payload = {
+        endpoint: cfg.endpoint,
+        campaign: cfg.campaign,
+        token: role === "gm" ? cfg.token : cfg.playerToken || cfg.token,
+        role: role === "gm" ? "gm" : "player",
+      };
+      var base = publishedRoot();
+      return base + "#join=" + b64urlEncode(JSON.stringify(payload));
+    }
+
+    /* Where the players will actually open the wiki. A page states its
+       published address in og:url; off a disk the address bar is a path into
+       someone's Dropbox, which is no use in a link. */
+    function publishedRoot() {
+      var og = document.querySelector('meta[property="og:url"]');
+      var stated = og ? og.getAttribute("content") || "" : "";
+      var here = stated || String(location.href).split("#")[0];
+      var prefix =
+        (document.body && document.body.getAttribute("data-wiki-root")) || "";
+      if (prefix && prefix.slice(-1) !== "/") prefix += "/";
+      try {
+        return new URL(prefix + "index.html", here).href;
+      } catch (e) {
+        return here;
+      }
+    }
+
+    /* ---------- Creating a campaign (the GM, once) ---------- */
+
+    function createCampaign(endpoint) {
+      var base = String(endpoint || "").replace(/\/+$/, "");
+      return fetch(base + "/v1/campaigns", {
+        method: "POST",
+        headers: { "content-type": "application/json" },
+        body: "{}",
+      })
+        .then(function (res) {
+          if (!res.ok) throw new Error("create " + res.status);
+          return res.json();
+        })
+        .then(function (out) {
+          registerLocalStores();
+          saveConfig({
+            endpoint: base,
+            campaign: out.campaign,
+            token: out.gm_token,
+            playerToken: out.player_token,
+            role: "gm",
+          });
+          // A campaign made from the GM's own browser starts from what that
+          // browser already holds — the prep is the campaign.
+          baseline = {};
+          cursor = 0;
+          etag = "";
+          saveBaseline();
+          setCursor(0);
+          start();
+          return out;
+        });
+    }
+
+    function connect(c) {
+      registerLocalStores();
+      saveConfig({
+        endpoint: String(c.endpoint || "").replace(/\/+$/, ""),
+        campaign: String(c.campaign || ""),
+        token: String(c.token || ""),
+        playerToken: c.playerToken || "",
+        role: c.role === "gm" ? "gm" : "player",
+      });
+      adopt();
+      start();
+    }
+
+    function disconnect() {
+      saveConfig(null);
+      stop();
+    }
+
+    /** Wipe one store across the whole campaign (end of an arc, a TPK, a test). */
+    function reset(store) {
+      if (!cfg) return Promise.reject(new Error("not connected"));
+      return api(
+        "/v1/state/" +
+          encodeURIComponent(cfg.campaign) +
+          "/" +
+          encodeURIComponent(store),
+        { method: "DELETE" }
+      ).then(function (res) {
+        if (!res.ok) throw new Error("reset " + res.status);
+        return pull();
+      });
+    }
+
+    window.StonetopStore = {
+      get: get,
+      set: set,
+      subscribe: subscribe,
+      status: function () {
+        return state;
+      },
+      onStatus: function (fn) {
+        statusSubs.push(fn);
+        fn(state);
+      },
+      config: function () {
+        return cfg
+          ? {
+              endpoint: cfg.endpoint,
+              campaign: cfg.campaign,
+              role: cfg.role,
+              hasPlayerToken: !!cfg.playerToken,
+            }
+          : null;
+      },
+      justJoined: function () {
+        return joined;
+      },
+      connect: connect,
+      disconnect: disconnect,
+      createCampaign: createCampaign,
+      joinLink: joinLink,
+      parseJoinLink: parseJoinLink,
+      reset: reset,
+      pull: function () {
+        return pull();
+      },
+      scopeOf: scopeOf,
+    };
+
+    /* A join link is consumed before anything else reads a store, so the
+       adopted campaign — not this browser's leftovers — is what the page
+       binds to. */
+    cfg = loadConfig();
+    joined = consumeJoinHash();
+
+    document.addEventListener("visibilitychange", function () {
+      if (document.visibilityState === "visible" && cfg) {
+        failures = 0;
+        tick();
+      }
+    });
+
+    if (document.readyState === "loading") {
+      document.addEventListener("DOMContentLoaded", start);
+    } else {
+      start();
+    }
+  })();
+
   const SCRIPT_BASE = (function () {
     const scripts = document.getElementsByTagName("script");
     for (let i = scripts.length - 1; i >= 0; i--) {
@@ -136,6 +840,39 @@
         toast.hidden = true;
       }, 250);
     }, ms || 4400);
+  }
+
+  /* The clipboard, wherever the wiki is opened from. navigator.clipboard is
+     refused outside a secure context, and off a disk this wiki is exactly
+     that — so a refusal falls back to a hidden textarea and execCommand.
+     Used by the section links and by the campaign join links. */
+  function legacyCopy(text) {
+    var ta = document.createElement("textarea");
+    ta.value = text;
+    ta.setAttribute("readonly", "");
+    ta.style.position = "fixed";
+    ta.style.top = "-1000px";
+    ta.style.opacity = "0";
+    document.body.appendChild(ta);
+    ta.select();
+    var ok = false;
+    try {
+      ok = document.execCommand("copy");
+    } catch (err) {
+      ok = false;
+    }
+    document.body.removeChild(ta);
+    return ok ? Promise.resolve() : Promise.reject(new Error("copy refused"));
+  }
+
+  function copyText(text) {
+    var api =
+      navigator.clipboard && navigator.clipboard.writeText
+        ? navigator.clipboard.writeText(text)
+        : Promise.reject(new Error("no clipboard"));
+    return api.catch(function () {
+      return legacyCopy(text);
+    });
   }
 
   function showDiceResult(result) {
@@ -280,39 +1017,6 @@
       for (var n = 2; document.getElementById(id); n++) id = base + "-" + n;
       h.id = id;
       return id;
-    }
-
-    function legacyCopy(text) {
-      // navigator.clipboard is refused outside a secure context, and off a
-      // disk this wiki is exactly that.
-      var ta = document.createElement("textarea");
-      ta.value = text;
-      ta.setAttribute("readonly", "");
-      ta.style.position = "fixed";
-      ta.style.top = "-1000px";
-      ta.style.opacity = "0";
-      document.body.appendChild(ta);
-      ta.select();
-      var ok = false;
-      try {
-        ok = document.execCommand("copy");
-      } catch (err) {
-        ok = false;
-      }
-      document.body.removeChild(ta);
-      return ok
-        ? Promise.resolve()
-        : Promise.reject(new Error("copy refused"));
-    }
-
-    function copyText(text) {
-      var api =
-        navigator.clipboard && navigator.clipboard.writeText
-          ? navigator.clipboard.writeText(text)
-          : Promise.reject(new Error("no clipboard"));
-      return api.catch(function () {
-        return legacyCopy(text);
-      });
     }
 
     function copyLink(h) {
@@ -585,6 +1289,325 @@
         paint();
         if (on) play();
       });
+    }
+  })();
+
+  /* ---------- Campaign panel ----------------------------------------------
+   *
+   * The sidebar's second footer control, beside the dice-sound toggle: a dot
+   * saying whether this browser is sharing state with the table, and a small
+   * panel behind it to set that up. Built here rather than emitted by the
+   * generator, so it appears on every page — book chapters, arcana cards, and
+   * the hand-authored site sheets alike — without a rebuild.
+   *
+   * The GM presses "Create campaign" once and sends the players the link it
+   * copies. That is the whole of onboarding: they click it, the wiki reads
+   * the campaign out of the address bar, adopts its state, and strips the
+   * token back out of the URL.
+   * --------------------------------------------------------------------- */
+  (function () {
+    var Store = window.StonetopStore;
+    if (!Store) return;
+
+    /* The deployed Worker, so nobody has to type it. An endpoint the reader
+       has already used is remembered either way, and overrides this. */
+    var DEFAULT_ENDPOINT = "https://sync.stonetop-wiki.workers.dev";
+
+    /* The tools sit under the search box, at the top of the sidebar, where a
+       glance finds them — whether the table is sharing state is the sort of
+       thing you want to see without scrolling the topic list to its end.
+
+       A site sheet has no search box; there the row goes under the sheet's
+       title and its way back to the wiki. The old footer is the last resort,
+       so a page with neither still gets the control. */
+    function toolsHost() {
+      var head = document.querySelector(".sidebar-head");
+      if (head) return { parent: head, before: null };
+      var nav = document.querySelector(".site-nav");
+      if (nav) {
+        var after =
+          nav.querySelector(".nav-wiki-home") || nav.querySelector(".nav-title");
+        return { parent: nav, before: after ? after.nextSibling : nav.firstChild };
+      }
+      var foot = document.querySelector(".sidebar-foot");
+      return foot ? { parent: foot, before: null } : null;
+    }
+
+    var host = toolsHost();
+    if (!host) return;
+
+    var tools = document.createElement("div");
+    tools.className = "sidebar-tools";
+    host.parent.insertBefore(tools, host.before);
+
+    var btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "sync-toggle";
+    btn.id = "sync-toggle";
+    btn.setAttribute("aria-expanded", "false");
+    btn.innerHTML =
+      '<span class="sync-dot" aria-hidden="true"></span>' +
+      '<span class="sync-label">Campaign</span>';
+    tools.appendChild(btn);
+
+    /* The dice-sound toggle is generated into the sidebar footer, where it sat
+       alone and adrift. Moved rather than re-made, so it keeps its id and the
+       handler already bound to it — and so a rebuild, which puts it back in the
+       footer, is picked up and moved again rather than leaving two of them. */
+    var sound = document.getElementById("sound-toggle");
+    if (sound) tools.appendChild(sound);
+
+    var panel = null;
+
+    function label(text, node) {
+      var l = document.createElement("label");
+      l.className = "sync-field";
+      var span = document.createElement("span");
+      span.textContent = text;
+      l.appendChild(span);
+      l.appendChild(node);
+      return l;
+    }
+
+    function input(placeholder, value) {
+      var i = document.createElement("input");
+      i.type = "text";
+      i.spellcheck = false;
+      i.autocomplete = "off";
+      i.placeholder = placeholder;
+      i.value = value || "";
+      return i;
+    }
+
+    function action(text, kind) {
+      var b = document.createElement("button");
+      b.type = "button";
+      b.className = "sync-action" + (kind ? " is-" + kind : "");
+      b.textContent = text;
+      return b;
+    }
+
+    function note(text) {
+      var p = document.createElement("p");
+      p.className = "sync-note";
+      p.textContent = text;
+      return p;
+    }
+
+    function say(text, ms) {
+      showToast('<span class="label">' + escapeHtml(text) + "</span>", ms || 3200);
+    }
+
+    /* A link is copied to be pasted into a chat window, so a failed clipboard
+       shows it instead of swallowing it. */
+    function copyLink(link, what) {
+      copyText(link).then(
+        function () {
+          say(what + " copied");
+        },
+        function () {
+          showToast(
+            '<span class="label">Copy this link</span> ' +
+              '<span class="roll-note">' +
+              escapeHtml(link) +
+              "</span>",
+            12000
+          );
+        }
+      );
+    }
+
+    function buildConnected(body, cfg) {
+      var head = document.createElement("p");
+      head.className = "sync-head";
+      head.textContent =
+        cfg.role === "gm" ? "Sharing as GM" : "Sharing with the table";
+      body.appendChild(head);
+
+      var id = document.createElement("p");
+      id.className = "sync-id";
+      id.textContent = cfg.campaign;
+      body.appendChild(id);
+
+      if (cfg.role === "gm" && cfg.hasPlayerToken) {
+        var player = action("Copy player link");
+        player.addEventListener("click", function () {
+          copyLink(Store.joinLink("player"), "Player link");
+        });
+        body.appendChild(player);
+      }
+
+      var mine = action(
+        cfg.role === "gm" ? "Copy GM link" : "Copy my link"
+      );
+      mine.addEventListener("click", function () {
+        copyLink(Store.joinLink(cfg.role), cfg.role === "gm" ? "GM link" : "Link");
+      });
+      body.appendChild(mine);
+
+      if (cfg.role === "gm" && !cfg.hasPlayerToken) {
+        body.appendChild(
+          note(
+            "This browser joined with a GM link, so it does not hold the " +
+              "player token. Copy the player link from the browser that " +
+              "created the campaign."
+          )
+        );
+      }
+
+      var off = action("Stop sharing", "quiet");
+      off.addEventListener("click", function () {
+        Store.disconnect();
+        render();
+        say("Sharing stopped — this browser keeps its own copy");
+      });
+      body.appendChild(off);
+
+      body.appendChild(
+        note(
+          "Ticked improvements, danger clocks and map pins are shared with " +
+            "everyone. Enemy HP is the GM's alone."
+        )
+      );
+    }
+
+    function buildDisconnected(body) {
+      var head = document.createElement("p");
+      head.className = "sync-head";
+      head.textContent = "Share this campaign";
+      body.appendChild(head);
+
+      /* With the Worker's address compiled in there is nothing to decide, so
+         the field is not shown — one button is the whole of setting up. It
+         comes back on its own if DEFAULT_ENDPOINT is ever emptied, which is
+         the only case where anyone would have something to type. */
+      var endpoint = null;
+      if (!DEFAULT_ENDPOINT) {
+        endpoint = input("https://sync.stonetop-wiki.workers.dev", "");
+        body.appendChild(label("Sync worker", endpoint));
+      }
+
+      var create = action("Create campaign", "primary");
+      create.addEventListener("click", function () {
+        var url = endpoint ? endpoint.value.trim() : DEFAULT_ENDPOINT;
+        if (!url) {
+          say("Enter the sync worker's address first");
+          return;
+        }
+        create.disabled = true;
+        create.textContent = "Creating…";
+        Store.createCampaign(url).then(
+          function () {
+            create.disabled = false;
+            create.textContent = "Create campaign";
+            render();
+            copyLink(Store.joinLink("player"), "Player link");
+          },
+          function () {
+            create.disabled = false;
+            create.textContent = "Create campaign";
+            say("Could not reach the sync worker");
+          }
+        );
+      });
+      body.appendChild(create);
+
+      body.appendChild(note("Or paste the link the GM sent you:"));
+      var link = input("https://…#join=…", "");
+      body.appendChild(label("Join link", link));
+
+      var join = action("Join");
+      join.addEventListener("click", function () {
+        var parsed = Store.parseJoinLink(link.value.trim());
+        if (!parsed) {
+          say("That does not look like a join link");
+          return;
+        }
+        Store.connect(parsed);
+        render();
+        say("Joined " + parsed.campaign);
+      });
+      body.appendChild(join);
+    }
+
+    function render() {
+      if (!panel) return;
+      var body = panel.querySelector(".sync-body");
+      body.innerHTML = "";
+      var cfg = Store.config();
+      if (cfg) buildConnected(body, cfg);
+      else buildDisconnected(body);
+    }
+
+    function ensurePanel() {
+      if (panel) return panel;
+      panel = document.createElement("div");
+      panel.className = "sync-panel";
+      panel.hidden = true;
+      panel.innerHTML = '<div class="sync-body"></div>';
+      document.body.appendChild(panel);
+      // A click inside must not count as a click outside.
+      panel.addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
+      return panel;
+    }
+
+    /* Dropped from under the button rather than pinned to a corner: the button
+       moved to the top of the sidebar, and a panel anchored to the bottom of
+       the viewport would have no visible relationship to it. Measured after it
+       is shown, so its real height is known, and clamped into the viewport so
+       a narrow window keeps all of it on screen. */
+    function place() {
+      var r = btn.getBoundingClientRect();
+      var w = panel.offsetWidth;
+      var h = panel.offsetHeight;
+      var left = Math.min(Math.max(8, r.left), window.innerWidth - w - 8);
+      var top = Math.min(r.bottom + 8, window.innerHeight - h - 8);
+      panel.style.left = Math.max(8, left) + "px";
+      panel.style.top = Math.max(8, top) + "px";
+    }
+
+    function open() {
+      ensurePanel();
+      render();
+      panel.hidden = false;
+      place();
+      btn.setAttribute("aria-expanded", "true");
+    }
+
+    function close() {
+      if (!panel) return;
+      panel.hidden = true;
+      btn.setAttribute("aria-expanded", "false");
+    }
+
+    btn.addEventListener("click", function (e) {
+      e.stopPropagation();
+      if (panel && !panel.hidden) close();
+      else open();
+    });
+    document.addEventListener("click", close);
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape") close();
+    });
+
+    /* The dot, and nothing louder. A table mid-session does not need a dialog
+       telling it the wifi dropped; the state will catch up when it comes back. */
+    Store.onStatus(function (state) {
+      btn.classList.toggle("is-on", state === "ok");
+      btn.classList.toggle("is-offline", state === "offline");
+      btn.title =
+        state === "ok"
+          ? "Sharing this campaign with the table"
+          : state === "offline"
+          ? "Sync worker unreachable — changes are saved here and will catch up"
+          : "This browser keeps its own copy";
+    });
+
+    if (Store.justJoined()) {
+      var cfg = Store.config();
+      say("Joined " + (cfg ? cfg.campaign : "the campaign"), 5000);
     }
   })();
 
@@ -1382,21 +2405,19 @@
     window.addEventListener("beforeunload", saveScroll);
   })();
 
-  /* ---------- Persistent requirement checkboxes ---------- */
+  /* ---------- Persistent requirement checkboxes ----------
+     Steading improvements and danger countdowns. Shared with the whole table
+     when a campaign is configured — watching Marshedge's Fire fill up is the
+     point — so these go through StonetopStore rather than localStorage. */
   (function () {
     var KEY = "stonetop-wiki-checks";
+    var Store = window.StonetopStore;
 
     function loadState() {
-      try {
-        return JSON.parse(localStorage.getItem(KEY) || "{}") || {};
-      } catch (e) {
-        return {};
-      }
+      return Store.get(KEY);
     }
     function saveState(state) {
-      try {
-        localStorage.setItem(KEY, JSON.stringify(state));
-      } catch (e) {}
+      Store.set(KEY, state);
     }
 
     /** Page slug from a path or href, e.g. .../minor-ice-weaving.html → minor-ice-weaving */
@@ -1455,22 +2476,29 @@
             });
           }
           saveState(st);
-          // Sync any other visible boxes for the same page+id (page + popup)
-          document
-            .querySelectorAll(
-              'input.wiki-check[data-check-id="' +
-                id.replace(/"/g, '\\"') +
-                '"][data-check-page="' +
-                pageSlug.replace(/"/g, '\\"') +
-                '"]'
-            )
-            .forEach(function (other) {
-              if (other !== box) other.checked = box.checked;
-            });
+          repaint();
         });
       });
     }
 
+    /* Every bound box, re-read from the store. This is the fan-out that used
+       to run only over the same page+id (a box shown both on the page and in
+       a hover popup) — written this way it also repaints a tick that arrived
+       from someone else at the table. */
+    function repaint() {
+      var state = loadState();
+      document
+        .querySelectorAll("input.wiki-check[data-check-id][data-check-page]")
+        .forEach(function (box) {
+          box.checked = isChecked(
+            state,
+            box.getAttribute("data-check-page"),
+            box.getAttribute("data-check-id")
+          );
+        });
+    }
+
+    Store.subscribe(KEY, repaint);
     window.bindWikiChecks = bindWikiChecks;
 
     // Bind checks on the current page at load
@@ -1483,25 +2511,18 @@
     var strip = document.querySelector(".maps-strip");
     if (!strip) return;
     var KEY = "stonetop-wiki-map-pins";
+    var Store = window.StonetopStore;
 
-    function load() {
-      try {
-        return JSON.parse(localStorage.getItem(KEY) || "{}") || {};
-      } catch (e) {
-        return {};
-      }
-    }
-    var store = load();
+    var store = Store.get(KEY);
     function persist() {
-      try {
-        localStorage.setItem(KEY, JSON.stringify(store));
-      } catch (e) {}
+      Store.set(KEY, store);
     }
     function pinsFor(mapId) {
       return store[mapId] || (store[mapId] = []);
     }
 
     var adding = false;
+    var dragging = false;
     var activeColor = "#e2534a";
     var addBtn = document.getElementById("map-add");
 
@@ -1578,6 +2599,7 @@
       dot.addEventListener("mousedown", function (e) {
         e.preventDefault();
         e.stopPropagation();
+        dragging = true;
         function move(ev) {
           var r = canvas.getBoundingClientRect();
           var x = (ev.clientX - r.left) / r.width;
@@ -1590,6 +2612,7 @@
         function up() {
           document.removeEventListener("mousemove", move);
           document.removeEventListener("mouseup", up);
+          dragging = false;
           persist();
         }
         document.addEventListener("mousemove", move);
@@ -1599,6 +2622,28 @@
     }
 
     var canvases = strip.querySelectorAll(".map-canvas");
+
+    /* Draw every map's pins from scratch. Called once at load, and again
+       whenever pins arrive from someone else at the table — but never while a
+       pin is being dragged or its label typed into, since redrawing would
+       take the element out from under the hand holding it. */
+    function renderAll(next) {
+      if (next) store = next;
+      if (dragging) return;
+      var active = document.activeElement;
+      if (active && active.classList && active.classList.contains("pin-label"))
+        return;
+      canvases.forEach(function (canvas) {
+        canvas.querySelectorAll(".map-pin").forEach(function (el) {
+          el.remove();
+        });
+        var mapId = canvas.getAttribute("data-map");
+        (store[mapId] || []).forEach(function (pin) {
+          renderPin(canvas, mapId, pin);
+        });
+      });
+    }
+
     canvases.forEach(function (canvas) {
       var mapId = canvas.getAttribute("data-map");
       (store[mapId] || []).forEach(function (pin) {
@@ -1652,6 +2697,8 @@
       });
     });
     if (swatches.length) selectColor(swatches[0]);
+
+    Store.subscribe(KEY, renderAll);
   })();
 
   /* Scroll to #fragment targets inside the horizontal multi-column pane */
