@@ -1945,6 +1945,10 @@
     if (previewSlug && typeof window.bindWikiChecks === "function") {
       window.bindWikiChecks(bubble, previewSlug);
     }
+    /* A stat block in a popup gets the same HP track as on its own page. */
+    if (previewSlug && typeof window.bindHpTrackers === "function") {
+      window.bindHpTrackers(bubble, previewSlug);
+    }
     bubble.hidden = false;
     positionPreview(link);
     void bubble.offsetWidth;
@@ -3721,30 +3725,51 @@
         });
     })();
 
-    /* ----- Monster and NPC stat blocks ----- */
-    document.querySelectorAll(".stat-block").forEach(function (block, i) {
-      var line = block.querySelector("p.stat-stats");
-      if (!line) return;
-      /* "HP 14; Armor 4 (resilience) · Damage …" — the number sits in the
-         leading text node, ahead of the dice buttons, so only that node is
-         touched and every listener already bound in the line survives. */
-      var first = line.firstChild;
-      if (!first || first.nodeType !== 3) return;
-      var m = first.nodeValue.match(/^\s*HP\s+(\d+)\s*;?\s*/i);
-      if (!m) return;
-      var max = parseInt(m[1], 10);
-      if (!(max > 0) || max > 200) return;
-      first.nodeValue = first.nodeValue.slice(m[0].length);
-
-      var name = block.querySelector(".stat-name");
-      var t = build({
-        store: MONSTER_STORE,
-        key: slug + "#" + (block.id || "stat-" + i),
-        max: max,
-        label: name ? name.textContent.trim() : "Enemy",
+    /* ----- Monster and NPC stat blocks -----
+     *
+     * Bound over the page at load, and again over the hover popup every time
+     * one is injected — a stat block read in a popup is being fought just as
+     * much as one read on its own page.
+     *
+     * The key is the *previewed* page's slug, not the page being read, so the
+     * track in the popup and the track on the page it came from are one track:
+     * wound something in a popup and the page has it wounded too. */
+    function bindStatBlocks(root, pageSlug) {
+      if (!root || !pageSlug) return;
+      /* The popup replaces its contents on every hover, and the trackers it
+         was holding went with them. */
+      trackers = trackers.filter(function (t) {
+        return t.boxes.isConnected;
       });
-      line.parentNode.insertBefore(t.el, line);
-    });
+      root.querySelectorAll(".stat-block").forEach(function (block, i) {
+        if (block.getAttribute("data-hp-bound")) return;
+        var line = block.querySelector("p.stat-stats");
+        if (!line) return;
+        /* "HP 14; Armor 4 (resilience) · Damage …" — the number sits in the
+           leading text node, ahead of the dice buttons, so only that node is
+           touched and every listener already bound in the line survives. */
+        var first = line.firstChild;
+        if (!first || first.nodeType !== 3) return;
+        var m = first.nodeValue.match(/^\s*HP\s+(\d+)\s*;?\s*/i);
+        if (!m) return;
+        var max = parseInt(m[1], 10);
+        if (!(max > 0) || max > 200) return;
+        first.nodeValue = first.nodeValue.slice(m[0].length);
+        block.setAttribute("data-hp-bound", pageSlug);
+
+        var name = block.querySelector(".stat-name");
+        var t = build({
+          store: MONSTER_STORE,
+          key: pageSlug + "#" + (block.id || "stat-" + i),
+          max: max,
+          label: name ? name.textContent.trim() : "Enemy",
+        });
+        line.parentNode.insertBefore(t.el, line);
+      });
+    }
+
+    window.bindHpTrackers = bindStatBlocks;
+    bindStatBlocks(document, slug);
   })();
 
   // Prefetch previews
