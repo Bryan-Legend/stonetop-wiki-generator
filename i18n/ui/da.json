@@ -1,0 +1,19 @@
+{
+  "lang": "da",
+  "skip_to_content": "Gå til indhold",
+  "toggle_nav": "Vis eller skjul navigation",
+  "search_placeholder": "Søg i wikien…",
+  "search_label": "Søg i wikien",
+  "nav_label": "Emner",
+  "credit": "Tekst fra {work} af Jeremy Strandberg, {license}",
+  "dice_sound": "Terningelyd",
+  "language": "Sprog",
+  "translated_note": "Oversat fra den engelske udgave.",
+  "view_original": "Se den engelske original",
+  "english_only": "Findes kun på engelsk",
+  "books": {
+    "book1": "Bog I",
+    "book2": "Bog II",
+    "sites": "Steder"
+  }
+}

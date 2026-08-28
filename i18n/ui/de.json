@@ -1,0 +1,19 @@
+{
+  "lang": "de",
+  "skip_to_content": "Zum Inhalt springen",
+  "toggle_nav": "Navigation ein-/ausblenden",
+  "search_placeholder": "Wiki durchsuchen…",
+  "search_label": "Wiki durchsuchen",
+  "nav_label": "Themen",
+  "credit": "Text aus {work} von Jeremy Strandberg, {license}",
+  "dice_sound": "Würfelgeräusch",
+  "language": "Sprache",
+  "translated_note": "Aus der englischen Ausgabe übersetzt.",
+  "view_original": "Englisches Original ansehen",
+  "english_only": "Nur auf Englisch verfügbar",
+  "books": {
+    "book1": "Buch I",
+    "book2": "Buch II",
+    "sites": "Schauplätze"
+  }
+}

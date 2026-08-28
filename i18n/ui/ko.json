@@ -1,0 +1,19 @@
+{
+  "lang": "ko",
+  "skip_to_content": "본문으로 건너뛰기",
+  "toggle_nav": "탐색 메뉴 열기·닫기",
+  "search_placeholder": "위키 검색…",
+  "search_label": "위키 검색",
+  "nav_label": "주제",
+  "credit": "본문 출처: Jeremy Strandberg의 {work}, {license}",
+  "dice_sound": "주사위 소리",
+  "language": "언어",
+  "translated_note": "영문판에서 번역했습니다.",
+  "view_original": "영문 원문 보기",
+  "english_only": "영어로만 제공",
+  "books": {
+    "book1": "제1권",
+    "book2": "제2권",
+    "sites": "모험 장소"
+  }
+}

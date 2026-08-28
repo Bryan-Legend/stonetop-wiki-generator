@@ -1,0 +1,19 @@
+{
+  "lang": "uk",
+  "skip_to_content": "Перейти до вмісту",
+  "toggle_nav": "Показати або сховати навігацію",
+  "search_placeholder": "Пошук у вікі…",
+  "search_label": "Пошук у вікі",
+  "nav_label": "Розділи",
+  "credit": "Текст із {work} Джеремі Стрендберґа, {license}",
+  "dice_sound": "Звук кісток",
+  "language": "Мова",
+  "translated_note": "Перекладено з англійського видання.",
+  "view_original": "Переглянути англійський оригінал",
+  "english_only": "Доступно лише англійською",
+  "books": {
+    "book1": "Книга I",
+    "book2": "Книга II",
+    "sites": "Місця"
+  }
+}

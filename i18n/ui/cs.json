@@ -1,0 +1,19 @@
+{
+  "lang": "cs",
+  "skip_to_content": "Přejít k obsahu",
+  "toggle_nav": "Přepnout navigaci",
+  "search_placeholder": "Hledat ve wiki…",
+  "search_label": "Hledat ve wiki",
+  "nav_label": "Témata",
+  "credit": "Text z {work} od Jeremyho Strandberga, {license}",
+  "dice_sound": "Zvuk kostek",
+  "language": "Jazyk",
+  "translated_note": "Přeloženo z anglického vydání.",
+  "view_original": "Zobrazit anglický originál",
+  "english_only": "Dostupné pouze anglicky",
+  "books": {
+    "book1": "Kniha I",
+    "book2": "Kniha II",
+    "sites": "Místa"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "lang": "es",
+  "skip_to_content": "Ir al contenido",
+  "toggle_nav": "Alternar navegación",
+  "search_placeholder": "Buscar en la wiki…",
+  "search_label": "Buscar en la wiki",
+  "nav_label": "Temas",
+  "credit": "Texto de {work} de Jeremy Strandberg, {license}",
+  "dice_sound": "Sonido de dados",
+  "language": "Idioma",
+  "translated_note": "Traducido de la edición inglesa.",
+  "view_original": "Ver el original en inglés",
+  "english_only": "Solo disponible en inglés",
+  "books": {
+    "book1": "Libro I",
+    "book2": "Libro II",
+    "sites": "Lugares"
+  }
+}

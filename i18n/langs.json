@@ -1,0 +1,39 @@
+{
+  "source": {
+    "code": "en",
+    "name": "English",
+    "endonym": "English",
+    "dir": "ltr",
+    "og_locale": "en_US"
+  },
+  "_note": [
+    "The target languages, ranked by the size of their tabletop-RPG readership",
+    "(official 5e/PbtA localizations, DriveThruRPG and itch.io storefront",
+    "locales, and crowdfunding backer geography). `rank` is documentation only;",
+    "the build sorts the language switcher by endonym so readers can find their",
+    "own language alphabetically. `code` is both the URL directory and the",
+    "hreflang value, so it must stay a valid BCP-47 tag."
+  ],
+  "targets": [
+    {"code": "es",      "rank": 1,  "name": "Spanish",              "endonym": "Español",             "dir": "ltr", "og_locale": "es_ES"},
+    {"code": "pt-BR",   "rank": 2,  "name": "Portuguese (Brazil)",  "endonym": "Português (Brasil)",  "dir": "ltr", "og_locale": "pt_BR"},
+    {"code": "de",      "rank": 3,  "name": "German",               "endonym": "Deutsch",             "dir": "ltr", "og_locale": "de_DE"},
+    {"code": "fr",      "rank": 4,  "name": "French",               "endonym": "Français",            "dir": "ltr", "og_locale": "fr_FR"},
+    {"code": "pl",      "rank": 5,  "name": "Polish",               "endonym": "Polski",              "dir": "ltr", "og_locale": "pl_PL"},
+    {"code": "it",      "rank": 6,  "name": "Italian",              "endonym": "Italiano",            "dir": "ltr", "og_locale": "it_IT"},
+    {"code": "ru",      "rank": 7,  "name": "Russian",              "endonym": "Русский",             "dir": "ltr", "og_locale": "ru_RU"},
+    {"code": "ja",      "rank": 8,  "name": "Japanese",             "endonym": "日本語",               "dir": "ltr", "og_locale": "ja_JP"},
+    {"code": "zh-Hans", "rank": 9,  "name": "Chinese (Simplified)", "endonym": "简体中文",             "dir": "ltr", "og_locale": "zh_CN"},
+    {"code": "ko",      "rank": 10, "name": "Korean",               "endonym": "한국어",               "dir": "ltr", "og_locale": "ko_KR"},
+    {"code": "nl",      "rank": 11, "name": "Dutch",                "endonym": "Nederlands",          "dir": "ltr", "og_locale": "nl_NL"},
+    {"code": "sv",      "rank": 12, "name": "Swedish",              "endonym": "Svenska",             "dir": "ltr", "og_locale": "sv_SE"},
+    {"code": "cs",      "rank": 13, "name": "Czech",                "endonym": "Čeština",             "dir": "ltr", "og_locale": "cs_CZ"},
+    {"code": "zh-Hant", "rank": 14, "name": "Chinese (Traditional)","endonym": "繁體中文",             "dir": "ltr", "og_locale": "zh_TW"},
+    {"code": "tr",      "rank": 15, "name": "Turkish",              "endonym": "Türkçe",              "dir": "ltr", "og_locale": "tr_TR"},
+    {"code": "uk",      "rank": 16, "name": "Ukrainian",            "endonym": "Українська",          "dir": "ltr", "og_locale": "uk_UA"},
+    {"code": "hu",      "rank": 17, "name": "Hungarian",            "endonym": "Magyar",              "dir": "ltr", "og_locale": "hu_HU"},
+    {"code": "da",      "rank": 18, "name": "Danish",               "endonym": "Dansk",               "dir": "ltr", "og_locale": "da_DK"},
+    {"code": "nb",      "rank": 19, "name": "Norwegian",            "endonym": "Norsk bokmål",        "dir": "ltr", "og_locale": "nb_NO"},
+    {"code": "fi",      "rank": 20, "name": "Finnish",              "endonym": "Suomi",               "dir": "ltr", "og_locale": "fi_FI"}
+  ]
+}

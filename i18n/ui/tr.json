@@ -1,0 +1,19 @@
+{
+  "lang": "tr",
+  "skip_to_content": "İçeriğe geç",
+  "toggle_nav": "Gezinmeyi aç/kapat",
+  "search_placeholder": "Vikide ara…",
+  "search_label": "Vikide ara",
+  "nav_label": "Konular",
+  "credit": "Metin, Jeremy Strandberg’in {work} adlı eserinden. {license}",
+  "dice_sound": "Zar sesi",
+  "language": "Dil",
+  "translated_note": "İngilizce baskıdan çevrilmiştir.",
+  "view_original": "İngilizce aslını görüntüle",
+  "english_only": "Yalnızca İngilizce mevcut",
+  "books": {
+    "book1": "Kitap I",
+    "book2": "Kitap II",
+    "sites": "Mekânlar"
+  }
+}

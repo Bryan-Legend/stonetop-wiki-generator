@@ -1,0 +1,19 @@
+{
+  "lang": "ru",
+  "skip_to_content": "Перейти к содержимому",
+  "toggle_nav": "Показать или скрыть навигацию",
+  "search_placeholder": "Поиск по вики…",
+  "search_label": "Поиск по вики",
+  "nav_label": "Разделы",
+  "credit": "Текст из {work} Джереми Страндберга, {license}",
+  "dice_sound": "Звук костей",
+  "language": "Язык",
+  "translated_note": "Перевод с английского издания.",
+  "view_original": "Открыть английский оригинал",
+  "english_only": "Доступно только на английском",
+  "books": {
+    "book1": "Книга I",
+    "book2": "Книга II",
+    "sites": "Места"
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "lang": "zh-Hans",
+  "skip_to_content": "跳到正文",
+  "toggle_nav": "切换导航",
+  "search_placeholder": "搜索维基…",
+  "search_label": "搜索维基",
+  "nav_label": "主题",
+  "credit": "文本出自 Jeremy Strandberg 的{work}，{license}",
+  "dice_sound": "骰子音效",
+  "language": "语言",
+  "translated_note": "译自英文版。",
+  "view_original": "查看英文原文",
+  "english_only": "仅有英文版",
+  "books": {
+    "book1": "第一卷",
+    "book2": "第二卷",
+    "sites": "冒险场景"
+  }
+}

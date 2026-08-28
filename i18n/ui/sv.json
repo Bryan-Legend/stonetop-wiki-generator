@@ -1,0 +1,19 @@
+{
+  "lang": "sv",
+  "skip_to_content": "Hoppa till innehållet",
+  "toggle_nav": "Visa eller dölj navigering",
+  "search_placeholder": "Sök i wikin…",
+  "search_label": "Sök i wikin",
+  "nav_label": "Ämnen",
+  "credit": "Text ur {work} av Jeremy Strandberg, {license}",
+  "dice_sound": "Tärningsljud",
+  "language": "Språk",
+  "translated_note": "Översatt från den engelska utgåvan.",
+  "view_original": "Visa det engelska originalet",
+  "english_only": "Finns endast på engelska",
+  "books": {
+    "book1": "Bok I",
+    "book2": "Bok II",
+    "sites": "Platser"
+  }
+}

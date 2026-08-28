@@ -1,0 +1,19 @@
+{
+  "lang": "fr",
+  "skip_to_content": "Aller au contenu",
+  "toggle_nav": "Afficher ou masquer la navigation",
+  "search_placeholder": "Rechercher dans le wiki…",
+  "search_label": "Rechercher dans le wiki",
+  "nav_label": "Sujets",
+  "credit": "Texte tiré de {work}, de Jeremy Strandberg, {license}",
+  "dice_sound": "Son des dés",
+  "language": "Langue",
+  "translated_note": "Traduit de l’édition anglaise.",
+  "view_original": "Voir l’original en anglais",
+  "english_only": "Disponible en anglais uniquement",
+  "books": {
+    "book1": "Livre I",
+    "book2": "Livre II",
+    "sites": "Lieux"
+  }
+}

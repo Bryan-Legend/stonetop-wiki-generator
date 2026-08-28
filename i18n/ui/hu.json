@@ -1,0 +1,19 @@
+{
+  "lang": "hu",
+  "skip_to_content": "Ugrás a tartalomra",
+  "toggle_nav": "Navigáció be- és kikapcsolása",
+  "search_placeholder": "Keresés a wikiben…",
+  "search_label": "Keresés a wikiben",
+  "nav_label": "Témák",
+  "credit": "A szöveg Jeremy Strandberg {work} című művéből, {license}",
+  "dice_sound": "Kockahang",
+  "language": "Nyelv",
+  "translated_note": "Az angol kiadásból fordítva.",
+  "view_original": "Az angol eredeti megtekintése",
+  "english_only": "Csak angolul érhető el",
+  "books": {
+    "book1": "I. könyv",
+    "book2": "II. könyv",
+    "sites": "Helyszínek"
+  }
+}

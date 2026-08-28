@@ -1,0 +1,19 @@
+{
+  "lang": "it",
+  "skip_to_content": "Vai al contenuto",
+  "toggle_nav": "Mostra o nascondi la navigazione",
+  "search_placeholder": "Cerca nel wiki…",
+  "search_label": "Cerca nel wiki",
+  "nav_label": "Argomenti",
+  "credit": "Testo tratto da {work} di Jeremy Strandberg, {license}",
+  "dice_sound": "Suono dei dadi",
+  "language": "Lingua",
+  "translated_note": "Tradotto dall’edizione inglese.",
+  "view_original": "Vedi l’originale in inglese",
+  "english_only": "Disponibile solo in inglese",
+  "books": {
+    "book1": "Libro I",
+    "book2": "Libro II",
+    "sites": "Luoghi"
+  }
+}

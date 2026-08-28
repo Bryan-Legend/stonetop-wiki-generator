@@ -1,0 +1,19 @@
+{
+  "lang": "fi",
+  "skip_to_content": "Siirry sisältöön",
+  "toggle_nav": "Näytä tai piilota navigointi",
+  "search_placeholder": "Hae wikistä…",
+  "search_label": "Hae wikistä",
+  "nav_label": "Aiheet",
+  "credit": "Teksti teoksesta {work}, Jeremy Strandberg, {license}",
+  "dice_sound": "Noppaääni",
+  "language": "Kieli",
+  "translated_note": "Käännetty englanninkielisestä laitoksesta.",
+  "view_original": "Katso englanninkielinen alkuteos",
+  "english_only": "Saatavilla vain englanniksi",
+  "books": {
+    "book1": "Kirja I",
+    "book2": "Kirja II",
+    "sites": "Paikat"
+  }
+}

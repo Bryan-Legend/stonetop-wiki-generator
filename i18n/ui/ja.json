@@ -1,0 +1,19 @@
+{
+  "lang": "ja",
+  "skip_to_content": "本文へスキップ",
+  "toggle_nav": "ナビゲーションの表示切り替え",
+  "search_placeholder": "ウィキ内を検索…",
+  "search_label": "ウィキ内を検索",
+  "nav_label": "トピック",
+  "credit": "本文は Jeremy Strandberg 著『{work}』より。{license}",
+  "dice_sound": "ダイスの効果音",
+  "language": "言語",
+  "translated_note": "英語版からの翻訳です。",
+  "view_original": "英語の原文を見る",
+  "english_only": "英語版のみ",
+  "books": {
+    "book1": "第1巻",
+    "book2": "第2巻",
+    "sites": "冒険の舞台"
+  }
+}

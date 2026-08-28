@@ -57,6 +57,7 @@ python stonetop-wiki-generator.py --input /path/to/folder-with-pdfs
 | `-i` / `--input` | Folder containing the 1-up book PDFs. Optional: `Maps/`. | current working directory |
 | `-o` / `--output` | Wiki folder. Chrome and sites stay in place; only book-derived files are written. | `Stonetop_Wiki/` |
 | `--books book1 book2` | Build only the listed books (faster while iterating). | every book PDF found |
+| `--langs de fr ja` | Build only these translations (`none` for English only). See [Languages](#languages). | every language with a translated page |
 | `--maps` | Include the Maps page and its images. **Local builds only** — map art is © Lucie Arnoux, not CC BY-SA. | off |
 
 ```bash
@@ -77,6 +78,31 @@ cd Stonetop_Wiki
 python -m http.server 8000
 # then visit http://localhost:8000
 ```
+## Languages
+
+The wiki is published in English plus twenty more languages, each in its own
+directory under the wiki root:
+
+```text
+/welcome-to-the-worlds-end.html        English
+/de/welcome-to-the-worlds-end.html     German
+/ja/welcome-to-the-worlds-end.html     Japanese
+```
+
+Translations are checked-in data under [`i18n/`](i18n/README.md) — not
+something the build re-derives — so a rebuild never disturbs one. Each page
+gets a self-canonical, a reciprocal `hreflang` cluster with `x-default`,
+translated chrome and metadata, and a crawlable language switcher in the
+sidebar; nothing anywhere redirects on `Accept-Language`. Slugs and section
+ids stay English in every language, which keeps deep links portable and keeps
+a reader's ticked checkboxes shared between a page and its translations.
+
+Pages with no translation yet stay English in that language's sidebar, marked
+`EN`, and link back up to the English page.
+
+Adding a page or a language: **[`i18n/README.md`](i18n/README.md)**. What is
+translated and what never is: **[`i18n/GLOSSARY.md`](i18n/GLOSSARY.md)**.
+
 ## Sites
 
 Drop HTML sheets in `Stonetop_Wiki/sites/` (or a subfolder of variants). Each build:

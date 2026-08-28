@@ -1,0 +1,19 @@
+{
+  "lang": "pl",
+  "skip_to_content": "Przejdź do treści",
+  "toggle_nav": "Przełącz nawigację",
+  "search_placeholder": "Szukaj w wiki…",
+  "search_label": "Szukaj w wiki",
+  "nav_label": "Tematy",
+  "credit": "Tekst z {work} autorstwa Jeremy’ego Strandberga, {license}",
+  "dice_sound": "Dźwięk kości",
+  "language": "Język",
+  "translated_note": "Przetłumaczone z wydania angielskiego.",
+  "view_original": "Zobacz angielski oryginał",
+  "english_only": "Dostępne tylko po angielsku",
+  "books": {
+    "book1": "Księga I",
+    "book2": "Księga II",
+    "sites": "Miejsca"
+  }
+}

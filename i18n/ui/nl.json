@@ -1,0 +1,19 @@
+{
+  "lang": "nl",
+  "skip_to_content": "Ga naar de inhoud",
+  "toggle_nav": "Navigatie tonen of verbergen",
+  "search_placeholder": "Zoek in de wiki…",
+  "search_label": "Zoek in de wiki",
+  "nav_label": "Onderwerpen",
+  "credit": "Tekst uit {work} van Jeremy Strandberg, {license}",
+  "dice_sound": "Dobbelsteengeluid",
+  "language": "Taal",
+  "translated_note": "Vertaald uit de Engelse uitgave.",
+  "view_original": "Bekijk het Engelse origineel",
+  "english_only": "Alleen in het Engels beschikbaar",
+  "books": {
+    "book1": "Boek I",
+    "book2": "Boek II",
+    "sites": "Locaties"
+  }
+}

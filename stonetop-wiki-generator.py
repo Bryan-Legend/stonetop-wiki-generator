@@ -21,6 +21,7 @@ from __future__ import annotations
 
 import argparse
 import datetime
+import hashlib
 import html
 import json
 import os
@@ -46,25 +47,35 @@ LICENSE_URL = "https://creativecommons.org/licenses/by-sa/4.0/"
 ISSUES_URL = GITHUB_PROJECT_URL.rstrip("/") + "/issues"
 
 
-def sidebar_foot_html() -> str:
+def sidebar_foot_html(ui: dict | None = None, lang_switch: str = "") -> str:
     """Sticky footer under the topic nav (attribution + GitHub project link).
 
     CC BY-SA 4.0 requires attribution and a license notice on the shared work,
-    so the credit line ships on every page, not just the home page.
+    so the credit line ships on every page, not just the home page. A
+    translation is an adaptation under that same license, so the credit is
+    translated with the page rather than left in English beneath it.
     """
+    ui = ui or UI_FALLBACK
+    credit = ui.get("credit") or UI_FALLBACK["credit"]
+    credit_html = credit.format(
+        work="<em>Stonetop</em>",
+        license=(
+            f'<a href="{html.escape(LICENSE_URL)}" rel="license">'
+            f"CC BY-SA 4.0</a>"
+        ),
+    )
+    dice = html.escape(ui.get("dice_sound") or UI_FALLBACK["dice_sound"])
     return (
         f'<div class="sidebar-foot">'
-        f'<span class="sidebar-credit">'
-        f'Text from <em>Stonetop</em> by Jeremy Strandberg, '
-        f'<a href="{html.escape(LICENSE_URL)}" rel="license">CC BY-SA 4.0</a>'
-        f"</span>"
+        f'{lang_switch}'
+        f'<span class="sidebar-credit">{credit_html}</span>'
         f'<a class="sidebar-github" href="{html.escape(GITHUB_PROJECT_URL)}">'
         f"GitHub</a>"
         f'<button type="button" class="sound-toggle" id="sound-toggle" '
-        f'aria-pressed="true" title="Dice sound">'
+        f'aria-pressed="true" title="{dice}">'
         f'<span class="sound-on" aria-hidden="true">\U0001f50a</span>'
         f'<span class="sound-off" aria-hidden="true">\U0001f507</span>'
-        f'<span class="sound-label">Dice sound</span></button>'
+        f'<span class="sound-label">{dice}</span></button>'
         f"</div>"
     )
 
@@ -120,30 +131,62 @@ def meta_description(text: str, limit: int = 160) -> str:
     return clean[: limit - 1].rsplit(" ", 1)[0].rstrip(",.;:—-") + "…"
 
 
-def social_meta_html(title: str, description: str, path: str) -> str:
-    """Description + Open Graph/Twitter tags.
+def social_meta_html(
+    title: str,
+    description: str,
+    path: str,
+    *,
+    og_locale: str = "en_US",
+    alternates: list[dict] | None = None,
+) -> str:
+    """Description + Open Graph/Twitter tags, canonical, and hreflang.
 
     Open Graph is what Discord, Reddit, and Slack read when someone pastes a
     link — the audience this wiki is shared with — so it ships on every page.
+
+    ``alternates`` is the page's whole language cluster, English included, in
+    ``{"hreflang", "path"}`` form. Google only trusts an hreflang set that is
+    reciprocal and self-referential, so every page in the cluster lists every
+    page in the cluster *and itself*, and the English page carries the same
+    list its translations do. The canonical is always the page's own URL: a
+    translation that canonicalises to the English page asks to be dropped from
+    the index, which is the usual way a localized site ends up invisible.
     """
     desc = meta_description(description) or (
         "A searchable web edition of Stonetop, the Powered-by-the-Apocalypse "
         "game by Jeremy Strandberg."
     )
     full = f"{title} — {SITE_NAME}"
-    url = SITE_BASE_URL.rstrip("/") + "/" + path.lstrip("/")
-    img = SITE_BASE_URL.rstrip("/") + "/images/favicon.png"
+    base = SITE_BASE_URL.rstrip("/")
+    url = base + "/" + path.lstrip("/")
+    img = base + "/images/favicon.png"
     e = html.escape
     tags = [
         f'  <meta name="description" content="{e(desc)}">',
+        f'  <link rel="canonical" href="{e(url)}">',
         f'  <meta property="og:site_name" content="{e(SITE_NAME)}">',
         f'  <meta property="og:title" content="{e(full)}">',
         f'  <meta property="og:description" content="{e(desc)}">',
         '  <meta property="og:type" content="article">',
+        f'  <meta property="og:locale" content="{e(og_locale)}">',
         f'  <meta property="og:url" content="{e(url)}">',
         f'  <meta property="og:image" content="{e(img)}">',
         '  <meta name="twitter:card" content="summary">',
     ]
+    for alt in alternates or []:
+        href = base + "/" + alt["path"].lstrip("/")
+        tags.append(
+            f'  <link rel="alternate" hreflang="{e(alt["hreflang"])}" '
+            f'href="{e(href)}">'
+        )
+    if alternates:
+        # x-default is what a reader who matches no listed language gets.
+        # alternates[0] is the source language (English) by construction.
+        default = base + "/" + alternates[0]["path"].lstrip("/")
+        tags.append(
+            f'  <link rel="alternate" hreflang="x-default" '
+            f'href="{e(default)}">'
+        )
     return "\n".join(tags)
 
 
@@ -172,8 +215,14 @@ def write_build_manifest(out: Path, names: list[str]) -> None:
     )
 
 
-def write_sitemap(out: Path, articles: list[dict], *, base_url: str) -> None:
-    """sitemap.xml covering every wiki page and site sheet."""
+def write_sitemap(
+    out: Path,
+    articles: list[dict],
+    *,
+    base_url: str,
+    extra: list[str] | None = None,
+) -> None:
+    """sitemap.xml covering every wiki page, site sheet, and translation."""
     base = base_url.rstrip("/")
     locs = [base + "/"]
     for art in articles:
@@ -181,6 +230,8 @@ def write_sitemap(out: Path, articles: list[dict], *, base_url: str) -> None:
         locs.append(base + "/" + href)
         for var in (art.get("site") or {}).get("variants") or []:
             locs.append(base + "/" + var["href"])
+    for href in extra or []:
+        locs.append(base + "/" + href.lstrip("/"))
     locs = list(dict.fromkeys(locs))
     today = datetime.date.today().isoformat()
     rows = [
@@ -206,6 +257,225 @@ def write_robots(out: Path, *, base_url: str) -> None:
         "",
     ]
     (out / "robots.txt").write_text("\n".join(lines), encoding="utf-8")
+
+
+# ------------------------------------------------------------------ i18n
+#
+# Translations are *data*, not something the build re-derives: they live in
+# i18n/ beside this script, are checked in, and are keyed by page slug. The
+# build reads them and lays each language out in its own directory under the
+# wiki root — /de/welcome-to-the-worlds-end.html beside the English page at
+# the root. Subdirectories (rather than subdomains or ccTLDs) keep every
+# language on one domain, so links earned by the English pages lift the
+# translations too, and GitHub Pages serves them with no configuration.
+#
+# Slugs and section ids are *not* translated: one URL shape across the site,
+# deep links that survive a language switch, and — because the wiki keys a
+# reader's ticked boxes and answers by slug — a checkbox that stays ticked
+# when the same reader moves between a page and its translation.
+
+I18N_DIRNAME = "i18n"
+UI_FALLBACK = {
+    "skip_to_content": "Skip to content",
+    "toggle_nav": "Toggle navigation",
+    "search_placeholder": "Search wiki…",
+    "search_label": "Search wiki",
+    "nav_label": "Topics",
+    "credit": "Text from {work} by Jeremy Strandberg, {license}",
+    "dice_sound": "Dice sound",
+    "language": "Language",
+    "translated_note": "",
+    "view_original": "",
+    "english_only": "",
+    "books": {},
+}
+
+
+def i18n_dir() -> Path:
+    return Path(__file__).resolve().parent / I18N_DIRNAME
+
+
+def load_locales(only: list[str] | None = None) -> tuple[dict, list[dict]]:
+    """Read ``i18n/langs.json`` plus each language's UI strings and pages.
+
+    Returns ``(source, targets)``. A target carries ``ui`` (chrome strings)
+    and ``pages`` (translated page bodies keyed by slug).
+
+    A language with no translated page is dropped. A directory of pages that
+    are really still English is exactly the thin, machine-shaped content
+    search engines discount — and it strands a reader inside a shell they
+    cannot read. Partial coverage is fine and expected; empty coverage is not
+    published at all.
+    """
+    root = i18n_dir()
+    try:
+        table = json.loads((root / "langs.json").read_text(encoding="utf-8"))
+    except OSError:
+        return {}, []
+    source = table.get("source") or {}
+    targets: list[dict] = []
+    for lang in table.get("targets") or []:
+        code = lang.get("code")
+        if not code or (only is not None and code not in only):
+            continue
+        ui = dict(UI_FALLBACK)
+        try:
+            ui.update(
+                json.loads(
+                    (root / "ui" / f"{code}.json").read_text(encoding="utf-8")
+                )
+            )
+        except OSError:
+            print(f"  i18n: {code} has no UI strings — skipped")
+            continue
+        pages: dict[str, dict] = {}
+        for path in sorted((root / "pages" / code).glob("*.json")):
+            try:
+                page = json.loads(path.read_text(encoding="utf-8"))
+            except (OSError, ValueError) as exc:
+                print(f"  i18n: {code}/{path.name} unreadable ({exc})")
+                continue
+            if page.get("slug") and page.get("body_html"):
+                pages[page["slug"]] = page
+        if not pages:
+            continue
+        entry = dict(lang)
+        entry["ui"] = ui
+        entry["pages"] = pages
+        targets.append(entry)
+    return source, targets
+
+
+def prune_language_dirs(out: Path, keeping: list[dict]) -> list[str]:
+    """Delete language directories this build is not going to write.
+
+    Only directories named by ``langs.json`` are touched, so nothing else at
+    the wiki root — ``css/``, ``sites/``, a hand-added folder — is at risk.
+    """
+    root = i18n_dir()
+    try:
+        table = json.loads((root / "langs.json").read_text(encoding="utf-8"))
+    except OSError:
+        return []
+    known = {t.get("code") for t in table.get("targets") or []}
+    keep = {t["code"] for t in keeping}
+    removed = []
+    for code in sorted(known - keep):
+        if code and (out / code).is_dir():
+            shutil.rmtree(out / code)
+            removed.append(code)
+    return removed
+
+
+def body_source_sha(body_html: str) -> str:
+    """Fingerprint of an English page body, as stored in a translation file.
+
+    A translation records the hash of the English it was made from. When the
+    books are re-extracted and a page's text moves, the hash stops matching
+    and the build says so — which is the difference between a stale
+    translation nobody noticed and one on a list to redo.
+    """
+    return hashlib.sha256(body_html.encode("utf-8")).hexdigest()
+
+
+def alternates_for(slug: str, source: dict, targets: list[dict]) -> list[dict]:
+    """The hreflang cluster for one page: English first, then each language
+    that actually has this page translated. Empty when nothing is translated —
+    a page with one language needs no cluster."""
+    have = [t for t in targets if slug in t["pages"]]
+    if not have:
+        return []
+    alts = [
+        {
+            "hreflang": source.get("code") or "en",
+            "path": f"{slug}.html",
+            "code": source.get("code") or "en",
+            "endonym": source.get("endonym") or "English",
+        }
+    ]
+    for t in have:
+        alts.append(
+            {
+                "hreflang": t["code"],
+                "path": f"{t['code']}/{slug}.html",
+                "code": t["code"],
+                "endonym": t.get("endonym") or t["code"],
+            }
+        )
+    return alts
+
+
+def lang_switch_html(
+    alternates: list[dict], current_code: str, ui: dict, *, rel_prefix: str
+) -> str:
+    """Sidebar language picker: plain links, sorted by endonym.
+
+    Plain crawlable links, and no redirect on Accept-Language anywhere — a
+    crawler arrives with ``Accept-Language: en`` from a US address, so a site
+    that redirects readers by header shows the crawler nothing but English and
+    the translations never get indexed. The reader chooses; the page never
+    chooses for them.
+    """
+    if not alternates:
+        return ""
+    ordered = sorted(alternates, key=lambda a: a["endonym"].casefold())
+    current = next(
+        (a for a in alternates if a["code"] == current_code), alternates[0]
+    )
+    rows = []
+    for alt in ordered:
+        # Root pages sit one level up from a language directory; a language
+        # page is a sibling of the directory the reader is already in.
+        href = rel_prefix + alt["path"] if alt["code"] != current_code else ""
+        if alt["code"] == current_code:
+            rows.append(
+                f'<li><span class="lang-current" aria-current="page" '
+                f'lang="{html.escape(alt["code"])}">'
+                f'{html.escape(alt["endonym"])}</span></li>'
+            )
+        else:
+            rows.append(
+                f'<li><a href="{html.escape(href)}" '
+                f'hreflang="{html.escape(alt["code"])}" '
+                f'lang="{html.escape(alt["code"])}">'
+                f'{html.escape(alt["endonym"])}</a></li>'
+            )
+    label = html.escape(ui.get("language") or UI_FALLBACK["language"])
+    # Written into the sidebar footer; wiki.js moves it up into the tools row
+    # beside the dice-sound icon, where CSS compacts it to globe + code. Both
+    # spans ship either way — the label is the control's accessible name once
+    # the row hides it, and the code is what an icon-sized control can show.
+    short = html.escape(current["code"].split("-")[0].upper())
+    return (
+        f'<details class="lang-switch">'
+        f'<summary title="{label}">'
+        f'<span class="lang-globe" aria-hidden="true">\U0001f310</span>'
+        f'<span class="lang-code" aria-hidden="true">{short}</span>'
+        f'<span class="lang-label">{label}</span>'
+        f'<span class="lang-now">{html.escape(current["endonym"])}</span>'
+        f"</summary>"
+        f'<ul class="lang-list">{"".join(rows)}</ul>'
+        f"</details>"
+    )
+
+
+def localize_body_links(body_html: str, translated_slugs: set[str]) -> str:
+    """Re-base a translated body's wiki links for its language directory.
+
+    A translated body stores its links the way the English page does
+    (``href="the-golden-oak.html"``). From inside ``/de/`` that has to become
+    ``../the-golden-oak.html`` — unless the target is itself translated into
+    this language, in which case the sibling in the same directory is the
+    better page to send the reader to.
+    """
+
+    def fix(m: re.Match) -> str:
+        slug = m.group(1)
+        if slug in translated_slugs:
+            return m.group(0)
+        return f'href="../{slug}.html"'
+
+    return re.sub(r'href="([a-z0-9][a-z0-9-]*)\.html"', fix, body_html)
 
 
 def resolve_sites_dir(out: Path) -> Path | None:
@@ -8079,6 +8349,18 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         ),
     )
     p.add_argument(
+        "--langs",
+        nargs="+",
+        default=None,
+        metavar="LANG",
+        help=(
+            "Limit localized output to these language codes from "
+            "i18n/langs.json (e.g. de fr ja), or 'none' to build English "
+            "only. Default: every language that has at least one translated "
+            "page."
+        ),
+    )
+    p.add_argument(
         "--maps",
         action="store_true",
         help=(
@@ -8774,6 +9056,8 @@ def build_nav_items(
     current_slug: str | None = None,
     section_navs: dict[str, list[dict]] | None = None,
     root_prefix: str = "",
+    locale: dict | None = None,
+    translated_slugs: set[str] | None = None,
 ) -> list[str]:
     """
     Sidebar <li> items for every article, with a label row per book.
@@ -8792,6 +9076,13 @@ def build_nav_items(
         a for a in articles if a.get("kind") not in ("site", "sites-hub")
     ]
     section_navs = section_navs or {}
+    # In a language directory the sidebar is mostly English, because most
+    # pages are: a translated entry links to its sibling in this directory,
+    # everything else links back up to the English page and says so.
+    lang_pages = (locale or {}).get("pages") or {}
+    translated_slugs = translated_slugs or set(lang_pages)
+    book_labels = ((locale or {}).get("ui") or {}).get("books") or {}
+    english_only = ((locale or {}).get("ui") or {}).get("english_only") or ""
     multi_book = len({a.get("book") for a in articles if a.get("book")}) > 1
     items: list[str] = []
     last_book: str | None = None
@@ -8805,7 +9096,7 @@ def build_nav_items(
             continue
         book = art.get("book")
         if multi_book and book != last_book:
-            label = art.get("book_label") or book or ""
+            label = book_labels.get(book) or art.get("book_label") or book or ""
             if label:
                 items.append(
                     f'<li class="nav-book-label">{html.escape(label)}</li>'
@@ -8829,14 +9120,26 @@ def build_nav_items(
             classes.append("current")
         cls_attr = f' class="{" ".join(classes)}"' if classes else ""
         art_slug = html.escape(art["slug"])
+        page_tr = lang_pages.get(art["slug"])
         if art.get("href"):
             # Slug can't be read back out of a site sheet's file name.
             href = html.escape(root_prefix + art["href"])
             slug_attr = f' data-nav-slug="{art_slug}"'
+        elif page_tr:
+            # Translated: the sibling in this same language directory.
+            href = f"{art_slug}.html"
+            slug_attr = ""
         else:
             href = f"{href_prefix}{art_slug}.html"
             slug_attr = ""
-        link = f'<a href="{href}"{slug_attr}>{html.escape(nav_label(art))}</a>'
+        label = html.escape(
+            (page_tr or {}).get("nav_label") or nav_label(art)
+        )
+        if locale and not page_tr and not art.get("href"):
+            slug_attr += ' class="nav-en"'
+            if english_only:
+                slug_attr += f' title="{html.escape(english_only)}" hreflang="en"'
+        link = f'<a href="{href}"{slug_attr}>{label}</a>'
         if art.get("kind") == "site" and art.get("site", {}).get("variants"):
             sub = "".join(
                 f'<li class="nav-section"><a href="'
@@ -8868,11 +9171,14 @@ def build_nav_items(
             )
             continue
         if secs:
-            # Nested deep links into chapter sections (from first-page TOC)
+            # Nested deep links into chapter sections (from first-page TOC).
+            # Section ids stay English so deep links survive a language
+            # switch; only the label the reader sees is translated.
+            sec_names = (page_tr or {}).get("sections") or {}
             sub = []
             for sec in secs:
                 sid = html.escape(sec["id"])
-                sname = html.escape(sec["name"])
+                sname = html.escape(sec_names.get(sec["id"]) or sec["name"])
                 sub.append(
                     f'<li class="nav-section">'
                     f'<a href="{href}#{sid}">{sname}</a></li>'
@@ -8895,45 +9201,78 @@ def page_shell(
     section_navs: dict[str, list[dict]] | None = None,
     content_class: str = "content",
     description: str = "",
+    *,
+    locale: dict | None = None,
+    alternates: list[dict] | None = None,
+    translated_slugs: set[str] | None = None,
 ) -> str:
-    meta_html = social_meta_html(title, description, slug + ".html")
+    """One page, in one language.
+
+    ``locale`` is a language entry from ``i18n/langs.json`` (with its ``ui``
+    strings); ``None`` is English at the wiki root. A localized page lives one
+    directory down, so its ``rel_prefix`` walks back up to the shared css/js
+    and to every page not yet translated.
+    """
+    ui = (locale or {}).get("ui") or UI_FALLBACK
+    code = (locale or {}).get("code") or "en"
+    path = f"{code}/{slug}.html" if locale else f"{slug}.html"
+    meta_html = social_meta_html(
+        title,
+        description,
+        path,
+        og_locale=(locale or {}).get("og_locale") or "en_US",
+        alternates=alternates,
+    )
     nav_html = "\n".join(
         build_nav_items(
             articles,
             current_slug=slug,
             section_navs=section_navs,
             root_prefix=rel_prefix,
+            href_prefix=rel_prefix,
+            locale=locale,
+            translated_slugs=translated_slugs,
         )
     )
+    switch = lang_switch_html(
+        alternates or [], code, ui, rel_prefix=rel_prefix
+    )
+    e = html.escape
+    dir_attr = f' dir="{e((locale or {}).get("dir") or "ltr")}"' if locale else ""
+    # A language directory needs its own data files no more than it needs its
+    # own copy of wiki.js: both sit at the wiki root and are reached through
+    # rel_prefix, so search and hover previews keep working from a translated
+    # page and lead back to the English pages that are not translated yet.
+    root_attr = f' data-wiki-root="{e(rel_prefix)}"' if rel_prefix else ""
 
     return f"""<!DOCTYPE html>
-<html lang="en">
+<html lang="{e(code)}"{dir_attr}>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{html.escape(title)} — Stonetop Wiki</title>
+  <title>{e(title)} — Stonetop Wiki</title>
 {meta_html}
   <link rel="icon" href="{rel_prefix}images/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="{rel_prefix}images/favicon.ico" sizes="16x16 32x32 48x48 64x64">
   <link rel="stylesheet" href="{rel_prefix}css/wiki.css">
 {ANALYTICS_HTML}
 </head>
-<body>
-  <a class="skip-link" href="#main">Skip to content</a>
-  <button type="button" class="sidebar-toggle" id="sidebar-toggle" aria-label="Toggle navigation">☰</button>
+<body{root_attr}>
+  <a class="skip-link" href="#main">{e(ui["skip_to_content"])}</a>
+  <button type="button" class="sidebar-toggle" id="sidebar-toggle" aria-label="{e(ui["toggle_nav"])}">☰</button>
   <div class="layout">
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-head">
         <a class="wiki-title" href="{rel_prefix}index.html">Stonetop Wiki</a>
-        <input type="search" id="nav-filter" class="nav-filter" placeholder="Search wiki…" autocomplete="off" aria-label="Search wiki">
+        <input type="search" id="nav-filter" class="nav-filter" placeholder="{e(ui["search_placeholder"])}" autocomplete="off" aria-label="{e(ui["search_label"])}">
         <div id="search-results" class="search-results" hidden></div>
       </div>
-      <nav class="toc" aria-label="Topics">
+      <nav class="toc" aria-label="{e(ui["nav_label"])}">
         <ul id="nav-list">
           {nav_html}
         </ul>
       </nav>
-      {sidebar_foot_html()}
+      {sidebar_foot_html(ui, switch)}
     </aside>
     <div class="main-wrap">
       <div class="content-scroll" id="main">
@@ -8949,6 +9288,71 @@ def page_shell(
 </body>
 </html>
 """
+
+
+def write_localized_pages(
+    out: Path,
+    articles: list[dict],
+    section_navs: dict[str, list[dict]],
+    english_bodies: dict[str, str],
+    source: dict,
+    targets: list[dict],
+) -> list[str]:
+    """Write ``<out>/<lang>/<slug>.html`` for every translated page.
+
+    Returns the hrefs written, for the sitemap. Each language directory is
+    rewritten from scratch, so a translation file that is deleted takes its
+    page with it.
+    """
+    written: list[str] = []
+    for locale in targets:
+        code = locale["code"]
+        lang_dir = out / code
+        if lang_dir.exists():
+            shutil.rmtree(lang_dir)
+        lang_dir.mkdir(parents=True)
+        translated = set(locale["pages"])
+        stale = []
+        for slug, page in sorted(locale["pages"].items()):
+            english = english_bodies.get(slug)
+            if english is None:
+                print(f"  i18n: {code}/{slug} has no English page — skipped")
+                continue
+            if page.get("source_sha256") and page["source_sha256"] != (
+                body_source_sha(english)
+            ):
+                stale.append(slug)
+            title = page.get("title") or slug
+            body = localize_body_links(page["body_html"], translated)
+            body = (
+                f'<h1 class="page-title">{html.escape(title)}</h1>\n' + body
+            )
+            navs = dict(section_navs)
+            html_out = page_shell(
+                title,
+                slug,
+                body,
+                articles,
+                rel_prefix="../",
+                section_navs=navs,
+                description=page.get("description") or "",
+                locale=locale,
+                alternates=alternates_for(slug, source, targets),
+                translated_slugs=translated,
+            )
+            (lang_dir / f"{slug}.html").write_text(html_out, encoding="utf-8")
+            written.append(f"{code}/{slug}.html")
+        if stale:
+            print(
+                f"  i18n: {code} stale against the English text: "
+                + ", ".join(stale)
+            )
+    if targets:
+        print(
+            f"  i18n: {len(written)} pages across {len(targets)} languages "
+            + ", ".join(t["code"] for t in targets)
+        )
+    return written
 
 
 def prepare_map_images(
@@ -9545,6 +9949,14 @@ def main(argv: list[str] | None = None) -> None:
     print(f"  input:  {input_dir}")
     print(f"  output: {out}")
 
+    # Translations are read before the pages are written: an English page has
+    # to carry the same hreflang cluster its translations do, or Google
+    # ignores the set (the cluster must be reciprocal).
+    only_langs = args.langs
+    if only_langs and len(only_langs) == 1 and only_langs[0].lower() == "none":
+        only_langs = []
+    lang_source, lang_targets = load_locales(only_langs)
+
     if legacy_out.is_dir() and not out.exists():
         try:
             legacy_out.rename(out)
@@ -9653,6 +10065,18 @@ def main(argv: list[str] | None = None) -> None:
         for bid in docs
     }
     set_title_index(articles)
+
+    # A translation of a page this build is not producing (a --books run that
+    # leaves out its book) is dropped now, before anything writes an hreflang
+    # link to a page that will not exist.
+    built_slugs = {a["slug"] for a in articles}
+    for locale in lang_targets:
+        locale["pages"] = {
+            slug: page
+            for slug, page in locale["pages"].items()
+            if slug in built_slugs
+        }
+    lang_targets = [t for t in lang_targets if t["pages"]]
     previews: dict[str, dict] = {}
 
     # Campaign maps + PDF map spreads (maps page only; Book II)
@@ -9811,6 +10235,9 @@ def main(argv: list[str] | None = None) -> None:
     }
     print("Building pages…")
     search_docs: list[dict] = []
+    # Each page's English body, kept so the localized pass can tell a
+    # translation still matching its source from one gone stale.
+    english_bodies: dict[str, str] = {}
     for art in articles:
         slug = art["slug"]
         book_id = art.get("book") or "book2"
@@ -9842,6 +10269,9 @@ def main(argv: list[str] | None = None) -> None:
                         rel_prefix="",
                         section_navs=section_navs,
                         description=excerpt,
+                        alternates=alternates_for(
+                            slug, lang_source, lang_targets
+                        ),
                     ),
                     encoding="utf-8",
                 )
@@ -9884,6 +10314,7 @@ def main(argv: list[str] | None = None) -> None:
                 section_navs=section_navs,
                 content_class="content maps-page",
                 description=excerpt,
+                alternates=alternates_for(slug, lang_source, lang_targets),
             )
             excerpt = (
                 "Maps of Stonetop, the vicinity, and the World's End — "
@@ -9906,6 +10337,7 @@ def main(argv: list[str] | None = None) -> None:
                 rel_prefix="",
                 section_navs=section_navs,
                 description=excerpt,
+                alternates=alternates_for(slug, lang_source, lang_targets),
             )
         else:
             lines = lines_cache.get(slug)
@@ -10025,6 +10457,7 @@ def main(argv: list[str] | None = None) -> None:
                     if 'class="pb-stats"' in body
                     else "content"
                 ),
+                alternates=alternates_for(slug, lang_source, lang_targets),
             )
 
         section_blocks: dict[str, dict] = {}
@@ -10070,6 +10503,7 @@ def main(argv: list[str] | None = None) -> None:
                 previews[slug]["number"] = art["number"]
                 previews[slug]["arcana_type"] = art.get("arcana_type") or ""
         (out / f"{slug}.html").write_text(page_html, encoding="utf-8")
+        english_bodies[slug] = body
 
         search_text = html_to_search_text(body)
         section_names = " ".join(
@@ -10126,7 +10560,19 @@ def main(argv: list[str] | None = None) -> None:
     page_files = ["index.html"] + [
         f"{a['slug']}.html" for a in articles if not a.get("href")
     ]
-    write_sitemap(out, articles, base_url=args.base_url)
+    # A language directory this build no longer produces is removed whole,
+    # so dropping a language from langs.json takes its pages off the site.
+    for code in prune_language_dirs(out, lang_targets):
+        print(f"  i18n: removed stale {code}/")
+    localized = write_localized_pages(
+        out,
+        articles,
+        section_navs,
+        english_bodies,
+        lang_source,
+        lang_targets,
+    )
+    write_sitemap(out, articles, base_url=args.base_url, extra=localized)
     write_robots(out, base_url=args.base_url)
     write_build_manifest(out, page_files + ["sitemap.xml", "robots.txt"])
     print(f"Done. Open {out / 'index.html'}")
