@@ -3115,3 +3115,22 @@ main.content > h1.page-title:first-child {
   flex: 1 1 0;
   min-width: 0;
 }
+
+/* ---------- Tags ----------
+   The small capsule an adventure-site sheet labels a room or a creature with,
+   and the same capsule the Sites hub uses to flag a sheet nobody has run at a
+   table yet. Defined here rather than in sites/site.css because the hub is an
+   ordinary wiki page and never loads that stylesheet. */
+.tag {
+  display: inline-block;
+  background: var(--accent-soft);
+  color: var(--head);
+  border: 1px solid var(--rule);
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.08rem 0.35rem;
+  border-radius: 3px;
+  margin-right: 0.2rem;
+  vertical-align: middle;
+}
+.tag.danger { color: var(--danger); border-color: #5a3028; }

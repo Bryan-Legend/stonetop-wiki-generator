@@ -323,18 +323,9 @@
       font-style: italic;
       margin-right: 0.25rem;
     }
-    .tag {
-      display: inline-block;
-      background: var(--accent-soft);
-      color: var(--head);
-      border: 1px solid var(--rule);
-      font-size: var(--fs-micro);
-      font-weight: 600;
-      padding: 0.08rem 0.35rem;
-      border-radius: 3px;
-      margin-right: 0.2rem;
-    }
-    .tag.danger { color: var(--danger); border-color: #5a3028; }
+    /* .tag and .tag.danger are defined once in ../css/wiki.css — the Sites
+       hub flags an untested sheet with the same tag, and that page does not
+       load this stylesheet. A sheet loads wiki.css before this one. */
     .statline {
       font-size: var(--fs-sm);
       color: var(--ink);

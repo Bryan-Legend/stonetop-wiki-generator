@@ -9128,6 +9128,13 @@ def read_site_file(path: Path, href: str) -> dict:
         if slug not in links:
             links.append(slug)
 
+    # A sheet says for itself whether it has been run at a table. Only the
+    # playtested ones are advertised on the home page; the rest are still
+    # linked from the Sites hub, flagged.
+    playtested = bool(
+        re.search(r'<body\b[^>]*\bdata-playtested="true"', raw, re.I)
+    )
+
     # Nav/sidebar chrome would swamp the search text with link labels.
     text = html_to_search_text(re.sub(r"(?is)<nav\b.*?</nav>", " ", raw))
 
@@ -9138,6 +9145,7 @@ def read_site_file(path: Path, href: str) -> dict:
         "variant": variant,
         "excerpt": excerpt,
         "links": links,
+        "playtested": playtested,
         "text": text,
     }
 
@@ -9226,6 +9234,7 @@ def discover_sites(out: Path) -> list[dict]:
                 "href": primary["href"],
                 "excerpt": primary["excerpt"],
                 "links": links,
+                "playtested": primary["playtested"],
                 "variants": variants,
                 "text": "\n".join(s["text"] for s in sheets),
             }
@@ -9260,6 +9269,7 @@ def site_articles(sites: list[dict]) -> list[dict]:
                 "kind": "site",
                 "href": site["href"],
                 "excerpt": site["excerpt"],
+                "playtested": site["playtested"],
                 "site": site,
                 **common,
             }
@@ -9285,9 +9295,16 @@ def sites_hub_html(
         site = art["site"]
         href = html.escape(root_prefix + art["href"])
         slug = html.escape(art["slug"])
+        # Linked either way — the hub is where you go looking. The tag is the
+        # warning that this one has not been run at a table yet.
+        flag = (
+            ""
+            if site.get("playtested")
+            else ' <span class="tag danger">untested</span>'
+        )
         parts = [
             f'<h2 id="{slug}"><a class="wiki-link" href="{href}" '
-            f'data-slug="{slug}">{html.escape(art["title"])}</a></h2>'
+            f'data-slug="{slug}">{html.escape(art["title"])}</a>{flag}</h2>'
         ]
         if site["excerpt"]:
             parts.append(f'<p class="site-excerpt">{html.escape(site["excerpt"])}</p>')
@@ -9381,6 +9398,10 @@ def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> 
                 or art.get("kind") == "arcana"
                 or art.get("hub_slug")
             ):
+                continue
+            # An untested site is reachable from the Sites hub, where it is
+            # flagged. The home page only offers what has been run at a table.
+            if art.get("kind") == "site" and not art.get("playtested"):
                 continue
             pv = previews.get(art["slug"], {})
             excerpt = strip_page_refs(pv.get("excerpt") or "")
