@@ -3105,3 +3105,13 @@ main.content > h1.page-title:first-child {
   padding-top: 0.5rem;
   border-top: 1px solid var(--rule);
 }
+
+/* Two actions on one line — export and import, which are a pair. */
+.sync-row {
+  display: flex;
+  gap: .35rem;
+}
+.sync-row .sync-action {
+  flex: 1 1 0;
+  min-width: 0;
+}

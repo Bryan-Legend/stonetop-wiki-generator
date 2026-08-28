@@ -810,6 +810,13 @@
         return pull();
       },
       scopeOf: scopeOf,
+      /** Every syncable store this browser holds, whatever page it is on. */
+      stores: function () {
+        registerLocalStores();
+        return Object.keys(known).sort();
+      },
+      /** True if this browser's role may both read and write that store. */
+      syncs: syncs,
     };
 
     /* A join link is consumed before anything else reads a store, so the
@@ -1545,6 +1552,151 @@
       );
     }
 
+    /* ---------- Export and import ----------------------------------------
+     *
+     * A campaign's state is a few flat maps, so a backup is those maps in a
+     * file. What it deliberately does not carry is the endpoint or either
+     * token: a file people mail around should not be a key to the campaign.
+     *
+     * Importing merges rather than replaces. Every key in the file wins over
+     * what is held for that key, and anything the file does not mention is
+     * left alone — so restoring a backup over a live campaign adds to it and
+     * cannot silently empty it. Into a fresh campaign, merging over nothing is
+     * exactly a restore.
+     * ------------------------------------------------------------------- */
+
+    function exportName(cfg) {
+      var day = new Date().toISOString().slice(0, 10);
+      return "stonetop-" + (cfg ? cfg.campaign : "local") + "-" + day + ".json";
+    }
+
+    function exportData() {
+      var cfg = Store.config();
+      var out = {
+        stonetop: "campaign-export",
+        version: 1,
+        exported: new Date().toISOString(),
+        campaign: cfg ? cfg.campaign : null,
+        stores: {},
+      };
+      var keys = 0;
+      Store.stores().forEach(function (name) {
+        var data = Store.get(name);
+        var n = Object.keys(data).length;
+        if (!n) return;
+        out.stores[name] = data;
+        keys += n;
+      });
+      if (!keys) {
+        say("Nothing to export yet");
+        return;
+      }
+      var text = JSON.stringify(out, null, 2);
+      var url = URL.createObjectURL(
+        new Blob([text], { type: "application/json" })
+      );
+      var a = document.createElement("a");
+      a.href = url;
+      a.download = exportName(cfg);
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
+      setTimeout(function () {
+        URL.revokeObjectURL(url);
+      }, 2000);
+      say(keys + " saved to " + a.download);
+    }
+
+    function importData(text) {
+      var doc;
+      try {
+        doc = JSON.parse(text);
+      } catch (e) {
+        return { error: "that file is not JSON" };
+      }
+      if (!doc || doc.stonetop !== "campaign-export" || !doc.stores) {
+        return { error: "that is not a campaign export" };
+      }
+      var cfg = Store.config();
+      var added = 0;
+      var touched = 0;
+      var skipped = [];
+      Object.keys(doc.stores).forEach(function (name) {
+        var incoming = doc.stores[name];
+        if (!incoming || typeof incoming !== "object") return;
+        /* A store the wiki does not know, or one this role may not write —
+           a player's browser has no business holding the enemies' HP. */
+        if (!Store.scopeOf(name) || (cfg && !Store.syncs(name))) {
+          skipped.push(name);
+          return;
+        }
+        var cur = Store.get(name);
+        var n = 0;
+        Object.keys(incoming).forEach(function (k) {
+          cur[k] = incoming[k];
+          n++;
+        });
+        if (!n) return;
+        Store.set(name, cur);
+        touched++;
+        added += n;
+      });
+      return { added: added, stores: touched, skipped: skipped };
+    }
+
+    /* The two buttons, on the panel whether a campaign is joined or not: a
+       browser keeping its own copy is exactly the one worth backing up. */
+    function addDataTools(body) {
+      body.appendChild(note("Campaign data"));
+
+      var row = document.createElement("div");
+      row.className = "sync-row";
+
+      var save = action("Export");
+      save.title = "Save this campaign's state to a file";
+      save.addEventListener("click", exportData);
+      row.appendChild(save);
+
+      var picker = document.createElement("input");
+      picker.type = "file";
+      picker.accept = "application/json,.json";
+      picker.hidden = true;
+      picker.addEventListener("change", function () {
+        var file = picker.files && picker.files[0];
+        if (!file) return;
+        var reader = new FileReader();
+        reader.onload = function () {
+          var out = importData(String(reader.result || ""));
+          picker.value = "";
+          if (out.error) {
+            say(out.error);
+            return;
+          }
+          if (!out.added) {
+            say("Nothing in that file to import");
+            return;
+          }
+          var msg = "Imported " + out.added + " across " + out.stores + " stores";
+          if (out.skipped.length) msg += " · skipped " + out.skipped.join(", ");
+          say(msg, 6000);
+        };
+        reader.onerror = function () {
+          say("Could not read that file");
+        };
+        reader.readAsText(file);
+      });
+
+      var load = action("Import");
+      load.title = "Merge a saved file into this campaign";
+      load.addEventListener("click", function () {
+        picker.click();
+      });
+      row.appendChild(load);
+
+      body.appendChild(row);
+      body.appendChild(picker);
+    }
+
     function buildConnected(body, cfg) {
       var head = document.createElement("p");
       head.className = "sync-head";
@@ -1593,10 +1745,13 @@
 
       body.appendChild(
         note(
-          "Ticked improvements, danger clocks and map pins are shared with " +
-            "everyone. Enemy HP is the GM's alone."
+          "Ticked improvements, danger clocks, answers, sheets and a " +
+            "character's HP are shared with everyone. Enemy HP is the GM's " +
+            "alone."
         )
       );
+
+      addDataTools(body);
     }
 
     function buildDisconnected(body) {
@@ -1656,6 +1811,8 @@
         say("Joined " + parsed.campaign);
       });
       body.appendChild(join);
+
+      addDataTools(body);
     }
 
     function render() {
