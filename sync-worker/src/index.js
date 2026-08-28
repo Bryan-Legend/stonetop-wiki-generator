@@ -20,6 +20,7 @@
 const STORE_SCOPES = [
   [/^stonetop-wiki-checks$/, "shared"],
   [/^stonetop-wiki-map-pins$/, "shared"],
+  [/^stonetop-wiki-notes$/, "shared"],
   [/^[a-z0-9-]+-hp$/, "gm"],
 ];
 

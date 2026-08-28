@@ -59,13 +59,14 @@ shared stores) and one for the GM (everything).
 |---|---|---|
 | `stonetop-wiki-checks` | `shared` | everyone — steading improvements, danger clocks |
 | `stonetop-wiki-map-pins` | `shared` | everyone |
+| `stonetop-wiki-notes` | `shared` | everyone — answers, blanks, playbook write-in boxes |
 | `<sheet>-hp` | `gm` | the GM's browsers only |
 
 The HP scope is a pattern, not a list: every adventure-site sheet names its own
 store in `data-hp-storage`, so a new sheet joins the sync without a deploy.
 
-Anything not in that table stays private to the browser — the reader's own
-answer notes (`stonetop-wiki-notes`), the dice-sound setting, scroll positions.
+Anything not in that table stays private to the browser — the dice-sound
+setting, scroll positions.
 The registry lives in two places that must agree: `STORE_SCOPES` in
 `src/index.js` and the same table in `wiki.js`. The Worker is the one that
 enforces it; the client's copy only saves a doomed round trip.

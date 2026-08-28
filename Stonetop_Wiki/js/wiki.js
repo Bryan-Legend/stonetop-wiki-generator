@@ -33,11 +33,14 @@
        its own store in data-hp-storage, so a new sheet joins the sync without
        anyone editing a list. Enemy HP mid-fight is the one clearly
        spoiler-bearing store; ticked improvements and danger clocks are better
-       seen by everyone. Anything not named here — the reader's own answer
-       notes, the dice-sound setting — stays private to the browser. */
+       seen by everyone, and so are the answers and write-in boxes — a
+       playbook filled in at the table is the table's, not one browser's.
+       Anything not named here — the dice-sound setting, scroll positions —
+       stays private to the browser. */
     var STORE_SCOPES = [
       [/^stonetop-wiki-checks$/, "shared"],
       [/^stonetop-wiki-map-pins$/, "shared"],
+      [/^stonetop-wiki-notes$/, "shared"],
       [/^[a-z0-9-]+-hp$/, "gm"],
     ];
 
@@ -2767,6 +2770,7 @@
      hash of the containing block's text, so a wiki rebuild keeps the answers. */
   (function () {
     var KEY = "stonetop-wiki-notes";
+    var Store = window.StonetopStore;
     /* A question mark, or two-plus underscores (the book's blank line). */
     var TARGET_RE = /\?|_{2,}/g;
     /* Never rewrite type that is already interactive, code-ish, or chrome. */
@@ -2780,16 +2784,10 @@
     var HOST_INSIDE = /^(LI|TD|TH|DD|BLOCKQUOTE|DIV|SECTION|ARTICLE|FIGCAPTION)$/;
 
     function loadAll() {
-      try {
-        return JSON.parse(localStorage.getItem(KEY) || "{}") || {};
-      } catch (e) {
-        return {};
-      }
+      return Store.get(KEY);
     }
     function saveAll(o) {
-      try {
-        localStorage.setItem(KEY, JSON.stringify(o));
-      } catch (e) {}
+      Store.set(KEY, o);
     }
     function setNote(key, val) {
       var s = loadAll();
@@ -3128,6 +3126,26 @@
       e.preventDefault();
       activate(el);
     });
+
+    /* An answer typed at the other end of the table. Anything open in front of
+       someone — a blank being edited, a note box with the cursor in it — is
+       left alone; the rest is re-read from the store. */
+    Store.subscribe(KEY, function (saved) {
+      root.querySelectorAll(".wiki-blank[data-note-key]").forEach(function (span) {
+        if (span.classList.contains("is-editing")) return;
+        var key = span.getAttribute("data-note-key");
+        var val = typeof saved[key] === "string" ? saved[key] : "";
+        var blank = span.getAttribute("data-blank") || "___";
+        span.textContent = val || blank;
+        span.classList.toggle("is-filled", !!val);
+        span.title = val ? "Click to edit" : "Click to fill in";
+      });
+      root.querySelectorAll(".wiki-q[data-note-key]").forEach(function (q) {
+        var key = q.getAttribute("data-note-key");
+        if (root.querySelector(".wiki-note" + sel(key))) return; // open editor
+        renderAnswer(q, key);
+      });
+    });
   })();
 
   /* ---------- Playbook sheets: write-in boxes and debilities ----------
@@ -3139,21 +3157,16 @@
      stats it dims. */
   (function () {
     var KEY = "stonetop-wiki-notes";
+    var Store = window.StonetopStore;
 
     function loadAll() {
-      try {
-        return JSON.parse(localStorage.getItem(KEY) || "{}") || {};
-      } catch (e) {
-        return {};
-      }
+      return Store.get(KEY);
     }
     function saveField(key, val) {
-      try {
-        var s = loadAll();
-        if (val && val.trim()) s[key] = val;
-        else delete s[key];
-        localStorage.setItem(KEY, JSON.stringify(s));
-      } catch (e) {}
+      var s = loadAll();
+      if (val && val.trim()) s[key] = val;
+      else delete s[key];
+      Store.set(KEY, s);
     }
 
     /* A box on a sheet is never left blank: emptied, it falls back to what
@@ -3334,6 +3347,23 @@
       else rollDamage(btn);
     });
 
+    /* The sheet's own boxes, when someone else fills them in. A box being
+       typed into is left alone. */
+    if (fields.length) {
+      Store.subscribe(KEY, function (saved) {
+        fields.forEach(function (input) {
+          if (input === document.activeElement) return;
+          var key = input.getAttribute("data-field-key");
+          if (!key) return;
+          input.value =
+            typeof saved[key] === "string" && saved[key]
+              ? saved[key]
+              : fallback(input);
+          if (input.hasAttribute("data-spin-min")) normalize(input, false);
+        });
+      });
+    }
+
     /* A marked debility dims the two stats the sheet brackets under it. */
     var debs = document.querySelectorAll(".pb-debility[data-stats]");
     if (!debs.length) return;
@@ -3360,6 +3390,10 @@
       });
     }
 
+    function syncAll() {
+      debs.forEach(sync);
+    }
+
     debs.forEach(function (label) {
       var box = label.querySelector("input[type=checkbox]");
       if (!box) return;
@@ -3372,6 +3406,16 @@
       }, 0);
       sync(label);
     });
+
+    /* A debility ticked at the other end of the table. The checkbox itself is
+       repainted by the checks module, but setting .checked in script fires no
+       change event — so the dimming it brackets has to be re-applied here or
+       the stats stay bright until the page is reloaded. That module subscribes
+       before this one, so the boxes are already right by the time this runs. */
+    if (window.StonetopStore) {
+      window.StonetopStore.subscribe("stonetop-wiki-checks", syncAll);
+    }
+
   })();
 
   /* ---------- One measure for every page ----------
