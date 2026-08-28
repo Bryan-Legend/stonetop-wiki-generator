@@ -21,6 +21,8 @@ const STORE_SCOPES = [
   [/^stonetop-wiki-checks$/, "shared"],
   [/^stonetop-wiki-map-pins$/, "shared"],
   [/^stonetop-wiki-notes$/, "shared"],
+  // A character's own HP, ahead of the catch-all below.
+  [/^stonetop-wiki-playbook-hp$/, "shared"],
   [/^[a-z0-9-]+-hp$/, "gm"],
 ];
 

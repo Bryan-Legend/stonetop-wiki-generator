@@ -3036,3 +3036,72 @@ main.content > h1.page-title:first-child {
   white-space: nowrap;
   border: 0;
 }
+
+/* ---------- HP trackers ----------
+   One row of boxes, used by the adventure-site sheets (whose own layout around
+   them is in sites/site.css), by every monster stat block, and under a
+   playbook's second row of inputs. Click a box to set HP to that number, the
+   box you are on to take a point off, the readout to go back to full. */
+.hp-boxes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3px;
+  max-width: 22rem;
+}
+.hp-box {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 0.85rem;
+  height: 0.85rem;
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  background: transparent;
+  cursor: pointer;
+  flex-shrink: 0;
+}
+.hp-box:hover {
+  border-color: var(--accent);
+  background: rgba(var(--accent-rgb), 0.15);
+}
+.hp-box.is-filled {
+  background: var(--accent);
+  border-color: var(--accent-deep);
+}
+.hp-box.is-empty {
+  background: rgba(0, 0, 0, 0.25);
+}
+/* A button on the book pages, a span on the sheets — the resets suit both. */
+.hp-readout {
+  font-family: inherit;
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--head);
+  min-width: 2.6rem;
+  text-align: right;
+  padding: 0;
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.hp-readout.is-down { color: var(--danger); }
+.hp-readout.is-full { color: var(--head); }
+
+/* The wrapper the book pages mount: above a stat block's stat line, and under
+   the playbook track grid. Breaking it across columns would split a single
+   creature's health in two. */
+.hp-track {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0.3rem 0 0.35rem;
+  break-inside: avoid;
+}
+.hp-track .hp-readout { min-width: 3.2rem; text-align: left; }
+.pb-track-grid + .hp-track {
+  margin: 0.5rem 0 0.2rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid var(--rule);
+}

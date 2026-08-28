@@ -383,46 +383,10 @@
       flex: 1 1 14rem;
       justify-content: flex-end;
     }
-    .hp-boxes {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 3px;
-      max-width: 22rem;
-    }
-    .hp-box {
-      appearance: none;
-      -webkit-appearance: none;
-      width: 0.85rem;
-      height: 0.85rem;
-      margin: 0;
-      padding: 0;
-      border: 1px solid var(--rule);
-      border-radius: 2px;
-      background: transparent;
-      cursor: pointer;
-      flex-shrink: 0;
-    }
-    .hp-box:hover {
-      border-color: var(--accent);
-      background: rgba(var(--accent-rgb), 0.15);
-    }
-    .hp-box.is-filled {
-      background: var(--accent);
-      border-color: var(--accent-deep);
-    }
-    .hp-box.is-empty {
-      background: rgba(0, 0, 0, 0.25);
-    }
-    .hp-readout {
-      font-variant-numeric: tabular-nums;
-      font-weight: 700;
-      font-size: var(--fs-sm);
-      color: var(--head);
-      min-width: 2.6rem;
-      text-align: right;
-    }
-    .hp-readout.is-down { color: var(--danger); }
-    .hp-readout.is-full { color: var(--head); }
+    /* The boxes, the filled/empty states and the readout are defined once in
+       ../css/wiki.css — the book pages grew HP trackers of their own, and a
+       sheet loads that stylesheet before this one. Only the sheet's own
+       layout around them lives here. */
 
     footer,
     footer.site-credit {

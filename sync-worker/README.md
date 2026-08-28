@@ -60,10 +60,13 @@ shared stores) and one for the GM (everything).
 | `stonetop-wiki-checks` | `shared` | everyone — steading improvements, danger clocks |
 | `stonetop-wiki-map-pins` | `shared` | everyone |
 | `stonetop-wiki-notes` | `shared` | everyone — answers, blanks, playbook write-in boxes |
-| `<sheet>-hp` | `gm` | the GM's browsers only |
+| `stonetop-wiki-playbook-hp` | `shared` | everyone — a character's own HP, keyed by playbook |
+| `<sheet>-hp`, `stonetop-wiki-monster-hp` | `gm` | the GM's browsers only |
 
 The HP scope is a pattern, not a list: every adventure-site sheet names its own
-store in `data-hp-storage`, so a new sheet joins the sync without a deploy.
+store in `data-hp-storage`, so a new sheet joins the sync without a deploy. The
+one exception is listed ahead of that pattern — a character's HP is theirs and
+the table watches it; only the enemies' is the GM's alone.
 
 Anything not in that table stays private to the browser — the dice-sound
 setting, scroll positions.

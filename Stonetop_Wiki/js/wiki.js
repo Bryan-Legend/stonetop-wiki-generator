@@ -41,6 +41,9 @@
       [/^stonetop-wiki-checks$/, "shared"],
       [/^stonetop-wiki-map-pins$/, "shared"],
       [/^stonetop-wiki-notes$/, "shared"],
+      /* A character's own HP, ahead of the catch-all below — the table watches
+         each other's health; only the enemies' is the GM's alone. */
+      [/^stonetop-wiki-playbook-hp$/, "shared"],
       [/^[a-z0-9-]+-hp$/, "gm"],
     ];
 
@@ -3481,6 +3484,219 @@
     window.addEventListener("resize", function () {
       clearTimeout(t);
       t = setTimeout(fit, 120);
+    });
+  })();
+
+  /* ---------- HP trackers -------------------------------------------------
+   *
+   * The row of little boxes the adventure-site sheets use, brought to the
+   * book pages: click a box to set HP to that number, click the one you are
+   * already on to take a point off, click the readout to go back to full.
+   *
+   * Two places want it. A playbook's HP box stops being the current total and
+   * becomes the *maximum* — the number the sheet prints is only where you
+   * start, and it climbs with level — while the boxes underneath are what you
+   * actually mark off in a fight. And every monster stat block trades its
+   * printed "HP 24;" for a track of its own, since a stat block read at the
+   * table is a thing being fought, not a thing being looked up.
+   *
+   * Full health is stored as nothing at all. An untouched enemy is absent
+   * from the store, which keeps it small and — the lesson the site sheets
+   * taught — stops a freshly opened page pushing a default over what the
+   * campaign already holds.
+   * --------------------------------------------------------------------- */
+  (function () {
+    var Store = window.StonetopStore;
+    if (!Store) return;
+
+    /* A character's HP is their own and the table watches it; a monster's is
+       the GM's, like the enemy HP on a site sheet. */
+    var PLAYBOOK_STORE = "stonetop-wiki-playbook-hp";
+    var MONSTER_STORE = "stonetop-wiki-monster-hp";
+    var NOTES_STORE = "stonetop-wiki-notes";
+
+    var trackers = [];
+
+    function slugOf() {
+      var m = String(location.pathname || "")
+        .replace(/\\/g, "/")
+        .match(/([^\/#?]+)\.html/i);
+      return m ? m[1] : "index";
+    }
+
+    function current(t) {
+      var v = Store.get(t.store)[t.key];
+      if (typeof v !== "number" || v < 0 || v > t.max) return t.max;
+      return v;
+    }
+
+    function paint(t) {
+      var cur = current(t);
+      var kids = t.boxes.children;
+      for (var i = 0; i < kids.length; i++) {
+        var n = i + 1;
+        kids[i].classList.toggle("is-filled", n <= cur);
+        kids[i].classList.toggle("is-empty", n > cur);
+        kids[i].setAttribute("aria-pressed", n <= cur ? "true" : "false");
+      }
+      t.readout.textContent = cur + "/" + t.max;
+      t.readout.classList.toggle("is-down", cur === 0);
+      t.readout.classList.toggle("is-full", cur === t.max);
+    }
+
+    function setHp(t, value) {
+      var v = Math.max(0, Math.min(t.max, value | 0));
+      var state = Store.get(t.store);
+      if (v === t.max) delete state[t.key];
+      else state[t.key] = v;
+      Store.set(t.store, state);
+    }
+
+    /* The boxes are rebuilt whenever the maximum moves — a playbook's does,
+       every time its owner levels. */
+    function render(t) {
+      t.boxes.innerHTML = "";
+      for (var i = 1; i <= t.max; i++) {
+        var box = document.createElement("button");
+        box.type = "button";
+        box.className = "hp-box";
+        box.title = "Set HP to " + i;
+        box.setAttribute("aria-label", t.label + ": set HP to " + i);
+        box.addEventListener(
+          "click",
+          (function (n) {
+            return function () {
+              var cur = current(t);
+              /* Clicking the box you are on takes a point off, so one click is
+                 the commonest thing that happens in a fight. */
+              setHp(t, n === cur && cur > 0 ? cur - 1 : n);
+            };
+          })(i)
+        );
+        t.boxes.appendChild(box);
+      }
+      paint(t);
+    }
+
+    function build(opts) {
+      var el = document.createElement("div");
+      el.className = "hp-track";
+      el.setAttribute("role", "group");
+      el.setAttribute("aria-label", opts.label + " HP");
+
+      var boxes = document.createElement("span");
+      boxes.className = "hp-boxes";
+
+      var readout = document.createElement("button");
+      readout.type = "button";
+      readout.className = "hp-readout";
+      readout.title = "Click to reset to full";
+
+      el.appendChild(boxes);
+      el.appendChild(readout);
+
+      var t = {
+        store: opts.store,
+        key: opts.key,
+        max: opts.max,
+        label: opts.label,
+        el: el,
+        boxes: boxes,
+        readout: readout,
+      };
+      readout.addEventListener("click", function () {
+        setHp(t, t.max);
+      });
+      render(t);
+      trackers.push(t);
+      return t;
+    }
+
+    function repaint(store) {
+      trackers.forEach(function (t) {
+        if (t.store === store) paint(t);
+      });
+    }
+    Store.subscribe(PLAYBOOK_STORE, function () {
+      repaint(PLAYBOOK_STORE);
+    });
+    Store.subscribe(MONSTER_STORE, function () {
+      repaint(MONSTER_STORE);
+    });
+
+    var slug = slugOf();
+
+    /* ----- The playbook sheet ----- */
+    (function () {
+      var stats = document.querySelector(".pb-stats");
+      if (!stats) return;
+      var grid = stats.querySelector(".pb-track-grid");
+      var maxBox = stats.querySelector(
+        'input.wiki-field[data-field-key$=":track-hp"]'
+      );
+      if (!grid || !maxBox) return;
+
+      /* The printed "HP (max 18)" was the starting total wearing the cap as a
+         label. It is the cap now, and it is meant to be edited — so the
+         ceiling comes off the spinner. */
+      var cell = maxBox.closest(".pb-track");
+      var name = cell && cell.querySelector(".pb-track-name");
+      if (name) name.textContent = "Max HP";
+      maxBox.setAttribute("aria-label", "Max HP");
+      maxBox.setAttribute("data-spin-min", "1");
+      maxBox.setAttribute("data-spin-max", "99");
+      maxBox.setAttribute("aria-valuemin", "1");
+      maxBox.setAttribute("aria-valuemax", "99");
+
+      function readMax() {
+        var n = parseInt(String(maxBox.value).replace(/[^0-9-]/g, ""), 10);
+        return n > 0 ? n : 1;
+      }
+
+      var t = build({
+        store: PLAYBOOK_STORE,
+        key: slug,
+        max: readMax(),
+        label: "Character",
+      });
+      grid.parentNode.insertBefore(t.el, grid.nextSibling);
+
+      function syncMax() {
+        var m = readMax();
+        if (m === t.max) return;
+        t.max = m;
+        render(t);
+      }
+      maxBox.addEventListener("input", syncMax);
+      maxBox.addEventListener("change", syncMax);
+      /* Max HP lives in the notes store, so it can also arrive from another
+         browser — which sets the box's value without firing either event. */
+      Store.subscribe(NOTES_STORE, syncMax);
+    })();
+
+    /* ----- Monster and NPC stat blocks ----- */
+    document.querySelectorAll(".stat-block").forEach(function (block, i) {
+      var line = block.querySelector("p.stat-stats");
+      if (!line) return;
+      /* "HP 14; Armor 4 (resilience) · Damage …" — the number sits in the
+         leading text node, ahead of the dice buttons, so only that node is
+         touched and every listener already bound in the line survives. */
+      var first = line.firstChild;
+      if (!first || first.nodeType !== 3) return;
+      var m = first.nodeValue.match(/^\s*HP\s+(\d+)\s*;?\s*/i);
+      if (!m) return;
+      var max = parseInt(m[1], 10);
+      if (!(max > 0) || max > 200) return;
+      first.nodeValue = first.nodeValue.slice(m[0].length);
+
+      var name = block.querySelector(".stat-name");
+      var t = build({
+        store: MONSTER_STORE,
+        key: slug + "#" + (block.id || "stat-" + i),
+        max: max,
+        label: name ? name.textContent.trim() : "Enemy",
+      });
+      line.parentNode.insertBefore(t.el, line);
     });
   })();
 
