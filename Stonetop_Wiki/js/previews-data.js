@@ -15448,7 +15448,14 @@ window.WIKI_PREVIEWS = {
   },
   "campaign-sites": {
     "title": "Sites",
-    "excerpt": "4 campaign adventure sites — prep, rooms, stat blocks — kept beside the wiki.",
+    "excerpt": "6 campaign adventure sites — prep, rooms, stat blocks — kept beside the wiki.",
+    "image": null,
+    "book": "sites",
+    "sections": {}
+  },
+  "the-drowned-choir": {
+    "title": "The Drowned Choir",
+    "excerpt": "Suarachan lair · Ferrier’s Fen , ~2 days in from Marshedge · late autumn · a sunken Green Lord hall",
     "image": null,
     "book": "sites",
     "sections": {}
@@ -15456,6 +15463,13 @@ window.WIKI_PREVIEWS = {
   "the-green-lords-tomb": {
     "title": "The Green Lord’s Tomb",
     "excerpt": "Sajra the swyn’s lair · 1½ days into the Great Wood · Book I pp. 371–377",
+    "image": null,
+    "book": "sites",
+    "sections": {}
+  },
+  "kneeroot": {
+    "title": "Kneeroot",
+    "excerpt": "The Willow Witches ’ abode · 5 areas · somewhere in Ferrier’s Fen · never twice in the same place",
     "image": null,
     "book": "sites",
     "sections": {}

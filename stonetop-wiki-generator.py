@@ -8783,7 +8783,14 @@ def build_nav_items(
 
     Adventures carry an `href` relative to the wiki root (they live outside
     the wiki root), so `root_prefix` walks back up from the page being rendered.
+
+    Campaign sites are left out of the sidebar: they are table sheets for one
+    group, not part of the books, and they are still reachable from the home
+    page, the Sites hub, search, and their own back-links.
     """
+    articles = [
+        a for a in articles if a.get("kind") not in ("site", "sites-hub")
+    ]
     section_navs = section_navs or {}
     multi_book = len({a.get("book") for a in articles if a.get("book")}) > 1
     items: list[str] = []

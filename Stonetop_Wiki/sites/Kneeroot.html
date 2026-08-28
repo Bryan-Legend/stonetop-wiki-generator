@@ -1,0 +1,1006 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Kneeroot</title>
+  <!-- Where this sheet is published: the § beside a heading copies a link
+       to the section, and off a disk there is no other way to know it. -->
+  <meta property="og:url" content="https://stonetop-wiki.github.io/sites/Kneeroot.html">
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml" />
+  <link rel="alternate icon" href="../images/favicon.ico" sizes="16x16 32x32 48x48 64x64" />
+  <link rel="stylesheet" href="../css/wiki.css" />
+  <link rel="stylesheet" href="site.css" />
+  <style>
+    /* SVG theme only — layout is body.has-map + aside.site-map in site.css */
+    .site-map-svg .map-edge {
+      fill: none;
+      stroke: var(--rule);
+      stroke-width: 2;
+    }
+    .site-map-svg .map-edge-tight {
+      stroke-dasharray: 4 3;
+    }
+    .site-map-svg .map-fence {
+      fill: none;
+      stroke: var(--muted);
+      stroke-width: 1.5;
+      stroke-dasharray: 2 4;
+    }
+    .site-map-svg .map-node {
+      fill: var(--bg-elev);
+      stroke: var(--accent);
+      stroke-width: 1.5;
+      transition: fill 0.12s ease, stroke 0.12s ease;
+    }
+    .site-map-svg .map-node-out {
+      stroke: var(--muted);
+    }
+    .site-map-svg .map-node-danger {
+      stroke: var(--danger);
+    }
+    .site-map-svg a:hover .map-node,
+    .site-map-svg a:focus .map-node {
+      fill: var(--accent-soft);
+      stroke: var(--link-hover);
+    }
+    .site-map-svg a:hover .map-node-danger,
+    .site-map-svg a:focus .map-node-danger {
+      stroke: var(--danger);
+    }
+    .site-map-svg .map-label {
+      fill: var(--quote);
+      font-family: var(--font-sans);
+      font-size: 10px;
+      text-anchor: middle;
+      pointer-events: none;
+    }
+    .site-map-svg a:hover .map-label,
+    .site-map-svg a:focus .map-label {
+      fill: var(--ink);
+    }
+    .site-map-svg .map-note {
+      fill: var(--muted);
+      font-family: var(--font-sans);
+      font-size: 8px;
+      text-anchor: middle;
+      pointer-events: none;
+    }
+    .site-map-svg a:focus { outline: none; }
+    .site-map-svg a:focus .map-node { stroke-width: 2.5; }
+    .exits {
+      font-size: 0.88rem;
+      color: var(--muted);
+      margin: 0.35rem 0 0.5rem;
+    }
+    .exits a { margin-right: 0.15rem; }
+  </style>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4536408101e64ba59733ed69779dd45c"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body class="site-sheet has-map" data-wiki-root="../" data-hp-storage="kneeroot-hp">
+<div class="site-layout">
+
+  <nav class="site-nav" aria-label="Site">
+    <a class="nav-title" href="#top">Kneeroot</a>
+    <a class="nav-wiki-home" href="../index.html">← Wiki</a>
+    <span class="nav-label">Prep</span>
+    <ul>
+      <li><a href="#truth">Truth</a></li>
+      <li><a href="#guest-right">Guest-right</a></li>
+      <li><a href="#dangers">Dangers</a></li>
+      <li><a href="#loot">Loot</a></li>
+    </ul>
+    <span class="nav-label">Travel</span>
+    <ul>
+      <li><a href="#travel">Finding the house</a></li>
+      <li><a class="nav-sub" href="#fen-troll">Fen-troll</a></li>
+    </ul>
+    <span class="nav-label">Areas</span>
+    <ul>
+      <li><a href="#room-1">1. Dooryard</a></li>
+      <li><a class="nav-sub" href="#snaplilies">Snaplilies</a></li>
+      <li><a class="nav-sub" href="#pyped">The Refused</a></li>
+      <li><a href="#room-2">2. Hearth</a></li>
+      <li><a class="nav-sub" href="#soothsayer">The other guest</a></li>
+      <li><a href="#room-3">3. Larder</a></li>
+      <li><a class="nav-sub" href="#household">The household</a></li>
+      <li><a class="nav-sub" href="#gwyllgi">The jar</a></li>
+      <li><a href="#room-4">4. Tally</a></li>
+      <li><a class="nav-sub" href="#price-steps">Setting the price</a></li>
+      <li><a href="#room-5">5. Under the Floor</a></li>
+      <li><a class="nav-sub" href="#blindspot">The blind spot</a></li>
+    </ul>
+    <span class="nav-label">Payoffs</span>
+    <ul>
+      <li><a href="#broken">If guest-right breaks</a></li>
+      <li><a href="#leaving">Getting out</a></li>
+    </ul>
+    <span class="nav-label">Wiki</span>
+    <ul>
+      <li><a href="../ferriers-fen.html#the-willow-witches" class="wiki-link" data-slug="ferriers-fen" data-fragment="the-willow-witches">Willow Witches</a></li>
+      <li><a href="../ferriers-fen.html#the-price" class="wiki-link" data-slug="ferriers-fen" data-fragment="the-price">The price</a></li>
+      <li><a href="../ferriers-fen.html#monsters" class="wiki-link" data-slug="ferriers-fen" data-fragment="monsters">Fen monsters</a></li>
+      <li><a href="../primordial-powers.html#black-iron" class="wiki-link" data-slug="primordial-powers" data-fragment="black-iron">Black iron</a></li>
+      <li><a href="../marshedge.html#secrets" class="wiki-link" data-slug="marshedge" data-fragment="secrets">Marshedge secrets</a></li>
+    </ul>
+    <div class="sidebar-foot">
+      <a class="sidebar-github" href="https://github.com/Bryan-Legend/stonetop-wiki-generator">GitHub</a>
+    </div>
+  </nav>
+
+  <div class="site-main" id="top">
+
+<header>
+  <h1>Kneeroot</h1>
+  <p class="meta">
+    <strong>The <a href="../ferriers-fen.html#the-willow-witches" class="wiki-link" data-slug="ferriers-fen" data-fragment="the-willow-witches">Willow Witches</a>’ abode</strong> ·
+    5 areas · somewhere in
+    <a href="../ferriers-fen.html" class="wiki-link" data-slug="ferriers-fen">Ferrier’s Fen</a> ·
+    never twice in the same place
+  </p>
+  <nav class="links">
+    <a href="../ferriers-fen.html#the-willow-witches" class="wiki-link" data-slug="ferriers-fen" data-fragment="the-willow-witches">Witches</a> ·
+    <a href="../ferriers-fen.html#mind-your-manners" class="wiki-link" data-slug="ferriers-fen" data-fragment="mind-your-manners">Manners</a> ·
+    <a href="../ferriers-fen.html#the-price" class="wiki-link" data-slug="ferriers-fen" data-fragment="the-price">Price</a> ·
+    <a href="../primordial-powers.html#incarnations" class="wiki-link" data-slug="primordial-powers" data-fragment="incarnations">Incarnations</a>
+  </nav>
+</header>
+
+<section id="truth">
+  <h2>Truth</h2>
+  <p>
+    Three witches, one being: the diminished
+    <a href="../primordial-powers.html#incarnations" class="wiki-link" data-slug="primordial-powers" data-fragment="incarnations">incarnation</a>
+    of a primordial power of <strong>knowledge, fate, costs and consequences</strong>. It does not want.
+    It <em>accounts</em>.
+  </p>
+  <p class="statline">
+    <strong>The thesis of this site:</strong> guest-right makes the Witches harmless to a guest.
+    It does not make the <em>house</em> harmless, and the Witches will not lift a finger to defend a
+    guest from anything that isn’t them — that is not what hospitality covers, and they find it
+    interesting to watch. This is the safest seat in Ferrier’s Fen, inside the most dangerous address in it.
+  </p>
+  <p>
+    <strong>The household.</strong> Every seven years an Old Family of
+    <a href="../marshedge.html#secrets" class="wiki-link" data-slug="marshedge" data-fragment="secrets">Marshedge</a>
+    delivers a child to a grand willow. The children are not killed. They are <em>kept</em>, and they
+    tend the yard. <strong>There are fewer of them than the arithmetic allows.</strong> Nobody in the
+    house has noticed, because the house cannot count what it cannot see (see
+    <a href="#room-5">Under the Floor</a>).
+  </p>
+  <p>
+    <strong>The account is in arrears.</strong> The seventh year came and the Ferriers were picked apart
+    before they could pay. Marshedge sent a servant girl instead. Like must pay for like — a substitute
+    is not a child of the blood, the debt did not clear, and the house will mention this to anyone from
+    Marshedge who walks in wanting something.
+  </p>
+  <div class="gm-line">
+    “We keep no grudges. Grudges are for people. We keep <em>accounts</em>.”
+  </div>
+</section>
+
+<section id="guest-right">
+  <h2>Guest-right <span class="tag">site-wide rule</span></h2>
+  <p>
+    Anyone who approaches peaceably and invokes the guest-right may eat the food and shelter under the
+    roof. <strong>The Witches will do no true harm</strong> unless a guest first breaks it by:
+    initiating violence · threatening the Witches <em>or their guests</em> · stealing · insulting the
+    hospitality.
+  </p>
+  <p class="statline">
+    Read this to the table when the door opens. Then read them the other half:
+  </p>
+  <ul>
+    <li><strong>It only covers the Witches.</strong> The snaplilies in the water, the thing eating the
+      dead outside the fence, the household in the larder, and whatever is under the floor are not
+      bound by it and never were.</li>
+    <li><strong>It covers the other guests too</strong> — which is the problem in
+      <a href="#room-2">the Hearth</a>, because one of them is a suarachan.</li>
+    <li><strong>It ends at the fence.</strong> Everything held back by manners inside is waiting
+      outside, and knows they have to come out eventually.</li>
+  </ul>
+  <p>
+    The Witches spend the visit <strong>provoking</strong> — riddles, shameful questions, revolting food,
+    a glimpse of something terrible that is gone when you look again. One provocation per room:
+    the fence · the bowl · the shelves · the question. Sail through with grace and the house prices
+    honestly. Sneer through and it prices you cheap and ruinously.
+    <em>The humble, patient, and wise do well. Hot-headed, prideful fools do not.</em>
+  </p>
+</section>
+
+<section id="dangers">
+  <h2>Dangers</h2>
+  <p class="statline">Live across the whole site, not just where they’re statted.</p>
+  <ul>
+    <li><strong>Deep, still water</strong> on every side. Falling in is the recurring hazard —
+      snaplilies, sucking mud, and the reason nobody sensible swims in the Fen.</li>
+    <li><strong>The exit is worse than the entrance.</strong> Anything the party ducked on the way in is
+      still there, plus whatever followed them, plus anything they made an enemy of at the table.</li>
+    <li><strong>Fen blight</strong> for anyone spending real time out here — see the
+      <a href="../ferriers-fen.html#fen-blight" class="wiki-link" data-slug="ferriers-fen" data-fragment="fen-blight">countdown</a>.
+      A guide who is hiding it (Fiadh) is a clock inside the party.</li>
+    <li><strong>Optional set-piece: the <a href="../ferriers-fen.html#monsters" class="wiki-link" data-slug="ferriers-fen" data-fragment="monsters">Gliomor</a></strong>
+      — HP 22, Armor 3, claws
+      <button type="button" class="dice-roll" data-dice="d12+3" title="Click to roll d12+3">d12+3</button> /
+      <button type="button" class="dice-roll" data-dice="d12+5" title="Click to roll d12+5">d12+5</button>,
+      heals in hours, regrows limbs in days. If the trip needs a hammer, it surfaces on the way out.
+      Don’t stack it with the Refused.</li>
+  </ul>
+</section>
+
+<section id="loot">
+  <h2>Loot</h2>
+  <p class="statline">
+    <strong>Three metals, three monsters.</strong> The site hands out its own answers early if the party
+    searches — that is the reward for being thorough, and it is what makes the last room winnable.
+  </p>
+  <ul>
+    <li><strong>Bronze</strong> (bog-bodies, <a href="#room-1">Dooryard</a>) → the
+      <a href="#room-5">llamudwr’s</a> Armor 4 becomes <strong>0</strong>.</li>
+    <li><strong>Silver</strong> (the wire on <a href="#gwyllgi">the jar</a>) → the gwyllgi’s Armor 4
+      becomes <strong>0</strong>; the <a href="#pyped">pyped</a> takes
+      +<button type="button" class="dice-roll" data-dice="1d4" title="Click to roll 1d4">1d4</button>.</li>
+    <li><strong>Salt</strong> (the <a href="#fen-troll">troll’s hoard</a>) → burns
+      <a href="#soothsayer">suarachan</a> skin; harms the pyped for
+      <button type="button" class="dice-roll" data-dice="1d8" title="Click to roll 1d8">1d8</button>
+      (hand, close).</li>
+  </ul>
+  <p class="statline">
+    Everything else worth having is on a shelf, and taking it off the shelf is theft. The Larder is loot
+    that can only be bought — which is the site in miniature.
+  </p>
+</section>
+
+<section class="room" id="travel">
+  <h2>Finding the house</h2>
+  <p class="statline">
+    Never in the same place twice. Cannot be Charted a Course to, mapped, or returned to.
+    <strong>The only sure way in is a <a href="../ferriers-fen.html#fen-troll" class="wiki-link" data-slug="ferriers-fen" data-fragment="fen-troll">fen-troll</a> guide.</strong>
+    They all know the way. Expect mischief.
+  </p>
+  <div class="gm-line">
+    “The water goes still. Not calm — <em>still</em>, like it’s holding its breath. Then a smell rolls
+    over you that you’ll be washing out for a week, and something the size of a cart shifts in the
+    reeds where there was nothing a moment ago.”
+  </div>
+
+  <h3 id="fen-troll">Fen-troll <span class="tag danger">Fight or bargain</span></h3>
+  <p class="statline">
+    Solitary, large, corrupted, hoarder, gluttonous, stealthy · sharp senses, horrid odor,
+    <strong>ashamed of its visage</strong> · Instinct to fill its belly and guard its hoard
+  </p>
+  <div class="enemy-block">
+    <div class="enemy-row" data-hp-id="fen-troll" data-hp-max="16">
+      <div class="enemy-meta">
+        <span class="enemy-name">
+          <a href="../ferriers-fen.html#fen-troll" class="wiki-link" data-slug="ferriers-fen" data-fragment="fen-troll">Fen-troll</a>
+        </span>
+        Armor 1 (thick hide) ·
+        <button type="button" class="dice-roll" data-dice="d10+3" title="Click to roll d10+3">d10+3</button>
+        grip (grabby, forceful) ·
+        <button type="button" class="dice-roll" data-dice="d10+3" title="Click to roll d10+3">d10+3</button>
+        maw (messy, 1 piercing)
+      </div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+  </div>
+  <p>
+    It was a person once. It prizes finery and ordinary goods — a comb, a good cloak, a whole loaf.
+    What it wants far more is <strong>to be treated like a person</strong>, and hunger, shame, and greed
+    make it lash out at whoever is kind enough to try.
+  </p>
+  <ul>
+    <li><strong>Pay the toll:</strong> treasure to pass (Value 1+, or a special possession). It guides
+      them, sulking, the long way.</li>
+    <li><strong>Be kind to it:</strong> the good road and the dangerous one. It guides them <em>well</em>
+      and coaches them on what to say at the door — but the first time anyone stares, recoils, or pities
+      it out loud, it lashes out (one hard move, then shame, then it bolts). Reconciling is the best
+      scene in the trip.</li>
+    <li><strong>Fight it:</strong> they can win. Then nobody knows the way.</li>
+    <li><strong>Refuse to deal:</strong> they wander. Roll the Fen’s
+      <a href="../ferriers-fen.html#discoveries" class="wiki-link" data-slug="ferriers-fen" data-fragment="discoveries">Discoveries</a>
+      until they give up or get lucky.</li>
+  </ul>
+  <div class="dialog-lines">
+    <div class="gm-line">“Toll. Or meat. Same to me. Not same to <em>you</em>.”</div>
+    <div class="gm-line">“You want the sisters. Everyone wants the sisters. Nobody wants <em>me</em>.”</div>
+    <div class="gm-line"><em>(guiding)</em> “Say the words at the fence. Say them <em>loud</em>. And don’t you take nothing. Not nothing.”</div>
+  </div>
+
+  <h3>The hoard <span class="tag">Loot</span></h3>
+  <p class="statline">
+    A hummock den behind a curtain of roots, everything laid out in rows and dusted. Given freely to a
+    friend, traded for the toll, or taken off the body. It will notice one missing comb.
+  </p>
+  <ul>
+    <li><strong>◇ A pouch of salt</strong>, hoarded because it keeps — <strong>the site’s best weapon</strong>.
+      Burns suarachan skin, and does
+      <button type="button" class="dice-roll" data-dice="1d8" title="Click to roll 1d8">1d8</button>
+      (hand, close) to the pyped. Value 1.</li>
+    <li><strong>Finery</strong>: a silver comb, an embroidered shirt gone green, a child’s shoe kept
+      like a relic. Value 1 the lot — but ask which piece it won’t part with, and why.</li>
+    <li><strong>◇ A handful of silvers</strong> in a rotted purse (Value 1), off a petitioner who
+      didn’t make the fence.</li>
+    <li><strong>Something it can’t use:</strong> a wax tablet and stylus, the last message still
+      pressed into it. Whoever wrote it was going to the house to ask about a child.</li>
+  </ul>
+</section>
+
+<article class="room" id="room-1">
+  <h2>1. The Dooryard</h2>
+  <span class="tag">Exterior</span>
+  <span class="tag danger">Hazard + fight</span>
+  <div class="gm-line">
+    “A willow stands in a foot of black water with its roots hauled clear of the mud — a dozen of them,
+    thick as thighs, bent like knees. The house is up in the crook of it, hunched and shuttered, and it
+    has its <em>back</em> to you. There’s no door on this side. There’s no door on any side you can see.”
+  </div>
+  <div class="gm-line">
+    “Around it runs a fence of bog-oak stakes, and every stake carries a lantern, and every lantern is
+    lit, though nothing burns in them. Between the stakes, people are working. They straighten up to
+    watch you come. They don’t wave.”
+  </div>
+  <p class="statline">
+    <strong>Kneeroot is the name</strong> — the fen-walkers' word for it, and they mean the roots, not
+    the house. It is the only part anyone can describe twice, because the house turns and the fence
+    moves with it. The fence-line is the site's working boundary: guest-right begins at it and ends at
+    it, and the <a href="#pyped">thing in the reeds</a> cannot cross it.
+  </p>
+
+  <h3 id="snaplilies">Crossing the water — snaplilies <span class="tag danger">Hazard</span></h3>
+  <p class="statline">
+    Thirty yards of lily-pad water between the last firm ground and the fence. They blend right in.
+    Instinct: to latch on and drag down.
+  </p>
+  <ul>
+    <li><strong>Wade carefully, poling ahead:</strong> no roll. Costs ten minutes and the household
+      watches them do it, which is its own kind of pressure.</li>
+    <li><strong>Rush, or cross with a heavy load:</strong> Defy Danger +DEX.
+      <button type="button" class="dice-roll" data-dice="1d4" title="Click to roll 1d4">1d4</button>
+      snapping shut on a limb (grabby) on a 7–9.</li>
+    <li><strong>Go down among them (6−, or anyone panicking, flailing, or dragged):</strong>
+      <button type="button" class="dice-roll" data-dice="1d8" title="Click to roll 1d8">1d8</button>
+      w/ advantage (grabby, messy) and pulled under. Someone else has to get them out.</li>
+  </ul>
+
+  <h3 id="pyped">The Refused <span class="tag danger">Fight</span></h3>
+  <p class="statline">
+    Petitioners who were priced, refused to pay, and wouldn’t leave. They are still out here, in the mud,
+    face-down, well-preserved. Something has been living on them.
+  </p>
+  <div class="gm-line">
+    “There are shapes in the reeds outside the fence-line. Bog-bodies, leather-brown and folded up like
+    sleepers. One of them stands up.”
+  </div>
+  <div class="enemy-block">
+    <div class="enemy-row" data-hp-id="pyped" data-hp-max="16">
+      <div class="enemy-meta">
+        <span class="enemy-name">
+          <a href="../death-and-the-undying.html#pyped" class="wiki-link" data-slug="death-and-the-undying" data-fragment="pyped">Pyped</a>
+        </span>
+        Armor 1 (speed) ·
+        <button type="button" class="dice-roll" data-dice="d8+2" title="Click to roll d8+2">d8+2</button>
+        bone-snapping grip (grabby, forceful) · Instinct to avoid the Last Door
+      </div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+  </div>
+  <p class="statline">
+    Burned by silver (+<button type="button" class="dice-roll" data-dice="1d4" title="Click to roll 1d4">1d4</button>) ·
+    harmed by salt (<button type="button" class="dice-roll" data-dice="1d8" title="Click to roll 1d8">1d8</button>, hand, close) ·
+    foul stench · sustained by marrow · jerky, surprising speed.
+    <strong>It cannot pass the fence line</strong> and it knows it. Kill it and the spirit finds another
+    body out here — there is no shortage — so it is <em>waiting for them when they come out</em>.
+  </p>
+  <ul>
+    <li><strong>Fight it in the open water:</strong> snaplilies are live the whole time. Anyone knocked
+      down rolls the 1d8 above.</li>
+    <li><strong>Run for the fence:</strong> clean escape, no roll — it stops dead at the stakes. The
+      party learns the fence-line rule the useful way, and learns it will be repeated on the way out.</li>
+    <li><strong>Talk to it:</strong> possible and horrible. Its memories are jumbled up with the people
+      whose bones it ate — including petitioners who know things about the Witches, and possibly about
+      Marshedge. It will trade lore for a body to eat.</li>
+  </ul>
+
+  <h3>Searching the bog-bodies <span class="tag">Loot</span></h3>
+  <p class="statline">
+    Grim, slow work in the open, with the snaplilies live and the lanterns watching. Worth every minute —
+    <strong>this is where the party arms itself for the last room without knowing it.</strong>
+  </p>
+  <ul>
+    <li><strong>A bronze knife</strong>, green and perfectly sound, on a body far older than the rest.
+      Bronze is what the <a href="#room-5">thing under the floor</a> has no armor against — seed it here
+      and let them work that out later. If nobody searches, the household mentions the old bronze in the
+      mud, once, in passing.</li>
+    <li><strong>◇ A purse of silvers</strong> (Value 2) nobody ever got to spend — and silver
+      burns the pyped standing over it.</li>
+    <li><strong>Payment in kind:</strong> whatever they meant to offer. A stoppered vial, a sealed letter
+      naming an Old Family, a wedding ring that matches the one in the broth upstairs.</li>
+    <li><strong>◇ Bendis root</strong>, a pouch, still good (Value 1 — <strong>2 outside Marshedge</strong>).
+      Whoever carried it burned it right up to the fence and it did not help.</li>
+  </ul>
+
+  <h3>The house has its back turned <span class="tag">Provocation 1</span></h3>
+  <p>
+    It turns when someone <strong>asks it aloud, politely, saying who they are and what they want</strong>.
+    That is the invocation. Force, climbing, prying, and fire do nothing — the roots step aside from a
+    climber, patiently, for as long as they keep trying. It isn’t a puzzle and it isn’t hostile. Insulting
+    it out loud, though, is <a href="#broken">insulting the hospitality</a>, and the fence is a bad place
+    to be standing when that happens.
+  </p>
+  <p class="statline">
+    <strong>Provocation:</strong> the lantern-bearers are the tithe-children. Some are stooped and old.
+    One is a child. One is a grown woman with the Ferrier nose in a High Town dress thirty years out of
+    fashion and no shoes. They answer questions briefly, say they are not prisoners, and will not leave.
+    A party that came here over a stolen girl is now looking at what Marshedge does on schedule.
+    Trying to free them is <em>threatening the household</em> — the yard goes quiet in a way that says so
+    before anything breaks. Give them the beat to back down in.
+  </p>
+  <div class="dialog-lines">
+    <div class="gm-line">“Seven years I carried this. Then Aoife came, and I put it down. It’s Aoife’s now.”</div>
+    <div class="gm-line">“You’re from the town? <em>(a long look)</em> Is the bridge still there?”</div>
+    <div class="gm-line">“Don’t take anything. Don’t promise anything you’d not say twice.”</div>
+  </div>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>Through the door, once the house has turned → <a href="#room-2">Hearth</a>:</em>
+    “The door is open. Nobody opened it.”
+  </div>
+  <div class="gm-line">
+    <em>Back across the water → out:</em>
+    “The lilies have closed over your own footprints. Whatever you left out there left too, and it
+    is not where you left it.”
+  </div>
+</article>
+
+<article class="room" id="room-2">
+  <h2>2. The Hearth</h2>
+  <span class="tag">Interior</span>
+  <span class="tag danger">Standoff</span>
+  <div class="gm-line">
+    “Inside is bigger than outside, and nobody remarks on it. A long low room, a fire that gives light
+    but no heat you can feel, and three chairs — left, middle, right. There is a place set for each of
+    you. There are exactly as many places as there are of you.”
+  </div>
+  <div class="gm-line">
+    “And one more. Occupied.”
+  </div>
+
+  <h3 id="soothsayer">The other guest <span class="tag danger">Cannot be attacked</span></h3>
+  <p class="statline">
+    A <a href="../ferriers-fen.html#monsters" class="wiki-link" data-slug="ferriers-fen" data-fragment="monsters">suarachan soothsayer</a>
+    is at the table, bright-scaled and oozing, eating politely. It is <strong>a guest</strong>. Attacking
+    or threatening it breaks guest-right exactly as if they had gone for a Witch.
+  </p>
+  <div class="enemy-block">
+    <div class="enemy-row" data-hp-id="soothsayer" data-hp-max="12">
+      <div class="enemy-meta">
+        <span class="enemy-name">Suarachan soothsayer</span>
+        Armor 0 ·
+        <button type="button" class="dice-roll" data-dice="d10" title="Click to roll d10">d10</button>
+        poisonous skin (hand) ·
+        <button type="button" class="dice-roll" data-dice="d4" title="Click to roll d4">d4</button>
+        tongue (reach) · salt burns it · marked by the
+        <a href="../the-things-below.html" class="wiki-link" data-slug="the-things-below">Things Below</a> ·
+        Instinct to mollify the Things Below
+      </div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+  </div>
+  <p>
+    It came to ask the Witches what will quiet the thing dreaming under its chorus-place. It lacks
+    language and communicates by touch and poison-vision. <strong>It knows where the captives are</strong>,
+    because its chorus has them, and it is entirely willing to discuss it — it does not consider itself
+    to be doing anything wrong, and it is not lying.
+  </p>
+  <ul>
+    <li><strong>Talk to it:</strong> requires its touch — its hallucinogenic secretion lets a PC perceive
+      and speak with spirits, and with the soothsayer. When it wears off, <strong>mark a debility</strong>
+      (dazed if available). The information is real and freely given.</li>
+    <li><strong>Bargain with it:</strong> it will trade captives for something that quiets the Things
+      Below. That is a promise with teeth, and the Witches are listening and will happily price it.</li>
+    <li><strong>Attack it at the table:</strong> guest-right broken, and the party has now started a fight
+      in the one house where they cannot win one. See <a href="#broken">If guest-right breaks</a>.</li>
+    <li><strong>Wait for it outside:</strong> legitimate, and the Witches will not object — hospitality
+      ends at the fence. But it did not come alone.</li>
+  </ul>
+  <p class="statline">
+    <strong>Its escort:</strong> three
+    <a href="../ferriers-fen.html#monsters" class="wiki-link" data-slug="ferriers-fen" data-fragment="monsters">suarachan hunters</a>
+    squatting in the reeds outside the fence, with the pyped, waiting. Group, stealthy, cautious,
+    organized, amphibious · Armor 1 (scaly hide) · excellent night vision · salt burns their skin ·
+    Instinct to bring home captives for sacrifice.
+  </p>
+  <div class="enemy-block">
+    <div class="enemy-row" data-hp-id="suarachan-1" data-hp-max="6">
+      <div class="enemy-meta"><span class="enemy-name">Hunter 1</span>
+        <button type="button" class="dice-roll" data-dice="d8" title="Click to roll d8">d8</button> cudgel ·
+        <button type="button" class="dice-roll" data-dice="d6" title="Click to roll d6">d6</button> blowgun (near)</div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="suarachan-2" data-hp-max="6">
+      <div class="enemy-meta"><span class="enemy-name">Hunter 2</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+    <div class="enemy-row" data-hp-id="suarachan-3" data-hp-max="6">
+      <div class="enemy-meta"><span class="enemy-name">Hunter 3</span></div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+  </div>
+
+  <h3>The three <span class="tag">Provocation 2</span></h3>
+  <p class="statline">
+    Always three, never fixed: old, young, middling, and which is which changes when you look away.
+    <strong>Run them by position</strong> — a different voice for left, center, and right, shifting
+    mid-sentence. One entity, three mouths.
+  </p>
+  <div class="enemy-block">
+    <div class="enemy-row" data-hp-id="willow-witches" data-hp-max="16">
+      <div class="enemy-meta">
+        <span class="enemy-name">
+          <a href="../ferriers-fen.html#the-willow-witches" class="wiki-link" data-slug="ferriers-fen" data-fragment="the-willow-witches">The Willow Witches</a>
+        </span>
+        Armor 4, <strong>0 vs
+        <a href="../primordial-powers.html#black-iron" class="wiki-link" data-slug="primordial-powers" data-fragment="black-iron">black iron</a></strong> ·
+        <button type="button" class="dice-roll" data-dice="d10+2" title="Click to roll d10+2">d10+2</button>
+        gnarled hands, w/ disadvantage (hand, forceful, grabby) · impossible to deceive or surprise ·
+        damage divided by three, rounded down
+      </div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+  </div>
+  <p>
+    <strong>Provocation:</strong> the food is served warm and it is <em>wrong</em> — something with too
+    many joints, a broth with a wedding ring in it, bread that is very good until you think about what it
+    smells like. Eating it is no trick and no poison; the Witches are visibly pleased. Declining politely
+    costs nothing. Gagging, sneering, or spitting it out chills them and makes the pricing cagey.
+  </p>
+  <p>
+    They will not be hurried and will not be asked sideways. <strong>Someone has to say the ask out loud,
+    plainly.</strong> Get it in the player’s own words and write it down verbatim — the whole site turns
+    on it.
+  </p>
+  <div class="dialog-lines">
+    <div class="gm-line">“Sit. Eat. You have come a long way to want something.”</div>
+    <div class="gm-line">“Not <em>that</em> way. Ask it the way you’d ask it if you were alone.”</div>
+    <div class="gm-line"><em>(of the soothsayer)</em> “Oh, don’t mind our other guest. It has asked us a better question than yours.”</div>
+    <div class="gm-line"><em>(to anyone from Marshedge)</em> “Your town owes us a child. Not a maidservant. A <em>child</em>. Shall we put that on your bill, or on theirs?”</div>
+  </div>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>Through a doorway that wasn’t in that wall → <a href="#room-4">Tally</a>:</em>
+    “The middle one gets up without finishing her sentence and walks through it. She doesn’t look
+    back to see whether you follow.”
+  </div>
+  <div class="gm-line">
+    <em>Off the hearth, unlocked, nobody says not to → <a href="#room-3">Larder</a>:</em>
+    “A low door, standing open on shelves. The light in there is better than it has any right to be.”
+  </div>
+  <div class="gm-line">
+    <em>Down the hatch → <a href="#room-5">Under the Floor</a>:</em>
+    “There’s a hatch in the floor you’d swear wasn’t there when you sat down.”
+  </div>
+  <div class="gm-line">
+    <em>Back out the door → <a href="#room-1">Dooryard</a>:</em>
+    “The house lets you go. It always does. That was never the part to worry about.”
+  </div>
+</article>
+
+<article class="room" id="room-3">
+  <h2>3. The Larder</h2>
+  <span class="tag">Interior</span>
+  <span class="tag danger">Fight if they steal</span>
+  <span class="tag">Lore</span>
+  <div class="gm-line">
+    “Shelves to the ceiling, everything on them labelled in a hand you can almost read. It isn’t food.
+    A stoppered bottle with something grey turning over in it. A folded shadow, creased like a letter.
+    A child’s tooth on a ribbon. A right eye, wet and interested. A ledger a foot thick.”
+  </div>
+  <p>
+    Every price the Witches have ever taken, kept and labelled and used for nothing. That is the horror:
+    none of it was wanted. It was owed, so it was taken, so it sits on a shelf.
+  </p>
+
+  <h3>What a careful guest learns</h3>
+  <ul>
+    <li><strong>Pricing:</strong> set by what you asked for and what it is worth to you. Never by what the
+      Witches want. They have no use for any of it.</li>
+    <li><strong>The price is fixed:</strong> no crossings-out anywhere in the ledger. Nobody has ever
+      renegotiated. Not once.</li>
+    <li><strong>Sianna Ferrier’s page:</strong> the founding bargain — the secrets of the Fen, priced at a
+      child of her blood <em>or the blood of those she settled with</em>, every seven years, forever.
+      The clause the Council has leaned on for two centuries, in the original wording.</li>
+    <li><strong>The arrears:</strong> the last entry is open. A servant girl’s name, struck through, and
+      beneath it in the same hand: <em>not of the blood. unpaid.</em></li>
+    <li><strong>The blind spot:</strong> one shelf is empty, swept, and the dust doesn’t settle on it.
+      The ledger has no page for it. (<a href="#room-5">Under the Floor</a>.)</li>
+  </ul>
+
+  <h3>What’s on the shelves <span class="tag">Loot — purchasable only</span></h3>
+  <p class="statline">
+    None of this can be taken (see below). All of it can be <strong>asked for</strong>, and an ask is
+    priced like any other ask. Let the party browse; let them want things.
+  </p>
+  <ul>
+    <li><strong>A silvery glass bottle</strong>, warped, shot through with slug-trail streaks that shift
+      while you look — the
+      <a href="../minor-witch-bottle.html" class="wiki-link" data-slug="minor-witch-bottle">Witch Bottle</a>
+      (Minor Arcana 44), paid by a hedge-witch who had nothing else. Unlocking it needs someone who
+      knows its workings to teach you, and <strong>the Witches know</strong> — so the object and the
+      teaching are two separate asks, each with its own price.</li>
+    <li><strong>The grey thing turning over in a bottle:</strong> a man’s memory of his father and the
+      kindness he showed him. Bought back, it goes home to whoever it came from. They will not
+      necessarily thank you.</li>
+    <li><strong>The folded shadow</strong>, creased like a letter. Its owner is still walking around
+      Marshedge without one and has been for years.</li>
+    <li><strong>A right eye, wet and interested</strong>, paid for knowing what old runes said.</li>
+    <li><strong>A jar of teeth on ribbons</strong> — one per tithe. Count them and you get the true
+      number of children given, which does <em>not</em> match the number working the yard.</li>
+    <li><strong>The ledger itself.</strong> Not for sale at any price they will name. Reading it is free.</li>
+  </ul>
+
+  <h3 id="household">Provocation 3 — the household <span class="tag danger">Fight</span></h3>
+  <p class="statline">
+    Nothing is locked, nothing is guarded, nobody came with them. The room is an unlocked test.
+    Take something off a shelf and it is <strong>stealing</strong> the moment it leaves the wood — not
+    when it leaves the house.
+  </p>
+  <div class="gm-line">
+    “The lantern-light in the yard goes out. All of it, at once. Then the doorway fills up with them.”
+  </div>
+  <div class="enemy-block">
+    <div class="enemy-row" data-hp-id="household" data-hp-max="12">
+      <div class="enemy-meta">
+        <span class="enemy-name">The household</span>
+        Group, organized, relentless · Armor 1 ·
+        <button type="button" class="dice-roll" data-dice="d8" title="Click to roll d8">d8</button>
+        lantern-hooks and bare hands (hand, grabby) · Instinct to keep the house whole
+      </div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+  </div>
+  <p class="statline">
+    Moves: take hold and not let go · put it back · block the doorway with bodies · say the thief’s name,
+    which they should not know. They do not shout, do not threaten, and <strong>do not stop</strong>.
+    They will not kill — they restrain, disarm, and eject. Killing them is entirely possible and it is
+    killing the stolen children of Marshedge, in a house full of witnesses who keep accounts.
+  </p>
+  <ul>
+    <li><strong>Put it back:</strong> the lanterns relight. No further consequence. The Witches never
+      mention it, which is how the party knows it counted.</li>
+    <li><strong>Fight through them:</strong> they can be beaten. Every one that goes down is a name in
+      the ledger, and the Witches will read those names aloud at the Tally when the price is set.</li>
+    <li><strong>Ask to buy something instead:</strong> allowed, and interesting — it is an ask like any
+      other and gets priced like one. A father’s memory can be bought back. It will cost about what a
+      father is worth.</li>
+  </ul>
+
+  <h3 id="gwyllgi">The jar <span class="tag danger">Fight — only if opened</span></h3>
+  <p class="statline">
+    High shelf, back corner, iron-banded, sealed with silver wire. Label: <em>paid by Hawtrey, 4th year.
+    do not unstop.</em> A price taken from a necromancer who could not pay in anything else.
+  </p>
+  <div class="enemy-block">
+    <div class="enemy-row" data-hp-id="gwyllgi" data-hp-max="16">
+      <div class="enemy-meta">
+        <span class="enemy-name">
+          <a href="../death-and-the-undying.html#gwyllgi" class="wiki-link" data-slug="death-and-the-undying" data-fragment="gwyllgi">Gwyllgi</a>
+        </span>
+        Armor 4 (resilience), <strong>0 vs silver</strong> ·
+        <button type="button" class="dice-roll" data-dice="d8" title="Click to roll d8">d8</button>
+        claws ·
+        <button type="button" class="dice-roll" data-dice="d8+2" title="Click to roll d8+2">d8+2</button>
+        bite · Instinct to feed on fear and despair
+      </div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+  </div>
+  <p class="statline">
+    A black wolf with blazing red eyes. Hates daylight; must be manifest to feed. Breathes a baleful cloud
+    (<button type="button" class="dice-roll" data-dice="d6" title="Click to roll d6">d6</button>, reach,
+    area, ignores armor) and can lay a <strong>death curse</strong> on someone caught alone.
+    The silver wire on the jar is the only silver in the house and it is right there — a party that thinks
+    fast can cut it free and use it.
+  </p>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>Back to the fire → <a href="#room-2">Hearth</a>:</em>
+    “The low door is where you left it. The chairs are not.”
+  </div>
+</article>
+
+<article class="room" id="room-4">
+  <h2>4. The Tally</h2>
+  <span class="tag">Interior</span>
+  <span class="tag danger">The bargain</span>
+  <div class="gm-line">
+    “A small room with a great weight in it. No loom, no cauldron, nothing witchy — a table, a stool, and
+    a tally-stick as long as a man, notched end to end and worn smooth in the middle where it’s been held.
+    All three are here now, though only one of them walked.”
+  </div>
+  <p class="statline">
+    The site’s social climax. Go slow, let the table go quiet, and roll no dice for any of it.
+  </p>
+
+  <h3>Provocation 4 — the question</h3>
+  <p>
+    Before pricing the ask they ask one back: <strong>the thing that PC would least like said in front of
+    the others</strong>. Never a gotcha and never a secret the player hasn’t established — the Witches
+    only name what is already true and unsaid. Ask it kindly. That’s worse.
+  </p>
+  <ul>
+    <li><strong>Answer honestly:</strong> well-mannered. They will be straight about the cost and may
+      offer a cheaper road.</li>
+    <li><strong>Deflect or lie:</strong> they can’t be deceived and won’t pretend. The silence sits.
+      Cagey pricing.</li>
+    <li><strong>Rage at them for asking:</strong> threatening the Witches. <a href="#broken">Break.</a></li>
+  </ul>
+  <p class="statline">
+    Build it from what the player has already put on the table. If nothing presents itself, ask the
+    <em>player</em> what their character would hate to be asked here and use that.
+  </p>
+
+  <h3 id="price-steps">Setting the price</h3>
+  <ol>
+    <li><strong>What did they actually ask for?</strong> Their words.</li>
+    <li><strong>What is it worth <em>to them</em>?</strong> What it would cost to walk out without it.</li>
+    <li><strong>Pick a shape</strong> of equal weight.</li>
+    <li><strong>State it</strong> — plainly, with an alternative, if they’ve been well-mannered. Cheap,
+      cagey and quietly ruinous if they haven’t.</li>
+  </ol>
+  <ul>
+    <li><strong>A promise</strong>, now or later. Renege and calamity follows.</li>
+    <li><strong>A possession</strong> worth at least as much to them as the ask.</li>
+    <li><strong>Something strange</strong> — chew off your own shadow and let us dispose of it.</li>
+    <li><strong>A bloody sacrifice</strong>: an eye, a hand, a tongue. <em>We are not picky.</em></li>
+    <li><strong>An intangible one</strong>: with the player, change an instinct, swap two stats, lose a move.</li>
+    <li><strong>Something not theirs to give</strong> — a friend’s kind heart. They choose whose.</li>
+  </ul>
+  <p class="statline">
+    Don’t ask for what they’ll never give up; don’t ask for what they won’t miss. It has to be able to go
+    either way. <strong>If they press, threaten, or entice them into changing it — don’t roll.</strong>
+    They will not be budged. Say that out loud so nobody burns a good roll on it.
+  </p>
+  <p class="statline">
+    <strong>A price with legs:</strong> a good option here is <em>fetch the thing we cannot reach</em> —
+    which sends them <a href="#room-5">under the floor</a> and turns the bargain into the dungeon’s
+    last room.
+  </p>
+  <div class="dialog-lines">
+    <div class="gm-line">“You may have it. Here is what it costs. You may also walk out owing nothing, which very few people do.”</div>
+    <div class="gm-line"><em>(well-mannered)</em> “Before you answer — there is a cheaper road. It’s longer and you’ll hate it. Shall we tell you that one instead?”</div>
+    <div class="gm-line"><em>(ill-mannered)</em> “Oh, it’s <em>cheap</em>. Barely anything at all. Take it, take it.”</div>
+    <div class="gm-line">“No. The price is not a door to be pushed on.”</div>
+  </div>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>Back the way the wall opened → <a href="#room-2">Hearth</a>:</em>
+    “The doorway is behind you again, and the fire is exactly as low as it was.”
+  </div>
+  <div class="gm-line">
+    <em>If the price was ‘fetch what we cannot reach’ → <a href="#room-5">Under the Floor</a>:</em>
+    “All three of them look at the floor at once, and none of them says anything, and that is the
+    whole of the instruction.”
+  </div>
+</article>
+
+<article class="room" id="room-5">
+  <h2>5. Under the Floor</h2>
+  <span class="tag">Interior</span>
+  <span class="tag danger">Boss</span>
+  <div class="gm-line">
+    “There’s a hatch in the hearth-room floor you’d swear wasn’t there when you sat down. Cold comes off
+    it — not damp, <em>cold</em>, the clean kind, out of a place with no water in it at all.”
+  </div>
+  <p>
+    Below the roots is a dry stone room that has nothing to do with the Fen. On a plinth at the centre:
+    a <a href="../primordial-powers.html#black-iron" class="wiki-link" data-slug="primordial-powers" data-fragment="black-iron">black iron</a>
+    box. Magic cannot pierce, detect, or perceive what black iron encloses — and this house is nothing
+    but magic. The box casts a <strong>blind spot</strong> across the cellar, and the being upstairs, which
+    is impossible to deceive or surprise, has never once seen inside it.
+  </p>
+
+  <h3 id="blindspot">What lives in the blind spot <span class="tag danger">Boss</span></h3>
+  <div class="gm-line">
+    “Something comes off the ceiling. Frog-bodied and seven feet of it, no legs at all, a whipping tail
+    behind and a twenty-foot span of bat-wing above — and the three voices upstairs go on talking,
+    pleasantly, about the weather, because they cannot hear this happening.”
+  </div>
+  <div class="enemy-block">
+    <div class="enemy-row" data-hp-id="llamudwr" data-hp-max="16">
+      <div class="enemy-meta">
+        <span class="enemy-name">
+          <a href="../green-lords.html#llamudwr" class="wiki-link" data-slug="green-lords" data-fragment="llamudwr">Llamudwr</a>
+        </span>
+        Armor 4 (resilience), <strong>0 vs bronze</strong> ·
+        <button type="button" class="dice-roll" data-dice="d10+1" title="Click to roll d10+1">d10+1</button>
+        stinging tail (reach) ·
+        <button type="button" class="dice-roll" data-dice="d10+1" title="Click to roll d10+1">d10+1</button>
+        bite (hand, grabby, messy, 1 piercing) · clumsy when grounded · Instinct to fill its belly and
+        retreat beneath the water
+      </div>
+      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
+    </div>
+  </div>
+  <p class="statline">
+    A Green Lord construct that crawled into the one place in the world an all-wise thing cannot look, and
+    has been eating the household one at a time ever since. <strong>That is why the yard is short-handed
+    and nobody has noticed.</strong> It hunts from the ceiling, stings first, and swallows whole.
+  </p>
+
+  <h3>Winning</h3>
+  <p class="statline">Two ways, and the second is better.</p>
+  <ul>
+    <li><strong>Kill it in the dark.</strong> Armor 4 is brutal — <strong>bronze cuts it to 0</strong>, and
+      it’s clumsy on the ground, so anything that grounds or pins it changes the fight completely.
+      Nobody upstairs will come. Nobody upstairs <em>can</em>.</li>
+    <li><strong>Get it seen.</strong> Drag, lure, or drive it off the blind spot — up the hatch, or move
+      the box. The instant it leaves the dead zone the Witches perceive it, and it is over immediately and
+      without ceremony: three old women look at it and it stops being. <strong>They will be furious</strong>
+      — not at the party, at themselves — and a thing that keeps accounts now has one running the wrong way.</li>
+  </ul>
+  <div class="dialog-lines">
+    <div class="gm-line"><em>(after)</em> “How long. <em>How long.</em> In our own floor.”</div>
+    <div class="gm-line">“We do not owe. We are not owed. This is… <em>(all three at once)</em> …new.”</div>
+  </div>
+  <p class="statline">
+    <strong>Payoff:</strong> a debt owed <em>by</em> the Willow Witches — the rarest currency in the Fen.
+    One ask, honestly priced at nothing. Whatever the party came for, they can now have. It does not
+    clear Marshedge’s arrears; the account is theirs, not the town’s, and the Witches are very clear
+    about the difference.
+  </p>
+
+  <h3>What it swallowed <span class="tag">Loot</span></h3>
+  <p class="statline">
+    It swallows whole and it has been feeding for a long time. Cutting it open is the only
+    unambiguously <em>free</em> treasure in the house — none of it is on the ledger, because the house
+    never knew any of it existed.
+  </p>
+  <ul>
+    <li><strong>Lantern-hooks and bronze lantern-fittings</strong>, a dozen of them, from the household
+      it has eaten. Value 1 as metal. Worth far more handed back to the yard.</li>
+    <li><strong>A Green Lord relic</strong> of its own making — it is a
+      <a href="../green-lords.html" class="wiki-link" data-slug="green-lords">Green Lord</a> construct
+      and something in it was <em>built</em>. A seed-pod of worked bronze that still ticks, a length of
+      grown-not-forged chain, a lens of amber with a live thing in it. Your call; a Value 2–3 curiosity,
+      or the hook for a later arcanum.</li>
+    <li><strong>A fen-walker’s kit</strong>, twenty years old, with a Marshedge charter-token in it.
+      Somebody was sent down here once, and did not come back up, and was never recorded as missing.</li>
+  </ul>
+
+  <h3>The box itself</h3>
+  <ul>
+    <li><strong>The black iron box</strong> is itself the prize: a metal that is utterly immune to magic,
+      that Fae take +<button type="button" class="dice-roll" data-dice="1d6" title="Click to roll 1d6">1d6</button>
+      (messy, ignores armor) from, that spirits cannot touch or perceive, and that no spell can pierce or
+      detect. There is nothing else like it within four days of Stonetop.</li>
+    <li><strong>Look at the rest of the being:</strong> what is <em>not</em> three women is also down here,
+      and it does not move. Looking at it is looking at the whole shape of what things cost, including
+      yours. No damage — mark a debility (shaken, or closest available) and give the player one true
+      thing about their future they now can’t stop thinking about.</li>
+    <li><strong>Take the box:</strong> not theft — the ledger has no page for it, so nothing was taken.
+      The Witches cannot know, cannot ask, and cannot get it back. Decide what’s inside before anyone
+      opens it, and only hand this over if you want a campaign about it.</li>
+  </ul>
+  <h3>Exits</h3>
+  <div class="gm-line">
+    <em>Up the hatch → <a href="#room-2">Hearth</a>:</em>
+    “The fire has burned down while you were under it. Nobody has moved. Somebody asks, kindly,
+    whether you found the cellar cold.”
+  </div>
+</article>
+
+<section id="broken">
+  <h2>If guest-right breaks</h2>
+  <p class="statline">
+    Violence, threats, theft, or a real insult — against the Witches <em>or the other guest</em>. Say
+    plainly that it has broken, and that the room has changed, before anyone rolls.
+  </p>
+  <div class="gm-line">
+    “The fire goes out. Not dies down — <em>out</em>, and the light stays. All three are standing, and
+    they were sitting, and the doorway you came in by is a wall.”
+  </div>
+  <p>They don’t rush to kill. The old ways say a guest who breaks faith is <em>dealt with</em>. In order:</p>
+  <ol>
+    <li><strong>Twist their perceptions</strong> — the offender can’t find the door, their friends, or their own hands.</li>
+    <li><strong>Take the debt in kind</strong> — the folded shadow in your pack is now the shadow you don’t have.</li>
+    <li><strong>Turn someone into a swamp creature.</strong> Not a threat, an outcome. Reversible at a price, set the usual way.</li>
+    <li><strong>Vanish, be elsewhere</strong> — the whole house with them, leaving the party in a foot of black water with no guide, no bargain, and the pyped and the suarachan still out there.</li>
+    <li><strong>Gnarled hands</strong>, last and reluctantly.</li>
+  </ol>
+  <p class="statline">
+    If they truly commit: HP 16 <strong>shared</strong>, damage divided by three and rounded down (a
+    <button type="button" class="dice-roll" data-dice="d10" title="Click to roll d10">d10</button>
+    rolling 8 does 2), Armor 4 against everything but black iron. Nobody brings black iron to a swamp —
+    that is the point. This is a fight the party should be able to <em>see</em> is unwinnable and choose
+    not to have.
+  </p>
+</section>
+
+<section id="leaving">
+  <h2>Getting out</h2>
+  <ul>
+    <li><strong>The house always lets a guest go</strong>, paid or unpaid. Everything else out there does not.</li>
+    <li><strong>The exit fight.</strong> Whatever they ducked on the way in is waiting at the fence-line:
+      the pyped (in a new body if they killed the old one), the suarachan escort if they crossed the
+      soothsayer, and the snaplilies for anyone who goes down. Run it as one running fight across thirty
+      yards of water with the lanterns watching.</li>
+    <li><strong>The fen-troll is at the fence</strong> whether or not it was asked to be — a rescue, a
+      toll, or a problem, depending entirely on how they treated it.</li>
+    <li><strong>No coming back.</strong> Never twice in the same place. A second visit is a second troll,
+      a second toll, a second trip — which makes “ask for time to pay” a far bigger favor than it sounds.</li>
+    <li><strong>Open accounts follow people home.</strong> Nothing enforces them and nothing needs to:
+      <em>renege, and calamity follows.</em></li>
+    <li><strong>Marshedge is still short a child</strong>, and now the party knows the wording of the
+      clause and which families have been reading it their way. What they do with that in town is worth
+      more than anything on the shelves.</li>
+  </ul>
+</section>
+
+<footer class="site-credit">
+  Prep sheet · not yet run at the table
+</footer>
+
+  </div><!-- .site-main -->
+
+  <aside class="site-map" id="map" aria-label="Site map">
+    <h2>Map</h2>
+    <div class="site-map-wrap">
+      <svg class="site-map-svg" viewBox="0 0 420 500" role="img" aria-label="Kneeroot site map">
+        <title>Kneeroot</title>
+
+        <!-- Fence line: guest-right begins and ends here -->
+        <path class="map-fence" d="M 30 128 L 390 128" />
+        <text x="376" y="121" class="map-note" text-anchor="end">fence-line</text>
+
+        <!-- Edges (under nodes) -->
+        <line class="map-edge" x1="210" y1="72" x2="210" y2="160" />   <!-- water → hearth -->
+        <line class="map-edge" x1="180" y1="198" x2="105" y2="280" />  <!-- hearth → larder -->
+        <line class="map-edge" x1="240" y1="198" x2="315" y2="280" />  <!-- hearth → tally -->
+        <line class="map-edge map-edge-tight" x1="210" y1="198" x2="210" y2="400" /> <!-- hatch -->
+        <text x="228" y="308" class="map-note" text-anchor="start">hatch</text>
+
+        <!-- 1 Dooryard -->
+        <a href="#room-1">
+          <rect class="map-node map-node-out" x="150" y="34" width="120" height="38" rx="6" />
+          <text class="map-label" x="210" y="58">1 · Dooryard</text>
+        </a>
+        <text x="210" y="22" class="map-note">water · snaplilies · the Refused</text>
+
+        <!-- 2 Hearth -->
+        <a href="#room-2">
+          <rect class="map-node" x="150" y="160" width="120" height="38" rx="6" />
+          <text class="map-label" x="210" y="184">2 · Hearth</text>
+        </a>
+        <text x="210" y="216" class="map-note">the other guest</text>
+
+        <!-- 3 Larder -->
+        <a href="#room-3">
+          <rect class="map-node" x="45" y="280" width="120" height="38" rx="6" />
+          <text class="map-label" x="105" y="304">3 · Larder</text>
+        </a>
+
+        <!-- 4 Tally -->
+        <a href="#room-4">
+          <rect class="map-node" x="255" y="280" width="120" height="38" rx="6" />
+          <text class="map-label" x="315" y="304">4 · Tally</text>
+        </a>
+
+        <!-- 5 Under the Floor -->
+        <a href="#room-5">
+          <rect class="map-node map-node-danger" x="150" y="400" width="120" height="38" rx="6" />
+          <text class="map-label" x="210" y="424">5 · Under the Floor</text>
+        </a>
+        <text x="210" y="456" class="map-note">blind spot · no help comes</text>
+      </svg>
+    </div>
+    <p class="statline">Guest-right holds inside the fence-line (2–5). The water and the reeds outside it are bound by nothing.</p>
+  </aside>
+</div><!-- .site-layout -->
+
+<div id="wiki-preview" class="wiki-preview" hidden></div>
+<div id="dice-toast" class="dice-toast" hidden></div>
+<script src="../js/wiki.js"></script>
+<script src="site.js"></script>
+</body>
+</html>
