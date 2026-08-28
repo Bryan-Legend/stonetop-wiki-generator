@@ -2866,7 +2866,7 @@ main.content > h1.page-title:first-child {
 .sidebar-tools {
   display: flex;
   align-items: center;
-  gap: .35rem;
+  gap: 0;
   margin-top: .55rem;
 }
 
@@ -3134,3 +3134,227 @@ main.content > h1.page-title:first-child {
   vertical-align: middle;
 }
 .tag.danger { color: var(--danger); border-color: #5a3028; }
+
+/* ---- Language switcher (sidebar footer) ------------------------------
+   Real links, always in the DOM: a crawler arrives with Accept-Language: en
+   from a US address, so the site never picks a language for the reader —
+   they pick, and the switcher is what they pick from. Collapsed by default
+   because twenty-one endonyms would otherwise own the footer. */
+.lang-switch {
+  margin-bottom: 0.55rem;
+  font-size: 0.72rem;
+  line-height: 1.45;
+}
+.lang-switch > summary {
+  display: flex;
+  align-items: baseline;
+  gap: 0.4rem;
+  cursor: pointer;
+  color: var(--muted);
+  list-style: none;
+  padding: 0.15rem 0;
+}
+.lang-switch > summary::-webkit-details-marker { display: none; }
+.lang-switch > summary:hover { color: var(--head); }
+.lang-globe { font-size: 0.85em; }
+.lang-switch .lang-now {
+  color: var(--head);
+  margin-left: auto;
+}
+.lang-switch[open] > summary .lang-now { opacity: 0.6; }
+.lang-list {
+  list-style: none;
+  margin: 0.35rem 0 0;
+  padding: 0.35rem 0 0 1.15rem;
+  border-top: 1px solid var(--rule);
+  max-height: 15rem;
+  overflow-y: auto;
+  columns: 2;
+  column-gap: 0.75rem;
+}
+.lang-list li {
+  margin: 0 0 0.22rem;
+  break-inside: avoid;
+}
+.lang-list a {
+  color: var(--muted);
+  text-decoration: none;
+}
+.lang-list a:hover { color: var(--link-hover); }
+.lang-current {
+  color: var(--head);
+  font-weight: 600;
+}
+
+/* In the tools row (where wiki.js moves it) it is an icon, not a field: globe
+   plus the current language's code, with the list dropping over the topic nav
+   rather than pushing it down. The label stays in the DOM as the control's
+   accessible name — the glyph alone says nothing to a screen reader. */
+.sidebar-tools .lang-switch {
+  flex: 0 0 auto;
+  position: relative;
+  margin-bottom: 0;
+}
+.sidebar-tools .lang-switch > summary {
+  gap: .25rem;
+  padding: .25rem .4rem;
+  line-height: 1;
+  border: 1px solid transparent;
+  border-radius: var(--radius);
+}
+.sidebar-tools .lang-switch > summary:hover,
+.sidebar-tools .lang-switch[open] > summary {
+  color: var(--head);
+  border-color: var(--rule);
+}
+.sidebar-tools .lang-switch .lang-code {
+  font-size: .68rem;
+  letter-spacing: .04em;
+}
+.sidebar-tools .lang-switch .lang-label,
+.sidebar-tools .lang-switch .lang-now {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+/* Lifted onto the body by wiki.js and fixed to the viewport: the sidebar
+   scrolls, so a list positioned inside it is clipped at the sidebar's edge.
+   left/top are set there, measured off the summary and clamped on screen. */
+.lang-list.lang-list-float {
+  position: fixed;
+  z-index: 60;
+  left: 1rem;
+  top: 4rem;
+  width: min(19rem, calc(100vw - 2rem));
+  max-height: min(22rem, calc(100vh - 6rem));
+  margin: 0;
+  padding: .6rem .7rem;
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-panel);
+  background: var(--panel);
+  background-image: var(--card-wash);
+  box-shadow: var(--shadow-panel);
+  font-family: var(--font-sans);
+  font-size: .74rem;
+}
+.lang-list.lang-list-float[hidden] { display: none; }
+
+/* A sidebar entry whose page has no translation in this language yet: the
+   reader follows it up to the English page, and the type says so before
+   they click rather than after. */
+.nav-en { opacity: 0.72; }
+.nav-en::after {
+  content: "EN";
+  font-size: 0.62em;
+  letter-spacing: 0.06em;
+  margin-left: 0.35em;
+  vertical-align: 0.15em;
+  color: var(--muted);
+}
+
+
+/* ---- Feedback (page foot) -----------------------------------------------
+   A link under every article, built by wiki.js, and the small form it opens:
+   what to change, an optional reply address, and — unseen — which page. */
+.page-feedback {
+  margin-top: 2rem;
+  padding-top: .6rem;
+  border-top: 1px solid var(--rule);
+  font-family: var(--font-sans);
+  font-size: .78rem;
+  color: var(--muted);
+  break-inside: avoid;
+}
+.page-feedback-link {
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 1px dotted var(--rule);
+}
+.page-feedback-link:hover {
+  color: var(--head);
+  border-bottom-color: var(--answer);
+}
+
+.feedback-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 950;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, .55);
+}
+.feedback-overlay[hidden] { display: none; }
+
+.feedback-panel {
+  position: relative;
+  width: min(26rem, 100%);
+  margin: 0;
+  padding: 1rem 1.05rem 1.05rem;
+  font-family: var(--font-sans);
+  font-size: .78rem;
+  line-height: 1.45;
+  color: var(--muted);
+  background: var(--panel);
+  background-image: var(--card-wash);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-panel);
+}
+.feedback-close {
+  position: absolute;
+  top: .4rem;
+  right: .5rem;
+  padding: .1rem .4rem;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: var(--muted);
+  background: none;
+  border: 0;
+  cursor: pointer;
+}
+.feedback-close:hover { color: var(--head); }
+.feedback-page {
+  margin: -.3rem 0 .7rem;
+  font-size: .72rem;
+}
+.feedback-page-title {
+  font-style: italic;
+  color: var(--head);
+}
+.feedback-panel .sync-field textarea {
+  width: 100%;
+  padding: .4rem .45rem;
+  font-family: inherit;
+  font-size: .8rem;
+  line-height: 1.4;
+  color: var(--link-hover);
+  background: var(--bg);
+  border: 1px solid var(--rule);
+  border-radius: var(--radius);
+  resize: vertical;
+}
+.feedback-panel .sync-field textarea:focus {
+  outline: none;
+  border-color: var(--answer);
+}
+.feedback-honey {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+}
+.feedback-actions {
+  display: flex;
+  gap: .5rem;
+  margin-top: .3rem;
+}
+.feedback-actions .sync-action { width: auto; flex: 1 1 auto; margin-top: 0; }
+.feedback-status { min-height: 1em; margin-bottom: 0; }

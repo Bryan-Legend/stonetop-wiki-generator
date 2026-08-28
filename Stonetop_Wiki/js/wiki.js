@@ -1468,6 +1468,75 @@
       return foot ? { parent: foot, before: null } : null;
     }
 
+    /* The language list drops out of the sidebar and onto the body, the way
+       the campaign panel does and for the same reason: the sidebar scrolls
+       (overflow: auto), so anything positioned inside it is clipped at its
+       edge — and the list is wider than the sidebar besides. On mobile the
+       sidebar is transformed, which would make it the containing block for a
+       fixed child and bring the clipping straight back, so the body is the
+       only place this works in both layouts.
+
+       <details> keeps the state and the keyboard behaviour; once its list is
+       elsewhere in the DOM the element can no longer show and hide it, so
+       that is done here off the toggle event. */
+    function floatLangMenu(details) {
+      var summary = details.querySelector("summary");
+      var list = details.querySelector(".lang-list");
+      if (!summary || !list) return;
+      list.id = list.id || "lang-list";
+      list.classList.add("lang-list-float");
+      list.hidden = true;
+      document.body.appendChild(list);
+      summary.setAttribute("aria-controls", list.id);
+      // A click inside must not count as a click outside.
+      list.addEventListener("click", function (e) {
+        e.stopPropagation();
+      });
+
+      // Measured after it is shown, so its real height is known, and clamped
+      // into the viewport so a short window keeps all of it on screen.
+      function place() {
+        var r = summary.getBoundingClientRect();
+        var w = list.offsetWidth;
+        var h = list.offsetHeight;
+        var left = Math.min(Math.max(8, r.left), window.innerWidth - w - 8);
+        var top = Math.min(r.bottom + 6, window.innerHeight - h - 8);
+        list.style.left = Math.max(8, left) + "px";
+        list.style.top = Math.max(8, top) + "px";
+      }
+
+      function sync() {
+        if (!details.open) {
+          list.hidden = true;
+          return;
+        }
+        list.hidden = false;
+        place();
+      }
+
+      details.addEventListener("toggle", sync);
+      window.addEventListener("resize", function () {
+        if (details.open) place();
+      });
+      window.addEventListener(
+        "scroll",
+        function () {
+          if (details.open) place();
+        },
+        true
+      );
+      document.addEventListener("click", function (e) {
+        if (details.open && !details.contains(e.target)) details.open = false;
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && details.open) {
+          details.open = false;
+          summary.focus();
+        }
+      });
+      sync();
+    }
+
     var host = toolsHost();
     if (!host) return;
 
@@ -1491,6 +1560,16 @@
        footer, is picked up and moved again rather than leaving two of them. */
     var sound = document.getElementById("sound-toggle");
     if (sound) tools.appendChild(sound);
+
+    /* The language switcher rides up with it, for the same reasons and by the
+       same means: generated into the footer, moved here, so a rebuild is
+       picked up rather than leaving two. Only pages that have a translation
+       carry one. */
+    var langs = document.querySelector(".sidebar-foot .lang-switch");
+    if (langs) {
+      tools.appendChild(langs);
+      floatLangMenu(langs);
+    }
 
     var panel = null;
 
@@ -4054,6 +4133,169 @@
 
     window.bindHpTrackers = bindStatBlocks;
     bindStatBlocks(document, slug);
+  })();
+
+  /* ---------- Feedback: a link at the foot of every page ------------------
+   *
+   * "Send feedback" under the article opens a small form that mails the GM
+   * through FormSubmit.co. The page's published address (og:url, else the
+   * address bar) rides along as a hidden field, so a note about a mangled
+   * table says which table without the reader having to. Runtime-only: it is
+   * built here so it reaches book pages, arcana cards and site sheets alike,
+   * and no rebuild can clobber it. Posts go to the AJAX endpoint (JSON back,
+   * page stays put). Off a disk nothing can be sent — see below.
+   * --------------------------------------------------------------------- */
+  (function () {
+    var ALIAS = "92a6f91f6240f66ca4a4813fd4169213";
+    var ENDPOINT = "https://formsubmit.co/" + ALIAS;
+    var AJAX = "https://formsubmit.co/ajax/" + ALIAS;
+
+    var body = document.body;
+    if (!body) return;
+    var host =
+      document.querySelector("main.content") ||
+      document.querySelector(".site-main") ||
+      (body.classList.contains("site-sheet") ? body : null);
+    if (!host || document.querySelector(".page-feedback")) return;
+
+    var pageUrl = (function () {
+      var og = document.querySelector('meta[property="og:url"]');
+      var stated = og ? og.getAttribute("content") || "" : "";
+      return stated || String(location.href).split("#")[0];
+    })();
+    var pageTitle = (document.title || "").trim();
+
+    var foot = document.createElement("footer");
+    foot.className = "page-feedback";
+    var link = document.createElement("a");
+    link.href = "#feedback";
+    link.className = "page-feedback-link";
+    link.textContent = "Send feedback about this page";
+    foot.appendChild(link);
+    host.appendChild(foot);
+
+    var overlay = null;
+    var form, msg, status, send;
+
+    function esc(t) {
+      return String(t).replace(/[&<>"]/g, function (c) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+      });
+    }
+
+    function build() {
+      if (overlay) return;
+      overlay = document.createElement("div");
+      overlay.className = "feedback-overlay";
+      overlay.hidden = true;
+      overlay.innerHTML =
+        '<form class="feedback-panel" method="POST" action="' + ENDPOINT + '" role="dialog" aria-modal="true" aria-labelledby="feedback-head">' +
+        '<button type="button" class="feedback-close" aria-label="Close">×</button>' +
+        '<h2 class="sync-head" id="feedback-head">Send feedback</h2>' +
+        '<p class="feedback-page">About <span class="feedback-page-title">' + esc(pageTitle || pageUrl) + "</span></p>" +
+        '<input type="hidden" name="Page" value="' + esc(pageUrl) + '">' +
+        '<input type="hidden" name="Title" value="' + esc(pageTitle) + '">' +
+        '<input type="hidden" name="_subject" value="Stonetop Wiki feedback: ' + esc(pageTitle || pageUrl) + '">' +
+        '<input type="hidden" name="_template" value="table">' +
+        '<input type="hidden" name="_captcha" value="false">' +
+        '<input type="hidden" name="_next" value="' + esc(pageUrl) + '">' +
+        '<input type="text" name="_honey" class="feedback-honey" tabindex="-1" autocomplete="off">' +
+        '<label class="sync-field"><span>What should change?</span>' +
+        '<textarea name="Feedback" rows="6" required placeholder="A wrong number, a missing move, a table that came out mangled…"></textarea></label>' +
+        '<label class="sync-field"><span>Email (optional, for a reply)</span>' +
+        '<input type="email" name="email" autocomplete="email"></label>' +
+        '<div class="feedback-actions">' +
+        '<button type="submit" class="sync-action is-primary">Send</button>' +
+        '<button type="button" class="sync-action is-quiet feedback-cancel">Cancel</button>' +
+        "</div>" +
+        '<p class="sync-note feedback-status" aria-live="polite"></p>' +
+        "</form>";
+      body.appendChild(overlay);
+      form = overlay.querySelector("form");
+      msg = form.querySelector("textarea");
+      status = form.querySelector(".feedback-status");
+      send = form.querySelector('button[type="submit"]');
+
+      overlay.addEventListener("click", function (e) {
+        if (e.target === overlay) close();
+      });
+      overlay.querySelector(".feedback-close").addEventListener("click", close);
+      overlay.querySelector(".feedback-cancel").addEventListener("click", close);
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && !overlay.hidden) close();
+      });
+      form.addEventListener("submit", onSubmit);
+    }
+
+    function open() {
+      build();
+      status.textContent = "";
+      overlay.hidden = false;
+      setTimeout(function () {
+        msg.focus();
+      }, 0);
+    }
+
+    function close() {
+      if (overlay) overlay.hidden = true;
+    }
+
+    function onSubmit(e) {
+      if (!window.fetch || !window.FormData) return; // plain post; the page reloads
+      e.preventDefault();
+      var data = {};
+      new FormData(form).forEach(function (v, k) {
+        if (k !== "_next") data[k] = v;
+      });
+      send.disabled = true;
+      status.textContent = "Sending…";
+      fetch(AJAX, {
+        method: "POST",
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify(data),
+      })
+        .then(function (r) {
+          return r.json();
+        })
+        .then(function (res) {
+          // FormSubmit answers 200 with success:"false" for a refused post.
+          if (String(res && res.success) !== "true") throw new Error((res && res.message) || "refused");
+          send.disabled = false;
+          msg.value = "";
+          close();
+          showToast("Feedback sent — thank you.", 3200);
+        })
+        .catch(function (err) {
+          send.disabled = false;
+          status.textContent = "Couldn’t send (" + (err && err.message ? err.message : "network error") + "). Try again, or email Bryan directly.";
+        });
+    }
+
+    /* FormSubmit attributes a post by its referring site and refuses one
+       from a page browsed as a file — there is no site to attribute it to.
+       Off a disk, then, the link goes to the published copy of this same
+       page with #feedback, which opens the form there on arrival. */
+    var offDisk = location.protocol === "file:" || !/^https?:/.test(pageUrl);
+    if (offDisk && /^https?:/.test(pageUrl)) {
+      link.href = pageUrl + "#feedback";
+      link.target = "_blank";
+      link.rel = "noopener";
+      link.title = "Opens the published page — feedback can't be sent from a page opened off a disk";
+      return;
+    }
+    if (offDisk) {
+      foot.remove();
+      return;
+    }
+
+    link.addEventListener("click", function (e) {
+      e.preventDefault();
+      open();
+    });
+    if (location.hash === "#feedback") {
+      if (history.replaceState) history.replaceState(null, "", location.pathname + location.search);
+      open();
+    }
   })();
 
   // Prefetch previews
