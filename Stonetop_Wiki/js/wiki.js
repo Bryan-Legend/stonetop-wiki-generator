@@ -3747,10 +3747,15 @@
         if (!line) return;
         /* "HP 14; Armor 4 (resilience) · Damage …" — the number sits in the
            leading text node, ahead of the dice buttons, so only that node is
-           touched and every listener already bound in the line survives. */
+           touched and every listener already bound in the line survives.
+           Most blocks put a semicolon after the number and a handful a comma,
+           so the separator goes with it — left behind, it opened the line on
+           its own punctuation.
+           "HP 0 of 6" is not this pattern at all: that is a site sheet's own
+           current-of-max, which has a real tracker of its own already. */
         var first = line.firstChild;
         if (!first || first.nodeType !== 3) return;
-        var m = first.nodeValue.match(/^\s*HP\s+(\d+)\s*;?\s*/i);
+        var m = first.nodeValue.match(/^\s*HP\s+(\d+)(?!\s*of)\s*[;,]?\s*/i);
         if (!m) return;
         var max = parseInt(m[1], 10);
         if (!(max > 0) || max > 200) return;
