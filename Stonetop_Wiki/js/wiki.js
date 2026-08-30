@@ -3615,6 +3615,17 @@
       saveField(input.getAttribute("data-field-key"), input.value);
     }
 
+    /* A textarea grows to hold what is in it — a one-line box on the sheet
+       opens out as the list gets long, and comes up the right size when the
+       text arrives from the store; the corner resizer is off (Chrome cannot
+       drag it inside a multicol layout), so this is how a box gets taller. */
+    function fit(el) {
+      if (!el || el.tagName !== "TEXTAREA") return;
+      el.style.height = "auto";
+      var h = el.scrollHeight;
+      if (h > 0) el.style.height = h + 2 + "px";
+    }
+
     var fields = document.querySelectorAll(
       "input.wiki-field[data-field-key], textarea.wiki-field[data-field-key]"
     );
@@ -3627,10 +3638,12 @@
         if (typeof saved[key] === "string") input.value = saved[key];
         if (!input.value) input.value = fallback(input);
         if (spin) normalize(input, false);
+        fit(input);
 
         input.addEventListener("input", function () {
           /* Save what is being typed; settle it when the box is left. */
           saveField(key, input.value);
+          fit(input);
         });
         input.addEventListener("blur", function () {
           if (spin) normalize(input, true);
@@ -3777,6 +3790,7 @@
               ? saved[key]
               : fallback(input);
           if (input.hasAttribute("data-spin-min")) normalize(input, false);
+          fit(input);
         });
       });
     }

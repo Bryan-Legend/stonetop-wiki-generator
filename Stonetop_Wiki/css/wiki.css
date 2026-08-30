@@ -820,7 +820,8 @@ h3 .book-icon,
   border-collapse: collapse;
   margin: 0.35rem 0;
   font-size: var(--text);
-  break-inside: avoid;
+  /* may span columns: a tall block that refuses to break leaves the column before it empty */
+  break-inside: auto;
 }
 .content th, .content td {
   border: 1px solid var(--rule);
@@ -838,7 +839,8 @@ h3 .book-icon,
 
 /* Trade / value tables */
 .value-table {
-  break-inside: avoid;
+  /* may span columns: a tall block that refuses to break leaves the column before it empty */
+  break-inside: auto;
   margin: 0.45rem 0 0.65rem;
   background: var(--panel);
   background-image: var(--card-wash);
@@ -966,7 +968,8 @@ h3 .book-icon,
 
 /* Roll tables */
 .roll-table {
-  break-inside: avoid;
+  /* may span columns: a tall block that refuses to break leaves the column before it empty */
+  break-inside: auto;
   margin: 0.45rem 0 0.65rem;
   background: var(--panel);
   background-image: var(--card-wash);
@@ -1183,8 +1186,13 @@ body:has(.index-grid) .content {
  * left to page through — read it top-to-bottom instead. The maps strip and
  * the index keep their own layouts (both are more specific than these).
  */
+/* The steading playbook is tables of boxes and textareas, not prose, so it
+   takes its own column measure. The JS measure reads column-width, so it
+   follows. (The other sheets read better at the ordinary measure.) */
+.content:has([data-sheet="steading"]) { --col-w: 420px; }
+.content:has([data-sheet="steading"]) textarea.wiki-field { min-height: 0; height: auto; }
 @media (max-width: 700px) {
-  .content { --col-w: min(360px, calc(100vw - 2rem)); }
+  .content, .content:has([data-sheet="steading"]) { --col-w: min(360px, calc(100vw - 2rem)); }
   .content-scroll {
     overflow-x: hidden;
     overflow-y: auto;
@@ -2463,7 +2471,6 @@ li.check-item input.wiki-check:checked + span {
    to mark a passing aside. */
 .wiki-field {
   font: inherit;
-  font-family: var(--font-serif);
   font-style: normal;
   letter-spacing: var(--track-display);
   color: var(--answer);
@@ -3378,7 +3385,8 @@ main.content > h1.page-title:first-child {
   border-left: 3px solid var(--accent);
   border-radius: var(--radius-panel);
   box-shadow: var(--shadow-panel);
-  break-inside: avoid;
+  /* may span columns: a tall block that refuses to break leaves the column before it empty */
+  break-inside: auto;
 }
 .follower-sheet > h2 { margin-top: 0; }
 .follower-sheet > h3 { margin-top: .7rem; }
@@ -3406,7 +3414,7 @@ ul.fs-inventory li { margin: .12rem 0; }
 .fs-uses { display: flex; flex-wrap: wrap; gap: .2rem .6rem; margin: .2rem 0 .4rem; }
 .fs-uses .arcana-track { margin: 0; }
 .fs-notes { flex-direction: column; align-items: stretch; }
-textarea.wiki-field { width: 100%; min-height: 4.5rem; resize: vertical; display: block; line-height: 1.35; }
+textarea.wiki-field { width: 100%; min-height: 4.5rem; resize: none; display: block; line-height: 1.35; overflow-y: hidden; box-sizing: border-box; }
 .fs-people { display: grid; grid-template-columns: 1fr; gap: .4rem; margin: .3rem 0 .5rem; }
 .fs-person {
   padding: .3rem .45rem;
@@ -3442,11 +3450,36 @@ ul.fs-places .wiki-field { flex: 1; }
   display: inline-flex; align-items: center; justify-content: center;
 }
 @media (max-width: 640px) { .fs-stats-6 { grid-template-columns: repeat(3, 1fr); } }
-.fs-table-wrap { overflow-x: auto; margin: .3rem 0 .6rem; }
+/* Not a scroll container: Chrome treats one as a single unbreakable box, which
+   shoved the 30-row Residents table into a fresh column and left the one before
+   it empty. The inputs shrink to fit the measure instead. */
+.fs-table-wrap { overflow: visible; margin: .3rem 0 .6rem; break-inside: auto; }
+table.fs-table { table-layout: fixed; break-inside: auto; }
 table.fs-table { width: 100%; border-collapse: collapse; font-size: .92em; }
-table.fs-table th { text-align: left; font-variant: small-caps; letter-spacing: .04em; color: var(--head); font-weight: 600; padding: .1rem .3rem .2rem; border-bottom: 1px solid rgba(var(--head-rgb), .35); }
+table.fs-table th { text-align: left; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; font-variant: small-caps; letter-spacing: .04em; color: var(--head); font-weight: 600; padding: .1rem .3rem .2rem; border-bottom: 1px solid rgba(var(--head-rgb), .35); }
 table.fs-table td { padding: .12rem .2rem; border-bottom: 1px solid rgba(var(--head-rgb), .12); }
 table.fs-table td .wiki-field { width: 100%; box-sizing: border-box; }
-table.fs-table td:last-child { width: 42%; }
+/* Column widths: with table-layout fixed they come off the header row, so
+   they are set on the <th>s. Traits gets the most room; Home and Occupation
+   the least. */
+table.fs-table th:first-child { width: 26%; }
+table.fs-table th:last-child { width: 44%; }
+table.fs-table th:nth-child(2):not(:last-child) { width: 15%; }
 .fs-improvement { margin: .4rem 0; }
-.fs-improvement .fs-notes textarea.wiki-field { min-height: 2.6rem; }
+
+/* Tall blocks flow across columns; what must stay whole is a row, a list item, a small card. */
+.content table tr, .fs-table tr { break-inside: avoid; }
+.content table thead { display: table-header-group; }
+.fs-improvement, .fs-person, .fs-stats, .fs-type, .pb-track { break-inside: avoid; }
+.follower-sheet > h2, .follower-sheet > h3 { break-after: avoid; }
+
+/* Names, stats and spinboxes are set in the display face; every other box
+   (tags, traits, gear, notes, the tables) is ordinary type. */
+.pb-write-box,
+.pb-stat-box,
+.pb-track-box,
+.pb-spin .wiki-field,
+.wiki-field[data-field-key$=":name"],
+.wiki-field[data-field-key$="-name"] {
+  font-family: var(--font-serif);
+}
