@@ -91,6 +91,7 @@ like a key. Two per campaign: player, and GM.
 | `stonetop-wiki-map-pins` | `shared` | everyone |
 | `stonetop-wiki-notes` | `shared` | everyone — answers, blanks, playbook write-in boxes |
 | `stonetop-wiki-playbook-hp` | `shared` | everyone — a character's own HP |
+| `stonetop-wiki-follower-hp` | `shared` | everyone — a follower's HP, the players' to manage |
 | `<sheet>-hp`, `stonetop-wiki-monster-hp` | `gm` | the GM's browsers only |
 
 The `-hp` scope is a pattern, not a list: every adventure-site sheet names its

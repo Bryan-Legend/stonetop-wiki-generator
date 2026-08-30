@@ -812,6 +812,20 @@ def split_bold_prefix(s: str) -> tuple[str, str]:
     return "", s or ""
 
 
+STAT_LABEL_RE = re.compile(
+    r"(^|(?<=[\s>]))(HP(?=\s*\d)|Armor|Damage|Instinct|Special [Qq]ualit(?:y|ies)|Cost|Loyalty)\b(?!</strong>)"
+)
+
+
+def bold_stat_labels(html_text: str) -> str:
+    """Set a stat block's labels (HP, Armor, Damage, Instinct, ...) in bold, the way
+    the book prints them. The stat line is rendered de-tokenized, so the book's own
+    bold runs are gone by here; the labels are found by shape instead — a capitalized
+    keyword at the start of the line or after whitespace (the book breaks its lines
+    wherever it likes). Case matters: "Damage" is a label, "+1d4 damage" is prose."""
+    return STAT_LABEL_RE.sub(lambda m: f"{m.group(1)}<strong>{m.group(2)}</strong>", html_text)
+
+
 def render_rich_text(s: str, link_fn) -> str:
     """Linkify text (inline formatting sentinels become tags inside link_fn)."""
     return link_fn(s)
@@ -3023,7 +3037,7 @@ def dice_button(expr: str) -> str:
     e = re.sub(r"\s*([+\-])\s*", r"\1", e)  # d10 + 3 → d10+3
     return (
         f'<button type="button" class="dice-roll" data-dice="{html.escape(e)}" '
-        f'title="Click to roll {html.escape(expr)}">{html.escape(expr)}</button>'
+        f'title="Click to roll {html.escape(expr)} — Shift: advantage · Ctrl: disadvantage">{html.escape(expr)}</button>'
     )
 
 
@@ -3767,8 +3781,16 @@ def render_stat_block(
     link_kw: dict | None = None,
     check_id: str | None = None,
     icon_html: str = "",
+    variant: str | None = None,
+    tags: str = "",
 ) -> str:
-    """Compact monster/enemy/threat block — minimal vertical space."""
+    """Compact monster/enemy/threat block — minimal vertical space.
+
+    ``variant="follower"`` marks a follower's block (an arcanum's bound spirit,
+    a Green Lord's vine): same card, but its HP is the players' to manage, so
+    the tracker keeps it in a store the whole table shares. ``tags`` is a tag
+    line the caller has already told apart (an arcanum sets it in italics), for
+    when the words alone would not give it away ("Spirit, primordial, …")."""
     lkw = link_kw or {}
     # Stat blocks are visually styled via CSS; parse/render on plain text so
     # inline formatting sentinels never break the HP/Damage/tag detection.
@@ -3781,7 +3803,7 @@ def render_stat_block(
         else:
             norm_lines.append(_defmt(l))
     lines = norm_lines
-    tags = ""
+    tags = _defmt(tags)
     stats: list[str] = []
     moves: list[str] = []
     other: list[str] = []
@@ -3814,12 +3836,49 @@ def render_stat_block(
         if not tags and re.match(r"^Threat\b", line, re.I):
             tags = line
             continue
+        # "Damage brick, makeshift club, rusty knife" / "d6 (hand, crude)":
+        # a die opening the next line is the Damage wrapping, however much
+        # the tags after it read like a creature's tag line.
+        if (
+            stats
+            and "damage" in stats[-1].lower()
+            and re.match(r"^\d{0,2}d\d+", low)
+        ):
+            stats[-1] = stats[-1] + " " + line
+            continue
+        # A stat line that stops on a comma or inside a parenthesis is a stat
+        # line that wrapped — "Armor 5 (resilience, human hide)," / "1 vs.
+        # bronze Damage obsidian knife …" — whatever the next line looks like,
+        # short of a move bullet.
+        if (
+            stats
+            and not line.startswith(("•", "·"))
+            and (
+                stats[-1].rstrip().endswith(",")
+                or stats[-1].count("(") > stats[-1].count(")")
+            )
+        ):
+            stats[-1] = stats[-1] + " " + line
+            continue
+        # The inserts print an HP box beside the stat line, and its label
+        # lands at the end of it — "HP 6; Armor 0 HP" — or ahead of the next
+        # stat: "Armor 1 (shield) HP Damage iron spear". The box's "Max. 6"
+        # lands on a move the same way.
+        if HP_LINE_RE.search(line):
+            line = re.sub(
+                r"\s+HP(?=\s*$|\s+(?:Damage|Instinct|Special|Cost)\b)", "", line
+            )
+            low = line.lower().strip()
+        elif line.startswith(("•", "·")):
+            # …and mid-move when the move wrapped under the box:
+            # "Tend to the sick, injured, Max. 6 women in labor"
+            line = re.sub(r"\s+Max\.?\s*\d+(?=\s|$)", "", line)
         # Don't absorb the next monster's identity
         if (
             tags
             and stats
             and looks_like_tag_line(line)
-            and not low.startswith(("damage", "hp", "instinct"))
+            and not low.startswith(("damage", "hp", "instinct", "cost"))
         ):
             # leftover identity of a following creature — stop via caller usually
             other.append(line)
@@ -3827,20 +3886,27 @@ def render_stat_block(
         if looks_like_tag_line(line) and not tags:
             tags = line
         elif HP_LINE_RE.search(line) or low.startswith(
-            ("damage", "special quality", "special qualities", "instinct", "armor")
+            (
+                "damage",
+                "special quality",
+                "special qualities",
+                "instinct",
+                "armor",
+                "cost",
+            )
         ):
             if low.startswith("instinct"):
                 seen_instinct = True
             # Damage lines often continue with bare "d6 (...)" on next line
             if (
                 stats
-                and re.match(r"^d\d+", low)
+                and re.match(r"^\d{0,2}d\d+", low)
                 and stats[-1].lower().startswith("damage")
             ):
                 stats[-1] = stats[-1] + " " + line
             else:
                 stats.append(line)
-        elif re.match(r"^d\d+", low) and stats:
+        elif re.match(r"^\d{0,2}d\d+", low) and stats:
             stats[-1] = stats[-1] + " " + line
         elif line.startswith("•") or line.startswith("·"):
             item = line.lstrip("•· ").strip()
@@ -3853,15 +3919,21 @@ def render_stat_block(
         elif low.startswith("when "):
             other.append(line)
         else:
-            # Continue a Damage line that wrapped mid-parenthetical
-            if stats and stats[-1].lower().startswith("damage") and (
-                line[0:1].islower()
+            # Continue a Damage line that wrapped mid-parenthetical. The
+            # Damage may share its line with HP and Armor ("HP 16; Armor 0
+            # Damage knife d8 (hand, messy," / "1 piercing, advantage)"), so
+            # the test is that the last stat holds a Damage at all — and an
+            # open parenthesis is proof the line broke inside the tags.
+            if stats and "damage" in stats[-1].lower() and (
+                stats[-1].count("(") > stats[-1].count(")")
+                or line.startswith("(")
+                or line[0:1].islower()
                 or low.startswith(
                     ("maw ", "1 piercing", "piercing)", "advantage)", "messy,")
                 )
                 or stats[-1].endswith(",")
                 or stats[-1].endswith("(")
-                or re.match(r"^d\d+", low)
+                or re.match(r"^\d{0,2}d\d+", low)
             ):
                 stats[-1] = stats[-1] + " " + line
                 continue
@@ -3912,16 +3984,30 @@ def render_stat_block(
         return render_rich_text(t, lf)
 
     id_attr = f' id="{html.escape(anchor_id)}"' if anchor_id else ""
+    cls = "stat-block" + (f" {variant}" if variant else "")
     parts = [
-        f'<div class="stat-block"{id_attr}>'
+        f'<div class="{cls}"{id_attr}>'
         f'<h3 class="stat-name">{icon_html}'
         f'{html.escape(titlecase_name(name))}</h3>'
     ]
     if tags:
         parts.append(f'<p class="stat-tags">{rr(tags)}</p>')
     if stats:
-        compact = " · ".join(s for s in stats)
-        parts.append(f'<p class="stat-stats">{rr(compact)}</p>')
+        # One stat to a line, the way the book sets them. The extractor
+        # sometimes hands two on one line ("Armor 0 Damage gore") — a label
+        # opening mid-line is where the book's line broke.
+        rows: list[str] = []
+        for s in stats:
+            rows.extend(
+                p.strip(" ;")
+                for p in re.split(
+                    r"\s+(?=(?:Damage|Instinct|Special [Qq]ualit(?:y|ies)|Cost)\b)",
+                    s,
+                )
+                if p.strip(" ;")
+            )
+        compact = "<br>".join(bold_stat_labels(rr(r)) for r in rows)
+        parts.append(f'<p class="stat-stats">{compact}</p>')
     if moves:
         parts.append('<ul class="stat-moves">')
         for mv in moves:
@@ -4513,7 +4599,7 @@ def render_playbook_stats(block: dict, slug: str, link_fn) -> str:
         )
         + f'<button type="button" class="pb-stat-abbr pb-roll" '
         f'data-roll-stat="{html.escape(abbr)}" '
-        f'title="Roll +{html.escape(abbr)}">'
+        f'title="Roll +{html.escape(abbr)} — Shift: advantage · Ctrl: disadvantage">'
         f"({html.escape(abbr)})</button></div>"
         for name, abbr in stats
     )
@@ -4558,7 +4644,7 @@ def render_playbook_stats(block: dict, slug: str, link_fn) -> str:
             name_html = (
                 f'<button type="button" class="pb-track-name pb-roll" '
                 f'data-roll-damage="{html.escape(printed)}" '
-                f'title="Roll damage">{html.escape(shown)}</button>'
+                f'title="Roll damage — Shift: advantage · Ctrl: disadvantage">{html.escape(shown)}</button>'
             )
         else:
             name_html = (
@@ -6052,7 +6138,14 @@ def structure_html(
                         block_lines.append(", ".join(tag_prefix))
                     tag_prefix = []
                 # In-card roll table header + rows (e.g. "1d6 current task")
-                m_roll = ROLL_HEADER_RE.match(plain)
+                # "d6 (hand, crude)" is the Damage line wrapping after its
+                # die, not a roll table called "(hand, crude)" — which is what
+                # it read as, and, finding no entries, was dropped outright.
+                m_roll = (
+                    None
+                    if re.match(r"^\d{0,2}d\d+[+\-]?\d*\s*\(", plain)
+                    else ROLL_HEADER_RE.match(plain)
+                )
                 m_dice_only = ROLL_HEADER_DICE_ONLY.match(plain)
                 if m_roll or (
                     m_dice_only
@@ -6125,6 +6218,10 @@ def structure_html(
                 i += 1
             if tag_prefix:
                 block_lines.insert(0, ", ".join(tag_prefix))
+            # A Cost is what a follower has and a monster never does
+            is_follower = any(
+                re.search(r"(^|[;·] )Cost\b", _defmt(b)) for b in block_lines
+            )
             out.append(
                 render_stat_block(
                     name,
@@ -6136,6 +6233,7 @@ def structure_html(
                     link_kw=link_kw,
                     check_id=next_check_id(name),
                     icon_html=creature_icon,
+                    variant="follower" if is_follower else None,
                 )
             )
             continue
@@ -7298,8 +7396,8 @@ def structure_minor_arcana_html(
             if not l:
                 j += 1
                 continue
-            if r.startswith(("\x02H", "\x02FACE", "\x02TH", M_MARK)):
-                break
+            if r.startswith(("\x02H", "\x02FACE", "\x02TH", M_MARK, M_ICON)):
+                break  # an icon opens a follower's stat block
             if re.match(r"^(When you|When |During this battle|If )\b", l, re.I) and not r.startswith((M_B, M_B2)):
                 break
             if r.startswith((M_B, M_B2)):
@@ -7428,6 +7526,18 @@ def structure_minor_arcana_html(
         d = _defmt(strip_markers(raw)).strip()
         if not d or raw.startswith("\x02TH") or d.lower() in ("front", "back"):
             i += 1
+            continue
+        if raw.startswith(M_ICON):
+            # A bound spirit's stat block; a stray icon is never printed as its path
+            fb = _arcana_follower_block(
+                back, i, lookup, current_slug, section_index, anchors, link_kw,
+                f"arcana-{slugify_id(power)}-follower",
+            )
+            if fb:
+                bparts.append(fb[0])
+                i = fb[1]
+            else:
+                i += 1
             continue
         if raw.startswith(M_MARK):
             nm = int(raw[len(M_MARK):] or "0")
@@ -7623,11 +7733,180 @@ def _is_mark_track_line(line: str) -> int:
     return 0
 
 
+PAGES_DIRNAME = "pages"
+
+
+def page_override(slug: str) -> str | None:
+    """A hand-authored article body for ``slug``, if one is checked in.
+
+    ``pages/<slug>.html`` beside the script replaces what the extractor makes
+    of the book's pages — for the sheets that are forms rather than articles
+    (the Followers, Crew and Animal Companion inserts), which no amount of
+    column analysis will turn into something a player can fill in. The file
+    is the article body only: the shell, sidebar, search entry and hover
+    preview are built around it as for any other page. A sheet declares
+    itself with ``data-sheet`` on its root so it is treated as a handout."""
+    path = Path(__file__).resolve().parent / PAGES_DIRNAME / f"{slug}.html"
+    if not path.is_file():
+        return None
+    return path.read_text(encoding="utf-8").strip()
+
+
+def override_sections(body: str) -> list[dict]:
+    """The h2/h3 anchors of a hand-authored body, in the shape structure_html
+    records — so the sidebar's deep links and the section index see them."""
+    out: list[dict] = []
+    for m in re.finditer(r'<h([23])\s+id="([^"]+)"[^>]*>(.*?)</h\1>', body, re.S):
+        name = html.unescape(re.sub(r"<[^>]+>", "", m.group(3))).strip()
+        out.append(
+            {
+                "id": m.group(2),
+                "name": name,
+                "norm": normalize_section_key(name),
+                "caps": "",
+            }
+        )
+    return out
+
+
+def override_excerpt(body: str) -> str:
+    """The first real paragraph of a hand-authored body."""
+    for m in re.finditer(r"<p(?:\s[^>]*)?>(.*?)</p>", body, re.S):
+        text = html.unescape(re.sub(r"<[^>]+>", "", m.group(1))).strip()
+        if len(text) >= 40:
+            return text if len(text) <= 320 else text[:319].rsplit(" ", 1)[0] + "…"
+    return ""
+
+
+def is_sheet_body(body: str) -> bool:
+    """A character sheet or a follower sheet is a handout, not an article."""
+    return 'class="pb-stats"' in body or "data-sheet" in body
+
+
 def _arcana_content(raw: str) -> str:
     """Strip a leading \\x02 marker but keep inline formatting sentinels."""
     if raw.startswith("\x02"):
         return MARKER_RE.sub("", raw)
     return raw
+
+
+# A label the card sets in bold mid-line: two stats the column crammed onto one
+# line ("Special qualities fireproof … \x04Instinct\x05 to be overzealous").
+_FOLLOWER_LABEL_SPLIT_RE = re.compile(
+    r"\s+(?=\x04(?:Special qualit(?:y|ies)|Instinct|Cost|Damage|HP)\x05)"
+)
+# A trigger line ends the block: the card goes back to its own moves.
+_FOLLOWER_STOP_RE = re.compile(r"^(When |Each time |If |During )", re.I)
+
+
+def _arcana_follower_block(
+    lines: list[str],
+    i: int,
+    lookup: dict,
+    current_slug: str | None,
+    section_index: dict | None,
+    anchors: "AnchorRegistry",
+    link_kw: dict,
+    check_id: str,
+) -> tuple[str, int] | None:
+    """A follower's stat block printed on an arcanum's card.
+
+    The card opens it with a category icon and the follower's name, then sets
+    tags, HP/Armor, Damage, Instinct, Special qualities, moves and Cost exactly
+    the way a monster block is set — so it is read the same way and handed to
+    ``render_stat_block`` as a ``follower``. The HP box the card prints for the
+    player to fill in ("HP" / "Starts at 13" / a bare number) is dropped: the
+    wiki's tracker takes its place. Returns ``(html, next_index)`` or ``None``
+    when the icon is not opening a block at all."""
+    n = len(lines)
+    raw = lines[i]
+    if not raw.startswith(M_ICON):
+        return None
+    icon = raw[len(M_ICON):].strip()
+    j = i + 1
+    while j < n and not _defmt(strip_markers(lines[j])).strip():
+        j += 1
+    if j >= n:
+        return None
+    name_raw = lines[j]
+    name = _defmt(strip_markers(name_raw)).strip()
+    # A card ruled into columns lands its HP/Armor boxes on the name line.
+    boxed = re.search(r"\s+HP\s+Armor\s*$", name)
+    if not (name_raw.startswith(M_H3) or boxed):
+        return None
+    name = re.sub(r"\s+HP\s+Armor\s*$", "", name).strip()
+    j += 1
+
+    block: list[str] = []
+    tags = ""
+    while j < n:
+        L = lines[j]
+        d = _defmt(strip_markers(L)).strip()
+        if not d:
+            j += 1
+            continue
+        # The tag line is the first thing under the name, set wholly in italics
+        if not block and not tags and re.fullmatch(r"(\x06[^\x07]*\x07[\s,()0-9]*)+", L.strip()):
+            tags = d
+            j += 1
+            continue
+        if L.startswith(M_C):
+            block.append(L)
+            j += 1
+            continue
+        if L.startswith((M_B, M_B2, M_Q, M_E)):
+            block.append("• " + MARKER_RE.sub("", L).strip())
+            j += 1
+            continue
+        if L.startswith("\x02"):
+            break  # rule, heading, face, icon — the block is over
+        if d.lower() in ("front", "back"):
+            j += 1
+            continue
+        if re.match(r"^HP\s*$", d, re.I):
+            # The printed HP box: "HP" / "Starts at 13 each" / "10"
+            j += 1
+            while j < n:
+                d2 = _defmt(strip_markers(lines[j])).strip()
+                if re.match(r"^(Starts at \d+.*|\d+)$", d2, re.I):
+                    j += 1
+                    continue
+                break
+            break
+        if _FOLLOWER_STOP_RE.match(d) and not d.startswith("•"):
+            break
+        for piece in _FOLLOWER_LABEL_SPLIT_RE.split(L):
+            pd = _defmt(piece).strip()
+            if not pd:
+                continue
+            # "Max. 13 lacks organs" — the HP box's cap, set beside it
+            m_max = re.search(r"\bMax\.?\s+(\d+)\b", pd)
+            if m_max:
+                block.append(f"HP {m_max.group(1)}")
+                rest = (pd[: m_max.start()] + pd[m_max.end():]).strip(" ;,")
+                if rest:
+                    block.append(rest)
+                continue
+            block.append(piece.strip())
+        j += 1
+
+    plain = [_defmt(strip_markers(b)).lower() for b in block]
+    if not any(HP_LINE_RE.search(p) or p.startswith(("damage", "instinct")) for p in plain):
+        return None
+    html_out = render_stat_block(
+        name,
+        block,
+        lookup,
+        current_slug,
+        section_index,
+        anchor_id=anchors.add(name),
+        link_kw=link_kw,
+        check_id=check_id,
+        icon_html=book_icon_img_html(icon, rel_prefix="") if icon else "",
+        variant="follower",
+        tags=tags,
+    )
+    return html_out, j
 
 
 def _arcana_title_line(
@@ -7839,8 +8118,8 @@ def structure_major_arcana_html(
                 if not l or l.lower() in ("front", "back"):
                     j += 1
                     continue
-                if r.startswith(("\x02H", "\x02FACE", "\x02TH", M_MARK)):
-                    break
+                if r.startswith(("\x02H", "\x02FACE", "\x02TH", M_MARK, M_ICON)):
+                    break  # an icon opens a follower's stat block
                 if r.startswith(M_C):
                     break
                 if _arcana_named_move(_arcana_content(r)):
@@ -7874,6 +8153,17 @@ def structure_major_arcana_html(
                 continue
             if raw.startswith("\x02TH") or L.lower() in ("front", "back"):
                 i += 1
+                continue
+            if raw.startswith(M_ICON):
+                fb = _arcana_follower_block(
+                    fl, i, lookup, current_slug, section_index, anchors, link_kw,
+                    f"arcana-{slugify_id(power)}-{face}-follower-{i}",
+                )
+                if fb:
+                    out.append(fb[0])
+                    i = fb[1]
+                else:
+                    i += 1
                 continue
             if raw.startswith("\x02H2") and L.lower() == "moves":
                 i += 1
@@ -10196,6 +10486,9 @@ def main(argv: list[str] | None = None) -> None:
                 lookups=lookups,
                 current_book=book_id,
             )
+        ov = page_override(slug)
+        if ov is not None:
+            sections = override_sections(ov)
         sections_by_slug[slug] = sections
 
     section_navs: dict[str, list[dict]] = {}
@@ -10386,25 +10679,18 @@ def main(argv: list[str] | None = None) -> None:
                     section_indexes=section_indexes,
                     current_book=book_id,
                 )
+            # A hand-authored body (pages/<slug>.html) replaces the extraction.
+            ov = page_override(slug)
+            if ov is not None:
+                body = ov
+                excerpt = override_excerpt(ov) or excerpt
             # A split chapter: the hub lists its parts, and each part links
             # back the way an arcanum does.
             if art.get("children") and art.get("kind") == "article":
                 body = body + "\n" + chapter_parts_html(art)
-            elif art.get("hub_slug") and art.get("kind") == "article":
-                hub = art["hub_slug"]
-                hub_art = next(
-                    (a for a in articles if a["slug"] == hub), None
-                )
-                back = (hub_art or {}).get("title") or "chapter"
-                # A character sheet is a handout: it opens with the name of
-                # the class alone, with no way back to the chapter — the
-                # sidebar already carries that.
-                if 'class="pb-stats"' not in body:
-                    body = (
-                        f'<p class="arcana-back"><a class="wiki-link" '
-                        f'href="{hub}.html" data-slug="{hub}">'
-                        f"← {html.escape(back)}</a></p>\n" + body
-                    )
+            # A split chapter's parts (the playbooks and inserts) are
+            # handouts: each opens with its own name and no way back to the
+            # chapter — the sidebar already carries that.
             # Keep pure card HTML for hover previews (before nav chrome)
             if art.get("kind") == "arcana":
                 card_preview_html = body
@@ -10453,9 +10739,7 @@ def main(argv: list[str] | None = None) -> None:
                 # A character sheet reads differently: a ticked box there
                 # means a move you have, not one you are done with.
                 content_class=(
-                    "content playbook"
-                    if 'class="pb-stats"' in body
-                    else "content"
+                    "content playbook" if is_sheet_body(body) else "content"
                 ),
                 alternates=alternates_for(slug, lang_source, lang_targets),
             )

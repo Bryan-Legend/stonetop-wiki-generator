@@ -1071,7 +1071,7 @@ h3 .book-icon,
   margin: 0.15rem 0;
   color: var(--ink);
 }
-.stat-block .stat-stats br { content: ""; }
+/* Stats break one to a line; the <br> is real. */
 .stat-block .stat-moves {
   margin: 0.2rem 0 0;
   padding-left: 1rem;
@@ -1233,10 +1233,17 @@ button.dice-roll {
   background: linear-gradient(180deg, #7a2038, #5d142b 55%, #410d1e);
   border: 1px solid #410d1e;
   border-radius: 3px;
-  padding: .05em .4em;
-  margin: 0 .1em;
+  /* Kept inside the line box: a button is inline-block whatever `display`
+     says, so its padding, border and line-height all add to the line's
+     height. No vertical padding, a tight line-height, and a negative
+     vertical margin that pulls the margin box well under every line-height
+     the wiki uses — the line it sits on stays where it was. */
+  padding: 0 .4em;
+  /* The tightest line the wiki sets is 1.2; the margin box contributes
+     1.15em + 2px - .4em, so the button is never the tallest thing on it. */
+  margin: -.2em .1em;
   cursor: pointer;
-  line-height: 1.4;
+  line-height: 1.15;
   box-shadow: 0 1px 0 rgba(0,0,0,.28), inset 0 1px 0 rgba(255,255,255,.18);
   vertical-align: baseline;
 }
@@ -3358,3 +3365,63 @@ main.content > h1.page-title:first-child {
 }
 .feedback-actions .sync-action { width: auto; flex: 1 1 auto; margin-top: 0; }
 .feedback-status { min-height: 1em; margin-bottom: 0; }
+
+/* ----- follower sheets (the Followers, Crew and Animal Companion inserts;
+   hand-authored in pages/, see the generator's page_override) ----- */
+.follower-sheet {
+  margin: .6rem 0 .9rem;
+  padding: .55rem .65rem .6rem;
+  background: var(--panel);
+  background-image: var(--card-wash);
+  border: 1px solid var(--rule);
+  border-left: 3px solid var(--accent);
+  border-radius: var(--radius-panel);
+  box-shadow: var(--shadow-panel);
+  break-inside: avoid;
+}
+.follower-sheet > h2 { margin-top: 0; }
+.follower-sheet > h3 { margin-top: .7rem; }
+.fs-field { display: flex; align-items: baseline; gap: .45rem; margin: .3rem 0; }
+.fs-field .wiki-field { flex: 1; min-width: 3rem; }
+.fs-label { flex: none; font-weight: 700; color: var(--head); font-size: .92em; }
+.fs-gloss, .fs-muted { color: var(--muted); font-size: .92em; margin: .2rem 0; }
+.fs-row { display: flex; align-items: baseline; gap: .8rem; flex-wrap: wrap; }
+.fs-row > .fs-field, .fs-row > p { flex: 1; margin: .2rem 0; }
+.fs-row > .arcana-track { flex: none; margin: 0; }
+.fs-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: .3rem; margin: .4rem 0 .2rem; }
+.fs-hp-mount:empty { display: none; }
+ul.check-list.fs-picks { display: flex; flex-wrap: wrap; gap: .05rem .9rem; }
+ul.check-list.fs-picks li.check-item { margin: .1rem 0; }
+ul.check-list.fs-lines li.check-item,
+ul.check-list.fs-picks li.check-item { display: flex; align-items: center; gap: .4rem; }
+.fs-lines .wiki-field, .fs-picks .wiki-field { flex: 1; min-width: 6rem; }
+.fs-moves ol, .fs-gear ul, ul.fs-inventory { list-style: none; margin: .15rem 0 .4rem; padding: 0; }
+.fs-moves, .fs-gear { flex-direction: column; align-items: stretch; gap: 0; }
+.fs-moves li, .fs-gear li { display: flex; align-items: center; gap: .4rem; margin: .15rem 0; }
+.fs-moves li::before { content: "▸"; color: var(--accent); flex: none; }
+.fs-gear li::before { content: "◇"; color: var(--muted); flex: none; }
+.fs-gear ul { display: block; }
+ul.fs-inventory li { margin: .12rem 0; }
+.fs-uses { display: flex; flex-wrap: wrap; gap: .2rem .6rem; margin: .2rem 0 .4rem; }
+.fs-uses .arcana-track { margin: 0; }
+.fs-notes { flex-direction: column; align-items: stretch; }
+textarea.wiki-field { width: 100%; min-height: 4.5rem; resize: vertical; display: block; line-height: 1.35; }
+.fs-people { display: grid; grid-template-columns: 1fr; gap: .4rem; margin: .3rem 0 .5rem; }
+.fs-person {
+  padding: .3rem .45rem;
+  border: 1px solid rgba(var(--head-rgb), .28);
+  border-radius: var(--radius-panel);
+  background: var(--panel);
+}
+.fs-person .fs-field { margin: .12rem 0; }
+.fs-type {
+  margin: .45rem 0;
+  padding: .4rem .5rem;
+  border: 1px solid rgba(var(--head-rgb), .28);
+  border-radius: var(--radius-panel);
+  break-inside: avoid;
+}
+.fs-type-head { display: flex; align-items: baseline; gap: .35rem; flex-wrap: wrap; }
+.fs-type-head label { display: inline-flex; align-items: center; gap: .35rem; cursor: pointer; }
+.fs-type-head .wiki-field { width: 5.5rem; }
+.fs-type .stat-line { margin: .15rem 0 .1rem; }

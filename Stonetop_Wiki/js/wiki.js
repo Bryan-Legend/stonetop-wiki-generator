@@ -44,6 +44,9 @@
       /* A character's own HP, ahead of the catch-all below — the table watches
          each other's health; only the enemies' is the GM's alone. */
       [/^stonetop-wiki-playbook-hp$/, "shared"],
+      /* A follower's HP is the players' to manage — a bound spirit, a Green
+         Lord's vine — so it travels with the character sheets, not the enemies. */
+      [/^stonetop-wiki-follower-hp$/, "shared"],
       [/^[a-z0-9-]+-hp$/, "gm"],
     ];
 
@@ -925,8 +928,29 @@
   }
 
   /* ---------- Dice ---------- */
-  /** Parse/roll NdS, NdS+M, NdS-M (e.g. d10+3, 1d4-1, 2d6). */
-  function rollDice(expr) {
+  /* Shift held on a roll button rolls with advantage, Ctrl (or Cmd) with
+     disadvantage: one extra die, the lowest or highest set aside. */
+  const ROLL_KEYS_NOTE = "Shift: advantage · Ctrl: disadvantage";
+  function rollModeOf(e) {
+    if (!e) return "";
+    if (e.shiftKey && !(e.ctrlKey || e.metaKey)) return "adv";
+    if ((e.ctrlKey || e.metaKey) && !e.shiftKey) return "dis";
+    return "";
+  }
+  /* Note the hotkeys on every roll button's tooltip — at load, and again
+     on injected HTML (hover previews), so built pages need no rebuild. */
+  function noteRollKeys(root) {
+    (root || document).querySelectorAll(".dice-roll, .pb-roll").forEach(function (b) {
+      var t = b.getAttribute("title") || "";
+      if (t.indexOf(ROLL_KEYS_NOTE) >= 0) return;
+      b.setAttribute("title", (t ? t + " — " : "") + ROLL_KEYS_NOTE);
+    });
+  }
+  window.noteRollKeys = noteRollKeys;
+
+  /** Parse/roll NdS, NdS+M, NdS-M (e.g. d10+3, 1d4-1, 2d6).
+      mode "adv"/"dis" rolls one die more and drops the lowest/highest. */
+  function rollDice(expr, mode) {
     const cleaned = String(expr || "")
       .toLowerCase()
       .replace(/[–—]/g, "-")
@@ -939,21 +963,31 @@
     if (!n || n > 99 || !sides) return null;
     let total = 0;
     const parts = [];
-    for (let i = 0; i < n; i++) {
-      const v = 1 + Math.floor(Math.random() * sides);
-      parts.push(v);
-      total += v;
+    const extra = mode === "adv" || mode === "dis" ? 1 : 0;
+    for (let i = 0; i < n + extra; i++) {
+      parts.push(1 + Math.floor(Math.random() * sides));
     }
+    const dropped = [];
+    if (extra) {
+      let at = 0;
+      for (let i = 1; i < parts.length; i++) {
+        if (mode === "adv" ? parts[i] < parts[at] : parts[i] > parts[at]) at = i;
+      }
+      dropped.push(parts.splice(at, 1)[0]);
+    }
+    for (let i = 0; i < parts.length; i++) total += parts[i];
     total += mod;
     const diceExpr = (n === 1 ? "" : String(n)) + "d" + sides;
     const modExpr = mod === 0 ? "" : mod > 0 ? "+" + mod : String(mod);
     return {
       total: total,
       parts: parts,
+      dropped: dropped,
       mod: mod,
       expr: diceExpr + modExpr,
       n: n,
       sides: sides,
+      note: extra ? (mode === "adv" ? "advantage" : "disadvantage") : "",
     };
   }
 
@@ -1083,7 +1117,7 @@
     const btn = e.target.closest(".dice-roll");
     if (!btn) return;
     e.preventDefault();
-    const result = rollDice(btn.getAttribute("data-dice"));
+    const result = rollDice(btn.getAttribute("data-dice"), rollModeOf(e));
     if (!result) return;
     btn.classList.remove("rolling");
     void btn.offsetWidth;
@@ -1193,9 +1227,11 @@
        arcanum's title belongs to its card face, not to a section. The § this
        adds is an <a> of our own — it must not disqualify its own heading. */
     function linkable(h) {
-      return (
-        !h.querySelector("a:not(.section-link)") && !h.closest(".arcana-card")
-      );
+      if (h.querySelector("a:not(.section-link)")) return false;
+      /* A stat block on a card face is a section of its own — a bound
+         spirit is looked up and linked to like any monster. */
+      if (h.classList.contains("stat-name")) return true;
+      return !h.closest(".arcana-card");
     }
 
     var heads = root.querySelectorAll("h2, h3");
@@ -2306,6 +2342,7 @@
     /* A stat block in a popup gets the same HP track as on its own page. */
     if (previewSlug && typeof window.bindHpTrackers === "function") {
       window.bindHpTrackers(bubble, previewSlug);
+      noteRollKeys(bubble);
     }
     bubble.hidden = false;
     positionPreview(link);
@@ -2872,6 +2909,7 @@
     // Bind checks on the current page at load
     var currentSlug = slugFromPath(location.pathname);
     if (currentSlug) bindWikiChecks(document, currentSlug);
+    noteRollKeys(document);
   })();
 
   /* ---------- Map pins + labels (Maps page) ---------- */
@@ -3577,7 +3615,9 @@
       saveField(input.getAttribute("data-field-key"), input.value);
     }
 
-    var fields = document.querySelectorAll("input.wiki-field[data-field-key]");
+    var fields = document.querySelectorAll(
+      "input.wiki-field[data-field-key], textarea.wiki-field[data-field-key]"
+    );
     if (fields.length) {
       var saved = loadAll();
       fields.forEach(function (input) {
@@ -3653,7 +3693,7 @@
       return found;
     }
 
-    function rollStat(btn) {
+    function rollStat(btn, mode) {
       var cell = btn.closest(".pb-stat");
       if (!cell) return;
       var abbr = cell.getAttribute("data-stat") || "";
@@ -3661,15 +3701,27 @@
       var mod = parseInt((input && input.value) || "0", 10);
       if (!isFinite(mod)) mod = 0;
       var deb = debilityOn(abbr);
+      // A debility is disadvantage; Shift (advantage) held against it cancels
+      // out to a plain roll, Ctrl on top of it is still one die dropped.
+      var note = "";
+      if (deb && mode === "adv") {
+        mode = "";
+        note = "advantage cancels " + deb;
+      } else if (deb) {
+        mode = "dis";
+        note = "disadvantage — " + deb;
+      } else if (mode) {
+        note = mode === "adv" ? "advantage" : "disadvantage";
+      }
       var rolls = [d6(), d6()];
       var dropped = [];
-      if (deb) {
+      if (mode) {
         rolls.push(d6());
-        var hi = 0;
+        var at = 0;
         for (var i = 1; i < rolls.length; i++) {
-          if (rolls[i] > rolls[hi]) hi = i;
+          if (mode === "adv" ? rolls[i] < rolls[at] : rolls[i] > rolls[at]) at = i;
         }
-        dropped = rolls.splice(hi, 1);
+        dropped = rolls.splice(at, 1);
       }
       var total = rolls[0] + rolls[1] + mod;
       showDiceResult({
@@ -3678,16 +3730,16 @@
         dropped: dropped,
         mod: mod,
         total: total,
-        note: deb ? "disadvantage — " + deb : "",
+        note: note,
       });
     }
 
-    function rollDamage(btn) {
+    function rollDamage(btn, mode) {
       var track = btn.closest(".pb-track");
       var input = track && track.querySelector("input.wiki-field");
       var expr = ((input && input.value) || "").trim();
       if (!expr) expr = btn.getAttribute("data-roll-damage") || "";
-      var result = rollDice(expr);
+      var result = rollDice(expr, mode);
       if (!result) return;
       result.expr = "damage " + result.expr;
       showDiceResult(result);
@@ -3708,8 +3760,8 @@
       btn.classList.remove("rolling");
       void btn.offsetWidth;
       btn.classList.add("rolling");
-      if (btn.hasAttribute("data-roll-stat")) rollStat(btn);
-      else rollDamage(btn);
+      if (btn.hasAttribute("data-roll-stat")) rollStat(btn, rollModeOf(e));
+      else rollDamage(btn, rollModeOf(e));
     });
 
     /* The sheet's own boxes, when someone else fills them in. A box being
@@ -3876,6 +3928,8 @@
        data-hp-storage, so the third one is not known until the page says. */
     var PLAYBOOK_STORE = "stonetop-wiki-playbook-hp";
     var MONSTER_STORE = "stonetop-wiki-monster-hp";
+    /* Followers are the players' own: shared scope, so the table sees them. */
+    var FOLLOWER_STORE = "stonetop-wiki-follower-hp";
     var NOTES_STORE = "stonetop-wiki-notes";
 
     var trackers = [];
@@ -4057,6 +4111,40 @@
       Store.subscribe(NOTES_STORE, syncMax);
     })();
 
+    /* ----- Follower sheets (the Followers, Crew and Animal Companion inserts) -----
+       A sheet names its follower on the root (data-hp-key) and prints a
+       Max HP box; the tracker goes into the sheet's own mount and lives in
+       the followers' store, which the whole table shares. */
+    document
+      .querySelectorAll(".follower-sheet[data-hp-key]")
+      .forEach(function (sheet) {
+        var maxBox = sheet.querySelector(
+          'input.wiki-field[data-field-key$="max-hp"]'
+        );
+        var mount = sheet.querySelector(".fs-hp-mount");
+        if (!maxBox || !mount) return;
+        function readMax() {
+          var n = parseInt(String(maxBox.value).replace(/[^0-9-]/g, ""), 10);
+          return n > 0 ? n : 1;
+        }
+        var t = build({
+          store: FOLLOWER_STORE,
+          key: slug + "#" + sheet.getAttribute("data-hp-key"),
+          max: readMax(),
+          label: sheet.getAttribute("data-label") || "Follower",
+        });
+        mount.appendChild(t.el);
+        function syncMax() {
+          var m = readMax();
+          if (m === t.max) return;
+          t.max = m;
+          render(t);
+        }
+        maxBox.addEventListener("input", syncMax);
+        maxBox.addEventListener("change", syncMax);
+        Store.subscribe(NOTES_STORE, syncMax);
+      });
+
     /* ----- Adventure-site sheets -----
        The sheets print their enemy rows in the page and name their store on
        the body. They used to run their own copy of everything above; this is
@@ -4112,17 +4200,33 @@
            "HP 0 of 6" is not this pattern at all: that is a site sheet's own
            current-of-max, which has a real tracker of its own already. */
         var first = line.firstChild;
+        /* The build sets the label in bold — "<strong>HP</strong> 14;" — so the
+           number then sits in the text node after it, and the label element goes
+           with the number once the tracker has taken its place. */
+        var label = null;
+        if (
+          first &&
+          first.nodeType === 1 &&
+          first.tagName === "STRONG" &&
+          /^\s*HP\s*$/i.test(first.textContent)
+        ) {
+          label = first;
+          first = first.nextSibling;
+        }
         if (!first || first.nodeType !== 3) return;
-        var m = first.nodeValue.match(/^\s*HP\s+(\d+)(?!\s*of)\s*[;,]?\s*/i);
+        var m = first.nodeValue.match(
+          label ? /^\s*(\d+)(?!\s*of\b)\s*[;,]?\s*/ : /^\s*HP\s+(\d+)(?!\s*of\b)\s*[;,]?\s*/i
+        );
         if (!m) return;
         var max = parseInt(m[1], 10);
         if (!(max > 0) || max > 200) return;
         first.nodeValue = first.nodeValue.slice(m[0].length);
+        if (label) label.parentNode.removeChild(label);
         block.setAttribute("data-hp-bound", pageSlug);
 
         var name = block.querySelector(".stat-name");
         var t = build({
-          store: MONSTER_STORE,
+          store: block.classList.contains("follower") ? FOLLOWER_STORE : MONSTER_STORE,
           key: pageSlug + "#" + (block.id || "stat-" + i),
           max: max,
           label: name ? name.textContent.trim() : "Enemy",

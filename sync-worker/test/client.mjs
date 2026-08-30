@@ -220,6 +220,7 @@ console.log("== no campaign configured: the wiki as it always was ==");
   chk("answers and playbook boxes travel", "shared", S.scopeOf("stonetop-wiki-notes"));
   chk("a character's own HP travels", "shared", S.scopeOf("stonetop-wiki-playbook-hp"));
   chk("a monster's HP is the GM's", "gm", S.scopeOf("stonetop-wiki-monster-hp"));
+  chk("a follower's HP is the table's", "shared", S.scopeOf("stonetop-wiki-follower-hp"));
   chk("nor the dice-sound setting", null, S.scopeOf("stonetop-wiki-sound"));
 }
 

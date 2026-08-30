@@ -17,6 +17,8 @@ export const STORE_SCOPES = [
   [/^stonetop-wiki-notes$/, "shared"],
   // A character's own HP, ahead of the catch-all below.
   [/^stonetop-wiki-playbook-hp$/, "shared"],
+  // A follower's HP is the players' to manage.
+  [/^stonetop-wiki-follower-hp$/, "shared"],
   [/^[a-z0-9-]+-hp$/, "gm"],
 ];
 
