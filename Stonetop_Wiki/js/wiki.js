@@ -3615,6 +3615,173 @@
       saveField(input.getAttribute("data-field-key"), input.value);
     }
 
+    /* ----- Where an arcanum is -----
+       Under the card, a Location box: which PC holds it, or where in the
+       world it lies. The nine playbooks are offered as a list and anything
+       else can be typed. It lives in the notes store under <slug>:location,
+       shared with the table, and each playbook page reads the store back to
+       list the arcana held by that class. Runtime-only: nothing is generated. */
+    var PLAYBOOKS = [
+      ["the-blessed", "The Blessed"],
+      ["the-fox", "The Fox"],
+      ["the-heavy", "The Heavy"],
+      ["the-judge", "The Judge"],
+      ["the-lightbearer", "The Lightbearer"],
+      ["the-marshal", "The Marshal"],
+      ["the-ranger", "The Ranger"],
+      ["the-seeker", "The Seeker"],
+      ["the-would-be-hero", "The Would-Be Hero"],
+    ];
+    var LOC_SUFFIX = ":location";
+
+    function pageSlug() {
+      var m = String(location.pathname || "")
+        .replace(/\\/g, "/")
+        .match(/([^\/#?]+)\.html/i);
+      return m ? m[1] : "index";
+    }
+
+    function esc(t) {
+      return String(t).replace(/[&<>"]/g, function (c) {
+        return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[c];
+      });
+    }
+
+    (function () {
+      var cards = document.querySelectorAll(".content .arcana-card");
+      if (cards.length !== 1) return; // an arcanum's own page, not a hub
+      var card = cards[0];
+      var key = pageSlug() + LOC_SUFFIX;
+      var OTHER = "—";
+      var wrap = document.createElement("div");
+      wrap.className = "arcana-location";
+      /* A real <select>, not a datalist: a datalist filters its options by
+         what is typed, so once a name is chosen the list shows that one
+         entry and nothing else. The last choice opens a box for anywhere
+         else — a place in the world, an NPC. The box is the field that is
+         saved; the select is a way of filling it. */
+      wrap.innerHTML =
+        '<div class="fs-field"><span class="fs-label">Location</span>' +
+        '<select class="wiki-field arcana-location-pick" aria-label="Who holds it">' +
+        '<option value="">— unknown —</option>' +
+        PLAYBOOKS.map(function (p) {
+          return '<option value="' + esc(p[1]) + '">' + esc(p[1]) + "</option>";
+        }).join("") +
+        '<option value="' + OTHER + '">Elsewhere / someone else…</option>' +
+        "</select>" +
+        '<input type="text" class="wiki-field arcana-location-box" ' +
+        'data-field-key="' + esc(key) + '" ' +
+        'placeholder="Where it lies, or who holds it" autocomplete="off" ' +
+        'aria-label="Location" hidden></div>';
+      card.parentNode.insertBefore(wrap, card.nextSibling);
+      var pick = wrap.querySelector("select");
+      var box = wrap.querySelector("input");
+
+      function isPlaybook(v) {
+        return PLAYBOOKS.some(function (p) {
+          return p[1] === v;
+        });
+      }
+      /* The select follows the box: a saved playbook name selects itself,
+         anything else opens the box with it. */
+      function reflect() {
+        var v = String(box.value || "").trim();
+        if (!v) {
+          pick.value = "";
+          box.hidden = true;
+        } else if (isPlaybook(v)) {
+          pick.value = v;
+          box.hidden = true;
+        } else {
+          pick.value = OTHER;
+          box.hidden = false;
+        }
+      }
+      pick.addEventListener("change", function () {
+        if (pick.value === OTHER) {
+          if (isPlaybook(box.value) || !box.value) box.value = "";
+          box.hidden = false;
+          box.focus();
+          return;
+        }
+        box.value = pick.value;
+        box.hidden = true;
+        box.dispatchEvent(new Event("input", { bubbles: true }));
+      });
+      box.addEventListener("blur", function () {
+        if (!box.value) reflect();
+      });
+      /* After the field binding below has filled the box from the store. */
+      setTimeout(reflect, 0);
+      Store.subscribe(KEY, function () {
+        if (document.activeElement !== box) setTimeout(reflect, 0);
+      });
+    })();
+
+    (function () {
+      var title = document.querySelector("h1.pb-title");
+      var stats = document.querySelector(".pb-stats");
+      if (!title || !stats) return;
+      var slug = pageSlug();
+      var name = title.textContent.trim().toLowerCase();
+      var bare = name.replace(/^the\s+/, "");
+
+      function held(v) {
+        v = String(v || "").trim().toLowerCase();
+        if (!v) return false;
+        return v === name || v === bare || v === slug || v === "the " + bare;
+      }
+
+      function titleOf(arcSlug, previews) {
+        var p = previews && previews[arcSlug];
+        if (p && p.title) return String(p.title).replace(/^\d+\.\s*/, "");
+        return arcSlug
+          .replace(/^(minor|major)-/, "")
+          .replace(/-/g, " ")
+          .replace(/\b\w/g, function (c) {
+            return c.toUpperCase();
+          });
+      }
+
+      var box = document.createElement("section");
+      box.className = "pb-arcana";
+      box.innerHTML =
+        '<h2 id="arcana">Arcana</h2>' +
+        '<ul class="pb-arcana-list"></ul>' +
+        '<p class="fs-muted pb-arcana-empty">None held. Set an arcanum’s ' +
+        "Location to “" + esc(title.textContent.trim()) + "” to list it here.</p>";
+      stats.parentNode.insertBefore(box, stats.nextSibling);
+      var list = box.querySelector("ul");
+      var empty = box.querySelector(".pb-arcana-empty");
+
+      function render() {
+        var saved = loadAll() || {};
+        var slugs = Object.keys(saved)
+          .filter(function (k) {
+            return k.slice(-LOC_SUFFIX.length) === LOC_SUFFIX && held(saved[k]);
+          })
+          .map(function (k) {
+            return k.slice(0, -LOC_SUFFIX.length);
+          })
+          .sort();
+        var paint = function (previews) {
+          list.innerHTML = slugs
+            .map(function (a) {
+              return (
+                '<li><a class="wiki-link" href="' + esc(a) + '.html" data-slug="' + esc(a) + '">' +
+                esc(titleOf(a, previews)) + "</a></li>"
+              );
+            })
+            .join("");
+          empty.hidden = slugs.length > 0;
+        };
+        if (!slugs.length) return paint(null);
+        loadPreviews().then(paint, function () { paint(null); });
+      }
+      render();
+      Store.subscribe(KEY, render);
+    })();
+
     /* A textarea grows to hold what is in it — a one-line box on the sheet
        opens out as the list gets long, and comes up the right size when the
        text arrives from the store; the corner resizer is off (Chrome cannot

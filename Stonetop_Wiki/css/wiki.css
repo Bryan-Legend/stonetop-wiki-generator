@@ -3483,3 +3483,30 @@ table.fs-table th:nth-child(2):not(:last-child) { width: 15%; }
 .wiki-field[data-field-key$="-name"] {
   font-family: var(--font-serif);
 }
+
+/* Where an arcanum is (under its card) and what a playbook holds. */
+.arcana-location { margin: .5rem auto 0; max-width: 32rem; break-inside: avoid; }
+.arcana-location .fs-field { margin: 0; flex-wrap: wrap; }
+.arcana-location .wiki-field { flex: 1; min-width: 9rem; }
+.arcana-location select.wiki-field,
+.arcana-location select.wiki-field option,
+.arcana-location input.wiki-field,
+.pb-arcana a { font-family: var(--font-serif); }
+.arcana-location select.wiki-field {
+  cursor: pointer;
+  /* The popup is painted by the browser off color-scheme, not off our
+     tokens: inherit the page's, and give the options the panel colors. */
+  color-scheme: inherit;
+  background-color: var(--panel);
+  color: var(--answer);
+}
+.arcana-location select.wiki-field option {
+  background: var(--panel);
+  color: var(--ink);
+}
+.pb-arcana { margin: .4rem 0 .8rem; break-inside: avoid; }
+.pb-arcana > h2 { margin-top: 0; }
+ul.pb-arcana-list { list-style: disc outside; margin: .2rem 0 .3rem; padding-left: 1.2rem; }
+ul.pb-arcana-list li::marker { color: var(--head); }
+ul.pb-arcana-list li { margin: .12rem 0; }
+.pb-arcana-empty { margin: .2rem 0; }
