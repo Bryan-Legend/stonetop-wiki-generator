@@ -2729,7 +2729,18 @@ def should_join(a: str, b: str) -> bool:
         return False
     if ROLL_HEADER_RE.match(b) or ROLL_HEADER_DICE_ONLY.match(b):
         return False
-    if ENTRY_RE.match(b):
+    m_entry = ENTRY_RE.match(b)
+    if m_entry:
+        # A sentence wrapping onto its own number — "…ask the GM" + "3
+        # questions about the wider world" — is prose, not a table row: the
+        # line above stops on a bare word and the "entry" opens lowercase.
+        if (
+            re.search(r"[A-Za-z]$", a)
+            and (m_entry.group(3) or "")[:1].islower()
+            and not looks_like_heading(a)
+            and not ENTRY_RE.match(a)  # a table row never swallows the next
+        ):
+            return True
         return False
     # Unclosed parenthesis: "Wynfor & Tiwlip (small, entranced," + "docile): HP 3"
     if a.count("(") > a.count(")") and a.endswith((",", "-")):
@@ -6391,7 +6402,12 @@ def structure_html(
             continue
 
         # --- Numbered standalone list that isn't a formal 1dN table ---
-        if ENTRY_RE.match(line) and peek(1) and ENTRY_RE.match(_defmt(peek(1))):
+        # Its entries count upward. Prose that happens to wrap onto a number
+        # ("on a 10+, ask the GM" / "3 questions …; on a 7-9, ask" / "1
+        # question") runs the other way and is left as the sentence it is.
+        _m0 = ENTRY_RE.match(line)
+        _m1 = ENTRY_RE.match(_defmt(peek(1))) if peek(1) else None
+        if _m0 and _m1 and int(_m0.group(1)) < int(_m1.group(1)):
             entries = []
             while i < n and ENTRY_RE.match(_defmt(lines[i])):
                 e = ENTRY_RE.match(_defmt(lines[i]))
@@ -7750,6 +7766,36 @@ def page_override(slug: str) -> str | None:
     if not path.is_file():
         return None
     return path.read_text(encoding="utf-8").strip()
+
+
+_EXTRACTED_MARK_RE = re.compile(
+    r'<!--\s*EXTRACTED\s+from="([^"]+)"(?:\s+to="([^"]+)")?\s*-->'
+)
+
+
+def apply_override(ov: str, extracted: str) -> str:
+    """Merge a hand-authored body with the extraction it replaces.
+
+    The override may carry ``<!--EXTRACTED from="content"-->``: that line is
+    replaced by the extracted body from the heading with that id to its end —
+    or, with ``to="other-improvements"``, up to (not including) that heading.
+    The steading playbook is a sheet on its first pages and twelve pages of
+    ordinary text after — the sheet is written by hand, the improvements keep
+    their extraction, and with it the check-list ids the table has already
+    ticked."""
+    def repl(m: re.Match) -> str:
+        cut = re.search(rf'<h[23]\s+id="{re.escape(m.group(1))}"', extracted)
+        if not cut:
+            return ""
+        end = len(extracted)
+        if m.group(2):
+            stop = re.search(
+                rf'<h[23]\s+id="{re.escape(m.group(2))}"', extracted[cut.start():]
+            )
+            if stop:
+                end = cut.start() + stop.start()
+        return extracted[cut.start():end]
+    return _EXTRACTED_MARK_RE.sub(repl, ov)
 
 
 def override_sections(body: str) -> list[dict]:
@@ -10488,7 +10534,7 @@ def main(argv: list[str] | None = None) -> None:
             )
         ov = page_override(slug)
         if ov is not None:
-            sections = override_sections(ov)
+            sections = override_sections(apply_override(ov, _body))
         sections_by_slug[slug] = sections
 
     section_navs: dict[str, list[dict]] = {}
@@ -10682,7 +10728,7 @@ def main(argv: list[str] | None = None) -> None:
             # A hand-authored body (pages/<slug>.html) replaces the extraction.
             ov = page_override(slug)
             if ov is not None:
-                body = ov
+                body = apply_override(ov, body)
                 excerpt = override_excerpt(ov) or excerpt
             # A split chapter: the hub lists its parts, and each part links
             # back the way an arcanum does.

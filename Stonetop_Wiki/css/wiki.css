@@ -283,7 +283,8 @@ html, body {
 
 .wiki-title {
   font-family: var(--font-serif);
-  font-size: 1.3rem;
+  font-size: 1.05rem;
+  white-space: nowrap;
   font-weight: 400;
   letter-spacing: var(--track-display);
   line-height: var(--lh-display);
@@ -3425,3 +3426,27 @@ textarea.wiki-field { width: 100%; min-height: 4.5rem; resize: vertical; display
 .fs-type-head label { display: inline-flex; align-items: center; gap: .35rem; cursor: pointer; }
 .fs-type-head .wiki-field { width: 5.5rem; }
 .fs-type .stat-line { margin: .15rem 0 .1rem; }
+/* steading sheet */
+.fs-stats-6 { grid-template-columns: repeat(5, 1fr); }
+.fs-stats .fs-muted { font-size: .72em; margin: 0; }
+ul.fs-items { list-style: none; margin: .15rem 0 .4rem; padding: 0; }
+ul.fs-items li { display: flex; align-items: center; gap: .4rem; margin: .12rem 0; }
+ul.fs-items li::before { content: "❦"; color: var(--accent); flex: none; font-size: .8em; }
+ul.fs-items .wiki-field { flex: 1; }
+ul.fs-places { list-style: none; margin: .15rem 0 .4rem; padding: 0; display: grid; grid-template-columns: 1fr; gap: .15rem .8rem; }
+ul.fs-places li { display: flex; align-items: center; gap: .45rem; }
+ul.fs-places .wiki-field { flex: 1; }
+.fs-badge {
+  flex: none; width: 1.35rem; height: 1.35rem; border-radius: 50%;
+  background: var(--head); color: var(--bg); font-weight: 700; font-size: .78em;
+  display: inline-flex; align-items: center; justify-content: center;
+}
+@media (max-width: 640px) { .fs-stats-6 { grid-template-columns: repeat(3, 1fr); } }
+.fs-table-wrap { overflow-x: auto; margin: .3rem 0 .6rem; }
+table.fs-table { width: 100%; border-collapse: collapse; font-size: .92em; }
+table.fs-table th { text-align: left; font-variant: small-caps; letter-spacing: .04em; color: var(--head); font-weight: 600; padding: .1rem .3rem .2rem; border-bottom: 1px solid rgba(var(--head-rgb), .35); }
+table.fs-table td { padding: .12rem .2rem; border-bottom: 1px solid rgba(var(--head-rgb), .12); }
+table.fs-table td .wiki-field { width: 100%; box-sizing: border-box; }
+table.fs-table td:last-child { width: 42%; }
+.fs-improvement { margin: .4rem 0; }
+.fs-improvement .fs-notes textarea.wiki-field { min-height: 2.6rem; }
