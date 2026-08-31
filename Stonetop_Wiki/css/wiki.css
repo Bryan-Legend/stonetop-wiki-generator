@@ -3510,3 +3510,9 @@ ul.pb-arcana-list { list-style: disc outside; margin: .2rem 0 .3rem; padding-lef
 ul.pb-arcana-list li::marker { color: var(--head); }
 ul.pb-arcana-list li { margin: .12rem 0; }
 .pb-arcana-empty { margin: .2rem 0; }
+/* Inventory sheet: a checkbox per ◇ slot ahead of the item. */
+li.inv-item { display: flex; align-items: baseline; gap: .45rem; margin: .15rem 0; }
+li.inv-item .inv-slots { display: inline-flex; gap: .2rem; flex: none; }
+li.inv-item .inv-slots input.wiki-check { width: 1rem; height: 1rem; accent-color: var(--accent); cursor: pointer; margin: 0; }
+li.inv-item label { cursor: pointer; }
+li.inv-item .wiki-field { flex: 1; }

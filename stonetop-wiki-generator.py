@@ -2725,6 +2725,12 @@ def should_join(a: str, b: str) -> bool:
         )
     ):
         return True
+    # "…, lose" + "1d4 HP:" — a dice amount of a stat is a sentence wrapping,
+    # not a table called "HP" or a heading. The line above is mid-sentence.
+    if re.match(
+        r"^\d{0,2}d\d+\s+(HP|hit points|damage|armor)\b", b, re.I
+    ) and not re.search(r"[.:!?)]\s*$", a):
+        return True
     if looks_like_heading(b) and len(b) < 40:
         return False
     if ROLL_HEADER_RE.match(b) or ROLL_HEADER_DICE_ONLY.match(b):
@@ -5793,6 +5799,11 @@ def structure_html(
         # (roll tables are CSS-styled, so parse/render on de-tokenized text)
         dpeek1 = _defmt(peek(1))
         dice = label = None
+        # "1d4 HP:" left standing alone is an insert's stat line, never a table
+        if re.match(r"^\d{0,2}d\d+\s+(HP|hit points|damage|armor)\b[:.]?\s*$", line, re.I):
+            out.append(f"<p>{link(line)}</p>")
+            i += 1
+            continue
         m = ROLL_HEADER_RE.match(line)
         m_rev = ROLL_HEADER_REV_RE.match(line)
         if m:
