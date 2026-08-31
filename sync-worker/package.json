@@ -10,7 +10,8 @@
     "test:worker": "bash test/worker.sh",
     "test:client": "node test/client.mjs",
     "test:socket": "node test/socket.mjs",
-    "test": "bash test/worker.sh && node test/socket.mjs && node test/client.mjs"
+    "test:compact": "node test/compact.mjs",
+    "test": "bash test/worker.sh && node test/socket.mjs && node test/client.mjs && node test/compact.mjs"
   },
   "devDependencies": {
     "jsdom": "^29.1.1",

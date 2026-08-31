@@ -124,9 +124,19 @@ curl -X DELETE "$ENDPOINT/v1/state/$CAMPAIGN/stonetop-wiki-checks" \
 Deletions travel as tombstones, so a browser that still holds the keys is told
 they are gone rather than pushing them back.
 
+## Tombstone compaction
+
+A tombstone kept forever is a row spent on saying nothing, counted against
+`MAX_ROWS`. So each write sweeps tombstones older than `TOMBSTONE_TTL_MS`
+(30 days; `src/shared.js`, overridable as an env var) and records a watermark
+of how far replay history is gone. A browser that syncs inside the window
+replays deletions normally; one away longer gets the whole state back, flagged
+`full`, and prunes local keys the snapshot no longer carries — keeping, and
+re-pushing, any key it changed itself while it was away.
+
 ## Tests
 
-All three need a Worker. In one shell:
+The first three need a Worker. In one shell:
 
 ```bash
 npm run dev            # wrangler dev --local on :8788
@@ -135,7 +145,7 @@ npm run dev            # wrangler dev --local on :8788
 In another:
 
 ```bash
-npm test               # all three suites
+npm test               # all four suites
 npm run test:worker    # curl over the endpoints: auth, scopes, merge,
                        # tombstones, etags, CORS, the caps
 npm run test:socket    # the push path: a write over HTTP landing on someone
@@ -147,9 +157,13 @@ npm run test:client    # two jsdom "browsers" running the real wiki.js and
                        # not the poll), a player joins by link, HP never
                        # reaches the players, the dot goes quiet when the
                        # Worker disappears
+npm run test:compact   # tombstone compaction — spawns its own Worker on
+                       # :8799 with TOMBSTONE_TTL_MS=0: the sweep, the
+                       # watermark, and a stale jsdom browser pruning what
+                       # was deleted while keeping its own unpushed edit
 ```
 
-Any of them can be pointed at production:
+Any but the compaction suite can be pointed at production:
 
 ```bash
 SYNC_ENDPOINT=https://sync.stonetop-wiki.workers.dev npm test

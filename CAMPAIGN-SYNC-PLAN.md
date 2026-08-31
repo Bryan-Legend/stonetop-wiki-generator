@@ -207,6 +207,14 @@ Each `set`/`del` touches one row and bumps `seq`. The response returns the new c
 `GET …?since=<cursor>` returns only rows above it. Deletions are tombstones (`v IS NULL`)
 so they propagate instead of being resurrected by a peer that still has the key.
 
+Tombstones are not kept forever — they would count against the campaign's row cap while
+saying nothing. Each write sweeps tombstones older than `TOMBSTONE_TTL_MS` (30 days) and
+records a `compacted` watermark; a cursor behind the watermark gets the whole state back,
+flagged `full`, and the client prunes local keys the snapshot no longer carries — unless it
+changed one itself while away, in which case its edit survives and is pushed back up. On the
+same principle the *client* never stores a value equal to a field's own default (an
+unchecked box, a stat at +0, HP at full): absent, the page falls back to the default anyway.
+
 **Map pins are the exception.** They're arrays, so per-key merge only reaches `mapId`
 granularity — concurrent edits to the *same* map still clobber. Acceptable for v1: pins are
 GM-drawn, effectively single-writer. Fix when it bites by giving each pin an `id` at

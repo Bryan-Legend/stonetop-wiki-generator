@@ -35,6 +35,11 @@ export function scopeFor(store) {
 /* ---------- Limits ---------- */
 
 export const MAX_BODY = 64 * 1024; // bytes of request body
+/* How long a deletion's tombstone row is kept before it is compacted away.
+ * A browser that syncs inside this window replays the deletion normally; one
+ * that has been away longer is handed the whole state instead (see
+ * rowsSince). Tests shrink it via the TOMBSTONE_TTL_MS env var. */
+export const TOMBSTONE_TTL_MS = 30 * 24 * 60 * 60 * 1000;
 export const MAX_PATCH_KEYS = 500; // set + del entries in one POST
 export const MAX_ROWS = 20000; // rows a single campaign may hold
 export const MAX_GET_ROWS = 5000; // rows one pull returns; more → ask again

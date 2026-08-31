@@ -24,6 +24,7 @@ import {
   MAX_ROWS,
   MAX_SOCKETS,
   SCOPES_FOR_ROLE,
+  TOMBSTONE_TTL_MS,
   json,
   originAllowed,
   randomToken,
@@ -43,7 +44,7 @@ export class Campaign {
     this.sql.exec(
       "CREATE TABLE IF NOT EXISTS entries (" +
         "scope TEXT NOT NULL, store TEXT NOT NULL, k TEXT NOT NULL, " +
-        "v TEXT, seq INTEGER NOT NULL, PRIMARY KEY (store, k))"
+        "v TEXT, seq INTEGER NOT NULL, ts INTEGER, PRIMARY KEY (store, k))"
     );
     this.sql.exec("CREATE INDEX IF NOT EXISTS entries_seq ON entries (seq)");
   }
@@ -106,6 +107,26 @@ export class Campaign {
   rowsSince(role, since) {
     const scopes = SCOPES_FOR_ROLE[role];
     const holes = scopes.map(() => "?").join(", ");
+
+    /* Tombstones at or before the compaction watermark are gone and cannot be
+       replayed, so a client whose cursor predates it is handed the whole state
+       instead, flagged `full` — its cue to drop local keys the answer no
+       longer carries (unless it changed them itself). Sent in one page: a
+       campaign is capped at MAX_ROWS and a snapshot must not be interleaved
+       with other writers' rows. */
+    const compacted = parseInt(this.meta("compacted") || "0", 10) || 0;
+    if (since < compacted) {
+      const rows = this.sql
+        .exec(
+          "SELECT store, k, v FROM entries WHERE scope IN (" +
+            holes +
+            ") ORDER BY seq",
+          ...scopes
+        )
+        .toArray();
+      return { full: true, more: false, cursor: this.seq, rows };
+    }
+
     const all = this.sql
       .exec(
         "SELECT store, k, v, seq FROM entries WHERE seq > ? AND scope IN (" +
@@ -131,24 +152,50 @@ export class Campaign {
   /** Apply ops, bump the sequence, and tell everyone who is listening. */
   applyOps(ops) {
     let seq = this.seq;
+    const now = Date.now();
     const written = [];
     for (const op of ops) {
       seq += 1;
       this.sql.exec(
-        "INSERT INTO entries (scope, store, k, v, seq) VALUES (?, ?, ?, ?, ?) " +
+        "INSERT INTO entries (scope, store, k, v, seq, ts) " +
+          "VALUES (?, ?, ?, ?, ?, ?) " +
           "ON CONFLICT(store, k) DO UPDATE SET " +
-          "v = excluded.v, seq = excluded.seq, scope = excluded.scope",
+          "v = excluded.v, seq = excluded.seq, scope = excluded.scope, " +
+          "ts = excluded.ts",
         op.scope,
         op.store,
         op.k,
         op.v,
-        seq
+        seq,
+        now
       );
       written.push({ scope: op.scope, store: op.store, k: op.k, v: op.v });
     }
     this.setMeta("seq", seq);
     this.broadcast(written, seq);
     return seq;
+  }
+
+  tombstoneTtl() {
+    const v = parseInt(this.env.TOMBSTONE_TTL_MS, 10);
+    return Number.isFinite(v) && v >= 0 ? v : TOMBSTONE_TTL_MS;
+  }
+
+  /** Drop tombstones old enough that every live browser has heard of them.
+      The watermark records how far replay history has been lost: a cursor
+      behind it gets a full snapshot rather than a delta (see rowsSince). */
+  compact() {
+    const cutoff = Date.now() - this.tombstoneTtl();
+    const top = this.sql
+      .exec(
+        "SELECT MAX(seq) AS m FROM entries WHERE v IS NULL AND ts <= ?",
+        cutoff
+      )
+      .toArray()[0];
+    if (!top || top.m == null) return;
+    this.sql.exec("DELETE FROM entries WHERE v IS NULL AND ts <= ?", cutoff);
+    const prev = parseInt(this.meta("compacted") || "0", 10) || 0;
+    if (top.m > prev) this.setMeta("compacted", top.m);
   }
 
   /* ---------- sockets ---------- */
@@ -202,7 +249,12 @@ export class Campaign {
     const out = this.rowsSince(role, since);
     try {
       server.send(
-        JSON.stringify({ t: "rows", cursor: out.cursor, rows: out.rows })
+        JSON.stringify({
+          t: "rows",
+          cursor: out.cursor,
+          rows: out.rows,
+          full: !!out.full,
+        })
       );
     } catch (e) {
       /* nothing to do — the client will fall back to polling */
@@ -352,6 +404,10 @@ export class Campaign {
     if (ops.length > MAX_PATCH_KEYS)
       return json({ error: "too many keys in one patch" }, 413);
     if (!ops.length) return json({ cursor: this.seq, applied: 0 });
+
+    /* Writes are the moment the object is awake anyway, so expired tombstones
+       are swept here — they would otherwise count against MAX_ROWS forever. */
+    this.compact();
 
     const count =
       this.sql.exec("SELECT COUNT(*) AS n FROM entries").toArray()[0].n || 0;

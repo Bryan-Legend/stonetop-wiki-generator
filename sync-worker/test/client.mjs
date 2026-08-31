@@ -169,6 +169,15 @@ console.log("== no campaign configured: the wiki as it always was ==");
   tick(b, 0, false);
   chk("unticking removes the key", ["marshedge#fire-2"], Object.keys(checks(b)));
 
+  /* A key from another page that happens to share a check id stays that
+     page's alone — check ids are short ("fire-2", "10-1"), so the page slug
+     in the key is what keeps pages apart. */
+  const other = browser(WIKI_PAGE, "https://stonetop-wiki.github.io/marshedge.html", {
+    seed: [["stonetop-wiki-checks", JSON.stringify({ "stonetop#fire-2": true })]],
+  });
+  const ob = other.w.document.querySelectorAll("input.wiki-check");
+  chk("another page's tick never leaks across", false, ob[1].checked);
+
   // The tools row sits in the sidebar head, under the search box — not in the
   // footer, where it used to be.
   const tools = b.w.document.querySelector(".sidebar-tools");
@@ -263,8 +272,13 @@ console.log("\n== a player joins by clicking the link ==");
   tick(before, 0, true);
   chk("they had a tick of their own", ["marshedge#fire-1"], Object.keys(checks(before)));
 
-  // Now they click the GM's link, on the same machine.
-  const joined = browser(WIKI_PAGE, link, { seed: before.box });
+  // Now they click the GM's link, on the same machine. The link's path is the
+  // wiki root, but its hash joins from any page — consume it on the marshedge
+  // page the fixture is, since a tick is keyed by the page it is on and no
+  // longer reads across pages that happen to share a check id.
+  const joined = browser(WIKI_PAGE, link.replace("index.html", "marshedge.html"), {
+    seed: before.box,
+  });
   const arrived = await until(() => checks(joined)["marshedge#fire-2"] === true);
   chk("the campaign's state arrives", true, arrived);
   chk("and replaces their own", ["marshedge#fire-2"], Object.keys(checks(joined)));
