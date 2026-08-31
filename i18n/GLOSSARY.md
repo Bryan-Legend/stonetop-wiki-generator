@@ -121,6 +121,11 @@ PbtA game published in that language, follow it; otherwise pick once.
   **discovery**, **expedition**, **follower**, **debility**, **harm**
 - **hearth fantasy** — the game's own genre label; render it, do not borrow
 
+The full per-language tables of settled terms — playbook and insert names,
+move names, stats, debilities, sheet headings, and the recurring place
+names — live in `TERMS.md`. Consult it before translating; extend it rather
+than re-deciding a term.
+
 ## Anchors and slugs are not translated
 
 This is a separate axis from names, and it does not move with them. A page

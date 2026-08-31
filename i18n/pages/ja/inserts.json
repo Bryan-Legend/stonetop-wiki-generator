@@ -1,0 +1,12 @@
+{
+  "lang": "ja",
+  "slug": "inserts",
+  "source_sha256": "8555ca8ac620dcdb5ce370da8092d6a8b28018ddab1715669860f089d32e29f7",
+  "title": "別紙",
+  "nav_label": "別紙",
+  "description": "ストーントップの各PCが持つ別紙の一覧——所持品、動物の相棒、部隊、ダヌの入信者、祈願、従者、そして死にまつわる3枚の別紙。",
+  "sections": {
+    "playbooks-inserts": "プレイブックと別紙"
+  },
+  "body_html": "<p>あなたのPCは少なくとも1枚の別紙を持つ。折ったプレイブックに差し込める、両面刷りの半頁シートだ。PDFはLampblack</p>\n<p>&amp; Brimstoneのウェブサイトのプレイキットに収録されているが、参照用としてこの章にも載せてある。</p>\n<p>すべてのPCは <strong>所持品</strong> <a class=\"wiki-link\" href=\"inventory.html\" data-slug=\"inventory\" >シート</a>を受け取る。この別紙の使い方は、 <strong>装備と所有物</strong> （ <a class=\"wiki-link\" href=\"playing-the-game.html\" data-slug=\"playing-the-game\" >ゲームのプレイ</a> 章）を参照。別紙の裏面は、プレイブックとあなたの選択によって変わる。</p>\n<p>もしあなたが…</p>\n<ul class=\"ellipsis\"><li><strong>動物の相棒のムーブを持つ野伏</strong>なら、当然 <strong>動物の相棒</strong> <a class=\"wiki-link\" href=\"animal-companion.html\" data-slug=\"animal-companion\" >の別紙</a>を受け取る。</li><li><strong>統率者</strong>なら、 <strong>部隊</strong> <a class=\"wiki-link\" href=\"crew.html\" data-slug=\"crew\" >の別紙</a>;</li><li><strong>入信者の生い立ちを持つ祝福されし者</strong>なら、 <strong>ダヌの入信者</strong> <a class=\"wiki-link\" href=\"initiates-of-danu.html\" data-slug=\"initiates-of-danu\" >の別紙</a>;</li><li><strong>光を掲げる者</strong>なら、 <strong>祈願</strong> <a class=\"wiki-link\" href=\"invocations.html\" data-slug=\"invocations\" >の別紙</a>;</li></ul>\n<p>それ以外なら、 <strong>汎用</strong> <a class=\"wiki-link\" href=\"followers.html\" data-slug=\"followers\" >の別紙</a> を受け取る。従者の記録欄と、プレイヤーのアジェンダ・原則・ルールの要約が載っている。</p>\n<p>プレイキットのPDFは、片面に所持品シート、裏面にプレイブック専用シート（または汎用の従者／アジェンダのシート）が来るように印刷できる体裁になっている。この章には各シートを1部ずつだけ収録している。</p>\n<h3 id=\"playbooks-inserts\">プレイブックと別紙</h3>\n<p>さらに、ムーブ「死の淵」とまずい決断の結果として手に入る別紙が3枚ある。 <a class=\"wiki-link\" href=\"ghost.html\" data-slug=\"ghost\" ><strong>亡霊</strong></a>、 <a class=\"wiki-link\" href=\"revenant.html\" data-slug=\"revenant\" ><strong>甦りし者</strong></a>、そして <a class=\"wiki-link\" href=\"thrall.html\" data-slug=\"thrall\" ><strong>隷属者</strong></a>だ。これらの別紙は通常、半分の紙に両面で印刷される。手に取るのは、それが現実になったときだけだ。</p>\n<p>この章に載せた別紙のほかに、別紙として受け取ることがあるのが <a class=\"wiki-link\" href=\"playing-the-game.html\" data-slug=\"playing-the-game\" ><strong>大アルカナム</strong></a>.</p>\n<p>探求者は、その生い立ちが示す大アルカナムを持ってプレイを始める。また用心棒のプレイブックで「嵐に刻まれし者」の生い立ちを取ったなら、大アルカナム「嵐の刻印」を持って始める。</p>\n<p>これらは付録D「大</p>\n<p>アルカナ」（<em>第2巻</em>, <a class=\"wiki-link\" href=\"major-staff-of-the-lidless-orb.html\" data-slug=\"major-staff-of-the-lidless-orb\" >瞼なき眼の杖</a>).</p>"
+}

@@ -1,0 +1,12 @@
+{
+  "lang": "ko",
+  "slug": "inserts",
+  "source_sha256": "8555ca8ac620dcdb5ce370da8092d6a8b28018ddab1715669860f089d32e29f7",
+  "title": "별지",
+  "nav_label": "별지",
+  "description": "스톤탑의 각 PC가 갖는 별지 안내 — 소지품, 동물 동료, 부대, 다누의 입문자, 기원, 추종자, 그리고 죽음에 얽힌 별지 셋.",
+  "sections": {
+    "playbooks-inserts": "플레이북과 별지"
+  },
+  "body_html": "<p>너의 PC는 적어도 별지 1장을 가진다. 접은 플레이북 안에 끼워 넣을 수 있는 양면 반쪽짜리 시트다. PDF는 Lampblack</p>\n<p>&amp; Brimstone 웹사이트의 플레이킷에 들어 있지만, 참고용으로 이 장에도 실어 두었다.</p>\n<p>모든 PC는 <strong>소지품</strong> <a class=\"wiki-link\" href=\"inventory.html\" data-slug=\"inventory\" >시트</a>를 받는다. 이 별지의 사용법은 <strong>장비와 소지품</strong> ( <a class=\"wiki-link\" href=\"playing-the-game.html\" data-slug=\"playing-the-game\" >게임 플레이</a> 장)을 보라. 별지 뒷면은 플레이북과 네가 한 선택에 따라 달라진다.</p>\n<p>만약 네가…</p>\n<ul class=\"ellipsis\"><li><strong>동물 동료 무브를 지닌 순찰자</strong>라면, 당연히 <strong>동물 동료</strong> <a class=\"wiki-link\" href=\"animal-companion.html\" data-slug=\"animal-companion\" >별지</a>를 받는다;</li><li><strong>통솔자</strong>라면, <strong>부대</strong> <a class=\"wiki-link\" href=\"crew.html\" data-slug=\"crew\" >별지</a>;</li><li><strong>입문자 배경을 고른 축복받은 자</strong>라면, <strong>다누의 입문자</strong> <a class=\"wiki-link\" href=\"initiates-of-danu.html\" data-slug=\"initiates-of-danu\" >별지</a>;</li><li><strong>빛을 든 자</strong>라면, <strong>기원</strong> <a class=\"wiki-link\" href=\"invocations.html\" data-slug=\"invocations\" >별지</a>;</li></ul>\n<p>그 외라면, <strong>범용</strong> <a class=\"wiki-link\" href=\"followers.html\" data-slug=\"followers\" >별지</a> 를 받는다. 추종자를 기록할 칸과 플레이어의 어젠다, 원칙, 규칙 요약이 실려 있다.</p>\n<p>플레이킷의 PDF는 한 면에 소지품 시트, 뒷면에 플레이북 전용 시트(또는 범용 추종자/어젠다 시트)가 오도록 인쇄되게 짜여 있다. 이 장에는 각 시트를 한 부씩만 실었다.</p>\n<h3 id=\"playbooks-inserts\">플레이북과 별지</h3>\n<p>또한 무브 '죽음의 문턱'과 잘못된 결정의 결과로 얻게 되는 별지가 셋 있다. <a class=\"wiki-link\" href=\"ghost.html\" data-slug=\"ghost\" ><strong>유령</strong></a>, <a class=\"wiki-link\" href=\"revenant.html\" data-slug=\"revenant\" ><strong>돌아온 자</strong></a>, 그리고 <a class=\"wiki-link\" href=\"thrall.html\" data-slug=\"thrall\" ><strong>예속자</strong></a>다. 이 별지들은 보통 반쪽짜리 종이에 양면으로 인쇄한다. 실제로 필요해졌을 때에만 손에 든다.</p>\n<p>이 장에 실린 별지들 외에, 별지로 받게 될 수도 있는 것이 바로 <a class=\"wiki-link\" href=\"playing-the-game.html\" data-slug=\"playing-the-game\" ><strong>대아르카눔</strong></a>.</p>\n<p>탐구자는 배경이 정하는 대아르카눔을 지니고 플레이를 시작한다. 또한 덩치 플레이북에서 '폭풍에 새겨진 자' 배경을 골랐다면, 대아르카눔 '폭풍 문양'을 지니고 시작한다.</p>\n<p>이들은 부록 D: 대</p>\n<p>아르카나 (<em>제2권</em>, <a class=\"wiki-link\" href=\"major-staff-of-the-lidless-orb.html\" data-slug=\"major-staff-of-the-lidless-orb\" >감기지 않는 눈의 지팡이</a>).</p>"
+}

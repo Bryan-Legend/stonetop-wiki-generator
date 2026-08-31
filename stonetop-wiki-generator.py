@@ -4623,8 +4623,8 @@ def render_playbook_stats(block: dict, slug: str, link_fn) -> str:
     debils = "".join(
         f'<label class="pb-debility" data-stats="{html.escape(" ".join(pair))}">'
         f'<input type="checkbox" class="wiki-check pb-debility-box" '
-        f'id="{html.escape(slug)}-deb-{html.escape(name)}" '
-        f'data-check-id="{html.escape(slug)}-deb-{html.escape(name)}">'
+        f'id="deb-{html.escape(name)}" '
+        f'data-check-id="deb-{html.escape(name)}">'
         f'<span class="pb-debility-name">{html.escape(name)}</span></label>'
         for name, pair in debs
     )
@@ -5117,6 +5117,11 @@ def structure_html(
         nonlocal check_list_n
         check_list_n += 1
         base = slugify_id(prefix) if prefix else "req"
+        # A tick is stored as "<page-slug>#<check-id>", so an id opening with
+        # the page's own slug says it twice ("the-seeker#the-seeker-10-1");
+        # the list number alone carries it ("the-seeker#10-1").
+        if base == current_slug:
+            return str(check_list_n)
         return f"{base}-{check_list_n}"
 
     rich_mode = any(l.startswith("\x02") for l in lines)
@@ -7521,7 +7526,9 @@ def structure_minor_arcana_html(
             fparts.append(
                 f'<p class="arcana-unlock-intro">{link(unlock_intro)}</p>'
             )
-        lid = f"arcana-{slugify_id(power)}-unlock"
+        # One arcanum per page, so the id needs no arcanum prefix — the
+        # storage key already opens with the page's slug.
+        lid = "unlock"
         # split into groups by dividers
         groups: list[tuple[str, list[str]]] = []
         cur_hdr = ""
@@ -7558,7 +7565,7 @@ def structure_minor_arcana_html(
             # A bound spirit's stat block; a stray icon is never printed as its path
             fb = _arcana_follower_block(
                 back, i, lookup, current_slug, section_index, anchors, link_kw,
-                f"arcana-{slugify_id(power)}-follower",
+                "follower",
             )
             if fb:
                 bparts.append(fb[0])
@@ -7569,9 +7576,7 @@ def structure_minor_arcana_html(
         if raw.startswith(M_MARK):
             nm = int(raw[len(M_MARK):] or "0")
             bparts.append(
-                render_mark_track(
-                    nm, f"arcana-{slugify_id(power)}-uses", label="Uses"
-                )
+                render_mark_track(nm, "uses", label="Uses")
             )
             i += 1
             continue
@@ -8246,7 +8251,7 @@ def structure_major_arcana_html(
                 continue
             if raw.startswith(M_MARK):
                 nm = int(raw[len(M_MARK):] or "0")
-                lid = f"arcana-{slugify_id(power)}-{face}-marks"
+                lid = f"{face}-marks"
                 out.append(render_mark_track(nm, lid, label="Progress marks"))
                 i += 1
                 continue
@@ -8296,7 +8301,7 @@ def structure_major_arcana_html(
             i += 1
 
         if cons_items:
-            lid = f"arcana-{slugify_id(power)}-cons"
+            lid = "cons"
             out.append('<div class="arcana-unlock arcana-consequences">')
             out.append('<p class="si-requires">Consequences</p>')
             out.append(render_check_list(cons_items, link, lid))
@@ -9507,10 +9512,30 @@ def build_nav_items(
                     if part["slug"] == current_slug
                     else "nav-section"
                 )
+                # A translated part links to its sibling in this language
+                # directory; an untranslated one links back up to the English
+                # page and says so, exactly as top-level entries do.
+                part_tr = lang_pages.get(part["slug"])
+                p_slug = html.escape(part["slug"])
+                if part_tr:
+                    p_href = f"{p_slug}.html"
+                    p_attr = ""
+                else:
+                    p_href = f"{href_prefix}{p_slug}.html"
+                    p_attr = ""
+                    if locale:
+                        p_attr = ' class="nav-en"'
+                        if english_only:
+                            p_attr += (
+                                f' title="{html.escape(english_only)}"'
+                                ' hreflang="en"'
+                            )
+                p_label = html.escape(
+                    (part_tr or {}).get("nav_label") or nav_label(part)
+                )
                 sub.append(
                     f'<li class="{p_cls}">'
-                    f'<a href="{href_prefix}{html.escape(part["slug"])}.html">'
-                    f"{html.escape(nav_label(part))}</a></li>"
+                    f'<a href="{p_href}"{p_attr}>{p_label}</a></li>'
                 )
             items.append(
                 f"<li{cls_attr}>{link}"
@@ -9671,8 +9696,14 @@ def write_localized_pages(
                 stale.append(slug)
             title = page.get("title") or slug
             body = localize_body_links(page["body_html"], translated)
+            # Mirror the English page: a sheet's h1 carries pb-title and its
+            # <main> the playbook class, so localized sheets keep the sheet
+            # styling and widgets.
+            h1_cls = "page-title"
+            if 'class="pb-stats"' in body:
+                h1_cls += " pb-title"
             body = (
-                f'<h1 class="page-title">{html.escape(title)}</h1>\n' + body
+                f'<h1 class="{h1_cls}">{html.escape(title)}</h1>\n' + body
             )
             navs = dict(section_navs)
             html_out = page_shell(
@@ -9682,6 +9713,9 @@ def write_localized_pages(
                 articles,
                 rel_prefix="../",
                 section_navs=navs,
+                content_class=(
+                    "content playbook" if is_sheet_body(body) else "content"
+                ),
                 description=page.get("description") or "",
                 locale=locale,
                 alternates=alternates_for(slug, source, targets),

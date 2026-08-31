@@ -364,7 +364,7 @@
         })
         .then(function (out) {
           if (out) {
-            applyRows(out.rows || []);
+            applyRows(out.rows || [], out.full);
             setCursor(out.cursor || cursor);
             succeeded();
             // The server had more than one page of rows waiting.
@@ -391,12 +391,21 @@
      * without anyone reloading. A null value is a tombstone: something was
      * deleted, and saying so is the only way to stop a peer that still holds
      * the key from putting it back.
+     *
+     * `full` means the rows are the campaign's whole state, not a delta — the
+     * Worker compacts tombstones after a while, and a browser away longer
+     * than that gets the snapshot instead. A local key the snapshot no longer
+     * carries was deleted while this browser was away, so it goes — unless
+     * this browser changed it since the server last agreed, in which case the
+     * edit is kept and pushed as new.
      */
-    function applyRows(rows) {
+    function applyRows(rows, full) {
       var touched = {};
+      var seen = {};
       rows.forEach(function (r) {
         if (!r || !r.store || typeof r.k !== "string") return;
         if (!syncs(r.store)) return;
+        (seen[r.store] || (seen[r.store] = {}))[r.k] = true;
         var cur = get(r.store);
         var base = baseline[r.store] || (baseline[r.store] = {});
         var localS = has(cur, r.k) ? stable(cur[r.k]) : undefined;
@@ -423,11 +432,41 @@
           }
         }
       });
+      if (full) {
+        var stores = {};
+        Object.keys(known).forEach(function (s) {
+          stores[s] = true;
+        });
+        Object.keys(baseline).forEach(function (s) {
+          stores[s] = true;
+        });
+        Object.keys(stores).forEach(function (store) {
+          if (!syncs(store)) return;
+          var cur = get(store);
+          var base = baseline[store] || (baseline[store] = {});
+          var present = seen[store] || {};
+          Object.keys(cur).forEach(function (k) {
+            if (has(present, k)) return;
+            if (base[k] === stable(cur[k])) {
+              // Unchanged since last agreed — the deletion wins.
+              delete cur[k];
+              touched[store] = true;
+            }
+            // Either way it is no longer something the server holds.
+            delete base[k];
+          });
+          Object.keys(base).forEach(function (k) {
+            if (!has(present, k) && !has(cur, k)) delete base[k];
+          });
+        });
+        // Kept local edits now differ from the baseline again; send them.
+        queuePush();
+      }
       Object.keys(touched).forEach(function (store) {
         writeJSON(store, mem[store]);
         notify(store);
       });
-      if (rows.length) saveBaseline();
+      if (rows.length || full) saveBaseline();
     }
 
     /* ---------- The socket ----------------------------------------------
@@ -487,7 +526,7 @@
           return;
         }
         if (!msg || msg.t !== "rows") return;
-        applyRows(msg.rows || []);
+        applyRows(msg.rows || [], msg.full);
         if (typeof msg.cursor === "number") setCursor(msg.cursor);
         succeeded();
       };
@@ -2837,20 +2876,9 @@
       return pageSlug + "#" + checkId;
     }
 
-    /** True if this check is marked under pageSlug (or any legacy path key). */
+    /** True if this check is marked under pageSlug. */
     function isChecked(state, pageSlug, checkId) {
-      if (state[storageKey(pageSlug, checkId)]) return true;
-      var suffix = "#" + checkId;
-      for (var k in state) {
-        if (
-          Object.prototype.hasOwnProperty.call(state, k) &&
-          state[k] &&
-          k.endsWith(suffix)
-        ) {
-          return true;
-        }
-      }
-      return false;
+      return !!state[storageKey(pageSlug, checkId)];
     }
 
     /**
@@ -2872,14 +2900,7 @@
         box.addEventListener("change", function () {
           var st = loadState();
           if (box.checked) st[full] = true;
-          else {
-            delete st[full];
-            // Clear legacy keys for same check id
-            var suffix = "#" + id;
-            Object.keys(st).forEach(function (k) {
-              if (k.endsWith(suffix)) delete st[k];
-            });
-          }
+          else delete st[full];
           saveState(st);
           repaint();
         });
@@ -3565,9 +3586,11 @@
     function loadAll() {
       return Store.get(KEY);
     }
-    function saveField(key, val) {
+    /* A value back at the sheet's own default is not worth a row: absent, the
+       box falls back to it anyway, and the campaign store stays small. */
+    function saveField(key, val, def) {
       var s = loadAll();
-      if (val && val.trim()) s[key] = val;
+      if (val && val.trim() && val !== def) s[key] = val;
       else delete s[key];
       Store.set(KEY, s);
     }
@@ -3602,7 +3625,12 @@
         input.value = format(input, n);
       }
       input.setAttribute("aria-valuenow", input.value);
-      if (save) saveField(input.getAttribute("data-field-key"), input.value);
+      if (save)
+        saveField(
+          input.getAttribute("data-field-key"),
+          input.value,
+          fallback(input)
+        );
     }
 
     function step(input, by) {
@@ -3612,7 +3640,7 @@
       var b = bounds(input);
       input.value = format(input, Math.max(b[0], Math.min(b[1], n + by)));
       input.setAttribute("aria-valuenow", input.value);
-      saveField(input.getAttribute("data-field-key"), input.value);
+      saveField(input.getAttribute("data-field-key"), input.value, fallback(input));
     }
 
     /* ----- Where an arcanum is -----
@@ -3809,14 +3837,14 @@
 
         input.addEventListener("input", function () {
           /* Save what is being typed; settle it when the box is left. */
-          saveField(key, input.value);
+          saveField(key, input.value, fallback(input));
           fit(input);
         });
         input.addEventListener("blur", function () {
           if (spin) normalize(input, true);
           else if (!input.value) {
             input.value = fallback(input);
-            saveField(key, input.value);
+            saveField(key, input.value, fallback(input));
           }
         });
         if (!spin) return;

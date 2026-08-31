@@ -1,0 +1,12 @@
+{
+  "lang": "zh-Hans",
+  "slug": "inserts",
+  "source_sha256": "8555ca8ac620dcdb5ce370da8092d6a8b28018ddab1715669860f089d32e29f7",
+  "title": "附页",
+  "nav_label": "附页",
+  "description": "石顶（Stonetop）中每名PC至少持有一张附页——行囊、动物伙伴、队伍、达努的入门者、祷文或追随者——夹在对折的剧本之中。",
+  "sections": {
+    "playbooks-inserts": "剧本与附页"
+  },
+  "body_html": "<p>你的PC至少会有一张附页：一张双面的半页纸，可以夹进你对折的剧本里。PDF收录在 Lampblack</p>\n<p>&amp; Brimstone 网站的游戏配件包中，本章也收录了各附页以供查阅。</p>\n<p>每名PC都会拿到 <strong>行囊</strong> <a class=\"wiki-link\" href=\"inventory.html\" data-slug=\"inventory\" >单页</a>。关于此附页的用法，参见 <strong>装备与财物</strong> 一节（见 <a class=\"wiki-link\" href=\"playing-the-game.html\" data-slug=\"playing-the-game\" >进行游戏</a> ）。附页背面因你的剧本与所做选择而各不相同。</p>\n<p>如果你是……</p>\n<ul class=\"ellipsis\"><li><strong>拥有动物伙伴行动的游侠</strong>，那么你自然会拿到 <strong>动物伙伴</strong> <a class=\"wiki-link\" href=\"animal-companion.html\" data-slug=\"animal-companion\" >附页</a>；</li><li><strong>统帅</strong>，那么你会拿到 <strong>队伍</strong> <a class=\"wiki-link\" href=\"crew.html\" data-slug=\"crew\" >附页</a>;</li><li><strong>选择了入门者背景的蒙福者</strong>，那么你会拿到 <strong>达努的入门者</strong> <a class=\"wiki-link\" href=\"initiates-of-danu.html\" data-slug=\"initiates-of-danu\" >附页</a>;</li><li><strong>持光者</strong>，那么你会拿到 <strong>祷文</strong> <a class=\"wiki-link\" href=\"invocations.html\" data-slug=\"invocations\" >附页</a>;</li></ul>\n<p>否则，你会拿到一张 <strong>通用</strong> <a class=\"wiki-link\" href=\"followers.html\" data-slug=\"followers\" >附页</a> ，上面有记录追随者的空间，以及玩家议程、原则与规则的摘要。</p>\n<p>游戏配件包中的PDF已排好版：行囊单页印在一面，剧本专属单页（或通用的追随者/议程单页）印在背面。本章中每种单页只收录一份。</p>\n<h3 id=\"playbooks-inserts\">剧本与附页</h3>\n<p>还有三张附页，会因「鬼门关」行动和糟糕的抉择而落到你手上： <a class=\"wiki-link\" href=\"ghost.html\" data-slug=\"ghost\" ><strong>鬼魂</strong></a>、 <a class=\"wiki-link\" href=\"revenant.html\" data-slug=\"revenant\" ><strong>还魂者</strong></a>与 <a class=\"wiki-link\" href=\"thrall.html\" data-slug=\"thrall\" ><strong>奴仆</strong></a>。这些附页通常双面打印在半页纸上。只有在事到临头时，你才会拿起其中一张。</p>\n<p>除本章收录的附页外，你还可能拿到一张附页，代表某件 <a class=\"wiki-link\" href=\"playing-the-game.html\" data-slug=\"playing-the-game\" ><strong>大秘宝</strong></a>.</p>\n<p>探寻者依其背景所示，开局便持有一件大秘宝；而若你选择壮汉剧本并搭配「风暴烙印」背景，你开局便持有大秘宝「风暴印记」。</p>\n<p>这些内容见附录D：大秘宝</p>\n<p>（<em>第二卷</em>, <a class=\"wiki-link\" href=\"major-staff-of-the-lidless-orb.html\" data-slug=\"major-staff-of-the-lidless-orb\" >无睑之眼法杖</a>).</p>"
+}

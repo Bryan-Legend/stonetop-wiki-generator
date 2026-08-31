@@ -36,3 +36,8 @@ Thumbs.db
 .idea/
 .vscode/
 *.tmp.*
+
+# Translation scratch: numbered segment files and the assembled bodies they
+# apply to. The translation itself is i18n/pages/<code>/<slug>.json; these are
+# regenerable with `python i18n/xlate.py extract <slug>`.
+i18n/_work/
