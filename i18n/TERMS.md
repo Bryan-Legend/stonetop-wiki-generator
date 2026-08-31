@@ -260,3 +260,40 @@ Pull Together · Deploy · Seasons Change · Death's Door.
 - **Sheet headings:** Tausta (Valitse 1) · Vaisto (Valitse 1) · Ulkonäkö · Kotiseutu ja nimi · Kyvyt · Erityinen omaisuus · Siirrot · Esittelyt
 - **Names:** Suurmetsä (Great Wood) · Suonreuna (Marshedge) · Muurisola (Barrier Pass) · Gordinin Kaivos · Kukkulakansa (Hillfolk) · Porrasmaat (Steplands) · Kehämuuri (Ringwall) · Vanhat Tiet · Rauniotorni · Ferrierin Räme · Tekijät (Makers) · Alla Olevat (Things Below) · Viimeinen Ovi · Kalpea Metsästäjä · Fae
 - **Tags:** käsi (hand) · lähellä (close) · likellä (near) · kaukana (far) · ulottuvuus (reach) · lävistävä (piercing) · alue (area) · ryhmä
+
+---
+
+## Terms settled while translating (extend as chapters are done)
+
+Recorded per language as pages are completed, so a later page agrees with an
+earlier one. Add to this table rather than re-deciding.
+
+### Recurring sheet & insert vocabulary — tr · hu · fi
+
+| English | tr | hu | fi |
+|---|---|---|---|
+| Mark (Thrall's stigma) | Damga | Bélyeg | Leima |
+| Favor (Thrall resource) | Lütuf | Kegy | Suosio |
+| Impulse / Urges | Dürtü / Dürtüler | Késztetés / Késztetések | Yllyke / Yllykkeet |
+| your master | efendin | az urad | herrasi |
+| Readiness | Hazırlık | Készenlét | Valmius |
+| Prosperity | Refah | Jólét | Vauraus |
+| Order Followers | Takipçilere Emir Ver | Követők Irányítása | Käske Seuralaisia |
+| Strengthen Your Bond | Bağını Güçlendir | Erősítsd a Köteléket | Vahvista Sidettä |
+| Loyal to the End | Sonuna Kadar Sadık | Hű a Végsőkig | Uskollinen Loppuun Asti |
+| Heroes to the Last | Sonuna Kadar Kahraman | Hősök az Utolsóig | Sankareita Viimeiseen Mieheen |
+| Dark Succor | Kara İnayet | Sötét Segedelem | Pimeä Armo |
+| Unholy Vessel | Kutsuz Kap | Szentségtelen Edény | Epäpyhä Astia |
+| Torment's Blessing | Azabın Kutsaması | A Kín Áldása | Tuskan Siunaus |
+| keen-nosed | keskin burunlu | éles szimatú | tarkkavainuinen |
+
+Tags — tr · hu · fi: *forceful* savurucu · taszító · sysäävä ·
+*messy* kanlı · mocskos · sotkuinen · *grabby* kavrayıcı · markoló · tarttuva ·
+*thrown* atılabilir · hajítható · heitettävä · *warm* sıcak tutan · meleg ·
+lämmin · *exceptional* istisnai · kivételes · poikkeuksellinen (tr: use
+`istisnai` throughout — `eşsiz` in an early file is the outlier).
+
+Animal-companion types — tr · hu · fi: Bird/Critter/Brute/Predator/Steed =
+Kuş, Ufak Yaratık, Azman, Yırtıcı, Binek · Madár, Apró Jószág, Fenevad,
+Ragadozó, Hátas · Lintu, Pikkueläin, Järkäle, Saalistaja, Ratsu; *drake* =
+ejder · sárkánygyík · traakki.

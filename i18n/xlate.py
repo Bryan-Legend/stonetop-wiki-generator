@@ -120,16 +120,21 @@ def apply(code: str, slug: str) -> None:
             raise SystemExit(f"{code}/{slug}: segment {n:04d} missing")
         tr = segs[n]
         pi = ctx[0]
+        if not tr.strip():
+            # An empty segment used to fall back to the English run, which
+            # published untranslated text that nothing downstream flagged.
+            raise SystemExit(
+                f"{code}/{slug}: segment {n:04d} is empty — translate it "
+                f"(English: {val.strip()[:60]!r})"
+            )
         if kind == "text":
-            # Replace exactly the original text run inside this part.
+            # Replace exactly the original text run inside this part, keeping
+            # the leading/trailing whitespace the original carried.
             esc_orig = parts[pi]
             new = html.escape(tr, quote=False)
-            parts[pi] = new
-            if esc_orig.startswith(" ") or esc_orig.endswith(" "):
-                # preserve leading/trailing whitespace of the original run
-                lead = esc_orig[: len(esc_orig) - len(esc_orig.lstrip())]
-                tail = esc_orig[len(esc_orig.rstrip()):]
-                parts[pi] = lead + new.strip() + tail if tr.strip() else esc_orig
+            lead = esc_orig[: len(esc_orig) - len(esc_orig.lstrip())]
+            tail = esc_orig[len(esc_orig.rstrip()):]
+            parts[pi] = lead + new.strip() + tail
         else:
             attr = ctx[1]
             new = html.escape(tr, quote=True)
