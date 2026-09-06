@@ -1,0 +1,2199 @@
+{
+ "book": "book2",
+ "label": "Book II",
+ "title": "Book II — The Wider World",
+ "filename": "Book_II_-_The_Wider_World_and_Other_Wonders_(1-up)_-_2nd_printing.pdf",
+ "page_count": 602,
+ "articles": [
+  {
+   "title": "Welcome to the World's End",
+   "slug": "welcome-to-the-worlds-end",
+   "start_page": 6,
+   "end_page": 7,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Maps",
+   "slug": "maps",
+   "start_page": 8,
+   "end_page": 11,
+   "kind": "maps",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World"
+  },
+  {
+   "title": "The Village of Stonetop",
+   "slug": "the-village-of-stonetop",
+   "start_page": 12,
+   "end_page": 21,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Aratis, the Lawkeeper",
+   "slug": "aratis-the-lawkeeper",
+   "start_page": 22,
+   "end_page": 25,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Barrier Pass",
+   "slug": "barrier-pass",
+   "start_page": 26,
+   "end_page": 33,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Barrow Builders",
+   "slug": "barrow-builders",
+   "start_page": 34,
+   "end_page": 47,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Blackwater Lake",
+   "slug": "blackwater-lake",
+   "start_page": 48,
+   "end_page": 57,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Crinwin",
+   "slug": "crinwin",
+   "start_page": 58,
+   "end_page": 61,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "The Crombil",
+   "slug": "the-crombil",
+   "start_page": 62,
+   "end_page": 63,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Danu, the Earth Mother",
+   "slug": "danu-the-earth-mother",
+   "start_page": 64,
+   "end_page": 67,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Death and the Undying",
+   "slug": "death-and-the-undying",
+   "start_page": 68,
+   "end_page": 85,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "The Dread River",
+   "slug": "the-dread-river",
+   "start_page": 86,
+   "end_page": 93,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Fae",
+   "slug": "fae",
+   "start_page": 94,
+   "end_page": 115,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Ferrier's Fen",
+   "slug": "ferriers-fen",
+   "start_page": 116,
+   "end_page": 125,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "The Flats",
+   "slug": "the-flats",
+   "start_page": 126,
+   "end_page": 135,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Fomoraij",
+   "slug": "fomoraij",
+   "start_page": 136,
+   "end_page": 143,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "The Foothills",
+   "slug": "the-foothills",
+   "start_page": 144,
+   "end_page": 149,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Forest Folk",
+   "slug": "forest-folk",
+   "start_page": 150,
+   "end_page": 155,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Forge Lords",
+   "slug": "forge-lords",
+   "start_page": 156,
+   "end_page": 171,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "The Frozen Wastes",
+   "slug": "the-frozen-wastes",
+   "start_page": 172,
+   "end_page": 177,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Gods and Religion",
+   "slug": "gods-and-religion",
+   "start_page": 178,
+   "end_page": 185,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "The Golden Oak",
+   "slug": "the-golden-oak",
+   "start_page": 186,
+   "end_page": 189,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Gordin's Delve",
+   "slug": "gordins-delve",
+   "start_page": 190,
+   "end_page": 199,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "The Great Wood",
+   "slug": "the-great-wood",
+   "start_page": 200,
+   "end_page": 209,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Green Lords",
+   "slug": "green-lords",
+   "start_page": 210,
+   "end_page": 223,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Helior, the Daybringer",
+   "slug": "helior-the-daybringer",
+   "start_page": 224,
+   "end_page": 227,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Hillfolk",
+   "slug": "hillfolk",
+   "start_page": 228,
+   "end_page": 235,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Huffel Peaks",
+   "slug": "huffel-peaks",
+   "start_page": 236,
+   "end_page": 241,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "The Labyrinth",
+   "slug": "the-labyrinth",
+   "start_page": 242,
+   "end_page": 255,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Lygos and the South",
+   "slug": "lygos-and-the-south",
+   "start_page": 256,
+   "end_page": 263,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "The Makers",
+   "slug": "the-makers",
+   "start_page": 264,
+   "end_page": 269,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "The Makers' Roads",
+   "slug": "the-makers-roads",
+   "start_page": 270,
+   "end_page": 273,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Marshedge",
+   "slug": "marshedge",
+   "start_page": 274,
+   "end_page": 280,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "The Maw",
+   "slug": "the-maw",
+   "start_page": 281,
+   "end_page": 281,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "North Manmarch",
+   "slug": "north-manmarch",
+   "start_page": 282,
+   "end_page": 291,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "The Pale Hunter",
+   "slug": "the-pale-hunter",
+   "start_page": 292,
+   "end_page": 297,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Primordial Powers",
+   "slug": "primordial-powers",
+   "start_page": 298,
+   "end_page": 313,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Red Groves",
+   "slug": "red-groves",
+   "start_page": 314,
+   "end_page": 315,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Rime Lords",
+   "slug": "rime-lords",
+   "start_page": 316,
+   "end_page": 331,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "The Ruined Tower",
+   "slug": "the-ruined-tower",
+   "start_page": 332,
+   "end_page": 349,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "South Manmarch",
+   "slug": "south-manmarch",
+   "start_page": 350,
+   "end_page": 355,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Spirits of the Wild",
+   "slug": "spirits-of-the-wild",
+   "start_page": 356,
+   "end_page": 371,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "The Steplands",
+   "slug": "the-steplands",
+   "start_page": 372,
+   "end_page": 381,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Stone Lords",
+   "slug": "stone-lords",
+   "start_page": 382,
+   "end_page": 395,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "The Stream",
+   "slug": "the-stream",
+   "start_page": 396,
+   "end_page": 397,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Tempest Lords",
+   "slug": "tempest-lords",
+   "start_page": 398,
+   "end_page": 411,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "The Things Below",
+   "slug": "the-things-below",
+   "start_page": 412,
+   "end_page": 437,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Three Coven Lake",
+   "slug": "three-coven-lake",
+   "start_page": 438,
+   "end_page": 447,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Titan Bones",
+   "slug": "titan-bones",
+   "start_page": 448,
+   "end_page": 451,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Tor, the Rain-maker",
+   "slug": "tor-the-rain-maker",
+   "start_page": 452,
+   "end_page": 457,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Useful or Valuable Flora",
+   "slug": "useful-or-valuable-flora",
+   "start_page": 458,
+   "end_page": 463,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Ustrina",
+   "slug": "ustrina",
+   "start_page": 464,
+   "end_page": 467,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Vor Svetelik",
+   "slug": "vor-svetelik",
+   "start_page": 468,
+   "end_page": 477,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Waystones",
+   "slug": "waystones",
+   "start_page": 478,
+   "end_page": 479,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "The Whitefang Mountains",
+   "slug": "the-whitefang-mountains",
+   "start_page": 480,
+   "end_page": 495,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Appendix A: Ages of the World",
+   "slug": "appendix-a-ages-of-the-world",
+   "start_page": 496,
+   "end_page": 497,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Appendix B: Artifact Creation",
+   "slug": "appendix-b-artifact-creation",
+   "start_page": 498,
+   "end_page": 507,
+   "kind": "article",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "toc_labels": []
+  },
+  {
+   "title": "Appendix C: Minor Arcana",
+   "slug": "appendix-c-minor-arcana",
+   "start_page": 508,
+   "end_page": 539,
+   "kind": "arcana-hub",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "children": [
+    {
+     "title": "Laoj Daveth's Galvanic Infusion",
+     "slug": "minor-laoj-daveths-galvanic-infusion",
+     "number": 1
+    },
+    {
+     "title": "Truth Seeds",
+     "slug": "minor-truth-seeds",
+     "number": 2
+    },
+    {
+     "title": "Old Mother's Wine",
+     "slug": "minor-old-mothers-wine",
+     "number": 3
+    },
+    {
+     "title": "Aalz Galt's Sudden Sinkhole",
+     "slug": "minor-aalz-galts-sudden-sinkhole",
+     "number": 4
+    },
+    {
+     "title": "Shell Game of Souls",
+     "slug": "minor-shell-game-of-souls",
+     "number": 5
+    },
+    {
+     "title": "Thunderous Bellow",
+     "slug": "minor-thunderous-bellow",
+     "number": 6
+    },
+    {
+     "title": "The Fiery Veil",
+     "slug": "minor-the-fiery-veil",
+     "number": 7
+    },
+    {
+     "title": "The Tomb-bog's Mark",
+     "slug": "minor-the-tomb-bogs-mark",
+     "number": 8
+    },
+    {
+     "title": "Fear of the Flame",
+     "slug": "minor-fear-of-the-flame",
+     "number": 9
+    },
+    {
+     "title": "Mantle Wraiths",
+     "slug": "minor-mantle-wraiths",
+     "number": 10
+    },
+    {
+     "title": "Shattering Words of Aalz Childric",
+     "slug": "minor-shattering-words-of-aalz-childric",
+     "number": 11
+    },
+    {
+     "title": "Ffyrnig Tonic",
+     "slug": "minor-ffyrnig-tonic",
+     "number": 12
+    },
+    {
+     "title": "Song of the Dool Trees",
+     "slug": "minor-song-of-the-dool-trees",
+     "number": 13
+    },
+    {
+     "title": "Ward of Still Waters",
+     "slug": "minor-ward-of-still-waters",
+     "number": 14
+    },
+    {
+     "title": "Ice Weaving",
+     "slug": "minor-ice-weaving",
+     "number": 15
+    },
+    {
+     "title": "The Six Locks of Sajua",
+     "slug": "minor-the-six-locks-of-sajua",
+     "number": 16
+    },
+    {
+     "title": "Helior's Shining Ring",
+     "slug": "minor-heliors-shining-ring",
+     "number": 17
+    },
+    {
+     "title": "Nerth Serpent's Vigor",
+     "slug": "minor-nerth-serpents-vigor",
+     "number": 18
+    },
+    {
+     "title": "Goldleaf Cloak",
+     "slug": "minor-goldleaf-cloak",
+     "number": 19
+    },
+    {
+     "title": "Opening the Way",
+     "slug": "minor-opening-the-way",
+     "number": 20
+    },
+    {
+     "title": "The Drowning Scale",
+     "slug": "minor-the-drowning-scale",
+     "number": 21
+    },
+    {
+     "title": "Preserving Runes",
+     "slug": "minor-preserving-runes",
+     "number": 22
+    },
+    {
+     "title": "Peacebond",
+     "slug": "minor-peacebond",
+     "number": 23
+    },
+    {
+     "title": "The Eye, Opened",
+     "slug": "minor-the-eye-opened",
+     "number": 24
+    },
+    {
+     "title": "Sanctifying Mark",
+     "slug": "minor-sanctifying-mark",
+     "number": 25
+    },
+    {
+     "title": "The Green Lord's Shade",
+     "slug": "minor-the-green-lords-shade",
+     "number": 26
+    },
+    {
+     "title": "Chimeric Transmogrification",
+     "slug": "minor-chimeric-transmogrification",
+     "number": 27
+    },
+    {
+     "title": "The Sylvan Web",
+     "slug": "minor-the-sylvan-web",
+     "number": 28
+    },
+    {
+     "title": "Flying Cloak",
+     "slug": "minor-flying-cloak",
+     "number": 29
+    },
+    {
+     "title": "Satchel of Plenty",
+     "slug": "minor-satchel-of-plenty",
+     "number": 30
+    },
+    {
+     "title": "Dancing Wind Spirit",
+     "slug": "minor-dancing-wind-spirit",
+     "number": 31
+    },
+    {
+     "title": "Call of the Hunt",
+     "slug": "minor-call-of-the-hunt",
+     "number": 32
+    },
+    {
+     "title": "Convocation of the Soil",
+     "slug": "minor-convocation-of-the-soil",
+     "number": 33
+    },
+    {
+     "title": "Unliving Chimera",
+     "slug": "minor-unliving-chimera",
+     "number": 34
+    },
+    {
+     "title": "Impudent Polymorph",
+     "slug": "minor-impudent-polymorph",
+     "number": 35
+    },
+    {
+     "title": "Make Pliant the Stone",
+     "slug": "minor-make-pliant-the-stone",
+     "number": 36
+    },
+    {
+     "title": "Plaster of Joining",
+     "slug": "minor-plaster-of-joining",
+     "number": 37
+    },
+    {
+     "title": "Cold Mind, Iron Body",
+     "slug": "minor-cold-mind-iron-body",
+     "number": 38
+    },
+    {
+     "title": "Little Friend",
+     "slug": "minor-little-friend",
+     "number": 39
+    },
+    {
+     "title": "Revealing Light",
+     "slug": "minor-revealing-light",
+     "number": 40
+    },
+    {
+     "title": "Darkwalker Cloak",
+     "slug": "minor-darkwalker-cloak",
+     "number": 41
+    },
+    {
+     "title": "The Flesh Is Like Clay",
+     "slug": "minor-the-flesh-is-like-clay",
+     "number": 42
+    },
+    {
+     "title": "Fetch's Mask",
+     "slug": "minor-fetchs-mask",
+     "number": 43
+    },
+    {
+     "title": "Witch Bottle",
+     "slug": "minor-witch-bottle",
+     "number": 44
+    },
+    {
+     "title": "Wishing Candles",
+     "slug": "minor-wishing-candles",
+     "number": 45
+    },
+    {
+     "title": "Baleful Utterance",
+     "slug": "minor-baleful-utterance",
+     "number": 46
+    },
+    {
+     "title": "Aetherium Spear",
+     "slug": "minor-aetherium-spear",
+     "number": 47
+    },
+    {
+     "title": "Staff of Magnetism",
+     "slug": "minor-staff-of-magnetism",
+     "number": 48
+    },
+    {
+     "title": "Groundskimmer",
+     "slug": "minor-groundskimmer",
+     "number": 49
+    },
+    {
+     "title": "Thunderbolt Bow",
+     "slug": "minor-thunderbolt-bow",
+     "number": 50
+    },
+    {
+     "title": "Bronze Protector",
+     "slug": "minor-bronze-protector",
+     "number": 51
+    },
+    {
+     "title": "Sublime Words",
+     "slug": "minor-sublime-words",
+     "number": 52
+    },
+    {
+     "title": "Flaming Sword",
+     "slug": "minor-flaming-sword",
+     "number": 53
+    },
+    {
+     "title": "Searing Touch",
+     "slug": "minor-searing-touch",
+     "number": 54
+    },
+    {
+     "title": "Sigil of Authority",
+     "slug": "minor-sigil-of-authority",
+     "number": 55
+    },
+    {
+     "title": "Horn of Storms",
+     "slug": "minor-horn-of-storms",
+     "number": 56
+    },
+    {
+     "title": "Moonstone",
+     "slug": "minor-moonstone",
+     "number": 57
+    },
+    {
+     "title": "Hand of Aals Sannan",
+     "slug": "minor-hand-of-aals-sannan",
+     "number": 58
+    },
+    {
+     "title": "Bittersweet Elixir",
+     "slug": "minor-bittersweet-elixir",
+     "number": 59
+    },
+    {
+     "title": "The Broom's Lullaby",
+     "slug": "minor-the-brooms-lullaby",
+     "number": 60
+    },
+    {
+     "title": "The Angry Little God",
+     "slug": "minor-the-angry-little-god",
+     "number": 61
+    },
+    {
+     "title": "The Silver Branch",
+     "slug": "minor-the-silver-branch",
+     "number": 62
+    },
+    {
+     "title": "Void Elemental",
+     "slug": "minor-void-elemental",
+     "number": 63
+    },
+    {
+     "title": "Runes of Creation",
+     "slug": "minor-runes-of-creation",
+     "number": 64
+    }
+   ]
+  },
+  {
+   "title": "Laoj Daveth's Galvanic Infusion",
+   "slug": "minor-laoj-daveths-galvanic-infusion",
+   "start_page": 508,
+   "end_page": 508,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 1
+  },
+  {
+   "title": "Truth Seeds",
+   "slug": "minor-truth-seeds",
+   "start_page": 508,
+   "end_page": 508,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 2
+  },
+  {
+   "title": "Old Mother's Wine",
+   "slug": "minor-old-mothers-wine",
+   "start_page": 509,
+   "end_page": 509,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 3
+  },
+  {
+   "title": "Aalz Galt's Sudden Sinkhole",
+   "slug": "minor-aalz-galts-sudden-sinkhole",
+   "start_page": 509,
+   "end_page": 509,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 4
+  },
+  {
+   "title": "Shell Game of Souls",
+   "slug": "minor-shell-game-of-souls",
+   "start_page": 510,
+   "end_page": 510,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 5
+  },
+  {
+   "title": "Thunderous Bellow",
+   "slug": "minor-thunderous-bellow",
+   "start_page": 510,
+   "end_page": 510,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 6
+  },
+  {
+   "title": "The Fiery Veil",
+   "slug": "minor-the-fiery-veil",
+   "start_page": 511,
+   "end_page": 511,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 7
+  },
+  {
+   "title": "The Tomb-bog's Mark",
+   "slug": "minor-the-tomb-bogs-mark",
+   "start_page": 511,
+   "end_page": 511,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 8
+  },
+  {
+   "title": "Fear of the Flame",
+   "slug": "minor-fear-of-the-flame",
+   "start_page": 512,
+   "end_page": 512,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 9
+  },
+  {
+   "title": "Mantle Wraiths",
+   "slug": "minor-mantle-wraiths",
+   "start_page": 512,
+   "end_page": 512,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 10
+  },
+  {
+   "title": "Shattering Words of Aalz Childric",
+   "slug": "minor-shattering-words-of-aalz-childric",
+   "start_page": 513,
+   "end_page": 513,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 11
+  },
+  {
+   "title": "Ffyrnig Tonic",
+   "slug": "minor-ffyrnig-tonic",
+   "start_page": 513,
+   "end_page": 513,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 12
+  },
+  {
+   "title": "Song of the Dool Trees",
+   "slug": "minor-song-of-the-dool-trees",
+   "start_page": 514,
+   "end_page": 514,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 13
+  },
+  {
+   "title": "Ward of Still Waters",
+   "slug": "minor-ward-of-still-waters",
+   "start_page": 514,
+   "end_page": 514,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 14
+  },
+  {
+   "title": "Ice Weaving",
+   "slug": "minor-ice-weaving",
+   "start_page": 515,
+   "end_page": 515,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 15
+  },
+  {
+   "title": "The Six Locks of Sajua",
+   "slug": "minor-the-six-locks-of-sajua",
+   "start_page": 515,
+   "end_page": 515,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 16
+  },
+  {
+   "title": "Helior's Shining Ring",
+   "slug": "minor-heliors-shining-ring",
+   "start_page": 516,
+   "end_page": 516,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 17
+  },
+  {
+   "title": "Nerth Serpent's Vigor",
+   "slug": "minor-nerth-serpents-vigor",
+   "start_page": 516,
+   "end_page": 516,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 18
+  },
+  {
+   "title": "Goldleaf Cloak",
+   "slug": "minor-goldleaf-cloak",
+   "start_page": 517,
+   "end_page": 517,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 19
+  },
+  {
+   "title": "Opening the Way",
+   "slug": "minor-opening-the-way",
+   "start_page": 517,
+   "end_page": 517,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 20
+  },
+  {
+   "title": "The Drowning Scale",
+   "slug": "minor-the-drowning-scale",
+   "start_page": 518,
+   "end_page": 518,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 21
+  },
+  {
+   "title": "Preserving Runes",
+   "slug": "minor-preserving-runes",
+   "start_page": 518,
+   "end_page": 518,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 22
+  },
+  {
+   "title": "Peacebond",
+   "slug": "minor-peacebond",
+   "start_page": 519,
+   "end_page": 519,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 23
+  },
+  {
+   "title": "The Eye, Opened",
+   "slug": "minor-the-eye-opened",
+   "start_page": 519,
+   "end_page": 519,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 24
+  },
+  {
+   "title": "Sanctifying Mark",
+   "slug": "minor-sanctifying-mark",
+   "start_page": 520,
+   "end_page": 520,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 25
+  },
+  {
+   "title": "The Green Lord's Shade",
+   "slug": "minor-the-green-lords-shade",
+   "start_page": 520,
+   "end_page": 520,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 26
+  },
+  {
+   "title": "Chimeric Transmogrification",
+   "slug": "minor-chimeric-transmogrification",
+   "start_page": 521,
+   "end_page": 521,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 27
+  },
+  {
+   "title": "The Sylvan Web",
+   "slug": "minor-the-sylvan-web",
+   "start_page": 521,
+   "end_page": 521,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 28
+  },
+  {
+   "title": "Flying Cloak",
+   "slug": "minor-flying-cloak",
+   "start_page": 522,
+   "end_page": 522,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 29
+  },
+  {
+   "title": "Satchel of Plenty",
+   "slug": "minor-satchel-of-plenty",
+   "start_page": 522,
+   "end_page": 522,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 30
+  },
+  {
+   "title": "Dancing Wind Spirit",
+   "slug": "minor-dancing-wind-spirit",
+   "start_page": 523,
+   "end_page": 523,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 31
+  },
+  {
+   "title": "Call of the Hunt",
+   "slug": "minor-call-of-the-hunt",
+   "start_page": 523,
+   "end_page": 523,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 32
+  },
+  {
+   "title": "Convocation of the Soil",
+   "slug": "minor-convocation-of-the-soil",
+   "start_page": 524,
+   "end_page": 524,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 33
+  },
+  {
+   "title": "Unliving Chimera",
+   "slug": "minor-unliving-chimera",
+   "start_page": 524,
+   "end_page": 524,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 34
+  },
+  {
+   "title": "Impudent Polymorph",
+   "slug": "minor-impudent-polymorph",
+   "start_page": 525,
+   "end_page": 525,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 35
+  },
+  {
+   "title": "Make Pliant the Stone",
+   "slug": "minor-make-pliant-the-stone",
+   "start_page": 525,
+   "end_page": 525,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 36
+  },
+  {
+   "title": "Plaster of Joining",
+   "slug": "minor-plaster-of-joining",
+   "start_page": 526,
+   "end_page": 526,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 37
+  },
+  {
+   "title": "Cold Mind, Iron Body",
+   "slug": "minor-cold-mind-iron-body",
+   "start_page": 526,
+   "end_page": 526,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 38
+  },
+  {
+   "title": "Little Friend",
+   "slug": "minor-little-friend",
+   "start_page": 527,
+   "end_page": 527,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 39
+  },
+  {
+   "title": "Revealing Light",
+   "slug": "minor-revealing-light",
+   "start_page": 527,
+   "end_page": 527,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 40
+  },
+  {
+   "title": "Darkwalker Cloak",
+   "slug": "minor-darkwalker-cloak",
+   "start_page": 528,
+   "end_page": 528,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 41
+  },
+  {
+   "title": "The Flesh Is Like Clay",
+   "slug": "minor-the-flesh-is-like-clay",
+   "start_page": 528,
+   "end_page": 528,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 42
+  },
+  {
+   "title": "Fetch's Mask",
+   "slug": "minor-fetchs-mask",
+   "start_page": 529,
+   "end_page": 529,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 43
+  },
+  {
+   "title": "Witch Bottle",
+   "slug": "minor-witch-bottle",
+   "start_page": 529,
+   "end_page": 529,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 44
+  },
+  {
+   "title": "Wishing Candles",
+   "slug": "minor-wishing-candles",
+   "start_page": 530,
+   "end_page": 530,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 45
+  },
+  {
+   "title": "Baleful Utterance",
+   "slug": "minor-baleful-utterance",
+   "start_page": 530,
+   "end_page": 530,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 46
+  },
+  {
+   "title": "Aetherium Spear",
+   "slug": "minor-aetherium-spear",
+   "start_page": 531,
+   "end_page": 531,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 47
+  },
+  {
+   "title": "Staff of Magnetism",
+   "slug": "minor-staff-of-magnetism",
+   "start_page": 531,
+   "end_page": 531,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 48
+  },
+  {
+   "title": "Groundskimmer",
+   "slug": "minor-groundskimmer",
+   "start_page": 532,
+   "end_page": 532,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 49
+  },
+  {
+   "title": "Thunderbolt Bow",
+   "slug": "minor-thunderbolt-bow",
+   "start_page": 532,
+   "end_page": 532,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 50
+  },
+  {
+   "title": "Bronze Protector",
+   "slug": "minor-bronze-protector",
+   "start_page": 533,
+   "end_page": 533,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 51
+  },
+  {
+   "title": "Sublime Words",
+   "slug": "minor-sublime-words",
+   "start_page": 533,
+   "end_page": 533,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 52
+  },
+  {
+   "title": "Flaming Sword",
+   "slug": "minor-flaming-sword",
+   "start_page": 534,
+   "end_page": 534,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 53
+  },
+  {
+   "title": "Searing Touch",
+   "slug": "minor-searing-touch",
+   "start_page": 534,
+   "end_page": 534,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 54
+  },
+  {
+   "title": "Sigil of Authority",
+   "slug": "minor-sigil-of-authority",
+   "start_page": 535,
+   "end_page": 535,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 55
+  },
+  {
+   "title": "Horn of Storms",
+   "slug": "minor-horn-of-storms",
+   "start_page": 535,
+   "end_page": 535,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 56
+  },
+  {
+   "title": "Moonstone",
+   "slug": "minor-moonstone",
+   "start_page": 536,
+   "end_page": 536,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 57
+  },
+  {
+   "title": "Hand of Aals Sannan",
+   "slug": "minor-hand-of-aals-sannan",
+   "start_page": 536,
+   "end_page": 536,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 58
+  },
+  {
+   "title": "Bittersweet Elixir",
+   "slug": "minor-bittersweet-elixir",
+   "start_page": 537,
+   "end_page": 537,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 59
+  },
+  {
+   "title": "The Broom's Lullaby",
+   "slug": "minor-the-brooms-lullaby",
+   "start_page": 537,
+   "end_page": 537,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 60
+  },
+  {
+   "title": "The Angry Little God",
+   "slug": "minor-the-angry-little-god",
+   "start_page": 538,
+   "end_page": 538,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 61
+  },
+  {
+   "title": "The Silver Branch",
+   "slug": "minor-the-silver-branch",
+   "start_page": 538,
+   "end_page": 538,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 62
+  },
+  {
+   "title": "Void Elemental",
+   "slug": "minor-void-elemental",
+   "start_page": 539,
+   "end_page": 539,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "top",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 63
+  },
+  {
+   "title": "Runes of Creation",
+   "slug": "minor-runes-of-creation",
+   "start_page": 539,
+   "end_page": 539,
+   "kind": "arcana",
+   "arcana_type": "minor",
+   "hub_slug": "appendix-c-minor-arcana",
+   "half": "bottom",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 64
+  },
+  {
+   "title": "Appendix D: Major Arcana",
+   "slug": "appendix-d-major-arcana",
+   "start_page": 540,
+   "end_page": 575,
+   "kind": "arcana-hub",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "children": [
+    {
+     "title": "Staff of the Lidless Orb",
+     "slug": "major-staff-of-the-lidless-orb",
+     "number": 1
+    },
+    {
+     "title": "Twisted Spear",
+     "slug": "major-twisted-spear",
+     "number": 2
+    },
+    {
+     "title": "Demonhide Cloak",
+     "slug": "major-demonhide-cloak",
+     "number": 3
+    },
+    {
+     "title": "Noruba's Ice Sphere",
+     "slug": "major-norubas-ice-sphere",
+     "number": 4
+    },
+    {
+     "title": "Mindgem",
+     "slug": "major-mindgem",
+     "number": 5
+    },
+    {
+     "title": "Whispering Rocks",
+     "slug": "major-whispering-rocks",
+     "number": 6
+    },
+    {
+     "title": "Blood-quenched Sword",
+     "slug": "major-blood-quenched-sword",
+     "number": 7
+    },
+    {
+     "title": "Shield of the Wisent Witch",
+     "slug": "major-shield-of-the-wisent-witch",
+     "number": 8
+    },
+    {
+     "title": "Hec'tumel Codex",
+     "slug": "major-hectumel-codex",
+     "number": 9
+    },
+    {
+     "title": "Red Scepter",
+     "slug": "major-red-scepter",
+     "number": 10
+    },
+    {
+     "title": "Ring of Daagon",
+     "slug": "major-ring-of-daagon",
+     "number": 11
+    },
+    {
+     "title": "Rune-laden Scales",
+     "slug": "major-rune-laden-scales",
+     "number": 12
+    },
+    {
+     "title": "Blackwood Fetishes",
+     "slug": "major-blackwood-fetishes",
+     "number": 13
+    },
+    {
+     "title": "Storm Markings",
+     "slug": "major-storm-markings",
+     "number": 14
+    },
+    {
+     "title": "Ineffable Words",
+     "slug": "major-ineffable-words",
+     "number": 15
+    },
+    {
+     "title": "Redwood Effigy",
+     "slug": "major-redwood-effigy",
+     "number": 16
+    },
+    {
+     "title": "Hungering Maw of Hlad",
+     "slug": "major-hungering-maw-of-hlad",
+     "number": 17
+    },
+    {
+     "title": "Azure Hand",
+     "slug": "major-azure-hand",
+     "number": 18
+    }
+   ]
+  },
+  {
+   "title": "Staff of the Lidless Orb",
+   "slug": "major-staff-of-the-lidless-orb",
+   "start_page": 540,
+   "end_page": 541,
+   "kind": "arcana",
+   "arcana_type": "major",
+   "hub_slug": "appendix-d-major-arcana",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 1
+  },
+  {
+   "title": "Twisted Spear",
+   "slug": "major-twisted-spear",
+   "start_page": 542,
+   "end_page": 543,
+   "kind": "arcana",
+   "arcana_type": "major",
+   "hub_slug": "appendix-d-major-arcana",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 2
+  },
+  {
+   "title": "Demonhide Cloak",
+   "slug": "major-demonhide-cloak",
+   "start_page": 544,
+   "end_page": 545,
+   "kind": "arcana",
+   "arcana_type": "major",
+   "hub_slug": "appendix-d-major-arcana",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 3
+  },
+  {
+   "title": "Noruba's Ice Sphere",
+   "slug": "major-norubas-ice-sphere",
+   "start_page": 546,
+   "end_page": 547,
+   "kind": "arcana",
+   "arcana_type": "major",
+   "hub_slug": "appendix-d-major-arcana",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 4
+  },
+  {
+   "title": "Mindgem",
+   "slug": "major-mindgem",
+   "start_page": 548,
+   "end_page": 549,
+   "kind": "arcana",
+   "arcana_type": "major",
+   "hub_slug": "appendix-d-major-arcana",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 5
+  },
+  {
+   "title": "Whispering Rocks",
+   "slug": "major-whispering-rocks",
+   "start_page": 550,
+   "end_page": 551,
+   "kind": "arcana",
+   "arcana_type": "major",
+   "hub_slug": "appendix-d-major-arcana",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 6
+  },
+  {
+   "title": "Blood-quenched Sword",
+   "slug": "major-blood-quenched-sword",
+   "start_page": 552,
+   "end_page": 553,
+   "kind": "arcana",
+   "arcana_type": "major",
+   "hub_slug": "appendix-d-major-arcana",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 7
+  },
+  {
+   "title": "Shield of the Wisent Witch",
+   "slug": "major-shield-of-the-wisent-witch",
+   "start_page": 554,
+   "end_page": 555,
+   "kind": "arcana",
+   "arcana_type": "major",
+   "hub_slug": "appendix-d-major-arcana",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 8
+  },
+  {
+   "title": "Hec'tumel Codex",
+   "slug": "major-hectumel-codex",
+   "start_page": 556,
+   "end_page": 557,
+   "kind": "arcana",
+   "arcana_type": "major",
+   "hub_slug": "appendix-d-major-arcana",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 9
+  },
+  {
+   "title": "Red Scepter",
+   "slug": "major-red-scepter",
+   "start_page": 558,
+   "end_page": 559,
+   "kind": "arcana",
+   "arcana_type": "major",
+   "hub_slug": "appendix-d-major-arcana",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 10
+  },
+  {
+   "title": "Ring of Daagon",
+   "slug": "major-ring-of-daagon",
+   "start_page": 560,
+   "end_page": 561,
+   "kind": "arcana",
+   "arcana_type": "major",
+   "hub_slug": "appendix-d-major-arcana",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 11
+  },
+  {
+   "title": "Rune-laden Scales",
+   "slug": "major-rune-laden-scales",
+   "start_page": 562,
+   "end_page": 563,
+   "kind": "arcana",
+   "arcana_type": "major",
+   "hub_slug": "appendix-d-major-arcana",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 12
+  },
+  {
+   "title": "Blackwood Fetishes",
+   "slug": "major-blackwood-fetishes",
+   "start_page": 564,
+   "end_page": 565,
+   "kind": "arcana",
+   "arcana_type": "major",
+   "hub_slug": "appendix-d-major-arcana",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 13
+  },
+  {
+   "title": "Storm Markings",
+   "slug": "major-storm-markings",
+   "start_page": 566,
+   "end_page": 567,
+   "kind": "arcana",
+   "arcana_type": "major",
+   "hub_slug": "appendix-d-major-arcana",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 14
+  },
+  {
+   "title": "Ineffable Words",
+   "slug": "major-ineffable-words",
+   "start_page": 568,
+   "end_page": 569,
+   "kind": "arcana",
+   "arcana_type": "major",
+   "hub_slug": "appendix-d-major-arcana",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 15
+  },
+  {
+   "title": "Redwood Effigy",
+   "slug": "major-redwood-effigy",
+   "start_page": 570,
+   "end_page": 571,
+   "kind": "arcana",
+   "arcana_type": "major",
+   "hub_slug": "appendix-d-major-arcana",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 16
+  },
+  {
+   "title": "Hungering Maw of Hlad",
+   "slug": "major-hungering-maw-of-hlad",
+   "start_page": 572,
+   "end_page": 573,
+   "kind": "arcana",
+   "arcana_type": "major",
+   "hub_slug": "appendix-d-major-arcana",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 17
+  },
+  {
+   "title": "Azure Hand",
+   "slug": "major-azure-hand",
+   "start_page": 574,
+   "end_page": 575,
+   "kind": "arcana",
+   "arcana_type": "major",
+   "hub_slug": "appendix-d-major-arcana",
+   "book": "book2",
+   "book_label": "Book II",
+   "book_title": "Book II — The Wider World",
+   "number": 18
+  }
+ ]
+}

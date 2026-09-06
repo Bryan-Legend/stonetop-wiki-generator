@@ -1,0 +1,695 @@
+{
+ "book": "book1",
+ "label": "Book I",
+ "title": "Book I — Stonetop",
+ "filename": "Book_I_-_Stonetop_(1-up)_-_2nd_printing.pdf",
+ "page_count": 614,
+ "articles": [
+  {
+   "title": "Welcome to Stonetop",
+   "slug": "welcome-to-stonetop",
+   "start_page": 7,
+   "end_page": 14,
+   "kind": "article",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": [
+    "Expectations",
+    "The Setting",
+    "Why Play?"
+   ]
+  },
+  {
+   "title": "Getting Started",
+   "slug": "getting-started",
+   "start_page": 15,
+   "end_page": 34,
+   "kind": "article",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": [
+    "Get ready",
+    "Review the setting",
+    "Set expectations",
+    "Discuss tone and content",
+    "Create characters",
+    "Intro the PCs",
+    "Let spring burst forth",
+    "After the session",
+    "Get ready"
+   ]
+  },
+  {
+   "title": "Playing the Game",
+   "slug": "playing-the-game",
+   "start_page": 35,
+   "end_page": 102,
+   "kind": "article",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": [
+    "The conversation",
+    "Your agenda",
+    "The flow of play",
+    "Dice and moves",
+    "Your principles",
+    "Other things to do",
+    "Your character",
+    "Arcana",
+    "Followers",
+    "Your home",
+    "The moves",
+    "Gear and possessions",
+    "If you want to..."
+   ]
+  },
+  {
+   "title": "Playbooks & Inserts",
+   "slug": "playbooks-inserts",
+   "start_page": 103,
+   "end_page": 104,
+   "kind": "article",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "children": [
+    {
+     "title": "The Blessed",
+     "slug": "the-blessed"
+    },
+    {
+     "title": "The Fox",
+     "slug": "the-fox"
+    },
+    {
+     "title": "The Heavy",
+     "slug": "the-heavy"
+    },
+    {
+     "title": "The Judge",
+     "slug": "the-judge"
+    },
+    {
+     "title": "The Lightbearer",
+     "slug": "the-lightbearer"
+    },
+    {
+     "title": "The Marshal",
+     "slug": "the-marshal"
+    },
+    {
+     "title": "The Ranger",
+     "slug": "the-ranger"
+    },
+    {
+     "title": "The Seeker",
+     "slug": "the-seeker"
+    },
+    {
+     "title": "The Would-be Hero",
+     "slug": "the-would-be-hero"
+    },
+    {
+     "title": "Inserts",
+     "slug": "inserts"
+    },
+    {
+     "title": "Inventory",
+     "slug": "inventory"
+    },
+    {
+     "title": "Animal Companion",
+     "slug": "animal-companion"
+    },
+    {
+     "title": "Crew",
+     "slug": "crew"
+    },
+    {
+     "title": "Initiates of Danu",
+     "slug": "initiates-of-danu"
+    },
+    {
+     "title": "Invocations",
+     "slug": "invocations"
+    },
+    {
+     "title": "Followers",
+     "slug": "followers"
+    },
+    {
+     "title": "Ghost",
+     "slug": "ghost"
+    },
+    {
+     "title": "Revenant",
+     "slug": "revenant"
+    },
+    {
+     "title": "Thrall",
+     "slug": "thrall"
+    },
+    {
+     "title": "Steading Playbook",
+     "slug": "steading-playbook"
+    }
+   ],
+   "toc_labels": [
+    "The Blessed",
+    "The Fox",
+    "The Heavy",
+    "The Judge",
+    "The Lightbearer",
+    "The Marshal",
+    "The Ranger",
+    "The Seeker",
+    "The Would-be Hero",
+    "Ghost",
+    "Revenant",
+    "Thrall",
+    "Stonetop steading playbook"
+   ]
+  },
+  {
+   "title": "The Blessed",
+   "slug": "the-blessed",
+   "start_page": 105,
+   "end_page": 108,
+   "kind": "article",
+   "hub_slug": "playbooks-inserts",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": []
+  },
+  {
+   "title": "The Fox",
+   "slug": "the-fox",
+   "start_page": 109,
+   "end_page": 112,
+   "kind": "article",
+   "hub_slug": "playbooks-inserts",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": []
+  },
+  {
+   "title": "The Heavy",
+   "slug": "the-heavy",
+   "start_page": 113,
+   "end_page": 116,
+   "kind": "article",
+   "hub_slug": "playbooks-inserts",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": []
+  },
+  {
+   "title": "The Judge",
+   "slug": "the-judge",
+   "start_page": 117,
+   "end_page": 120,
+   "kind": "article",
+   "hub_slug": "playbooks-inserts",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": []
+  },
+  {
+   "title": "The Lightbearer",
+   "slug": "the-lightbearer",
+   "start_page": 121,
+   "end_page": 124,
+   "kind": "article",
+   "hub_slug": "playbooks-inserts",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": []
+  },
+  {
+   "title": "The Marshal",
+   "slug": "the-marshal",
+   "start_page": 125,
+   "end_page": 128,
+   "kind": "article",
+   "hub_slug": "playbooks-inserts",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": []
+  },
+  {
+   "title": "The Ranger",
+   "slug": "the-ranger",
+   "start_page": 129,
+   "end_page": 132,
+   "kind": "article",
+   "hub_slug": "playbooks-inserts",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": []
+  },
+  {
+   "title": "The Seeker",
+   "slug": "the-seeker",
+   "start_page": 133,
+   "end_page": 136,
+   "kind": "article",
+   "hub_slug": "playbooks-inserts",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": []
+  },
+  {
+   "title": "The Would-be Hero",
+   "slug": "the-would-be-hero",
+   "start_page": 137,
+   "end_page": 140,
+   "kind": "article",
+   "hub_slug": "playbooks-inserts",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": []
+  },
+  {
+   "title": "Inserts",
+   "slug": "inserts",
+   "start_page": 141,
+   "end_page": 141,
+   "kind": "article",
+   "hub_slug": "playbooks-inserts",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": []
+  },
+  {
+   "title": "Inventory",
+   "slug": "inventory",
+   "start_page": 142,
+   "end_page": 142,
+   "kind": "article",
+   "hub_slug": "playbooks-inserts",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": []
+  },
+  {
+   "title": "Animal Companion",
+   "slug": "animal-companion",
+   "start_page": 143,
+   "end_page": 143,
+   "kind": "article",
+   "hub_slug": "playbooks-inserts",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": []
+  },
+  {
+   "title": "Crew",
+   "slug": "crew",
+   "start_page": 144,
+   "end_page": 144,
+   "kind": "article",
+   "hub_slug": "playbooks-inserts",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": []
+  },
+  {
+   "title": "Initiates of Danu",
+   "slug": "initiates-of-danu",
+   "start_page": 145,
+   "end_page": 145,
+   "kind": "article",
+   "hub_slug": "playbooks-inserts",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": []
+  },
+  {
+   "title": "Invocations",
+   "slug": "invocations",
+   "start_page": 146,
+   "end_page": 146,
+   "kind": "article",
+   "hub_slug": "playbooks-inserts",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": []
+  },
+  {
+   "title": "Followers",
+   "slug": "followers",
+   "start_page": 147,
+   "end_page": 147,
+   "kind": "article",
+   "hub_slug": "playbooks-inserts",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": []
+  },
+  {
+   "title": "Ghost",
+   "slug": "ghost",
+   "start_page": 148,
+   "end_page": 149,
+   "kind": "article",
+   "hub_slug": "playbooks-inserts",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": []
+  },
+  {
+   "title": "Revenant",
+   "slug": "revenant",
+   "start_page": 150,
+   "end_page": 151,
+   "kind": "article",
+   "hub_slug": "playbooks-inserts",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": []
+  },
+  {
+   "title": "Thrall",
+   "slug": "thrall",
+   "start_page": 152,
+   "end_page": 153,
+   "kind": "article",
+   "hub_slug": "playbooks-inserts",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": []
+  },
+  {
+   "title": "Steading Playbook",
+   "slug": "steading-playbook",
+   "start_page": 154,
+   "end_page": 166,
+   "kind": "article",
+   "hub_slug": "playbooks-inserts",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": []
+  },
+  {
+   "title": "Running the Game",
+   "slug": "running-the-game",
+   "start_page": 167,
+   "end_page": 206,
+   "kind": "article",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": [
+    "Your agenda",
+    "The core loop",
+    "The spotlight",
+    "Scenes and loose play",
+    "Your GM moves",
+    "Example of play",
+    "Your principles",
+    "Other things to do",
+    "GMing is a practice",
+    "Prep"
+   ]
+  },
+  {
+   "title": "Player Moves",
+   "slug": "player-moves",
+   "start_page": 207,
+   "end_page": 236,
+   "kind": "article",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": [
+    "Basic Moves",
+    "DEFY DANGER",
+    "AID",
+    "CLASH",
+    "DEFEND",
+    "INTERFERE",
+    "KNOW THINGS",
+    "LET FLY",
+    "PERSUADE (vs. NPCs)",
+    "PERSUADE (vs. PCs)",
+    "SEEK INSIGHT",
+    "Special Moves",
+    "ADVANTAGE/DISADVANTAGE",
+    "BURN BRIGHTLY",
+    "END OF SESSION",
+    "DEATH'S DOOR",
+    "Basic Moves"
+   ]
+  },
+  {
+   "title": "Harm & Healing",
+   "slug": "harm-healing",
+   "start_page": 237,
+   "end_page": 250,
+   "kind": "article",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": [
+    "Hit points and damage",
+    "Debilities",
+    "Problematic wounds",
+    "Death and dying",
+    "Healing and recovery"
+   ]
+  },
+  {
+   "title": "First Adventure",
+   "slug": "first-adventure",
+   "start_page": 251,
+   "end_page": 276,
+   "kind": "article",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": [
+    "Goals",
+    "Structure",
+    "Background",
+    "Setup questions",
+    "Setting the scene",
+    "Dropping the hook",
+    "Heading out",
+    "Goals"
+   ]
+  },
+  {
+   "title": "Threats",
+   "slug": "threats",
+   "start_page": 277,
+   "end_page": 300,
+   "kind": "article",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": [
+    "When to write up threats",
+    "Writing a threat",
+    "Example threats",
+    "Updating threats"
+   ]
+  },
+  {
+   "title": "Expeditions",
+   "slug": "expeditions",
+   "start_page": 301,
+   "end_page": 344,
+   "kind": "article",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": [
+    "Preparations",
+    "Running the journey",
+    "Player moves",
+    "Going home",
+    "What to prep"
+   ]
+  },
+  {
+   "title": "Sites",
+   "slug": "sites",
+   "start_page": 345,
+   "end_page": 378,
+   "kind": "article",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": [
+    "Environmental storytelling",
+    "Running sites",
+    "Exploring sites",
+    "Creating sites",
+    "The Green Lord's Tomb"
+   ]
+  },
+  {
+   "title": "Dangers",
+   "slug": "dangers",
+   "start_page": 379,
+   "end_page": 420,
+   "kind": "article",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": [
+    "Hazards",
+    "Monsters",
+    "Running combat"
+   ]
+  },
+  {
+   "title": "Discoveries",
+   "slug": "discoveries",
+   "start_page": 421,
+   "end_page": 448,
+   "kind": "article",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": [
+    "Clues",
+    "Sites",
+    "Encounters",
+    "Opportunities",
+    "Artifacts",
+    "Arcana"
+   ]
+  },
+  {
+   "title": "NPCs & Followers",
+   "slug": "npcs-followers",
+   "start_page": 449,
+   "end_page": 482,
+   "kind": "article",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": [
+    "NPCs",
+    "NPCs in play",
+    "Creating NPCs",
+    "Follower moves",
+    "ORDER FOLLOWERS",
+    "STRENGTHEN YOUR BOND",
+    "Followers in play",
+    "Creating followers",
+    "Updating followers",
+    "Losing followers",
+    "NPCs"
+   ]
+  },
+  {
+   "title": "Homefront",
+   "slug": "homefront",
+   "start_page": 483,
+   "end_page": 548,
+   "kind": "article",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": [
+    "Bringing the village to life",
+    "Running the homefront",
+    "Aftermath",
+    "The steading playbook",
+    "Seasons Change",
+    "Player moves",
+    "BOLSTER",
+    "CONVALESCE",
+    "DEPLOY",
+    "LEVEL UP",
+    "MAKE A PLAN",
+    "MEET WITH DISASTER",
+    "MUSTER",
+    "PULL TOGETHER",
+    "TRADE & BARTER",
+    "What to prep"
+   ]
+  },
+  {
+   "title": "Writing Moves & Love Letters",
+   "slug": "writing-moves-love-letters",
+   "start_page": 549,
+   "end_page": 570,
+   "kind": "article",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": []
+  },
+  {
+   "title": "The Game Ongoing",
+   "slug": "the-game-ongoing",
+   "start_page": 571,
+   "end_page": 596,
+   "kind": "article",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": [
+    "Ending a session",
+    "Between sessions",
+    "Starting a session",
+    "Pacing",
+    "Advancement",
+    "Retiring PCs",
+    "New PCs",
+    "Conflict between PCs",
+    "Time skips",
+    "Shake-ups",
+    "Ending your game"
+   ]
+  },
+  {
+   "title": "Acknowledgements",
+   "slug": "acknowledgements",
+   "start_page": 597,
+   "end_page": 597,
+   "kind": "article",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": []
+  },
+  {
+   "title": "Mediography",
+   "slug": "mediography",
+   "start_page": 598,
+   "end_page": 599,
+   "kind": "article",
+   "book": "book1",
+   "book_label": "Book I",
+   "book_title": "Book I — Stonetop",
+   "toc_labels": []
+  }
+ ]
+}

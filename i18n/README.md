@@ -123,9 +123,9 @@ code change.
 ## Building
 
 ```bash
-python stonetop-wiki-generator.py --input .            # every language
-python stonetop-wiki-generator.py --input . --langs de fr ja
-python stonetop-wiki-generator.py --input . --langs none   # English only
+python stonetop-wiki-generator.py            # every language
+python stonetop-wiki-generator.py --langs de fr ja
+python stonetop-wiki-generator.py --langs none   # English only
 ```
 
 Each language directory is rewritten from scratch every build, and a language

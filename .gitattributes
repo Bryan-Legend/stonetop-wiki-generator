@@ -1,0 +1,3 @@
+# The corpus is diffed and translated line by line; keep it LF everywhere.
+extracted/** text eol=lf
+*.py text eol=lf
