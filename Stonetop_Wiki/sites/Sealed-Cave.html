@@ -12,67 +12,7 @@
   <link rel="stylesheet" href="../css/wiki.css" />
   <link rel="stylesheet" href="site.css" />
   <style>
-    /* SVG theme only — layout is body.has-map + aside.site-map in site.css */
-    .site-map-svg .map-edge {
-      fill: none;
-      stroke: var(--rule);
-      stroke-width: 2;
-    }
-    .site-map-svg .map-edge-tight {
-      stroke-dasharray: 4 3;
-    }
-    .site-map-svg .map-node {
-      fill: var(--bg-elev);
-      stroke: var(--accent);
-      stroke-width: 1.5;
-      transition: fill 0.12s ease, stroke 0.12s ease;
-    }
-    .site-map-svg .map-node-out {
-      stroke: var(--muted);
-    }
-    .site-map-svg .map-node-danger {
-      stroke: var(--danger);
-    }
-    .site-map-svg a:hover .map-node,
-    .site-map-svg a:focus .map-node {
-      fill: var(--accent-soft);
-      stroke: var(--link-hover);
-    }
-    .site-map-svg a:hover .map-node-danger,
-    .site-map-svg a:focus .map-node-danger {
-      stroke: var(--danger);
-    }
-    .site-map-svg .map-num {
-      fill: var(--accent);
-      font-family: var(--font-serif);
-      font-size: 11px;
-      font-weight: 700;
-      text-anchor: middle;
-      pointer-events: none;
-    }
-    .site-map-svg .map-label {
-      fill: var(--quote);
-      font-family: var(--font-sans);
-      font-size: 10px;
-      text-anchor: middle;
-      pointer-events: none;
-    }
-    .site-map-svg a:hover .map-label,
-    .site-map-svg a:focus .map-label {
-      fill: var(--ink);
-    }
-    .site-map-svg a:focus {
-      outline: none;
-    }
-    .site-map-svg a:focus .map-node {
-      stroke-width: 2.5;
-    }
-    .exits {
-      font-size: 0.88rem;
-      color: var(--muted);
-      margin: 0.35rem 0 0.5rem;
-    }
-    .exits a { margin-right: 0.15rem; }
+    /* SVG theme only — map chrome is site.css */
     .goals li { margin: 0.2rem 0; }
   </style>
   <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4536408101e64ba59733ed69779dd45c"}'></script><!-- End Cloudflare Web Analytics -->
@@ -619,7 +559,7 @@
       <line class="map-edge" x1="120" y1="328" x2="210" y2="380" />  <!-- 7→8 -->
       <!-- Chimney: 3 ↔ 6 (dashed) -->
       <path class="map-edge map-edge-tight" d="M 270 40 C 380 80, 390 240, 360 300" fill="none" />
-      <text x="400" y="190" class="map-label" style="font-size:8px;fill:var(--muted)">chimney</text>
+      <text x="400" y="190" class="map-note">chimney</text>
 
       <!-- 3 Sapling Ridge -->
       <a href="#room-3">

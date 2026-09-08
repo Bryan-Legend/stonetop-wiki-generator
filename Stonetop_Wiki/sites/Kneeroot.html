@@ -12,68 +12,13 @@
   <link rel="stylesheet" href="../css/wiki.css" />
   <link rel="stylesheet" href="site.css" />
   <style>
-    /* SVG theme only — layout is body.has-map + aside.site-map in site.css */
-    .site-map-svg .map-edge {
-      fill: none;
-      stroke: var(--rule);
-      stroke-width: 2;
-    }
-    .site-map-svg .map-edge-tight {
-      stroke-dasharray: 4 3;
-    }
+    /* SVG theme only — map chrome is site.css */
     .site-map-svg .map-fence {
       fill: none;
       stroke: var(--muted);
       stroke-width: 1.5;
       stroke-dasharray: 2 4;
     }
-    .site-map-svg .map-node {
-      fill: var(--bg-elev);
-      stroke: var(--accent);
-      stroke-width: 1.5;
-      transition: fill 0.12s ease, stroke 0.12s ease;
-    }
-    .site-map-svg .map-node-out {
-      stroke: var(--muted);
-    }
-    .site-map-svg .map-node-danger {
-      stroke: var(--danger);
-    }
-    .site-map-svg a:hover .map-node,
-    .site-map-svg a:focus .map-node {
-      fill: var(--accent-soft);
-      stroke: var(--link-hover);
-    }
-    .site-map-svg a:hover .map-node-danger,
-    .site-map-svg a:focus .map-node-danger {
-      stroke: var(--danger);
-    }
-    .site-map-svg .map-label {
-      fill: var(--quote);
-      font-family: var(--font-sans);
-      font-size: 10px;
-      text-anchor: middle;
-      pointer-events: none;
-    }
-    .site-map-svg a:hover .map-label,
-    .site-map-svg a:focus .map-label {
-      fill: var(--ink);
-    }
-    .site-map-svg .map-note {
-      fill: var(--muted);
-      font-family: var(--font-sans);
-      font-size: 8px;
-      text-anchor: middle;
-      pointer-events: none;
-    }
-    .site-map-svg a:focus { outline: none; }
-    .site-map-svg a:focus .map-node { stroke-width: 2.5; }
-    .exits {
-      font-size: 0.88rem;
-      color: var(--muted);
-      margin: 0.35rem 0 0.5rem;
-    }
-    .exits a { margin-right: 0.15rem; }
   </style>
   <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4536408101e64ba59733ed69779dd45c"}'></script><!-- End Cloudflare Web Analytics -->
 </head>
@@ -97,17 +42,17 @@
     </ul>
     <span class="nav-label">Areas</span>
     <ul>
-      <li><a href="#room-1">1. Dooryard</a></li>
+      <li><a href="#room-1">Dooryard</a></li>
       <li><a class="nav-sub" href="#snaplilies">Snaplilies</a></li>
       <li><a class="nav-sub" href="#pyped">The Refused</a></li>
-      <li><a href="#room-2">2. Hearth</a></li>
+      <li><a href="#room-2">Hearth</a></li>
       <li><a class="nav-sub" href="#soothsayer">The other guest</a></li>
-      <li><a href="#room-3">3. Larder</a></li>
+      <li><a href="#room-3">Larder</a></li>
       <li><a class="nav-sub" href="#household">The household</a></li>
       <li><a class="nav-sub" href="#gwyllgi">The jar</a></li>
-      <li><a href="#room-4">4. Tally</a></li>
+      <li><a href="#room-4">Tally</a></li>
       <li><a class="nav-sub" href="#price-steps">Setting the price</a></li>
-      <li><a href="#room-5">5. Under the Floor</a></li>
+      <li><a href="#room-5">Under the Floor</a></li>
       <li><a class="nav-sub" href="#blindspot">The blind spot</a></li>
     </ul>
     <span class="nav-label">Payoffs</span>
@@ -327,7 +272,7 @@
 </section>
 
 <article class="room" id="room-1">
-  <h2>1. The Dooryard</h2>
+  <h2>The Dooryard</h2>
   <span class="tag">Exterior</span>
   <span class="tag danger">Hazard + fight</span>
   <div class="gm-line">
@@ -454,7 +399,7 @@
 </article>
 
 <article class="room" id="room-2">
-  <h2>2. The Hearth</h2>
+  <h2>The Hearth</h2>
   <span class="tag">Interior</span>
   <span class="tag danger">Standoff</span>
   <div class="gm-line">
@@ -587,7 +532,7 @@
 </article>
 
 <article class="room" id="room-3">
-  <h2>3. The Larder</h2>
+  <h2>The Larder</h2>
   <span class="tag">Interior</span>
   <span class="tag danger">Fight if they steal</span>
   <span class="tag">Lore</span>
@@ -710,7 +655,7 @@
 </article>
 
 <article class="room" id="room-4">
-  <h2>4. The Tally</h2>
+  <h2>The Tally</h2>
   <span class="tag">Interior</span>
   <span class="tag danger">The bargain</span>
   <div class="gm-line">
@@ -785,7 +730,7 @@
 </article>
 
 <article class="room" id="room-5">
-  <h2>5. Under the Floor</h2>
+  <h2>Under the Floor</h2>
   <span class="tag">Interior</span>
   <span class="tag danger">Boss</span>
   <div class="gm-line">
@@ -963,38 +908,38 @@
         <!-- 1 Dooryard -->
         <a href="#room-1">
           <rect class="map-node map-node-out" x="150" y="34" width="120" height="38" rx="6" />
-          <text class="map-label" x="210" y="58">1 · Dooryard</text>
+          <text class="map-label" x="210" y="58">The Dooryard</text>
         </a>
         <text x="210" y="22" class="map-note">water · snaplilies · the Refused</text>
 
         <!-- 2 Hearth -->
         <a href="#room-2">
           <rect class="map-node" x="150" y="160" width="120" height="38" rx="6" />
-          <text class="map-label" x="210" y="184">2 · Hearth</text>
+          <text class="map-label" x="210" y="184">The Hearth</text>
         </a>
         <text x="210" y="216" class="map-note">the other guest</text>
 
         <!-- 3 Larder -->
         <a href="#room-3">
           <rect class="map-node" x="45" y="280" width="120" height="38" rx="6" />
-          <text class="map-label" x="105" y="304">3 · Larder</text>
+          <text class="map-label" x="105" y="304">The Larder</text>
         </a>
 
         <!-- 4 Tally -->
         <a href="#room-4">
           <rect class="map-node" x="255" y="280" width="120" height="38" rx="6" />
-          <text class="map-label" x="315" y="304">4 · Tally</text>
+          <text class="map-label" x="315" y="304">The Tally</text>
         </a>
 
         <!-- 5 Under the Floor -->
         <a href="#room-5">
           <rect class="map-node map-node-danger" x="150" y="400" width="120" height="38" rx="6" />
-          <text class="map-label" x="210" y="424">5 · Under the Floor</text>
+          <text class="map-label" x="210" y="424">Under the Floor</text>
         </a>
         <text x="210" y="456" class="map-note">blind spot · no help comes</text>
       </svg>
     </div>
-    <p class="statline">Guest-right holds inside the fence-line (2–5). The water and the reeds outside it are bound by nothing.</p>
+    <p class="statline">Guest-right holds inside the fence-line. The water and the reeds outside it are bound by nothing.</p>
   </aside>
 </div><!-- .site-layout -->
 

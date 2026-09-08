@@ -12,68 +12,17 @@
   <link rel="stylesheet" href="../css/wiki.css" />
   <link rel="stylesheet" href="site.css" />
   <style>
-    /* SVG theme only — layout is body.has-map + aside.site-map in site.css */
-    .site-map-svg .map-edge {
-      fill: none;
-      stroke: var(--rule);
-      stroke-width: 2;
-    }
+    /* SVG theme only — map chrome is site.css */
     .site-map-svg .map-edge-fae {
       stroke: var(--link);
       stroke-dasharray: 4 3;
     }
-    .site-map-svg .map-node {
-      fill: var(--bg-elev);
-      stroke: var(--accent);
-      stroke-width: 1.5;
-      transition: fill 0.12s ease, stroke 0.12s ease;
-    }
-    .site-map-svg .map-node-out {
-      stroke: var(--muted);
-    }
     .site-map-svg .map-node-fae {
       stroke: var(--link);
-    }
-    .site-map-svg .map-node-danger {
-      stroke: var(--danger);
-    }
-    .site-map-svg a:hover .map-node,
-    .site-map-svg a:focus .map-node {
-      fill: var(--accent-soft);
-      stroke: var(--link-hover);
-    }
-    .site-map-svg a:hover .map-node-danger,
-    .site-map-svg a:focus .map-node-danger {
-      stroke: var(--danger);
     }
     .site-map-svg a:hover .map-node-fae,
     .site-map-svg a:focus .map-node-fae {
       stroke: var(--link-hover);
-    }
-    .site-map-svg .map-num {
-      fill: var(--accent);
-      font-family: var(--font-serif);
-      font-size: 11px;
-      font-weight: 700;
-      text-anchor: middle;
-      pointer-events: none;
-    }
-    .site-map-svg .map-label {
-      fill: var(--quote);
-      font-family: var(--font-sans);
-      font-size: 10px;
-      text-anchor: middle;
-      pointer-events: none;
-    }
-    .site-map-svg a:hover .map-label,
-    .site-map-svg a:focus .map-label {
-      fill: var(--ink);
-    }
-    .site-map-svg a:focus {
-      outline: none;
-    }
-    .site-map-svg a:focus .map-node {
-      stroke-width: 2.5;
     }
   </style>
   <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4536408101e64ba59733ed69779dd45c"}'></script><!-- End Cloudflare Web Analytics -->
@@ -1037,22 +986,28 @@
       <line class="map-edge" x1="100" y1="529" x2="420" y2="529" />  <!-- 9→10 -->
       <!-- Fae door into 6 (domain) -->
       <path class="map-edge map-edge-fae" d="M 480 289 C 500 289, 500 320, 480 320" fill="none" />
-      <text class="map-label" x="505" y="308" style="font-size:8px;fill:var(--muted);text-anchor:start">drift</text>
+      <text class="map-note" x="505" y="308" text-anchor="start">drift</text>
 
       <!-- 1 Stair -->
       <a href="#node-1">
         <rect class="map-node map-node-out" x="200" y="20" width="120" height="38" rx="6" />
-        <text class="map-label" x="260" y="44">Stair</text>
+        <text class="map-label" x="260" y="39">
+          <tspan x="260" dy="0">Prayer-Flag</tspan>
+          <tspan x="260" dy="11">Stair</tspan>
+        </text>
       </a>
       <!-- 2 Cloister -->
       <a href="#node-2">
         <rect class="map-node" x="40" y="110" width="120" height="38" rx="6" />
-        <text class="map-label" x="100" y="134">Cloister</text>
+        <text class="map-label" x="100" y="129">
+          <tspan x="100" dy="0">The Vigil’s</tspan>
+          <tspan x="100" dy="11">Cloister</tspan>
+        </text>
       </a>
       <!-- 3 Falls -->
       <a href="#node-3">
         <rect class="map-node map-node-out" x="360" y="110" width="120" height="38" rx="6" />
-        <text class="map-label" x="420" y="134">Ice Falls</text>
+        <text class="map-label" x="420" y="134">The Ice Falls</text>
       </a>
       <!-- 4 Hall -->
       <a href="#node-4">
@@ -1062,32 +1017,47 @@
       <!-- 5 Apes -->
       <a href="#node-5">
         <rect class="map-node" x="40" y="270" width="120" height="38" rx="6" />
-        <text class="map-label" x="100" y="294">Apes’ Hoard</text>
+        <text class="map-label" x="100" y="289">
+          <tspan x="100" dy="0">The Apes’</tspan>
+          <tspan x="100" dy="11">Hoard</tspan>
+        </text>
       </a>
       <!-- 6 Cistern -->
       <a href="#node-6">
         <rect class="map-node map-node-fae" x="360" y="270" width="120" height="38" rx="6" />
-        <text class="map-label" x="420" y="294">Cistern Cave</text>
+        <text class="map-label" x="420" y="289">
+          <tspan x="420" dy="0">The Cistern</tspan>
+          <tspan x="420" dy="11">Cave</tspan>
+        </text>
       </a>
       <!-- 7 Gate -->
       <a href="#node-7">
         <rect class="map-node" x="200" y="350" width="120" height="38" rx="6" />
-        <text class="map-label" x="260" y="374">Gate of Quiet</text>
+        <text class="map-label" x="260" y="369">
+          <tspan x="260" dy="0">The Gate of</tspan>
+          <tspan x="260" dy="11">Quiet</tspan>
+        </text>
       </a>
       <!-- 8 Meadow -->
       <a href="#node-8">
         <rect class="map-node" x="200" y="430" width="120" height="38" rx="6" />
-        <text class="map-label" x="260" y="454">Stilled Meadow</text>
+        <text class="map-label" x="260" y="449">
+          <tspan x="260" dy="0">The Stilled</tspan>
+          <tspan x="260" dy="11">Meadow</tspan>
+        </text>
       </a>
       <!-- 9 Reliquary -->
       <a href="#node-9">
         <rect class="map-node" x="40" y="510" width="120" height="38" rx="6" />
-        <text class="map-label" x="100" y="534">Reliquary</text>
+        <text class="map-label" x="100" y="534">The Reliquary</text>
       </a>
       <!-- 10 Vault -->
       <a href="#node-10">
         <rect class="map-node map-node-danger" x="360" y="510" width="120" height="38" rx="6" />
-        <text class="map-label" x="420" y="534">Vault</text>
+        <text class="map-label" x="420" y="529">
+          <tspan x="420" dy="0">The Vault of</tspan>
+          <tspan x="420" dy="11">Quiet</tspan>
+        </text>
       </a>
     </svg>
   </div>

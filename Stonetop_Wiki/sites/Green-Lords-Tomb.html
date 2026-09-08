@@ -38,60 +38,7 @@
       stroke-width: 2.5;
       opacity: 0.85;
     }
-    .site-map-svg .map-node {
-      fill: var(--bg-elev);
-      stroke: var(--accent);
-      stroke-width: 1.5;
-      transition: fill 0.12s ease, stroke 0.12s ease;
-    }
-    .site-map-svg .map-node-out {
-      stroke: var(--muted);
-    }
-    .site-map-svg .map-node-danger {
-      stroke: var(--danger);
-    }
-    .site-map-svg a:hover .map-node,
-    .site-map-svg a:focus .map-node {
-      fill: var(--accent-soft);
-      stroke: var(--link-hover);
-    }
-    .site-map-svg a:hover .map-node-danger,
-    .site-map-svg a:focus .map-node-danger {
-      stroke: var(--danger);
-    }
-    .site-map-svg .map-num {
-      fill: var(--accent);
-      font-family: var(--font-serif);
-      font-size: 11px;
-      font-weight: 700;
-      text-anchor: middle;
-      pointer-events: none;
-    }
-    .site-map-svg .map-label {
-      fill: var(--quote);
-      font-family: var(--font-sans);
-      font-size: 9px;
-      text-anchor: middle;
-      pointer-events: none;
-    }
-    .site-map-svg a:hover .map-label,
-    .site-map-svg a:focus .map-label {
-      fill: var(--ink);
-    }
-    .site-map-svg a:focus {
-      outline: none;
-    }
-    .site-map-svg a:focus .map-node {
-      stroke-width: 2.5;
-    }
-    .site-map-svg .map-letter {
-      fill: var(--head);
-      font-family: var(--font-serif);
-      font-size: 13px;
-      font-weight: 700;
-      text-anchor: middle;
-      pointer-events: none;
-    }
+    /* Nodes, labels, hover: site.css. Walls stay local — they are corridors, not links. */
     .site-map-svg .map-micro {
       fill: var(--muted);
       font-family: var(--font-sans);
@@ -105,7 +52,7 @@
       stroke-width: 1.2;
     }
     .site-map-svg .map-rubble {
-      fill: var(--bg-elev);
+      fill: var(--panel);
       stroke: var(--danger);
       stroke-width: 1.5;
       stroke-dasharray: 3 2;
@@ -137,15 +84,15 @@
     </ul>
     <span class="nav-label">Areas</span>
     <ul>
-      <li><a href="#room-1">1 Hill</a></li>
-      <li><a href="#room-2">2 A Entrance</a></li>
-      <li><a href="#room-3">3 B Collapse</a></li>
-      <li><a href="#room-4">4 C Central</a></li>
-      <li><a href="#room-5">5 D Mossy</a></li>
-      <li><a href="#room-6">6 E Shrine</a></li>
-      <li><a href="#room-7">7 F Pryder</a></li>
-      <li><a href="#room-8">8 G Great Hall</a></li>
-      <li><a href="#room-9">9 Inner tomb</a></li>
+      <li><a href="#room-1">Hill</a></li>
+      <li><a href="#room-2">Entrance</a></li>
+      <li><a href="#room-3">Collapse</a></li>
+      <li><a href="#room-4">Central</a></li>
+      <li><a href="#room-5">Mossy</a></li>
+      <li><a href="#room-6">Shrine</a></li>
+      <li><a href="#room-7">Pryder’s hall</a></li>
+      <li><a href="#room-8">Great hall</a></li>
+      <li><a href="#room-9">Inner tomb</a></li>
       <li><a class="nav-sub" href="#inner-ante">Antechamber</a></li>
       <li><a class="nav-sub" href="#inner-humility">Humility</a></li>
       <li><a class="nav-sub" href="#inner-gratitude">Gratitude</a></li>
@@ -260,8 +207,8 @@
     Half are <em>trusted</em> (replace <em>cautious</em> with <em>zealous</em>). New flee at half lost; trusted fight to death.
   </p>
   <ul>
-    <li>4 sentries outside · 4–10 on Pryder in F · 3–6 asleep outside · 3–6 asleep in G · 10–15 off foraging · up to 5 doing crinwin stuff.</li>
-    <li><strong>Alerted:</strong> 2–3 keep tabs; rest rally at A. In 10–20 minutes, once ~10 have gathered: mimic Tiwlip/Wynfor crying for help, lure to A, swarm.</li>
+    <li>4 sentries outside · 4–10 on Pryder · 3–6 asleep outside · 3–6 asleep in the Great hall · 10–15 off foraging · up to 5 doing crinwin stuff.</li>
+    <li><strong>Alerted:</strong> 2–3 keep tabs; rest rally at the Entrance. In 10–20 minutes, once ~10 have gathered: mimic Tiwlip/Wynfor crying for help, lure to the Entrance, swarm.</li>
     <li><strong>Sajra / hoard / kids threatened:</strong> nearby crinwin alarm and attack.</li>
     <li><strong>Unaware:</strong> eating, nest-work, fighting over junk, bullying, mimicking Sajra or the kids.</li>
   </ul>
@@ -371,22 +318,22 @@
   </ul>
   <p class="exits">
     Exits →
-    <a href="#room-2">A Entrance</a>
-    <a href="#room-5">D secret</a>
+    <a href="#room-2">Entrance</a>
+    <a href="#room-5">Mossy (secret)</a>
   </p>
   <h3>Exits</h3>
   <div class="gm-line">
-    <em>Briar arch, north face → <a href="#room-2">A Entrance</a>:</em>
+    <em>Briar arch, north face → <a href="#room-2">Entrance</a>:</em>
     “Soil to the knees. Daylight dies two steps in. The marble still throws what light you brought.”
   </div>
   <div class="gm-line">
-    <em>West boulder, packs off → <a href="#room-5">D Mossy</a>:</em>
+    <em>West boulder, packs off → <a href="#room-5">Mossy chamber</a>:</em>
     “A squeeze under stone that shouldn’t be this smooth. Then moss, and a slab that lifts.”
   </div>
 </article>
 
 <article class="room" id="room-2">
-  <h2>A · Entrance</h2>
+  <h2>Entrance</h2>
   <span class="tag">Threshold</span>
   <div class="gm-line">
     “Debris piled four feet at the arch, sloping down. Leaf litter slick underfoot. Saplings in the dirt.
@@ -394,14 +341,14 @@
   </div>
   <ul>
     <li>Moss and vines on the walls near the light.</li>
-    <li><strong>Tracks:</strong> crinwin, and a drag-trail toward C (Pryder). Faint S-curve in the dirt — Sajra, to and from E.</li>
+    <li><strong>Tracks:</strong> crinwin, and a drag-trail toward Central (and on to Pryder). Faint S-curve in the dirt — Sajra, to and from the Shrine.</li>
     <li>If they’re alerted, this is where they rally and fake the kids’ voices.</li>
   </ul>
   <p class="exits">
     Exits →
     <a href="#room-1">Hill</a>
-    <a href="#room-4">C Central</a>
-    <a href="#room-3">B squeeze</a>
+    <a href="#room-4">Central</a>
+    <a href="#room-3">Collapse (squeeze)</a>
   </p>
   <h3>Exits</h3>
   <div class="gm-line">
@@ -409,17 +356,17 @@
     “Daylight, wasp-hum, and the oaks pretending to be just oaks.”
   </div>
   <div class="gm-line">
-    <em>South, the cross of halls → <a href="#room-4">C Central</a>:</em>
+    <em>South, the cross of halls → <a href="#room-4">Central</a>:</em>
     “Vaulted dark, soot on the ceiling, water ticking in a floor-channel.”
   </div>
   <div class="gm-line">
-    <em>Northeast rubble, if they squeeze → <a href="#room-3">B Collapse</a>:</em>
+    <em>Northeast rubble, if they squeeze → <a href="#room-3">Collapse</a>:</em>
     “Stone that fell a long time ago, and something wrapped in linen under it.”
   </div>
 </article>
 
 <article class="room" id="room-3">
-  <h2>B · Collapse</h2>
+  <h2>Collapse</h2>
   <span class="tag danger">Rubble</span>
   <span class="tag">Burrow</span>
   <div class="gm-line">
@@ -453,23 +400,23 @@
   </ul>
   <p class="exits">
     Exits →
-    <a href="#room-2">A squeeze</a>
-    <a href="#room-6">E squeeze</a>
+    <a href="#room-2">Entrance (squeeze)</a>
+    <a href="#room-6">Shrine (squeeze)</a>
     <a href="#room-1">Hill burrow</a>
   </p>
   <h3>Exits</h3>
   <div class="gm-line">
-    <em>Back along the ring → <a href="#room-2">A Entrance</a>:</em>
+    <em>Back along the ring → <a href="#room-2">Entrance</a>:</em>
     “Mud and leaf-litter again. The arch is a pale coin of daylight.”
   </div>
   <div class="gm-line">
-    <em>East squeeze toward water-sound → <a href="#room-6">E Shrine</a>:</em>
+    <em>East squeeze toward water-sound → <a href="#room-6">Shrine</a>:</em>
     “Cooler air. A pool throwing light on the ceiling.”
   </div>
 </article>
 
 <article class="room" id="room-4">
-  <h2>C · Central</h2>
+  <h2>Central</h2>
   <span class="tag">Crossroads</span>
   <div class="gm-line">
     “Twenty feet of sooty vault. Scorch on the floor, very old. Empty niches. Four smashed sarcophagi.
@@ -484,32 +431,32 @@
   </ul>
   <p class="exits">
     Exits →
-    <a href="#room-2">A north</a>
-    <a href="#room-5">D west</a>
-    <a href="#room-6">E east</a>
-    <a href="#room-8">G south</a>
+    <a href="#room-2">Entrance (north)</a>
+    <a href="#room-5">Mossy (west)</a>
+    <a href="#room-6">Shrine (east)</a>
+    <a href="#room-8">Great hall (south)</a>
   </p>
   <h3>Exits</h3>
   <div class="gm-line">
-    <em>North, toward daylight → <a href="#room-2">A Entrance</a>:</em>
+    <em>North, toward daylight → <a href="#room-2">Entrance</a>:</em>
     “Mud again, and a coin of sky.”
   </div>
   <div class="gm-line">
-    <em>West, following the water → <a href="#room-5">D Mossy</a>:</em>
+    <em>West, following the water → <a href="#room-5">Mossy chamber</a>:</em>
     “Frog-song cuts off. The floor goes soft and green.”
   </div>
   <div class="gm-line">
-    <em>East, against the current → <a href="#room-6">E Shrine</a>:</em>
+    <em>East, against the current → <a href="#room-6">Shrine</a>:</em>
     “Cooler. Light on the water. Something expensive on an altar that isn’t an altar anymore.”
   </div>
   <div class="gm-line">
-    <em>South, the cabbage-smell worse → <a href="#room-8">G Great Hall</a>:</em>
+    <em>South, the cabbage-smell worse → <a href="#room-8">Great hall</a>:</em>
     “Pillars like trees. A hole in the floor that wants to be stairs.”
   </div>
 </article>
 
 <article class="room" id="room-5">
-  <h2>D · Mossy chamber</h2>
+  <h2>Mossy chamber</h2>
   <span class="tag">Talk</span>
   <span class="tag">Secret</span>
   <div class="gm-line">
@@ -529,17 +476,17 @@
   </div>
   <p class="exits">
     Exits →
-    <a href="#room-4">C east</a>
-    <a href="#room-7">F south</a>
+    <a href="#room-4">Central (east)</a>
+    <a href="#room-7">Pryder’s hall (south)</a>
     <a href="#room-1">Hill secret</a>
   </p>
   <h3>Exits</h3>
   <div class="gm-line">
-    <em>East along the water → <a href="#room-4">C Central</a>:</em>
+    <em>East along the water → <a href="#room-4">Central</a>:</em>
     “The moss ends. Soot and smashed stone.”
   </div>
   <div class="gm-line">
-    <em>South along the outer ring → <a href="#room-7">F Pryder</a>:</em>
+    <em>South along the outer ring → <a href="#room-7">Pryder’s hall</a>:</em>
     “Niches. A boy breathing wrong. Eyes in the dark that are not his.”
   </div>
   <div class="gm-line">
@@ -549,7 +496,7 @@
 </article>
 
 <article class="room" id="room-6">
-  <h2>E · Shrine</h2>
+  <h2>Shrine</h2>
   <span class="tag danger">Sajra</span>
   <span class="tag">Kids</span>
   <div class="gm-line">
@@ -591,23 +538,23 @@
   </div>
   <p class="exits">
     Exits →
-    <a href="#room-4">C west</a>
-    <a href="#room-8">G south</a>
-    <a href="#room-3">B squeeze</a>
+    <a href="#room-4">Central (west)</a>
+    <a href="#room-8">Great hall (south)</a>
+    <a href="#room-3">Collapse (squeeze)</a>
   </p>
   <h3>Exits</h3>
   <div class="gm-line">
-    <em>West, the water leaving → <a href="#room-4">C Central</a>:</em>
+    <em>West, the water leaving → <a href="#room-4">Central</a>:</em>
     “Glow dies in the channel. Soot and the broken goddess in the rubble.”
   </div>
   <div class="gm-line">
-    <em>South along the ring → <a href="#room-8">G Great Hall</a>:</em>
+    <em>South along the ring → <a href="#room-8">Great hall</a>:</em>
     “The cabbage-smell thickens. Pillars. Nests you might miss until they move.”
   </div>
 </article>
 
 <article class="room" id="room-7">
-  <h2>F · Pryder’s hall</h2>
+  <h2>Pryder’s hall</h2>
   <span class="tag">Rescue</span>
   <div class="gm-line">
     “A burial niche with a boy in it. Breathing. Hot. The hall has too many small shadows, and some of them are watching other shadows.”
@@ -638,22 +585,22 @@
   </ul>
   <p class="exits">
     Exits →
-    <a href="#room-5">D north</a>
-    <a href="#room-8">G east</a>
+    <a href="#room-5">Mossy (north)</a>
+    <a href="#room-8">Great hall (east)</a>
   </p>
   <h3>Exits</h3>
   <div class="gm-line">
-    <em>North, moss-smell → <a href="#room-5">D Mossy</a>:</em>
+    <em>North, moss-smell → <a href="#room-5">Mossy chamber</a>:</em>
     “Green underfoot. The glow in the ceiling like a held breath.”
   </div>
   <div class="gm-line">
-    <em>East, toward the pillars → <a href="#room-8">G Great Hall</a>:</em>
+    <em>East, toward the pillars → <a href="#room-8">Great hall</a>:</em>
     “Trusted crinwin were already looking this way.”
   </div>
 </article>
 
 <article class="room" id="room-8">
-  <h2>G · Great hall</h2>
+  <h2>Great hall</h2>
   <span class="tag danger">Nests</span>
   <span class="tag">Stairs</span>
   <div class="gm-line">
@@ -679,22 +626,22 @@
   </ul>
   <p class="exits">
     Exits →
-    <a href="#room-4">C north</a>
-    <a href="#room-7">F west</a>
-    <a href="#room-6">E east</a>
-    <a href="#room-9">Inner down</a>
+    <a href="#room-4">Central (north)</a>
+    <a href="#room-7">Pryder’s hall (west)</a>
+    <a href="#room-6">Shrine (east)</a>
+    <a href="#room-9">Inner tomb (down)</a>
   </p>
   <h3>Exits</h3>
   <div class="gm-line">
-    <em>North → <a href="#room-4">C Central</a>:</em>
+    <em>North → <a href="#room-4">Central</a>:</em>
     “The soot-vault. Water in the floor, ticking.”
   </div>
   <div class="gm-line">
-    <em>West → <a href="#room-7">F Pryder</a>:</em>
+    <em>West → <a href="#room-7">Pryder’s hall</a>:</em>
     “The niche. The boy. The small jealous things.”
   </div>
   <div class="gm-line">
-    <em>East → <a href="#room-6">E Shrine</a>:</em>
+    <em>East → <a href="#room-6">Shrine</a>:</em>
     “Cooler air and stolen shine on the water.”
   </div>
   <div class="gm-line">
@@ -806,11 +753,11 @@
   </ul>
   <p class="exits">
     Exits →
-    <a href="#room-8">G stairs up</a>
+    <a href="#room-8">Great hall (stairs up)</a>
   </p>
   <h3>Exits</h3>
   <div class="gm-line">
-    <em>Stairs up → <a href="#room-8">G Great Hall</a>:</em>
+    <em>Stairs up → <a href="#room-8">Great hall</a>:</em>
     “Soot and wasp-hum and the smell you had almost forgotten. Iron is just iron again.”
   </div>
 </article>
@@ -885,62 +832,54 @@
       <text class="map-micro" x="200" y="88">N</text>
       <polygon points="200,74 196,84 204,84" fill="var(--muted)" />
 
-      <!-- 1 Hill -->
+      <!-- Hill -->
       <a href="#room-1">
         <rect class="map-node map-node-out" x="150" y="8" width="100" height="34" rx="6" />
-        <text class="map-letter" x="200" y="22">1</text>
-        <text class="map-label" x="200" y="34">Hill</text>
+        <text class="map-label" x="200" y="29">Hill</text>
       </a>
 
-      <!-- 2 A Entrance -->
+      <!-- Entrance -->
       <a href="#room-2">
         <rect class="map-node" x="160" y="100" width="80" height="48" rx="6" />
-        <text class="map-letter" x="200" y="118">A</text>
-        <text class="map-label" x="200" y="132">Entrance</text>
+        <text class="map-label" x="200" y="128">Entrance</text>
       </a>
 
-      <!-- 3 B Collapse -->
+      <!-- Collapse -->
       <a href="#room-3">
         <rect class="map-rubble" x="248" y="112" width="78" height="50" rx="6" />
         <rect fill="url(#glt-hatch)" x="248" y="112" width="78" height="50" rx="6" pointer-events="none" />
-        <text class="map-letter" x="287" y="132">B</text>
-        <text class="map-label" x="287" y="146">Collapse</text>
+        <text class="map-label" x="287" y="142">Collapse</text>
       </a>
 
-      <!-- 4 C Central -->
+      <!-- Central -->
       <a href="#room-4">
         <circle class="map-node" cx="200" cy="248" r="40" />
-        <text class="map-letter" x="200" y="244">C</text>
-        <text class="map-label" x="200" y="258">Central</text>
+        <text class="map-label" x="200" y="252">Central</text>
       </a>
 
-      <!-- 5 D Mossy -->
+      <!-- Mossy -->
       <a href="#room-5">
         <rect class="map-node" x="42" y="218" width="72" height="60" rx="6" />
-        <text class="map-letter" x="78" y="240">D</text>
-        <text class="map-label" x="78" y="254">Mossy</text>
+        <text class="map-label" x="78" y="250">Mossy</text>
         <text class="map-micro" x="58" y="268">T</text>
       </a>
 
-      <!-- 6 E Shrine -->
+      <!-- Shrine -->
       <a href="#room-6">
         <rect class="map-node map-node-danger" x="286" y="218" width="72" height="60" rx="6" />
-        <text class="map-letter" x="322" y="240">E</text>
-        <text class="map-label" x="322" y="254">Shrine</text>
+        <text class="map-label" x="322" y="252">Shrine</text>
       </a>
 
-      <!-- 7 F Pryder -->
+      <!-- Pryder -->
       <a href="#room-7">
         <rect class="map-node" x="58" y="322" width="66" height="50" rx="6" />
-        <text class="map-letter" x="91" y="342">F</text>
-        <text class="map-label" x="91" y="356">Pryder</text>
+        <text class="map-label" x="91" y="352">Pryder</text>
       </a>
 
-      <!-- 8 G Great Hall -->
+      <!-- Great Hall -->
       <a href="#room-8">
         <rect class="map-node" x="155" y="328" width="90" height="72" rx="6" />
-        <text class="map-letter" x="200" y="350">G</text>
-        <text class="map-label" x="200" y="364">Great Hall</text>
+        <text class="map-label" x="200" y="356">Great Hall</text>
         <!-- stairs -->
         <rect class="map-stairs" x="188" y="372" width="24" height="18" />
         <line class="map-stairs" x1="188" y1="377" x2="212" y2="377" />
@@ -948,17 +887,16 @@
         <line class="map-stairs" x1="188" y1="387" x2="212" y2="387" />
       </a>
 
-      <!-- 9 Inner -->
+      <!-- Inner tomb -->
       <a href="#room-9">
         <rect class="map-node map-node-danger" x="150" y="450" width="100" height="36" rx="6" />
-        <text class="map-letter" x="200" y="466">9</text>
-        <text class="map-label" x="200" y="478">Inner tomb</text>
+        <text class="map-label" x="200" y="472">Inner tomb</text>
       </a>
     </svg>
   </div>
   <p class="statline">
     North arch is the door. Dashed = squeeze, secret, or burrow (S).
-    Water runs E → C → D. Stairs in G go down.
+    Water runs Shrine → Central → Mossy. Stairs in the Great hall go down.
   </p>
 </aside>
 

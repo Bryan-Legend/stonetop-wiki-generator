@@ -156,7 +156,7 @@
       flex: 1;
       min-width: 0;
       width: 100%;
-      max-width: 66rem;
+      max-width: 640px;
       margin-left: var(--nav-w);
       padding: 1.25rem 1.5rem 2.5rem;
       box-sizing: border-box;
@@ -191,7 +191,7 @@
       margin: 0.35rem 0 0;
     }
     .site-map-wrap {
-      background: var(--accent-soft);
+      background: #080607;
       border: 1px solid var(--rule);
       border-radius: var(--radius);
       padding: 0.4rem;
@@ -205,6 +205,79 @@
       height: auto;
       margin: 0 auto;
     }
+    .site-map-svg .map-edge {
+      fill: none;
+      stroke: var(--accent);
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+    .site-map-svg .map-edge-tight {
+      stroke-dasharray: 6 5;
+    }
+    .site-map-svg .map-node {
+      fill: var(--panel);
+      stroke: var(--rule);
+      stroke-width: 1;
+      filter: drop-shadow(0 0 4px #000);
+      transition: stroke 0.12s ease;
+    }
+    .site-map-svg .map-node-wash {
+      fill: url(#site-node-wash);
+      pointer-events: none;
+    }
+    .site-map-svg .map-node-out {
+      stroke: var(--muted);
+    }
+    .site-map-svg .map-node-danger {
+      stroke: var(--danger);
+    }
+    .site-map-svg a:hover .map-node,
+    .site-map-svg a:focus .map-node {
+      stroke: var(--link-hover);
+    }
+    .site-map-svg a:hover .map-node-danger,
+    .site-map-svg a:focus .map-node-danger {
+      stroke: var(--danger);
+    }
+    .site-map-svg a:focus {
+      outline: none;
+    }
+    .site-map-svg a:focus .map-node {
+      stroke-width: 2;
+    }
+    .site-map-svg .map-label,
+    .site-map-svg .map-label tspan {
+      fill: var(--head);
+      font-family: var(--font-serif);
+      font-size: var(--map-label-fs, 10px);
+      font-weight: 400;
+      font-synthesis-weight: none;
+      letter-spacing: 0.08em;
+      text-anchor: middle;
+      dominant-baseline: alphabetic;
+      alignment-baseline: alphabetic;
+      pointer-events: none;
+    }
+    .site-map-svg a:hover .map-label,
+    .site-map-svg a:hover .map-label tspan,
+    .site-map-svg a:focus .map-label,
+    .site-map-svg a:focus .map-label tspan {
+      fill: var(--ink);
+    }
+    .site-map-svg .map-note {
+      fill: var(--muted);
+      font-family: var(--font-sans);
+      font-size: 8px;
+      text-anchor: middle;
+      pointer-events: none;
+    }
+    .exits {
+      font-size: var(--fs-sm);
+      color: var(--muted);
+      margin: 0.35rem 0 0.5rem;
+    }
+    .exits a { margin-right: 0.15rem; }
 
     header {
       border-bottom: 3px double var(--rule);
