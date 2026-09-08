@@ -158,7 +158,7 @@
 
 <section id="hooks">
   <h2>This table</h2>
-  <p class="statline">
+  <p>
     Book names: <strong>Tiwlip</strong> (Woods child, last winter), <strong>Wynfor</strong> (Stonetop raid), <strong>Pryder</strong> (just taken).
     Swap for whoever this village has already lost.
   </p>
@@ -172,7 +172,7 @@
 
 <section id="thornthumb">
   <h2>Thornthumb</h2>
-  <p class="statline">
+  <p>
     Displaced Fae · plant-sway · collector · oathbound to stay away from the tomb, Sajra, its servants, and its possessions.
     Instinct: to get his hoard back without breaking the oath.
   </p>
@@ -188,7 +188,7 @@
 
 <section id="interior-rule">
   <h2>Site rule — interior</h2>
-  <p class="statline">True in A–G. White marble, plant-and-chimera scrollwork, often marred. Dark, but the stone throws light.</p>
+  <p>True in A–G. White marble, plant-and-chimera scrollwork, often marred. Dark, but the stone throws light.</p>
   <ul>
     <li>Damp, cool. Wooden archways that grew there. Crude graffiti in Green Lord script. Lazy wasps. Distant voices that might be kids, or crinwin.</li>
     <li><strong>Halls</strong> 10 feet wide, burial niches 8–24 per hall. No bodies. Some niches hold junk shrines (bones, potsherds, flawed Value 1 finery) — crinwin aping Sajra.</li>
@@ -198,14 +198,20 @@
 
 <section id="crinwin-tactics">
   <h2>Crinwin (~30)</h2>
-  <p class="statline">
-    <a href="../crinwin.html" class="wiki-link" data-slug="crinwin">Crinwin</a>
-    horde · small, hoarder, stealthy · HP 3 · Armor 1 (reflexes) ·
-    claws/rocks/choke
-    <button type="button" class="dice-roll" data-dice="d6" title="Click to roll d6">d6</button>
-    (hand) · climbs like a squirrel · instinct: to covet.
-    Half are <em>trusted</em> (replace <em>cautious</em> with <em>zealous</em>). New flee at half lost; trusted fight to death.
-  </p>
+  <div class="stat-block">
+    <h3 class="stat-name"><img class="book-icon" src="../images/icons/beast.svg" alt="" width="18" height="18" loading="lazy"><a href="../crinwin.html#horde" class="wiki-link" data-slug="crinwin" data-fragment="horde">6 Crinwin</a></h3>
+    <p class="stat-tags">Horde, small, hoarder, cautious, stealthy</p>
+    <p class="stat-stats"><strong>HP</strong> 3; <strong>Armor</strong> 1 (reflexes)<br>
+      <strong>Damage</strong> claws, rocks, choking <button type="button" class="dice-roll" data-dice="d6" title="Click to roll d6">d6</button> (hand)<br>
+      <strong>Special qualities</strong> climbs and jumps like a squirrel<br>
+      <strong>Instinct</strong> to covet</p>
+    <ul class="stat-moves">
+      <li>Mimic noises, words, cries for help</li>
+      <li>Hide or vanish into the trees</li>
+      <li>Snatch something and dart away</li>
+    </ul>
+    <p class="stat-note">Half are <em>trusted</em> (replace cautious with zealous). New flee at half lost; trusted fight to death. Track a wave, not all ~30.</p>
+  </div>
   <ul>
     <li>4 sentries outside · 4–10 on Pryder · 3–6 asleep outside · 3–6 asleep in the Great hall · 10–15 off foraging · up to 5 doing crinwin stuff.</li>
     <li><strong>Alerted:</strong> 2–3 keep tabs; rest rally at the Entrance. In 10–20 minutes, once ~10 have gathered: mimic Tiwlip/Wynfor crying for help, lure to the Entrance, swarm.</li>
@@ -220,44 +226,23 @@
     (ignores armor) and writhing; anything else is Defy Danger +CON.
     Each later swarm hit steps the die up (max d10). Flee: roll +CON; 7+ escape and pick 1 (10+) or 2 (7–9): take swarm damage · mark a debility · run into another danger.
   </p>
-  <div class="enemy-block">
-    <div class="enemy-row" data-hp-id="crin-1" data-hp-max="3">
-      <div class="enemy-meta"><span class="enemy-name">Crinwin 1</span></div>
-      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
-    </div>
-    <div class="enemy-row" data-hp-id="crin-2" data-hp-max="3">
-      <div class="enemy-meta"><span class="enemy-name">Crinwin 2</span></div>
-      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
-    </div>
-    <div class="enemy-row" data-hp-id="crin-3" data-hp-max="3">
-      <div class="enemy-meta"><span class="enemy-name">Crinwin 3</span></div>
-      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
-    </div>
-    <div class="enemy-row" data-hp-id="crin-4" data-hp-max="3">
-      <div class="enemy-meta"><span class="enemy-name">Crinwin 4</span></div>
-      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
-    </div>
-    <div class="enemy-row" data-hp-id="crin-5" data-hp-max="3">
-      <div class="enemy-meta"><span class="enemy-name">Crinwin 5</span></div>
-      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
-    </div>
-    <div class="enemy-row" data-hp-id="crin-6" data-hp-max="3">
-      <div class="enemy-meta"><span class="enemy-name">Crinwin 6</span></div>
-      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
-    </div>
-  </div>
 </section>
 
 <section id="sajra">
   <h2>Sajra the Swyn</h2>
-  <p class="statline">
-    <a href="../green-lords.html#swyn" class="wiki-link" data-slug="green-lords" data-fragment="swyn">Swyn</a>
-    · solitary, large, construct, corrupted, stealthy, magical, devious, cautious, hoarder ·
-    HP 20 · Armor 4 (resilience), 2 vs bronze ·
-    bite &amp; constriction
-    <button type="button" class="dice-roll" data-dice="d10+3" title="Click to roll d10+3">d10+3</button>
-    (hand, close, forceful, grabby) · instinct: to indulge its ego.
-  </p>
+  <div class="stat-block" data-hp-key="sajra">
+    <h3 class="stat-name"><img class="book-icon" src="../images/icons/construct.svg" alt="" width="18" height="18" loading="lazy"><a href="../green-lords.html#swyn" class="wiki-link" data-slug="green-lords" data-fragment="swyn">Sajra</a></h3>
+    <p class="stat-tags">Solitary, large, construct, corrupted, stealthy, magical, devious, cautious, hoarder</p>
+    <p class="stat-stats"><strong>HP</strong> 20; <strong>Armor</strong> 4 (resilience), 2 vs bronze (scales)<br>
+      <strong>Damage</strong> bite &amp; constriction <button type="button" class="dice-roll" data-dice="d10+3" title="Click to roll d10+3">d10+3</button> (hand, close, forceful, grabby)<br>
+      <strong>Instinct</strong> to indulge its ego</p>
+    <ul class="stat-moves">
+      <li>Appear out of nowhere and lock eyes</li>
+      <li>Hold its prey fast with gaze and soothing words</li>
+      <li>Plant a suggestion in its victim’s mind</li>
+      <li>Turn the weak-willed into fawning servants</li>
+    </ul>
+  </div>
   <p>
     First time they approach the hill, roll the
     <a href="../playing-the-game.html#the-die-of-fate" class="wiki-link" data-slug="playing-the-game" data-fragment="the-die-of-fate">Die of Fate</a>:
@@ -278,12 +263,6 @@
     <li>Priority: itself, then ego, then hoard / lair / kids. Crinwin are expendable.</li>
     <li>Compel against their will: they mark XP if they obey. Resist = Defy Danger.</li>
   </ul>
-  <div class="enemy-block">
-    <div class="enemy-row" data-hp-id="sajra" data-hp-max="20">
-      <div class="enemy-meta"><span class="enemy-name">Sajra</span></div>
-      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
-    </div>
-  </div>
 </section>
 
 <article class="room" id="room-1">
@@ -302,7 +281,7 @@
     <li>Rotting cabbage, bad eggs. Hum that isn’t bees. Papery nests in the oaks.</li>
   </ul>
   <h3>Sentries</h3>
-  <p class="statline">4 on watch in the oaks, often “singing.” <button type="button" class="dice-roll" data-dice="1d4+2" title="Click to roll 1d4+2">1d4+2</button> asleep in nests. <button type="button" class="dice-roll" data-dice="1d6-1" title="Click to roll 1d6-1">1d6-1</button> others outside doing crinwin stuff.</p>
+  <p>4 on watch in the oaks, often “singing.” <button type="button" class="dice-roll" data-dice="1d4+2" title="Click to roll 1d4+2">1d4+2</button> asleep in nests. <button type="button" class="dice-roll" data-dice="1d6-1" title="Click to roll 1d6-1">1d6-1</button> others outside doing crinwin stuff.</p>
   <ul>
     <li><strong>Notice PCs:</strong> stop singing, bird-call. Others hide. Sleepers wake and stay put.</li>
     <li><strong>Poke around:</strong> watch, sneak closer, keep bird-calling.</li>
@@ -377,22 +356,18 @@
     <a href="../green-lords.html#mummified-servant" class="wiki-link" data-slug="green-lords" data-fragment="mummified-servant">mummified servants</a>
     trapped in the fall. Crinwin/Sajra squeeze-tunnel through, and out via a burrow. Sajra’s trail is here if you look.
   </p>
-  <p class="statline">
-    Horde, spirit, undead · HP 11 · Armor 0 · choke
-    <button type="button" class="dice-roll" data-dice="d6" title="Click to roll d6">d6</button>
-    (hand, grabby) or spear
-    <button type="button" class="dice-roll" data-dice="d6" title="Click to roll d6">d6</button>
-    (close, 1 piercing) · +1d4 from fire · regenerate unless burned or jars destroyed · instinct: destroy intruders.
-  </p>
-  <div class="enemy-block">
-    <div class="enemy-row" data-hp-id="servant-1" data-hp-max="11">
-      <div class="enemy-meta"><span class="enemy-name">Servant 1</span></div>
-      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
-    </div>
-    <div class="enemy-row" data-hp-id="servant-2" data-hp-max="11">
-      <div class="enemy-meta"><span class="enemy-name">Servant 2</span></div>
-      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
-    </div>
+  <div class="stat-block">
+    <h3 class="stat-name"><img class="book-icon" src="../images/icons/undead.svg" alt="" width="18" height="18" loading="lazy"><a href="../green-lords.html#mummified-servant" class="wiki-link" data-slug="green-lords" data-fragment="mummified-servant">2 Mummified Servants</a></h3>
+    <p class="stat-tags">Horde, spirit, undead, organized, relentless</p>
+    <p class="stat-stats"><strong>HP</strong> 11; <strong>Armor</strong> 0<br>
+      <strong>Damage</strong> choking grip <button type="button" class="dice-roll" data-dice="d6" title="Click to roll d6">d6</button> (hand, grabby), spear <button type="button" class="dice-roll" data-dice="d6" title="Click to roll d6">d6</button> (close, 1 piercing)<br>
+      <strong>Special qualities</strong> takes +<button type="button" class="dice-roll" data-dice="1d4" title="Click to roll 1d4">1d4</button> from fire; regenerate unless burned or jars destroyed<br>
+      <strong>Instinct</strong> to destroy intruders</p>
+    <ul class="stat-moves">
+      <li>Animate its preserved corpse</li>
+      <li>Surround intruders and hem them in</li>
+      <li>Keep fighting with limbs that have been severed</li>
+    </ul>
   </div>
   <ul>
     <li><strong>Leave the rubble:</strong> they stay dead. The squeeze is still a crinwin/Sajra flank.</li>
@@ -469,7 +444,12 @@
     <li>Ants, snails, frogs, moths, gnats. Wasps and crinwin hunt them.</li>
   </ul>
   <h3>Moss spirits</h3>
-  <p class="statline">horde, spirits, vain, moody · instinct: to express themselves visually. Fret over Thornthumb. Sajra is a boor. Crinwin are vile. You clearly don’t understand the work.</p>
+  <div class="stat-block">
+    <h3 class="stat-name"><img class="book-icon" src="../images/icons/spirit.svg" alt="" width="18" height="18" loading="lazy">Moss spirits</h3>
+    <p class="stat-tags">Horde, spirits, vain, moody</p>
+    <p class="stat-stats"><strong>Instinct</strong> to express themselves visually</p>
+    <p class="stat-note">Fret over Thornthumb. Sajra is a boor. Crinwin are vile. You clearly don’t understand the work.</p>
+  </div>
   <div class="dialog-lines">
     <div class="gm-line">“He kept the light. The snake does not keep the light. The snake sits in it.”</div>
     <div class="gm-line">“Do not step there. That was a year. That was a good year.”</div>
@@ -510,28 +490,25 @@
     <li>Sajra is probably not here — <a href="#sajra">disposition</a>. If it is, this is its den.</li>
   </ul>
   <h3>Wynfor &amp; Tiwlip</h3>
-  <p class="statline">
-    small, entranced, docile · HP 3 · bronze knife
-    <button type="button" class="dice-roll" data-dice="d4" title="Click to roll d4">d4</button>
-    (hand) · instinct: bask in Sajra’s presence.
-    Ill-fitting silks. Asleep or staring at the pool. Ignore PCs until someone takes <em>them</em> or the hoard — then they stab.
-  </p>
-  <div class="enemy-block">
-    <div class="enemy-row" data-hp-id="wynfor" data-hp-max="3">
-      <div class="enemy-meta"><span class="enemy-name">Wynfor</span></div>
-      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
-    </div>
-    <div class="enemy-row" data-hp-id="tiwlip" data-hp-max="3">
-      <div class="enemy-meta"><span class="enemy-name">Tiwlip</span></div>
-      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
-    </div>
+  <div class="stat-block" data-hp-names="Wynfor,Tiwlip">
+    <h3 class="stat-name"><img class="book-icon" src="../images/icons/person.svg" alt="" width="18" height="18" loading="lazy">Wynfor &amp; Tiwlip</h3>
+    <p class="stat-tags">Small, entranced, docile</p>
+    <p class="stat-stats"><strong>HP</strong> 3; <strong>Armor</strong> 0<br>
+      <strong>Damage</strong> bronze knife <button type="button" class="dice-roll" data-dice="d4" title="Click to roll d4">d4</button> (hand)<br>
+      <strong>Instinct</strong> to bask in Sajra’s presence</p>
+    <p class="stat-note">Ill-fitting silks. Asleep or staring at the pool. Ignore PCs until someone takes them or the hoard — then they stab.</p>
   </div>
   <ul>
     <li><strong>Carry them out gently:</strong> they go limp, then fight at the threshold if Sajra’s suggestion still holds. Break it with time, a spirit, or by putting Sajra down.</li>
     <li><strong>Hurt them:</strong> Sven will not forgive the table. Crinwin alarm. Sajra’s ego is wounded even if it’s hunting.</li>
   </ul>
   <h3>Spirit of the spring</h3>
-  <p class="statline">solitary, spirit, anxious · instinct: fuss over everything. Mile-a-minute whisper. Questions, no waiting. Hates Sajra, frets over its opinion. Upsets herself and insults herself.</p>
+  <div class="stat-block">
+    <h3 class="stat-name"><img class="book-icon" src="../images/icons/spirit.svg" alt="" width="18" height="18" loading="lazy">Spirit of the spring</h3>
+    <p class="stat-tags">Solitary, spirit, anxious</p>
+    <p class="stat-stats"><strong>Instinct</strong> to fuss over everything</p>
+    <p class="stat-note">Mile-a-minute whisper. Questions, no waiting. Hates Sajra, frets over its opinion. Upsets herself and insults herself.</p>
+  </div>
   <div class="dialog-lines">
     <div class="gm-line">“Is it coming back? Don’t tell it I asked. I didn’t ask. The pool is fine. The pool is not fine.”</div>
     <div class="gm-line">“The statue went west. They dragged her. I should have — I didn’t. I’m sorry. I’m not sorry.”</div>
@@ -559,24 +536,20 @@
   <div class="gm-line">
     “A burial niche with a boy in it. Breathing. Hot. The hall has too many small shadows, and some of them are watching other shadows.”
   </div>
-  <p class="statline">
+  <p>
     <button type="button" class="dice-roll" data-dice="1d4+2" title="Click to roll 1d4+2">1d4+2</button>
     “new” crinwin (the ones who brought him) on watch.
     <button type="button" class="dice-roll" data-dice="1d4" title="Click to roll 1d4">1d4</button>
     “trusted” looking on from G.
   </p>
   <h3>Pryder</h3>
-  <p class="statline">
-    woods-wise, handsome, concussed · HP 0 of 6 ·
-    <button type="button" class="dice-roll" data-dice="d6" title="Click to roll d6">d6</button>
-    if armed · instinct: see the good in things.
-    Asleep on Sajra’s command. Head wound, fever. Slow, tires fast, <em>mind is free</em>.
-  </p>
-  <div class="enemy-block">
-    <div class="enemy-row" data-hp-id="pryder" data-hp-max="6">
-      <div class="enemy-meta"><span class="enemy-name">Pryder</span> (start him at 0)</div>
-      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
-    </div>
+  <div class="stat-block">
+    <h3 class="stat-name"><img class="book-icon" src="../images/icons/person.svg" alt="" width="18" height="18" loading="lazy">Pryder</h3>
+    <p class="stat-tags">Woods-wise, handsome, concussed</p>
+    <p class="stat-stats"><strong>HP</strong> 6; <strong>Armor</strong> 0<br>
+      <strong>Damage</strong> <button type="button" class="dice-roll" data-dice="d6" title="Click to roll d6">d6</button> if armed<br>
+      <strong>Instinct</strong> to see the good in things</p>
+    <p class="stat-note">Start him at 0. Asleep on Sajra’s command. Head wound, fever. Slow, tires fast, mind is free.</p>
   </div>
   <ul>
     <li><strong>Wake him:</strong> he knows he’s not supposed to. He will try. He can walk if helped. He will name the shrine, the snake, the other two kids.</li>
@@ -614,7 +587,7 @@
     <li>Wasps in the nests and pillars. Agitate → swarm.</li>
   </ul>
   <h3>Unstable pillars</h3>
-  <p class="statline">Advance a box each time a pillar is struck, or as a GM move.</p>
+  <p>Advance a box each time a pillar is struck, or as a GM move.</p>
   <ul class="check-list" data-check-list="glt-pillars">
     <li class="check-item"><label for="glt-p0"><input type="checkbox" class="wiki-check" id="glt-p0" data-check-id="glt-p0"> <span>Pillar cracks/buckles, dirt pours down</span></label></li>
     <li class="check-item"><label for="glt-p1"><input type="checkbox" class="wiki-check" id="glt-p1" data-check-id="glt-p1"> <span>Stones fall (<button type="button" class="dice-roll" data-dice="1d6+1" title="Click to roll 1d6+1">1d6+1</button> damage, <em>forceful</em>)</span></label></li>
@@ -654,7 +627,7 @@
   <h2>Inner tomb</h2>
   <span class="tag">Linear</span>
   <span class="tag">Fae wards</span>
-  <p class="statline">Below G. The book leaves this for later; the moves live here so you are not flipping chapters. Kids first is enough for a session.</p>
+  <p>Below G. The book leaves this for later; the moves live here so you are not flipping chapters. Kids first is enough for a session.</p>
 
   <h3 id="inner-ante">Antechamber</h3>
   <div class="gm-line">
@@ -692,24 +665,19 @@
     They plant those trunk-arms and swing forward. Creaking wood.
     Something that was on your left is on your right.”
   </div>
-  <p class="statline">
-    <a href="../dangers.html#the-almtakers-guardian-fae" class="wiki-link" data-slug="dangers" data-fragment="the-almtakers-guardian-fae">Almtakers</a>
-    · group, large, Fae, magical, organized · HP 14 · Armor 5 (resilience, skill), 2 vs iron ·
-    powerful blows
-    <button type="button" class="dice-roll" data-dice="d6+3" title="Click to roll d6+3">d6+3</button>
-    w/ disadvantage (close, reach, forceful) ·
-    <a href="../fae.html#injury" class="wiki-link" data-slug="fae" data-fragment="injury">Fae nature</a>,
-    telepathic, cannot lie · warp local time and space · instinct: protect its master.
-  </p>
-  <div class="enemy-block">
-    <div class="enemy-row" data-hp-id="almtaker-1" data-hp-max="14">
-      <div class="enemy-meta"><span class="enemy-name">Almtaker 1</span></div>
-      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
-    </div>
-    <div class="enemy-row" data-hp-id="almtaker-2" data-hp-max="14">
-      <div class="enemy-meta"><span class="enemy-name">Almtaker 2</span></div>
-      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
-    </div>
+  <div class="stat-block">
+    <h3 class="stat-name"><img class="book-icon" src="../images/icons/fae.svg" alt="" width="18" height="18" loading="lazy"><a href="../dangers.html#the-almtakers-guardian-fae" class="wiki-link" data-slug="dangers" data-fragment="the-almtakers-guardian-fae">2 Almtakers</a></h3>
+    <p class="stat-tags">Group, large, fae, magical, organized</p>
+    <p class="stat-stats"><strong>HP</strong> 14; <strong>Armor</strong> 5 (resilience, skill), 2 vs iron (hide, skill)<br>
+      <strong>Damage</strong> powerful blows <button type="button" class="dice-roll" data-dice="d6+3" title="Click to roll d6+3">d6+3</button> w/disadvantage (close, reach, forceful)<br>
+      <strong>Special qualities</strong> <a href="../fae.html#injury" class="wiki-link" data-slug="fae" data-fragment="injury">Fae nature</a>, telepathic, cannot lie or mislead; subtly warps local time and space<br>
+      <strong>Instinct</strong> to protect its master</p>
+    <ul class="stat-moves">
+      <li>Lock eyes, then teleport them away</li>
+      <li>Act in tandem, without hesitation</li>
+      <li>Require an oath of good intentions</li>
+      <li>Lay a wasting curse on oath-breakers</li>
+    </ul>
   </div>
   <ul>
     <li>They want an offering, a vow of peace and respect, then they judge.</li>
@@ -733,18 +701,20 @@
     dusty halls, feral gardens, discarded wealth, surly bound Fae. The Green Lord’s soul swings from boredom to manic fits; the Fae on hand cobble threadbare glamour of half-remembered deeds.
     Theme: promises, deals, loopholes. Time does not behave.
   </p>
-  <p class="statline">
-    <a href="../green-lords.html#mummified-green-lord" class="wiki-link" data-slug="green-lords" data-fragment="mummified-green-lord">Mummified Green Lord</a>
-    · HP 24 · Armor 4 (wards), 0 vs fire ·
-    mighty blows
-    <button type="button" class="dice-roll" data-dice="d10+2" title="Click to roll d10+2">d10+2</button>
-    (hand, close, forceful) · tethered to jars, senses the whole tomb · instinct: preserve its glorious afterlife.
-  </p>
-  <div class="enemy-block">
-    <div class="enemy-row" data-hp-id="green-lord" data-hp-max="24">
-      <div class="enemy-meta"><span class="enemy-name">Green Lord</span></div>
-      <div class="hp-tracker"><div class="hp-boxes"></div><span class="hp-readout"></span></div>
-    </div>
+  <div class="stat-block">
+    <h3 class="stat-name"><img class="book-icon" src="../images/icons/beast-large.svg" alt="" width="18" height="18" loading="lazy"><a href="../green-lords.html#mummified-green-lord" class="wiki-link" data-slug="green-lords" data-fragment="mummified-green-lord">Mummified Green Lord</a></h3>
+    <p class="stat-tags">Solitary, large, spirit, undead, magical, cunning, cautious, organized, terrifying</p>
+    <p class="stat-stats"><strong>HP</strong> 24; <strong>Armor</strong> 4 (potent wards), 0 vs fire<br>
+      <strong>Damage</strong> mighty blows <button type="button" class="dice-roll" data-dice="d10+2" title="Click to roll d10+2">d10+2</button> (hand, close, forceful)<br>
+      <strong>Special qualities</strong> tethered to canopic jars; can sense all that happens in its tomb<br>
+      <strong>Instinct</strong> to preserve its glorious afterlife</p>
+    <ul class="stat-moves">
+      <li>Animate its preserved corpse</li>
+      <li>Overawe anyone in its presence</li>
+      <li>Twist, mutate, or transform living things with a gesture</li>
+      <li>Wield nearby plants and beasts as extensions of itself</li>
+      <li>Regenerate its corpse, even if burned, unless its canopic jars are destroyed</li>
+    </ul>
   </div>
   <ul>
     <li>It does not want to leave the dream. Threaten the afterlife, the jars, or the corpse, and it will inhabit the body.</li>
@@ -834,67 +804,66 @@
 
       <!-- Hill -->
       <a href="#room-1">
-        <rect class="map-node map-node-out" x="150" y="8" width="100" height="34" rx="6" />
-        <text class="map-label" x="200" y="29">Hill</text>
+        <rect class="map-node map-node-out" x="140" y="6" width="120" height="32" rx="6" />
+        <text class="map-label">Hill</text>
       </a>
 
       <!-- Entrance -->
       <a href="#room-2">
-        <rect class="map-node" x="160" y="100" width="80" height="48" rx="6" />
-        <text class="map-label" x="200" y="128">Entrance</text>
+        <rect class="map-node" x="140" y="96" width="120" height="32" rx="6" />
+        <text class="map-label">Entrance</text>
       </a>
 
       <!-- Collapse -->
       <a href="#room-3">
-        <rect class="map-rubble" x="248" y="112" width="78" height="50" rx="6" />
-        <rect fill="url(#glt-hatch)" x="248" y="112" width="78" height="50" rx="6" pointer-events="none" />
-        <text class="map-label" x="287" y="142">Collapse</text>
+        <rect class="map-rubble" x="272" y="96" width="120" height="32" rx="6" />
+        <rect fill="url(#glt-hatch)" x="272" y="96" width="120" height="32" rx="6" pointer-events="none" />
+        <text class="map-label">Collapse</text>
       </a>
 
       <!-- Central -->
       <a href="#room-4">
         <circle class="map-node" cx="200" cy="248" r="40" />
-        <text class="map-label" x="200" y="252">Central</text>
+        <text class="map-label">Central</text>
       </a>
 
-      <!-- Mossy -->
+      <!-- Mossy chamber -->
       <a href="#room-5">
-        <rect class="map-node" x="42" y="218" width="72" height="60" rx="6" />
-        <text class="map-label" x="78" y="250">Mossy</text>
-        <text class="map-micro" x="58" y="268">T</text>
+        <rect class="map-node" x="8" y="228" width="120" height="32" rx="6" />
+        <text class="map-label">Mossy chamber</text>
+        <text class="map-micro" x="20" y="262">T</text>
       </a>
 
       <!-- Shrine -->
       <a href="#room-6">
-        <rect class="map-node map-node-danger" x="286" y="218" width="72" height="60" rx="6" />
-        <text class="map-label" x="322" y="252">Shrine</text>
+        <rect class="map-node map-node-danger" x="272" y="228" width="120" height="32" rx="6" />
+        <text class="map-label">Shrine</text>
       </a>
 
-      <!-- Pryder -->
+      <!-- Pryder’s hall -->
       <a href="#room-7">
-        <rect class="map-node" x="58" y="322" width="66" height="50" rx="6" />
-        <text class="map-label" x="91" y="352">Pryder</text>
+        <rect class="map-node" x="8" y="328" width="120" height="32" rx="6" />
+        <text class="map-label">Pryder’s hall</text>
       </a>
 
-      <!-- Great Hall -->
+      <!-- Great hall -->
       <a href="#room-8">
-        <rect class="map-node" x="155" y="328" width="90" height="72" rx="6" />
-        <text class="map-label" x="200" y="356">Great Hall</text>
-        <!-- stairs -->
-        <rect class="map-stairs" x="188" y="372" width="24" height="18" />
-        <line class="map-stairs" x1="188" y1="377" x2="212" y2="377" />
-        <line class="map-stairs" x1="188" y1="382" x2="212" y2="382" />
-        <line class="map-stairs" x1="188" y1="387" x2="212" y2="387" />
+        <rect class="map-node" x="140" y="328" width="120" height="32" rx="6" />
+        <text class="map-label">Great hall</text>
+        <rect class="map-stairs" x="188" y="370" width="24" height="18" />
+        <line class="map-stairs" x1="188" y1="375" x2="212" y2="375" />
+        <line class="map-stairs" x1="188" y1="380" x2="212" y2="380" />
+        <line class="map-stairs" x1="188" y1="385" x2="212" y2="385" />
       </a>
 
       <!-- Inner tomb -->
       <a href="#room-9">
-        <rect class="map-node map-node-danger" x="150" y="450" width="100" height="36" rx="6" />
-        <text class="map-label" x="200" y="472">Inner tomb</text>
+        <rect class="map-node map-node-danger" x="140" y="448" width="120" height="32" rx="6" />
+        <text class="map-label">Inner tomb</text>
       </a>
     </svg>
   </div>
-  <p class="statline">
+  <p>
     North arch is the door. Dashed = squeeze, secret, or burrow (S).
     Water runs Shrine → Central → Mossy. Stairs in the Great hall go down.
   </p>

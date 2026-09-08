@@ -1034,13 +1034,13 @@ h3 .book-icon,
   border-left: 3px solid var(--accent);
   border-radius: var(--radius-panel);
   box-shadow: var(--shadow-panel);
-  font-size: var(--text);
+  font-size: var(--content);
   line-height: 1.28;
   width: 100%;
 }
 .hazard-block .stat-name {
   font-family: var(--font-serif);
-  font-size: 0.98rem;
+  font-size: 1em;
   color: var(--head);
   margin: 0 0 0.25rem;
   border: none;
@@ -1059,17 +1059,21 @@ h3 .book-icon,
 }
 .stat-block .stat-name {
   font-family: var(--font-serif);
-  font-size: 0.98rem;
+  font-size: 1em;
   color: var(--head);
   margin: 0 0 0.15rem;
   border: none;
   padding: 0;
 }
+.stat-block .stat-name a.wiki-link {
+  font: inherit;
+  letter-spacing: inherit;
+}
 .stat-block .stat-tags {
   margin: 0 0 0.2rem;
   color: var(--muted);
   font-style: italic;
-  font-size: var(--text);
+  font-size: inherit;
 }
 .stat-block .stat-stats {
   margin: 0.15rem 0;
@@ -1086,7 +1090,7 @@ h3 .book-icon,
 .stat-block .stat-note {
   margin: 0.25rem 0 0;
   color: var(--ink);
-  font-size: var(--text);
+  font-size: inherit;
 }
 /* Deep-link :target — scroll still works; no outline flash on jump */
 
@@ -3115,6 +3119,23 @@ main.content > h1.page-title:first-child {
   break-inside: avoid;
 }
 .hp-track .hp-readout { min-width: 3.2rem; text-align: left; }
+/* A site heading "4 Suarachan Hunters" repeats the track once per combatant. */
+.hp-tracks {
+  display: flex;
+  flex-direction: column;
+  gap: 0.12rem;
+  margin: 0.25rem 0 0.3rem;
+  break-inside: avoid;
+}
+.hp-tracks .hp-track { margin: 0; }
+.hp-track-n {
+  font-family: var(--font-serif);
+  font-size: 1em;
+  color: var(--head);
+  min-width: 1.15rem;
+  flex-shrink: 0;
+}
+.stat-block .hp-readout { font-size: 1em; }
 .pb-track-grid + .hp-track {
   margin: 0.5rem 0 0.2rem;
   padding-top: 0.5rem;

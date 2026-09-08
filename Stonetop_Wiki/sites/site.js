@@ -86,12 +86,8 @@
   }
 
   /* ---- HP trackers ----
-     Moved wholesale into ../js/wiki.js, which every sheet already loads.
-     It finds .enemy-row[data-hp-id][data-hp-max] on this page, reads the
-     store off the body's data-hp-storage, and fills the .hp-boxes the sheet
-     prints — the same rows, the same clicks, the same store key. The book
-     pages grew trackers of their own (playbooks and monster stat blocks),
-     and one copy of the logic beats three. */
+     wiki.js bindStatBlocks turns printed HP in a .stat-block into a tracker.
+     A heading "4 Suarachan Hunters" repeats it four times. */
 
   /* Room-card wine wash on map nodes. Same stops as --card-wash in wiki.css. */
   var SVG_NS = "http://www.w3.org/2000/svg";
@@ -122,9 +118,12 @@
     });
     defs.appendChild(grad);
   }
-  /* Node labels: 9 user-units at viewBox width 420 (Drowned Choir). Scale so
-     other maps render the same on-screen size. */
+  /* Node labels: 10 user-units at viewBox width 420 (Drowned Choir). Scale so
+     other maps render the same on-screen size. Rect nodes: 120×32 — width from
+     Drowned Choir, height fits two lines at that size (lh 1.05 + padding). */
   var MAP_LABEL_AT_420 = 10;
+  var MAP_NODE_W = 120;
+  var MAP_NODE_H = 32;
   function scaleMapLabels(svg) {
     var raw = svg.getAttribute("viewBox") || "";
     var parts = raw.trim().split(/[\s,]+/);
@@ -132,9 +131,36 @@
     if (!w) return;
     svg.style.setProperty("--map-label-fs", (MAP_LABEL_AT_420 * w / 420) + "px");
   }
+  function sizeMapNodes(svg) {
+    svg.querySelectorAll("rect.map-node, rect.map-rubble").forEach(function (r) {
+      var w = parseFloat(r.getAttribute("width"));
+      var h = parseFloat(r.getAttribute("height"));
+      var x = parseFloat(r.getAttribute("x"));
+      var y = parseFloat(r.getAttribute("y"));
+      if (!w || !h) return;
+      var cx = x + w / 2;
+      var cy = y + h / 2;
+      r.setAttribute("width", MAP_NODE_W);
+      r.setAttribute("height", MAP_NODE_H);
+      r.setAttribute("x", cx - MAP_NODE_W / 2);
+      r.setAttribute("y", cy - MAP_NODE_H / 2);
+    });
+    svg.querySelectorAll("rect.map-rubble").forEach(function (r) {
+      var n = r.nextElementSibling;
+      if (!n || n.tagName.toLowerCase() !== "rect") return;
+      var fill = n.getAttribute("fill") || "";
+      if (fill.indexOf("hatch") === -1) return;
+      n.setAttribute("x", r.getAttribute("x"));
+      n.setAttribute("y", r.getAttribute("y"));
+      n.setAttribute("width", MAP_NODE_W);
+      n.setAttribute("height", MAP_NODE_H);
+      n.setAttribute("rx", r.getAttribute("rx") || "6");
+    });
+  }
   function paintNodeWash() {
     document.querySelectorAll(".site-map-svg").forEach(function (svg) {
       scaleMapLabels(svg);
+      sizeMapNodes(svg);
       ensureNodeWash(svg);
       svg.querySelectorAll(".map-node, .map-rubble").forEach(function (node) {
         var parent = node.parentNode;

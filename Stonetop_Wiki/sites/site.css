@@ -5,8 +5,8 @@
       /* Type scale. Every font-size in this sheet is one of these seven steps —
          it had grown fifteen ad-hoc values between 0.72rem and 1.72rem. */
       --fs-micro: 0.72rem; /* tracked micro-labels: nav groups, tags */
-      --fs-xs: 0.8rem;     /* secondary chrome: sub-nav, footer, map stat lines */
-      --fs-sm: 0.88rem;    /* dense body: stat lines, meta, readouts, kickers */
+      --fs-xs: 0.8rem;     /* secondary chrome: sub-nav, footer */
+      --fs-sm: 0.88rem;    /* dense body: meta, readouts, kickers */
       --fs-base: 0.9375rem;/* 15px — body copy, read-aloud, map headings */
       --fs-lg: 1.1rem;     /* h3, nav title */
       --fs-xl: 1.25rem;    /* h2 */
@@ -17,12 +17,22 @@
       overflow: auto !important;
       min-height: 0 !important;
     }
+    /* Map present: the page does not scroll. The main column does, so the
+       bar sits on the map’s left edge instead of covering its right. */
+    html:has(body.has-map),
+    html:has(body.has-map) body {
+      height: 100% !important;
+      overflow: hidden !important;
+    }
     * { box-sizing: border-box; }
     body.site-sheet {
       margin: 0;
       font: var(--fs-base)/1.5 var(--font-sans);
       letter-spacing: var(--track-text);
       color: var(--ink);
+      /* Wiki chrome uses --text for dice and the like. On a book page that
+         is remapped to article size inside .content; a sheet has no .content. */
+      --text: var(--fs-base);
     }
     a, a.wiki-link { color: var(--link); }
     a.wiki-link {
@@ -162,7 +172,19 @@
       box-sizing: border-box;
     }
     body.has-map .site-main {
-      margin-right: var(--map-w);
+      position: fixed;
+      top: 0;
+      left: var(--nav-w);
+      right: var(--map-w);
+      height: 100vh;
+      margin-left: 0;
+      margin-right: 0;
+      max-width: none;
+      width: auto;
+      overflow-y: auto;
+    }
+    body.has-map .site-main > * {
+      max-width: 640px;
     }
 
     /* Right map sidebar (opt-in: body.has-map + aside.site-map) */
@@ -186,8 +208,7 @@
       margin-top: 0;
       font-size: var(--fs-base);
     }
-    .site-map .statline {
-      font-size: var(--fs-xs);
+    .site-map > p {
       margin: 0.35rem 0 0;
     }
     .site-map-wrap {
@@ -322,32 +343,13 @@
     }
     p, li { margin: 0.25rem 0; }
     ul, ol { padding-left: 1.15rem; margin: 0.3rem 0; }
-    /* Room cards — flat panel; title uses arcana face-label sans treatment */
+    /* Areas are an h2 in the flow, not a card. .room stays as the id
+       wrapper for nav, map, and § links. */
     .room {
-      background: var(--panel);
-      background-image: var(--card-wash);
-      border: 1px solid var(--rule);
-      border-radius: var(--radius-panel);
-      box-shadow: var(--shadow-panel);
-      padding: 0.65rem 0.95rem 0.85rem;
-      margin: 0.85rem 0 1.05rem;
+      margin: 0 0 1.35rem;
       scroll-margin-top: 0.75rem;
     }
     section { scroll-margin-top: 0.75rem; }
-    .room > h2 {
-      margin: 0 0 0.55rem;
-      padding: 0 0 0.4rem;
-      border: none;
-      border-bottom: 1px solid var(--rule);
-      background-image: none;
-      font-family: var(--font-serif);
-      font-size: var(--fs-sm);
-      font-weight: 400;
-      font-synthesis-weight: none;
-      letter-spacing: 0.08em;
-      color: var(--head);
-      line-height: 1.3;
-    }
     .deal {
       background: var(--accent-soft);
       border-left: 3px solid var(--accent);
@@ -386,10 +388,10 @@
       border-left: 2px solid var(--rule);
     }
     .dialog-lines .gm-line {
-      margin: 0.3rem 0;
-      font-size: var(--fs-sm);
+      margin: 0.2rem 0;
+      padding: 0.1rem 0;
       color: var(--quote);
-      border-left-color: var(--muted);
+      border-left: none;
     }
     .dialog-lines .gm-line em {
       color: var(--muted);
@@ -399,13 +401,19 @@
     /* .tag and .tag.danger are defined once in ../css/wiki.css — the Sites
        hub flags an untested sheet with the same tag, and that page does not
        load this stylesheet. A sheet loads wiki.css before this one. */
-    .statline {
-      font-size: var(--fs-sm);
-      color: var(--ink);
-      margin: 0.25rem 0 0.4rem;
+    /* GM paragraph under the intro read-aloud: what’s true in this area. */
+    .area-notes {
+      margin: 0.25rem 0 0.45rem;
     }
 
-    /* Enemy HP trackers */
+    /* HP rows sit inside a wiki .stat-block; don't double the panel. */
+    .stat-block .enemy-block {
+      margin: 0.35rem 0 0;
+      padding: 0.3rem 0 0;
+      background: none;
+      border: none;
+      box-shadow: none;
+    }
     .enemy-block {
       margin: 0.45rem 0 0.55rem;
       padding: 0.45rem 0.55rem;
@@ -463,8 +471,22 @@
     }
 
     @media (max-width: 1100px) {
+      html:has(body.has-map),
+      html:has(body.has-map) body {
+        height: auto !important;
+        overflow: auto !important;
+      }
       body.has-map .site-main {
+        position: static;
+        height: auto;
+        left: auto;
+        right: auto;
         margin-right: 0;
+        max-width: 640px;
+        overflow: visible;
+      }
+      body.has-map .site-main > * {
+        max-width: none;
       }
       body.has-map .site-map {
         position: relative;
@@ -510,7 +532,17 @@
         border: 1px solid var(--rule);
         break-inside: avoid;
       }
-      body.has-map .site-main { margin-right: 0; }
+      html:has(body.has-map),
+      html:has(body.has-map) body {
+        height: auto !important;
+        overflow: visible !important;
+      }
+      body.has-map .site-main {
+        position: static;
+        height: auto;
+        overflow: visible;
+        margin-right: 0;
+      }
       .room { break-inside: avoid; }
       button.dice-roll {
         background: none; border: none; color: inherit;

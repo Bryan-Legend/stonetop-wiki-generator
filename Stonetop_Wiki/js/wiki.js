@@ -4355,9 +4355,10 @@
       });
 
     /* ----- Adventure-site sheets -----
-       The sheets print their enemy rows in the page and name their store on
-       the body. They used to run their own copy of everything above; this is
-       all that is left of it. */
+       Older sheets printed .enemy-row[data-hp-id] by hand. New ones are
+       ordinary wiki stat-blocks: bindStatBlocks reads the printed HP and,
+       when the heading starts with a count, repeats the track. This path
+       stays so a leftover row still works. */
     (function () {
       var store =
         document.body && document.body.getAttribute("data-hp-storage");
@@ -4389,6 +4390,48 @@
      * The key is the *previewed* page's slug, not the page being read, so the
      * track in the popup and the track on the page it came from are one track:
      * wound something in a popup and the page has it wounded too. */
+    function headingText(block) {
+      var name = block.querySelector(".stat-name");
+      if (!name) return "";
+      var t = "";
+      name.childNodes.forEach(function (n) {
+        if (n.nodeType === 3) t += n.nodeValue;
+        else if (n.nodeType === 1 && n.tagName !== "IMG") t += n.textContent;
+      });
+      return t.replace(/\s+/g, " ").trim();
+    }
+
+    function slugifyHp(s) {
+      return String(s)
+        .toLowerCase()
+        .replace(/['’]/g, "")
+        .replace(/&/g, " and ")
+        .replace(/[^a-z0-9]+/g, "-")
+        .replace(/^-+|-+$/g, "");
+    }
+
+    /* "4 Suarachan Hunters" → four tracks labelled 1–4. data-hp-names lists
+       named combatants (Wynfor, Tiwlip). A lone name is one unlabelled track,
+       same as a book page. */
+    function combatantLabels(block, heading) {
+      var named = block.getAttribute("data-hp-names");
+      if (named) {
+        return named
+          .split(/\s*,\s*/)
+          .map(function (s) {
+            return s.trim();
+          })
+          .filter(Boolean);
+      }
+      var n = parseInt(block.getAttribute("data-hp-count"), 10);
+      var m = heading.match(/^(\d+)\s+/);
+      if (!(n > 0)) n = m ? parseInt(m[1], 10) : 1;
+      if (!(n > 1) || n > 24) return [];
+      var out = [];
+      for (var k = 1; k <= n; k++) out.push(String(k));
+      return out;
+    }
+
     function bindStatBlocks(root, pageSlug) {
       if (!root || !pageSlug) return;
       /* The popup replaces its contents on every hover, and the trackers it
@@ -4396,6 +4439,11 @@
       trackers = trackers.filter(function (t) {
         return t.boxes.isConnected;
       });
+      var siteStore =
+        document.body && document.body.getAttribute("data-hp-storage");
+      /* A hover card is a book monster even when the page underneath is a
+         site sheet — don't park its HP in the site's store. */
+      var inPreview = !(root === document || root === document.documentElement);
       root.querySelectorAll(".stat-block").forEach(function (block, i) {
         if (block.getAttribute("data-hp-bound")) return;
         var line = block.querySelector("p.stat-stats");
@@ -4406,41 +4454,81 @@
            Most blocks put a semicolon after the number and a handful a comma,
            so the separator goes with it — left behind, it opened the line on
            its own punctuation.
-           "HP 0 of 6" is not this pattern at all: that is a site sheet's own
-           current-of-max, which has a real tracker of its own already. */
+           "HP 0 of 6" is not this pattern at all: that is a current-of-max. */
         var first = line.firstChild;
+        while (
+          first &&
+          first.nodeType === 3 &&
+          !/\S/.test(first.nodeValue)
+        ) {
+          first = first.nextSibling;
+        }
         /* The build sets the label in bold — "<strong>HP</strong> 14;" — so the
            number then sits in the text node after it, and the label element goes
            with the number once the tracker has taken its place. */
-        var label = null;
+        var hpLabel = null;
         if (
           first &&
           first.nodeType === 1 &&
           first.tagName === "STRONG" &&
           /^\s*HP\s*$/i.test(first.textContent)
         ) {
-          label = first;
+          hpLabel = first;
           first = first.nextSibling;
         }
         if (!first || first.nodeType !== 3) return;
         var m = first.nodeValue.match(
-          label ? /^\s*(\d+)(?!\s*of\b)\s*[;,]?\s*/ : /^\s*HP\s+(\d+)(?!\s*of\b)\s*[;,]?\s*/i
+          hpLabel ? /^\s*(\d+)(?!\s*of\b)\s*[;,]?\s*/ : /^\s*HP\s+(\d+)(?!\s*of\b)\s*[;,]?\s*/i
         );
         if (!m) return;
         var max = parseInt(m[1], 10);
         if (!(max > 0) || max > 200) return;
         first.nodeValue = first.nodeValue.slice(m[0].length);
-        if (label) label.parentNode.removeChild(label);
+        if (hpLabel) hpLabel.parentNode.removeChild(hpLabel);
         block.setAttribute("data-hp-bound", pageSlug);
 
-        var name = block.querySelector(".stat-name");
-        var t = build({
-          store: block.classList.contains("follower") ? FOLLOWER_STORE : MONSTER_STORE,
-          key: pageSlug + "#" + (block.id || "stat-" + i),
-          max: max,
-          label: name ? name.textContent.trim() : "Enemy",
-        });
-        line.parentNode.insertBefore(t.el, line);
+        var heading = headingText(block);
+        var labels = combatantLabels(block, heading);
+        var store = block.classList.contains("follower")
+          ? FOLLOWER_STORE
+          : !inPreview && siteStore
+            ? siteStore
+            : MONSTER_STORE;
+        var onSite = store === siteStore;
+        var base =
+          block.getAttribute("data-hp-key") ||
+          (onSite
+            ? slugifyHp(heading) || "stat-" + i
+            : block.id || "stat-" + i);
+        var named = !!block.getAttribute("data-hp-names");
+        var n = labels.length || 1;
+        var mount = n > 1 ? document.createElement("div") : null;
+        if (mount) mount.className = "hp-tracks";
+        for (var k = 0; k < n; k++) {
+          var tag = labels[k];
+          var key = onSite
+            ? named
+              ? slugifyHp(tag) || base + "-" + (k + 1)
+              : n > 1
+                ? base + "-" + (k + 1)
+                : base
+            : pageSlug + "#" + (n > 1 ? base + "-" + (k + 1) : base);
+          var t = build({
+            store: store,
+            key: key,
+            max: max,
+            label: tag ? heading + " " + tag : heading || "Enemy",
+          });
+          if (tag) {
+            var num = document.createElement("span");
+            num.className = "hp-track-n";
+            num.textContent = tag;
+            t.el.insertBefore(num, t.el.firstChild);
+          }
+          if (mount) mount.appendChild(t.el);
+          else line.parentNode.insertBefore(t.el, line);
+        }
+        if (mount) line.parentNode.insertBefore(mount, line);
       });
     }
 
