@@ -413,3 +413,123 @@ ejder · sárkánygyík · traakki.
 | Harnessing the Stream / Herd of Horses / Heroic Reputation / Inn / Market / Mill | 小川の利用 / 馬の群れ / 英雄の評判 / 宿屋 / 市場 / 製粉所 |
 | Palisade / Raincatching / Standing Watch / Stone Wall / Township | 木柵 / 雨水集め / 常設の警備隊 / 石壁 / 町への昇格 |
 | Weapons of War / Well-Trained Militia | 戦の武器 / よく訓練された民兵 |
+
+### Steading playbook — ru · zh-Hans · ko (2026-09-09, corpus route)
+
+| English | ru | zh-Hans | ko |
+|---|---|---|---|
+| Fortunes | Фортуна | 气运 | 운세 |
+| Surplus | Избыток | 盈余 | 잉여 |
+| Prosperity | Процветание | 繁荣 | 번영 |
+| Population | Население | 人口 | 인구 |
+| Defenses | Оборона | 防务 | 방비 |
+| Size | Размер | 规模 | 규모 |
+| Resources | Ресурсы | 资源 | 자원 |
+| Fortifications | Укрепления | 防御工事 | 방어 시설 |
+| Debilities (steading) | Недуги | 积弊 | 쇠약 |
+| diminished / lacking / malcontent | ослаблено / нуждается / недовольно | 凋敝 / 匮乏 / 离心 | 피폐 / 결핍 / 불만 |
+| hamlet / village / town / city | хутор / деревня / городок / город | 小村 / 村落 / 镇 / 城 | 작은 마을 / 마을 / 읍 / 도시 |
+| Steading Improvements | Улучшения поселения | 聚落改良 | 정착지 개량 |
+| Assets | Имущество | 公产 | 공동 재산 |
+| Value (gear) | Ценность | 价值 | 가치 |
+| Requires / Henceforth | Требуется / Впредь | 需要 / 此后 | 필요 조건 / 이후 |
+| Places of interest | Примечательные места | 名胜 | 주요 장소 |
+| The Stone / Pavilion of the Gods / Public House | Камень / Павильон Богов / Трактир | 巨石 / 诸神亭 / 酒馆 | 거석 / 신들의 정자 / 주막 |
+| Excluded / Veiled content, Special handling | Исключённое / Скрытое содержание, Особое обращение | 排除的内容 / 遮掩的内容、特殊处理 | 제외할 내용 / 가릴 내용, 특별 처리 |
+| Summary / Requirements / Effects | Кратко / Требования / Эффекты | 概要 / 条件 / 效果 | 요약 / 조건 / 효과 |
+| Purses / Handfuls / Coins | Кошельки / Пригоршни / Монеты | 袋 / 把 / 枚 | 주머니 / 줌 / 닢 |
+| the Flats | Равнины | 荒原 | 평원 |
+| the Old Wall | Старая Стена | 旧墙 | 옛 성벽 |
+| the Stream | Ручей | 溪流 | 시내 |
+| Forest Folk | Лесной Народ | 森林之民 | 숲의 민족 |
+| Whitefang (wool) | Белоклык | 白牙 | 흰송곳니 |
+| forceful (tag) | мощный | 强力 | 강타 |
+| Additional Housing | Дополнительное Жильё | 增建住房 | 주거 증설 |
+| Aurochs Hunting | Охота на Туров | 猎野牛 | 오록스 사냥 |
+| Expanded Trades | Расширенные Ремёсла | 扩展行当 | 생업 확장 |
+| Greater Harvest | Больший Урожай | 丰收 | 풍성한 수확 |
+| Harnessing the Stream | Укрощение Ручья | 驾驭溪流 | 시내 이용 |
+| Herd of Horses | Табун Лошадей | 马群 | 말 떼 |
+| Heroic Reputation | Героическая Слава | 英雄之名 | 영웅의 명성 |
+| Inn | Постоялый Двор | 客栈 | 여관 |
+| Market | Рынок | 集市 | 시장 |
+| Mill | Мельница | 磨坊 | 방앗간 |
+| Palisade | Частокол | 木栅 | 목책 |
+| Raincatching | Сбор Дождевой Воды | 集雨 | 빗물 모으기 |
+| Standing Watch | Постоянный Дозор | 常备守望 | 상설 경비 |
+| Stone Wall | Каменная Стена | 石墙 | 돌담 |
+| Township | Городок | 升格为镇 | 읍으로 승격 |
+| Weapons of War | Оружие Войны | 战争兵器 | 전쟁 무기 |
+| Well-Trained Militia | Выученное Ополчение | 精训民兵 | 잘 훈련된 민병 |
+
+### Steading playbook — nl · sv · cs (2026-09-09, corpus route)
+
+| English | nl | sv | cs |
+|---|---|---|---|
+| Fortunes | Fortuin | Fortuna | Štěstěna |
+| Surplus | Overschot | Överskott | Přebytek |
+| Prosperity | Welvaart | Välstånd | Prosperita |
+| Population | Bevolking | Befolkning | Obyvatelstvo |
+| Defenses | Verdediging | Försvar | Obrana |
+| Size / Resources / Fortifications / Assets / Value | Grootte / Hulpbronnen / Vestingwerken / Bezittingen / Waarde | Storlek / Resurser / Befästningar / Tillgångar / Värde | Velikost / Zdroje / Opevnění / Majetek / Hodnota |
+| diminished / lacking / malcontent | uitgedund / tekort / ontevreden | försvagad / i brist / missnöjd | prořídlá / strádající / nespokojená |
+| hamlet / village / town / city | gehucht / dorp / stad / grote stad | bygd / by / köping / stad | osada / vesnice / městečko / město |
+| Steading Improvements | Verbeteringen van de nederzetting | Bosättningsförbättringar | Vylepšení osady |
+| Requires / Henceforth | Vereist / Voortaan | Kräver / Hädanefter | Vyžaduje / Nadále |
+| the Flats / the Old Wall / the Stream | de Vlakte / de Oude Muur / de Beek | Slätten / den Gamla Muren / Bäcken | Planiny / Stará Hradba / Potok |
+| Forest Folk / Whitefang | het Woudvolk / Witfang | Skogsfolket / Vitfang | Lesní Lid / Bílý tesák |
+| Additional Housing / Aurochs Hunting / Expanded Trades / Greater Harvest | Extra Huisvesting / Oerosjacht / Uitgebreide Ambachten / Grotere Oogst | Ytterligare Bostäder / Uroxejakt / Utökade Hantverk / Större Skörd | Další Bydlení / Lov praturů / Rozšířená Řemesla / Větší Úroda |
+| Harnessing the Stream / Herd of Horses / Heroic Reputation | De Beek Benutten / Kudde Paarden / Heldenroep | Tämja Bäcken / Hästhjord / Hjälteryktet | Zkrocení Potoka / Stádo Koní / Hrdinská Pověst |
+| Inn / Market / Mill / Palisade / Raincatching | Herberg / Markt / Molen / Palissade / Regenopvang | Värdshus / Marknad / Kvarn / Palisad / Regnuppsamling | Hostinec / Trh / Mlýn / Palisáda / Sběr Dešťové Vody |
+| Standing Watch / Stone Wall / Township | Staande Wacht / Stenen Muur / Stadswording | Stående vakt / Stenmur / Köping | Stálá stráž / Kamenná Zeď / Městečko |
+| Weapons of War / Well-Trained Militia | Oorlogswapens / Goed Getrainde Militie | Krigsvapen / Vältränad Milis | Válečné Zbraně / Dobře Vycvičená Milice |
+
+### Steading playbook — zh-Hant (mirrors zh-Hans, 2026-09-09)
+
+Traditional forms of the zh-Hans table via OpenCC s2twp: 聚落劇本 · 氣運 / 盈餘 / 繁榮 / 人口 / 防務 · 積弊: 凋敝 / 匱乏 / 離心 · 石頂 · 澤畔 · 戈丁礦場 · 舊牆 · 駕馭溪流 · 增建住房 · 獵野牛 · 客棧 · 木柵 · 常備守望 · 升格為鎮 · 戰爭兵器 · 精訓民兵.
+
+### Steading playbook — tr · uk · hu (2026-09-09, corpus route)
+
+| English | tr | uk | hu |
+|---|---|---|---|
+| Fortunes | Talih | Фортуна | Fortuna |
+| Surplus | Fazlalık | Надлишок | Többlet |
+| Prosperity | Refah | Процвітання | Jólét |
+| Population | Nüfus | Населення | Népesség |
+| Defenses | Savunma | Оборона | Védelem |
+| Size / Resources / Fortifications / Assets / Value | Ölçek / Kaynaklar / Tahkimat / Mallar / Değer | Розмір / Ресурси / Укріплення / Майно / Цінність | Méret / Erőforrások / Erődítmények / Javak / Érték |
+| diminished / lacking / malcontent | tükenmiş / yokluk / huzursuz | ослаблене / нужденне / невдоволене | megfogyatkozott / nélkülöző / elégedetlen |
+| hamlet / village / town / city | mezra / köy / kasaba / kent | хутір / село / містечко / місто | tanya / falu / mezőváros / város |
+| Steading Improvements | Yerleşke İyileştirmeleri | Поліпшення поселення | Településfejlesztések |
+| Requires / Henceforth | Gerektirir / Bundan böyle | Потрібно / Надалі | Szükséges / Ezután |
+| the Flats / the Old Wall / the Stream | Düzlükler / Eski Sur / Dere | Рівнини / Старий Мур / Струмок | a Síkság / a Régi Fal / a Patak |
+| Forest Folk / Whitefang | Orman Halkı / Akdiş | Лісовий Народ / Білоклик | az Erdő Népe / Fehéragyar |
+| Additional Housing / Aurochs Hunting | Ek Konut / Yaban Sığırı Avı | Додаткове Житло / Полювання на Турів | További Lakhely / Őstulokvadászat |
+| Expanded Trades / Greater Harvest | Genişletilmiş Zanaatlar / Daha Bol Hasat | Розширені Ремесла / Більший Урожай | Kiterjesztett Mesterségek / Nagyobb Aratás |
+| Harnessing the Stream / Herd of Horses / Heroic Reputation | Dereyi Ehlileştirme / At Sürüsü / Kahramanlık Ünü | Приборкання Струмка / Табун Коней / Героїчна Слава | A Patak Fegyelmezése / Lócsorda / Hősi Hírnév |
+| Inn / Market / Mill / Palisade / Raincatching | Han / Pazar / Değirmen / Kazık Sur / Yağmur Toplama | Постоялий Двір / Ринок / Млин / Частокіл / Збір Дощової Води | Fogadó / Piac / Malom / Cölöpkerítés / Esőgyűjtés |
+| Standing Watch / Stone Wall / Township | Sürekli Nöbet / Taş Duvar / Kasaba | Постійна Варта / Кам'яна Стіна / Містечко | Állandó Őrség / Kőfal / Mezőváros |
+| Weapons of War / Well-Trained Militia | Savaş Silahları / İyi Eğitilmiş Milis | Зброя Війни / Вишколене Ополчення | Háborús Fegyverek / Jól Kiképzett Milícia |
+
+### Steading playbook — da · nb · fi (2026-09-09, corpus route)
+
+| English | da | nb | fi |
+|---|---|---|---|
+| Fortunes | Lykke | Lykke | Onni |
+| Surplus | Overskud | Overskudd | Ylijäämä |
+| Prosperity | Velstand | Velstand | Vauraus |
+| Population | Befolkning | Befolkning | Väkiluku |
+| Defenses | Forsvar | Forsvar | Puolustus |
+| Size / Resources / Fortifications / Assets / Value | Størrelse / Ressourcer / Befæstninger / Ejendele / Værdi | Størrelse / Ressurser / Befestninger / Eiendeler / Verdi | Koko / Voimavarat / Linnoitteet / Omaisuus / Arvo |
+| diminished / lacking / malcontent | svækket / i knibe / utilfreds | svekket / i knibe / utilfreds | kuihtunut / puutteessa / tyytymätön |
+| hamlet / village / town / city | landsby / bygd / købstad / by | grend / bygd / kjøpstad / by | kyläpahanen / kylä / kauppala / kaupunki |
+| Steading Improvements | Bygdeforbedringer | Bygdeforbedringer | Asutuksen parannukset |
+| Requires / Henceforth | Kræver / Herefter | Krever / Herefter | Vaatii / Tästä lähtien |
+| the Flats / the Old Wall / the Stream | Sletten / den Gamle Mur / Bækken | Sletten / den Gamle Mur / Bekken | Tasangot / Vanha Muuri / Puro |
+| Forest Folk / Whitefang | Skovfolket / Hvidhug | Skogfolket / Hvithugg | Metsän kansa / Valkohammas |
+| Additional Housing / Aurochs Hunting | Ekstra Boliger / Uroksejagt | Ekstra Boliger / Uroksejagt | Lisää Asumuksia / Alkuhärkäjahti |
+| Expanded Trades / Greater Harvest | Udvidede Håndværk / Større Høst | Utvidede Håndverk / Større Høst | Laajennetut Ammatit / Suurempi Sato |
+| Harnessing the Stream / Herd of Horses / Heroic Reputation | Tæmme Bækken / Hesteflok / Heltery | Temme Bekken / Hesteflok / Helteryktet | Puron Valjastaminen / Hevoslauma / Sankarimaine |
+| Inn / Market / Mill / Palisade / Raincatching | Kro / Marked / Mølle / Palissade / Regnopsamling | Kro / Marked / Mølle / Palisade / Regnopsamling | Majatalo / Tori / Mylly / Paaluvarustus / Sateenkeruu |
+| Standing Watch / Stone Wall / Township | Stående vagt / Stenmur / Købstad | Stående vakt / Stenmur / Kjøpstad | Pysyvä vartio / Kivimuuri / Kauppala |
+| Weapons of War / Well-Trained Militia | Krigsvåben / Veltrænet Milits | Krigsvåpen / Veltrent Milits | Sodan Aseet / Hyvin Koulutettu Miliisi |
