@@ -228,6 +228,44 @@ M_STEP = "\x02STEP "  # numbered step of a walkthrough (payload: n \x03 text)
 M_BAND = "\x02BAND"   # full-measure rule: end of a banded region
 # A major arcanum's two pages: which face of the card the lines below are.
 M_FACE = "\x02FACE "  # payload: "front" | "back"
+
+# Sheet markers: the hand-authored sheets under pages/ (the follower inserts,
+# the inventory, the steading playbook) are written in the corpus format with
+# these, rendered by generator/sheet.py. The extractor never emits them. A
+# payload's sub-fields are separated by M_SEP (a tab on disk); which of them
+# are translatable text is recorded in generator/translate.py.
+M_SHEET = "\x02SHEET "        # kind [hp-key label]: opens a .follower-sheet
+M_ENDSHEET = "\x02ENDSHEET"
+M_DIV = "\x02DIV "            # class [id]: a plain wrapper
+M_ENDDIV = "\x02ENDDIV"
+M_FIELD = "\x02FIELD "        # key label placeholder: one write-in line
+M_FIELDS = "\x02FIELDS "      # class label key-prefix count placeholder: a list of write-ins
+M_NOTES = "\x02NOTES "        # key label rows: a textarea
+M_STAT = "\x02STAT "          # key label default min max [gloss aria]: a spinbox
+M_DMG = "\x02DMG "            # key label default [title]: the damage box + roll button
+M_HPMOUNT = "\x02HPMOUNT"     # where the HP tracker mounts
+M_TRACK = "\x02TRACK "        # id label steps step-word [class]: a row of marks
+M_LIST = "\x02LIST "          # classes [id]: opens a <ul>
+M_ENDLIST = "\x02ENDLIST"
+M_CK = "\x02CK "              # id text: a check item with a fixed id
+M_CKX = "\x02CKX "            # text: a check item printed ticked and locked
+M_CKW = "\x02CKW "            # id key placeholder: a check box beside a write-in
+M_INV = "\x02INV "            # id slots text: an inventory line with ◇ slots
+M_INVW = "\x02INVW "          # id key placeholder aria: an inventory write-in
+M_ITEM = "\x02ITEM "          # key default [aria]: a write-in list line
+M_PLACE = "\x02PLACE "        # letter text [key]: a lettered place of interest
+M_LI = "\x02LI "              # text: a plain list item
+M_TYPE = "\x02TYPE "          # check-id name key-other examples: a follower type's head
+M_STATLINE = "\x02STATLINE "  # text: a type's stat line
+M_STATBLOCK = "\x02STATBLOCK "  # name tags line...: a follower stat block
+M_TABLE = "\x02TABLE "        # key-prefix rows: opens a write-in table
+M_COL = "\x02COL "            # key-suffix header: one column of it
+M_ROW = "\x02ROW "            # default per column: a pre-filled row
+M_ENDTABLE = "\x02ENDTABLE"
+M_NAMEHEAD = "\x02NAMEHEAD "  # check-id key placeholder aria-check aria-name: a card's write-in title
+M_NOTE = "\x02NOTE "          # text: a muted paragraph
+M_GLOSS = "\x02GLOSS "        # text: a gloss paragraph
+M_EXTRACT = "\x02EXTRACT "    # from [to blocks]: splice of the book's extraction
 # Payload separator inside a marker (value-table row: item \x03 value; a
 # numbered step or plaqued heading: number \x03 text).
 M_SEP = "\x03"
@@ -241,8 +279,23 @@ MARKERS: dict[str, str] = {
         M_B, M_B2, M_Q, M_BC, M_E, M_C, M_H2, M_H3, M_H4, M_TH, M_VT, M_VR,
         M_VA, M_VF, M_BOX, M_ENDBOX, M_MARK, M_HR, M_ICON, M_C2, M_CX, M_CX2,
         M_STATS, M_WRITE, M_STEP, M_BAND, M_FACE,
+        M_SHEET, M_ENDSHEET, M_DIV, M_ENDDIV, M_FIELD, M_FIELDS, M_NOTES,
+        M_STAT, M_DMG, M_HPMOUNT, M_TRACK, M_LIST, M_ENDLIST, M_CK, M_CKX,
+        M_CKW, M_INV, M_INVW, M_ITEM, M_PLACE, M_LI, M_TYPE, M_STATLINE,
+        M_STATBLOCK, M_TABLE, M_COL, M_ROW, M_ENDTABLE, M_NAMEHEAD, M_NOTE, M_GLOSS,
+        M_EXTRACT,
     )
 }
+SHEET_MARKERS = frozenset(
+    m[1:].strip()
+    for m in (
+        M_SHEET, M_ENDSHEET, M_DIV, M_ENDDIV, M_FIELD, M_FIELDS, M_NOTES,
+        M_STAT, M_DMG, M_HPMOUNT, M_TRACK, M_LIST, M_ENDLIST, M_CK, M_CKX,
+        M_CKW, M_INV, M_INVW, M_ITEM, M_PLACE, M_LI, M_TYPE, M_STATLINE,
+        M_STATBLOCK, M_TABLE, M_COL, M_ROW, M_ENDTABLE, M_NAMEHEAD, M_NOTE, M_GLOSS,
+        M_EXTRACT,
+    )
+)
 
 MARKER_RE = re.compile(r"^\x02[A-Z0-9]+ ?")
 VAL_TOKEN_RE = re.compile(
@@ -1217,6 +1270,15 @@ _TITLE_MINOR = {
     "a", "an", "and", "as", "at", "but", "by", "for", "from", "in", "into",
     "nor", "of", "off", "on", "onto", "or", "over", "the", "to", "up", "upon",
     "with", "vs",
+    # The same job in the languages the wiki is translated into: a shouted
+    # improvement name comes back retitled in every language. Only words no
+    # English title would carry mid-line.
+    "de", "del", "della", "dell", "delle", "dei", "degli", "di", "da", "dal",
+    "dalla", "la", "le", "les", "il", "lo", "gli", "los", "las", "du", "des",
+    "à", "al", "aux", "en", "y", "e", "et", "und", "der", "dem", "von", "zum",
+    "zur", "im", "na", "w", "z", "i", "o", "um", "uma", "do", "dos", "ao",
+    "pelo", "pela", "por", "para", "con", "com", "sur", "ou", "oder", "el",
+    "agli", "alla", "nel", "nella", "sul", "sulla", "ai", "au",
 }
 
 
@@ -1235,12 +1297,16 @@ def smart_title(text: str) -> str:
             return word
         return word[:1].upper() + word[1:]
 
-    # Hyphens split words ("STORM-BRINGER" -> "Storm-Bringer"); apostrophes don't.
-    out = re.sub(r"[A-Za-z][A-Za-z'’]*", recase, text)
+    # Hyphens split words ("STORM-BRINGER" -> "Storm-Bringer"); apostrophes
+    # don't. Letters are any script's — "RÉCOLTE" is one word, not "R", "É",
+    # "COLTE" — and an apostrophe after a one-letter elision starts a new
+    # word ("L'AUROCHS" -> "L'Aurochs"), as French and Italian set it.
+    out = re.sub(r"[^\W\d_](?:[^\W\d_]|['’])*", recase, text)
+    out = re.sub(r"(?<![^\W\d_])([LlDd]['’])([^\W\d_])", lambda m: m.group(1) + m.group(2).upper(), out)
     # First and last words are capitalised even when minor — "The Flesh …",
     # and "APPENDIX A" must not become "Appendix a".
     out = out[:1].upper() + out[1:]
-    words = list(re.finditer(r"[A-Za-z][A-Za-z'’]*", out))
+    words = list(re.finditer(r"[^\W\d_](?:[^\W\d_]|['’])*", out))
     if words:
         last = words[-1]
         out = (

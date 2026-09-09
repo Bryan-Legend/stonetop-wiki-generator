@@ -13,6 +13,7 @@ import shutil
 from pathlib import Path
 
 from . import REPO_ROOT
+from .translate import load_corpus_translations
 
 
 # ------------------------------------------------------------------ i18n
@@ -93,6 +94,18 @@ def load_locales(only: list[str] | None = None) -> tuple[dict, list[dict]]:
                 continue
             if page.get("slug") and page.get("body_html"):
                 pages[page["slug"]] = page
+        # Translations of the corpus (i18n/corpus/<code>/…): rendered by the
+        # build from the English lines, so only their meta is known here.
+        # One outranks a JSON page of the same slug.
+        for slug, entry in load_corpus_translations(code).items():
+            meta = entry.get("meta") or {}
+            pages[slug] = {
+                "slug": slug,
+                "corpus": entry,
+                "title": meta.get("title") or "",
+                "nav_label": meta.get("nav_label") or meta.get("title") or "",
+                "description": meta.get("description") or "",
+            }
         if not pages:
             continue
         entry = dict(lang)

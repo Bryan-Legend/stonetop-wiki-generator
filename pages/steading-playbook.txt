@@ -1,0 +1,188 @@
+# Steading Playbook · a sheet, written by hand (see generator/sheet.py); the improvements are spliced in from the book's extraction
+P	A version of the steading playbook for Stonetop itself. Use it to track the village's stats, debilities, resources, improvements, etc. See [[playing-the-game#your-home|Your home]] for an explanation of each element. Everything here is shared with the whole table.
+SHEET	steading
+H2	Stonetop
+STAT	fortunes	Fortunes	+1	-1	3	starts at +1
+STAT	surplus	Surplus	1	0	99	starts at 1
+STAT	prosperity	Prosperity	+0	-1	3	starts at +0
+STAT	population	Population	+0	-1	3	starts at +0
+STAT	defenses	Defenses	+0	-1	3	starts at +0
+H3	Size
+LIST	fs-lines
+CK	sp-size-0	<i>hamlet</i> (\<50 people)
+CK	sp-size-1	<i>village</i> (150-350) — starts here
+CK	sp-size-2	<i>town</i> (500-1500)
+CK	sp-size-3	<i>city</i> (2500+)
+ENDLIST
+H3	Resources
+LIST	fs-items
+ITEM	resource0	Farming (beans, potatoes, oats, barley)
+ITEM	resource1	Hunting/trapping (fur, meat, hides)
+ITEM	resource2	Distilling (whisky)
+ITEM	resource3	Stone (collected from the Old Wall)
+ITEM	resource4	Cistern (filled with rain, snow)
+ITEM	resource5	Tradesfolk (midwife, potter, publican, smith, tanner)
+ITEM	resource6	Trade: Gordin's Delve (metal, tools)
+ITEM	resource7	Trade: Marshedge (textiles, herbs, glass)
+ITEM	resource8	
+ITEM	resource9	
+ITEM	resource10	
+ITEM	resource11	
+ENDLIST
+H3	Fortifications, etc.		defenses
+LIST	fs-items
+ITEM	fort0	Village militia
+ITEM	fort1	The Ringwall (low, stone)
+ITEM	fort2	3 watchtowers
+ITEM	fort3	Spears & shields in every home
+ITEM	fort4	Some bows
+ITEM	fort5	
+ITEM	fort6	
+ITEM	fort7	
+ITEM	fort8	
+ITEM	fort9	
+ENDLIST
+H3	Debilities
+LIST		sp-debility
+CK	sp-debility-0	<i>diminished</i>, by injury/sickness/doubt (disadvantage to Deploy, Muster, or Pull Together)
+CK	sp-debility-1	<i>lacking</i>, due to shortages/hoarding/distrust (treat Prosperity as if it's 1 lower than it is)
+CK	sp-debility-2	<i>malcontent</i>, from fear/anger/despair (Fortunes reset to +0 each season, not +1; folks need Persuading more often than usual)
+ENDLIST
+H3	Places of interest
+LIST	fs-places
+PLACE	A	The Stone
+PLACE	B	The Granary
+PLACE	C	Public House & Stables
+PLACE	D	Cistern
+PLACE	E	Pavilion of the Gods
+PLACE	F	Watchtowers
+PLACE	G		place-g
+PLACE	H		place-h
+PLACE	I		place-i
+PLACE	J		place-j
+PLACE	K		place-k
+PLACE	L		place-l
+PLACE	M		place-m
+PLACE	N		place-n
+PLACE	O		place-o
+PLACE	P		place-p
+PLACE	Q		place-q
+PLACE	R		place-r
+ENDLIST
+NOTES	notes	Notes	3
+ENDSHEET
+H2	Content
+P	Keep this in sync with the GM playbook. Review it at the start of each session.
+P	When <b><i>anyone calls "time out,"</i></b> play stops. Step out of character, check in with each other, maybe take a break. Discuss what's wrong, player-to-player.
+P	If <b><i>content was included that shouldn't have been</i></b>, acknowledge the mistake, fix the fiction, and move on.
+P	If <b><i>someone realizes they need content to be excluded, veiled, or handled in a particular way</i></b>, then update the lists. Clarify specifics, now or later, but don't ask reasons. Fix the fiction. Check in with the player(s). When everyone is ready, move on.
+H3	Excluded content
+NOTE	(Not part of the game, on-camera or off)
+NOTES	excluded		1	Excluded content
+H3	Veiled content
+NOTE	(Part of the fiction, but only off-camera)
+NOTES	veiled		1	Veiled content
+H3	Special handling
+NOTES	special-handling		1	Special handling
+EXTRACT	steading-improvements	other-improvements	improvements
+H2	Other Improvements
+P	Additional possible Improvements, revealed by the GM.
+DIV	steading-improvement si-other	other-improvement-1
+NAMEHEAD	other-imp0	other-imp0-name	Improvement	Other improvement 1: completed	Other improvement 1
+NOTES	other-imp0-summary	Summary	2
+NOTES	other-imp0-requirements	Requirements	3
+NOTES	other-imp0-effects	Effects	3
+ENDDIV
+DIV	steading-improvement si-other	other-improvement-2
+NAMEHEAD	other-imp1	other-imp1-name	Improvement	Other improvement 2: completed	Other improvement 2
+NOTES	other-imp1-summary	Summary	2
+NOTES	other-imp1-requirements	Requirements	3
+NOTES	other-imp1-effects	Effects	3
+ENDDIV
+DIV	steading-improvement si-other	other-improvement-3
+NAMEHEAD	other-imp2	other-imp2-name	Improvement	Other improvement 3: completed	Other improvement 3
+NOTES	other-imp2-summary	Summary	2
+NOTES	other-imp2-requirements	Requirements	3
+NOTES	other-imp2-effects	Effects	3
+ENDDIV
+DIV	steading-improvement si-other	other-improvement-4
+NAMEHEAD	other-imp3	other-imp3-name	Improvement	Other improvement 4: completed	Other improvement 4
+NOTES	other-imp3-summary	Summary	2
+NOTES	other-imp3-requirements	Requirements	3
+NOTES	other-imp3-effects	Effects	3
+ENDDIV
+DIV	steading-improvement si-other	other-improvement-5
+NAMEHEAD	other-imp4	other-imp4-name	Improvement	Other improvement 5: completed	Other improvement 5
+NOTES	other-imp4-summary	Summary	2
+NOTES	other-imp4-requirements	Requirements	3
+NOTES	other-imp4-effects	Effects	3
+ENDDIV
+DIV	steading-improvement si-other	other-improvement-6
+NAMEHEAD	other-imp5	other-imp5-name	Improvement	Other improvement 6: completed	Other improvement 6
+NOTES	other-imp5-summary	Summary	2
+NOTES	other-imp5-requirements	Requirements	3
+NOTES	other-imp5-effects	Effects	3
+ENDDIV
+H2	Assets
+P	Owned by the residents of Stonetop in common. To take them on an expedition or otherwise put them at risk, you must Requisition.
+LIST	fs-items
+ITEM	asset0	A pair of hardy draft horses, followers (large, powerful, keen-nosed, hardy): HP 10 each; Damage d6+3 (hand, close, forceful); Instinct: to panic; Cost: care & grooming.	Asset
+ITEM	asset1	A pair of horse-drawn plows, iron	Asset
+ITEM	asset2	A pair of carts (plus horse harness)	Asset
+ITEM	asset3	A wagon (plus horse harness)	Asset
+ITEM	asset4		Asset
+ITEM	asset5		Asset
+ITEM	asset6		Asset
+ITEM	asset7		Asset
+ITEM	asset8		Asset
+ITEM	asset9		Asset
+ITEM	asset10		Asset
+ITEM	asset11		Asset
+ENDLIST
+H3	Silver
+STAT	silver-purses	Purses	0	0	999		Silver purses
+STAT	silver-handfuls	Handfuls	0	0	999		Silver handfuls
+STAT	silver-coins	Coins	0	0	999		Silver coins
+H3	Gold
+STAT	gold-purses	Purses	0	0	999		Gold purses
+STAT	gold-handfuls	Handfuls	0	0	999		Gold handfuls
+STAT	gold-coins	Coins	0	0	999		Gold coins
+H2	Residents of Stonetop
+P	Add each NPC that is named during introductions or play. Give each an occupation (even if just farmer or homemaker) and at least 1 trait.
+TABLE	res	30
+COL	name	Name (pronouns)
+COL	occ	Occupation
+COL	traits	Traits, relations, etc.
+ROW		publican
+ROW		smith
+ROW		tanner
+ROW		potter
+ROW		midwife
+ENDTABLE
+H3	Names
+P	Aderyn, Aeronwen, Afanen, Afon, Alun, Andras, Aneirin, Awstin, Bedwyr, Berwyn, Betrys, Braith, Briallen, Bronwen, Bryn, Cadi, Cadoc, Cadwygan, Caron, Cefin, Ceinwen, Ceridwyn, Cerys, Colwyn, Deiniol, Dilwen, Dylis, Eifion, Eirlys, Eluned, Emrys, Enfys, Eurwen, Gaenor, Garet, Gethin, Glyndir, Heledd, Hywel, Ifan, Iorwerth, Iwan, Lewela, Leuca, Linos, Mado, Maldwyn, Malon, Mared, Marged, Martyn, Meirion, Menwen, Mererid, Neirin, Nia, Ofydd, Olwyn, Owain, Padrig, Parry, Pryce, Pryder, Rheinal, Rhisiart, Rhosyn, Rydderch, Sawyl, Siana, Sioned, Talfryn, Tegid, Tiwlip, Tomos, Tudyr, Winifred, Yorath
+H2	NPC traits
+P	Assign as needed; choose from this list or make up your own.
+P	all thumbs, ambitious, beloved by everyone, beautiful singing voice, best cook, best weaver, blind, braved the Ruined Tower, cautious, cheery, chronic cough, complains too much, cowardly, craves recognition, curious, dallied with the Fae years ago, deaf, desperately wants a child, distills the best whisky, doesn't pull their weight, drunkard, eagle-eye, fearless, foundling, gathers herbs from the Wood, gets the best deals, gifted storyteller, gods-fearing, good with children, happy-go-lucky, has a beef with Marshedge, has a good heart, has a lot of backbone, has a wandering eye, has a way with animals, has Fae blood in their veins, has just terrible luck, has lost their nerve, has no respect for their elders, has terrible nightmares, has the most children, has their head in the clouds, hates the Hillfolk, hears voices, humorless, immaculate appearance, jealous, just got married, keeps to themselves, knows all the gossip, lame, likes to hurt things, lived among the Forest Folk, lost all their children, lovesick, loves their dogs, loyal friend, most handsome, moved here recently, must approve any marriages, mute, not afraid of deep water, not too bright, oldest, orphan, overprotective, prettiest, prideful, reckless, refuses to marry, resents their lot in life, runs everywhere, sensitive, simpleton, slew many crinwin, stoic, stubborn, suffers from fits, swears they met the Pale Hunter, tells the best jokes, tender-hearted, tends the Gods' Pavilion, tends to the sick & injured, touched, very strong, wants to have kids, well-read, well-traveled, widowed, will eat anything
+H2	Notable neighbors of Stonetop
+P	Add NPCs from neighboring areas when instructed by a playbook, or as needed.
+TABLE	nb	20
+COL	name	Name (pronouns)
+COL	home	Home
+COL	occ	Occupation
+COL	traits	Traits, relations, etc.
+ENDTABLE
+H3	Marshedge
+NOTES	loc-marshedge	Notes	3
+P	<b>Names:</b> Abben, Ailen, Brin, Brogan, Catlin, Coln, Daedre, Dermos, Ennin, Finnen, Gilor, Isbeal, Kiran, Lile, Lim, Mathuin, Mirne, Noren, Owan, Ragan, Renan, Seadha, Seann, Tierney, Ulliam
+H3	Gordin's Delve
+NOTES	loc-gordins-delve	Notes	3
+P	<b>Names:</b> Choose from other lists; everyone comes to Gordin's Delve from somewhere else.
+H3	The Steplands	(Hillfolk)
+NOTES	loc-the-steplands	Notes	3
+P	<b>Names:</b> Adm, Blej, Cirl, Davth, Elst, Gwilm, Gwenl, Henri, Ines, Jenfir, Jown, Juda, Kiln, Laurl, Loic, Merrn, Maikl, Nanzl, Nolwn, Quent, Reegn, Ropr, Sabi, Stren, Yanz
+H3	Lygos	(and other points south)
+NOTES	loc-lygos	Notes	3
+P	<b>Names:</b> Agatte, Aref, Alix, Baraz, Canan, Darya, Demetra, Elene, Elios, Fotios, Faruza, Golza, Iasos, Iona, Kyriakos, Marika, Maayan, Osher, Natasa, Nivola, Rinat, Stamat, Thecla, Zhaleh
+H3	Other places	(Barrier Pass, the Manmarch, etc.)
+NOTES	loc-other-places	Notes	3

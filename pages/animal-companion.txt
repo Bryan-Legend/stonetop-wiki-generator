@@ -1,0 +1,170 @@
+# Animal Companion · a sheet, written by hand (see generator/sheet.py)
+P	Ranger, you are accompanied by a beast, with whom you have bonded deeply and communicate without words. Treat it as a follower.
+SHEET	animal-companion	companion	Animal Companion
+H2	Your Companion
+FIELD	name	Name	name
+FIELD	damage-tags	Damage tags	hand, …
+STAT	max-hp	Max HP	5	1	99
+STAT	armor	Armor	1	0	9
+DMG	damage	Damage	d4	Roll damage
+HPMOUNT
+GLOSS	Set Max HP, Armor and Damage from the type you pick below (see Type).
+H3	Type
+P	Pick 1.
+DIV	fs-type
+TYPE	type0-pick	Bird	type0-other	falcon, eagle, owl, buzzard, magpie,
+STATLINE	HP 5; Armor 1 (size); Damage d4 (<i>hand</i>)
+NOTE	Pick 4 more:
+LIST	fs-picks
+CK	type0-0	Improved damage die (d6)
+CK	type0-1	+4 HP
+CK	type0-2	+1 armor (agility)
+CK	type0-3	<i>attack-bird</i>
+CK	type0-4	<i>cautious</i>
+CK	type0-5	<i>clever</i>
+CK	type0-6	<i>fast</i>
+CK	type0-7	<i>mimic</i>
+CK	type0-8	<i>sharp-eyed</i>
+CK	type0-9	<i>stealthy</i>
+CK	type0-10	<i>thieving</i>
+CKX	<i>tiny</i>
+CK	type0-12	<i>tireless</i>
+CKW	type0-blank0	type0-blank0	write in
+ENDLIST
+ENDDIV
+DIV	fs-type
+TYPE	type1-pick	Critter	type1-other	cat, fox, possum, raccoon, weasel,
+STATLINE	HP 5; Armor 1 (size); Damage d4 (<i>hand</i>)
+NOTE	Pick 5 more:
+LIST	fs-picks
+CK	type1-0	+4 HP
+CK	type1-1	+1 armor (agility)
+CK	type1-2	<i>agile</i>
+CK	type1-3	<i>adorable</i>
+CK	type1-4	<i>annoying</i>
+CK	type1-5	<i>burrowing</i>
+CK	type1-6	<i>cautious</i>
+CK	type1-7	<i>clever</i>
+CK	type1-8	<i>climber</i>
+CK	type1-9	<i>dextrous</i>
+CK	type1-10	<i>keen-eared</i>
+CK	type1-11	<i>keen-eyed</i>
+CK	type1-12	<i>keen-nosed</i>
+CK	type1-13	<i>quick</i>
+CK	type1-14	<i>stealthy</i>
+CK	type1-15	<i>stinky</i>
+CKX	<i>tiny</i>
+CK	type1-17	<i>thieving</i>
+CKW	type1-blank0	type1-blank0	write in
+ENDLIST
+ENDDIV
+DIV	fs-type
+TYPE	type2-pick	Brute	type2-other	bear, boar, wolverine, aurochs, drake,
+STATLINE	HP 12; Armor 0; Damage d6 (<i>hand</i>)
+NOTE	Pick 3 more:
+LIST	fs-picks
+CK	type2-0	+1 armor (hide, scales, etc.)
+CK	type2-1	Damage is +2 damage, <i>forceful</i>
+CK	type2-2	Damage is <i>messy</i>, 1 piercing
+CK	type2-3	<i>large</i> (+4 HP, +1 damage, +<i>close</i>)
+CK	type2-4	<i>easy-going</i>
+CK	type2-5	<i>fearless</i>
+CK	type2-6	<i>gluttonous</i>
+CK	type2-7	<i>keen-nosed</i>
+CK	type2-8	<i>powerful</i>
+CK	type2-9	<i>protective</i>
+CK	type2-10	<i>quick</i>
+CK	type2-11	<i>terrifying</i>
+CKX	<i>tough</i>
+CKW	type2-blank0	type2-blank0	write in
+ENDLIST
+ENDDIV
+DIV	fs-type
+TYPE	type3-pick	Predator	type3-other	hound, wolf, cougar, drake,
+STATLINE	HP 8; Armor 0; Damage d8 (<i>hand</i>, <i>grabby</i>)
+NOTE	Pick 3 more:
+LIST	fs-picks
+CK	type3-0	+4 HP
+CK	type3-1	+1 armor (hide)
+CK	type3-2	Damage is <i>messy</i>, 1 piercing
+CK	type3-3	<i>agile</i>
+CK	type3-4	<i>climber</i>
+CK	type3-5	<i>clever</i>
+CK	type3-6	<i>enduring</i>
+CK	type3-7	<i>fast</i>
+CKX	<i>fierce</i>
+CK	type3-9	<i>keen-eared</i>
+CK	type3-10	<i>keen-eyed</i>
+CK	type3-11	<i>pack-hunter</i>
+CK	type3-12	<i>keen-nosed</i>
+CK	type3-13	<i>patient</i>
+CK	type3-14	<i>powerful</i>
+CK	type3-15	<i>stealthy</i>
+CK	type3-16	<i>terrifying</i>
+CKW	type3-blank0	type3-blank0	write in
+ENDLIST
+ENDDIV
+DIV	fs-type
+TYPE	type4-pick	Steed	type4-other	horse, mule,
+STATLINE	HP 12; Armor 0; Damage d6+1 (<i>hand</i>, <i>close</i>)
+NOTE	Pick 4 more:
+LIST	fs-picks
+CK	type4-0	+4 HP
+CK	type4-1	+1 armor (hide)
+CK	type4-2	Damage is +2 damage, <i>forceful</i>
+CK	type4-3	<i>aggressive</i>
+CK	type4-4	<i>agile</i>
+CK	type4-5	<i>beautiful</i>
+CK	type4-6	<i>calm</i>
+CK	type4-7	<i>clever</i>
+CK	type4-8	<i>hardy</i>
+CK	type4-9	<i>keen-nosed</i>
+CKX	<i>large</i>
+CK	type4-11	<i>powerful</i>
+CK	type4-12	<i>swift</i>
+CKW	type4-blank0	type4-blank0	write in
+ENDLIST
+ENDDIV
+H3	Instinct
+P	Pick 1.
+LIST	fs-lines
+CK	inst0	To bully and threaten
+CK	inst1	To make mischief
+CK	inst2	To fill its belly
+CK	inst3	To startle and panic
+CK	inst4	To get distracted
+CK	inst5	To run rampant
+CK	inst6	To give chase
+CKW	instblank0	instblank0	write in
+ENDLIST
+H3	Cost
+DIV	fs-row
+P	Pick 1.
+TRACK	ac-loyalty	Loyalty	3	Loyalty	fs-loyalty
+ENDDIV
+LIST	fs-lines
+CK	cost0	Play, grooming, training, affection
+CK	cost1	Time off on its own, free to roam
+CK	cost2	Cozy quarters, comfort, ample food
+CKW	costblank0	costblank0	write in
+ENDLIST
+H3	Beast of Legend
+P	Each time you take Beast of Legend, pick 1:
+LIST	fs-lines
+CK	legend0	They are <i>exceptional</i> (see Order Followers below)
+CK	legend1	They get +4 HP and +1 armor
+CK	legend2	They develop a unique ability or trait
+ENDLIST
+NOTES	notes	Notes	3
+ENDSHEET
+H3	Order Followers
+P	When you <b><i>direct them to make a move and they do so</i></b>, roll +1 instead of +STAT if any of their tags apply (or +2 if they're also <i>exceptional</i>). If no tags apply, roll +0. If any of their tags would get in the way, roll with disadvantage.
+P	When they are <b><i>without orders</i></b> or they <b><i>act on their own initiative</i></b>, the GM says what they do and how it goes.
+H3	Strengthen Your Bond
+P	When you <b><i>pay their cost</i></b> and you haven't done so recently, they hold +1 Loyalty (max 3).
+P	Spend their Loyalty 1-for-1 to have them:
+B	Overcome their fear to do as you say
+B	Resist acting on their instinct/tags/traits
+B	Do something they don't want to do (as long as it's not abhorrent or suicidal)
+H3	Loyal to the End
+P	When <b><i>your companion is at 0 HP</i></b>, roll +0, with advantage if it holds Loyalty: <b>on a 10+</b>, it'll be fine once it regains any HP; <b>on a 7-9</b>, it gets the <i>injured</i> tag; <b>on a 6-</b>, it's injured and will die soon unless someone saves it.

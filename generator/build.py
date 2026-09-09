@@ -77,8 +77,10 @@ from .structure import (
     match_toc_to_sections,
     set_page_sections,
     set_title_index,
+    linkify_pages,
 )
 from .text import heading_pages, html_to_search_text
+from .translate import render_translated
 
 
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
@@ -276,6 +278,19 @@ def extract_books(
 
 
 # ------------------------------------------------------------------ build
+
+def page_link_fn(lookup: dict[int, dict], common: dict):
+    """``linkify_pages`` bound to one page, for the sheet renderer."""
+    return lambda text: linkify_pages(
+        text,
+        lookup,
+        common.get("current_slug"),
+        common.get("section_index"),
+        lookups=common.get("lookups"),
+        section_indexes=common.get("section_indexes"),
+        current_book=common.get("current_book"),
+    )
+
 
 def main(argv: list[str] | None = None) -> None:
     # A Windows console is often cp1252; the build's progress lines carry
@@ -519,7 +534,11 @@ def main(argv: list[str] | None = None) -> None:
             )
         ov = page_override(slug)
         if ov is not None:
-            sections = override_sections(apply_override(ov, _body))
+            sections = override_sections(
+                apply_override(
+                    ov, _body, slug=slug, link_fn=page_link_fn(lookup, common)
+                )
+            )
         sections_by_slug[slug] = sections
 
     section_navs: dict[str, list[dict]] = {}
@@ -689,8 +708,31 @@ def main(argv: list[str] | None = None) -> None:
             # A hand-authored body (pages/<slug>.html) replaces the extraction.
             ov = page_override(slug)
             if ov is not None:
-                body = apply_override(ov, body)
+                body = apply_override(
+                    ov, body, slug=slug, link_fn=page_link_fn(lookup, common)
+                )
                 excerpt = override_excerpt(ov) or excerpt
+            # The same page in every language that has its corpus translated.
+            for locale in lang_targets:
+                tr = locale["pages"].get(slug)
+                if not tr or "corpus" not in tr:
+                    continue
+                if art.get("kind") != "article":
+                    print(f"  i18n: {locale['code']}/{slug}: only articles and sheets render from a corpus translation yet")
+                    del locale["pages"][slug]
+                    continue
+                page_tr, notes = render_translated(
+                    tr["corpus"], locale["code"], art, lines, _pages, ov,
+                    lookup, articles, common,
+                )
+                for note in notes:
+                    print(f"  i18n: {note}")
+                if page_tr is None:
+                    del locale["pages"][slug]
+                    continue
+                if art.get("children") and art.get("kind") == "article":
+                    page_tr["body_html"] += "\n" + chapter_parts_html(art)
+                tr.update(page_tr)
             # A split chapter: the hub lists its parts, and each part links
             # back the way an arcanum does.
             if art.get("children") and art.get("kind") == "article":

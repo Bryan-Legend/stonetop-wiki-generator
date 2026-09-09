@@ -1,0 +1,73 @@
+# Followers · a sheet, written by hand (see generator/sheet.py)
+P	Space for the followers you pick up along the way, and the sheet's reminder of what a player is here to do. Followers get a full set of stats, very similar to those of monsters, plus a <b>cost</b> and <b>Loyalty</b> — see [[npcs-followers|NPCs & Followers]]. The HP tracker under each follower is shared with the whole table.
+SHEET	follower	follower-1	Follower 1
+H2	Follower 1
+FIELD	f1-name	Name	name
+FIELD	f1-tags	Tags	tags
+LIST	fs-picks
+CK	f1-tag0	<i>exceptional</i>
+CK	f1-tag1	<i>group</i>
+ENDLIST
+STAT	f1-max-hp	Max HP	6	1	99
+STAT	f1-armor	Armor	0	0	9
+DMG	f1-damage	Damage	d6	Roll damage
+HPMOUNT
+FIELD	f1-instinct	Instinct	to …
+FIELDS	fs-moves	Moves	f1-move	3	move
+DIV	fs-row
+FIELD	f1-cost	Cost	what keeps them following
+TRACK	f1-loyalty	Loyalty	3	Loyalty	fs-loyalty
+ENDDIV
+FIELDS	fs-gear	Gear	f1-gear	6	
+NOTES	f1-notes	Notes	3
+ENDSHEET
+SHEET	follower	follower-2	Follower 2
+H2	Follower 2
+FIELD	f2-name	Name	name
+FIELD	f2-tags	Tags	tags
+LIST	fs-picks
+CK	f2-tag0	<i>exceptional</i>
+CK	f2-tag1	<i>group</i>
+ENDLIST
+STAT	f2-max-hp	Max HP	6	1	99
+STAT	f2-armor	Armor	0	0	9
+DMG	f2-damage	Damage	d6	Roll damage
+HPMOUNT
+FIELD	f2-instinct	Instinct	to …
+FIELDS	fs-moves	Moves	f2-move	3	move
+DIV	fs-row
+FIELD	f2-cost	Cost	what keeps them following
+TRACK	f2-loyalty	Loyalty	3	Loyalty	fs-loyalty
+ENDDIV
+FIELDS	fs-gear	Gear	f2-gear	6	
+NOTES	f2-notes	Notes	3
+ENDSHEET
+HR
+H2	Player's Agenda
+B	Portray a compelling character
+B	Engage with the fictional world
+B	Play to find out what happens
+H2	Player's Principles
+B	Begin and end with the fiction
+B	Connect with the other PCs
+B	Show us what's important to you
+B	Have goals and pursue them
+B	Be bold, take risks
+B	Embrace difficulty, setback, and failure
+B	Participate in worldbuilding
+B	Build on what others have said
+B	Give others a chance to shine
+B	Participate in the conversation
+H2	When in doubt…
+B	Visualize the situation
+B	Ask the GM for clarification
+B	What do you want? What's your goal?
+B	Consider your strengths and weaknesses
+B	Look to others for ideas
+B	Go with the obvious choice, the interesting choice, the meaningful choice… not always the "right" choice (remember, you get XP on a miss!)
+H2	Triggering moves
+P	If you want to do it, then do it in the fiction. Tell us how you do it, what it looks like. Be specific.
+P	But remember: if you do it in the fiction, then you have to do it. "I rush past the hagr to grab the glowing sword" and the GM says that's Defy Danger with DEX. It's okay to say, "Oh, really? I guess I don't do that." But if you want to rush past the hagr, make with the dice.
+H2	Hold and spend
+P	When a move says, "hold X Currency (until/while/so long as ___)," then note the Currency you hold and spend it as described by the move. Spending held Currency usually means you just do it, no roll required.
+P	Sometimes, though, spending held Currency will allow you to trigger a move (and thus roll) when otherwise you just couldn't have done it.

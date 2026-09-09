@@ -1,0 +1,108 @@
+# Thrall · a sheet, written by hand (see generator/sheet.py)
+P	When you <b><i>die but call on one of the Things Below by name and beseech them to intercede</i></b>, they do. Death is averted, but you gain this insert and 1 Mark (see below).
+SHEET	thrall
+H2	Your master
+P	The Thing Below that you called upon? The one that plucked your soul from the Last Door and hides you from the Pale Hunter? It owns you now.
+P	Name your master here, along with any titles that you know:
+NOTES	master	Master	2	Your master's name and titles
+H3	Impulse
+P	Ask the GM to choose 1, to represent your master's nature and will:
+LIST	fs-lines	thrall-1
+CK	thrall-1-0	Stoke conflict, confusion, distrust
+CK	thrall-1-1	Erode hope/faith/honor/self-image
+CK	thrall-1-2	Hide/bury/smother things or ideas
+CK	thrall-1-3	Deprive others of what they need
+CK	thrall-1-4	Inflict harm, cruelly and unnecessarily
+CK	thrall-1-5	Desecrate/mutilate/ruin things of value
+CK	thrall-1-6	Shock/terrify/horrify others
+CKW	thrall-1-7	impulse-other	write in
+ENDLIST
+H3	Instinct
+P	Lose the Instinct from your playbook, and replace it with one of these (your choice):
+LIST	fs-lines	thrall-2
+CK	thrall-2-0	<b>Fascination</b> — To explore your powers, your master, your new existence.
+ENDLIST
+LIST	fs-lines	thrall-3
+CK	thrall-3-0	<b>Resistance</b> — To struggle against your master and cling to your humanity.
+ENDLIST
+LIST	fs-lines	thrall-4
+CK	thrall-4-0	<b>Shame</b> — To hide and deny your true nature.
+ENDLIST
+ENDSHEET
+H2	Moves
+P	You gain all of the following:
+H3	Favor
+TRACK	thrall-favor	Favor	3	Favor
+P	Your Favor starts at 0 and can go no higher than 3. When you <b><i>have 3 Favor and would gain another</i></b>, reduce your Favor to 0 and choose 1:
+B	Ask a question of your master and gain advantage on your next roll to act on the answer.
+B	Gain a new Mark of your choice. Then ask the GM to choose a Mark that you don't have, and cross it off—you can never gain it.
+H3	Urges
+P	When <b><i>the GM compels you to act on your impulse</i></b>, gain 1 Favor if you act as bidden. If you resist, roll +WIS: <b>on a 10+</b>, your actions are your own; <b>on a 7-9</b>, choose 1:
+B	Struggle for control until something/one snaps you out of it
+B	Start acting as compelled, putting yourself or an ally in a spot before you regain control
+B	Harm yourself (d6 damage, ignores armor) to regain control
+P	<b>On a 6-</b>, you come to your senses later, having done gods-know-what.
+P	When you <b><i>act on your impulse without being compelled to do so</i></b>, and your actions cause you or your allies trouble, gain 1 Favor.
+H3	Dark Succor
+P	When you <b><i>are dying or killed outright</i></b>, your master intercedes on your behalf. You will recover, here and now or at a time and place of the GM's choosing. Then, roll +Favor: <b>on a 10+</b>, choose 1; <b>on a 7-9</b>, choose 2; <b>on a 6-</b>, all 3 apply.
+B	Gain a new Mark of the GM's choice
+B	Cross off a Mark that you don't have—you can never gain it
+B	Your master gives you a task; until you complete it, your Favor stays at 0.
+P	Regardless, reset your Favor to 0.
+H3	Unholy Vessel
+P	When you <b><i>would gain a Mark but there are none left to gain</i></b>, your humanity is utterly lost. You become a threat in the GM's control. Make a new character.
+H2	Marks
+P	When you first gain this insert, the GM will choose 1 Mark for you, based on your master's nature. Gain more when a move tells you.
+LIST		thrall-5
+CK	thrall-5-0	<b>A Festering Rot</b> — You are unharmed by poison, disease, caustic substances, and vermin bites. Things in your presence rot, crack, corrode, and spoil.
+ENDLIST
+P	When you <b><i>roll doubles</i></b>, something on your person is ruined. The GM will tell you what, and how.
+LIST		thrall-6
+CK	thrall-6-0	<b>Child of the Deeps</b> — Reduce your max HP by 2.
+ENDLIST
+P	You can breathe water and suffer no harm from cold or pressure. Your skin becomes squamous. When you <b><i>go a day without bathing</i></b>, mark a debility.
+P	While near a body of water, you can spend 1 Favor to call forth a slimy tentacle to do your bidding. Treat it as a follower:
+STATBLOCK	Slimy Tentacle	stealthy, relentless	<b>HP</b> 6; <b>Armor</b> 0	<b>Damage</b> d10 (reach, forceful, grabby)	<b>Instinct</b> to squeeze the life from things	<b>Cost</b> lives drowned
+LIST		thrall-7
+CK	thrall-7-0	<b>Death Mask</b> — You find or craft a horrid mask. When you <b><i>do not wear your mask</i></b>, you have disadvantage on all rolls.
+ENDLIST
+P	When you <b><i>wear your mask</i></b>, undead treat as one of their own.
+P	When you <b><i>wear your mask</i></b>, you can spend 1 Favor to fill any living thing that sees you with dread. They must choose: flee, cower, or stand fast. If they stand fast, you have advantage on your first roll against them.
+LIST		thrall-8
+CK	thrall-8-0	<b>Quicksilver Dreams</b> — Reduce your max HP by 2.
+ENDLIST
+P	When <b><i>you Make Camp</i></b>, everyone with you suffers nightmares and has disadvantage on their next roll.
+P	You can spend 1 Favor to inflict false sensations upon someone, as long you can see them.
+LIST		thrall-9
+CK	thrall-9-0	<b>Ravenous</b> — You are filled with unending hunger. Gain an extra impulse: "Wantonly devour flesh."
+ENDLIST
+P	When you <b><i>Make Camp</i></b>, consume an extra 1d4 provisions or uses of supplies.
+P	You can spend 1 Favor to:
+B	Touch something. For as long as you hold it, everyone who sees it desires it.
+B	Gain a horrid, iron-rending maw (<i>hand</i>, 3 piercing, <i>messy</i>) for as long as you wish, and with it the ability to eat and digest anything.
+LIST		thrall-10
+CK	thrall-10-0	<b>Red Wrath</b> — Reduce your max HP by 2.
+ENDLIST
+P	When <b><i>the GM compels you to violence</i></b>, you have disadvantage to resist.
+P	When <b><i>you let your fury fly and lash out at someone</i></b> (<i>hand</i>, <i>close</i>), spend 1-3 Favor and roll +Favor spent: <b>on a 10+</b>, deal 2d8 damage (<i>messy</i>, <i>forceful</i>) and shock, terrify, or impress any onlookers; <b>on a 7-9</b>, as a 10+ but you keep attacking your victim (or their corpse) in an unthinking rage, heedless of other danger.
+LIST		thrall-11
+CK	thrall-11-0	<b>Shadow's Cold Embrace</b> — Reduce your max HP by 2. You cast no shadow and no reflection.
+ENDLIST
+P	When you are <b><i>exposed to sunlight or holy light</i></b>, you cannot spend Favor (for any reason).
+P	Otherwise you can spend 1 Favor to:
+B	Remain unnoticed, even when under scrutiny or after doing something to draw attention.
+B	Leave no trace of your comings or goings
+B	Pass off a lie as an obvious, evident truth
+LIST		thrall-12
+CK	thrall-12-0	<b>Speak Truth, Whisper Secrets</b> — Reduce your max HP by 2. Your tongue grows unusually long and your teeth become stained and jagged.
+ENDLIST
+P	You can spend 1 Favor to look someone in the eye and learn (pick 1):
+B	What do they desire above all else?
+B	What secret shame do they bear?
+B	What is their greatest fear?
+B	What is their worst memory?
+P	When you <b><i>use the answer against them</i></b>, you have advantage.
+LIST		thrall-13
+CK	thrall-13-0	<b>Torment's Blessing</b> — Your wounds are slow to heal. When you recover HP, recover only half the amount that you should. But, you never need to Defy Danger due to pain, blood loss, and weakness due to wounds.
+ENDLIST
+P	When you <b><i>speak a word of torment</i></b>, name someone nearby, spend 1-3 Favor, and roll +Favor spent: <b>on a 10+</b>, they take 2d4 damage and are wracked with pain—lesser victims are incapacitated, and mighty foes are momentarily stunned; <b>on a 7-9</b>, they take 1d6 damage (ignores armor) and lesser victims are momentarily stunned.

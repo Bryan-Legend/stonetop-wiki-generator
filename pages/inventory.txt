@@ -1,0 +1,125 @@
+# Inventory · a sheet, written by hand (see generator/sheet.py)
+SHEET	inventory
+P	When you <b><i>Outfit</i></b>, mark a number of ◇ below, on specific items or Undefined.
+B	For a <b>light load</b> (<i>quick & quiet</i>), mark up to 3 ◇
+B	For a <b>normal load</b>, mark 4-6 ◇
+B	For a <b>heavy load</b> (<i>noisy, slow, hot, quick to tire</i>), mark 7-9 ◇
+H3	Undefined
+DIV	fs-uses
+TRACK	inv-undef		9	Mark
+ENDDIV
+P	When you <b><i>Have What You Need</i></b>, move a mark from here to a specific ◇ below.
+H3	Gear
+LIST	fs-lines inv-list
+INV	inv-supplies	1	<b>Supplies</b> (4+Prosperity uses ○○○○ ○○)
+INV	inv-more-supplies	1	<b>More supplies</b> (4+Prosperity uses ○○○○ ○○)
+INV	inv-even-more-supplies	1	<b>Even more supplies</b> (4+Prosperity uses ○○○○ ○○)
+ENDLIST
+NOTE	<i>Use supplies to Recover, Make Camp, or have extra <i>small</i> items.</i>
+LIST	fs-lines inv-list
+INV	inv-mess-kit	1	<b>Mess kit</b> (requires fire & water; makes Supplies last longer)
+INV	inv-bedroll	1	<b>Bedroll</b> (recover 1d6 extra HP when you Make Camp)
+ENDLIST
+LIST	fs-lines inv-list
+INV	inv-blanket	1	<b>Blanket</b> (<i>warm</i>)
+INV	inv-change-of-clothes	1	<b>Change of clothes</b>
+INV	inv-rope	1	<b>Rope</b>, ~25 ft
+INV	inv-shovel	1	<b>Shovel</b>
+INV	inv-sledge	2	<b>Sledge/litter/travois</b>, roll-out
+INV	inv-snow-shoes	1	<b>Snow-shoes</b>
+ENDLIST
+LIST	fs-lines inv-list
+INV	inv-torch	1	<b>Torch</b> (lasts ~1 hour; <i>reach</i>, <i>area</i>, <i>dangerous</i>)
+INV	inv-oil-lamp	1	<b>Oil lamp</b> (○○○ hours, <i>close</i>, <i>area</i>, <i>crude</i>)
+INV	inv-extra-oil	1	<b>Extra oil</b> (○○○○○ hours, for lamp/lantern, useless as a weapon)
+INV	inv-firewood	2	<b>Firewood</b> (enough to last 1 full night, <i>reach</i>, <i>area</i>)
+ENDLIST
+LIST	fs-lines inv-list
+INV	inv-hatchet	1	<b>Hatchet</b>, iron (<i>hand</i>, <i>thrown</i>, x piercing)
+INV	inv-mallet	1	<b>Mallet</b>, iron and/or wood (<i>hand</i>)
+ENDLIST
+LIST	fs-lines inv-list
+INV	inv-mattock	1	<b>Mattock</b>, iron (<i>close</i>, x piercing, <i>messy</i>, <i>awkward</i>)
+INV	inv-maul	2	<b>Maul</b>, iron (<i>close</i>, <i>forceful</i>, <i>awkward</i>)
+INV	inv-staff	1	<b>Staff</b> (<i>close</i>)
+ENDLIST
+LIST	fs-lines inv-list
+INV	inv-spear	1	<b>Spear</b>, iron (<i>close</i>, <i>thrown</i>, x piercing)
+INV	inv-long-spear	2	<b>Long spear</b>, iron (<i>reach</i>, x piercing)
+ENDLIST
+LIST	fs-lines inv-list
+INV	inv-bow	1	<b>Bow & iron arrows</b> (<i>near</i>, x piercing, ○ low ammo, ○ all out)
+INV	inv-extra-arrows	1	<b>Extra arrows</b> (x piercing, ○ plenty left, ○ low ammo, ○ all out)
+INV	inv-javelins	1	<b>Javelins</b>, a few, iron (<i>thrown</i>, x piercing, +1 damage, ○ all out)
+ENDLIST
+LIST	fs-lines inv-list
+INV	inv-shield	2	<b>Shield</b> (+1 armor, +1 Readiness on a 7+ to Defend)
+INV	inv-thick-hides	2	<b>Thick hides</b> (1 armor, <i>warm</i>)
+INV	inv-cloak	1	<b>Cloak</b> (<i>warm</i>)
+ENDLIST
+H3	Possessions, items, loot
+LIST	fs-lines inv-list
+INVW	inv-loot0	loot0	…	Item
+INVW	inv-loot1	loot1	…	Item
+INVW	inv-loot2	loot2	…	Item
+INVW	inv-loot3	loot3	…	Item
+INVW	inv-loot4	loot4	…	Item
+INVW	inv-loot5	loot5	…	Item
+INVW	inv-loot6	loot6	…	Item
+INVW	inv-loot7	loot7	…	Item
+ENDLIST
+H3	Other things
+NOTE	(animals, kits, stashed items, etc.)
+NOTES	other-things		2	Other things
+H3	Small items
+P	Fit in a pocket, pouch, or boot. When you <b><i>Outfit</i></b>, mark ☐ below equal to 4+Prosperity.
+DIV	fs-uses
+TRACK	inv-small-undef	Undefined	6	Mark
+ENDDIV
+P	When you <b><i>Have What You Need</i></b>, move a mark from here to items below, or expend supplies to mark an additional ☐.
+LIST	fs-lines inv-list inv-small
+CK	inv-knife	<b>Knife or dagger</b>, iron (<i>hand</i>)
+CK	inv-sling	<b>Sling</b> (<i>near</i>, <i>reload</i>, <i>awkward</i>, ○ low ammo, ○ all out)
+CK	inv-rushlight	<b>Rushlight</b> (lasts ~15-30 minutes, <i>hand</i>, <i>crude</i>)
+CK	inv-tinderbox	<b>Tinderbox</b> (<i>slow</i>)
+CK	inv-needle-thread	<b>Needle & thread</b>
+CK	inv-coppers	<b>Handful of coppers</b>
+CK	inv-whisky	<b>Whisky</b>, skin (○○ uses)
+CK	inv-awl	Awl
+CK	inv-bowstring	Bowstring
+CK	inv-chalk	Chalk
+CK	inv-charcoal	Charcoal
+CK	inv-clay-jar	Clay jar
+CK	inv-cloth-rag	Cloth/rag
+CK	inv-comb	Comb
+CK	inv-cup	Cup
+CK	inv-extra-socks	Extra socks
+CK	inv-gloves	Gloves
+CK	inv-little-box	Little box
+CK	inv-sack	Sack (empty)
+CK	inv-sawdust	Sawdust
+CK	inv-tallow	Tallow
+CK	inv-twine	Twine/cord
+CK	inv-waterskin	Waterskin
+CK	inv-whetstone	Whetstone
+CK	inv-whistle	Whistle
+INVW	inv-small-blank0	small0	…	Small item
+INVW	inv-small-blank1	small1	…	Small item
+INVW	inv-small-blank2	small2	…	Small item
+INVW	inv-small-blank3	small3	…	Small item
+INVW	inv-small-blank4	small4	…	Small item
+INVW	inv-small-blank5	small5	…	Small item
+INVW	inv-small-blank6	small6	…	Small item
+INVW	inv-small-blank7	small7	…	Small item
+INVW	inv-small-blank8	small8	…	Small item
+INVW	inv-small-blank9	small9	…	Small item
+ENDLIST
+H3	Prosperity
+LIST	fs-lines
+CK	inv-prosp-0	-1  Gear is <i>crude</i>
+CK	inv-prosp-1	+0
+CK	inv-prosp-2	+1  <i>x</i> = 1 piercing
+CK	inv-prosp-3	+2  <i>x</i> = 2 piercing
+CK	inv-prosp-4	+3  <i>x</i> = 3 piercing
+ENDLIST
+ENDSHEET

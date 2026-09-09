@@ -1,0 +1,121 @@
+# Crew · a sheet, written by hand (see generator/sheet.py)
+P	Marshal, your Crew is a half-dozen strong by default. Treat them as a follower with the <i>group</i> tag. All starting values here are subject to change in play.
+SHEET	crew	crew	Crew
+H2	The Crew
+STAT	max-hp	Max HP	6	1	99
+STAT	armor	Armor	0	0	9
+DMG	damage	Damage	d6	Roll damage
+HPMOUNT
+GLOSS	HP starts at 6 each; Armor at 0; Damage at d6.
+H3	Tags
+P	Your crew starts with <i>group</i>, a tag granted by your background, plus 2 more of your choice.
+LIST	fs-picks
+CK	tag0	<i>archers</i>
+CK	tag1	<i>athletic</i>
+CK	tag2	<i>brave</i>
+CK	tag3	<i>cunning</i>
+CK	tag4	<i>devoted</i>
+CKX	<i>group</i>
+CK	tag6	<i>hardy</i>
+CK	tag7	<i>intimidating</i>
+CK	tag8	<i>observant</i>
+CK	tag9	<i>patient</i>
+CK	tag10	<i>respected</i>
+CK	tag11	<i>stealthy</i>
+CK	tag12	<i>warriors</i>
+CKW	tagblank0	tagblank0	write in
+CKW	tagblank1	tagblank1	write in
+CKW	tagblank2	tagblank2	write in
+ENDLIST
+LIST	fs-lines
+CK	exc0	<i>exceptional</i> (requires Heroes to the Last)
+ENDLIST
+H3	Instinct
+P	Pick 1.
+LIST	fs-lines
+CK	inst0	To bicker, infight, and hold grudges
+CK	inst1	To hew to tradition and superstition
+CK	inst2	To indulge their baser instincts
+CK	inst3	To lord over others
+CK	inst4	To take needless risks
+CK	inst5	To take things too far
+CKW	instblank0	instblank0	write in
+ENDLIST
+H3	Cost
+DIV	fs-row
+P	Pick 1.
+TRACK	crew-loyalty	Loyalty	3	Loyalty	fs-loyalty
+ENDDIV
+LIST	fs-lines
+CK	cost0	Merry-making, as a group
+CK	cost1	Public recognition and respect, honor
+CK	cost2	Risks taken, by you, to help them
+CK	cost3	Victories won against worthy foes
+CK	cost4	Wealth gained for themselves or Stonetop
+CKW	costblank0	costblank0	write in
+ENDLIST
+H3	Inventory
+P	3 ◇ or fewer is a light load; 4–6 ◇ is a normal load; 7–9 ◇ is a heavy load.
+LIST	fs-inventory
+LI	◇ <b>Hatchet</b>, iron (<i>hand</i>, <i>thrown</i>, x piercing)
+LI	◇ <b>Spear</b>, iron (<i>close</i>, <i>thrown</i>, x piercing)
+LI	◇ <b>Bow & iron arrows</b> (<i>near</i>, x piercing, ○ low ammo, ○ all out)
+LI	◇◇ <b>Shield</b> (+1 armor, +1 Readiness on a 7+ to Defend)
+LI	◇◇ <b>Thick hides</b> (1 armor, <i>warm</i>)
+LI	◇ <b>Cloak</b> (<i>warm</i>)
+LI	◇ <b>Supplies</b> (4+Prosperity uses per crew member)
+ENDLIST
+DIV	fs-uses
+TRACK	crew-supplies-a	Supplies	8	Use
+TRACK	crew-supplies-b		8	Use
+TRACK	crew-supplies-c		8	Use
+ENDDIV
+FIELDS	fs-gear	Other gear	gear	6	
+H3	Individuals
+P	When one stands out, give them a name, a tag, and one or more traits.
+DIV	fs-people
+DIV	fs-person
+FIELD	ind0-name	Name	name
+FIELD	ind0-tag	Tag	tag
+FIELD	ind0-traits	Traits	traits
+ENDDIV
+DIV	fs-person
+FIELD	ind1-name	Name	name
+FIELD	ind1-tag	Tag	tag
+FIELD	ind1-traits	Traits	traits
+ENDDIV
+DIV	fs-person
+FIELD	ind2-name	Name	name
+FIELD	ind2-tag	Tag	tag
+FIELD	ind2-traits	Traits	traits
+ENDDIV
+DIV	fs-person
+FIELD	ind3-name	Name	name
+FIELD	ind3-tag	Tag	tag
+FIELD	ind3-traits	Traits	traits
+ENDDIV
+DIV	fs-person
+FIELD	ind4-name	Name	name
+FIELD	ind4-tag	Tag	tag
+FIELD	ind4-traits	Traits	traits
+ENDDIV
+DIV	fs-person
+FIELD	ind5-name	Name	name
+FIELD	ind5-tag	Tag	tag
+FIELD	ind5-traits	Traits	traits
+ENDDIV
+ENDDIV
+P	<b>Names:</b> Aled, Culhwich, Eira, Gerat, Glaw, Harri, Lowri, Mervyn, Nesta
+P	<b>Tags:</b> <i>animal-lover, big, bully, cynical, drunkard, eager, gambler, greedy, grumpy, gullible, heartthrob, honest, kind, lewd, little, naive, old, popular, proud, rookie, reckless, shameless, sharp-eyed, short-tempered</i>
+P	<b>Traits:</b> ___'s kid/sibling/parent/cousin/___, bald, crush on ___, grudge against ___, hates ___, idolizes ___, jokes, messy, missing eye/finger/hand/___, misses their kids, nightmares, recently married, religious, scars, skinny, sharp-tongued, sings, snores, tells tall tales, too serious, troubles at home, whistles, whittler
+NOTES	notes	Notes	3
+ENDSHEET
+H3	Order Followers
+P	When you <b><i>direct them to make a move and they do so</i></b>, roll +1 instead of +STAT if any of their tags apply (or +2 if they're also <i>exceptional</i>). If no tags apply, roll +0. If any of their tags would get in the way, roll with disadvantage.
+P	When they are <b><i>without orders</i></b> or they <b><i>act on their own initiative</i></b>, the GM says what they do and how it goes.
+H3	Strengthen Your Bond
+P	When you <b><i>pay their cost</i></b> and you haven't done so recently, they hold +1 Loyalty (max 3).
+P	Spend their Loyalty 1-for-1 to have them:
+B	Overcome their fear to do as you say
+B	Resist acting on their instinct/tags/traits
+B	Do something they don't want to do (as long as it's not abhorrent or suicidal)

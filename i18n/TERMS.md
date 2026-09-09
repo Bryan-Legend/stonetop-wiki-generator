@@ -297,3 +297,119 @@ Animal-companion types — tr · hu · fi: Bird/Critter/Brute/Predator/Steed =
 Kuş, Ufak Yaratık, Azman, Yırtıcı, Binek · Madár, Apró Jószág, Fenevad,
 Ragadozó, Hátas · Lintu, Pikkueläin, Järkäle, Saalistaja, Ratsu; *drake* =
 ejder · sárkánygyík · traakki.
+
+### Steading playbook — es · pt-BR · de (2026-09-09, corpus route)
+
+| English | es | pt-BR | de |
+|---|---|---|---|
+| Fortunes | Fortuna | Fortuna | Geschick |
+| Surplus | Excedente | Excedente | Überschuss |
+| Prosperity | Prosperidad | Prosperidade | Wohlstand |
+| Population | Población | População | Bevölkerung |
+| Defenses | Defensas | Defesas | Verteidigung |
+| Size | Tamaño | Tamanho | Größe |
+| Resources | Recursos | Recursos | Ressourcen |
+| Fortifications | Fortificaciones | Fortificações | Befestigungen |
+| Debilities (steading) | Debilidades | Debilidades | Schwächungen |
+| diminished / lacking / malcontent | mermado / carente / descontento | diminuído / carente / descontente | dezimiert / bedürftig / unzufrieden |
+| hamlet / village / town / city | caserío / aldea / villa / ciudad | lugarejo / vilarejo / vila / cidade | Weiler / Dorf / Stadt / Großstadt |
+| Steading Improvements | Mejoras del Asentamiento | Melhorias do Povoado | Siedlungs-Verbesserungen |
+| Assets | Bienes | Bens | Besitz |
+| Value (gear) | Valor | Valor | Wert |
+| Requires / Henceforth | Requiere / En adelante | Requer / Doravante | Erfordert / Fortan |
+| Places of interest | Lugares de interés | Locais de interesse | Bemerkenswerte Orte |
+| Excluded / Veiled content, Special handling | Contenido excluido / velado, Tratamiento especial | Conteúdo excluído / velado, Tratamento especial | Ausgeschlossene / Verhüllte Inhalte, Besondere Behandlung |
+| Summary / Requirements / Effects | Resumen / Requisitos / Efectos | Resumo / Requisitos / Efeitos | Zusammenfassung / Voraussetzungen / Auswirkungen |
+| Purses / Handfuls / Coins | Bolsas / Puñados / Monedas | Bolsas / Punhados / Moedas | Beutel / Handvoll / Münzen |
+| the Flats | las Llanuras | as Planícies | das Flachland |
+| the Old Wall | la Vieja Muralla | a Muralha Antiga | die Alte Mauer |
+| the Stream | el Arroyo | o Riacho | der Bach |
+| Forest Folk | el Pueblo del Bosque | o Povo da Mata | das Waldvolk |
+| Whitefang (wool) | colmilloblanco | Presa-Branca | Weißzahn |
+| forceful (tag) | contundente | vigoroso | wuchtig |
+| Additional Housing | Viviendas Adicionales | Moradias Adicionais | Zusätzlicher Wohnraum |
+| Aurochs Hunting | Caza de Uros | Caça de Auroques | Auerochsenjagd |
+| Expanded Trades | Oficios Ampliados | Ofícios Ampliados | Erweitertes Handwerk |
+| Greater Harvest | Cosecha Abundante | Colheita Maior | Größere Ernte |
+| Harnessing the Stream | Aprovechar el Arroyo | Aproveitamento do Riacho | Den Bach nutzbar machen |
+| Herd of Horses | Manada de Caballos | Manada de Cavalos | Pferdeherde |
+| Heroic Reputation | Reputación Heroica | Reputação Heroica | Heldenruf |
+| Inn | Posada | Estalagem | Gasthaus |
+| Market | Mercado | Mercado | Markt |
+| Mill | Molino | Moinho | Mühle |
+| Palisade | Empalizada | Paliçada | Palisade |
+| Raincatching | Recogida de Lluvia | Captação de Chuva | Regenfang |
+| Standing Watch | Guardia Permanente | Guarda Permanente | Stehende Wache |
+| Stone Wall | Muralla de Piedra | Muralha de Pedra | Steinmauer |
+| Township | Villa | Vila | Stadtwerdung |
+| Weapons of War | Armas de Guerra | Armas de Guerra | Kriegswaffen |
+| Well-Trained Militia | Milicia Bien Adiestrada | Milícia Bem Treinada | Gut ausgebildete Miliz |
+
+### Steading playbook — fr · pl · it (2026-09-09, corpus route)
+
+| English | fr | pl | it |
+|---|---|---|---|
+| Fortunes | Fortune | Fortuna | Fortuna |
+| Surplus | Surplus | Nadwyżka | Eccedenza |
+| Prosperity | Prospérité | Dobrobyt | Prosperità |
+| Population | Population | Ludność | Popolazione |
+| Defenses | Défenses | Obrona | Difese |
+| Size | Taille | Rozmiar | Dimensione |
+| Resources | Ressources | Zasoby | Risorse |
+| Fortifications | Fortifications | Fortyfikacje | Fortificazioni |
+| Debilities (steading) | Faiblesses | Osłabienia | Debilità |
+| diminished / lacking / malcontent | diminué / démuni / mécontent | osłabiona / uboga / niezadowolona | diminuito / carente / malcontento |
+| hamlet / village / town / city | hameau / village / bourg / ville | przysiółek / wieś / miasteczko / miasto | borgo / villaggio / cittadina / città |
+| Steading Improvements | Améliorations de la Bourgade | Ulepszenia Osady | Migliorie dell'Insediamento |
+| Assets | Biens | Dobra | Beni |
+| Value (gear) | Valeur | Wartość | Valore |
+| Requires / Henceforth | Requiert / Désormais | Wymaga / Od tej pory | Richiede / D'ora in poi |
+| Places of interest | Lieux d'intérêt | Miejsca warte uwagi | Luoghi d'interesse |
+| Excluded / Veiled content, Special handling | Contenu exclu / voilé, Traitement particulier | Treści wykluczone / zasłonięte, Szczególne traktowanie | Contenuto escluso / velato, Trattamento speciale |
+| Summary / Requirements / Effects | Résumé / Prérequis / Effets | Podsumowanie / Wymagania / Efekty | Riepilogo / Requisiti / Effetti |
+| Purses / Handfuls / Coins | Bourses / Poignées / Pièces | Sakiewki / Garście / Monety | Borse / Manciate / Monete |
+| NPC | PNJ | BN | PNG |
+| the Flats | les Plaines | Równiny | le Pianure |
+| the Old Wall | le Vieux Mur | Stary Mur | il Vecchio Muro |
+| the Stream | le Ruisseau | Strumień | il Ruscello |
+| Forest Folk | le Peuple de la Forêt | Lud Lasu | il Popolo del Bosco |
+| Whitefang (wool) | Croc-Blanc | Białykieł | Zannabianca |
+| forceful (tag) | puissant | silny | contundente |
+| Additional Housing | Logements Supplémentaires | Dodatkowe Mieszkania | Alloggi Aggiuntivi |
+| Aurochs Hunting | Chasse à l'Aurochs | Polowanie na Tury | Caccia all'Uro |
+| Expanded Trades | Métiers Élargis | Rozszerzone Rzemiosła | Mestieri Ampliati |
+| Greater Harvest | Récolte Abondante | Większe Zbiory | Raccolto Maggiore |
+| Harnessing the Stream | Maîtrise du Ruisseau | Okiełznanie Strumienia | Imbrigliare il Ruscello |
+| Herd of Horses | Troupeau de Chevaux | Stado Koni | Mandria di Cavalli |
+| Heroic Reputation | Réputation Héroïque | Bohaterska Sława | Reputazione Eroica |
+| Inn | Auberge | Gospoda | Locanda |
+| Market | Marché | Targ | Mercato |
+| Mill | Moulin | Młyn | Mulino |
+| Palisade | Palissade | Palisada | Palizzata |
+| Raincatching | Collecte de Pluie | Zbieranie Deszczówki | Raccolta della Pioggia |
+| Standing Watch | Garde Permanente | Stała Warta | Guardia Permanente |
+| Stone Wall | Mur de Pierre | Kamienny Mur | Muro di Pietra |
+| Township | Bourg | Miasteczko | Cittadina |
+| Weapons of War | Armes de Guerre | Broń Wojenna | Armi da Guerra |
+| Well-Trained Militia | Milice Bien Entraînée | Dobrze Wyszkolona Milicja | Milizia Ben Addestrata |
+
+### Steading playbook — ja (2026-09-09, corpus route)
+
+| English | ja |
+|---|---|
+| Fortunes / Surplus / Prosperity / Population / Defenses | 命運 / 余剰 / 繁栄 / 人口 / 防備 |
+| Size / Resources / Fortifications / Assets / Value (gear) | 規模 / 資源 / 防御施設 / 資産 / 価値 |
+| Debilities (steading): diminished / lacking / malcontent | 不調: 疲弊 / 欠乏 / 不満 |
+| hamlet / village / town / city | 小村 / 村 / 町 / 都市 |
+| Steading Improvements | 集落の改良 |
+| Requires / Henceforth | 必要条件 / 以降 |
+| Places of interest; The Stone; Pavilion of the Gods; Public House | 注目すべき場所; 巨石; 神々の東屋; 酒場 |
+| Excluded / Veiled content, Special handling | 除外する内容 / 伏せる内容、特別な扱い |
+| Summary / Requirements / Effects | 概要 / 必要条件 / 効果 |
+| Purses / Handfuls / Coins | 財布 / ひとつかみ / 硬貨 |
+| the Flats / the Old Wall / the Stream / Forest Folk / Whitefang | 平原 / 古き壁 / 小川 / 森の民 / 白牙 |
+| forceful (tag) | 強打 |
+| Additional Housing / Aurochs Hunting / Expanded Trades / Greater Harvest | 住居の増設 / オーロックス狩り / 職人の拡充 / 豊かな収穫 |
+| Harnessing the Stream / Herd of Horses / Heroic Reputation / Inn / Market / Mill | 小川の利用 / 馬の群れ / 英雄の評判 / 宿屋 / 市場 / 製粉所 |
+| Palisade / Raincatching / Standing Watch / Stone Wall / Township | 木柵 / 雨水集め / 常設の警備隊 / 石壁 / 町への昇格 |
+| Weapons of War / Well-Trained Militia | 戦の武器 / よく訓練された民兵 |

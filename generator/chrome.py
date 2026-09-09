@@ -19,8 +19,11 @@ from .i18n import (
     lang_switch_html,
     localize_body_links,
 )
+from .corpus import parse_text
+from .sheet import render_sheet, sheet_excerpt
+from .structure import T_english
 from .sites import SITES_BOOK_ID
-from .text import normalize_section_key
+from .text import _is_all_caps_label, normalize_section_key, slugify_id, titlecase_label
 
 # Project credit in the wiki sidebar footer.
 GITHUB_PROJECT_URL = "https://github.com/Bryan-Legend/stonetop-wiki-generator"
@@ -243,61 +246,194 @@ def write_robots(out: Path, *, base_url: str) -> None:
 PAGES_DIRNAME = "pages"
 
 
-def page_override(slug: str) -> str | None:
-    """A hand-authored article body for ``slug``, if one is checked in.
+def page_override(slug: str) -> dict | None:
+    """The hand-authored body for ``slug``, if there is one.
 
-    ``pages/<slug>.html`` beside the script replaces what the extractor makes
-    of the book's pages — for the sheets that are forms rather than articles
-    (the Followers, Crew and Animal Companion inserts), which no amount of
-    column analysis will turn into something a player can fill in. The file
-    is the article body only: the shell, sidebar, search entry and hover
-    preview are built around it as for any other page. A sheet declares
-    itself with ``data-sheet`` on its root so it is treated as a handout."""
+    ``pages/<slug>.txt`` is a sheet in the corpus format (``generator/sheet.py``)
+    and comes back as ``{"kind": "sheet", "lines", "pages", "text"}``;
+    ``pages/<slug>.html`` is a body written as HTML, ``{"kind": "html",
+    "html"}``. Either replaces what the extractor makes of the slug's book
+    pages; the shell, sidebar entry, search entry and hover preview are still
+    built around it. A sheet marks itself with ``data-sheet`` on its root so
+    it is treated as a handout."""
+    txt = REPO_ROOT / PAGES_DIRNAME / f"{slug}.txt"
+    if txt.is_file():
+        text = txt.read_text(encoding="utf-8")
+        lines, pages = parse_text(text, str(txt))
+        return {"kind": "sheet", "lines": lines, "pages": pages, "text": text}
     path = REPO_ROOT / PAGES_DIRNAME / f"{slug}.html"
     if not path.is_file():
         return None
-    return path.read_text(encoding="utf-8").strip()
+    return {"kind": "html", "html": path.read_text(encoding="utf-8").strip()}
 
 
 _EXTRACTED_MARK_RE = re.compile(
-    r'<!--\s*EXTRACTED\s+from="([^"]+)"(?:\s+to="([^"]+)")?\s*-->'
+    r'<!--\s*EXTRACTED\s+from="([^"]+)"(?:\s+to="([^"]+)")?'
+    r'(?:\s+blocks="([^"]+)")?\s*-->'
 )
 
+# The opening line of an improvement as the sheet extraction sets it: a
+# one-item check list whose label starts with the name in shouted bold, the
+# blurb following on the same line.
+_IMPROVEMENT_HEAD_RE = re.compile(
+    r'<ul class="check-list" data-check-list="[^"]*"><li class="check-item">'
+    r'<label for="[^"]*">(<input type="checkbox" class="wiki-check" id="[^"]*"'
+    r' data-check-id="[^"]*">) <span><strong>([^<]+)</strong>\s*(.*?)</span>'
+    r"</label></li></ul>\n?",
+    re.S,
+)
+# The paragraph that opens a requirement list ("Requires 1 of the
+# following:", "And then:"). Found by position — the paragraph right before a
+# check list — so a translation is classified the same way as the English.
+_LEAD_IN_RE = re.compile(r"<p>(.*?)</p>\n(?=<ul class=\"check-list\")")
 
-def apply_override(ov: str, extracted: str) -> str:
+
+def _lead_in(m: re.Match) -> str:
+    inner = re.sub(r"</?strong>", "", m.group(1))
+    return f'<p class="si-requires">{inner}</p>\n'
+
+
+def _shouted(text: str) -> bool:
+    """A label the book sets in full caps — or in a script with no case at
+    all, which is what a translation of one comes back as."""
+    letters = [c for c in text if c.isalpha()]
+    if not letters:
+        return False
+    cased = [c for c in letters if c.upper() != c.lower()]
+    if not cased:
+        return len(text) <= 55
+    return _is_all_caps_label(text)
+
+
+def block_improvements(fragment: str) -> str:
+    """Wrap each steading improvement of the sheet's extraction in a block.
+
+    The steading playbook's improvement pages come out of the extractor as a
+    run of check lists and paragraphs: the improvement's name is the first
+    check box, in shouted bold, its blurb beside it, and the book rules some
+    of them off with a hairline. The Homefront chapter and the Book II
+    steadings set the same material as ``div.steading-improvement`` cards, so
+    this makes the sheet match — one card per improvement, opened by an
+    ``h3.si-title`` carrying the improvement's own check box (its check id is
+    kept, so a box the table has ticked stays ticked), the blurb under it and
+    the ``Requires …`` lead-ins marked. The card carries the id, which is
+    what the section-link ``§`` copies and the hover preview captures. The
+    hairlines go: the card is the rule now."""
+    fragment = re.sub(r"\n?<hr>\n?", "\n", fragment)
+    heads = [
+        m for m in _IMPROVEMENT_HEAD_RE.finditer(fragment)
+        if _shouted(m.group(2))
+    ]
+    if not heads:
+        return fragment
+    out: list[str] = [fragment[: heads[0].start()]]
+    for k, m in enumerate(heads):
+        end = heads[k + 1].start() if k + 1 < len(heads) else len(fragment)
+        body = fragment[m.end():end]
+        # A section heading ends the card, not the improvement before it.
+        cut = re.search(r"<h[12]\b", body)
+        tail = ""
+        if cut:
+            body, tail = body[: cut.start()], body[cut.start():]
+        # The name is read back out of rendered HTML, so it is unescaped
+        # first (an apostrophe arrives as an entity) and escaped once on the
+        # way out. The id is the English improvement's, in every language.
+        raw_name = html.unescape(m.group(2).strip())
+        title = titlecase_label(raw_name)
+        card_id = slugify_id(titlecase_label(T_english(raw_name)))
+        box = m.group(1).replace(
+            ">", f' aria-label="{html.escape(title)}: completed">', 1
+        )
+        blurb = m.group(3).strip()
+        body = _LEAD_IN_RE.sub(_lead_in, body)
+        card = [
+            f'<div class="steading-improvement" id="{card_id}">',
+            f'<h3 class="si-title">{box} {html.escape(title)}</h3>',
+        ]
+        if blurb:
+            card.append(f'<p class="si-blurb">{blurb}</p>')
+        card.append(body.strip())
+        card.append("</div>\n")
+        out.append("\n".join(card))
+        out.append(tail)
+    return "".join(out)
+
+
+def extracted_slice(extracted: str, start: str, stop: str = "", blocks: str = "") -> str:
+    """The extracted body from the heading with id ``start`` to its end — or,
+    with ``stop``, up to (not including) that heading. ``blocks="improvements"``
+    passes the slice through :func:`block_improvements` first."""
+    cut = re.search(rf'<h[23]\s+id="{re.escape(start)}"', extracted)
+    if not cut:
+        return ""
+    end = len(extracted)
+    if stop:
+        m = re.search(rf'<h[23]\s+id="{re.escape(stop)}"', extracted[cut.start():])
+        if m:
+            end = cut.start() + m.start()
+    piece = extracted[cut.start():end]
+    if blocks == "improvements":
+        piece = block_improvements(piece)
+    return piece
+
+
+def apply_override(
+    ov: dict,
+    extracted: str,
+    *,
+    slug: str = "",
+    link_fn=None,
+    lines: list[str] | None = None,
+) -> str:
     """Merge a hand-authored body with the extraction it replaces.
 
-    The override may carry ``<!--EXTRACTED from="content"-->``: that line is
-    replaced by the extracted body from the heading with that id to its end —
-    or, with ``to="other-improvements"``, up to (not including) that heading.
-    The steading playbook is a sheet on its first pages and twelve pages of
-    ordinary text after — the sheet is written by hand, the improvements keep
-    their extraction, and with it the check-list ids the table has already
-    ticked."""
+    A sheet (``pages/<slug>.txt``) is rendered by ``render_sheet``; its
+    ``EXTRACT from [to blocks]`` line splices in the extracted body from the
+    heading with that id (up to, not including, the second). ``lines`` are
+    the sheet's lines to show when they are not the English ones — a
+    translation — with ids still made from the English.
+
+    An HTML body may carry ``<!--EXTRACTED from="content"-->`` for the same
+    splice. The steading playbook is a sheet on its first pages and twelve
+    pages of ordinary text after — the sheet is written by hand, the
+    improvements keep their extraction, and with it the check-list ids the
+    table has already ticked."""
+    if ov["kind"] == "sheet":
+        if link_fn is None:
+            raise ValueError("a sheet needs link_fn")
+        return render_sheet(
+            lines if lines is not None else ov["lines"],
+            slug,
+            link_fn,
+            extract_fn=lambda a, b, c: extracted_slice(extracted, a, b, c),
+            id_lines=ov["lines"] if lines is not None else None,
+        )
+
     def repl(m: re.Match) -> str:
-        cut = re.search(rf'<h[23]\s+id="{re.escape(m.group(1))}"', extracted)
-        if not cut:
-            return ""
-        end = len(extracted)
-        if m.group(2):
-            stop = re.search(
-                rf'<h[23]\s+id="{re.escape(m.group(2))}"', extracted[cut.start():]
-            )
-            if stop:
-                end = cut.start() + stop.start()
-        return extracted[cut.start():end]
-    return _EXTRACTED_MARK_RE.sub(repl, ov)
+        return extracted_slice(extracted, m.group(1), m.group(2) or "", m.group(3) or "")
+    return _EXTRACTED_MARK_RE.sub(repl, ov["html"])
 
 
 def override_sections(body: str) -> list[dict]:
     """The h2/h3 anchors of a hand-authored body, in the shape structure_html
     records — so the sidebar's deep links and the section index see them."""
     out: list[dict] = []
-    for m in re.finditer(r'<h([23])\s+id="([^"]+)"[^>]*>(.*?)</h\1>', body, re.S):
-        name = html.unescape(re.sub(r"<[^>]+>", "", m.group(3))).strip()
+    # A heading with an id, or an improvement card: the card carries the id
+    # and its h3.si-title the name (a card whose title is a blank to fill in
+    # has no name and is not a section).
+    pat = (
+        r'<h([23])\s+id="([^"]+)"[^>]*>(.*?)</h\1>'
+        r'|<div class="steading-improvement[^"]*" id="([^"]+)">\s*'
+        r'<h3 class="si-title">(.*?)</h3>'
+    )
+    for m in re.finditer(pat, body, re.S):
+        sid = m.group(2) or m.group(4)
+        name = html.unescape(re.sub(r"<[^>]+>", "", m.group(3) or m.group(5))).strip()
+        if not name:
+            continue
         out.append(
             {
-                "id": m.group(2),
+                "id": sid,
                 "name": name,
                 "norm": normalize_section_key(name),
                 "caps": "",
@@ -306,8 +442,11 @@ def override_sections(body: str) -> list[dict]:
     return out
 
 
-def override_excerpt(body: str) -> str:
+def override_excerpt(ov: dict) -> str:
     """The first real paragraph of a hand-authored body."""
+    if ov["kind"] == "sheet":
+        return sheet_excerpt(ov["lines"])
+    body = ov["html"]
     for m in re.finditer(r"<p(?:\s[^>]*)?>(.*?)</p>", body, re.S):
         text = html.unescape(re.sub(r"<[^>]+>", "", m.group(1))).strip()
         if len(text) >= 40:

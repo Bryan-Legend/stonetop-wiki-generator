@@ -66,6 +66,8 @@ files: a hand edit is undone by the next extraction and shows up as a diff.
 That diff is the point — after a change to the extractor, `git diff
 extracted/` shows exactly which lines moved.
 
-A translation can be the same file with the same tag skeleton, checked
-line for line against the English; the current translations
-(`i18n/pages/`) still work from the built HTML.
+A translation is the same file with the same tag skeleton, checked line
+for line against the English: `i18n/corpus/<code>/<book>/<slug>.txt`, made
+with `i18n/corpus_xlate.py` (see `i18n/README.md`). The hand-authored sheets
+under `pages/` use the same format with a few markers of their own
+(`generator/sheet.py`).

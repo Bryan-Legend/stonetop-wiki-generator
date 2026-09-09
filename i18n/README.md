@@ -10,7 +10,9 @@ i18n/
   langs.json           the twenty target languages (code, endonym, dir, og_locale)
   GLOSSARY.md          what is translated, what never is, and the fixed terms
   ui/<code>.json       chrome strings: nav, search box, footer, credit line
-  pages/<code>/<slug>.json   one translated page
+  corpus/<code>/<book>/<slug>.txt   one translated page: the book's text, same skeleton
+  corpus/<code>/pages/<slug>.txt    …and its sheet, if it has one
+  pages/<code>/<slug>.json   one translated page, the older route (an HTML body)
 ```
 
 ## Where the pages land
@@ -67,7 +69,52 @@ address with `Accept-Language: en`; a site that redirects by header shows the
 crawler nothing but English and its translations are never indexed. The reader
 chooses, from the switcher.
 
-## Adding a page
+## Translating a page through the corpus
+
+The route to use for new work. The wiki is built from the books' extracted
+text (`extracted/<book>/<slug>.txt`) and, for the fill-in sheets, from
+`pages/<slug>.txt` — both marker files, `TAG<tab>payload` per line. A
+translation is **the same file with its text in another language** and
+everything else — tags, keys, ids, defaults, numbers — byte-identical:
+
+```
+i18n/corpus/<code>/book1/<slug>.txt     the book's text
+i18n/corpus/<code>/pages/<slug>.txt     the sheet, if the page has one
+```
+
+Nobody writes those by hand. The tool produces a *work file* holding only
+the translatable text, and folds the translated work file back over the
+English skeleton, so the skeleton cannot drift:
+
+```bash
+python i18n/corpus_xlate.py extract <slug> [--book-lines A-B]
+#   → i18n/_work/corpus/<slug>.work.txt
+#     ref TAB tag TAB text [TAB text]     S12 = pages/<slug>.txt line 12
+#                                          B140 = extracted/…/<slug>.txt line 140
+#     META title / nav_label / description
+#   --book-lines limits the book lines (the steading playbook's corpus holds
+#   pages its sheet replaces; the improvements are lines 98–282).
+#   Translate it into i18n/_work/corpus/<code>/<slug>.work.txt: same lines,
+#   same order, same refs and tags; keep <b>/<i> around the same words and
+#   [[slug#frag|label]] links (translate the label only).
+python i18n/corpus_xlate.py apply <code> <slug>
+#   writes the i18n/corpus files, reports any line it could not place, and
+#   the coverage
+python i18n/corpus_xlate.py check <code> [<slug>]
+```
+
+The build renders the page from the **English** lines — so every structural
+decision is made on the text the generator was written for, and every id and
+link stays English — and swaps each line for its translation where text
+becomes HTML. A sheet renders from the translated lines with ids taken from
+the English sheet. Per page the build prints `book N/M lines translated`,
+`sheet N/M`, any translated line the renderer never asked for (English
+leaked through, listed as `not shown whole`), and `stale` when the English
+text changed since the translation was made (`source_sha256` in the file's
+header). A corpus translation outranks a JSON page of the same slug. Arcana
+pages cannot be rendered this way yet.
+
+## The older route: a JSON page body
 
 Write `pages/<code>/<slug>.json`:
 

@@ -100,6 +100,33 @@ def bold_stat_labels(html_text: str) -> str:
     return STAT_LABEL_RE.sub(lambda m: f"{m.group(1)}<strong>{m.group(2)}</strong>", html_text)
 
 
+# A translation memory (translate.TextMemory) consulted wherever text is
+# emitted, so a page can be rendered from its English lines — every
+# classifier seeing the text it was written for, every id English — and
+# still read in another language. None while the English pages build.
+_TM = None
+
+
+def set_translation(tm) -> None:
+    global _TM
+    _TM = tm
+
+
+def T(s: str) -> str:
+    """``s`` in the language being rendered, when a translation has it."""
+    if _TM is None or not s:
+        return s
+    return _TM.get(s)
+
+
+def T_english(s: str) -> str:
+    """The English behind a translated string, when one is being rendered —
+    for an id made off text read back out of the HTML. ``s`` otherwise."""
+    if _TM is None or not s:
+        return s
+    return _TM.reverse(s) or s
+
+
 def render_rich_text(s: str, link_fn) -> str:
     """Linkify text (inline formatting sentinels become tags inside link_fn)."""
     return link_fn(s)
@@ -444,6 +471,7 @@ def linkify_pages(
     even if the current article is from Book I (and vice versa).
     """
 
+    text = T(text)
     placeholders: list[str] = []
 
     def store(s: str) -> str:
@@ -1787,7 +1815,7 @@ def try_parse_improvement_block(
     if kind or starts_si:
         parts.append('<p class="si-kind">Steading improvement</p>')
     if title:
-        parts.append(f'<h3 class="si-title">{html.escape(title)}</h3>')
+        parts.append(f'<h3 class="si-title">{html.escape(T(title))}</h3>')
     if blurb:
         parts.append(f'<p class="si-blurb">{link_fn(blurb)}</p>')
 
@@ -1979,9 +2007,9 @@ def structure_html(
                 ic = take_icon_html()
                 label = (
                     f'<span class="step-badge">{html.escape(plaque)}</span> '
-                    + html.escape(rest.rstrip(":"))
+                    + html.escape(T(rest.rstrip(":")))
                     if rest
-                    else html.escape(txt.rstrip(":"))
+                    else html.escape(T(txt.rstrip(":")))
                 )
                 out.append(f'<h2 id="{html.escape(hid)}">{ic}{label}</h2>')
                 i += 1
@@ -2001,7 +2029,7 @@ def structure_html(
                 ic = take_icon_html()
                 out.append(
                     f'<h3 id="{html.escape(hid)}" class="table-heading">'
-                    f"{ic}{html.escape(txt)}</h3>"
+                    f"{ic}{html.escape(T(txt))}</h3>"
                 )
                 i += 1
                 continue
@@ -2158,7 +2186,7 @@ def structure_html(
                 hid = anchors.add(bare.rstrip(":"))
                 out.append(
                     f'<h3 id="{html.escape(hid)}">'
-                    f"{ic}{html.escape(bare.rstrip(':'))}</h3>"
+                    f"{ic}{html.escape(T(bare.rstrip(':')))}</h3>"
                 )
                 i += 1
                 continue
@@ -3167,7 +3195,7 @@ def structure_html(
             hid = anchors.add(cleaned_h.rstrip(":"))
             out.append(
                 f'<{level} id="{html.escape(hid)}">'
-                f"{html.escape(cleaned_h.rstrip(':'))}</{level}>"
+                f"{html.escape(T(cleaned_h.rstrip(':')))}</{level}>"
             )
             i += 1
             continue

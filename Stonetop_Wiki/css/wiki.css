@@ -1708,7 +1708,7 @@ h3.arcana-title-line,
 .requirement-block {
   break-inside: avoid;
   margin: 0.75rem 0 1rem;
-  padding: 0.65rem 0.8rem 0.75rem;
+  padding: 0.55rem 0.8rem 0.75rem; /* same head room as .follower-sheet */
   border: 1px solid var(--rule);
   border-left: 3px solid var(--accent);
   border-radius: var(--radius-panel);
@@ -1725,7 +1725,9 @@ h3.arcana-title-line,
   letter-spacing: 0.06em;
   color: var(--head);
 }
-.si-title {
+/* Qualified with .content: the chapter's own h3 rule is more specific than a
+   bare class and would put its 0.7rem back above the card's title. */
+.content h3.si-title, .si-title {
   margin: 0 0 0.4rem;
   font-family: var(--font-serif);
   font-size: 1.12rem;
@@ -3486,12 +3488,27 @@ table.fs-table td .wiki-field { width: 100%; box-sizing: border-box; }
 table.fs-table th:first-child { width: 26%; }
 table.fs-table th:last-child { width: 44%; }
 table.fs-table th:nth-child(2):not(:last-child) { width: 15%; }
-.fs-improvement { margin: .4rem 0; }
+/* The steading sheet's improvements are the same cards the Homefront chapter
+   and the Book II steadings use, each opened by its own check box: ticked, the
+   card takes the answer color, the way a ticked move does on a playbook. The
+   Other Improvements are the same card with a name box for a title. */
+.si-title input.wiki-check {
+  width: 1rem; height: 1rem; margin: 0 .2rem 0 0; vertical-align: -.1em;
+  accent-color: var(--accent); cursor: pointer;
+}
+.si-title input.si-name { width: calc(100% - 2.6rem); font-size: .95em; padding: .05rem .35rem; }
+.si-other .fs-field { margin: .12rem 0; }
+.content.playbook .steading-improvement:has(> .si-title > input.wiki-check:checked) {
+  border-left-color: rgba(var(--answer-rgb), .85);
+}
+.content.playbook .steading-improvement:has(> .si-title > input.wiki-check:checked) > .si-title {
+  color: var(--answer);
+}
 
 /* Tall blocks flow across columns; what must stay whole is a row, a list item, a small card. */
 .content table tr, .fs-table tr { break-inside: avoid; }
 .content table thead { display: table-header-group; }
-.fs-improvement, .fs-person, .fs-stats, .fs-type, .pb-track { break-inside: avoid; }
+.fs-person, .fs-stats, .fs-type, .pb-track { break-inside: avoid; }
 .follower-sheet > h2, .follower-sheet > h3 { break-after: avoid; }
 
 /* Names, stats and spinboxes are set in the display face; every other box
