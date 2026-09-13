@@ -6,7 +6,7 @@ Two phases, with a checked-in corpus between them:
   extract   PDF → marker lines            (``extract``, ``articles``; needs PyMuPDF)
   corpus    marker lines ↔ ``extracted/``  (``corpus``; plain text, committed)
   build     marker lines → HTML wiki      (``structure``, ``arcana``, ``chrome``,
-                                           ``i18n``, ``sites``, ``build``)
+                                           ``i18n``, ``build``)
 
 ``text`` is the layer both phases share: marker constants, inline-format
 sentinels, and the line classifiers.

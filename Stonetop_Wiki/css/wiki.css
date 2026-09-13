@@ -540,60 +540,6 @@ html, body {
   padding-right: 7.5rem;
 }
 
-/* --- Sites (sheets under sites/) --- */
-.toc li.nav-site > a {
-  font-weight: 600;
-}
-
-.site-list {
-  margin: 0.5rem 0 0;
-}
-.site-card {
-  break-inside: avoid;
-  margin: 0 0 1rem;
-  padding: 0 0 0.75rem;
-  border-bottom: 1px solid var(--rule);
-}
-.site-card:last-child {
-  border-bottom: none;
-}
-.site-card h2 {
-  margin-top: 0;
-}
-.site-card .site-excerpt {
-  color: var(--muted, #6b6560);
-}
-.site-card .site-variants,
-.site-card .site-refs {
-  font-size: var(--text);
-  margin: 0.3rem 0 0;
-}
-.site-card .site-refs {
-  color: var(--muted, #6b6560);
-}
-.site-refs-label,
-.related-sites .ra-label {
-  display: inline-block;
-  margin-right: 0.4rem;
-  font-family: var(--font-serif);
-  font-size: 0.85em;
-  letter-spacing: 0.06em;
-  color: var(--muted, #6b6560);
-}
-
-/* "Sites · Vasilya’s Grove" strip atop a referenced wiki page */
-.related-sites {
-  margin: 0 0 0.65rem;
-  padding: 0.35rem 0.55rem;
-  font-size: var(--text);
-  background: var(--panel);
-  background-image: var(--card-wash);
-  border: 1px solid var(--rule);
-  border-left: 3px solid var(--accent);
-  border-radius: var(--radius-panel);
-  break-inside: avoid;
-}
-
 .main-wrap {
   flex: 1;
   min-width: 0;
@@ -2215,8 +2161,6 @@ li.check-item input.wiki-check:checked + span {
  * ------------------------------------------------------------------------ */
 .wiki-title,
 .toc li.nav-book-label,
-.site-refs-label,
-.related-sites .ra-label,
 .content h1,
 .content h2,
 .content h3,

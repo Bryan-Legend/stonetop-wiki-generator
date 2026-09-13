@@ -62,13 +62,6 @@ from .extract import (
     split_chapter_toc,
 )
 from .i18n import alternates_for, load_locales, prune_language_dirs
-from .sites import (
-    SITES_BOOK_ID,
-    SITES_OUT_DIRNAME,
-    discover_sites,
-    site_articles,
-    sites_hub_html,
-)
 from .structure import (
     article_html,
     build_page_section_map,
@@ -109,9 +102,9 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         type=Path,
         default=None,
         help=(
-            "Wiki folder. Static chrome (css/, js/wiki.js, images/icons/) and "
-            "optional sites/ live here and are left in place; the build "
-            "writes the page HTML, indexes, and map images. "
+            "Wiki folder. Static chrome (css/, js/wiki.js, images/icons/) "
+            "lives here and is left in place; the build writes the page "
+            "HTML, indexes, and map images. "
             "Default: <repo>/Stonetop_Wiki."
         ),
     )
@@ -426,29 +419,11 @@ def main(argv: list[str] | None = None) -> None:
     if not (args.maps and maps_art):
         articles = [a for a in articles if a.get("kind") != "maps"]
 
-    # Site sheets already under <out>/sites/ — index only, no copy.
-    sites = discover_sites(out)
-    site_arts = site_articles(sites)
-    articles.extend(site_arts)
-
-    # Book pages claim their slugs first (a site named after a chapter
-    # gets "-site" appended, not the other way round) …
     ensure_unique_slugs(articles)
-    for art in site_arts:
-        if art.get("site"):
-            art["site"]["slug"] = art["slug"]
-    # … and the campaign's own material trails the book material, so the
-    # sidebar and home page lead with the wiki proper.
-    if site_arts:
-        articles = [
-            a for a in articles if a.get("book") != SITES_BOOK_ID
-        ] + site_arts
 
     print("Articles:")
     last_book = None
     for art in articles:
-        if art.get("book") == SITES_BOOK_ID:
-            continue  # listed separately below (no page range)
         if art.get("book") != last_book:
             last_book = art.get("book")
             print(f"  [{art.get('book_label') or last_book}]")
@@ -461,15 +436,6 @@ def main(argv: list[str] | None = None) -> None:
     n_arc = sum(1 for a in articles if a.get("kind") == "arcana")
     print(f"  (+ {n_arc} individual arcana pages)")
     print(f"  Total pages: {len(articles)}")
-    if sites:
-        print(f"Sites ({SITES_OUT_DIRNAME}/):")
-        for site in sites:
-            extra = (
-                f"  [{', '.join(v['label'] for v in site['variants'])}]"
-                if site["variants"]
-                else ""
-            )
-            print(f"  {site['href']}{extra}")
 
     # Page-number lookups stay per book: "page 270" means a different article
     # in Book I than in Book II.
@@ -506,7 +472,7 @@ def main(argv: list[str] | None = None) -> None:
     for art in articles:
         slug = art["slug"]
         book_id = art.get("book") or "book2"
-        if art["kind"] not in TEXT_KINDS:  # sites, hubs, the maps page
+        if art["kind"] not in TEXT_KINDS:  # hubs, the maps page
             sections_by_slug[slug] = []
             continue
         lines, pages = texts[slug]
@@ -572,13 +538,6 @@ def main(argv: list[str] | None = None) -> None:
     n_sec = sum(len(v) for v in sections_by_slug.values())
     print(f"  Indexed {n_sec} sections/monsters across {len(sections_by_slug)} pages")
 
-    # Wiki page slug → sites that reference it (back-links), and the
-    # titles the hub shows for the pages a site uses.
-    titles_by_slug = {
-        a["slug"]: a["title"]
-        for a in articles
-        if a.get("book") != SITES_BOOK_ID
-    }
     print("Building pages…")
     search_docs: list[dict] = []
     # Each page's English body, kept so the localized pass can tell a
@@ -587,60 +546,6 @@ def main(argv: list[str] | None = None) -> None:
     for art in articles:
         slug = art["slug"]
         book_id = art.get("book") or "book2"
-
-        # Sites: sheets live outside the wiki — index and preview them,
-        # but there is no page of our own to write.
-        if art["kind"] in ("site", "sites-hub"):
-            if art["kind"] == "site":
-                site = art["site"]
-                excerpt = site["excerpt"]
-                search_text = site["text"]
-            else:
-                body = sites_hub_html(site_arts[1:], titles_by_slug)
-                body = (
-                    f'<h1 class="page-title">'
-                    f'{html.escape(art["title"])}</h1>\n' + body
-                )
-                n = len(site_arts) - 1
-                excerpt = (
-                    f"{n} campaign adventure site{'' if n == 1 else 's'} — "
-                    "prep, rooms, stat blocks — kept beside the wiki."
-                )
-                (out / f"{slug}.html").write_text(
-                    page_shell(
-                        art["title"],
-                        slug,
-                        body,
-                        articles,
-                        rel_prefix="",
-                        section_navs=section_navs,
-                        description=excerpt,
-                        alternates=alternates_for(
-                            slug, lang_source, lang_targets
-                        ),
-                    ),
-                    encoding="utf-8",
-                )
-                search_text = html_to_search_text(body)
-            previews[slug] = {
-                "title": art["title"],
-                "excerpt": excerpt,
-                "image": None,
-                "book": SITES_BOOK_ID,
-                "sections": {},
-            }
-            doc_entry = {
-                "slug": slug,
-                "title": art["title"],
-                "book": SITES_BOOK_ID,
-                "excerpt": (excerpt or "")[:280],
-                "text": f"{art['title']}\n{search_text}"[:80_000],
-            }
-            if art.get("href"):
-                # Root-relative; wiki.js re-bases it for pages/ (see hrefFromRoot)
-                doc_entry["href"] = art["href"]
-            search_docs.append(doc_entry)
-            continue
 
         lookup = lookups[book_id]
         section_index = section_indexes[book_id]
@@ -891,7 +796,7 @@ def main(argv: list[str] | None = None) -> None:
     write_index_custom(articles, previews, out / "index.html")
 
     page_files = ["index.html"] + [
-        f"{a['slug']}.html" for a in articles if not a.get("href")
+        f"{a['slug']}.html" for a in articles
     ]
     # A language directory this build no longer produces is removed whole,
     # so dropping a language from langs.json takes its pages off the site.

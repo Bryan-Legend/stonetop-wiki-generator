@@ -10,7 +10,6 @@ import html
 import json
 import re
 
-from .sites import SITES_BOOK_ID
 from .text import (
     BARE_PAGE_RE,
     B_OFF,
@@ -429,10 +428,6 @@ def set_page_sections(mapping: dict[tuple[str, int], dict]) -> None:
 def set_title_index(articles: list[dict]) -> None:
     _TITLE_INDEX.clear()
     for art in articles:
-        # Site sheets live in sites/ — never a target for the
-        # "page N" / bare-title linkers, which emit <slug>.html.
-        if art.get("book") == SITES_BOOK_ID:
-            continue
         t = (art.get("title") or "").strip()
         if not t:
             continue

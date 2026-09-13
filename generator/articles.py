@@ -13,7 +13,6 @@ except ImportError:  # pragma: no cover
     fitz = None
 
 from .extract import list_minor_arcana_cards
-from .sites import SITES_BOOK_ID
 from .text import slugify, titlecase_name
 
 
@@ -249,7 +248,6 @@ def split_chapter_articles(
 BOOK_SLUG_SUFFIX = {
     "book1": "-book-i",
     "book2": "-book-ii",
-    SITES_BOOK_ID: "-site",
 }
 
 

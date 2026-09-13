@@ -1,7 +1,9 @@
 /* Two browsers at one table, against the local `wrangler dev` worker.
  *
  * Each "browser" is a jsdom window with its own localStorage, running the
- * real Stonetop_Wiki/js/wiki.js (and sites/site.js for a sheet). The wiki
+ * real Stonetop_Wiki/js/wiki.js (and, for a sheet, the adventure sites'
+ * site.js, read from the stonetop-adventures checkout beside this repo, or
+ * from SITE_JS=<path>; without it the sheet runs on wiki.js alone). The wiki
  * page carries a couple of wiki checkboxes and a map strip; the sheet page
  * carries an enemy row. Then: tick a box in one, and see it reach the other. */
 
@@ -11,7 +13,15 @@ import fs from "node:fs";
 // ../../Stonetop_Wiki — the chrome this suite is testing, read off disk.
 const ROOT = new URL("../../Stonetop_Wiki/", import.meta.url);
 const WIKI_JS = fs.readFileSync(new URL("js/wiki.js", ROOT), "utf8");
-const SITE_JS = fs.readFileSync(new URL("sites/site.js", ROOT), "utf8");
+// The sheets live in their own repo and site now; their script is read off
+// the sibling checkout when it is there.
+const SITE_JS_PATH =
+  process.env.SITE_JS ||
+  new URL("../../../stonetop-adventures/site.js", import.meta.url);
+const SITE_JS = fs.existsSync(SITE_JS_PATH)
+  ? fs.readFileSync(SITE_JS_PATH, "utf8")
+  : null;
+if (!SITE_JS) console.log("  (site.js not found — sheets run on wiki.js alone)");
 // Defaults to the local `wrangler dev`. Point it at the deployed Worker to
 // check a fresh deploy: SYNC_ENDPOINT=https://sync.stonetop-wiki.workers.dev
 const B = process.env.SYNC_ENDPOINT || "http://127.0.0.1:8788";
@@ -50,11 +60,11 @@ const WIKI_PAGE = `<!doctype html><html><head>
 </body></html>`;
 
 const SHEET_PAGE = `<!doctype html><html><head>
-<meta property="og:url" content="https://stonetop-wiki.github.io/sites/Underfalls.html">
-</head><body class="site-sheet" data-wiki-root="../" data-hp-storage="underfalls-hp">
+<meta property="og:url" content="https://bryan-legend.github.io/stonetop-adventures/Underfalls.html">
+</head><body class="site-sheet" data-notes-slug="sites/Underfalls" data-wiki-root="https://stonetop-wiki.github.io/" data-hp-storage="underfalls-hp">
 <nav class="site-nav">
   <a class="nav-title" href="#top">Underfalls</a>
-  <a class="nav-wiki-home" href="../index.html">← Wiki</a>
+  <a class="nav-wiki-home" href="index.html">← Adventures</a>
   <span class="nav-label">Prep</span>
   <div class="sidebar-foot"><a class="sidebar-github" href="#">GitHub</a></div>
 </nav>
@@ -97,7 +107,7 @@ function browser(html, url, opts = {}) {
     get: () => "visible",
   });
   w.eval(WIKI_JS);
-  if (opts.sheet) w.eval(SITE_JS);
+  if (opts.sheet && SITE_JS) w.eval(SITE_JS);
   w.document.dispatchEvent(new w.Event("DOMContentLoaded"));
   return { dom, w, box };
 }
@@ -349,7 +359,7 @@ console.log("\n== map pins ==");
 /* ------------------------------------------------------------------ */
 console.log("\n== enemy HP is the GM's alone ==");
 {
-  const sheet = browser(SHEET_PAGE, "https://stonetop-wiki.github.io/sites/Underfalls.html", {
+  const sheet = browser(SHEET_PAGE, "https://bryan-legend.github.io/stonetop-adventures/Underfalls.html", {
     sheet: true,
   });
   sheet.w.StonetopStore.connect(gmCfg);
@@ -357,7 +367,7 @@ console.log("\n== enemy HP is the GM's alone ==");
 
   const sheetTools = sheet.w.document.querySelector(".sidebar-tools");
   chk(
-    "a site sheet puts the row under its way back to the wiki",
+    "a site sheet puts the row under its way back to the index",
     "nav-wiki-home",
     sheetTools.previousElementSibling.className
   );
@@ -384,7 +394,7 @@ console.log("\n== enemy HP is the GM's alone ==");
   );
 
   // A second GM browser on the same sheet picks it up.
-  const other = browser(SHEET_PAGE, "https://stonetop-wiki.github.io/sites/Underfalls.html", {
+  const other = browser(SHEET_PAGE, "https://bryan-legend.github.io/stonetop-adventures/Underfalls.html", {
     sheet: true,
   });
   other.w.StonetopStore.connect(gmCfg);
@@ -397,11 +407,11 @@ console.log("\n== enemy HP is the GM's alone ==");
 
 /* ------------------------------------------------------------------ */
 console.log("\n== a sheet opened on its own, with no wiki around it ==");
-{
+if (SITE_JS) {
   /* The trackers live in wiki.js now — one implementation for the book pages
-     and the sheets alike. A sheet loads it from ../js/wiki.js, so this only
-     happens to a sheet copied out of the tree: site.js alone leaves the rows
-     unbuilt, and must not throw doing it. */
+     and the sheets alike. A sheet loads it from the published wiki, so this
+     only happens to a sheet opened with no connection: site.js alone leaves
+     the rows unbuilt, and must not throw doing it. */
   const vc = new VirtualConsole();
   const errors = [];
   vc.on("jsdomError", (e) => errors.push(e.message));

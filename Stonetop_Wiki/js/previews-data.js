@@ -15605,62 +15605,6 @@ window.WIKI_PREVIEWS = {
     "kind": "arcana",
     "number": 18,
     "arcana_type": "major"
-  },
-  "campaign-sites": {
-    "title": "Sites",
-    "excerpt": "7 campaign adventure sites — prep, rooms, stat blocks — kept beside the wiki.",
-    "image": null,
-    "book": "sites",
-    "sections": {}
-  },
-  "the-drowned-choir": {
-    "title": "The Drowned Choir",
-    "excerpt": "Suarachan lair · Ferrier’s Fen , ~2 days in from Marshedge · late autumn · a sunken Green Lord hall",
-    "image": null,
-    "book": "sites",
-    "sections": {}
-  },
-  "the-green-lords-tomb": {
-    "title": "The Green Lord’s Tomb",
-    "excerpt": "Sajra the swyn’s lair · 1½ days into the Great Wood · Book I pp. 371–377",
-    "image": null,
-    "book": "sites",
-    "sections": {}
-  },
-  "kneeroot": {
-    "title": "Kneeroot",
-    "excerpt": "The Willow Witches ’ abode · 5 areas · somewhere in Ferrier’s Fen · never twice in the same place",
-    "image": null,
-    "book": "sites",
-    "sections": {}
-  },
-  "the-sealed-cave": {
-    "title": "The Sealed Cave",
-    "excerpt": "Hills above Stonetop · Peacebond discovery · Glasbren",
-    "image": null,
-    "book": "sites",
-    "sections": {}
-  },
-  "the-quern": {
-    "title": "The Quern",
-    "excerpt": "A prophecy plotline · Stonetop to Gordin’s Delve · a titan pinned under the Third Delve, and the Stone is its last nail",
-    "image": null,
-    "book": "sites",
-    "sections": {}
-  },
-  "underfalls": {
-    "title": "Underfalls",
-    "excerpt": "A working Rime Lord shrine · hanging valley under the ice falls in the Whitefang Mountains , two days east of Barrier Pass · 10 nodes, one major arcanum",
-    "image": null,
-    "book": "sites",
-    "sections": {}
-  },
-  "vasilyas-grove": {
-    "title": "Vasilya’s Grove",
-    "excerpt": "Corrupted Forest seed · deep Great Wood , east of the Stream , deep into the Wood",
-    "image": null,
-    "book": "sites",
-    "sections": {}
   }
 };
 window.WIKI_PAGE_MAP = {

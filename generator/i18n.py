@@ -119,7 +119,7 @@ def prune_language_dirs(out: Path, keeping: list[dict]) -> list[str]:
     """Delete language directories this build is not going to write.
 
     Only directories named by ``langs.json`` are touched, so nothing else at
-    the wiki root — ``css/``, ``sites/``, a hand-added folder — is at risk.
+    the wiki root — ``css/``, a hand-added folder — is at risk.
     """
     root = i18n_dir()
     try:

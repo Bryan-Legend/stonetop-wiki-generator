@@ -898,7 +898,8 @@
    * Prefix to reach the wiki root from the current document.
    *
    * Wiki pages sit at the wiki root beside index.html, so they need no prefix.
-   * Site sheets live in sites/ and declare data-wiki-root="../".
+   * The adventure-site sheets, published on a site of their own, declare the
+   * wiki's URL.
    */
   function wikiRootPrefix() {
     var root =
@@ -919,7 +920,7 @@
     if (previewsPromise) return previewsPromise;
     // Load as a script so previews work over file:// (fetch of JSON often fails there).
     // Missing previews-data.js (e.g. a site sheet opened without a built wiki) → empty {}.
-    // Site sheets load wiki.js from ../js/ and set data-wiki-root to the wiki root.
+    // Site sheets load wiki.js from the wiki and set data-wiki-root to it.
     previewsPromise = new Promise(function (resolve) {
       function finish(obj) {
         previews =
@@ -3225,14 +3226,17 @@
     }
 
     function pageSlug() {
+      /* A page may say which key its answers are kept under. The
+         adventure-site sheets were keyed "sites/<Name>" while they lived
+         under the wiki, and declare that still, so a table's answers
+         followed them to their own site. */
+      var declared =
+        document.body && document.body.getAttribute("data-notes-slug");
+      if (declared) return declared;
       var m = String(location.pathname || "")
         .replace(/\\/g, "/")
         .match(/([^\/#?]+)\.html/i);
-      var slug = m ? m[1] : "index";
-      /* Site sheets live in their own folder and can share a slug with a
-         book page, so qualify them. */
-      if (/\/sites\//i.test(location.pathname)) slug = "sites/" + slug;
-      return slug;
+      return m ? m[1] : "index";
     }
 
     /* djb2 - stable across rebuilds as long as the block's words don't change. */

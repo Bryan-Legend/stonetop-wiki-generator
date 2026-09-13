@@ -22,7 +22,6 @@ from .i18n import (
 from .corpus import parse_text
 from .sheet import render_sheet, sheet_excerpt
 from .structure import T_english
-from .sites import SITES_BOOK_ID
 from .text import _is_all_caps_label, normalize_section_key, slugify_id, titlecase_label
 
 # Project credit in the wiki sidebar footer.
@@ -206,14 +205,11 @@ def write_sitemap(
     base_url: str,
     extra: list[str] | None = None,
 ) -> None:
-    """sitemap.xml covering every wiki page, site sheet, and translation."""
+    """sitemap.xml covering every wiki page and translation."""
     base = base_url.rstrip("/")
     locs = [base + "/"]
     for art in articles:
-        href = art.get("href") or (art["slug"] + ".html")
-        locs.append(base + "/" + href)
-        for var in (art.get("site") or {}).get("variants") or []:
-            locs.append(base + "/" + var["href"])
+        locs.append(base + "/" + art["slug"] + ".html")
     for href in extra or []:
         locs.append(base + "/" + href.lstrip("/"))
     locs = list(dict.fromkeys(locs))
@@ -534,17 +530,7 @@ def build_nav_items(
 
     Book labels are only emitted when the wiki holds more than one book;
     wiki.js hides a label whose articles are all filtered out.
-
-    Adventures carry an `href` relative to the wiki root (they live outside
-    the wiki root), so `root_prefix` walks back up from the page being rendered.
-
-    Campaign sites are left out of the sidebar: they are table sheets for one
-    group, not part of the books, and they are still reachable from the home
-    page, the Sites hub, search, and their own back-links.
     """
-    articles = [
-        a for a in articles if a.get("kind") not in ("site", "sites-hub")
-    ]
     section_navs = section_navs or {}
     # In a language directory the sidebar is mostly English, because most
     # pages are: a translated entry links to its sibling in this directory,
@@ -577,12 +563,8 @@ def build_nav_items(
         classes: list[str] = []
         if art.get("kind") == "arcana":
             classes.append("nav-arcana")
-        elif art.get("kind") in ("arcana-hub", "sites-hub") or art.get(
-            "children"
-        ):
+        elif art.get("kind") == "arcana-hub" or art.get("children"):
             classes.append("nav-hub")
-        elif art.get("kind") == "site":
-            classes.append("nav-site")
         secs = section_navs.get(art["slug"]) or []
         if secs or parts:
             classes.append("has-sections")
@@ -591,11 +573,7 @@ def build_nav_items(
         cls_attr = f' class="{" ".join(classes)}"' if classes else ""
         art_slug = html.escape(art["slug"])
         page_tr = lang_pages.get(art["slug"])
-        if art.get("href"):
-            # Slug can't be read back out of a site sheet's file name.
-            href = html.escape(root_prefix + art["href"])
-            slug_attr = f' data-nav-slug="{art_slug}"'
-        elif page_tr:
+        if page_tr:
             # Translated: the sibling in this same language directory.
             href = f"{art_slug}.html"
             slug_attr = ""
@@ -605,23 +583,11 @@ def build_nav_items(
         label = html.escape(
             (page_tr or {}).get("nav_label") or nav_label(art)
         )
-        if locale and not page_tr and not art.get("href"):
+        if locale and not page_tr:
             slug_attr += ' class="nav-en"'
             if english_only:
                 slug_attr += f' title="{html.escape(english_only)}" hreflang="en"'
         link = f'<a href="{href}"{slug_attr}>{label}</a>'
-        if art.get("kind") == "site" and art.get("site", {}).get("variants"):
-            sub = "".join(
-                f'<li class="nav-section"><a href="'
-                f'{html.escape(root_prefix + v["href"])}">{html.escape(v["label"])}'
-                f"</a></li>"
-                for v in art["site"]["variants"]
-            )
-            items.append(
-                f"<li{cls_attr}>{link}"
-                f'<ul class="nav-sections">{sub}</ul></li>'
-            )
-            continue
         if parts:
             sub = []
             for part in parts:
@@ -951,14 +917,9 @@ def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> 
                 or art.get("hub_slug")
             ):
                 continue
-            # An untested site is reachable from the Sites hub, where it is
-            # flagged. The home page only offers what has been run at a table.
-            if art.get("kind") == "site" and not art.get("playtested"):
-                continue
             pv = previews.get(art["slug"], {})
             excerpt = strip_page_refs(pv.get("excerpt") or "")
-            # Sites sit in sites/ — link to the sheet where it lives.
-            href = art.get("href") or f'{art["slug"]}.html'
+            href = f'{art["slug"]}.html'
             cards.append(
                 f'<a class="index-card" href="{html.escape(href)}">'
                 f'<p class="card-title">{html.escape(art["title"])}</p>'
@@ -976,7 +937,6 @@ def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> 
     labels = [
         f"<strong>{html.escape(label)}</strong>"
         for _b, label in books_present
-        if _b != SITES_BOOK_ID
     ]
     if len(labels) > 1:
         lede_books = ", ".join(labels[:-1]) + " and " + labels[-1]
@@ -988,7 +948,7 @@ def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> 
         "Stonetop Wiki",
         "A searchable web edition of Stonetop and The Wider World and Other "
         "Wonders by Jeremy Strandberg — moves, gear, threats, places, and "
-        "arcana, plus table-ready adventure sites.",
+        "arcana.",
         "",
     )
 

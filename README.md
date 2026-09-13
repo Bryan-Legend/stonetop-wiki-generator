@@ -10,7 +10,6 @@ The wiki includes:
 - Minor & major arcana as interactive cards (checkboxes for unlocks / progress / consequences)
 - Full-text search, hover previews, and dice rollers
 - Deep links between page references and monster/stat blocks
-- Adventure sites under `Stonetop_Wiki/sites/` with dice rollers, hp trackers, & deep linking rich popups
 
 > **The book text in this repository is published under CC BY-SA 4.0** — both books state
 > *"All text herein is released under a CC BY-SA 4.0 license."*
@@ -70,7 +69,7 @@ then shows exactly which lines of text changed, before any HTML is looked at.
 
 | Flag | Meaning | Default |
 |------|---------|---------|
-| `-o` / `--output` | Wiki folder. Chrome and sites stay in place; only book-derived files are written. | `Stonetop_Wiki/` |
+| `-o` / `--output` | Wiki folder. Chrome stays in place; only book-derived files are written. | `Stonetop_Wiki/` |
 | `--corpus DIR` | The extracted text to build from (and to write when extracting). | `extracted/` |
 | `--extract` | Re-extract from the PDFs into the corpus, then build. Without it a PDF is only opened for a book the corpus lacks. | off |
 | `--extract-only` | Extract and stop; write no wiki. | off |
@@ -107,7 +106,6 @@ generator/                   the package
   arcana.py      marker lines → arcana card HTML
   chrome.py      page shell, sidebar, hub pages, pages/ overrides, home page, sitemap
   i18n.py        translations as data (i18n/)
-  sites.py       adventure-site sheets under Stonetop_Wiki/sites/
   build.py       command line and the two phases
 extracted/                   the books' text, one file per article — see extracted/README.md
 tests/                       python -m unittest discover -s tests
@@ -145,19 +143,15 @@ Pages with no translation yet stay English in that language's sidebar, marked
 Adding a page or a language: **[`i18n/README.md`](i18n/README.md)**. What is
 translated and what never is: **[`i18n/GLOSSARY.md`](i18n/GLOSSARY.md)**.
 
-## Sites
+## Adventure sites
 
-Drop HTML sheets in `Stonetop_Wiki/sites/` (or a subfolder of variants). Each build:
-
-- lists them in a **Sites** group at the foot of the sidebar and home page
-- builds a Sites hub and full-text search entries
-
-Sheets should link wiki pages as `../<slug>.html` and set `data-wiki-root="../"`. Shared chrome: `site.css` and `site.js` in the same folder.
-
-### Included play-tested sites:
-
-- **[Vasilya’s Grove](https://stonetop-wiki.github.io/sites/Vasilyas-Grove.html)**
-- **[Underfalls](https://stonetop-wiki.github.io/sites/Underfalls.html)**
+The table-ready adventure sheets that used to live under `Stonetop_Wiki/sites/`
+have their own repository and site: [stonetop-adventures](https://github.com/Bryan-Legend/stonetop-adventures),
+published at <https://bryan-legend.github.io/stonetop-adventures/>. They load this
+wiki's chrome (`css/wiki.css`, `js/wiki.js`, the icons and hover previews) from
+<https://stonetop-wiki.github.io/> by absolute URL, so a change to the chrome here
+reaches them on the next deploy. The wiki does not link to them; `Stonetop_Wiki/sites/`
+and `campaign-sites.html` are kept only as redirects to the new addresses.
 
 ## License
 
