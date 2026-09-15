@@ -39,6 +39,16 @@
       "Damage": "Schade",
       "Armor": "Pantser",
       "Level": "Niveau"
+    },
+    "arcana": {
+      "front": "Voorkant",
+      "reverse": "Achterkant",
+      "progress_marks": "Voortgangstekens",
+      "consequences_note": "Kruis gevolgen aan zodra ze gelden.",
+      "major": "Grote arcana",
+      "minor": "Kleine arcana",
+      "all_major": "Alle grote arcana",
+      "all_minor": "Alle kleine arcana"
     }
   }
 }

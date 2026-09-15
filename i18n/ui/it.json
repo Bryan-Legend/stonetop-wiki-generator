@@ -39,6 +39,16 @@
       "Damage": "Danno",
       "Armor": "Armatura",
       "Level": "Livello"
+    },
+    "arcana": {
+      "front": "Fronte",
+      "reverse": "Retro",
+      "progress_marks": "Segni di progresso",
+      "consequences_note": "Segna le conseguenze man mano che si applicano.",
+      "major": "Arcani maggiori",
+      "minor": "Arcani minori",
+      "all_major": "Tutti gli arcani maggiori",
+      "all_minor": "Tutti gli arcani minori"
     }
   }
 }

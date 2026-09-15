@@ -39,6 +39,16 @@
       "Damage": "Skada",
       "Armor": "Rustning",
       "Level": "Nivå"
+    },
+    "arcana": {
+      "front": "Framsida",
+      "reverse": "Baksida",
+      "progress_marks": "Framstegsmarkeringar",
+      "consequences_note": "Kryssa i konsekvenser när de inträffar.",
+      "major": "Stora arkana",
+      "minor": "Små arkana",
+      "all_major": "Alla stora arkana",
+      "all_minor": "Alla små arkana"
     }
   }
 }

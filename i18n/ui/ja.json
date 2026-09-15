@@ -39,6 +39,16 @@
       "Damage": "ダメージ",
       "Armor": "鎧",
       "Level": "レベル"
+    },
+    "arcana": {
+      "front": "表",
+      "reverse": "裏",
+      "progress_marks": "進捗の印",
+      "consequences_note": "代償は該当するたびに印をつける。",
+      "major": "大アルカナム",
+      "minor": "小アルカナム",
+      "all_major": "大アルカナム一覧",
+      "all_minor": "小アルカナム一覧"
     }
   }
 }

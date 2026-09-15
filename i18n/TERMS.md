@@ -648,3 +648,18 @@ Animal Companion page (clever, keen-nosed / close, grabby).
 - **ja:** 前兆 · 決意 · 信頼 · 燃え上がる; forceful = 強打; Defend's Readiness = 備え
 - **ko:** 징조 · 결의 · 교감 · 활활 타오르기; forceful = 강타; Readiness = 대비
 - **zh:** 预兆/預兆 · 决心/決心 · 默契 · 炽烈燃烧/熾烈燃燒; Readiness = 戒备/戒備
+
+### Staff of the Lidless Orb — first arcanum through the corpus (2026-09-15)
+
+All 20 languages (zh-Hant mirrors). Card name as in each Seeker page. The move
+"Power of the Lidless Orb" in natural case (de Macht des Lidlosen Auges · fr
+Pouvoir de l'Orbe sans Paupière · ru Сила Безвекой Сферы · ja 瞼なき宝珠の力 ·
+zh 无睑之眼之力). El'rash-Orra, the Many Eyes: kept in Latin script,
+transliterated elsewhere (ru Эль'раш-Орра · ja エルラシュ＝オラ · ko 엘라시-오라 ·
+zh 埃尔拉什-奥拉); "the Many Eyes" translated (de die Vielen Augen · fr les
+Mille Yeux · ru Многоокое · ja 多眼なるもの · zh 万目者). "from Below" follows
+each language's Things Below. Consequences: de Konsequenzen · nl Gevolgen ·
+es Consecuencias · pt-BR Consequências · fr Conséquences · it Conseguenze ·
+pl Konsekwencje · sv/da/nb Konsekvenser · cs Následky · fi Seuraukset ·
+hu Következmények · tr Sonuçlar · ru Последствия · uk Наслідки · ja 代償 ·
+ko 대가 · zh 后果.

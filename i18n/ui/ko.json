@@ -39,6 +39,16 @@
       "Damage": "피해",
       "Armor": "방어구",
       "Level": "레벨"
+    },
+    "arcana": {
+      "front": "앞면",
+      "reverse": "뒷면",
+      "progress_marks": "진행 표시",
+      "consequences_note": "대가는 해당될 때마다 표시한다.",
+      "major": "대 아르카눔",
+      "minor": "소 아르카눔",
+      "all_major": "대 아르카눔 전체",
+      "all_minor": "소 아르카눔 전체"
     }
   }
 }

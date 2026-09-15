@@ -76,6 +76,27 @@ from .text import heading_pages, html_to_search_text
 from .translate import render_translated
 
 
+def arcana_back_html(art: dict, ui: dict | None = None) -> str:
+    """The link an arcanum's page opens with, back to its hub, and the
+    number printed on the card — in the page's language when ``ui`` has it."""
+    words = ((ui or {}).get("sheet") or {}).get("arcana") or {}
+    minor = art.get("arcana_type") == "minor"
+    hub_title = words.get("minor" if minor else "major") or (
+        "Minor Arcana" if minor else "Major Arcana"
+    )
+    back = words.get("all_minor" if minor else "all_major") or f"All {hub_title}"
+    hub = art["hub_slug"]
+    card_no = (
+        f'<span class="arcana-card-no">{html.escape(hub_title)} {art["number"]}</span>'
+        if art.get("number")
+        else ""
+    )
+    return (
+        f'<p class="arcana-back"><a class="wiki-link" href="{hub}.html" '
+        f'data-slug="{hub}">← {html.escape(back)}</a>{card_no}</p>\n'
+    )
+
+
 def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
     p = argparse.ArgumentParser(
         description=(
@@ -622,8 +643,8 @@ def main(argv: list[str] | None = None) -> None:
                 tr = locale["pages"].get(slug)
                 if not tr or "corpus" not in tr:
                     continue
-                if art.get("kind") != "article":
-                    print(f"  i18n: {locale['code']}/{slug}: only articles and sheets render from a corpus translation yet")
+                if art.get("kind") not in ("article", "arcana"):
+                    print(f"  i18n: {locale['code']}/{slug}: only articles, arcana and sheets render from a corpus translation yet")
                     del locale["pages"][slug]
                     continue
                 page_tr, notes = render_translated(
@@ -637,6 +658,10 @@ def main(argv: list[str] | None = None) -> None:
                     continue
                 if art.get("children") and art.get("kind") == "article":
                     page_tr["body_html"] += "\n" + chapter_parts_html(art)
+                if art.get("kind") == "arcana" and art.get("hub_slug"):
+                    page_tr["body_html"] = (
+                        arcana_back_html(art, locale.get("ui")) + page_tr["body_html"]
+                    )
                 tr.update(page_tr)
             # A split chapter: the hub lists its parts, and each part links
             # back the way an arcanum does.
@@ -649,23 +674,7 @@ def main(argv: list[str] | None = None) -> None:
             if art.get("kind") == "arcana":
                 card_preview_html = body
             if art.get("kind") == "arcana" and art.get("hub_slug"):
-                hub = art["hub_slug"]
-                hub_title = (
-                    "Minor Arcana"
-                    if art.get("arcana_type") == "minor"
-                    else "Major Arcana"
-                )
-                card_no = (
-                    f'<span class="arcana-card-no">'
-                    f'{html.escape(hub_title)} {art["number"]}</span>'
-                    if art.get("number")
-                    else ""
-                )
-                body = (
-                    f'<p class="arcana-back"><a class="wiki-link" href="{hub}.html" '
-                    f'data-slug="{hub}">← All {hub_title}</a>{card_no}</p>\n'
-                    + body
-                )
+                body = arcana_back_html(art) + body
             # Every page opens with its own title. An arcanum is the exception:
             # the card carries its name on its face, in its own type.
             if art.get("kind") != "arcana" and body:

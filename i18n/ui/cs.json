@@ -39,6 +39,16 @@
       "Damage": "Zranění",
       "Armor": "Zbroj",
       "Level": "Úroveň"
+    },
+    "arcana": {
+      "front": "Líc",
+      "reverse": "Rub",
+      "progress_marks": "Značky postupu",
+      "consequences_note": "Zaškrtávej následky, jak nastávají.",
+      "major": "Velká arkána",
+      "minor": "Malá arkána",
+      "all_major": "Všechna velká arkána",
+      "all_minor": "Všechna malá arkána"
     }
   }
 }

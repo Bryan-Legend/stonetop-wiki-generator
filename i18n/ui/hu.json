@@ -39,6 +39,16 @@
       "Damage": "Sebzés",
       "Armor": "Páncél",
       "Level": "Szint"
+    },
+    "arcana": {
+      "front": "Előlap",
+      "reverse": "Hátlap",
+      "progress_marks": "Haladásjelek",
+      "consequences_note": "Jelöld a következményeket, ahogy bekövetkeznek.",
+      "major": "Nagy arkánumok",
+      "minor": "Kis arkánumok",
+      "all_major": "Az összes nagy arkánum",
+      "all_minor": "Az összes kis arkánum"
     }
   }
 }

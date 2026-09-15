@@ -39,6 +39,16 @@
       "Damage": "傷害",
       "Armor": "護甲",
       "Level": "等級"
+    },
+    "arcana": {
+      "front": "正面",
+      "reverse": "背面",
+      "progress_marks": "進度標記",
+      "consequences_note": "後果發生時即勾選。",
+      "major": "大祕寶",
+      "minor": "小祕寶",
+      "all_major": "全部大祕寶",
+      "all_minor": "全部小祕寶"
     }
   }
 }

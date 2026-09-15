@@ -39,6 +39,16 @@
       "Damage": "Dégâts",
       "Armor": "Armure",
       "Level": "Niveau"
+    },
+    "arcana": {
+      "front": "Recto",
+      "reverse": "Verso",
+      "progress_marks": "Marques de progression",
+      "consequences_note": "Coche les conséquences à mesure qu'elles s'appliquent.",
+      "major": "Arcanes majeurs",
+      "minor": "Arcanes mineurs",
+      "all_major": "Tous les arcanes majeurs",
+      "all_minor": "Tous les arcanes mineurs"
     }
   }
 }

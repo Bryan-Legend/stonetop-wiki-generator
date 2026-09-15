@@ -39,6 +39,16 @@
       "Damage": "Vahinko",
       "Armor": "Panssari",
       "Level": "Taso"
+    },
+    "arcana": {
+      "front": "Etupuoli",
+      "reverse": "Kääntöpuoli",
+      "progress_marks": "Edistymismerkit",
+      "consequences_note": "Merkitse seuraukset sitä mukaa kuin ne toteutuvat.",
+      "major": "Suuret arkanat",
+      "minor": "Pienet arkanat",
+      "all_major": "Kaikki suuret arkanat",
+      "all_minor": "Kaikki pienet arkanat"
     }
   }
 }

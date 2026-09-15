@@ -9,6 +9,8 @@ import re
 
 from .structure import (
     AnchorRegistry,
+    T,
+    UI,
     book_icon_img_html,
     dice_button,
     linkify_pages,
@@ -490,12 +492,12 @@ def _arcana_strip_tag_seps(text: str) -> str:
     t = text or ""
     while t:
         # Plain diamonds / commas / whitespace
-        m = re.match(r"^[◇\s,]+", t)
+        m = re.match(r"^[◇\s,、，]+", t)
         if m:
             t = t[m.end() :]
             continue
         # Bold- or italic-wrapped separator (comma, diamond, space, or empty)
-        m = re.match(r"^[\x04\x06]([◇\s,]*)[\x05\x07]", t)
+        m = re.match(r"^[\x04\x06]([◇\s,、，]*)[\x05\x07]", t)
         if m:
             t = t[m.end() :]
             continue
@@ -518,14 +520,14 @@ def _arcana_tags_prose(text: str):
         # Nested bold+italic tag: \x04\x06word\x07\x05
         m = re.match(r"^\x04\x06([^\x06\x07]*)\x07\x05", t)
         if m:
-            bit = _defmt(m.group(1)).strip(" ,")
+            bit = _defmt(m.group(1)).strip(" ,、，")
             if bit:
                 tags.append(bit)
             t = t[m.end() :]
             continue
         m = re.match(r"^\x06([^\x06\x07]*)\x07", t)
         if m:
-            bit = _defmt(m.group(1)).strip(" ,")
+            bit = _defmt(m.group(1)).strip(" ,、，")
             if bit:
                 tags.append(bit)
             t = t[m.end() :]
@@ -698,10 +700,10 @@ def structure_minor_arcana_html(
     if disc_name:
         did = anchors.add(disc_name)
         fparts.append(
-            _arcana_title_line(disc_name, "Front", tag="h3", hid=did)
+            _arcana_title_line(disc_name, UI("arcana/front", "Front"), tag="h3", hid=did)
         )
     else:
-        fparts.append(_arcana_title_line(power, "Front", tag="h3"))
+        fparts.append(_arcana_title_line(power, UI("arcana/front", "Front"), tag="h3"))
     if disc_tags:
         fparts.append(f'<p class="arcana-tags">{link(disc_tags)}</p>')
     for p in desc_paras:
@@ -776,7 +778,7 @@ def structure_minor_arcana_html(
             name, mtags, trig = named
             name = titlecase_label(name)
             hid = anchors.add(name)
-            label = html.escape(name)
+            label = html.escape(T(name))
             if mtags:
                 label += f' <span class="arcana-sub-tags">({html.escape(mtags)})</span>'
             bparts.append(f'<h3 id="{html.escape(hid)}" class="arcana-sub">{label}</h3>')
@@ -808,7 +810,7 @@ def structure_minor_arcana_html(
     parts.append("</div>")
     if bparts:
         parts.append('<div class="arcana-face arcana-back-face">')
-        parts.append(_arcana_title_line(power, "Reverse", tag="h2"))
+        parts.append(_arcana_title_line(power, UI("arcana/reverse", "Reverse"), tag="h2"))
         if power_tags:
             parts.append(f'<p class="arcana-tags">{link(power_tags)}</p>')
         parts.extend(bparts)
@@ -969,7 +971,8 @@ def _arcana_title_line(
     If *name* is empty, only the face label is shown (major reverse side).
     """
     id_attr = f' id="{html.escape(hid)}"' if hid else ""
-    name = titlecase_name(name or "")
+    shown = T(name) if name else ""
+    name = titlecase_name(name or "") if shown == name else shown
     face = f'<span class="arcana-title-face">{html.escape(face_label)}</span>'
     if not (name or "").strip():
         return f"<{tag}{id_attr} class=\"arcana-title-line\">{face}</{tag}>"
@@ -1141,7 +1144,7 @@ def structure_major_arcana_html(
             if raw.startswith(M_MARK):
                 nm = int(raw[len(M_MARK):] or "0")
                 lid = f"{face}-marks"
-                out.append(render_mark_track(nm, lid, label="Progress marks"))
+                out.append(render_mark_track(nm, lid, label=UI("arcana/progress_marks", "Progress marks")))
                 i += 1
                 continue
             named = _arcana_named_move(_arcana_content(raw))
@@ -1149,7 +1152,7 @@ def structure_major_arcana_html(
                 name, mtags, trigger = named
                 name = titlecase_label(name)
                 hid = anchors.add(name)
-                label = html.escape(name)
+                label = html.escape(T(name))
                 if mtags:
                     label += (
                         f' <span class="arcana-sub-tags">'
@@ -1192,10 +1195,12 @@ def structure_major_arcana_html(
         if cons_items:
             lid = "cons"
             out.append('<div class="arcana-unlock arcana-consequences">')
-            out.append('<p class="si-requires">Consequences</p>')
+            out.append(f'<p class="si-requires">{html.escape(T("Consequences"))}</p>')
             out.append(render_check_list(cons_items, link, lid))
             out.append(
-                '<p class="arcana-note"><em>Mark consequences as they apply.</em></p>'
+                '<p class="arcana-note"><em>'
+                + html.escape(UI("arcana/consequences_note", "Mark consequences as they apply."))
+                + "</em></p>"
             )
             out.append("</div>")
         return "\n".join(out), tags
@@ -1207,7 +1212,7 @@ def structure_major_arcana_html(
     parts = [
         f'<div class="arcana-card arcana-major" id="{html.escape(hid)}">',
         '<div class="arcana-face arcana-front">',
-        _arcana_title_line(power, "Front", tag="h2"),
+        _arcana_title_line(power, UI("arcana/front", "Front"), tag="h2"),
     ]
     if tags:
         parts.append(f'<p class="arcana-tags">{link(tags)}</p>')
@@ -1216,7 +1221,7 @@ def structure_major_arcana_html(
     if back_html.strip():
         parts.append('<div class="arcana-face arcana-back-face">')
         # Majors have no alternate reverse name — face label only
-        parts.append(_arcana_title_line("", "Reverse", tag="h2"))
+        parts.append(_arcana_title_line("", UI("arcana/reverse", "Reverse"), tag="h2"))
         parts.append(back_html)
         parts.append("</div>")
     parts.append("</div>")

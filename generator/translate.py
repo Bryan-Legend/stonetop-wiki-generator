@@ -519,6 +519,43 @@ class TextMemory:
         ]
 
 
+def _arcana_memory(tm: TextMemory, en: list[str], tr: list[str]) -> None:
+    """What an arcanum's card asks for beyond whole lines: the tag run it
+    peels off the head of a line (and the prose after it), and a move's
+    body, which gathers consecutive lines into one paragraph."""
+    from .arcana import _arcana_named_move, _arcana_tags_prose
+
+    texts: list[tuple[str, str] | None] = []
+    for a, b in zip(en, tr):
+        pa, pb = _payload(a), _payload(b)
+        if _tag_of(a) != _tag_of(b) or len(pa) != 1 or len(pb) != 1:
+            texts.append(None)
+            continue
+        texts.append((pa[0], pb[0]))
+        ta, ra = _arcana_tags_prose(pa[0])
+        tb, rb = _arcana_tags_prose(pb[0])
+        if ta and tb:
+            tm.add(ta, tb, derived=True)
+            if ra and rb:
+                tm.add(ra, rb, derived=True)
+            if not ra:
+                # A bare tag line: the card shows only its tags.
+                tm._derived.add(tm.norm(pa[0]))
+        if _arcana_named_move(pa[0]):
+            # A named move: the card shows its name and its trigger apart.
+            tm._derived.add(tm.norm(pa[0]))
+    for i in range(len(texts)):
+        for k in (2, 3, 4, 5):
+            run = texts[i : i + k]
+            if len(run) < k or any(x is None for x in run):
+                break
+            tm.add(
+                " ".join(x[0] for x in run),
+                " ".join(x[1] for x in run),
+                derived=True,
+            )
+
+
 # ------------------------------------------------------ loading translations
 
 def load_corpus_translations(code: str) -> dict[str, dict]:
@@ -567,6 +604,7 @@ def render_translated(
     from .chrome import apply_override, override_sections
     from .corpus import dump_text
     from .sheet import sheet_excerpt
+    from .arcana import major_arcana_html, minor_arcana_html
     from .structure import article_html, linkify_pages, set_translation
 
     slug = art["slug"]
@@ -580,6 +618,14 @@ def render_translated(
         if problems:
             return None, problems[:5]
         tm = TextMemory.from_lines(en_lines, tr["book"][0])
+    render = article_html
+    if art.get("kind") == "arcana":
+        render = minor_arcana_html if art.get("arcana_type") == "minor" else major_arcana_html
+        if tm is not None:
+            _arcana_memory(tm, en_lines, tr["book"][0])
+            if meta.get("title"):
+                # The card sets its name on its face, from the English title.
+                tm.add(art["title"], meta["title"], derived=True)
     sheet_lines: list[str] | None = None
     if ov is not None:
         if ov["kind"] != "sheet":
@@ -605,7 +651,7 @@ def render_translated(
 
     set_translation(tm, ui)
     try:
-        body, excerpt, secs = article_html(
+        body, excerpt, secs = render(
             en_lines, art["title"], lookup, articles, **common
         )
         if ov is not None:

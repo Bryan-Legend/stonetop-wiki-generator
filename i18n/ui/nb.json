@@ -39,6 +39,16 @@
       "Damage": "Skade",
       "Armor": "Rustning",
       "Level": "Nivå"
+    },
+    "arcana": {
+      "front": "Forside",
+      "reverse": "Bakside",
+      "progress_marks": "Fremskrittsmerker",
+      "consequences_note": "Kryss av konsekvenser etter hvert som de inntreffer.",
+      "major": "Store arkana",
+      "minor": "Små arkana",
+      "all_major": "Alle store arkana",
+      "all_minor": "Alle små arkana"
     }
   }
 }

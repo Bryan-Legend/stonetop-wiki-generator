@@ -39,6 +39,16 @@
       "Damage": "Hasar",
       "Armor": "Zırh",
       "Level": "Seviye"
+    },
+    "arcana": {
+      "front": "Ön yüz",
+      "reverse": "Arka yüz",
+      "progress_marks": "İlerleme işaretleri",
+      "consequences_note": "Sonuçları gerçekleştikçe işaretle.",
+      "major": "Büyük arkanalar",
+      "minor": "Küçük arkanalar",
+      "all_major": "Tüm büyük arkanalar",
+      "all_minor": "Tüm küçük arkanalar"
     }
   }
 }

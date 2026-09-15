@@ -39,6 +39,16 @@
       "Damage": "Dano",
       "Armor": "Armadura",
       "Level": "Nível"
+    },
+    "arcana": {
+      "front": "Frente",
+      "reverse": "Verso",
+      "progress_marks": "Marcas de progresso",
+      "consequences_note": "Marque as consequências conforme se aplicarem.",
+      "major": "Arcanos maiores",
+      "minor": "Arcanos menores",
+      "all_major": "Todos os arcanos maiores",
+      "all_minor": "Todos os arcanos menores"
     }
   }
 }

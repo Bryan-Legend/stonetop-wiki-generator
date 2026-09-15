@@ -39,6 +39,16 @@
       "Damage": "Obrażenia",
       "Armor": "Pancerz",
       "Level": "Poziom"
+    },
+    "arcana": {
+      "front": "Awers",
+      "reverse": "Rewers",
+      "progress_marks": "Znaczniki postępu",
+      "consequences_note": "Zaznaczaj konsekwencje, gdy mają zastosowanie.",
+      "major": "Wielkie arkana",
+      "minor": "Mniejsze arkana",
+      "all_major": "Wszystkie wielkie arkana",
+      "all_minor": "Wszystkie mniejsze arkana"
     }
   }
 }

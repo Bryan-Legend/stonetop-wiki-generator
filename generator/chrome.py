@@ -580,9 +580,10 @@ def build_nav_items(
         else:
             href = f"{href_prefix}{art_slug}.html"
             slug_attr = ""
-        label = html.escape(
-            (page_tr or {}).get("nav_label") or nav_label(art)
-        )
+        label = (page_tr or {}).get("nav_label") or ""
+        if label and art.get("number"):
+            label = f"{art['number']}. {label}"  # an arcanum's card number
+        label = html.escape(label or nav_label(art))
         if locale and not page_tr:
             slug_attr += ' class="nav-en"'
             if english_only:
@@ -786,9 +787,11 @@ def write_localized_pages(
             h1_cls = "page-title"
             if 'class="pb-stats"' in body:
                 h1_cls += " pb-title"
-            body = (
-                f'<h1 class="{h1_cls}">{html.escape(title)}</h1>\n' + body
-            )
+            # An arcanum carries its name on the card's face, as in English.
+            if 'class="arcana-card' not in body:
+                body = (
+                    f'<h1 class="{h1_cls}">{html.escape(title)}</h1>\n' + body
+                )
             navs = dict(section_navs)
             html_out = page_shell(
                 title,
