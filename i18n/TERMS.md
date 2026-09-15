@@ -279,7 +279,7 @@ earlier one. Add to this table rather than re-deciding.
 | Readiness | Hazırlık | Készenlét | Valmius |
 | Prosperity | Refah | Jólét | Vauraus |
 | Order Followers | Takipçilere Emir Ver | Követők Irányítása | Käske Seuralaisia |
-| Strengthen Your Bond | Bağını Güçlendir | Erősítsd a Köteléket | Vahvista Sidettä |
+| Strengthen Your Bond (as on each Crew page) | de Die Bindung stärken · fr Renforcer votre lien · it Rafforzare il legame · es Fortalece el Vínculo · pt-BR Fortaleça o Vínculo · pl Wzmocnij więź · nl De Band Versterken · sv Stärk Ert Band · da Styrk Jeres Bånd · nb Styrk Båndet · cs Posil pouto · ru Укрепить Узы · uk Зміцнити Узи · ja 絆を深める · ko 유대 다지기 · zh 加深羁绊 (tr·hu·fi: table above) |
 | Loyal to the End | Sonuna Kadar Sadık | Hű a Végsőkig | Uskollinen Loppuun Asti |
 | Heroes to the Last | Sonuna Kadar Kahraman | Hősök az Utolsóig | Sankareita Viimeiseen Mieheen |
 | Dark Succor | Kara İnayet | Sötét Segedelem | Pimeä Armo |
@@ -580,3 +580,45 @@ de · fr · it · pl · nl · sv · cs · da · nb · fi · hu · tr · ru · uk
 | Pavilion of the Gods (new) | it Padiglione degli Dei · pl Pawilon Bogów · nl Paviljoen der Goden · sv Gudarnas Paviljong · zh 众神殿 |
 | *awkward* · *indestructible* · *loud* | de unhandlich · unzerstörbar · laut — fr malcommode · indestructible · bruyant — it scomodo · indistruttibile · rumoroso — pl niewygodny · niezniszczalny · głośny — nl onhandig · onverwoestbaar · luid — sv besvärlig · oförstörbar · högljudd — da/nb uhåndterlig · uforgængelig/uforgjengelig · larmende/bråkete — cs nemotorná · nezničitelná · hlasitá — fi hankala · tuhoutumaton · äänekäs — hu esetlen · elpusztíthatatlan · hangos — tr zahmetli · yok edilemez · gürültülü — ru неудобное · неразрушимое · громкое — uk незручна · незнищенна · гучна — zh 难用 · 不可摧毁 · 响亮 |
 | Makerglass · dark ice | de Erbauerglas · Dunkeleis — fr verre des Bâtisseurs · glace noire — it vetro degli Artefici · ghiaccio scuro — pl szkło Twórców · ciemny lód — nl Makersglas · donkerijs — sv skaparglas · mörkis — da skaberglas · mørkis — nb skaperglass · mørkis — cs sklo Tvůrců · temný led — fi Tekijälasi · tumma jää — hu alkotóüveg · sötét jég — tr Yapıcı camı · karanlık buz — ru стекло Создателей · тёмный лёд — uk скло Творців · темний лід — zh 匠造玻璃 · 暗冰 |
+
+### Lightbearer — corpus route (2026-09-15)
+
+All 20 languages (zh-Hant mirrors zh-Hans). *reduced*/*empowered* and "holy light" follow each language's Invocations page.
+
+| English | Settled |
+|---|---|
+| Enigma (hold) | de Rätsel · fr Énigme · it/es/pt-BR Enigma · pl Zagadka · nl Raadsel · sv Gåta · da Gåde · nb Gåte · cs Záhada · fi Arvoitus · hu Rejtély · tr Muamma · ru/uk Загадка · ja 謎 · ko 수수께끼 · zh 谜团 |
+| Blessing (hold) | de Segen · fr Bénédiction · it Benedizione · es Bendición · pt-BR Bênção · pl Błogosławieństwo · nl Zegen · sv Välsignelse · da/nb Velsignelse · cs Požehnání · fi Siunaus · hu Áldás · tr Bereket · ru Благословение · uk Благословення · ja 祝福 · ko 축복 · zh 祝福 |
+| Invoke the Sun God | de Den Sonnengott anrufen · fr Invoquer le Dieu Soleil · it Invocare il Dio Sole · es Invocar al Dios Sol · pt-BR Invocar o Deus Sol · pl Wezwanie Boga Słońca · nl De Zonnegod Aanroepen · sv Åkalla Solguden · da Påkalde Solguden · nb Påkalle Solguden · cs Vzývání Boha Slunce · fi Huuda Aurinkojumalaa Avuksi · hu Fohászkodj a Napistenhez · tr Güneş Tanrısı'na Yakar · ru Воззвать к Богу Солнца · uk Закликати Бога Сонця · ja 太陽神に祈願する · ko 태양신께 기원하기 · zh 向太阳神祷告 |
+| Consecrated Flame | de Geweihte Flamme · fr Flamme Consacrée · it Fiamma Consacrata · es Llama Consagrada · pt-BR Chama Consagrada · pl Uświęcony Płomień · nl Gewijde Vlam · sv Helgad Låga · da Indviet Flamme · nb Innviet Flamme · cs Posvěcený Plamen · fi Pyhitetty Liekki · hu Megszentelt Láng · tr Kutsanmış Alev · ru Освящённое Пламя · uk Освячене Полум'я · ja 聖別の炎 · ko 축성된 불꽃 · zh 圣化之火 |
+| Strengthen Your Bond | de Die Bindung stärken · fr Renforcer le Lien · it Rafforzare il Legame · es Fortalecer el Vínculo · pt-BR Fortalecer o Vínculo · pl Wzmocnienie Więzi · nl De Band Versterken · sv Stärka Bandet · da/nb Styrke Båndet · cs Posílit Pouto · ru Укрепить Узы · uk Зміцнити Узи · ja 絆を深める · ko 유대 강화하기 · zh 加深羁绊 (tr·hu·fi: table above) |
+| Helior the Daybringer | de der Tagbringer · fr le Porteur du Jour · it il Portatore del Giorno · es el Traedor del Día · pt-BR o Portador do Dia · pl Przynoszący Dzień · nl de Dagbrenger · sv/da/nb Dagbringaren/Dagbringeren · cs Přinašeč Dne · fi Päivänkantaja · hu a Nappalhozó · tr Günü Getiren · ru Приносящий День · uk Денносець · ja 昼をもたらす者 · ko 낮을 가져오는 자 · zh 携昼者 |
+| Pavilion of the Gods (ja · ko · es · pt-BR, from existing pages) | ja 神々の殿 · ko 신들의 전각 · es Pabellón de los Dioses · pt-BR Pavilhão dos Deuses |
+
+### Marshal — corpus route (2026-09-15)
+
+es · pt-BR · fr · it · pl · sv · cs · da · nb · fi · hu · tr · uk · ja · ko (de · nl · ru · zh still JSON pages). Crew tags (*respected*, *warriors*, *devoted*, *exceptional*) and Order Followers follow each language's Crew page.
+
+| English | Settled |
+|---|---|
+| Presence (hold) | es Presencia · pt-BR Presença · fr Présence · it Presenza · pl Obecność · sv Närvaro · da/nb Nærvær · cs Přítomnost · fi Läsnäolo · hu Jelenlét · tr Heybet · uk Присутність · ja 存在感 · ko 존재감 |
+| Surprise (hold) | es/it Sorpresa · pt-BR Surpresa · fr Surprise · pl Niespodzianka · sv Överraskning · da/nb Overraskelse · cs Překvapení · fi Yllätys · hu Meglepetés · tr Sürpriz · uk Несподіванка · ja 奇策 · ko 기습 |
+| Command (hold) | es Mando · pt-BR/it Comando · fr Commandement · pl Rozkaz · sv Befäl · da/nb Kommando · cs Velení · fi Komento · hu Parancs · tr Komuta · uk Команда · ja 号令 · ko 호령 |
+| Inspiration (hold) | es Inspiración · pt-BR Inspiração · fr/sv/da Inspiration · nb Inspirasjon · it Ispirazione · pl Natchnienie · cs Inspirace · fi Innoitus · hu Lelkesedés · tr İlham · uk Натхнення · ja 鼓舞 · ko 고무 |
+| Logistics | es/pt-BR Logística · fr Logistique · it Logistica · pl Logistyka · sv/da Logistik · nb Logistikk · cs Logistika · fi Logistiikka · hu Logisztika · tr Lojistik · uk Логістика · ja 兵站 · ko 병참 |
+| Heroes to the Last | es Héroes Hasta el Final · pt-BR Heróis até o Fim · fr Héros Jusqu'au Bout · it Eroi Fino alla Fine · pl Bohaterowie do Końca · sv Hjältar in i det Sista · da Helte til det Sidste · nb Helter til det Siste · cs Hrdinové do Posledního · uk Герої до Останнього · ja 最後まで英雄 · ko 끝까지 영웅 (tr·hu·fi: table above) |
+| *messy* (es · pt-BR · fr · it · ja · ko) | es sucio · pt-BR sujo · fr sanglant · it cruento · ja 血まみれ · ko 유혈 |
+| Foothills (es · pt-BR · fr · it · ja · ko) | es Estribaciones · pt-BR Contrafortes · fr Contreforts · it Colli Pedemontani · ja 山麓 · ko 산기슭 |
+| Brennan's Claws (es · pt-BR · fr · it · ja · ko) | es/pt-BR Garras · fr Griffes · it Artigli · ja 爪団 · ko 발톱단 |
+
+### Seeker — corpus route (2026-09-15, in progress)
+
+Done: es · fr · it · pt-BR · sv · da · nb · fi · hu. Still to do: tr · ru · uk · ja · ko. Major arcana names are translated with the English card name in parentheses (the arcana pages are English-only), e.g. es El Cetro Rojo (The Red Scepter).
+
+| English | Settled |
+|---|---|
+| Well Versed | es/pt-BR Versado · fr Érudit · it Esperto · sv Bevandrad · da/nb Bevandret · fi Perehtynyt · hu Jártas |
+| Work With What You've Got | es Apáñatelas con lo que Tienes · fr Faire avec les Moyens du Bord · it Arrangiarsi con Ciò che Si Ha · pt-BR Use o que Tem à Mão · sv Använd Det Du Har · da Brug Hvad Du Har · nb Bruk Det Du Har · fi Käytä Mitä On Käsillä · hu Dolgozz Azzal, Amid Van |
+| Protection (hold) | es/pt-BR Protección/Proteção · fr Protection · it Protezione · sv Skydd · da/nb Beskyttelse · fi Suoja · hu Oltalom |
+| Make a Plan | es Trazar un Plan · fr Faire un Plan · it Fare un Piano · pt-BR Fazer um Plano · sv Göra en Plan · da/nb Lægge/Legge en Plan · fi Tee Suunnitelma · hu Készíts Tervet |
+| *dangerous* · *slow* · *magical* | es peligrosa · lento · mágica — fr dangereux · lent · magique — it pericolosa · lento · magico — pt-BR perigosa · lento · mágica — sv farlig · långsam · magisk — da/nb farlig · langsom · magisk — fi vaarallinen · hidas · maaginen — hu veszélyes · lassú · mágikus |
