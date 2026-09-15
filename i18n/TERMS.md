@@ -568,7 +568,7 @@ de · pl · nl · sv · cs · da · nb · fi · hu · tr · ru · uk · zh-Hans 
 
 ### Judge — corpus route (2026-09-15)
 
-de · fr · it · pl · nl · sv · cs · da · nb · fi · hu · tr · ru · uk · zh-Hans (zh-Hant mirrors).
+es · pt-BR · ja · ko (from the old JSON pages' move names; Sanction/Diligence es Sanción/Diligencia · pt-BR Sanção/Diligência · ja 裁可/精励 · ko 재가/근면) · de · fr · it · pl · nl · sv · cs · da · nb · fi · hu · tr · ru · uk · zh-Hans (zh-Hant mirrors).
 
 | English | Settled |
 |---|---|
@@ -597,7 +597,7 @@ All 20 languages (zh-Hant mirrors zh-Hans). *reduced*/*empowered* and "holy ligh
 
 ### Marshal — corpus route (2026-09-15)
 
-es · pt-BR · fr · it · pl · sv · cs · da · nb · fi · hu · tr · uk · ja · ko (de · nl · ru · zh still JSON pages). Crew tags (*respected*, *warriors*, *devoted*, *exceptional*) and Order Followers follow each language's Crew page.
+es · pt-BR · fr · it · pl · sv · cs · da · nb · fi · hu · tr · uk · ja · ko · de · nl · ru · zh-Hans (retranslated from the stale JSON pages; zh-Hant mirrors). de/nl/ru/zh hold names: Präsenz/Overwicht/Присутствие/威势 · Überraschung/Verrassing/Сюрприз/奇招 · Kommando/Bevel/Команда/号令 · Inspiration/Inspiratie/Вдохновение/鼓舞. Crew tags (*respected*, *warriors*, *devoted*, *exceptional*) and Order Followers follow each language's Crew page.
 
 | English | Settled |
 |---|---|
@@ -613,7 +613,7 @@ es · pt-BR · fr · it · pl · sv · cs · da · nb · fi · hu · tr · uk ·
 
 ### Seeker — corpus route (2026-09-15)
 
-es · fr · it · pt-BR · sv · da · nb · fi · hu · tr · ru · uk · ja · ko (de · nl · pl · cs · zh still JSON pages, now stale). Major arcana names are translated with the English card name in parentheses (the arcana pages are English-only), e.g. es El Cetro Rojo (The Red Scepter).
+es · fr · it · pt-BR · sv · da · nb · fi · hu · tr · ru · uk · ja · ko · de · nl · pl · cs · zh-Hans (retranslated from the stale JSON pages; zh-Hant mirrors). Protection: de Schutz · nl Bescherming · pl Ochrona · cs Ochrana · zh 庇护. Major arcana names are translated with the English card name in parentheses (the arcana pages are English-only), e.g. es El Cetro Rojo (The Red Scepter).
 
 | English | Settled |
 |---|---|
