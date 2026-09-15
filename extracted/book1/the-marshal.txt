@@ -50,7 +50,8 @@ C	<b>Engineer's tools</b>: rulers, tapes, rods, plumb-bobs, ◇ tripods, ◇ blo
 C	<b>Personal symbol</b> (a flag, crest, marking, etc.): when you <b><i>display or reveal it in a dramatic fashion</i></b>, your crew holds +1 Loyalty (max 3).
 C	<b>Scribe's tools</b>: parchment, ink, pigments, vials, quills, ◇ a notebook, etc.
 C	<b>Weapons of war</b>: choose up to 3 (now or later):
-C	◇ Sword, iron (<i>close</i>, +1 damage) ◇◇ Long spear, fine steel (<i>reach</i>, 2 piercing)
+C	◇ Sword, iron (<i>close</i>, +1 damage)
+C	◇◇ Long spear, fine steel (<i>reach</i>, 2 piercing)
 C	◇ Battleaxe, iron (<i>close</i>, <i>messy</i>)
 C	◇ Composite bow (<i>far</i>, +1 damage, <i>x</i> piercing; low ammo, all out)◇◇ (discuss with GM)
 PAGE	126

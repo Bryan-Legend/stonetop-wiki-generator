@@ -60,7 +60,8 @@ C	<b>A good dog</b>, follower ( <i>retriever</i> or <i>herder</i>, <i>keen-nosed
 C	<b>Husbandry tools</b>: brushes, muzzles, collars, feed, ◇ whips, ◇ bridles, etc. Gain advantage to Persuade domestic beasts (livestock, dogs, etc.).
 C	<b>Smithy</b> (or access to it): iron goods, ingots, thick gloves, ◇ tongs, ◇ bellows, an anvil, etc.
 C	<b>Stoneworker's tools</b>: chisels, drills, ◇ prybars, ◇ spikes, ◇ block & tackles, wheelbarrow, etc.
-C	<b>Personal token, fraught with meaning</b>: (pick 1) ◇◇ A shield, bearing ___'s crest
+C	<b>Personal token, fraught with meaning</b>: (pick 1)
+C	◇◇ A shield, bearing ___'s crest
 C	◇ A wool cloak, woven just for you by ___
 C	A letter, spattered with tears & blood
 C	A flute, a gift from someone you loved

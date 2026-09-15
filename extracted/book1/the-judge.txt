@@ -52,8 +52,10 @@ HR
 P	(Pick 1, in addition to your symbol of authority and scribe's kit)
 HR
 CX	<b>Your symbol of authority</b> (pick 1):
-P	◇◇ <b>Black iron maul</b>, utterly immune to all magic (<i>close</i>, <i>forceful</i>, <i>awkward</i>, +1 damage)
-P	◇◇ <b>Makerglass shield</b>, etched with Aratis's symbol (<i>indestructible</i>, +1 armor, +1
+C2	◇◇ <b>Black iron maul</b>, utterly immune to all
+P	magic (<i>close</i>, <i>forceful</i>, <i>awkward</i>, +1 damage)
+C2	◇◇ <b>Makerglass shield</b>, etched with
+P	Aratis's symbol (<i>indestructible</i>, +1 armor, +1
 P	Readiness on a Defend 7+)
 C2	◇ <b>Helm</b> set with a dark ice "jewel." Grants
 P	advantage to resist mind-affecting magic.

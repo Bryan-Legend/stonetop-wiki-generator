@@ -811,12 +811,18 @@ def extract_page_rich(
                         bullet = "check"
                         checked = True
                         break
+            # Weight diamonds printed between a box and its text ("☐ ◇◇ The
+            # Mindgem") push the text right; measure from the first diamond,
+            # or a two-diamond item falls past the reach and loses its box.
+            lead_x = min(
+                [first_x] + [d.x0 for d in row_dia if d.x0 < first_x]
+            )
             if bullet is None:
                 for r in r_checks:
                     if (
                         abs((r.y0 + r.y1) / 2 - y_c) <= 5.5
-                        and r.x0 < first_x
-                        and first_x - r.x0 <= 25
+                        and r.x0 < lead_x
+                        and lead_x - r.x0 <= 25
                     ):
                         bullet = "check"
                         break
@@ -829,8 +835,8 @@ def extract_page_rich(
                     r
                     for r in r_checks
                     if abs((r.y0 + r.y1) / 2 - y_c) <= 5.5
-                    and r.x0 <= first_x + 2
-                    and first_x - r.x0 <= 30
+                    and r.x0 <= lead_x + 2
+                    and lead_x - r.x0 <= 30
                 ]
                 if row_checks:
                     check_x = min(r.x0 for r in row_checks)

@@ -13,11 +13,13 @@ C	◇ The Staff of the Lidless Orb
 C	<b>ANTIQUARIAN</b> The past has buried many secrets, and you are determined to dig them up. Years of study across the land have led you here, and you are convinced that this town holds the key to your greatest discoveries. What is it you hope to find? What is it that keeps you here?
 P	In any case, your travels and studies mean that you start with the Polyglot move and that you are Well Versed in the Makers and their arts (go mark them now). You've also acquired 1 major arcanum:
 C	◇ Noruba's Ice Sphere
-C	◇ The Azure Hand ◇◇ The Mindgem
+C	◇ The Azure Hand
+C	◇◇ The Mindgem
 C	<b>WITCH HUNTER</b> You've dedicated your life to rooting out and destroying horrors and their servants. What set you down this path? What did you sacrifice to walk it? What led you to call Stonetop home?
 P	Regardless, you start with the Everything Bleeds move and are Well Versed in (pick 1) the Fae, the Things Below, or the Last Door and what lies beyond (go mark them now). You've also acquired 1 major arcanum:
 C	◇ The Demonhide Cloak
-C	The Redwood Effigy ◇◇ The Twisted Spear
+C	The Redwood Effigy
+C	◇◇ The Twisted Spear
 H2	Instinct (Choose 1)
 C	<b>CUNNING</b> To scheme, manipulate, and plot.
 HR
