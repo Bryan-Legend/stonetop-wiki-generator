@@ -84,7 +84,7 @@ B	In cosa non è proprio quello giusto, ma forse andrà bene
 B	I guai che hai combinato a casa per procurartelo
 B	Perché usarlo attirerà attenzioni indesiderate
 B	Che è l'unica cosa del genere che hai, e perché funzionerà una volta sola
-C	<b>MAI A CORTO DI RISORSE</b> Quando <b><i>Sai le Cose e ottieni 6-</i></b>, puoi scegliere di non segnare PE. Se non segni PE, il peggio che può capitare è che il GM non ti dica nulla di interessante o utile sull'argomento, ma ti dica invece come potresti saperne di più.
+C	<b>MAI A CORTO DI RISORSE</b> Quando <b><i>Sai le Cose e ottieni 6-</i></b>, puoi scegliere di non segnare XP. Se non segni XP, il peggio che può capitare è che il GM non ti dica nulla di interessante o utile sull'argomento, ma ti dica invece come potresti saperne di più.
 C	<b>POLIGLOTTA</b> Quando <b><i>incontri per la prima volta una lingua viva in gioco</i></b>, descrivi la tua padronanza di essa (se ne hai) e come l'hai acquisita.
 P	Quando <b><i>Sai le Cose su scritture, testi, rune</i></b> <b><i>o simboli che incontri</i></b>, hai vantaggio.
 C2	<b>CRITTOLOGO</b>

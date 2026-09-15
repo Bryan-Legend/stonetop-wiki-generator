@@ -611,9 +611,9 @@ es · pt-BR · fr · it · pl · sv · cs · da · nb · fi · hu · tr · uk ·
 | Foothills (es · pt-BR · fr · it · ja · ko) | es Estribaciones · pt-BR Contrafortes · fr Contreforts · it Colli Pedemontani · ja 山麓 · ko 산기슭 |
 | Brennan's Claws (es · pt-BR · fr · it · ja · ko) | es/pt-BR Garras · fr Griffes · it Artigli · ja 爪団 · ko 발톱단 |
 
-### Seeker — corpus route (2026-09-15, in progress)
+### Seeker — corpus route (2026-09-15)
 
-Done: es · fr · it · pt-BR · sv · da · nb · fi · hu. Still to do: tr · ru · uk · ja · ko. Major arcana names are translated with the English card name in parentheses (the arcana pages are English-only), e.g. es El Cetro Rojo (The Red Scepter).
+es · fr · it · pt-BR · sv · da · nb · fi · hu · tr · ru · uk · ja · ko (de · nl · pl · cs · zh still JSON pages, now stale). Major arcana names are translated with the English card name in parentheses (the arcana pages are English-only), e.g. es El Cetro Rojo (The Red Scepter).
 
 | English | Settled |
 |---|---|
@@ -622,3 +622,29 @@ Done: es · fr · it · pt-BR · sv · da · nb · fi · hu. Still to do: tr · 
 | Protection (hold) | es/pt-BR Protección/Proteção · fr Protection · it Protezione · sv Skydd · da/nb Beskyttelse · fi Suoja · hu Oltalom |
 | Make a Plan | es Trazar un Plan · fr Faire un Plan · it Fare un Piano · pt-BR Fazer um Plano · sv Göra en Plan · da/nb Lægge/Legge en Plan · fi Tee Suunnitelma · hu Készíts Tervet |
 | *dangerous* · *slow* · *magical* | es peligrosa · lento · mágica — fr dangereux · lent · magique — it pericolosa · lento · magico — pt-BR perigosa · lento · mágica — sv farlig · långsam · magisk — da/nb farlig · langsom · magisk — fi vaarallinen · hidas · maaginen — hu veszélyes · lassú · mágikus |
+| Well Versed · Protection · Make a Plan (tr · ru · uk · ja · ko) | tr Bilgili · Koruma · Plan Yap — ru Сведущий · Защита · Составить План — uk Обізнаний · Захист · Скласти План — ja 通暁 · 守り · 計画を立てる — ko 조예 · 보호 · 계획 세우기 |
+
+## Would-Be Hero
+
+Omens · Resolve · Rapport · Burn Brightly, per language. Dog tags follow each
+Animal Companion page (clever, keen-nosed / close, grabby).
+
+- **de:** Omen · Entschlossenheit · Draht · Hell zu brennen
+- **nl:** Voortekenen · Vastberadenheid · Klik · Fel Branden
+- **es:** Presagios · Determinación · Sintonía · Arder con Fuerza
+- **pt-BR:** Presságios · Determinação · Sintonia · Arder com Intensidade
+- **fr:** Présages · Détermination · Complicité · Brûler Intensément
+- **it:** Presagi · Risolutezza · Intesa · Ardere Intensamente
+- **pl:** Znaki · Determinacja · Porozumienie · Płonąć Jasno
+- **sv:** Omen · Beslutsamhet · Samklang · Brinna Starkt
+- **cs:** Znamení · Odhodlání · Porozumění · Hořet Jasně
+- **da:** Varsler · Beslutsomhed · Samklang · Brænde Klart
+- **nb:** Varsler · Besluttsomhet · Samklang · Brenne Klart
+- **fi:** Enteet · Päättäväisyys · Yhteys · Palaa Kirkkaasti
+- **hu:** Ómenek · Elszántság · Összhang · Fényesen Lángolni
+- **tr:** Alametler · Azim · Yakınlık · Parlakça Yanmak
+- **ru:** Знамения · Решимость · Взаимопонимание · Гореть Ярко
+- **uk:** Знамення · Рішучість · Порозуміння · Горіти Яскраво
+- **ja:** 前兆 · 決意 · 信頼 · 燃え上がる; forceful = 強打; Defend's Readiness = 備え
+- **ko:** 징조 · 결의 · 교감 · 활활 타오르기; forceful = 강타; Readiness = 대비
+- **zh:** 预兆/預兆 · 决心/決心 · 默契 · 炽烈燃烧/熾烈燃燒; Readiness = 戒备/戒備

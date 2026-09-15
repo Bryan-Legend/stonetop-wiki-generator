@@ -95,7 +95,7 @@ C	<b>SCROLLATELO DI DOSSO</b> Quando <b><i>ordini a un alleato di superare paura
 P	<b>con 7-9</b>, un PG ottiene vantaggio per riuscirci; un PNG ci riuscirà, ma gli servirà tempo, ce l'avrà con te o si sentirà umiliato (decide il GM).
 C	<b>MURO DI SCUDI</b> Quando <b><i>fai formare alla tua squadra un muro di scudi</i></b>, Difendono con vantaggio e <b>con 7+</b> tengono +2 Prontezza (invece del solito +1 per gli scudi). <b><i>Finché</i></b> <b><i>mantengono la formazione</i></b>, possono passare all'offensiva senza perdere Prontezza.
 PAGE	127
-C	<b>SIGNORE, PERMESSO DI MORIRE, SIGNORE</b> Quando <b><i>uno dei tuoi seguaci starebbe per morire</i></b>, puoi spendere 1 della sua Lealtà perché sopravviva (fuori combattimento, ma vivo). Se lo lasci andare, segna PE.
+C	<b>SIGNORE, PERMESSO DI MORIRE, SIGNORE</b> Quando <b><i>uno dei tuoi seguaci starebbe per morire</i></b>, puoi spendere 1 della sua Lealtà perché sopravviva (fuori combattimento, ma vivo). Se lo lasci andare, segna XP.
 C	<b>PARLA PIANO</b> Quando <b><i>offri la pace ma il nemico rifiuta</i></b>, ottieni vantaggio al prossimo tiro contro di lui.
 C	<b>STENTOREO</b> ◇◇ Quando <b><i>alzi la voce</i></b>, arriva lontano e sovrasta perfino il fragore della battaglia. Quando <b><i>entri in</i></b> <b><i>battaglia</i></b>, tieni 2 Comando. Spendi 1 Comando per gridare un ordine o un avvertimento e scegline 1:
 B	I PG ottengono vantaggio al prossimo tiro per fare ciò che dici
