@@ -403,6 +403,17 @@ def coverage(en: list[str], tr: list[str], *, sheet: bool) -> tuple[int, int]:
 _BULLET_RE = re.compile(r"^[•·]\s*")
 _NAMED_MOVE_TR_RE = re.compile(r"^\x04[^\x05]+\x05\s*(?:\x06([^\x07]*)\x07\s*)?(.*)$", re.S)
 _BOLD_SPLIT_RE = re.compile(r"\s+(?=\x04)")
+# A move block sets its trigger apart from the words around it. The
+# trigger can be several formatted runs in a row (the book broke the
+# line), and the block shows them as one phrase.
+_TRIGGER_RE = re.compile(r"((?:\x04[^\x05]*\x05\s*)+)")
+
+
+def _trigger_segments(text: str) -> list[str]:
+    """``text`` cut into its runs of formatting and the words between."""
+    return [p for p in _TRIGGER_RE.split(text) if p.strip()]
+
+
 _BOLD_PREFIX_RE = re.compile(r"^\x04([^\x05]+)\x05\s*(.*)$", re.S)
 
 
@@ -477,6 +488,12 @@ class TextMemory:
                 sa, sb = _BOLD_SPLIT_RE.split(fa), _BOLD_SPLIT_RE.split(fb)
                 if 1 < len(sa) == len(sb):
                     for xa, xb in zip(sa, sb):
+                        tm.add(xa, xb, derived=True, parts=[fa])
+                # A move block sets its trigger apart from the words around
+                # it ("When you" / "take time to catch your breath" / ", ...").
+                ra, rb = _trigger_segments(fa), _trigger_segments(fb)
+                if 1 < len(ra) == len(rb):
+                    for xa, xb in zip(ra, rb):
                         tm.add(xa, xb, derived=True, parts=[fa])
         return tm
 
@@ -598,7 +615,7 @@ def _joined_memory(tm: TextMemory, en: list[str], tr: list[str]) -> None:
     # A rule between lines does not stop a card gathering them.
     texts = [x for x, a in zip(texts, en) if x is not None or _payload(a) != [""] and _payload(a)]
     for i in range(len(texts)):
-        for k in range(2, 14):
+        for k in range(2, 25):
             run = texts[i : i + k]
             if len(run) < k or any(x is None for x in run):
                 break
@@ -607,6 +624,12 @@ def _joined_memory(tm: TextMemory, en: list[str], tr: list[str]) -> None:
             tm.add(joined_en, joined_tr, derived=True, parts=[x[0] for x in run])
             # A checklist item that swallows the line under it keeps no
             # ellipsis either.
+            # A move block gathers its lines and then sets the trigger
+            # apart from the words around it.
+            ja, jb = _trigger_segments(joined_en), _trigger_segments(joined_tr)
+            if 1 < len(ja) == len(jb):
+                for xa, xb in zip(ja, jb):
+                    tm.add(xa, xb, derived=True, parts=[x[0] for x in run])
             bare = re.sub(r"^[\s…\.]+", "", joined_en)
             if bare != joined_en:
                 tm.add(
