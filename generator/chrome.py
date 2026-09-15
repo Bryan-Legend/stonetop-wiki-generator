@@ -781,6 +781,9 @@ def write_localized_pages(
                 stale.append(slug)
             title = page.get("title") or slug
             body = localize_body_links(page["body_html"], translated)
+            # The body is built for the wiki root; a language directory sits
+            # one level down, so its icons and images need the way back up.
+            body = body.replace('src="images/', 'src="../images/')
             # Mirror the English page: a sheet's h1 carries pb-title and its
             # <main> the playbook class, so localized sheets keep the sheet
             # styling and widgets.
