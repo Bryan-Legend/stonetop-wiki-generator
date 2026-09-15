@@ -533,10 +533,11 @@ class TextMemory:
         ]
 
 
-def _arcana_memory(tm: TextMemory, en: list[str], tr: list[str]) -> None:
-    """What an arcanum's card asks for beyond whole lines: the tag run it
-    peels off the head of a line (and the prose after it), and a move's
-    body, which gathers consecutive lines into one paragraph."""
+def _joined_memory(tm: TextMemory, en: list[str], tr: list[str]) -> None:
+    """What a renderer asks for beyond whole lines: the tag run peeled off
+    the head of a line (and the prose after it), a checklist item without
+    its ellipsis, and a paragraph gathered from consecutive lines — a move's
+    body, an arcanum's move, a chapter's move block."""
     from .arcana import (
         _arcana_named_move,
         _arcana_strip_tag_seps,
@@ -679,13 +680,15 @@ def render_translated(
             return None, problems[:5]
         tm = TextMemory.from_lines(en_lines, tr["book"][0])
     render = article_html
+    if tm is not None:
+        # What a renderer asks for beyond whole lines: a paragraph gathered
+        # from several lines, a line cut at a label, a peeled tag run.
+        _joined_memory(tm, en_lines, tr["book"][0])
     if art.get("kind") == "arcana":
         render = minor_arcana_html if art.get("arcana_type") == "minor" else major_arcana_html
-        if tm is not None:
-            _arcana_memory(tm, en_lines, tr["book"][0])
-            if meta.get("title"):
-                # The card sets its name on its face, from the English title.
-                tm.add(art["title"], meta["title"], derived=True)
+        if tm is not None and meta.get("title"):
+            # The card sets its name on its face, from the English title.
+            tm.add(art["title"], meta["title"], derived=True)
     sheet_lines: list[str] | None = None
     if ov is not None:
         if ov["kind"] != "sheet":
