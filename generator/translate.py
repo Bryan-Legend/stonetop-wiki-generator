@@ -401,6 +401,8 @@ def coverage(en: list[str], tr: list[str], *, sheet: bool) -> tuple[int, int]:
 # --------------------------------------------------------- text memory
 
 _BULLET_RE = re.compile(r"^[•·]\s*")
+_NAMED_MOVE_TR_RE = re.compile(r"^\x04[^\x05]+\x05\s*(?:\x06([^\x07]*)\x07\s*)?(.*)$", re.S)
+_BOLD_SPLIT_RE = re.compile(r"\s+(?=\x04)")
 _BOLD_PREFIX_RE = re.compile(r"^\x04([^\x05]+)\x05\s*(.*)$", re.S)
 
 
@@ -427,6 +429,7 @@ class TextMemory:
         self.hits: set[str] = set()
         self._derived: set[str] = set()  # sub-segments of a line, not lines
         self._reverse: dict[str, str] = {}  # norm(translation) → English, plain
+        self._parts: dict[str, list[str]] = {}  # derived key → the line keys it shows
 
     @staticmethod
     def norm(s: str) -> str:
@@ -434,7 +437,9 @@ class TextMemory:
         # for the item without it.
         return _BULLET_RE.sub("", _defmt(s).strip()).rstrip(":").strip().casefold()
 
-    def add(self, en: str, tr: str, *, derived: bool = False) -> None:
+    def add(
+        self, en: str, tr: str, *, derived: bool = False, parts: list[str] | None = None
+    ) -> None:
         en, tr = en.strip(), tr.strip()
         if not en or not tr or en == tr:
             return
@@ -444,6 +449,8 @@ class TextMemory:
             self._reverse.setdefault(self.norm(tr), _defmt(en).strip())
             if derived:
                 self._derived.add(key)
+            if parts:
+                self._parts[key] = [self.norm(p) for p in parts]
 
     @classmethod
     def from_lines(cls, en: list[str], tr: list[str]) -> "TextMemory":
@@ -465,6 +472,12 @@ class TextMemory:
                 if ma and mb:
                     tm.add(ma.group(1), mb.group(1), derived=True)
                     tm.add(ma.group(2), mb.group(2), derived=True)
+                # A stat block cuts a line where a bold label opens
+                # ("… Damage spear d8 …", "… Cost proof of honor …").
+                sa, sb = _BOLD_SPLIT_RE.split(fa), _BOLD_SPLIT_RE.split(fb)
+                if 1 < len(sa) == len(sb):
+                    for xa, xb in zip(sa, sb):
+                        tm.add(xa, xb, derived=True, parts=[fa])
         return tm
 
     def __len__(self) -> int:
@@ -479,6 +492,7 @@ class TextMemory:
             return s
         raw, plain, en_raw = hit
         self.hits.add(key)
+        self.hits.update(self._parts.get(key, ()))
         out = raw if any(c in s for c in _FMT) else plain
         if not _BULLET_RE.match(_defmt(s).strip()):
             out = _BULLET_RE.sub("", out, count=1)
@@ -532,20 +546,38 @@ def _arcana_memory(tm: TextMemory, en: list[str], tr: list[str]) -> None:
             texts.append(None)
             continue
         texts.append((pa[0], pb[0]))
+        # The HP box's cap set beside a special quality: "Max. 13 lacks organs".
+        ma = re.match(r"^\s*Max\.?\s+\d+\s+(.+)$", _defmt(pa[0]))
+        mb = re.match(r"^\s*\S+\s+\d+\s+(.+)$", _defmt(pb[0]))
+        if ma and mb:
+            tm.add(ma.group(1), mb.group(1), derived=True, parts=[pa[0]])
         ta, ra = _arcana_tags_prose(pa[0])
         tb, rb = _arcana_tags_prose(pb[0])
-        if ta and tb:
-            tm.add(ta, tb, derived=True)
+        if ta and not ra:
+            # A bare tag line: the card shows only its tags. The words that
+            # tell a tag apart are English ("+1 damage"), so the translation
+            # is taken whole rather than peeled.
+            whole = _defmt(pb[0]).strip(" \u25c7,\u3001\uff0c")
+            tm.add(ta, whole, derived=True, parts=[pa[0]])
+        elif ta and tb:
+            tm.add(ta, tb, derived=True, parts=[pa[0]])
             if ra and rb:
-                tm.add(ra, rb, derived=True)
-            if not ra:
-                # A bare tag line: the card shows only its tags.
-                tm._derived.add(tm.norm(pa[0]))
-        if _arcana_named_move(pa[0]):
-            # A named move: the card shows its name and its trigger apart.
+                tm.add(ra, rb, derived=True, parts=[pa[0]])
+        named = _arcana_named_move(pa[0])
+        if named:
+            # A named move: the card shows its name, its tags and its
+            # trigger apart. The translated name is not in capitals, so the
+            # translation is cut by its formatting instead.
             tm._derived.add(tm.norm(pa[0]))
+            _name, tags_en, trigger_en = named
+            mb = _NAMED_MOVE_TR_RE.match(pb[0])
+            if mb and tags_en and mb.group(1):
+                tm.add(tags_en, mb.group(1).strip(" ()"), derived=True, parts=[pa[0]])
+                tm.add(trigger_en, mb.group(2), derived=True, parts=[pa[0]])
+    # A rule between lines does not stop a card gathering them.
+    texts = [x for x, a in zip(texts, en) if x is not None or _payload(a) != [""] and _payload(a)]
     for i in range(len(texts)):
-        for k in (2, 3, 4, 5):
+        for k in range(2, 9):
             run = texts[i : i + k]
             if len(run) < k or any(x is None for x in run):
                 break
@@ -553,6 +585,7 @@ def _arcana_memory(tm: TextMemory, en: list[str], tr: list[str]) -> None:
                 " ".join(x[0] for x in run),
                 " ".join(x[1] for x in run),
                 derived=True,
+                parts=[x[0] for x in run],
             )
 
 

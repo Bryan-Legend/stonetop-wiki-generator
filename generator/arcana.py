@@ -1139,6 +1139,9 @@ def structure_major_arcana_html(
             if section == "consequences":
                 if raw.startswith(M_C):
                     cons_items.append(_arcana_content(raw))
+                elif cons_items and not raw.startswith("\x02"):
+                    # The rest of a consequence, set as its own paragraph.
+                    cons_items[-1] += " " + _arcana_content(raw)
                 i += 1
                 continue
             if raw.startswith(M_MARK):
@@ -1156,7 +1159,7 @@ def structure_major_arcana_html(
                 if mtags:
                     label += (
                         f' <span class="arcana-sub-tags">'
-                        f"({html.escape(mtags)})</span>"
+                        f"({html.escape(T(mtags))})</span>"
                     )
                 out.append(
                     f'<h3 id="{html.escape(hid)}" class="arcana-sub">{label}</h3>'

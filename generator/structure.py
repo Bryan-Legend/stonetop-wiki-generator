@@ -885,6 +885,13 @@ def render_value_table(
     )
 
 
+def _stat_name(name: str) -> str:
+    """A stat block's name as shown: translated when a translation has it
+    (and then left as the translator cased it), title-cased otherwise."""
+    shown = T(name)
+    return titlecase_name(name) if shown == name else shown
+
+
 def render_stat_block(
     name: str,
     lines: list[str],
@@ -1102,7 +1109,7 @@ def render_stat_block(
     parts = [
         f'<div class="{cls}"{id_attr}>'
         f'<h3 class="stat-name">{icon_html}'
-        f'{html.escape(titlecase_name(name))}</h3>'
+        f'{html.escape(_stat_name(name))}</h3>'
     ]
     if tags:
         parts.append(f'<p class="stat-tags">{rr(tags)}</p>')
