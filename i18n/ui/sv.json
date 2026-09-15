@@ -15,5 +15,30 @@
     "book1": "Bok I",
     "book2": "Bok II",
     "sites": "Platser"
+  },
+  "sheet": {
+    "dice_title": "Klicka för att slå {expr} — Skift: fördel · Ctrl: nackdel",
+    "stat_roll_title": "Slå +{stat} — Skift: fördel · Ctrl: nackdel",
+    "damage_roll_title": "Slå skada — Skift: fördel · Ctrl: nackdel",
+    "start_with": "Du börjar med detta",
+    "stats": "Grundegenskaper",
+    "stat_names": {
+      "Strength": "Styrka",
+      "Dexterity": "Smidighet",
+      "Intelligence": "Intelligens",
+      "Wisdom": "Visdom",
+      "Constitution": "Fysik",
+      "Charisma": "Karisma"
+    },
+    "debilities": {
+      "weakened": "försvagad",
+      "dazed": "omtöcknad",
+      "miserable": "nedslagen"
+    },
+    "tracks": {
+      "Damage": "Skada",
+      "Armor": "Rustning",
+      "Level": "Nivå"
+    }
   }
 }

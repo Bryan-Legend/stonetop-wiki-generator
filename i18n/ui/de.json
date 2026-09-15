@@ -15,5 +15,30 @@
     "book1": "Buch I",
     "book2": "Buch II",
     "sites": "Schauplätze"
+  },
+  "sheet": {
+    "dice_title": "Klicken, um {expr} zu würfeln — Umschalt: Vorteil · Strg: Nachteil",
+    "stat_roll_title": "Wurf +{stat} — Umschalt: Vorteil · Strg: Nachteil",
+    "damage_roll_title": "Schaden würfeln — Umschalt: Vorteil · Strg: Nachteil",
+    "start_with": "Damit startest du",
+    "stats": "Werte",
+    "stat_names": {
+      "Strength": "Stärke",
+      "Dexterity": "Geschicklichkeit",
+      "Intelligence": "Intelligenz",
+      "Wisdom": "Weisheit",
+      "Constitution": "Konstitution",
+      "Charisma": "Charisma"
+    },
+    "debilities": {
+      "weakened": "geschwächt",
+      "dazed": "benommen",
+      "miserable": "niedergeschlagen"
+    },
+    "tracks": {
+      "Damage": "Schaden",
+      "Armor": "Rüstung",
+      "Level": "Stufe"
+    }
   }
 }

@@ -12,7 +12,7 @@ i18n/
   ui/<code>.json       chrome strings: nav, search box, footer, credit line
   corpus/<code>/<book>/<slug>.txt   one translated page: the book's text, same skeleton
   corpus/<code>/pages/<slug>.txt    …and its sheet, if it has one
-  pages/<code>/<slug>.json   one translated page, the older route (an HTML body)
+  pages/<code>/<slug>.json   legacy: an HTML body; still published, never added to
 ```
 
 ## Where the pages land
@@ -114,45 +114,22 @@ text changed since the translation was made (`source_sha256` in the file's
 header). A corpus translation outranks a JSON page of the same slug. Arcana
 pages cannot be rendered this way yet.
 
-## The older route: a JSON page body
+A class playbook's stat block is one `STATS` line of JSON; its work line
+carries two text fields, the gloss and the HP label (`HP (max 18)`). What
+every playbook prints alike — stat names, debilities, Damage/Armor/Level, the
+Stats heading, the dice and roll tooltips, "You start with this" — is not in
+any work file: it is translated once per language in `ui/<code>.json` under
+`sheet`, and the renderer reads it through `UI()` in `generator/structure.py`.
 
-Write `pages/<code>/<slug>.json`:
+## Legacy JSON pages
 
-```json
-{
-  "lang": "de",
-  "slug": "welcome-to-the-worlds-end",
-  "source_sha256": "ddff8c84…",
-  "title": "Willkommen am Ende der Welt",
-  "nav_label": "Willkommen am Ende der Welt",
-  "description": "One sentence for search results and link previews.",
-  "sections": { "how-to-use-this-book": "Wie du dieses Buch benutzt" },
-  "body_html": "<p>…</p>\n<h2 id=\"how-to-use-this-book\">…</h2>\n<p>…</p>"
-}
-```
-
-- `body_html` is the English page's body **without** its `<h1>` (the build adds
-  one from `title`), keeping the same tags, the same `<h2 id>` values, and the
-  same `<a class=\"wiki-link\" href=\"slug.html\" data-slug=\"slug\">` form.
-  The build re-bases those hrefs: a link to a page translated into the same
-  language stays a sibling, everything else gets `../`.
-- `source_sha256` is the SHA-256 of the English body **as the build holds it**,
-  `<h1>` included. Get it from a built page:
-
-  ```bash
-  python - <<'PY'
-  import re, hashlib, pathlib
-  t = pathlib.Path("Stonetop_Wiki/welcome-to-the-worlds-end.html").read_text(encoding="utf-8")
-  body = re.search(r'<main class="content">\n {10}(.*?)\n {8}</main>', t, re.S).group(1)
-  print(hashlib.sha256(body.encode()).hexdigest())
-  PY
-  ```
-
-  When the books are re-extracted and that page's English text moves, the hash
-  stops matching and the build prints the page under
-  `i18n: de stale against the English text:` — which is the difference between
-  a stale translation nobody noticed and one on a list to redo. It still
-  publishes; it just says so.
+`pages/<code>/<slug>.json` holds pages translated before the corpus route
+existed: an HTML body with the English markup and translated text. The build
+still publishes them (and prints them `stale` when the English body's hash
+moves), but **the route is closed** — its tools are gone, and no page is
+added to it or edited in it. To fix or refresh one, translate the page through
+the corpus; the corpus translation outranks the JSON page of the same slug,
+which can then be deleted.
 
 Read `GLOSSARY.md` before translating anything. One rendering per term, per
 language, everywhere — inconsistent terminology is what makes a translated

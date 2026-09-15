@@ -15,5 +15,30 @@
     "book1": "Boek I",
     "book2": "Boek II",
     "sites": "Locaties"
+  },
+  "sheet": {
+    "dice_title": "Klik om {expr} te werpen — Shift: voordeel · Ctrl: nadeel",
+    "stat_roll_title": "Werp +{stat} — Shift: voordeel · Ctrl: nadeel",
+    "damage_roll_title": "Werp schade — Shift: voordeel · Ctrl: nadeel",
+    "start_with": "Hier begin je mee",
+    "stats": "Waarden",
+    "stat_names": {
+      "Strength": "Kracht",
+      "Dexterity": "Behendigheid",
+      "Intelligence": "Intelligentie",
+      "Wisdom": "Wijsheid",
+      "Constitution": "Constitutie",
+      "Charisma": "Charisma"
+    },
+    "debilities": {
+      "weakened": "verzwakt",
+      "dazed": "versuft",
+      "miserable": "terneergeslagen"
+    },
+    "tracks": {
+      "Damage": "Schade",
+      "Armor": "Pantser",
+      "Level": "Niveau"
+    }
   }
 }

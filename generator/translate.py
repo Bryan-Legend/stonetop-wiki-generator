@@ -34,6 +34,7 @@ render so the build can say how much of a page reached the reader.
 from __future__ import annotations
 
 import hashlib
+import json
 import re
 from html import unescape as html_unescape
 from pathlib import Path
@@ -90,6 +91,19 @@ BOOK_TEXT_TAGS = {
     "CX2", "TH", "VT", "VA", "VF", "WRITE",
 }
 BOOK_FIELD_TAGS = {"VR": [0], "STEP": [1]}
+# A playbook's stat block is one JSON payload; its text is the gloss under
+# the heading and the HP label with the sheet's cap. The rest of it — stat
+# names, debilities, tracks — is the same on every sheet and is translated
+# once per language, in i18n/ui/<code>.json (``sheet``).
+STATS_TEXT_KEYS = ("gloss", "hp")
+
+
+def _stats_block(payload: str) -> dict:
+    try:
+        block = json.loads(payload)
+    except ValueError:
+        return {}
+    return block if isinstance(block, dict) else {}
 
 
 def _has_letters(s: str) -> bool:
@@ -105,6 +119,10 @@ def text_field_indexes(tag: str, parts: list[str], *, sheet: bool) -> list[int]:
         idx = range(len(parts))
     elif not sheet and tag in BOOK_FIELD_TAGS:
         idx = BOOK_FIELD_TAGS[tag]
+    elif not sheet and tag == "STATS":
+        # Counted as one line; its fields are spread by extract/apply_work.
+        block = _stats_block(parts[0]) if parts else {}
+        return [0] if any(_has_letters(str(block.get(k) or "")) for k in STATS_TEXT_KEYS) else []
     elif sheet and tag == "P":
         idx = range(len(parts))
     else:
@@ -237,6 +255,11 @@ def extract_work(
             idx = text_field_indexes(tag, parts, sheet=(kind == "sheet"))
             if not idx:
                 continue
+            if kind == "book" and tag == "STATS":
+                block = _stats_block(parts[0])
+                out.append(f"{prefix}{n}	{tag}	" + "	".join(
+                    str(block.get(k) or "") for k in STATS_TEXT_KEYS))
+                continue
             out.append(f"{prefix}{n}\t{tag}\t" + "\t".join(parts[i] for i in idx))
     return "\n".join(out) + "\n"
 
@@ -279,8 +302,20 @@ def apply_work(
         if en_tag != tag:
             problems.append(f"work line {wn}: {ref} is {en_tag}, not {tag}")
             continue
-        idx = text_field_indexes(en_tag, en_parts, sheet=(kind == "sheet"))
         given = cells[2:]
+        if kind == "book" and en_tag == "STATS":
+            if len(given) != len(STATS_TEXT_KEYS):
+                problems.append(
+                    f"work line {wn}: {ref} needs {len(STATS_TEXT_KEYS)} text field(s), got {len(given)}"
+                )
+                continue
+            block = _stats_block(en_parts[0])
+            for k, val in zip(STATS_TEXT_KEYS, given):
+                if val.strip() and block.get(k):
+                    block[k] = val.strip()
+            lines[kind][n - 1] = tag + "	" + json.dumps(block, ensure_ascii=False)
+            continue
+        idx = text_field_indexes(en_tag, en_parts, sheet=(kind == "sheet"))
         if len(given) != len(idx):
             problems.append(
                 f"work line {wn}: {ref} needs {len(idx)} text field(s), got {len(given)}"
@@ -416,6 +451,11 @@ class TextMemory:
             pa, pb = _payload(a), _payload(b)
             if len(pa) != len(pb):
                 continue
+            if _tag_of(a) == "STATS":
+                ba, bb = _stats_block(pa[0]), _stats_block(pb[0])
+                for k in STATS_TEXT_KEYS:
+                    tm.add(str(ba.get(k) or ""), str(bb.get(k) or ""))
+                continue
             for fa, fb in zip(pa, pb):
                 tm.add(fa, fb)
                 ma, mb = _BOLD_PREFIX_RE.match(fa), _BOLD_PREFIX_RE.match(fb)
@@ -510,6 +550,7 @@ def render_translated(
     lookup: dict,
     articles: list[dict],
     common: dict,
+    ui: dict | None = None,
 ) -> tuple[dict | None, list[str]]:
     """One page in one language, from its corpus translation.
 
@@ -557,7 +598,7 @@ def render_translated(
             current_book=common.get("current_book"),
         )
 
-    set_translation(tm)
+    set_translation(tm, ui)
     try:
         body, excerpt, secs = article_html(
             en_lines, art["title"], lookup, articles, **common

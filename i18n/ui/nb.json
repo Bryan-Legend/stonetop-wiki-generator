@@ -15,5 +15,30 @@
     "book1": "Bok I",
     "book2": "Bok II",
     "sites": "Steder"
+  },
+  "sheet": {
+    "dice_title": "Klikk og slå {expr} — Shift: fordel · Ctrl: ulempe",
+    "stat_roll_title": "Slå +{stat} — Shift: fordel · Ctrl: ulempe",
+    "damage_roll_title": "Slå skade — Shift: fordel · Ctrl: ulempe",
+    "start_with": "Du starter med dette",
+    "stats": "Egenskaper",
+    "stat_names": {
+      "Strength": "Styrke",
+      "Dexterity": "Smidighet",
+      "Intelligence": "Intelligens",
+      "Wisdom": "Visdom",
+      "Constitution": "Fysikk",
+      "Charisma": "Karisma"
+    },
+    "debilities": {
+      "weakened": "svekket",
+      "dazed": "omtåket",
+      "miserable": "motløs"
+    },
+    "tracks": {
+      "Damage": "Skade",
+      "Armor": "Rustning",
+      "Level": "Nivå"
+    }
   }
 }

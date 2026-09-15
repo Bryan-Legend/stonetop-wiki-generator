@@ -15,5 +15,30 @@
     "book1": "第1巻",
     "book2": "第2巻",
     "sites": "冒険の舞台"
+  },
+  "sheet": {
+    "dice_title": "クリックで{expr}をロール — Shift: 有利 · Ctrl: 不利",
+    "stat_roll_title": "+{stat}でロール — Shift: 有利 · Ctrl: 不利",
+    "damage_roll_title": "ダメージをロール — Shift: 有利 · Ctrl: 不利",
+    "start_with": "最初から持っている",
+    "stats": "能力値",
+    "stat_names": {
+      "Strength": "筋力",
+      "Dexterity": "敏捷力",
+      "Intelligence": "知力",
+      "Wisdom": "判断力",
+      "Constitution": "耐久力",
+      "Charisma": "魅力"
+    },
+    "debilities": {
+      "weakened": "衰弱",
+      "dazed": "朦朧",
+      "miserable": "消沈"
+    },
+    "tracks": {
+      "Damage": "ダメージ",
+      "Armor": "鎧",
+      "Level": "レベル"
+    }
   }
 }

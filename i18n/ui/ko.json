@@ -15,5 +15,30 @@
     "book1": "제1권",
     "book2": "제2권",
     "sites": "모험 장소"
+  },
+  "sheet": {
+    "dice_title": "클릭하여 {expr} 굴림 — Shift: 유리 · Ctrl: 불리",
+    "stat_roll_title": "+{stat} 굴림 — Shift: 유리 · Ctrl: 불리",
+    "damage_roll_title": "피해 굴림 — Shift: 유리 · Ctrl: 불리",
+    "start_with": "처음부터 가지고 시작한다",
+    "stats": "능력치",
+    "stat_names": {
+      "Strength": "근력",
+      "Dexterity": "민첩",
+      "Intelligence": "지능",
+      "Wisdom": "지혜",
+      "Constitution": "건강",
+      "Charisma": "매력"
+    },
+    "debilities": {
+      "weakened": "쇠약",
+      "dazed": "몽롱",
+      "miserable": "침울"
+    },
+    "tracks": {
+      "Damage": "피해",
+      "Armor": "방어구",
+      "Level": "레벨"
+    }
   }
 }

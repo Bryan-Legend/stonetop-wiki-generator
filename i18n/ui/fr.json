@@ -15,5 +15,30 @@
     "book1": "Livre I",
     "book2": "Livre II",
     "sites": "Lieux"
+  },
+  "sheet": {
+    "dice_title": "Clique pour lancer {expr} — Maj : avantage · Ctrl : désavantage",
+    "stat_roll_title": "Lancer +{stat} — Maj : avantage · Ctrl : désavantage",
+    "damage_roll_title": "Lancer les dégâts — Maj : avantage · Ctrl : désavantage",
+    "start_with": "Tu commences avec ceci",
+    "stats": "Caractéristiques",
+    "stat_names": {
+      "Strength": "Force",
+      "Dexterity": "Dextérité",
+      "Intelligence": "Intelligence",
+      "Wisdom": "Sagesse",
+      "Constitution": "Constitution",
+      "Charisma": "Charisme"
+    },
+    "debilities": {
+      "weakened": "affaibli",
+      "dazed": "hébété",
+      "miserable": "abattu"
+    },
+    "tracks": {
+      "Damage": "Dégâts",
+      "Armor": "Armure",
+      "Level": "Niveau"
+    }
   }
 }

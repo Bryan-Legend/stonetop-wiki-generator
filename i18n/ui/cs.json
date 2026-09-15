@@ -15,5 +15,30 @@
     "book1": "Kniha I",
     "book2": "Kniha II",
     "sites": "Místa"
+  },
+  "sheet": {
+    "dice_title": "Klikni a hoď {expr} — Shift: výhoda · Ctrl: nevýhoda",
+    "stat_roll_title": "Hoď +{stat} — Shift: výhoda · Ctrl: nevýhoda",
+    "damage_roll_title": "Hoď na zranění — Shift: výhoda · Ctrl: nevýhoda",
+    "start_with": "S tímhle začínáš",
+    "stats": "Vlastnosti",
+    "stat_names": {
+      "Strength": "Síla",
+      "Dexterity": "Obratnost",
+      "Intelligence": "Inteligence",
+      "Wisdom": "Moudrost",
+      "Constitution": "Odolnost",
+      "Charisma": "Charisma"
+    },
+    "debilities": {
+      "weakened": "oslabený",
+      "dazed": "omámený",
+      "miserable": "sklíčený"
+    },
+    "tracks": {
+      "Damage": "Zranění",
+      "Armor": "Zbroj",
+      "Level": "Úroveň"
+    }
   }
 }

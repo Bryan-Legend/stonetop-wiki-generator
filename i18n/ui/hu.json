@@ -15,5 +15,30 @@
     "book1": "I. könyv",
     "book2": "II. könyv",
     "sites": "Helyszínek"
+  },
+  "sheet": {
+    "dice_title": "Kattints a {expr} dobásához — Shift: előny · Ctrl: hátrány",
+    "stat_roll_title": "Dobás: +{stat} — Shift: előny · Ctrl: hátrány",
+    "damage_roll_title": "Sebzésdobás — Shift: előny · Ctrl: hátrány",
+    "start_with": "Ezzel kezdesz",
+    "stats": "Tulajdonságok",
+    "stat_names": {
+      "Strength": "Erő",
+      "Dexterity": "Ügyesség",
+      "Intelligence": "Intelligencia",
+      "Wisdom": "Bölcsesség",
+      "Constitution": "Állóképesség",
+      "Charisma": "Karizma"
+    },
+    "debilities": {
+      "weakened": "legyengült",
+      "dazed": "kába",
+      "miserable": "csüggedt"
+    },
+    "tracks": {
+      "Damage": "Sebzés",
+      "Armor": "Páncél",
+      "Level": "Szint"
+    }
   }
 }

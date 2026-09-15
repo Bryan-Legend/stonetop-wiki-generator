@@ -15,5 +15,30 @@
     "book1": "Kirja I",
     "book2": "Kirja II",
     "sites": "Paikat"
+  },
+  "sheet": {
+    "dice_title": "Heitä {expr} napsauttamalla — Shift: etu · Ctrl: haitta",
+    "stat_roll_title": "Heitä +{stat} — Shift: etu · Ctrl: haitta",
+    "damage_roll_title": "Heitä vahinko — Shift: etu · Ctrl: haitta",
+    "start_with": "Aloitat tällä",
+    "stats": "Kyvyt",
+    "stat_names": {
+      "Strength": "Voima",
+      "Dexterity": "Ketteryys",
+      "Intelligence": "Älykkyys",
+      "Wisdom": "Viisaus",
+      "Constitution": "Kestävyys",
+      "Charisma": "Karisma"
+    },
+    "debilities": {
+      "weakened": "heikentynyt",
+      "dazed": "tokkurainen",
+      "miserable": "kurja"
+    },
+    "tracks": {
+      "Damage": "Vahinko",
+      "Armor": "Panssari",
+      "Level": "Taso"
+    }
   }
 }

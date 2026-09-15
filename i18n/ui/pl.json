@@ -15,5 +15,30 @@
     "book1": "Księga I",
     "book2": "Księga II",
     "sites": "Miejsca"
+  },
+  "sheet": {
+    "dice_title": "Kliknij, by rzucić {expr} — Shift: przewaga · Ctrl: utrudnienie",
+    "stat_roll_title": "Rzuć +{stat} — Shift: przewaga · Ctrl: utrudnienie",
+    "damage_roll_title": "Rzuć na obrażenia — Shift: przewaga · Ctrl: utrudnienie",
+    "start_with": "Zaczynasz z tym",
+    "stats": "Cechy",
+    "stat_names": {
+      "Strength": "Siła",
+      "Dexterity": "Zręczność",
+      "Intelligence": "Inteligencja",
+      "Wisdom": "Mądrość",
+      "Constitution": "Kondycja",
+      "Charisma": "Charyzma"
+    },
+    "debilities": {
+      "weakened": "osłabiony",
+      "dazed": "oszołomiony",
+      "miserable": "przygnębiony"
+    },
+    "tracks": {
+      "Damage": "Obrażenia",
+      "Armor": "Pancerz",
+      "Level": "Poziom"
+    }
   }
 }

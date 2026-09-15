@@ -15,5 +15,30 @@
     "book1": "Kitap I",
     "book2": "Kitap II",
     "sites": "Mekânlar"
+  },
+  "sheet": {
+    "dice_title": "{expr} atmak için tıkla — Shift: avantaj · Ctrl: dezavantaj",
+    "stat_roll_title": "Zar at +{stat} — Shift: avantaj · Ctrl: dezavantaj",
+    "damage_roll_title": "Hasar zarı at — Shift: avantaj · Ctrl: dezavantaj",
+    "start_with": "Bununla başlarsın",
+    "stats": "Nitelikler",
+    "stat_names": {
+      "Strength": "Kuvvet",
+      "Dexterity": "Çeviklik",
+      "Intelligence": "Zekâ",
+      "Wisdom": "Bilgelik",
+      "Constitution": "Dayanıklılık",
+      "Charisma": "Karizma"
+    },
+    "debilities": {
+      "weakened": "zayıf düşmüş",
+      "dazed": "sersemlemiş",
+      "miserable": "bitkin"
+    },
+    "tracks": {
+      "Damage": "Hasar",
+      "Armor": "Zırh",
+      "Level": "Seviye"
+    }
   }
 }

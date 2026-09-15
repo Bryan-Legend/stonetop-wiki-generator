@@ -628,7 +628,7 @@ def main(argv: list[str] | None = None) -> None:
                     continue
                 page_tr, notes = render_translated(
                     tr["corpus"], locale["code"], art, lines, _pages, ov,
-                    lookup, articles, common,
+                    lookup, articles, common, ui=locale.get("ui"),
                 )
                 for note in notes:
                     print(f"  i18n: {note}")

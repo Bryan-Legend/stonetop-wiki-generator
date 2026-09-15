@@ -15,5 +15,30 @@
     "book1": "Libro I",
     "book2": "Libro II",
     "sites": "Lugares"
+  },
+  "sheet": {
+    "dice_title": "Haz clic para tirar {expr} — Mayús: ventaja · Ctrl: desventaja",
+    "stat_roll_title": "Tirar +{stat} — Mayús: ventaja · Ctrl: desventaja",
+    "damage_roll_title": "Tirar daño — Mayús: ventaja · Ctrl: desventaja",
+    "start_with": "Empiezas con esto",
+    "stats": "Estadísticas",
+    "stat_names": {
+      "Strength": "Fuerza",
+      "Dexterity": "Destreza",
+      "Intelligence": "Inteligencia",
+      "Wisdom": "Sabiduría",
+      "Constitution": "Constitución",
+      "Charisma": "Carisma"
+    },
+    "debilities": {
+      "weakened": "debilitado",
+      "dazed": "aturdido",
+      "miserable": "abatido"
+    },
+    "tracks": {
+      "Damage": "Daño",
+      "Armor": "Armadura",
+      "Level": "Nivel"
+    }
   }
 }

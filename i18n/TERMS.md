@@ -533,3 +533,24 @@ Traditional forms of the zh-Hans table via OpenCC s2twp: 聚落劇本 · 氣運 
 | Inn / Market / Mill / Palisade / Raincatching | Kro / Marked / Mølle / Palissade / Regnopsamling | Kro / Marked / Mølle / Palisade / Regnopsamling | Majatalo / Tori / Mylly / Paaluvarustus / Sateenkeruu |
 | Standing Watch / Stone Wall / Township | Stående vagt / Stenmur / Købstad | Stående vakt / Stenmur / Kjøpstad | Pysyvä vartio / Kivimuuri / Kauppala |
 | Weapons of War / Well-Trained Militia | Krigsvåben / Veltrænet Milits | Krigsvåpen / Veltrent Milits | Sodan Aseet / Hyvin Koulutettu Miliisi |
+
+### Blessed & Fox — corpus route (2026-09-15)
+
+Resources and recurring words. Blessed: tr · uk · hu · da · nb · fi. Fox: pl · nl · sv · cs · da · nb · fi · hu · tr · ru · uk · zh-Hans (zh-Hant mirrors it).
+
+| English | Settled |
+|---|---|
+| Stock (sacred pouch) | tr Stok · uk Зілля · hu Hozzávaló · da/nb Beholdning · fi Aines |
+| sacred pouch | tr kutsal kese · uk священна торбинка · hu szent tarsoly · da/nb hellig pung · fi pyhä pussi |
+| Boon | tr Nimet · uk Благодать · hu Adomány · da/nb Gunst · fi Lahja |
+| Earth Mother | tr Toprak Ana · uk Мати-Земля · hu Földanya · da Jordmoderen · nb Jordmoren · fi Maaemo |
+| Pavilion of the Gods | tr Tanrıların Köşkü · uk Павільйон Богів · hu Istenek Pavilonja · da Gudernes Pavillon · nb Gudenes Paviljong · fi Jumalten Paviljonki |
+| Readiness | pl Gotowość · nl Paraatheid · sv/nb Beredskap · da Beredskab · cs Pohotovost · fi Valmius · hu Készenlét · tr Hazırlık · ru Готовность · uk Готовність · zh 戒备/戒備 |
+| Nerve (Silver Tongued) | pl Tupet · nl Lef · sv Nerv · da Mod · nb Mot · cs Kuráž · fi Pokka · hu Mersz · tr Cüret · ru/uk Выдержка/Витримка · zh 胆识/膽識 |
+| *thrown* (tag) | pl miotany · nl werp · sv kastvapen · da/nb kastbar · cs vrhací · fi heitettävä · hu hajítható · tr atılabilir · ru метательное · uk метальна · zh 投掷/投擲 |
+| NPC | cs cizí postava · fi sivuhahmo · hu NJK · tr OOK · ru/uk НИП/НІП · nl NSP · sv/da/nb SLP |
+| Fox moves: Ambush · Skill at Arms · Danger Sense · Perceptive · Burgle · Light Fingers | pl Zasadzka · Biegłość w Broni · Wyczucie Niebezpieczeństwa · Spostrzegawczość · Włamanie · Lepkie Palce — nl Hinderlaag · Wapenkunde · Gevaarzin · Scherpzinnig · Inbreken · Lange Vingers — sv Bakhåll · Vapenskicklighet · Farosinne · Skarpsynt · Inbrott · Långfingrad — da Baghold · Våbenfærdighed · Faresans · Skarpsindig · Indbrud · Lange Fingre — nb Bakhold · Våpenferdighet · Faresans · Skarpsindig · Innbrudd · Lange Fingre — cs Přepadení · Zbrojní Um · Šestý Smysl · Všímavost · Vloupání · Lehké Prsty — fi Väijytys · Asetaito · Vaaranvaisto · Tarkkanäköinen · Murtovarkaus · Näppärät Näpit — hu Rajtaütés · Fegyverforgatás · Veszélyérzék · Éles Szem · Betörés · Enyves Kéz — tr Pusu · Silah Ustalığı · Tehlike Sezgisi · Keskin Göz · Hırsızlık · Hafif Parmaklar — ru Засада · Владение Оружием · Чутьё на Опасность · Наблюдательность · Взлом · Ловкие Пальцы — uk Засідка · Володіння Зброєю · Чуття Небезпеки · Спостережливість · Зламування · Спритні Пальці — zh 伏击 · 武艺 · 危险感知 · 敏锐 · 潜入盗窃 · 妙手空空 |
+| Improved / Superior Stat | tr Geliştirilmiş/Üstün Nitelik · hu Javított/Kiváló Tulajdonság · cs Zlepšená/Vynikající Vlastnost · fi Parannettu/Ylivertainen Kyky · ru Улучшенная/Превосходная Характеристика · uk Покращена/Неперевершена Характеристика · zh 属性提升/卓越属性 · da/nb Forbedret/Overlegen Egenskab/Egenskap · sv Förbättrad/Överlägsen Grundegenskap · nl Verbeterde/Superieure Waarde · pl Lepsza/Wybitna Cecha (verify against each Ranger page when next touched) |
+| Tall-tale places: Flats · Foothills · Huffel Peaks · Labyrinth · Barrow Mounds | pl Równiny · Pogórze · Szczyty Huffel · Labirynt · Kurhany — nl Vlakten · Uitlopers · Huffelpieken · Labyrint · Grafheuvels — sv Slätterna · Förbergen · Huffeltopparna · Labyrinten · Gravhögarna — da Sletterne · Forbjergene · Huffeltinderne · Labyrinten · Gravhøjene — nb Slettene · Forfjellene · Huffeltindene · Labyrinten · Gravhaugene — cs Pláně · Podhůří · Huffelské Štíty · Labyrint · Mohyly — fi Tasangot · Kukkulajuuret · Huffelin huiput · Labyrintti · Hautakummut — hu Síkság · Hegylábak · Huffel-csúcsok · Labirintus · Sírhalmok — tr Düzlükler · Etekler · Huffel Dorukları · Labirent · Mezar Höyükleri — ru Равнины · Предгорья · пики Хаффел · Лабиринт · Курганы — uk Рівнини · Передгір'я · піки Гаффел · Лабіринт · Кургани — zh 平原 · 山麓 · 赫弗尔峰 · 迷宫 · 古冢丘 |
+
+The Wild's name-words (Autumn, Badger, Crow…) are translated in every Latin-script language, as de/sv/fr/es already did. Blessed move names per language are in `i18n/corpus/<code>/book1/the-blessed.txt`.

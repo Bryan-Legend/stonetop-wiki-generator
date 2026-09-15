@@ -15,5 +15,30 @@
     "book1": "Livro I",
     "book2": "Livro II",
     "sites": "Locais"
+  },
+  "sheet": {
+    "dice_title": "Clique para rolar {expr} — Shift: vantagem · Ctrl: desvantagem",
+    "stat_roll_title": "Rolar +{stat} — Shift: vantagem · Ctrl: desvantagem",
+    "damage_roll_title": "Rolar dano — Shift: vantagem · Ctrl: desvantagem",
+    "start_with": "Você começa com isto",
+    "stats": "Atributos",
+    "stat_names": {
+      "Strength": "Força",
+      "Dexterity": "Destreza",
+      "Intelligence": "Inteligência",
+      "Wisdom": "Sabedoria",
+      "Constitution": "Constituição",
+      "Charisma": "Carisma"
+    },
+    "debilities": {
+      "weakened": "enfraquecido",
+      "dazed": "atordoado",
+      "miserable": "abatido"
+    },
+    "tracks": {
+      "Damage": "Dano",
+      "Armor": "Armadura",
+      "Level": "Nível"
+    }
   }
 }

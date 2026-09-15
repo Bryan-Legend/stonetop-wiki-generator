@@ -15,5 +15,30 @@
     "book1": "第一卷",
     "book2": "第二卷",
     "sites": "冒险场景"
+  },
+  "sheet": {
+    "dice_title": "点击掷 {expr} — Shift: 优势 · Ctrl: 劣势",
+    "stat_roll_title": "掷 +{stat} — Shift: 优势 · Ctrl: 劣势",
+    "damage_roll_title": "掷伤害 — Shift: 优势 · Ctrl: 劣势",
+    "start_with": "你起始便拥有此项",
+    "stats": "属性",
+    "stat_names": {
+      "Strength": "力量",
+      "Dexterity": "敏捷",
+      "Intelligence": "智力",
+      "Wisdom": "感知",
+      "Constitution": "体质",
+      "Charisma": "魅力"
+    },
+    "debilities": {
+      "weakened": "虚弱",
+      "dazed": "恍惚",
+      "miserable": "沮丧"
+    },
+    "tracks": {
+      "Damage": "伤害",
+      "Armor": "护甲",
+      "Level": "等级"
+    }
   }
 }

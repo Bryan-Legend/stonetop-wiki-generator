@@ -104,11 +104,33 @@ def bold_stat_labels(html_text: str) -> str:
 # classifier seeing the text it was written for, every id English — and
 # still read in another language. None while the English pages build.
 _TM = None
+# The language's fixed sheet vocabulary (``i18n/ui/<code>.json`` → ``sheet``):
+# the words every playbook prints the same — stat names, debilities, the
+# roll tooltips — translated once per language rather than once per page.
+_UI: dict = {}
 
 
-def set_translation(tm) -> None:
-    global _TM
+DICE_TITLE = "Click to roll {expr} — Shift: advantage · Ctrl: disadvantage"
+STAT_ROLL_TITLE = "Roll +{stat} — Shift: advantage · Ctrl: disadvantage"
+DAMAGE_ROLL_TITLE = "Roll damage — Shift: advantage · Ctrl: disadvantage"
+
+
+def set_translation(tm, ui: dict | None = None) -> None:
+    global _TM, _UI
     _TM = tm
+    _UI = (ui or {}).get("sheet") or {}
+
+
+def UI(key: str, default: str, **fill: str) -> str:
+    """A fixed sheet string in the language being rendered; ``{name}``
+    placeholders are filled from ``fill``. A ``key`` of ``"group/word"``
+    looks ``word`` up in the ``group`` table."""
+    group, _, word = key.partition("/")
+    val = (_UI.get(group) or {}).get(word) if word else _UI.get(key)
+    out = val if isinstance(val, str) and val else default
+    for name, v in fill.items():
+        out = out.replace("{" + name + "}", v)
+    return out
 
 
 def T(s: str) -> str:
@@ -148,7 +170,7 @@ def dice_button(expr: str) -> str:
     e = re.sub(r"\s*([+\-])\s*", r"\1", e)  # d10 + 3 → d10+3
     return (
         f'<button type="button" class="dice-roll" data-dice="{html.escape(e)}" '
-        f'title="Click to roll {html.escape(expr)} — Shift: advantage · Ctrl: disadvantage">{html.escape(expr)}</button>'
+        f'title="{html.escape(UI("dice_title", DICE_TITLE, expr=expr))}">{html.escape(expr)}</button>'
     )
 
 
@@ -1401,19 +1423,19 @@ def render_playbook_stats(block: dict, slug: str, link_fn) -> str:
     # carries the roll — it never truncates.
     cells = "".join(
         f'<div class="pb-stat" data-stat="{html.escape(abbr)}">'
-        f'<span class="pb-stat-name" title="{html.escape(name)}">'
-        f"{html.escape(name)}</span>"
+        f'<span class="pb-stat-name" title="{html.escape(UI("stat_names/" + name, name))}">'
+        f"{html.escape(UI('stat_names/' + name, name))}</span>"
         + _field(
             f"{slug}:stat-{abbr.lower()}",
             "pb-stat-box",
-            aria=name,
+            aria=UI("stat_names/" + name, name),
             span=PLAYBOOK_SPANS["stat"],
             default=PLAYBOOK_DEFAULTS["stat"],
             sign=True,
         )
         + f'<button type="button" class="pb-stat-abbr pb-roll" '
         f'data-roll-stat="{html.escape(abbr)}" '
-        f'title="Roll +{html.escape(abbr)} — Shift: advantage · Ctrl: disadvantage">'
+        f'title="{html.escape(UI("stat_roll_title", STAT_ROLL_TITLE, stat=abbr))}">'
         f"({html.escape(abbr)})</button></div>"
         for name, abbr in stats
     )
@@ -1422,14 +1444,14 @@ def render_playbook_stats(block: dict, slug: str, link_fn) -> str:
         f'<input type="checkbox" class="wiki-check pb-debility-box" '
         f'id="deb-{html.escape(name)}" '
         f'data-check-id="deb-{html.escape(name)}">'
-        f'<span class="pb-debility-name">{html.escape(name)}</span></label>'
+        f'<span class="pb-debility-name">{html.escape(UI("debilities/" + name, name))}</span></label>'
         for name, pair in debs
     )
     row2 = []
     for label in tracks:
         # Damage and HP carry the sheet's own die and cap.
         printed = ""
-        shown = label
+        shown = UI("tracks/" + label, label)
         if label == "Damage":
             printed = block.get("die") or ""
         elif label == "HP":
@@ -1446,6 +1468,7 @@ def render_playbook_stats(block: dict, slug: str, link_fn) -> str:
             top = int(cap.group(0)) if cap else 20
             span = (0, top)
             default = str(top)
+            shown = T(shown)
         box = _field(
             f"{slug}:track-{label.lower()}",
             "pb-track-box",
@@ -1458,7 +1481,7 @@ def render_playbook_stats(block: dict, slug: str, link_fn) -> str:
             name_html = (
                 f'<button type="button" class="pb-track-name pb-roll" '
                 f'data-roll-damage="{html.escape(printed)}" '
-                f'title="Roll damage — Shift: advantage · Ctrl: disadvantage">{html.escape(shown)}</button>'
+                f'title="{html.escape(UI("damage_roll_title", DAMAGE_ROLL_TITLE))}">{html.escape(shown)}</button>'
             )
         else:
             name_html = (
@@ -1471,7 +1494,7 @@ def render_playbook_stats(block: dict, slug: str, link_fn) -> str:
     )
     return (
         '<section class="pb-stats">'
-        '<h2 id="stats">Stats</h2>'
+        f'<h2 id="stats">{html.escape(UI("stats", "Stats"))}</h2>'
         f"{gloss_html}"
         f'<div class="pb-stat-grid">{cells}</div>'
         f'<div class="pb-debilities">{debils}</div>'
@@ -1484,8 +1507,8 @@ def render_playbook_write(label: str, key: str) -> str:
     """The sheet's ruled name box ("I am called…")."""
     return (
         '<div class="pb-write">'
-        f'<span class="pb-write-label">{html.escape(label)}</span>'
-        + _field(key, "pb-write-box", aria=label)
+        f'<span class="pb-write-label">{html.escape(T(label))}</span>'
+        + _field(key, "pb-write-box", aria=T(label))
         + "</div>"
     )
 
@@ -1527,7 +1550,7 @@ def render_sheet_checks(items: list[dict], link_fn, list_id: str) -> str:
             rows.append(
                 f'<li class="{cls} is-fixed">'
                 f'<span class="check-fixed" role="img" '
-                f'aria-label="You start with this">'
+                f'aria-label="{html.escape(UI("start_with", "You start with this"))}">'
                 f'<input type="checkbox" checked disabled tabindex="-1"></span>'
                 f"<span>{body}</span>{cont}</li>"
             )
