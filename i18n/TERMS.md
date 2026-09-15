@@ -565,3 +565,18 @@ de · pl · nl · sv · cs · da · nb · fi · hu · tr · ru · uk · zh-Hans 
 | Storm Markings (major arcanum) | de Sturmmale · pl Znamiona Burzy · nl Stormtekens · sv Stormmärkena · cs Bouřná Znamení · da Stormmærkerne · nb Stormmerkene · fi Myrskymerkit · hu Viharjelek · tr Fırtına İşaretleri · ru Грозовые Метки · uk Грозові Знаки · zh 风暴印记 |
 | Readiness (de) | Bereitschaft; NPC (de) NSC |
 | Brennan's Claws | de Klauen · pl Pazury · nl Klauwen · sv Klorna · cs Drápy · da Kløerne · nb Klørne · fi Kynnet · hu Karmok · tr Pençeler · ru Когти · uk Пазурі · zh 利爪帮 |
+
+### Judge — corpus route (2026-09-15)
+
+de · fr · it · pl · nl · sv · cs · da · nb · fi · hu · tr · ru · uk · zh-Hans (zh-Hant mirrors).
+
+| English | Settled |
+|---|---|
+| the Chronicle | de Chronik · fr Chronique · it Cronaca · pl/cs Kronika · nl Kroniek · sv Krönikan · da/nb Krøniken · fi Kronikka · hu Krónika · tr Vakayiname · ru Летопись · uk Літопис · zh 编年史 |
+| Sanction (hold) | de Sanktion · fr Sanction · it Sanzione · pl Sankcja · nl Sanctie · sv/da Sanktion · nb Sanksjon · cs Pověření · fi Valtuutus · hu Felhatalmazás · tr Yetki · ru/uk Санкция/Санкція · zh 圣许 |
+| Diligence (hold) | de Sorgfalt · fr Diligence · it Diligenza · pl Sumienność · nl Zorgvuldigheid · sv/da/nb Flit/Flid · cs Píle · fi Uutteruus · hu Szorgalom · tr Titizlik · ru Усердие · uk Старанність · zh 勤勉 |
+| Censure (move) | de Tadel · fr Censure · it Censura · pl Potępienie · nl Berisping · sv Klander · da Irettesættelse · nb Irettesettelse · cs Pokárání · fi Nuhde · hu Megrovás · tr Kınama · ru Порицание · uk Догана · zh 谴责 |
+| The Lawkeeper (Aratis) | de die Gesetzeshüterin · fr la Gardienne de la Loi · it la Custode della Legge · pl Strażniczka Prawa · nl de Wetshoedster · sv Lagväkterskan · da Lovvogtersken · nb Lovvokteren · cs Strážkyně Zákona · fi Lainvartija · hu a Törvényőrző · tr Yasa Bekçisi · ru Хранительница Закона · uk Охоронниця Закону · zh 护法者 |
+| Pavilion of the Gods (new) | it Padiglione degli Dei · pl Pawilon Bogów · nl Paviljoen der Goden · sv Gudarnas Paviljong · zh 众神殿 |
+| *awkward* · *indestructible* · *loud* | de unhandlich · unzerstörbar · laut — fr malcommode · indestructible · bruyant — it scomodo · indistruttibile · rumoroso — pl niewygodny · niezniszczalny · głośny — nl onhandig · onverwoestbaar · luid — sv besvärlig · oförstörbar · högljudd — da/nb uhåndterlig · uforgængelig/uforgjengelig · larmende/bråkete — cs nemotorná · nezničitelná · hlasitá — fi hankala · tuhoutumaton · äänekäs — hu esetlen · elpusztíthatatlan · hangos — tr zahmetli · yok edilemez · gürültülü — ru неудобное · неразрушимое · громкое — uk незручна · незнищенна · гучна — zh 难用 · 不可摧毁 · 响亮 |
+| Makerglass · dark ice | de Erbauerglas · Dunkeleis — fr verre des Bâtisseurs · glace noire — it vetro degli Artefici · ghiaccio scuro — pl szkło Twórców · ciemny lód — nl Makersglas · donkerijs — sv skaparglas · mörkis — da skaberglas · mørkis — nb skaperglass · mørkis — cs sklo Tvůrců · temný led — fi Tekijälasi · tumma jää — hu alkotóüveg · sötét jég — tr Yapıcı camı · karanlık buz — ru стекло Создателей · тёмный лёд — uk скло Творців · темний лід — zh 匠造玻璃 · 暗冰 |
