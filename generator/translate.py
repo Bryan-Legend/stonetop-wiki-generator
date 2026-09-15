@@ -400,6 +400,7 @@ def coverage(en: list[str], tr: list[str], *, sheet: bool) -> tuple[int, int]:
 
 # --------------------------------------------------------- text memory
 
+_BULLET_RE = re.compile(r"^[•·]\s*")
 _BOLD_PREFIX_RE = re.compile(r"^\x04([^\x05]+)\x05\s*(.*)$", re.S)
 
 
@@ -429,7 +430,9 @@ class TextMemory:
 
     @staticmethod
     def norm(s: str) -> str:
-        return _defmt(s).strip().rstrip(":").strip().casefold()
+        # A leading bullet glyph is dropped: the bullet-list renderer asks
+        # for the item without it.
+        return _BULLET_RE.sub("", _defmt(s).strip()).rstrip(":").strip().casefold()
 
     def add(self, en: str, tr: str, *, derived: bool = False) -> None:
         en, tr = en.strip(), tr.strip()
@@ -477,6 +480,8 @@ class TextMemory:
         raw, plain, en_raw = hit
         self.hits.add(key)
         out = raw if any(c in s for c in _FMT) else plain
+        if not _BULLET_RE.match(_defmt(s).strip()):
+            out = _BULLET_RE.sub("", out, count=1)
         # The renderer may have cut the English line's colon off (a heading)
         # or kept it: give the translation the same treatment, and otherwise
         # leave its punctuation to the translator.

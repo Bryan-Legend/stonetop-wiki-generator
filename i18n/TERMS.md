@@ -554,3 +554,14 @@ Resources and recurring words. Blessed: tr · uk · hu · da · nb · fi. Fox: p
 | Tall-tale places: Flats · Foothills · Huffel Peaks · Labyrinth · Barrow Mounds | pl Równiny · Pogórze · Szczyty Huffel · Labirynt · Kurhany — nl Vlakten · Uitlopers · Huffelpieken · Labyrint · Grafheuvels — sv Slätterna · Förbergen · Huffeltopparna · Labyrinten · Gravhögarna — da Sletterne · Forbjergene · Huffeltinderne · Labyrinten · Gravhøjene — nb Slettene · Forfjellene · Huffeltindene · Labyrinten · Gravhaugene — cs Pláně · Podhůří · Huffelské Štíty · Labyrint · Mohyly — fi Tasangot · Kukkulajuuret · Huffelin huiput · Labyrintti · Hautakummut — hu Síkság · Hegylábak · Huffel-csúcsok · Labirintus · Sírhalmok — tr Düzlükler · Etekler · Huffel Dorukları · Labirent · Mezar Höyükleri — ru Равнины · Предгорья · пики Хаффел · Лабиринт · Курганы — uk Рівнини · Передгір'я · піки Гаффел · Лабіринт · Кургани — zh 平原 · 山麓 · 赫弗尔峰 · 迷宫 · 古冢丘 |
 
 The Wild's name-words (Autumn, Badger, Crow…) are translated in every Latin-script language, as de/sv/fr/es already did. Blessed move names per language are in `i18n/corpus/<code>/book1/the-blessed.txt`.
+
+### Heavy — corpus route (2026-09-15)
+
+de · pl · nl · sv · cs · da · nb · fi · hu · tr · ru · uk · zh-Hans (zh-Hant mirrors).
+
+| English | Settled |
+|---|---|
+| *messy* · *forceful* · *reload* · *cumbersome* · *warm* | de blutig · wuchtig · nachladen · sperrig · warm — pl krwawy · odrzucający · przeładowanie · nieporęczny · ciepły — nl smerig · krachtig · herladen · log · warm — sv blodig · kraftfull · omladdning · otymplig · varm — cs krvavá · drtivá · nabíjení · neohrabaná · teplá — da blodig · kraftfuld · genladning · klodset · varm — nb blodig · kraftig · omlading · klumpete · varm — fi (tr·hu·fi table) · lataus · kömpelö — hu (table) · újratöltés · nehézkes — tr (table) · yeniden doldurma · hantal — ru кровавое · отбрасывающее · перезарядка · громоздкое · тёплое — uk кривава · відкидна · перезаряджання · громіздка · тепла — zh 血腥 · 冲击 · 装填 · 笨重 · 保暖 |
+| Storm Markings (major arcanum) | de Sturmmale · pl Znamiona Burzy · nl Stormtekens · sv Stormmärkena · cs Bouřná Znamení · da Stormmærkerne · nb Stormmerkene · fi Myrskymerkit · hu Viharjelek · tr Fırtına İşaretleri · ru Грозовые Метки · uk Грозові Знаки · zh 风暴印记 |
+| Readiness (de) | Bereitschaft; NPC (de) NSC |
+| Brennan's Claws | de Klauen · pl Pazury · nl Klauwen · sv Klorna · cs Drápy · da Kløerne · nb Klørne · fi Kynnet · hu Karmok · tr Pençeler · ru Когти · uk Пазурі · zh 利爪帮 |
