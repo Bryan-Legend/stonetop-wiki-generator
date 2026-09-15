@@ -1838,7 +1838,7 @@ def try_parse_improvement_block(
     hid = anchors.add(title or "Steading improvement", caps_label=True)
     parts = [f'<div class="steading-improvement" id="{html.escape(hid)}">']
     if kind or starts_si:
-        parts.append('<p class="si-kind">Steading improvement</p>')
+        parts.append(f'<p class="si-kind">{html.escape(T("Steading improvement"))}</p>')
     if title:
         parts.append(f'<h3 class="si-title">{html.escape(T(title))}</h3>')
     if blurb:
@@ -1850,9 +1850,9 @@ def try_parse_improvement_block(
         header = lines[j].strip().rstrip(":")
         j += 1
         if header.endswith("?"):
-            parts.append(f'<p class="si-requires">{html.escape(header)}</p>')
+            parts.append(f'<p class="si-requires">{html.escape(T(header))}</p>')
         else:
-            parts.append(f'<p class="si-requires">{html.escape(header)}:</p>')
+            parts.append(f'<p class="si-requires">{html.escape(T(header))}:</p>')
         items: list[str] = []
         while j < n and _is_require_item(lines[j]):
             items.append(strip_markers(lines[j]).strip())

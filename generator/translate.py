@@ -403,6 +403,7 @@ def coverage(en: list[str], tr: list[str], *, sheet: bool) -> tuple[int, int]:
 _BULLET_RE = re.compile(r"^[•·]\s*")
 _NAMED_MOVE_TR_RE = re.compile(r"^\x04[^\x05]+\x05\s*(?:\x06([^\x07]*)\x07\s*)?(.*)$", re.S)
 _BOLD_SPLIT_RE = re.compile(r"\s+(?=\x04)")
+_ROLL_ROW_RE = re.compile(r"^(\d+(?:[-\u2013]\d+)?)\s+(.+)$", re.S)
 # A move block sets its trigger apart from the words around it. The
 # trigger can be several formatted runs in a row (the book broke the
 # line), and the block shows them as one phrase.
@@ -569,6 +570,12 @@ def _joined_memory(tm: TextMemory, en: list[str], tr: list[str]) -> None:
             texts.append(None)
             continue
         texts.append((pa[0], pb[0]))
+        # A roll table's row drops the numbers it opens with ("4-5 Clearing,
+        # meadow, sparse trees").
+        na = _ROLL_ROW_RE.match(_defmt(pa[0]))
+        nb = _ROLL_ROW_RE.match(_defmt(pb[0]))
+        if na and nb and na.group(1) == nb.group(1):
+            tm.add(na.group(2), nb.group(2), derived=True, parts=[pa[0]])
         # A checklist item loses its leading ellipsis ("… is sealed with wax").
         ea = re.sub(r"^[\s…\.]+", "", pa[0])
         eb = re.sub(r"^[\s…\.]+", "", pb[0])
@@ -626,6 +633,11 @@ def _joined_memory(tm: TextMemory, en: list[str], tr: list[str]) -> None:
             # ellipsis either.
             # A move block gathers its lines and then sets the trigger
             # apart from the words around it.
+            # A roll table's row can wrap onto the next line.
+            na = _ROLL_ROW_RE.match(_defmt(joined_en))
+            nb = _ROLL_ROW_RE.match(_defmt(joined_tr))
+            if na and nb and na.group(1) == nb.group(1):
+                tm.add(na.group(2), nb.group(2), derived=True, parts=[x[0] for x in run])
             ja, jb = _trigger_segments(joined_en), _trigger_segments(joined_tr)
             if 1 < len(ja) == len(jb):
                 for xa, xb in zip(ja, jb):
