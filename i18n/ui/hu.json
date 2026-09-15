@@ -48,7 +48,8 @@
       "major": "Nagy arkánumok",
       "minor": "Kis arkánumok",
       "all_major": "Az összes nagy arkánum",
-      "all_minor": "Az összes kis arkánum"
+      "all_minor": "Az összes kis arkánum",
+      "uses": "Használat"
     }
   }
 }

@@ -537,7 +537,12 @@ def _arcana_memory(tm: TextMemory, en: list[str], tr: list[str]) -> None:
     """What an arcanum's card asks for beyond whole lines: the tag run it
     peels off the head of a line (and the prose after it), and a move's
     body, which gathers consecutive lines into one paragraph."""
-    from .arcana import _arcana_named_move, _arcana_tags_prose
+    from .arcana import (
+        _arcana_named_move,
+        _arcana_strip_tag_seps,
+        _arcana_tags_prose,
+        _dedupe_arcana_title,
+    )
 
     texts: list[tuple[str, str] | None] = []
     for a, b in zip(en, tr):
@@ -546,11 +551,26 @@ def _arcana_memory(tm: TextMemory, en: list[str], tr: list[str]) -> None:
             texts.append(None)
             continue
         texts.append((pa[0], pb[0]))
+        # A checklist item loses its leading ellipsis ("… is sealed with wax").
+        ea = re.sub(r"^[\s…\.]+", "", pa[0])
+        eb = re.sub(r"^[\s…\.]+", "", pb[0])
+        if ea != pa[0] and eb:
+            tm.add(ea, eb, derived=True, parts=[pa[0]])
+        # A minor arcanum's title line is printed twice by the extractor
+        # ("A giant's dormitory giant's dormitory"); the card shows it once.
+        if _tag_of(a) == "H3":
+            da = _dedupe_arcana_title(_defmt(pa[0]))
+            if da != _defmt(pa[0]):
+                tm.add(da, pb[0], derived=True, parts=[pa[0]])
         # The HP box's cap set beside a special quality: "Max. 13 lacks organs".
         ma = re.match(r"^\s*Max\.?\s+\d+\s+(.+)$", _defmt(pa[0]))
         mb = re.match(r"^\s*\S+\s+\d+\s+(.+)$", _defmt(pb[0]))
         if ma and mb:
             tm.add(ma.group(1), mb.group(1), derived=True, parts=[pa[0]])
+        # A line opening with inventory diamonds shows without them.
+        sa, sb = _arcana_strip_tag_seps(pa[0]), _arcana_strip_tag_seps(pb[0])
+        if sa != pa[0] and sb:
+            tm.add(sa, sb, derived=True, parts=[pa[0]])
         ta, ra = _arcana_tags_prose(pa[0])
         tb, rb = _arcana_tags_prose(pb[0])
         if ta and not ra:
@@ -577,16 +597,23 @@ def _arcana_memory(tm: TextMemory, en: list[str], tr: list[str]) -> None:
     # A rule between lines does not stop a card gathering them.
     texts = [x for x, a in zip(texts, en) if x is not None or _payload(a) != [""] and _payload(a)]
     for i in range(len(texts)):
-        for k in range(2, 9):
+        for k in range(2, 14):
             run = texts[i : i + k]
             if len(run) < k or any(x is None for x in run):
                 break
-            tm.add(
-                " ".join(x[0] for x in run),
-                " ".join(x[1] for x in run),
-                derived=True,
-                parts=[x[0] for x in run],
-            )
+            joined_en = " ".join(x[0] for x in run)
+            joined_tr = " ".join(x[1] for x in run)
+            tm.add(joined_en, joined_tr, derived=True, parts=[x[0] for x in run])
+            # A checklist item that swallows the line under it keeps no
+            # ellipsis either.
+            bare = re.sub(r"^[\s…\.]+", "", joined_en)
+            if bare != joined_en:
+                tm.add(
+                    bare,
+                    re.sub(r"^[\s…\.]+", "", joined_tr),
+                    derived=True,
+                    parts=[x[0] for x in run],
+                )
 
 
 # ------------------------------------------------------ loading translations

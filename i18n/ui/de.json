@@ -48,7 +48,8 @@
       "major": "Große Arkana",
       "minor": "Kleine Arkana",
       "all_major": "Alle großen Arkana",
-      "all_minor": "Alle kleinen Arkana"
+      "all_minor": "Alle kleinen Arkana",
+      "uses": "Anwendungen"
     }
   }
 }

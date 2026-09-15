@@ -48,7 +48,8 @@
       "major": "Arcanes majeurs",
       "minor": "Arcanes mineurs",
       "all_major": "Tous les arcanes majeurs",
-      "all_minor": "Tous les arcanes mineurs"
+      "all_minor": "Tous les arcanes mineurs",
+      "uses": "Utilisations"
     }
   }
 }

@@ -48,7 +48,8 @@
       "major": "大秘宝",
       "minor": "小秘宝",
       "all_major": "全部大秘宝",
-      "all_minor": "全部小秘宝"
+      "all_minor": "全部小秘宝",
+      "uses": "次数"
     }
   }
 }

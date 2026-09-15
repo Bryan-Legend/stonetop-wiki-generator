@@ -48,7 +48,8 @@
       "major": "Grote arcana",
       "minor": "Kleine arcana",
       "all_major": "Alle grote arcana",
-      "all_minor": "Alle kleine arcana"
+      "all_minor": "Alle kleine arcana",
+      "uses": "Gebruiken"
     }
   }
 }

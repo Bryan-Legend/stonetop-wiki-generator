@@ -731,7 +731,7 @@ def structure_minor_arcana_html(
         gi = 0
         for hdr, items in groups:
             if hdr:
-                fparts.append(f'<p class="si-requires">{html.escape(hdr)}</p>')
+                fparts.append(f'<p class="si-requires">{html.escape(T(hdr))}</p>')
             fparts.append(render_check_list(items, link, f"{lid}-{gi}"))
             gi += 1
         fparts.append("</div>")
@@ -764,7 +764,7 @@ def structure_minor_arcana_html(
         if raw.startswith(M_MARK):
             nm = int(raw[len(M_MARK):] or "0")
             bparts.append(
-                render_mark_track(nm, "uses", label="Uses")
+                render_mark_track(nm, "uses", label=UI("arcana/uses", "Uses"))
             )
             i += 1
             continue
@@ -780,7 +780,7 @@ def structure_minor_arcana_html(
             hid = anchors.add(name)
             label = html.escape(T(name))
             if mtags:
-                label += f' <span class="arcana-sub-tags">({html.escape(mtags)})</span>'
+                label += f' <span class="arcana-sub-tags">({html.escape(T(mtags))})</span>'
             bparts.append(f'<h3 id="{html.escape(hid)}" class="arcana-sub">{label}</h3>')
             i += 1
             if trig:

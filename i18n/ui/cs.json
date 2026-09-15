@@ -48,7 +48,8 @@
       "major": "Velká arkána",
       "minor": "Malá arkána",
       "all_major": "Všechna velká arkána",
-      "all_minor": "Všechna malá arkána"
+      "all_minor": "Všechna malá arkána",
+      "uses": "Použití"
     }
   }
 }

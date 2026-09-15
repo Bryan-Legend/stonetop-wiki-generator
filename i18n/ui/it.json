@@ -48,7 +48,8 @@
       "major": "Arcani maggiori",
       "minor": "Arcani minori",
       "all_major": "Tutti gli arcani maggiori",
-      "all_minor": "Tutti gli arcani minori"
+      "all_minor": "Tutti gli arcani minori",
+      "uses": "Usi"
     }
   }
 }

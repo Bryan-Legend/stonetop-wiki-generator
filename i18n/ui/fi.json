@@ -48,7 +48,8 @@
       "major": "Suuret arkanat",
       "minor": "Pienet arkanat",
       "all_major": "Kaikki suuret arkanat",
-      "all_minor": "Kaikki pienet arkanat"
+      "all_minor": "Kaikki pienet arkanat",
+      "uses": "Käyttökerrat"
     }
   }
 }

@@ -48,7 +48,8 @@
       "major": "Büyük arkanalar",
       "minor": "Küçük arkanalar",
       "all_major": "Tüm büyük arkanalar",
-      "all_minor": "Tüm küçük arkanalar"
+      "all_minor": "Tüm küçük arkanalar",
+      "uses": "Kullanım"
     }
   }
 }

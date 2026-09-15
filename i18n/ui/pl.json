@@ -48,7 +48,8 @@
       "major": "Wielkie arkana",
       "minor": "Mniejsze arkana",
       "all_major": "Wszystkie wielkie arkana",
-      "all_minor": "Wszystkie mniejsze arkana"
+      "all_minor": "Wszystkie mniejsze arkana",
+      "uses": "Użycia"
     }
   }
 }

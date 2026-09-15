@@ -48,7 +48,8 @@
       "major": "Stora arkana",
       "minor": "Små arkana",
       "all_major": "Alla stora arkana",
-      "all_minor": "Alla små arkana"
+      "all_minor": "Alla små arkana",
+      "uses": "Användningar"
     }
   }
 }
