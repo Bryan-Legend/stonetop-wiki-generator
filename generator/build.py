@@ -42,6 +42,7 @@ from .chrome import (
     write_build_manifest,
     home_alternates,
     write_index_custom,
+    write_localized_arcana_hubs,
     write_localized_index,
     write_localized_pages,
     write_robots,
@@ -711,7 +712,14 @@ def main(argv: list[str] | None = None) -> None:
                 rel_prefix="",
                 section_navs=section_navs,
                 description=excerpt,
-                alternates=alternates_for(slug, lang_source, lang_targets),
+                # A hub is generated into every language directory rather than
+                # translated, so its cluster is named rather than looked up.
+                alternates=alternates_for(
+                    slug,
+                    lang_source,
+                    lang_targets,
+                    have=[t for t in lang_targets if t.get("pages")],
+                ),
             )
         else:
             lines, _pages = texts[slug]
@@ -959,6 +967,9 @@ def main(argv: list[str] | None = None) -> None:
         clock.phase("write localized home pages")
         localized += write_localized_index(
             out, articles, previews, lang_source, lang_targets
+        )
+        localized += write_localized_arcana_hubs(
+            out, articles, section_navs, lang_source, lang_targets
         )
         clock.phase("sitemap / robots / manifest")
         write_sitemap(out, articles, base_url=args.base_url, extra=localized)

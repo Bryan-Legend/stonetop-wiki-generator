@@ -476,21 +476,76 @@ def chapter_parts_html(art: dict) -> str:
     )
 
 
-def arcana_hub_html(art: dict) -> str:
-    """Index body for Minor/Major Arcana hub pages."""
+ARCANA_HUB_FALLBACK = {
+    "title_minor": "Appendix C: Minor Arcana",
+    "title_major": "Appendix D: Major Arcana",
+    "lede_minor": (
+        "Individual minor arcana from Book II. Each entry is its own page."
+    ),
+    "lede_major": (
+        "Individual major arcana from Book II. Each entry is its own page."
+    ),
+    "all_minor": "All Minor Arcana",
+    "all_major": "All Major Arcana",
+}
+
+
+def arcana_hub_strings(art: dict, ui: dict | None = None) -> dict:
+    """The hub's own words, in one language.
+
+    ``i18n/ui/<code>.json`` → ``arcana_hub``; anything missing falls back to
+    English, so a language that has arcana translated but no hub strings yet
+    still gets a page that leads to them.
+    """
+    which = "minor" if "minor" in (art.get("title") or "").lower() else "major"
+    block = ((ui or {}).get("arcana_hub") or {})
+    got = {**ARCANA_HUB_FALLBACK, **block}
+    return {
+        "title": got[f"title_{which}"],
+        "lede": got[f"lede_{which}"],
+        "all": got[f"all_{which}"],
+    }
+
+
+def arcana_hub_html(
+    art: dict,
+    *,
+    ui: dict | None = None,
+    translated: set[str] | None = None,
+    page_titles: dict[str, str] | None = None,
+    rel_prefix: str = "",
+    english_only: str = "",
+) -> str:
+    """Index body for Minor/Major Arcana hub pages.
+
+    In a language directory a card that is translated is linked beside this
+    page and carries its translated name; one that is not links back up to the
+    English page and is marked ``EN``, exactly as the sidebar does — the point
+    of the hub is that every card is reachable, not that every card is done.
+    """
     kids = art.get("children") or []
-    kind = "Minor" if "minor" in art["title"].lower() else "Major"
+    words = arcana_hub_strings(art, ui)
     items = []
     for c in kids:
+        slug = c["slug"]
+        done = translated is None or slug in translated
+        title = (page_titles or {}).get(slug) or c["title"]
+        href = f"{slug}.html" if done else f"{rel_prefix}{slug}.html"
+        mark = ""
+        if not done:
+            title = c["title"]
+            mark = ' hreflang="en"'
+            if english_only:
+                mark = f' title="{html.escape(english_only)}"' + mark
+        cls = "wiki-link" if done else "wiki-link nav-en"
         items.append(
-            f'<li><a class="wiki-link" href="{html.escape(c["slug"])}.html" '
-            f'data-slug="{html.escape(c["slug"])}">'
-            f'{html.escape(c["title"])}</a></li>'
+            f'<li><a class="{cls}" href="{html.escape(href)}"'
+            f'{mark} data-slug="{html.escape(slug)}">'
+            f"{html.escape(title)}</a></li>"
         )
     return (
-        f"<p>Individual {kind.lower()} arcana from Book II. "
-        f"Each entry is its own page.</p>"
-        f'<div class="arcana-index"><h2>All {kind} Arcana</h2>'
+        f"<p>{html.escape(words['lede'])}</p>"
+        f'<div class="arcana-index"><h2>{html.escape(words["all"])}</h2>'
         f"<ol>{''.join(items)}</ol></div>"
     )
 
@@ -775,7 +830,10 @@ def write_localized_pages(
         if only_pages is None and lang_dir.exists():
             shutil.rmtree(lang_dir)
         lang_dir.mkdir(parents=True, exist_ok=True)
-        translated = set(locale["pages"])
+        # The arcana indexes are generated into every language directory
+        # (write_localized_arcana_hubs), so the sidebar links to them beside
+        # this page rather than marking them English-only.
+        translated = set(locale["pages"]) | arcana_hub_slugs(articles)
         stale = []
         for slug, page in sorted(locale["pages"].items()):
             if only_pages is not None and slug not in only_pages:
@@ -859,6 +917,77 @@ HOME_FALLBACK = {
 }
 
 
+def arcana_hub_slugs(articles: list[dict]) -> set[str]:
+    """The slugs of the generated arcana index pages."""
+    return {a["slug"] for a in articles if a.get("kind") == "arcana-hub"}
+
+
+def write_localized_arcana_hubs(
+    out: Path,
+    articles: list[dict],
+    section_navs: dict[str, list[dict]],
+    source: dict,
+    targets: list[dict],
+) -> list[str]:
+    """Write ``<out>/<lang>/appendix-[cd]-*-arcana.html`` — the arcana indexes.
+
+    A hub is *generated*, not translated, so it is in no language's ``pages``
+    and ``write_localized_pages`` never sees it — which is how pt-BR came to
+    have all 82 cards translated and no index in Portuguese to reach them
+    from. Written for every language that has any pages, on the same rule as
+    the home page, since an index whose entries are mostly English still
+    leads a reader to the ones that are not.
+    """
+    written: list[str] = []
+    live = [t for t in targets if t.get("pages")]
+    hubs = [a for a in articles if a.get("kind") == "arcana-hub"]
+    if not live or not hubs:
+        return written
+    hub_slugs = {a["slug"] for a in hubs}
+    for locale in live:
+        code = locale["code"]
+        lang_dir = out / code
+        lang_dir.mkdir(parents=True, exist_ok=True)
+        ui = locale.get("ui") or {}
+        translated = set(locale["pages"]) | hub_slugs
+        titles = locale.get("titles") or {}
+        page_titles = {
+            slug: (page.get("title") or titles.get(slug) or "")
+            for slug, page in locale["pages"].items()
+        }
+        for art in hubs:
+            slug = art["slug"]
+            words = arcana_hub_strings(art, ui)
+            body = arcana_hub_html(
+                art,
+                ui=ui,
+                translated=set(locale["pages"]),
+                page_titles=page_titles,
+                rel_prefix="../",
+                english_only=ui.get("english_only") or "",
+            )
+            head = f'<h1 class="page-title">{html.escape(words["title"])}</h1>'
+            body = head + "\n" + body
+            kids = len(art.get("children") or [])
+            html_out = page_shell(
+                words["title"],
+                slug,
+                body,
+                articles,
+                rel_prefix="../",
+                section_navs=section_navs,
+                description=words["lede"] or f"{kids} arcana.",
+                locale=locale,
+                alternates=alternates_for(slug, source, targets, have=live),
+                translated_slugs=translated,
+            )
+            (lang_dir / f"{slug}.html").write_text(html_out, encoding="utf-8")
+            written.append(f"{code}/{slug}.html")
+    if written:
+        print(f"  i18n: {len(written)} arcana indexes")
+    return written
+
+
 def home_alternates(source: dict, targets: list[dict]) -> list[dict]:
     """The home page's language cluster — English first, then every language
     that has a home page.
@@ -918,7 +1047,7 @@ def write_localized_index(
         home = {**HOME_FALLBACK, **((ui.get("home") or {}))}
         book_labels = (ui.get("books") or {})
         titles = locale.get("titles") or {}
-        translated = set(locale["pages"])
+        translated = set(locale["pages"]) | arcana_hub_slugs(articles)
 
         books_present: list[tuple] = []
         for art in articles:

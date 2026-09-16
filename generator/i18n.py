@@ -147,11 +147,22 @@ def body_source_sha(body_html: str) -> str:
     return hashlib.sha256(body_html.encode("utf-8")).hexdigest()
 
 
-def alternates_for(slug: str, source: dict, targets: list[dict]) -> list[dict]:
+def alternates_for(
+    slug: str,
+    source: dict,
+    targets: list[dict],
+    *,
+    have: list[dict] | None = None,
+) -> list[dict]:
     """The hreflang cluster for one page: English first, then each language
     that actually has this page translated. Empty when nothing is translated —
-    a page with one language needs no cluster."""
-    have = [t for t in targets if slug in t["pages"]]
+    a page with one language needs no cluster.
+
+    ``have`` names the languages explicitly, for a page the build *generates*
+    rather than translates (the arcana hubs), which is therefore in no
+    language's ``pages``.
+    """
+    have = [t for t in targets if slug in t["pages"]] if have is None else have
     if not have:
         return []
     alts = [

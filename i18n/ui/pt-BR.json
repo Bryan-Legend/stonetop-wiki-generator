@@ -71,5 +71,13 @@
     "remembers_html": "<strong>Ele lembra.</strong> Marque uma caixa, responda a uma pergunta, preencha uma lacuna, distribua seus atributos — o wiki guarda tudo isso, então um livreto vira uma ficha de personagem que dá para jogar de verdade, e a contagem de um perigo ou as melhorias de um povoado continuam marcadas entre as sessões.",
     "defects_html": "Estas páginas são extraídas automaticamente dos PDFs dos livros, então <strong>espere defeitos</strong> — tabelas embaralhadas, texto perdido ou duplicado, títulos errados, links quebrados. Se você encontrar algum, <a href=\"{issues}\">abra uma issue ou um pull request no GitHub</a>.",
     "license_html": "O <strong>texto</strong> dos livros é de Jeremy Strandberg, sob <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>."
+  },
+  "arcana_hub": {
+    "title_minor": "Apêndice C: Arcanos Menores",
+    "title_major": "Apêndice D: Arcanos Maiores",
+    "lede_minor": "Arcanos menores individuais do Livro II. Cada entrada é uma página própria.",
+    "lede_major": "Arcanos maiores individuais do Livro II. Cada entrada é uma página própria.",
+    "all_minor": "Todos os Arcanos Menores",
+    "all_major": "Todos os Arcanos Maiores"
   }
 }
