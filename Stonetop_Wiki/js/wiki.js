@@ -4753,7 +4753,7 @@
         '<p class="feedback-page">' + esc(UI("feedback_about")) + ' <span class="feedback-page-title">' + esc(pageTitle || pageUrl) + "</span></p>" +
         '<input type="hidden" name="Page" value="' + esc(pageUrl) + '">' +
         '<input type="hidden" name="Title" value="' + esc(pageTitle) + '">' +
-        '<input type="hidden" name="_subject" value="Stonetop Wiki feedback: ' + esc(pageTitle || pageUrl) + '">' +
+        '<input type="hidden" name="_subject" value="Stonetop feedback: ' + esc(pageTitle || pageUrl) + '">' +
         '<input type="hidden" name="_template" value="table">' +
         '<input type="hidden" name="_captcha" value="false">' +
         '<input type="hidden" name="_next" value="' + esc(pageUrl) + '">' +

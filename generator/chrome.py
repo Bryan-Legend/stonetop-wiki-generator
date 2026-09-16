@@ -82,7 +82,7 @@ DATA_COVERAGE = 0.5
 SITE_BASE_URL = "https://stonetop-wiki.github.io"
 
 
-SITE_NAME = "Stonetop Wiki"
+SITE_NAME = "Stonetop"
 
 # Cloudflare Web Analytics beacon, injected into every generated page's <head>.
 # Kept as a plain constant (not inlined) because the token payload contains
@@ -154,7 +154,8 @@ def social_meta_html(
         "A searchable web edition of Stonetop, the Powered-by-the-Apocalypse "
         "game by Jeremy Strandberg."
     )
-    full = f"{title} — {SITE_NAME}"
+    # The home page is the site itself: no "Stonetop — Stonetop".
+    full = title if title == SITE_NAME else f"{title} — {SITE_NAME}"
     base = SITE_BASE_URL.rstrip("/")
     url = base + "/" + path.lstrip("/")
     img = base + "/images/favicon.png"
@@ -838,13 +839,14 @@ def page_shell(
     # (``write_localized_index``), so the wiki title leads there, not up to
     # the English one.
     home_href = "index.html" if locale else f"{rel_prefix}index.html"
+    doc_title = title if title == SITE_NAME else f"{title} — {SITE_NAME}"
 
     return f"""<!DOCTYPE html>
 <html lang="{e(code)}"{dir_attr}>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{e(title)} — Stonetop Wiki</title>
+  <title>{e(doc_title)}</title>
 {meta_html}
   <link rel="icon" href="{rel_prefix}images/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="{rel_prefix}images/favicon.ico" sizes="16x16 32x32 48x48 64x64">
@@ -857,7 +859,7 @@ def page_shell(
   <div class="layout">
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-head">
-        <a class="wiki-title" href="{home_href}">Stonetop Wiki</a>
+        <a class="wiki-title" href="{home_href}">Stonetop</a>
         <input type="search" id="nav-filter" class="nav-filter" placeholder="{e(ui["search_placeholder"])}" autocomplete="off" aria-label="{e(ui["search_label"])}">
         <div id="search-results" class="search-results" hidden></div>
       </div>
@@ -1106,7 +1108,7 @@ def write_localized_pages(
 
 
 HOME_FALLBACK = {
-    "title": "Stonetop Wiki",
+    "title": "Stonetop",
     "topics": "Topics",
     "lede_html": (
         "A static, hyperlinked wiki for <em>Stonetop</em> {books}. "
@@ -1489,7 +1491,7 @@ def write_index_custom(
     issues_url = html.escape(ISSUES_URL)
     license_url = html.escape(LICENSE_URL)
     home_meta = social_meta_html(
-        "Stonetop Wiki",
+        "Stonetop",
         "A searchable web edition of Stonetop and The Wider World and Other "
         "Wonders by Jeremy Strandberg — moves, gear, threats, places, and "
         "arcana.",
@@ -1505,7 +1507,7 @@ def write_index_custom(
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Stonetop Wiki</title>
+  <title>Stonetop</title>
 {home_meta}
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="images/favicon.ico" sizes="16x16 32x32 48x48 64x64">
@@ -1518,7 +1520,7 @@ def write_index_custom(
   <div class="layout">
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-head">
-        <a class="wiki-title" href="index.html">Stonetop Wiki</a>
+        <a class="wiki-title" href="index.html">Stonetop</a>
         <input type="search" id="nav-filter" class="nav-filter" placeholder="Search wiki…" autocomplete="off" aria-label="Search wiki">
         <div id="search-results" class="search-results" hidden></div>
       </div>
@@ -1531,7 +1533,7 @@ def write_index_custom(
     </aside>
     <div class="main-wrap">
       <div class="content-scroll" id="main">
-        <main class="content"><h1 class="page-title">Stonetop Wiki</h1>
+        <main class="content"><h1 class="page-title">Stonetop</h1>
         {cards_html}
         <div class="index-hero">
           <p class="lede">A static, hyperlinked wiki for <em>Stonetop</em>

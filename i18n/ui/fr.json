@@ -135,7 +135,7 @@
     "all_major": "Tous les arcanes majeurs"
   },
   "home": {
-    "title": "Wiki Stonetop",
+    "title": "Stonetop",
     "topics": "Sujets",
     "lede_html": "Un wiki statique et hyperlié pour <em>Stonetop</em> {books}. Les numéros de page sont des liens ; les expressions de dés se lancent d’un clic ; survolez un lien pour un aperçu (bloc de caractéristiques complet quand le lien est profond).",
     "remembers_html": "<strong>Il se souvient.</strong> Cochez une case, répondez à une question, remplissez un blanc, répartissez vos caractéristiques : le wiki garde tout.",

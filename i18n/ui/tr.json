@@ -135,7 +135,7 @@
     "all_major": "Tüm büyük arkanalar"
   },
   "home": {
-    "title": "Stonetop Wiki",
+    "title": "Stonetop",
     "topics": "Konular",
     "lede_html": "<em>Stonetop</em> {books} için statik, bağlantılı bir wiki. Sayfa numaraları bağlantıdır; zar ifadeleri tıklayınca atılır; önizleme için imleci bir bağlantının üzerine getirin (derin bağlantılarda tam stat bloğu).",
     "remembers_html": "<strong>Hatırlar.</strong> Bir kutuyu işaretleyin, bir soruyu yanıtlayın, bir boşluğu doldurun, statlarınızı dağıtın; wiki hepsini saklar.",

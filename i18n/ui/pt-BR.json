@@ -65,7 +65,7 @@
     "pág."
   ],
   "home": {
-    "title": "Wiki de Stonetop",
+    "title": "Stonetop",
     "topics": "Tópicos",
     "lede_html": "Um wiki estático e hiperligado para <em>Stonetop</em> {books}. Os números de página são links; expressões de dados rolam com um clique; passe o mouse sobre um link para ver uma prévia (blocos de estatísticas completos quando o link é profundo).",
     "remembers_html": "<strong>Ele lembra.</strong> Marque uma caixa, responda a uma pergunta, preencha uma lacuna, distribua seus atributos — o wiki guarda tudo isso, então um livreto vira uma ficha de personagem que dá para jogar de verdade, e a contagem de um perigo ou as melhorias de um povoado continuam marcadas entre as sessões.",

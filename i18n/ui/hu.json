@@ -135,7 +135,7 @@
     "all_major": "Az összes nagy arkánum"
   },
   "home": {
-    "title": "Stonetop wiki",
+    "title": "Stonetop",
     "topics": "Témák",
     "lede_html": "Statikus, hivatkozásokkal átszőtt wiki a <em>Stonetop</em> {books} anyagához. Az oldalszámok hivatkozások; a kockakifejezések kattintásra dobnak; vidd az egeret egy hivatkozás fölé az előnézethez (mély hivatkozásnál a teljes statisztikablokk).",
     "remembers_html": "<strong>Megjegyzi.</strong> Pipálj ki egy négyzetet, válaszolj egy kérdésre, tölts ki egy üres helyet, oszd el a tulajdonságaidat – a wiki mindent megőriz.",

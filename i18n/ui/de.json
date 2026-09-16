@@ -135,7 +135,7 @@
     "all_major": "Alle großen Arkana"
   },
   "home": {
-    "title": "Stonetop Wiki",
+    "title": "Stonetop",
     "topics": "Themen",
     "lede_html": "Ein statisches, verlinktes Wiki zu <em>Stonetop</em> {books}. Seitenzahlen sind Links; Würfelausdrücke würfeln per Klick; fahre über einen Link, um eine Vorschau zu sehen (bei Deep Links mit vollständigem Werteblock).",
     "remembers_html": "<strong>Es merkt sich alles.</strong> Hake ein Kästchen ab, beantworte eine Frage, fülle eine Lücke aus, verteile deine Werte – das Wiki behält es.",

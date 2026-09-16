@@ -135,7 +135,7 @@
     "all_major": "Alla stora arkana"
   },
   "home": {
-    "title": "Stonetop-wikin",
+    "title": "Stonetop",
     "topics": "Ämnen",
     "lede_html": "En statisk, hyperlänkad wiki för <em>Stonetop</em> {books}. Sidnummer är länkar; tärningsuttryck slås med ett klick; håll muspekaren över en länk för en förhandsvisning (hela statistikblocket vid djuplänkar).",
     "remembers_html": "<strong>Den minns.</strong> Bocka i en ruta, svara på en fråga, fyll i ett tomrum, fördela dina grundegenskaper – wikin behåller alltihop.",
