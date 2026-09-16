@@ -628,6 +628,22 @@ def _joined_memory(tm: TextMemory, en: list[str], tr: list[str]) -> None:
             da = _dedupe_arcana_title(_defmt(pa[0]))
             if da != _defmt(pa[0]):
                 tm.add(da, pb[0], derived=True, parts=[pa[0]])
+        # An insert's move wrapped under the HP box: the renderer drops the
+        # box's cap out of the middle of the line ("Tend to the sick,
+        # injured, Max. 6 women in labor"), and shows the move without its
+        # bullet. A translation writes the cap in its own words ("Máx. 6").
+        da, db = _defmt(pa[0]), _defmt(pb[0])
+        if da.lstrip().startswith(("•", "·")):
+            ca = re.sub(r"\s+Max\.?\s*\d+(?=\s|$)", "", da)
+            cb = re.sub(r"\s+(?:Max|Máx)\.?\s*\d+(?=\s|$)", "", db)
+            if ca != da and cb:
+                tm.add(ca, cb, derived=True, parts=[pa[0]])
+                tm.add(
+                    ca.lstrip("•· "),
+                    cb.lstrip("•· "),
+                    derived=True,
+                    parts=[pa[0]],
+                )
         # The HP box's cap set beside a special quality: "Max. 13 lacks organs".
         ma = re.match(r"^\s*Max\.?\s+\d+\s+(.+)$", _defmt(pa[0]))
         mb = re.match(r"^\s*\S+\s+\d+\s+(.+)$", _defmt(pb[0]))
