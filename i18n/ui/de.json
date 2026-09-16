@@ -51,5 +51,44 @@
       "all_minor": "Alle kleinen Arkana",
       "uses": "Anwendungen"
     }
+  },
+  "js": {
+    "feedback_link": "Rückmeldung zu dieser Seite senden",
+    "feedback_head": "Rückmeldung senden",
+    "feedback_about": "Zu",
+    "feedback_what": "Was sollte sich ändern?",
+    "feedback_placeholder": "Eine falsche Zahl, ein fehlender Spielzug, eine zerschossene Tabelle …",
+    "feedback_email": "E-Mail (optional, für eine Antwort)",
+    "feedback_send": "Senden",
+    "feedback_cancel": "Abbrechen",
+    "feedback_close": "Schließen",
+    "feedback_sending": "Wird gesendet …",
+    "feedback_sent": "Rückmeldung gesendet – danke!",
+    "feedback_failed": "Senden fehlgeschlagen ({error}). Bitte noch einmal versuchen.",
+    "feedback_network": "Netzwerkfehler",
+    "search_empty": "Keine Seite passt zu „{query}“.",
+    "search_pages_one": "1 Seite",
+    "search_pages_many": "{n} Seiten",
+    "search_showing": " (zeige {n})",
+    "search_in_title_text": "Titel + Text",
+    "search_in_title": "Titel",
+    "search_in_text": "im Text",
+    "preview_no_summary": "Keine Zusammenfassung verfügbar.",
+    "preview_missing": "Keine Vorschau für diesen Link.",
+    "location_label": "Aufenthaltsort",
+    "location_who": "Wer es hat",
+    "location_unknown": "— unbekannt —",
+    "location_other": "Anderswo / jemand anderes …",
+    "location_placeholder": "Wo es liegt oder wer es hat",
+    "arcana_head": "Arkana",
+    "arcana_none": "Keine in der Hand. Trage bei einem Arkanum als Aufenthaltsort „{title}“ ein, damit es hier erscheint."
+  },
+  "arcana_hub": {
+    "title_minor": "Anhang C: Kleine Arkana",
+    "title_major": "Anhang D: Große Arkana",
+    "lede_minor": "Die kleinen Arkana aus Buch II, einzeln. Jeder Eintrag ist eine eigene Seite.",
+    "lede_major": "Die großen Arkana aus Buch II, einzeln. Jeder Eintrag ist eine eigene Seite.",
+    "all_minor": "Alle kleinen Arkana",
+    "all_major": "Alle großen Arkana"
   }
 }

@@ -51,5 +51,44 @@
       "all_minor": "Alle kleine arcana",
       "uses": "Gebruiken"
     }
+  },
+  "js": {
+    "feedback_link": "Feedback over deze pagina sturen",
+    "feedback_head": "Feedback sturen",
+    "feedback_about": "Over",
+    "feedback_what": "Wat moet er anders?",
+    "feedback_placeholder": "Een verkeerd getal, een ontbrekende zet, een tabel die door elkaar ligt…",
+    "feedback_email": "E-mail (optioneel, voor een antwoord)",
+    "feedback_send": "Versturen",
+    "feedback_cancel": "Annuleren",
+    "feedback_close": "Sluiten",
+    "feedback_sending": "Versturen…",
+    "feedback_sent": "Feedback verstuurd, bedankt!",
+    "feedback_failed": "Versturen mislukt ({error}). Probeer het opnieuw.",
+    "feedback_network": "netwerkfout",
+    "search_empty": "Geen pagina’s gevonden voor ‘{query}’.",
+    "search_pages_one": "1 pagina",
+    "search_pages_many": "{n} pagina’s",
+    "search_showing": " ({n} getoond)",
+    "search_in_title_text": "titel + tekst",
+    "search_in_title": "titel",
+    "search_in_text": "in de tekst",
+    "preview_no_summary": "Geen samenvatting beschikbaar.",
+    "preview_missing": "Geen voorbeeld voor deze link.",
+    "location_label": "Locatie",
+    "location_who": "Wie het heeft",
+    "location_unknown": "— onbekend —",
+    "location_other": "Elders / iemand anders…",
+    "location_placeholder": "Waar het ligt, of wie het heeft",
+    "arcana_head": "Arcana",
+    "arcana_none": "Geen in bezit. Zet de Locatie van een arcanum op ‘{title}’ om het hier te tonen."
+  },
+  "arcana_hub": {
+    "title_minor": "Bijlage C: Kleine arcana",
+    "title_major": "Bijlage D: Grote arcana",
+    "lede_minor": "De kleine arcana uit Boek II, stuk voor stuk. Elk item is een eigen pagina.",
+    "lede_major": "De grote arcana uit Boek II, stuk voor stuk. Elk item is een eigen pagina.",
+    "all_minor": "Alle kleine arcana",
+    "all_major": "Alle grote arcana"
   }
 }

@@ -51,5 +51,44 @@
       "all_minor": "全部小秘宝",
       "uses": "次数"
     }
+  },
+  "js": {
+    "feedback_link": "就本页提交反馈",
+    "feedback_head": "提交反馈",
+    "feedback_about": "关于",
+    "feedback_what": "哪里需要修改？",
+    "feedback_placeholder": "错误的数字、缺失的动作、排乱的表格……",
+    "feedback_email": "邮箱（选填，用于回复）",
+    "feedback_send": "发送",
+    "feedback_cancel": "取消",
+    "feedback_close": "关闭",
+    "feedback_sending": "发送中……",
+    "feedback_sent": "反馈已发送，谢谢。",
+    "feedback_failed": "发送失败（{error}）。请重试。",
+    "feedback_network": "网络错误",
+    "search_empty": "没有页面匹配“{query}”。",
+    "search_pages_one": "1 个页面",
+    "search_pages_many": "{n} 个页面",
+    "search_showing": "（显示 {n} 个）",
+    "search_in_title_text": "标题 + 正文",
+    "search_in_title": "标题",
+    "search_in_text": "正文",
+    "preview_no_summary": "暂无摘要。",
+    "preview_missing": "此链接没有预览。",
+    "location_label": "所在",
+    "location_who": "持有者",
+    "location_unknown": "— 未知 —",
+    "location_other": "其他地方 / 其他人……",
+    "location_placeholder": "它在哪里，或由谁持有",
+    "arcana_head": "秘宝",
+    "arcana_none": "尚无。把某件秘宝的所在设为“{title}”，它就会列在这里。"
+  },
+  "arcana_hub": {
+    "title_minor": "附录C：小秘宝",
+    "title_major": "附录D：大秘宝",
+    "lede_minor": "第二卷中的各件小秘宝。每个条目都是单独一页。",
+    "lede_major": "第二卷中的各件大秘宝。每个条目都是单独一页。",
+    "all_minor": "全部小秘宝",
+    "all_major": "全部大秘宝"
   }
 }

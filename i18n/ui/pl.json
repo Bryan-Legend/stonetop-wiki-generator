@@ -51,5 +51,44 @@
       "all_minor": "Wszystkie mniejsze arkana",
       "uses": "Użycia"
     }
+  },
+  "js": {
+    "feedback_link": "Zgłoś uwagi do tej strony",
+    "feedback_head": "Zgłoś uwagi",
+    "feedback_about": "Dotyczy",
+    "feedback_what": "Co należy zmienić?",
+    "feedback_placeholder": "Błędna liczba, brakujący ruch, tabela, która wyszła pokiereszowana…",
+    "feedback_email": "E-mail (opcjonalnie, do odpowiedzi)",
+    "feedback_send": "Wyślij",
+    "feedback_cancel": "Anuluj",
+    "feedback_close": "Zamknij",
+    "feedback_sending": "Wysyłanie…",
+    "feedback_sent": "Uwagi wysłane – dziękujemy.",
+    "feedback_failed": "Nie udało się wysłać ({error}). Spróbuj ponownie.",
+    "feedback_network": "błąd sieci",
+    "search_empty": "Żadna strona nie pasuje do „{query}”.",
+    "search_pages_one": "1 strona",
+    "search_pages_many": "{n} stron",
+    "search_showing": " (pokazano {n})",
+    "search_in_title_text": "tytuł + tekst",
+    "search_in_title": "tytuł",
+    "search_in_text": "w tekście",
+    "preview_no_summary": "Brak streszczenia.",
+    "preview_missing": "Brak podglądu dla tego odnośnika.",
+    "location_label": "Miejsce",
+    "location_who": "Kto go ma",
+    "location_unknown": "— nieznane —",
+    "location_other": "Gdzie indziej / ktoś inny…",
+    "location_placeholder": "Gdzie się znajduje albo kto go ma",
+    "arcana_head": "Arkana",
+    "arcana_none": "Brak. Wpisz „{title}” jako Miejsce arkanum, aby pojawiło się tutaj."
+  },
+  "arcana_hub": {
+    "title_minor": "Dodatek C: Mniejsze arkana",
+    "title_major": "Dodatek D: Wielkie arkana",
+    "lede_minor": "Mniejsze arkana z Księga II, każde z osobna. Każdy wpis to osobna strona.",
+    "lede_major": "Wielkie arkana z Księga II, każde z osobna. Każdy wpis to osobna strona.",
+    "all_minor": "Wszystkie mniejsze arkana",
+    "all_major": "Wszystkie wielkie arkana"
   }
 }

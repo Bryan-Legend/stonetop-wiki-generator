@@ -51,5 +51,44 @@
       "all_minor": "Todos los arcanos menores",
       "uses": "Usos"
     }
+  },
+  "js": {
+    "feedback_link": "Enviar comentarios sobre esta página",
+    "feedback_head": "Enviar comentarios",
+    "feedback_about": "Sobre",
+    "feedback_what": "¿Qué debería cambiar?",
+    "feedback_placeholder": "Un número equivocado, un movimiento que falta, una tabla que salió desordenada…",
+    "feedback_email": "Correo (opcional, para responderte)",
+    "feedback_send": "Enviar",
+    "feedback_cancel": "Cancelar",
+    "feedback_close": "Cerrar",
+    "feedback_sending": "Enviando…",
+    "feedback_sent": "Comentarios enviados. ¡Gracias!",
+    "feedback_failed": "No se pudo enviar ({error}). Inténtalo de nuevo.",
+    "feedback_network": "error de red",
+    "search_empty": "Ninguna página coincide con «{query}».",
+    "search_pages_one": "1 página",
+    "search_pages_many": "{n} páginas",
+    "search_showing": " (mostrando {n})",
+    "search_in_title_text": "título + texto",
+    "search_in_title": "título",
+    "search_in_text": "en el texto",
+    "preview_no_summary": "No hay resumen disponible.",
+    "preview_missing": "No hay vista previa para este enlace.",
+    "location_label": "Ubicación",
+    "location_who": "Quién lo tiene",
+    "location_unknown": "— desconocida —",
+    "location_other": "En otro lugar / otra persona…",
+    "location_placeholder": "Dónde está, o quién lo tiene",
+    "arcana_head": "Arcanos",
+    "arcana_none": "No tiene ninguno. Pon «{title}» como Ubicación de un arcano para que aparezca aquí."
+  },
+  "arcana_hub": {
+    "title_minor": "Apéndice C: Arcanos menores",
+    "title_major": "Apéndice D: Arcanos mayores",
+    "lede_minor": "Los arcanos menores del Libro II, uno por uno. Cada entrada es su propia página.",
+    "lede_major": "Los arcanos mayores del Libro II, uno por uno. Cada entrada es su propia página.",
+    "all_minor": "Todos los arcanos menores",
+    "all_major": "Todos los arcanos mayores"
   }
 }

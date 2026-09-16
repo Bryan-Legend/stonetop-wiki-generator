@@ -38,7 +38,15 @@
     search_in_title: "title",
     search_in_text: "in text",
     preview_no_summary: "No summary available.",
-    preview_missing: "No preview entry for this link."
+    preview_missing: "No preview entry for this link.",
+    location_label: "Location",
+    location_who: "Who holds it",
+    location_unknown: "— unknown —",
+    location_other: "Elsewhere / someone else…",
+    location_placeholder: "Where it lies, or who holds it",
+    arcana_head: "Arcana",
+    arcana_none:
+      "None held. Set an arcanum’s Location to “{title}” to list it here."
   };
 
   function UI(key, vars) {
@@ -58,6 +66,13 @@
   function bookLabel(book) {
     var books = (window.WIKI_UI && window.WIKI_UI.books) || {};
     return books[book] || "";
+  }
+
+  /* A playbook's title in the page's language (the translated page's own),
+     English where the page or the playbook is not translated. */
+  function playbookTitle(slug, english) {
+    var pbs = (window.WIKI_UI && window.WIKI_UI.playbooks) || {};
+    return pbs[slug] || english;
   }
 
   /* ---------- StonetopStore: the table's shared state ----------------------
@@ -3780,19 +3795,23 @@
          entry and nothing else. The last choice opens a box for anywhere
          else — a place in the world, an NPC. The box is the field that is
          saved; the select is a way of filling it. */
+      /* The value saved is the English class name whatever the page's
+         language, so a table reading in two languages shares one answer
+         and every playbook page recognises it; only the label shown is
+         translated. */
       wrap.innerHTML =
-        '<div class="fs-field"><span class="fs-label">Location</span>' +
-        '<select class="wiki-field arcana-location-pick" aria-label="Who holds it">' +
-        '<option value="">— unknown —</option>' +
+        '<div class="fs-field"><span class="fs-label">' + esc(UI("location_label")) + "</span>" +
+        '<select class="wiki-field arcana-location-pick" aria-label="' + esc(UI("location_who")) + '">' +
+        '<option value="">' + esc(UI("location_unknown")) + "</option>" +
         PLAYBOOKS.map(function (p) {
-          return '<option value="' + esc(p[1]) + '">' + esc(p[1]) + "</option>";
+          return '<option value="' + esc(p[1]) + '">' + esc(playbookTitle(p[0], p[1])) + "</option>";
         }).join("") +
-        '<option value="' + OTHER + '">Elsewhere / someone else…</option>' +
+        '<option value="' + OTHER + '">' + esc(UI("location_other")) + "</option>" +
         "</select>" +
         '<input type="text" class="wiki-field arcana-location-box" ' +
         'data-field-key="' + esc(key) + '" ' +
-        'placeholder="Where it lies, or who holds it" autocomplete="off" ' +
-        'aria-label="Location" hidden></div>';
+        'placeholder="' + esc(UI("location_placeholder")) + '" autocomplete="off" ' +
+        'aria-label="' + esc(UI("location_label")) + '" hidden></div>';
       card.parentNode.insertBefore(wrap, card.nextSibling);
       var pick = wrap.querySelector("select");
       var box = wrap.querySelector("input");
@@ -3845,11 +3864,19 @@
       var slug = pageSlug();
       var name = title.textContent.trim().toLowerCase();
       var bare = name.replace(/^the\s+/, "");
+      /* On a translated page the title is not the English name the Location
+         box saves, so the English one is matched too, by slug. */
+      var english = "";
+      PLAYBOOKS.forEach(function (p) {
+        if (p[0] === slug) english = p[1].toLowerCase();
+      });
+      var englishBare = english.replace(/^the\s+/, "");
 
       function held(v) {
         v = String(v || "").trim().toLowerCase();
         if (!v) return false;
-        return v === name || v === bare || v === slug || v === "the " + bare;
+        if (v === name || v === bare || v === slug || v === "the " + bare) return true;
+        return !!english && (v === english || v === englishBare);
       }
 
       function titleOf(arcSlug, previews) {
@@ -3866,10 +3893,10 @@
       var box = document.createElement("section");
       box.className = "pb-arcana";
       box.innerHTML =
-        '<h2 id="arcana">Arcana</h2>' +
+        '<h2 id="arcana">' + esc(UI("arcana_head")) + "</h2>" +
         '<ul class="pb-arcana-list"></ul>' +
-        '<p class="fs-muted pb-arcana-empty">None held. Set an arcanum’s ' +
-        "Location to “" + esc(title.textContent.trim()) + "” to list it here.</p>";
+        '<p class="fs-muted pb-arcana-empty">' +
+        esc(UI("arcana_none", { title: title.textContent.trim() })) + "</p>";
       stats.parentNode.insertBefore(box, stats.nextSibling);
       var list = box.querySelector("ul");
       var empty = box.querySelector(".pb-arcana-empty");

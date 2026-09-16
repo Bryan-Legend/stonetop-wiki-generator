@@ -51,5 +51,44 @@
       "all_minor": "Tous les arcanes mineurs",
       "uses": "Utilisations"
     }
+  },
+  "js": {
+    "feedback_link": "Signaler un problème sur cette page",
+    "feedback_head": "Envoyer un retour",
+    "feedback_about": "À propos de",
+    "feedback_what": "Que faudrait-il changer ?",
+    "feedback_placeholder": "Un nombre erroné, une action manquante, un tableau qui est sorti de travers…",
+    "feedback_email": "E-mail (facultatif, pour une réponse)",
+    "feedback_send": "Envoyer",
+    "feedback_cancel": "Annuler",
+    "feedback_close": "Fermer",
+    "feedback_sending": "Envoi…",
+    "feedback_sent": "Retour envoyé, merci !",
+    "feedback_failed": "Envoi impossible ({error}). Réessayez.",
+    "feedback_network": "erreur réseau",
+    "search_empty": "Aucune page ne correspond à « {query} ».",
+    "search_pages_one": "1 page",
+    "search_pages_many": "{n} pages",
+    "search_showing": " ({n} affichées)",
+    "search_in_title_text": "titre + texte",
+    "search_in_title": "titre",
+    "search_in_text": "dans le texte",
+    "preview_no_summary": "Aucun résumé disponible.",
+    "preview_missing": "Aucun aperçu pour ce lien.",
+    "location_label": "Emplacement",
+    "location_who": "Qui le détient",
+    "location_unknown": "— inconnu —",
+    "location_other": "Ailleurs / quelqu’un d’autre…",
+    "location_placeholder": "Où il se trouve, ou qui le détient",
+    "arcana_head": "Arcanes",
+    "arcana_none": "Aucun en main. Donnez « {title} » comme Emplacement à un arcane pour le voir ici."
+  },
+  "arcana_hub": {
+    "title_minor": "Annexe C : Arcanes mineurs",
+    "title_major": "Annexe D : Arcanes majeurs",
+    "lede_minor": "Les arcanes mineurs du Livre II, un par un. Chaque entrée a sa propre page.",
+    "lede_major": "Les arcanes majeurs du Livre II, un par un. Chaque entrée a sa propre page.",
+    "all_minor": "Tous les arcanes mineurs",
+    "all_major": "Tous les arcanes majeurs"
   }
 }

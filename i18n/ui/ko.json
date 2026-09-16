@@ -51,5 +51,44 @@
       "all_minor": "소 아르카눔 전체",
       "uses": "사용 횟수"
     }
+  },
+  "js": {
+    "feedback_link": "이 페이지에 대한 의견 보내기",
+    "feedback_head": "의견 보내기",
+    "feedback_about": "대상",
+    "feedback_what": "무엇을 고쳐야 하나요?",
+    "feedback_placeholder": "잘못된 숫자, 빠진 무브, 깨진 표 등…",
+    "feedback_email": "이메일 (선택, 답장용)",
+    "feedback_send": "보내기",
+    "feedback_cancel": "취소",
+    "feedback_close": "닫기",
+    "feedback_sending": "보내는 중…",
+    "feedback_sent": "의견을 보냈습니다. 감사합니다.",
+    "feedback_failed": "보내지 못했습니다({error}). 다시 시도해 주세요.",
+    "feedback_network": "네트워크 오류",
+    "search_empty": "“{query}”에 해당하는 페이지가 없습니다.",
+    "search_pages_one": "1페이지",
+    "search_pages_many": "{n}페이지",
+    "search_showing": " ({n}개 표시)",
+    "search_in_title_text": "제목 + 본문",
+    "search_in_title": "제목",
+    "search_in_text": "본문",
+    "preview_no_summary": "요약이 없습니다.",
+    "preview_missing": "이 링크의 미리보기가 없습니다.",
+    "location_label": "소재",
+    "location_who": "소지자",
+    "location_unknown": "— 알 수 없음 —",
+    "location_other": "다른 곳 / 다른 사람…",
+    "location_placeholder": "어디에 있는지, 또는 누가 가지고 있는지",
+    "arcana_head": "아르카눔",
+    "arcana_none": "가진 것이 없습니다. 아르카눔의 소재를 “{title}”(으)로 정하면 여기에 표시됩니다."
+  },
+  "arcana_hub": {
+    "title_minor": "부록 C: 소 아르카눔",
+    "title_major": "부록 D: 대 아르카눔",
+    "lede_minor": "제2권의 소 아르카눔을 하나씩. 각 항목이 별도의 페이지입니다.",
+    "lede_major": "제2권의 대 아르카눔을 하나씩. 각 항목이 별도의 페이지입니다.",
+    "all_minor": "소 아르카눔 전체",
+    "all_major": "대 아르카눔 전체"
   }
 }

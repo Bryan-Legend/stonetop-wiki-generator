@@ -51,5 +51,44 @@
       "all_minor": "小アルカナム一覧",
       "uses": "使用回数"
     }
+  },
+  "js": {
+    "feedback_link": "このページについて意見を送る",
+    "feedback_head": "意見を送る",
+    "feedback_about": "対象",
+    "feedback_what": "どこを直すべきですか？",
+    "feedback_placeholder": "数値の誤り、抜けているムーブ、崩れた表など…",
+    "feedback_email": "メールアドレス（任意・返信用）",
+    "feedback_send": "送信",
+    "feedback_cancel": "キャンセル",
+    "feedback_close": "閉じる",
+    "feedback_sending": "送信中…",
+    "feedback_sent": "送信しました。ありがとうございます。",
+    "feedback_failed": "送信できませんでした（{error}）。もう一度お試しください。",
+    "feedback_network": "ネットワークエラー",
+    "search_empty": "「{query}」に一致するページはありません。",
+    "search_pages_one": "1ページ",
+    "search_pages_many": "{n}ページ",
+    "search_showing": "（{n}件を表示）",
+    "search_in_title_text": "題名＋本文",
+    "search_in_title": "題名",
+    "search_in_text": "本文",
+    "preview_no_summary": "要約はありません。",
+    "preview_missing": "このリンクのプレビューはありません。",
+    "location_label": "所在",
+    "location_who": "所持者",
+    "location_unknown": "— 不明 —",
+    "location_other": "その他の場所／人物…",
+    "location_placeholder": "どこにあるか、誰が持っているか",
+    "arcana_head": "アルカナム",
+    "arcana_none": "所持なし。アルカナムの所在に「{title}」を設定すると、ここに表示されます。"
+  },
+  "arcana_hub": {
+    "title_minor": "付録C：小アルカナム",
+    "title_major": "付録D：大アルカナム",
+    "lede_minor": "第2巻の小アルカナムを一つずつ。各項目がそれぞれ独立したページです。",
+    "lede_major": "第2巻の大アルカナムを一つずつ。各項目がそれぞれ独立したページです。",
+    "all_minor": "小アルカナム一覧",
+    "all_major": "大アルカナム一覧"
   }
 }

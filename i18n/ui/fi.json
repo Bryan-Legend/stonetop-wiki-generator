@@ -51,5 +51,44 @@
       "all_minor": "Kaikki pienet arkanat",
       "uses": "Käyttökerrat"
     }
+  },
+  "js": {
+    "feedback_link": "Lähetä palautetta tästä sivusta",
+    "feedback_head": "Lähetä palautetta",
+    "feedback_about": "Sivu",
+    "feedback_what": "Mitä pitäisi muuttaa?",
+    "feedback_placeholder": "Väärä luku, puuttuva siirto, sekaisin mennyt taulukko…",
+    "feedback_email": "Sähköposti (valinnainen, vastausta varten)",
+    "feedback_send": "Lähetä",
+    "feedback_cancel": "Peruuta",
+    "feedback_close": "Sulje",
+    "feedback_sending": "Lähetetään…",
+    "feedback_sent": "Palaute lähetetty – kiitos!",
+    "feedback_failed": "Lähetys epäonnistui ({error}). Yritä uudelleen.",
+    "feedback_network": "verkkovirhe",
+    "search_empty": "Yksikään sivu ei vastaa hakua ”{query}”.",
+    "search_pages_one": "1 sivu",
+    "search_pages_many": "{n} sivua",
+    "search_showing": " (näytetään {n})",
+    "search_in_title_text": "otsikko + teksti",
+    "search_in_title": "otsikko",
+    "search_in_text": "tekstissä",
+    "preview_no_summary": "Tiivistelmää ei ole.",
+    "preview_missing": "Tälle linkille ei ole esikatselua.",
+    "location_label": "Sijainti",
+    "location_who": "Kenellä se on",
+    "location_unknown": "— tuntematon —",
+    "location_other": "Muualla / jollakulla muulla…",
+    "location_placeholder": "Missä se on tai kenellä se on",
+    "arcana_head": "Arkanat",
+    "arcana_none": "Ei yhtään. Aseta arkanan sijainniksi ”{title}”, niin se näkyy tässä."
+  },
+  "arcana_hub": {
+    "title_minor": "Liite C: Pienet arkanat",
+    "title_major": "Liite D: Suuret arkanat",
+    "lede_minor": "Kirja II:n pienet arkanat yksitellen. Jokainen kohta on oma sivunsa.",
+    "lede_major": "Kirja II:n suuret arkanat yksitellen. Jokainen kohta on oma sivunsa.",
+    "all_minor": "Kaikki pienet arkanat",
+    "all_major": "Kaikki suuret arkanat"
   }
 }

@@ -51,5 +51,44 @@
       "all_minor": "Tüm küçük arkanalar",
       "uses": "Kullanım"
     }
+  },
+  "js": {
+    "feedback_link": "Bu sayfa hakkında geri bildirim gönder",
+    "feedback_head": "Geri bildirim gönder",
+    "feedback_about": "Sayfa",
+    "feedback_what": "Ne değişmeli?",
+    "feedback_placeholder": "Yanlış bir sayı, eksik bir hamle, bozuk çıkmış bir tablo…",
+    "feedback_email": "E-posta (isteğe bağlı, yanıt için)",
+    "feedback_send": "Gönder",
+    "feedback_cancel": "Vazgeç",
+    "feedback_close": "Kapat",
+    "feedback_sending": "Gönderiliyor…",
+    "feedback_sent": "Geri bildirim gönderildi, teşekkürler.",
+    "feedback_failed": "Gönderilemedi ({error}). Yeniden deneyin.",
+    "feedback_network": "ağ hatası",
+    "search_empty": "“{query}” ile eşleşen sayfa yok.",
+    "search_pages_one": "1 sayfa",
+    "search_pages_many": "{n} sayfa",
+    "search_showing": " ({n} gösteriliyor)",
+    "search_in_title_text": "başlık + metin",
+    "search_in_title": "başlık",
+    "search_in_text": "metinde",
+    "preview_no_summary": "Özet yok.",
+    "preview_missing": "Bu bağlantı için önizleme yok.",
+    "location_label": "Konum",
+    "location_who": "Kimde",
+    "location_unknown": "— bilinmiyor —",
+    "location_other": "Başka bir yerde / başka biri…",
+    "location_placeholder": "Nerede olduğu ya da kimde olduğu",
+    "arcana_head": "Arkanalar",
+    "arcana_none": "Elinde yok. Bir arkananın konumunu “{title}” yapın, burada listelensin."
+  },
+  "arcana_hub": {
+    "title_minor": "Ek C: Küçük arkanalar",
+    "title_major": "Ek D: Büyük arkanalar",
+    "lede_minor": "Kitap II’deki küçük arkanalar, tek tek. Her madde kendi sayfasıdır.",
+    "lede_major": "Kitap II’deki büyük arkanalar, tek tek. Her madde kendi sayfasıdır.",
+    "all_minor": "Tüm küçük arkanalar",
+    "all_major": "Tüm büyük arkanalar"
   }
 }

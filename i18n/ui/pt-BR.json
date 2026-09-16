@@ -102,6 +102,13 @@
     "search_in_title": "título",
     "search_in_text": "no texto",
     "preview_no_summary": "Sem resumo disponível.",
-    "preview_missing": "Nenhuma prévia para este link."
+    "preview_missing": "Nenhuma prévia para este link.",
+    "location_label": "Localização",
+    "location_who": "Quem o possui",
+    "location_unknown": "— desconhecida —",
+    "location_other": "Em outro lugar / outra pessoa…",
+    "location_placeholder": "Onde está, ou quem o possui",
+    "arcana_head": "Arcanos",
+    "arcana_none": "Nenhum em mãos. Defina a Localização de um arcano como “{title}” para listá-lo aqui."
   }
 }

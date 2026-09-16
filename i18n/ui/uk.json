@@ -51,5 +51,44 @@
       "all_minor": "Усі молодші аркануми",
       "uses": "Використання"
     }
+  },
+  "js": {
+    "feedback_link": "Повідомити про помилку на цій сторінці",
+    "feedback_head": "Повідомити про помилку",
+    "feedback_about": "Сторінка",
+    "feedback_what": "Що потрібно виправити?",
+    "feedback_placeholder": "Хибне число, зниклий хід, перекошена таблиця…",
+    "feedback_email": "Ел. пошта (необов’язково, для відповіді)",
+    "feedback_send": "Надіслати",
+    "feedback_cancel": "Скасувати",
+    "feedback_close": "Закрити",
+    "feedback_sending": "Надсилання…",
+    "feedback_sent": "Повідомлення надіслано — дякуємо.",
+    "feedback_failed": "Не вдалося надіслати ({error}). Спробуйте ще раз.",
+    "feedback_network": "помилка мережі",
+    "search_empty": "Немає сторінок за запитом «{query}».",
+    "search_pages_one": "1 сторінка",
+    "search_pages_many": "{n} стор.",
+    "search_showing": " (показано {n})",
+    "search_in_title_text": "заголовок + текст",
+    "search_in_title": "заголовок",
+    "search_in_text": "у тексті",
+    "preview_no_summary": "Короткого опису немає.",
+    "preview_missing": "Для цього посилання немає попереднього перегляду.",
+    "location_label": "Місцезнаходження",
+    "location_who": "У кого він",
+    "location_unknown": "— невідомо —",
+    "location_other": "Деінде / у когось іншого…",
+    "location_placeholder": "Де він лежить або в кого він",
+    "arcana_head": "Аркануми",
+    "arcana_none": "Нічого немає. Вкажіть «{title}» як місцезнаходження арканума, щоб він з’явився тут."
+  },
+  "arcana_hub": {
+    "title_minor": "Додаток C: Молодші аркануми",
+    "title_major": "Додаток D: Старші аркануми",
+    "lede_minor": "Молодші аркануми з Книга II, по одному. Кожен запис — окрема сторінка.",
+    "lede_major": "Старші аркануми з Книга II, по одному. Кожен запис — окрема сторінка.",
+    "all_minor": "Усі молодші аркануми",
+    "all_major": "Усі старші аркануми"
   }
 }

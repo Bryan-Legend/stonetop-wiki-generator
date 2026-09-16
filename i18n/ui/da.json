@@ -51,5 +51,44 @@
       "all_minor": "Alle små arkana",
       "uses": "Anvendelser"
     }
+  },
+  "js": {
+    "feedback_link": "Send feedback om denne side",
+    "feedback_head": "Send feedback",
+    "feedback_about": "Om",
+    "feedback_what": "Hvad bør ændres?",
+    "feedback_placeholder": "Et forkert tal, et manglende træk, en tabel der er kommet skævt ud…",
+    "feedback_email": "E-mail (valgfri, til et svar)",
+    "feedback_send": "Send",
+    "feedback_cancel": "Annuller",
+    "feedback_close": "Luk",
+    "feedback_sending": "Sender…",
+    "feedback_sent": "Feedback sendt – tak!",
+    "feedback_failed": "Kunne ikke sende ({error}). Prøv igen.",
+    "feedback_network": "netværksfejl",
+    "search_empty": "Ingen sider matcher »{query}«.",
+    "search_pages_one": "1 side",
+    "search_pages_many": "{n} sider",
+    "search_showing": " (viser {n})",
+    "search_in_title_text": "titel + tekst",
+    "search_in_title": "titel",
+    "search_in_text": "i teksten",
+    "preview_no_summary": "Intet resumé tilgængeligt.",
+    "preview_missing": "Ingen forhåndsvisning af dette link.",
+    "location_label": "Sted",
+    "location_who": "Hvem har det",
+    "location_unknown": "— ukendt —",
+    "location_other": "Andetsteds / en anden…",
+    "location_placeholder": "Hvor det ligger, eller hvem der har det",
+    "arcana_head": "Arkana",
+    "arcana_none": "Ingen. Sæt et arkanums Sted til »{title}« for at få det vist her."
+  },
+  "arcana_hub": {
+    "title_minor": "Bilag C: Små arkana",
+    "title_major": "Bilag D: Store arkana",
+    "lede_minor": "De små arkana fra Bog II, ét ad gangen. Hvert opslag er sin egen side.",
+    "lede_major": "De store arkana fra Bog II, ét ad gangen. Hvert opslag er sin egen side.",
+    "all_minor": "Alle små arkana",
+    "all_major": "Alle store arkana"
   }
 }

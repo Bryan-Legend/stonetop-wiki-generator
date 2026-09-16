@@ -51,5 +51,44 @@
       "all_minor": "全部小祕寶",
       "uses": "次數"
     }
+  },
+  "js": {
+    "feedback_link": "就本頁提交回饋",
+    "feedback_head": "提交回饋",
+    "feedback_about": "關於",
+    "feedback_what": "哪裡需要修改？",
+    "feedback_placeholder": "錯誤的數字、缺漏的動作、排亂的表格……",
+    "feedback_email": "電子郵件（選填，用於回覆）",
+    "feedback_send": "送出",
+    "feedback_cancel": "取消",
+    "feedback_close": "關閉",
+    "feedback_sending": "送出中……",
+    "feedback_sent": "回饋已送出，謝謝。",
+    "feedback_failed": "送出失敗（{error}）。請再試一次。",
+    "feedback_network": "網路錯誤",
+    "search_empty": "沒有頁面符合「{query}」。",
+    "search_pages_one": "1 個頁面",
+    "search_pages_many": "{n} 個頁面",
+    "search_showing": "（顯示 {n} 個）",
+    "search_in_title_text": "標題 + 內文",
+    "search_in_title": "標題",
+    "search_in_text": "內文",
+    "preview_no_summary": "暫無摘要。",
+    "preview_missing": "此連結沒有預覽。",
+    "location_label": "所在",
+    "location_who": "持有者",
+    "location_unknown": "— 未知 —",
+    "location_other": "其他地方 / 其他人……",
+    "location_placeholder": "它在哪裡，或由誰持有",
+    "arcana_head": "祕寶",
+    "arcana_none": "尚無。把某件祕寶的所在設為「{title}」，它就會列在這裡。"
+  },
+  "arcana_hub": {
+    "title_minor": "附錄C：小祕寶",
+    "title_major": "附錄D：大祕寶",
+    "lede_minor": "第二卷中的各件小祕寶。每個條目都是單獨一頁。",
+    "lede_major": "第二卷中的各件大祕寶。每個條目都是單獨一頁。",
+    "all_minor": "全部小祕寶",
+    "all_major": "全部大祕寶"
   }
 }

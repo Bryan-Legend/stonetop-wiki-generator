@@ -51,5 +51,44 @@
       "all_minor": "Alla små arkana",
       "uses": "Användningar"
     }
+  },
+  "js": {
+    "feedback_link": "Skicka synpunkter på den här sidan",
+    "feedback_head": "Skicka synpunkter",
+    "feedback_about": "Gäller",
+    "feedback_what": "Vad borde ändras?",
+    "feedback_placeholder": "Ett fel tal, ett saknat drag, en tabell som blev förvrängd…",
+    "feedback_email": "E-post (valfritt, för svar)",
+    "feedback_send": "Skicka",
+    "feedback_cancel": "Avbryt",
+    "feedback_close": "Stäng",
+    "feedback_sending": "Skickar…",
+    "feedback_sent": "Synpunkter skickade – tack!",
+    "feedback_failed": "Kunde inte skicka ({error}). Försök igen.",
+    "feedback_network": "nätverksfel",
+    "search_empty": "Inga sidor matchar ”{query}”.",
+    "search_pages_one": "1 sida",
+    "search_pages_many": "{n} sidor",
+    "search_showing": " (visar {n})",
+    "search_in_title_text": "titel + text",
+    "search_in_title": "titel",
+    "search_in_text": "i texten",
+    "preview_no_summary": "Ingen sammanfattning finns.",
+    "preview_missing": "Ingen förhandsvisning för den här länken.",
+    "location_label": "Plats",
+    "location_who": "Vem som har det",
+    "location_unknown": "— okänd —",
+    "location_other": "Någon annanstans / någon annan…",
+    "location_placeholder": "Var det finns, eller vem som har det",
+    "arcana_head": "Arkana",
+    "arcana_none": "Inga. Ange ”{title}” som Plats för ett arkanum så listas det här."
+  },
+  "arcana_hub": {
+    "title_minor": "Bilaga C: Små arkana",
+    "title_major": "Bilaga D: Stora arkana",
+    "lede_minor": "De små arkana ur Bok II, ett i taget. Varje post är en egen sida.",
+    "lede_major": "De stora arkana ur Bok II, ett i taget. Varje post är en egen sida.",
+    "all_minor": "Alla små arkana",
+    "all_major": "Alla stora arkana"
   }
 }

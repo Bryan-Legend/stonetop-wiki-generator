@@ -648,18 +648,24 @@ def build_nav_items(
         cls_attr = f' class="{" ".join(classes)}"' if classes else ""
         art_slug = html.escape(art["slug"])
         page_tr = lang_pages.get(art["slug"])
-        if page_tr:
-            # Translated: the sibling in this same language directory.
+        # A page is in this language if it is translated *or* generated here
+        # (the arcana indexes are in no locale's ``pages``, yet every language
+        # directory carries them) — ``translated_slugs`` names both.
+        in_lang = art["slug"] in translated_slugs
+        if in_lang:
+            # The sibling in this same language directory.
             href = f"{art_slug}.html"
             slug_attr = ""
         else:
             href = f"{href_prefix}{art_slug}.html"
             slug_attr = ""
         label = (page_tr or {}).get("nav_label") or ""
+        if not label and locale and art.get("kind") == "arcana-hub":
+            label = arcana_hub_strings(art, locale.get("ui"))["title"]
         if label and art.get("number"):
             label = f"{art['number']}. {label}"  # an arcanum's card number
         label = html.escape(label or nav_label(art))
-        if locale and not page_tr:
+        if locale and not in_lang:
             slug_attr += ' class="nav-en"'
             if english_only:
                 slug_attr += f' title="{html.escape(english_only)}" hreflang="en"'
@@ -677,7 +683,7 @@ def build_nav_items(
                 # page and says so, exactly as top-level entries do.
                 part_tr = lang_pages.get(part["slug"])
                 p_slug = html.escape(part["slug"])
-                if part_tr:
+                if part["slug"] in translated_slugs:
                     p_href = f"{p_slug}.html"
                     p_attr = ""
                 else:
@@ -724,6 +730,21 @@ def build_nav_items(
     return items
 
 
+PLAYBOOK_SLUGS = frozenset(
+    {
+        "the-blessed",
+        "the-fox",
+        "the-heavy",
+        "the-judge",
+        "the-lightbearer",
+        "the-marshal",
+        "the-ranger",
+        "the-seeker",
+        "the-would-be-hero",
+    }
+)
+
+
 def ui_script_html(locale: dict | None) -> str:
     """``window.WIKI_UI`` — the strings ``js/wiki.js`` needs, for this page.
 
@@ -742,6 +763,16 @@ def ui_script_html(locale: dict | None) -> str:
     data = {k: ui[k] for k in keys if ui.get(k)}
     if ui.get("js"):
         data["js"] = ui["js"]
+    # The arcana Location box lists the nine playbooks: their titles in this
+    # language, from the translated pages themselves, so the list reads as
+    # the sidebar does. The value saved stays English (wiki.js).
+    playbooks = {
+        slug: page["title"]
+        for slug, page in (locale.get("pages") or {}).items()
+        if slug in PLAYBOOK_SLUGS and page.get("title")
+    }
+    if playbooks:
+        data["playbooks"] = playbooks
     if not data:
         return ""
     # </script> inside a string would close this one; JSON has no other way
@@ -803,6 +834,10 @@ def page_shell(
     # page and lead back to the English pages that are not translated yet.
     root_attr = f' data-wiki-root="{e(rel_prefix)}"' if rel_prefix else ""
     ui_script = ui_script_html(locale)
+    # Every language directory that has pages gets its own home page
+    # (``write_localized_index``), so the wiki title leads there, not up to
+    # the English one.
+    home_href = "index.html" if locale else f"{rel_prefix}index.html"
 
     return f"""<!DOCTYPE html>
 <html lang="{e(code)}"{dir_attr}>
@@ -822,7 +857,7 @@ def page_shell(
   <div class="layout">
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-head">
-        <a class="wiki-title" href="{rel_prefix}index.html">Stonetop Wiki</a>
+        <a class="wiki-title" href="{home_href}">Stonetop Wiki</a>
         <input type="search" id="nav-filter" class="nav-filter" placeholder="{e(ui["search_placeholder"])}" autocomplete="off" aria-label="{e(ui["search_label"])}">
         <div id="search-results" class="search-results" hidden></div>
       </div>

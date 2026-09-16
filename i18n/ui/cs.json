@@ -51,5 +51,44 @@
       "all_minor": "Všechna malá arkána",
       "uses": "Použití"
     }
+  },
+  "js": {
+    "feedback_link": "Poslat připomínku k této stránce",
+    "feedback_head": "Poslat připomínku",
+    "feedback_about": "Ke stránce",
+    "feedback_what": "Co by se mělo změnit?",
+    "feedback_placeholder": "Špatné číslo, chybějící tah, rozsypaná tabulka…",
+    "feedback_email": "E-mail (nepovinný, pro odpověď)",
+    "feedback_send": "Odeslat",
+    "feedback_cancel": "Zrušit",
+    "feedback_close": "Zavřít",
+    "feedback_sending": "Odesílání…",
+    "feedback_sent": "Připomínka odeslána – děkujeme.",
+    "feedback_failed": "Nepodařilo se odeslat ({error}). Zkuste to znovu.",
+    "feedback_network": "chyba sítě",
+    "search_empty": "Dotazu „{query}“ neodpovídá žádná stránka.",
+    "search_pages_one": "1 stránka",
+    "search_pages_many": "{n} stránek",
+    "search_showing": " (zobrazeno {n})",
+    "search_in_title_text": "název + text",
+    "search_in_title": "název",
+    "search_in_text": "v textu",
+    "preview_no_summary": "Shrnutí není k dispozici.",
+    "preview_missing": "Pro tento odkaz není náhled.",
+    "location_label": "Kde je",
+    "location_who": "Kdo ho má",
+    "location_unknown": "— neznámo —",
+    "location_other": "Jinde / někdo jiný…",
+    "location_placeholder": "Kde leží, nebo kdo ho má",
+    "arcana_head": "Arkána",
+    "arcana_none": "Žádné. Nastavte u arkána „{title}“ jako místo, kde je, a objeví se zde."
+  },
+  "arcana_hub": {
+    "title_minor": "Příloha C: Malá arkána",
+    "title_major": "Příloha D: Velká arkána",
+    "lede_minor": "Malá arkána z Kniha II, jedno po druhém. Každá položka má vlastní stránku.",
+    "lede_major": "Velká arkána z Kniha II, jedno po druhém. Každá položka má vlastní stránku.",
+    "all_minor": "Všechna malá arkána",
+    "all_major": "Všechna velká arkána"
   }
 }

@@ -51,5 +51,44 @@
       "all_minor": "Все младшие арканумы",
       "uses": "Применения"
     }
+  },
+  "js": {
+    "feedback_link": "Сообщить об ошибке на этой странице",
+    "feedback_head": "Сообщить об ошибке",
+    "feedback_about": "Страница",
+    "feedback_what": "Что нужно исправить?",
+    "feedback_placeholder": "Неверное число, пропавший ход, перекошенная таблица…",
+    "feedback_email": "Эл. почта (необязательно, для ответа)",
+    "feedback_send": "Отправить",
+    "feedback_cancel": "Отмена",
+    "feedback_close": "Закрыть",
+    "feedback_sending": "Отправка…",
+    "feedback_sent": "Сообщение отправлено — спасибо.",
+    "feedback_failed": "Не удалось отправить ({error}). Попробуйте ещё раз.",
+    "feedback_network": "ошибка сети",
+    "search_empty": "Нет страниц по запросу «{query}».",
+    "search_pages_one": "1 страница",
+    "search_pages_many": "{n} стр.",
+    "search_showing": " (показано {n})",
+    "search_in_title_text": "заголовок + текст",
+    "search_in_title": "заголовок",
+    "search_in_text": "в тексте",
+    "preview_no_summary": "Краткого описания нет.",
+    "preview_missing": "Для этой ссылки нет предпросмотра.",
+    "location_label": "Местонахождение",
+    "location_who": "У кого он",
+    "location_unknown": "— неизвестно —",
+    "location_other": "В другом месте / у кого-то ещё…",
+    "location_placeholder": "Где он находится или у кого он",
+    "arcana_head": "Арканумы",
+    "arcana_none": "Ничего нет. Укажите «{title}» как местонахождение арканума, чтобы он появился здесь."
+  },
+  "arcana_hub": {
+    "title_minor": "Приложение C: Младшие арканумы",
+    "title_major": "Приложение D: Старшие арканумы",
+    "lede_minor": "Младшие арканумы из Книга II, по одному. Каждая запись — отдельная страница.",
+    "lede_major": "Старшие арканумы из Книга II, по одному. Каждая запись — отдельная страница.",
+    "all_minor": "Все младшие арканумы",
+    "all_major": "Все старшие арканумы"
   }
 }

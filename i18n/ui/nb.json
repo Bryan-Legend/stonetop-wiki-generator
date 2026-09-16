@@ -51,5 +51,44 @@
       "all_minor": "Alle små arkana",
       "uses": "Bruk"
     }
+  },
+  "js": {
+    "feedback_link": "Send tilbakemelding om denne siden",
+    "feedback_head": "Send tilbakemelding",
+    "feedback_about": "Om",
+    "feedback_what": "Hva bør endres?",
+    "feedback_placeholder": "Et feil tall, et manglende trekk, en tabell som ble rotete…",
+    "feedback_email": "E-post (valgfritt, for svar)",
+    "feedback_send": "Send",
+    "feedback_cancel": "Avbryt",
+    "feedback_close": "Lukk",
+    "feedback_sending": "Sender…",
+    "feedback_sent": "Tilbakemelding sendt – takk!",
+    "feedback_failed": "Kunne ikke sende ({error}). Prøv igjen.",
+    "feedback_network": "nettverksfeil",
+    "search_empty": "Ingen sider samsvarer med «{query}».",
+    "search_pages_one": "1 side",
+    "search_pages_many": "{n} sider",
+    "search_showing": " (viser {n})",
+    "search_in_title_text": "tittel + tekst",
+    "search_in_title": "tittel",
+    "search_in_text": "i teksten",
+    "preview_no_summary": "Ingen oppsummering tilgjengelig.",
+    "preview_missing": "Ingen forhåndsvisning for denne lenken.",
+    "location_label": "Sted",
+    "location_who": "Hvem har det",
+    "location_unknown": "— ukjent —",
+    "location_other": "Et annet sted / noen andre…",
+    "location_placeholder": "Hvor det ligger, eller hvem som har det",
+    "arcana_head": "Arkana",
+    "arcana_none": "Ingen. Sett et arkanums Sted til «{title}» for å vise det her."
+  },
+  "arcana_hub": {
+    "title_minor": "Vedlegg C: Små arkana",
+    "title_major": "Vedlegg D: Store arkana",
+    "lede_minor": "De små arkana fra Bok II, ett om gangen. Hver oppføring er sin egen side.",
+    "lede_major": "De store arkana fra Bok II, ett om gangen. Hver oppføring er sin egen side.",
+    "all_minor": "Alle små arkana",
+    "all_major": "Alle store arkana"
   }
 }

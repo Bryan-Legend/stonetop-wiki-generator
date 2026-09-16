@@ -51,5 +51,44 @@
       "all_minor": "Az összes kis arkánum",
       "uses": "Használat"
     }
+  },
+  "js": {
+    "feedback_link": "Visszajelzés küldése erről az oldalról",
+    "feedback_head": "Visszajelzés küldése",
+    "feedback_about": "Oldal",
+    "feedback_what": "Min kellene változtatni?",
+    "feedback_placeholder": "Egy rossz szám, egy hiányzó lépés, egy összekuszálódott táblázat…",
+    "feedback_email": "E-mail (nem kötelező, a válaszhoz)",
+    "feedback_send": "Küldés",
+    "feedback_cancel": "Mégse",
+    "feedback_close": "Bezárás",
+    "feedback_sending": "Küldés…",
+    "feedback_sent": "Visszajelzés elküldve – köszönjük.",
+    "feedback_failed": "Nem sikerült elküldeni ({error}). Próbáld újra.",
+    "feedback_network": "hálózati hiba",
+    "search_empty": "Nincs a(z) „{query}” keresésnek megfelelő oldal.",
+    "search_pages_one": "1 oldal",
+    "search_pages_many": "{n} oldal",
+    "search_showing": " ({n} megjelenítve)",
+    "search_in_title_text": "cím + szöveg",
+    "search_in_title": "cím",
+    "search_in_text": "a szövegben",
+    "preview_no_summary": "Nincs összefoglaló.",
+    "preview_missing": "Ehhez a hivatkozáshoz nincs előnézet.",
+    "location_label": "Hollét",
+    "location_who": "Kinél van",
+    "location_unknown": "— ismeretlen —",
+    "location_other": "Máshol / valaki másnál…",
+    "location_placeholder": "Hol van, vagy kinél van",
+    "arcana_head": "Arkánumok",
+    "arcana_none": "Nincs nála semmi. Állítsd egy arkánum hollétét erre: „{title}”, és itt megjelenik."
+  },
+  "arcana_hub": {
+    "title_minor": "C. függelék: Kis arkánumok",
+    "title_major": "D. függelék: Nagy arkánumok",
+    "lede_minor": "A II. könyv kis arkánumai, egyenként. Minden tétel külön oldal.",
+    "lede_major": "A II. könyv nagy arkánumai, egyenként. Minden tétel külön oldal.",
+    "all_minor": "Az összes kis arkánum",
+    "all_major": "Az összes nagy arkánum"
   }
 }

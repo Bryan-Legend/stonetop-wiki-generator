@@ -3467,7 +3467,7 @@ table.fs-table th:nth-child(2):not(:last-child) { width: 15%; }
 }
 
 /* Where an arcanum is (under its card) and what a playbook holds. */
-.arcana-location { margin: .5rem auto 0; max-width: 32rem; break-inside: avoid; }
+.arcana-location { margin: .5rem 0 0; max-width: 32rem; break-inside: avoid; }
 .arcana-location .fs-field { margin: 0; flex-wrap: wrap; }
 .arcana-location .wiki-field { flex: 1; min-width: 9rem; }
 .arcana-location select.wiki-field,
