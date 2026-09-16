@@ -2785,7 +2785,12 @@ def structure_html(
         # spot a big old buck…"). looks_like_roll_header() knows the
         # difference — a head is a short label, not a sentence.
         m = ROLL_HEADER_RE.match(line) if looks_like_roll_header(line) else None
-        m_rev = ROLL_HEADER_REV_RE.match(line)
+        # …and the reverse form ("size 1d6") is a head for the same reason:
+        # a label, not a sentence. "Village (150-350 people): Consume 1d4"
+        # merely ends with a die.
+        m_rev = (
+            ROLL_HEADER_REV_RE.match(line) if looks_like_roll_header(line) else None
+        )
         if m:
             dice, label = m.group(1), m.group(2).strip()
         elif m_rev and not ENTRY_RE.match(line):
