@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NPC与追随者 — Stonetop Wiki</title>
+  <meta name="description" content="NPC与追随者（NPCs &amp; Followers）：描绘NPC、创建NPC、追随者属性、命令追随者、巩固纽带与忠诚。">
+  <link rel="canonical" href="https://stonetop-wiki.github.io/zh-Hans/npcs-followers.html">
+  <meta property="og:site_name" content="Stonetop Wiki">
+  <meta property="og:title" content="NPC与追随者 — Stonetop Wiki">
+  <meta property="og:description" content="NPC与追随者（NPCs &amp; Followers）：描绘NPC、创建NPC、追随者属性、命令追随者、巩固纽带与忠诚。">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:url" content="https://stonetop-wiki.github.io/zh-Hans/npcs-followers.html">
+  <meta property="og:image" content="https://stonetop-wiki.github.io/images/favicon.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="alternate" hreflang="en" href="https://stonetop-wiki.github.io/npcs-followers.html">
+  <link rel="alternate" hreflang="pt-BR" href="https://stonetop-wiki.github.io/pt-BR/npcs-followers.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://stonetop-wiki.github.io/zh-Hans/npcs-followers.html">
+  <link rel="alternate" hreflang="x-default" href="https://stonetop-wiki.github.io/npcs-followers.html">
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="../images/favicon.ico" sizes="16x16 32x32 48x48 64x64">
+  <link rel="stylesheet" href="../css/wiki.css">
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4536408101e64ba59733ed69779dd45c"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body data-wiki-root="../">
+  <a class="skip-link" href="#main">跳到正文</a>
+  <button type="button" class="sidebar-toggle" id="sidebar-toggle" aria-label="切换导航">☰</button>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-head">
+        <a class="wiki-title" href="../index.html">Stonetop Wiki</a>
+        <input type="search" id="nav-filter" class="nav-filter" placeholder="搜索维基…" autocomplete="off" aria-label="搜索维基">
+        <div id="search-results" class="search-results" hidden></div>
+      </div>
+      <nav class="toc" aria-label="主题">
+        <ul id="nav-list">
+          <li class="nav-book-label">第一卷</li>
+<li class="has-sections"><a href="welcome-to-stonetop.html">欢迎来到石顶</a><ul class="nav-sections"><li class="nav-section"><a href="welcome-to-stonetop.html#expectations">期望</a></li><li class="nav-section"><a href="welcome-to-stonetop.html#the-setting">设定</a></li><li class="nav-section"><a href="welcome-to-stonetop.html#why-play">为何玩？</a></li></ul></li>
+<li class="has-sections"><a href="getting-started.html">开始游戏</a><ul class="nav-sections"><li class="nav-section"><a href="getting-started.html#review-the-setting">回顾设定</a></li><li class="nav-section"><a href="getting-started.html#set-expectations">设定期望</a></li><li class="nav-section"><a href="getting-started.html#discuss-tone-and-content">讨论基调与内容</a></li><li class="nav-section"><a href="getting-started.html#create-characters">创建角色</a></li><li class="nav-section"><a href="getting-started.html#intro-the-pcs">介绍PC</a></li><li class="nav-section"><a href="getting-started.html#let-spring-burst-forth">让春天迸发</a></li><li class="nav-section"><a href="getting-started.html#after-the-session">场次之后</a></li></ul></li>
+<li class="has-sections"><a href="playing-the-game.html">玩游戏</a><ul class="nav-sections"><li class="nav-section"><a href="playing-the-game.html#the-conversation">交谈</a></li><li class="nav-section"><a href="playing-the-game.html#your-agenda">你的议程</a></li><li class="nav-section"><a href="playing-the-game.html#flow-of-play">游戏流程</a></li><li class="nav-section"><a href="playing-the-game.html#dice-and-moves">骰子与行动</a></li><li class="nav-section"><a href="playing-the-game.html#your-principles">你的原则</a></li><li class="nav-section"><a href="playing-the-game.html#other-things-to-do">其他可做之事</a></li><li class="nav-section"><a href="playing-the-game.html#your-character">你的角色</a></li><li class="nav-section"><a href="playing-the-game.html#arcana">秘宝</a></li><li class="nav-section"><a href="playing-the-game.html#followers">追随者</a></li><li class="nav-section"><a href="playing-the-game.html#your-home">你的家</a></li><li class="nav-section"><a href="playing-the-game.html#moves">行动</a></li><li class="nav-section"><a href="playing-the-game.html#gear-and-possessions">装备与 财物</a></li><li class="nav-section"><a href="playing-the-game.html#if-you-want-to">如果你想……</a></li></ul></li>
+<li class="nav-hub has-sections"><a href="playbooks-inserts.html">剧本与附页</a><ul class="nav-sections"><li class="nav-section"><a href="the-blessed.html">蒙福者</a></li><li class="nav-section"><a href="the-fox.html">狐狸</a></li><li class="nav-section"><a href="the-heavy.html">壮汉</a></li><li class="nav-section"><a href="the-judge.html">裁判官</a></li><li class="nav-section"><a href="the-lightbearer.html">持光者</a></li><li class="nav-section"><a href="the-marshal.html">统帅</a></li><li class="nav-section"><a href="the-ranger.html">游侠</a></li><li class="nav-section"><a href="the-seeker.html">探寻者</a></li><li class="nav-section"><a href="the-would-be-hero.html">准英雄</a></li><li class="nav-section"><a href="inserts.html">附页</a></li><li class="nav-section"><a href="inventory.html">行囊</a></li><li class="nav-section"><a href="animal-companion.html">动物伙伴</a></li><li class="nav-section"><a href="crew.html">队伍</a></li><li class="nav-section"><a href="initiates-of-danu.html">达努的入门者</a></li><li class="nav-section"><a href="invocations.html">祷文</a></li><li class="nav-section"><a href="followers.html">追随者</a></li><li class="nav-section"><a href="ghost.html">鬼魂</a></li><li class="nav-section"><a href="revenant.html">还魂者</a></li><li class="nav-section"><a href="thrall.html">奴仆</a></li><li class="nav-section"><a href="steading-playbook.html">聚落剧本</a></li></ul></li>
+<li class="has-sections"><a href="running-the-game.html">主持游戏</a><ul class="nav-sections"><li class="nav-section"><a href="running-the-game.html#your-agenda">你的议程</a></li><li class="nav-section"><a href="running-the-game.html#the-core-loop">核心循环</a></li><li class="nav-section"><a href="running-the-game.html#the-spotlight">聚光灯</a></li><li class="nav-section"><a href="running-the-game.html#scenes-and-loose-play">场景与松散玩法</a></li><li class="nav-section"><a href="running-the-game.html#your-gm-moves">你的GM行动</a></li><li class="nav-section"><a href="running-the-game.html#example-of-play">游戏示例</a></li><li class="nav-section"><a href="running-the-game.html#your-principles">你的原则</a></li><li class="nav-section"><a href="running-the-game.html#other-things-to-do">其他要做的事</a></li><li class="nav-section"><a href="running-the-game.html#gming-is-a-practice">主持是一种练习</a></li><li class="nav-section"><a href="running-the-game.html#prep">准备</a></li></ul></li>
+<li class="has-sections"><a href="player-moves.html">玩家行动</a><ul class="nav-sections"><li class="nav-section"><a href="player-moves.html#defy-danger">直面险境</a></li><li class="nav-section"><a href="player-moves.html#aid">相助</a></li><li class="nav-section"><a href="player-moves.html#clash">短兵相接</a></li><li class="nav-section"><a href="player-moves.html#defend">守护</a></li><li class="nav-section"><a href="player-moves.html#interfere">阻挠</a></li><li class="nav-section"><a href="player-moves.html#know-things">见多识广</a></li><li class="nav-section"><a href="player-moves.html#let-fly">放箭</a></li><li class="nav-section"><a href="player-moves.html#seek-insight">寻求洞见</a></li><li class="nav-section"><a href="player-moves.html#special-moves">特殊行动</a></li><li class="nav-section"><a href="player-moves.html#advantage-disadvantage">优势/劣势</a></li><li class="nav-section"><a href="player-moves.html#burn-brightly">燃得更旺</a></li><li class="nav-section"><a href="player-moves.html#end-of-session">会末</a></li><li class="nav-section"><a href="player-moves.html#deaths-door">鬼门关</a></li></ul></li>
+<li class="has-sections"><a href="harm-healing.html">伤害与治疗</a><ul class="nav-sections"><li class="nav-section"><a href="harm-healing.html#hit-points-and-damage">生命值与伤害</a></li><li class="nav-section"><a href="harm-healing.html#debilities">衰弱</a></li><li class="nav-section"><a href="harm-healing.html#problematic-wounds">棘手伤口</a></li><li class="nav-section"><a href="harm-healing.html#death-and-dying">死亡与垂死</a></li></ul></li>
+<li class="has-sections"><a href="first-adventure.html">第一次冒险</a><ul class="nav-sections"><li class="nav-section"><a href="first-adventure.html#structure">结构</a></li><li class="nav-section"><a href="first-adventure.html#background">背景</a></li><li class="nav-section"><a href="first-adventure.html#setup-questions">铺垫问题</a></li><li class="nav-section"><a href="first-adventure.html#setting-the-scene">框定场景</a></li><li class="nav-section"><a href="first-adventure.html#dropping-the-hook">抛出钩子</a></li><li class="nav-section"><a href="first-adventure.html#heading-out">出发</a></li></ul></li>
+<li class="has-sections"><a href="threats.html">威胁</a><ul class="nav-sections"><li class="nav-section"><a href="threats.html#when-to-write-up-threats">何时写威胁</a></li><li class="nav-section"><a href="threats.html#writing-a-threat">写一个威胁</a></li><li class="nav-section"><a href="threats.html#example-threats">范例威胁</a></li><li class="nav-section"><a href="threats.html#updating">更新</a></li></ul></li>
+<li class="has-sections"><a href="expeditions.html">远征</a><ul class="nav-sections"><li class="nav-section"><a href="expeditions.html#preparations">准备</a></li><li class="nav-section"><a href="expeditions.html#running-the-journey">主持旅程</a></li><li class="nav-section"><a href="expeditions.html#player-moves">玩家行动</a></li><li class="nav-section"><a href="expeditions.html#going-home">归途</a></li><li class="nav-section"><a href="expeditions.html#what-to-prep">准备什么</a></li></ul></li>
+<li class="has-sections"><a href="sites.html">地点</a><ul class="nav-sections"><li class="nav-section"><a href="sites.html#environmental-storytelling">环境叙事</a></li><li class="nav-section"><a href="sites.html#running-sites">主持地点</a></li><li class="nav-section"><a href="sites.html#exploring-sites">探索地点</a></li><li class="nav-section"><a href="sites.html#creating-sites">创建地点</a></li><li class="nav-section"><a href="sites.html#the-green-lords-tomb">绿领主陵墓</a></li></ul></li>
+<li class="has-sections"><a href="dangers.html">危险</a><ul class="nav-sections"><li class="nav-section"><a href="dangers.html#hazards">危害</a></li><li class="nav-section"><a href="dangers.html#monsters">怪物</a></li><li class="nav-section"><a href="dangers.html#running-combat">运行战斗</a></li></ul></li>
+<li class="has-sections"><a href="discoveries.html">发现</a><ul class="nav-sections"><li class="nav-section"><a href="discoveries.html#clues">线索</a></li><li class="nav-section"><a href="discoveries.html#sites">地点</a></li><li class="nav-section"><a href="discoveries.html#encounters">遭遇</a></li><li class="nav-section"><a href="discoveries.html#opportunities">机会</a></li><li class="nav-section"><a href="discoveries.html#artifacts">造物</a></li><li class="nav-section"><a href="discoveries.html#arcana">秘宝</a></li></ul></li>
+<li class="has-sections current"><a href="npcs-followers.html">NPC与追随者</a><ul class="nav-sections"><li class="nav-section"><a href="npcs-followers.html#npcs-in-play">游戏中的NPC</a></li><li class="nav-section"><a href="npcs-followers.html#creating-npcs">创建NPC</a></li><li class="nav-section"><a href="npcs-followers.html#follower-moves">追随者行动</a></li><li class="nav-section"><a href="npcs-followers.html#order-followers">命令追随者</a></li><li class="nav-section"><a href="npcs-followers.html#strengthen-your-bond">巩固 纽带</a></li><li class="nav-section"><a href="npcs-followers.html#followers-in-play">游戏中的追随者</a></li><li class="nav-section"><a href="npcs-followers.html#creating-followers">创建追随者</a></li><li class="nav-section"><a href="npcs-followers.html#updating-followers">更新追随者</a></li><li class="nav-section"><a href="npcs-followers.html#losing-followers">失去追随者</a></li></ul></li>
+<li class="has-sections"><a href="homefront.html">家园</a><ul class="nav-sections"><li class="nav-section"><a href="homefront.html#bringing-the-village-to-life">让村庄活起来</a></li><li class="nav-section"><a href="homefront.html#running-the-homefront">运行家园</a></li><li class="nav-section"><a href="homefront.html#aftermath">余波</a></li><li class="nav-section"><a href="homefront.html#the-steading-playbook">聚落剧本</a></li><li class="nav-section"><a href="homefront.html#seasons-change">季节更替</a></li><li class="nav-section"><a href="homefront.html#player-moves">玩家行动</a></li><li class="nav-section"><a href="homefront.html#bolster">鼓舞</a></li><li class="nav-section"><a href="homefront.html#convalesce">休养</a></li><li class="nav-section"><a href="homefront.html#deploy">派遣</a></li><li class="nav-section"><a href="homefront.html#level-up">升级</a></li><li class="nav-section"><a href="homefront.html#make-a-plan">制定计划</a></li><li class="nav-section"><a href="homefront.html#meet-with-disaster">遭遇灾难</a></li><li class="nav-section"><a href="homefront.html#muster">集结</a></li><li class="nav-section"><a href="homefront.html#pull-together">同心协力</a></li><li class="nav-section"><a href="homefront.html#trade-barter">交易与易货</a></li><li class="nav-section"><a href="homefront.html#what-to-prep">准备什么</a></li></ul></li>
+<li><a href="writing-moves-love-letters.html">编写行动与情书</a></li>
+<li class="has-sections"><a href="the-game-ongoing.html">持续的游戏</a><ul class="nav-sections"><li class="nav-section"><a href="the-game-ongoing.html#ending-a-session">结束会话</a></li><li class="nav-section"><a href="the-game-ongoing.html#between-sessions">会话之间</a></li><li class="nav-section"><a href="the-game-ongoing.html#starting-a-session">开始会话</a></li><li class="nav-section"><a href="the-game-ongoing.html#pacing">节奏</a></li><li class="nav-section"><a href="the-game-ongoing.html#advancement">成长</a></li><li class="nav-section"><a href="the-game-ongoing.html#retiring-pcs">PC退场</a></li><li class="nav-section"><a href="the-game-ongoing.html#new-pcs">新PC</a></li><li class="nav-section"><a href="the-game-ongoing.html#conflict-between-pcs">PC之间的冲突</a></li><li class="nav-section"><a href="the-game-ongoing.html#time-skips">时间跳跃</a></li><li class="nav-section"><a href="the-game-ongoing.html#shake-ups">剧变</a></li><li class="nav-section"><a href="the-game-ongoing.html#ending-your-game">结束你的游戏</a></li></ul></li>
+<li><a href="acknowledgements.html">致谢</a></li>
+<li><a href="mediography.html">媒介志</a></li>
+<li class="nav-book-label">第二卷</li>
+<li><a href="welcome-to-the-worlds-end.html">欢迎来到世界尽头</a></li>
+<li><a href="the-village-of-stonetop.html">石顶村</a></li>
+<li><a href="aratis-the-lawkeeper.html">阿拉蒂斯，护法者</a></li>
+<li><a href="barrier-pass.html">屏障隘口</a></li>
+<li><a href="barrow-builders.html">坟冢建造者</a></li>
+<li><a href="blackwater-lake.html">黑水湖</a></li>
+<li><a href="crinwin.html">克林温</a></li>
+<li><a href="the-crombil.html">克朗比尔</a></li>
+<li><a href="danu-the-earth-mother.html">达努，地母</a></li>
+<li><a href="death-and-the-undying.html">死亡与不死者</a></li>
+<li><a href="the-dread-river.html">惧河</a></li>
+<li><a href="fae.html">妖精</a></li>
+<li><a href="ferriers-fen.html">费里尔沼泽</a></li>
+<li><a href="the-flats.html">荒原</a></li>
+<li><a href="fomoraij.html">福莫莱</a></li>
+<li><a href="the-foothills.html">山麓</a></li>
+<li><a href="forest-folk.html">森林之民</a></li>
+<li><a href="forge-lords.html">熔炉领主</a></li>
+<li><a href="the-frozen-wastes.html">冰封荒原</a></li>
+<li><a href="gods-and-religion.html">神明与宗教</a></li>
+<li><a href="the-golden-oak.html">黄金橡树</a></li>
+<li><a href="gordins-delve.html">戈丁矿场</a></li>
+<li><a href="the-great-wood.html">大森林</a></li>
+<li><a href="green-lords.html">绿领主</a></li>
+<li><a href="helior-the-daybringer.html">赫利奥，携昼者</a></li>
+<li><a href="hillfolk.html">丘陵之民</a></li>
+<li><a href="huffel-peaks.html">胡费尔群峰</a></li>
+<li><a href="the-labyrinth.html">迷宫</a></li>
+<li><a href="lygos-and-the-south.html">利戈斯与南方</a></li>
+<li><a href="the-makers.html">匠造者</a></li>
+<li><a href="the-makers-roads.html">匠造者之路</a></li>
+<li><a href="marshedge.html">泽畔</a></li>
+<li><a href="the-maw.html">巨口</a></li>
+<li><a href="north-manmarch.html">北曼马奇</a></li>
+<li><a href="the-pale-hunter.html">苍白猎手</a></li>
+<li><a href="primordial-powers.html">太古之力</a></li>
+<li><a href="red-groves.html">红林</a></li>
+<li><a href="rime-lords.html">霜领主</a></li>
+<li><a href="the-ruined-tower.html">废塔</a></li>
+<li><a href="south-manmarch.html">南曼马奇</a></li>
+<li><a href="spirits-of-the-wild.html">荒野精魂</a></li>
+<li><a href="the-steplands.html">阶地</a></li>
+<li><a href="stone-lords.html">石领主</a></li>
+<li><a href="the-stream.html">溪流</a></li>
+<li><a href="tempest-lords.html">风暴领主</a></li>
+<li><a href="the-things-below.html">地底之物</a></li>
+<li><a href="three-coven-lake.html">三巫湖</a></li>
+<li><a href="titan-bones.html">泰坦遗骨</a></li>
+<li><a href="tor-the-rain-maker.html">托尔，降雨者</a></li>
+<li><a href="useful-or-valuable-flora.html">有用或值钱的植物</a></li>
+<li><a href="ustrina.html">乌斯特里纳</a></li>
+<li><a href="vor-svetelik.html">沃尔·斯维特里克</a></li>
+<li><a href="waystones.html">路石</a></li>
+<li><a href="the-whitefang-mountains.html">白牙山脉</a></li>
+<li><a href="appendix-a-ages-of-the-world.html">附录A：世界诸纪</a></li>
+<li><a href="appendix-b-artifact-creation.html">附录B：神器创制</a></li>
+<li class="nav-hub"><a href="../appendix-c-minor-arcana.html" class="nav-en" title="仅有英文版" hreflang="en">Appendix C: Minor Arcana</a></li>
+<li class="nav-arcana"><a href="minor-laoj-daveths-galvanic-infusion.html">1. 劳杰·达维斯的电流灌注</a></li>
+<li class="nav-arcana"><a href="minor-truth-seeds.html">2. 真话种子</a></li>
+<li class="nav-arcana"><a href="minor-old-mothers-wine.html">3. 老母之酒</a></li>
+<li class="nav-arcana"><a href="minor-aalz-galts-sudden-sinkhole.html">4. 阿尔兹·加尔特的骤陷坑</a></li>
+<li class="nav-arcana"><a href="minor-shell-game-of-souls.html">5. 灵魂套壳戏</a></li>
+<li class="nav-arcana"><a href="minor-thunderous-bellow.html">6. 雷鸣咆哮</a></li>
+<li class="nav-arcana"><a href="minor-the-fiery-veil.html">7. 火帷</a></li>
+<li class="nav-arcana"><a href="minor-the-tomb-bogs-mark.html">8. 冢沼印记</a></li>
+<li class="nav-arcana"><a href="minor-fear-of-the-flame.html">9. 惧火</a></li>
+<li class="nav-arcana"><a href="minor-mantle-wraiths.html">10. 披风怨灵</a></li>
+<li class="nav-arcana"><a href="minor-shattering-words-of-aalz-childric.html">11. 阿尔兹·奇尔德里克的碎裂之言</a></li>
+<li class="nav-arcana"><a href="minor-ffyrnig-tonic.html">12. 费尔尼格补剂</a></li>
+<li class="nav-arcana"><a href="minor-song-of-the-dool-trees.html">13. 杜尔树之歌</a></li>
+<li class="nav-arcana"><a href="minor-ward-of-still-waters.html">14. 静水结界</a></li>
+<li class="nav-arcana"><a href="minor-ice-weaving.html">15. 织冰</a></li>
+<li class="nav-arcana"><a href="minor-the-six-locks-of-sajua.html">16. 萨尤亚的六锁</a></li>
+<li class="nav-arcana"><a href="minor-heliors-shining-ring.html">17. 赫利奥的闪耀戒指</a></li>
+<li class="nav-arcana"><a href="minor-nerth-serpents-vigor.html">18. 奈尔特蛇之活力</a></li>
+<li class="nav-arcana"><a href="minor-goldleaf-cloak.html">19. 金叶斗篷</a></li>
+<li class="nav-arcana"><a href="minor-opening-the-way.html">20. 开辟通路</a></li>
+<li class="nav-arcana"><a href="minor-the-drowning-scale.html">21. 溺水鳞片</a></li>
+<li class="nav-arcana"><a href="minor-preserving-runes.html">22. 保存符文</a></li>
+<li class="nav-arcana"><a href="minor-peacebond.html">23. 和平契</a></li>
+<li class="nav-arcana"><a href="minor-the-eye-opened.html">24. 开眼</a></li>
+<li class="nav-arcana"><a href="minor-sanctifying-mark.html">25. 圣化印记</a></li>
+<li class="nav-arcana"><a href="minor-the-green-lords-shade.html">26. 绿领主之影</a></li>
+<li class="nav-arcana"><a href="minor-chimeric-transmogrification.html">27. 嵌合体变形术</a></li>
+<li class="nav-arcana"><a href="minor-the-sylvan-web.html">28. 林间之网</a></li>
+<li class="nav-arcana"><a href="minor-flying-cloak.html">29. 飞行斗篷</a></li>
+<li class="nav-arcana"><a href="minor-satchel-of-plenty.html">30. 丰饶挎包</a></li>
+<li class="nav-arcana"><a href="minor-dancing-wind-spirit.html">31. 舞风精魂</a></li>
+<li class="nav-arcana"><a href="minor-call-of-the-hunt.html">32. 狩猎召唤</a></li>
+<li class="nav-arcana"><a href="minor-convocation-of-the-soil.html">33. 土壤召请</a></li>
+<li class="nav-arcana"><a href="minor-unliving-chimera.html">34. 亡者嵌合体</a></li>
+<li class="nav-arcana"><a href="minor-impudent-polymorph.html">35. 无礼变形</a></li>
+<li class="nav-arcana"><a href="minor-make-pliant-the-stone.html">36. 令石柔顺</a></li>
+<li class="nav-arcana"><a href="minor-plaster-of-joining.html">37. 接合灰浆</a></li>
+<li class="nav-arcana"><a href="minor-cold-mind-iron-body.html">38. 冷心铁体</a></li>
+<li class="nav-arcana"><a href="minor-little-friend.html">39. 小小伙伴</a></li>
+<li class="nav-arcana"><a href="minor-revealing-light.html">40. 揭示之光</a></li>
+<li class="nav-arcana"><a href="minor-darkwalker-cloak.html">41. 暗行斗篷</a></li>
+<li class="nav-arcana"><a href="minor-the-flesh-is-like-clay.html">42. 血肉如泥</a></li>
+<li class="nav-arcana"><a href="minor-fetchs-mask.html">43. 替身之面</a></li>
+<li class="nav-arcana"><a href="minor-witch-bottle.html">44. 巫瓶</a></li>
+<li class="nav-arcana"><a href="minor-wishing-candles.html">45. 许愿烛</a></li>
+<li class="nav-arcana"><a href="minor-baleful-utterance.html">46. 凶咒之言</a></li>
+<li class="nav-arcana"><a href="minor-aetherium-spear.html">47. 以太矿矛</a></li>
+<li class="nav-arcana"><a href="minor-staff-of-magnetism.html">48. 磁力法杖</a></li>
+<li class="nav-arcana"><a href="minor-groundskimmer.html">49. 掠地舟</a></li>
+<li class="nav-arcana"><a href="minor-thunderbolt-bow.html">50. 霹雳弓</a></li>
+<li class="nav-arcana"><a href="minor-bronze-protector.html">51. 青铜守护者</a></li>
+<li class="nav-arcana"><a href="minor-sublime-words.html">52. 至美之言</a></li>
+<li class="nav-arcana"><a href="minor-flaming-sword.html">53. 火焰之剑</a></li>
+<li class="nav-arcana"><a href="minor-searing-touch.html">54. 灼热之触</a></li>
+<li class="nav-arcana"><a href="minor-sigil-of-authority.html">55. 权柄印记</a></li>
+<li class="nav-arcana"><a href="minor-horn-of-storms.html">56. 风暴号角</a></li>
+<li class="nav-arcana"><a href="minor-moonstone.html">57. 月石</a></li>
+<li class="nav-arcana"><a href="minor-hand-of-aals-sannan.html">58. 阿尔斯·桑南之手</a></li>
+<li class="nav-arcana"><a href="minor-bittersweet-elixir.html">59. 苦甜灵药</a></li>
+<li class="nav-arcana"><a href="minor-the-brooms-lullaby.html">60. 扫帚摇篮曲</a></li>
+<li class="nav-arcana"><a href="minor-the-angry-little-god.html">61. 愤怒的小神</a></li>
+<li class="nav-arcana"><a href="minor-the-silver-branch.html">62. 银枝</a></li>
+<li class="nav-arcana"><a href="minor-void-elemental.html">63. 虚空元素</a></li>
+<li class="nav-arcana"><a href="minor-runes-of-creation.html">64. 创世之符</a></li>
+<li class="nav-hub"><a href="../appendix-d-major-arcana.html" class="nav-en" title="仅有英文版" hreflang="en">Appendix D: Major Arcana</a></li>
+<li class="nav-arcana"><a href="major-staff-of-the-lidless-orb.html">1. 无睑之眼法杖</a></li>
+<li class="nav-arcana"><a href="major-twisted-spear.html">2. 扭曲之矛</a></li>
+<li class="nav-arcana"><a href="major-demonhide-cloak.html">3. 魔皮斗篷</a></li>
+<li class="nav-arcana"><a href="major-norubas-ice-sphere.html">4. 诺鲁巴冰球</a></li>
+<li class="nav-arcana"><a href="major-mindgem.html">5. 心灵宝石</a></li>
+<li class="nav-arcana"><a href="major-whispering-rocks.html">6. 低语之石</a></li>
+<li class="nav-arcana"><a href="major-blood-quenched-sword.html">7. 血淬之剑</a></li>
+<li class="nav-arcana"><a href="major-shield-of-the-wisent-witch.html">8. 林牛女巫之盾</a></li>
+<li class="nav-arcana"><a href="major-hectumel-codex.html">9. 赫克图梅尔抄本</a></li>
+<li class="nav-arcana"><a href="major-red-scepter.html">10. 红权杖</a></li>
+<li class="nav-arcana"><a href="major-ring-of-daagon.html">11. 达贡之戒</a></li>
+<li class="nav-arcana"><a href="major-rune-laden-scales.html">12. 符文鳞甲</a></li>
+<li class="nav-arcana"><a href="major-blackwood-fetishes.html">13. 黑木偶</a></li>
+<li class="nav-arcana"><a href="major-storm-markings.html">14. 风暴印记</a></li>
+<li class="nav-arcana"><a href="major-ineffable-words.html">15. 不可言说之言</a></li>
+<li class="nav-arcana"><a href="major-redwood-effigy.html">16. 红木偶像</a></li>
+<li class="nav-arcana"><a href="major-hungering-maw-of-hlad.html">17. 赫拉德饥渴之口</a></li>
+<li class="nav-arcana"><a href="major-azure-hand.html">18. 蔚蓝之手</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-foot"><details class="lang-switch"><summary title="语言"><span class="lang-globe" aria-hidden="true">🌐</span><span class="lang-code" aria-hidden="true">ZH</span><span class="lang-label">语言</span><span class="lang-now">简体中文</span></summary><ul class="lang-list"><li><a href="../npcs-followers.html" hreflang="en" lang="en">English</a></li><li><a href="../pt-BR/npcs-followers.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><span class="lang-current" aria-current="page" lang="zh-Hans">简体中文</span></li></ul></details><span class="sidebar-credit">文本出自 Jeremy Strandberg 的<em>Stonetop</em>，<a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">CC BY-SA 4.0</a></span><a class="sidebar-github" href="https://github.com/Bryan-Legend/stonetop-wiki-generator">GitHub</a><button type="button" class="sound-toggle" id="sound-toggle" aria-pressed="true" title="骰子音效"><span class="sound-on" aria-hidden="true">🔊</span><span class="sound-off" aria-hidden="true">🔇</span><span class="sound-label">骰子音效</span></button></div>
+    </aside>
+    <div class="main-wrap">
+      <div class="content-scroll" id="main">
+        <main class="content">
+          <h1 class="page-title">NPC与追随者</h1>
+<p>NPC是<strong>非玩家角色</strong>，即存在于游戏虚构中、不是PC的任何人。这当然包括人，也包括荒野之灵、逝者之影和被束缚的实体。</p>
+<p>它甚至可以包括野兽，比如狗、马或勇敢的鸡。如果它有个性，而PC能与之沟通，它就是NPC。</p>
+<p>许多NPC也是<strong>威胁</strong>（<a class="wiki-link" href="threats.html" data-slug="threats" >威胁</a>），给PC或村庄造成持续的麻烦。NPC也可以是PC能与之战斗的<strong>怪物</strong>（<a class="wiki-link" href="dangers.html" data-slug="dangers" >危险</a>）。不过这一章把他们当作与PC互动的人（或至少是有智慧的存在）来讨论。</p>
+<p>如果一个NPC听从PC的命令，服从他们并大体上照PC说的做，那这个NPC就是<strong>追随者</strong>。玩家可以通过他们的追随者触发短兵相接或寻求洞见等行动，追随者可以持有忠诚，让他们更可能做PC想要的事。</p>
+<p>追随者从page 460开始详细讨论。</p>
+<h2 id="npcs-in-play">游戏中的NPC</h2>
+<p>作为GM，你的工作之一是描绘NPC。他们做什么、说什么、感觉如何——全由你决定！实际上，你作为游戏<strong>核心循环</strong>（<a class="wiki-link" href="running-the-game.html" data-slug="running-the-game" >主持游戏</a>）的一部分来描绘NPC。</p>
+<p>确立情境时，说出（或询问）有哪些NPC在场，他们长什么样，穿着如何，举止如何。</p>
+<p>说出（或询问）他们在干什么。用他们的声音说话，或概述他们说的话。</p>
+<p>做GM行动时，你可以用NPC来做。让一个追随者凑到统帅身边低语“我们被跟踪了”来<strong>宣告麻烦</strong>。说“他要大声呼救了，你怎么做？”来<strong>让他们 陷入困境</strong>。</p>
+<p>说“玛丽又对侍者动手动脚，又被一壶麦酒浇了头，她又要发火了”来<strong>展示一个坏处</strong>。</p>
+<p>解决玩家行动时，你决定NPC如何反应或受到什么影响。当狐狸把一桶泔水冒充上等威士忌时，你决定商人是直接上当，还是绝不会相信，还是可能相信但前提是狐狸说服他们。</p>
+<p>当统帅让她的队伍短兵相接并得到7-9时，你决定他们中谁承受敌人的攻击。</p>
+<p>当PC做了不触发行动的事时，你说发生了什么，而“发生了什么”常常涉及NPC如何反应。</p>
+<p>当准英雄第一次对他的心上人说“我爱你”时，没有玩家行动告诉你她如何回应。</p>
+<p>重点是：描绘NPC——与他们搭建场景、描述他们、用他们做行动、说他们如何反应——是运行游戏的一大部分。</p>
+<h2 id="modes-of-portrayal">描绘方式</h2>
+<p>描绘NPC时，你可以<strong>用他们的声音 说话</strong>，用第一人称（“我……就是不知道我还能不能……继续这样”）。或者，你可以用第三人称<strong>概述他们说的话</strong>以及怎么说的（“她眼泛泪光，说她不能再这样下去了——场面很尴尬”）。</p>
+<p><strong>用NPC的声音说话</strong>往往比只是概述他们的话更有沉浸感、更吸引人。它促使玩家以同样方式回应，用他们PC的声音说话。它让你能展示而不是讲述。而且它可以非常有趣。</p>
+<p><strong>概述NPC的话</strong>通常更容易做到。它不需要表演技巧。更容易纠正自己。概述一段对话通常比演出它花的时间更少。你可以更有意识地决定分享的信息和做的GM行动。</p>
+<p>实践中，你常常会<strong>在方式之间 切换</strong>。你可能以第三人称开始，但用NPC的声音说出一句关键台词。</p>
+<p>你可能以第一人称开始，然后拉远概述他们的故事。你可能描述一段涉及多个NPC的对话，但用几句特定声音的关键台词来点缀。</p>
+<p>试着<strong>对如何使用描绘方式保持 留意和有意识</strong>。根据场景的需要、会话的节奏和玩家的偏好来挑选。</p>
+<p>挑战自己！如果你的本能是总是概述NPC说的话，试试第一人称描绘。如果你发现自己总是以角色身份说话，试试概述对话。<strong>GM是 一种修行</strong>（<a class="wiki-link" href="running-the-game.html" data-slug="running-the-game" >主持游戏</a>），你只会在尝试过的事上变得更好！</p>
+<h2 id="multiple-npcs-at-once">同时多个NPC</h2>
+<p>你不可避免地会有一些场景，其中多个NPC发生冲突或至少意见相左。</p>
+<p>在这样的场景中，你需要在<strong>赋予你的NPC生命</strong>和<strong>做 PC的粉丝</strong>之间取得平衡。</p>
+<p>试着让对话以PC为中心。让NPC向他们求助，让他们选边站。</p>
+<p>如果那说不通，那就专注于传达冲突的要点。</p>
+<p>多用第三人称概述，少用第一人称描绘。很少有GM能让一段冗长的“NPC互相交谈”场景奏效。</p>
+<p>这不意味着NPC冲突时你应该避免第一人称描绘。只是意味着你应该少用。用每个NPC的几句对白搭建冲突，然后拉远概述对话和要点。</p>
+<p>当你<em>确实</em>在同一场景描绘多个NPC时，尽可能清楚地表明每个NPC何时在说话。</p>
+<p>给每个NPC独特的声音或举止对此真的很有帮助。另一个技巧是切换角色时左右移动你的头/身体，扮演NPC一号时向左倾身、向右看，扮演NPC二号时反过来。</p>
+<h2 id="dialogue-scenes">对话场景</h2>
+<p>很多场景会是对话场景，即一名或多名PC与一个NPC交谈，而行动仅限于此。</p>
+<p>很容易陷入“只是聊天”，你们都代入PC和NPC，只是表演，看他们如何回应彼此。这很有趣，是<strong>赋予你的角色生命</strong>、<strong>让事情有喘息的空间</strong>的机会。但要小心！也很容易让对话场景拖沓、漫无目的。</p>
+<p>像所有场景一样，<strong>好的对话场景有 目的</strong>。你（或你的玩家）发起这段在这些角色之间的对话是有原因的。PC在试图达成某事；你在试图传达某事；有一个需要回答的问题；有一个需要解决——或升级——的冲突！即使在描绘NPC、用他们的声音说话时，也记住场景的原因。</p>
+<p>试着<strong>坚持核心循环</strong>！确立情境——时间地点、涉及的NPC、对话的基调和要点——然后做一个温和GM行动。</p>
+<p>让NPC问：“那么，我能为你做什么？”或者，让他们说些挑逗性的话，给玩家回应的机会。</p>
+<p>或者，跳出角色，说NPC表现得很紧张，或看起来不舒服，或他们炉台上有一尊以前没有的奇怪新偶像。问“你怎么做？”从那里继续。</p>
+<p>记得<strong>在真相和细节上 诚实而慷慨</strong>。当你通过NPC的声音做GM行动（温和或强硬）时，跳出角色，明确说出你刚才所说的含义。如果你打算把一个NPC描绘成鬼鬼祟祟、紧张不安，说完他们的台词后说：“他鬼鬼祟祟、紧张不安。”别假定玩家会正确理解你的描绘。</p>
+<p><strong>留意玩家在对话中触发行动</strong>。如果你（作为NPC）表示抗拒而PC坚持，他们就触发了说服。如果你问PC一个尖锐的问题而他们公然撒谎，他们大概在直面险境。如果PC有在对话中生效的特殊行动（比如看透</p>
+<p>人心或八面玲珑），问玩家是否想使用。</p>
+<p>当场景的目的已经达成，或对话开始冷场或绕圈时，<strong>结束场景</strong>。跳出角色，过渡到下一个场景，移动聚光灯，和/或切换到松散游戏。</p>
+<h2 id="creating-npcs">创建NPC</h2>
+<p>记住你的原则之一是<strong>赋予你的角色生命</strong>。</p>
+<p>你希望你的NPC鲜明难忘、可信且引人入胜，而不只是纸上的名字。一个充满有趣NPC的世界是<strong>一个丰富 而神秘的世界</strong>。</p>
+<p>你希望玩家在乎你的NPC和他们的命运——即使那意味着恨他们或想让他们死。当玩家在乎你的NPC时，<strong>用冒险点缀PC的 生活</strong>就容易得多。</p>
+<p>最后，你希望你的NPC以一致性和自身的内在逻辑行事。这让他们更可信、更引人入胜，也意味着你可以退回到“这个NPC会怎么做？”并诚实地回答。这是<strong>游戏是为了 看看会发生什么</strong>的关键部分。</p>
+<p>那么：你<em>怎么</em>做到？</p>
+<p>1）给他们起个名字</p>
+<p>2）构思他们</p>
+<ul class="bullets"><li>在已确立的基础上构建</li><li>向PC提问</li><li>挑一个令人难忘的特质</li></ul>
+<p><strong>3）</strong>给出至多3个关于他们的印象</p>
+<p><strong>4）</strong>按需充实细节，比如：</p>
+<ul class="bullets"><li>本能</li><li>他们与他人的联系</li><li>他们的动机</li><li>你将如何在游戏中体现他们</li><li>游戏属性：标签、HP、护甲、伤害和GM行动 你也可以添加细节，把他们当作<strong>追随者</strong>（<a class="wiki-link" href="#game-stats" data-slug="npcs-followers" data-fragment="game-stats">游戏属性</a>）、<strong>怪物</strong>（<a class="wiki-link" href="dangers.html" data-slug="dangers" >危险</a>）和/或<strong>威胁</strong>（<a class="wiki-link" href="threats.html" data-slug="threats" >威胁</a>）。</li></ul>
+<p>你常常会在游戏中即兴这些细节，在会话之间充实NPC。</p>
+<p>但如果你预计某个NPC会在即将到来的会话中出现，就提前准备部分或全部这些细节。不过一如既往，<strong>只准备你觉得有用和 有价值的量</strong>。</p>
+<h2 id="1-name"><span class="step-badge">1</span> 名字</h2>
+<p>给NPC起个名字，或请玩家起。从合适的名字列表或<em>第二册</em>条目中选，或用发音或来源相似的名字。</p>
+<ul class="bullets"><li><strong>Stonetop名字</strong>受威尔士语启发</li><li><strong>泽畔名字</strong>受爱尔兰语启发</li><li><strong>丘陵之民名字</strong>受布列塔尼语或法语启发，但被截短、缺少元音</li><li><strong>曼马奇名字</strong>是日耳曼式的</li><li><strong>屏障隘口名字</strong>受藏语或尼泊尔语启发</li><li><strong>南方名字</strong>取自希腊语、希伯来语、波斯语或阿拉伯语。</li><li><strong>其他民族</strong>（如乌斯特里纳），参考<em>第二册</em>中的相应条目。</li></ul>
+<p>把NPC的名字加进聚落剧本。</p>
+<hr>
+<blockquote><p><em>在出发去戈丁矿场进行贸易任务之前， 莉安娜集结村庄 防备克林温。她 得了10，选了“1或2个人 展现出真正的潜力；问GM是谁 以及如何”。我心里没有人选， 所以我看了看Stonetop的名字列表， 说：“呃……就说安德拉斯 引起了你的注意，来接替好老加雷特吧。 还有，哦，埃利奥斯。他是你 不在时可以留下主事的人。”我把 两个名字作为Stonetop的居民加进 聚落剧本。</em></p></blockquote>
+<hr>
+<h2 id="2-concept"><span class="step-badge">2</span> 概念</h2>
+<p>弄清这个人是谁。</p>
+<p>关于他们最明显、最重要的是什么？他们的代词是什么？多大年纪？来自哪里？如果你只能用几个词描述他们，会是什么？</p>
+<h3 id="build-on-whats-established">在已确立的基础上构建</h3>
+<p>从你已经知道的关于这个NPC的东西开始推演。如果NPC被写成追随者、怪物或威胁，他们的概念已经相当确立，你只需要补充一些细节。但如果你从头编造这个NPC，你需要做更多工作。</p>
+<p>无论细节多么稀少，你总是知道关于这个NPC的一些东西。</p>
+<p>他们是如何或为何被引入的？根据那个背景你能推断出他们什么？你已经确立的关于世界的什么能填补空白？选显而易见的答案，或有意选择颠覆套路的东西。</p>
+<p>暂时别把你的想法抓得太紧。当你为这个NPC提问和选择特质时，你对他们的初始概念可能会改变。那很好！保持灵活！</p>
+<hr>
+<blockquote><p><em>我刚把埃利奥斯作为一个合适的人选引入， 在PC去戈丁矿场时 负责防务。我想 埃利奥斯是个有根基的农民，大概 和莉安娜差不多年纪。我本能地 把他想成“他”。我把这告诉 莉安娜。我现在想的是一个好的、 受人喜爱的顾家男人，但我们看看 玩家们怎么说。</em></p></blockquote>
+<hr>
+<h3 id="ask-questions">提问</h3>
+<p>许多NPC会是PC认识的人，或至少听说过的，所以问你的玩家关于他们的事。他们会更在乎自己帮忙创造的NPC！记住<strong>界线</strong>（<a class="wiki-link" href="running-the-game.html" data-slug="running-the-game" >主持游戏</a>）。问角色能回答的问题。PC与NPC越亲近，你应该问的问题就越多。</p>
+<p><strong>对于本地人或PC熟悉的人：</strong></p>
+<ul class="questions"><li>你和他们有亲戚关系吗？什么关系？</li><li>他们的家庭状况如何？（结婚了？有孩子？父母？兄弟姐妹？）</li><li>他们还和谁亲近？谁在乎他们？</li><li>你喜欢/不喜欢他们什么？</li><li>他们因什么受人尊敬？</li><li>别人背地里怎么说他们？</li><li>他们最显著的特征是什么？</li><li>他们一直以来怎么对待你？</li><li>他们似乎喜欢/不喜欢什么？</li></ul>
+<p><strong>对于外人，但PC认识的：</strong></p>
+<ul class="questions"><li>你第一次见到他们是何时/如何？</li><li>你上次见到他们是什么时候？</li><li>你对他们的家人了解多少？</li><li>你会如何描述他们？</li><li>你为什么（不）期待再见到他们？</li><li>自上次见面以来他们有什么变化？</li></ul>
+<p><strong>对于PC听说过但并不真正 认识的人：</strong></p>
+<ul class="questions"><li>他们以什么闻名？</li><li>据说他们最显著的特质是什么？</li><li>你认识的人里谁见过他们？</li><li>他们与你预期的有何不同？</li></ul>
+<p>对于特定的NPC，你可以挑逗得多。设计你的问题，让它们断言你希望为真的事，同时仍然问玩家有意义的东西。当你引入一个来自壮汉血腥过去的佣兵时，也许问：“你为什么永远不想和他们交手？”或“你曾经看到他们做过什么卑劣的事？”</p>
+<p>如果多名PC认识这个NPC，把问题分散开。更好的是，问能把PC推向对NPC相互矛盾的看法的问题。如果你问壮汉看到这个佣兵做过什么卑劣的事，那也许问探寻者这同一个佣兵曾经如何救过他们的命。</p>
+<p>在玩家给你的答案上构建。</p>
+<p>澄清并问追加问题，但除此之外把他们的答案当作一直如此的事实。</p>
+<hr>
+<blockquote><p><em>我问莉安娜：“那么埃利奥斯为什么是个 留下主事的好人选？”她说 他帮她操练民兵。她出去 在森林里时人们总是找他。 “为什么？”她说他 年轻时当过佣兵，对 这种事有实际经验。有意思！</em><em></em></p><p><em>“酷！”我说，然后转向布洛德温。 “你和他是什么关系？他 是什么样的人？”她说他是她的 舅舅（她母亲的兄弟），一个勤劳的 人，粗声粗气但对她总是很和善。</em></p><p><em>然后我问瓦希德他不喜欢 埃利奥斯什么。他就像：“唉。他最糟了。 开不起玩笑。一点幽默感都没有。”</em></p></blockquote>
+<hr>
+<h3 id="assign-memorable-traits">赋予令人难忘的特质</h3>
+<p>给NPC至少一个具体的、令人难忘的特质，并突出那个特质。这些特质成为你描绘他们的试金石。人们可能记不住酒馆老板的女儿叫“特吉德”，但他们会记得“那个到哪都用跑的女孩”。</p>
+<p>从聚落剧本的NPC特质列表中挑选特质，或自己编，或请玩家编。把这些特质写在NPC名字旁边，连同他们的职业或境遇，以及任何关键关系。</p>
+<p>NPC的特质可能自然地源于已确立的东西，但你也可以挑一个与你所知或你所预期的形成反差的特质。也许魁梧的铁匠也知道所有八卦。也许狐狸心地善良的配偶暗中憎恨丘陵之民。这样的反差让NPC更引人入胜、更令人难忘。</p>
+<hr>
+<p><em>根据我们所知，我记下：</em></p>
+<p>埃利奥斯（他）：农民，没有幽默感，前佣兵，布洛德温的舅舅 <em>我查看NPC特质列表，寻找 一个有趣的反差。我的目光落 在“刚结婚”上。我觉得这有点 微妙，问PC为什么。瓦希德 插嘴说：“他娶了一个年轻的 女人，非常健谈、活泼的人。 这配对很怪，但他们看起来 挺幸福。嗯，她是。埃利奥斯 从来都不幸福。”</em></p>
+<blockquote><p><em>我太喜欢了。我把“刚结婚”加进他的 描述，并记下还要弄清 他的新婚妻子是谁！</em></p></blockquote>
+<hr>
+<h2 id="3-impressions"><span class="step-badge">3</span> 印象</h2>
+<p>到这时，你应该对NPC有了一个扎实的概念，足以开始描绘他们。</p>
+<p>如果你在即兴创建这个NPC，与他们搭建一个场景（如果还没有的话），并<strong>给出至多3个关于 他们</strong>、他们的周遭或与他们相处感觉的印象。</p>
+<p>如果你在提前准备NPC，现在就决定这些印象并写下来，详细程度按你觉得有帮助的来。在你第一次把NPC放上屏幕时提出它们。</p>
+<h3 id="impression-examples">印象示例</h3>
+<p><strong>面容：</strong>棱角分明、鼻梁断过、有酒窝、雀斑、鹰钩鼻、皮革般的、缺牙、涂彩、伤疤、愁眉、柔和、晒伤、纹身、疣等。</p>
+<p><strong>眼睛：</strong>大、明亮、冷淡、浑浊、深色、深邃、下垂、缺失、浅色、小、眯缝、敏锐、泪汪汪等。</p>
+<p><strong>头发：</strong>秃、卷、油腻、直、浓密、稀疏等。</p>
+<p><strong>身体：</strong>高大、壮实、瘦小、轻盈、肉乎乎、缺了__、圆润、矮、佝偻、高、粗壮、瘦、精瘦等。</p>
+<p><strong>气场：</strong>警觉、阴郁、开朗、优雅、坐立不安、友好、傲慢、驼背、紧绷、安详等。</p>
+<p><strong>气味：</strong>泥土味、麝香味、花香、熟透味、酸味、烟熏味等。</p>
+<p><strong>衣着：</strong>靴子、护符、干净、[颜色]、脏、毛皮、丝带、丝绸、项圈、破旧、邋遢等。</p>
+<p><strong>声音：</strong>气声、短促、粗俗、粗哑、尖高、沙哑、抑扬顿挫、口齿不清、单调、含糊、鼻音重、颤抖、低沉隆隆、尖利、轻柔、口吃等。</p>
+<p>每个印象应涉及NPC的不同感官或方面（示例见侧栏）。保持印象简短、简单、有画面感。给的细节比你认为需要的少；让玩家的想象力补足其余部分。</p>
+<p>也许请PC帮忙描述NPC，尤其是他们熟悉的人。关于准英雄的心上人，也许问“你觉得他们最有魅力的是什么？”当“利爪”布伦南第一次出现在屏幕上时，也许说“莉安娜，你见过他——他脸上的什么让人这么想揍？”</p>
+<p>大多数印象应反映NPC的概念——它们是展示而非讲述的方式。但也许给一个与NPC其余部分形成反差的印象：</p>
+<p>给卑劣的佣兵一双柔和而悲伤的眼睛，或者说衣着光鲜的商人一身体臭。这样的反差给你的NPC深度和质感。</p>
+<hr>
+<blockquote><p><em>我准备好描绘埃利奥斯了，所以我搭建 场景。“就像你说的，莉安娜，你 加倍守望并加强操练。 几天后，你看到埃利奥斯在熟练地指挥一道盾墙。”</em></p><p><em>我给出一些突出他 角色的印象。“他有一副低沉、近乎单调的 嗓音，人们都得凑近才听得清，还有 脸上的一道伤疤，你猜是他 在南方那些日子留下的。”然后，为了让 他更有人情味一点，我加上：“当他 看着人们练习时，你意识到他 在，呃，摆弄一个……吊坠盒？大概是 他新婚妻子送的礼物。”</em></p></blockquote>
+<hr>
+<h2 id="4-additional-details"><span class="step-badge">4</span> 额外细节</h2>
+<p>只在NPC的其余细节对故事或你如何描绘他们变得重要和相关时才填补。</p>
+<p>如果你在即兴编造NPC，你可能没有时间或脑力去有意识地做这些。</p>
+<p>根据你已确立的东西自然地、本能地描绘新NPC是很常见的。然后你可以在会话后回头记下你是如何描绘他们的，和/或充实一些缺失的细节。</p>
+<p>如果你在提前准备NPC，想想以下方面并做一些决定。但记住：只准备对<em>你</em>有用和有价值的东西。</p>
+<h3 id="embodiment">体现</h3>
+<p>考虑以下一个或多个技巧来帮助体现NPC。即使你不是天生的表演者，这样的技巧也能帮助让NPC与众不同。</p>
+<ul class="bullets"><li>挑一个<strong>电视、电影或 戏剧中的演员或角色</strong>。告诉玩家把NPC想象成他们。或者，试着描绘那个角色但不告诉玩家你在这么做！</li><li>挑一个<strong>你亲自认识的人</strong>。模仿他们，但别告诉任何人。</li><li>为这个NPC挑一种<strong>说话方式</strong>或<strong>调整 你的嗓音</strong>、<strong>一句口头禅</strong>、<strong>一个身体 小动作</strong>或<strong>一种行为</strong>。每次描绘他们时都使用。</li><li><strong>找或制作一张他们的图片</strong>。描绘这个NPC时展示它。</li></ul>
+<p>这些技巧在游戏中即兴新NPC时相对容易使用。如果你确实用了一个，会话后给自己记下你用了什么技巧，以便将来一致地描绘这个NPC。</p>
+<hr>
+<blockquote><p><em>随着场景展开，莉安娜开始 告诉埃利奥斯她的计划以及她希望 他主事，我着重表现我描述他有的那种“低沉、 近乎单调的嗓音”。我降低音调，保持 语调平淡。我意识到我在模仿</em> 小熊维尼<em>里那头忧郁的驴子屹耳的 声音，而这似乎很合适。</em><em></em></p><p><em>我在笔记里记下“屹耳的声音”。</em></p></blockquote>
+<hr>
+<h3 id="instinct">本能</h3>
+<p>会话之间，考虑为你的NPC写一个本能。用这个格式写：“[做某事]”。</p>
+<p>如果NPC是……</p>
+<ul class="ellipsis"><li><strong>怪物</strong>（<a class="wiki-link" href="dangers.html" data-slug="dangers" >危险</a>）或<strong>威胁</strong>（<a class="wiki-link" href="threats.html" data-slug="threats" >威胁</a>），他们的本能应该让他们与他人发生冲突。</li><li><strong>追随者</strong>（<a class="wiki-link" href="#game-stats" data-slug="npcs-followers" data-fragment="game-stats">游戏属性</a>），他们的本能应该给带领他们的PC制造麻烦。</li><li><strong>其他任何人</strong>，他们的本能应该反映他们的基本观念以及他们如何对待世界。</li></ul>
+<p>用NPC的本能来指导他们如何行事和反应。如果你不确定NPC会怎么做，看看他们的本能。让他们那么做。</p>
+<hr>
+<blockquote><p><em>会话后，我想了想埃利奥斯， 为他写了这个本能：</em></p></blockquote>
+<p>抱怨但把活干完。</p>
+<hr>
+<h3 id="connections-to-others">与他人的联系</h3>
+<p>当你有时间时——通常在会话之间——想想这个NPC与他人相处得如何。问自己以下部分或全部问题：</p>
+<ul class="questions"><li>他们怎么看PC？</li><li>他们和谁有亲戚关系？和谁是朋友？</li><li>他们对谁忠诚，为什么？</li><li>他们不喜欢谁，为什么？</li></ul>
+<p>问自己追加问题。如果你不确定某个答案，暂时把它留作值得思考的事。</p>
+<p>用这些答案来描绘NPC，并帮助解决PC的行动。铁匠不喜欢狐狸的配偶？狐狸可能不得不说服铁匠去做一件本来很简单的事。铁匠忠于接生婆？她的支持可能让铁匠同意。</p>
+<p>别充实NPC的整个社交网络。留下空白，在它们与游戏相关时再补充细节。</p>
+<p>我对埃利奥斯的笔记现在是这样：</p>
+<hr>
+<p>埃利奥斯（他）：农民，没有幽默感，前佣兵，布洛德温的舅舅。</p>
+<p>新婚。屹耳的声音。</p>
+<p>本能：抱怨但把活干完。</p>
+<blockquote><p><em>会话后，我问自己其中一些 问题，加上这些笔记：</em></p></blockquote>
+<p>尊重莉安娜。对布洛德温和善。</p>
+<p>瓦希德是个危险的怪人。忠于他的妻子。</p>
+<blockquote><p><em>我需要充实他的妻子，但可以 等到我需要她出场时再说。</em></p></blockquote>
+<hr>
+<h3 id="motivations">动机</h3>
+<p>如果你想真正充实NPC的内心生活和动机，问自己以下部分或全部问题：</p>
+<ul class="questions"><li>他们想从PC那里得到什么？</li><li>他们害怕什么？</li><li>什么让他们愤怒？</li><li>他们渴望什么？</li><li>他们认为自己应得什么？</li><li>他们渴望做什么或成为什么？</li></ul>
+<p>除非你真的喜欢这种准备，否则把这些问题留给内心生活和动机真正重要的NPC。</p>
+<p>大多数情况下，你可以依靠NPC的概念、特质和本能。</p>
+<hr>
+<blockquote><p><em>埃利奥斯的动机在我看来很直接。目前，没有幽默感、 他的本能（“抱怨但把活 干完”）和他的新婚给了我 足够的素材。</em></p><p><em>不过将来，也许人们开始 怀疑莉安娜的领导，转而 指望埃利奥斯。到那时，我可能会 问自己其中一些问题。他 想从PC那里得到什么？他想让 莉安娜振作起来。他 害怕什么？为整个镇子的安全负责， 但也害怕他的妻子或 襁褓中的儿子受到伤害。什么让 他愤怒？瓦希德和卡拉多克不断 给村庄招来麻烦， 而莉安娜对此 视而不见。</em></p><p><em>这样的答案暗示埃利奥斯和莉安娜之间 一场迫在眉睫的对峙，他可能会要求她 管住卡拉多克和瓦希德，否则就 辞去统帅一职。</em></p></blockquote>
+<h3 id="game-stats">游戏属性</h3>
+<p>如果你认为一个NPC……</p>
+<ul class="ellipsis"><li><strong>可能与PC发生战斗</strong>，把他们写成<strong>怪物</strong>（<a class="wiki-link" href="dangers.html" data-slug="dangers" >危险</a>）的属性。</li><li><strong>会造成持续的麻烦</strong>，把他们写成<strong>威胁</strong>（<a class="wiki-link" href="threats.html" data-slug="threats" >威胁</a>）。</li><li><strong>会经常按PC的命令行事</strong>，把他们写成<strong>追随者</strong>（<a class="wiki-link" href="#creating-followers" data-slug="npcs-followers" data-fragment="creating-followers">创建追随者</a>）的属性。</li><li><strong>需要HP、护甲和伤害骰， 但不是怪物或追随者</strong>，那就照样使用追随者指引（<a class="wiki-link" href="#creating-followers" data-slug="npcs-followers" data-fragment="creating-followers">创建追随者</a>）。或者干脆随机应变。</li></ul>
+<p>NPC在你第一次创建或构想他们时可能不需要这些属性，但那可能随时间改变。一个友好的NPC可能开始追随PC并成为追随者。或者他们可能成为持续麻烦的来源并成为威胁。或者两者都是。两者都是很好。</p>
+<hr>
+<blockquote><p><em>当我第一次引入埃利奥斯时，我不认为他会和PC发生战斗， 他也没给他们制造任何麻烦。所以 没必要给他怪物属性 或把他写成威胁。</em></p><p><em>他尊重莉安娜，在镇上的防务方面 大体上听她的， 但我并不真的把他看作她的追随者。</em></p><p><em>不过随着游戏推进，镇上的人 对莉安娜的领导感到沮丧， 我可能会决定埃利奥斯 成了一个持续的问题，然后 把他写成一个威胁（一个</em>不定因素<em>，</em></p></blockquote>
+<p><em>大概，至少一开始）。</em></p>
+<hr>
+<p>追随者是大体上听从PC命令、追随其领导的NPC。</p>
+<p>他们通常是人，但训练有素的野兽、被束缚的灵体，甚至有感知的造物都可以算作追随者。PC可以通过机制（通过剧本、行动或秘宝）获得追随者，或在游戏过程中自然获得。</p>
+<p>追随者首先是NPC。</p>
+<p>你，GM，最终决定他们做什么、说什么，以及他们遭遇什么。他们与其他NPC的区别在于……</p>
+<ul class="ellipsis"><li>他们大体上会照他们的PC说的做；</li><li>他们可以积累对其PC的忠诚，让他们更容易带领和管理；以及</li><li>当PC让他们做某事时，他们可以触发玩家行动。</li></ul>
+<p>追随者也有一整套属性，与<strong>怪物</strong>（<a class="wiki-link" href="dangers.html" data-slug="dangers" >危险</a>）的非常相似。</p>
+<p>他们有标签、HP、护甲、伤害骰、本能，可能还有GM行动。</p>
+<p>追随者还有两项额外属性：<strong>代价</strong>和<strong>忠诚</strong>。</p>
+<p>追随者的代价描述是什么让他们持续追随PC。通常是几个词，比如“钱币、报酬、宝藏”或“感情、尊重”或“训练”。当PC支付追随者的代价时，追随者持有忠诚。</p>
+<p>忠诚是追随者可以持有的一种货币。追随者的玩家可以花费那忠诚，让追随者无视恐惧、守规矩，或做他们宁愿不做的事。详见<strong>巩固 纽带</strong>行动（<a class="wiki-link" href="#loyalty" data-slug="npcs-followers" data-fragment="loyalty">忠诚</a>）。</p>
+<p>这是一个追随者示例：</p>
+<hr>
+<div class="stat-block follower" id="rhiannas-crew-the-hunters"><h3 class="stat-name">莉安娜的队伍，猎人们</h3><p class="stat-tags">群体、弓箭手、观察敏锐、潜行、受尊敬、熟悉林地</p><p class="stat-stats"><strong>HP</strong> 6；护甲 0<br>伤害 手斧 <button type="button" class="dice-roll" data-dice="1d6" title="点击掷 1d6 — Shift: 优势 · Ctrl: 劣势">1d6</button>（手持）或弓 <button type="button" class="dice-roll" data-dice="1d6" title="点击掷 1d6 — Shift: 优势 · Ctrl: 劣势">1d6</button>（近距，弹药不足，耗尽）◇◇<br>本能 恪守传统和迷信<br>代价 作为一个群体寻欢作乐（忠诚 ◇◇◇ ）</p><p class="stat-note">艾拉（副手，愤世嫉俗）、洛丽（打鼾，眼尖）、哈里（瘦，老）、加雷特（已死）、另外两人。</p></div>
+<hr>
+<p>作为统帅，莉安娜开局就有一支队伍，并可以定义他们是谁。她的队伍是镇上的猎人。我们通常把他们当作一个群体，但艾拉、洛丽、哈里和已故的可怜加雷特都已被确立为个体。</p>
+<p>加雷特死后，莉安娜招募了：</p>
+<hr>
+<p>安德拉斯，学徒猎人</p>
+<div class="stat-block follower" id="archer"><h3 class="stat-name">Archer</h3><p class="stat-stats"><strong>HP</strong> 6；护甲 0<br>伤害 手斧 <button type="button" class="dice-roll" data-dice="1d6" title="点击掷 1d6 — Shift: 优势 · Ctrl: 劣势">1d6</button>（手持）或弓 <button type="button" class="dice-roll" data-dice="1d6" title="点击掷 1d6 — Shift: 优势 · Ctrl: 劣势">1d6</button>（近距，弹药不足，耗尽）◇◇<br>本能 努力给莉安娜留下好印象<br>代价 认可（忠诚 ◇◇◇ ）</p><p class="stat-note">observant, eager, rookie</p><p class="stat-note">年轻人，帕德里格的儿子。暗恋布洛德温。非常努力，问很多问题。</p></div>
+<hr>
+<p>他在她去戈丁矿场前集结村庄时引起了她的注意。</p>
+<p>随着时间推移，安德拉斯变得越来越称职，最终并入了莉安娜的猎人队伍。</p>
+<p>这是另一个示例：</p>
+<hr>
+<div class="stat-block follower" id="fflur-a-draft-horse"><h3 class="stat-name">弗卢尔，一匹挽马</h3><p class="stat-tags">大型、强壮、嗅觉灵敏、耐劳</p><p class="stat-stats"><strong>HP</strong> 10; <strong>Armor</strong> 0<br><strong>Damage</strong> hoofs <button type="button" class="dice-roll" data-dice="1d6+3" title="点击掷 1d6+3 — Shift: 优势 · Ctrl: 劣势">1d6+3</button> (hand, close, forceful)<br>本能 惊慌失措<br>代价 精心照料、梳理（忠诚 ◇◇◇ ）</p><p class="stat-note">一匹栗色母马，大约12岁。</p><p class="stat-note">总是饿。比塞琳懂事，但终究是匹马。</p></div>
+<hr>
+<p>弗卢尔是镇上的两匹马之一，作为资产列在聚落剧本上。PC为去戈丁矿场征用了她和一辆大车，但给她起名字的是布洛德温的玩家。</p>
+<p>马对镇子很重要，而布洛德温能和动物说话，所以玩家们和我对弗卢尔这个角色很感兴趣。我们决定把她当作追随者。</p>
+<p>因为布洛德温能和她说话，而且最感兴趣，我们同意把弗卢尔具体当作布洛德温的追随者。</p>
+<p>还有一个：</p>
+<div class="stat-block follower" id="andalau-of-the-flute-dancing-wind-spirit"><h3 class="stat-name">笛之安达劳，舞风之灵</h3><p class="stat-tags">灵体、微小、潜行、调皮</p><p class="stat-stats"><strong>HP</strong> 8；护甲 0<br>伤害 无<br>本能 玩耍嬉闹<br>代价 娱乐（忠诚 ◇◇◇ ）</p><ul class="stat-moves"><li>显形为一阵飘动的风（只有盐能伤害它）</li><li>传递一条耳语般的消息</li><li>抛掷东西（灰尘、树叶等）</li><li>惹恼或吓唬某人</li></ul><p class="stat-note">当你吹奏一支让风本身起舞的曲子时，安达劳显形，持有1忠诚。当你在它不持有忠诚时遣散灵体，笛子会裂开散架；安达劳获得自由。</p></div>
+<hr>
+<p>瓦希德在绿主的陵墓里发现了一支紫杉木的开裂笛子——一件<strong>小秘宝</strong>（<a class="wiki-link" href="playing-the-game.html" data-slug="playing-the-game" >玩游戏</a>）。经过几周的练习和波折，他现在能召唤被束缚在笛子上的安达劳。它大体上会照他说的做，但它是个善变的东西，他必须让它开心，否则笛子会碎裂变得毫无价值。</p>
+<h2 id="follower-moves">追随者行动</h2>
+<p>当PC与他们的追随者互动时，这些行动变得相关。</p>
+<div class="move-block" id="order-followers"><h3 class="move-name">Order Followers</h3><p class="move-trigger">当你<strong><em>指示你的追随者去做 会触发玩家行动的 事</em></strong>，而他们做了，他们就触发该行动。如果行动涉及掷骰，你替他们掷。不掷 +属性，而是掷骰并……</p><ul class="ellipsis"><li>如果他们至少有一个合适的标签或行动，+1，如果他们还是<em>出色的</em>则+2；</li><li>如果他们没有相关的标签或行动，+0；以及</li><li>如果他们的任何标签会造成妨碍，带劣势掷骰。</li></ul>
+<p>当追随者没有命令或主动行事时，由GM说他们做什么并决定进展如何。</p>
+<p>追随者是NPC——他们通常不触发面向玩家的行动。你可以<strong>让他们 陷入困境</strong>，让一个追随者冲上去攻击他们打不过的敌人，但那只是你在做温和GM行动。你告诉玩家这发生了，问“你怎么做？”没人为鲁莽的追随者掷短兵相接！</p>
+<p>不过，当追随者按PC的吩咐行事时，情况就变了。追随者是作为PC意志的延伸在行动，所以我们看骰子和面向玩家的行动来弄清会发生什么。</p>
+<p>如果PC叫追随者去做他们不想做的事，PC必须说服或以其他方式让他们去做——就像对任何其他NPC一样。<strong>忠诚</strong>（<a class="wiki-link" href="#loyalty" data-slug="npcs-followers" data-fragment="loyalty">忠诚</a>）让这更容易，但大多数追随者不经一番劝说是不会冲向雷龙的！</p>
+<p>假设追随者<em>确实</em>照PC说的做了，而那个动作如果由PC做会触发面向玩家的行动，那就正常解决该行动。玩家代追随者掷骰，并做如果他们的PC触发该行动时通常会做的任何决定。如果他们掷出6-，玩家标记XP。</p>
+<p>追随者没有STR或INT这样的属性。如果行动要求掷+属性，玩家查看追随者的标签和行动。如果其中任何一个表明追随者擅长这个，玩家加</p>
+<p>+1（即使有多个标签或行动适用）。</p>
+<p>否则，他们加+0。</p>
+<p>如果追随者是<em>出色的</em>，并且他们有另一个适用的标签或行动，那么玩家掷+2。但如果没有其他标签或行动适用，玩家对<em>出色的</em>追随者仍然掷+0。</p>
+<p>如果追随者的任何标签会主动妨碍他们正在做的行动，玩家带劣势掷骰。一次掷骰可以同时获得+1（或+2）和劣势。如果瓦希德派他<em>潜行</em>、<em>调皮</em>的风</p>
+<p>灵去监视某人，<em>潜行</em>标签有帮助（+1），但<em>调皮</em>标签意味着它可能分心并试图捉弄目标（施加劣势）。</p></div>
+<hr>
+<blockquote><p><em>莉安娜刚看到卡拉多克被 哈格尔撞飞，她冲向他身边大喊： “艾拉，洛丽——射！”她们回过 神来，搭箭，放箭。</em></p><p><em>队伍有</em>弓箭手<em>标签（但没有</em> 出色的<em>标签），所以莉安娜掷+1， 得了7。队伍造成伤害，但 莉安娜得选：减少弹药、保持 稳定、靠近，或仓促射击。“我 觉得她们射了一大堆箭，”她说， 在队伍的装备上标记</em> ◇ <em>弹药不足。 然后她掷<button type="button" class="dice-roll" data-dice="1d6+1" title="点击掷 1d6+1 — Shift: 优势 · Ctrl: 劣势">1d6+1</button>（队伍的伤害，+1 因为有两人在射）， 得了5。</em><em></em></p><p><em>“漂亮！”我说。“它痛得嚎叫，人立起来， 寻找刺痛它的东西，给了你时间 赶到卡拉多克身边。瓦希德，你一直在看着这一幕，你怎么做？”</em></p></blockquote>
+<hr>
+<blockquote><p><em>莉安娜不信任戈丁矿场的 马夫，所以她告诉安德拉斯他要 睡在大车里，看着它 和马。</em></p><p><em>安德拉斯是追随者，他会在屏幕外 守着，所以我说：“我想你是 让他直面险境，危险是 马夫可能搞的任何名堂。但先别 掷。”我让莉安娜在第二天， 几个以PC为中心的场景之后掷骰。</em></p></blockquote>
+<p><em>安德拉斯的</em>观察敏锐<em>标签适用，所以她加</em></p>
+<blockquote><p><em>+1，但她得了5。“卡拉多克，鼻子流血的安德拉斯在客栈找到你，他 就像，‘他们偷了弗卢尔！我们怎么办？’”</em></p></blockquote>
+<hr>
+<p>试着用尽可能少的行动和掷骰解决追随者的行动。拉远，用单次直面险境解决复杂的任务。如果追随者做和PC一样的动作，把它当作追随者相助PC，而不是触发他们自己的行动。</p>
+<hr>
+<blockquote><p><em>艾拉几乎死了，阴影存在 吸走了她的生命。布洛德温 问：“我们知道怎么治这个吗？我去 请教格温迪尔和塞伦。”我们都 同意布洛德温在命令追随者， 但不清楚她是让她们 见多识广，还是自己见多识广并让追随者相助她。我们决定是 后者，因为这让焦点保持在PC身上。</em></p><p><em>所以，布洛德温带优势掷骰+INT。 她得了12，我告诉她：“艾拉的灵魂 受了伤。格温迪尔能强固她的 身体，但要真正治愈她，你需要 进入恍惚状态，接触她的灵魂，并试着 用你自己的灵魂修复它。那会非常 危险。你怎么做？”</em></p></blockquote>
+<hr>
+<blockquote><p><em>布洛德温和塞伦找到了艾拉几近野化的灵魂。布洛德温试图说服艾拉 让她帮忙，但掷出4，我让某人 陷入困境。“经过一番哄劝，她让你 靠近。但就在你靠近时，塞伦咒骂一声 冲了出去。你看到一群不怀好意的灵体 从雾中出现，而她要去 正面迎击它们！”</em></p><p><em>布洛德温问塞伦是在守护还是 短兵相接。“都不是，”我说，“她是 自作主张，不是按你的指示。”然后我告诉她 后果。“她暂时挡住了它们， 但她撑不了多久。你可以 帮她，但艾拉会跑掉。或者你可以 帮艾拉，希望你够快能把 塞伦救出来。你怎么做？”</em></p></blockquote>
+<p>注意追随者无法使用PC的剧本行动。统帅可以命令追随者发表一篇鼓舞人心的演讲，但他们不会触发我等寡众。游侠可能有大猎物猎人，但他们的宠物狼不会因此对</p>
+<p><em>大型</em>敌人造成+2伤害。</p>
+<div class="move-block" id="strengthen-your-bond"><h3 class="move-name">Strengthen Your Bond</h3><p class="move-trigger">当你<strong><em>支付追随者的代价</em></strong>，且你最近没有这么做过，他们持有+1忠诚（最多3）。 1对1花费追随者的忠诚，让他们：</p><ul class="bullets"><li>克服恐惧照你说的做</li><li>抵制按其本能/标签/特质行事</li><li>做他们不想做的事（只要不是令人憎恶的或自杀性的）</li></ul>
+<p>当追随者没有命令或主动行事时，由GM说他们做什么并决定进展如何。</p>
+<p>每个追随者都有一个代价，比如“真挚的感情”或“钱币、报酬、宝藏”或“训练”。当PC支付那个代价——当他们直接提供它或确保追随者得到它——追随者就获得忠诚。</p>
+<p>支付追随者的代价应该是有意义的时刻。理想情况下，它应该涉及PC有意采取的行动。让玩家负责指出他们何时支付了追随者的代价，但当然——和任何行动一样——任何人都可以指出这个行动被触发了。如果有人不同意，讨论一下。</p>
+<p>PC和/或追随者应在“镜头前”有一个重要的场景，才能再次</p>
+<p>巩固纽带。如果PC在一段休整或松散游戏中多次支付“训练”之类的代价，追随者只持有+1忠诚。</p></div>
+<h2 id="loyalty">忠诚</h2>
+<p>当追随者的代价被支付时，他们持有</p>
+<p>+1忠诚，最多3。如果追随者持有</p>
+<p>3忠诚，那巩固纽带不会触发。</p>
+<p>追随者持有忠诚，但由他们追随的PC（或者说，那名PC的玩家）选择花费。一般来说，一个追随者与一名PC绑定，只有那名PC能支付其代价或花费其忠诚。但如果一个NPC追随整个队伍，那么任何PC都可以产生或花费那个追随者的忠诚。</p>
+<p>PC通常会在你做了GM行动、展示追随者害怕、或要做蠢事、或不想照吩咐做之后花费追随者的忠诚。玩家可以花费忠诚来解决那个问题，而不必触发说服或直面险境之类的行动。</p>
+<p>玩家也可以主动花费忠诚，但如果他们这么做，考虑是否真的有必要。如果追随者本来不会退缩或做蠢事，告诉玩家终究没必要花费忠诚。</p>
+<p>很容易把追随者的代价和忠诚看作交易性的：我为你做了这个，现在你欠我的。对某些追随者确实如此，但对大多数来说，忠诚代表信任、尊重、喜爱，甚至只是习惯。</p>
+<p><strong>问玩家花费追随者的忠诚时 是什么样</strong>。也许PC拍拍他们的肩膀说些鼓舞人心的话。也许他们对上眼神摇摇头。或者也许追随者只是咽了口唾沫，做了该做的事。与玩家一起确立这个特定追随者的忠诚如何表现。</p>
+<hr>
+<blockquote><p><em>去戈丁矿场的旅程要四天， 第一天我们确立布洛德温 在照顾弗卢尔。她晚上费心 给她梳理，刷洗她的 身体，在她吃草时陪着她。 我们同意这支付了弗卢尔的代价 （“精心照料、梳理”），布洛德温的 玩家为弗卢尔标记1忠诚。</em></p><p><em>第二天的旅途没有任何 重要场景。布洛德温扎营时又照顾了 弗卢尔，问 她是否再次巩固纽带。“不，” 我说，“你刚刚做过了，对吧？就是，是的，游戏中 过了一天，但你基本上一直都在 照顾她，对吧？”所以 弗卢尔仍然只持有1忠诚。</em></p><p><em>第二天，一只弗里坦克（一种巨大的 猛禽）低空掠过队伍。如果他们待着不动，道路的魔法 会保护他们，但我</em><strong><em>展示一个坏处</em></strong><em>，突出 弗卢尔的本能（“惊慌失措”）。“布洛德温， 弗卢尔尥蹶子、人立，把你撞倒， 你翻滚着摔在铺路石上。她还套在 挽具里，如果她继续这样，她会， 呃，摔断腿。你怎么做？”</em><em></em></p><p><em>“我站起来，平静地走过去，双手伸出 像是‘吁，姑娘’。”她在试图用她的深入 狮穴行动，让她能用触摸让野兽平静下来。</em><em></em></p><p><em>“我知道行动说她不会伤害你， 但她还在踢蹬、人立。我觉得 仍然有你退缩或表现出 恐惧的危险。你要用WIS直面险境。 或者你可以花费弗卢尔的忠诚来阻止 她按本能行事。”</em></p><p><em>布洛德温用了忠诚，我问 这是什么样。“我就像是对她低语， 双手伸出，‘嘘，姑娘……’然后她平静 下来。行吗？”当然行！</em></p></blockquote>
+<hr>
+<blockquote><p><em>森林里的事情变得诡异了。 太阳刚刚暗了下去。树在流血。 不祥的影子在视线边缘闪过。 瓦希德正在卡拉多克的盾上 画圣化标记，但需要时间。</em></p><p><em>“他们在做这件事时，莉安娜，你的队伍 有点吓坏了。你怎么做？” 她吹了声口哨，指挥他们围住 PC，打算让他们守护。</em></p><p><em>“是的，但我觉得他们得先直面险境，” 我说，“危险是他们自己的 恐惧。你知道他们有多迷信！”</em></p><p><em>“呃，不，”莉安娜说。“我花掉他们的1 忠诚让他们克服恐惧照我说的做。 我觉得看起来没什么，那声口哨 就让他们回过神来。那么……我就掷 守护了？”当然！</em></p></blockquote>
+<hr>
+<blockquote><p><em>格温迪尔没来参加瓦希德的 开斋聚会，布洛德温 去她家看看为什么。格温迪尔 声称她不认同“那些颓废的 南方做派”，但实际上，她觉得 被她最喜欢的学生冷落了。</em></p><p><em>我预计布洛德温会劝格温迪尔并触发 说服。结果，布洛德温抱了抱她， 为自己不常在身边道歉，说：“我们 不用去。这里有很多活要干。”她们 花了几个小时切药草、捆药草。 然后布洛德温问这是否支付了格温迪尔的代价 “体贴、感情”。我确实认为是。</em></p><p><em>“你知道，瓦希德那儿可能还剩些果仁 蜜饼，”布洛德温说。“我花掉 那忠诚让她做她 不想做的事。”但是，现在她 感觉好些了，我觉得格温迪尔 很乐意去聚会，我告诉布洛德温 留着那忠诚。</em></p></blockquote>
+<h2 id="followers-in-play">游戏中的追随者</h2>
+<p>追随者是NPC。他们在<strong>界线</strong>（<a class="wiki-link" href="running-the-game.html" data-slug="running-the-game" >主持游戏</a>）你这一侧，<strong>描绘他们是你的责任——不是玩家的</strong>，说他们做什么、说什么。稍微模糊界线是自然的，但如果玩家把追随者当作第二个PC来描绘，暂停游戏并重新设定期望。<strong></strong></p>
+<p>和任何NPC一样，<strong>把追随者作为 核心循环的一部分来使用</strong>（<a class="wiki-link" href="running-the-game.html" data-slug="running-the-game" >主持游戏</a>）。确立情境时包括他们。用他们或针对他们做GM行动（温和或强硬）。决定他们对PC的言行如何反应——这适用于所有PC，不只是他们追随的那名！</p>
+<p>话虽如此，<strong>追随者大体上会做 他们的PC叫他们做的事，而且他们 常常指望PC来指挥</strong>。问“那你让你的队伍做什么？”或说“他期待地看着你，你叫他做什么吗？”之类的话完全没问题。</p>
+<p>追随者越是确立，你就越应该<strong>提问并在答案的基础上 构建</strong>。如果统帅的队伍像家人一样，在充实个体成员甚至决定他们会做什么时都依靠他们。“莉安娜，你觉得哈里在这里会作何反应？”</p>
+<p>不过记住：<strong>命令追随者只在PC <em>指示</em> 追随者时触发</strong>。</p>
+<p>如果你问玩家他们认为追随者会做什么，而你同意，是的，他们会那么做——那不是命令追随者，追随者不触发任何行动。你只是决定发生什么。</p>
+<h2 id="the-burden-of-leadership">领导的重担</h2>
+<p>追随者可能有用，但他们也应该是压力和冲突的来源。</p>
+<p>首先，<strong>追随者会害怕</strong>。他们可能在受惊时僵住，或逃离<em>骇人</em>的敌人，或在超自然恐怖面前惊慌失措。发生这种情况时告诉玩家，问他们怎么做。</p>
+<p>如果PC给他们下令，玩家可以花1忠诚让追随者克服恐惧照吩咐做。</p>
+<p>否则，问自己：<strong>如果追随者不害怕， 他们会心甘情愿地做这件事吗？</strong></p>
+<p><strong>如果会</strong>，那PC是在让他们直面险境（危险是他们僵住、惊慌或搞砸）。</p>
+<p><strong>如果不会</strong>，那追随者需要被说服，通过说服或其他某个行动。</p>
+<p>即使不害怕，<strong>追随者 也不总是照吩咐做</strong>。他们可能在以下情况抗拒命令……</p>
+<ul class="ellipsis"><li>他们愤怒、痛苦、震惊或以其他方式不堪重负；</li><li>命令不合理、愚蠢、有辱人格、令人反感等；和/或</li><li>命令违背追随者的本能、标签、代价或其他特质。</li></ul>
+<p>例如，<em>战士</em>追随者通常愿意投入战斗，但如果敌众我寡，或者他们几天没吃东西，又湿又冷，受够了这些破事，嗯，他们大概需要一番劝说！</p>
+<p>当你决定追随者不想照吩咐做时，把这告诉玩家！“他用疲惫的眼睛看着你，连身都不起，你怎么做？”或“你要我去做什么？那……</p>
+<p>不，绝不。”或“你看得出他不想，你得说服他——你怎么做？”</p>
+<p>然后玩家可以选择花费追随者的忠诚（如果有的话）让他们“做他们不想做的事”。或者PC可以说服追随者，或用不同的行动让他们信服。或者他们可以作罢去做别的。无论他们做什么，<strong>遵守 规则</strong>和骰子，一致地描绘追随者，<strong>游戏是为了 看看会发生什么</strong>。</p>
+<p><strong>把追随者的本能、标签和 特质作为PC的麻烦来源加以突出</strong>。</p>
+<p>游侠的狼有“填饱肚子”的本能吗？那就让它咬住明显的诱饵，或拒绝丢下没吃完的尸体。统帅队伍里有个赌徒？让她擅离职守去参加一场骰子游戏，或让一个戈丁矿场的债主上门讨债。玩家可以花1忠诚让追随者“抵制按其本能/标签/特质行事”，但如果他们不花，就需要说服他们停下，否则承担后果。</p>
+<p>强调追随者的恐惧、缺点和麻烦的行为让他们的忠诚有价值！如果追随者总是照PC说的做，从不害怕或捣乱，那他们的玩家就看不出有什么理由支付追随者的代价并巩固</p>
+<p>纽带。</p>
+<hr>
+<blockquote><p><em>瓦希德从伐木营地沿路 走下来，吹奏一支轻快的曲子， 召唤与他的笛子相连的安达劳。 风阵阵回旋，当 瓦希德停止吹奏时，我压低嗓子喊： “再来！再来再来再来！”</em></p><p><em>瓦希德想让灵体找到伊万 去过的那些废墟，并带他 去。鉴于安达劳的本能 （“玩耍嬉闹”）和</em>调皮<em>标签，我觉得它不想去。我叹了口气 低语：“好——无——聊——”</em></p><p><em>舞风之灵秘宝说 安达劳显形时持有1忠诚； 瓦希德可以直接花掉。 但如果灵体被遣散时没有 忠诚，笛子就会碎。瓦希德转而说服 它。“无聊？哎呀，这会是一场精彩的 捉迷藏！”他掷出8。</em></p><p><em>“它没被说服，”我说，“但如果你在它带你去 废墟时把这变成一个游戏， 它会觉得有趣。那甚至能 支付它的代价。”瓦希德提出了这个， 灵体同意了。第二天早上，灵体 回来了。“找到了，找到了，来，来， 跟上！玩！”</em></p><p><em>瓦希德告诉莉安娜他能带 大家去废墟，她让所有人 准备出发。但当她</em>迷信的<em>队伍意识到他们要跟着 一个善变的灵体玩“冷热 游戏”时，他们死活不肯。现在莉安娜得说服他们同意 这个计划。如果她昨晚让队伍 庆祝了，那就支付了 他们的代价，她可以直接花掉他们的 忠诚。但她没有，他们没有 忠诚，所以现在她需要 说服他们。</em></p></blockquote>
+<hr>
+<h2 id="off-screen-orders">屏幕外的命令</h2>
+<p><strong>当玩家派追随者到屏幕外 做某事时</strong>，用单个行动（至多！）解决它。事情滚雪球时PC不会在场给出后续指示，所以拉远，选一个行动来代表屏幕外的行动。</p>
+<p>解决那一个行动。让所有其他可能顺利或出错的事情来渲染结果。</p>
+<p>如果你实在决定不了追随者在做哪个行动，那就是直面险境。</p>
+<p>一般来说，在PC可能得知结果时让玩家为追随者的屏幕外行动掷骰。如果PC把追随者留在戈丁矿场监视“利齿”穆特拉，就在PC回到戈丁矿场时让玩家掷寻求洞见。</p>
+<p>不过有时，你想提前知道结果，好把它编进正在展开的事件。比如统帅让她的队伍悄悄绕过去包抄敌人。</p>
+<p>你可以让统帅立即掷直面险境，然后也许一两个场景后再揭示结果。“7，嗯？好，好。”然后，在PC悄悄接近土匪营地、正要进攻时：“北边传来一阵骚动，一个人影把另一个从灌木丛里拖出来。哦糟，他们抓住了哈里！</p>
+<p>营地里的每个人都会去看怎么回事。你怎么做？”</p>
+<h2 id="followers-in-fights">战斗中的追随者</h2>
+<p>追随者能对战斗产生很大影响。</p>
+<p>他们能帮助拉平差距，或让PC以多打少压倒一个敌人。但追随者也可能因惊慌、惹上麻烦或鲁莽行事而让局面复杂化。</p>
+<p>运行战斗时记住追随者。他们可能听从PC或指望PC指挥，但他们很少只是站着不动！当你确立情境或做GM行动时，想想聚光灯在PC身上时追随者一直在干什么。“你解决了这只克林温，但看到另一只压在格劳身上。哈里在瞄准，但在犹豫。</p>
+<p>另一只克林温拿着你的炊具在逃跑。你怎么做？”</p>
+<p>不过记住，追随者只在其PC指示时才触发玩家行动。如果PC无视哈里和格劳去追逃跑的克林温，那哈里射不射由你决定。如果他射了，由你决定他射中、射偏，还是射中了格劳。但如果PC一边冲去追逃跑的克林温一边喊“哈里，射啊，该死！”——那他们就是在命令追随者，玩家掷骰让哈里放箭。</p>
+<p>战斗中清晰沟通很难！很吵，你没多少时间（或气息！），而且每个人都忙着别被杀。别让玩家在激战中下达复杂详细的命令。几个词或手势大概就是他们能做的全部！</p>
+<p>如果PC的命令含糊，问他们的意图以及追随者如何能明白。如果他们与追随者合作已久，给他们一些余地。统帅的队伍多年来一起操练、并肩作战，所以“哈里，身后！”可以传达“哈里，敌人在你身后，转身攻击它！”但对一个新追随者，这样的警告最多只能让他们闪避！</p>
+<p><strong>战斗中的追随者</strong>示例见page 213、223、415、463和472。</p>
+<h2 id="when-followers-defend">当追随者守护时</h2>
+<p>当PC命令追随者守护并得到7+时，<em>追随者</em>持有戒备，但由玩家决定何时以及如何花费。</p>
+<p>当玩家花费追随者的戒备时，考虑追随者是否真的会做玩家想要的事。</p>
+<p>他们真的会替被守护者承受这次攻击吗？他们真的会把所有注意力引到自己身上吗？如果答案感觉是“不会”，那玩家必须同时花费</p>
+<p>1戒备<em>和</em>1忠诚——他们不太可能有时间说服追随者！</p>
+<p>当PC守护而追随者相助他们时，那名PC持有戒备，但可以花费它让<em>追随者</em>承受攻击的伤害/效果，或让<em>追随者</em>把所有注意力从被守护者引到自己身上。问玩家这是什么样。如果他们狡猾地把追随者当肉盾，那追随者对此没多少发言权（但如果他们活下来，可能会有很多话要说）。</p>
+<p>如果玩家只是指望追随者为团队牺牲，嗯……那可能</p>
+<p>也需要花费忠诚。</p>
+<h2 id="followers-at-0-hp">0 HP的追随者</h2>
+<p>当追随者降到0 HP时，他们的命运掌握在你手中。如果伤害来源可能致命，那他们退出行动，由你选1：</p>
+<ul class="bullets"><li>他们立即死亡</li><li>他们触发鬼门关（即使不是其PC指示的）。其PC的玩家掷骰</li><li>他们濒死，如果没人干预，很快要么死去要么触发鬼门关 记住：保护你的NPC不是你的工作，而追随者是NPC！<strong>让它 烧起来</strong>。</li></ul>
+<p>如果伤害来源不致命，那追随者退出行动，直到你另有说法或他们恢复HP（因为魔法、某人的行动，或因为有人照料他们的伤口而他们恢复）。</p>
+<p>注意：游侠的动物伙伴是例外。它们有一个特殊行动<strong>至死 忠诚</strong>（<a class="wiki-link" href="animal-companion.html" data-slug="animal-companion" >动物伙伴</a>），决定它们降到0 HP时发生什么。没人想看到狗死。</p>
+<h2 id="group-followers">群体追随者</h2>
+<p>带<em>群体</em>标签的追随者代表共享属性、常常一同行动的多个个体。统帅的队伍是最明显的例子。其他群体包括PC招募来对付克林温的村民队伍，或被束缚在那件破斗篷（饰有牙齿的那件）上的三个怨灵。</p>
+<p>群体成员有相同的标签、最大HP、护甲、伤害、本能、行动和代价。他们持有一个共同的忠诚池，但各自有自己的当前HP。</p>
+<p>他们通常用相同的装备整装。</p>
+<hr>
+<blockquote><p><em>PC们和莉安娜的队伍循着 妖精小径追踪巨型蜘蛛到 大森林里一座古老的金字形神塔。 他们认为妮娅在里面。 队伍每人有8 HP，携带一</em> ◇ <em>把弓和青铜箭、一</em></p></blockquote>
+<ul>
+<li>◇ 把青铜手斧、 ◇◇ 厚兽皮，以及 两个未定义的 ◇ 。他们目前作为群体持有1 忠诚。</li>
+</ul>
+<hr>
+<p>带领群体追随者的PC常常会<strong>指示它作为整体行动</strong>。如果这导致群体触发玩家行动（按命令追随者），那玩家掷一次，根据群体共享的标签施加加值（和/或劣势）。</p>
+<hr>
+<blockquote><p><em>莉安娜说：“我示意我的队伍悄悄 摸过去就位。我想让他们在我们接近时掩护。”她在命令 追随者，让他们直面险境 （危险是他们被发现甚至 遭到伏击）。她替他们掷骰，因</em> 潜行<em>标签加+1，得了7。</em><em></em></p></blockquote>
+<hr>
+<p><strong>当群体追随者做行动并 承受某种后果时</strong>，你可以让那个后果影响整个群体，或群体中的个别成员。</p>
+<hr>
+<blockquote><p><em>我选了较小的成功。“好，他们悄悄 前进就位，除了 其中一个。他在去 神塔的半路上，低头看，好像 被什么缠住了。哦，糟，你意识到 那是一张网！如果他继续那样拉扯， 蜘蛛肯定会注意到。”</em></p></blockquote>
+<hr>
+<p><strong>当群体中的某个成员首次 脱颖而出时</strong>，按当时说得通的细节程度充实他们。</p>
+<p>给他们一个名字、一个令人难忘的特质，也许再加一个标签。问关于他们的问题。做笔记，或让玩家做！</p>
+<hr>
+<blockquote><p><em>我问莉安娜她队伍里谁被缠住了， 她决定是其中一个迄今未定义的 成员。她看了看她的 队伍附页，上面有可用的名字、 标签和特质。“嗯，格劳。他是</em>矮小的<em>， 就是又矮又瘦，我觉得他太 严肃了。有点矮个子情结。”</em> 她把他加进附页。</p><p><em>“但他是个老练的猎人，对吧？那 你觉得他现在为什么有点 慌？”</em></p><p><em>“哦，我觉得他经常被队伍 取笑，他就知道他们 会没完没了地拿这事说笑。所以他 不是，呃，惊慌。但他快要 破口大骂了。”</em></p></blockquote>
+<hr>
+<p><strong>当PC指示群体中的 个别成员时</strong>，他们可以像自己是追随者一样触发行动。群体的标签和行动适用，加上他们作为个体的任何独特标签或行动。</p>
+<hr>
+<blockquote><p><em>莉安娜悄悄上前帮格劳 割开网脱身，她自己直面险境 得了10。然后我</em><strong><em>提供一个机会</em></strong><em>， 指出一棵高而细、斜 伸到空地上方的树。爬上去会很难， 但能清楚看到</em> 神塔屋顶的洞里。“你怎么做？”</p><p><em>“又高又细，你说？听起来 是个适合……矮小的人的活。我 让格劳爬。‘没必要让 其他人知道网的事，对吧？我， 呃，很高兴你发现了这棵树叫 我过来。’我眨眨眼。”她在让他 做危险的事，但我觉得她 处理得非常好。我看不出他有什么理由 抗拒。</em></p><p><em>“他抬头看看那棵细树，点点头， 然后放下弓和多余的装备， 开始爬。我想他又在直面 险境；他冒着摔下来或弄出很大声响的风险。”我们看了他的标签， 决定</em>潜行<em>（来自 群体）或</em>矮小的<em>（他的个人标签） 都可能适用，但那仍然只是 +1加值。</em></p><p><em>莉安娜掷出11，所以格劳飞快地爬上 树，往里看，毫无问题地下来了。 不过他脸色煞白。 “妮娅在里面，是的。她…… 她一动不动地站着，就盯着 这个……挂毯？上面像是一只巨大的蜘蛛。 而挂毯在……起伏。 那……那真的很吓人。”</em></p></blockquote>
+<hr>
+<p>群体追随者持有一个共同的忠诚池，可以花费来影响整个群体或个别成员。</p>
+<p>群体的代价通常需要支付给整个群体，但如果玩家认为在群体某个成员身上花费忠诚有价值，他们可以！</p>
+<hr>
+<blockquote><p><em>格劳刚看到了诡异的 超自然之物，而莉安娜的队伍有 “恪守传统和迷信”的 本能。所以，我</em><strong><em>展示一个坏处</em></strong><em>， 告诉莉安娜格劳明显 吓坏了，濒临恐慌。不过只是</em> 他一个人。“你怎么做？”</p><p><em>“我把手搭在他肩上。‘妮娅在 里面，她是我们的人。我要和 蒙福者、瓦希德和卡拉多克一起进去。但我需要你在外面保持清醒。’”我问 她是在说服他保持冷静， 还是花费忠诚让他克服恐惧。“我花忠诚。我可不想 在这冒6-的险。”队伍一开始只持有1 忠诚，现在没了。 但格劳会稳住！</em></p></blockquote>
+<hr>
+<p><strong>群体的每个成员都有自己的 HP</strong>，他们各自受到伤害、失去HP。如果群体的多个</p>
+<p>成员同时受到伤害，为每个成员分别掷伤害，从他们的当前HP中扣除。</p>
+<hr>
+<blockquote><p><em>在PC们带着妮娅逃离 神塔时，蛛母派出一波 蛛形生物追击。莉安娜的队伍 提供掩护射击（在PC 同舟共济时相助他们），但那引来了 蛛群的注意。</em></p><p><em>莉安娜大喊让他们跑向 路石。我们都同意他们在直面险境。莉安娜掷+0（他们的 标签都不适用于全力冲刺）， 唉，得了2。</em></p><p><em>“这可不妙，”我说。“首先，他们 每人受<button type="button" class="dice-roll" data-dice="1d8" title="点击掷 1d8 — Shift: 优势 · Ctrl: 劣势">1d8</button>伤害。”莉安娜掷出 1、4、5、5、6和8，每个减去 队伍的1护甲。“所以，格劳没受任何 伤害？嗯，他追上了你们，但 你们听到其他人的叫喊。瓦希德，你 回头一看，看到哈里被扑倒了。 你们各自怎么做？”</em></p></blockquote>
+<hr>
+<p>群体成员通常用相同的装备整装，但如果玩家愿意做额外的记录，可以让个体装载不同的物品。</p>
+<p>同样，PC可以指示一名队员有备无患并在其行囊中添加一件物品，而不需要其余队员每人都拿出同样的物品。不过记录这些是玩家的责任！</p>
+<p>一般来说，别操心小物品，或哪个成员带着补给品的确切次数。如果玩家真的想要，他们可以记录这种细节程度，但很少值得费这个劲。</p>
+<hr>
+<blockquote><p><em>瓦希德用他的 畏火秘宝赶走了蜘蛛。莉安娜 回去把哈里拖了出来。 每个人都回到了路石， 精怪荆棘拇指一直 在那里等他们。</em></p><p><em>在穿过妖精 小径返回之前，布洛德温照料哈里，恢复 他的HP并稳住他，但他仍然 瘫痪。莉安娜让洛丽把 他的2个未定义的</em> ◇ <em>变成一副卷式担架 来抬哈里。她在队伍的行囊清单上写下“</em> ◇◇ <em>担架 （洛丽）”。</em></p><p><em>然后她让队伍其余每人</em></p></blockquote>
+<p><em>把一个未定义的</em> ◇ <em>变成</em> ◇ <em>补给品，</em></p>
+<blockquote><p><em>总共20次（五名追随者，每人4 次）。然后四名PC恢复， 四名HP不满的追随者也恢复，用上追随者 带来的绷带、威士忌和食物。 追随者还剩12次补给品。</em></p><p><em>莉安娜可以决定格劳和艾拉 用光了所有补给品，现在每人 只带五个</em> ◇ <em>，但此时这并不真的 重要。如果以后变得重要（比如，某个队员 和群体走散了），我们可以 到时再决定谁带着什么。</em></p></blockquote>
+<hr>
+<h2 id="when-a-group">当群体……</h2>
+<ul class="ellipsis"><li><strong>短兵相接或放箭</strong>（或相助PC这么做）时，攻击可以伤害多个敌人。他们掷一次行动，对每个敌人分别掷伤害（见page 414）。考虑把交锋抽象化（<a class="wiki-link" href="dangers.html" data-slug="dangers" >危险</a>）。</li><li><strong>对单个敌人 短兵相接或放箭</strong>（或相助PC这么做）时，他们掷一次行动（很可能带优势），掷一个攻击者的伤害，每多一个攻击者+1（见page 414）。</li><li><strong>守护</strong>时，群体持有一个共同的戒备池。PC代表整个群体或某个成员花费它，哪个说得通就用哪个。</li><li><strong>恢复</strong>时，每个恢复HP的成员必须消耗1次补给品。</li><li><strong>寻求洞见</strong>时，PC总共可以问3个或1个问题，而不是群体每个成员3个或1个。</li><li>与一名或多名PC一起<strong>同舟共济</strong>时，群体掷一次。6-时，决定让群体的哪个（些）成员陷入困境。10+时，问玩家谁挺身而出救人，以及如何救。</li><li><strong>招致代价、承受攻击、 陷入危险、引来不受欢迎的 关注</strong>等时，由你决定哪个（些）成员受影响，以及如何受影响。</li></ul>
+<h2 id="creating-followers">创建追随者</h2>
+<p>PC可以通过以下方式获得追随者……</p>
+<ul class="ellipsis"><li>来自剧本、背景、行动或特殊财产；</li><li>解锁某些秘宝的奥秘；或</li><li>在游戏中自然获得。</li></ul>
+<p>当游戏机制说PC获得一个追随者时，它要么提供追随者的属性，要么让玩家从各种提示中选择属性。像对任何NPC一样与玩家一起充实追随者。但你不需要操心给他们分配属性——机制替你做了！</p>
+<p>在游戏中自然出现的追随者就是另一回事了。他们可能来自任何地方，几乎可以是任何人。</p>
+<p>一个NPC可能开始跟着某名PC到处走，照他们说的做。</p>
+<p>PC可能交易与易货弄来一条猎犬，或征用镇上的一匹马。也许他们招募一些村民去猎克林温，或从土匪手中救下一个商人，或与一个丘陵之民骑手联手杀死某头凶兽。</p>
+<p>在把某人写成追随者之前，问自己：</p>
+<ul class="questions"><li>他们会追随PC的领导，大体上听从那名PC的命令吗？</li><li>你和你的玩家足够在乎这个NPC，愿意给他们属性吗？</li><li>当他们的PC把他们送入危险时，你想让骰子决定他们的命运（而不是你自己决定发生什么）吗？</li><li>你能接受追随者带来的额外记录、机制和聚光灯时间吗？</li></ul>
+<p><strong>如果你对上述任何一个回答“否”，</strong>那就别把NPC当作追随者。不过这不是硬性标准。你的团体可能想把村里的马当作追随者，但其他团体可能不想。</p>
+<p>答案也可能随时间改变。</p>
+<p>麻烦的难民孩子开始可能不是追随者，但和壮汉一起生活一个季节后，他可能会成为追随者！</p>
+<p>同样，一个NPC可能在与PC进行特定远征时充当追随者，但回家后就不再是了。</p>
+<hr>
+<blockquote><p><em>PC们在为去 戈丁矿场做准备。他们集结了 村庄，确定了两个有用的NPC： 埃利奥斯（莉安娜不在时会留下负责 防务）和 安德拉斯（她队伍的新成员）。 他们还征用了一匹 村里的马和一辆大车。</em></p><p><em>埃利奥斯不和他们一起去，我也不 认为他只是照莉安娜说的做； 他不是她的追随者。不过安德拉斯是 一个渴望加入她队伍的热切孩子。我 肯定会把他当作追随者。</em></p><p><em>村里的马提供了追随者属性， 但一开始我们没把它当作 追随者。但当PC出发时， 显然布洛德温和这匹马 （弗卢尔）相当亲近。我想在弗卢尔的 命运上放弃一些决定权， 而且我乐意多照管一个 追随者，所以她就成了追随者！</em></p></blockquote>
+<hr>
+<p>如果一个NPC不是追随者，那他们按PC命令行事时不触发行动，也没有代价或持有忠诚。他们可能仍然有属性，仍然可能是<strong>怪物</strong>（<a class="wiki-link" href="dangers.html" data-slug="dangers" >危险</a>）或<strong>威胁</strong>（<a class="wiki-link" href="threats.html" data-slug="threats" >威胁</a>）。</p>
+<p>如果你决定一个NPC是追随者，那就弄清他们追随哪名PC。此外，他们需要属性：标签、HP、护甲、伤害、本能、代价，也许还有一些GM行动。</p>
+<p>有些追随者已经有属性，来自<em>第二册</em>条目或玩家手册。</p>
+<p>例如，村里的马在Stonetop聚落剧本上有属性，你可以在行动与装备手册中找到狗、骡子或马的追随者属性。如果你决定把它们当作追随者，就使用这些属性。</p>
+<p>注意：你不必仅仅因为某人或某物在<em>第二册</em>条目或手册上有属性就把他们当作追随者。如果PC刚弄到一条猎犬但还没机会训练它，它就不是追随者。如果你就是没精力把沼泽向导当作追随者，那就别！</p>
+<p>如果你决定一个怪物成为追随者，那它已经有属性了。把怪物转换成追随者：</p>
+<p><strong>1）</strong>添加你认为合适的任何标签，以反映其本性或能力。</p>
+<p><strong>2）</strong>选择（或编造）一个<strong>代价</strong>，参考page 479的示例。</p>
+<p><strong>3）</strong>添加一处记录其忠诚的地方（最多3）。</p>
+<p>否则，照原样使用它的属性。</p>
+<p>如果追随者还没有属性，那你需要制作。做法如下：</p>
+<p><strong>1）</strong>把他们创建为NPC（<a class="wiki-link" href="#creating-npcs" data-slug="npcs-followers" data-fragment="creating-npcs">创建NPC</a>）。</p>
+<p><strong>2）</strong>给他们标签。</p>
+<p><strong>3）</strong>计算生命值。</p>
+<p><strong>4）</strong>计算护甲。</p>
+<p><strong>5）</strong>计算伤害。</p>
+<p><strong>6）</strong>写下他们的本能。</p>
+<p><strong>7）</strong>（可选）写下他们的行动。</p>
+<p><strong>8）</strong>写下他们的代价。</p>
+<p><strong>9）</strong>为他们配备装备。</p>
+<p>这个流程在接下来几页详述。</p>
+<h2 id="1-basics"><span class="step-badge">1</span> 基础</h2>
+<p>如果还没有，就把这个追随者作为NPC充实。给他们一个名字，发展他们的概念，想想你将如何描述他们。如果额外细节看起来重要或有价值，就添加。指引见page 453。</p>
+<hr>
+<blockquote><p><em>安德拉斯是个年轻小伙，渴望 成为村里的猎人。</em></p><p><em>首先，我们把他作为NPC充实。我问了 PC一些问题，我们得知 他是帕德里格的儿子，只比卡拉多克小几个 月。卡拉多克的 玩家还提议他喜欢布洛德温，但还没鼓起勇气 说出来。这足够 用了！</em></p></blockquote>
+<hr>
+<h2 id="2-tags"><span class="step-badge">2</span> 标签</h2>
+<p>给每个追随者2-4个标签，有时更多。标签是形容词或名词，应该能补全句子“这个追随者是/是一个__”。</p>
+<p>标签<strong>在你描绘 追随者时作为指引</strong>，决定他们如何行动或会/不会想做什么。标签也影响<strong>玩家命令 追随者时掷什么</strong>（<a class="wiki-link" href="#follower-moves" data-slug="npcs-followers" data-fragment="follower-moves">追随者行动</a>）。</p>
+<p>避免过于宽泛的标签，比如<em>有经验的</em>、<em>无敌的</em>、<em>熟练的</em>、<em>无能的</em>等。你想要的是有时适用、而不是总是适用的标签！</p>
+<p>给追随者混合有用的、有问题的和好坏参半的标签。更称职的追随者应该有更多有用的标签和更少有问题的标签，但即使技艺高超的追随者也可以有一些令人不快的怪癖。</p>
+<p>如果追随者真正出类拔萃，就给他们<em>出色的</em>标签（见page 462）。这样的追随者应该很少见；把这个标签留给最优秀的人。</p>
+<p>如果你在创建<em>群体</em>追随者，挑选适用于整个群体的标签。</p>
+<p>随着个别成员脱颖而出，考虑给每个人一个他们自己的独特标签。</p>
+<hr>
+<p><em>我请莉安娜从队伍的标签中挑两个 安德拉斯已经具备的。“嗯。 我觉得他已经很会用弓了， 所以</em>弓箭手<em>。我觉得他</em>观察敏锐<em>。</em></p>
+<p><em>那是那种很难教的特质， 你知道吧？”</em></p>
+<p><em>两个都是有用的特质，所以我加上</em> 热切<em>（好坏参半）和</em>新手</p>
+<p><em>（肯定有问题）。</em></p>
+<hr>
+<h2 id="tag-examples">标签示例</h2>
+<p><strong>有用的标签：</strong><em>敏捷</em>、<em>弓箭手</em>、<em>健壮</em>、</p>
+<p><em>美丽</em>、<em>勇敢</em>、<em>狡猾</em>、<em>迅速</em>、<em>凶猛</em>、<em>耐劳</em>、<em>治疗者</em>、<em>威慑</em>、<em>魔法</em>、<em>观察敏锐</em>、<em>有组织</em>、<em>耐心</em>、<em>受尊敬</em>、<em>自给自足</em>、<em>眼尖</em>、<em>潜行</em>、<em>不知疲倦</em>、<em>追踪者</em>、</p>
+<p><em>战士</em>、<em>熟悉___</em></p>
+<p><strong>有问题的标签：</strong><em>偏执</em>、<em>酗酒</em>、</p>
+<p><em>贪婪</em>、<em>轻信</em>、<em>好色</em>、<em>天真</em>、<em>骄傲</em>、<em>新手</em>、<em>鲁莽</em>、<em>暴躁</em>、<em>固执</em>、<em>虚弱</em></p>
+<p><strong>好坏参半的标签：</strong><em>爱动物</em>、</p>
+<p><em>烦人</em>、<em>高大</em>、<em>恶霸</em>、<em>冷酷</em>、<em>谨慎</em>、<em>狡诈</em>、<em>热切</em>、<em>手脚不干净</em>、<em>爱八卦</em>、<em>诚实</em>、<em>善良</em>、<em>矮小</em>、<em>无耻</em>、<em>骇人</em></p>
+<h2 id="3-hit-points"><span class="step-badge">3</span> 生命值</h2>
+<p>通过回答以下问题确定追随者的最大</p>
+<p>HP：</p>
+<hr>
+<p><strong>他们有多坚韧？</strong>（选1） hp</p>
+<hr>
+<p>虚弱/孱弱/柔弱 3</p>
+<p>身体健全 6</p>
+<p>坚韧/强壮/结实 9</p>
+<hr>
+<p><strong>还有什么适用？</strong>（选所有适用的） hp</p>
+<hr>
+<p>他们是微小的 -2</p>
+<p>他们是<em>大型</em>的 +4</p>
+<p>命运眷顾他们 +2</p>
+<hr>
+<blockquote><p><em>安德拉斯在我看来身体健全——一个 能拉开弓的健康年轻人。他既不</em>微小<em>也不</em>大型<em>， 我也没有理由认为命运眷顾 他，所以他有6 HP。</em><em></em></p></blockquote>
+<hr>
+<h2 id="4-armor"><span class="step-badge">4</span> 护甲</h2>
+<p>回答以下问题：</p>
+<hr>
+<p><strong>什么保护着他们？</strong>（选1） 护甲</p>
+<p>只有衣服和血肉 0</p>
+<p>皮甲或厚兽皮 1</p>
+<p>锁子甲、鳞甲或类似 2 钢、骨板、甲壳 3</p>
+<p>强大的魔法守护或 4 超自然的韧性</p>
+<hr>
+<p><strong>还有什么适用？</strong>（选所有适用的） 护甲</p>
+<hr>
+<p>他们是<em>微小</em>的 +1 他们持盾或类似物 +1</p>
+<p>他们擅长防御 +1</p>
+<p>他们没有要害器官 +1</p>
+<hr>
+<blockquote><p><em>安德拉斯只是个年轻人，没有 特殊技能或防护。他有0 护甲，除非莉安娜选择给他 整装厚兽皮或盾。</em></p></blockquote>
+<hr>
+<h2 id="5-damage"><span class="step-badge">5</span> 伤害</h2>
+<p>回答以下问题：</p>
+<hr>
+<p><strong>他们有多危险？</strong>（选1） 伤害</p>
+<hr>
+<h2><button type="button" class="dice-roll" data-dice="d4" title="点击掷 d4 — Shift: 优势 · Ctrl: 劣势">d4</button> <span class="roll-label">Not Very</span></h2>
+<p>能自卫 <button type="button" class="dice-roll" data-dice="d6" title="点击掷 d6 — Shift: 优势 · Ctrl: 劣势">d6</button> 老练的斗士或掠食者 <button type="button" class="dice-roll" data-dice="d8" title="点击掷 d8 — Shift: 优势 · Ctrl: 劣势">d8</button> 距离和其他标签基于他们的装备。对于怪物般的追随者，使用<strong>怪物</strong>的伤害指引（<a class="wiki-link" href="dangers.html" data-slug="dangers" >危险</a>）。</p>
+<hr>
+<blockquote><p><em>同样，安德拉斯是个身体健全的年轻人， 很会用弓。他是新手，但 我觉得他完全能自卫。 他造成<button type="button" class="dice-roll" data-dice="1d6" title="点击掷 1d6 — Shift: 优势 · Ctrl: 劣势">1d6</button>伤害。</em></p></blockquote>
+<hr>
+<h2 id="6-instinct"><span class="step-badge">6</span> 本能</h2>
+<p>追随者自然而然会做的、给他们追随的PC制造麻烦的事是什么？用这个格式写下他们的本能：</p>
+<p>“[做某事]”。追随者的本能示例包括：</p>
+<ul class="bullets"><li>做得太过火</li><li>质疑领导和权威</li><li>紧抓传统不放</li><li>冲动行事</li><li>屈服于诱惑</li><li>不把事情当回事</li><li>在危险面前僵住</li></ul>
+<hr>
+<blockquote><p><em>我想突出安德拉斯的热切， 我喜欢它与卡拉多克形成的反差， 后者正在摆脱他那“莽撞 少年”的做派。我加倍强调他的</em> 热切<em>标签，给他一个本能 “努力给莉安娜留下好印象”。那应该 有点让人恼火，而且很可能 促使他做些蠢事， 但不会让他成为彻底的累赘。</em></p></blockquote>
+<hr>
+<h2 id="7-moves-optional"><span class="step-badge">7</span> 行动（可选）</h2>
+<p>写至多3个GM行动。写成能补全句子的形式：</p>
+<p>“这个追随者能/会___”。例如：</p>
+<ul>
+<li>在风中嗅出麻烦</li>
+<li>编织一个小幻术</li>
+<li>独自走开 追随者的行动可以反映标签未涵盖的能力，或他们如何使用某个特定标签，和/或常见行为（好的或坏的）。</li>
+</ul>
+<p>这些行动主要是给你用的，这一步完全可选，但玩家能看到它们，它们可以影响玩家<strong>命令追随者</strong>（<a class="wiki-link" href="#follower-moves" data-slug="npcs-followers" data-fragment="follower-moves">追随者行动</a>）时掷什么。</p>
+<hr>
+<blockquote><p><em>我考虑给安德拉斯一些GM 行动，比如“痴望布洛德温”或 “犯新手错误”，但坦白说我 觉得不需要。那些行动 不会影响莉安娜替他 做的任何掷骰，而且与他的标签或特质没有实质区别。 所以，没有行动，至少目前如此。</em></p></blockquote>
+<hr>
+<h2 id="8-cost"><span class="step-badge">8</span> 代价</h2>
+<p>追随者的代价描述是什么让他们持续追随PC。通常是几个词，比如“钱币、报酬、宝藏”或“感情、尊重”或“训练”。</p>
+<p>从下面的列表中选一个，或自己编。当他们的代价被支付时，他们持有+1忠诚（最多3），按<strong>巩固纽带</strong>行动（<a class="wiki-link" href="#loyalty" data-slug="npcs-followers" data-fragment="loyalty">忠诚</a>）。</p>
+<ul class="bullets"><li>钱币、报酬、宝藏</li><li>名声、公众认可</li><li>感情、尊重（来自你）</li><li>知识（关于什么？）</li><li>纠正错误、行善</li><li>消遣、娱乐</li><li>进展（朝某个特定目标）</li></ul>
+<hr>
+<blockquote><p><em>安德拉斯是个年轻人，热切又是 新手，本能是“努力给 莉安娜留下好印象”。我觉得莉安娜的一句 表扬，尤其是当众的， 对这孩子意味着一切。所以 我把那作为他的代价：“认可”。</em></p></blockquote>
+<hr>
+<h2 id="9-equipment"><span class="step-badge">9</span> 装备</h2>
+<p>要么决定追随者携带什么装备，要么请玩家像对PC一样为他们整装。</p>
+<hr>
+<blockquote><p><em>对于这第一次去戈丁 矿场的远征，我决定他会带着 他的弓、一件旧斗篷、一些</em></p></blockquote>
+<p>◇ <em>补给品和一把铁刀出现。</em></p>
+<p>我把这写在一张索引卡上，在他出现送行时交给莉安娜的玩家：</p>
+<p>安德拉斯，学徒猎人</p>
+<div class="stat-block follower" id="archer-2"><h3 class="stat-name">Archer</h3><p class="stat-stats"><strong>HP</strong> 6；护甲 0<br>伤害 刀 <button type="button" class="dice-roll" data-dice="1d6" title="点击掷 1d6 — Shift: 优势 · Ctrl: 劣势">1d6</button>（手持）或弓 <button type="button" class="dice-roll" data-dice="1d6" title="点击掷 1d6 — Shift: 优势 · Ctrl: 劣势">1d6</button>（近距，O 弹药不足，O 耗尽）<br>本能：努力给莉安娜留下好印象<br>代价：认可（忠诚 OOO）</p><ul class="stat-moves"><li>&lt;&gt; 弓和铁箭（近距）</li><li>&lt;&gt; 旧斗篷（保暖）</li><li>&lt;&gt; 补给品（次数 OOOO）</li><li>◇ 。</li></ul><p class="stat-note">observant, eager, rookie</p><p class="stat-note">年轻人，帕德里格的儿子。暗恋布洛德温。非常努力，问很多问题。</p><p class="stat-note">铁刀（手持）</p><p class="stat-note">卡拉多克取笑他在天气 还这么暖和（对秋天来说）的时候 带斗篷。不过莉安娜 赞许地点点头。“你会 做饭吗，小子？”他开始吹嘘 他会做的（寥寥）几道菜， 她就像“好，很棒，小子”，然后她 在他的装备里加上一套炊具和两个未定义的 ◇</p></div>
+<hr>
+<h2 id="updating-followers">更新追随者</h2>
+<p>追随者会随时间改变。他们可能在机制上改变，比如统帅选了“老兵队伍”行动时。</p>
+<p>但他们常常会在游戏过程中自然改变。</p>
+<p>会话之间，回顾PC拥有的任何追随者。对每一个，如果……</p>
+<ul class="ellipsis"><li><strong>他们的本能和/或代价不再 真实</strong>，那就修改它们。</li><li><strong>他们的任何标签或行动不再 真实，</strong>那就删除或修改它们，哪个更说得通就怎么做</li><li><strong>他们展现出新的天赋、技能 或行为</strong>，考虑把它添加为标签或行动。</li><li><strong>他们变得更坚韧，或不那么 坚韧</strong>（由于个人成长、受伤、疾病等），那就相应调整他们的最大HP。</li><li><strong>他们变得明显更加或 不那么危险</strong>，那就调整他们的伤害骰。</li><li><strong>他们成为某名PC或整个村庄的持续、 主动的麻烦来源</strong>，把他们写成<strong>威胁</strong>（<a class="wiki-link" href="threats.html" data-slug="threats" >威胁</a>），作为追随者之外的补充或替代。</li><li><strong>这是一个 <em>群体</em> 追随者</strong>，有人离开或加入群体了吗？更新群体名册以反映这一点。</li><li><strong>他们不再指望PC的 领导，或不再听从 其命令</strong>，那他们就不再是追随者了（见下一栏）。</li><li><strong>他们把忠诚从一名PC 转向另一名</strong>（或他们当前的领导者把对他们的责任交给另一名PC），那就告诉玩家，也许在下次会话中通过一个场景展示出来。告诉玩家相应更新他们的笔记。</li></ul>
+<h2 id="losing-followers">失去追随者</h2>
+<p>追随者当然可能死去。但他们也可能因为种种原因不再是追随者。</p>
+<p><strong>追随者与PC之间的关系 可能是暂时的或情境性的</strong>。</p>
+<p>当他们听从PC的命令不再说得通时，他们就不再是追随者。他们可能再次成为追随者，但目前，他们有自己的生活要过！</p>
+<hr>
+<blockquote><p><em>弗卢尔在去戈丁矿场的旅途中成了布洛德温的 追随者，但在他们 回家后，那就不太 说得通了。酒馆老板的儿子照料 马匹弗卢尔和塞琳，它们常常 在田里。</em></p><p><em>如果PC带弗卢尔去另一次 远征，我们很可能会再次把她当作 布洛德温的追随者。但在镇子周围， 她只是一匹和布洛德温 要好的马。</em></p></blockquote>
+<hr>
+<p><strong>追随者可能以某种方式改变，使得 他们不再追随他们的PC</strong>。也许他们失去了勇气，或搬走了，或有了孩子安定下来，等等。</p>
+<p>他们可能仍然作为NPC在身边，但不再是追随者。</p>
+<hr>
+<blockquote><p><em>艾拉在与死亡擦肩后幸存了下来， 布洛德温治愈了她受伤的灵魂，但她 再也不是从前的她了。就像她一周内老了20岁， 下次会话时，她告诉 莉安娜她不干了。那是一个动情的 场景，我们真的看到莉安娜哭了。 结束后，她从她的 队伍附页上擦掉艾拉，我在聚落剧本上她的 条目加上“退休”。</em></p></blockquote>
+<hr>
+<p>当然，追随者与其PC分道扬镳并不总是友好的。如果分手很难看，追随者很可能会成为<strong>威胁</strong>（<a class="wiki-link" href="threats.html" data-slug="threats" >威胁</a>）。如果追随者一直对其PC心怀日益增长的怨恨，他们甚至可能以突然而戏剧性的方式背叛他们。</p>
+<hr>
+<blockquote><p><em>瓦希德那受气的风灵 监视荆棘拇指回来了，满是消息 和顽皮的活力——恰好在瓦希德 坐下来和寡妇梅尔共进晚餐时。 他走到外面恳求 灵体暂时乖一点，并答应 稍后去田里吹笛子，好让 灵体跳舞嬉闹。</em></p><p><em>安达劳没有忠诚了，所以 瓦希德掷骰说服。唉，他掷出4。 我问瓦希德他觉得自己怎么搞砸 的，他说他失去耐心 开始大喊，试图吓唬它 让它听话。</em></p><p><em>我决定灵体受够了。 “它变得安静、静止。然后，天哪。 风越刮越大，越来越 强。老天，你没想到它能 这么强。它咆哮，尖啸， 抢夺笛子。”瓦希德试图抓 住，但直面险境掷出3， 笛子在巨石上被砸得粉碎。</em></p><p><em>灵体曾被系缚在那支笛子上，而 现在不是了。它当然不再是 追随者。一个失去系缚的灵体 通常会消散，但我觉得这一个 记仇。它暂时消失了，但 在会话之间，我把它写成一个威胁 （一个</em>魔法实体<em>，</em><strong><em>本能</em></strong> <em>折磨</em></p></blockquote>
+<p><em>瓦希德）。</em></p>
+<hr>
+        </main>
+      </div>
+    </div>
+  </div>
+  <div id="wiki-preview" class="wiki-preview" hidden></div>
+  <div id="dice-toast" class="dice-toast" hidden></div>
+  <script>window.WIKI_UI={"books": {"book1": "第一卷", "book2": "第二卷", "sites": "冒险场景"}, "english_only": "仅有英文版"};</script>
+  <script src="../js/wiki.js"></script>
+</body>
+</html>

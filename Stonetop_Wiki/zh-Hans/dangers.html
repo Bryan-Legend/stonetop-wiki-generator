@@ -1,0 +1,771 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>危险 — Stonetop Wiki</title>
+  <meta name="description" content="危险（Dangers）：危害与怪物——如何即兴和准备危害、创建怪物、指定HP、护甲、伤害与行动，以及如何主持石顶的战斗。">
+  <link rel="canonical" href="https://stonetop-wiki.github.io/zh-Hans/dangers.html">
+  <meta property="og:site_name" content="Stonetop Wiki">
+  <meta property="og:title" content="危险 — Stonetop Wiki">
+  <meta property="og:description" content="危险（Dangers）：危害与怪物——如何即兴和准备危害、创建怪物、指定HP、护甲、伤害与行动，以及如何主持石顶的战斗。">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:url" content="https://stonetop-wiki.github.io/zh-Hans/dangers.html">
+  <meta property="og:image" content="https://stonetop-wiki.github.io/images/favicon.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="alternate" hreflang="en" href="https://stonetop-wiki.github.io/dangers.html">
+  <link rel="alternate" hreflang="pt-BR" href="https://stonetop-wiki.github.io/pt-BR/dangers.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://stonetop-wiki.github.io/zh-Hans/dangers.html">
+  <link rel="alternate" hreflang="x-default" href="https://stonetop-wiki.github.io/dangers.html">
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="../images/favicon.ico" sizes="16x16 32x32 48x48 64x64">
+  <link rel="stylesheet" href="../css/wiki.css">
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4536408101e64ba59733ed69779dd45c"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body data-wiki-root="../">
+  <a class="skip-link" href="#main">跳到正文</a>
+  <button type="button" class="sidebar-toggle" id="sidebar-toggle" aria-label="切换导航">☰</button>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-head">
+        <a class="wiki-title" href="../index.html">Stonetop Wiki</a>
+        <input type="search" id="nav-filter" class="nav-filter" placeholder="搜索维基…" autocomplete="off" aria-label="搜索维基">
+        <div id="search-results" class="search-results" hidden></div>
+      </div>
+      <nav class="toc" aria-label="主题">
+        <ul id="nav-list">
+          <li class="nav-book-label">第一卷</li>
+<li class="has-sections"><a href="welcome-to-stonetop.html">欢迎来到石顶</a><ul class="nav-sections"><li class="nav-section"><a href="welcome-to-stonetop.html#expectations">期望</a></li><li class="nav-section"><a href="welcome-to-stonetop.html#the-setting">设定</a></li><li class="nav-section"><a href="welcome-to-stonetop.html#why-play">为何玩？</a></li></ul></li>
+<li class="has-sections"><a href="getting-started.html">开始游戏</a><ul class="nav-sections"><li class="nav-section"><a href="getting-started.html#review-the-setting">回顾设定</a></li><li class="nav-section"><a href="getting-started.html#set-expectations">设定期望</a></li><li class="nav-section"><a href="getting-started.html#discuss-tone-and-content">讨论基调与内容</a></li><li class="nav-section"><a href="getting-started.html#create-characters">创建角色</a></li><li class="nav-section"><a href="getting-started.html#intro-the-pcs">介绍PC</a></li><li class="nav-section"><a href="getting-started.html#let-spring-burst-forth">让春天迸发</a></li><li class="nav-section"><a href="getting-started.html#after-the-session">场次之后</a></li></ul></li>
+<li class="has-sections"><a href="playing-the-game.html">玩游戏</a><ul class="nav-sections"><li class="nav-section"><a href="playing-the-game.html#the-conversation">交谈</a></li><li class="nav-section"><a href="playing-the-game.html#your-agenda">你的议程</a></li><li class="nav-section"><a href="playing-the-game.html#flow-of-play">游戏流程</a></li><li class="nav-section"><a href="playing-the-game.html#dice-and-moves">骰子与行动</a></li><li class="nav-section"><a href="playing-the-game.html#your-principles">你的原则</a></li><li class="nav-section"><a href="playing-the-game.html#other-things-to-do">其他可做之事</a></li><li class="nav-section"><a href="playing-the-game.html#your-character">你的角色</a></li><li class="nav-section"><a href="playing-the-game.html#arcana">秘宝</a></li><li class="nav-section"><a href="playing-the-game.html#followers">追随者</a></li><li class="nav-section"><a href="playing-the-game.html#your-home">你的家</a></li><li class="nav-section"><a href="playing-the-game.html#moves">行动</a></li><li class="nav-section"><a href="playing-the-game.html#gear-and-possessions">装备与 财物</a></li><li class="nav-section"><a href="playing-the-game.html#if-you-want-to">如果你想……</a></li></ul></li>
+<li class="nav-hub has-sections"><a href="playbooks-inserts.html">剧本与附页</a><ul class="nav-sections"><li class="nav-section"><a href="the-blessed.html">蒙福者</a></li><li class="nav-section"><a href="the-fox.html">狐狸</a></li><li class="nav-section"><a href="the-heavy.html">壮汉</a></li><li class="nav-section"><a href="the-judge.html">裁判官</a></li><li class="nav-section"><a href="the-lightbearer.html">持光者</a></li><li class="nav-section"><a href="the-marshal.html">统帅</a></li><li class="nav-section"><a href="the-ranger.html">游侠</a></li><li class="nav-section"><a href="the-seeker.html">探寻者</a></li><li class="nav-section"><a href="the-would-be-hero.html">准英雄</a></li><li class="nav-section"><a href="inserts.html">附页</a></li><li class="nav-section"><a href="inventory.html">行囊</a></li><li class="nav-section"><a href="animal-companion.html">动物伙伴</a></li><li class="nav-section"><a href="crew.html">队伍</a></li><li class="nav-section"><a href="initiates-of-danu.html">达努的入门者</a></li><li class="nav-section"><a href="invocations.html">祷文</a></li><li class="nav-section"><a href="followers.html">追随者</a></li><li class="nav-section"><a href="ghost.html">鬼魂</a></li><li class="nav-section"><a href="revenant.html">还魂者</a></li><li class="nav-section"><a href="thrall.html">奴仆</a></li><li class="nav-section"><a href="steading-playbook.html">聚落剧本</a></li></ul></li>
+<li class="has-sections"><a href="running-the-game.html">主持游戏</a><ul class="nav-sections"><li class="nav-section"><a href="running-the-game.html#your-agenda">你的议程</a></li><li class="nav-section"><a href="running-the-game.html#the-core-loop">核心循环</a></li><li class="nav-section"><a href="running-the-game.html#the-spotlight">聚光灯</a></li><li class="nav-section"><a href="running-the-game.html#scenes-and-loose-play">场景与松散玩法</a></li><li class="nav-section"><a href="running-the-game.html#your-gm-moves">你的GM行动</a></li><li class="nav-section"><a href="running-the-game.html#example-of-play">游戏示例</a></li><li class="nav-section"><a href="running-the-game.html#your-principles">你的原则</a></li><li class="nav-section"><a href="running-the-game.html#other-things-to-do">其他要做的事</a></li><li class="nav-section"><a href="running-the-game.html#gming-is-a-practice">主持是一种练习</a></li><li class="nav-section"><a href="running-the-game.html#prep">准备</a></li></ul></li>
+<li class="has-sections"><a href="player-moves.html">玩家行动</a><ul class="nav-sections"><li class="nav-section"><a href="player-moves.html#defy-danger">直面险境</a></li><li class="nav-section"><a href="player-moves.html#aid">相助</a></li><li class="nav-section"><a href="player-moves.html#clash">短兵相接</a></li><li class="nav-section"><a href="player-moves.html#defend">守护</a></li><li class="nav-section"><a href="player-moves.html#interfere">阻挠</a></li><li class="nav-section"><a href="player-moves.html#know-things">见多识广</a></li><li class="nav-section"><a href="player-moves.html#let-fly">放箭</a></li><li class="nav-section"><a href="player-moves.html#seek-insight">寻求洞见</a></li><li class="nav-section"><a href="player-moves.html#special-moves">特殊行动</a></li><li class="nav-section"><a href="player-moves.html#advantage-disadvantage">优势/劣势</a></li><li class="nav-section"><a href="player-moves.html#burn-brightly">燃得更旺</a></li><li class="nav-section"><a href="player-moves.html#end-of-session">会末</a></li><li class="nav-section"><a href="player-moves.html#deaths-door">鬼门关</a></li></ul></li>
+<li class="has-sections"><a href="harm-healing.html">伤害与治疗</a><ul class="nav-sections"><li class="nav-section"><a href="harm-healing.html#hit-points-and-damage">生命值与伤害</a></li><li class="nav-section"><a href="harm-healing.html#debilities">衰弱</a></li><li class="nav-section"><a href="harm-healing.html#problematic-wounds">棘手伤口</a></li><li class="nav-section"><a href="harm-healing.html#death-and-dying">死亡与垂死</a></li></ul></li>
+<li class="has-sections"><a href="first-adventure.html">第一次冒险</a><ul class="nav-sections"><li class="nav-section"><a href="first-adventure.html#structure">结构</a></li><li class="nav-section"><a href="first-adventure.html#background">背景</a></li><li class="nav-section"><a href="first-adventure.html#setup-questions">铺垫问题</a></li><li class="nav-section"><a href="first-adventure.html#setting-the-scene">框定场景</a></li><li class="nav-section"><a href="first-adventure.html#dropping-the-hook">抛出钩子</a></li><li class="nav-section"><a href="first-adventure.html#heading-out">出发</a></li></ul></li>
+<li class="has-sections"><a href="threats.html">威胁</a><ul class="nav-sections"><li class="nav-section"><a href="threats.html#when-to-write-up-threats">何时写威胁</a></li><li class="nav-section"><a href="threats.html#writing-a-threat">写一个威胁</a></li><li class="nav-section"><a href="threats.html#example-threats">范例威胁</a></li><li class="nav-section"><a href="threats.html#updating">更新</a></li></ul></li>
+<li class="has-sections"><a href="expeditions.html">远征</a><ul class="nav-sections"><li class="nav-section"><a href="expeditions.html#preparations">准备</a></li><li class="nav-section"><a href="expeditions.html#running-the-journey">主持旅程</a></li><li class="nav-section"><a href="expeditions.html#player-moves">玩家行动</a></li><li class="nav-section"><a href="expeditions.html#going-home">归途</a></li><li class="nav-section"><a href="expeditions.html#what-to-prep">准备什么</a></li></ul></li>
+<li class="has-sections"><a href="sites.html">地点</a><ul class="nav-sections"><li class="nav-section"><a href="sites.html#environmental-storytelling">环境叙事</a></li><li class="nav-section"><a href="sites.html#running-sites">主持地点</a></li><li class="nav-section"><a href="sites.html#exploring-sites">探索地点</a></li><li class="nav-section"><a href="sites.html#creating-sites">创建地点</a></li><li class="nav-section"><a href="sites.html#the-green-lords-tomb">绿领主陵墓</a></li></ul></li>
+<li class="has-sections current"><a href="dangers.html">危险</a><ul class="nav-sections"><li class="nav-section"><a href="dangers.html#hazards">危害</a></li><li class="nav-section"><a href="dangers.html#monsters">怪物</a></li><li class="nav-section"><a href="dangers.html#running-combat">运行战斗</a></li></ul></li>
+<li class="has-sections"><a href="discoveries.html">发现</a><ul class="nav-sections"><li class="nav-section"><a href="discoveries.html#clues">线索</a></li><li class="nav-section"><a href="discoveries.html#sites">地点</a></li><li class="nav-section"><a href="discoveries.html#encounters">遭遇</a></li><li class="nav-section"><a href="discoveries.html#opportunities">机会</a></li><li class="nav-section"><a href="discoveries.html#artifacts">造物</a></li><li class="nav-section"><a href="discoveries.html#arcana">秘宝</a></li></ul></li>
+<li class="has-sections"><a href="npcs-followers.html">NPC与追随者</a><ul class="nav-sections"><li class="nav-section"><a href="npcs-followers.html#npcs-in-play">游戏中的NPC</a></li><li class="nav-section"><a href="npcs-followers.html#creating-npcs">创建NPC</a></li><li class="nav-section"><a href="npcs-followers.html#follower-moves">追随者行动</a></li><li class="nav-section"><a href="npcs-followers.html#order-followers">命令追随者</a></li><li class="nav-section"><a href="npcs-followers.html#strengthen-your-bond">巩固 纽带</a></li><li class="nav-section"><a href="npcs-followers.html#followers-in-play">游戏中的追随者</a></li><li class="nav-section"><a href="npcs-followers.html#creating-followers">创建追随者</a></li><li class="nav-section"><a href="npcs-followers.html#updating-followers">更新追随者</a></li><li class="nav-section"><a href="npcs-followers.html#losing-followers">失去追随者</a></li></ul></li>
+<li class="has-sections"><a href="homefront.html">家园</a><ul class="nav-sections"><li class="nav-section"><a href="homefront.html#bringing-the-village-to-life">让村庄活起来</a></li><li class="nav-section"><a href="homefront.html#running-the-homefront">运行家园</a></li><li class="nav-section"><a href="homefront.html#aftermath">余波</a></li><li class="nav-section"><a href="homefront.html#the-steading-playbook">聚落剧本</a></li><li class="nav-section"><a href="homefront.html#seasons-change">季节更替</a></li><li class="nav-section"><a href="homefront.html#player-moves">玩家行动</a></li><li class="nav-section"><a href="homefront.html#bolster">鼓舞</a></li><li class="nav-section"><a href="homefront.html#convalesce">休养</a></li><li class="nav-section"><a href="homefront.html#deploy">派遣</a></li><li class="nav-section"><a href="homefront.html#level-up">升级</a></li><li class="nav-section"><a href="homefront.html#make-a-plan">制定计划</a></li><li class="nav-section"><a href="homefront.html#meet-with-disaster">遭遇灾难</a></li><li class="nav-section"><a href="homefront.html#muster">集结</a></li><li class="nav-section"><a href="homefront.html#pull-together">同心协力</a></li><li class="nav-section"><a href="homefront.html#trade-barter">交易与易货</a></li><li class="nav-section"><a href="homefront.html#what-to-prep">准备什么</a></li></ul></li>
+<li><a href="writing-moves-love-letters.html">编写行动与情书</a></li>
+<li class="has-sections"><a href="the-game-ongoing.html">持续的游戏</a><ul class="nav-sections"><li class="nav-section"><a href="the-game-ongoing.html#ending-a-session">结束会话</a></li><li class="nav-section"><a href="the-game-ongoing.html#between-sessions">会话之间</a></li><li class="nav-section"><a href="the-game-ongoing.html#starting-a-session">开始会话</a></li><li class="nav-section"><a href="the-game-ongoing.html#pacing">节奏</a></li><li class="nav-section"><a href="the-game-ongoing.html#advancement">成长</a></li><li class="nav-section"><a href="the-game-ongoing.html#retiring-pcs">PC退场</a></li><li class="nav-section"><a href="the-game-ongoing.html#new-pcs">新PC</a></li><li class="nav-section"><a href="the-game-ongoing.html#conflict-between-pcs">PC之间的冲突</a></li><li class="nav-section"><a href="the-game-ongoing.html#time-skips">时间跳跃</a></li><li class="nav-section"><a href="the-game-ongoing.html#shake-ups">剧变</a></li><li class="nav-section"><a href="the-game-ongoing.html#ending-your-game">结束你的游戏</a></li></ul></li>
+<li><a href="acknowledgements.html">致谢</a></li>
+<li><a href="mediography.html">媒介志</a></li>
+<li class="nav-book-label">第二卷</li>
+<li><a href="welcome-to-the-worlds-end.html">欢迎来到世界尽头</a></li>
+<li><a href="the-village-of-stonetop.html">石顶村</a></li>
+<li><a href="aratis-the-lawkeeper.html">阿拉蒂斯，护法者</a></li>
+<li><a href="barrier-pass.html">屏障隘口</a></li>
+<li><a href="barrow-builders.html">坟冢建造者</a></li>
+<li><a href="blackwater-lake.html">黑水湖</a></li>
+<li><a href="crinwin.html">克林温</a></li>
+<li><a href="the-crombil.html">克朗比尔</a></li>
+<li><a href="danu-the-earth-mother.html">达努，地母</a></li>
+<li><a href="death-and-the-undying.html">死亡与不死者</a></li>
+<li><a href="the-dread-river.html">惧河</a></li>
+<li><a href="fae.html">妖精</a></li>
+<li><a href="ferriers-fen.html">费里尔沼泽</a></li>
+<li><a href="the-flats.html">荒原</a></li>
+<li><a href="fomoraij.html">福莫莱</a></li>
+<li><a href="the-foothills.html">山麓</a></li>
+<li><a href="forest-folk.html">森林之民</a></li>
+<li><a href="forge-lords.html">熔炉领主</a></li>
+<li><a href="the-frozen-wastes.html">冰封荒原</a></li>
+<li><a href="gods-and-religion.html">神明与宗教</a></li>
+<li><a href="the-golden-oak.html">黄金橡树</a></li>
+<li><a href="gordins-delve.html">戈丁矿场</a></li>
+<li><a href="the-great-wood.html">大森林</a></li>
+<li><a href="green-lords.html">绿领主</a></li>
+<li><a href="helior-the-daybringer.html">赫利奥，携昼者</a></li>
+<li><a href="hillfolk.html">丘陵之民</a></li>
+<li><a href="huffel-peaks.html">胡费尔群峰</a></li>
+<li><a href="the-labyrinth.html">迷宫</a></li>
+<li><a href="lygos-and-the-south.html">利戈斯与南方</a></li>
+<li><a href="the-makers.html">匠造者</a></li>
+<li><a href="the-makers-roads.html">匠造者之路</a></li>
+<li><a href="marshedge.html">泽畔</a></li>
+<li><a href="the-maw.html">巨口</a></li>
+<li><a href="north-manmarch.html">北曼马奇</a></li>
+<li><a href="the-pale-hunter.html">苍白猎手</a></li>
+<li><a href="primordial-powers.html">太古之力</a></li>
+<li><a href="red-groves.html">红林</a></li>
+<li><a href="rime-lords.html">霜领主</a></li>
+<li><a href="the-ruined-tower.html">废塔</a></li>
+<li><a href="south-manmarch.html">南曼马奇</a></li>
+<li><a href="spirits-of-the-wild.html">荒野精魂</a></li>
+<li><a href="the-steplands.html">阶地</a></li>
+<li><a href="stone-lords.html">石领主</a></li>
+<li><a href="the-stream.html">溪流</a></li>
+<li><a href="tempest-lords.html">风暴领主</a></li>
+<li><a href="the-things-below.html">地底之物</a></li>
+<li><a href="three-coven-lake.html">三巫湖</a></li>
+<li><a href="titan-bones.html">泰坦遗骨</a></li>
+<li><a href="tor-the-rain-maker.html">托尔，降雨者</a></li>
+<li><a href="useful-or-valuable-flora.html">有用或值钱的植物</a></li>
+<li><a href="ustrina.html">乌斯特里纳</a></li>
+<li><a href="vor-svetelik.html">沃尔·斯维特里克</a></li>
+<li><a href="waystones.html">路石</a></li>
+<li><a href="the-whitefang-mountains.html">白牙山脉</a></li>
+<li><a href="appendix-a-ages-of-the-world.html">附录A：世界诸纪</a></li>
+<li><a href="appendix-b-artifact-creation.html">附录B：神器创制</a></li>
+<li class="nav-hub"><a href="../appendix-c-minor-arcana.html" class="nav-en" title="仅有英文版" hreflang="en">Appendix C: Minor Arcana</a></li>
+<li class="nav-arcana"><a href="minor-laoj-daveths-galvanic-infusion.html">1. 劳杰·达维斯的电流灌注</a></li>
+<li class="nav-arcana"><a href="minor-truth-seeds.html">2. 真话种子</a></li>
+<li class="nav-arcana"><a href="minor-old-mothers-wine.html">3. 老母之酒</a></li>
+<li class="nav-arcana"><a href="minor-aalz-galts-sudden-sinkhole.html">4. 阿尔兹·加尔特的骤陷坑</a></li>
+<li class="nav-arcana"><a href="minor-shell-game-of-souls.html">5. 灵魂套壳戏</a></li>
+<li class="nav-arcana"><a href="minor-thunderous-bellow.html">6. 雷鸣咆哮</a></li>
+<li class="nav-arcana"><a href="minor-the-fiery-veil.html">7. 火帷</a></li>
+<li class="nav-arcana"><a href="minor-the-tomb-bogs-mark.html">8. 冢沼印记</a></li>
+<li class="nav-arcana"><a href="minor-fear-of-the-flame.html">9. 惧火</a></li>
+<li class="nav-arcana"><a href="minor-mantle-wraiths.html">10. 披风怨灵</a></li>
+<li class="nav-arcana"><a href="minor-shattering-words-of-aalz-childric.html">11. 阿尔兹·奇尔德里克的碎裂之言</a></li>
+<li class="nav-arcana"><a href="minor-ffyrnig-tonic.html">12. 费尔尼格补剂</a></li>
+<li class="nav-arcana"><a href="minor-song-of-the-dool-trees.html">13. 杜尔树之歌</a></li>
+<li class="nav-arcana"><a href="minor-ward-of-still-waters.html">14. 静水结界</a></li>
+<li class="nav-arcana"><a href="minor-ice-weaving.html">15. 织冰</a></li>
+<li class="nav-arcana"><a href="minor-the-six-locks-of-sajua.html">16. 萨尤亚的六锁</a></li>
+<li class="nav-arcana"><a href="minor-heliors-shining-ring.html">17. 赫利奥的闪耀戒指</a></li>
+<li class="nav-arcana"><a href="minor-nerth-serpents-vigor.html">18. 奈尔特蛇之活力</a></li>
+<li class="nav-arcana"><a href="minor-goldleaf-cloak.html">19. 金叶斗篷</a></li>
+<li class="nav-arcana"><a href="minor-opening-the-way.html">20. 开辟通路</a></li>
+<li class="nav-arcana"><a href="minor-the-drowning-scale.html">21. 溺水鳞片</a></li>
+<li class="nav-arcana"><a href="minor-preserving-runes.html">22. 保存符文</a></li>
+<li class="nav-arcana"><a href="minor-peacebond.html">23. 和平契</a></li>
+<li class="nav-arcana"><a href="minor-the-eye-opened.html">24. 开眼</a></li>
+<li class="nav-arcana"><a href="minor-sanctifying-mark.html">25. 圣化印记</a></li>
+<li class="nav-arcana"><a href="minor-the-green-lords-shade.html">26. 绿领主之影</a></li>
+<li class="nav-arcana"><a href="minor-chimeric-transmogrification.html">27. 嵌合体变形术</a></li>
+<li class="nav-arcana"><a href="minor-the-sylvan-web.html">28. 林间之网</a></li>
+<li class="nav-arcana"><a href="minor-flying-cloak.html">29. 飞行斗篷</a></li>
+<li class="nav-arcana"><a href="minor-satchel-of-plenty.html">30. 丰饶挎包</a></li>
+<li class="nav-arcana"><a href="minor-dancing-wind-spirit.html">31. 舞风精魂</a></li>
+<li class="nav-arcana"><a href="minor-call-of-the-hunt.html">32. 狩猎召唤</a></li>
+<li class="nav-arcana"><a href="minor-convocation-of-the-soil.html">33. 土壤召请</a></li>
+<li class="nav-arcana"><a href="minor-unliving-chimera.html">34. 亡者嵌合体</a></li>
+<li class="nav-arcana"><a href="minor-impudent-polymorph.html">35. 无礼变形</a></li>
+<li class="nav-arcana"><a href="minor-make-pliant-the-stone.html">36. 令石柔顺</a></li>
+<li class="nav-arcana"><a href="minor-plaster-of-joining.html">37. 接合灰浆</a></li>
+<li class="nav-arcana"><a href="minor-cold-mind-iron-body.html">38. 冷心铁体</a></li>
+<li class="nav-arcana"><a href="minor-little-friend.html">39. 小小伙伴</a></li>
+<li class="nav-arcana"><a href="minor-revealing-light.html">40. 揭示之光</a></li>
+<li class="nav-arcana"><a href="minor-darkwalker-cloak.html">41. 暗行斗篷</a></li>
+<li class="nav-arcana"><a href="minor-the-flesh-is-like-clay.html">42. 血肉如泥</a></li>
+<li class="nav-arcana"><a href="minor-fetchs-mask.html">43. 替身之面</a></li>
+<li class="nav-arcana"><a href="minor-witch-bottle.html">44. 巫瓶</a></li>
+<li class="nav-arcana"><a href="minor-wishing-candles.html">45. 许愿烛</a></li>
+<li class="nav-arcana"><a href="minor-baleful-utterance.html">46. 凶咒之言</a></li>
+<li class="nav-arcana"><a href="minor-aetherium-spear.html">47. 以太矿矛</a></li>
+<li class="nav-arcana"><a href="minor-staff-of-magnetism.html">48. 磁力法杖</a></li>
+<li class="nav-arcana"><a href="minor-groundskimmer.html">49. 掠地舟</a></li>
+<li class="nav-arcana"><a href="minor-thunderbolt-bow.html">50. 霹雳弓</a></li>
+<li class="nav-arcana"><a href="minor-bronze-protector.html">51. 青铜守护者</a></li>
+<li class="nav-arcana"><a href="minor-sublime-words.html">52. 至美之言</a></li>
+<li class="nav-arcana"><a href="minor-flaming-sword.html">53. 火焰之剑</a></li>
+<li class="nav-arcana"><a href="minor-searing-touch.html">54. 灼热之触</a></li>
+<li class="nav-arcana"><a href="minor-sigil-of-authority.html">55. 权柄印记</a></li>
+<li class="nav-arcana"><a href="minor-horn-of-storms.html">56. 风暴号角</a></li>
+<li class="nav-arcana"><a href="minor-moonstone.html">57. 月石</a></li>
+<li class="nav-arcana"><a href="minor-hand-of-aals-sannan.html">58. 阿尔斯·桑南之手</a></li>
+<li class="nav-arcana"><a href="minor-bittersweet-elixir.html">59. 苦甜灵药</a></li>
+<li class="nav-arcana"><a href="minor-the-brooms-lullaby.html">60. 扫帚摇篮曲</a></li>
+<li class="nav-arcana"><a href="minor-the-angry-little-god.html">61. 愤怒的小神</a></li>
+<li class="nav-arcana"><a href="minor-the-silver-branch.html">62. 银枝</a></li>
+<li class="nav-arcana"><a href="minor-void-elemental.html">63. 虚空元素</a></li>
+<li class="nav-arcana"><a href="minor-runes-of-creation.html">64. 创世之符</a></li>
+<li class="nav-hub"><a href="../appendix-d-major-arcana.html" class="nav-en" title="仅有英文版" hreflang="en">Appendix D: Major Arcana</a></li>
+<li class="nav-arcana"><a href="major-staff-of-the-lidless-orb.html">1. 无睑之眼法杖</a></li>
+<li class="nav-arcana"><a href="major-twisted-spear.html">2. 扭曲之矛</a></li>
+<li class="nav-arcana"><a href="major-demonhide-cloak.html">3. 魔皮斗篷</a></li>
+<li class="nav-arcana"><a href="major-norubas-ice-sphere.html">4. 诺鲁巴冰球</a></li>
+<li class="nav-arcana"><a href="major-mindgem.html">5. 心灵宝石</a></li>
+<li class="nav-arcana"><a href="major-whispering-rocks.html">6. 低语之石</a></li>
+<li class="nav-arcana"><a href="major-blood-quenched-sword.html">7. 血淬之剑</a></li>
+<li class="nav-arcana"><a href="major-shield-of-the-wisent-witch.html">8. 林牛女巫之盾</a></li>
+<li class="nav-arcana"><a href="major-hectumel-codex.html">9. 赫克图梅尔抄本</a></li>
+<li class="nav-arcana"><a href="major-red-scepter.html">10. 红权杖</a></li>
+<li class="nav-arcana"><a href="major-ring-of-daagon.html">11. 达贡之戒</a></li>
+<li class="nav-arcana"><a href="major-rune-laden-scales.html">12. 符文鳞甲</a></li>
+<li class="nav-arcana"><a href="major-blackwood-fetishes.html">13. 黑木偶</a></li>
+<li class="nav-arcana"><a href="major-storm-markings.html">14. 风暴印记</a></li>
+<li class="nav-arcana"><a href="major-ineffable-words.html">15. 不可言说之言</a></li>
+<li class="nav-arcana"><a href="major-redwood-effigy.html">16. 红木偶像</a></li>
+<li class="nav-arcana"><a href="major-hungering-maw-of-hlad.html">17. 赫拉德饥渴之口</a></li>
+<li class="nav-arcana"><a href="major-azure-hand.html">18. 蔚蓝之手</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-foot"><details class="lang-switch"><summary title="语言"><span class="lang-globe" aria-hidden="true">🌐</span><span class="lang-code" aria-hidden="true">ZH</span><span class="lang-label">语言</span><span class="lang-now">简体中文</span></summary><ul class="lang-list"><li><a href="../dangers.html" hreflang="en" lang="en">English</a></li><li><a href="../pt-BR/dangers.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><span class="lang-current" aria-current="page" lang="zh-Hans">简体中文</span></li></ul></details><span class="sidebar-credit">文本出自 Jeremy Strandberg 的<em>Stonetop</em>，<a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">CC BY-SA 4.0</a></span><a class="sidebar-github" href="https://github.com/Bryan-Legend/stonetop-wiki-generator">GitHub</a><button type="button" class="sound-toggle" id="sound-toggle" aria-pressed="true" title="骰子音效"><span class="sound-on" aria-hidden="true">🔊</span><span class="sound-off" aria-hidden="true">🔇</span><span class="sound-label">骰子音效</span></button></div>
+    </aside>
+    <div class="main-wrap">
+      <div class="content-scroll" id="main">
+        <main class="content">
+          <h1 class="page-title">危险</h1>
+<p><strong>危险</strong>很可能会伤害PC或他们在乎的事物。有两种基本的危险：</p>
+<p><strong>危害</strong>是环境危险，如陷阱、奸险的地形，或天气。</p>
+<p><strong>怪物</strong>是主动的危险，通常是有意图的东西；PC能与之战斗（或击退）的对手。</p>
+<p>PC通常在远征时遇到危险，或当事情变糟、一个危险出现在镇上时。</p>
+<p>归根结底，它们只是虚构的元素：你框定一个包含危险的场景（或把一个危险引入场景），你描述处境，你用这个危险做一项行动，你问“你怎么做？”从那里继续。</p>
+<p>像虚构的任何元素一样，危险可以即兴。不过本章大部分聚焦于事先准备危险。本章最后一块处理主持战斗。</p>
+<h2 id="dangers-vs-threats">危险与威胁</h2>
+<p>危险也许是、也许不是<strong>威胁</strong>（见 <a class="wiki-link" href="threats.html" data-slug="threats" >威胁</a>）。威胁是持续的问题，以后会回来缠上PC的东西；它们也许并不危险，但总是麻烦。危险是眼前的问题：能在一个场景里、此时此地伤害或阻碍PC的东西。</p>
+<p>归根结底，区别在于你准备什么。你对威胁的准备告诉你它们在干什么、可能惹什么样的麻烦、那麻烦会如何升级以及最终往哪里去。你对危险的准备告诉你如何在此时此地、在一个场景里使用一处危害或一头怪物。</p>
+<p>许多威胁也是PC也许会与之战斗的东西。如果是，给它们写一份怪物描述（见 <a class="wiki-link" href="#monsters" data-slug="dangers" data-fragment="monsters">怪物</a>）或在年鉴里找一条适宜的条目。PC遇到的许多怪物以后也许会成为威胁。如果会，在场次之间把它们写成威胁。</p>
+<h2 id="hazards">危害</h2>
+<p>危害是环境危险。它们能阻碍或伤害PC，但缺乏主动性和意图。危害不能真的用矛和盾去打、去杀；它们必须被避开、忍受、挫败或克服。</p>
+<h2 id="improvising-a-hazard">即兴一处危害</h2>
+<p>危害不总是需要游戏机制或属性。你常常只会即兴它们。</p>
+<p>要即兴一处危害：想象一处在这个环境里说得通的物理障碍或危险。然后，框定一个场景（如果你还没有）并做一项GM行动来引入这个危害。问PC怎么做。如果他们问澄清问题，编说得通的答案，但然后表现得好像它们一直为真。如果PC做了有显而易见结果的事，说出发生什么。如果他们触发一项玩家行动，结算它。用你对处境的知识和你对虚构的感觉来描述接下来发生什么。</p>
+<p>当玩家试图绕过或克服一处危害时，你应当经常<strong>告诉他们 后果/要求并问</strong>他们是否仍想那样做。玩家在承诺任何行动路线之前应当理解风险——即便风险是“你不确定会发生什么”。</p>
+<p>聪明的玩家常常会想出绕过危害、不触发行动的办法。抵抗只因为你觉得“应当有一次掷骰”就要求一项行动（如直面险境或同舟共济）的冲动。始终确认触发条件实际上被满足了。否则，你会最终让玩家的创造力无效，也许会发现自己在7-9或6-上挣扎着想出有意义的结果。</p>
+<p>你也可以回应一项玩家行动来引入危害。一处新危害是直面险境7-9掷骰上很好的后果（“你过了那个暴徒，但灯倒在床垫上——着火了！”）。当有人寻求洞见并问“我该留意什么？”时，编一处危害并告诉他们。如果他们在野外旅行而有人几乎在任何事上掷出6-，你可以<strong>引入一个危险</strong>，让天空打开一场倾盆大雨。</p>
+<p>记住6-时，当你做硬GM行动并确立坏事时，你决定它有多糟。这意味着你可以引入一处危害并立刻让它造成伤害或坏事，只要在虚构中说得通。但你不必。所以当狐狸撬窃一口箱子掷出6-时，你也许会直接跳到用一根毒针陷阱<strong>伤害他们</strong>。</p>
+<p>但你也可以<strong>引入一个危险</strong>，说他们注意到沿口这些奥术符文，显然箱子打开时某种有害魔法会被释放，你怎么做？</p>
+<p>当一处危害出现在一场战斗或任何其他行动场景中时，继续把它纳入虚构，继续用它做行动。危害是环境和角色<strong>虚构定位</strong>（<a class="wiki-link" href="playing-the-game.html" data-slug="playing-the-game" >玩游戏</a>）的一部分；它的存在限制PC能做什么，并告知他们行动的结果。</p>
+<hr>
+<blockquote><p><em>瓦希德、卡拉多克、布洛德温、瑞安娜和安德拉斯正在探索三巫湖周围的废墟。他们在爬一套宽阔、古老的楼梯，沿峭壁一侧往上。摔下去会很难看，落到岩石水里，但楼梯到目前为止建造良好、稳固。</em><em></em><em></em><em></em><em></em><em></em></p><p><em>我决定改变那个，并</em> <strong><em>引入一个危险</em></strong><em>。“楼梯和峭壁向内弯，离开湖，然后楼梯变平到一段短平台。瓦希德，你在前面，所以你先看见这个。平台部分塌了，虽然剩下的够窜过去，但看起来不完全稳。另一端的楼梯看起来还好。你怎么做？”</em><em></em><em></em><em></em><em></em><em></em><em></em></p><p><em>他们问了一些关于落差（大概50或60英尺，落到岩石上）和平台大小（原先大约12英尺见方，但大部分只剩2或3英尺，贴着崖壁，有将近9英尺的缺口）的问题。</em><em></em><em></em><em></em><em></em><em></em></p><p><em>“只有9英尺？那我们就能直接跳过去，对吧？”卡拉多克说。</em><em></em></p><p><em>我</em> <strong><em>告诉他们后果并问</em></strong><em>。“当然跳得过，但不是十拿九稳。你们各自得直面险境，常负或重负的人会处于劣势。哦，而且我不觉得安德拉斯能做成——他还在养腿上那支箭伤，对吧？但你们其余的人想试就可以试。你怎么做？”</em><em></em><em></em><em></em><em></em><em></em><em></em></p></blockquote>
+<hr>
+<blockquote><p><em>他们决定不跳。瓦希德用矛戳平台，并以其他方式观察处境，寻求洞见。他得到7-9。“这里什么对我有用或有价值？”他问。</em><em></em><em></em><em></em><em></em></p><p><em>我想了处境并做了一个决定（记住，我是边走边编）。“嗯，剩下的岩架如果你一次一个人走应当能承重，但没法确定。但你仔细看时，意识到崖壁有一些脊可以当抓手。哦，如果你装备里有绳子，那也会有用。”</em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em></p><p><em>然后我</em> <strong><em>以代价提供财富</em></strong> <em>并说他从这儿能看见楼梯其余部分。“它们看起来完好，一直到凿进崖壁的下一个开口，一道刻着匠造者符文的华丽拱门。你怎么做？”</em><em></em><em></em><em></em><em></em></p><p><em>“我真的想去看看那个，”瓦希德说。讨论之后，他们拿出一些绳子互相绑在一起，然后一次一个人窜过岩架，用抓手稳住自己。绳子意味着他们作为一群人直面险境，所以我们用同舟共济结算这个（并决定人人在掷骰上获得优势，因为依寻求洞见的答案行动）。</em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em></p></blockquote>
+<h2 id="damage-from-hazards">来自危害的伤害</h2>
+<p><strong>如果一处危害（即兴或准备的）造成 伤害</strong>，问自己它对一个普通人可能做什么。</p>
+<p>最糟结果 骰</p>
+<hr>
+<h2><button type="button" class="dice-roll" data-dice="d4" title="点击掷 d4 — Shift: 优势 · Ctrl: 劣势">d4</button> <span class="roll-label">Bruises &amp; Scrapes, Pain, Light Burns</span></h2>
+<h2><button type="button" class="dice-roll" data-dice="d6" title="点击掷 d6 — Shift: 优势 · Ctrl: 劣势">d6</button> <span class="roll-label">Nasty Flesh Wounds, Bruises, Burns</span></h2>
+<p>骨折、严重烧伤、 <button type="button" class="dice-roll" data-dice="d8" title="点击掷 d8 — Shift: 优势 · Ctrl: 劣势">d8</button> 使人衰弱的剧痛</p>
+<hr>
+<p>死亡或肢解 <button type="button" class="dice-roll" data-dice="d10" title="点击掷 d10 — Shift: 优势 · Ctrl: 劣势">d10</button> 然后，根据其能力给危害指定效果（选所有适用的）：</p>
+<p>如果…… 效果</p>
+<hr>
+<ul class="ellipsis"><li>护甲保护不了 无视护甲 它</li></ul>
+<hr>
+<ul class="ellipsis"><li>它切开 1 穿刺，皮革/毛皮 <em>狼藉</em></li></ul>
+<hr>
+<ul class="ellipsis"><li>它能撕开金属 3 穿刺，<em>狼藉</em></li></ul>
+<hr>
+<ul class="ellipsis"><li>它把他们打倒 <em>强力</em> 或甩来甩去</li></ul>
+<hr>
+<ul class="ellipsis"><li>它大/凶残/吓人 +2 伤害</li></ul>
+<hr>
+<ul class="ellipsis"><li>PC已经采取 劣势 预防</li></ul>
+<hr>
+<ul class="ellipsis"><li>它出其不意抓住他们 优势 如果PC知道（或怀疑）这个危害并主动做了什么来保护自己，就把伤害掷骰置于劣势。例如，如果危害是毒气而他们在进入之前用湿布捂住脸和嘴，就给伤害掷骰施加劣势。相反，如果危害在他们还没意识到它在那儿之前就伤害他们，把他们打个措手不及，那就给伤害掷骰施加优势。</li></ul>
+<h2 id="certain-death">必死无疑</h2>
+<p>如果一处危害（或其他伤害来源）会确定地、绝对地杀死一个普通人，那它就不应当对PC造成伤害——它应当立刻把他们降到 0 HP 并触发鬼门关行动。</p>
+<p>如果他们活下来，那就意味着他们走运了。你可以也应当仍然<strong>伤害他们</strong>，狠狠地。</p>
+<p><strong>非常清楚地预告这种危害。 </strong>“如果你掉下去，我大概会给你一次抓住自己的机会。但如果那失败了，就是60英尺落到尖利岩石和浅水上。你不会承受HP伤害，你会掷鬼门关。你确定想这样做？”</p>
+<h2 id="preparing-hazards">准备危害</h2>
+<p>如果你事先准备一次远征或一个兴趣点，你也许想准备一些危害。为你准备任何东西的所有理由准备危害：给自己有趣的话可说，加快游戏，补上你的弱点，打磨你的技艺，并给自己许可去打得硬、把坏事砸到PC头上。</p>
+<p>按你觉得有价值的或多或少准备你的危害。记住准备是为了你的好处；除非你在给别人用的笔记，否则写下对你显而易见的东西没什么意义。</p>
+<p>准备危害有几种做法。你也许会把一处准备成……</p>
+<ul class="ellipsis"><li>一份详细描述；</li><li>一系列GM行动，也许带一项本能；</li><li>一个迫近厄运（带凶兆）；</li><li>一项或多项面向玩家的行动；或……</li><li>以上的某种组合。</li></ul>
+<p>何时用每种做法没有铁定的规则。用对你心里那处危害看起来最适宜的那种。</p>
+<p><em>第二卷</em>呈现了许多用这些做法准备的危害。按原样使用它们，或把它们当作范例查阅。</p>
+<h3 id="as-a-detailed-description">作为详细描述</h3>
+<p>想想这个危害及其具体虚构细节：它在哪里？看起来怎样？如何运作？什么触发它？它做什么？你也许只在脑子里想象它，或记下一些笔记，甚至画一张图或示意图。</p>
+<p>在游戏中，引入这种危害很像你在即兴它时会做的。</p>
+<p>框定一个危害相关的场景，用一项GM行动引入它，问“你怎么做？”根据你对危害的理解回答玩家的问题并结算他们的行动。</p>
+<p>这种做法往往对陷阱好，因为它意味着事先花时间想通陷阱如何运作。当你即兴一个陷阱时，很容易编出经不起细看的细节。</p>
+<p>这种做法也对物理障碍好，尤其是那些不太动态的（如他们也许想跨过的一道裂谷，或他们也许想爬的一棵树）。想通过物理空间让你容易回答玩家的问题并结算他们的行动。</p>
+<hr>
+<blockquote><p><em>我们的第一次冒险中，有一个被毁的克林温巢，PC在前往斯温萨吉拉巢穴的途中也许会遇到。</em><em></em><em></em><em></em></p><p><em>我怀疑PC也许想调查这个巢，或放火烧它，但我知道它高高在一棵巨树上。攀爬绝对会是一处危害。</em><em></em><em></em><em></em><em></em></p><p><em>我做一些笔记：巢大约70英尺高，最低的枝桠大概40英尺。树干大概10英尺宽。我查了红杉树，画了一张小草图作参考。</em><em></em><em></em><em></em><em></em></p><p><em>从这么高的树上掉下来绝对能杀死一个人，但不是必死无疑。它绝对大而吓人，会把人甩来甩去，护甲帮不上忙，所以我把伤害定为</em><em></em><em></em><em></em><em></em></p></blockquote>
+<p><em><button type="button" class="dice-roll" data-dice="1d10+2" title="点击掷 1d10+2 — Shift: 优势 · Ctrl: 劣势">1d10+2</button>（无视护甲，</em>强力<em>）。</em></p>
+<hr>
+<blockquote><p><em>萨吉拉巢穴附近还有一座旧匠造者温室，被奴役的克林温一直在为斯温挖掘。我早些时候决定它会包括一些旧魔法种子，锁着，仍未被克林温偷走。为什么？因为它们被一个陷阱保护着！</em><em></em><em></em><em></em><em></em><em></em><em></em></p><p><em>我想种子存在一口保存得出奇完好的木箱里。如果有人在没有先按木头上两个特定结之前扰动搭扣，一根刺会从搭扣射出，扎到正在处理它的人。刺带着致命毒素（<button type="button" class="dice-roll" data-dice="d10" title="点击掷 d10 — Shift: 优势 · Ctrl: 劣势">d10</button> 伤害，无视护甲，如果不治疗会迅速坏死血肉并让心脏停跳）。房间里有一只死掉的克林温，一只手枯萎发黑；它早先试过开箱子。</em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em></p></blockquote>
+<hr>
+<h3 id="as-gm-moves">作为GM行动</h3>
+<p>想想危害如何运作——更重要的是——你打算在游戏中如何使用它。写出一系列相当具体的GM行动，反映以下说得通的尽可能多：</p>
+<ul class="bullets"><li>危害的存在如何被预告或揭示</li><li>危害如何伤害或阻碍</li><li>危害如何升级或变糟</li><li>危害也许如何挫败克服它的企图。</li></ul>
+<p>考虑给这些行动各加条件触发，作为何时使用它们的提醒。</p>
+<p>如果危害是动态且变化的（如一场风暴、一次雪崩、一场野火，等等），给它一项本能，写成“去[做某事]”的格式。游戏中，用危害的本能作为它如何行为的指引。</p>
+<p>如果你不确定一处危害接下来会做什么，就做它本能所建议的。</p>
+<p>为什么用这种做法？主要是因为它帮你打磨技艺。你可以事先想通节奏和升级，而不是在游戏中的压力下。</p>
+<p>这种准备也能让<strong>让事情燃烧</strong>更容易；如果你事先准备危害时写了一项像“切掉一条肢体”的行动，游戏中你就更可能真的那样做。</p>
+<hr>
+<blockquote><p><em>克林温正在挖掘的那座旧废温室有若干会动的、具攻击性的藤，可能给PC惹各种各样的麻烦。我先考虑把它们写成怪物，但意识到它们不能真的被打……无论他们砍断多少藤，总会有更多！相反，我把藤写成一处危害，带以下GM行动：</em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em></p></blockquote>
+<p>* 它们慢慢生长、爬行时发出安静的声音 <em>（如何被预</em></p>
+<p><em>告）</em></p>
+<p>* 看起来在动，但直视时停下 <em>（如何被预</em></p>
+<p><em>告）</em></p>
+<p>* 揭示一团缠着一具干枯克林温尸体的藤 <em>（如何被预告）</em></p>
+<p>* 一条卷须慢慢、安静地绕上一条肢体 <em>（它如何阻碍）</em></p>
+<p>* 抽出刺并注入一种麻木、欣快的毒素 <em>（它如何伤害）</em></p>
+<p>* 用更多卷须抽打来制服挣扎的猎物 <em>（它如何</em></p>
+<p><em>升级）</em></p>
+<p><em>我也给它一项本能：“去缠住。”</em></p>
+<blockquote><p><em>我不把这处危害看成造成伤害——它只是束缚猎物，让它飘飘然、停止挣扎，然后慢慢闷死它。我想任何被注入欣快毒素的人要做除放松享受之外的任何事都得直面险境。</em><em></em><em></em><em></em><em></em><em></em></p></blockquote>
+<hr>
+<h3 id="as-an-impending-doom">作为一个迫近厄运</h3>
+<p>写一系列越来越糟的事件，以某种最终厄运结束。</p>
+<p>先想象能发生的最终、终极坏事，写一段短描述，如“王座厅塌了。”然后写1-4个凶兆，代表危害如何开始、如何升级的事件。如果适宜，给每个预兆配上伤害和标签。</p>
+<p>在每个凶兆旁边放一个或多个勾选框（多个勾选框意味着那个预兆发生多次）。以迫近厄运结束。游戏中，当你做GM行动时，你可以<strong>朝迫近厄运 推进</strong>并让下一事件发生。</p>
+<p>可选地，你可以写导致厄运靠近的触发条件。触发可以是虚构的（“每次有大声响或有力一击”）或机制的（“每次有人掷出对子”）。</p>
+<p>游戏中，考虑把迫近厄运里勾选框的数量公开。这能收紧张力，并让玩家根据他们有（或没有）多少时间做决定。</p>
+<hr>
+<blockquote><p><em>斯温萨吉拉的巢穴是一座旧绿领主陵墓，被岁月的森林生长埋住。其中一个厅有一道开裂、下垂的屋顶，由三根古老的木柱撑着（第四根许多年前塌了）。萨吉拉的一些克林温开始在剩下的柱子周围筑巢，进一步削弱它们。</em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em></p><p><em>PC很可能在这个厅里和克林温打起来，柱子很容易被伤到并开始塌。我这样写这个危害：</em><em></em><em></em><em></em><em></em></p></blockquote>
+<p>不稳的柱子：每次一根柱子被击中，或作为一项GM行动，推进这个。</p>
+<p>O 柱子裂/弯，土倾泻下来</p>
+<p>O 石头落下（<button type="button" class="dice-roll" data-dice="1d6+1" title="点击掷 1d6+1 — Shift: 优势 · Ctrl: 劣势">1d6+1</button> 伤害，强力）</p>
+<p>OO 柱子断，石板落下（<button type="button" class="dice-roll" data-dice="1d8+3" title="点击掷 1d8+3 — Shift: 优势 · Ctrl: 劣势">1d8+3</button> 伤害，范围，强力）</p>
+<p>O 迫近厄运：天花板塌下，埋住仍在里面的任何人（鬼门关）；连接的隧道被堵住</p>
+<hr>
+<h3 id="as-player-moves">作为玩家行动</h3>
+<p>写一项自定义面向玩家的行动来反映这个危害（或它的一部分），如“当你<strong><em>吸入巨口那可怕的恶臭</em></strong>时，掷</p>
+<p>+体质……。”当PC遇到这个危害而这项行动变得相关时，与玩家分享它。像结算任何其他面向玩家的行动一样结算它。</p>
+<p>一项面向玩家的行动是确立并传达赌注的好办法。你可以告诉一名玩家他们得直面险境才能跳过裂谷，但除非你也告诉他们10+、7-9和6-时会发生什么，他们并不<em>真的</em>知道风险。用一项自定义行动，你可以把赌注直接烤进去。</p>
+<p>玩家行动也是处理“怪异”危害的好办法，如扰乱他们心智的魔法，或遵循奇怪因果规则的魔法。一项玩家行动可以把这些处境抽象化，给它们一种含糊、如梦的质感。</p>
+<p>记住：一切<strong>从虚构开始，以虚构 结束</strong>。如果PC想出一种聪明办法绕过危害或其触发，那你的行动也许就不再适用。</p>
+<p>那很好。别只因为你有一项想用的酷自定义行动，就否定他们的选择、他们的创造力或他们的能力。</p>
+<p>指引见<strong>撰写行动</strong>（<a class="wiki-link" href="writing-moves-love-letters.html" data-slug="writing-moves-love-letters" >编写行动与情书</a>）。</p>
+<h3 id="as-a-combination">作为组合</h3>
+<p>许多危害作为这些做法的组合效果最好。你也许从一间陷阱厅的详细描述开始，然后加一项面向玩家的行动，关于他们试图以某种特定方式绕过陷阱时发生什么。或者你也许为一场野火写一系列GM行动和一项本能，外加一份描述火如何蔓延的倒计时。发挥创意。</p>
+<hr>
+<blockquote><p><em>我先前把被毁的克林温巢——以及到达它的攀爬——只写成一份详细描述。我记下掉下去也许会造成 <button type="button" class="dice-roll" data-dice="1d10+3" title="点击掷 1d10+3 — Shift: 优势 · Ctrl: 劣势">1d10+3</button> 伤害，但再想一想，坠落很容易杀死某人或让他们受重伤。我想让PC知道攀爬可能有多危险，所以我写了这项自定义行动：</em><em></em><em></em><em></em><em></em><em></em><em></em><em></em></p></blockquote>
+<p><strong>当你从这棵树的枝桠上掉下去时 </strong>，承受 <button type="button" class="dice-roll" data-dice="1d10+3" title="点击掷 1d10+3 — Shift: 优势 · Ctrl: 劣势">1d10+3</button> 伤害（无视护甲，强力）并掷</p>
+<p>+体质：10+ 时，你淤青、流血、很痛，但奇迹般地没有东西断；7-9 时，有东西断了——问GM是什么；6- 时，你落得很糟，你在鬼门关。</p>
+<hr>
+<blockquote><p><em>萨吉拉的巢穴是一座旧绿领主陵墓，制成木乃伊的匠造者仍安坐在其中央葬室。要到达葬室，必须穿过谦卑之厅和感恩之厅。它们被妖精魔法结界，以确保接近葬室的人以恰当的尊敬这样做。我决定把这些危害写成自定义行动。</em><em></em><em></em><em></em><em></em><em></em><em></em><em></em></p></blockquote>
+<p><strong>当你进入谦卑之厅时， 选 1：</strong></p>
+<p>* 告诉我们一个让你在自然世界面前感到谦卑而渺小的时刻；然后你可以前往感恩之厅。</p>
+<p>* 告诉我们一次个人凯旋，一个让你充满骄傲和自我满足的时刻；然后你离开谦卑之厅，发现自己回到前厅。</p>
+<hr>
+<p>当你<strong>进入感恩之厅</strong>时，你看见一幅变幻的画面：远古的人们生活着、在高大壮丽的存在脚边学习。掷 +感知：10+ 时，你目睹某人学习一门如今被视为理所当然的技能或手艺——描述这个场景，然后前往祭品之厅；7-9 时，你发现自己活在这些远古生活中的一个——描述你为匠造者做的任务，以及你如何意识到这生活不是你的，然后标记恍惚并前往祭品之厅；6- 时，画面转变，你发现自己活在野蛮、残暴、疾病、饥饿和匮乏的生活里——告诉我们你最残酷经历的一种艰辛，并标记全部三项衰弱。然后告诉我们你如何重新找到真正的自己，并前往祭品之厅。</p>
+<h2 id="monster-format">怪物格式</h2>
+<p><em>更广阔</em>年鉴条目里包括许多怪物写照，<strong>0</strong></p>
+<p><em>世界</em>像这样——能用时就用它们，<strong>3</strong> 按原样或<strong>4</strong> 稍作修改。<strong>5 6</strong></p>
+<ul class="bullets"><li><strong>0 图标</strong>：不同怪物类型的快速视觉标识<strong>7</strong>（见 <a class="wiki-link" href="#monster-types" data-slug="dangers" data-fragment="monster-types">怪物类型</a>）。你为自己写的怪物不必纳入这些。<strong>8</strong></li><li><strong>1 名字</strong>：怪物被怎么称呼（它自己、与它打交道最多的人，或你，GM，供自己参考）。</li><li><strong>2 标签</strong>：帮描述怪物的术语。所有怪物都有一个组织标签（<em>独行</em>、<em>群体</em>或<em>集群</em>），表明它们如何狩猎和战斗；许多有一个体型标签（<em>微型</em>、<em>小型</em>、<em>大型</em>或<em>巨型</em>），描述它们有多大。其他标签描述怪物的基本性</li></ul>
+<p><strong>9</strong></p>
+<p>质（如<em>构装体</em>、<em>精魂</em>、<em>不死</em>）、它的特质（如<em>潜行</em>、<em>骇人</em>）或它的行为（如<em>有组织</em>、<em>谨慎</em>）。</p>
+<p>语境见 <a class="wiki-link" href="#3-tags" data-slug="dangers" data-fragment="3-tags">3 Tags</a>。</p>
+<ul class="bullets"><li><strong>3 生命值（HP）与护甲</strong>：怪物能承受多少伤害，以及它保护得有多好。当一头怪物被降到 0 HP 时，它退出行动（昏迷、失能、垂死或死亡——由你定）。当一头怪物承受伤害时，把那伤害减去它的护甲。护甲等级后面的描述说明其来源，以及任何例外。</li></ul>
+<div class="stat-block" id="crinwin-1"><h3 class="stat-name"><img class="book-icon" src="../images/icons/default.svg" alt="" width="18" height="18" loading="lazy">克林温 1</h3><p class="stat-tags">集群，小型，囤积，谨慎，潜行 2</p><p class="stat-stats"><strong>HP</strong> 3；护甲 1（反射）<br>伤害 爪、石头、扼喉 <button type="button" class="dice-roll" data-dice="d6" title="点击掷 d6 — Shift: 优势 · Ctrl: 劣势">d6</button>（近身）<br>特殊性质 像松鼠一样爬/跳<br>本能 去贪求<br>特殊性质可以是有利的（“回声定位”或“免疫热/火”）、不利的（“盲”或“怕水/冷”）或中性的（“由结晶岩石构成”）。这些本身不是GM行动，但它们可以也应当告知你确立的虚构和你做的GM行动。</p><ul class="stat-moves"><li>模仿噪音、话语、呼救</li><li>藏进或消失进树里</li><li>抓起某样东西窜走</li></ul><p class="stat-note">它们一直都在那儿，在森林里，潜伏在树上。几代人以来，森林之民猎杀它们并控制它们的数量。不再了。</p><p class="stat-note">• 格格不入的噪音：不完整的鸟叫、不合时令的虫鸣、树顶传来的熊吼、胡言乱语的片段</p><p class="stat-note">• 身影在枝桠间窜、跳、荡</p><p class="stat-note">• 筋腱强壮的手指绕上你的喉咙</p><p class="stat-note">• 湿冷、发黑的血；太冷太腐，不像自然的 某件有趣的事：有某样大家都同意能挡住克林温的东西（一种气味、一件护符、一种声音、一个小仪式，等等）。那是什么，你为什么确定它几乎毫无价值？</p><p class="stat-note">某件有用的事：真的有某样东西能挡住克林温，但它涉及某样不常见、不实际、或两者都有的东西。</p><p class="stat-note">那是什么，为什么不是常识（或至少不被普遍接受）？</p><p class="stat-note">4 伤害：怪物通常如何攻击、它造成的伤害，以及与那伤害相关的标签（描述见 <a class="wiki-link" href="#6-damage" data-slug="dangers" data-fragment="6-damage">6 Damage</a>）。</p><p class="stat-note">5 特殊性质：（可选）影响游戏但标签并未以其他方式显而易见或描述的内在特质。</p><p class="stat-note">6 本能：怪物通常做什么使它与他人冲突。用它的本能作为其行为的指引。当你不确定一头怪物会做什么时，跟着它本能所建议的走。</p><p class="stat-note">7 行动：你可以用这头怪物做的GM行动。你不限于这些行动——你可以也会用所有标准GM行动，如宣告麻烦或消耗他们的 资源——但怪物行动描述怪物战斗或惹麻烦的具体方式。</p><p class="stat-note">8 描述：怪物的外表、栖息地、行为，等等。也许包括印象或扮演它的提示。</p><p class="stat-note">9 可选元素：包括传说（某件有趣的事和某件有用的事，供有人见多识广时用），或自定义玩家行动（例如，“当你与斯温对上眼时，掷……”）。</p></div>
+<h2 id="monsters">怪物</h2>
+<p>怪物是主动的危险——PC能与之战斗（或至少击退）的东西。</p>
+<p>它们通常是能动的、有感知的，或够接近。这更多是一个游戏术语而不是别的，涵盖野兽和人、构装体和精魂，以及真正怪物般的敌人。</p>
+<p>左边是一头范例怪物，完全准备好，其各个元素被标出。</p>
+<p>每当你准备一个威胁或一次远征，并确定某样PC很可能与之战斗的东西时，要么在年鉴里找它的怪物条目，要么自己创建这头怪物。</p>
+<hr>
+<blockquote><p><em>我计划第一次冒险时，确定了PC也许会遇到的若干怪物：克林温、奈拉德、羽龙，当然还有斯温本身。这些怪物在</em>第二卷<em>里都有写照，所以我就用那些。</em><em></em><em></em><em></em><em></em></p><p><em>不过，我已经决定斯温萨吉拉的巢穴是一座大体完好的绿领主陵墓，葬室的最后入口由一些强大的妖精仆从守卫。我翻过</em>第二卷<em>里的妖精条目，但没有范例符合。我需要从零创建这些妖精守卫！</em><em></em><em></em><em></em><em></em><em></em><em></em><em></em></p></blockquote>
+<hr>
+<p>这些图标用来给<em>更广阔的世界与其他奇观</em>里出现的不同生物分类。</p>
+<p>人类个体</p>
+<p>人类群体 妖精</p>
+<p>自然/野兽 不死</p>
+<p>受染/</p>
+<p>精魂</p>
+<p>福莫莱</p>
+<p>构装体</p>
+<p>要创建一头怪物：</p>
+<p>1) 把它概念化</p>
+<p>2) 给它起名</p>
+<p>3) 给它标签</p>
+<p>4) 计算生命值</p>
+<p>5) 计算护甲</p>
+<p>6) 计算伤害</p>
+<p>7) 写特殊性质</p>
+<p>8) 写它的本能</p>
+<p>9) 写它的行动</p>
+<p>10) 描述它</p>
+<p><strong>11)</strong> 写任何适宜的可选元素：传说、面向玩家的行动，等等。</p>
+<p>如果你在游戏中即兴一头怪物，就快速把它概念化（步骤 1）</p>
+<p>然后计算它的HP、护甲和伤害（步骤 4-6）。眼下用你的标准GM行动来主持它。如果它仍然要紧，在场次之间把它写全。</p>
+<h2 id="monster-types"><img class="book-icon" src="../images/icons/default.svg" alt="" width="18" height="18" loading="lazy">怪物类型</h2>
+<p>第二卷： 精魂/构装体 匠造者</p>
+<p>流溢</p>
+<p>地底之物</p>
+<p>未知起源</p>
+<h2 id="1-concept"><img class="book-icon" src="../images/icons/default.svg" alt="" width="18" height="18" loading="lazy"><span class="step-badge">1</span> 概念</h2>
+<p>在你做任何其他事之前，想象这头怪物。它是什么？看起来怎样？它做什么？它独自生活还是和别人一起？它如何战斗、进食和生活？</p>
+<p>你开始这个过程时通常会有一些点子。如果没有，或你想要某样东西来刺激和引导你的创造力，就用<em>第二卷</em>里各种怪物创建表中的一套。</p>
+<p>另一个窍门是从更传统的奇幻设定里挑一头怪物，某样<em>石顶</em>里没有的东西。确定你觉得它最有趣的是什么（它的外表、它的能力、它的象征意义、它的行为或与他人的关系，等等），并打造一头“契合”石顶神话的类似怪物。例如，如果你是缠绳怪（看起来像巨型石笋的穴居怪物）的大粉丝，你也许会决定把类似的东西放进迷宫，保留它的能力但改变它的传说，好让它与地底之物对齐。</p>
+<p>你应当在继续之前对怪物的概念有相当的把握。</p>
+<p>你的概念也许会在你工作时改变和演变，但这个过程充实一个你已经有的概念。它不为你生成概念。</p>
+<hr>
+<blockquote><p><em>我想要两名强大的妖精守卫来保护绿领主的葬室。它们会出现在祭品之厅，迎接任何穿过谦卑之厅和感恩之厅的人。我知道它们忠于绿领主主人，并控制通向其构筑来世及其实际、物理葬室的通道。</em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em></p><p><em>我按</em> <strong><em>创造妖精</em></strong> <em>的步骤走（</em>第二卷<em>，<a class="wiki-link" href="playing-the-game.html" data-slug="playing-the-game" >玩游戏</a>）。我已经决定它们的执念是“守卫”。我为体型掷出2（“</em>大型<em>”），为面向掷出2和7（“有角/有蹄”和“树一般”）。我掷一颗<button type="button" class="dice-roll" data-dice="d6" title="点击掷 d6 — Shift: 优势 · Ctrl: 劣势">d6</button>看它们有多像人，得到2。我在想象高大、体格强壮的树人，带着木质血肉、空白的脸和麋鹿般的角。</em><em></em><em></em><em></em><em></em><em></em><em></em><em></em></p><p><em>才能方面，我掷出6（“摆弄时间、空间”）。我想它们能把闯入者传送来传送去，并能在它们小小的领域里随意消失或出现。我也挑了“诅咒/祝福/给予/拿走”。我想它们从到它们面前的人那里榨取承诺，并诅咒那些违背誓言的人。</em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em></p><p><em>看着剩下的表，我想这些妖精是从树木精魂繁育出来，帮着保护它们绿领主的来世。妖精叛乱期间它们保持忠诚，并维持一种凶猛的保护欲——因此陵墓完好。</em><em></em><em></em><em></em><em></em></p></blockquote>
+<hr>
+<h2 id="2-name"><span class="step-badge">2</span> 名字</h2>
+<p>你会想要一种称呼这头怪物的办法，至少在你自己的笔记里。写下来。</p>
+<p><strong>如果怪物有它自己用的专名 </strong>，就那样叫它，也许带一句短描述。例如，“斯温萨吉拉”或“红衣黛德蕾，土匪头子。”从一份适宜的名字清单或年鉴条目里挑专名，或编类似的东西。</p>
+<p><strong>如果怪物为石顶的人所知 </strong>，而且是他们视为凡俗或常见的东西，那就用平白的中文给它一个简单、描述性的名字（如“羽龙”或“屠夫鸟”）。</p>
+<p><strong>如果怪物被神秘包围</strong>，是传闻和传说里的东西，那就给它一个威尔士风的名字（如“奈拉德”或“ceffylwraig”）。用中文想一个与怪物相关的词或描述，然后过一遍在线翻译。组合并微调得出的译文（或试其他短语），直到你找到听起来好、在游戏中够简单好用的东西。</p>
+<p>（你也可以用这种手法来想专名。）</p>
+<p><strong>对为另一群人所知的怪物 </strong>，如曼马奇人或丘陵之民，用与上面类似的过程。但对神秘、传闻中的怪物，把中文描述译成适合那个民族或地区的语言。如果它是一头为……所知的神秘怪物</p>
+<ul class="ellipsis"><li><strong>丘陵之民</strong>，那就把它译成布列塔尼语并丢掉一些元音，给它一种短促、截断的声音。</li><li><strong>泽畔</strong>，那就把它译成爱尔兰语。</li><li><strong>曼马奇人</strong>，那就把它译成德语。</li><li><strong>屏障隘口的人</strong>，那就把它译成尼泊尔语或藏语。</li><li><strong>利戈斯或南方</strong>，那就把它译成希腊语、希伯来语、波斯语或阿拉伯语。</li><li><strong>戈丁矿场的人</strong>，那就决定哪个移民群体原先给它起名，并按上面译。</li><li><strong>其他民族</strong>（如乌斯特里纳），那就查阅<em>第二卷</em>里相应的条目。</li></ul>
+<p><strong>对未知且未命名的怪物</strong>，用平白的中文给它们阴森、描述性的头衔，如“阴影般的存在”或“杀戮之霜”或“白井里的东西”。</p>
+<hr>
+<blockquote><p><em>因为妖精能和任何人说话，它们的名字更像短语。我想我的守卫妖精共享一个头衔，与礼物或祭品以及站岗相关。我想了一下，写下：</em><em></em><em></em><em></em><em></em></p></blockquote>
+<p>阿尔姆采集者（Almtakers），守护妖精。</p>
+<blockquote><p><em>森林之民会有他们自己（斯拉夫风）给阿尔姆采集者的名字，石顶的人也许知道。我拿英-保加利亚词典玩了一下，发现“接受者”可以译成“priemnitsi”。我喜欢那个：“普雷姆尼齐”。</em><em></em><em></em><em></em><em></em><em></em></p></blockquote>
+<hr>
+<h2 id="3-tags"><span class="step-badge">3</span> 标签</h2>
+<p>通过回答以下问题汇编一份标签清单。</p>
+<hr>
+<p><strong>它如何狩猎或战斗？</strong>（选 1） 标签</p>
+<hr>
+<p>大群（6或更多） <em>集群</em> 小群（每群2-5） <em>群体</em></p>
+<p>独自 独行</p>
+<p>如果一头个体怪物属于一个群体，但它仍然大多独自战斗或狩猎，那就给它<em>独行</em>标签（以及相应的HP和伤害等级；见下）。</p>
+<hr>
+<p><strong>它有多大？</strong>（选 1） 标签</p>
+<hr>
+<p>猫大小或更小 微型</p>
+<p>像一个人类孩子 <em>小型</em></p>
+<p>成年人类大小 <em>-</em>像一匹马、一辆车，等等 <em>大型</em> 像一头象，或更大 <em>巨型</em></p>
+<hr>
+<p><strong>它的性质是什么？</strong></p>
+<p>（加所有适用的） 标签</p>
+<hr>
+<p>没有物理形态 <em>精魂</em></p>
+<p>介于物理与灵性之间 妖精</p>
+<p>被某人制造 构装体</p>
+<p>被地底之物改变 受染</p>
+<p>来自创造的第一纪 <em>原初</em></p>
+<p>死了，但不承认 <em>不死</em></p>
+<hr>
+<p><strong>它以什么著称？</strong></p>
+<p>（加所有适用的） 标签</p>
+<hr>
+<p>积攒小玩意和宝藏 <em>囤积</em> 避开战斗，早早逃跑 <em>谨慎</em></p>
+<p>智力 狡诈 或 阴险</p>
+<p>令人不安/可怕的存在 骇人</p>
+<p>潜行、出其不意、伏击 <em>潜行</em></p>
+<p>使用法术或魔法 <em>魔法</em> 在群体中配合良好 <em>有组织</em> 如果这个生物拥有某种容易用一个词描述的其他性质，就编一个标签。</p>
+<hr>
+<p><em>如果阿尔姆采集者战斗，它们成对战斗，所以我给它们</em>群体 <em>标签。</em><em></em></p>
+<p><em>它们大概12英尺高、相当庞大，所以我给它们</em>大型 <em>标签。</em><em></em></p>
+<blockquote><p><em>它们显然是</em>妖精<em>，并以使用魔法和配合良好著称。我把它们的标签写成：</em><em></em><em></em></p></blockquote>
+<p>群体<em>，</em>大型<em>，</em>妖精<em>，</em>魔法<em>，</em>有组织。</p>
+<h2 id="4-hit-points"><span class="step-badge">4</span> 生命值</h2>
+<p>通过回答以下问题确定怪物的上限</p>
+<p>HP：</p>
+<hr>
+<p><strong>它如何狩猎或战斗？</strong>（选 1） hp</p>
+<hr>
+<p>大群（6或更多，<em>集群</em>） 3 小群（2-5，<em>群体</em>） 6</p>
+<p>独自（<em>独行</em>） 12 说清楚：<em>集群</em>里每头怪物有 3 HP，<em>群体</em>里每头怪物有 6 HP。这不是共享的HP池（除非你选择抽象一个群体；见 <a class="wiki-link" href="#abstracting-groups" data-slug="dangers" data-fragment="abstracting-groups">抽象化群体</a>）。</p>
+<hr>
+<p><strong>它有多大？</strong>（选 1） hp</p>
+<hr>
+<p>猫大小或更小（微型） -2</p>
+<p>像一个人类孩子（小型） -</p>
+<p>成年人类大小 <em>-</em>像一匹马、一辆车，等等（<em>大型</em>） +4 像一头象，或更大（<em>巨型</em>） +8</p>
+<hr>
+<p><strong>还有什么适用？</strong>（选所有适用的） hp</p>
+<hr>
+<p>它特别结实/耐久 +4 它被命运眷顾 +2 它被不止生物学所驱动 +4</p>
+<p>它没有要害器官 +3</p>
+<hr>
+<p>阿尔姆采集者成对战斗，带</p>
+<p>群体 <em>标签，所以它们各自起始 6 HP。</em></p>
+<p><em>它们也是</em>大型<em>，给它们 +4 HP。</em></p>
+<blockquote><p><em>妖精有奇怪的形态，但它们仍是有可辨解剖的活物：它们流血，有心、脑、关节，等等。但这些妖精——带着木质血肉和庞大骨架——特别结实。我给它们 +4 HP，各自总共 14 HP。</em><em></em><em></em><em></em><em></em><em></em><em></em></p></blockquote>
+<hr>
+<h2 id="5-armor"><span class="step-badge">5</span> 护甲</h2>
+<p>回答以下：</p>
+<hr>
+<p><strong>它被什么保护？</strong>（选 1） 护甲</p>
+<hr>
+<p>除了布和肉什么都没有 0</p>
+<p>皮革或厚皮 1</p>
+<p>链甲、鳞甲或类似 2 钢甲、骨质板、甲壳 3</p>
+<p>强力魔法结界或 4 超自然韧性</p>
+<hr>
+<p>还有什么适用？</p>
+<p>（选所有适用的） 护甲</p>
+<hr>
+<p>它是<em>微型</em> +1 它带着盾或类似 +1</p>
+<p>它擅长防御 +1</p>
+<p>它没有要害器官 +1 在护甲等级后面的括号里，记下护甲的来源。然后列出任何变体或例外。</p>
+<hr>
+<blockquote><p><em>阿尔姆采集者有妖精对除铁以外一切的典型韧性，所以我先给它们护甲 4。即便对铁，它们也有木头般的血肉；我想那算“厚皮”。它们有器官和解剖，所以那儿没有加值，但我想它们擅长防御——它们毕竟是守卫。我写下：</em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em></p></blockquote>
+<p>护甲 5（韧性，技巧），对铁 2（皮，技巧）</p>
+<p><em>哇。这些东西很结实。</em></p>
+<hr>
+<h2 id="6-damage"><span class="step-badge">6</span> 伤害</h2>
+<p>怪物典型的攻击形式是什么？写下来，连同怪物的伤害等级和适宜的标签。要确定它们，回答以下：</p>
+<hr>
+<p><strong>它如何狩猎或战斗？</strong>（选 1） 伤害</p>
+<hr>
+<p>大群（6或更多，<em>集群</em>） <button type="button" class="dice-roll" data-dice="d6" title="点击掷 d6 — Shift: 优势 · Ctrl: 劣势">d6</button> 小群（2-5，<em>群体</em>） <button type="button" class="dice-roll" data-dice="d8" title="点击掷 d8 — Shift: 优势 · Ctrl: 劣势">d8</button></p>
+<p>独自（独行） <button type="button" class="dice-roll" data-dice="d10" title="点击掷 d10 — Shift: 优势 · Ctrl: 劣势">d10</button></p>
+<h2 id="attack-tags-terms">攻击标签与术语</h2>
+<p>距离标签（<em>斜体</em>）表明一次攻击在什么距离有用。</p>
+<p><strong><em>近身</em></strong>：狭窄处；贴身肉搏 <strong><em>近战</em></strong>：近战距离，1-2步外 <strong><em>触及</em></strong>：3-4步外 <strong><em>近距</em></strong>：最多大约30步外 <strong><em>远距</em></strong>：相当远；最多100步，也许更远。</p>
+<p>其他标签（<em>斜体</em>）表明额外的虚构效果。在你描述和结算怪物攻击的方式里反映标签。</p>
+<p><strong><em>范围</em></strong>：影响一个区域内的一切 <strong><em>粗陋</em></strong>：容易断、磨损，等等。</p>
+<p><strong><em>强力</em></strong>：把敌人甩来甩去/打倒 <strong><em>抓取</em></strong>：擒抱、抓住并束缚 <strong><em>狼藉</em></strong>：特别具破坏性，把敌人和东西撕开 带 <strong>[</strong><strong><em>n</em></strong><strong>] 穿刺</strong>的攻击无视敌人护甲的 <em>n</em> 点。<strong>无视护甲</strong>的攻击把护甲视为 0。</p>
+<p>更多标签与术语见 <a class="wiki-link" href="playing-the-game.html" data-slug="playing-the-game" >玩游戏</a>。</p>
+<hr>
+<p><strong>它攻击的性质 是什么？</strong>（选所有适用的） 加</p>
+<hr>
+<p>贴身肉搏时有用 <em>近身</em></p>
+<hr>
+<p>在剑的触及处好用 <em>近战</em></p>
+<hr>
+<p>能把敌人挡开 <em>触及</em></p>
+<p>在距离上有用 <em>近距</em> 或 <em>远距</em> 能一次伤害许多敌人 <em>范围</em></p>
+<hr>
+<p>小而弱 -1 骰面</p>
+<hr>
+<p>凶残而明显 +2 伤害</p>
+<hr>
+<p>无情或压倒性 优势</p>
+<hr>
+<p>咬住、钉住、擒抱 <em>抓取</em></p>
+<hr>
+<p>能切开厚皮 1 穿刺，</p>
+<p><em>狼藉</em></p>
+<hr>
+<p>能撕开金属 3 穿刺，</p>
+<p><em>狼藉</em></p>
+<hr>
+<p>完全绕过护甲 无视护甲</p>
+<hr>
+<p>容易断裂 粗陋</p>
+<hr>
+<p><strong>它有多大？</strong>（选 1） 加</p>
+<hr>
+<p>猫大小或更小（<em>微型</em>） -2 伤害，降低距离</p>
+<hr>
+<p>像一个人类孩子（<em>小型</em>） 降低距离</p>
+<hr>
+<p>成年人类大小 -</p>
+<hr>
+<p>像一匹马、一辆车，等等 +1 伤害，（<em>大型</em>） 加一个距离</p>
+<hr>
+<p>像一头象，或更大 +3 伤害，（<em>巨型</em>） 加一个距离</p>
+<hr>
+<p>还有什么适用？</p>
+<p>（选所有适用的） 加</p>
+<hr>
+<p>它力量惊人 +2 伤害，</p>
+<p><em>强力</em></p>
+<hr>
+<p>它打得灵巧而精确 +1 穿刺</p>
+<hr>
+<p>身体伤害不是它构成的 -1 骰面 最糟危险</p>
+<hr>
+<p>它古老而显著 +1 骰面</p>
+<hr>
+<p>它憎恶暴力 劣势 <strong>优势</strong>意味着你掷伤害两次并用较高结果；<strong>劣势</strong>意味着掷两次并用较低结果。</p>
+<p><strong>降低距离</strong>意味着攻击的距离标签低一级（例如从<em>近战</em>到<em>近身</em>），而<strong>加一个距离</strong>意味着攻击得到一个额外的距离标签（例如如果已经是<em>近战</em>，现在也是<em>近身</em>或<em>触及</em>）。</p>
+<p>如果怪物有多种、分立的攻击方式，把每种连同它自己的伤害等级和标签写下来。</p>
+<hr>
+<blockquote><p><em>阿尔姆采集者厌恶战斗，但当它们战斗时，它们用树干般的前肢砸敌人，或把那些肢插稳再用腿踢。我把“有力一击”写成它们主要的攻击形式。</em><em></em><em></em><em></em></p><p><em>它们成对战斗（</em>群体 <em>标签），所以起始 <button type="button" class="dice-roll" data-dice="d8" title="点击掷 d8 — Shift: 优势 · Ctrl: 劣势">d8</button> 伤害。它们的肢相对体型特别长，所以我给它们</em>近战 <em>距离（而不是</em>近身<em>）。虽然它们的肢又大又长，我不觉得它们“凶残而明显”。</em><em></em><em></em><em></em><em></em></p></blockquote>
+<p><em>阿尔姆采集者是</em>大型<em>，给它们 +1 伤害和一个额外距离。我加</em>触及 <em>而不是</em>近身<em>。我想它们更擅长把敌人挡开而不是贴身肉搏。</em><em></em><em></em></p>
+<hr>
+<blockquote><p><em>我想象它们有一种不可动摇的力量（像树根！），所以给它们 +2 伤害和</em>强力<em>。不过它们的主要危险来自诅咒破誓者和摆弄时间空间的能力。那把它们的骰面从 <button type="button" class="dice-roll" data-dice="d8" title="点击掷 d8 — Shift: 优势 · Ctrl: 劣势">d8</button> 降到 <button type="button" class="dice-roll" data-dice="d6" title="点击掷 d6 — Shift: 优势 · Ctrl: 劣势">d6</button>。它们相当古老（来自绿领主时代）但不特别显著，所以我把骰面留在那儿。而且因为它们厌恶暴力，它们掷伤害带劣势。</em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em><em></em></p><p><em>我把它们的伤害条目写成：</em></p></blockquote>
+<p>有力一击：<button type="button" class="dice-roll" data-dice="d6+3" title="点击掷 d6+3 — Shift: 优势 · Ctrl: 劣势">d6+3</button> 伤害带劣势（近战，触及，强力）。</p>
+<h2 id="7-special-qualities"><span class="step-badge">7</span> 特殊性质</h2>
+<p>考虑为怪物拥有的以下每一项写一项特殊性质。</p>
+<ul class="bullets"><li>一种非凡/受限的感官（如“看见热而不是光”）</li><li>一种有用的适应/防御（如“免疫火”）</li><li>一种奇怪的形态或构成（如“无定形软泥”或“由尘构成”）</li><li>一种弱点或脆弱（如“日光下无力”）</li><li>一种对周围的影响（如“火焰在它面前变暗闪烁”）</li><li>一种否则不明显的重要特质（如对一只鸟写“能说话”）</li></ul>
+<p>如果它是<em>构装体</em>，务必写一两项反映其构造或目的的特殊性质。如果它是<em>位面</em>的，至少给它一项关于它如何不自然或不属于这里的特殊性质。</p>
+<p>只写你觉得会在基本描述和其他属性之外影响游戏的特殊性质。别为显而易见或被假定的东西费心写特殊性质。如果你在写一头巨型恶魔蛙，你不需要写下“两栖”（它是一只蛙）但大概应当写下“覆着有毒、腐蚀的黏液”。</p>
+<hr>
+<blockquote><p><em>阿尔姆采集者有与妖精相关的所有特殊性质。我不想全写出来，所以我只说“妖精本性”和一个页码。</em><em></em><em></em></p><p><em>我想它们有三只发光、空洞的眼睛。那怪异阴森，但不会真的影响游戏。它们有木质血肉，但我已经在HP和护甲里算过了。我已经记下它们对铁的脆弱。</em><em></em><em></em><em></em><em></em><em></em></p><p><em>它们没有嘴，但心灵感应地“说话”。我想它们完全诚实。而且我想它们的存在摆弄时间和空间——东西不移动就换了位置，片刻变成几分钟，几分钟在片刻里过去，诸如此类。那些都是也许会影响游戏的重要特质，所以我写下</em><em></em><em></em><em></em><em></em><em></em><em></em></p></blockquote>
+<p>特殊性质：妖精本性（第</p>
+<p>二卷，<a class="wiki-link" href="playing-the-game.html" data-slug="playing-the-game" >玩游戏</a>），心灵感应；不能说谎或误导；微妙地扭曲空间/时间。</p>
+<hr>
+<h2 id="8-instinct"><span class="step-badge">8</span> 本能</h2>
+<p>怪物做什么使它与他人冲突，或导致它伤害他人？把这写成“去[做某事]”的格式。</p>
+<p>好的本能描述一种一般的行为模式而不是一次具体行动。“去把自己塞饱”是好本能；“把猎物整个吞下”太具体（那更像一项行动）。话虽如此，试着写有辨识度的本能。“去狩猎”是还可以的本能；“去无情地追逐它的猎物”更好。</p>
+<p>一头怪物也许有多项本能，如一头洞穴熊的“去填饱肚子；去保护幼崽。”少这样做；这对有冲突动机的细腻怪物、或被其本性强烈统治的怪物最好。</p>
+<p>怪物有可能有多个本能，比如洞熊的“填饱肚子；保护幼崽”。要少这么做；这最适合动机相互冲突的细腻怪物，或被基本天性强烈支配的怪物。</p>
+<hr>
+<blockquote><p><em>阿尔姆采集者守卫通向绿领主主人葬室和构筑来世的入口。它们会挑战任何接近的人，评判他们，要求一份祭品，并榨取和平与尊敬的誓言。归根结底，这种行为都源于一项简单的本能：</em>去保护它的主人。<em></em><em></em><em></em><em></em><em></em><em></em></p></blockquote>
+<hr>
+<h2 id="9-moves"><span class="step-badge">9</span> 行动</h2>
+<p>每头怪物应当有几项GM行动。写这些行动好让它们补全这句话“这头怪物能够/将会 __。”例如：“包围并袭扰猎物”或“砸穿障碍”或“拉响警报。”</p>
+<p>如果怪物……（选所有适用的）</p>
+<ul class="ellipsis"><li><strong>善于欺骗和潜行</strong>，写一项关于它阴招的行动。</li><li><strong>使用法术或魔法</strong>，写一项描述其能力的行动。</li><li><strong>在群体中配合良好</strong>，写一项关于它如何召唤或与他人协调的行动。</li><li><strong>是精魂</strong>，但它能显现或占据物理形态，写一项描述它如何这样做的行动。</li><li><strong>构成的主要危险不是身体伤害 </strong>，写一项反映它真正构成的威胁的行动。</li><li><strong>主动保护自己</strong>，写一项描述那种防御的行动。</li><li><strong>有一种特殊的攻击形式</strong>，写一项描述它的行动，连同任何标签——如果适宜——以及一个替代伤害值。</li><li><strong>行动少于3项</strong>，或如果感觉缺了什么，再写一项描述怪物以做什么著称的行动。</li></ul>
+<p>大多数怪物有三项行动；简单的也许只有两项。特别重要或危险的敌人可以有四项，也许甚至五项。</p>
+<p>别写只描述其基本攻击的怪物行动。如果你给了它“石尖矛，<button type="button" class="dice-roll" data-dice="d6" title="点击掷 d6 — Shift: 优势 · Ctrl: 劣势">d6</button> 伤害（<em>近战</em>，<em>触及</em>）”，那就别写一项行动“用矛刺敌人”。</p>
+<p>你已经知道它能那样做！如果你真的想要一项行动来描述它如何战斗，写更有趣的东西，如“一头扎进战斗”或“用一片矛林把敌人困住。”</p>
+<p>同样，避免写只是“做它的本能”的行动。寻找表达本能的具体方式。如果它的本能是“去追逐猎物”，那它如何追逐猎物？哦，它能“从数英里外嗅到猎物”？或“准确追踪一只它尝过血的生物”？很好。</p>
+<p>写会帮你在桌上使用这头怪物的行动。措辞松的行动（如“欺凌并操控人”或“施放火与焰的法术”）给你很多灵活性和许可，但只有当你能在桌上即兴那种行动时才有帮助。更具体的行动（如“威胁他们的家人或名声”或“召起几乎不受控制的原初之火法术”）会在桌上给你多得多的方向，也许更好用。</p>
+<hr>
+<blockquote><p><em>阿尔姆采集者使用法术和魔法，配合良好，它们的主要危险不是它们造成的伤。那给了我三项要写的行动。我选：</em><em></em><em></em><em></em></p></blockquote>
+<p>&gt; 对上眼并把他们传送走</p>
+<p>&gt; 毫不犹豫地协同行动</p>
+<p>&gt; 给任何打破和平与尊敬承诺的人降下消耗诅咒 <em>最后那个有点啰嗦不清楚，所以我这样拆开：</em></p>
+<p>&gt; 要求一份善意的誓言</p>
+<p>&gt; 给破誓者降下消耗诅咒</p>
+<hr>
+<h2 id="10-description"><span class="step-badge">10</span> 描述</h2>
+<p>按你喜欢的或多或少写你怪物的描述。</p>
+<p>记住，这里的读者是你，在游戏中使用这头怪物。带着那个写你的描述。</p>
+<p>想想你会如何在游戏中向玩家描述这头怪物。它有多大，看起来怎样，如何移动，等等。用明喻和与熟悉物件的比较（“它像一头巨大的麋鹿半人马，颅骨头上长着老大的角，肋骨外露，还有一对阴森的小暴龙臂”）。也许草画某样东西，或在网上找图给玩家看。</p>
+<p>提示：至少纳入一个视觉以外感官的印象，如它发出的窸窣声、它过后留下的臭氧味、他们在它面前感到的冷汗。保持简洁而唤起画面。</p>
+<p>最多限制自己三个这样的印象。</p>
+<p>你也许会纳入描述的其他东西：</p>
+<ul class="bullets"><li>有多少</li><li>在哪里找到它们</li><li>PC遇到它们时它们可能在做什么</li><li>社会结构和关系</li><li>背景和历史</li></ul>
+<p>许多怪物也是NPC；如果它们会和PC说话，考虑想出一种难忘、有辨识度的方式在桌上体现它们（见 <a class="wiki-link" href="npcs-followers.html" data-slug="npcs-followers" >NPC与追随者</a>）。</p>
+<hr>
+<blockquote><p><em>我想了一下我会如何描述阿尔姆采集者，记下这些笔记：</em><em></em></p></blockquote>
+<p>* 12英尺高，人形，皮像木头。树干前臂，山羊腿，角。没有嘴；三只发光的白眼。</p>
+<p>* 像大猩猩那样移动，或拄着拐……</p>
+<p>把大前臂插稳，腿向前荡。木头吱嘎声。</p>
+<p>* 怪异、如梦的存在。</p>
+<p>“它刚才不是在那边吗？”</p>
+<p>* “声音：”安静、气音。每隔几个词重复，像回声。</p>
+<hr>
+<h2 id="11-optional-elements"><span class="step-badge">11</span> 可选元素</h2>
+<p>如果怪物有细腻的动机或行为，考虑写出怪物的战术，作为一系列“如果-那么”条件和行为。这能帮你<strong>完整地描绘你的角色 </strong>，并加快游戏。</p>
+<p>要写战术，想想PC最可能如何、在哪里遇到这头怪物。为那个写一个“如果”或“当”陈述，以及怪物可能作为回应做什么。PC接下来可能做什么，那会如何影响怪物的行为？为那个再写一个如果/那么。继续跟着路径上可能的分叉，写如果/那么直到你覆盖了可能的结果：怪物攻击、怪物逃跑、怪物同意放他们走，等等。</p>
+<p>如果你预期玩家会见多识广关于这头怪物，那也许事先准备“某件有趣的事”（给7-9结果）和“某件有用的事”（给10+）。指引见<strong>见多识广</strong>（<a class="wiki-link" href="player-moves.html" data-slug="player-moves" >玩家行动</a>）。不过记住：这些笔记是为了你的好处。别费心准备你能在桌上即兴的东西，或怪物属性显而易见暗示的东西。准备传说来填否则不明显的空白，或预先计划你会在7-9或10+上给多少信息。</p>
+<p>最后，考虑写一个或多个自定义的面向玩家的行动。如果怪物可能对PC做某件事，或对他们产生某种效果，而一个自定义的面向玩家的行动能帮你在游戏中解决它，那就把它写出来。</p>
+<p>面向玩家的行动特别适合解决凶狠的攻击或棘手、令人不快的效果。精神控制、瞬间“击杀”能力（如石化）和毒素都是不错的候选。指引见<strong>编写行动</strong>（<a class="wiki-link" href="writing-moves-love-letters.html" data-slug="writing-moves-love-letters" >编写行动与情书</a>）。</p>
+<hr>
+<blockquote><p><em>我设想玩家可能会对施主见多识广， 知道他们会认为什么是“配得上”的供奉。我想出 某件有趣的事和某件有用的事， 把它加进写作里。</em><em></em></p></blockquote>
+<hr>
+<div class="stat-block" id="the-almtakers-guardian-fae"><h3 class="stat-name">施主，守护妖精</h3><p class="stat-tags">（群体，大型，妖精，魔法，有组织）</p><p class="stat-stats"><strong>HP</strong> 14；护甲 5（韧性、技巧），对铁2（皮、技巧）<br>伤害 强力重击 <button type="button" class="dice-roll" data-dice="d6+3" title="点击掷 d6+3 — Shift: 优势 · Ctrl: 劣势">d6+3</button> 带劣势（近身、长距、猛力）<br>特殊性质 妖精本性（第二册，<a class="wiki-link" href="playing-the-game.html" data-slug="playing-the-game" >玩游戏</a>），心灵感应，不能说谎或误导；微妙地扭曲局部时间</p><p class="stat-note">与空间 本能 保护其主人</p><p class="stat-note">&gt; 对视，然后把他们传送走</p><p class="stat-note">&gt; 毫不犹豫地协同行动</p><p class="stat-note">&gt; 要求立下善意的誓言</p><p class="stat-note">&gt; 对背誓者施以衰竭诅咒 12英尺高，类人，皮肤如木。</p><p class="stat-note">树干般的前臂，山羊腿，鹿角。</p><p class="stat-note">没有嘴，三只发光的白眼。</p><p class="stat-note">像大猩猩或拄拐那样移动——撑住巨大的前臂，把腿荡向前。木头吱嘎声。</p><p class="stat-note">怪异、梦一般的存在。“它刚才不是在那边吗？”</p><p class="stat-note">“声音：”安静，气声。每隔几个词重复一次，像回声。</p></div>
+<blockquote><p><em>我还在想他们的心灵感应让 他们特别难以欺骗。我写了一个 面向玩家的行动来体现这点。</em></p><p><em>写完后，施主的写作 看起来是这样：</em></p></blockquote>
+<p><strong>某件有趣的事：</strong>森林之民说起过普里耶姆尼齐，即“接收者”，他们代一位伟大的神谕者接受供奉。这些妖精会是他们吗？</p>
+<p><strong>某件有用的事：</strong>此地存在于时间之外，与世隔绝。自绿主时代以来新出现的事物（或对此类事物的鲜活记忆）作为礼物会很受欢迎。</p>
+<p><strong>当你试图欺骗 施主</strong>（即使严格来说你说的是实话），掷骰+WIS：10+，你隐藏了意图，他们毫无察觉；7-9，他们起了疑心并试探一番——要么现在坦白，要么加倍下注试图欺骗他们更多；6-，他们把你看得一清二楚。</p>
+<h2 id="running-combat">运行战斗</h2>
+<p>记住，“怪物”只是对PC可能最终与之战斗的东西的一个称呼。它包括敌对（或潜在敌对）的人，也包括灵体、野兽和货真价实的<em>怪物</em>。</p>
+<p>无论本性如何，怪物都有个性——或至少有行为模式——比单纯的“杀死PC”更细腻。每个怪物都有本能。大多数有自保之心。许多有PC可以利用的欲望、需求、恐惧或弱点——它们既是怪物也是<em>角色</em>。</p>
+<p><strong>完整地描绘你的角色</strong>。</p>
+<p>考虑这头怪物——带着<em>这个</em>本能和<em>这些</em>动机，面对以<em>这种</em>方式行事的<em>这些</em>PC——会做什么。</p>
+<p>然后让它那么做。暗示怪物的故事和内心生活。呈现或许并不真的想打、或者可以讲道理、或者可以被吓跑的怪物。</p>
+<p>但同时，<strong>把怪物描绘成 <em>怪物</em></strong>。</p>
+<p>试着抓住面对饥饿的掠食者或愤怒的巨兽时的恐惧。渲染与另一个人搏斗时的紧张、绝望和血腥后果。想想遇到饿鬼、异界妖精、或由无边仇恨与嫉妒构成的恶魔会是什么样，并试着把它传达给你的玩家。让你的怪物可怕。</p>
+<p><strong>让它烧起来</strong>。别保护你的怪物，别保护你的NPC，也别保护PC。如果虚构、骰子和你对将会发生什么的判断都指向受伤或死亡，那就顺其自然。</p>
+<p>别为了某个宏大故事而作弊。游戏是为了看看会发生什么。</p>
+<h2 id="introducing-monsters">引入怪物</h2>
+<p>每当该做GM行动时，你可以<strong>引入一个危险</strong>，把怪物放进场景。</p>
+<p>别担心你的怪物是不是“公平的战斗”或“平衡的遭遇”，或者PC是否甚至能打败它。</p>
+<p>担心你的怪物<em>说不说得通</em>。</p>
+<p><strong>描绘一个丰富而神秘的世界</strong>，对吧？如果PC撞上一对（极其危险的）雷龙说得通，那就来吧。然后<strong>游戏是为了 看看会发生什么</strong>。</p>
+<p>究竟如何引入怪物取决于情境、怪物的标签、性质和行动，以及PC的行动。在开阔空间遇到的“显眼”怪物会给PC充足的机会计划和反应。</p>
+<p><em>潜行</em>的怪物在黑暗杂乱的空间里，而PC在火把光中跌跌撞撞？就没那么多了。</p>
+<hr>
+<blockquote><p><em>PC们在戈丁矿场，试图 卖掉他们在绿主陵墓里找到的 一些贵重物品。莉安娜去找一个 联络人谈话。瓦希德、卡拉多克和布洛德温 在酒馆。卡拉多克和布洛德温起身 离开，而瓦希德看见两个 不三不四的家伙起身跟了上去。</em></p><p><em>那么，如果这两人只是被卡拉多克 惹恼了的一对本地矿工， 我就会</em><strong><em>引入一个危险</em></strong><em>，让PC 看见他们过来。“回旅舍走到一半， 你们意识到有人跟着。 是酒馆里那几个家伙，他们看起来 很火大。你们怎么做？”PC有各种 选择——他们可以试着甩掉对方， 或设伏，或谈话，随便什么。</em></p><p><em>但如果这些坏蛋是</em>潜行<em>的杀手， 经常在小巷里谋杀不警觉的旅人 并搜刮尸体，那我会 激进得多。我会先</em> <strong><em>暗示表象之下另有隐情</em></strong><em>。 “你们发现自己置身于一个黑暗、空旷、 满是垃圾的小广场，一切都很安静。</em><em></em></p></blockquote>
+<hr>
+<blockquote><p><em>太安静了。你们感觉自己被盯着。 你们怎么做？”</em></p><p><em>假设他们寻求洞见，掷出7-9， 问：“我该提防什么？” 我会说：“你很确定有人在跟着你，或者也许在前面绕行。而 这些巷子里满是 设伏的好地方。你怎么做？”无论 怎样，他们都会警惕。我的下一个行动 大概会是</em><strong><em>引入一个危险</em></strong><em>，但 温和地，并给出反应的机会。“当你们 经过一条黑暗的侧巷时，两个暴徒冲出来 扑向你们，你们怎么做？”</em></p><p><em>但假设他们寻求洞见得了 6-，或者干脆无视我含蓄的威胁 莽撞前进。那样的话，我会</em><strong><em>引入一个 危险</em></strong><em>，狠狠地、痛苦地。“卡拉多克，这个 家伙从黑暗的侧巷里出来，抓住 你的右臂，一拧，把你 脸朝前推到墙上。受到<button type="button" class="dice-roll" data-dice="1d8" title="点击掷 1d8 — Shift: 优势 · Ctrl: 劣势">1d8</button>伤害。 布洛德温，你看见第二个家伙上前， 冷笑着，手里有金属的闪光。你 怎么做？”</em></p></blockquote>
+<h2 id="the-flow-of-battle">战斗的流程</h2>
+<p>与敌人战斗是游戏的一大部分，但战斗并不是一种独立的游戏模式。没有哪一刻你会说“掷先攻”然后启用不同的规则。没有每人轮到时做一个动作的有序轮转。</p>
+<p>当战斗开始时，你<strong>运行游戏</strong>：描述情境，做一个GM行动，问“你怎么做？”解决他们的行动。</p>
+<p>重复。<em>Stonetop</em>中的战斗——和游戏中的其他一切一样——是一场对话。</p>
+<p>怪物不会短兵相接或放箭；你不掷骰看它们的攻击是否成功。相反，你做一个GM行动。通常，你<strong>描述 攻击，但在它命中之前停下</strong>。</p>
+<p>问聚光灯下的玩家：“你怎么做？”无论他们如何回应，都很可能触发一个行动。解决那个行动，让情境从那里滚雪球般发展。</p>
+<hr>
+<blockquote><p><em>卡拉多克刚被脸朝前撞到 建筑上，第二个杀手正 持刀逼近布洛德温 （我在</em><strong><em>宣告麻烦</em></strong><em>）。“你 怎么做？”我问。</em></p><p><em>布洛德温把法杖留在了旅舍； 她基本上手无寸铁。“我会退让 后撤，”她说，“找根 棍子或石头之类的东西来 自卫。”那是寻求洞见， 6-的话这家伙大概会捅 她。但她掷出了8。</em></p><p><em>“行，当然，巷子墙边靠着一把 断掉的扫帚，你可以用它 当棍棒。还有几块松动的砖。”然后我</em> <strong><em>让她陷入困境</em></strong><em>。“但就在你看见它们时， 那家伙朝你扑来，刀子这样低刺过来。你怎么做？”</em><em></em></p></blockquote>
+<hr>
+<p>战斗通常涉及很多同时发生的事情。你需要<strong>管理 聚光灯，让每个人都参与进来</strong>。</p>
+<p>当行动出现停顿时，转向另一个角色（最好是有一阵子没说话的那个）。从他们的视角描述情境，做一个GM行动，问“你怎么做？”有时你会在解决单个PC的动作或行动后就移动聚光灯。其他时候，你会解决几个自然衔接的行动，等它们完成后再移动聚光灯。</p>
+<hr>
+<blockquote><p><em>布洛德温寻求了洞见，发现了 一些可以当武器的破烂，但 我把聚光灯留在她身上，让 杀手攻击。她说：“我扭身 躲开，然后扑向那把扫帚！” 我们同意她在用 DEX直面险境（带优势，因为按 寻求洞见的结果行动）。</em></p><p><em>她掷出9，我给她一个代价或 较小的成功。“你可以拿到扫帚， 但会被砍中受<button type="button" class="dice-roll" data-dice="1d8" title="点击掷 1d8 — Shift: 优势 · Ctrl: 劣势">1d8</button>伤害，或者你 可以躲开但够不到 扫帚。”她决定拿扫帚， 过程中受了5点伤害。“好， 你拿到了，”我说，“但你的肩膀 被那一刀划得流血。”</em></p><p><em>有一会儿了，所以我把聚光灯移 到卡拉多克。首先，我回顾他的处境： “那么这家伙把你的右臂拧在 背后，把你的脸推向 冰冷粗糙的砖墙。”然后我 做一个温和的GM行动（我的怪物行动之一，</em><strong><em>下黑手</em></strong><em>）：“他抓住你的 头发往后拉，你就知道 他要把你的脸再砸回 那堵墙，你怎么做？”</em></p></blockquote>
+<p>角色真正承受怪物的攻击是在……</p>
+<ul class="ellipsis"><li>你用温和行动铺垫了一次攻击，而PC无视它；</li><li>PC的行动结果（如短兵相接）说他们承受；或</li><li>PC在几乎任何行动上掷出6-，而你决定他们承受。</li></ul>
+<p>承受怪物的攻击并不（仅仅）意味着受到伤害。它意味着你用这头怪物做一个激进的、强硬的行动。你当然可以<strong>伤害 他们</strong>。或者你可以做任何其他说得通的强硬GM行动。如果你的行动涉及PC受伤、挨揍或被消耗，那就把造成伤害作为该行动的一部分。</p>
+<hr>
+<blockquote><p><em>“所以这家伙拧着我的右臂？ 但我的左臂是自由的？当他抓着我的头发 往后拉时，我会这样快速拔出我的新 匕首，向后刺。”我 没料到这个，但根据我们描述过的 情况，它说得通。 那就短兵相接！</em></p><p><em>他掷出4，我开始考虑</em><strong><em>伤害他</em></strong><em>，把他的鼻子撞断在 墙上。但卡拉多克发动莽撞少年，把结果提升到 7-9（代价是失去他的刀）。他 刺中暴徒并造成伤害（暴徒 6 HP中的3点），但也承受了 暴徒的攻击。我决定</em><strong><em>把他的行动 反过来用在他身上</em></strong><em>。“他大叫一声，放开 你的右臂。但随即他抓住你 持刀的左臂，像这样 拧起来翻过去，踢倒 你的腿把你砸在地上。 受<button type="button" class="dice-roll" data-dice="1d8" title="点击掷 1d8 — Shift: 优势 · Ctrl: 劣势">1d8</button>伤害，还有，你的 刀从手里飞了出去。”</em></p></blockquote>
+<hr>
+<p>PC的行动受<strong>虚构 定位</strong>（<a class="wiki-link" href="playing-the-game.html" data-slug="playing-the-game" >玩游戏</a>）影响：他们在哪里，在做什么，敌人在哪里、在做什么，动势、地形、光线、武器、距离、活动空间，以及我们对这一情境已确立的其他一切。</p>
+<p>虚构定位影响PC的行动是否触发行动、触发哪个行动，以及某个行动是否可行。它也影响可能结果的范围，好的和坏的都是。强势的虚构定位可以缓和掷骰的坏结果，而绝望的虚构定位可能意味着6-真的、真的很糟。</p>
+<p>熟练的玩家会寻找塑造虚构定位的方法，让自己触发更有利的行动，为更好的结果铺路，甚至完全跳过掷骰。</p>
+<hr>
+<blockquote><p><em>我跳回布洛德温，她刚从 袭击者身边扑过，抓起一把断扫帚 当武器。她被砍了一刀，但现在 与攻击者拉开了些距离。 我描述情境：“你握紧扫帚， 他转身面对你，眼里多了 一点敬意。”然后我</em><strong><em>提供一个机会</em></strong> <em>让布洛德温夺取主动。“他 这样蹲下，刀已就位—— 你看得出他在等待时机。 你怎么做？”</em></p><p><em>“就像老塞伦教我的那样。我假装 害怕，露出破绽。当 他攻击时，我侧步闪开，敲他的手腕， 再向上挥击他的脸。”</em></p><p><em>我可以说“不，他不吃你这套”或 甚至</em><strong><em>告诉她要求</em></strong><em>， 说她得说服才能引他上钩。 但我认为这家伙是个大恶霸，没料到会有什么抵抗，于是他被骗 上钩。“好，掷短兵相接！”</em></p><p><em>她得了7-9，所以她的招式大体 奏效，但她承受了他的攻击。她伤害 只掷出1（对这家伙的6 HP）， 所以我说她把刀从他手里 打飞，但没能接上 击脸那一下。因为他不再有 刀，我让他的攻击比原本 温和，并</em><strong><em>让她陷入困境</em></strong><em>。“你还没 来得及向上挥，他的左手抓住了杆子。 然后他右手也抓上来， 你发现自己在为这根断扫帚柄 与他角力。”</em></p></blockquote>
+<hr>
+<blockquote><p><em>我跳回卡拉多克，他自己也陷在 困境里——趴在地上，没有刀，愤怒的 坏蛋压在上面。“他仍然把你的左 臂拧在背后，还像是 跪在你背上。”我</em><strong><em>宣告麻烦</em></strong><em>。 “他不断加力。感觉你的 手臂要断了什么的。你 怎么做？”</em></p><p><em>“我，呃，右手向后伸 抓他的脸，试着挖眼睛或撕 他的脸颊什么的。”</em></p><p><em>考虑到这家伙把他压成这样，那 根本不合理。我澄清情境， 然后</em><strong><em>告诉他要求并询问</em></strong><em>。 “你得先挣脱他的钳制 才能攻击他。而如果你要 硬挣脱，那是用STR 直面险境。你做吗？”</em></p><p><em>“等等，等等。我觉得这算是对 我所爱之人的威胁，对吧？这些家伙是想杀布洛德温，不只是我。愤怒是 天赋？”有点牵强，但行吧。“好， 我花1点决心突然行动，让 他措手不及。我还需要掷骰吗？”</em></p><p><em>“你现在的位置还是非常糟糕。 但我告诉你——我觉得让他 措手不及意味着你可以挣脱的同时 攻击他。所以是短兵相接 而不是直面险境。行吗？”他同意， 掷出10+，大吼一声挣脱 并一拳把暴徒打晕。</em></p></blockquote>
+<p>你通常会一次把聚光灯集中在一两个特定角色身上。其他玩家可以在虚构、规则和礼貌允许的范围内打断和插话。别害怕（礼貌但坚定地）制止不断抢聚光灯的玩家，或者角色正忙于他事的玩家，或者想做不合理之事的玩家。</p>
+<hr>
+<blockquote><p><em>卡拉多克解决了他的对手，我跳 回布洛德温，她正与另一个杀手 为断扫帚柄 角力。我</em><strong><em>展示一个坏处</em></strong><em>， 告诉她：“他比你强壮得多，你 几乎握不住。你怎么做？”</em></p><p><em>她还没开口，卡拉多克就插 进来。“我花掉最后的决心突然行动。我不知从哪儿冲出来把 这家伙撞翻。短兵相接？”</em></p><p><em>我很想说“不，这是在 你和你那家伙打的时候发生的。”但 他的行动确实让他能花决心 “突然行动，让对方措手不及”。</em></p><p><em>“嗯。行，我想可以。掷吧！”</em></p></blockquote>
+<hr>
+<p>随着战斗进行，避免任何感觉像“互殴”或只是互相磨耗HP的东西。用你的GM行动和玩家行动的结果不断改变战斗的动势和虚构定位。即使一方掷出低伤害（或零伤害），也要找办法让情境改变。</p>
+<p>经常问自己：“这头怪物会继续战斗吗？”以它的本能为指引，也参考你对它个性和它为何而战的了解。<em>谨慎</em>的敌人尤其会在战斗不利时立刻寻求逃离暴力。</p>
+<hr>
+<blockquote><p><em>卡拉多克短兵相接掷出12，确实 扑倒了杀手。他只掷出 1点伤害，但他的招式仍然奏效。 “你把他推到对面墙上， 他闷哼了一声。”</em></p><p><em>我把焦点转回布洛德温，</em><strong><em>给她提供一个机会</em></strong><em>。“呼，你 自由了。你注意到这家伙的匕首在你 脚边。你怎么做？”</em></p><p><em>“我捡起匕首，平静地走 向他们。卡拉多克把他按住了？”</em></p><p><em>“呃，他们还在角力，但 大体上，是的。”</em></p><p><em>“我把他的刀架在他喉咙上。‘住手。现在 滚，你就能活。再挣扎 我就像宰春羔一样放你的血。’”</em></p><p><em>我在想这是说服，但说真的， 他没有理由抵抗。他们显然 赢了，而这家伙更像是暗中捅刀的类型，而不是战至 死的类型。“他停止挣扎，”我说，“他的 眼睛瞪着你，布洛德温。他微微 点头。卡拉多克，你放他走吗？”</em></p></blockquote>
+<hr>
+<h2 id="foes-they-cant-hurt">他们伤不到的敌人</h2>
+<p>有时，PC无法可行地攻击他们的敌人。怪物可能有一个特殊性质（如“由石头构成”）或标签（如<em>巨型</em>），让它们对PC的武器实际上无懈可击。它可能有一个行动（如“从空中拍落箭矢”）能反制攻击。虚构定位可能让攻击格外危险或不可能（它有<em>长距</em>武器而PC只有<em>手持</em>武器）。</p>
+<p>当你第一次呈现这样的怪物时，传达出伤到它有多难。“它有一条甩动的鞭子般的尾巴，至少10英尺长。”</p>
+<p>“它简直就是一棵会动的树，30英尺高，由木头构成。”“她带着大师级斗士的沉着自信移动。”</p>
+<p>如果玩家说他们用一种根本行不通的方式攻击，那他们不触发短兵相接或放箭。相反，<strong>告诉他们 要求</strong>（“你得先过那条尾巴”）或<strong>揭示一个不受欢迎的 真相</strong>（“你全力砍进去，它就只是，呃，掉了一小片”）或<strong>让他们陷入困境</strong>（“她若无其事地侧步闪开，她自己的矛就闪向你的喉咙”），然后问：“你怎么做？”</p>
+<p>让PC为之努力。他们可能得想办法真正伤到这个敌人。他们可能需要直面险境才能靠近，或相助彼此才有机会突破它的防御。他们可能需要利用环境。他们可能因为根本伤不到它而不得不撤退或逃跑。他们可能需要等待时机。他们可能需要做些极端的事。</p>
+<p>奖励创意和努力。如果他们有一个能奏效的主意或行动——即使是你从未预料到的——那就顺势而为。</p>
+<p><strong>做玩家角色的粉丝</strong>。但同时，<strong>尊重你的准备</strong>和虚构。如果你的笔记说这头怪物只有青铜能伤到，而他们没有青铜，别让他们逼你同意它也怕，哦，白银。</p>
+<hr>
+<blockquote><p><em>他们在探索三巫湖附近的 废墟。房间突然 变冷，灯笼闪烁，然后（在 寻求洞见掷出6-之后）一道长长的手状 阴影伸出来抓住了瓦希德。他 丢下灯笼，开始抽搐 发作。我对其他人说：“你们怎么做？”</em></p><p><em>卡拉多克毫不犹豫。“我拔刀 砍向那条阴影的肢体，试图 把瓦希德砍出来。短兵相接？”</em></p><p><em>“不，别掷。”我</em><strong><em>揭示一个不受欢迎的 真相</em></strong><em>。“你的刀直接穿过了 阴影，好像那里根本什么都没有， 但你的手麻了，刀刃上 结了霜。莉安娜，布洛德温， 你们看见这一幕，你们怎么做？”</em></p><p><em>布洛德温看看她的物品，说 “本迪斯根！我的药草园里 有一些。”她放下法杖，放下 灯笼，有备无患地 拿出一些。</em></p><p><em>“拿出来点燃需要一会儿。 你还做吗？”（</em><strong><em>告诉 要求并询问</em></strong><em>）。是的，她要 做。“莉安娜，你在做什么？”</em></p><p><em>“这像是鬼魂，对吧？那什么 能伤到鬼魂？铁？银？”</em></p><p><em>那肯定是见多识广，她 掷出10+。“银。事实上，你很 确定这就是瓦希德去年夏天得到那把银 匕首的原因。”</em></p><p><em>“哦。哦！我上前从他身上 把它拔下来，然后攻击这东西。”</em></p><p><em>“好，掷短兵相接！”</em></p></blockquote>
+<hr>
+<h2 id="fighting-spirits">与灵体战斗</h2>
+<p>灵体难以对付，因为默认情况下它们没有实体形态。</p>
+<p>大多数寻常攻击对它们无效，会直接穿过去。然而最危险的灵体即使不显形也能攻击有实体的生物！</p>
+<p>一些灵体（如鬼魂）对特定材料脆弱。PC也可能获得物品（如扭曲之矛）或行动（如持光者的净化之焰）能直接伤害灵体。以这种方式降到0 HP的灵体被摧毁，或至少暂时驱散。</p>
+<p>许多灵体能显形或附身于实体形态。PC可以伤害这种形态，但把它的HP降到0只是摧毁该形态和/或迫使灵体回到无形状态。</p>
+<p>你可能会觉得把灵体的“显形”HP与“真实”HP分开记录很有用。如果PC用能伤害其真身的东西攻击显形的灵体，那些攻击会同时减少两组HP。</p>
+<h2 id="multiple-combatants">多个战斗者</h2>
+<p>当PC面对多个敌人时（他们经常会），把行动拆成多个较小的交锋——游侠打一个克林温，狐狸打另一个，统帅和他的队伍对付其余的。这不是什么正式规则。只是管理场景的自然方式。</p>
+<p>未交战的敌人——那些没被战斗牵制的——是各种潜在的麻烦。一有机会就把它们纳入你的行动。<strong>宣告 麻烦</strong>，让它们移动去包抄PC。<strong>展示</strong>寡不敌众的<strong>坏处</strong>，让它们挡住PC的去路。揭示一个不受欢迎的真相，让一个不知从哪儿冒出来，在PC掷出6-时揍他一下。坏蛋不会只是坐等被攻击。</p>
+<p><strong>当PC或追随者与多个 敌人交战时</strong>，做比面对单个敌人时更激进的行动。如果他们无视多个敌人构成的威胁，<strong>告诉他们 后果并询问</strong>。如果他们继续无视威胁，或掷出6-，或以其他方式承受敌人的攻击，那就把你的行动做得格外强硬。</p>
+<p>当<strong><em>PC或追随者的攻击可以合理地伤到多个敌人</em></strong>——因为<em>范围</em>标签，因为一<em>群</em>追随者在发动或相助攻击，或只是因为玩家的描述说得通——那么玩家只掷一次短兵相接或放箭，但对每个敌人分别掷伤害。</p>
+<p><strong>当多个PC和/或追随者 同时攻击一个敌人时</strong>，其中一人掷短兵相接或放箭，其他人相助。如果一群追随者攻击单个敌人（或明显更小的群体），他们实际上</p>
+<p>相助自己。</p>
+<p><strong>当多个战斗者对单个敌人 造成伤害时</strong>，掷其中一个战斗者的伤害（通常是最好的那个），并为第一个之后每个有能力的攻击者加+1额外伤害。合理地应用所有攻击者的标签。例如，如果一名PC与两名骑马（<button type="button" class="dice-roll" data-dice="d6+2" title="点击掷 d6+2 — Shift: 优势 · Ctrl: 劣势">d6+2</button>伤害，<em>猛力</em>）的丘陵之民战士（<button type="button" class="dice-roll" data-dice="d8" title="点击掷 d8 — Shift: 优势 · Ctrl: 劣势">d8</button>伤害，1穿刺）战斗并承受他们的攻击，你大概会掷一匹马的伤害并加+3；也就是<button type="button" class="dice-roll" data-dice="d6+5" title="点击掷 d6+5 — Shift: 优势 · Ctrl: 劣势">d6+5</button>伤害（1穿刺，<em>猛力</em>）。疼。</p>
+<p>对付多个战斗者时，巧妙的战术能带来巨大差异。</p>
+<p>守住一个隘口能减少他们需要同时面对的敌人数量。集中火力打强敌能帮助更快放倒它。攻击一群敌人的侧翼，在它们反应过来之前放倒几个？绝妙。</p>
+<hr>
+<blockquote><p><em>莉安娜、加雷特和艾拉（她队伍里的两人） 发现卡拉多克勉强守着门口 对抗六个克林温。有几个转身嘶叫。 莉安娜说：“我们拔出手斧冲 进去！”她的队伍是弓箭手而非战士， 所以她花掉队伍的1点忠诚（见page 464）让他们跟随她的带领。</em></p><p><em>卡拉多克已经缠住两个克林温，所以我告诉 莉安娜她要对付另外 四个。“你们怎么做？”</em></p><p><em>“我打头阵，砍第一个， 再从他身边冲过去对付下一个。加雷特 在我左边，艾拉在我右边，落后一步， 各自砍自己的那个。”</em></p><p><em>“听起来是短兵相接，由你的队伍 相助，”我说。“但他们不是提供优势——他们是让你能同时对付多个 敌人。”莉安娜掷出8。她和 她的队伍造成伤害，但承受了 敌人的攻击。</em></p><p><em>莉安娜掷两次她的<button type="button" class="dice-roll" data-dice="1d8" title="点击掷 1d8 — Shift: 优势 · Ctrl: 劣势">1d8</button>伤害（她交战的 每个克林温一次），得到7和 2。克林温有1护甲和3 HP，所以</em></p></blockquote>
+<hr>
+<blockquote><p><em>第一个倒下，第二个还站着但 受了伤。她也掷队伍的<button type="button" class="dice-roll" data-dice="1d6" title="点击掷 1d6 — Shift: 优势 · Ctrl: 劣势">1d6</button>伤害对付另外两个克林温， 得到4和3。加雷特放倒了他的，艾拉的 重伤但还站着。</em></p><p><em>他们也承受了克林温的攻击。我 没有特别想好的行动，但我知道 它会造成伤害，所以我从这里开始。“莉安娜，你们每人从自己对付的 克林温那里受<button type="button" class="dice-roll" data-dice="1d6" title="点击掷 1d6 — Shift: 优势 · Ctrl: 劣势">1d6</button>伤害。其实，你受 <button type="button" class="dice-roll" data-dice="1d6+1" title="点击掷 1d6+1 — Shift: 优势 · Ctrl: 劣势">1d6+1</button>，因为你打了两个。”</em></p><p><em>“真的？我不是在第一个伤到我之前 就把它砍倒了吗？”</em></p><p><em>我可以告诉她它在倒下前 捞到了一下，但算了。“有道理。 你们每人受<button type="button" class="dice-roll" data-dice="1d6" title="点击掷 1d6 — Shift: 优势 · Ctrl: 劣势">1d6</button>伤害。”她自己受了4 伤害。加雷特受1，艾拉 受5。他们都还站着，但艾拉 有麻烦。我让这影响我的行动，</em><strong><em>让她陷入困境</em></strong><em>。“好，艾拉被她那个绊倒了， 它压在她胸口，把她的 头往墙上撞。她看起来神志不清， 而莉安娜，你面前还有一个 克林温。与此同时，卡拉多克……”</em></p></blockquote>
+<p>如果PC有一群追随者，那你通常会想把他们在战斗中的行动抽象化。用尽可能少的单独行动解决群体的行动。例如，如果统帅的六人队伍对一群20个克林温开火，让统帅掷一次放箭看看结果如何。</p>
+<p>如果群体对另一个群体造成</p>
+<p>伤害，或从另一个群体受到</p>
+<p>伤害，那你可以每方掷一次伤害并抽象化结果。一个群体造成伤害、拥有HP和护甲，就像它是群体中的一个个体成员一样。例如，统帅的六人队伍会造成<button type="button" class="dice-roll" data-dice="1d6" title="点击掷 1d6 — Shift: 优势 · Ctrl: 劣势">1d6</button>伤害，有8 HP，皮甲带来1护甲。克林温群会造成<button type="button" class="dice-roll" data-dice="1d6" title="点击掷 1d6 — Shift: 优势 · Ctrl: 劣势">1d6</button>伤害，有3 HP，敏捷和反应带来1护甲。</p>
+<h2 id="abstracting-groups">抽象化群体</h2>
+<p>如果一个群体的数量超过另一个，每超出1倍，它们的伤害和护甲获得+1加值。例如，20个克林温对六人队伍大约是3:1，所以它们的伤害和护甲获得+2加值。</p>
+<p>伤害代表伤亡。如果一个</p>
+<p>群体失去一半HP，那该群体约一半的人退出行动。</p>
+<p>相应调整伤害和护甲的加值！所以如果六人队伍放箭对克林温造成4伤害，扣护甲后是1伤害，把克林温从3 HP减到</p>
+<p>2 HP。三分之一的克林温（就算七个）退出行动，把它们的优势减到约2:1。它们的伤害和护甲加值现在只有+1。</p>
+<p>在群体和单个PC之间移动聚光灯。相应切换行动的尺度和“缩放”。</p>
+<p>被单个PC交战的敌人并不真正属于群体。所以如果一名PC冲进去攻击两个克林温，而另一名PC</p>
+<p>守护并吸引了另外三个的注意，统帅的六人队伍就只剩八个克林温要对付（开始20个，减去放箭杀死的7个，减去被PC牵制的5个）。那基本是人数相当，所以克林温失去了护甲和伤害的加值。</p>
+<p>降到0 HP的群体被击溃、屠杀或以其他方式击败。每个群体中个体的命运由你决定。</p>
+<h2 id="keeping-fights-interesting">让战斗保持有趣</h2>
+<p>战斗应该刺激、动态、紧张。玩家永远不该觉得他们只是在“互殴”或试图耗尽敌人的HP。玩家不该无聊地等待“轮到自己”，而结局永远不该完全确定。</p>
+<p><strong>时时刻刻都做温和的GM行动</strong>。</p>
+<p>每个玩家行动之后，描述情境并做一个温和行动：说些激发行动或提升张力的话。</p>
+<p>然后问某人：“你怎么做？”</p>
+<p>有时，你的温和行动会是<strong>提供 一个机会</strong>让PC自由行动，或跟进前一个行动的成功。</p>
+<p>不过这很容易无意间做到，结果是怪物看起来只是站在那里什么都不做。要有意识！</p>
+<p><strong>让你的行动——尤其是怪物的攻击——多彩、描述性、 具体</strong>。别只说“它攻击你”，要说“它朝你俯冲下来，爪子这样张开，直冲你的脸！你怎么做？”</p>
+<p><strong>对玩家提同样的要求</strong>。如果他们说“我用矛刺它”，就回应“好，行，那看起来是什么样？”如果玩家似乎不确定，或犹豫不决，就给他们选择。“你是，呃，冲向它？站稳脚跟？你是攻它的肚子、翅膀还是脸，还是什么？”如果你无法在脑中看到行动，就要求更多细节。</p>
+<p><strong>考虑行动的动势</strong>和虚构定位的其他要素。</p>
+<p>把它们纳入你的描述和GM行动。所以如果你的温和行动是“它张着爪子俯冲向你的脸”，他们的回应是“我站稳，把长矛捅进它的肚子！”而他们短兵相接得了7-9，那结果应该把这一切都考虑进去。“对，你刺穿了它，但它的冲势把矛从你手里扯了出去，它们一起滚到这边，靠近边缘。掷伤害！”</p>
+<p>变换你的GM行动，尤其是在怪物攻击命中时。别总是<strong>伤害 他们</strong>或<strong>让他们陷入困境</strong>。依靠你的怪物行动增加变化。有时，看看你的GM行动列表，挑一个有阵子没做过的，只为保持新鲜。无论你选什么行动：如果它涉及让PC吃苦头，或可能让他们退出战斗，那就随行动一起造成伤害。</p>
+<p>当PC的伤害掷骰“落空”时，<strong>尊重 他们攻击的虚构</strong>，以及他们（很可能）在让他们造成伤害的那个行动上得了7+这一事实。低伤害掷骰意味着那不是致命一击，但它仍然应该改变虚构。“只有2伤害？哎呀，你没刺穿它的皮。但它还是有点晕，喘不上气——看来你把它打得岔了气。”</p>
+<p><strong>记住其他敌人在 干什么</strong>。PC刺中了朝他俯冲的怪物，但它的同伴在做什么？做一个温和GM行动把它们带进行动。“……看来你把它打得岔了气。与此同时，下一只正朝手无寸铁的你俯冲下来，你怎么做？”</p>
+<p><strong>让聚光灯保持移动</strong>。当一名PC没有积极参与时，对当前PC做一个温和行动，然后把聚光灯移到闲着的PC，问他们对此怎么做。</p>
+<p>“……下一只正朝手无寸铁的你俯冲下来。莉安娜，你看见这一幕，你怎么做？”</p>
+<p><strong>给不那么擅长战斗的角色 发光的机会</strong>。鼓励探寻者对敌人的弱点见多识广。加入蒙福者可以互动的灵体或野兽。加入要营救的受害者、要保护的易碎宝物、要解开的谜题。不是总是，也不是每场战斗，但要足够频繁以让每个人都参与。</p>
+<p><strong>把环境纳入</strong>你的描述和行动：光线、地形、能见度和战争迷雾。他们在一道巨大的楼梯上？用怪物的攻击<strong>让他们陷入困境</strong>，把他们撞得半个身子悬在边缘外。除了他们的火把光圈外一片漆黑？让怪物撤退，然后<strong>宣告 麻烦</strong>：“你看不见它们，但你听见它们盘旋准备再次攻击的叫声，你怎么做？”</p>
+<p><strong>在你的战场上布置潜在 能量</strong>——可以撞倒的重物、可以摔下的高处、可以点燃的引火物。</p>
+<p>也扔进一些<strong>活跃的危害</strong>：熊熊大火、坍塌的天花板、吸人的泥沼。</p>
+<p>把这些元素作为机会呈现给PC。用它们回答“这里有什么对我有用或有价值？”把它们纳入你的GM行动，温和的和强硬的都是。</p>
+<p><strong>经常回顾情境</strong>，尤其是在你四处移动聚光灯时。“好，那么：</p>
+<p>瓦希德在楼梯上段。他的矛和他伤到的那只生物在这边，靠近边缘。卡拉多克，你挂在同一道边缘上。布洛德温、莉安娜和安德拉斯在缺口的另一边，布洛德温高举火把，莉安娜和安德拉斯扫视天空。</p>
+<p>卡拉多克，你感觉手在打滑。</p>
+<p>你们都怎么做？”</p>
+<p><strong>宁早勿晚地结束战斗</strong>。如果PC明显会赢，就让坏蛋逃跑或投降。如果事情开始拖沓，而有人掷出6-，就用你的强硬行动彻底改变情境——新怪物出现，一名PC被抓走拖走，一名追随者牺牲自己救下PC并解决了怪物。如果PC想逃，让他们同舟共济来逃脱，而不是逐个演出行动。</p>
+<p>最后，记住这并不容易。</p>
+<p><strong>GM是一种修行</strong>，不是能精通的东西。你一开始很可能会忘记做这些所有事，那没关系。每次游戏后稍作反思：你的战斗中什么有趣刺激，什么显得拖沓。问问自己本可以做些什么不同的，下次试着那样做。不断推动自己进步！</p>
+<h2 id="maps-tokens-and-minis">地图、标记和微缩模型</h2>
+<p>直观地表现一场战斗常常很有帮助，尤其是有很多战斗者和不同区域的战斗。</p>
+<p>它可以是任何东西，从战场的粗略草图到带3D微缩模型和地形的完整立体模型。这样的可视化非常适合确立情境，确保每个人都在同一页上。</p>
+<p>不过要小心，别让地图主导游戏。用地图来可视化和沟通，但把焦点保持在对话上。<strong>以虚构 开始，以虚构结束</strong>，而不是桌上的棋子或白板上的涂鸦！如果有人说“我绕到北边然后攻击上面那家伙”，用类似这样的话把他们拉回虚构：“你一到大概这里他就咆哮着冲向你，斧头这样举起——你还攻击吗？好，那看起来是什么样？”</p>
+        </main>
+      </div>
+    </div>
+  </div>
+  <div id="wiki-preview" class="wiki-preview" hidden></div>
+  <div id="dice-toast" class="dice-toast" hidden></div>
+  <script>window.WIKI_UI={"books": {"book1": "第一卷", "book2": "第二卷", "sites": "冒险场景"}, "english_only": "仅有英文版"};</script>
+  <script src="../js/wiki.js"></script>
+</body>
+</html>
