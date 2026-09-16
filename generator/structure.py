@@ -593,7 +593,7 @@ def linkify_pages(
                 return (
                     f'<a class="wiki-link" href="#{sec["id"]}" '
                     f'data-slug="{art["slug"]}" data-fragment="{sec["id"]}">'
-                    f'{html.escape(label or sec["name"])}</a>'
+                    f'{html.escape(label or T(sec["name"]))}</a>'
                 )
             return html.escape(label) if label else f"page {page}"
         text_out = label if label else (
