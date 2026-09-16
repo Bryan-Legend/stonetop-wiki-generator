@@ -560,6 +560,26 @@ class TextMemory:
         ]
 
 
+# A word the book broke over two lines ends in a hyphen, which may sit
+# inside a formatting run ("…mar-</i></b>" + "ble…").
+_HYPH_END_RE = re.compile(r"-([-\s]*)$")
+
+
+def _join_dehyphenated(parts) -> str:
+    """Join lines the way a block does, putting a broken word back together."""
+    out = ""
+    for part in parts:
+        if not out:
+            out = part
+            continue
+        m = _HYPH_END_RE.search(out)
+        if m:
+            out = out[: m.start()] + m.group(1) + part.lstrip()
+        else:
+            out = out + " " + part
+    return out
+
+
 def _joined_memory(tm: TextMemory, en: list[str], tr: list[str]) -> None:
     """What a renderer asks for beyond whole lines: the tag run peeled off
     the head of a line (and the prose after it), a checklist item without
@@ -644,6 +664,16 @@ def _joined_memory(tm: TextMemory, en: list[str], tr: list[str]) -> None:
             joined_en = " ".join(x[0] for x in run)
             joined_tr = " ".join(x[1] for x in run)
             tm.add(joined_en, joined_tr, derived=True, parts=[x[0] for x in run])
+            # A word broken across two lines ("mar-" / "ble") is put back
+            # together without the hyphen when the block gathers its lines.
+            if any(_HYPH_END_RE.search(x[0]) for x in run[:-1]):
+                de_en = _join_dehyphenated(x[0] for x in run)
+                de_tr = _join_dehyphenated(x[1] for x in run)
+                tm.add(de_en, de_tr, derived=True, parts=[x[0] for x in run])
+                da, db = _trigger_segments(de_en), _trigger_segments(de_tr)
+                if 1 < len(da) == len(db):
+                    for xa, xb in zip(da, db):
+                        tm.add(xa, xb, derived=True, parts=[x[0] for x in run])
             # A checklist item that swallows the line under it keeps no
             # ellipsis either.
             # A move block gathers its lines and then sets the trigger

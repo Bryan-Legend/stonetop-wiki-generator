@@ -186,8 +186,8 @@ H3	Uma laje de mármore marcada
 P	<i>imóvel</i>, <i>mágica</i>
 P	Uma laje de pedra outrora bela, com uns 30 pés de altura e cerca de metade disso a mais de largura, erguida numa câmara abobadada, cercada de runas talhadas fundo que falam de união e proteção, consumo e sacrifício.
 P	A pedra traz uma infinidade de lascas, entalhes e rachaduras. Poeira e destroços a cercam.
-P	Quando você <b><i>arranca uma lasca de pedra do már-</i></b>
-P	<b><i>more e a engole inteira, estando</i></b>
+P	Quando você <b><i>arranca uma lasca de pedra do mármore</i></b>
+P	<b><i>e a engole inteira, estando</i></b>
 P	<b><i>dentro do círculo de runas</i></b>, sua carne fica como pedra e sua DES vira -2 até o efeito acabar. Nas próximas três vezes em que você sofreria dano físico, a laje de mármore sofre o dano em seu lugar. O efeito acaba depois do terceiro golpe.
 HR
 ICON	icons/arcana.svg
