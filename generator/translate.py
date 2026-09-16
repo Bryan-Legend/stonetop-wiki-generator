@@ -488,8 +488,17 @@ class TextMemory:
                 # ("… Damage spear d8 …", "… Cost proof of honor …").
                 sa, sb = _BOLD_SPLIT_RE.split(fa), _BOLD_SPLIT_RE.split(fb)
                 if 1 < len(sa) == len(sb):
-                    for xa, xb in zip(sa, sb):
-                        tm.add(xa, xb, derived=True, parts=[fa])
+                    # Every run of consecutive pieces, since a block may cut
+                    # the line at the last label only ("Special qualities …
+                    # willing to use them" / "Instinct to …").
+                    for x in range(len(sa)):
+                        for y in range(x + 1, len(sa) + 1):
+                            tm.add(
+                                " ".join(sa[x:y]),
+                                " ".join(sb[x:y]),
+                                derived=True,
+                                parts=[fa],
+                            )
                 # A move block sets its trigger apart from the words around
                 # it ("When you" / "take time to catch your breath" / ", ...").
                 ra, rb = _trigger_segments(fa), _trigger_segments(fb)
@@ -648,6 +657,19 @@ def _joined_memory(tm: TextMemory, en: list[str], tr: list[str]) -> None:
             if 1 < len(ja) == len(jb):
                 for xa, xb in zip(ja, jb):
                     tm.add(xa, xb, derived=True, parts=[x[0] for x in run])
+            # A stat block hoists a line out of the run and shows the rest
+            # joined: the last move bullet followed by the prose under the
+            # block's note. Short spans only — the key is an exact match, so
+            # one that names nothing simply never comes up.
+            if 3 <= k <= 5:
+                for j in range(1, k - 1):
+                    kept = run[:j] + run[j + 1 :]
+                    tm.add(
+                        " ".join(x[0] for x in kept),
+                        " ".join(x[1] for x in kept),
+                        derived=True,
+                        parts=[x[0] for x in kept],
+                    )
             bare = re.sub(r"^[\s…\.]+", "", joined_en)
             if bare != joined_en:
                 tm.add(
