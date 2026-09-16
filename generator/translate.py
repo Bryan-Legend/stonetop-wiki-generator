@@ -51,6 +51,7 @@ from .text import (
     SHEET_MARKERS,
     TAG_MIN,
     TAG_RE,
+    TAG_WORDS,
     _cancel_fmt_seam,
     _defmt,
     _split_leading_fmt,
@@ -524,6 +525,16 @@ _MAX_EN_RE = re.compile(r"\s+Max\.?\s*\d+(?=\s|$)")
 _MAX_TR_RE = re.compile(r"\s+(?:Max|Máx)\.?\s*\d+(?=\s|$)")
 _MAX_HEAD_EN_RE = re.compile(r"^\s*Max\.?\s+\d+\s+(.+)$")
 _MAX_HEAD_TR_RE = re.compile(r"^\s*\S+\s+\d+\s+(.+)$")
+# A creature whose identity line opens with its name and closes with its
+# tags ("Archer, observant, eager, rookie"): the block sets the name as the
+# heading and the tags under it, so each is asked for on its own. The
+# English pattern is `structure.py`'s (lowercase tag words); a translation's
+# tags may open with an accented letter, so that side only has to agree on
+# how many there are.
+_CREATURE_EN_RE = re.compile(r"^(.+?),\s*([a-z][\w\-]*(?:\s*,\s*[a-z][\w\-]*)*)$")
+_CREATURE_TR_RE = re.compile(
+    r"^(.+?),\s*([^\W\d_][\w\- ]*(?:\s*,\s*[^\W\d_][\w\- ]*)*)$"
+)
 
 
 def _cf(s: str) -> str:
@@ -643,6 +654,18 @@ def derive_variants(
         if ca != da and cb:
             add(ca, cb)
             add(ca.lstrip("•· "), cb.lstrip("•· "))
+    # A creature's identity line, name then tags: the block shows the name as
+    # its heading and the tags under it, never the line whole.
+    ca, cb = _CREATURE_EN_RE.match(da), _CREATURE_TR_RE.match(db)
+    if ca and cb:
+        bits_a = [t.strip() for t in ca.group(2).split(",") if t.strip()]
+        bits_b = [t.strip() for t in cb.group(2).split(",") if t.strip()]
+        if (
+            len(bits_a) == len(bits_b)
+            and all(b[0:1].islower() or b.lower() in TAG_WORDS for b in bits_a)
+        ):
+            add(ca.group(1).strip(), cb.group(1).strip())
+            add(", ".join(bits_a), ", ".join(bits_b))
     # The HP box's cap set beside a special quality: "Max. 13 lacks organs".
     m2a, m2b = _MAX_HEAD_EN_RE.match(da), _MAX_HEAD_TR_RE.match(db)
     if m2a and m2b:
