@@ -576,6 +576,12 @@ def _joined_memory(tm: TextMemory, en: list[str], tr: list[str]) -> None:
         nb = _ROLL_ROW_RE.match(_defmt(pb[0]))
         if na and nb and na.group(1) == nb.group(1):
             tm.add(na.group(2), nb.group(2), derived=True, parts=[pa[0]])
+        # A roll table's head keeps the dice apart from the label it names
+        # ("1d6 discovery" → the table is titled "discovery").
+        ha = re.match(r"^\s*(\d*d\d+)\s+(.+)$", _defmt(pa[0]))
+        hb = re.match(r"^\s*(\d*d\d+)\s+(.+)$", _defmt(pb[0]))
+        if ha and hb and ha.group(1) == hb.group(1):
+            tm.add(ha.group(2), hb.group(2), derived=True, parts=[pa[0]])
         # A checklist item loses its leading ellipsis ("… is sealed with wax").
         ea = re.sub(r"^[\s…\.]+", "", pa[0])
         eb = re.sub(r"^[\s…\.]+", "", pb[0])

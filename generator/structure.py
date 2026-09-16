@@ -818,6 +818,14 @@ def auto_link_titles(html_text: str, articles: list[dict], current_slug: str | N
     return "".join(chunks)
 
 
+def _roll_label(label: str) -> str:
+    """A roll table is titled by the words after its dice. The book sets
+    them lowercase and the table title-cases them; a translation is shown
+    as its language writes it."""
+    tl = T(label)
+    return titlecase_name(label) if tl == label else tl
+
+
 def render_roll_table(
     dice: str,
     label: str,
@@ -840,7 +848,7 @@ def render_roll_table(
         f'<div class="roll-table"{id_attr}>'
         f'<div class="roll-table-head">'
         f"{dice_button(dice)}"
-        f' <span class="roll-label">{html.escape(titlecase_name(label))}</span>'
+        f' <span class="roll-label">{html.escape(_roll_label(label))}</span>'
         f"</div>"
         f'<table><tbody>{"".join(rows)}</tbody></table>'
         f"</div>"
@@ -1150,7 +1158,7 @@ def render_stat_block(
             f'<div class="roll-table roll-table-inline">'
             f'<div class="roll-table-head">'
             f"{dice_button(dice_s)}"
-            f' <span class="roll-label">{html.escape(titlecase_name(label_s))}</span>'
+            f' <span class="roll-label">{html.escape(_roll_label(label_s))}</span>'
             f"</div>"
             f"<table><tbody>{rows_html}</tbody></table>"
             f"</div>"
