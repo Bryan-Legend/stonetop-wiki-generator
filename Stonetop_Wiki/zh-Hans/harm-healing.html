@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="zh-Hans" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>伤害与治疗 — Stonetop Wiki</title>
+  <meta name="description" content="伤害与治疗（Harm &amp; Healing）：HP与伤害、护甲、衰弱、棘手伤口、鬼门关、恢复、扎营与休养。">
+  <link rel="canonical" href="https://stonetop-wiki.github.io/zh-Hans/harm-healing.html">
+  <meta property="og:site_name" content="Stonetop Wiki">
+  <meta property="og:title" content="伤害与治疗 — Stonetop Wiki">
+  <meta property="og:description" content="伤害与治疗（Harm &amp; Healing）：HP与伤害、护甲、衰弱、棘手伤口、鬼门关、恢复、扎营与休养。">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="zh_CN">
+  <meta property="og:url" content="https://stonetop-wiki.github.io/zh-Hans/harm-healing.html">
+  <meta property="og:image" content="https://stonetop-wiki.github.io/images/favicon.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="alternate" hreflang="en" href="https://stonetop-wiki.github.io/harm-healing.html">
+  <link rel="alternate" hreflang="pt-BR" href="https://stonetop-wiki.github.io/pt-BR/harm-healing.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://stonetop-wiki.github.io/zh-Hans/harm-healing.html">
+  <link rel="alternate" hreflang="x-default" href="https://stonetop-wiki.github.io/harm-healing.html">
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="../images/favicon.ico" sizes="16x16 32x32 48x48 64x64">
+  <link rel="stylesheet" href="../css/wiki.css">
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4536408101e64ba59733ed69779dd45c"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body data-wiki-root="../">
+  <a class="skip-link" href="#main">跳到正文</a>
+  <button type="button" class="sidebar-toggle" id="sidebar-toggle" aria-label="切换导航">☰</button>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-head">
+        <a class="wiki-title" href="../index.html">Stonetop Wiki</a>
+        <input type="search" id="nav-filter" class="nav-filter" placeholder="搜索维基…" autocomplete="off" aria-label="搜索维基">
+        <div id="search-results" class="search-results" hidden></div>
+      </div>
+      <nav class="toc" aria-label="主题">
+        <ul id="nav-list">
+          <li class="nav-book-label">第一卷</li>
+<li class="has-sections"><a href="welcome-to-stonetop.html">欢迎来到石顶</a><ul class="nav-sections"><li class="nav-section"><a href="welcome-to-stonetop.html#expectations">期望</a></li><li class="nav-section"><a href="welcome-to-stonetop.html#the-setting">设定</a></li><li class="nav-section"><a href="welcome-to-stonetop.html#why-play">为何玩？</a></li></ul></li>
+<li class="has-sections"><a href="getting-started.html">开始游戏</a><ul class="nav-sections"><li class="nav-section"><a href="getting-started.html#review-the-setting">回顾设定</a></li><li class="nav-section"><a href="getting-started.html#set-expectations">设定期望</a></li><li class="nav-section"><a href="getting-started.html#discuss-tone-and-content">讨论基调与内容</a></li><li class="nav-section"><a href="getting-started.html#create-characters">创建角色</a></li><li class="nav-section"><a href="getting-started.html#intro-the-pcs">介绍PC</a></li><li class="nav-section"><a href="getting-started.html#let-spring-burst-forth">让春天迸发</a></li><li class="nav-section"><a href="getting-started.html#after-the-session">场次之后</a></li></ul></li>
+<li class="has-sections"><a href="playing-the-game.html">玩游戏</a><ul class="nav-sections"><li class="nav-section"><a href="playing-the-game.html#the-conversation">交谈</a></li><li class="nav-section"><a href="playing-the-game.html#your-agenda">你的议程</a></li><li class="nav-section"><a href="playing-the-game.html#flow-of-play">游戏流程</a></li><li class="nav-section"><a href="playing-the-game.html#dice-and-moves">骰子与行动</a></li><li class="nav-section"><a href="playing-the-game.html#your-principles">你的原则</a></li><li class="nav-section"><a href="playing-the-game.html#other-things-to-do">其他可做之事</a></li><li class="nav-section"><a href="playing-the-game.html#your-character">你的角色</a></li><li class="nav-section"><a href="playing-the-game.html#arcana">秘宝</a></li><li class="nav-section"><a href="playing-the-game.html#followers">追随者</a></li><li class="nav-section"><a href="playing-the-game.html#your-home">你的家</a></li><li class="nav-section"><a href="playing-the-game.html#moves">行动</a></li><li class="nav-section"><a href="playing-the-game.html#gear-and-possessions">装备与 财物</a></li><li class="nav-section"><a href="playing-the-game.html#if-you-want-to">如果你想……</a></li></ul></li>
+<li class="nav-hub has-sections"><a href="playbooks-inserts.html">剧本与附页</a><ul class="nav-sections"><li class="nav-section"><a href="the-blessed.html">蒙福者</a></li><li class="nav-section"><a href="the-fox.html">狐狸</a></li><li class="nav-section"><a href="the-heavy.html">壮汉</a></li><li class="nav-section"><a href="the-judge.html">裁判官</a></li><li class="nav-section"><a href="the-lightbearer.html">持光者</a></li><li class="nav-section"><a href="the-marshal.html">统帅</a></li><li class="nav-section"><a href="the-ranger.html">游侠</a></li><li class="nav-section"><a href="the-seeker.html">探寻者</a></li><li class="nav-section"><a href="the-would-be-hero.html">准英雄</a></li><li class="nav-section"><a href="inserts.html">附页</a></li><li class="nav-section"><a href="inventory.html">行囊</a></li><li class="nav-section"><a href="animal-companion.html">动物伙伴</a></li><li class="nav-section"><a href="crew.html">队伍</a></li><li class="nav-section"><a href="initiates-of-danu.html">达努的入门者</a></li><li class="nav-section"><a href="invocations.html">祷文</a></li><li class="nav-section"><a href="followers.html">追随者</a></li><li class="nav-section"><a href="ghost.html">鬼魂</a></li><li class="nav-section"><a href="revenant.html">还魂者</a></li><li class="nav-section"><a href="thrall.html">奴仆</a></li><li class="nav-section"><a href="steading-playbook.html">聚落剧本</a></li></ul></li>
+<li class="has-sections"><a href="running-the-game.html">主持游戏</a><ul class="nav-sections"><li class="nav-section"><a href="running-the-game.html#your-agenda">你的议程</a></li><li class="nav-section"><a href="running-the-game.html#the-core-loop">核心循环</a></li><li class="nav-section"><a href="running-the-game.html#the-spotlight">聚光灯</a></li><li class="nav-section"><a href="running-the-game.html#scenes-and-loose-play">场景与松散玩法</a></li><li class="nav-section"><a href="running-the-game.html#your-gm-moves">你的GM行动</a></li><li class="nav-section"><a href="running-the-game.html#example-of-play">游戏示例</a></li><li class="nav-section"><a href="running-the-game.html#your-principles">你的原则</a></li><li class="nav-section"><a href="running-the-game.html#other-things-to-do">其他要做的事</a></li><li class="nav-section"><a href="running-the-game.html#gming-is-a-practice">主持是一种练习</a></li><li class="nav-section"><a href="running-the-game.html#prep">准备</a></li></ul></li>
+<li class="has-sections"><a href="player-moves.html">玩家行动</a><ul class="nav-sections"><li class="nav-section"><a href="player-moves.html#defy-danger">直面险境</a></li><li class="nav-section"><a href="player-moves.html#aid">相助</a></li><li class="nav-section"><a href="player-moves.html#clash">短兵相接</a></li><li class="nav-section"><a href="player-moves.html#defend">守护</a></li><li class="nav-section"><a href="player-moves.html#interfere">阻挠</a></li><li class="nav-section"><a href="player-moves.html#know-things">见多识广</a></li><li class="nav-section"><a href="player-moves.html#let-fly">放箭</a></li><li class="nav-section"><a href="player-moves.html#seek-insight">寻求洞见</a></li><li class="nav-section"><a href="player-moves.html#special-moves">特殊行动</a></li><li class="nav-section"><a href="player-moves.html#advantage-disadvantage">优势/劣势</a></li><li class="nav-section"><a href="player-moves.html#burn-brightly">燃得更旺</a></li><li class="nav-section"><a href="player-moves.html#end-of-session">会末</a></li><li class="nav-section"><a href="player-moves.html#deaths-door">鬼门关</a></li></ul></li>
+<li class="has-sections current"><a href="harm-healing.html">伤害与治疗</a><ul class="nav-sections"><li class="nav-section"><a href="harm-healing.html#hit-points-and-damage">生命值与伤害</a></li><li class="nav-section"><a href="harm-healing.html#debilities">衰弱</a></li><li class="nav-section"><a href="harm-healing.html#problematic-wounds">棘手伤口</a></li><li class="nav-section"><a href="harm-healing.html#death-and-dying">死亡与垂死</a></li></ul></li>
+<li class="has-sections"><a href="first-adventure.html">第一次冒险</a><ul class="nav-sections"><li class="nav-section"><a href="first-adventure.html#structure">结构</a></li><li class="nav-section"><a href="first-adventure.html#background">背景</a></li><li class="nav-section"><a href="first-adventure.html#setup-questions">铺垫问题</a></li><li class="nav-section"><a href="first-adventure.html#setting-the-scene">框定场景</a></li><li class="nav-section"><a href="first-adventure.html#dropping-the-hook">抛出钩子</a></li><li class="nav-section"><a href="first-adventure.html#heading-out">出发</a></li></ul></li>
+<li class="has-sections"><a href="threats.html">威胁</a><ul class="nav-sections"><li class="nav-section"><a href="threats.html#when-to-write-up-threats">何时写威胁</a></li><li class="nav-section"><a href="threats.html#writing-a-threat">写一个威胁</a></li><li class="nav-section"><a href="threats.html#example-threats">范例威胁</a></li><li class="nav-section"><a href="threats.html#updating">更新</a></li></ul></li>
+<li class="has-sections"><a href="expeditions.html">远征</a><ul class="nav-sections"><li class="nav-section"><a href="expeditions.html#preparations">准备</a></li><li class="nav-section"><a href="expeditions.html#running-the-journey">主持旅程</a></li><li class="nav-section"><a href="expeditions.html#player-moves">玩家行动</a></li><li class="nav-section"><a href="expeditions.html#going-home">归途</a></li><li class="nav-section"><a href="expeditions.html#what-to-prep">准备什么</a></li></ul></li>
+<li class="has-sections"><a href="sites.html">地点</a><ul class="nav-sections"><li class="nav-section"><a href="sites.html#environmental-storytelling">环境叙事</a></li><li class="nav-section"><a href="sites.html#running-sites">主持地点</a></li><li class="nav-section"><a href="sites.html#exploring-sites">探索地点</a></li><li class="nav-section"><a href="sites.html#creating-sites">创建地点</a></li><li class="nav-section"><a href="sites.html#the-green-lords-tomb">绿领主陵墓</a></li></ul></li>
+<li class="has-sections"><a href="../dangers.html" class="nav-en" title="仅有英文版" hreflang="en">Dangers</a><ul class="nav-sections"><li class="nav-section"><a href="../dangers.html#hazards">Hazards</a></li><li class="nav-section"><a href="../dangers.html#monsters">Monsters</a></li><li class="nav-section"><a href="../dangers.html#running-combat">Running combat</a></li></ul></li>
+<li class="has-sections"><a href="../discoveries.html" class="nav-en" title="仅有英文版" hreflang="en">Discoveries</a><ul class="nav-sections"><li class="nav-section"><a href="../discoveries.html#clues">Clues</a></li><li class="nav-section"><a href="../discoveries.html#sites">Sites</a></li><li class="nav-section"><a href="../discoveries.html#encounters">Encounters</a></li><li class="nav-section"><a href="../discoveries.html#opportunities">Opportunities</a></li><li class="nav-section"><a href="../discoveries.html#artifacts">Artifacts</a></li><li class="nav-section"><a href="../discoveries.html#arcana">Arcana</a></li></ul></li>
+<li class="has-sections"><a href="../npcs-followers.html" class="nav-en" title="仅有英文版" hreflang="en">NPCs &amp; Followers</a><ul class="nav-sections"><li class="nav-section"><a href="../npcs-followers.html#npcs-in-play">NPCs in play</a></li><li class="nav-section"><a href="../npcs-followers.html#creating-npcs">Creating NPCs</a></li><li class="nav-section"><a href="../npcs-followers.html#follower-moves">Follower moves</a></li><li class="nav-section"><a href="../npcs-followers.html#order-followers">Order Followers</a></li><li class="nav-section"><a href="../npcs-followers.html#strengthen-your-bond">Strengthen Your Bond</a></li><li class="nav-section"><a href="../npcs-followers.html#followers-in-play">Followers in play</a></li><li class="nav-section"><a href="../npcs-followers.html#creating-followers">Creating followers</a></li><li class="nav-section"><a href="../npcs-followers.html#updating-followers">Updating followers</a></li><li class="nav-section"><a href="../npcs-followers.html#losing-followers">Losing followers</a></li></ul></li>
+<li class="has-sections"><a href="../homefront.html" class="nav-en" title="仅有英文版" hreflang="en">Homefront</a><ul class="nav-sections"><li class="nav-section"><a href="../homefront.html#bringing-the-village-to-life">Bringing the village to life</a></li><li class="nav-section"><a href="../homefront.html#running-the-homefront">Running the homefront</a></li><li class="nav-section"><a href="../homefront.html#aftermath">Aftermath</a></li><li class="nav-section"><a href="../homefront.html#the-steading-playbook">The steading playbook</a></li><li class="nav-section"><a href="../homefront.html#seasons-change">Seasons Change</a></li><li class="nav-section"><a href="../homefront.html#player-moves">Player moves</a></li><li class="nav-section"><a href="../homefront.html#bolster">Bolster</a></li><li class="nav-section"><a href="../homefront.html#convalesce">Convalesce</a></li><li class="nav-section"><a href="../homefront.html#deploy">Deploy</a></li><li class="nav-section"><a href="../homefront.html#level-up">Level Up</a></li><li class="nav-section"><a href="../homefront.html#make-a-plan">Make a Plan</a></li><li class="nav-section"><a href="../homefront.html#meet-with-disaster">Meet with Disaster</a></li><li class="nav-section"><a href="../homefront.html#muster">Muster</a></li><li class="nav-section"><a href="../homefront.html#pull-together">Pull Together</a></li><li class="nav-section"><a href="../homefront.html#trade-barter">Trade &amp; Barter</a></li><li class="nav-section"><a href="../homefront.html#what-to-prep">What to prep</a></li></ul></li>
+<li><a href="../writing-moves-love-letters.html" class="nav-en" title="仅有英文版" hreflang="en">Writing Moves &amp; Love Letters</a></li>
+<li class="has-sections"><a href="../the-game-ongoing.html" class="nav-en" title="仅有英文版" hreflang="en">The Game Ongoing</a><ul class="nav-sections"><li class="nav-section"><a href="../the-game-ongoing.html#ending-a-session">Ending a session</a></li><li class="nav-section"><a href="../the-game-ongoing.html#between-sessions">Between sessions</a></li><li class="nav-section"><a href="../the-game-ongoing.html#starting-a-session">Starting a session</a></li><li class="nav-section"><a href="../the-game-ongoing.html#pacing">Pacing</a></li><li class="nav-section"><a href="../the-game-ongoing.html#advancement">Advancement</a></li><li class="nav-section"><a href="../the-game-ongoing.html#retiring-pcs">Retiring PCs</a></li><li class="nav-section"><a href="../the-game-ongoing.html#new-pcs">New PCs</a></li><li class="nav-section"><a href="../the-game-ongoing.html#conflict-between-pcs">Conflict between PCs</a></li><li class="nav-section"><a href="../the-game-ongoing.html#time-skips">Time skips</a></li><li class="nav-section"><a href="../the-game-ongoing.html#shake-ups">Shake-ups</a></li><li class="nav-section"><a href="../the-game-ongoing.html#ending-your-game">Ending your game</a></li></ul></li>
+<li><a href="acknowledgements.html">致谢</a></li>
+<li><a href="mediography.html">媒介志</a></li>
+<li class="nav-book-label">第二卷</li>
+<li><a href="welcome-to-the-worlds-end.html">欢迎来到世界尽头</a></li>
+<li><a href="the-village-of-stonetop.html">石顶村</a></li>
+<li><a href="aratis-the-lawkeeper.html">阿拉蒂斯，护法者</a></li>
+<li><a href="barrier-pass.html">屏障隘口</a></li>
+<li><a href="barrow-builders.html">坟冢建造者</a></li>
+<li><a href="blackwater-lake.html">黑水湖</a></li>
+<li><a href="crinwin.html">克林温</a></li>
+<li><a href="the-crombil.html">克朗比尔</a></li>
+<li><a href="danu-the-earth-mother.html">达努，地母</a></li>
+<li><a href="death-and-the-undying.html">死亡与不死者</a></li>
+<li><a href="the-dread-river.html">惧河</a></li>
+<li><a href="fae.html">妖精</a></li>
+<li><a href="ferriers-fen.html">费里尔沼泽</a></li>
+<li><a href="the-flats.html">荒原</a></li>
+<li><a href="fomoraij.html">福莫莱</a></li>
+<li><a href="the-foothills.html">山麓</a></li>
+<li><a href="forest-folk.html">森林之民</a></li>
+<li><a href="forge-lords.html">熔炉领主</a></li>
+<li><a href="the-frozen-wastes.html">冰封荒原</a></li>
+<li><a href="gods-and-religion.html">神明与宗教</a></li>
+<li><a href="the-golden-oak.html">黄金橡树</a></li>
+<li><a href="gordins-delve.html">戈丁矿场</a></li>
+<li><a href="the-great-wood.html">大森林</a></li>
+<li><a href="green-lords.html">绿领主</a></li>
+<li><a href="helior-the-daybringer.html">赫利奥，携昼者</a></li>
+<li><a href="hillfolk.html">丘陵之民</a></li>
+<li><a href="huffel-peaks.html">胡费尔群峰</a></li>
+<li><a href="the-labyrinth.html">迷宫</a></li>
+<li><a href="lygos-and-the-south.html">利戈斯与南方</a></li>
+<li><a href="the-makers.html">匠造者</a></li>
+<li><a href="the-makers-roads.html">匠造者之路</a></li>
+<li><a href="marshedge.html">泽畔</a></li>
+<li><a href="the-maw.html">巨口</a></li>
+<li><a href="north-manmarch.html">北曼马奇</a></li>
+<li><a href="the-pale-hunter.html">苍白猎手</a></li>
+<li><a href="primordial-powers.html">太古之力</a></li>
+<li><a href="red-groves.html">红林</a></li>
+<li><a href="rime-lords.html">霜领主</a></li>
+<li><a href="the-ruined-tower.html">废塔</a></li>
+<li><a href="south-manmarch.html">南曼马奇</a></li>
+<li><a href="spirits-of-the-wild.html">荒野精魂</a></li>
+<li><a href="the-steplands.html">阶地</a></li>
+<li><a href="stone-lords.html">石领主</a></li>
+<li><a href="the-stream.html">溪流</a></li>
+<li><a href="tempest-lords.html">风暴领主</a></li>
+<li><a href="the-things-below.html">地底之物</a></li>
+<li><a href="three-coven-lake.html">三巫湖</a></li>
+<li><a href="titan-bones.html">泰坦遗骨</a></li>
+<li><a href="tor-the-rain-maker.html">托尔，降雨者</a></li>
+<li><a href="useful-or-valuable-flora.html">有用或值钱的植物</a></li>
+<li><a href="ustrina.html">乌斯特里纳</a></li>
+<li><a href="vor-svetelik.html">沃尔·斯维特里克</a></li>
+<li><a href="waystones.html">路石</a></li>
+<li><a href="the-whitefang-mountains.html">白牙山脉</a></li>
+<li><a href="appendix-a-ages-of-the-world.html">附录A：世界诸纪</a></li>
+<li><a href="appendix-b-artifact-creation.html">附录B：神器创制</a></li>
+<li class="nav-hub"><a href="../appendix-c-minor-arcana.html" class="nav-en" title="仅有英文版" hreflang="en">Appendix C: Minor Arcana</a></li>
+<li class="nav-arcana"><a href="minor-laoj-daveths-galvanic-infusion.html">1. 劳杰·达维斯的电流灌注</a></li>
+<li class="nav-arcana"><a href="minor-truth-seeds.html">2. 真话种子</a></li>
+<li class="nav-arcana"><a href="minor-old-mothers-wine.html">3. 老母之酒</a></li>
+<li class="nav-arcana"><a href="minor-aalz-galts-sudden-sinkhole.html">4. 阿尔兹·加尔特的骤陷坑</a></li>
+<li class="nav-arcana"><a href="minor-shell-game-of-souls.html">5. 灵魂套壳戏</a></li>
+<li class="nav-arcana"><a href="minor-thunderous-bellow.html">6. 雷鸣咆哮</a></li>
+<li class="nav-arcana"><a href="minor-the-fiery-veil.html">7. 火帷</a></li>
+<li class="nav-arcana"><a href="minor-the-tomb-bogs-mark.html">8. 冢沼印记</a></li>
+<li class="nav-arcana"><a href="minor-fear-of-the-flame.html">9. 惧火</a></li>
+<li class="nav-arcana"><a href="minor-mantle-wraiths.html">10. 披风怨灵</a></li>
+<li class="nav-arcana"><a href="minor-shattering-words-of-aalz-childric.html">11. 阿尔兹·奇尔德里克的碎裂之言</a></li>
+<li class="nav-arcana"><a href="minor-ffyrnig-tonic.html">12. 费尔尼格补剂</a></li>
+<li class="nav-arcana"><a href="minor-song-of-the-dool-trees.html">13. 杜尔树之歌</a></li>
+<li class="nav-arcana"><a href="minor-ward-of-still-waters.html">14. 静水结界</a></li>
+<li class="nav-arcana"><a href="minor-ice-weaving.html">15. 织冰</a></li>
+<li class="nav-arcana"><a href="minor-the-six-locks-of-sajua.html">16. 萨尤亚的六锁</a></li>
+<li class="nav-arcana"><a href="minor-heliors-shining-ring.html">17. 赫利奥的闪耀戒指</a></li>
+<li class="nav-arcana"><a href="minor-nerth-serpents-vigor.html">18. 奈尔特蛇之活力</a></li>
+<li class="nav-arcana"><a href="minor-goldleaf-cloak.html">19. 金叶斗篷</a></li>
+<li class="nav-arcana"><a href="minor-opening-the-way.html">20. 开辟通路</a></li>
+<li class="nav-arcana"><a href="minor-the-drowning-scale.html">21. 溺水鳞片</a></li>
+<li class="nav-arcana"><a href="minor-preserving-runes.html">22. 保存符文</a></li>
+<li class="nav-arcana"><a href="minor-peacebond.html">23. 和平契</a></li>
+<li class="nav-arcana"><a href="minor-the-eye-opened.html">24. 开眼</a></li>
+<li class="nav-arcana"><a href="minor-sanctifying-mark.html">25. 圣化印记</a></li>
+<li class="nav-arcana"><a href="minor-the-green-lords-shade.html">26. 绿领主之影</a></li>
+<li class="nav-arcana"><a href="minor-chimeric-transmogrification.html">27. 嵌合体变形术</a></li>
+<li class="nav-arcana"><a href="minor-the-sylvan-web.html">28. 林间之网</a></li>
+<li class="nav-arcana"><a href="minor-flying-cloak.html">29. 飞行斗篷</a></li>
+<li class="nav-arcana"><a href="minor-satchel-of-plenty.html">30. 丰饶挎包</a></li>
+<li class="nav-arcana"><a href="minor-dancing-wind-spirit.html">31. 舞风精魂</a></li>
+<li class="nav-arcana"><a href="minor-call-of-the-hunt.html">32. 狩猎召唤</a></li>
+<li class="nav-arcana"><a href="minor-convocation-of-the-soil.html">33. 土壤召请</a></li>
+<li class="nav-arcana"><a href="minor-unliving-chimera.html">34. 亡者嵌合体</a></li>
+<li class="nav-arcana"><a href="minor-impudent-polymorph.html">35. 无礼变形</a></li>
+<li class="nav-arcana"><a href="minor-make-pliant-the-stone.html">36. 令石柔顺</a></li>
+<li class="nav-arcana"><a href="minor-plaster-of-joining.html">37. 接合灰浆</a></li>
+<li class="nav-arcana"><a href="minor-cold-mind-iron-body.html">38. 冷心铁体</a></li>
+<li class="nav-arcana"><a href="minor-little-friend.html">39. 小小伙伴</a></li>
+<li class="nav-arcana"><a href="minor-revealing-light.html">40. 揭示之光</a></li>
+<li class="nav-arcana"><a href="minor-darkwalker-cloak.html">41. 暗行斗篷</a></li>
+<li class="nav-arcana"><a href="minor-the-flesh-is-like-clay.html">42. 血肉如泥</a></li>
+<li class="nav-arcana"><a href="minor-fetchs-mask.html">43. 替身之面</a></li>
+<li class="nav-arcana"><a href="minor-witch-bottle.html">44. 巫瓶</a></li>
+<li class="nav-arcana"><a href="minor-wishing-candles.html">45. 许愿烛</a></li>
+<li class="nav-arcana"><a href="minor-baleful-utterance.html">46. 凶咒之言</a></li>
+<li class="nav-arcana"><a href="minor-aetherium-spear.html">47. 以太矿矛</a></li>
+<li class="nav-arcana"><a href="minor-staff-of-magnetism.html">48. 磁力法杖</a></li>
+<li class="nav-arcana"><a href="minor-groundskimmer.html">49. 掠地舟</a></li>
+<li class="nav-arcana"><a href="minor-thunderbolt-bow.html">50. 霹雳弓</a></li>
+<li class="nav-arcana"><a href="minor-bronze-protector.html">51. 青铜守护者</a></li>
+<li class="nav-arcana"><a href="minor-sublime-words.html">52. 至美之言</a></li>
+<li class="nav-arcana"><a href="minor-flaming-sword.html">53. 火焰之剑</a></li>
+<li class="nav-arcana"><a href="minor-searing-touch.html">54. 灼热之触</a></li>
+<li class="nav-arcana"><a href="minor-sigil-of-authority.html">55. 权柄印记</a></li>
+<li class="nav-arcana"><a href="minor-horn-of-storms.html">56. 风暴号角</a></li>
+<li class="nav-arcana"><a href="minor-moonstone.html">57. 月石</a></li>
+<li class="nav-arcana"><a href="minor-hand-of-aals-sannan.html">58. 阿尔斯·桑南之手</a></li>
+<li class="nav-arcana"><a href="minor-bittersweet-elixir.html">59. 苦甜灵药</a></li>
+<li class="nav-arcana"><a href="minor-the-brooms-lullaby.html">60. 扫帚摇篮曲</a></li>
+<li class="nav-arcana"><a href="minor-the-angry-little-god.html">61. 愤怒的小神</a></li>
+<li class="nav-arcana"><a href="minor-the-silver-branch.html">62. 银枝</a></li>
+<li class="nav-arcana"><a href="minor-void-elemental.html">63. 虚空元素</a></li>
+<li class="nav-arcana"><a href="minor-runes-of-creation.html">64. 创世之符</a></li>
+<li class="nav-hub"><a href="../appendix-d-major-arcana.html" class="nav-en" title="仅有英文版" hreflang="en">Appendix D: Major Arcana</a></li>
+<li class="nav-arcana"><a href="major-staff-of-the-lidless-orb.html">1. 无睑之眼法杖</a></li>
+<li class="nav-arcana"><a href="major-twisted-spear.html">2. 扭曲之矛</a></li>
+<li class="nav-arcana"><a href="major-demonhide-cloak.html">3. 魔皮斗篷</a></li>
+<li class="nav-arcana"><a href="major-norubas-ice-sphere.html">4. 诺鲁巴冰球</a></li>
+<li class="nav-arcana"><a href="major-mindgem.html">5. 心灵宝石</a></li>
+<li class="nav-arcana"><a href="major-whispering-rocks.html">6. 低语之石</a></li>
+<li class="nav-arcana"><a href="major-blood-quenched-sword.html">7. 血淬之剑</a></li>
+<li class="nav-arcana"><a href="major-shield-of-the-wisent-witch.html">8. 林牛女巫之盾</a></li>
+<li class="nav-arcana"><a href="major-hectumel-codex.html">9. 赫克图梅尔抄本</a></li>
+<li class="nav-arcana"><a href="major-red-scepter.html">10. 红权杖</a></li>
+<li class="nav-arcana"><a href="major-ring-of-daagon.html">11. 达贡之戒</a></li>
+<li class="nav-arcana"><a href="major-rune-laden-scales.html">12. 符文鳞甲</a></li>
+<li class="nav-arcana"><a href="major-blackwood-fetishes.html">13. 黑木偶</a></li>
+<li class="nav-arcana"><a href="major-storm-markings.html">14. 风暴印记</a></li>
+<li class="nav-arcana"><a href="major-ineffable-words.html">15. 不可言说之言</a></li>
+<li class="nav-arcana"><a href="major-redwood-effigy.html">16. 红木偶像</a></li>
+<li class="nav-arcana"><a href="major-hungering-maw-of-hlad.html">17. 赫拉德饥渴之口</a></li>
+<li class="nav-arcana"><a href="major-azure-hand.html">18. 蔚蓝之手</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-foot"><details class="lang-switch"><summary title="语言"><span class="lang-globe" aria-hidden="true">🌐</span><span class="lang-code" aria-hidden="true">ZH</span><span class="lang-label">语言</span><span class="lang-now">简体中文</span></summary><ul class="lang-list"><li><a href="../harm-healing.html" hreflang="en" lang="en">English</a></li><li><a href="../pt-BR/harm-healing.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><span class="lang-current" aria-current="page" lang="zh-Hans">简体中文</span></li></ul></details><span class="sidebar-credit">文本出自 Jeremy Strandberg 的<em>Stonetop</em>，<a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">CC BY-SA 4.0</a></span><a class="sidebar-github" href="https://github.com/Bryan-Legend/stonetop-wiki-generator">GitHub</a><button type="button" class="sound-toggle" id="sound-toggle" aria-pressed="true" title="骰子音效"><span class="sound-on" aria-hidden="true">🔊</span><span class="sound-off" aria-hidden="true">🔇</span><span class="sound-label">骰子音效</span></button></div>
+    </aside>
+    <div class="main-wrap">
+      <div class="content-scroll" id="main">
+        <main class="content">
+          <h1 class="page-title">伤害与治疗</h1>
+<p>玩家角色及其追随者常常身处险境，暴露于受伤与伤害之中。看着他们受伤，再看他们如何应对，是<strong>玩下去，看会发生什么</strong>的重要部分。</p>
+<p>角色大致会承受四种伤害：</p>
+<ul class="bullets"><li>对生命值（HP）的损伤</li><li>衰弱</li><li>虚构上棘手的伤口</li><li>死亡或致命伤</li></ul>
+<p>每当一个角色（PC 或 NPC）在虚构中受伤，他们就会承受其中部分或全部类型的伤害。每种都以不同方式影响角色。</p>
+<h2 id="hit-points-and-damage">生命值与伤害</h2>
+<p>每个角色（PC、NPC 和怪物）都有生命值（HP）。当角色受伤、被打得东倒西歪、挨揍，或以其他方式受虐时，他们失去 HP。这叫做“承受伤害”；你对别人这样做时，叫做“造成伤害”。</p>
+<p>当某人被降到 0 HP 时，他们退出行动，并且很可能已经死了或正在死去。</p>
+<p>HP 是游戏元素：它们并不对应虚构中的某一件具体事物。它们是战意、决心、勇气、运气与技巧的综合；把本该致命的一击变成擦伤的能力。HP 绝对<em>不是</em>衡量角色伤势轻重的尺度。</p>
+<p>机制上，HP 充当剧情护甲和节奏机制。一名拥有 20 HP 的 PC 可以确信自己能撑过一场战斗的第一轮交锋。可一旦一名 PC 只剩 5 或 6 HP，任何敌人的任何一击都可能让他们倒下——这让一切都更紧张、更危险。</p>
+<p>PC 通常比 NPC 或怪物拥有更多 HP。那是因为他们是主人公；我们在讲他们的故事，所以他们得到更多侥幸与险险躲过。</p>
+<h2 id="damage">伤害</h2>
+<p>承受伤害意味着失去 HP，有可能退出行动。角色在以下情况承受伤害……</p>
+<ul class="ellipsis"><li>一项面向玩家的行动明确说他们承受伤害；</li><li>你<strong>伤害他们</strong>（他们在虚构伤害之外还承受伤害）；</li><li>你<strong>消耗他们的资源</strong>，而 HP 就是你消耗的那项资源；或</li><li>你做出任何涉及他们被击中、打得东倒西歪、挨揍、受苦等的 GM 行动。</li></ul>
+<p>如果你做出一项 GM 行动，而该行动理论上能杀死、致残或打昏一个普通人，那就同时造成伤害。造成伤害几乎永远不该是你的行动本身，但它常常是你行动的<em>一部分</em>。</p>
+<h3 id="how-much-damage">造成多少伤害？</h3>
+<p>如果伤害来源是一份准备好的<strong>危险</strong>（<a class="wiki-link" href="../dangers.html" data-slug="dangers" >Dangers</a>），使用该危险的属性。</p>
+<p>例如，如果你的行动是让一头哈格（hagr）把一名 PC 从地上拎起来开始掐他，那你就造成该哈格的</p>
+<p><button type="button" class="dice-roll" data-dice="1d10+3" title="点击掷 1d10+3 — Shift: 优势 · Ctrl: 劣势">1d10+3</button> 伤害。</p>
+<p><strong>当多名战斗者同时造成 伤害时</strong>，在他们之中掷那颗最高的伤害骰，每多一名战斗者再 +1。所有战斗者的标签都生效。所以如果六只 coedwig（荆棘精魂，造成 <button type="button" class="dice-roll" data-dice="d6" title="点击掷 d6 — Shift: 优势 · Ctrl: 劣势">d6</button> 伤害，1 穿刺）和一只 birdwraig（树木精魂，<button type="button" class="dice-roll" data-dice="d8+3" title="点击掷 d8+3 — Shift: 优势 · Ctrl: 劣势">d8+3</button> 伤害，<em>强力</em>）同时砸向壮汉，壮汉承受 <button type="button" class="dice-roll" data-dice="d8+9" title="点击掷 d8+9 — Shift: 优势 · Ctrl: 劣势">d8+9</button> 伤害（1 穿刺，<em>强力</em>）——而且大概会过得很糟。</p>
+<p><strong>如果伤害并不与一份 准备好的危险相关</strong>，就问自己它对一个普通人可能造成什么。如果它最糟大概只会……</p>
+<ul class="ellipsis"><li>造成瘀伤和擦伤、疼痛或轻度烧伤，它造成 <button type="button" class="dice-roll" data-dice="d4" title="点击掷 d4 — Shift: 优势 · Ctrl: 劣势">d4</button> 伤害。</li><li>造成难看的皮肉伤、瘀伤或烧伤，它造成 <button type="button" class="dice-roll" data-dice="d6" title="点击掷 d6 — Shift: 优势 · Ctrl: 劣势">d6</button> 伤害。</li><li>折断骨头、造成深/广烧伤，或以剧痛使人衰弱，它造成 <button type="button" class="dice-roll" data-dice="d8" title="点击掷 d8 — Shift: 优势 · Ctrl: 劣势">d8</button> 伤害。</li><li>造成死亡或肢解，它造成 <button type="button" class="dice-roll" data-dice="d10" title="点击掷 d10 — Shift: 优势 · Ctrl: 劣势">d10</button> 伤害。</li></ul>
+<h2 id="armor">护甲</h2>
+<p>从受害者承受的伤害中减去其护甲值。这可以把伤害减到 0，意味着他们不失去任何 HP。对他们有利！他们仍然被击中/甩来甩去/诸如此类，但这没有消耗他们的活力、运气或剧情护甲。</p>
+<p>如果攻击带有“[<em>n</em>] 穿刺”标签，对该次攻击忽略 [<em>n</em>] 点护甲。</p>
+<p>所以，如果你造成 5 伤害（1 穿刺）而目标有 2 护甲，对该次攻击其护甲实际只有 1；他们失去 4 HP（但其护甲值对后续攻击仍是 2）。</p>
+<p>如果攻击“无视护甲”，则护甲不适用。他们承受全部伤害。当虚构要求时，当场套用此标签：被火焰吞没时锁子甲帮不上忙，再多的物理护甲也挡不住心灵袭击。</p>
+<p>少数面向玩家的行动让玩家“失去 [<em>n</em>] HP”（而不是“承受 [<em>n</em>] 伤害”）。护甲从不适用于这种 HP 损失。</p>
+<h2 id="taking-damage">承受伤害</h2>
+<p>当角色承受伤害时，他们把当前 HP 减去该数额。如果被降到 0 HP，他们就退出行动。</p>
+<p><strong>当一名玩家角色被降到 0 HP 且伤害来源可能致命时</strong>，该 PC 处于鬼门关（Death&#x27;s Door），并据此做出该行动（见 <a class="wiki-link" href="#death-and-dying" data-slug="harm-healing" data-fragment="death-and-dying">死亡与垂死</a>）。<strong>如果伤害来源 不太可能杀死任何人</strong>，则该 PC 只是退出行动：昏迷、喘不过气、恐慌、被困，等等。</p>
+<p>考虑问问玩家他们为何、如何被打出行动。以这种方式失能的角色无法自救；他们保持失能，直到有人帮助他们，或直到你另有说法。</p>
+<p><strong>当一名 NPC 或怪物被降到 0 HP 时</strong>，他们的命运掌握在你手中。如果伤害来源可能致命，他们大概已经死了，或很快会死。否则，他们退出行动、不再参战，但如何退出由你说。不过记住：保护你的 NPC 或怪物不是你的工作。<strong>让事情烧毁。</strong></p>
+<p><strong>追随者</strong>（<a class="wiki-link" href="../npcs-followers.html" data-slug="npcs-followers" >NPCs &amp; Followers</a>）是 NPC，所以他们到 0 HP 时发生什么由你决定。不过，你也可以选择让玩家为他们掷鬼门关。</p>
+<p>如果你<strong>伤害他们</strong>，那么失去的 HP 就是虚构伤害的一部分。否则，承受伤害意味着擦伤和瘀青、肌肉酸痛、牙齿发颤、嘴唇破裂和鼻子流血、喘不过气、头晕、疼痛与疲惫与疲劳。那是把人磨下去、却还不至于让人退出战斗的损耗。</p>
+<h2 id="regaining-hit-points">恢复生命值</h2>
+<p>一名 PC 或追随者在以下情况恢复 HP……</p>
+<ul class="ellipsis"><li>他们<strong>恢复</strong>（<a class="wiki-link" href="expeditions.html" data-slug="expeditions" >远征</a>）；</li><li>他们<strong>扎营</strong>（<a class="wiki-link" href="expeditions.html" data-slug="expeditions" >远征</a>），并选择恢复 HP；</li><li>他们处于<strong>鬼门关</strong>（<a class="wiki-link" href="#death-and-dying" data-slug="harm-healing" data-fragment="death-and-dying">死亡与垂死</a>）并掷出 10+；</li><li>他们有几天休整时间并<strong>休养</strong>（<a class="wiki-link" href="#and-recovery" data-slug="harm-healing" data-fragment="and-recovery">与复原</a>）；</li><li>另一项行动说他们恢复；或</li><li>你<strong>提供一个机会</strong>让他们恢复 HP，而他们抓住了它。</li></ul>
+<p>非追随者的 NPC 和怪物在</p>
+<p>你决定他们恢复时恢复 HP。以玩家行动为指引：休息几分钟并有补给可用会恢复 3-5 HP；一夜休息会恢复上限一半的 HP；几天休息与康复会让他们回到满 HP。当然，虚构优先。一头超自然地强壮而坚韧的生物可能更快恢复 HP；一件魔法构装体可能除非有人或某物修理或充能，否则不会恢复 HP。</p>
+<p>记住，HP 不是“肉点数”。</p>
+<p>恢复 HP 并不意味着伤口已经闭合或骨头已经接上；它意味着他们已经习惯疼痛、止住了血、喘过气来。伤势仍在，直到愈合。只是角色又有了更多战意，再次离致命一击更远。</p>
+<h2 id="debilities">衰弱</h2>
+<p>玩家角色最多可以承受三种不同的衰弱：</p>
+<ul class="bullets"><li><strong><em>虚弱</em></strong>：角色疲惫、困倦、迟缓、发抖。他们掷 +STR 或 +DEX 时处于劣势。</li><li><strong><em>恍惚</em></strong>：角色心不在焉、糊涂、思路不清。他们掷 +INT 或 +WIS 时处于劣势。</li><li><strong><em>沮丧</em></strong>：角色极度苦恼、暴躁或愤怒、不适、疼痛。他们掷 +CON 或 +CHA 时处于劣势。</li></ul>
+<p>除了机制惩罚，衰弱还有虚构后果。一名<em>沮丧</em>的角色就是沮丧的，你应当把它织进你的描述和 GM 行动里。一项衰弱可能意味着某人在本来不必直面险境时也得直面险境。</p>
+<h2 id="marking-debilities">标记衰弱</h2>
+<p>玩家在角色表上标记衰弱，表示其角色正承受它们。玩家角色可能因为以下原因标记一项衰弱……</p>
+<ul class="ellipsis"><li>他们触发一项玩家行动，而该行动说他们标记一项衰弱；</li><li>你伤害他们，而你施加的伤害包括他们标记一项衰弱；</li><li>你展示不利之处，或提供一个有代价的机会，或告诉他们后果，而那不利/代价/后果就是他们标记一项衰弱；或</li><li>你做出任何其他涉及他们变得<em>虚弱</em>、<em>恍惚</em>或<em>沮丧</em>的 GM 行动，并让他们标记该项衰弱。</li></ul>
+<p>换句话说：标记衰弱既是规定性的，也是描述性的。规定性：</p>
+<p>一项行动说他们标记该衰弱，然后他们在虚构中承受该状态。描述性：虚构中发生了会让角色<em>虚弱</em>、或<em>恍惚</em>、或<em>沮丧</em>的事，于是角色标记该衰弱并承受机制惩罚。</p>
+<p>如果一项行动让玩家“标记一项衰弱”，他们可以选择标记哪一项。</p>
+<p>问他们这在虚构里看起来怎样。持光者的祷文让他们<em>沮丧</em>？为什么是那项衰弱？症状是什么？在别人眼里这是什么样子？</p>
+<p>如果一项行动让玩家标记一项特定衰弱，而它已经被标记，那他们算是捡了便宜。也许该状态在虚构里稍微加重，但机制惩罚保持不变。如果标记该项特定衰弱是可选选择，而它已经被标记，那他们就不能选那个选项。</p>
+<p>如果一项行动要求 PC 作为触发条件的一部分标记一项衰弱，而该衰弱已经被标记，那他们就不能触发该行动。例如，如果壮汉三项衰弱都已标记，他们就不能触发无拘无束。</p>
+<h2 id="clearing-debilities">清除衰弱</h2>
+<p>玩家角色可以在以下情况清除一项衰弱……</p>
+<ul class="ellipsis"><li>他们<strong>恢复</strong>（<a class="wiki-link" href="#and-recovery" data-slug="harm-healing" data-fragment="and-recovery">与复原</a>），并说明他们如何处理该衰弱；</li><li>他们<strong>扎营</strong>（<a class="wiki-link" href="#and-recovery" data-slug="harm-healing" data-fragment="and-recovery">与复原</a>），并选择清除一项衰弱；</li><li>他们有几天休整时间来<strong>休养</strong>（<a class="wiki-link" href="#and-recovery" data-slug="harm-healing" data-fragment="and-recovery">与复原</a>）；</li><li>另一项行动说他们清除；或</li><li>你<strong>提供一个机会</strong>让他们清除一项衰弱，而他们抓住了它。</li></ul>
+<p>清除一项衰弱意味着：他们擦掉角色表上的标记，不再承受机制惩罚，并且其角色不再被虚构中的那些效应主动困扰。</p>
+<p>清除一项衰弱并不意味着伴随的伤势已经愈合——它意味着他们已经尽其所能处理过，它不再主动妨碍他们。如果他们因为二头肌撕裂而标记<em>虚弱</em>，清除该衰弱大概意味着已经包扎、胳膊吊着。完全愈合仍需时间。</p>
+<h2 id="npcs-monsters-and-debilities">NPC、怪物与衰弱</h2>
+<p>怪物和 NPC 不标记衰弱，面向玩家的行动也从不允许 PC 把衰弱施加给 NPC 或怪物。</p>
+<p>怪物和大多数 NPC 不为行动掷骰，所以两项属性处于劣势毫无意义。</p>
+<p>所以：如果一头怪物遭受会让它虚弱的效应，他们不标记<em>虚弱</em>——你只是把他们描述得更慢或发抖。也许你因此<strong>向 PC 提供一个机会</strong>？</p>
+<p><strong>追随者</strong>（<a class="wiki-link" href="../npcs-followers.html" data-slug="npcs-followers" >NPCs &amp; Followers</a>）可以触发玩家行动。如果你愿意，把一项衰弱作为临时标签赋给一名追随者（<em>虚弱</em>、<em>恍惚</em>或<em>沮丧</em>），对任何相关掷骰施加劣势。但多数时候，你应当在如何扮演他们、他们如何行动、以及他们能够或愿意做什么里，反映追随者的当前状态。</p>
+<h2 id="problematic-wounds">棘手伤口</h2>
+<p>棘手伤口是带有持久虚构后果的伤口。当角色被你<strong>伤害他们</strong>，或你做出另一项涉及角色以特定、有后果的方式受伤的 GM 行动时，他们承受这类伤口。</p>
+<p>只需在虚构中描述该伤口。</p>
+<p>它现在就是真的！扭伤的脚踝无法承重。一记打在头上的击打让他们踉跄、头晕。被砍断的手就是被砍断了，他们大概在失血（并休克）。这类棘手伤口在涉及<em>狼藉</em>攻击时应当特别常见。</p>
+<p>棘手伤口常常涉及 PC 标记衰弱，并且总是涉及承受伤害（即失去 HP）。如果一名 NPC 折断了一名 PC 的手指，该 PC 握不成拳，大概会因剧痛而<em>虚弱</em>或<em>恍惚</em>或<em>沮丧</em>，并且将承受 <button type="button" class="dice-roll" data-dice="1d8" title="点击掷 1d8 — Shift: 优势 · Ctrl: 劣势">1d8</button> 伤害（无视护甲）。如果他们降到 0 HP，这伤害不会杀死他们，但可能让他们退出行动。</p>
+<h2 id="how-do-you-decide">你如何决定？</h2>
+<p>PC 刚刚遭受一次攻击、无视了一项威胁，或掷出 6-，而你觉得自己要造成伤害。</p>
+<p>你造成伤害吗？你让他们标记一项衰弱吗？你施加棘手伤口吗，如果是，严重到什么程度？</p>
+<p>没有铁律，但你应当遵循你的原则，并做出从虚构中流出的 GM 行动。常常，你会选一项 GM 行动（如<strong>把他们置于困境</strong>，或一项怪物行动如<strong>把猎物砸到 地上，打得不省人事</strong>），而你行动的具体虚构意味着他们也承受伤害或标记一项衰弱。</p>
+<p>另一些时候，你会知道自己想做某件有害的事，但脑子里没有一项具体行动。</p>
+<p>那种情况下，让玩家掷所承受的伤害，让它来告知你行动的性质与严重程度。更多指引见 <a class="wiki-link" href="running-the-game.html" data-slug="running-the-game" >主持游戏</a>。</p>
+<p>记住所涉攻击的标签。<em>狼藉</em>攻击尤其具有破坏性，应当常常<strong>伤害 他们</strong>或<strong>消耗他们的资源</strong>（毁掉盾牌、武器或装备）。</p>
+<p><em>强力</em>攻击把受害者甩来甩去；即便它们不造成伤害，也应当改变战斗的势头或站位。</p>
+<p>当 PC 或追随者对怪物造成伤害时，用他们攻击的描述、造成的伤害数额、敌人还剩多少 HP，以及攻击上的标签，来告知虚构结果。</p>
+<hr>
+<blockquote><p><strong><em>宣告麻烦（未来或镜头外）：</em></strong> <em>“安德拉斯面如白纸，那处蛇 咬又红又肿，你看见发怒的 红线顺着血管往他胳膊上爬。 你怎么做？”</em></p></blockquote>
+<hr>
+<blockquote><p><strong><em>揭示不受欢迎的真相：</em></strong> <em>“哎哟。是啊， 布洛德温，你把加雷特伤口上的绷带揭开，然后……不太妙。它 气味很难闻，肉有点发黑，还有 发绿的脓。它感染了，而且会 越来越糟。 你怎么做？”</em></p></blockquote>
+<hr>
+<blockquote><p><strong><em>把某人置于困境：</em></strong> <em>“它在你把它甩开之前抓向你的 脸。承受 <button type="button" class="dice-roll" data-dice="d6" title="点击掷 d6 — Shift: 优势 · Ctrl: 劣势">d6</button> 伤害。你还站着？好，我想它划开了 你的额头，血开始灌进 你的眼睛。你几乎看不见，但你听见 它在附近窸窣，准备再次扑 上来。你怎么做？”</em></p></blockquote>
+<hr>
+<h2 id="problematic-wounds-in-play">游戏中的棘手伤口</h2>
+<p>把棘手伤口织进虚构和你的 GM 行动。当玩家掷出 7-9 或 6- 时，也许用棘手伤口来合理化该结果。</p>
+<p>用你的行动把伤势推到故事前台，或让它把处境复杂化。</p>
+<blockquote><p><strong><em>消耗他们的资源：</em></strong> <em>“你爬上 来，出了那条沟，但你肋下的伤口 仍在流血。你站起来时一阵 头晕。它过去了，但再承受 <button type="button" class="dice-roll" data-dice="1d6" title="点击掷 1d6 — Shift: 优势 · Ctrl: 劣势">1d6</button> 伤害，无视护甲。你 还站着吗？”</em></p></blockquote>
+<hr>
+<blockquote><p><strong><em>展示不利之处：</em></strong> <em>（在掷出 7-9 直面险境、从一头 哈格手下逃脱之后）“就像你说的……你在它挥来时钻到那根 木头下面，在它回过神之前冲过它身边。 可大约五步开外， 你的膝盖一软，你瘫倒在 地上。就是早先那处伤。你的 膝盖只剩一团灼烧的剧痛，你 听见哈格哼了一声，把木头 抽出来，开始朝你蹒跚走来，你 怎么做？”</em></p></blockquote>
+<hr>
+<blockquote><p><strong><em>告诉他们后果：</em></strong> <em>“你就是在 往外喷血。如果你不尽快上止血带，你会失血而死。 当然，你的双手——嗯，那一只手——在 发抖，一切都发麻。标记</em> 虚弱<em>，而且你做任何需要精细动作控制的事都得 直面险境。 你怎么做？”</em></p></blockquote>
+<hr>
+<blockquote><p><strong><em>告诉他们要求：</em></strong> <em>“如果你想 用那只脚踝走路，你得给它上夹板， 再找一根手杖或拐杖。再来点 能止痛的东西也好。你 怎么做？”</em></p></blockquote>
+<h2 id="death-and-dying">死亡与垂死</h2>
+<p>当一名 PC 被一次可能杀死他们的攻击降到 0 HP 时，他们正在死去，必须做这项行动。他们也可能因为虚构要求而正在死去：如果他们从</p>
+<p>100 英尺高处摔到岩石上，他们不承受伤害，他们处于 0 HP，并在鬼门关。</p>
+<div class="move-block" id="deaths-door"><h3 class="move-name">Death&#x27;s Door</h3><p class="move-trigger">当你<strong><em>正在死去</em></strong>时，你瞥见最后之门（Last Door）与鸦母（Lady of Crows）（描述它们）。然后，掷 +无： <strong>10+ 时</strong>，你把自己拽回生者的领域——回到 1 HP，但说出与死亡擦肩如何在你身上留下印记；<strong>7-9 时</strong>，鸦母挥手让你走开——你不再垂死，但退出行动；<strong>6- 时</strong>，你的时辰到了——选 1 项：</p><ul class="bullets"><li>做最后一项行动，如同你掷出 12+，然后踏过最后之门</li><li>拒绝离去；获得还魂者或鬼魂附页</li><li>呼唤一个地底之物的名字，恳求它插手；获得奴仆附页</li></ul>
+<p>如果你愿意，可以等到场景收束或其他 PC 稍微得到一点聚光灯时，再结算这项行动。如果有人试图拯救垂死的 PC（处理伤口等），那他们就是在相助鬼门关掷骰。他们把自己暴露于其中的“风险、代价或后果”，很大程度上取决于他们如何相助、你们这桌对鸦母的理解，以及掷骰结果。</p>
+<p>鸦母与最后之门由你和你这桌来描述。它们甚至可能对不同角色呈现出不同样子。</p>
+<p>10+ 时，他们重新投入行动，不再垂死，但他们在心智、身体或灵魂上留下了印记。由玩家决定如何留下，但尽管提出建议，比如一道难看的伤疤、一只失去的眼睛、最后之门的异象，或一群总在附近的乌鸦。无论他们选什么，都要在游戏中经常提起这印记。甚至可以把它写成一桩威胁（一项<strong><em>折磨</em></strong>，<a class="wiki-link" href="threats.html" data-slug="threats" >威胁</a>）。</p>
+<p>7-9+ 时，角色不再垂死，但他们昏迷（或差不多）直到你另有说法。</p>
+<p>6- 时，他们的时辰到了，理智的做法是踏过最后之门。</p>
+<p>他们可以做最后一项行动，但之后他们就死了。救不了他们。他们不能用那最后一项行动来躲避死亡。只有最罕见的魔法能把他们带回来。</p>
+<p>如果他们拒绝离去，问为什么。让他们看鬼魂或还魂者附页，并挑选他们的可怖使命。如果他们说不出来，就不该选这个选项。</p>
+<p>要成为奴仆，PC 必须知道一个地底之物的名字。如果游戏中还没有出现过任何地底之物，也许这名 PC 能在死去之前见多识广？</p>
+<p>如果角色“留下来”，他们将走上一条稳步下行的路，变得越来越不稳定、越来越像怪物。</p>
+<p>把恐怖演足。展示他们的“生活”如何不再一样。把他们的可怖</p>
+<p>使命或冲动推进游戏。对鬼魂或还魂者，把他们的可怖使命写成一项折磨；对奴仆，把他们的主人写成一个<em>魔法存在</em>（见<strong>威胁</strong>，<a class="wiki-link" href="threats.html" data-slug="threats" >威胁</a>）。</p>
+<p>一名不死的 PC 应当让人觉得他们在借来的时间上活着——因为他们确实如此。其他 PC 应当对他们的不死盟友心存戒备。</p>
+<p>至少，是戒备。</p></div>
+<h2 id="and-recovery">与复原</h2>
+<p>以下行动处理恢复 HP、清除衰弱，以及处理或从棘手伤口中复原。</p>
+<div class="move-block" id="recover"><h3 class="move-name">Recover</h3><p class="move-trigger">当你<strong><em>花时间喘口气 并处理困扰你的事</em></strong>时，消耗 1 次补给品并恢复 等于 4+繁荣 的 HP。在你再承受更多伤害之前，你不能再次获得这项好处。 当你<strong><em>处理一项衰弱或一处棘手伤口</em></strong>时，说明如何处理。GM 要么说已经处理好了，要么告诉你这样做还需要什么（直面险境、消耗补给品或其他资源、找到 ___、扎 营，等等）。 和任何行动一样：问他们这看起来怎样。他们是在处理伤口吗？ 吃点东西？敷药膏？ 嚼柳树皮？什么？ 常常，多名 PC 会同时恢复。 没问题。这是<strong>提出尖锐问题</strong>并鼓励他们彼此稍作角色扮演的好时机。 每个恢复 HP 的角色必须消耗 1 次补给品，或必须有别人为他们消耗一次。聚落的繁荣直接影响那些补给品的质量，从而影响恢复的 HP 数量。繁荣 +1 的聚落能提供比繁荣 +0 的聚落更丰盛的食物和更有效的草药。 一旦某名角色通过恢复行动恢复了 HP，他们就不能再这样做，直到再承受更多伤害。一名 PC 不能比如说承受 12 伤害，然后靠短暂休息和一点威士忌就弹回满 HP。那种程度的 HP 损失需要真正的休息来恢复。（而且，不，一名 PC 不能只是“在胳膊上划一下承受 1 HP 伤害”好再次恢复。不是那样运作的。） 记住，恢复 HP 并不意味着愈合伤口。那些瘀伤、擦伤等等仍在。 对于衰弱和棘手伤口，促使他们描述如何处理伤势。如果听起来合理有效，就说：“酷，处理好了。” 但你也可以告诉他们还需要什么，例如……</p><ul class="ellipsis"><li>见多识广以知道该怎么做；</li><li>直面险境，那险境是……</li><li>疼痛。</li><li>他们在你动手时挣扎。</li><li>伤口/状况恶化。</li><li>___ 在你完成之前到来/发生。</li><li>引起 ___ 的注意</li><li>你需要用掉/多用 ___；</li><li>消耗（更多）补给品、威士忌等；</li><li>找到 ___（一种药草、抗毒剂、淡水、可当支架的东西等）；</li><li>扎营/让他们休息；或</li><li>做某件剧烈的事（烧灼、截肢、战地手术等）。</li></ul>
+<p>按你认为合适的，用“和”与“或”把这些要求组合起来。如果他们满足了要求，则衰弱被清除和/或棘手伤口被稳住（尽管几乎肯定没有愈合）。</p></div>
+<hr>
+<blockquote><p><em>他们已经解决了洞穴里的熊，但 卡拉多克自己在过程中被打得不轻。 他失去了 9 HP，而且他</em> 恍惚<em>——他 的盾被拍中，整个人被砸到 洞壁上。他喘不过气来，浑身酸痛， 但我从未确立一处具体伤势。</em></p><p><em>其他人去探查洞穴时，卡拉多克 问“我能恢复吗？”当然，但我问那 看起来怎样，他在用什么样的补给品。 “我想我会靠在洞壁上瘫下来， 放下盾和矛，深吸几口气。 也许喝一口威士忌，再 吃点薄饼。”酷！他划掉一次 补给品，恢复 4 HP（聚落的 繁荣当前是 0）。我也觉得这足以 清除他的</em> 恍惚 <em>衰弱。</em></p><p><em>他还差 5 HP，问能不能再 恢复一次。“不行，”我说。“直到你 再承受更多伤害。”</em></p></blockquote>
+<hr>
+<blockquote><p><em>加雷特（瑞安娜队伍里的一员）的腿被 一头羽龙划开了。他仍然 清醒，但已经 0 HP，而且在大量失血。 他撑不了多久。</em></p><p><em>战斗结束了，瑞安娜和 布洛德温冲过去，看能不能 救他的命。布洛德温主持局面。 “瑞安娜，在伤口上方加压。 我来做止血带。然后，我不知道，大概 缝上他，吧？”</em></p><p><em>她在处理一处 棘手伤口， 而这是恢复的 触发条件之一。 看着我那份可能的 要求列表，我觉得 她在用 INT 直面险境，那险境是 加雷特会失血而死</em></p></blockquote>
+<hr>
+<blockquote><p><em>在他们止住血之前。另外， 他们需要为止血带和缝合消耗一次补给品。 “你做吗？”我 问。她做，伸手去拿骰子。</em></p><p><em>她掷出 8，我给她一个在代价与较轻成功之间的选择。 “你止住了血，救了他的命，但他情况很糟。 你可以再花一次补给品， 用某种兴奋草药让他撑下去。 他会以 4 HP 醒来， 能慢慢走动，但会非常痛， 而且很可能再次伤到自己。 或者你可以留下他，稳住了但神志时清时迷， 无法自己走路。 你怎么做？”</em></p></blockquote>
+<div class="move-block" id="make-camp"><h3 class="move-name">Make Camp</h3><p class="move-trigger">当你<strong><em>在不安全的地方安顿下来 休息</em></strong>时，回答 GM 关于营地的问题。队伍中每人必须消耗 1 次补给品或口粮；如果你使用一套 ◇ 炊具（<em>需要火与水</em>），则 1 次可以为最多四人提供。 如果你<strong><em>吃饱喝足</em></strong>，并且<strong><em>得到 至少几个钟头的睡眠</em></strong>，选 1 项。</p><ul class="bullets"><li>恢复等于你上限一半的 HP</li><li>清除一项衰弱</li></ul>
+<p>如果<strong><em>你的休息特别安宁、 舒适或愉快，</em></strong>你还在下一次掷骰上获得优势。</p>
+<p>当 PC 被打得不轻或筋疲力尽时，他们会想扎营。如果他们有时间、一套炊具、火和水，他们 ◇ 只需 1-2 次补给品就能恢复大量 HP 和/或清除一些衰弱。</p>
+<p>要做选择，他们需要全部三项：食物、饮水和睡眠。任何还使用一条 ◇ 铺盖卷的人，无论选哪一项，都额外恢复 +<button type="button" class="dice-roll" data-dice="1d6" title="点击掷 1d6 — Shift: 优势 · Ctrl: 劣势">1d6</button> HP。</p>
+<p>恢复 HP 或清除衰弱并不会让棘手伤口消失。PC 必须用恢复行动来处理它们，而这类伤口需要时间才能完全愈合。</p>
+<p>要在下一次掷骰上获得优势，事情需要<em>很棒</em>，而不仅仅是够用。这应当是例外，而不是常态。</p>
+<p>关于扎营，以及如何决定夜里发生什么（如果有的话），见 <a class="wiki-link" href="expeditions.html" data-slug="expeditions" >远征</a>。</p></div>
+<hr>
+<blockquote><p><em>队伍正前往泽畔（Marshedge）， 在泰坦遗骨附近扎营时，与 诺斯加劳（nosgolau）有过一次几乎灾难性的遭遇。 他们把瓦希德救了回来（勉强），但他 处于</em> 恍惚 <em>和</em> 虚弱<em>。他还承受了 大量伤害，只剩 16 HP 中的 6。 卡拉多克和瑞安娜也承受了些 伤害。布洛德温安然无恙。</em></p><p><em>他们一回到营地，就都 睡了几个钟头。他们在遇袭前已经吃过 喝过，所以每人都可以 做一个选择。</em></p><p><em>布洛德温已经是满 HP，也没有衰弱。 “那我获得优势吗， 然后？”她问。不行！她也许没被 打伤，但她仍然睡在坚硬的 铺石上，裹着斗篷缩成一团。</em></p><p><em>卡拉多克和瑞安娜各自选择恢复 HP。卡拉多克上限 16 HP，他 只剩 7。他恢复 8 HP（上限的 一半），最终有 15 HP。 他本可以再恢复来拿回最后那 1 HP， 但觉得不值得。 瑞安娜失去的不到上限的一半， 所以她回到满值。</em></p><p><em>瓦希德面临艰难选择：他可以清除 一项衰弱，也可以恢复 HP。“要不我从扎营恢复 HP，然后再恢复 来清除那些衰弱？”我问他如何 处理那些衰弱。 “哦，我会吃一顿 大餐，多到看起来不像我 塞得下。”</em></p><p><em>“好，那就这样说。你会恢复 上限一半的 HP，回到 14。如果你再吃 1 次补给品，你可以 清除</em> 虚弱<em>。但你仍会</em> 恍惚 <em>直到你再次扎营并 好好睡一觉。成交？”</em></p></blockquote>
+<hr>
+<div class="move-block" id="convalesce"><h3 class="move-name">Convalesce</h3><p class="move-trigger">当你<strong><em>在安全与舒适中休息 几天，</em></strong>把你的 HP 设回上限并清除全部衰弱。当你<strong><em>在一名治疗者照料下 休息几周</em></strong>时，你愈合任何能够愈合的棘手伤口。如果你<strong><em>遭受了永久性伤残 或损伤</em></strong>，要么退役，要么拟定计划来适应它。 这项行动让 PC 在远征之间“重置”。这是让时间流逝、季节更替的机会。也是提问并使用你的<strong>家园行动</strong>（<a class="wiki-link" href="../homefront.html" data-slug="homefront" >Homefront</a>）的绝佳时机。 休养会愈合大多数伤口，但它不能再长出失去的肢体，也不能修好粉碎的膝盖。角色要么退役，要么拟定计划并适应。 如果一名 PC 退役，玩家停止主动扮演他们。该角色已经失去了让他们成为 PC 的锋芒与胆气。玩家应当做一个新角色，退役的角色变成一名 NPC。 如果玩家希望他们的 PC 适应，则使用<strong>拟定计划</strong>行动（<a class="wiki-link" href="../homefront.html" data-slug="homefront" >Homefront</a>）来澄清他们的目标以及达成它所需要的。这可能涉及某件非凡之事（比如从乌斯特里纳得到一只发条手），但通常是巧思、练习与毅力的问题。 不要把要求设得过分困难。你的工作是<strong>做玩家 角色的拥趸</strong>并<strong>用冒险点缀他们的 生活</strong>。不是因为他们受伤而惩罚他们。你想看到这些坚韧、坚定、足智多谋的角色适应他们的挫折。给他们一条复原之路，看他们如何应对。</p></div>
+<hr>
+<blockquote><p><em>瑞安娜在三巫湖失去了右臂 （她算是走运；安德拉斯 根本没能回家）。一些快速思考救了她的命， 但她不确定 自己还如何能当一名有效的战士和 弓手。不过她不打算退役。</em></p><p><em>于是，我们拟定计划。“你希望达成什么？ 你是想用魔法替换或再长出那只胳膊？还是 学单手射击？” 瑞安娜过分实际，连魔法选项都没考虑。 我看着可能的 要求列表，写下：</em></p></blockquote>
+<p>O 你必须设计并制作某种假体或装置，好单手拉</p>
+<p>并释放弓 O 你必须学会使用该装置 O 这需要数月练习 <em>我们决定，一个套在弓弦上的皮革口咬 能让她拉弦并释放。这是件简单的东西， 在制革匠萨维尔的帮助下就能 做成。</em></p>
+<blockquote><p><em>后来，我框定一个瑞安娜练习新装置的场景。 我问那看起来怎样， 她在跟什么较劲。 然后安德拉斯的母亲过来，感谢 瑞安娜把他收在翼下， 说自己多么骄傲能有 安德拉斯保护村子。 瑞安娜心里五味杂陈， 为了瓦希德那该死的火宝石把他丢了。</em></p><p><em>秋天来了，瑞安娜还没完成她需要的那几个月练习， 而 PC 们最终去猎一种一直在林中潜行的黑暗存在。 “眼下，”我说， “你的弓会带</em> 装填 <em>标签，而且 你放箭时处于劣势。但 一旦你再练一个月， 你就会无惩罚地射击 和放箭。”</em></p></blockquote>
+<hr>
+        </main>
+      </div>
+    </div>
+  </div>
+  <div id="wiki-preview" class="wiki-preview" hidden></div>
+  <div id="dice-toast" class="dice-toast" hidden></div>
+  <script>window.WIKI_UI={"books": {"book1": "第一卷", "book2": "第二卷", "sites": "冒险场景"}, "english_only": "仅有英文版"};</script>
+  <script src="../js/wiki.js"></script>
+</body>
+</html>
