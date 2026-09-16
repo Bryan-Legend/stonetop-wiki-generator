@@ -431,11 +431,17 @@ def main(argv: list[str] | None = None) -> None:
     # root, so a blind *.html sweep would also delete hand-added root files —
     # Google/Bing site-verification pages, CNAME, a hand-written robots.txt.
     # The manifest records what the build owns; everything else is left alone.
-    for name in read_build_manifest(out):
-        try:
-            (out / name).unlink()
-        except OSError:
-            pass
+    # --pages writes only the named pages and leaves the rest of the site
+    # alone, so it must not sweep: the manifest lists every page the last
+    # full build wrote, and wiping those would take the whole wiki out with
+    # the three pages being rebuilt (and --pages doesn't rewrite the
+    # manifest, so the next run would do it again).
+    if not args.pages:
+        for name in read_build_manifest(out):
+            try:
+                (out / name).unlink()
+            except OSError:
+                pass
 
     # The books' text is CC BY-SA 4.0, but "all artwork herein is
     # © 2026 by Lucie Arnoux" — maps are artwork. Drop the Maps page (and its
