@@ -46,7 +46,53 @@
     location_placeholder: "Where it lies, or who holds it",
     arcana_head: "Arcana",
     arcana_none:
-      "None held. Set an arcanum’s Location to “{title}” to list it here."
+      "None held. Set an arcanum’s Location to “{title}” to list it here.",
+    sync_label: "Campaign",
+    sync_copied: "{what} copied",
+    sync_copy_this: "Copy this link",
+    sync_nothing_export: "Nothing to export yet",
+    sync_saved: "{n} saved to {file}",
+    sync_not_json: "that file is not JSON",
+    sync_not_export: "that is not a campaign export",
+    sync_data: "Campaign data",
+    sync_export: "Export",
+    sync_export_title: "Save this campaign's state to a file",
+    sync_import: "Import",
+    sync_import_title: "Merge a saved file into this campaign",
+    sync_nothing_import: "Nothing in that file to import",
+    sync_imported: "Imported {n} across {stores} stores",
+    sync_skipped: " · skipped {names}",
+    sync_read_failed: "Could not read that file",
+    sync_sharing_gm: "Sharing as GM",
+    sync_sharing_table: "Sharing with the table",
+    sync_copy_player: "Copy player link",
+    sync_copy_gm: "Copy GM link",
+    sync_copy_mine: "Copy my link",
+    sync_player_link: "Player link",
+    sync_gm_link: "GM link",
+    sync_link: "Link",
+    sync_no_player_token:
+      "This browser joined with a GM link, so it does not hold the player token. Copy the player link from the browser that created the campaign.",
+    sync_stop: "Stop sharing",
+    sync_stopped: "Sharing stopped — this browser keeps its own copy",
+    sync_what_shared:
+      "Ticked improvements, danger clocks, answers, sheets and a character's HP are shared with everyone. Enemy HP is the GM's alone.",
+    sync_share_head: "Share this campaign",
+    sync_worker: "Sync worker",
+    sync_create: "Create campaign",
+    sync_creating: "Creating…",
+    sync_enter_endpoint: "Enter the sync worker's address first",
+    sync_unreachable: "Could not reach the sync worker",
+    sync_paste: "Or paste the link the GM sent you:",
+    sync_join_link: "Join link",
+    sync_join: "Join",
+    sync_bad_link: "That does not look like a join link",
+    sync_joined: "Joined {campaign}",
+    sync_the_campaign: "the campaign",
+    sync_status_on: "Sharing this campaign with the table",
+    sync_status_offline:
+      "Sync worker unreachable — changes are saved here and will catch up",
+    sync_status_local: "This browser keeps its own copy"
   };
 
   function UI(key, vars) {
@@ -1326,7 +1372,7 @@
         function () {
           // Nothing reached the clipboard — show the link to be taken by hand.
           showToast(
-            '<span class="label">Copy this link</span> ' +
+            '<span class="label">' + escapeHtml(UI("sync_copy_this")) + "</span> " +
               '<span class="roll-note">' +
               escapeHtml(url) +
               "</span>",
@@ -1706,7 +1752,7 @@
     btn.setAttribute("aria-expanded", "false");
     btn.innerHTML =
       '<span class="sync-dot" aria-hidden="true"></span>' +
-      '<span class="sync-label">Campaign</span>';
+      '<span class="sync-label">' + escapeHtml(UI("sync_label")) + "</span>";
     tools.appendChild(btn);
 
     /* The dice-sound toggle is generated into the sidebar footer, where it sat
@@ -1772,11 +1818,11 @@
     function copyLink(link, what) {
       copyText(link).then(
         function () {
-          say(what + " copied");
+          say(UI("sync_copied", { what: what }));
         },
         function () {
           showToast(
-            '<span class="label">Copy this link</span> ' +
+            '<span class="label">' + escapeHtml(UI("sync_copy_this")) + "</span> " +
               '<span class="roll-note">' +
               escapeHtml(link) +
               "</span>",
@@ -1822,7 +1868,7 @@
         keys += n;
       });
       if (!keys) {
-        say("Nothing to export yet");
+        say(UI("sync_nothing_export"));
         return;
       }
       var text = JSON.stringify(out, null, 2);
@@ -1838,7 +1884,7 @@
       setTimeout(function () {
         URL.revokeObjectURL(url);
       }, 2000);
-      say(keys + " saved to " + a.download);
+      say(UI("sync_saved", { n: keys, file: a.download }));
     }
 
     function importData(text) {
@@ -1846,10 +1892,10 @@
       try {
         doc = JSON.parse(text);
       } catch (e) {
-        return { error: "that file is not JSON" };
+        return { error: UI("sync_not_json") };
       }
       if (!doc || doc.stonetop !== "campaign-export" || !doc.stores) {
-        return { error: "that is not a campaign export" };
+        return { error: UI("sync_not_export") };
       }
       var cfg = Store.config();
       var added = 0;
@@ -1881,13 +1927,13 @@
     /* The two buttons, on the panel whether a campaign is joined or not: a
        browser keeping its own copy is exactly the one worth backing up. */
     function addDataTools(body) {
-      body.appendChild(note("Campaign data"));
+      body.appendChild(note(UI("sync_data")));
 
       var row = document.createElement("div");
       row.className = "sync-row";
 
-      var save = action("Export");
-      save.title = "Save this campaign's state to a file";
+      var save = action(UI("sync_export"));
+      save.title = UI("sync_export_title");
       save.addEventListener("click", exportData);
       row.appendChild(save);
 
@@ -1907,21 +1953,21 @@
             return;
           }
           if (!out.added) {
-            say("Nothing in that file to import");
+            say(UI("sync_nothing_import"));
             return;
           }
-          var msg = "Imported " + out.added + " across " + out.stores + " stores";
-          if (out.skipped.length) msg += " · skipped " + out.skipped.join(", ");
+          var msg = UI("sync_imported", { n: out.added, stores: out.stores });
+          if (out.skipped.length) msg += UI("sync_skipped", { names: out.skipped.join(", ") });
           say(msg, 6000);
         };
         reader.onerror = function () {
-          say("Could not read that file");
+          say(UI("sync_read_failed"));
         };
         reader.readAsText(file);
       });
 
-      var load = action("Import");
-      load.title = "Merge a saved file into this campaign";
+      var load = action(UI("sync_import"));
+      load.title = UI("sync_import_title");
       load.addEventListener("click", function () {
         picker.click();
       });
@@ -1935,7 +1981,7 @@
       var head = document.createElement("p");
       head.className = "sync-head";
       head.textContent =
-        cfg.role === "gm" ? "Sharing as GM" : "Sharing with the table";
+        cfg.role === "gm" ? UI("sync_sharing_gm") : UI("sync_sharing_table");
       body.appendChild(head);
 
       var id = document.createElement("p");
@@ -1944,45 +1990,37 @@
       body.appendChild(id);
 
       if (cfg.role === "gm" && cfg.hasPlayerToken) {
-        var player = action("Copy player link");
+        var player = action(UI("sync_copy_player"));
         player.addEventListener("click", function () {
-          copyLink(Store.joinLink("player"), "Player link");
+          copyLink(Store.joinLink("player"), UI("sync_player_link"));
         });
         body.appendChild(player);
       }
 
       var mine = action(
-        cfg.role === "gm" ? "Copy GM link" : "Copy my link"
+        cfg.role === "gm" ? UI("sync_copy_gm") : UI("sync_copy_mine")
       );
       mine.addEventListener("click", function () {
-        copyLink(Store.joinLink(cfg.role), cfg.role === "gm" ? "GM link" : "Link");
+        copyLink(Store.joinLink(cfg.role), cfg.role === "gm" ? UI("sync_gm_link") : UI("sync_link"));
       });
       body.appendChild(mine);
 
       if (cfg.role === "gm" && !cfg.hasPlayerToken) {
         body.appendChild(
-          note(
-            "This browser joined with a GM link, so it does not hold the " +
-              "player token. Copy the player link from the browser that " +
-              "created the campaign."
-          )
+          note(UI("sync_no_player_token"))
         );
       }
 
-      var off = action("Stop sharing", "quiet");
+      var off = action(UI("sync_stop"), "quiet");
       off.addEventListener("click", function () {
         Store.disconnect();
         render();
-        say("Sharing stopped — this browser keeps its own copy");
+        say(UI("sync_stopped"));
       });
       body.appendChild(off);
 
       body.appendChild(
-        note(
-          "Ticked improvements, danger clocks, answers, sheets and a " +
-            "character's HP are shared with everyone. Enemy HP is the GM's " +
-            "alone."
-        )
+        note(UI("sync_what_shared"))
       );
 
       addDataTools(body);
@@ -1991,7 +2029,7 @@
     function buildDisconnected(body) {
       var head = document.createElement("p");
       head.className = "sync-head";
-      head.textContent = "Share this campaign";
+      head.textContent = UI("sync_share_head");
       body.appendChild(head);
 
       /* With the Worker's address compiled in there is nothing to decide, so
@@ -2001,48 +2039,48 @@
       var endpoint = null;
       if (!DEFAULT_ENDPOINT) {
         endpoint = input("https://sync.stonetop-wiki.workers.dev", "");
-        body.appendChild(label("Sync worker", endpoint));
+        body.appendChild(label(UI("sync_worker"), endpoint));
       }
 
-      var create = action("Create campaign", "primary");
+      var create = action(UI("sync_create"), "primary");
       create.addEventListener("click", function () {
         var url = endpoint ? endpoint.value.trim() : DEFAULT_ENDPOINT;
         if (!url) {
-          say("Enter the sync worker's address first");
+          say(UI("sync_enter_endpoint"));
           return;
         }
         create.disabled = true;
-        create.textContent = "Creating…";
+        create.textContent = UI("sync_creating");
         Store.createCampaign(url).then(
           function () {
             create.disabled = false;
-            create.textContent = "Create campaign";
+            create.textContent = UI("sync_create");
             render();
-            copyLink(Store.joinLink("player"), "Player link");
+            copyLink(Store.joinLink("player"), UI("sync_player_link"));
           },
           function () {
             create.disabled = false;
-            create.textContent = "Create campaign";
-            say("Could not reach the sync worker");
+            create.textContent = UI("sync_create");
+            say(UI("sync_unreachable"));
           }
         );
       });
       body.appendChild(create);
 
-      body.appendChild(note("Or paste the link the GM sent you:"));
+      body.appendChild(note(UI("sync_paste")));
       var link = input("https://…#join=…", "");
-      body.appendChild(label("Join link", link));
+      body.appendChild(label(UI("sync_join_link"), link));
 
-      var join = action("Join");
+      var join = action(UI("sync_join"));
       join.addEventListener("click", function () {
         var parsed = Store.parseJoinLink(link.value.trim());
         if (!parsed) {
-          say("That does not look like a join link");
+          say(UI("sync_bad_link"));
           return;
         }
         Store.connect(parsed);
         render();
-        say("Joined " + parsed.campaign);
+        say(UI("sync_joined", { campaign: parsed.campaign }));
       });
       body.appendChild(join);
 
@@ -2118,15 +2156,15 @@
       btn.classList.toggle("is-offline", state === "offline");
       btn.title =
         state === "ok"
-          ? "Sharing this campaign with the table"
+          ? UI("sync_status_on")
           : state === "offline"
-          ? "Sync worker unreachable — changes are saved here and will catch up"
-          : "This browser keeps its own copy";
+          ? UI("sync_status_offline")
+          : UI("sync_status_local");
     });
 
     if (Store.justJoined()) {
       var cfg = Store.config();
-      say("Joined " + (cfg ? cfg.campaign : "the campaign"), 5000);
+      say(UI("sync_joined", { campaign: cfg ? cfg.campaign : UI("sync_the_campaign") }), 5000);
     }
   })();
 
