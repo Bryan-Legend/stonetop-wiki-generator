@@ -266,198 +266,198 @@ B	O jogador dele sai do jogo
 H2	Virando uma ameaça
 P	Quando um PJ descamba para a vilania e a monstruosidade, ele deixa de ser PJ e vira uma ameaça sob o controle do Mestre.
 P	Escreva-o tanto como <b>ameaça</b> (página 282) quanto como <b>monstro</b> (página 391), usando como inspiração os movimentos, posses e capacidades estabelecidos dele. Não se preocupe em reproduzir exatamente as habilidades do livreto, e fique à vontade para torná-lo mais assustador do que era como PJ.
-H2	Retirement
-P	If a PC retires from play but stays in the village or the region, then turn them into an NPC. By default, their portrayal falls to you. But if everyone agrees, their original player can portray them.
-P	Whoever portrays them, don't let them overshadow the PCs. They're retired! It's okay for them to advise and support the PCs, or to help meet the requirements of a plan. But they shouldn't act as followers or solve the PCs' problems. If need be, ask the ex-PC's original player why they can't or won't help with any given problem.
-H2	Epilogues
-P	When a PC retires or passes away, give them an epilogue: a scene or two to send them off and say goodbye.
-P	If the PC died, play out the funeral or wake. Establish the local traditions, if you haven't already. Show how NPCs react.
-P	Ask the surviving PCs to say some words.
-P	Let the dead PC's player savor the farewell to their fallen alter ego.
-P	If the PC leaves Stonetop, then have the player narrate their departure, as well as a glimpse of their future—a "Where are they now?" moment. On the road to Lygos, wandering among the Hillfolk, stepping on the Fae paths to never be seen again…
-P	That sort of thing.
-P	If the PC retires, play out their decision to do so. Then, now or later, have the player describe a typical day in their new life.
-P	Who are they with and what are they up to? How do they seem to be getting on?
-P	What do they seem to be enjoying? What regrets weigh them down?
-P	Invite the other players to contribute, by asking questions, suggesting details, or playing out their own scenes of grief and loss, of absence and new beginnings.
-P	Epilogues should skip game mechanics.
-P	These aren't scenes with conflict or even stakes. They're just vignettes, meant to give a sense of closure to a PC's tale.
+H2	Aposentadoria
+P	Se um PJ se aposenta do jogo mas continua na aldeia ou na região, transforme-o num NPC. Por padrão, interpretá-lo passa a ser tarefa sua. Mas, se todos concordarem, o jogador original pode interpretá-lo.
+P	Seja quem for que o interprete, não deixe que ele ofusque os PJs. Ele está aposentado! Tudo bem que aconselhe e apoie os PJs, ou que ajude a cumprir os requisitos de um plano. Mas ele não deve agir como seguidor nem resolver os problemas dos PJs. Se preciso, pergunte ao jogador original do ex-PJ por que ele não pode ou não quer ajudar em determinado problema.
+H2	Epílogos
+P	Quando um PJ se aposenta ou morre, dê a ele um epílogo: uma cena ou duas para despedi-lo e dizer adeus.
+P	Se o PJ morreu, jogue o funeral ou o velório. Estabeleça as tradições locais, se ainda não o fez. Mostre como os NPCs reagem.
+P	Peça aos PJs sobreviventes que digam algumas palavras.
+P	Deixe o jogador do PJ morto saborear a despedida de seu alter ego tombado.
+P	Se o PJ deixa Stonetop, peça ao jogador que narre a partida, além de um vislumbre do futuro dele—um momento de "onde ele está agora?". Na estrada para Lygos, perambulando entre o Povo das Colinas, pisando nos caminhos Fae para nunca mais ser visto…
+P	Esse tipo de coisa.
+P	Se o PJ se aposenta, jogue a decisão dele de fazer isso. Depois, agora ou mais tarde, peça ao jogador que descreva um dia comum na nova vida dele.
+P	Com quem ele está e o que anda fazendo? Como parece estar se virando?
+P	Com o que parece estar se divertindo? Que arrependimentos pesam sobre ele?
+P	Convide os outros jogadores a contribuir, fazendo perguntas, sugerindo detalhes ou jogando suas próprias cenas de luto e perda, de ausência e recomeço.
+P	Epílogos devem pular as mecânicas de jogo.
+P	Não são cenas com conflito nem sequer com apostas. São só vinhetas, feitas para dar uma sensação de fechamento à história de um PJ.
 PAGE	585
-H2	New PCs
-P	You might need to introduce a new PC to an ongoing game when:
-B	A new player joins your group
-B	A PC dies, retires, or otherwise leaves play (see previous page), and the player creates a replacement PC
-P	If you're adding a player to an ongoing game, then brief them on the game so far.
-P	Have them read the Setting Overview and Moves & Gear handouts. Ideally, have them read the group's session logs and look over the steading playbook. Schedule time to answer any questions they have.
-H2	Creating the character
-P	Have the player pick one of the unused playbooks. They should also pick a background that reflects either a new arrival in Stonetop or a local NPC stepping up to PC status—each playbook has at least two such backgrounds. You don't want this new, highly-skilled PC to have been here all along without ever getting involved.
-P	When the player gets to the "worldbuilding" part of their playbook (back page, left column), help them make choices that fit with the established lore of your game.
-P	As a rule, new PCs start play at level 1, no matter how seasoned everyone else is.
-P	Don't worry about "balance." A level 1 PC in <i>Stonetop</i> is plenty competent, and starting fresh lets the player learn the playbook and develop their character through play.
-P	That said: it's okay to start a new PC at a higher level if there's a compelling reason (like the PC is an ancient hero freed from stasis), the player is familiar with <i>Stonetop</i>, and the whole group is cool with it.
-H2	Introductions
-P	Have the player stop at the Introductions part of their playbook. Decide together how you'll bring them into the game.
-P	There are two basic approaches:
-P	<b>Play it out</b>. Introduce the new PC in play.
-P	Frame a scene with them arriving in town, or have them be there when the PCs get home from an adventure. Or, like, have that clumsy kid get struck by lightning during a crisis and become the Storm-marked Heavy just in time to save the day.
-P	Skip the formal Introductions on their playbook, but ask questions as needed.
-P	This approach can be fun and visceral, but it can also take up a lot of game-time and inadvertently set up PC-PC conflicts.
-P	<b>Time skip</b>. The new PC appears (or steps up) between sessions, during a stretch of downtime. Establish that they've been here (or been active) a while. Have the new PC do <b>Introductions</b> (page 56) more or less normally at the start of the next session (or between sessions, if that works for your group). Maybe write a <b>love letter</b> (page 568) to each existing PC that both covers events during the time skip and that establishes their connection to this new PC.
-H2	Getting them involved
-P	Once they're in play, make sure the new PC matters. Prepare hooks that touch on their background, instincts, or unresolved questions. Work their worldbuilding elements into the game. Give them a little more spotlight, and allow them to find their place in the game.
-P	Handled well, the introduction of a new
-P	PC is not disruptive. It deepens and adds new texture to your game.
+H2	PJs novos
+P	Você pode precisar introduzir um PJ novo num jogo em andamento quando:
+B	Um jogador novo entra no grupo
+B	Um PJ morre, se aposenta ou de outro modo sai de cena (veja a página anterior) e o jogador cria um PJ substituto
+P	Se você está acrescentando um jogador a um jogo em andamento, atualize-o sobre a partida até aqui.
+P	Peça que leia a Visão Geral do Cenário e o encarte de Movimentos e Equipamento. O ideal é que leia também os registros de sessão do grupo e dê uma olhada no livreto do povoado. Reserve um tempo para responder às dúvidas dele.
+H2	Criando o personagem
+P	Peça ao jogador que escolha um dos livretos ainda não usados. Ele também deve escolher um antecedente que reflita ou alguém que acabou de chegar a Stonetop ou um NPC local que passa a PJ—cada livreto tem ao menos dois antecedentes assim. Você não quer que esse PJ novo e altamente habilidoso estivesse ali o tempo todo sem nunca se envolver.
+P	Quando o jogador chegar à parte de "construção de mundo" do livreto (última página, coluna da esquerda), ajude-o a fazer escolhas que combinem com o saber já estabelecido no seu jogo.
+P	Via de regra, PJs novos começam no nível 1, por mais experientes que sejam os outros.
+P	Não se preocupe com "equilíbrio". Um PJ de nível 1 em <i>Stonetop</i> é bem competente, e começar do zero permite ao jogador aprender o livreto e desenvolver o personagem jogando.
+P	Dito isso: tudo bem começar um PJ novo num nível mais alto se houver um bom motivo (como um PJ que é um herói antigo libertado da estase), o jogador conhecer <i>Stonetop</i> e o grupo todo topar.
+H2	Apresentações
+P	Peça ao jogador que pare na parte de Apresentações do livreto. Decidam juntos como vão trazê-lo para o jogo.
+P	Há duas abordagens básicas:
+P	<b>Jogar a cena</b>. Apresente o PJ novo em jogo.
+P	Enquadre uma cena com ele chegando à aldeia, ou faça com que esteja lá quando os PJs voltarem de uma aventura. Ou, sei lá, faça aquele garoto desajeitado ser atingido por um raio durante uma crise e virar o Brutamontes Marcado pela Tempestade bem a tempo de salvar o dia.
+P	Pule as Apresentações formais do livreto, mas faça perguntas conforme a necessidade.
+P	Essa abordagem pode ser divertida e visceral, mas também pode tomar muito tempo de jogo e criar sem querer conflitos entre PJs.
+P	<b>Salto no tempo</b>. O PJ novo aparece (ou assume o papel) entre sessões, durante um período de folga. Estabeleça que ele já está ali (ou já vem atuando) há um tempo. Faça o PJ novo passar pelas <b>Apresentações</b> (página 56) mais ou menos como de costume no começo da próxima sessão (ou entre sessões, se isso funcionar para o seu grupo). Talvez escreva uma <b>carta de amor</b> (página 568) a cada PJ existente que cubra os acontecimentos do salto no tempo e estabeleça a ligação dele com esse PJ novo.
+H2	Envolvendo-o no jogo
+P	Depois que ele entrar em jogo, garanta que o PJ novo importe. Prepare ganchos que toquem no antecedente, nos instintos ou nas perguntas em aberto dele. Encaixe no jogo os elementos de construção de mundo dele. Dê a ele um pouco mais de holofote e deixe que encontre seu lugar no jogo.
+P	Bem conduzida, a entrada de um PJ
+P	novo não atrapalha. Ela aprofunda o jogo e acrescenta textura.
 PAGE	586
-H2	Conflict between PCs
-P	One of your players' agendas is to <b>portray</b> <b>a compelling character</b> (page 37), and such characters won't always agree. That's okay. Actually, that's great! Handled well, conflict between PCs can be high drama and some of the most memorable parts of the game.
-P	Most PC conflicts are just disagreements, or one PC trying to stop another PC from doing something rash. The Would-be Hero goes to charge the corrupted boar, but the Marshal Interferes and stops them. The Blessed wants to subdue the beast and heal it if she can, and Persuades the other PCs to let her try.
-P	Encourage players to argue in character, not to "win" but to establish their positions and their values. Use moves like Persuade (vs. PCs), Interfere, and Seek Insight to keep things moving.
-H2	Intractable differences
-P	Over time, disagreements can grow into ongoing conflicts. The Judge won't stand for the Fox's deceit. The Fox can't forgive the Heavy for his husband's death. The Lightbearer frets over the state of the Seeker's soul.
-P	When you first sense such tensions, check in with the players. Make sure that the frustrations and emotions are felt by the characters and not the players. If the players are getting upset with each other, take a step back and look for a solution. Update your content guidelines, fix the fiction if you need to, and commit to whatever changes you've all agreed upon.
+H2	Conflito entre PJs
+P	Uma das agendas dos seus jogadores é <b>interpretar</b> <b>um personagem cativante</b> (página 37), e personagens assim nem sempre vão concordar. Tudo bem. Na verdade, isso é ótimo! Bem conduzido, o conflito entre PJs pode render muito drama e alguns dos momentos mais memoráveis do jogo.
+P	A maioria dos conflitos entre PJs é só desacordo, ou um PJ tentando impedir outro de fazer uma besteira. O Aspirante a Herói vai partir para cima do javali corrompido, mas o Marechal Interfere e o segura. A Abençoada quer subjugar a fera e curá-la, se puder, e Persuade os outros PJs a deixarem que ela tente.
+P	Incentive os jogadores a discutir no personagem, não para "ganhar", mas para estabelecer suas posições e seus valores. Use movimentos como Persuadir (vs. PJs), Interferir e Buscar Discernimento para manter as coisas andando.
+H2	Diferenças irreconciliáveis
+P	Com o tempo, desacordos podem virar conflitos contínuos. O Juiz não suporta o embuste da Raposa. A Raposa não perdoa o Brutamontes pela morte do marido dela. O Portador da Luz se aflige com o estado da alma do Buscador.
+P	Quando você perceber tensões assim pela primeira vez, converse com os jogadores. Garanta que as frustrações e emoções sejam dos personagens, não dos jogadores. Se os jogadores estão ficando chateados uns com os outros, dê um passo atrás e procure uma solução. Atualizem as diretrizes de conteúdo, corrijam a ficção se preciso e comprometam-se com as mudanças que combinarem.
 PAGE	587
-P	If everyone is on board, though, then lean into the conflict. Ask folks what they're looking for. Escalation? Resolution?
-P	Heartbreak? Use their answers to guide what comes next.
-H2	Open conflict
-P	When PCs directly oppose each other—through violence, subterfuge, sabotage, or whatever—then slow down. A lot.
-P	First, do a temperature check. If things feel heated between the players, then call time out. Check in. Make sure everyone wants to proceed. A little conversation can go a long way towards preventing hurt feelings, resentment, and distrust.
-P	If everyone is on board with the conflict, then give everyone involved a chance to declare their intent. When one PC does something that actively affects another PC or their interests, tell the targeted player what they perceive. Ask what they do in response. If any other PCs are present or involved, ask what they do as well. Figure out what moves are being triggered, and in what order. Very often, someone will end up Interfering.
-P	Use the results of PC actions and player moves to inform what comes next. Keep checking in with the players. Move the spotlight and give other PCs chances to get involved. If someone rolls a 6-, push things to their logical (if unfortunate) conclusion, or interrupt the whole conflict with some unrelated but pressing problem.
-H2	Descent into villainy
-P	Sometimes, a PC starts down a dark path.
-P	Maybe they keep using a major arcanum and racking up consequences. Maybe they are corrupted by the Things Below. Maybe they die but refuse to pass on, and linger as a <b>Ghost</b> (page 148), <b>Revenant</b> (page 150), or <b>Thrall</b> (page 152). Maybe they just make one grim choice after another.
-P	It's usually okay for a PC to be wayward or wicked, but not both. If a PC schemes, lies, and causes trouble for the other PCs but their heart is in the right place, that's interesting. And if a PC relies on foul magic or despicable acts, but does so in alignment with the other PCs' goals, then that can be compelling. But a PC who's both evil and opposed to the other PCs is no longer a protagonist. They're a villain.
-P	When a PC crosses the line into villainy, or just cozies up to it, check in. Does this PC's player think they can be redeemed?
-P	Do the other players want to try? If not, does everyone want to play out one last conflict or scheme? If the answer to any of these is "No," then the PC should <b>become</b> <b>a threat</b> (page 584). If the answer to all three questions is "Yes," then focus on that confrontation in an upcoming session. If the party fails to redeem their one-time ally, then that PC becomes a threat.
-H2	Regarding secrets
-P	When PCs come into conflict, it's natural that they will start lying to each other, or keeping secrets. Great! More drama! But don't let players keep secrets from each other. Don't accept notes they pass you.
-P	Don't have private chats or huddles in the hall. Encourage everyone to keep in mind what they know vs. what their character knows, and then enjoy the dramatic irony.
+P	Se todo mundo topar, porém, abrace o conflito. Pergunte ao pessoal o que eles querem. Escalada? Resolução?
+P	Coração partido? Use as respostas para guiar o que vem a seguir.
+H2	Conflito aberto
+P	Quando os PJs se opõem diretamente—por violência, artimanha, sabotagem ou o que for—desacelere. Bastante.
+P	Primeiro, meça a temperatura. Se as coisas parecerem quentes entre os jogadores, peça um tempo. Conversem. Garantam que todos querem seguir em frente. Uma conversinha ajuda muito a evitar mágoas, ressentimento e desconfiança.
+P	Se todo mundo topar o conflito, dê a cada envolvido a chance de declarar sua intenção. Quando um PJ faz algo que afeta ativamente outro PJ ou os interesses dele, diga ao jogador visado o que ele percebe. Pergunte o que ele faz em resposta. Se outros PJs estiverem presentes ou envolvidos, pergunte o que fazem também. Descubram que movimentos estão sendo disparados e em que ordem. Muitas vezes alguém vai acabar Interferindo.
+P	Use os resultados das ações dos PJs e dos movimentos dos jogadores para definir o que vem a seguir. Continue conversando com os jogadores. Mova o holofote e dê a outros PJs a chance de se envolver. Se alguém tirar 6-, leve as coisas à sua conclusão lógica (ainda que infeliz), ou interrompa o conflito inteiro com algum problema urgente e sem relação com ele.
+H2	Descida à vilania
+P	Às vezes, um PJ envereda por um caminho sombrio.
+P	Talvez ele fique usando um arcano maior e acumulando consequências. Talvez seja corrompido pelas Coisas de Baixo. Talvez morra mas se recuse a partir e permaneça como <b>Fantasma</b> (página 148), <b>Revenante</b> (página 150) ou <b>Servo</b> (página 152). Talvez só faça uma escolha sombria atrás da outra.
+P	Em geral, tudo bem um PJ ser desencaminhado ou perverso, mas não as duas coisas. Se um PJ trama, mente e causa problemas aos outros PJs mas tem bom coração, isso é interessante. E se um PJ recorre a magia suja ou atos desprezíveis, mas o faz alinhado com os objetivos dos outros PJs, isso pode ser cativante. Mas um PJ que é ao mesmo tempo maligno e contrário aos outros PJs já não é um protagonista. É um vilão.
+P	Quando um PJ cruza a linha da vilania, ou só chega perto dela, converse. O jogador desse PJ acha que ele pode ser redimido?
+P	Os outros jogadores querem tentar? Se não, todos querem jogar um último conflito ou uma última trama? Se a resposta a qualquer uma dessas perguntas for "não", então o PJ deve <b>virar</b> <b>uma ameaça</b> (página 584). Se a resposta às três for "sim", concentre-se nesse confronto numa sessão futura. Se o grupo não conseguir redimir o antigo aliado, então esse PJ vira uma ameaça.
+H2	Sobre segredos
+P	Quando os PJs entram em conflito, é natural que comecem a mentir uns para os outros ou a guardar segredos. Ótimo! Mais drama! Mas não deixe os jogadores guardarem segredos uns dos outros. Não aceite bilhetinhos que lhe passem.
+P	Não faça conversas particulares nem rodinhas no corredor. Incentive todos a ter em mente o que eles sabem vs. o que o personagem sabe, e depois aproveitem a ironia dramática.
 PAGE	588
-H2	Time skips
-P	<i>Stonetop</i> often has you gloss over stretches of time. You might cover days, weeks, or months of travel or downtime with little more than a brief description and a few questions for the PCs. But sometimes, you want to zoom way out and jump farther forward in time. Maybe you reach the end of a story arc and you'd like to <b>let things</b> <b>breathe</b>, or let the PCs age and mature.
-P	Perhaps your group takes a break for real-world reasons, and you want to reflect that in the fiction. A PC might head off to Lygos and you want to jump ahead to their return. Or maybe there's a big <b>shake-up</b> (page 590) and you want to skip the immediate aftermath.
-P	How you handle a time skip depends largely on its length.
-H2	Months, seasons, years
-P	If you're skipping a few months, seasons, or years, then write <b>love letters</b> (page 568) to cover the gap. These can be fairly involved, including not only a roll and its results, but also invitations to narrate events and/or to involve the other players.
-P	"Dear Marshal, it's been a peaceful year but tell us—what trouble has stemmed from having a standing watch that you never predicted? Then, ask each of the other PCs one of the following …"
-P	If the time skip straddles the change of just one season, have the players make the Seasons Change move and incorporate its results into your letters. For a skip that spans multiple seasons, work changes to steading elements (Fortunes, Surplus, improvements, etc.) into the love letters.
-P	Either way, prep a new <b>adventure</b> (page 251) to bring things back with a bang.
+H2	Saltos no tempo
+P	<i>Stonetop</i> muitas vezes faz você resumir períodos inteiros. Você pode cobrir dias, semanas ou meses de viagem ou de folga com pouco mais que uma breve descrição e algumas perguntas aos PJs. Mas, às vezes, você quer abrir bem o foco e saltar muito mais adiante no tempo. Talvez você chegue ao fim de um arco de história e queira <b>deixar as coisas</b> <b>respirarem</b>, ou deixar os PJs envelhecerem e amadurecerem.
+P	Talvez seu grupo dê uma pausa por razões do mundo real e você queira refletir isso na ficção. Um PJ pode partir para Lygos e você querer pular até a volta dele. Ou talvez haja uma grande <b>reviravolta</b> (página 590) e você queira pular o rescaldo imediato.
+P	Como lidar com um salto no tempo depende muito do tamanho dele.
+H2	Meses, estações, anos
+P	Se você vai pular alguns meses, estações ou anos, escreva <b>cartas de amor</b> (página 568) para cobrir o intervalo. Elas podem ser bem elaboradas, incluindo não só uma rolagem e seus resultados, mas também convites para narrar acontecimentos e/ou envolver os outros jogadores.
+P	"Querido Marechal, foi um ano de paz, mas conte para nós—que encrenca surgiu de ter uma guarda permanente, coisa que você nunca previu? Depois, faça a cada um dos outros PJs uma das seguintes perguntas…"
+P	Se o salto no tempo atravessa a virada de apenas uma estação, peça aos jogadores que façam o movimento As Estações Mudam e incorpore os resultados às suas cartas. Para um salto que abrange várias estações, encaixe nas cartas de amor as mudanças nos elementos do povoado (Fortuna, Excedente, melhorias etc.).
+P	De todo jeito, prepare uma <b>aventura</b> nova (página 251) para retomar o jogo com tudo.
 PAGE	589
-H2	Up to a decade or two
-P	If you're skipping more than a few years, up to a decade or two, take a session off from actual play. Instead, discuss:
-Q	How long, exactly, are you skipping?
-Q	Who wants to continue playing their current PC? How might they change?
-Q	Who wants to make new PCs?
-Q	What NPCs and setting elements should continue to be important?
-Q	How has the setting changed?
-P	Have anyone who wants to play a new PC create them now, picking any background that makes sense given the time skip. Do <b>Introductions</b> (page 56) as normal, with the existing PCs each taking turns during steps 6-7 (PC connections). Pick a starting season and do the Seasons Change move.
-P	Use the result to craft a <b>First Adventure</b> (page 251), writing love letters to existing PCs to help fill in the skipped-over time.
-H2	Generations
-P	If you jump ahead generations, then you're starting a whole new game. Hold a new <b>first session</b> (page 32). Discuss how the setting has changed in light of the game that just ended. Make and introduce new PCs, keeping those changes in mind. Ask questions about the timeline between the prior game and this one. Have spring burst forth, and prep a first adventure.
-P	In play, continue to ask questions and fill in the timeline between games. Sprinkle this game with connections to the prior one.
-P	Encourage players to do the same. Revisit the ruin where the previous Heavy died.
-P	Reveal that this Fox's father was that kid who tagged along after the old PCs. Gasp when the Marshal anoints her crew with red pigment, to honor the scar borne by the last generation's Would-be Hero.
+H2	Até uma década ou duas
+P	Se você vai pular mais de alguns anos, até uma década ou duas, tire uma sessão do jogo propriamente dito. Em vez disso, conversem sobre:
+Q	Quanto tempo, exatamente, vocês vão pular?
+Q	Quem quer continuar com o PJ atual? Como ele pode mudar?
+Q	Quem quer criar PJs novos?
+Q	Que NPCs e elementos de cenário devem continuar importantes?
+Q	Como o cenário mudou?
+P	Peça a quem quiser jogar um PJ novo que o crie agora, escolhendo qualquer antecedente que faça sentido dado o salto no tempo. Façam as <b>Apresentações</b> (página 56) normalmente, com os PJs existentes se revezando nos passos 6-7 (conexões entre PJs). Escolham uma estação inicial e façam o movimento As Estações Mudam.
+P	Use o resultado para montar uma <b>Primeira Aventura</b> (página 251), escrevendo cartas de amor aos PJs existentes para ajudar a preencher o tempo pulado.
+H2	Gerações
+P	Se você saltar gerações à frente, então está começando um jogo inteiramente novo. Façam uma nova <b>primeira sessão</b> (página 32). Conversem sobre como o cenário mudou à luz do jogo que acabou de terminar. Criem e apresentem PJs novos, tendo essas mudanças em mente. Façam perguntas sobre a linha do tempo entre o jogo anterior e este. Deixem a primavera irromper e preparem uma primeira aventura.
+P	Em jogo, continuem fazendo perguntas e preenchendo a linha do tempo entre os jogos. Salpiquem este jogo com ligações ao anterior.
+P	Incentive os jogadores a fazer o mesmo. Revisitem a ruína onde o Brutamontes anterior morreu.
+P	Revele que o pai desta Raposa era aquele garoto que andava atrás dos PJs antigos. Puxe um suspiro quando a Marechal ungir sua tropa com pigmento vermelho, em honra à cicatriz carregada pelo Aspirante a Herói da geração anterior.
 PAGE	590
-H2	Shake-ups
-P	The PCs all die, or leave Stonetop for good. The village is razed and its people scattered. A cataclysm is unleashed upon the world. Big changes like these can upend your game. Don't panic. Talk to the players about how they'd like to proceed.
-P	You have two basic options:
-H2	Option 1: End the game
-P	The right answer is often the simplest: call it quits. If the story feels complete, or the shake-up has stolen the game's momentum, then let the game end. Consider using the <b>Denouement</b> (page 595) move if that kind of closure feels right.
-P	Take a break. Play something else for a while. You can always come back to <i>Stonetop</i> later, either with a whole new game or by doing a time skip and starting up a few decades or generations later.
-H2	Option 2: Pivot
-P	Keep playing, adjusting the game to reflect the shake-up. Skip forward an appropriate amount of time (see previous page). Make any mechanical changes you need. The specifics will vary case by case.
-P	Pivots like this can be hard. They make you rethink the game's core assumptions. You have to update rules and handouts. You're basically designing a new game. But if you and your players are down for it, it can be rewarding and fun as hell.
+H2	Reviravoltas
+P	Os PJs morrem todos, ou deixam Stonetop para sempre. A aldeia é arrasada e seu povo, espalhado. Um cataclismo é solto sobre o mundo. Mudanças grandes assim podem virar seu jogo de cabeça para baixo. Não entre em pânico. Converse com os jogadores sobre como eles gostariam de seguir.
+P	Você tem duas opções básicas:
+H2	Opção 1: Encerrar o jogo
+P	A resposta certa muitas vezes é a mais simples: parar por aqui. Se a história parece completa, ou se a reviravolta roubou o impulso do jogo, deixe o jogo terminar. Pense em usar o movimento <b>Desenlace</b> (página 595), se esse tipo de fechamento parecer certo.
+P	Dê uma pausa. Joguem outra coisa por um tempo. Vocês sempre podem voltar a <i>Stonetop</i> depois, seja com um jogo inteiramente novo, seja com um salto no tempo, recomeçando algumas décadas ou gerações adiante.
+H2	Opção 2: Virar a chave
+P	Continuem jogando, ajustando o jogo para refletir a reviravolta. Salte adiante um tanto adequado de tempo (veja a página anterior). Faça as mudanças mecânicas que precisar. As especificidades variam caso a caso.
+P	Viradas assim podem ser difíceis. Elas fazem você repensar as premissas centrais do jogo. Você precisa atualizar regras e encartes. Está basicamente projetando um jogo novo. Mas, se você e seus jogadores toparem, pode ser recompensador e divertidíssimo.
 HR
-P	<i>The PCs have left Stonetop to help allied</i> <i>Hillfolk clans in a war against their</i> <i>rivals. I write up a new steading playbook for the ally's war-camp, skip ahead</i> <i>a few months, and write love letters to</i> <i>establish the new situation. The next few</i> <i>seasons might involve stealth missions,</i> <i>attempts to secure resources, and pitched</i> <i>battles. When the war ends and the</i> <i>PCs head home, I'll write love letters to</i> <i>determine what happened while they</i> <i>were gone.</i>
+P	<i>Os PJs deixaram Stonetop para ajudar clãs aliados</i> <i>do Povo das Colinas numa guerra contra seus</i> <i>rivais. Escrevo um livreto de povoado novo para o acampamento de guerra do aliado, salto adiante</i> <i>alguns meses e escrevo cartas de amor para</i> <i>estabelecer a situação nova. As próximas</i> <i>estações podem envolver missões furtivas,</i> <i>tentativas de garantir recursos e batalhas</i> <i>campais. Quando a guerra acabar e os</i> <i>PJs voltarem para casa, vou escrever cartas de amor para</i> <i>determinar o que aconteceu enquanto eles</i> <i>estavam fora.</i>
 HR
-P	<i>The PCs have all died trying to stop the</i> <i>release of</i> <b><i>Y'aaw'kara</i></b> <i>(</i>Book II<i>, page</i>
-P	<i>421). A new ice age is unleashed and</i> <i>the Howling Curse plagues the land. We</i> <i>decide to skip ahead a decade or so and</i> <i>start fresh with all new PCs, and discuss</i> <i>how Stonetop has adapted to the harsh</i> <i>new climate, updating its resources and</i> <i>potential improvements accordingly.</i> <i>I rewrite the Seasons Change move,</i> <i>update the inventory inserts and gear</i> <i>lists, and give everyone a custom insert</i> <i>for tracking the</i> <b><i>Howling Curse</i></b> <i>(</i>Book
-P	II<i>, page 492).</i>
+P	<i>Os PJs morreram todos tentando impedir a</i> <i>libertação de</i> <b><i>Y'aaw'kara</i></b> <i>(</i>Livro II<i>, página</i>
+P	<i>421). Uma nova era do gelo é desencadeada e</i> <i>a Maldição Uivante assola a terra. Decidimos</i> <i>saltar uma década mais ou menos e</i> <i>recomeçar com PJs inteiramente novos, e conversamos</i> <i>sobre como Stonetop se adaptou ao novo clima</i> <i>severo, atualizando seus recursos e</i> <i>melhorias possíveis de acordo.</i> <i>Reescrevo o movimento As Estações Mudam,</i> <i>atualizo os encartes de inventário e as listas de</i> <i>equipamento e dou a todos um encarte próprio</i> <i>para acompanhar a</i> <b><i>Maldição Uivante</i></b> <i>(</i>Livro
+P	II<i>, página 492).</i>
 HR
-P	<i>The PCs have been exiled from Stonetop</i> <i>and have taken up lives as wandering</i> <i>adventurers. The steading playbook will</i> <i>no longer be relevant to them; most of</i> <i>the Homefront moves no longer apply,</i> <i>or would be much harder to trigger, so I</i> <i>rewrite some of the questions in the End</i> <i>of Session move, and update Level Up to</i> <i>require "a quiet stretch of downtime," instead of "a quiet stretch at home." All in</i> <i>all, the game will now play out more like</i> <i>a traditional fantasy-adventure RPG.</i>
+P	<i>Os PJs foram exilados de Stonetop</i> <i>e passaram a viver como aventureiros</i> <i>errantes. O livreto do povoado já não</i> <i>vai ser relevante para eles; a maioria dos</i> <i>movimentos do Lar já não se aplica,</i> <i>ou seria bem mais difícil de disparar, então</i> <i>reescrevo algumas das perguntas do movimento de Fim</i> <i>de Sessão e atualizo Subir de Nível para</i> <i>exigir "um período tranquilo de folga", em vez de "um período tranquilo em casa". No</i> <i>fim das contas, o jogo agora vai correr mais como</i> <i>um RPG tradicional de fantasia e aventura.</i>
 HR
 PAGE	591
-H2	Ending your game
-P	All stories end. Maybe the story of your Stonetop burns bright and fast. Maybe it stretches on for years.
-P	Maybe it just… fizzles out. And that's fine.
-P	Not every story gets a good ending.
-P	Ideally, though, you'll see the end coming. Maybe real life forces your hand, and one or more of your players are moving, or having a kid, or starting school or a new job and they can't play anymore. Maybe you sense the game's story arcing towards its conclusion. Or maybe you or some of your players are just getting the itch to play something else.
-H2	Planning for the end
-P	When you see the end coming, you have an opportunity. An opportunity for climax, denouement, and a fitting farewell. A chance to give your shared story the final chapter it deserves.
-H2	1	Schedule a planning session
-P	Once you realize it's time to start ending the game, schedule a planning session with your players. Expect it to take an hour or two, so it might just be part of a normal session.
-P	Try to make sure everyone can be there. If you can, give yourself some lead-time so that you and your players can prep.
-H2	2	Prepare
-P	Ask your players to review the questions below, and give them some thought before the planning session. If they can't attend, ask them to send you their wish lists beforehand. Encourage everyone else to come with notes, or at least thoughts.
-P	Before the game ends:
-Q	What arcs do you want resolved?
-Q	What questions do you want to see answered?
-Q	What scenes do you hope to have?
-Q	Are there any moves, artifacts, or arcana you'd love to see in action?
-Q	What goals do you want a chance for your PC to accomplish?
-P	If you have time, provide the players with a list of hanging threads for reference. That includes active <b>threats</b> (page 277), stuff from your <b>"I wonder…"</b> list (page 33), unsolved mysteries and unfished projects, player wishes yet to be granted, and so forth.
-P	Give these questions some thought, yourself. You're allowed to have opinions!
-H2	3	Assemble the wishlist
-P	Once you've gathered for the planning session, refer to the questions from step 2, above. Print them out if playing in person, or post them somewhere everyone can see. The goal here is to establish each player's wishlist of things they'd like to do, resolve, or see in play before the game ends.
-P	If anyone is absent and sent you their wish list, read it off now. After that, go around the group and have each player share their list. Ask for clarification if needed, but try to limit discussion. You want everyone to freely share what they want.
-P	Take notes, ideally somewhere public.
+H2	Encerrando seu jogo
+P	Toda história acaba. Talvez a história da sua Stonetop arda intensa e breve. Talvez se estenda por anos.
+P	Talvez ela simplesmente… se apague. E tudo bem.
+P	Nem toda história ganha um bom final.
+P	O ideal, porém, é que você veja o fim chegando. Talvez a vida real force a barra e um ou mais jogadores se mudem, tenham um filho, comecem a faculdade ou um emprego novo e não possam mais jogar. Talvez você perceba a história do jogo se curvando rumo à conclusão. Ou talvez você ou alguns jogadores estejam só com vontade de jogar outra coisa.
+H2	Planejando o fim
+P	Quando você vê o fim chegando, tem uma oportunidade. Uma oportunidade de clímax, de desenlace e de uma despedida à altura. Uma chance de dar à história que vocês partilharam o capítulo final que ela merece.
+H2	1	Marque uma sessão de planejamento
+P	Quando perceber que é hora de começar a encerrar o jogo, marque uma sessão de planejamento com seus jogadores. Espere que leve uma ou duas horas, então pode ser só parte de uma sessão normal.
+P	Tente garantir que todos possam estar lá. Se puder, dê alguma antecedência para que você e seus jogadores se preparem.
+H2	2	Prepare-se
+P	Peça aos seus jogadores que leiam as perguntas abaixo e pensem nelas antes da sessão de planejamento. Se não puderem comparecer, peça que mandem as listas de desejos antes. Incentive todo mundo a chegar com anotações, ou ao menos com ideias.
+P	Antes de o jogo acabar:
+Q	Que arcos você quer ver resolvidos?
+Q	Que perguntas você quer ver respondidas?
+Q	Que cenas você espera ter?
+Q	Há movimentos, artefatos ou arcanos que você adoraria ver em ação?
+Q	Que objetivos você quer dar a seu PJ a chance de cumprir?
+P	Se tiver tempo, dê aos jogadores uma lista de pontas soltas para consulta. Isso inclui <b>ameaças</b> ativas (página 277), coisas da sua lista <b>"fico pensando…"</b> (página 33), mistérios não resolvidos e projetos inacabados, desejos de jogador ainda não atendidos e por aí vai.
+P	Pense você mesmo nessas perguntas. Você tem direito a ter opiniões!
+H2	3	Monte a lista de desejos
+P	Reunidos para a sessão de planejamento, consultem as perguntas do passo 2, acima. Imprimam-nas, se estiverem jogando presencialmente, ou publiquem em algum lugar que todos vejam. O objetivo aqui é estabelecer a lista de desejos de cada jogador: coisas que gostariam de fazer, resolver ou ver em jogo antes de ele acabar.
+P	Se alguém estiver ausente e tiver mandado a lista, leia-a agora. Depois, dê a volta no grupo e peça a cada jogador que compartilhe a sua. Peça esclarecimentos se precisar, mas tente limitar a discussão. Você quer que todos digam livremente o que querem.
+P	Anote tudo, de preferência em algum lugar visível a todos.
 PAGE	592
-P	Keep track of which players wished for what. If you have ideas about how you'll accomplish these things, great—maybe jot that down privately. But keep the focus on what folks want for now.
-P	If you have any of your own wishes that haven't been mentioned, share those now.
-P	Open the floor for discussion. Let folks ask questions, make suggestions, endorse other folk's wishes, and reconsider their own. If your players wish for conflicting things, talk it over and come to a compromise.
-P	If they wish for something infeasible in the time you have, try to identify what is feasible instead.
-P	Prioritize. Everyone (including you) can pick one "must-have" item, and up to two "important" items. Give folks the chance to strike off items they added earlier that they don't actually care about. Everything else is low priority, a "nice to have."
-P	To be clear: this is a wish list, not a list of promises. You're all agreeing to try and fit these things in the game, but there's no guarantee how exactly they'll play out when that happens. "Deal with Brennan
-P	& the trade embargo" just means a chance to tie off those threads. Hopefully the PCs will succeed. But they might not!
-H2	Driving toward resolution
-P	From now on, push play towards those must-have and important wishes. Work them into your prep. Keep the wish list handy as a reference during play, and get to the "nice to have" wishes as you can.
-P	Make use of techniques for <b>increasing the</b> <b>pace</b> (page 582). Skip over the familiar.
-P	Zoom out and gloss over stuff where you can. Frame scenes aggressively. Make GM
+P	Registre quem desejou o quê. Se você tiver ideias de como realizar essas coisas, ótimo—talvez anote isso em particular. Mas, por ora, mantenha o foco no que o pessoal quer.
+P	Se você tiver desejos próprios que não foram mencionados, compartilhe agora.
+P	Abra a palavra para a discussão. Deixe o pessoal fazer perguntas, dar sugestões, apoiar os desejos dos outros e repensar os próprios. Se seus jogadores desejarem coisas conflitantes, conversem e cheguem a um meio-termo.
+P	Se desejarem algo inviável no tempo que têm, tentem identificar o que é viável no lugar.
+P	Priorizem. Cada um (inclusive você) pode escolher um item "indispensável" e até dois itens "importantes". Deem ao pessoal a chance de riscar itens que colocaram antes e com os quais não se importam de verdade. Todo o resto é de baixa prioridade, um "seria legal".
+P	Para deixar claro: isto é uma lista de desejos, não uma lista de promessas. Vocês estão concordando em tentar encaixar essas coisas no jogo, mas não há garantia de como elas vão se desenrolar quando acontecerem. "Resolver o assunto Brennan
+P	e o embargo comercial" só significa uma chance de amarrar essas pontas. Tomara que os PJs consigam. Mas podem não conseguir!
+H2	Rumo à resolução
+P	De agora em diante, empurre o jogo rumo a esses desejos indispensáveis e importantes. Encaixe-os na sua preparação. Mantenha a lista de desejos à mão como referência durante o jogo e chegue aos desejos "seria legal" conforme der.
+P	Use as técnicas para <b>acelerar o</b> <b>ritmo</b> (página 582). Pule o que já é conhecido.
+P	Abra o foco e resuma o que der. Enquadre cenas com agressividade. Faça movimentos
 HR
-P	<i>I'm starting a new job soon, and won't</i> <i>be able to keep running the game. I</i> <i>reckon we have time for maybe four</i> <i>more sessions. Prior to the next session,</i> <i>I send out the questions and my list of</i> <i>hanging threads, and ask folks to create</i> <i>wishlists. During our planning session,</i> <i>our discussion results in these priorities:</i>
-P	MUST-HAVES
-P	• Deal with Brennan & the trade embargo (Rhianna, me) • See the Mighty Servant in play (Vahid) • Tell Caradoc how I feel (Blodwen) • Prove himself to the village, once and for all (Caradoc)
-P	IMPORTANT
-P	• Resolve Nia's spider connection (me, Blodwen) • Try to make peace with Owain (Rhianna) • Settle things with Maire (Vahid) • Use Big Damn Hero (Caradoc) • Have it out with Vahid (Rhianna)
-P	NICE TO HAVE
-P	• Tegwen gets her comeuppance (Blodwen, Rhianna) • Get back at Mutra (Vahid) • See Eira in retirement (Rhianna) • Morwenna's wedding (Caradoc) • Punch Brennan's face (Caradoc)
+P	<i>Vou começar num emprego novo em breve e não</i> <i>vou conseguir continuar mestrando o jogo. Acho</i> <i>que temos tempo para umas quatro</i> <i>sessões a mais. Antes da próxima sessão,</i> <i>mando as perguntas e minha lista de</i> <i>pontas soltas e peço que o pessoal monte</i> <i>listas de desejos. Na nossa sessão de planejamento,</i> <i>a discussão resulta nestas prioridades:</i>
+P	INDISPENSÁVEIS
+P	• Resolver o assunto Brennan e o embargo comercial (Rhianna, eu) • Ver o Servo Poderoso em jogo (Vahid) • Dizer a Caradoc o que sinto (Blodwen) • Provar seu valor para a aldeia, de uma vez por todas (Caradoc)
+P	IMPORTANTES
+P	• Resolver a ligação de Nia com as aranhas (eu, Blodwen) • Tentar fazer as pazes com Owain (Rhianna) • Acertar as contas com Maire (Vahid) • Usar Herói pra Valer (Caradoc) • Ter uma conversa franca com Vahid (Rhianna)
+P	SERIA LEGAL
+P	• Tegwen receber o troco (Blodwen, Rhianna) • Se vingar de Mutra (Vahid) • Ver Eira aposentada (Rhianna) • O casamento de Morwenna (Caradoc) • Dar um soco na cara de Brennan (Caradoc)
 HR
-P	moves that resolve situations, rather than escalating or drawing them out. Resist the urge to introduce new threads or complications unless they directly relate to an item on the wish list. Step in when the players start to swirl.
-P	Focus. You're in the endgame, now.
+P	de Mestre que resolvam situações, em vez de escalá-las ou esticá-las. Resista à vontade de introduzir pontas ou complicações novas, a menos que se liguem diretamente a um item da lista de desejos. Intervenha quando os jogadores começarem a rodopiar.
+P	Foco. Vocês estão no fim do jogo agora.
 PAGE	593
 HR
-P	<i>If we're going to see the Mighty Servant</i> <i>on-screen, Vahid will need to acquire its</i> <i>aetherium helm and spend time with its</i> <i>chassis, assembling it. Dealing with Brennan and the trade embargo implies a direct</i> <i>confrontation. And if Caradoc is going to</i> <i>prove himself to the village, it should happen near Stonetop.</i>
-P	<i>We've got only two sessions left, so we jump</i> <i>to spring and I use love letters to set the</i> <i>scene: Morwenna's wedding (a subdued</i> <i>affair), Blodwen and Caradoc dancing,</i> <i>Brennan's goons blockading the West Road,</i> <i>a skeevy adventurer sneaking past to sell the</i> <i>aetherium helm to Vahid.</i>
-P	<i>During the session, Rhianna and Vahid</i> <i>have a row over his obsession with the Servant. The PCs and Rhianna's crew kill most</i> <i>of Brennan's men and drive off the rest.</i>
+P	<i>Se a gente vai ver o Servo Poderoso</i> <i>em cena, Vahid vai precisar conseguir o</i> <i>elmo de etério dele e passar um tempo com o</i> <i>chassi, montando tudo. Resolver o assunto Brennan e o embargo comercial implica um</i> <i>confronto direto. E, se Caradoc vai</i> <i>provar seu valor para a aldeia, isso deve acontecer perto de Stonetop.</i>
+P	<i>Só nos restam duas sessões, então pulamos</i> <i>para a primavera e uso cartas de amor para montar a</i> <i>cena: o casamento de Morwenna (uma cerimônia</i> <i>contida), Blodwen e Caradoc dançando,</i> <i>os capangas de Brennan bloqueando a Estrada Oeste,</i> <i>um aventureiro escroto se esgueirando para vender o</i> <i>elmo de etério a Vahid.</i>
+P	<i>Durante a sessão, Rhianna e Vahid</i> <i>brigam por causa da obsessão dele com o Servo. Os PJs e a tropa de Rhianna matam a maior parte</i> <i>dos homens de Brennan e enxotam o resto.</i>
 HR
-P	<i>Caradoc uses Big Damn Hero and crosses</i> <i>"Would-be" off his playbook. Vahid heads</i> <i>north to assemble the Mighty Servant. The</i> <i>session ends there.</i>
-P	<i>For the final session, we skip ahead to summer. Another round of love letters establish</i> <i>that Vahid is still assembling the Servant.</i> <i>Blodwen's and Caradoc's romance is going</i> <i>well. And Brennan is marching towards</i> <i>Stonetop with a force of Manmarcher</i> <i>mercenaries, intent on beating Stonetop</i> <i>into submission.</i>
-P	<i>Will Rhianna and Caradoc rally the village? Will Blodwen convince Nia to call</i> <i>on the spiders for aid? Will Vahid return</i> <i>with the Mighty Servant and help turn</i> <i>the tables? Will Caradoc punch Brennan in</i> <i>the face?</i>
-P	<i>I don't know, but we'll play to find out!</i>
+P	<i>Caradoc usa Herói pra Valer e risca</i> <i>"Aspirante a" do livreto. Vahid ruma para</i> <i>o norte para montar o Servo Poderoso. A</i> <i>sessão termina aí.</i>
+P	<i>Para a sessão final, saltamos para o verão. Outra rodada de cartas de amor estabelece</i> <i>que Vahid ainda está montando o Servo.</i> <i>O romance de Blodwen e Caradoc vai</i> <i>bem. E Brennan está marchando rumo a</i> <i>Stonetop com uma força de mercenários</i> <i>da Marcha, decidido a dobrar Stonetop</i> <i>na marra.</i>
+P	<i>Rhianna e Caradoc vão conseguir reunir a aldeia? Blodwen vai convencer Nia a chamar</i> <i>as aranhas para ajudar? Vahid vai voltar</i> <i>com o Servo Poderoso e ajudar a virar</i> <i>o jogo? Caradoc vai dar um soco na cara</i> <i>de Brennan?</i>
+P	<i>Não sei, mas vamos jogar para descobrir!</i>
 PAGE	594
-H2	The final sessions
-P	Figure out when your last session will be, and how many sessions you have before then. As you prep for those final sessions, keep the wishlist forefront in your mind.
-P	Look at what you need to cover and how many sessions you have left. Use <b>time</b> <b>skips</b> (page 588), <b>love letters</b> (page 568), and aggressive scene-framing to get the wishes on screen. If you don't see a way to do so, talk to your players and ask for ideas. If you think you have an idea, but it involves committing the PCs to a certain course of action, check in and make sure everyone is on board.
-P	Ignore moves, procedures, and rules that don't help you hit the wish list items in the time that remains. If the last session will hinge on a battle with Yaarowslow the Many in the ruins of Vor Svetelik, then don't bother with Seasons Change or the journey there or how many supplies the PCs have left.
-P	During the finale, especially: <b>go big and</b> <b>don't hold back</b>. Make bold GM moves that force the PCs to make hard choices, take desperate risks, and put it all on the line. When they roll a 6-, make it hurt.
-P	Now more than ever, <b>let things burn</b>.
-P	But also: <b>be a fan of the player characters</b>.
-P	Encourage boldness. Present them with opportunities. Give them all a chance to be heroes, one last time.
+H2	As sessões finais
+P	Descubram quando será a última sessão e quantas sessões faltam até lá. Ao preparar essas sessões finais, mantenha a lista de desejos em primeiro plano.
+P	Veja o que precisa cobrir e quantas sessões restam. Use <b>saltos no</b> <b>tempo</b> (página 588), <b>cartas de amor</b> (página 568) e enquadramento agressivo de cenas para pôr os desejos em cena. Se não enxergar um jeito, converse com seus jogadores e peça ideias. Se achar que tem uma ideia, mas ela envolve comprometer os PJs com certo curso de ação, converse antes e garanta que todos topem.
+P	Ignore movimentos, procedimentos e regras que não ajudem a cumprir os itens da lista de desejos no tempo que resta. Se a última sessão vai girar em torno de uma batalha com Yaarowslow, o Múltiplo, nas ruínas de Vor Svetelik, então não se preocupe com As Estações Mudam, nem com a viagem até lá, nem com quantos suprimentos sobraram aos PJs.
+P	No desfecho, em especial: <b>vá com tudo e</b> <b>não se segure</b>. Faça movimentos de Mestre ousados, que obriguem os PJs a fazer escolhas duras, correr riscos desesperados e apostar tudo. Quando tirarem 6-, faça doer.
+P	Agora mais do que nunca, <b>deixe tudo arder</b>.
+P	Mas também: <b>seja fã dos personagens jogadores</b>.
+P	Incentive a ousadia. Apresente oportunidades a eles. Dê a todos a chance de serem heróis, uma última vez.
 PAGE	595
-H2	The end
-P	When the final conflict ends and the dust starts to settle, take a breath. Then wrap up the current situation to whatever level of detail makes sense.
-P	Don't use any moves or mechanics. Just describe the scene and give the players space to say what they do, what happens next. If there are moments they want to play out, let them. If they have questions, answer them.
-P	Use what time remains to do this one last move, together.
-P	<b>DENOUEMENT</b>
-P	When <b><i>the game comes to an end</i></b>, go around the table. On your turn, pick a scene below and ask the player or the GM to describe it.
-P	When you <b><i>describe a scene</i></b>, make it involve your PC, an NPC important to them, or (if you're the GM) any NPC you like.
-B	A return home
-B	A funeral, a farewell, an ending
-B	A struggle, an absence, grief
-B	A time of rebuilding, renewal, hope
-B	A lasting change, a transition
-B	A beginning, a fresh start, a birth
-B	A memory, a story, a legend Go around as many times as you like.
-P	Change who you ask each time, or just pick a scene to describe yourself.
-P	When you're done, thank your friends, wish them well, and say goodbye.
+H2	O fim
+P	Quando o conflito final acabar e a poeira começar a baixar, respire fundo. Depois amarre a situação atual no nível de detalhe que fizer sentido.
+P	Não use movimentos nem mecânicas. Só descreva a cena e dê espaço para os jogadores dizerem o que fazem, o que acontece a seguir. Se houver momentos que eles queiram jogar, deixe. Se tiverem perguntas, responda.
+P	Use o tempo que restar para fazer este último movimento, juntos.
+P	<b>DESENLACE</b>
+P	Quando <b><i>o jogo chega ao fim</i></b>, deem a volta na mesa. No seu turno, escolha uma cena abaixo e peça ao jogador ou ao Mestre que a descreva.
+P	Quando você <b><i>descreve uma cena</i></b>, faça com que ela envolva seu PJ, um NPC importante para ele ou (se você for o Mestre) qualquer NPC que quiser.
+B	Uma volta para casa
+B	Um funeral, uma despedida, um fim
+B	Uma luta, uma ausência, o luto
+B	Um tempo de reconstrução, renovação, esperança
+B	Uma mudança duradoura, uma transição
+B	Um começo, um recomeço, um nascimento
+B	Uma lembrança, uma história, uma lenda Deem quantas voltas quiserem.
+P	Mude a quem você pede a cada vez, ou simplesmente escolha uma cena para descrever você mesmo.
+P	Quando terminarem, agradeça aos seus amigos, deseje-lhes o bem e diga adeus.
 P	The end.
