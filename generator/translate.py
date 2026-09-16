@@ -661,9 +661,9 @@ def _joined_memory(tm: TextMemory, en: list[str], tr: list[str]) -> None:
             # joined: the last move bullet followed by the prose under the
             # block's note. Short spans only — the key is an exact match, so
             # one that names nothing simply never comes up.
-            if 3 <= k <= 6:
+            if 3 <= k <= 8:
                 for j in range(1, k - 1):
-                    for skip in (1, 2):
+                    for skip in (1, 2, 3, 4):
                         if j + skip > k - 1:
                             break
                         kept = run[:j] + run[j + skip :]
