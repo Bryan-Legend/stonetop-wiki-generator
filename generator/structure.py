@@ -818,6 +818,13 @@ def auto_link_titles(html_text: str, articles: list[dict], current_slug: str | N
     return "".join(chunks)
 
 
+def _shown_name(name: str) -> str:
+    """A card's heading: the book sets it in caps or lowercase and the card
+    title-cases it; a translation is shown as its language writes it."""
+    tl = T(name)
+    return titlecase_name(name) if tl == name else tl
+
+
 def _roll_label(label: str) -> str:
     """A roll table is titled by the words after its dice. The book sets
     them lowercase and the table title-cases them; a translation is shown
@@ -877,9 +884,9 @@ def render_value_table(
     # The books set the head in two columns — the category on the left, the
     # word "value" over the value column — so split the title back apart and
     # put it in a header row, where it lines up with the values beneath it.
-    head_name = smart_title(
-        re.sub(r"\s*value\s*$", "", title, flags=re.I).strip()
-    )
+    head_raw = re.sub(r"\s*value\s*$", "", title, flags=re.I).strip()
+    head_tr = T(head_raw)
+    head_name = smart_title(head_raw) if head_tr == head_raw else head_tr
     return (
         f'<div class="value-table">'
         f"<table>"
@@ -2166,7 +2173,7 @@ def structure_html(
                         body_parts.append(_defmt(L2))
                     j += 1
                 if ic:
-                    haz_name = titlecase_name(bare.rstrip(":"))
+                    haz_name = _shown_name(bare.rstrip(":"))
                     hid = anchors.add(haz_name, caps_label=True)
                     parts_h = [
                         f'<div class="hazard-block" id="{html.escape(hid)}">',
