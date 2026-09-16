@@ -493,12 +493,18 @@ class TextMemory:
                     # willing to use them" / "Instinct to …").
                     for x in range(len(sa)):
                         for y in range(x + 1, len(sa) + 1):
-                            tm.add(
-                                " ".join(sa[x:y]),
-                                " ".join(sb[x:y]),
-                                derived=True,
-                                parts=[fa],
-                            )
+                            ja1 = " ".join(sa[x:y])
+                            jb1 = " ".join(sb[x:y])
+                            tm.add(ja1, jb1, derived=True, parts=[fa])
+                            # The block shows a label ("Instinct") apart
+                            # from the words that follow it.
+                            pa1 = _BOLD_PREFIX_RE.match(ja1)
+                            pb1 = _BOLD_PREFIX_RE.match(jb1)
+                            if pa1 and pb1:
+                                tm.add(
+                                    pa1.group(2), pb1.group(2),
+                                    derived=True, parts=[fa],
+                                )
                 # A move block sets its trigger apart from the words around
                 # it ("When you" / "take time to catch your breath" / ", ...").
                 ra, rb = _trigger_segments(fa), _trigger_segments(fb)
@@ -697,12 +703,31 @@ def _joined_memory(tm: TextMemory, en: list[str], tr: list[str]) -> None:
                         if j + skip > k - 1:
                             break
                         kept = run[:j] + run[j + skip :]
-                        tm.add(
-                            " ".join(x[0] for x in kept),
-                            " ".join(x[1] for x in kept),
-                            derived=True,
-                            parts=[x[0] for x in kept],
-                        )
+                        ka = " ".join(x[0] for x in kept)
+                        kb = " ".join(x[1] for x in kept)
+                        kparts = [x[0] for x in kept]
+                        tm.add(ka, kb, derived=True, parts=kparts)
+                        # The block may also cut that join at a bold label
+                        # ("Instinct to seek perfection …" + the prose).
+                        sa2 = _BOLD_SPLIT_RE.split(ka)
+                        sb2 = _BOLD_SPLIT_RE.split(kb)
+                        if 1 < len(sa2) == len(sb2):
+                            for x2 in range(len(sa2)):
+                                for y2 in range(x2 + 1, len(sa2) + 1):
+                                    ja2 = " ".join(sa2[x2:y2])
+                                    jb2 = " ".join(sb2[x2:y2])
+                                    tm.add(ja2, jb2, derived=True, parts=kparts)
+                                    # A stat line shows the label ("Instinct")
+                                    # apart from what follows it.
+                                    pa2 = _BOLD_PREFIX_RE.match(ja2)
+                                    pb2 = _BOLD_PREFIX_RE.match(jb2)
+                                    if pa2 and pb2:
+                                        tm.add(
+                                            pa2.group(2),
+                                            pb2.group(2),
+                                            derived=True,
+                                            parts=kparts,
+                                        )
             bare = re.sub(r"^[\s…\.]+", "", joined_en)
             if bare != joined_en:
                 tm.add(
