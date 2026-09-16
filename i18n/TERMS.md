@@ -312,6 +312,25 @@ Chapter title 玩游戏. Page refs kept as English `page N` so the linker still 
 | fragile / warm / reload / slow / thrown / dangerous / immobile | 易碎 / 保暖 / 装填 / 缓慢 / 投掷 / 危险 / 无法携带 |
 | Running the Game / Running combat | 主持游戏 / 主持战斗 |
 
+### Book II setting — zh-Hans (2026-09-16)
+
+Settled after the first Book II wave. Dedicated article wins for that subject's own name; majority across the language wins the rest. Swept 2026-09-16.
+
+| English | zh-Hans |
+|---|---|
+| Forge / Green / Rime / Stone / Tempest Lords | 熔炉领主 / 绿领主 / 霜领主 / 石领主 / 风暴领主 |
+| Barrow Builders / First Creators | 坟冢建造者 / 初代造物者 |
+| Dread River / Three Coven Lake / Blackwater Lake | 惧河 / 三巫湖 / 黑水湖 |
+| Whitefang Mountains / Frozen Wastes / Foothills | 白牙山脉 / 冰封荒原 / 山麓 |
+| Makers' Roads / waystones / the Maw / the Labyrinth | 匠造者之路 / 路石 / 巨口 / 迷宫 |
+| Vor Svetelik / Fomoraij / Ustrina / Crombil | 沃尔·斯维特里克 / 福莫莱 / 乌斯特里纳 / 克朗比尔 |
+| Time of Cataclysm / Stormcatcher / Howling Curse | 灾变时代 / 风暴捕手 / 嚎叫诅咒 |
+| orichalcum / black iron / tulpa | 山铜 / 黑铁 / 图尔帕 |
+| spirits of the wild / little gods / shade | 荒野精魂 / 小神 / 残影 |
+| hearth fantasy | 炉边奇幻 |
+| Red Groves | 红林 |
+| North / South Manmarch | 北曼马奇 / 南曼马奇 |
+
 ### Recurring sheet & insert vocabulary — tr · hu · fi
 
 | English | tr | hu | fi |
