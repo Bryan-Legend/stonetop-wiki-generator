@@ -94,6 +94,12 @@ def load_locales(only: list[str] | None = None) -> tuple[dict, list[dict]]:
                 continue
             if page.get("slug") and page.get("body_html"):
                 pages[page["slug"]] = page
+            else:
+                missing = [k for k in ("slug", "body_html") if not page.get(k)]
+                print(
+                    f"  ERROR: {code}/{path.name} NOT PUBLISHED: missing"
+                    f" {' and '.join(missing)}"
+                )
         # Translations of the corpus (i18n/corpus/<code>/…): rendered by the
         # build from the English lines, so only their meta is known here.
         # One outranks a JSON page of the same slug.

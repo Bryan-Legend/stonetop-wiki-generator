@@ -553,6 +553,14 @@ def main(argv: list[str] | None = None) -> None:
     # link to a page that will not exist.
     built_slugs = {a["slug"] for a in articles}
     for locale in lang_targets:
+        if wanted is None:
+            # Every book is being built, so a translation with no page is an
+            # orphan (a renamed slug, a typo in the file name), not a filter.
+            for slug in sorted(set(locale["pages"]) - built_slugs):
+                print(
+                    f"  ERROR: {locale['code']}/{slug} NOT PUBLISHED: no English"
+                    " page has that slug (renamed, or a misnamed translation file?)"
+                )
         locale["pages"] = {
             slug: page
             for slug, page in locale["pages"].items()
@@ -778,6 +786,11 @@ def main(argv: list[str] | None = None) -> None:
                 for note in notes:
                     print(f"  i18n: {note}")
                 if page_tr is None:
+                    print(
+                        f"  ERROR: {locale['code']}/{slug} NOT PUBLISHED: the translation"
+                        " does not align with the English (see the problems above);"
+                        f" fix it and re-run: python i18n/corpus_xlate.py apply {locale['code']} {slug}"
+                    )
                     del locale["pages"][slug]
                     continue
                 if art.get("children") and art.get("kind") == "article":
