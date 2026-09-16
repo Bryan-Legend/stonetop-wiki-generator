@@ -157,7 +157,11 @@ def social_meta_html(
         '  <meta name="twitter:card" content="summary">',
     ]
     for alt in alternates or []:
-        href = base + "/" + alt["path"].lstrip("/")
+        # ``url`` overrides ``path`` where the address to index and the address
+        # to link to differ: the home page is canonically the bare directory,
+        # but a link has to say index.html or it breaks when the wiki is opened
+        # off a disk.
+        href = base + "/" + alt.get("url", alt["path"]).lstrip("/")
         tags.append(
             f'  <link rel="alternate" hreflang="{e(alt["hreflang"])}" '
             f'href="{e(href)}">'
@@ -165,7 +169,8 @@ def social_meta_html(
     if alternates:
         # x-default is what a reader who matches no listed language gets.
         # alternates[0] is the source language (English) by construction.
-        default = base + "/" + alternates[0]["path"].lstrip("/")
+        first = alternates[0]
+        default = base + "/" + first.get("url", first["path"]).lstrip("/")
         tags.append(
             f'  <link rel="alternate" hreflang="x-default" '
             f'href="{e(default)}">'
@@ -854,6 +859,37 @@ HOME_FALLBACK = {
 }
 
 
+def home_alternates(source: dict, targets: list[dict]) -> list[dict]:
+    """The home page's language cluster — English first, then every language
+    that has a home page.
+
+    The English home page is built by hand rather than through ``page_shell``
+    (it is a card grid, not an article), which is how it went out with no
+    hreflang and no language switcher while all twenty translations linked
+    back up to it. One cluster, built here, is what keeps the set reciprocal.
+    """
+    live = [t for t in targets if t.get("pages")]
+    if not live:
+        return []
+    return [
+        {
+            "hreflang": source.get("code") or "en",
+            "path": "index.html",
+            "url": "",  # canonically the bare directory
+            "code": source.get("code") or "en",
+            "endonym": source.get("endonym") or "English",
+        }
+    ] + [
+        {
+            "hreflang": t["code"],
+            "path": f"{t['code']}/index.html",
+            "code": t["code"],
+            "endonym": t.get("endonym") or t["code"],
+        }
+        for t in live
+    ]
+
+
 def write_localized_index(
     out: Path,
     articles: list[dict],
@@ -873,22 +909,7 @@ def write_localized_index(
     live = [t for t in targets if t.get("pages")]
     if not live:
         return written
-    home_alts = [
-        {
-            "hreflang": source.get("code") or "en",
-            "path": "index.html",
-            "code": source.get("code") or "en",
-            "endonym": source.get("endonym") or "English",
-        }
-    ] + [
-        {
-            "hreflang": t["code"],
-            "path": f"{t['code']}/index.html",
-            "code": t["code"],
-            "endonym": t.get("endonym") or t["code"],
-        }
-        for t in live
-    ]
+    home_alts = home_alternates(source, targets)
     for locale in live:
         code = locale["code"]
         lang_dir = out / code
@@ -1059,7 +1080,19 @@ def ensure_wiki_chrome(out: Path) -> None:
         )
     print("  wiki chrome: css/, js/wiki.js, images/icons/ (in place)")
 
-def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> None:
+def write_index_custom(
+    articles: list[dict],
+    previews: dict,
+    out_path: Path,
+    *,
+    alternates: list[dict] | None = None,
+) -> None:
+    """The English home page.
+
+    ``alternates`` is the home page's language cluster (``home_alternates``),
+    which gives this page the hreflang set and the sidebar language switcher
+    every other page gets from ``page_shell``.
+    """
     nav_items = build_nav_items(articles)
 
     books_present = []
@@ -1115,6 +1148,10 @@ def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> 
         "Wonders by Jeremy Strandberg — moves, gear, threats, places, and "
         "arcana.",
         "",
+        alternates=alternates,
+    )
+    switch = lang_switch_html(
+        alternates or [], "en", UI_FALLBACK, rel_prefix=""
     )
 
     html_out = f"""<!DOCTYPE html>
@@ -1144,7 +1181,7 @@ def write_index_custom(articles: list[dict], previews: dict, out_path: Path) -> 
           {''.join(nav_items)}
         </ul>
       </nav>
-      {sidebar_foot_html()}
+      {sidebar_foot_html(lang_switch=switch)}
     </aside>
     <div class="main-wrap">
       <div class="content-scroll" id="main">

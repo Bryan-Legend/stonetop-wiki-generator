@@ -40,6 +40,7 @@ from .chrome import (
     page_shell,
     read_build_manifest,
     write_build_manifest,
+    home_alternates,
     write_index_custom,
     write_localized_index,
     write_localized_pages,
@@ -927,7 +928,12 @@ def main(argv: list[str] | None = None) -> None:
             encoding="utf-8",
         )
         print(f"  Search index: {len(search_docs)} pages, {len(search_json)//1024} KB")
-        write_index_custom(articles, previews, out / "index.html")
+        write_index_custom(
+            articles,
+            previews,
+            out / "index.html",
+            alternates=home_alternates(lang_source, lang_targets),
+        )
 
     page_files = ["index.html"] + [
         f"{a['slug']}.html" for a in articles
