@@ -90,12 +90,12 @@ HR
 C	<b>INTIMIDADOR</b> Quando você <b><i>Persuade usando violência ou ameaças</i></b>, você tem vantagem.
 HR
 CX	<b>DIFÍCIL DE MATAR</b>
-P	Quando você <b><i>está na Porta da Morte,</i></b> pode rolar +CON ou +nada (você escolhe). <b>Com 7-9</b>, pode marcar uma debilidade à sua escolha para recuperar 1 HP.
+P	Quando você <b><i>está em À Beira da Morte,</i></b> pode rolar +CON ou +nada (você escolhe). <b>Com 7-9</b>, pode marcar uma debilidade à sua escolha para recuperar 1 HP.
 HR
 C2	<b>IMPARÁVEL</b> ◇◇◇◇◇
 P	(Requer Difícil de Matar)
 P	Quando você <b><i>é reduzido a 0 HP em batalha</i></b>, pode continuar lutando. Cada vez que sofrer dano com 0 HP, marque 1. Se fosse recuperar HP enquanto luta, limpe uma marca em vez disso.
-P	Quando você <b><i>para de lutar</i></b>, role na Porta da Morte com -1 de penalidade para cada círculo marcado. Se sobreviver, limpe todos os seus círculos.
+P	Quando você <b><i>para de lutar</i></b>, role À Beira da Morte com -1 de penalidade para cada círculo marcado. Se sobreviver, limpe todos os seus círculos.
 HR
 C	<b>PURO MÚSCULO</b> (Requer Força +2 ou mais) Quando você <b><i>faz um ataque corpo a corpo ou de arremesso</i></b>, ele é <i>vigoroso</i> e <i>cruento</i>. Se já fosse <i>vigoroso</i> e/ou <i>cruento</i>, fica ainda mais.
 PAGE	115

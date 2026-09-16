@@ -9,7 +9,7 @@ PAGE	168
 P	Há dezenas de maneiras de mestrar um RPG. Há uma maneira específica de conduzir <i>Stonetop</i>. É esta. O resto do jogo é construído sobre essa abordagem.
 P	Lembre-se: <b>o jogo é uma conversa</b>.
 P	Você vai dizer coisas, os outros jogadores vão dizer coisas. Vocês vão fazer perguntas uns aos outros, interromper, falar por cima. As regras do jogo entram em cena em momentos específicos e mostram para onde a conversa vai.
-P	Como Mestre, você tem um papel especial na conversa. <b>É seu trabalho descrever o</b> <b>mundo, dizer o que acontece e interpretar</b> <b>monstros e PdMs</b>. Você vai facilitar e tomar decisões. Vai pedir opiniões. Vai enquadrar cenas e apontar os holofotes. O jogo investe você, o Mestre, com muito poder — e muita responsabilidade.
+P	Como Mestre, você tem um papel especial na conversa. <b>É seu trabalho descrever o</b> <b>mundo, dizer o que acontece e interpretar</b> <b>monstros e NPCs</b>. Você vai facilitar e tomar decisões. Vai pedir opiniões. Vai enquadrar cenas e apontar os holofotes. O jogo investe você, o Mestre, com muito poder — e muita responsabilidade.
 H2	Sua agenda
 P	Estes são seus objetivos ao conduzir <i>Stonetop</i>:
 B	Retratar um mundo rico e misterioso
@@ -30,7 +30,7 @@ B	Enquadre a ação
 B	Descreva o ambiente
 B	Dê detalhes e especificidades
 B	Faça perguntas, peça opiniões
-B	Interprete PdMs e monstros
+B	Interprete NPCs e monstros
 B	Responda perguntas, esclareça
 P	<b>2) Faça um movimento suave de Mestre</b>
 P	Provoque ação e/ou aumente a tensão.
@@ -80,8 +80,8 @@ P	"Rhianna, que traço te salta aos olhos nesse bandido? Tipo, o que o diferenci
 P	Faça perguntas sobre o que eles estão fazendo e o que estão tramando, sobre como passam o tempo e com quem andam, e assim por diante.
 P	Quando estiverem numa expedição, pergunte a ordem de marcha. Quando Acamparem, pergunte o que estão comendo, como é o acampamento, quem fica em qual vigília, etc.
 P	Faça perguntas sobre o que eles estão pensando e sentindo. "Vahid, o que está passando pela sua cabeça?" "Rhianna, o que mais está te preocupando agora?"
-H3	Interprete PdMs e monstros
-P	Se há personagens do mestre (PdMs) envolvidos, descreva-os. Diga o que estão fazendo. Se os PJs interagirem com eles, diga como os PdMs respondem. Fale com a voz deles e diga o que eles dizem. Se isso for intimidante para você, ou se você só quiser ir direto ao ponto, então <i>descreva</i> o que eles dizem em vez de dizer de fato.
+H3	Interprete NPCs e monstros
+P	Se há personagens não jogadores (NPCs) envolvidos, descreva-os. Diga o que estão fazendo. Se os PJs interagirem com eles, diga como os NPCs respondem. Fale com a voz deles e diga o que eles dizem. Se isso for intimidante para você, ou se você só quiser ir direto ao ponto, então <i>descreva</i> o que eles dizem em vez de dizer de fato.
 P	Se a situação inclui monstros — feras, espíritos, crinwin e afins — então interprete-os também. Descreva-os: quão grandes são, como se movem, que som e que cheiro têm. Diga o que fazem, no que estão concentrados. Diga como respondem aos PJs.
 H3	Responda perguntas, esclareça
 P	Os jogadores vão te interromper e fazer perguntas. Seja honesto e generoso com a verdade e os detalhes. Se a resposta não for clara para os PJs, diga isso e conte o que seria preciso para descobrir. Seu trabalho é <b>retratar um mundo rico e misterioso</b>, não fazê-los saltar obstáculos e adivinhar o que você está pensando.
@@ -94,14 +94,14 @@ P	Escolha um dos seus <b>movimentos de Mestre</b> (página 178) e faça isso.
 P	Para provocar ação: diga que algo ruim está prestes a acontecer, ou está acontecendo, mas <b>dê aos PJs uma chance</b> <b>de fazer algo a respeito</b>. "Assim que sua mão encontra o cabo da faca, o crinwin solta um 'hiissssss' e salta, com os dedos indo para a sua garganta, o que você faz?"
 P	Você também pode provocar ação <b>oferecendo</b> <b>uma oportunidade</b> a eles, ou apresentando opções e <b>pedindo que escolham</b>.
 P	"Certo, ele passou rolando por você. Está surpreso e você tem um instante. Você pode pular nas costas dele e tentar apunhalá-lo. Ou dar o fora dali. O que você faz?"
-P	Numa cena social, seus PdMs podem pedir ou exigir alguma coisa. Podem dizer algo vulnerável ou emocionado e então olhar para o PJ, esperando uma reação.
+P	Numa cena social, seus NPCs podem pedir ou exigir alguma coisa. Podem dizer algo vulnerável ou emocionado e então olhar para o PJ, esperando uma reação.
 P	Movimentos suaves nem sempre provocam ação.
 P	Às vezes eles <b>só aumentam a tensão</b>.
 P	Você pode gastar os recursos deles, prenunciar encrenca ou acrescentar encrenca a uma cena de um jeito que não dá para responder na hora. "Vocês estão aqui embaixo faz um tempo, suas tochas estão começando a acabar." Ou "Há mais um tremor. Um pouco de terra cai do teto.
 P	O que você faz?"
 H2	3	"O que você faz?"
 P	Depois de fazer um movimento suave de Mestre, pergunte <b>"O que você faz?"</b> Isso devolve a conversa ao(s) jogador(es) e os convida a dizer algo.
-P	Você não precisa dizer literalmente "O que você faz?". Às vezes o seu movimento já inclui uma pergunta. Ao interpretar um PdM, você pode fazer o movimento e simplesmente olhar para os jogadores com expectativa. Mas, se estiver em dúvida, pergunte: "O que você faz?"
+P	Você não precisa dizer literalmente "O que você faz?". Às vezes o seu movimento já inclui uma pergunta. Ao interpretar um NPC, você pode fazer o movimento e simplesmente olhar para os jogadores com expectativa. Mas, se estiver em dúvida, pergunte: "O que você faz?"
 P	Se eles disserem algo que não faz sentido — algo que você considera impossível, inválido ou pouco razoável — diga isso a eles. Esclareça a ficção. Se insistirem, <b>diga a</b> <b>eles as consequências e/ou os requisitos</b>. Pergunte se ainda querem fazer aquilo.
 P	Se fizerem perguntas, responda. Se as respostas não forem óbvias, <b>diga a eles os</b> <b>requisitos</b>. "Você vai ter que fuçar um pouco e Buscar Discernimento." Depois devolva a bola: "O que você faz?"
 H2	Jogadores se antecipando
@@ -163,7 +163,7 @@ P	Cenas de muita tensão e muita ação funcionam bem com cortes curtos e rápid
 PAGE	176
 H2	Cenas e jogo solto
 P	Durante o jogo, a conversa vai naturalmente alternar entre cenas e jogo solto. Não é uma distinção formal, nem sequer sempre consciente. Muitas vezes você vai alternar entre as duas de modo natural e instintivo.
-P	<b>Cenas são um close</b>. Elas trazem personagens específicos num lugar específico num momento específico. Você acompanha a ação momento a momento. Os detalhes são abundantes e precisos. Os jogadores falam na pele dos personagens, e você interpreta os PdMs na pele deles também.
+P	<b>Cenas são um close</b>. Elas trazem personagens específicos num lugar específico num momento específico. Você acompanha a ação momento a momento. Os detalhes são abundantes e precisos. Os jogadores falam na pele dos personagens, e você interpreta os NPCs na pele deles também.
 P	Mesmo que você e os jogadores não falem de fato com a voz dos personagens, ainda assim vocês tratam da conversa num nível ampliado e detalhado.
 P	Durante uma cena, você pode descrever a clareira na mata onde os PJs se encontram, o som do riacho correndo e como o urso fareja, mexe as orelhas e vasculha a linha das árvores em busca de perigo. "Rhianna, você acha que ele ainda não te viu, o que você faz?"
 P	Cenas são cinematográficas e envolventes, às vezes tensas, muitas vezes empolgantes. Os jogadores podem se perder nos personagens e sentir emoções reais sobre o que está acontecendo.
@@ -215,7 +215,7 @@ P	Você também tem outras listas de movimentos de Mestre à disposição.
 P	Use seus <b>movimentos de exploração</b> quando os PJs estiverem numa <b>expedição</b> (página 317) ou <b>explorando um sítio</b> (veja página 352).
 P	Use <b>movimentos de ameaça</b> para trazer uma ameaça ou sua influência para uma cena, ou quando ela já estiver envolvida (página 284).
 P	Use <b>movimentos do lar</b> quando os PJs estiverem em casa ou passando um tempo em outro povoado, para fazer coisas interessantes acontecerem ali (veja página 502).
-P	Use movimentos específicos de um <b>perigo</b> (páginas 386, 401) ou de um <b>PdM</b> (página 449) quando esses elementos estiverem em jogo.
+P	Use movimentos específicos de um <b>perigo</b> (páginas 386, 401) ou de um <b>NPC</b> (página 449) quando esses elementos estiverem em jogo.
 PAGE	180
 H2	Exemplos de movimentos de Mestre
 H3	Anunciar encrenca
@@ -242,7 +242,7 @@ P	<i>"Ai, um 6-? Bom, vocês vasculham as colinas</i> <i>o resto do dia e... ach
 HR
 PAGE	181
 H3	Fazer uma pergunta provocativa
-P	Faça uma pergunta que force uma decisão ou uma resposta, mesmo que seja só uma resposta emocional ou a decisão de não agir. Você pode fazer a pergunta você mesmo ou colocá-la na boca de um dos seus PdMs. Como alternativa:
+P	Faça uma pergunta que force uma decisão ou uma resposta, mesmo que seja só uma resposta emocional ou a decisão de não agir. Você pode fazer a pergunta você mesmo ou colocá-la na boca de um dos seus NPCs. Como alternativa:
 P	faça uma pergunta que afirme a desgraça, mas que dê ao jogador a chance de criá-la.
 HR
 P	<i>"Rhianna, a Eira está com cara fechada e</i> <i>diz: 'O Garet está perdendo muito sangue. Não</i> <i>acho que ele vá aguentar, e vai nos atrasar</i> <i>de um jeito assustador. Você</i> <i>quer que eu faça o necessário?''</i>
@@ -253,7 +253,7 @@ P	<i>"Ai, um 4? Bom, acho que você consegue</i> <i>ofendê-la, tipo magoá-la d
 HR
 H3	Colocar alguém em apuros
 P	Esta é uma versão mais agressiva de <b>anunciar encrenca</b> — eles têm que fazer alguma coisa, agora, ou vai ficar feio.
-P	"Alguém" pode ser um PJ ou um PdM, e você pode brincar com os holofotes. Talvez a pessoa que você coloca em apuros não seja a que vai resolver.
+P	"Alguém" pode ser um PJ ou um NPC, e você pode brincar com os holofotes. Talvez a pessoa que você coloca em apuros não seja a que vai resolver.
 HR
 P	<i>"Quase! Você faz o salto, mas bate</i> <i>no galho. Escorrega e se segura por um triz. Você está pendurado naquele galho</i> <i>assim, ofegante, uns 25 metros de altura,</i> <i>e sua pegada está cedendo. O que</i> <i>você faz?"</i>
 HR
@@ -302,7 +302,7 @@ P	<i>"É, ela simplesmente não engole essa. Não tem</i> <i>jeito de você conv
 HR
 PAGE	184
 H3	Machucar alguém
-P	Inflija um ferimento específico e problemático a um PJ ou a um PdM de quem eles gostam. Algo mais do que apenas perder HP. Algo doloroso, sangrento, com consequências, ou as três coisas.
+P	Inflija um ferimento específico e problemático a um PJ ou a um NPC de quem eles gostam. Algo mais do que apenas perder HP. Algo doloroso, sangrento, com consequências, ou as três coisas.
 P	Usar este movimento significa, sem dúvida, que a vítima sofre dano, e contra um PJ pode significar também que ele marque uma debilidade.
 P	Significa <i>definitivamente</i> que agora ele tem um <b>ferimento problemático</b> (veja página 243). É parte da ficção, algo com que ele tem que lidar e algo que você pode usar como base para seus movimentos de Mestre.
 P	O quanto você os machuca depende da ficção, de o dano ter vindo de um 7+ ou de um 6-, do dano rolado e das etiquetas do dano (<i>sujo</i>, <i>forte</i>, etc.). Quando você os machuca porque tiraram 7-9 ao Cruzar Lâminas com um sujeito de porrete e só sofrem 2 de dano, isso vai ser bem diferente de um 6- contra um drake furioso causando 12 de dano <i>sujo</i>.
@@ -313,7 +313,7 @@ P	dentes de quinze centímetros e mandíbulas que esmagam árvores… se ela te 
 P	bom, você avisou. Diga adeus àquele braço e olá a um chafariz de sangue.
 P	Por outro lado, se você apresentou essa coisa como uma ameaça, mas não do tipo <i>arranca-braços</i>, num 7-9 você pode dizer "Ela morde, tem sangue por toda parte e começa a te sacudir.
 P	Tem uma parte estranha e calma do seu cérebro dizendo 'Ah, meu braço vai ser arrancado', mas o resto de você é só AAAGH. Sofra 1d10+3 de dano e marque <i>enfraquecido</i>. O que você faz?" Ainda é um movimento bem duro, eu diria, mas do qual eles podem se recuperar. Arrancar o braço sem aviso? Nada legal.
-P	Dito isso: fique à vontade para machucar PdMs de forma mais agressiva e brutal do que os PJs. Arrancar o braço de um <i>seguidor</i> (por exemplo) é ótimo para mostrar que os ataques dessa coisa são <i>sujos</i> e terríveis, aumentando as apostas sem tirar o protagonismo dos PJs. (Um conselho, porém: não brutalize um companheiro animal sem aviso; os jogadores ficam extremamente zelosos com seus bichos.)
+P	Dito isso: fique à vontade para machucar NPCs de forma mais agressiva e brutal do que os PJs. Arrancar o braço de um <i>seguidor</i> (por exemplo) é ótimo para mostrar que os ataques dessa coisa são <i>sujos</i> e terríveis, aumentando as apostas sem tirar o protagonismo dos PJs. (Um conselho, porém: não brutalize um companheiro animal sem aviso; os jogadores ficam extremamente zelosos com seus bichos.)
 P	Uma vez infligido, um ferimento ou lesão é parte da ficção. Pode fazer o PJ ter que Desafiar o Perigo para tentar algo que de outro modo não seria perigoso. Pode ser a justificativa ficcional de outro movimento que você faça. Pode te levar a fazer movimentos que agravem a lesão.
 P	Para mais sobre HP, dano, debilidades e ferimentos problemáticos, veja o capítulo <b>Dano e</b> <b>Cura</b> (página 237).
 PAGE	185
@@ -326,13 +326,13 @@ P	<i>"Ai, meu Deus. 9 de dano? E você ainda está de pé?</i> <i>É, ahn... ach
 HR
 H2	Causando dano e infligindo debilidades
 P	"Causar dano" não é um movimento de Mestre por si só; é algo que acontece como parte de outro movimento de Mestre. Quando você faz um movimento que envolve um personagem se machucar, apanhar, ser jogado por aí ou ferido, então cause dano a ele como parte desse movimento.
-P	Diga ao jogador quanto dano ele sofre (normalmente uma rolagem de dado, com base no monstro que o causou ou nas circunstâncias). Ele perde essa quantidade de HP. Se for reduzido a 0, está fora de ação e muito provavelmente na Porta da Morte.
+P	Diga ao jogador quanto dano ele sofre (normalmente uma rolagem de dado, com base no monstro que o causou ou nas circunstâncias). Ele perde essa quantidade de HP. Se for reduzido a 0, está fora de ação e muito provavelmente em À Beira da Morte.
 P	Da mesma forma, você não tem um movimento de "infligir uma debilidade". Você pode infligir uma debilidade quando <b>machuca alguém</b> ou <b>gasta os recursos deles</b>, ou quando faz qualquer outro movimento que resulte em alguém ficar <i>enfraquecido</i>, <i>atordoado</i> ou <i>abatido</i> ("Você percebe que suas mãos estão tremendo, suas pernas bambeando… marque <i>enfraquecido</i>").
 P	Para mais sobre dano e debilidades, veja o capítulo <b>Dano e Cura</b> (página 237).
 PAGE	186
 H3	Separá-los
 P	Divida o grupo. Ponha inimigos ou obstáculos entre eles. Faça alguém ficar para trás.
-P	Faça um seguidor ou outro PdM sumir.
+P	Faça um seguidor ou outro NPC sumir.
 P	Mande alguém rolando ladeira abaixo, tirando-o da luta. Esse tipo de coisa.
 P	Este movimento costuma combinar bem com <b>colocá-los</b> <b>em apuros</b>. Porque o que é pior do que estar em apuros? Estar <i>sozinho</i> em apuros.
 HR
@@ -400,7 +400,7 @@ P	<i>Ficamos sabendo que o Sawyl, o Curtidor, anda</i> <i>procurando um novo apr
 P	<i>Certo, vamos lá. Eu</i> <b><i>enquadro a ação</i></b> <i>e</i> <i>então</i> <b><i>descrevo o ambiente</i></b><i>. "Vocês</i> <i>quatro entram nos Contrafortes na tarde do</i> <i>segundo dia de viagem. As colinas se erguem das</i> <i>Planícies, e a estrada serpenteia entre elas.</i> <i>Árvores jovens e finas pontilham as encostas, ficando</i> <i>maiores e mais velhas conforme vocês avançam para dentro</i> <i>das colinas. Quando o sol baixa, vocês finalmente ganham</i> <i>uma bendita sombra." (Alguns desses detalhes</i> <i>vêm do almanaque; o resto eu inventei).</i>
 HR
 P	<i>É a primeira vez que vemos os Contrafortes no jogo, então eu</i> <b><i>faço perguntas</i></b> <i>como "Que diferença</i> <i>marcante você nota entre estas colinas</i> <i>e a Grande Mata?"</i>
-P	<i>Depois que eles respondem às minhas perguntas, eu aproximo a lente</i> <i>e enquadro uma cena de verdade,</i> <b><i>dando detalhes</i></b> <b><i>e especificidades</i></b><i>. "Vocês chegam ao acampamento logo depois do</i> <i>pôr do sol. Fica à beira do caminho, mas mesmo assim</i> <i>eles empilharam troncos derrubados como uma barricada.</i> <i>Estão todos amontoados em volta de uma fogueira de cozinha</i> <i>fraca. Todo mundo em silêncio, tenso, agarrando os</i> <i>machadinhos. Eles se assustam um pouco quando vocês</i> <i>aparecem, mas quando percebem que são vocês quatro,</i> <i>há um murmúrio de alívio. 'É a Rhianna',</i> <i>e "a Abençoada', e 'Graças a Tor.'" (Repare</i> <i>como estou focando em sentimentos e comportamentos</i> <i>mais do que no arranjo tático, porque são esses</i> <i>os detalhes que importam. Também estou</i> <b><i>interpretando meus PdMs</i></b><i>.) "Ei, Rhianna, quem</i> <i>você deixou no comando?' (Mais perguntas!)</i>
+P	<i>Depois que eles respondem às minhas perguntas, eu aproximo a lente</i> <i>e enquadro uma cena de verdade,</i> <b><i>dando detalhes</i></b> <b><i>e especificidades</i></b><i>. "Vocês chegam ao acampamento logo depois do</i> <i>pôr do sol. Fica à beira do caminho, mas mesmo assim</i> <i>eles empilharam troncos derrubados como uma barricada.</i> <i>Estão todos amontoados em volta de uma fogueira de cozinha</i> <i>fraca. Todo mundo em silêncio, tenso, agarrando os</i> <i>machadinhos. Eles se assustam um pouco quando vocês</i> <i>aparecem, mas quando percebem que são vocês quatro,</i> <i>há um murmúrio de alívio. 'É a Rhianna',</i> <i>e "a Abençoada', e 'Graças a Tor.'" (Repare</i> <i>como estou focando em sentimentos e comportamentos</i> <i>mais do que no arranjo tático, porque são esses</i> <i>os detalhes que importam. Também estou</i> <b><i>interpretando meus NPCs</i></b><i>.) "Ei, Rhianna, quem</i> <i>você deixou no comando?' (Mais perguntas!)</i>
 P	<i>"Hã. O Elios, eu acho."</i>
 P	<i>Faço meu movimento suave e</i> <b><i>faço uma pergunta</i></b> <b><i>provocativa</i></b><i>. "Legal. Ele diz: 'Só vocês</i> <i>quatro? Então, quê, acabou? Podemos ir para casa?'</i> <i>Os outros assentem, esperançosos.</i> <b><i>O que você faz?</i></b><i>"</i>
 P	<i>Rhianna me pergunta, jogadora para Mestre: "Espera,</i> <i>peraí. A minha tropa está aqui?" Eu</i> <b><i>respondo à</i></b> <b><i>pergunta dela</i></b><i>, digo que não estão, e pergunto</i> <i>de novo o que ela faz.</i>
@@ -410,7 +410,7 @@ PAGE	190
 HR
 P	(continuação da página anterior)
 P	<i>A situação está clara, mas pede um empurrão,</i> <i>então continuo falando como Elios e faço outro</i> <i>movimento suave (</i><b><i>anunciar encrenca</i></b><i>). "'Sabe,</i> <i>eles já deviam ter voltado a esta altura.' O que</i> <i>vocês fazem?"</i>
-P	<i>Os PJs discutem procurar a tropa, mas</i> <i>optam por ficar e conseguir mais informação. Eles ainda</i> <i>não disparam nenhum movimento (estão fazendo</i> <i>perguntas que os lenhadores responderiam de bom grado),</i> <i>então eu só</i> <b><i>interpreto meu PdM</i></b><i>. O Elios</i> <i>e a Terrwyn contam como ambos viram o</i> <i>demônio uma semana atrás, antes de o Andras ser</i> <i>atacado. "Tipo um bode grande, com um crânio</i> <i>humano, três olhos e um chifre enorme."</i>
+P	<i>Os PJs discutem procurar a tropa, mas</i> <i>optam por ficar e conseguir mais informação. Eles ainda</i> <i>não disparam nenhum movimento (estão fazendo</i> <i>perguntas que os lenhadores responderiam de bom grado),</i> <i>então eu só</i> <b><i>interpreto meu NPC</i></b><i>. O Elios</i> <i>e a Terrwyn contam como ambos viram o</i> <i>demônio uma semana atrás, antes de o Andras ser</i> <i>atacado. "Tipo um bode grande, com um crânio</i> <i>humano, três olhos e um chifre enorme."</i>
 P	<i>Eu ia</i> <b><i>oferecer uma oportunidade</i></b> <i>mas</i> <i>o Vahid se antecipa. "Eu já ouvi falar de</i> <i>algo assim?" Isso dispara Saber</i> <i>das Coisas, então ele rola +INT e tira 8.</i>
 P	<i>Sei da minha preparação que esse bode-demônio</i> <i>é na verdade um espírito guardião, e que a</i> <i>ameaça real é um hagr, então uso um dos meus</i> <i>movimentos de exploração e</i> <b><i>sugiro que há mais do que</i></b> <b><i>os olhos veem</i></b><i>. "Parece um shaksa, um espírito</i> <i>ou demônio em que o povo do norte acredita. Tipo</i> <i>um guardião de cemitérios? Ou talvez isso seja</i> <i>uma metáfora e ele seja tipo o senhor dos mortos?</i> <i>Como você sabe disso?"</i>
 P	<i>"Ah, de um texto religioso deles, eu li</i> <i>numa biblioteca lá no sul. Vou guardar isso</i> <i>para mim por ora."</i>
@@ -510,10 +510,10 @@ P	Você é o autor da adversidade deles. Você precisa <b>pontuar a vida deles c
 P	Mas também: dê a eles oportunidades, tanto de brilhar no momento quanto de melhorar as coisas a longo prazo. Deixe que aproveitem aquilo pelo que trabalharam.
 P	<i>Stonetop</i> dá muita agência aos personagens dos jogadores. Respeite isso. Não os prive dos movimentos ou das rolagens deles. Veja o que eles fazem com seu poder, seu prestígio e sua competência. <b>Jogue para descobrir o que acontece.</b>
 H2	A Linha
-P	Em <i>Stonetop</i> e em jogos parecidos, existe uma linha entre aquilo pelo que os jogadores são responsáveis e aquilo pelo que você, como Mestre, é responsável. Os jogadores estão no comando dos personagens deles: o que fazem e dizem; o que sentem e pensam; como vivem; as experiências passadas. Como Mestre, você está no comando do mundo: o ambiente, os PdMs, os perigos e as descobertas.
+P	Em <i>Stonetop</i> e em jogos parecidos, existe uma linha entre aquilo pelo que os jogadores são responsáveis e aquilo pelo que você, como Mestre, é responsável. Os jogadores estão no comando dos personagens deles: o que fazem e dizem; o que sentem e pensam; como vivem; as experiências passadas. Como Mestre, você está no comando do mundo: o ambiente, os NPCs, os perigos e as descobertas.
 P	Algumas das perguntas descritas aqui embaçam a Linha. Quando você pergunta ao Vahid o que as crianças desaparecidas têm em comum, você está na verdade pedindo ao jogador do Vahid que faça algo que em geral é responsabilidade do Mestre:
 P	inventar detalhes sobre o mundo.
-P	O truque é <b>dirigir-se aos personagens, não aos jogadores</b>. Não peça ao jogador que invente o que ele encontra na sala seguinte, ou como um PdM reage, ou como a armadilha o machuca. Pergunte ao <i>personagem</i> sobre algo que ele sabe, algo que ele ouviu, algo que ele viveu. Isso devolve o pedido para o lado dele da Linha. É um truque de percepção, mas é eficaz.
+P	O truque é <b>dirigir-se aos personagens, não aos jogadores</b>. Não peça ao jogador que invente o que ele encontra na sala seguinte, ou como um NPC reage, ou como a armadilha o machuca. Pergunte ao <i>personagem</i> sobre algo que ele sabe, algo que ele ouviu, algo que ele viveu. Isso devolve o pedido para o lado dele da Linha. É um truque de percepção, mas é eficaz.
 P	Mesmo assim, embaçar a Linha pode ser desconfortável ou desagradável para alguns jogadores. Alguns não se importam nem um pouco de inventar detalhes sobre o mundo, mas outros vão achar que isso atrapalha a imersão deles ou faz o mundo parecer oco e inventado. Ajuste as perguntas que você faz, e o jeito de fazê-las, às preferências suas e dos seus jogadores.
 PAGE	196
 H3	Abrace o fantástico e o mundano
@@ -522,34 +522,34 @@ P	espíritos, monstros, os volúveis Fae, as obras antigas dos Construtores, a e
 P	Mas, ao mesmo tempo, ancore o jogo em preocupações humanas: a virada das estações, a colheita que vem, amigos e vizinhos.
 P	Ameace os PJs com perigos do mundo real:
 P	clima severo, feras selvagens, fome, exposição. Pergunte sobre as provisões que eles trouxeram ou sobre como conseguiram aquele manto. Faça do mundo algo rico em detalhes mundanos.
-P	<b>Contraste o fantástico e o mundano um com o outro</b>. Se uma aventura gira em torno de uma ameaça ou oportunidade sobrenatural, inclua também desafios, perigos e descobertas perfeitamente mundanos. Se uma sessão envolve sobretudo preocupações mundanas (como uma missão comercial a Marshedge ou uma caçada a auroques), salpique alguns elementos fantásticos. O jogo entre os dois torna o mundo muito mais rico e misterioso.
+P	<b>Contraste o fantástico e o mundano um com o outro</b>. Se uma aventura gira em torno de uma ameaça ou oportunidade sobrenatural, inclua também desafios, perigos e descobertas perfeitamente mundanos. Se uma sessão envolve sobretudo preocupações mundanas (como uma missão comercial a Beira-Brejo (Marshedge) ou uma caçada a auroques), salpique alguns elementos fantásticos. O jogo entre os dois torna o mundo muito mais rico e misterioso.
 H3	Explore o guia de cenário
 P	<i>Stonetop</i> vem com muito cenário estabelecido, mas deixa muitas lacunas para você e seus jogadores preencherem durante o jogo. O cenário serve como trampolim para a sua criatividade. Ele ajuda a definir um tom e dá a todos um ponto de partida comum.
 P	Ele fornece detalhes para improvisar em cima. Ele insinua respostas, mas nem sempre as dá. Use o cenário estabelecido para <b>retratar um mundo rico</b> <b>e misterioso</b>.
 P	Use o guia de cenário como inspiração, mas não se sinta preso a ele. Se seus jogadores te derem algo que contradiga o cenário estabelecido, não negue a contribuição deles só porque o livro diz. O livro não é a autoridade, é um recurso para você explorar.
-P	Dito isso: <b>seja criterioso sobre o que</b> <b>você muda ou descarta</b>. É mais seguro mudar detalhes específicos do que temas amplos. Se a Raposa disser que o Brennan comandava uma gangue em Marshedge e matou até chegar ao poder (em vez da história do guia de cenário, de que ele era um bandido que o conselho contratou como marechal), tudo bem. Mas se você e o Buscador decidirem que os Construtores eram artífices do tamanho de gnomos em vez de titãs inescrutáveis, vocês vão precisar repensar todo tipo de detalhe do cenário (o tamanho das estradas, a escala da Torre em Ruínas, os temas associados a cada tipo de Construtor, e por aí vai).
+P	Dito isso: <b>seja criterioso sobre o que</b> <b>você muda ou descarta</b>. É mais seguro mudar detalhes específicos do que temas amplos. Se a Raposa disser que o Brennan comandava uma gangue em Beira-Brejo e matou até chegar ao poder (em vez da história do guia de cenário, de que ele era um bandido que o conselho contratou como marechal), tudo bem. Mas se você e o Buscador decidirem que os Construtores eram artífices do tamanho de gnomos em vez de titãs inescrutáveis, vocês vão precisar repensar todo tipo de detalhe do cenário (o tamanho das estradas, a escala da Torre em Ruínas, os temas associados a cada tipo de Construtor, e por aí vai).
 PAGE	197
 H3	Respeite sua preparação
-P	Entre as sessões, você vai fazer preparativos (ou seja, "preparação"). Você vai escrever ameaças e PdMs. Vai criar ou escolher perigos e descobertas. Vai pensar em encontros e projetar locais para explorar.
+P	Entre as sessões, você vai fazer preparativos (ou seja, "preparação"). Você vai escrever ameaças e NPCs. Vai criar ou escolher perigos e descobertas. Vai pensar em encontros e projetar locais para explorar.
 P	Parte da preparação envolve possibilidades: coisas que os PJs <i>podem</i> descobrir, perigos que eles <i>poderiam</i> enfrentar, problemas que <i>podem</i> surgir.
 P	Esse tipo de preparação vive num estado quântico; até você de fato usar essas ideias e introduzi-las na ficção, elas não são verdade. São só ideias — ideias que te ajudam a <b>pontuar a vida dos personagens</b> <b>com aventura</b>.
-P	<b>Boa parte da sua preparação, porém, envolve</b> <b>tomar decisões</b> — decisões reais e vinculantes sobre como o mundo <i>é</i>. Isso inclui coisas como o instinto, os movimentos e os HP de um monstro, ou como um lugar chegou a ser do jeito que é, ou quem matou a viúva Maire. Pode incluir decisões sobre o que <i>vai</i> acontecer se os PJs não intervierem, ou como um PdM reagiria a X ou Y. Esse tipo de preparação já é parte da ficção, mesmo que você ainda não a tenha revelado aos jogadores.
+P	<b>Boa parte da sua preparação, porém, envolve</b> <b>tomar decisões</b> — decisões reais e vinculantes sobre como o mundo <i>é</i>. Isso inclui coisas como o instinto, os movimentos e os HP de um monstro, ou como um lugar chegou a ser do jeito que é, ou quem matou a viúva Maire. Pode incluir decisões sobre o que <i>vai</i> acontecer se os PJs não intervierem, ou como um NPC reagiria a X ou Y. Esse tipo de preparação já é parte da ficção, mesmo que você ainda não a tenha revelado aos jogadores.
 P	Tome essas decisões com cuidado e reflexão. Vá com calma. Siga as orientações dos capítulos seguintes.
 P	Depois, durante o jogo, <b>respeite sua preparação</b>. Trate-a como verdade ficcional. Descreva o mundo, interprete seus personagens e faça movimentos de Mestre tendo essas decisões em mente. Se você preparou bem, vai descobrir que se ater à preparação não só te ajuda a <b>retratar um mundo rico e misterioso</b>, como também (paradoxalmente) te ajuda a <b>jogar para descobrir o que acontece</b>.
 P	Veja a página 204 para mais sobre <b>preparação</b>.
 H3	Dê vida aos seus personagens
-P	Dê nome aos seus PdMs. Dê a eles personalidades distintas. Desejos, necessidades e manias.
+P	Dê nome aos seus NPCs. Dê a eles personalidades distintas. Desejos, necessidades e manias.
 P	Opiniões e crenças. Se você der conta, interprete-os com vozes ou trejeitos distintos. Traga-os à vida e interprete-os como se fossem pessoas de verdade.
-P	Descreva seus PdMs com traços memoráveis. Os jogadores costumam ter dificuldade em lembrar que o ferreiro se chama Taliesen, mas vão lembrar que o ferreiro é um sujeito grande e barulhento com uma cabeleira branca.
-P	Não deixe os PJs passarem por cima dos seus PdMs.
-P	<b>Seja fã dos personagens dos jogadores</b>, claro, mas isso não quer dizer que seus PdMs devam simplesmente fazer o que os PJs querem. Se parecer que os PJs estão pressionando ou aliciando seus PdMs a fazer algo que eles não gostariam de fazer, bem, é para isso que serve o movimento Persuadir.
+P	Descreva seus NPCs com traços memoráveis. Os jogadores costumam ter dificuldade em lembrar que o ferreiro se chama Taliesen, mas vão lembrar que o ferreiro é um sujeito grande e barulhento com uma cabeleira branca.
+P	Não deixe os PJs passarem por cima dos seus NPCs.
+P	<b>Seja fã dos personagens dos jogadores</b>, claro, mas isso não quer dizer que seus NPCs devam simplesmente fazer o que os PJs querem. Se parecer que os PJs estão pressionando ou aliciando seus NPCs a fazer algo que eles não gostariam de fazer, bem, é para isso que serve o movimento Persuadir.
 P	Dê vida também aos seus personagens não humanos.
 P	Descreva como eles são, claro, mas também como se movem, que som e que cheiro têm, como agem.
 P	Feras, espíritos, até as absolutamente alienígenas Coisas de Baixo — todos têm personalidade. Desenvolva uma noção dos motivos deles e de como agem sob pressão. Para as feras, pense nas ecologias delas. Para os mortos-vivos, o que os impede de atravessar a Última Porta?
 P	Para entidades mágicas, pense nas regras estranhas que elas seguem. Para todos os acima: ponha esses detalhes em cena, ou pelo menos insinue-os. Isso ajuda muito a <b>retratar um mundo rico e misterioso</b>.
 PAGE	198
 H3	Pense também fora de cena
-P	Quando você estabelece a situação, responde perguntas ou faz movimentos, pense nos acontecimentos fora de cena. O que seus PdMs e monstros estão fazendo? O que eles fizeram? Que rastros deixaram? O que andaram aprontando que fica evidente? O que estão fazendo agora que pode ser relevante depois? Teça as respostas no que você diz.
+P	Quando você estabelece a situação, responde perguntas ou faz movimentos, pense nos acontecimentos fora de cena. O que seus NPCs e monstros estão fazendo? O que eles fizeram? Que rastros deixaram? O que andaram aprontando que fica evidente? O que estão fazendo agora que pode ser relevante depois? Teça as respostas no que você diz.
 P	Pense também no que os PJs estão fazendo e em como isso moldaria os acontecimentos fora de cena. Se eles fazem muito barulho atravessando a Grande Mata, quem os ouve chegando e como reage? Se fazem uma aliança com a Cava de Gordin, como o Povo das Colinas — que tem desavenças com os cavadores — responde?
 P	Se eles disseram à aldeia que ficariam fora cinco dias e ficam duas semanas, quem os dá por mortos? Quem toma a frente e tenta assumir o comando? Quem aproveita a chance para fazer o que quer?
 P	Pensar fora de cena te ajuda a <b>retratar um</b> <b>mundo rico e misterioso</b>, porque o mundo vai parecer maior que os PJs. Ajuda você a <b>pontuar a vida dos personagens com</b> <b>aventura</b>, porque ameaças e oportunidades fora de cena viram rapidamente coisas com que os PJs têm que lidar. E ajuda você a <b>jogar para descobrir o que acontece</b>, porque te faz pensar em consequências e em causa/efeito numa escala mais ampla.
@@ -559,7 +559,7 @@ P	Quando os PJs partem para uma aventura, mostre como os vizinhos reagem. Quem a
 P	Durante as aventuras, faça perguntas que se liguem de volta à vida dos PJs em Stonetop. Quem te ensinou a caçar? Quem veio para cá com vocês todos aqueles anos atrás, e o que aconteceu com essa pessoa? Que veterano já teve um encontro com essas criaturas?
 P	A vida de quem mais mudaria com este tesouro? No sorriso de quem você se pega pensando, aqui fora, sob as estrelas?
 P	Quando os PJs voltam para casa, considere o que aconteceu enquanto estavam fora e descreva como os aldeões os recebem. Quem está mais feliz? Quem se ressente do retorno deles? Quem os culpa por terem mexido em toda essa encrenca, pouco importando que tenham consertado as coisas?
-P	Entre as aventuras, pergunte aos personagens sobre o dia a dia e os relacionamentos deles. Mostre como a aldeia muda em resposta aos seus problemas e às oportunidades que os PJs agarraram. Descreva PdMs envelhecendo, tendo filhos, aspirando a mais, contentando-se com menos. Mostre como foram afetados pelas aventuras dos PJs.
+P	Entre as aventuras, pergunte aos personagens sobre o dia a dia e os relacionamentos deles. Mostre como a aldeia muda em resposta aos seus problemas e às oportunidades que os PJs agarraram. Descreva NPCs envelhecendo, tendo filhos, aspirando a mais, contentando-se com menos. Mostre como foram afetados pelas aventuras dos PJs.
 P	Traga para perto.
 PAGE	199
 H3	Deixe as coisas respirarem
@@ -567,15 +567,15 @@ P	Permita que períodos de tempo passem entre as aventuras, ou mesmo entre movim
 P	Quando uma ameaça se avizinha, ela não precisa ser imediata e terrível. Você pode mostrar sinais dela se agitando, mas mantê-la distante e remota. Pergunte aos PJs o que fazem a respeito, mas você pode resolver a resposta deles ao longo de dias ou semanas.
 P	Aproxime a lente e enquadre uma cena apenas quando a ficção pedir ação imediata e específica; afaste-a assim que isso terminar. Deixe a ameaça fervilhar até transbordar e virar algo com que os PJs tenham que lidar.
 H3	Deixe as coisas queimarem
-P	Por mais que você goste dos seus planos, por mais que você venha a amar alguns dos seus PdMs, por mais que os jogadores se apeguem:
+P	Por mais que você goste dos seus planos, por mais que você venha a amar alguns dos seus NPCs, por mais que os jogadores se apeguem:
 P	não proteja ninguém nem nada.
-P	Muitos Mestres têm a tendência, bem natural, de mimar os PJs e de blindar os PdMs de quem gostam. De preservar o estado das coisas. De guardar seus vilões para um confronto futuro, mesmo quando os movimentos, as rolagens e a ação ousada dos PJs deveriam, com justiça, enterrá-los.
+P	Muitos Mestres têm a tendência, bem natural, de mimar os PJs e de blindar os NPCs de quem gostam. De preservar o estado das coisas. De guardar seus vilões para um confronto futuro, mesmo quando os movimentos, as rolagens e a ação ousada dos PJs deveriam, com justiça, enterrá-los.
 P	Essa tendência? Queime-a. E então deixe todo o resto queimar também. Você não está jogando para preservar seus queridinhos. Você está <b>jogando para</b> <b>descobrir o que acontece</b>.
 P	Isso não quer dizer que você deva se esforçar para destruir aquilo que os personagens amam. Quer dizer que você deve ameaçar essas coisas e que, se os personagens não conseguirem salvá-las, você deve ir até o fim. Aceite consequências duras e irrevogáveis. Brinque com fogo. Deixe as coisas queimarem.
 PAGE	200
 H2	Outras coisas a fazer
 P	<b>Faça anotações.</b> Você vai acabar gerando muitos detalhes, e pode ser difícil acompanhar tudo. Você vai precisar descobrir a melhor ferramenta e o nível de detalhe que funciona para você, mas entre as coisas que talvez valha anotar estão:
-B	Nomes de PdMs (e traços, e relações relevantes)
+B	Nomes de NPCs (e traços, e relações relevantes)
 B	Acontecimentos históricos que você e os jogadores estabelecem (e quando/onde/quem)
 B	Detalhes interessantes que você não quer esquecer
 B	Um resumo dos acontecimentos de cada sessão Você pode escrever recapitulações formais de sessão para compartilhar com seus jogadores, mas essas anotações são sobretudo para você. Escreva só o tanto que for útil.
@@ -589,8 +589,8 @@ P	<b>Envolva todo mundo.</b> Continue movendo os holofotes pela mesa. Garanta qu
 P	"Blodwen, você vê… Brian, espera aí, estou falando com o Hobbes."
 P	<b>Façam pausas.</b> Elas deixam todo mundo refletir sobre o que aconteceu e pensar no que quer fazer em seguida. Elas deixam vocês — as pessoas de verdade que estão ali juntas — se conhecerem melhor, colocarem a conversa em dia ou só brincarem. Isso também é importante.
 P	<b>Envolva seus jogadores na construção do mundo</b> e garanta que percebam que o cenário é deles tanto quanto seu. Quando perguntarem algo sobre o mundo e você não tiver uma resposta na ponta da língua, devolva a pergunta. "Boa pergunta. Blodwen, o que ES as pessoas de Stonetop fazem com seus mortos?"
-P	<b>Às vezes, abra mão de decidir.</b> Ponha um desfecho nas mãos do personagem ("Ele está todo ensanguentado, mas não morto. Você ainda pode salvá-lo. Salva?"). Discuta um desfecho com os jogadores ("O que vocês acham? O Andras está vivo ou morto?"). Deixe os dados decidirem ("Quer saber, role a Porta da Morte por ele.").
-P	Deixe seus PdMs decidirem, com base nos instintos, nos desejos e necessidades deles, nas suas anotações e na sua própria noção da lógica interna deles.
+P	<b>Às vezes, abra mão de decidir.</b> Ponha um desfecho nas mãos do personagem ("Ele está todo ensanguentado, mas não morto. Você ainda pode salvá-lo. Salva?"). Discuta um desfecho com os jogadores ("O que vocês acham? O Andras está vivo ou morto?"). Deixe os dados decidirem ("Quer saber, role À Beira da Morte por ele.").
+P	Deixe seus NPCs decidirem, com base nos instintos, nos desejos e necessidades deles, nas suas anotações e na sua própria noção da lógica interna deles.
 P	("Não, ele não é do tipo que voltaria como fantasma, então… é, ele está morto.")
 H2	O Dado do Destino
 P	Uma forma de abrir mão de decidir é deixar os dados decidirem. Muitas vezes isso quer dizer deixar o resultado do movimento de um jogador determinar o que acontece. Mas você também pode usar o Dado do Destino.
@@ -604,7 +604,7 @@ P	Não se sinta limitado a um d6, especialmente quando tiver uma tabela de resul
 PAGE	202
 H2	O que não fazer
 P	<b>Não planeje um enredo ou uma trama.</b> Não planeje os arcos dos personagens dos PJs. Não planeje momentos dramáticos em que os PJs chegam <i>bem</i> na hora em que determinada coisa acontece (não importa quanto tempo levaram para chegar ou o que fizeram antes). Não presuma que os PJs vão tomar determinado rumo, nem que vão ter sucesso ou fracassar em determinada tarefa. Tudo isso vai contra <b>jogar para descobrir o que</b> <b>acontece</b>. Isso é você decidindo sozinho, de antemão, o que vai acontecer. Absolutamente não é para isso que você está aqui.
-P	Em vez disso: prepare situações, encontros possíveis e lugares para explorar. Prepare ameaças e PdMs com bons instintos acionáveis, talvez alguns presságios sombrios e catástrofes iminentes. Veja a seção <b>Preparação</b> (página 204) para saber como fazer isso.
+P	Em vez disso: prepare situações, encontros possíveis e lugares para explorar. Prepare ameaças e NPCs com bons instintos acionáveis, talvez alguns presságios sombrios e catástrofes iminentes. Veja a seção <b>Preparação</b> (página 204) para saber como fazer isso.
 P	<b>Não diga a eles o que rolar antes de eles</b> <b>terem dito o que estão fazendo.</b> Você <i>não</i> pode dizer besteira do tipo "o bandido ataca, Desafie
 P	o Perigo com DES." Porque 1) não é assim que funciona e 2) e se eles não agirem rápido nem com destreza (o gatilho de Desafiar o Perigo com DES)? E se eles afastarem o ataque dele e o golpearem com o escudo? E se levarem o golpe e o trespassarem? E se jogarem terra nos olhos dele e chutarem a virilha? Quando você manda os jogadores fazerem um movimento sem que eles tenham dito antes que fizeram algo que dispara o movimento, você está tomando o controle dos personagens deles e ditando o que eles fazem.
 P	Você está quebrando as regras do jogo.
@@ -620,7 +620,7 @@ H2	Mestrar é uma prática
 P	Conduzir qualquer RPG é uma prática, como ioga, música ou artes marciais. Não é algo que se domine. Sempre há espaço para melhorar, sempre há algo a aprender.
 P	Conduzir <i>Stonetop</i> especificamente é uma habilidade própria, uma prática própria. Mesmo que você tenha experiência conduzindo jogos parecidos (como <i>Dungeon World</i> ou <i>Apocalypse World</i>), há uma curva de aprendizado. Stonetop é mais fácil de pegar se você já mestrou outros jogos, mas essa experiência também pode jogar contra! Você vai ter que desaprender hábitos e se ajustar a abordagens novas, e isso pode ser difícil.
 P	A questão é: conduzir <i>Stonetop</i> não é exatamente fácil, mas <b>você melhora fazendo,</b> <b>refletindo sobre como as coisas correram e</b> <b>tentando fazer melhor da próxima vez</b>.
-P	Durante a primeira aventura, foque na sua <b>agenda</b> (página 168), em seguir o <b>ciclo</b> <b>central</b> (página 169) e em reconhecer os gatilhos dos <b>movimentos básicos de jogador</b> (página 208). Apoie-se na sua preparação — é para isso que ela serve — e vá com calma. Espere que as coisas sejam um pouco truncadas enquanto você e seus jogadores aprendem as regras. Não se preocupe com descrições marcantes, nem com fazer vozes de PdMs, nem com seguir cada princípio à risca.
+P	Durante a primeira aventura, foque na sua <b>agenda</b> (página 168), em seguir o <b>ciclo</b> <b>central</b> (página 169) e em reconhecer os gatilhos dos <b>movimentos básicos de jogador</b> (página 208). Apoie-se na sua preparação — é para isso que ela serve — e vá com calma. Espere que as coisas sejam um pouco truncadas enquanto você e seus jogadores aprendem as regras. Não se preocupe com descrições marcantes, nem com fazer vozes de NPCs, nem com seguir cada princípio à risca.
 P	Depois da primeira sessão "no personagem", peça retorno aos seus jogadores. Do que gostaram? O que pareceu truncado? O que querem ver mais nas próximas sessões? Peça esclarecimentos se precisar, mas não fique na defensiva e não tente se explicar.
 P	Tente ser humilde e receptivo.
 P	Quando tiver um tempo, revise a sessão à luz da sua agenda. Você <b>retratou um mundo rico e misterioso</b>, ou o mundo pareceu chapado, oco, arbitrário?
@@ -656,11 +656,11 @@ P	Veja a seção "<b>O que preparar"</b> do capítulo Expedições (página 340)
 H2	Sítios
 P	Pense em cada lugar importante que você espera que os PJs explorem ou encontrem durante uma sessão. Como é? Como você vai descrevê-lo? Que perguntas você vai fazer sobre ele? Qual é a história dele? Você precisa de um mapa ou de um apoio visual? Há perigos ou descobertas ali dentro? Veja a página 345 para ideias.
 H2	Perigos
-P	Os riscos, monstros e PdMs hostis que os PJs podem encontrar.
+P	Os riscos, monstros e NPCs hostis que os PJs podem encontrar.
 P	Ache entradas no guia de cenário para usar, ou faça as suas. Você pode fazer isso na hora, claro, mas toma tempo de mesa e é melhor já estar pronto. Veja o capítulo sobre <b>Perigos</b> (página 379) para orientações.
 H2	Descobertas
 P	Quebra-cabeças, pistas, mistérios, tesouros, arcanos… tudo isso são descobertas. Alguns você vai improvisar na hora. De outros vai querer fazer algumas anotações. Alguns (especialmente os arcanos) vai querer escrever em detalhe. Veja a página 421 para mais.
-H2	PdMs
-P	Se há PdMs que você espera que eles encontrem no jogo, pense nos nomes deles, nas perguntas que você vai fazer sobre eles, nos traços que os definem, em como você vai descrevê-los e interpretá-los. Talvez dê a eles um instinto, conexões e motivações. Se um PdM puder acabar virando seguidor, considere anotar os atributos, as etiquetas, os movimentos, o custo e o instinto dele antes do jogo. Veja a página 449 para orientações.
+H2	NPCs
+P	Se há NPCs que você espera que eles encontrem no jogo, pense nos nomes deles, nas perguntas que você vai fazer sobre eles, nos traços que os definem, em como você vai descrevê-los e interpretá-los. Talvez dê a eles um instinto, conexões e motivações. Se um NPC puder acabar virando seguidor, considere anotar os atributos, as etiquetas, os movimentos, o custo e o instinto dele antes do jogo. Veja a página 449 para orientações.
 P	Toda essa preparação pode parecer ir contra <b>jogar para descobrir o que acontece</b>, mas não vai mesmo. Você não está preparando uma história, nem uma trama, nem uma série inevitável de cenas que se seguem umas às outras.
 P	Você está preparando coisas que te dão material interessante para dizer, que aceleram o jogo, que reforçam seus pontos fracos e afiam seu ofício, e que te dão permissão para jogar duro. Boa preparação não é roteirizar tudo; é assentar uma base que te ajude a improvisar.

@@ -177,6 +177,33 @@ Three rules this loop exists to enforce:
   they are easy to skip — and a page with no translated title shows an English
   one in the sidebar, the `<title>`, the search index and the home page card.
 
+### Audit the chapter's terms before you commit
+
+A long chapter reintroduces nearly every proper noun and move name in the game,
+and a plausible-but-new rendering is both the easiest mistake to make and the
+hardest to catch — the page reads perfectly well on its own, and only the rest
+of the language disagrees with it. So count, don't trust your memory:
+
+```bash
+grep -rhoE "Construtores|Criadores" i18n/corpus/pt-BR/ | sort | uniq -c
+```
+
+The majority across the whole language wins; `TERMS.md` breaks ties; the fix
+goes in the **work** file and the page is re-applied. Four terms drifted this
+way while pt-BR was being written, all now corrected and recorded in
+`TERMS.md`:
+
+| Right | Wrong | Why it was easy to get wrong |
+|---|---|---|
+| **Construtores** (Makers) | *Criadores* | *Primeiros Criadores* really is *First Creators* — a different thing |
+| **NPC** | *PdM* | the obvious calque, but the corpus keeps NPC in English like HP and XP |
+| **À Beira da Morte** (Death's Door) | *Porta da Morte* | the literal reading; the move is named for the state, not the door |
+| **Beira-Brejo** (Marshedge) | *Marshedge* | Latin-script languages keep *Stonetop*, but not every name |
+
+Names carry the English in parentheses on **first mention per page**
+(`Beira-Brejo (Marshedge)`), so a bare English name later in a page is fine and
+a bare English name on first mention is not.
+
 ### Finish with a full build
 
 `--pages <slug>` is for a spot check mid-chapter. **It is not what you commit**:

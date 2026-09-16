@@ -362,7 +362,7 @@ P	• Testar sua resistência para continuar, ou só para respirar
 P	• Impor uma debilidade
 P	• Revelar que deixaram algo passar
 P	• Fazer com que desabem, incapazes de continuar
-P	• Encher seus pulmões de líquido, inchar seus cérebros, fazê-los rolar na Porta da Morte
+P	• Encher seus pulmões de líquido, inchar seus cérebros, fazê-los rolar em À Beira da Morte
 P	<b>Algo interessante:</b> Os discípulos dos Senhores da Geada praticam técnicas para prosperar no ar rarefeito, mas elas levam meses ou anos para ser dominadas.
 P	<b>Algo útil:</b> Dá para se aclimatar com segurança subindo no máximo uns trezentos metros por dia e, mesmo assim, o esforço extremo pode ser perigoso. Um chá feito de erva-draco roxa alivia os sintomas, mas uma dose alta demais pode causar morte por asfixia.
 HR

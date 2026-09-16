@@ -55,7 +55,12 @@ Pull Together · Deploy · Seasons Change · Death's Door.
 - **Moves:** Desafiar o Perigo · Lutar como Um Só · Disparar · Cruzar Lâminas · Defender · Saber das Coisas · Buscar Discernimento · Persuadir · Ajudar ou Interferir · Acampar · Forragear · Recuperar-se · Convalescer · Comerciar e Barganhar · Ter o Necessário · Equipar-se · Requisitar · Convocar · Unir Esforços · Mobilizar · Mudança das Estações · À Beira da Morte
 - **Sheet headings:** Antecedente (Escolha 1) · Instinto (Escolha 1) · Aparência · Lugar de origem e nome · Atributos · Posses especiais · Movimentos · Apresentações
 - **Names:** a Grande Mata (Great Wood) · Beira-Brejo (Marshedge) · o Passo da Barreira · a Cava de Gordin · o Povo das Colinas (Hillfolk) · as Terras Escalonadas (Steplands) · a Muralha Circular (Ringwall) · as Estradas Antigas (Old Roads) · a Torre em Ruínas · o Brejo de Ferrier · os Construtores (Makers) · as Coisas de Baixo · a Última Porta · o Caçador Pálido · os Fae
-- **Tags:** mão · perto (close) · próximo (near) · longe (far) · alcance (reach) · perfurante · área · grupo
+- **Tags:** mão · perto (close) · próximo (near) · longe (far) · alcance (reach) · perfurante · área · grupo · ágil (mobile) · furtivo · cauteloso · imóvel · belo · horda · espírito · solitário · temperamental
+- **Kept in English:** NPC / NPCs (never *PdM*) · HP · XP · Fae · crinwin · swyn · nailadd · hagr · Almtakers · Stonetop
+- **Easily confused:** os Construtores = the Makers, but os Primeiros Criadores = the First Creators (two different things) · os Construtores de Túmulos = the Barrow Builders · o Tempo dos Construtores = the Time of the Makers
+- **More names:** os Senhores da Pedra (Stone Lords) · os Senhores Verdes (Green Lords) · os Senhores da Forja (Forge Lords) · os Senhores da Tempestade (Tempest Lords) · o Povo da Floresta (Forest Folk) · as Montanhas Presa-Branca (Whitefang) · o Lago das Três Assembleias (Three Coven Lake) · a Gema da Mente (Mindgem) · o Dedo-de-Espinho (Thornthumb) · vidro dos Construtores (makerglass) · as Profundezas (the Deeps)
+- **More moves:** Ler o terreno (Read the Land) · Rastreador Perito · Sondar (Seek Out) · Traçar um Rumo (Chart a Course) · Fazer Companhia (Keep Company) · Debaixo da Pele (Under Your Skin) · Bom de Papo (Up With People)
+- **More terms:** movimento de Mestre = GM move · movimento suave/duro = soft/hard move · holofotes = spotlight · jogo solto = loose play · ciclo central = core loop · sítio = site · risco = hazard · perigo = danger · descoberta = discovery · ameaça = threat · catástrofe iminente = impending doom · presságios sombrios = grim portents · Dado do Destino = Die of Fate · aventura inicial = adventure starter · narrativa pelo ambiente = environmental storytelling
 
 ## de — Deutsch
 

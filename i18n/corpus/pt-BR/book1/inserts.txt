@@ -17,7 +17,7 @@ E	<b>o Portador da Luz</b>, então recebe o encarte <b>Invocações</b> (página
 P	Caso contrário, você recebe um encarte <b>genérico</b> (página 147), com espaço para acompanhar seguidores e um resumo da sua agenda, dos seus princípios e das suas regras de jogador.
 P	O PDF do playkit está preparado para imprimir com a folha de Inventário numa página e a folha específica do livreto (ou as folhas genéricas de seguidores/agenda) no verso. Só há uma cópia de cada folha neste capítulo.
 H3	Livretos e Encartes
-P	Há também três encartes que podem ser obtidos como resultado do movimento Porta da Morte e de más decisões: o <b>Fantasma</b> (página 148), o <b>Revenante</b> (página 150) e o <b>Servo</b> (página 152). Esses encartes normalmente são impressos frente e verso em meia folha de papel. Você pega um deles só quando ele se torna relevante.
+P	Há também três encartes que podem ser obtidos como resultado do movimento À Beira da Morte e de más decisões: o <b>Fantasma</b> (página 148), o <b>Revenante</b> (página 150) e o <b>Servo</b> (página 152). Esses encartes normalmente são impressos frente e verso em meia folha de papel. Você pega um deles só quando ele se torna relevante.
 P	Além dos encartes apresentados neste capítulo, você também pode receber um encarte que representa um <b>arcano maior</b> (página 60).
 P	O Buscador começa o jogo com um arcano maior, conforme indicado pelo seu antecedente; e, se você pegar o livreto do Brutamontes com o antecedente "Marcado pela Tempestade", começa o jogo com o arcano maior Marcas da Tempestade.
 P	Você encontra esses arcanos no Apêndice D: Arcanos

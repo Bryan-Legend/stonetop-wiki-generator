@@ -9,7 +9,7 @@ PAGE	346
 P	Sítios são lugares interessantes que os PJs podem explorar. Podem ser o destino de uma expedição, um ponto de interesse no caminho ou só uma descoberta casual.
 P	São lugares onde a aventura acontece!
 P	Os sítios variam muito em tamanho e escopo. Alguns são bem pequenos e delimitados, como um altar de pedra no alto de uma colina solitária. Alguns são feitos de salas, áreas ou zonas distintas — como um sistema de cavernas, ou um túmulo, ou um casarão em ruínas da era dos Construtores. Alguns são complexos vastos, formados por vários sítios menores.
-P	A maioria dos sítios fica no ermo, mas você pode pensar num assentamento (como Marshedge, a Cava de Gordin ou um vale agrícola lá nas Montanhas Presa-Branca) como um sítio também. Você pode até encontrar sítios dentro de assentamentos: a Crônica do Juiz (se houver uma), a cisterna de Stonetop (se houver mais que água lá embaixo), o moinho de Marshedge, as cavas que dão nome à Cava de Gordin — tudo isso são sítios!
+P	A maioria dos sítios fica no ermo, mas você pode pensar num assentamento (como Beira-Brejo (Marshedge), a Cava de Gordin ou um vale agrícola lá nas Montanhas Presa-Branca) como um sítio também. Você pode até encontrar sítios dentro de assentamentos: a Crônica do Juiz (se houver uma), a cisterna de Stonetop (se houver mais que água lá embaixo), o moinho de Beira-Brejo, as cavas que dão nome à Cava de Gordin — tudo isso são sítios!
 PAGE	347
 P	Nem todo lugar onde você enquadra uma cena precisa ser um "sítio" propriamente dito. Muitos locais são apenas o pano de fundo de uma cena, um lugar onde você apresenta um perigo ou uma descoberta, ou onde os PJs interagem com alguém.
 P	O riacho que os PJs precisam atravessar não é um sítio, é só um risco. A beira da estrada é só um ponto de referência, ou um lugar onde os PJs encontram alguns viajantes.
@@ -63,10 +63,10 @@ H3	Ordem de marcha
 P	Quem vai na frente, quem vem depois e quem fecha a retaguarda? Isso é especialmente importante em espaços apertados ou quando algo ataca.
 H3	Equipamento
 P	O que cada um tem em mãos, ou pronto para usar? Quão pesada é a carga que estão levando? Se for pesada, o quanto isso atrapalha? Eles têm espaço para balançar aquele malho <i>desajeitado</i> aqui dentro? Conseguem passar por aquele túnel com o escudo?
-H3	Seguidores e PdMs
+H3	Seguidores e NPCs
 P	Inclua-os na situação! Onde estão? O que estão fazendo? Como reagem a __? Faça movimentos de Mestre por meio deles, ou contra eles. Se ficaram para trás no acampamento ou de guarda, o que (se é que algo) acontece com eles?
 H3	Estados físicos e mentais
-P	Fome e sede, cansaço, irritação, desorientação, pavor. Como os PJs reagem? Como os PdMs lidam com isso? (Spoiler: mal.)
+P	Fome e sede, cansaço, irritação, desorientação, pavor. Como os PJs reagem? Como os NPCs lidam com isso? (Spoiler: mal.)
 H3	Habitantes
 P	Quem ou o que mais está aqui? Que sinais da presença deles os PJs poderiam encontrar? Eles notariam os PJs? Se sim, como reagiriam? São hostis, desconfiados, curiosos, ou o quê?
 H2	Fontes de luz e etiquetas
@@ -111,7 +111,7 @@ P	Mas se a próxima sala ou área interessante fica a alguma distância, você p
 P	Afaste a lente e trate isso como uma <b>etapa de viagem</b> (página 312) numa expedição:
 B	Descreva o ambiente pelo qual os PJs passam
 B	Faça perguntas aos PJs (sobre como estão se sentindo, o que está passando pela cabeça deles, o que isso os faz lembrar, etc.)
-B	Interprete seguidores e outros PdMs
+B	Interprete seguidores e outros NPCs
 B	Talvez Fazer Companhia
 HR
 P	<i>Os PJs e o Andras estão no Lago das Três</i> <i>Assembleias, no alto da represa, examinando as</i> <i>ruínas espalhadas. Apresento uma escolha de caminhos:</i> <i>escalar o penhasco ao norte e dar uma olhada nas</i> <i>salas talhadas nele, ou explorar a margem sul,</i> <i>mais suave. Eles se mantêm longe da água</i> <i>e vão para o norte.</i>
@@ -296,7 +296,7 @@ B	Outros elementos de cenário do <i>Livro II</i>
 B	A linha do tempo do cenário (veja as eras do mundo, <i>Livro II</i>, página 496)
 B	Coisas que interessam aos jogadores
 B	Os PJs, as coisas deles e o passado deles
-B	PdMs e ameaças já estabelecidos
+B	NPCs e ameaças já estabelecidos
 B	Acontecimentos anteriores no jogo
 B	As perguntas da sua lista <b>"Fico pensando…"</b> (página 33) Deixe que essas conexões suscitem perguntas, sugiram respostas ou simplesmente inspirem ideias novas.
 P	Pense em como todos esses elementos se encaixam no seu sítio.
@@ -381,7 +381,7 @@ P	Se há vários habitantes, pense nas relações entre grupos e indivíduos. Fa
 P	Dívidas, alianças e rixas. Laços de família.
 P	Amor e ódio e ciúme, essas coisas todas.
 P	Inclua algumas anotações sobre essas relações enquanto faz sua lista.
-P	Se você espera que os PJs se comuniquem com algum habitante, crie-os como <b>PdMs</b> (página 453), com etiquetas, traços, um instinto, notas de interpretação, etc.
+P	Se você espera que os PJs se comuniquem com algum habitante, crie-os como <b>NPCs</b> (página 453), com etiquetas, traços, um instinto, notas de interpretação, etc.
 H3	Identifique perigos e descobertas
 P	Faça uma lista dos perigos e descobertas sugeridos pela base, pela história e pelos ocupantes do sítio. Isso pode incluir:
 B	<b>Riscos</b> (página 381) com os quais os PJs talvez precisem lidar
@@ -509,12 +509,12 @@ P	Depois escreva os detalhes e as decisões que você quer lembrar sobre aquela 
 B	Uma descrição do ambiente
 B	Impressões de vários sentidos
 B	Perguntas que você pode fazer aos PJs
-B	Conteúdo: PdMs, perigos, descobertas, acontecimentos possíveis (abaixo)
+B	Conteúdo: NPCs, perigos, descobertas, acontecimentos possíveis (abaixo)
 B	Saberes, história de fundo ou explicações
 B	Saídas e conexões com outras áreas Para o conteúdo, inclua os detalhes de que precisar: números, onde são encontrados, comportamentos, táticas, etc. (veja <b>"Faça planos"</b> na próxima página). Para conteúdo que tenha bloco de atributos ou redação próprios, inclua uma referência de página, uma cópia dessa redação ou um link, conforme for apropriado.
 H3	Subdivida conforme a necessidade
 P	Se há detalhes que você se pega escrevendo para várias áreas ou salas, puxe isso para uma entrada própria.
-P	Da mesma forma, se certos perigos, descobertas ou PdMs podem ser encontrados por todo o sítio, ou são complexos o bastante para merecer isso, dê a eles um cabeçalho próprio.
+P	Da mesma forma, se certos perigos, descobertas ou NPCs podem ser encontrados por todo o sítio, ou são complexos o bastante para merecer isso, dê a eles um cabeçalho próprio.
 PAGE	369
 H3	Encontre/crie conteúdo
 P	Se precisar acrescentar algo a uma área ou ao sítio como um todo, escolha algo do <i>Livro II</i> (e ajuste conforme a necessidade) ou crie do zero. Consulte:
@@ -526,18 +526,18 @@ B	<b>Oportunidades</b> (página 428)
 B	<b>Criando artefatos</b> (página 434)
 B	<b>Criando arcanos menores</b> (página 444)
 B	<b>Criando arcanos maiores</b> (página 446)
-B	<b>Criando PdMs</b> (página 453)
+B	<b>Criando NPCs</b> (página 453)
 B	<b>Escrevendo movimentos</b> (página 551)
 P	Se perceber que precisa criar uma área nova, trate-a como um sítio menor. Assente a <b>base</b> dela (página 356). Construa a <b>história</b> dela (página 358). Esboce o <b>conteúdo</b> dela (página 362) e depois escreva conforme a necessidade.
 H3	Faça listas e tabelas
 P	Parte do conteúdo existe num estado quântico.
-P	As sentinelas percorrem um perímetro. Os ursos da caverna podem estar fora forrageando. A ruína é vasta e você não está a fim de mapear onde cada perigo, descoberta ou PdM está a cada momento.
+P	As sentinelas percorrem um perímetro. Os ursos da caverna podem estar fora forrageando. A ruína é vasta e você não está a fim de mapear onde cada perigo, descoberta ou NPC está a cada momento.
 P	Ponha esse tipo de conteúdo numa lista (ou em listas).
 P	Quando os PJs entrarem numa área nova, ou quando você quiser fazer um movimento de Mestre mas não souber o que fazer, escolha algo dessa lista.
 P	Se quiser, transforme a lista numa tabela. Atribua números de 1 a 6 ou de 1 a 12 às opções e peça a um jogador que role o Dado do Destino para ver qual sai.
 P	Para exemplos, veja as muitas entradas de região e de sítio do <i>Livro II</i>.
 H3	Faça planos
-P	Pense em como os PdMs ou monstros provavelmente vão reagir aos PJs, ou no que pode acontecer quando os PJs entrarem numa área, ou em quanto tempo depois de X acontece Y. Registre isso nas suas anotações como…
+P	Pense em como os NPCs ou monstros provavelmente vão reagir aos PJs, ou no que pode acontecer quando os PJs entrarem numa área, ou em quanto tempo depois de X acontece Y. Registre isso nas suas anotações como…
 E	uma ou duas frases descritivas;
 E	um ou mais movimentos de Mestre que você pode fazer;
 E	uma série de afirmações do tipo se/então;
@@ -672,7 +672,7 @@ P	<b>Pilares instáveis</b>: avance isto cada vez que um pilar for atingido, ou 
 C	O pilar racha/verga, cai terra
 C	Pedras caem (1d6+1 de dano, <i>forte</i>)
 C	O pilar quebra, lajes grandes de pedra caem (1d8+3 de dano, <i>área</i>, <i>forte</i>)
-C	<b>Catástrofe iminente</b>: o teto desaba, soterrando quem ainda estiver dentro (Porta da Morte); os túneis de ligação ficam bloqueados
+C	<b>Catástrofe iminente</b>: o teto desaba, soterrando quem ainda estiver dentro (À Beira da Morte); os túneis de ligação ficam bloqueados
 PAGE	376
 HR
 H3	Crinwin
