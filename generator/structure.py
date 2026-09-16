@@ -11,6 +11,8 @@ import json
 import re
 
 from .text import (
+    TAG_RE,
+    strip_tags,
     BARE_PAGE_RE,
     B_OFF,
     B_ON,
@@ -180,9 +182,12 @@ def UI(key: str, default: str, **fill: str) -> str:
 
 
 def T(s: str) -> str:
-    """``s`` in the language being rendered, when a translation has it."""
-    if _TM is None or not s:
+    """``s`` in the language being rendered, when a translation has it —
+    and in any case without the provenance tags the lines carry."""
+    if not s:
         return s
+    if _TM is None:
+        return strip_tags(s)
     return _TM.get(s)
 
 
@@ -445,6 +450,7 @@ class AnchorRegistry:
         The name itself is retitled for display before it gets here, so the
         casing can no longer be recovered from the string — record it.
         """
+        name = strip_tags(name)
         base = slugify_id(name)
         sid = base
         n = 2
@@ -865,7 +871,7 @@ def auto_link_titles(html_text: str, articles: list[dict], current_slug: str | N
 def _shown_name(name: str) -> str:
     """A card's heading: the book sets it in caps or lowercase and the card
     title-cases it; a translation is shown as its language writes it."""
-    tl = T(name)
+    name, tl = strip_tags(name), T(name)
     return titlecase_name(name) if tl == name else tl
 
 
@@ -873,7 +879,7 @@ def _roll_label(label: str) -> str:
     """A roll table is titled by the words after its dice. The book sets
     them lowercase and the table title-cases them; a translation is shown
     as its language writes it."""
-    tl = T(label)
+    label, tl = strip_tags(label), T(label)
     return titlecase_name(label) if tl == label else tl
 
 
@@ -923,14 +929,15 @@ def render_value_table(
             f'<td class="val">{html.escape(val)}</td></tr>'
         )
     notes_html = "".join(
-        f'<div class="value-note">{html.escape(nt)}</div>' for nt in (notes or [])
+        f'<div class="value-note">{html.escape(T(nt))}</div>' for nt in (notes or [])
     )
     # The books set the head in two columns — the category on the left, the
     # word "value" over the value column — so split the title back apart and
     # put it in a header row, where it lines up with the values beneath it.
     head_raw = re.sub(r"\s*value\s*$", "", title, flags=re.I).strip()
-    head_tr = T(head_raw)
-    head_name = smart_title(head_raw) if head_tr == head_raw else head_tr
+    head_plain = strip_tags(head_raw)
+    head_tr = T(head_plain + "".join(TAG_RE.findall(head_raw)))
+    head_name = smart_title(head_plain) if head_tr == head_plain else head_tr
     return (
         f'<div class="value-table">'
         f"<table>"
@@ -947,7 +954,7 @@ def render_value_table(
 def _stat_name(name: str) -> str:
     """A stat block's name as shown: translated when a translation has it
     (and then left as the translator cased it), title-cased otherwise."""
-    shown = T(name)
+    name, shown = strip_tags(name), T(name)
     return titlecase_name(name) if shown == name else shown
 
 
@@ -974,16 +981,44 @@ def render_stat_block(
     lkw = link_kw or {}
     # Stat blocks are visually styled via CSS; parse/render on plain text so
     # inline formatting sentinels never break the HP/Damage/tag detection.
-    name = _defmt(name)
+    # Plain text has lost its provenance tags, so each string made here
+    # remembers the tags of the lines it came from, and gets them back as a
+    # suffix when it is rendered — which is how a translation finds it.
+    prov: dict[str, str] = {}
+
+    def _plain(l: str) -> str:
+        p = _defmt(l)
+        t = "".join(TAG_RE.findall(l))
+        if t:
+            prov[p] = t
+        return p
+
+    def _cat(a: str, b: str) -> str:
+        r = a + " " + b
+        t = prov.get(a, "") + prov.get(b, "")
+        if t:
+            prov[r] = t
+        return r
+
+    def _same(new: str, old: str) -> str:
+        t = prov.get(old, "")
+        if t and new != old:
+            prov[new] = t
+        return new
+
+    def pv(t: str) -> str:
+        return t + prov.get(t, "")
+
+    name = _plain(name)
     # Preserve embedded roll-table payloads; de-tokenized for everything else.
     norm_lines: list[str] = []
     for l in lines:
         if l.startswith("__ROLL_TABLE__") or l.startswith(M_C):
             norm_lines.append(l)
         else:
-            norm_lines.append(_defmt(l))
+            norm_lines.append(_plain(l))
     lines = norm_lines
-    tags = _defmt(tags)
+    tags = _plain(tags)
     stats: list[str] = []
     moves: list[str] = []
     other: list[str] = []
@@ -1024,7 +1059,7 @@ def render_stat_block(
             and "damage" in stats[-1].lower()
             and re.match(r"^\d{0,2}d\d+", low)
         ):
-            stats[-1] = stats[-1] + " " + line
+            stats[-1] = _cat(stats[-1], line)
             continue
         # A stat line that stops on a comma or inside a parenthesis is a stat
         # line that wrapped — "Armor 5 (resilience, human hide)," / "1 vs.
@@ -1038,21 +1073,21 @@ def render_stat_block(
                 or stats[-1].count("(") > stats[-1].count(")")
             )
         ):
-            stats[-1] = stats[-1] + " " + line
+            stats[-1] = _cat(stats[-1], line)
             continue
         # The inserts print an HP box beside the stat line, and its label
         # lands at the end of it — "HP 6; Armor 0 HP" — or ahead of the next
         # stat: "Armor 1 (shield) HP Damage iron spear". The box's "Max. 6"
         # lands on a move the same way.
         if HP_LINE_RE.search(line):
-            line = re.sub(
+            line = _same(re.sub(
                 r"\s+HP(?=\s*$|\s+(?:Damage|Instinct|Special|Cost)\b)", "", line
-            )
+            ), line)
             low = line.lower().strip()
         elif line.startswith(("•", "·")):
             # …and mid-move when the move wrapped under the box:
             # "Tend to the sick, injured, Max. 6 women in labor"
-            line = re.sub(r"\s+Max\.?\s*\d+(?=\s|$)", "", line)
+            line = _same(re.sub(r"\s+Max\.?\s*\d+(?=\s|$)", "", line), line)
         # Don't absorb the next monster's identity
         if (
             tags
@@ -1083,17 +1118,17 @@ def render_stat_block(
                 and re.match(r"^\d{0,2}d\d+", low)
                 and stats[-1].lower().startswith("damage")
             ):
-                stats[-1] = stats[-1] + " " + line
+                stats[-1] = _cat(stats[-1], line)
             else:
                 stats.append(line)
         elif re.match(r"^\d{0,2}d\d+", low) and stats:
-            stats[-1] = stats[-1] + " " + line
+            stats[-1] = _cat(stats[-1], line)
         elif line.startswith("•") or line.startswith("·"):
-            item = line.lstrip("•· ").strip()
+            item = _same(line.lstrip("•· ").strip(), line)
             # After flavor notes (or a Questions section), trailing bullets
             # are options/requirements — keep them in notes, not moves.
             if in_questions or (other and seen_instinct and moves):
-                other.append("• " + item)
+                other.append(_same("• " + item, item))
             else:
                 moves.append(item)
         elif low.startswith("when "):
@@ -1115,7 +1150,7 @@ def render_stat_block(
                 or stats[-1].endswith("(")
                 or re.match(r"^\d{0,2}d\d+", low)
             ):
-                stats[-1] = stats[-1] + " " + line
+                stats[-1] = _cat(stats[-1], line)
                 continue
             # After instinct, short action phrases are moves (not more stats)
             if seen_instinct or (
@@ -1142,10 +1177,10 @@ def render_stat_block(
                     other.append(line)
                     continue
                 if len(line) < 100:
-                    moves.append(line.lstrip("•· ").strip())
+                    moves.append(_same(line.lstrip("•· ").strip(), line))
                     continue
             if moves and not looks_like_heading(line) and line[0:1].islower():
-                moves[-1] = moves[-1] + " " + line
+                moves[-1] = _cat(moves[-1], line)
             else:
                 other.append(line)
 
@@ -1168,10 +1203,10 @@ def render_stat_block(
     parts = [
         f'<div class="{cls}"{id_attr}>'
         f'<h3 class="stat-name">{icon_html}'
-        f'{html.escape(_stat_name(name))}</h3>'
+        f'{html.escape(_stat_name(pv(name)))}</h3>'
     ]
     if tags:
-        parts.append(f'<p class="stat-tags">{rr(tags)}</p>')
+        parts.append(f'<p class="stat-tags">{rr(pv(tags))}</p>')
     if stats:
         # One stat to a line, the way the book sets them. The extractor
         # sometimes hands two on one line ("Armor 0 Damage gore") — a label
@@ -1179,26 +1214,26 @@ def render_stat_block(
         rows: list[str] = []
         for s in stats:
             rows.extend(
-                p.strip(" ;")
+                _same(p.strip(" ;"), s)
                 for p in re.split(
                     r"\s+(?=(?:Damage|Instinct|Special [Qq]ualit(?:y|ies)|Cost)\b)",
                     s,
                 )
                 if p.strip(" ;")
             )
-        compact = "<br>".join(bold_stat_labels(rr(r)) for r in rows)
+        compact = "<br>".join(bold_stat_labels(rr(pv(r))) for r in rows)
         parts.append(f'<p class="stat-stats">{compact}</p>')
     if moves:
         parts.append('<ul class="stat-moves">')
         for mv in moves:
-            parts.append(f"<li>{rr(mv)}</li>")
+            parts.append(f"<li>{rr(pv(mv))}</li>")
         parts.append("</ul>")
     for o in notes:
         if o.startswith("• "):
             # bullet note — keep as a compact list item style paragraph
-            parts.append(f'<p class="stat-note">• {rr(o[2:])}</p>')
+            parts.append(f'<p class="stat-note">• {rr(pv(_same(o[2:], o)))}</p>')
         else:
-            parts.append(f'<p class="stat-note">{rr(o)}</p>')
+            parts.append(f'<p class="stat-note">{rr(pv(o))}</p>')
     for dice_s, label_s, ents in roll_tables:
         rows_html = "".join(
             f'<tr><th scope="row">{html.escape(num_s)}</th>'
@@ -1703,6 +1738,9 @@ def _render_steading_block_rich(
     n = len(lines)
     i = start
     plain: list[str] = ["steading improvement"]
+    # Beside each plain line, the provenance tags of the line it came
+    # from, so the title the parser gathers can be translated.
+    ptags: list[str] = [""]
     while i < n:
         L = lines[i]
         if L.startswith(M_C):
@@ -1712,19 +1750,25 @@ def _render_steading_block_rich(
                 # Checkbox on a title line: emit the name, then any trailing
                 # text (a blurb or a group-header) as its own line.
                 plain.append(bp)
+                ptags.append("".join(TAG_RE.findall(L)))
                 rest = full[len(bp):].strip()
                 if rest:
                     plain.append(rest)
+                    ptags.append("")
             else:
                 plain.append(strip_markers(L).strip())
+                ptags.append("".join(TAG_RE.findall(L)))
             i += 1
             continue
         if L.startswith("\x02"):
             break  # heading / table / other structure ends the block
         plain.append(strip_markers(L).strip())
+        ptags.append("".join(TAG_RE.findall(L)))
         i += 1
 
-    parsed = try_parse_improvement_block(plain, 0, link_fn, anchors, next_check_id)
+    parsed = try_parse_improvement_block(
+        plain, 0, link_fn, anchors, next_check_id, line_tags=ptags
+    )
     if parsed is not None:
         html_block, consumed = parsed
         # Anything the parser did not consume → plain paragraphs
@@ -1803,16 +1847,19 @@ def _render_artifact_block_rich(
             prev, pn = paras[-1]
             body_pv, tail_pv = _split_trailing_fmt(prev.rstrip())
             lead_pv, rest_pv = _split_leading_fmt(L)
-            if body_pv.endswith("-") and rest_pv[:1].islower():
+            if body_pv.endswith("-") and strip_tags(rest_pv)[:1].islower():
                 paras[-1] = (body_pv[:-1] + _cancel_fmt_seam(tail_pv, lead_pv) + rest_pv, pn)
             else:
                 paras[-1] = (prev + " " + L, pn)
 
-    disc_name = titlecase_name(title.rstrip(":"))
+    disc_name = titlecase_name(strip_tags(title).rstrip(":"))
     hid = anchors.add(disc_name)
+    # Shown translated where a translation has the title — asked for with
+    # the tags of the lines the title was gathered from.
+    disc_shown = T(disc_name + "".join(TAG_RE.findall(title)))
     parts = [
         f'<div class="discovery-block" id="{html.escape(hid)}">',
-        f'<h3 class="discovery-name">{html.escape(disc_name)}</h3>',
+        f'<h3 class="discovery-name">{html.escape(disc_shown)}</h3>',
     ]
     if tags:
         parts.append(f'<p class="discovery-tags">{link_fn(tags)}</p>')
@@ -1829,6 +1876,7 @@ def try_parse_improvement_block(
     link_fn,
     anchors: AnchorRegistry,
     next_check_id,
+    line_tags: list[str] | None = None,
 ) -> tuple[str, int] | None:
     """
     Parse a steading improvement (or similar) requirement block with checkboxes.
@@ -1858,12 +1906,15 @@ def try_parse_improvement_block(
         j += 1
 
     title_parts: list[str] = []
+    title_tags = ""  # the provenance of plain title lines (``line_tags``)
     while (
         j < n
         and _is_all_caps_label(lines[j])
         and not _is_require_header(lines[j])
     ):
         title_parts.append(lines[j].strip())
+        if line_tags and j < len(line_tags):
+            title_tags += line_tags[j]
         j += 1
         if len(title_parts) >= 4:
             break
@@ -1893,13 +1944,16 @@ def try_parse_improvement_block(
         return None
 
     block_start = j
-    title = titlecase_label(title)
+    # The title may be gathered from several lines: retitled plain, and
+    # asked for with the tags of the lines it came from.
+    title_tags += "".join(TAG_RE.findall(title))
+    title = titlecase_label(strip_tags(title))
     hid = anchors.add(title or "Steading improvement", caps_label=True)
     parts = [f'<div class="steading-improvement" id="{html.escape(hid)}">']
     if kind or starts_si:
         parts.append(f'<p class="si-kind">{html.escape(T("Steading improvement"))}</p>')
     if title:
-        parts.append(f'<h3 class="si-title">{html.escape(T(title))}</h3>')
+        parts.append(f'<h3 class="si-title">{html.escape(T(title + title_tags))}</h3>')
     if blurb:
         parts.append(f'<p class="si-blurb">{link_fn(blurb)}</p>')
 
@@ -1998,6 +2052,37 @@ def structure_html(
         return linkify_pages(
             text, lookup, current_slug, section_index, **link_kw
         )
+
+    # A list item or numbered entry is built de-tokenized, which loses its
+    # provenance tags; each such string remembers the tags of the lines it
+    # came from and gets them back, as a suffix, when it is rendered.
+    prov: dict[str, str] = {}
+
+    def _plain(l: str) -> str:
+        p = _defmt(l)
+        t = "".join(TAG_RE.findall(l))
+        if t:
+            prov[p] = t
+        return p
+
+    def _glue(r: str, a: str, b: str) -> str:
+        """``r``, made of ``a`` and ``b`` in some way, keeps both their tags."""
+        t = prov.get(a, "") + prov.get(b, "")
+        if t:
+            prov[r] = t
+        return r
+
+    def _cat(a: str, b: str) -> str:
+        return _glue(a + " " + b, a, b)
+
+    def _same(new: str, old: str) -> str:
+        t = prov.get(old, "")
+        if t and new != old:
+            prov[new] = t
+        return new
+
+    def pv(t: str) -> str:
+        return t + prov.get(t, "")
 
     def next_check_id(prefix: str = "req") -> str:
         nonlocal check_list_n
@@ -2101,7 +2186,7 @@ def structure_html(
             if line.startswith(M_TH):
                 txt = line[len(M_TH):].strip()
                 # "steading improvement" label → custom improvement block
-                if txt.lower() == "steading improvement":
+                if _defmt(txt).lower() == "steading improvement":
                     pending_icon = None
                     block_html, i = _render_steading_block_rich(
                         lines, i + 1, link, anchors, next_check_id,
@@ -2179,8 +2264,8 @@ def structure_html(
                     if ic and block_html.startswith("<"):
                         # Prefixed title inside the artifact card if present
                         block_html = block_html.replace(
-                            f">{html.escape(bare)}",
-                            f">{ic}{html.escape(bare)}",
+                            f">{html.escape(strip_tags(bare))}",
+                            f">{ic}{html.escape(strip_tags(bare))}",
                             1,
                         )
                     out.append(block_html)
@@ -2540,8 +2625,8 @@ def structure_html(
             # "weapons armor" then "value" or "&" then maybe "value" implied
             parts = [line.strip()]
             i += 1
-            while i < n and lines[i].lower() in {"&", "and", "value"}:
-                if lines[i].lower() == "value":
+            while i < n and _defmt(lines[i]).lower() in {"&", "and", "value"}:
+                if _defmt(lines[i]).lower() == "value":
                     parts.append("value")
                 i += 1
             val_title = " ".join(parts) if "value" in " ".join(parts).lower() else (
@@ -2739,11 +2824,11 @@ def structure_html(
                     continue
                 if lines[i].startswith("\x02"):
                     break
-                cur = _defmt(lines[i])
+                cur = _plain(lines[i])
                 e = ENTRY_RE.match(cur)
                 if e:
                     num = e.group(1) + (f"-{e.group(2)}" if e.group(2) else "")
-                    body = e.group(3).strip()
+                    body = _same(e.group(3).strip(), cur)
                     i += 1
                     # continuations (also skip decorative HRs mid-entry)
                     while i < n:
@@ -2761,7 +2846,7 @@ def structure_html(
                             continue
                         if lines[i].startswith("\x02"):
                             break
-                        nxt = _defmt(lines[i])
+                        nxt = _plain(lines[i])
                         if ENTRY_RE.match(nxt):
                             break
                         # Next dice table (e.g. "1d6 signs" after size row 6)
@@ -2780,11 +2865,11 @@ def structure_html(
                         # Always glue non-entry lines into the current row
                         # (wrapped descriptions; e.g. wonder #9's second sentence).
                         if nxt.endswith("-") and not nxt.endswith(("–", "—", "--")):
-                            body = body.rstrip("-") + nxt.lstrip("-")
+                            body = _glue(body.rstrip("-") + nxt.lstrip("-"), body, nxt)
                         elif body.endswith(("–", "—")):
-                            body = body + nxt
+                            body = _glue(body + nxt, body, nxt)
                         else:
-                            body = body + " " + nxt
+                            body = _cat(body, nxt)
                         i += 1
                     entries.append((num, body))
                     continue
@@ -2806,7 +2891,7 @@ def structure_html(
                     if cur.endswith(":") and cur[0:1].isupper() and len(cur) < 60:
                         break
                     num, body = entries[-1]
-                    entries[-1] = (num, body + " " + cur)
+                    entries[-1] = (num, _cat(body, cur))
                     i += 1
                     continue
                 break
@@ -2836,7 +2921,7 @@ def structure_html(
                     if last_num is not None and first_new == last_num + 1:
                         row_html = "".join(
                             f'<tr><th scope="row">{html.escape(num)}</th>'
-                            f"<td>{link(body)}</td></tr>"
+                            f"<td>{link(pv(body))}</td></tr>"
                             for num, body in entries
                         )
                         out[-1] = prev.replace(
@@ -2851,7 +2936,7 @@ def structure_html(
                     render_roll_table(
                         dice,
                         label or "result",
-                        entries,
+                        [(nm, pv(b)) for nm, b in entries],
                         lookup,
                         current_slug,
                         section_index,
@@ -2902,7 +2987,7 @@ def structure_html(
         }
         dp1, dp2 = _defmt(peek(1)), _defmt(peek(2))
         is_creature_start = i in forced_creature or (
-            line.lower() not in _not_creature
+            _defmt(line).lower() not in _not_creature
             and not looks_like_value_header(line)
             and not VALUE_ROW_RE.match(line)
             and (
@@ -2997,7 +3082,7 @@ def structure_html(
                     continue
                 if L.startswith(M_H3):
                     bare_h = L[len(M_H3) :].strip()
-                    bare_l = bare_h.rstrip(":").lower()
+                    bare_l = _defmt(bare_h).rstrip(":").lower()
                     if bare_l == "questions" or bare_l.startswith("questions"):
                         block_lines.append(bare_h.rstrip(":") + ":")
                         i += 1
@@ -3025,7 +3110,7 @@ def structure_html(
                     break
                 if L.startswith("\x02"):
                     break
-                plain = _defmt(L)
+                plain = _plain(L)
                 # Next GM-note creature (Sites: Spirit of the spring after
                 # Wynfor & Tiwlip) — don't swallow it into this card.
                 if block_lines and looks_like_inline_creature(plain):
@@ -3046,7 +3131,7 @@ def structure_html(
                     or re.match(r"^(damage|instinct|threat)\b", plain, re.I)
                 ):
                     if looks_like_tag_line(plain):
-                        plain = ", ".join(tag_prefix) + ", " + plain
+                        plain = _same(", ".join(tag_prefix) + ", " + plain, plain)
                     else:
                         block_lines.append(", ".join(tag_prefix))
                     tag_prefix = []
@@ -3086,19 +3171,19 @@ def structure_html(
                             break
                         if lines[i].startswith("\x02"):
                             break
-                        cur_e = _defmt(lines[i])
+                        cur_e = _plain(lines[i])
                         em = ENTRY_RE.match(cur_e)
                         if not em:
                             break
                         num_e = em.group(1) + (
                             f"-{em.group(2)}" if em.group(2) else ""
                         )
-                        body_e = em.group(3).strip()
+                        body_e = _same(em.group(3).strip(), cur_e)
                         i += 1
                         while i < n and not lines[i].startswith("\x02"):
                             if lines[i] == M_HR:
                                 break
-                            nxt_e = _defmt(lines[i])
+                            nxt_e = _plain(lines[i])
                             if ENTRY_RE.match(nxt_e):
                                 break
                             if looks_like_roll_header(nxt_e) or looks_like_heading(
@@ -3110,9 +3195,9 @@ def structure_html(
                                 and nxt_e[:1].isupper()
                             ):
                                 break
-                            body_e = body_e + " " + nxt_e
+                            body_e = _cat(body_e, nxt_e)
                             i += 1
-                        entries_c.append((num_e, body_e))
+                        entries_c.append((num_e, pv(body_e)))
                     if entries_c:
                         # stash as a renderable HTML fragment line
                         block_lines.append(
@@ -3125,9 +3210,9 @@ def structure_html(
                         )
                     continue
                 if plain.startswith("•") or plain.startswith("·"):
-                    block_lines.append("• " + plain.lstrip("•· ").strip())
+                    block_lines.append(pv(_same("• " + plain.lstrip("•· ").strip(), plain)))
                 else:
-                    block_lines.append(plain)
+                    block_lines.append(pv(plain))
                 i += 1
             if tag_prefix:
                 block_lines.insert(0, ", ".join(tag_prefix))
@@ -3288,18 +3373,18 @@ def structure_html(
         if line.startswith("•") or line.startswith("·"):
             items = []
             while i < n and _defmt(lines[i]).lstrip().startswith(("•", "·")):
-                items.append(_defmt(lines[i]).lstrip("•· ").strip())
+                items.append(_same(_plain(lines[i]).lstrip("•· ").strip(), _plain(lines[i])))
                 i += 1
                 # join soft wraps already done; also join if next is continuation
                 while i < n and should_join(items[-1], lines[i]) and not _defmt(lines[i]).lstrip().startswith(("•", "·")):
-                    items[-1] = items[-1] + " " + _defmt(lines[i])
+                    items[-1] = _cat(items[-1], _plain(lines[i]))
                     i += 1
             if not items:
                 i += 1  # never spin on a lone bullet glyph
                 continue
             out.append("<ul>")
             for it in items:
-                out.append(f"<li>{link(it)}</li>")
+                out.append(f"<li>{link(pv(it))}</li>")
             out.append("</ul>")
             continue
 
@@ -3315,17 +3400,17 @@ def structure_html(
                 e = ENTRY_RE.match(_defmt(lines[i]))
                 assert e
                 num = e.group(1) + (f"-{e.group(2)}" if e.group(2) else "")
-                body = e.group(3).strip()
+                body = _same(e.group(3).strip(), _plain(lines[i]))
                 i += 1
                 while i < n and should_join(body, lines[i]) and not ENTRY_RE.match(_defmt(lines[i])):
-                    body = body + " " + _defmt(lines[i])
+                    body = _cat(body, _plain(lines[i]))
                     i += 1
                 entries.append((num, body))
             out.append('<div class="roll-table bare-numbered"><table><tbody>')
             for num, body in entries:
                 out.append(
                     f"<tr><th scope=\"row\">{html.escape(num)}</th>"
-                    f"<td>{link(body)}</td></tr>"
+                    f"<td>{link(pv(body))}</td></tr>"
                 )
             out.append("</tbody></table></div>")
             continue

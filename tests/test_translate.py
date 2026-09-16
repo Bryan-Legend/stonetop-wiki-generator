@@ -98,8 +98,14 @@ class TextMemoryTest(unittest.TestCase):
         # a shouted label retitled by the renderer comes back retitled
         tm2 = TextMemory.from_lines(["\x02C " + B_ON + "STONE WALL" + B_OFF + " A rampart."], ["\x02C " + B_ON + "STEINMAUER" + B_OFF + " Ein Wall."])
         self.assertEqual(tm2.get("Stone Wall"), "Steinmauer")
-        # the whole line was never asked for: that is a leak; the sub-segment hit is not
-        self.assertEqual(tm2.unused(), [B_ON + "STONE WALL" + B_OFF + " A rampart."])
+        # A line opening with a shouted label is shown in pieces (name apart
+        # from the rest), so the whole never being asked for is not a leak.
+        self.assertEqual(tm2.unused(), [])
+        # A plain line never asked for is.
+        tm3 = TextMemory.from_lines(["A rampart of stone."], ["Ein Wall aus Stein."])
+        self.assertEqual(tm3.unused(), ["A rampart of stone."])
+        tm3.get("A rampart of stone.")
+        self.assertEqual(tm3.unused(), [])
 
 
 if __name__ == "__main__":

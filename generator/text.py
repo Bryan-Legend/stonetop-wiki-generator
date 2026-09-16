@@ -310,6 +310,25 @@ I_ON, I_OFF = "\x06", "\x07"   # italic
 _FMT_TOKENS = str.maketrans("", "", B_ON + B_OFF + I_ON + I_OFF)
 _FMT_SET = frozenset((B_ON, B_OFF, I_ON, I_OFF))
 
+# Provenance tags: one character from Supplementary Private Use Area-A per
+# translatable field of a page (``translate.tag_lines``), read back by the
+# translation memory where text becomes HTML. Dropped with the formatting
+# sentinels, so analysis never sees one.
+TAG_MIN = 0xF0000
+TAG_RE = re.compile("[\U000F0000-\U000FFFFD]")
+
+
+def tag_char(k: int) -> str:
+    return chr(TAG_MIN + k)
+
+
+def has_tags(s: str) -> bool:
+    return bool(s) and TAG_RE.search(s) is not None
+
+
+def strip_tags(s: str) -> str:
+    return TAG_RE.sub("", s) if s else s
+
 
 def _split_trailing_fmt(s: str) -> tuple[str, str]:
     """Split off any trailing inline-format sentinels: (body, trailing)."""
@@ -340,11 +359,20 @@ def _cancel_fmt_seam(tail: str, lead: str) -> str:
     return "".join(t) + "".join(l)
 
 
+def _has_fmt(s: str) -> bool:
+    return B_ON in s or I_ON in s or B_OFF in s or I_OFF in s
+
+
 def _defmt(s: str) -> str:
-    """Drop inline bold/italic sentinels (keep structural \\x02 markers)."""
+    """Drop inline bold/italic sentinels and provenance tags (keep
+    structural \\x02 markers)."""
+    # Most strings carry no formatting; the four `in` checks are far cheaper
+    # than a translate() pass over a line that has nothing to drop.
     if not s:
         return ""
-    return s.translate(_FMT_TOKENS)
+    if _has_fmt(s):
+        s = s.translate(_FMT_TOKENS)
+    return TAG_RE.sub("", s)
 
 
 def strip_markers(line: str) -> str:
@@ -352,7 +380,9 @@ def strip_markers(line: str) -> str:
         return ""
     if line.startswith("\x02"):
         line = MARKER_RE.sub("", line)
-    return line.translate(_FMT_TOKENS)
+    if _has_fmt(line):
+        line = line.translate(_FMT_TOKENS)
+    return TAG_RE.sub("", line)
 
 
 def heading_pages(lines: list[str], pages: list[int]) -> list[tuple[int, str]]:
@@ -609,6 +639,7 @@ def parse_page_nums(spec: str) -> list[int]:
 
 def looks_like_tag_line(line: str) -> bool:
     """Horde, small, stealthy, … or Solitary, brutal, fearless, drunkard"""
+    line = strip_tags(line)
     if not line or len(line) > 160:
         return False
     if HP_LINE_RE.search(line) or line.lower().startswith("damage"):
@@ -1136,6 +1167,7 @@ def _strip_leading_inventory_marks(s: str) -> str:
 
 def _is_pure_arcana_tag_line(line: str) -> bool:
     """True if the whole line is one or more arcana tags (e.g. 'magical', 'fragile, immobile')."""
+    line = strip_tags(line)
     L = _strip_leading_inventory_marks(line.strip().lstrip(",").strip())
     if not L or len(L) > 90:
         return False
@@ -1167,6 +1199,7 @@ def _is_pure_arcana_tag_line(line: str) -> bool:
 
 def italic_coverage(line: str) -> float:
     """Share of the line's characters that sit inside an italic run."""
+    line = strip_tags(line)
     bare = strip_markers(_defmt(line)).strip()
     if not bare:
         return 0.0
@@ -1186,6 +1219,7 @@ def is_set_off_italic(line: str) -> bool:
     ``<blockquote>``. An italic run *inside* a sentence doesn't qualify, nor
     does an item's tag list, which is italic end to end for other reasons.
     """
+    line = strip_tags(line)
     if not line or line.startswith("\x02"):
         return False
     bare = strip_markers(_defmt(line)).strip()
@@ -1204,6 +1238,7 @@ def _is_item_tag_line(line: str) -> bool:
     an inventory-slot diamond). Prefer italic coverage over a hard-coded word
     list; fall back to the pure-tag keyword check for de-tokenized plain lines.
     """
+    line = strip_tags(line)
     if not line or line.startswith("\x02"):
         return False
     # Measure italic coverage on the raw (sentinel-bearing) line

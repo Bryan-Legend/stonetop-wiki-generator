@@ -49,7 +49,15 @@ from .text import (
     M_SEP,
     MARKERS,
     SHEET_MARKERS,
+    TAG_MIN,
+    TAG_RE,
+    _cancel_fmt_seam,
     _defmt,
+    _split_leading_fmt,
+    _split_trailing_fmt,
+    has_tags,
+    strip_tags,
+    tag_char,
     titlecase_label,
 )
 
@@ -398,12 +406,106 @@ def coverage(en: list[str], tr: list[str], *, sheet: bool) -> tuple[int, int]:
     return done, total
 
 
+# --------------------------------------------------------- provenance tags
+
+# Where in a field the tag goes: after its opening formatting sentinels and
+# after whatever the renderer strips off the front of a line — a bullet, an
+# ellipsis, inventory diamonds, a roll row's numbers, a roll head's dice —
+# so every one of those strips still finds what it looks for at the start.
+_TAG_AT_RE = re.compile(
+    r"^(?:[\s…\.•·◇,、，\x04-\x07]|\d+(?:[-\u2013]\d+)?\s+|\d*d\d+\s+)*"
+)
+
+
+def tag_lines(lines: list[str]) -> tuple[list[str], list[tuple[int, int]]]:
+    """``lines`` with every translatable field carrying its unit tag, and
+    ``units[k] = (line, field)`` for tag ``k``.
+
+    A tag is one character from Supplementary Private Use Area-A
+    (``text.tag_char``), put after the field's opening sentinels and leading
+    bullet or numbers (``_TAG_AT_RE``), so a bold label still opens with its
+    ``\\x04`` and a bullet is still stripped. It rides through whatever
+    the renderer does to the text — lines gathered into a paragraph, a line
+    cut at a label, a bullet dropped — and says, where the text becomes HTML,
+    which fields it was made from; :class:`TextMemory` then takes the same
+    fields from the translation. ``_defmt`` and ``strip_markers`` drop tags,
+    so no classifier ever sees one. The English pages are built from tagged
+    lines too, which is what keeps their analysis and a translation's the
+    same by construction (``T()`` strips the tags when nothing translates).
+    """
+    out: list[str] = []
+    units: list[tuple[int, int]] = []
+    for li, line in enumerate(lines):
+        tag = _tag_of(line)
+        if line.startswith("\x02"):
+            head, sp, payload = line.partition(" ")
+            if not sp:
+                out.append(line)
+                continue
+            head += sp
+        else:
+            head, payload = "", line
+        parts = payload.split(M_SEP)
+        idx = text_field_indexes(tag, parts, sheet=False)
+        if tag == "STATS":  # the stat block is one JSON payload
+            out.append(line)
+            continue
+        # A line with no letters — a page number the extractor left behind,
+        # a roll row's number on its own line — is nothing to translate,
+        # but the renderer gathers it with its neighbours all the same, and
+        # the gathering has to account for it.
+        if not idx and tag in BOOK_TEXT_TAGS and len(parts) == 1 and parts[0].strip():
+            idx = [0]
+        if not idx:
+            out.append(line)
+            continue
+        for f in idx:
+            p = parts[f]
+            at = _TAG_AT_RE.match(p).end()
+            if at >= len(p):
+                continue
+            parts[f] = p[:at] + tag_char(len(units)) + p[at:]
+            units.append((li, f))
+        out.append(head + M_SEP.join(parts))
+    return out, units
+
+
+def _split_tagged(s: str, leads: list[str]) -> list[tuple[int | None, str]]:
+    """``s`` cut at its tags: ``(unit, text)`` per piece, the first piece
+    (unit ``None``) whatever came before the first tag. A field's tag sits
+    after its opening sentinel and leading bullet or numbers (``leads[k]``),
+    which therefore end the piece before; they are handed back to the piece
+    they belong to, so it reads as its field does."""
+    segs: list[tuple[int | None, str]] = []
+    unit: int | None = None
+    start = 0
+    for m in TAG_RE.finditer(s):
+        segs.append((unit, s[start:m.start()]))
+        unit = ord(m.group()) - TAG_MIN
+        start = m.end()
+    segs.append((unit, s[start:]))
+    for i in range(len(segs) - 1):
+        u, t = segs[i]
+        k = segs[i + 1][0]
+        lead = leads[k] if k is not None and k < len(leads) else ""
+        if lead and t.endswith(lead):
+            j = len(t) - len(lead)
+        else:
+            j = len(t)
+            while j > 0 and t[j - 1] in (B_ON, I_ON):
+                j -= 1
+        if j < len(t):
+            segs[i] = (u, t[:j])
+            segs[i + 1] = (k, t[j:] + segs[i + 1][1])
+    return segs
+
+
 # --------------------------------------------------------- text memory
 
 _BULLET_RE = re.compile(r"^[•·]\s*")
 _NAMED_MOVE_TR_RE = re.compile(r"^\x04[^\x05]+\x05\s*(?:\x06([^\x07]*)\x07\s*)?(.*)$", re.S)
 _BOLD_SPLIT_RE = re.compile(r"\s+(?=\x04)")
-_ROLL_ROW_RE = re.compile(r"^(\d+(?:[-\u2013]\d+)?)\s+(.+)$", re.S)
+_ROLL_ROW_RE = re.compile(r"^(\d+(?:[-–]\d+)?)\s+(.+)$", re.S)
 # A move block sets its trigger apart from the words around it. The
 # trigger can be several formatted runs in a row (the book broke the
 # line), and the block shows them as one phrase.
@@ -416,6 +518,26 @@ def _trigger_segments(text: str) -> list[str]:
 
 
 _BOLD_PREFIX_RE = re.compile(r"^\x04([^\x05]+)\x05\s*(.*)$", re.S)
+_DICE_HEAD_RE = re.compile(r"^\s*(\d*d\d+)\s+(.+)$")
+_ELLIPSIS_RE = re.compile(r"^[\s…\.]+")
+_MAX_EN_RE = re.compile(r"\s+Max\.?\s*\d+(?=\s|$)")
+_MAX_TR_RE = re.compile(r"\s+(?:Max|Máx)\.?\s*\d+(?=\s|$)")
+_MAX_HEAD_EN_RE = re.compile(r"^\s*Max\.?\s+\d+\s+(.+)$")
+_MAX_HEAD_TR_RE = re.compile(r"^\s*\S+\s+\d+\s+(.+)$")
+
+
+def _cf(s: str) -> str:
+    """Formatting and tags dropped, case folded — the character-wise half of
+    :meth:`TextMemory.norm`."""
+    return _defmt(s).casefold()
+
+
+def _norm_tail(s: str) -> str:
+    """The rest of :meth:`TextMemory.norm`, over text ``_cf`` has been through."""
+    s = s.strip()
+    if s and s[0] in "•·":
+        s = _BULLET_RE.sub("", s)
+    return s.rstrip(":").strip()
 
 
 def _payload(line: str) -> list[str]:
@@ -425,108 +547,254 @@ def _payload(line: str) -> list[str]:
     return line.split(M_SEP)
 
 
+def _join_dehyphenated(parts) -> str:
+    """Join lines the way a block does, putting a broken word back together
+    — the hyphen may sit inside a formatting run ("…mar-</i></b>" + "ble"),
+    and the seam's closing and opening sentinels cancel."""
+    out = ""
+    for part in parts:
+        if not out:
+            out = part
+            continue
+        body, tail = _split_trailing_fmt(out.rstrip())
+        lead, rest = _split_leading_fmt(part)
+        if body.endswith("-") and rest[:1].islower():
+            out = body[:-1] + _cancel_fmt_seam(tail, lead) + rest
+        else:
+            out = out + " " + part
+    return out
+
+
+def derive_variants(
+    en: str, tr: str, tag: str = "P"
+) -> tuple[list[tuple[str, str, bool]], bool]:
+    """What a renderer asks for of a line beyond the line whole, paired with
+    the same cut of its translation: ``(english, translation, shows_line)``,
+    ``shows_line`` when a hit means the line reached the reader. Also whether
+    the line is only ever shown in pieces (an arcanum's named move), so it
+    is not reported as a leak. Works over a run of lines gathered into one
+    the same way."""
+    from .arcana import (
+        _arcana_named_move,
+        _arcana_strip_tag_seps,
+        _arcana_tags_prose,
+        _dedupe_arcana_title,
+    )
+
+    out: list[tuple[str, str, bool]] = []
+
+    def add(a: str, b: str, shows: bool = True) -> None:
+        if a and b and a.strip() and b.strip():
+            out.append((a, b, shows))
+
+    whole_derived = False
+    # A label the line opens with, and the words after it ("Instinct" / "to …").
+    ma, mb = _BOLD_PREFIX_RE.match(en), _BOLD_PREFIX_RE.match(tr)
+    if ma and mb:
+        add(ma.group(1), mb.group(1), False)
+        add(ma.group(2), mb.group(2), False)
+    # A stat block cuts a line where a bold label opens ("… Damage spear d8
+    # …", "… Cost proof of honor …"); every run of consecutive pieces, since
+    # a block may cut the line at the last label only.
+    sa, sb = _BOLD_SPLIT_RE.split(en), _BOLD_SPLIT_RE.split(tr)
+    if 1 < len(sa) == len(sb):
+        for x in range(len(sa)):
+            for y in range(x + 1, len(sa) + 1):
+                ja, jb = " ".join(sa[x:y]), " ".join(sb[x:y])
+                add(ja, jb)
+                # The block shows a label ("Instinct") apart from the words
+                # that follow it.
+                pa, pb = _BOLD_PREFIX_RE.match(ja), _BOLD_PREFIX_RE.match(jb)
+                if pa and pb:
+                    add(pa.group(2), pb.group(2))
+    # A move block sets its trigger apart from the words around it ("When
+    # you" / "take time to catch your breath" / ", ...").
+    ra, rb = _trigger_segments(en), _trigger_segments(tr)
+    if 1 < len(ra) == len(rb):
+        for xa, xb in zip(ra, rb):
+            add(xa, xb)
+    da, db = _defmt(en), _defmt(tr)
+    # A roll table's row drops the numbers it opens with ("4-5 Clearing,
+    # meadow, sparse trees").
+    na, nb = _ROLL_ROW_RE.match(da), _ROLL_ROW_RE.match(db)
+    if na and nb and na.group(1) == nb.group(1):
+        add(na.group(2), nb.group(2))
+    # A roll table's head keeps the dice apart from the label it names
+    # ("1d6 discovery" → the table is titled "discovery").
+    ha, hb = _DICE_HEAD_RE.match(da), _DICE_HEAD_RE.match(db)
+    if ha and hb and ha.group(1) == hb.group(1):
+        add(ha.group(2), hb.group(2))
+    # A checklist item loses its leading ellipsis ("… is sealed with wax").
+    ea, eb = _ELLIPSIS_RE.sub("", en), _ELLIPSIS_RE.sub("", tr)
+    if ea != en and eb:
+        add(ea, eb)
+    # A minor arcanum's title line is printed twice by the extractor
+    # ("A giant's dormitory giant's dormitory"); the card shows it once.
+    if tag == "H3":
+        dd = _dedupe_arcana_title(da)
+        if dd != da:
+            add(dd, tr)
+    # An insert's move wrapped under the HP box: the renderer drops the
+    # box's cap out of the middle of the line ("Tend to the sick,
+    # injured, Max. 6 women in labor"), and shows the move without its
+    # bullet. A translation writes the cap in its own words ("Máx. 6").
+    if da.lstrip().startswith(("•", "·")):
+        ca, cb = _MAX_EN_RE.sub("", da), _MAX_TR_RE.sub("", db)
+        if ca != da and cb:
+            add(ca, cb)
+            add(ca.lstrip("•· "), cb.lstrip("•· "))
+    # The HP box's cap set beside a special quality: "Max. 13 lacks organs".
+    m2a, m2b = _MAX_HEAD_EN_RE.match(da), _MAX_HEAD_TR_RE.match(db)
+    if m2a and m2b:
+        add(m2a.group(1), m2b.group(1))
+    # A line opening with inventory diamonds shows without them.
+    s2a, s2b = _arcana_strip_tag_seps(en), _arcana_strip_tag_seps(tr)
+    if s2a != en and s2b:
+        add(s2a, s2b)
+    ta, pra = _arcana_tags_prose(en)
+    tb, prb = _arcana_tags_prose(tr)
+    if ta and not pra:
+        # A bare tag line: the card shows only its tags. The words that
+        # tell a tag apart are English ("+1 damage"), so the translation
+        # is taken whole rather than peeled.
+        add(ta, db.strip(" ◇,、，"))
+    elif ta and tb:
+        add(ta, tb)
+        if pra and prb:
+            add(pra, prb)
+    named = _arcana_named_move(en)
+    if named:
+        # A named move: the card shows its name, its tags and its trigger
+        # apart. The translated name is not in capitals, so the translation
+        # is cut by its formatting instead.
+        whole_derived = True
+        _name, tags_en, trigger_en = named
+        mn = _NAMED_MOVE_TR_RE.match(tr)
+        if mn and tags_en and mn.group(1):
+            add(tags_en, mn.group(1).strip(" ()"))
+            add(trigger_en, mn.group(2))
+    return out, whole_derived
+
+
 class TextMemory:
     """English text → its translation, consulted where the renderer emits text.
 
-    Keys are matched loosely — inline formatting dropped, case folded, a
-    trailing colon ignored — because the renderer passes a line on in
-    several forms. What comes back keeps the shape of the query: the raw
-    translation (sentinels and all) for a raw query, the plain one for a
-    plain query, the query's colon, and title case where the query was
-    retitled from a shouted label.
+    Two ways in. Text still carrying its provenance tags (see ``tag_lines``)
+    names the fields it was made from: each is matched against its own field
+    — whole, or as one of the field's variants — and a text the renderer
+    gathered from several fields (a paragraph, a stat block's joined note)
+    is matched against the variants of that run, made on demand and kept.
+    Text without tags (a piece cut out of a field, a fixed word) is matched
+    by content, loosely — inline formatting dropped, case folded, a trailing
+    colon ignored — because the renderer passes a line on in several forms.
+    What comes back keeps the shape of the query: the raw translation
+    (sentinels and all) for a raw query, the plain one for a plain query,
+    the query's colon, and title case where the query was retitled from a
+    shouted label.
     """
 
     def __init__(self) -> None:
-        self._index: dict[str, tuple[str, str, str]] = {}  # norm → (raw, plain, en_raw)
+        self._index: dict[str, tuple[str, str]] = {}  # norm → (raw, en_raw)
+        self._units: dict[str, tuple[int, ...]] = {}  # key → the fields it shows
         self.hits: set[str] = set()
+        self._unit_hits: set[int] = set()
         self._derived: set[str] = set()  # sub-segments of a line, not lines
-        self._reverse: dict[str, str] = {}  # norm(translation) → English, plain
-        self._parts: dict[str, list[str]] = {}  # derived key → the line keys it shows
+        self._en: list[str] = []  # unit → English field, plain of tags
+        self._tr: list[str] = []  # unit → its translation (English if none)
+        self._unit_key: list[str] = []  # unit → norm of the English
+        self._lead: list[str] = []  # unit → what its tag sits after
+        self._runs: dict[tuple[int, ...], dict[str, tuple[str, str]]] = {}
+        # norm(translation) → English, plain; made when first asked for.
+        self._reverse: dict[str, str] = {}
+        self._reverse_n = -1
 
     @staticmethod
     def norm(s: str) -> str:
         # A leading bullet glyph is dropped: the bullet-list renderer asks
         # for the item without it.
-        return _BULLET_RE.sub("", _defmt(s).strip()).rstrip(":").strip().casefold()
+        return _norm_tail(_cf(s))
 
     def add(
-        self, en: str, tr: str, *, derived: bool = False, parts: list[str] | None = None
+        self,
+        en: str,
+        tr: str,
+        *,
+        derived: bool = False,
+        units: tuple[int, ...] = (),
     ) -> None:
         en, tr = en.strip(), tr.strip()
         if not en or not tr or en == tr:
             return
         key = self.norm(en)
         if key and key not in self._index:
-            self._index[key] = (tr, _defmt(tr), en)
-            self._reverse.setdefault(self.norm(tr), _defmt(en).strip())
+            self._index[key] = (tr, en)
             if derived:
                 self._derived.add(key)
-            if parts:
-                self._parts[key] = [self.norm(p) for p in parts]
+            if units:
+                self._units[key] = units
 
     @classmethod
     def from_lines(cls, en: list[str], tr: list[str]) -> "TextMemory":
         tm = cls()
+        _tagged, units = tag_lines(en)
+        for k, (li, f) in enumerate(units):
+            a, b = en[li], tr[li]
+            pa = _payload(a)
+            pb = _payload(b) if _tag_of(a) == _tag_of(b) else []
+            ea = pa[f]
+            eb = pb[f] if len(pa) == len(pb) else ea
+            tm._en.append(ea)
+            tm._tr.append(eb)
+            tm._unit_key.append(tm.norm(ea))
+            tm._lead.append(_TAG_AT_RE.match(ea).group())
+            if ea == eb:
+                continue
+            tm.add(ea, eb, units=(k,))
+            variants, whole_derived = derive_variants(ea, eb, _tag_of(a))
+            for va, vb, shows in variants:
+                tm.add(va, vb, derived=True, units=(k,) if shows else ())
+            if whole_derived:
+                tm._derived.add(tm.norm(ea))
+        # A playbook's stat block is one JSON payload; its text is the gloss
+        # and the HP label.
         for a, b in zip(en, tr):
-            if a == b or _tag_of(a) != _tag_of(b):
-                continue
-            pa, pb = _payload(a), _payload(b)
-            if len(pa) != len(pb):
-                continue
-            if _tag_of(a) == "STATS":
-                ba, bb = _stats_block(pa[0]), _stats_block(pb[0])
-                for k in STATS_TEXT_KEYS:
-                    tm.add(str(ba.get(k) or ""), str(bb.get(k) or ""))
-                continue
-            for fa, fb in zip(pa, pb):
-                tm.add(fa, fb)
-                ma, mb = _BOLD_PREFIX_RE.match(fa), _BOLD_PREFIX_RE.match(fb)
-                if ma and mb:
-                    tm.add(ma.group(1), mb.group(1), derived=True)
-                    tm.add(ma.group(2), mb.group(2), derived=True)
-                # A stat block cuts a line where a bold label opens
-                # ("… Damage spear d8 …", "… Cost proof of honor …").
-                sa, sb = _BOLD_SPLIT_RE.split(fa), _BOLD_SPLIT_RE.split(fb)
-                if 1 < len(sa) == len(sb):
-                    # Every run of consecutive pieces, since a block may cut
-                    # the line at the last label only ("Special qualities …
-                    # willing to use them" / "Instinct to …").
-                    for x in range(len(sa)):
-                        for y in range(x + 1, len(sa) + 1):
-                            ja1 = " ".join(sa[x:y])
-                            jb1 = " ".join(sb[x:y])
-                            tm.add(ja1, jb1, derived=True, parts=[fa])
-                            # The block shows a label ("Instinct") apart
-                            # from the words that follow it.
-                            pa1 = _BOLD_PREFIX_RE.match(ja1)
-                            pb1 = _BOLD_PREFIX_RE.match(jb1)
-                            if pa1 and pb1:
-                                tm.add(
-                                    pa1.group(2), pb1.group(2),
-                                    derived=True, parts=[fa],
-                                )
-                # A move block sets its trigger apart from the words around
-                # it ("When you" / "take time to catch your breath" / ", ...").
-                ra, rb = _trigger_segments(fa), _trigger_segments(fb)
-                if 1 < len(ra) == len(rb):
-                    for xa, xb in zip(ra, rb):
-                        tm.add(xa, xb, derived=True, parts=[fa])
+            if _tag_of(a) == "STATS" == _tag_of(b):
+                pa, pb = _payload(a), _payload(b)
+                if pa and pb:
+                    ba, bb = _stats_block(pa[0]), _stats_block(pb[0])
+                    for key in STATS_TEXT_KEYS:
+                        tm.add(str(ba.get(key) or ""), str(bb.get(key) or ""))
         return tm
 
     def __len__(self) -> int:
         return len(self._index)
 
+    # ------------------------------------------------------------ lookups
+
     def get(self, s: str) -> str:
-        if not s or not self._index:
+        if not s:
             return s
+        if has_tags(s):
+            out = self._resolve_tagged(s)
+            if out is not None:
+                return out
+            s = strip_tags(s)
+        if not self._index:
+            return s
+        return self._lookup(s)
+
+    def _lookup(self, s: str) -> str:
         key = self.norm(s)
         hit = self._index.get(key)
         if hit is None:
             return s
-        raw, plain, en_raw = hit
         self.hits.add(key)
-        self.hits.update(self._parts.get(key, ()))
-        out = raw if any(c in s for c in _FMT) else plain
+        self._unit_hits.update(self._units.get(key, ()))
+        return self._adjust(s, *hit)
+
+    def _adjust(self, s: str, raw: str, en_raw: str) -> str:
+        """``raw`` in the shape of the query ``s`` it answers."""
+        out = raw if any(c in s for c in _FMT) else _defmt(raw)
         if not _BULLET_RE.match(_defmt(s).strip()):
             out = _BULLET_RE.sub("", out, count=1)
         # The renderer may have cut the English line's colon off (a heading)
@@ -550,208 +818,136 @@ class TextMemory:
         trail = s[len(s.rstrip()):]
         return lead + out + trail
 
+    def _segment(self, k: int, seg: str) -> str | None:
+        """``seg``, the text the renderer shows of field ``k``: the field
+        whole, or one of its variants. ``None`` when it is neither."""
+        if not seg.strip():
+            return seg
+        key = self.norm(seg)
+        if k < len(self._en) and key == self._unit_key[k]:
+            self._unit_hits.add(k)
+            en, tr = self._en[k], self._tr[k]
+            if en != tr:
+                self.hits.add(key)
+                return self._adjust(seg, tr, en)
+            # The field is not translated (a move's name printed alone,
+            # translated where it is used); the same words elsewhere may be,
+            # and otherwise it is shown as it is.
+            hit = self._index.get(key)
+            return seg if hit is None else self._adjust(seg, *hit)
+        hit = self._index.get(key)
+        if hit is None:
+            return None
+        self.hits.add(key)
+        self._unit_hits.update(self._units.get(key, ()))
+        return self._adjust(seg, *hit)
+
+    def _resolve_tagged(self, s: str) -> str | None:
+        segs = _split_tagged(s, self._lead)
+        units = [k for k, _ in segs if k is not None]
+        if not units:
+            return None
+        head = segs[0][1]
+        if not any(t.strip() for k, t in segs if k is not None):
+            # A provenance suffix: the text was made from these fields, in
+            # this order, and rendered plain (a stat block's).
+            return self._run(head, units)
+        parts: list[str] | None = []
+        for k, t in segs:
+            if k is None:
+                if not t.strip():
+                    parts.append(t)
+                    continue
+                # Opened inside a field: a piece cut out of it, by content.
+                key = self.norm(t)
+                hit = self._index.get(key)
+                if hit is None:
+                    parts = None
+                    break
+                self.hits.add(key)
+                self._unit_hits.update(self._units.get(key, ()))
+                parts.append(self._adjust(t, *hit))
+            else:
+                r = self._segment(k, t)
+                if r is None:
+                    parts = None
+                    break
+                parts.append(r)
+        if parts is not None:
+            return "".join(parts)
+        return self._run(strip_tags(s), units, head=head)
+
+    def _run(self, plain: str, units: list[int], head: str = "") -> str | None:
+        """``plain``, gathered by the renderer from the fields ``units``, as
+        the same gathering of their translations."""
+        if not plain.strip():
+            return None
+        if head.strip():
+            # The query opens inside the field before the first tagged one
+            # (a stat block cut its joined lines at a label): find it.
+            hk = self.norm(head)
+            for back in range(1, 5):
+                c = units[0] - back
+                if c < 0:
+                    break
+                if hk and self._unit_key[c].endswith(hk):
+                    units = [c] + units
+                    break
+        key = tuple(units)
+        variants = self._runs.get(key)
+        if variants is None:
+            variants = self._runs[key] = self._run_variants(units)
+        hit = variants.get(self.norm(plain))
+        if hit is None:
+            return None
+        self._unit_hits.update(units)
+        # Kept, so an id made off the translated text can be read back — as
+        # a derived entry of these fields, not a line of its own.
+        rk = self.norm(hit[1])
+        self._index.setdefault(rk, hit)
+        self._derived.add(rk)
+        self._units.setdefault(rk, tuple(units))
+        self.hits.add(rk)
+        return self._adjust(plain, *hit)
+
+    def _run_variants(self, units: list[int]) -> dict[str, tuple[str, str]]:
+        en_parts = [self._en[k] for k in units if k < len(self._en)]
+        tr_parts = [self._tr[k] for k in units if k < len(self._en)]
+        out: dict[str, tuple[str, str]] = {}
+
+        def put(a: str, b: str) -> None:
+            if a.strip() and b.strip() and a.strip() != b.strip():
+                out.setdefault(self.norm(a), (b.strip(), a.strip()))
+
+        for join in (" ".join, _join_dehyphenated):
+            je, jt = join(en_parts), join(tr_parts)
+            put(je, jt)
+            for va, vb, _shows in derive_variants(je, jt)[0]:
+                put(va, vb)
+        return out
+
     def reverse(self, s: str) -> str | None:
         """The English a translated string came from, plain — for the ids a
         renderer makes off text it reads back out of the HTML."""
-        if not s or not self._reverse:
+        if not s or not self._index:
             return None
+        if self._reverse_n != len(self._index):
+            # First translation to land for a key wins, as the index does.
+            rev: dict[str, str] = {}
+            for raw, en_raw in self._index.values():
+                rev.setdefault(self.norm(raw), _defmt(en_raw).strip())
+            self._reverse, self._reverse_n = rev, len(self._index)
         return self._reverse.get(self.norm(html_unescape(s)))
 
     def unused(self) -> list[str]:
         """English lines whose translation the renderer never asked for."""
         return [
             en
-            for k, (_r, _p, en) in self._index.items()
-            if k not in self.hits and k not in self._derived
+            for k, (_r, en) in self._index.items()
+            if k not in self.hits
+            and k not in self._derived
+            and not (self._unit_hits & set(self._units.get(k, ())))
         ]
-
-
-# A word the book broke over two lines ends in a hyphen, which may sit
-# inside a formatting run ("…mar-</i></b>" + "ble…").
-_HYPH_END_RE = re.compile(r"-([-\s]*)$")
-
-
-def _join_dehyphenated(parts) -> str:
-    """Join lines the way a block does, putting a broken word back together."""
-    out = ""
-    for part in parts:
-        if not out:
-            out = part
-            continue
-        m = _HYPH_END_RE.search(out)
-        if m:
-            out = out[: m.start()] + m.group(1) + part.lstrip()
-        else:
-            out = out + " " + part
-    return out
-
-
-def _joined_memory(tm: TextMemory, en: list[str], tr: list[str]) -> None:
-    """What a renderer asks for beyond whole lines: the tag run peeled off
-    the head of a line (and the prose after it), a checklist item without
-    its ellipsis, and a paragraph gathered from consecutive lines — a move's
-    body, an arcanum's move, a chapter's move block."""
-    from .arcana import (
-        _arcana_named_move,
-        _arcana_strip_tag_seps,
-        _arcana_tags_prose,
-        _dedupe_arcana_title,
-    )
-
-    texts: list[tuple[str, str] | None] = []
-    for a, b in zip(en, tr):
-        pa, pb = _payload(a), _payload(b)
-        if _tag_of(a) != _tag_of(b) or len(pa) != 1 or len(pb) != 1:
-            texts.append(None)
-            continue
-        texts.append((pa[0], pb[0]))
-        # A roll table's row drops the numbers it opens with ("4-5 Clearing,
-        # meadow, sparse trees").
-        na = _ROLL_ROW_RE.match(_defmt(pa[0]))
-        nb = _ROLL_ROW_RE.match(_defmt(pb[0]))
-        if na and nb and na.group(1) == nb.group(1):
-            tm.add(na.group(2), nb.group(2), derived=True, parts=[pa[0]])
-        # A roll table's head keeps the dice apart from the label it names
-        # ("1d6 discovery" → the table is titled "discovery").
-        ha = re.match(r"^\s*(\d*d\d+)\s+(.+)$", _defmt(pa[0]))
-        hb = re.match(r"^\s*(\d*d\d+)\s+(.+)$", _defmt(pb[0]))
-        if ha and hb and ha.group(1) == hb.group(1):
-            tm.add(ha.group(2), hb.group(2), derived=True, parts=[pa[0]])
-        # A checklist item loses its leading ellipsis ("… is sealed with wax").
-        ea = re.sub(r"^[\s…\.]+", "", pa[0])
-        eb = re.sub(r"^[\s…\.]+", "", pb[0])
-        if ea != pa[0] and eb:
-            tm.add(ea, eb, derived=True, parts=[pa[0]])
-        # A minor arcanum's title line is printed twice by the extractor
-        # ("A giant's dormitory giant's dormitory"); the card shows it once.
-        if _tag_of(a) == "H3":
-            da = _dedupe_arcana_title(_defmt(pa[0]))
-            if da != _defmt(pa[0]):
-                tm.add(da, pb[0], derived=True, parts=[pa[0]])
-        # An insert's move wrapped under the HP box: the renderer drops the
-        # box's cap out of the middle of the line ("Tend to the sick,
-        # injured, Max. 6 women in labor"), and shows the move without its
-        # bullet. A translation writes the cap in its own words ("Máx. 6").
-        da, db = _defmt(pa[0]), _defmt(pb[0])
-        if da.lstrip().startswith(("•", "·")):
-            ca = re.sub(r"\s+Max\.?\s*\d+(?=\s|$)", "", da)
-            cb = re.sub(r"\s+(?:Max|Máx)\.?\s*\d+(?=\s|$)", "", db)
-            if ca != da and cb:
-                tm.add(ca, cb, derived=True, parts=[pa[0]])
-                tm.add(
-                    ca.lstrip("•· "),
-                    cb.lstrip("•· "),
-                    derived=True,
-                    parts=[pa[0]],
-                )
-        # The HP box's cap set beside a special quality: "Max. 13 lacks organs".
-        ma = re.match(r"^\s*Max\.?\s+\d+\s+(.+)$", _defmt(pa[0]))
-        mb = re.match(r"^\s*\S+\s+\d+\s+(.+)$", _defmt(pb[0]))
-        if ma and mb:
-            tm.add(ma.group(1), mb.group(1), derived=True, parts=[pa[0]])
-        # A line opening with inventory diamonds shows without them.
-        sa, sb = _arcana_strip_tag_seps(pa[0]), _arcana_strip_tag_seps(pb[0])
-        if sa != pa[0] and sb:
-            tm.add(sa, sb, derived=True, parts=[pa[0]])
-        ta, ra = _arcana_tags_prose(pa[0])
-        tb, rb = _arcana_tags_prose(pb[0])
-        if ta and not ra:
-            # A bare tag line: the card shows only its tags. The words that
-            # tell a tag apart are English ("+1 damage"), so the translation
-            # is taken whole rather than peeled.
-            whole = _defmt(pb[0]).strip(" \u25c7,\u3001\uff0c")
-            tm.add(ta, whole, derived=True, parts=[pa[0]])
-        elif ta and tb:
-            tm.add(ta, tb, derived=True, parts=[pa[0]])
-            if ra and rb:
-                tm.add(ra, rb, derived=True, parts=[pa[0]])
-        named = _arcana_named_move(pa[0])
-        if named:
-            # A named move: the card shows its name, its tags and its
-            # trigger apart. The translated name is not in capitals, so the
-            # translation is cut by its formatting instead.
-            tm._derived.add(tm.norm(pa[0]))
-            _name, tags_en, trigger_en = named
-            mb = _NAMED_MOVE_TR_RE.match(pb[0])
-            if mb and tags_en and mb.group(1):
-                tm.add(tags_en, mb.group(1).strip(" ()"), derived=True, parts=[pa[0]])
-                tm.add(trigger_en, mb.group(2), derived=True, parts=[pa[0]])
-    # A rule between lines does not stop a card gathering them.
-    texts = [x for x, a in zip(texts, en) if x is not None or _payload(a) != [""] and _payload(a)]
-    for i in range(len(texts)):
-        for k in range(2, 25):
-            run = texts[i : i + k]
-            if len(run) < k or any(x is None for x in run):
-                break
-            joined_en = " ".join(x[0] for x in run)
-            joined_tr = " ".join(x[1] for x in run)
-            tm.add(joined_en, joined_tr, derived=True, parts=[x[0] for x in run])
-            # A word broken across two lines ("mar-" / "ble") is put back
-            # together without the hyphen when the block gathers its lines.
-            if any(_HYPH_END_RE.search(x[0]) for x in run[:-1]):
-                de_en = _join_dehyphenated(x[0] for x in run)
-                de_tr = _join_dehyphenated(x[1] for x in run)
-                tm.add(de_en, de_tr, derived=True, parts=[x[0] for x in run])
-                da, db = _trigger_segments(de_en), _trigger_segments(de_tr)
-                if 1 < len(da) == len(db):
-                    for xa, xb in zip(da, db):
-                        tm.add(xa, xb, derived=True, parts=[x[0] for x in run])
-            # A checklist item that swallows the line under it keeps no
-            # ellipsis either.
-            # A move block gathers its lines and then sets the trigger
-            # apart from the words around it.
-            # A roll table's row can wrap onto the next line.
-            na = _ROLL_ROW_RE.match(_defmt(joined_en))
-            nb = _ROLL_ROW_RE.match(_defmt(joined_tr))
-            if na and nb and na.group(1) == nb.group(1):
-                tm.add(na.group(2), nb.group(2), derived=True, parts=[x[0] for x in run])
-            ja, jb = _trigger_segments(joined_en), _trigger_segments(joined_tr)
-            if 1 < len(ja) == len(jb):
-                for xa, xb in zip(ja, jb):
-                    tm.add(xa, xb, derived=True, parts=[x[0] for x in run])
-            # A stat block hoists a line out of the run and shows the rest
-            # joined: the last move bullet followed by the prose under the
-            # block's note. Short spans only — the key is an exact match, so
-            # one that names nothing simply never comes up.
-            if 3 <= k <= 8:
-                for j in range(1, k - 1):
-                    for skip in (1, 2, 3, 4):
-                        if j + skip > k - 1:
-                            break
-                        kept = run[:j] + run[j + skip :]
-                        ka = " ".join(x[0] for x in kept)
-                        kb = " ".join(x[1] for x in kept)
-                        kparts = [x[0] for x in kept]
-                        tm.add(ka, kb, derived=True, parts=kparts)
-                        # The block may also cut that join at a bold label
-                        # ("Instinct to seek perfection …" + the prose).
-                        sa2 = _BOLD_SPLIT_RE.split(ka)
-                        sb2 = _BOLD_SPLIT_RE.split(kb)
-                        if 1 < len(sa2) == len(sb2):
-                            for x2 in range(len(sa2)):
-                                for y2 in range(x2 + 1, len(sa2) + 1):
-                                    ja2 = " ".join(sa2[x2:y2])
-                                    jb2 = " ".join(sb2[x2:y2])
-                                    tm.add(ja2, jb2, derived=True, parts=kparts)
-                                    # A stat line shows the label ("Instinct")
-                                    # apart from what follows it.
-                                    pa2 = _BOLD_PREFIX_RE.match(ja2)
-                                    pb2 = _BOLD_PREFIX_RE.match(jb2)
-                                    if pa2 and pb2:
-                                        tm.add(
-                                            pa2.group(2),
-                                            pb2.group(2),
-                                            derived=True,
-                                            parts=kparts,
-                                        )
-            bare = re.sub(r"^[\s…\.]+", "", joined_en)
-            if bare != joined_en:
-                tm.add(
-                    bare,
-                    re.sub(r"^[\s…\.]+", "", joined_tr),
-                    derived=True,
-                    parts=[x[0] for x in run],
-                )
 
 
 # ------------------------------------------------------ loading translations
@@ -818,10 +1014,9 @@ def render_translated(
             return None, problems[:5]
         tm = TextMemory.from_lines(en_lines, tr["book"][0])
     render = article_html
-    if tm is not None:
-        # What a renderer asks for beyond whole lines: a paragraph gathered
-        # from several lines, a line cut at a label, a peeled tag run.
-        _joined_memory(tm, en_lines, tr["book"][0])
+    # The page renders from the English lines, each field tagged with its
+    # unit, so what the renderer shows names the fields it was made from.
+    tagged, _units = tag_lines(en_lines)
     if art.get("kind") == "arcana":
         render = minor_arcana_html if art.get("arcana_type") == "minor" else major_arcana_html
         if tm is not None and meta.get("title"):
@@ -853,13 +1048,18 @@ def render_translated(
     set_translation(tm, ui, titles)
     try:
         body, excerpt, secs = render(
-            en_lines, art["title"], lookup, articles, **common
+            tagged, art["title"], lookup, articles, **common
         )
         if ov is not None:
             body = apply_override(ov, body, slug=slug, link_fn=link_fn, lines=sheet_lines)
             secs = override_sections(body)
     finally:
         set_translation(None)
+    if has_tags(body):
+        # Text that reached the HTML without going through T(): English,
+        # and tagged. Reported, and the tags taken out.
+        notes.append(f"{where}: {len(TAG_RE.findall(body))} provenance tags leaked into the HTML")
+        body = strip_tags(body)
 
     sections: dict[str, str] = {}
     for sec in secs:
@@ -912,6 +1112,8 @@ def render_translated(
 
 __all__ = [
     "TextMemory",
+    "derive_variants",
+    "tag_lines",
     "render_translated",
     "apply_work",
     "check_alignment",

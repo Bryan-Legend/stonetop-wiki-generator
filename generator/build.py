@@ -73,8 +73,8 @@ from .structure import (
     set_title_index,
     linkify_pages,
 )
-from .text import heading_pages, html_to_search_text
-from .translate import render_translated
+from .text import TAG_RE, heading_pages, html_to_search_text, strip_tags
+from .translate import render_translated, tag_lines
 
 
 class BuildClock:
@@ -591,6 +591,7 @@ def main(argv: list[str] | None = None) -> None:
         lines, pages = texts[slug]
         lookup = lookups[book_id]
         t_page = time.perf_counter()
+        tagged, _units = tag_lines(lines)
         common = dict(
             current_slug=slug,
             section_index=None,
@@ -599,18 +600,18 @@ def main(argv: list[str] | None = None) -> None:
         )
         if art["kind"] == "arcana" and art.get("arcana_type") == "minor":
             _body, _ex, sections = minor_arcana_html(
-                lines, art["title"], lookup, articles, **common
+                tagged, art["title"], lookup, articles, **common
             )
         elif art["kind"] == "arcana":
             _body, _ex, sections = major_arcana_html(
-                lines, art["title"], lookup, articles, **common
+                tagged, art["title"], lookup, articles, **common
             )
         else:
             # Which page each heading opened on, so an in-article "see page
             # 18" can name the section the reader is being sent to.
             head_pages_by_slug[slug] = heading_pages(lines, pages)
             _body, _ex, sections = article_html(
-                lines, art["title"], lookup, articles, **common
+                tagged, art["title"], lookup, articles, **common
             )
         ov = page_override(slug)
         if ov is not None:
@@ -720,18 +721,28 @@ def main(argv: list[str] | None = None) -> None:
                 section_indexes=section_indexes,
                 current_book=book_id,
             )
+            # The lines carry provenance tags (see translate.tag_lines): the
+            # English page is built from the same tagged lines its
+            # translations are, so the two are analysed the same way.
+            tagged, _units = tag_lines(lines)
             if art.get("kind") == "arcana" and art.get("arcana_type") == "minor":
                 body, excerpt, _secs = minor_arcana_html(
-                    lines, art["title"], lookup, articles, **common
+                    tagged, art["title"], lookup, articles, **common
                 )
             elif art.get("kind") == "arcana":
                 body, excerpt, _secs = major_arcana_html(
-                    lines, art["title"], lookup, articles, **common
+                    tagged, art["title"], lookup, articles, **common
                 )
             else:
                 body, excerpt, _secs = article_html(
-                    lines, art["title"], lookup, articles, **common
+                    tagged, art["title"], lookup, articles, **common
                 )
+            if TAG_RE.search(body) or TAG_RE.search(excerpt):
+                # Text reached the HTML without going through T(). It is
+                # English here, so nothing is lost but the tags — and a
+                # translation of the same page would show English there.
+                print(f"  note: {slug}: {len(TAG_RE.findall(body))} provenance tags leaked into the HTML")
+                body, excerpt = strip_tags(body), strip_tags(excerpt)
             # A hand-authored body (pages/<slug>.html) replaces the extraction.
             ov = page_override(slug)
             if ov is not None:

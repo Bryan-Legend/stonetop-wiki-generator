@@ -19,6 +19,7 @@ from .structure import (
     render_stat_block,
 )
 from .text import (
+    strip_tags,
     M_FACE,
     BOLD_PREFIX_RE,
     DICE_RE,
@@ -489,7 +490,7 @@ def _arcana_strip_tag_seps(text: str) -> str:
     ``◇◇ \\x04,\\x05 \\x06magical\\x07\\x04,\\x05 \\x06beautiful\\x07``.
     Those bold commas must not stop the peel.
     """
-    t = text or ""
+    t = strip_tags(text or "")
     while t:
         # Plain diamonds / commas / whitespace
         m = re.match(r"^[◇\s,、，]+", t)
