@@ -500,6 +500,17 @@ def main(argv: list[str] | None = None) -> None:
             if slug in built_slugs
         }
     lang_targets = [t for t in lang_targets if t["pages"]]
+    # What each language calls the pages it has, so a link from one
+    # translated page to another reads in that language.
+    for locale in lang_targets:
+        titles: dict[str, str] = {}
+        for s_slug, page in locale["pages"].items():
+            t = page.get("title") or (
+                ((page.get("corpus") or {}).get("meta") or {}).get("title")
+            )
+            if t:
+                titles[s_slug] = t
+        locale["titles"] = titles
     previews: dict[str, dict] = {}
 
     # Campaign maps + PDF map spreads (maps page only; Book II)
@@ -677,6 +688,7 @@ def main(argv: list[str] | None = None) -> None:
                 page_tr, notes = render_translated(
                     tr["corpus"], locale["code"], art, lines, _pages, ov,
                     lookup, articles, common, ui=locale.get("ui"),
+                    titles=locale.get("titles"),
                 )
                 for note in notes:
                     print(f"  i18n: {note}")

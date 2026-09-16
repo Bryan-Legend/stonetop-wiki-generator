@@ -115,10 +115,56 @@ STAT_ROLL_TITLE = "Roll +{stat} — Shift: advantage · Ctrl: disadvantage"
 DAMAGE_ROLL_TITLE = "Roll damage — Shift: advantage · Ctrl: disadvantage"
 
 
-def set_translation(tm, ui: dict | None = None) -> None:
-    global _TM, _UI
+def set_translation(
+    tm, ui: dict | None = None, titles: dict[str, str] | None = None
+) -> None:
+    global _TM, _UI, _PAGE_WORDS, _TITLES
     _TM = tm
+    # A page ref carries no label of its own ("(page 200)"), so the link is
+    # named after the page it points at. On a translated page that name is
+    # the target's own title in this language, where it has one.
+    _TITLES = titles or {}
     _UI = (ui or {}).get("sheet") or {}
+    # "(page 200)" is a link; a translation writes it in its own language
+    # ("(página 200)"), so the language says which word carries a page
+    # number. English is always understood as well.
+    words = (ui or {}).get("page_words") or (ui or {}).get("page_word") or ()
+    if isinstance(words, str):
+        words = [words]
+    _PAGE_WORDS = tuple(w for w in words if isinstance(w, str) and w.strip())
+
+
+def _page_res() -> tuple:
+    """The page-ref regexes for the language being rendered: the one in
+    parentheses, the bare one, and the one that carries a title."""
+    hit = _PAGE_RE_CACHE.get(_PAGE_WORDS)
+    if hit:
+        return hit
+    if _PAGE_WORDS:
+        alt = "(?:pages?|" + "|".join(
+            re.escape(w) + "s?" for w in _PAGE_WORDS
+        ) + ")"
+    else:
+        alt = "(?:pages?)"
+    nums = r"([\d,\s\-\u2013\u2014]+)"
+    paren = re.compile(r"\((?:see\s+)?" + alt + r"\s+" + nums + r"\)", re.IGNORECASE)
+    bare = re.compile(
+        r"(?<![\w/])(?:see\s+)?" + alt + r"\s+" + nums + r"(?![\w/])",
+        re.IGNORECASE,
+    )
+    titled = re.compile(
+        r"([^\W\d_][\w\'\u2019\-]*(?:\s+[^\W\d_][\w\'\u2019\-]*){0,6})\s+"
+        r"\((?:see\s+)?" + alt + r"\s+" + nums + r"\)",
+        re.IGNORECASE,
+    )
+    out = (paren, bare, titled)
+    _PAGE_RE_CACHE[_PAGE_WORDS] = out
+    return out
+
+
+_PAGE_WORDS: tuple = ()
+_PAGE_RE_CACHE: dict = {}
+_TITLES: dict[str, str] = {}
 
 
 def UI(key: str, default: str, **fill: str) -> str:
@@ -550,7 +596,9 @@ def linkify_pages(
                     f'{html.escape(label or sec["name"])}</a>'
                 )
             return html.escape(label) if label else f"page {page}"
-        text_out = label if label else art["title"]
+        text_out = label if label else (
+            _TITLES.get(art["slug"]) or art["title"]
+        )
         href = f"{art['slug']}.html"
         if frag:
             href = f"{href}#{frag}"
@@ -740,18 +788,14 @@ def linkify_pages(
             return store(html.escape(prefix) + " " + link)
         return store(link)
 
-    work = re.sub(
-        r"([A-Za-z][A-Za-z0-9'’\-]*(?:\s+[A-Za-z][A-Za-z0-9'’\-]*){0,6})\s+"
-        r"\((?:see\s+)?pages?\s+([\d,\s\-–—]+)\)",
-        repl_title_page,
-        work,
-    )
+    paren_re, bare_re, titled_re = _page_res()
+    work = titled_re.sub(repl_title_page, work)
 
     def repl_paren(m: re.Match) -> str:
         pages = parse_page_nums(m.group(1))
         return store(links_for_pages(pages))
 
-    work = PAGE_REF_RE.sub(repl_paren, work)
+    work = paren_re.sub(repl_paren, work)
 
     def repl_bare(m: re.Match) -> str:
         pages = parse_page_nums(m.group(1))
@@ -761,7 +805,7 @@ def linkify_pages(
         prefix = html.escape(lead.group(0)) if lead else ""
         return store(prefix + links_for_pages(pages))
 
-    work = BARE_PAGE_RE.sub(repl_bare, work)
+    work = bare_re.sub(repl_bare, work)
 
     # Escape remaining text in segments between placeholders
     parts = re.split(r"(\x00\d+\x00)", work)

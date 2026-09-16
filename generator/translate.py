@@ -717,6 +717,7 @@ def render_translated(
     articles: list[dict],
     common: dict,
     ui: dict | None = None,
+    titles: dict[str, str] | None = None,
 ) -> tuple[dict | None, list[str]]:
     """One page in one language, from its corpus translation.
 
@@ -775,7 +776,7 @@ def render_translated(
             current_book=common.get("current_book"),
         )
 
-    set_translation(tm, ui)
+    set_translation(tm, ui, titles)
     try:
         body, excerpt, secs = render(
             en_lines, art["title"], lookup, articles, **common

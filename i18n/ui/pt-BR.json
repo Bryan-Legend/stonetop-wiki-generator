@@ -51,5 +51,9 @@
       "all_minor": "Todos os arcanos menores",
       "uses": "Usos"
     }
-  }
+  },
+  "page_words": [
+    "página",
+    "pág."
+  ]
 }
