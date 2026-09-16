@@ -830,6 +830,161 @@ def write_localized_pages(
     return written
 
 
+HOME_FALLBACK = {
+    "title": "Stonetop Wiki",
+    "topics": "Topics",
+    "lede_html": (
+        "A static, hyperlinked wiki for <em>Stonetop</em> {books}. "
+        "Page numbers are links; dice expressions roll on click; hover a "
+        "link for a preview (full stat blocks when deep-linked)."
+    ),
+    "remembers_html": (
+        "<strong>It remembers.</strong> Tick a checkbox, answer a question, "
+        "fill in a blank, assign your stats — the wiki keeps all of it."
+    ),
+    "defects_html": (
+        "These pages are extracted from the books' PDFs automatically, so "
+        "<strong>expect defects</strong>. If you spot one, "
+        '<a href="{issues}">open an issue on GitHub</a>.'
+    ),
+    "license_html": (
+        "The books' <strong>text</strong> is by Jeremy Strandberg under "
+        '<a href="{license}" rel="license">CC BY-SA 4.0</a>.'
+    ),
+}
+
+
+def write_localized_index(
+    out: Path,
+    articles: list[dict],
+    previews: dict,
+    source: dict,
+    targets: list[dict],
+) -> list[str]:
+    """Write ``<out>/<lang>/index.html`` — the home page, per language.
+
+    A card carries the page's own title and description in this language
+    where the page is translated, and the English ones where it is not; an
+    untranslated card links back up to the English page, exactly as the
+    sidebar does. The fixed prose comes from ``i18n/ui/<code>.json`` →
+    ``home``, falling back to English.
+    """
+    written: list[str] = []
+    live = [t for t in targets if t.get("pages")]
+    if not live:
+        return written
+    home_alts = [
+        {
+            "hreflang": source.get("code") or "en",
+            "path": "index.html",
+            "code": source.get("code") or "en",
+            "endonym": source.get("endonym") or "English",
+        }
+    ] + [
+        {
+            "hreflang": t["code"],
+            "path": f"{t['code']}/index.html",
+            "code": t["code"],
+            "endonym": t.get("endonym") or t["code"],
+        }
+        for t in live
+    ]
+    for locale in live:
+        code = locale["code"]
+        lang_dir = out / code
+        lang_dir.mkdir(parents=True, exist_ok=True)
+        ui = locale.get("ui") or {}
+        home = {**HOME_FALLBACK, **((ui.get("home") or {}))}
+        book_labels = (ui.get("books") or {})
+        titles = locale.get("titles") or {}
+        translated = set(locale["pages"])
+
+        books_present: list[tuple] = []
+        for art in articles:
+            key = (
+                art.get("book"),
+                art.get("book_title")
+                or art.get("book_label")
+                or art.get("book")
+                or "",
+            )
+            if key not in books_present:
+                books_present.append(key)
+        multi_book = len(books_present) > 1
+
+        sections: list[str] = []
+        for book, label in books_present:
+            cards = []
+            for art in articles:
+                if (
+                    art.get("book") != book
+                    or art.get("kind") == "arcana"
+                    or art.get("hub_slug")
+                ):
+                    continue
+                slug = art["slug"]
+                page = locale["pages"].get(slug) or {}
+                title = titles.get(slug) or art["title"]
+                excerpt = page.get("description") or strip_page_refs(
+                    (previews.get(slug, {}) or {}).get("excerpt") or ""
+                )
+                href = f"{slug}.html" if slug in translated else f"../{slug}.html"
+                cards.append(
+                    f'<a class="index-card" href="{html.escape(href)}">'
+                    f'<p class="card-title">{html.escape(title)}</p>'
+                    f'<p class="card-excerpt">{html.escape(excerpt)}</p></a>'
+                )
+            if not cards:
+                continue
+            heading = book_labels.get(book) or label
+            if not multi_book:
+                heading = ui.get("nav_label") or home["topics"]
+            sections.append(
+                f"<h2>{html.escape(heading)}</h2>"
+                f'<div class="index-grid">{"".join(cards)}</div>'
+            )
+
+        labels = [
+            f"<strong>{html.escape(book_labels.get(b) or lab)}</strong>"
+            for b, lab in books_present
+        ]
+        lede_books = labels[0] if len(labels) == 1 else ", ".join(labels)
+        hero = (
+            '<div class="index-hero">'
+            f'<p class="lede">{home["lede_html"].format(books=lede_books)}</p>'
+            f'<p class="index-vtt">{home["remembers_html"]}</p>'
+            f'<p class="index-note">'
+            f'{home["defects_html"].format(issues=html.escape(ISSUES_URL))}</p>'
+            f'<p class="index-license">'
+            f'{home["license_html"].format(license=html.escape(LICENSE_URL))}'
+            "</p></div>"
+        )
+        title = home["title"]
+        body = (
+            f'<h1 class="page-title">{html.escape(title)}</h1>'
+            + "".join(sections)
+            + hero
+        )
+        html_out = page_shell(
+            title,
+            "index",
+            body,
+            articles,
+            rel_prefix="../",
+            description=strip_page_refs(home["lede_html"]).replace(
+                "{books}", ""
+            ),
+            locale=locale,
+            alternates=home_alts,
+            translated_slugs=translated,
+        )
+        (lang_dir / "index.html").write_text(html_out, encoding="utf-8")
+        written.append(f"{code}/index.html")
+    if written:
+        print(f"  i18n: {len(written)} home pages")
+    return written
+
+
 MAP_PIN_COLORS = [
     "#e2534a",  # red
     "#e08a3c",  # orange

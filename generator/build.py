@@ -41,6 +41,7 @@ from .chrome import (
     read_build_manifest,
     write_build_manifest,
     write_index_custom,
+    write_localized_index,
     write_localized_pages,
     write_robots,
     write_sitemap,
@@ -870,6 +871,11 @@ def main(argv: list[str] | None = None) -> None:
         only_pages=only_pages,
     )
     if only_pages is None:
+        # The home page lists every page, so it needs the whole run's
+        # previews — a --pages run has only the pages it rebuilt.
+        localized += write_localized_index(
+            out, articles, previews, lang_source, lang_targets
+        )
         write_sitemap(out, articles, base_url=args.base_url, extra=localized)
         write_robots(out, base_url=args.base_url)
         write_build_manifest(out, page_files + ["sitemap.xml", "robots.txt"])
