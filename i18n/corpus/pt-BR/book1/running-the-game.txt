@@ -386,7 +386,7 @@ P	<i>"Vocês encontram a Nia naquela casa desabada na</i> <i>beira da aldeia. Vo
 HR
 P	<i>"Então, você está golpeando a coisa por cima do</i> <i>ombro, mas cambaleando enquanto</i> <i>faz isso. E acho que, é, você a mata, mas</i> <i>acaba tropeçando para trás numa das</i> <i>colunas antigas. Vem um CRAC alto</i> <i>e uns rangidos e começa a cair poeira</i> <i>do teto. Vahid, você</i> <i>vê isso acontecer, o que você faz?"</i>
 HR
-P	<i>"Caradoc, enquanto você pega no sono, você</i> <i>se vê sonhando. Um sonho bem estranho,</i> <i>vívido. É como quando você estava naquela</i> <i>tumba antiga dos Criadores olhando para cima,</i> <i>mas… diferente. Mais claustrofóbico.</i> <i>Como se você estivesse enterrado na terra, há</i> <i>sempre, e houvesse uma luz acima, bem</i> <i>longe. Mas é… o bastante, sabe?</i> <i>Algo na direção do qual se mover? E então</i> <i>você se estica e escava a terra com as unhas,</i> <i>rumo à luz, e você acorda de sobressalto</i> <i>e caramba, está tudo tremendo e</i> <i>as pessoas estão gritando e as crianças chorando,</i> <i>é um terremoto! O que você faz?"</i>
+P	<i>"Caradoc, enquanto você pega no sono, você</i> <i>se vê sonhando. Um sonho bem estranho,</i> <i>vívido. É como quando você estava naquela</i> <i>tumba antiga dos Construtores olhando para cima,</i> <i>mas… diferente. Mais claustrofóbico.</i> <i>Como se você estivesse enterrado na terra, há</i> <i>sempre, e houvesse uma luz acima, bem</i> <i>longe. Mas é… o bastante, sabe?</i> <i>Algo na direção do qual se mover? E então</i> <i>você se estica e escava a terra com as unhas,</i> <i>rumo à luz, e você acorda de sobressalto</i> <i>e caramba, está tudo tremendo e</i> <i>as pessoas estão gritando e as crianças chorando,</i> <i>é um terremoto! O que você faz?"</i>
 HR
 PAGE	189
 HR
@@ -518,7 +518,7 @@ P	Mesmo assim, embaçar a Linha pode ser desconfortável ou desagradável para a
 PAGE	196
 H3	Abrace o fantástico e o mundano
 P	O mundo está cheio de elementos fantásticos:
-P	espíritos, monstros, os volúveis Fae, as obras antigas dos Criadores, a escuridão das Coisas de Baixo. Dê destaque a esses elementos. Use-os para tornar o mundo misterioso.
+P	espíritos, monstros, os volúveis Fae, as obras antigas dos Construtores, a escuridão das Coisas de Baixo. Dê destaque a esses elementos. Use-os para tornar o mundo misterioso.
 P	Mas, ao mesmo tempo, ancore o jogo em preocupações humanas: a virada das estações, a colheita que vem, amigos e vizinhos.
 P	Ameace os PJs com perigos do mundo real:
 P	clima severo, feras selvagens, fome, exposição. Pergunte sobre as provisões que eles trouxeram ou sobre como conseguiram aquele manto. Faça do mundo algo rico em detalhes mundanos.
@@ -527,7 +527,7 @@ H3	Explore o guia de cenário
 P	<i>Stonetop</i> vem com muito cenário estabelecido, mas deixa muitas lacunas para você e seus jogadores preencherem durante o jogo. O cenário serve como trampolim para a sua criatividade. Ele ajuda a definir um tom e dá a todos um ponto de partida comum.
 P	Ele fornece detalhes para improvisar em cima. Ele insinua respostas, mas nem sempre as dá. Use o cenário estabelecido para <b>retratar um mundo rico</b> <b>e misterioso</b>.
 P	Use o guia de cenário como inspiração, mas não se sinta preso a ele. Se seus jogadores te derem algo que contradiga o cenário estabelecido, não negue a contribuição deles só porque o livro diz. O livro não é a autoridade, é um recurso para você explorar.
-P	Dito isso: <b>seja criterioso sobre o que</b> <b>você muda ou descarta</b>. É mais seguro mudar detalhes específicos do que temas amplos. Se a Raposa disser que o Brennan comandava uma gangue em Marshedge e matou até chegar ao poder (em vez da história do guia de cenário, de que ele era um bandido que o conselho contratou como marechal), tudo bem. Mas se você e o Buscador decidirem que os Criadores eram artífices do tamanho de gnomos em vez de titãs inescrutáveis, vocês vão precisar repensar todo tipo de detalhe do cenário (o tamanho das estradas, a escala da Torre em Ruínas, os temas associados a cada tipo de Criador, e por aí vai).
+P	Dito isso: <b>seja criterioso sobre o que</b> <b>você muda ou descarta</b>. É mais seguro mudar detalhes específicos do que temas amplos. Se a Raposa disser que o Brennan comandava uma gangue em Marshedge e matou até chegar ao poder (em vez da história do guia de cenário, de que ele era um bandido que o conselho contratou como marechal), tudo bem. Mas se você e o Buscador decidirem que os Construtores eram artífices do tamanho de gnomos em vez de titãs inescrutáveis, vocês vão precisar repensar todo tipo de detalhe do cenário (o tamanho das estradas, a escala da Torre em Ruínas, os temas associados a cada tipo de Construtor, e por aí vai).
 PAGE	197
 H3	Respeite sua preparação
 P	Entre as sessões, você vai fazer preparativos (ou seja, "preparação"). Você vai escrever ameaças e PdMs. Vai criar ou escolher perigos e descobertas. Vai pensar em encontros e projetar locais para explorar.
