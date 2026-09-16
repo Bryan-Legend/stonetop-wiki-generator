@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://stonetop-wiki.github.io/sitemap.xml
