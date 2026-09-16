@@ -2780,7 +2780,11 @@ def structure_html(
             out.append(f"<p>{link(line)}</p>")
             i += 1
             continue
-        m = ROLL_HEADER_RE.match(line)
+        # A paragraph that merely opens with a die expression is not a roll
+        # table's head ("2d6 uses of provisions with a risk, then maybe they
+        # spot a big old buck…"). looks_like_roll_header() knows the
+        # difference — a head is a short label, not a sentence.
+        m = ROLL_HEADER_RE.match(line) if looks_like_roll_header(line) else None
         m_rev = ROLL_HEADER_REV_RE.match(line)
         if m:
             dice, label = m.group(1), m.group(2).strip()
@@ -3142,6 +3146,7 @@ def structure_html(
                 m_roll = (
                     None
                     if re.match(r"^\d{0,2}d\d+[+\-]?\d*\s*\(", plain)
+                    or not looks_like_roll_header(plain)
                     else ROLL_HEADER_RE.match(plain)
                 )
                 m_dice_only = ROLL_HEADER_DICE_ONLY.match(plain)
