@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NPCs e Seguidores — Stonetop Wiki</title>
+  <meta name="description" content="NPCs e Seguidores: como interpretar personagens não jogadores, cenas de diálogo, como criá-los, e as regras completas de seguidores — Lealdade, Custo, tipos…">
+  <link rel="canonical" href="https://stonetop-wiki.github.io/pt-BR/npcs-followers.html">
+  <meta property="og:site_name" content="Stonetop Wiki">
+  <meta property="og:title" content="NPCs e Seguidores — Stonetop Wiki">
+  <meta property="og:description" content="NPCs e Seguidores: como interpretar personagens não jogadores, cenas de diálogo, como criá-los, e as regras completas de seguidores — Lealdade, Custo, tipos…">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://stonetop-wiki.github.io/pt-BR/npcs-followers.html">
+  <meta property="og:image" content="https://stonetop-wiki.github.io/images/favicon.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="alternate" hreflang="en" href="https://stonetop-wiki.github.io/npcs-followers.html">
+  <link rel="alternate" hreflang="pt-BR" href="https://stonetop-wiki.github.io/pt-BR/npcs-followers.html">
+  <link rel="alternate" hreflang="x-default" href="https://stonetop-wiki.github.io/npcs-followers.html">
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="../images/favicon.ico" sizes="16x16 32x32 48x48 64x64">
+  <link rel="stylesheet" href="../css/wiki.css">
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4536408101e64ba59733ed69779dd45c"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body data-wiki-root="../">
+  <a class="skip-link" href="#main">Ir para o conteúdo</a>
+  <button type="button" class="sidebar-toggle" id="sidebar-toggle" aria-label="Alternar navegação">☰</button>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-head">
+        <a class="wiki-title" href="../index.html">Stonetop Wiki</a>
+        <input type="search" id="nav-filter" class="nav-filter" placeholder="Pesquisar na wiki…" autocomplete="off" aria-label="Pesquisar na wiki">
+        <div id="search-results" class="search-results" hidden></div>
+      </div>
+      <nav class="toc" aria-label="Tópicos">
+        <ul id="nav-list">
+          <li class="nav-book-label">Livro I</li>
+<li class="has-sections"><a href="welcome-to-stonetop.html">Bem-vindo a Stonetop</a><ul class="nav-sections"><li class="nav-section"><a href="welcome-to-stonetop.html#expectations">Expectativas</a></li><li class="nav-section"><a href="welcome-to-stonetop.html#the-setting">O cenário</a></li><li class="nav-section"><a href="welcome-to-stonetop.html#why-play">Por que jogar?</a></li></ul></li>
+<li class="has-sections"><a href="getting-started.html">Começando</a><ul class="nav-sections"><li class="nav-section"><a href="getting-started.html#review-the-setting">Revejam o cenário</a></li><li class="nav-section"><a href="getting-started.html#set-expectations">Alinhem as expectativas</a></li><li class="nav-section"><a href="getting-started.html#discuss-tone-and-content">Conversem sobre tom e conteúdo</a></li><li class="nav-section"><a href="getting-started.html#create-characters">Criem os personagens</a></li><li class="nav-section"><a href="getting-started.html#intro-the-pcs">Apresentem os PJs</a></li><li class="nav-section"><a href="getting-started.html#let-spring-burst-forth">deixar a primavera irromper</a></li><li class="nav-section"><a href="getting-started.html#after-the-session">Depois da sessão</a></li></ul></li>
+<li class="has-sections"><a href="../playing-the-game.html" class="nav-en" title="Disponível apenas em inglês" hreflang="en">Playing the Game</a><ul class="nav-sections"><li class="nav-section"><a href="../playing-the-game.html#the-conversation">The conversation</a></li><li class="nav-section"><a href="../playing-the-game.html#your-agenda">Your agenda</a></li><li class="nav-section"><a href="../playing-the-game.html#flow-of-play">Flow of play</a></li><li class="nav-section"><a href="../playing-the-game.html#dice-and-moves">Dice and moves</a></li><li class="nav-section"><a href="../playing-the-game.html#your-principles">Your principles</a></li><li class="nav-section"><a href="../playing-the-game.html#other-things-to-do">Other things to do</a></li><li class="nav-section"><a href="../playing-the-game.html#your-character">Your character</a></li><li class="nav-section"><a href="../playing-the-game.html#arcana">Arcana</a></li><li class="nav-section"><a href="../playing-the-game.html#followers">Followers</a></li><li class="nav-section"><a href="../playing-the-game.html#your-home">Your home</a></li><li class="nav-section"><a href="../playing-the-game.html#moves">Moves</a></li><li class="nav-section"><a href="../playing-the-game.html#gear-and-possessions">Gear and possessions</a></li><li class="nav-section"><a href="../playing-the-game.html#if-you-want-to">If you want to…</a></li></ul></li>
+<li class="nav-hub has-sections"><a href="playbooks-inserts.html">Livretos e Encartes</a><ul class="nav-sections"><li class="nav-section"><a href="the-blessed.html">O Abençoado</a></li><li class="nav-section"><a href="the-fox.html">A Raposa</a></li><li class="nav-section"><a href="the-heavy.html">O Brutamontes</a></li><li class="nav-section"><a href="the-judge.html">O Juiz</a></li><li class="nav-section"><a href="the-lightbearer.html">Portador da Luz</a></li><li class="nav-section"><a href="the-marshal.html">Marechal</a></li><li class="nav-section"><a href="the-ranger.html">O Patrulheiro</a></li><li class="nav-section"><a href="the-seeker.html">Buscador</a></li><li class="nav-section"><a href="the-would-be-hero.html">Aspirante a Herói</a></li><li class="nav-section"><a href="inserts.html">Encartes</a></li><li class="nav-section"><a href="inventory.html">Inventário</a></li><li class="nav-section"><a href="animal-companion.html">Companheiro Animal</a></li><li class="nav-section"><a href="crew.html">Tropa</a></li><li class="nav-section"><a href="initiates-of-danu.html">Iniciados de Danu</a></li><li class="nav-section"><a href="invocations.html">Invocações</a></li><li class="nav-section"><a href="followers.html">Seguidores</a></li><li class="nav-section"><a href="ghost.html">Fantasma</a></li><li class="nav-section"><a href="revenant.html">Revenante</a></li><li class="nav-section"><a href="thrall.html">Servo</a></li><li class="nav-section"><a href="steading-playbook.html">Livreto do Povoado</a></li></ul></li>
+<li class="has-sections"><a href="running-the-game.html">Conduzindo o Jogo</a><ul class="nav-sections"><li class="nav-section"><a href="running-the-game.html#your-agenda">Sua agenda</a></li><li class="nav-section"><a href="running-the-game.html#the-core-loop">O ciclo central</a></li><li class="nav-section"><a href="running-the-game.html#the-spotlight">Os holofotes</a></li><li class="nav-section"><a href="running-the-game.html#scenes-and-loose-play">Cenas e jogo solto</a></li><li class="nav-section"><a href="running-the-game.html#your-gm-moves">Seus movimentos de Mestre</a></li><li class="nav-section"><a href="running-the-game.html#example-of-play">Exemplo de jogo</a></li><li class="nav-section"><a href="running-the-game.html#your-principles">Seus princípios</a></li><li class="nav-section"><a href="running-the-game.html#other-things-to-do">Outras coisas a fazer</a></li><li class="nav-section"><a href="running-the-game.html#gming-is-a-practice">Mestrar é uma prática</a></li><li class="nav-section"><a href="running-the-game.html#prep">preparação</a></li></ul></li>
+<li class="has-sections"><a href="player-moves.html">Movimentos dos Jogadores</a><ul class="nav-sections"><li class="nav-section"><a href="player-moves.html#defy-danger">Desafiar o Perigo</a></li><li class="nav-section"><a href="player-moves.html#aid">Ajudar</a></li><li class="nav-section"><a href="player-moves.html#clash">Cruzar Lâminas</a></li><li class="nav-section"><a href="player-moves.html#defend">Defender</a></li><li class="nav-section"><a href="player-moves.html#interfere">Interferir</a></li><li class="nav-section"><a href="player-moves.html#know-things">Saber Das Coisas</a></li><li class="nav-section"><a href="player-moves.html#let-fly">Disparar</a></li><li class="nav-section"><a href="player-moves.html#seek-insight">Buscar Discernimento</a></li><li class="nav-section"><a href="player-moves.html#special-moves">Movimentos especiais</a></li><li class="nav-section"><a href="player-moves.html#advantage-disadvantage">Vantagem/Desvantagem</a></li><li class="nav-section"><a href="player-moves.html#burn-brightly">Arder com Intensidade</a></li><li class="nav-section"><a href="player-moves.html#end-of-session">Fim de Sessão</a></li><li class="nav-section"><a href="player-moves.html#deaths-door">À Beira da Morte</a></li></ul></li>
+<li class="has-sections"><a href="harm-healing.html">Dano e Cura</a><ul class="nav-sections"><li class="nav-section"><a href="harm-healing.html#hit-points-and-damage">Pontos de vida e dano</a></li><li class="nav-section"><a href="harm-healing.html#debilities">Debilidades</a></li><li class="nav-section"><a href="harm-healing.html#problematic-wounds">Ferimentos problemáticos</a></li><li class="nav-section"><a href="harm-healing.html#death-and-dying">Morte e agonia</a></li></ul></li>
+<li class="has-sections"><a href="first-adventure.html">A Primeira Aventura</a><ul class="nav-sections"><li class="nav-section"><a href="first-adventure.html#structure">Estrutura</a></li><li class="nav-section"><a href="first-adventure.html#background">Pano de fundo</a></li><li class="nav-section"><a href="first-adventure.html#setup-questions">Perguntas de preparação</a></li><li class="nav-section"><a href="first-adventure.html#setting-the-scene">Enquadrando a cena</a></li><li class="nav-section"><a href="first-adventure.html#dropping-the-hook">Soltando o gancho</a></li><li class="nav-section"><a href="first-adventure.html#heading-out">Partindo</a></li></ul></li>
+<li class="has-sections"><a href="threats.html">Ameaças</a><ul class="nav-sections"><li class="nav-section"><a href="threats.html#when-to-write-up-threats">Quando escrever ameaças</a></li><li class="nav-section"><a href="threats.html#writing-a-threat">Escrevendo uma ameaça</a></li><li class="nav-section"><a href="threats.html#example-threats">Exemplos de ameaças</a></li><li class="nav-section"><a href="threats.html#updating">Atualizando</a></li></ul></li>
+<li class="has-sections"><a href="../expeditions.html" class="nav-en" title="Disponível apenas em inglês" hreflang="en">Expeditions</a><ul class="nav-sections"><li class="nav-section"><a href="../expeditions.html#preparations">Preparations</a></li><li class="nav-section"><a href="../expeditions.html#running-the-journey">Running the journey</a></li><li class="nav-section"><a href="../expeditions.html#player-moves">Player moves</a></li><li class="nav-section"><a href="../expeditions.html#going-home">Going home</a></li><li class="nav-section"><a href="../expeditions.html#what-to-prep">What to prep</a></li></ul></li>
+<li class="has-sections"><a href="sites.html">Sítios</a><ul class="nav-sections"><li class="nav-section"><a href="sites.html#environmental-storytelling">Narrativa pelo ambiente</a></li><li class="nav-section"><a href="sites.html#running-sites">Conduzindo sítios</a></li><li class="nav-section"><a href="sites.html#exploring-sites">Explorando sítios</a></li><li class="nav-section"><a href="sites.html#creating-sites">Criando sítios</a></li><li class="nav-section"><a href="sites.html#the-green-lords-tomb">O TÚMULO DO SENHOR VERDE</a></li></ul></li>
+<li class="has-sections"><a href="../dangers.html" class="nav-en" title="Disponível apenas em inglês" hreflang="en">Dangers</a><ul class="nav-sections"><li class="nav-section"><a href="../dangers.html#hazards">Hazards</a></li><li class="nav-section"><a href="../dangers.html#monsters">Monsters</a></li><li class="nav-section"><a href="../dangers.html#running-combat">Running combat</a></li></ul></li>
+<li class="has-sections"><a href="discoveries.html">Descobertas</a><ul class="nav-sections"><li class="nav-section"><a href="discoveries.html#clues">Pistas</a></li><li class="nav-section"><a href="discoveries.html#sites">Sítios</a></li><li class="nav-section"><a href="discoveries.html#encounters">Encontros</a></li><li class="nav-section"><a href="discoveries.html#opportunities">Oportunidades</a></li><li class="nav-section"><a href="discoveries.html#artifacts">Artefatos</a></li><li class="nav-section"><a href="discoveries.html#arcana">Arcanos</a></li></ul></li>
+<li class="has-sections current"><a href="npcs-followers.html">NPCs e Seguidores</a><ul class="nav-sections"><li class="nav-section"><a href="npcs-followers.html#npcs-in-play">NPCs no jogo</a></li><li class="nav-section"><a href="npcs-followers.html#creating-npcs">Criando NPCs</a></li><li class="nav-section"><a href="npcs-followers.html#follower-moves">Movimentos de seguidor</a></li><li class="nav-section"><a href="npcs-followers.html#order-followers">Comandar Seguidores</a></li><li class="nav-section"><a href="npcs-followers.html#strengthen-your-bond">Fortaleça Seu Vínculo</a></li><li class="nav-section"><a href="npcs-followers.html#followers-in-play">Seguidores no jogo</a></li><li class="nav-section"><a href="npcs-followers.html#creating-followers">Criando seguidores</a></li><li class="nav-section"><a href="npcs-followers.html#updating-followers">Atualizando seguidores</a></li><li class="nav-section"><a href="npcs-followers.html#losing-followers">Perdendo seguidores</a></li></ul></li>
+<li class="has-sections"><a href="../homefront.html" class="nav-en" title="Disponível apenas em inglês" hreflang="en">Homefront</a><ul class="nav-sections"><li class="nav-section"><a href="../homefront.html#bringing-the-village-to-life">Bringing the village to life</a></li><li class="nav-section"><a href="../homefront.html#running-the-homefront">Running the homefront</a></li><li class="nav-section"><a href="../homefront.html#aftermath">Aftermath</a></li><li class="nav-section"><a href="../homefront.html#the-steading-playbook">The steading playbook</a></li><li class="nav-section"><a href="../homefront.html#seasons-change">Seasons Change</a></li><li class="nav-section"><a href="../homefront.html#player-moves">Player moves</a></li><li class="nav-section"><a href="../homefront.html#bolster">Bolster</a></li><li class="nav-section"><a href="../homefront.html#convalesce">Convalesce</a></li><li class="nav-section"><a href="../homefront.html#deploy">Deploy</a></li><li class="nav-section"><a href="../homefront.html#level-up">Level Up</a></li><li class="nav-section"><a href="../homefront.html#make-a-plan">Make a Plan</a></li><li class="nav-section"><a href="../homefront.html#meet-with-disaster">Meet with Disaster</a></li><li class="nav-section"><a href="../homefront.html#muster">Muster</a></li><li class="nav-section"><a href="../homefront.html#pull-together">Pull Together</a></li><li class="nav-section"><a href="../homefront.html#trade-barter">Trade &amp; Barter</a></li><li class="nav-section"><a href="../homefront.html#what-to-prep">What to prep</a></li></ul></li>
+<li><a href="writing-moves-love-letters.html">Escrevendo Movimentos e Cartas de Amor</a></li>
+<li class="has-sections"><a href="the-game-ongoing.html">O Jogo em Andamento</a><ul class="nav-sections"><li class="nav-section"><a href="the-game-ongoing.html#ending-a-session">Encerrando uma sessão</a></li><li class="nav-section"><a href="the-game-ongoing.html#between-sessions">Entre as sessões</a></li><li class="nav-section"><a href="the-game-ongoing.html#starting-a-session">Começando uma sessão</a></li><li class="nav-section"><a href="the-game-ongoing.html#pacing">Ritmo</a></li><li class="nav-section"><a href="the-game-ongoing.html#advancement">Evolução</a></li><li class="nav-section"><a href="the-game-ongoing.html#retiring-pcs">Aposentando PJs</a></li><li class="nav-section"><a href="the-game-ongoing.html#new-pcs">PJs novos</a></li><li class="nav-section"><a href="the-game-ongoing.html#conflict-between-pcs">Conflito entre PJs</a></li><li class="nav-section"><a href="the-game-ongoing.html#time-skips">Saltos no tempo</a></li><li class="nav-section"><a href="the-game-ongoing.html#shake-ups">Reviravoltas</a></li><li class="nav-section"><a href="the-game-ongoing.html#ending-your-game">Encerrando seu jogo</a></li></ul></li>
+<li><a href="acknowledgements.html">Agradecimentos</a></li>
+<li><a href="mediography.html">Mediografia</a></li>
+<li class="nav-book-label">Livro II</li>
+<li><a href="welcome-to-the-worlds-end.html">Bem-vindo ao Fim do Mundo</a></li>
+<li><a href="the-village-of-stonetop.html">Aldeia de Stonetop</a></li>
+<li><a href="aratis-the-lawkeeper.html">Aratis, a Guardiã da Lei</a></li>
+<li><a href="barrier-pass.html">Passo da Barreira</a></li>
+<li><a href="barrow-builders.html">Construtores de Túmulos</a></li>
+<li><a href="blackwater-lake.html">Lago das Águas Negras</a></li>
+<li><a href="crinwin.html">Crinwin</a></li>
+<li><a href="the-crombil.html">Crombil</a></li>
+<li><a href="danu-the-earth-mother.html">Danu, a Mãe Terra</a></li>
+<li><a href="death-and-the-undying.html">Morte e os Que Não Morrem</a></li>
+<li><a href="the-dread-river.html">Rio Pavor</a></li>
+<li><a href="fae.html">Fae</a></li>
+<li><a href="ferriers-fen.html">Brejo de Ferrier</a></li>
+<li><a href="the-flats.html">Planícies</a></li>
+<li><a href="fomoraij.html">Fomoraij</a></li>
+<li><a href="the-foothills.html">Contrafortes</a></li>
+<li><a href="forest-folk.html">Povo da Floresta</a></li>
+<li><a href="forge-lords.html">Senhores da Forja</a></li>
+<li><a href="the-frozen-wastes.html">Ermos Gelados</a></li>
+<li><a href="gods-and-religion.html">Deuses e Religião</a></li>
+<li><a href="the-golden-oak.html">Carvalho Dourado</a></li>
+<li><a href="gordins-delve.html">Cava de Gordin</a></li>
+<li><a href="the-great-wood.html">Grande Mata</a></li>
+<li><a href="green-lords.html">Senhores Verdes</a></li>
+<li><a href="helior-the-daybringer.html">Helior, o Traz-o-Dia</a></li>
+<li><a href="hillfolk.html">Povo das Colinas</a></li>
+<li><a href="huffel-peaks.html">Picos de Huffel</a></li>
+<li><a href="the-labyrinth.html">Labirinto</a></li>
+<li><a href="lygos-and-the-south.html">Lygos e o Sul</a></li>
+<li><a href="the-makers.html">Construtores</a></li>
+<li><a href="the-makers-roads.html">Estradas dos Construtores</a></li>
+<li><a href="marshedge.html">Beira-Brejo</a></li>
+<li><a href="the-maw.html">Goela</a></li>
+<li><a href="north-manmarch.html">Marcha Norte</a></li>
+<li><a href="the-pale-hunter.html">Caçador Pálido</a></li>
+<li><a href="primordial-powers.html">Poderes Primordiais</a></li>
+<li><a href="red-groves.html">Bosques Vermelhos</a></li>
+<li><a href="rime-lords.html">Senhores da Geada</a></li>
+<li><a href="the-ruined-tower.html">Torre em Ruínas</a></li>
+<li><a href="south-manmarch.html">Marcha Sul</a></li>
+<li><a href="spirits-of-the-wild.html">Espíritos do Ermo</a></li>
+<li><a href="the-steplands.html">Terras Escalonadas</a></li>
+<li><a href="stone-lords.html">Senhores da Pedra</a></li>
+<li><a href="the-stream.html">Riacho</a></li>
+<li><a href="tempest-lords.html">Senhores da Tempestade</a></li>
+<li><a href="the-things-below.html">Coisas de Baixo</a></li>
+<li><a href="three-coven-lake.html">Lago das Três Assembleias</a></li>
+<li><a href="titan-bones.html">Ossos do Titã</a></li>
+<li><a href="tor-the-rain-maker.html">Tor, o Traz-Chuva</a></li>
+<li><a href="useful-or-valuable-flora.html">Flora Útil ou Valiosa</a></li>
+<li><a href="ustrina.html">Ustrina</a></li>
+<li><a href="vor-svetelik.html">Vor Svetelik</a></li>
+<li><a href="waystones.html">Pedras-Guia</a></li>
+<li><a href="the-whitefang-mountains.html">Montanhas Presa-Branca</a></li>
+<li><a href="appendix-a-ages-of-the-world.html">Apêndice A: As Eras do Mundo</a></li>
+<li><a href="appendix-b-artifact-creation.html">Apêndice B: Criação de Artefatos</a></li>
+<li class="nav-hub"><a href="../appendix-c-minor-arcana.html" class="nav-en" title="Disponível apenas em inglês" hreflang="en">Appendix C: Minor Arcana</a></li>
+<li class="nav-arcana"><a href="minor-laoj-daveths-galvanic-infusion.html">1. A Infusão Galvânica de Laoj Daveth</a></li>
+<li class="nav-arcana"><a href="minor-truth-seeds.html">2. As Sementes da Verdade</a></li>
+<li class="nav-arcana"><a href="minor-old-mothers-wine.html">3. O Vinho da Velha Mãe</a></li>
+<li class="nav-arcana"><a href="minor-aalz-galts-sudden-sinkhole.html">4. O Sumidouro Súbito de Aalz Galt</a></li>
+<li class="nav-arcana"><a href="minor-shell-game-of-souls.html">5. O Jogo de Almas</a></li>
+<li class="nav-arcana"><a href="minor-thunderous-bellow.html">6. O Bramido Trovejante</a></li>
+<li class="nav-arcana"><a href="minor-the-fiery-veil.html">7. O Véu Flamejante</a></li>
+<li class="nav-arcana"><a href="minor-the-tomb-bogs-mark.html">8. A Marca do Brejo-Túmulo</a></li>
+<li class="nav-arcana"><a href="minor-fear-of-the-flame.html">9. O Medo da Chama</a></li>
+<li class="nav-arcana"><a href="minor-mantle-wraiths.html">10. Os Espectros do Manto</a></li>
+<li class="nav-arcana"><a href="minor-shattering-words-of-aalz-childric.html">11. As Palavras Estilhaçantes de Aalz Childric</a></li>
+<li class="nav-arcana"><a href="minor-ffyrnig-tonic.html">12. O Tônico de Ffyrnig</a></li>
+<li class="nav-arcana"><a href="minor-song-of-the-dool-trees.html">13. A Canção das Árvores Dool</a></li>
+<li class="nav-arcana"><a href="minor-ward-of-still-waters.html">14. A Proteção das Águas Paradas</a></li>
+<li class="nav-arcana"><a href="minor-ice-weaving.html">15. O Tecer do Gelo</a></li>
+<li class="nav-arcana"><a href="minor-the-six-locks-of-sajua.html">16. Os Seis Cadeados de Sajua</a></li>
+<li class="nav-arcana"><a href="minor-heliors-shining-ring.html">17. O Anel Reluzente de Helior</a></li>
+<li class="nav-arcana"><a href="minor-nerth-serpents-vigor.html">18. O Vigor da Serpente de Nerth</a></li>
+<li class="nav-arcana"><a href="minor-goldleaf-cloak.html">19. O Manto de Folha Dourada</a></li>
+<li class="nav-arcana"><a href="minor-opening-the-way.html">20. Abrir o Caminho</a></li>
+<li class="nav-arcana"><a href="minor-the-drowning-scale.html">21. A Escama do Afogamento</a></li>
+<li class="nav-arcana"><a href="minor-preserving-runes.html">22. As Runas da Preservação</a></li>
+<li class="nav-arcana"><a href="minor-peacebond.html">23. O Selo de Paz</a></li>
+<li class="nav-arcana"><a href="minor-the-eye-opened.html">24. O Olho, Aberto</a></li>
+<li class="nav-arcana"><a href="minor-sanctifying-mark.html">25. A Marca Santificante</a></li>
+<li class="nav-arcana"><a href="minor-the-green-lords-shade.html">26. A Sombra do Senhor Verde</a></li>
+<li class="nav-arcana"><a href="minor-chimeric-transmogrification.html">27. A Transmutação Quimérica</a></li>
+<li class="nav-arcana"><a href="minor-the-sylvan-web.html">28. A Teia Silvestre</a></li>
+<li class="nav-arcana"><a href="minor-flying-cloak.html">29. O Manto Voador</a></li>
+<li class="nav-arcana"><a href="minor-satchel-of-plenty.html">30. A Bolsa da Fartura</a></li>
+<li class="nav-arcana"><a href="minor-dancing-wind-spirit.html">31. O Espírito do Vento Dançante</a></li>
+<li class="nav-arcana"><a href="minor-call-of-the-hunt.html">32. O Chamado da Caçada</a></li>
+<li class="nav-arcana"><a href="minor-convocation-of-the-soil.html">33. A Convocação do Solo</a></li>
+<li class="nav-arcana"><a href="minor-unliving-chimera.html">34. A Quimera Sem Vida</a></li>
+<li class="nav-arcana"><a href="minor-impudent-polymorph.html">35. A Metamorfose Impudente</a></li>
+<li class="nav-arcana"><a href="minor-make-pliant-the-stone.html">36. Amolecer a Pedra</a></li>
+<li class="nav-arcana"><a href="minor-plaster-of-joining.html">37. O Emplastro da União</a></li>
+<li class="nav-arcana"><a href="minor-cold-mind-iron-body.html">38. Mente Fria, Corpo de Ferro</a></li>
+<li class="nav-arcana"><a href="minor-little-friend.html">39. Pequeno Amigo</a></li>
+<li class="nav-arcana"><a href="minor-revealing-light.html">40. A Luz Reveladora</a></li>
+<li class="nav-arcana"><a href="minor-darkwalker-cloak.html">41. O Manto do Andarilho das Trevas</a></li>
+<li class="nav-arcana"><a href="minor-the-flesh-is-like-clay.html">42. A Carne É Como Barro</a></li>
+<li class="nav-arcana"><a href="minor-fetchs-mask.html">43. A Máscara do Duplo</a></li>
+<li class="nav-arcana"><a href="minor-witch-bottle.html">44. A Garrafa da Bruxa</a></li>
+<li class="nav-arcana"><a href="minor-wishing-candles.html">45. As Velas dos Desejos</a></li>
+<li class="nav-arcana"><a href="minor-baleful-utterance.html">46. A Palavra Funesta</a></li>
+<li class="nav-arcana"><a href="minor-aetherium-spear.html">47. A Lança de Etério</a></li>
+<li class="nav-arcana"><a href="minor-staff-of-magnetism.html">48. O Cajado do Magnetismo</a></li>
+<li class="nav-arcana"><a href="minor-groundskimmer.html">49. O Rasante</a></li>
+<li class="nav-arcana"><a href="minor-thunderbolt-bow.html">50. O Arco do Trovão</a></li>
+<li class="nav-arcana"><a href="minor-bronze-protector.html">51. O Protetor de Bronze</a></li>
+<li class="nav-arcana"><a href="minor-sublime-words.html">52. As Palavras Sublimes</a></li>
+<li class="nav-arcana"><a href="minor-flaming-sword.html">53. A Espada Flamejante</a></li>
+<li class="nav-arcana"><a href="minor-searing-touch.html">54. O Toque Escaldante</a></li>
+<li class="nav-arcana"><a href="minor-sigil-of-authority.html">55. O Sigilo da Autoridade</a></li>
+<li class="nav-arcana"><a href="minor-horn-of-storms.html">56. O Chifre das Tempestades</a></li>
+<li class="nav-arcana"><a href="minor-moonstone.html">57. A Pedra da Lua</a></li>
+<li class="nav-arcana"><a href="minor-hand-of-aals-sannan.html">58. A Mão de Aals Sannan</a></li>
+<li class="nav-arcana"><a href="minor-bittersweet-elixir.html">59. O Elixir Agridoce</a></li>
+<li class="nav-arcana"><a href="minor-the-brooms-lullaby.html">60. A Canção de Ninar da Vassoura</a></li>
+<li class="nav-arcana"><a href="minor-the-angry-little-god.html">61. O Deusinho Raivoso</a></li>
+<li class="nav-arcana"><a href="minor-the-silver-branch.html">62. O Ramo de Prata</a></li>
+<li class="nav-arcana"><a href="minor-void-elemental.html">63. O Elemental do Vazio</a></li>
+<li class="nav-arcana"><a href="minor-runes-of-creation.html">64. As Runas da Criação</a></li>
+<li class="nav-hub"><a href="../appendix-d-major-arcana.html" class="nav-en" title="Disponível apenas em inglês" hreflang="en">Appendix D: Major Arcana</a></li>
+<li class="nav-arcana"><a href="major-staff-of-the-lidless-orb.html">1. O Cajado do Olho sem Pálpebra</a></li>
+<li class="nav-arcana"><a href="major-twisted-spear.html">2. A Lança Retorcida</a></li>
+<li class="nav-arcana"><a href="major-demonhide-cloak.html">3. O Manto de Pele de Demônio</a></li>
+<li class="nav-arcana"><a href="major-norubas-ice-sphere.html">4. A Esfera de Gelo de Noruba</a></li>
+<li class="nav-arcana"><a href="major-mindgem.html">5. A Gema da Mente</a></li>
+<li class="nav-arcana"><a href="major-whispering-rocks.html">6. As Pedras Sussurrantes</a></li>
+<li class="nav-arcana"><a href="major-blood-quenched-sword.html">7. A Espada Temperada em Sangue</a></li>
+<li class="nav-arcana"><a href="major-shield-of-the-wisent-witch.html">8. O Escudo da Bruxa do Bisão</a></li>
+<li class="nav-arcana"><a href="major-hectumel-codex.html">9. O Códice de Hec&#x27;tumel</a></li>
+<li class="nav-arcana"><a href="major-red-scepter.html">10. O Cetro Vermelho</a></li>
+<li class="nav-arcana"><a href="major-ring-of-daagon.html">11. O Anel de Daagon</a></li>
+<li class="nav-arcana"><a href="major-rune-laden-scales.html">12. As Escamas Rúnicas</a></li>
+<li class="nav-arcana"><a href="major-blackwood-fetishes.html">13. Os Fetiches de Madeira Negra</a></li>
+<li class="nav-arcana"><a href="major-storm-markings.html">14. As Marcas da Tempestade</a></li>
+<li class="nav-arcana"><a href="major-ineffable-words.html">15. As Palavras Inefáveis</a></li>
+<li class="nav-arcana"><a href="major-redwood-effigy.html">16. A Efígie de Sequoia</a></li>
+<li class="nav-arcana"><a href="major-hungering-maw-of-hlad.html">17. A Bocarra Faminta de Hlad</a></li>
+<li class="nav-arcana"><a href="major-azure-hand.html">18. A Mão Azul</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-foot"><details class="lang-switch"><summary title="Idioma"><span class="lang-globe" aria-hidden="true">🌐</span><span class="lang-code" aria-hidden="true">PT</span><span class="lang-label">Idioma</span><span class="lang-now">Português (Brasil)</span></summary><ul class="lang-list"><li><a href="../npcs-followers.html" hreflang="en" lang="en">English</a></li><li><span class="lang-current" aria-current="page" lang="pt-BR">Português (Brasil)</span></li></ul></details><span class="sidebar-credit">Texto de <em>Stonetop</em>, por Jeremy Strandberg, <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">CC BY-SA 4.0</a></span><a class="sidebar-github" href="https://github.com/Bryan-Legend/stonetop-wiki-generator">GitHub</a><button type="button" class="sound-toggle" id="sound-toggle" aria-pressed="true" title="Som dos dados"><span class="sound-on" aria-hidden="true">🔊</span><span class="sound-off" aria-hidden="true">🔇</span><span class="sound-label">Som dos dados</span></button></div>
+    </aside>
+    <div class="main-wrap">
+      <div class="content-scroll" id="main">
+        <main class="content">
+          <h1 class="page-title">NPCs e Seguidores</h1>
+<p>NPCs são <strong>personagens não jogadores</strong>, qualquer um que exista na ficção do jogo e não seja um dos PJs. Isso inclui pessoas, claro, mas também espíritos da natureza, sombras dos que partiram e entidades presas.</p>
+<p>Pode até incluir feras como cães, cavalos ou galinhas corajosas. Se tem personalidade e os PJs conseguem se comunicar com aquilo, é um NPC.</p>
+<p>Muitos NPCs também são <strong>ameaças</strong> <a class="wiki-link" href="threats.html" data-slug="threats" >Ameaças</a> que causam encrenca contínua para os PJs ou para a aldeia. NPCs também podem ser <strong>monstros</strong> <a class="wiki-link" href="../dangers.html" data-slug="dangers" >Dangers</a> com quem os PJs podem lutar. Este capítulo, porém, trata deles como pessoas (ou pelo menos como seres sapientes) com quem os PJs interagem.</p>
+<p>Se um NPC recebe ordens de um PJ, deferindo a ele e em geral fazendo o que o PJ manda, então esse NPC é um <strong>seguidor</strong>. Os jogadores podem disparar movimentos como Cruzar Lâminas ou Buscar Discernimento por meio dos seguidores, e os seguidores podem guardar Lealdade, o que os torna mais propensos a fazer o que o PJ quer.</p>
+<p>Os seguidores são tratados em detalhe a partir da <a class="wiki-link" href="#game-stats" data-slug="npcs-followers" data-fragment="game-stats">Atributos de jogo</a>.</p>
+<h2 id="npcs-in-play">NPCs no jogo</h2>
+<p>Parte do seu trabalho como Mestre é interpretar os NPCs. O que fazem, o que dizem, como se sentem — tudo isso é com você! Na prática, você interpreta os NPCs como parte do <strong>ciclo central</strong> <a class="wiki-link" href="running-the-game.html" data-slug="running-the-game" >do jogo</a>.</p>
+<p>Enquanto estabelece uma situação, diga (ou pergunte) que NPCs estão ali, como são, como estão vestidos ou como se portam.</p>
+<p>Diga (ou pergunte) o que estão aprontando. Fale com a voz deles ou resuma o que dizem.</p>
+<p>Quando fizer um movimento de Mestre, você pode usar os NPCs para fazê-lo. <strong>Anuncie encrenca</strong> fazendo um seguidor se aproximar do Marechal e sussurrar: &quot;estamos sendo seguidos&quot;. <strong>Coloque-os em apuros</strong> dizendo: &quot;Ele está prestes a gritar feito louco, o que você faz?&quot;</p>
+<p><strong>Mostre uma desvantagem</strong> dizendo: &quot;A Mari passou a mão nos garçons de novo, levou uma jarra de cerveja na cabeça de novo, e está prestes a perder a paciência — de novo.&quot;</p>
+<p>Quando você resolve as ações dos jogadores, é você quem decide como os NPCs reagem ou são afetados. Quando a Raposa faz passar um barril de zurrapa por uísque fino, você decide se o mercador simplesmente cai na conversa, ou se jamais acreditaria, ou se poderia acreditar mas só se a Raposa o Persuadir.</p>
+<p>Quando o Marechal manda a tropa dela Cruzar Lâminas e ela tira 7-9, você decide quem entre eles sofre o ataque do inimigo.</p>
+<p>Quando os PJs fazem algo que não dispara um movimento, você diz o que acontece — e &quot;o que acontece&quot; muitas vezes envolve como os NPCs reagem.</p>
+<p>Quando o Aspirante a Herói diz &quot;eu te amo&quot; à namorada pela primeira vez, não há movimento de jogador que te diga como ela responde.</p>
+<p>A questão é: interpretar NPCs — enquadrar cenas com eles, descrevê-los, fazer movimentos com eles, dizer como reagem — é uma grande parte de conduzir o jogo.</p>
+<h2 id="modes-of-portrayal">Modos de interpretação</h2>
+<p>Ao interpretar um NPC, você pode <strong>falar com a voz dele</strong>, em primeira pessoa (&quot;Eu… só não sei se consigo continuar… fazendo isso&quot;). Ou pode <strong>resumir o que ele diz</strong> e como diz, em terceira pessoa (&quot;Ela se emociona e diz que não consegue continuar com isso — é constrangedor&quot;).</p>
+<p><strong>Falar com a voz de um NPC</strong> costuma ser mais imersivo e envolvente do que só resumir as palavras dele. Isso leva os jogadores a responder na mesma moeda, falando com a voz dos PJs. Permite que você mostre em vez de contar. E pode ser muito divertido.</p>
+<p><strong>Resumir as palavras de um NPC</strong> costuma ser mais fácil. Não exige talento para atuação. É mais fácil de corrigir. Muitas vezes leva menos tempo resumir uma conversa do que encená-la. Você pode ser mais intencional sobre a informação que compartilha e os movimentos de Mestre que faz.</p>
+<p>Na prática, você vai muitas vezes <strong>alternar entre os modos</strong>. Pode começar em terceira pessoa e entregar uma fala-chave com a voz do NPC.</p>
+<p>Pode começar em primeira pessoa e depois afastar a lente para resumir a história dele. Pode descrever uma conversa que envolve vários NPCs, mas pontuá-la com algumas falas-chave em vozes específicas.</p>
+<p>Tente <strong>ser consciente e intencional sobre como usa os modos de interpretação</strong>. Escolha conforme as necessidades da cena, o ritmo da sessão e as preferências dos seus jogadores.</p>
+<p>Desafie-se! Se o seu instinto é sempre resumir o que os NPCs dizem, experimente um pouco de interpretação em primeira pessoa. Se você percebe que sempre fala no personagem, experimente resumir as conversas. <strong>Mestrar é uma prática</strong> <a class="wiki-link" href="running-the-game.html" data-slug="running-the-game" >Conduzindo o Jogo</a>, e você só melhora naquilo que experimenta!</p>
+<h2 id="multiple-npcs-at-once">Vários NPCs de uma vez</h2>
+<p>Inevitavelmente você vai ter cenas em que vários NPCs estão em conflito, ou pelo menos têm opiniões conflitantes.</p>
+<p>Nessas cenas, você precisa equilibrar <strong>dar vida aos seus NPCs</strong> com <strong>ser fã dos PJs</strong>.</p>
+<p>Tente manter a conversa centrada nos PJs. Faça os NPCs apelarem a eles e levá-los a tomar partido.</p>
+<p>Se isso não fizer sentido, foque em transmitir o essencial do conflito.</p>
+<p>Use resumos em terceira pessoa mais do que interpretação em primeira pessoa. Pouquíssimos Mestres conseguem fazer funcionar uma cena longa de &quot;NPCs conversando entre si&quot;.</p>
+<p>Isso não quer dizer que você deva evitar a primeira pessoa quando os NPCs estão em conflito. Só quer dizer que deve usá-la com parcimônia. Enquadre o conflito com algumas falas de cada NPC e depois afaste a lente para resumir a conversa e os pontos importantes.</p>
+<p>Quando você <em>de fato</em> interpretar vários NPCs na mesma cena, seja o mais claro possível sobre quando cada NPC está falando.</p>
+<p>Ter vozes ou trejeitos distintos para cada NPC ajuda muito nisso. Outro truque é mudar a cabeça/o corpo de um lado para o outro ao trocar de personagem, inclinando-se à esquerda e olhando para a direita como NPC nº 1, e o contrário como NPC nº 2.</p>
+<h2 id="dialogue-scenes">Cenas de diálogo</h2>
+<p>Muitas cenas vão ser cenas de diálogo, cenas em que um ou mais PJs conversam com um NPC, e é só isso que acontece.</p>
+<p>É fácil cair no &quot;só conversar&quot;, em que todos vocês habitam os PJs e os NPCs e ficam encenando, vendo como respondem uns aos outros. É divertido, e é uma chance de <strong>dar vida aos seus personagens</strong> e de <strong>deixar as coisas respirarem</strong>. Mas cuidado! Também é fácil deixar cenas de diálogo se arrastarem e vagarem sem propósito.</p>
+<p>Como todas as cenas, <strong>boas cenas de diálogo têm um propósito</strong>. Há um motivo para você (ou seus jogadores) ter iniciado esta conversa, entre estes personagens. Os PJs estão tentando conseguir algo; você está tentando transmitir algo; há uma pergunta que precisa de resposta; há um conflito a resolver — ou a escalar! Tenha o motivo da cena em mente, mesmo enquanto interpreta o NPC (ou os NPCs) e fala com a voz dele (ou deles).</p>
+<p>Tente <strong>seguir o ciclo central</strong>! Estabeleça a situação — a hora e o lugar, os NPCs envolvidos, o tom e o essencial da conversa — e então faça um movimento suave de Mestre.</p>
+<p>Faça o NPC perguntar: &quot;E então, no que posso ajudar?&quot; Ou faça-o dizer algo provocativo e dê ao jogador a chance de responder.</p>
+<p>Ou saia do personagem e diga como o NPC está agindo de forma nervosa, ou como parece adoentado, ou como há um ídolo novo e estranho na lareira dele que não estava lá antes. Pergunte: &quot;O que você faz?&quot; Siga dali.</p>
+<p>Lembre-se de <strong>ser honesto e generoso com a verdade e os detalhes</strong>. Quando fizer um movimento de Mestre (suave ou duro) pela voz de um NPC, saia do personagem e seja explícito sobre o que aquilo implica. Se a sua intenção é interpretar um NPC esquivo e nervoso, entregue as falas dele e depois diga: &quot;Ele está esquivo e nervoso&quot;. Não presuma que seus jogadores vão interpretar direito a sua atuação.</p>
+<p><strong>Fique de olho nos jogadores disparando movimentos durante os diálogos</strong>. Se você (como NPC) opõe resistência e o PJ insiste, ele acabou de disparar Persuadir. Se você faz uma pergunta direta aos PJs e eles mentem descaradamente, provavelmente estão Desafiando o Perigo. Se os PJs têm movimentos especiais que entram em ação durante uma conversa (como Debaixo</p>
+<p>da Pele ou Bom de Papo), pergunte ao jogador se ele quer usá-los.</p>
+<p>Quando o propósito de uma cena tiver sido resolvido, ou quando o diálogo começar a se esvaziar ou a girar em círculos, <strong>encerre a cena</strong>. Saia do personagem, faça a transição para a próxima cena, mude os holofotes e/ou passe para o jogo solto.</p>
+<h2 id="creating-npcs">Criando NPCs</h2>
+<p>Lembre-se de que um dos seus princípios é <strong>dar vida aos seus personagens</strong>.</p>
+<p>Você quer que seus NPCs sejam distintos e memoráveis, pessoas críveis e instigantes em vez de só nomes numa folha. Um mundo cheio de NPCs interessantes é <strong>um mundo rico e misterioso</strong>.</p>
+<p>Você quer que seus jogadores se importem com os seus NPCs e com o destino deles — mesmo que isso signifique odiá-los ou querê-los mortos. Quando seus jogadores se importam com os seus NPCs, fica muito mais fácil <strong>pontuar a vida dos PJs com aventura</strong>.</p>
+<p>Por fim, você quer que seus NPCs ajam com integridade e com a lógica interna deles. Isso os torna mais críveis e instigantes, mas também significa que você pode recorrer a &quot;o que este NPC faria?&quot; e responder honestamente. É parte essencial de <strong>jogar para descobrir o que acontece</strong>.</p>
+<p>Então: como <em>fazer</em> isso?</p>
+<p>1) Dê um nome a ele</p>
+<p>2) Conceba-o</p>
+<ul class="bullets"><li>Construa sobre o que está estabelecido</li><li>Faça perguntas aos PJs</li><li>Escolha um traço memorável</li></ul>
+<p><strong>3)</strong> Dê até 3 impressões sobre ele</p>
+<p><strong>4)</strong> Detalhe o que for necessário, como:</p>
+<ul class="bullets"><li>Um instinto</li><li>As conexões dele com os outros</li><li>As motivações dele</li><li>Como você vai encarná-lo no jogo</li><li>Atributos de jogo: etiquetas, HP, armadura, dano e movimentos de Mestre Você também pode acrescentar detalhes para tratá-lo como <strong>seguidor</strong> <a class="wiki-link" href="#game-stats" data-slug="npcs-followers" data-fragment="game-stats">Atributos de jogo</a>, <strong>monstro</strong> <a class="wiki-link" href="../dangers.html" data-slug="dangers" >Dangers</a> e/ou <strong>ameaça</strong> <a class="wiki-link" href="threats.html" data-slug="threats" >Ameaças</a>.</li></ul>
+<p>Muitas vezes você vai improvisar esses detalhes no jogo e desenvolver o NPC entre as sessões.</p>
+<p>Mas se você espera que um NPC apareça numa sessão futura, prepare alguns ou todos esses detalhes com antecedência. Como sempre, porém, <strong>prepare só o tanto que achar útil e valioso</strong>.</p>
+<h2 id="1-name"><span class="step-badge">1</span> Nome</h2>
+<p>Dê um nome ao NPC, ou peça aos jogadores que deem. Escolha na lista de nomes apropriada ou na entrada do <em>Livro II</em>, ou use um nome de som ou origem parecidos.</p>
+<ul class="bullets"><li><strong>Nomes de Stonetop</strong> são inspirados no galês</li><li><strong>Nomes de Beira-Brejo (Marshedge)</strong> são inspirados no irlandês</li><li><strong>Nomes do Povo das Colinas</strong> são inspirados no bretão ou no francês, mas truncados e sem vogais</li><li><strong>Nomes de Manmarch</strong> são germânicos</li><li><strong>Nomes do Passo da Barreira</strong> são inspirados no tibetano ou no nepalês</li><li><strong>Nomes do Sul</strong> bebem do grego, do hebraico, do persa ou do árabe.</li><li><strong>Para outros povos</strong> (como os Ustrina), consulte a entrada apropriada do <em>Livro II</em>.</li></ul>
+<p>Acrescente o nome do NPC ao livreto do povoado.</p>
+<hr>
+<blockquote><p><em>Antes de sair numa missão comercial para a Cava de Gordin, a Rhianna Convoca a aldeia para se precaver contra os crinwin. Ela tira 10 e escolhe &quot;1 ou 2 indivíduos mostram potencial de verdade; pergunte ao Mestre quem e como&quot;. Não tenho ninguém em mente, então olho a lista de nomes de Stonetop e digo: &quot;Ahn… vamos dizer que o Andras te chama a atenção para substituir o bom e velho Garet. E, ah, o Elios. Ele é alguém que você pode deixar no comando enquanto estiver fora.&quot; Acrescento os dois nomes como moradores de Stonetop no livreto do povoado.</em></p></blockquote>
+<hr>
+<h2 id="2-concept"><span class="step-badge">2</span> Conceito</h2>
+<p>Descubra quem é essa pessoa.</p>
+<p>Quais são as coisas mais óbvias e importantes sobre ela? Que pronomes usa? Que idade tem? De onde vem? Se você tivesse que descrevê-la em poucas palavras, quais seriam?</p>
+<h3 id="build-on-whats-established">Construa sobre o que está estabelecido</h3>
+<p>Comece pelo que você já sabe sobre esse NPC e extrapole. Se o NPC já está escrito como seguidor, monstro ou ameaça, o conceito dele já está bem estabelecido e você só precisa preencher alguns detalhes. Mas se estiver inventando esse NPC do zero, vai precisar de mais trabalho.</p>
+<p>Por mais escassos que sejam os detalhes, você sempre sabe algo sobre esse NPC.</p>
+<p>Como ou por que ele foi introduzido? O que dá para inferir sobre ele a partir desse contexto? O que você já estabeleceu sobre o mundo que possa preencher as lacunas? Vá pelas respostas óbvias ou escolha de propósito algo que subverta um clichê.</p>
+<p>Segure suas ideias com leveza por ora. Conforme você faz perguntas e escolhe traços para esse NPC, o conceito inicial dele pode mudar. Ótimo! Fique solto!</p>
+<hr>
+<blockquote><p><em>Acabei de apresentar o Elios como uma boa pessoa para assumir as defesas enquanto os PJs vão à Cava de Gordin. Imagino que o Elios é um agricultor estabelecido, talvez da idade da Rhianna. Instintivamente pensei nele como &quot;ele&quot;. Digo isso à Rhianna. Agora estou pensando num bom homem de família, benquisto, mas vamos ver o que meus jogadores têm a dizer.</em></p></blockquote>
+<hr>
+<h3 id="ask-questions">Faça perguntas</h3>
+<p>Muitos NPCs vão ser pessoas que os PJs conhecem, ou pelo menos de quem já ouviram falar, então pergunte aos seus jogadores sobre eles. Eles vão se importar mais com NPCs que ajudaram a criar! Tenha <strong>a Linha</strong> <a class="wiki-link" href="running-the-game.html" data-slug="running-the-game" >Conduzindo o Jogo</a> em mente. Faça aos personagens perguntas que eles consigam responder. Quanto mais próximos os PJs forem de um NPC, mais perguntas você deve fazer.</p>
+<p><strong>Para gente da terra ou pessoas que os PJs conhecem bem:</strong></p>
+<ul class="questions"><li>Você é parente dessa pessoa? Como?</li><li>Qual é a situação familiar dela? (Casada? Filhos? Pais? Irmãos?)</li><li>De quem mais ela é próxima? Quem se importa com ela?</li><li>Do que você gosta/não gosta nela?</li><li>Pelo que ela é respeitada?</li><li>O que os outros dizem pelas costas dela?</li><li>Qual é a característica mais marcante dela?</li><li>Como ela sempre te tratou?</li><li>Do que ela parece gostar/não gostar?</li></ul>
+<p><strong>Para forasteiros, mas que os PJs conhecem:</strong></p>
+<ul class="questions"><li>Quando/como você a conheceu?</li><li>Quando você a viu pela última vez?</li><li>O que você sabe da família dela?</li><li>Como você a descreveria?</li><li>Por que você (não) está ansioso para revê-la?</li><li>Como ela mudou desde o último encontro de vocês?</li></ul>
+<p><strong>Para gente de quem os PJs ouviram falar mas não conhecem de fato:</strong></p>
+<ul class="questions"><li>Pelo que ela é conhecida?</li><li>Qual dizem ser o traço mais marcante dela?</li><li>Quem você conhece que já a encontrou?</li><li>Em que ela é diferente do que você esperava?</li></ul>
+<p>Para NPCs específicos, você pode ser bem mais provocativo. Formule suas perguntas de modo que afirmem coisas que você quer que sejam verdade, mas ainda perguntando algo significativo ao jogador. Quando você apresenta um mercenário do passado sangrento do Brutamontes, talvez pergunte: &quot;Por que você jamais ia querer cruzar espadas com ele?&quot; ou &quot;Que ato covarde você já o viu cometer?&quot;</p>
+<p>Se vários PJs conhecem o NPC, espalhe as perguntas. Melhor ainda, faça perguntas que empurrem os PJs para opiniões conflitantes sobre o NPC. Se você perguntou ao Brutamontes que ato covarde ele viu esse mercenário cometer, talvez pergunte ao Buscador como esse mesmo mercenário uma vez salvou a vida dele.</p>
+<p>Construa sobre as respostas que seus jogadores derem.</p>
+<p>Esclareça e faça perguntas de acompanhamento, mas de resto trate as respostas como se sempre tivessem sido verdade.</p>
+<hr>
+<blockquote><p><em>Pergunto à Rhianna: &quot;Então, o que faz do Elios uma boa escolha para deixar no comando?&quot; Ela diz que ele a ajuda a treinar a milícia. O pessoal sempre recorreu a ele quando ela está fora na Mata. &quot;Por que isso?&quot; Ela diz que ele passou um tempo como mercenário quando era mais jovem, e tem experiência de verdade com essas coisas. Interessante!</em></p><p><em>&quot;Legal!&quot;, eu digo, e me viro para a Blodwen. &quot;Qual é o seu parentesco com ele? E como ele é?&quot; Ela diz que ele é tio dela (irmão da mãe dela), trabalhador duro, ríspido mas sempre gentil com ela.</em></p><p><em>Depois pergunto ao Vahid do que ele não gosta no Elios. E ele solta: &quot;Ugh. Ele é o pior. Não entende uma piada. Nenhum senso de humor.&quot;</em></p></blockquote>
+<hr>
+<h3 id="assign-memorable-traits">Atribua traços memoráveis</h3>
+<p>Dê ao NPC pelo menos um traço específico e memorável e dê destaque a ele. Esses traços viram suas pedras de toque para interpretá-lo. As pessoas talvez não lembrem que a filha do taverneiro se chama &quot;Tegid&quot;, mas vão lembrar da &quot;menina que sai correndo para tudo&quot;.</p>
+<p>Escolha traços da lista de Traços de NPC do livreto do povoado, ou invente, ou peça aos jogadores que inventem. Anote esses traços ao lado do nome do NPC, junto com a ocupação ou o lugar dele na vida, além de quaisquer relações importantes.</p>
+<p>Os traços de um NPC podem fluir naturalmente do que já está estabelecido, mas você também pode escolher um traço que contraste com o que você sabe ou com o que esperaria. Talvez o ferreiro corpulento também saiba de toda a fofoca. Talvez o cônjuge de bom coração da Raposa nutra ódio pelo Povo das Colinas. Contrastes assim tornam os NPCs mais instigantes e memoráveis.</p>
+<hr>
+<p><em>Com base no que sabemos, anoto:</em></p>
+<p>ELIOS (ele/dele): agricultor, sem senso de humor, ex-mercenário, tio da Blodwen <em>Confiro a lista de Traços de NPC, procurando um contraste interessante. Meu olho pega &quot;acabou de se casar&quot;. Acho que tem algo de tenso aí, e pergunto aos PJs por quê. O Vahid solta: &quot;Ele se casou com uma mulher mais nova, alguém muito falante e animada. É um par estranho, mas eles parecem felizes o bastante. Bom, ela parece. O Elios nunca está feliz.&quot;</em></p>
+<blockquote><p><em>Adorei. Acrescento &quot;recém-casado&quot; à ficha dele e faço uma nota para descobrir quem é a nova esposa dele também!</em></p></blockquote>
+<hr>
+<h2 id="3-impressions"><span class="step-badge">3</span> Impressões</h2>
+<p>A esta altura você já deve ter um conceito sólido do NPC, o bastante para começar a interpretá-lo.</p>
+<p>Se estiver criando esse NPC na hora, enquadre uma cena com ele (se ainda não o fez) e <strong>dê até 3 impressões sobre ele</strong>, sobre o que o cerca ou sobre como é estar perto dele.</p>
+<p>Se estiver preparando o NPC com antecedência, decida essas impressões agora e anote-as, com o nível de detalhe que achar útil. Traga-as à tona quando puser o NPC em cena pela primeira vez.</p>
+<h3 id="impression-examples">Exemplos de impressões</h3>
+<p><strong>Rosto:</strong> anguloso, nariz quebrado, com covinhas, sardas, nariz adunco, curtido, faltando dentes, pintura, cicatriz, carranca, macio, queimado de sol, tatuagem, verrugas, etc.</p>
+<p><strong>Olhos:</strong> grandes, brilhantes, frios, turvos, escuros, fundos, caídos, faltando um, claros, pequenos, apertados, rápidos, marejados, etc.</p>
+<p><strong>Cabelo:</strong> careca, cacheado, engordurado, liso, grosso, ralo, etc.</p>
+<p><strong>Corpo:</strong> grande, corpulento, miúdo, esguio, carnudo, faltando __, redondo, baixo, curvado, alto, encorpado, magro, fibroso, etc.</p>
+<p><strong>Presença:</strong> alerta, taciturna, alegre, elegante, inquieta, amistosa, arrogante, encolhida, intensa, serena, etc.</p>
+<p><strong>Cheiro:</strong> de terra, almiscarado, floral, forte, azedo, esfumaçado, etc.</p>
+<p><strong>Roupas:</strong> botas, amuletos, limpas, [cor], sujas, peles, fitas, seda, torque, puídas, desleixadas, etc.</p>
+<p><strong>Voz:</strong> ofegante, cortada, grosseira, rouca, aguda, enrouquecida, cantada, com ceceio, monótona, resmungada, anasalada, trêmula, retumbante, estridente, suave, gaguejada, etc.</p>
+<p>Cada impressão deve envolver um sentido ou aspecto diferente do NPC (veja o quadro para exemplos). Mantenha as impressões curtas, simples e evocativas. Dê menos detalhe do que acha que precisa; deixe a imaginação dos jogadores preencher o resto.</p>
+<p>Talvez peça aos PJs para ajudar a descrever o NPC, principalmente se for alguém que conhecem bem. Sobre a paixão do Aspirante a Herói, talvez pergunte: &quot;O que você acha mais atraente nessa pessoa?&quot; Quando o Brennan, a Garra, aparece em cena pela primeira vez, talvez diga: &quot;Rhianna, você já o encontrou — o que no rosto dele dá tanta vontade de dar um soco?&quot;</p>
+<p>A maior parte das impressões deve refletir o conceito do NPC — são um jeito de mostrar em vez de contar. Mas talvez dê uma impressão que contraste com o resto do NPC:</p>
+<p>dê ao mercenário covarde olhos suaves e tristes, ou diga que o mercador bem-vestido fede a suor. Contrastes assim dão profundidade e textura aos seus NPCs.</p>
+<hr>
+<blockquote><p><em>Estou pronto para interpretar o Elios, então enquadro a cena. &quot;Como você disse, Rhianna, você dobra as vigias e intensifica os treinos. Alguns dias depois, você encontra o Elios comandando com competência uma parede de escudos.&quot;</em></p><p><em>Dou algumas impressões que reforçam o papel dele. &quot;Ele tem uma voz grave, quase monótona, e as pessoas meio que se inclinam para ouvir, e uma cicatriz no rosto que você presume que ele ganhou nos tempos dele lá no sul.&quot; Depois, para deixá-lo um pouco mais humano, acrescento: &quot;E enquanto ele observa o pessoal treinando, você percebe que ele está, tipo, mexendo num… medalhão? Provavelmente um presente da nova esposa.&quot;</em></p></blockquote>
+<hr>
+<h2 id="4-additional-details"><span class="step-badge">4</span> Detalhes adicionais</h2>
+<p>Preencha o resto dos detalhes de um NPC só conforme eles se tornem importantes e relevantes para a história ou para o jeito como você o interpreta.</p>
+<p>Se estiver inventando o NPC na hora, provavelmente não vai ter tempo nem espaço mental para fazer isso de propósito.</p>
+<p>É comum simplesmente interpretar NPCs novos de forma natural e instintiva, com base no que você já estabeleceu. Depois você pode voltar, após a sessão, e anotar como os interpretou e/ou desenvolver alguns dos detalhes que faltam.</p>
+<p>Se estiver preparando um NPC com antecedência, pense nas áreas a seguir e tome algumas decisões sobre elas. Mas lembre-se: prepare só o que for útil e valioso para <em>você</em>.</p>
+<h3 id="embodiment">Encarnação</h3>
+<p>Considere um ou mais destes truques para ajudar a encarnar o NPC. Truques assim podem deixá-lo distinto, mesmo que você não seja um performista nato.</p>
+<ul class="bullets"><li>Escolha <strong>um ator ou personagem de TV, cinema ou teatro</strong>. Diga aos jogadores para imaginá-lo como o NPC. Ou tente interpretar esse personagem sem contar aos jogadores que está fazendo isso!</li><li>Escolha <strong>alguém que você conheça pessoalmente</strong>. Imite essa pessoa, mas não conte a ninguém.</li><li>Escolha <strong>um jeito de falar</strong> ou <strong>uma alteração na sua voz</strong>, <strong>um bordão</strong>, <strong>um tique físico</strong> ou <strong>um comportamento</strong> para esse NPC. Use sempre que for interpretá-lo.</li><li><strong>Ache ou crie uma imagem dele</strong>. Mostre-a ao interpretar esse NPC.</li></ul>
+<p>Esses truques são relativamente fáceis de usar na hora, enquanto se improvisa um NPC novo. Se usar um, faça uma nota para si mesmo depois da sessão sobre qual truque usou, para poder interpretar o NPC de forma consistente no futuro.</p>
+<hr>
+<blockquote><p><em>Conforme a cena se desenrola, e a Rhianna começa a contar ao Elios os planos dela e como quer que ele fique no comando, eu me apoio naquela &quot;voz grave, quase monótona&quot; que descrevi nele. Baixo o tom e mantenho a entonação chapada. Percebo que estou fazendo a voz do Bisonho, o burro melancólico de</em> Ursinho Pooh<em>, e isso parece certo.</em></p><p><em>Anoto &quot;voz de Bisonho&quot; nas minhas notas.</em></p></blockquote>
+<hr>
+<h3 id="instinct">Instinto</h3>
+<p>Entre as sessões, considere escrever um instinto para o seu NPC. Escreva neste formato: &quot;fazer [alguma coisa]&quot;.</p>
+<p>Se o NPC for…</p>
+<ul class="ellipsis"><li>um <strong>monstro</strong> <a class="wiki-link" href="../dangers.html" data-slug="dangers" >Dangers</a> ou uma <strong>ameaça</strong> <a class="wiki-link" href="threats.html" data-slug="threats" >Ameaças</a>, o instinto dele deve colocá-lo em conflito com os outros.</li><li><strong>um seguidor</strong> <a class="wiki-link" href="#game-stats" data-slug="npcs-followers" data-fragment="game-stats">Atributos de jogo</a>, o instinto dele deve causar encrenca para o PJ que o lidera.</li><li><strong>qualquer outra pessoa</strong>, o instinto dele deve refletir a visão de mundo básica dele e como ele encara a vida.</li></ul>
+<p>Use o instinto de um NPC para guiar como ele se comporta e reage. Se não souber o que um NPC faria, olhe o instinto dele. Faça-o fazer isso.</p>
+<hr>
+<blockquote><p><em>Depois da sessão, penso um pouco no Elios e escrevo este instinto para ele:</em></p></blockquote>
+<p>Reclamar mas dar conta do serviço.</p>
+<hr>
+<h3 id="connections-to-others">Conexões com os outros</h3>
+<p>Quando tiver tempo — normalmente entre as sessões — pense em como esse NPC se dá com os outros. Pergunte a si mesmo algumas ou todas as questões abaixo:</p>
+<ul class="questions"><li>O que ele acha dos PJs?</li><li>De quem ele é parente? De quem é amigo?</li><li>A quem ele é leal, e por quê?</li><li>De quem ele não gosta, e por quê?</li></ul>
+<p>Faça perguntas de acompanhamento a si mesmo. Se não tiver certeza de uma resposta, deixe como algo para ficar pensando por ora.</p>
+<p>Use as respostas para interpretar o NPC e para ajudar a resolver as ações dos PJs. O ferreiro não gosta do cônjuge da Raposa? Talvez a Raposa tenha que Persuadir o ferreiro a fazer uma tarefa que de outro modo seria simples. O ferreiro é leal à parteira? O apoio dela pode fazer o ferreiro concordar.</p>
+<p>Não desenvolva a rede social inteira de um NPC. Deixe lacunas e preencha detalhes conforme se tornem relevantes para o jogo.</p>
+<p>Minhas anotações sobre o Elios agora estão assim:</p>
+<hr>
+<p>ELIOS (ele/dele): agricultor, sem senso de humor, ex-mercenário, tio da Blodwen.</p>
+<p>Recém-casado. Voz de Bisonho.</p>
+<p>Instinto: reclamar mas dar conta do serviço.</p>
+<blockquote><p><em>Depois da sessão, faço a mim mesmo algumas dessas perguntas e acrescento estas notas:</em></p></blockquote>
+<p>Respeita a Rhianna. Gentil com a Blodwen.</p>
+<p>O Vahid é um esquisito perigoso. Leal à esposa.</p>
+<blockquote><p><em>Preciso desenvolver a esposa dele, mas isso pode esperar até eu precisar dela numa cena.</em></p></blockquote>
+<hr>
+<h3 id="motivations">Motivações</h3>
+<p>Se quiser mesmo desenvolver a vida interior e as motivações de um NPC, pergunte a si mesmo algumas ou todas as questões abaixo:</p>
+<ul class="questions"><li>O que ele quer dos PJs?</li><li>O que ele teme?</li><li>O que o irrita?</li><li>Pelo que ele anseia?</li><li>O que ele acha que merece?</li><li>O que ele aspira fazer ou ser?</li></ul>
+<p>A não ser que você goste muito desse tipo de preparação, guarde essas perguntas para NPCs cuja vida interior e cujas motivações realmente importem.</p>
+<p>Na maioria dos casos, você pode se apoiar no conceito, nos traços e nos instintos de um NPC.</p>
+<hr>
+<blockquote><p><em>As motivações do Elios me parecem diretas. Por ora, a falta de senso de humor, o instinto dele (&quot;reclamar mas dar conta do serviço&quot;) e o casamento novo já me dão bastante com que trabalhar.</em></p><p><em>No futuro, porém, talvez as pessoas comecem a duvidar da liderança da Rhianna e passem a olhar para o Elios. Aí eu poderia fazer a mim mesmo algumas dessas perguntas. O que ele quer dos PJs? Ele quer que a Rhianna se ajeite de uma vez. O que ele teme? Ser responsável pela segurança da aldeia inteira, mas também que a esposa ou o filho pequeno sofram algum mal. O que o irrita? O jeito como o Vahid e o Caradoc ficam trazendo encrenca para a aldeia, e como a Rhianna faz vista grossa para isso.</em></p><p><em>Respostas assim sugeririam um confronto à espreita entre o Elios e a Rhianna, em que ele poderia exigir que ela controlasse o Caradoc e o Vahid ou então deixasse o posto de marechal.</em></p></blockquote>
+<h3 id="game-stats">Atributos de jogo</h3>
+<p>Se você achar que um NPC…</p>
+<ul class="ellipsis"><li><strong>pode entrar numa briga com os PJs</strong>, monte-o como <strong>monstro</strong> <a class="wiki-link" href="../dangers.html" data-slug="dangers" >Dangers</a>.</li><li><strong>vai causar encrenca contínua</strong>, escreva-o como <strong>ameaça</strong> <a class="wiki-link" href="threats.html" data-slug="threats" >Ameaças</a>.</li><li><strong>vai agir regularmente sob as ordens de um PJ</strong>, monte-o como <strong>seguidor</strong> <a class="wiki-link" href="#creating-followers" data-slug="npcs-followers" data-fragment="creating-followers">Criando seguidores</a>.</li><li><strong>precisa de HP, armadura e um dado de dano, mas não é monstro nem seguidor</strong>, <a class="wiki-link" href="#creating-followers" data-slug="npcs-followers" data-fragment="creating-followers">use as diretrizes de seguidor mesmo assim</a>. Ou só improvise.</li></ul>
+<p>Um NPC pode não precisar desses atributos quando você o cria ou concebe, mas isso pode mudar com o tempo. Um NPC amistoso pode começar a seguir a liderança de um PJ e virar seguidor. Ou pode virar fonte de encrenca contínua e virar ameaça. Ou as duas coisas. As duas coisas é bom.</p>
+<hr>
+<blockquote><p><em>Quando apresento o Elios pela primeira vez, não espero que ele entre numa briga com os PJs, e ele não está causando encrenca nenhuma. Então não há necessidade de dar a ele atributos de monstro nem de escrevê-lo como ameaça.</em></p><p><em>Ele respeita a Rhianna e em geral defere a ela no que toca às defesas da aldeia, mas eu não o vejo bem como seguidor dela.</em></p><p><em>Conforme o jogo avança, porém, e a aldeia fica frustrada com a liderança da Rhianna, eu poderia decidir que o Elios virou um problema contínuo e o escreveria como ameaça (um</em> curinga<em>,</em></p></blockquote>
+<p><em>provavelmente, pelo menos para começar).</em></p>
+<hr>
+<p>Seguidores são NPCs que em geral recebem ordens de um PJ e seguem a liderança dele.</p>
+<p>Normalmente são pessoas, mas feras bem treinadas, espíritos presos e até artefatos sencientes podem contar como seguidores. Os PJs podem ganhar seguidores por mecânica (pelo livreto, por um movimento ou por um arcano) ou naturalmente ao longo do jogo.</p>
+<p>Seguidores são, antes de tudo, NPCs.</p>
+<p>Você, o Mestre, decide em última instância o que eles fazem e o que dizem, e o que acontece com eles. O que os distingue dos outros NPCs é que…</p>
+<ul class="ellipsis"><li>em geral vão fazer o que o PJ deles manda;</li><li>podem acumular Lealdade ao PJ deles, o que os torna mais fáceis de liderar e administrar; e</li><li>quando um PJ os manda fazer algo, eles podem disparar movimentos de jogador.</li></ul>
+<p>Seguidores também ganham um conjunto completo de atributos, bem parecido com o dos <strong>monstros</strong> <a class="wiki-link" href="../dangers.html" data-slug="dangers" >Dangers</a>.</p>
+<p>Eles têm etiquetas, HP, armadura, um dado de dano, um instinto e possivelmente movimentos de Mestre.</p>
+<p>Seguidores também têm dois atributos adicionais: um <strong>custo</strong> e <strong>Lealdade</strong>.</p>
+<p>O custo de um seguidor descreve o que o mantém seguindo a liderança de um PJ. Costuma ser umas poucas palavras, como &quot;moedas, pagamento, tesouro&quot; ou &quot;afeto, respeito&quot; ou &quot;treinamento&quot;. Quando um PJ paga o custo do seguidor, o seguidor guarda Lealdade.</p>
+<p>Lealdade é uma moeda que os seguidores podem guardar. O jogador do seguidor pode gastar essa Lealdade para fazer o seguidor ignorar o medo, se comportar ou fazer algo que preferiria não fazer. Veja o movimento <strong>Fortaleça Seu Vínculo</strong> <a class="wiki-link" href="#loyalty" data-slug="npcs-followers" data-fragment="loyalty">Lealdade</a> para detalhes.</p>
+<p>Aqui vai um seguidor de exemplo:</p>
+<hr>
+<div class="stat-block follower" id="rhiannas-crew-the-hunters"><h3 class="stat-name">A TROPA DA RHIANNA, os caçadores</h3><p class="stat-tags">Grupo, arqueiros, observadores, furtivos, respeitados, sabidos na mata</p><p class="stat-stats"><strong>HP</strong> 6; Armadura 0<br>Dano machadinha <button type="button" class="dice-roll" data-dice="1d6" title="Clique para rolar 1d6 — Shift: vantagem · Ctrl: desvantagem">1d6</button> (mão) ou arco <button type="button" class="dice-roll" data-dice="1d6" title="Clique para rolar 1d6 — Shift: vantagem · Ctrl: desvantagem">1d6</button> (próximo, pouca munição, acabou)◇◇<br>Instinto ater-se à tradição e à superstição<br>Custo farra, em grupo (Lealdade ◇◇◇ )</p><p class="stat-note">Eira (tenente, cínica), Lowri (ronca, olho afiado), Harri (magrelo, velho), Garet (morto), mais dois.</p></div>
+<hr>
+<p>Como Marechal, a Rhianna começa com uma tropa e pode definir quem eles são. A tropa dela são os caçadores da aldeia. Em geral os tratamos como um grupo, mas a Eira, a Lowri, o Harri e o pobre falecido Garet foram todos estabelecidos como indivíduos.</p>
+<p>Depois da morte do Garet, a Rhianna recrutou:</p>
+<hr>
+<p>ANDRAS, aprendiz de caçador</p>
+<div class="stat-block follower" id="archer"><h3 class="stat-name">Arqueiro</h3><p class="stat-stats"><strong>HP</strong> 6; Armadura 0<br>Dano machadinha <button type="button" class="dice-roll" data-dice="1d6" title="Clique para rolar 1d6 — Shift: vantagem · Ctrl: desvantagem">1d6</button> (mão) ou arco <button type="button" class="dice-roll" data-dice="1d6" title="Clique para rolar 1d6 — Shift: vantagem · Ctrl: desvantagem">1d6</button> (próximo, pouca munição, acabou)◇◇<br>Instinto tentar impressionar a Rhianna<br>Custo reconhecimento (Lealdade ◇◇◇ )</p><p class="stat-note">observador, ansioso, novato</p><p class="stat-note">Rapaz jovem, filho do Padraig. Caidinho pela Blodwen. Se esforça muito, faz um monte de perguntas.</p></div>
+<hr>
+<p>Ele chamou a atenção dela quando ela Convocou a aldeia antes de uma viagem à Cava de Gordin.</p>
+<p>Com o tempo, o Andras foi ficando cada vez mais competente, até acabar se juntando à tropa de caçadores da Rhianna.</p>
+<p>Aqui vai outro exemplo:</p>
+<hr>
+<div class="stat-block follower" id="fflur-a-draft-horse"><h3 class="stat-name">FFLUR, uma égua de tiro</h3><p class="stat-tags">Grande, poderosa, de faro apurado, resistente</p><p class="stat-stats"><strong>HP</strong> 10; Armadura 0<br>Dano cascos <button type="button" class="dice-roll" data-dice="1d6+3" title="Clique para rolar 1d6+3 — Shift: vantagem · Ctrl: desvantagem">1d6+3</button> (mão, perto, forte)<br>Instinto entrar em pânico<br>Custo cuidado caprichado, escovação (Lealdade ◇◇◇ )</p><p class="stat-note">Uma égua castanha, de uns 12 anos.</p><p class="stat-note">Sempre com fome. Mais sensata que o Celyn, mas ainda assim um cavalo.</p></div>
+<hr>
+<p>A Fflur é um dos dois cavalos da aldeia, listados no livreto do povoado como bens. Os PJs a Requisitaram junto com uma carroça para a viagem à Cava de Gordin, mas foi a jogadora da Blodwen quem lhe deu nome.</p>
+<p>Os cavalos são importantes para a aldeia, e a Blodwen sabe falar com animais, então os jogadores e eu nos interessamos pela Fflur como personagem. Decidimos tratá-la como seguidora.</p>
+<p>Como a Blodwen consegue falar com ela e foi quem mais se interessou, combinamos tratar a Fflur como seguidora da Blodwen, especificamente.</p>
+<p>E mais um:</p>
+<div class="stat-block follower" id="andalau-of-the-flute-dancing-wind-spirit"><h3 class="stat-name">ANDALAU DA FLAUTA, espírito de vento dançarino</h3><p class="stat-tags">Espírito, minúsculo, furtivo, travesso</p><p class="stat-stats"><strong>HP</strong> 8; Armadura 0<br>Dano nenhum<br>Instinto brincar e folgar<br>Custo entretenimento (Lealdade ◇◇◇ )</p><ul class="stat-moves"><li>Manifestar-se como uma rajada de vento esvoaçante (só é ferido por sal)</li><li>Entregar uma mensagem sussurrada</li><li>Jogar coisas para todo lado (poeira, folhas, etc.)</li><li>Irritar ou assustar alguém</li></ul><p class="stat-note">Quando você toca uma melodia para fazer o próprio vento dançar, o andalau se manifesta guardando 1 de Lealdade. Quando você dispensa o espírito enquanto ele não guarda Lealdade nenhuma, a flauta racha e se despedaça; o andalau é solto.</p></div>
+<hr>
+<p>O Vahid descobriu uma flauta rachada de madeira de teixo — um <strong>arcano menor</strong> <a class="wiki-link" href="../playing-the-game.html" data-slug="playing-the-game" >Playing the Game</a> — no túmulo do Senhor Verde. Depois de algumas semanas de prática e desventura, ele agora consegue invocar o andalau preso à flauta. Ele em geral faz o que o Vahid manda, mas é uma coisa volúvel e ele precisa mantê-lo contente ou a flauta se estilhaça e vira inútil.</p>
+<h2 id="follower-moves">Movimentos de seguidor</h2>
+<p>Estes movimentos ficam relevantes quando os PJs interagem com os seguidores deles.</p>
+<div class="move-block" id="order-followers"><h3 class="move-name">Order Followers</h3><p class="move-trigger">Quando você <strong><em>orienta seu seguidor a fazer algo que dispararia um movimento de jogador</em></strong>, e ele faz, o movimento dispara. Se o movimento envolver rolagem, você rola por ele. Em vez de rolar +ATRIBUTO, role e…</p><ul class="ellipsis"><li>se ele tiver pelo menos uma etiqueta ou movimento apropriado, some +1, ou +2 se ele também for <em>excepcional</em>;</li><li>se ele não tiver etiqueta nem movimento relevante, some +0; e</li><li>se alguma das etiquetas dele atrapalhar, role com desvantagem.</li></ul>
+<p>Quando um seguidor está sem ordens ou age por iniciativa própria, o Mestre diz o que ele faz e decide como as coisas correm.</p>
+<p>Seguidores são NPCs — normalmente não disparam movimentos voltados aos jogadores. Você pode <strong>colocá-los em apuros</strong> e fazer um seguidor avançar para atacar um inimigo que não tem como vencer, mas isso é só você fazendo um movimento suave de Mestre. Você conta aos jogadores que isso acontece e pergunta: &quot;O que você faz?&quot; Ninguém rola Cruzar Lâminas pelo seguidor imprudente!</p>
+<p>Isso muda, porém, quando um seguidor age a pedido de um PJ. O seguidor está agindo como extensão da vontade do PJ, então recorremos aos dados e aos movimentos voltados aos jogadores para descobrir o que acontece.</p>
+<p>Se um PJ manda um seguidor fazer algo que ele não quer fazer, o PJ precisa Persuadi-lo ou convencê-lo de outro jeito — exatamente como faria com qualquer outro NPC. A <strong>Lealdade</strong> <a class="wiki-link" href="#loyalty" data-slug="npcs-followers" data-fragment="loyalty">Lealdade</a> facilita isso, mas a maioria dos seguidores não vai partir para cima de um drake-trovão sem alguma conversa!</p>
+<p>Supondo que o seguidor <em>de fato</em> faça o que o PJ manda, e que essa ação dispararia um movimento voltado ao jogador se um PJ a fizesse, resolva o movimento normalmente. O jogador rola em nome do seguidor e toma as decisões que normalmente tomaria se o PJ tivesse disparado o movimento. Se tirar 6-, o jogador marca XP.</p>
+<p>Seguidores não têm atributos como FOR ou INT. Se um movimento pede uma rolagem +ATRIBUTO, o jogador olha as etiquetas e os movimentos do seguidor. Se algum deles indicar que o seguidor é bom nisso, o jogador soma</p>
+<p>+1 (mesmo que várias etiquetas ou movimentos se apliquem).</p>
+<p>Caso contrário, soma +0.</p>
+<p>Se o seguidor for <em>excepcional</em> E tiver outra etiqueta ou movimento que se aplique, o jogador rola +2. Mas se nenhuma outra etiqueta ou movimento se aplicar, o jogador ainda rola +0 para um seguidor <em>excepcional</em>.</p>
+<p>Se alguma das etiquetas de um seguidor atrapalhar ativamente o movimento que ele está fazendo, o jogador rola com desvantagem. Uma rolagem pode ter tanto +1 (ou +2) quanto desvantagem. Se o Vahid manda seu espírito de vento <em>furtivo</em> e <em>travesso</em></p>
+<p>espionar alguém, a etiqueta <em>furtivo</em> ajuda (+1), mas a etiqueta <em>travesso</em> significa que ele pode se distrair e tentar pregar uma peça no alvo (impondo desvantagem).</p></div>
+<hr>
+<blockquote><p><em>A Rhianna acabou de ver o Caradoc ser esmagado pelo hagr, e corre para o lado dele gritando: &quot;Eira, Lowri — atirem!&quot; Elas se recompõem, encaixam as flechas e Disparam.</em></p><p><em>A tropa tem a etiqueta</em> arqueiros <em>(mas não a etiqueta</em> excepcional<em>), então a Rhianna rola +1 e tira 7. A tropa causa dano, mas a Rhianna tem que escolher: reduzir a munição, manter a posição, chegar mais perto ou apressar os tiros. &quot;Acho que elas dão um monte de tiros&quot;, ela diz, e marca</em> ◇ <em>pouca munição no equipamento da tropa. Ela então rola <button type="button" class="dice-roll" data-dice="1d6+1" title="Clique para rolar 1d6+1 — Shift: vantagem · Ctrl: desvantagem">1d6+1</button> (o dano da tropa, +1 porque são duas atirando) e tira 5.</em></p><p><em>&quot;Boa!&quot;, eu digo. &quot;Ele uiva de dor e empina, procurando o que o picou, dando a você tempo de chegar até o Caradoc. Vahid, você acompanhou tudo isso, o que você faz?&quot;</em></p></blockquote>
+<hr>
+<blockquote><p><em>A Rhianna não confia no cavalariço lá na Cava de Gordin, então diz ao Andras que ele vai dormir na carroça e ficar de olho nela e na égua.</em></p><p><em>O Andras é um seguidor e vai ficar de vigia fora de cena, então eu digo: &quot;Acho que você está fazendo com que ele Desafie o Perigo, sendo o perigo o que quer que o cavalariço apronte. Mas não role ainda.&quot; Faço a Rhianna rolar no dia seguinte, depois de algumas cenas focadas nos PJs.</em></p></blockquote>
+<p><em>A etiqueta</em> observador <em>do Andras se aplica, então ela soma</em></p>
+<blockquote><p><em>+1 mas tira 5. &quot;Caradoc, um Andras de nariz sangrando te encontra na estalagem, e ele diz: Roubaram a Fflur! O que a gente faz?&#x27;&quot;</em></p></blockquote>
+<hr>
+<p>Tente resolver as ações dos seguidores com o mínimo possível de movimentos e rolagens. Afaste a lente e resolva tarefas complicadas com um único Desafiar o Perigo. Se um seguidor faz a mesma ação que um PJ, trate isso como o seguidor Ajudando o PJ, e não como um movimento próprio.</p>
+<hr>
+<blockquote><p><em>A Eira está mais para morta do que para viva, com a Presença Sombria tendo sugado a vida dela. A Blodwen pergunta: &quot;A gente sabe como tratar isso? Vou consultar a Gwendyl e a Seren.&quot; Todos nós concordamos que a Blodwen está Comandando Seguidores, mas não está claro se ela está fazendo com que elas Saibam das Coisas, ou se ela está Sabendo das Coisas e fazendo com que as seguidoras a Ajudem. Optamos pelo segundo, já que mantém o foco no PJ.</em></p><p><em>Então a Blodwen rola +INT, com vantagem. Ela tira 12 e eu digo a ela: &quot;A alma da Eira foi ferida. A Gwendyl pode fortalecer o corpo dela, mas para curá-la de verdade você vai ter que entrar em transe, contatar o espírito dela e tentar restaurá-lo com o seu. Vai ser perigoso pra caramba. O que você faz?&quot;</em></p></blockquote>
+<hr>
+<blockquote><p><em>A Blodwen e a Seren acharam a alma quase selvagem da Eira. A Blodwen tenta Persuadir a Eira a deixá-la ajudar, mas tira 4 e eu coloco alguém em apuros. &quot;Depois de um pouco de conversa, ela deixa você se aproximar. Mas quando você se aproxima, a Seren xinga e dispara para longe. Você vê um bando de espíritos zombeteiros emergindo das brumas, e ela vai enfrentá-los!&quot;</em></p><p><em>A Blodwen pergunta se a Seren está Defendendo ou Cruzando Lâminas. &quot;Nenhum dos dois&quot;, eu digo, &quot;ela está fazendo isso por conta própria, não por ordem sua.&quot; Então digo a ela as consequências. &quot;Ela está segurando os espíritos por ora, mas não vai aguentar muito tempo. Você pode ajudá-la, mas a Eira vai fugir. Ou pode ajudar a Eira e torcer para ser rápida o bastante para tirar a Seren de lá. O que você faz?&quot;</em></p></blockquote>
+<p>Repare que os seguidores não têm acesso aos movimentos de livreto do PJ. O Marechal pode ordenar que um seguidor faça um discurso inflamado, mas ele não vai disparar Nós, os Poucos Felizes. O Patrulheiro pode ter Caçador de Grandes Presas, mas o lobo de estimação dele não causa +2 de dano contra inimigos</p>
+<p><em>grandes</em> por causa disso.</p>
+<div class="move-block" id="strengthen-your-bond"><h3 class="move-name">Strengthen Your Bond</h3><p class="move-trigger">Quando você <strong><em>paga o custo do seu seguidor</em></strong>, e não fez isso recentemente, ele guarda +1 de Lealdade (máx. 3). Gaste a Lealdade do seu seguidor 1 para 1 para fazê-lo:</p><ul class="bullets"><li>Superar o medo e fazer o que você manda</li><li>Resistir a agir conforme o instinto/as etiquetas/os traços dele</li><li>Fazer algo que não quer fazer (desde que não seja abominável nem suicida)</li></ul>
+<p>Quando um seguidor está sem ordens ou age por iniciativa própria, o Mestre diz o que ele faz e decide como as coisas correm.</p>
+<p>Cada seguidor tem um custo, como &quot;afeto genuíno&quot; ou &quot;moedas, pagamento, tesouro&quot; ou &quot;treinamento&quot;. Quando um PJ paga esse custo — quando o fornece diretamente ou garante que o seguidor o receba — o seguidor ganha Lealdade.</p>
+<p>Pagar o custo de um seguidor deve ser um momento significativo. Idealmente, deve envolver uma ação intencional do PJ. Ponha nas mãos do jogador a responsabilidade de apontar quando pagou o custo do seguidor, mas é claro — como em qualquer movimento — qualquer um pode apontar que este movimento disparou. Se alguém discordar, conversem.</p>
+<p>O PJ e/ou o seguidor devem ter uma cena significativa &quot;em cena&quot; antes de poderem</p>
+<p>Fortalecer o Vínculo de novo. Se um PJ paga um custo como &quot;treinamento&quot; várias vezes ao longo de um período de descanso ou de jogo solto, o seguidor guarda apenas +1 de Lealdade.</p></div>
+<h2 id="loyalty">Lealdade</h2>
+<p>Quando o custo de um seguidor é pago, ele guarda</p>
+<p>+1 de Lealdade, até 3. Se um seguidor guarda</p>
+<p>3 de Lealdade, Fortaleça Seu Vínculo não dispara.</p>
+<p>O seguidor guarda a Lealdade, mas o PJ que ele segue (ou melhor, o jogador desse PJ) é quem escolhe gastá-la. Por regra, um seguidor está ligado a um PJ, e só esse PJ pode pagar o custo dele ou gastar a Lealdade dele. Mas se um NPC segue o grupo como um todo, qualquer PJ pode gerar ou gastar a Lealdade desse seguidor.</p>
+<p>Normalmente um PJ vai gastar a Lealdade de um seguidor depois que você fizer um movimento de Mestre e mostrar que o seguidor está com medo, ou prestes a fazer uma bobagem, ou que não quer fazer o que mandaram. O jogador pode gastar Lealdade para resolver esse problema sem ter que disparar um movimento como Persuadir ou Desafiar o Perigo.</p>
+<p>Um jogador também pode gastar Lealdade de forma proativa, mas se fizer isso, considere se é mesmo necessário. Se o seguidor não fosse hesitar nem fazer bobagem, diga ao jogador que não há necessidade de gastar a Lealdade afinal.</p>
+<p>É fácil pensar no custo e na Lealdade de um seguidor como algo transacional: eu fiz isto por você, agora você me deve. Isso vale para alguns seguidores, mas para a maioria a Lealdade representa confiança, respeito, carinho ou até só hábito.</p>
+<p><strong>Pergunte ao jogador como é quando ele gasta a Lealdade de um seguidor</strong>. Talvez o PJ dê um tapinha no ombro dele e diga algo inspirador. Talvez encare o seguidor nos olhos e balance a cabeça. Ou talvez o seguidor só engula em seco e faça o que precisa ser feito. Trabalhe com o jogador para estabelecer como a Lealdade desse seguidor em particular se manifesta.</p>
+<hr>
+<blockquote><p><em>A viagem à Cava de Gordin leva quatro dias, e no primeiro dia estabelecemos que a Blodwen está cuidando da Fflur. Ela faz questão de escová-la à noite, dando uma boa escovada e fazendo companhia a ela enquanto pasta. Concordamos que isso paga o custo da Fflur (&quot;cuidado caprichado, escovação&quot;) e a jogadora da Blodwen marca 1 de Lealdade para a Fflur.</em></p><p><em>O dia seguinte de viagem passa sem nenhuma cena significativa. A Blodwen cuida da Fflur de novo quando acampam, e pergunta se Fortalece o Vínculo de novo. &quot;Não&quot;, eu digo, &quot;você acabou de fazer isso, né? Tipo, é, passou um dia no jogo, mas você basicamente ficou cuidando dela esse tempo todo, né?&quot; Então a Fflur continua guardando só 1 de Lealdade.</em></p><p><em>No dia seguinte, um frythanc (uma ave de rapina enorme) passa baixo sobre o grupo. A magia das estradas vai mantê-los a salvo se ficarem parados, mas eu</em> <strong><em>mostro uma desvantagem</em></strong> <em>e dou destaque ao instinto da Fflur (&quot;entrar em pânico&quot;). &quot;Blodwen, a Fflur corcoveia, empina e te joga para trás, fazendo você cair nas lajes. Ela ainda está nos arreios, e se continuar assim vai, tipo, quebrar a perna. O que você faz?&quot;</em></p><p><em>&quot;Eu levanto e me aproximo com calma, mãos abertas tipo &#x27;calma, menina&#x27;.&quot; Ela está tentando usar o movimento Na Cova do Leão, que permite acalmar feras com um toque.</em></p><p><em>&quot;Eu sei que o movimento diz que ela não vai te machucar, mas ela ainda está chutando e empinando. Acho que ainda existe o perigo de você vacilar ou demonstrar medo. Você vai Desafiar o Perigo com SAB. Ou pode gastar a Lealdade da Fflur para impedir que ela aja conforme o instinto.&quot;</em></p><p><em>A Blodwen usa a Lealdade e eu pergunto como isso é. &quot;Eu fico tipo sussurrando para ela, mãos abertas, &#x27;shhh, menina…&#x27;&quot; e ela se acalma. Funciona?&quot; Funciona, sim!</em></p></blockquote>
+<hr>
+<blockquote><p><em>As coisas estão ficando sinistras lá na mata. O sol acabou de escurecer. As árvores estão sangrando. Sombras ameaçadoras passam no canto do olho. O Vahid está pintando uma marca de consagração no escudo do Caradoc, mas isso vai levar tempo.</em></p><p><em>&quot;Enquanto eles fazem isso, Rhianna, a sua tropa está meio surtando. O que você faz?&quot; Ela assobia e os manda cercar os PJs, com a intenção de fazê-los Defender.</em></p><p><em>&quot;É, mas acho que eles estão Desafiando o Perigo primeiro&quot;, eu digo, &quot;sendo o perigo o próprio medo deles. Você sabe como são supersticiosos!&quot;</em></p><p><em>&quot;Ahn, não&quot;, diz a Rhianna. &quot;Vou gastar 1 de Lealdade deles para superar o medo e fazerem o que mando. Acho que não é grande coisa, aquele assobio só os tira do transe. Então… eu rolo para Defender, é isso?&quot; É isso mesmo!</em></p></blockquote>
+<hr>
+<blockquote><p><em>A Gwendyl não apareceu na festa de Quebra-Jejum do Vahid, e a Blodwen vai à casa dela descobrir por quê. A Gwendyl alega que não compactua com &quot;esses costumes decadentes do sul&quot;, mas na verdade está se sentindo negligenciada pela pupila favorita.</em></p><p><em>Eu espero que a Blodwen pressione a Gwendyl e dispare Persuadir. Em vez disso, a Blodwen lhe dá um abraço, pede desculpas por ter sumido e diz: &quot;A gente não precisa ir. Tem muito o que fazer aqui.&quot; Elas passam algumas horas cortando e amarrando ervas. Então a Blodwen pergunta se isso paga o custo da Gwendyl, &quot;consideração, afeto&quot;. Eu acho que paga, sim.</em></p><p><em>&quot;Sabe, deve ter sobrado um pouco de baklava lá na casa do Vahid&quot;, diz a Blodwen. &quot;Eu gasto essa Lealdade para fazê-la fazer algo que ela não quer fazer.&quot; Mas, agora que ela está se sentindo melhor, acho que a Gwendyl iria numa boa à festa, e digo à Blodwen para segurar essa Lealdade.</em></p></blockquote>
+<h2 id="followers-in-play">Seguidores no jogo</h2>
+<p>Seguidores são NPCs. Ficam do seu lado <strong>da Linha</strong> <a class="wiki-link" href="running-the-game.html" data-slug="running-the-game" >Conduzindo o Jogo</a>, e <strong>é responsabilidade sua — não dos jogadores — interpretá-los e dizer</strong> o que fazem e o que dizem. Um pouco de borrão na Linha é natural, mas se um jogador interpreta um seguidor como se fosse um segundo PJ, pause o jogo e realinhe as expectativas.</p>
+<p>Como com qualquer NPC, <strong>use os seguidores como parte do ciclo central</strong> <a class="wiki-link" href="running-the-game.html" data-slug="running-the-game" >Conduzindo o Jogo</a>. Inclua-os quando estabelecer a situação. Faça movimentos de Mestre (suaves ou duros) com eles ou contra eles. Decida como reagem às palavras e aos atos dos PJs — e isso vale para todos os PJs, não só para o PJ que eles seguem!</p>
+<p>Dito isso, <strong>os seguidores em geral fazem o que o PJ deles manda, e muitas vezes olham para o PJ esperando direção</strong>. Não tem problema nenhum perguntar &quot;E o que você manda a sua tropa fazer?&quot; ou dizer algo como &quot;Ele olha para você com expectativa, você manda ele fazer alguma coisa?&quot;</p>
+<p>Quanto mais estabelecido o seguidor, mais você deve <strong>fazer perguntas e construir sobre as respostas</strong>. Se a tropa do Marechal é como família, apoie-se neles ao desenvolver os membros individuais ou até ao decidir o que fariam. &quot;Rhianna, como você acha que o Hari reagiria aqui?&quot;</p>
+<p>Lembre-se, porém: <strong>Comandar Seguidores só dispara quando o PJ <em>orienta</em> um seguidor</strong>.</p>
+<p>Se você pergunta ao jogador o que ele acha que o seguidor faria, e vocês concordam que, é, ele faz isso — isso não é Comandar Seguidores, e o seguidor não dispara movimento nenhum. Você simplesmente decide o que acontece.</p>
+<h2 id="the-burden-of-leadership">O fardo da liderança</h2>
+<p>Seguidores podem ser úteis, mas também devem ser fontes de estresse e conflito.</p>
+<p>Para começar, <strong>seguidores sentem medo</strong>. Podem travar quando surpreendidos, ou fugir de um inimigo <em>aterrorizante</em>, ou entrar em pânico diante do horror sobrenatural. Diga ao jogador quando isso acontecer e pergunte o que ele faz.</p>
+<p>Se o PJ der uma ordem a eles, o jogador pode gastar 1 de Lealdade para o seguidor superar o medo e fazer o que mandaram.</p>
+<p>Caso contrário, pergunte a si mesmo: <strong>o seguidor faria isso de boa vontade se não estivesse com medo?</strong></p>
+<p><strong>Se faria</strong>, então o PJ está fazendo com que ele Desafie o Perigo (sendo o perigo travar, entrar em pânico ou estragar tudo).</p>
+<p><strong>Se não faria</strong>, então o seguidor precisa ser convencido, por Persuadir ou outro movimento.</p>
+<p>Mesmo sem medo, <strong>os seguidores nem sempre fazem o que mandam</strong>. Podem resistir a ordens se…</p>
+<ul class="ellipsis"><li>estiverem com raiva, abatidos, chocados ou de algum modo sobrecarregados;</li><li>a ordem for irracional, tola, humilhante, desagradável, etc.; e/ou</li><li>a ordem for contra o instinto, as etiquetas, o custo ou outros traços do seguidor.</li></ul>
+<p>Por exemplo, um seguidor <em>guerreiro</em> normalmente vai topar entrar em batalha, mas se as chances forem esmagadoras, ou se ele não come faz dois dias e está molhado e com frio e já cansou dessa palhaçada, bom, provavelmente vai precisar de alguma conversa!</p>
+<p>Quando você decidir que um seguidor não quer fazer o que mandaram, revele isso ao jogador! &quot;Ele olha para você com olhos cansados e nem se levanta, o que você faz?&quot; Ou: &quot;Você quer que eu faça o quê? Isso é…</p>
+<p>não, de jeito nenhum.&quot; Ou: &quot;Dá para ver que ele não quer, você vai ter que convencê-lo — o que você faz?&quot;</p>
+<p>O jogador pode então escolher gastar a Lealdade do seguidor (se ele guardar alguma) para fazê-lo &quot;fazer algo que não quer fazer&quot;. Ou o PJ pode Persuadir o seguidor, ou usar outro movimento para convencê-lo. Ou pode deixar para lá e fazer outra coisa. Faça o que fizer, <strong>siga as regras</strong> e os dados, interprete o seguidor com integridade e <strong>jogue para descobrir o que acontece</strong>.</p>
+<p><strong>Dê destaque ao instinto, às etiquetas e aos traços de um seguidor como fonte de encrenca para os PJs</strong>.</p>
+<p>O lobo do Patrulheiro tem o instinto de &quot;encher a barriga&quot;? Então faça-o abocanhar a isca óbvia, ou se recusar a deixar uma carcaça sem comer. Uma das pessoas da tropa do Marechal é jogadora? Faça-a abandonar o posto para entrar num jogo de dados, ou faça um credor da Cava de Gordin aparecer para cobrar. O jogador pode gastar 1 de Lealdade para o seguidor &quot;resistir a agir conforme o instinto/as etiquetas/os traços&quot;, mas se não gastar, precisa convencê-lo a parar ou então lidar com as consequências.</p>
+<p>Enfatizar o medo, as fraquezas e os comportamentos problemáticos de um seguidor torna a Lealdade dele valiosa! Se um seguidor sempre faz simplesmente o que o PJ manda e nunca sente medo nem apronta, o jogador dele não vai ver razão para pagar o custo do seguidor e Fortalecer</p>
+<p>o Vínculo.</p>
+<hr>
+<blockquote><p><em>O Vahid desce a estrada que vem do acampamento de lenhadores e toca uma melodia animada, chamando o andalau preso à flauta dele. O vento sopra e rodopia, e quando o Vahid para de tocar eu sussurro alto: &quot;Mais! Mais mais mais!&quot;</em></p><p><em>O Vahid quer que o espírito ache aquelas ruínas que o Iwan visitou e o leve até lá. Dado o instinto do andalau (&quot;brincar e folgar&quot;) e a etiqueta</em> travesso<em>, não acho que ele queira. Suspiro e sussurro: &quot;Que chaaaaato.&quot;</em></p><p><em>O arcano Espírito de Vento Dançarino diz que o andalau guarda 1 de Lealdade quando se manifesta; o Vahid poderia simplesmente gastar isso. Mas a flauta vai quebrar se o espírito não tiver Lealdade nenhuma ao ser dispensado. O Vahid o Persuade em vez disso. &quot;Chato? Ora, vai ser um belo jogo de esconde-esconde!&quot; Ele tira 8.</em></p><p><em>&quot;Ele não está convencido&quot;, eu digo, &quot;mas se você transformar isso num jogo quando ele te levar às ruínas, ele acharia divertido. Isso até pagaria o custo dele.&quot; O Vahid oferece isso e o espírito aceita. Na manhã seguinte, o espírito volta. &quot;Achei, achei, vem, vem, segue! Brinca!&quot;</em></p><p><em>O Vahid conta à Rhianna que consegue levá-los às ruínas, e ela manda todo mundo se aprontar. Mas quando a tropa</em> supersticiosa <em>dela percebe que vão seguir um espírito volúvel num jogo de &quot;quente e frio&quot;, eles cravam o pé. Agora a Rhianna tem que convencê-los a topar esse plano. Se ela tivesse deixado a tropa comemorar na noite passada, isso teria pago o custo deles e ela poderia simplesmente gastar a Lealdade deles. Mas ela não deixou, e eles não guardam Lealdade nenhuma, então agora ela vai precisar Persuadi-los.</em></p></blockquote>
+<hr>
+<h2 id="off-screen-orders">Ordens fora de cena</h2>
+<p><strong>Quando um jogador manda um seguidor para fora de cena fazer alguma coisa</strong>, resolva com um único movimento (no máximo!). O PJ não vai estar lá para dar novas orientações quando as coisas virarem bola de neve, então afaste a lente e escolha um único movimento para representar a ação fora de cena.</p>
+<p>Resolva esse único movimento. Deixe que todas as outras coisas que poderiam dar certo ou errado colorem o resultado.</p>
+<p>Se você realmente não conseguir decidir que movimento o seguidor está fazendo, é Desafiar o Perigo.</p>
+<p>Em geral, peça ao jogador para rolar o movimento fora de cena do seguidor quando os PJs puderem saber o resultado. Se um PJ deixa o seguidor na Cava de Gordin espionando o Mutra, o Dentes, peça ao jogador para rolar Buscar Discernimento quando o PJ voltar à Cava de Gordin.</p>
+<p>Às vezes, porém, você quer saber os resultados de antemão, para poder tecê-los nos acontecimentos. Digamos que o Marechal mande a tropa contornar para flanquear um inimigo.</p>
+<p>Você pode pedir ao Marechal que role Desafiar o Perigo na hora e depois revelar os resultados uma ou duas cenas adiante. &quot;Um 7, é? Certo, legal, legal.&quot; Então, depois que os PJs se aproximam sorrateiros do acampamento dos bandidos e estão prestes a atacar: &quot;Tem uma agitação ao norte, e uma figura arrasta outra para fora do mato. Ah, droga, pegaram o Hari!</p>
+<p>Todo mundo no acampamento vai olhar o que está acontecendo. O que você faz?&quot;</p>
+<h2 id="followers-in-fights">Seguidores em lutas</h2>
+<p>Seguidores podem ter grande impacto nas lutas.</p>
+<p>Podem ajudar a equilibrar as chances ou permitir que os PJs sufoquem um inimigo sozinho. Mas também podem complicar a situação entrando em pânico, se metendo em encrenca ou agindo de forma impulsiva.</p>
+<p>Tenha os seguidores em mente enquanto conduz as lutas. Eles podem deferir aos PJs ou olhar para eles esperando direção, mas raramente vão só ficar parados! Quando você estabelecer a situação ou fizer um movimento de Mestre, pense no que os seguidores andaram fazendo enquanto os holofotes estavam nos PJs. &quot;Você liquida este crinwin, mas vê outro em cima do Glaw. O Hari está mirando, mas hesitando.</p>
+<p>Aquele outro crinwin está fugindo com o seu kit de panelas nas mãos. O que você faz?&quot;</p>
+<p>Lembre-se, porém, de que os seguidores só disparam movimentos de jogador quando orientados a isso pelo PJ deles. Se o PJ ignora o Hari e o Glaw e sai atrás do crinwin em fuga, é você quem decide se o Hari atira ou não. Se ele atirar, você decide se o tiro acerta, erra ou acerta o Glaw no lugar. Mas se o PJ grita &quot;Hari, atira, droga!&quot; enquanto corre atrás do crinwin em fuga — aí ele está Comandando Seguidores, e o jogador rola para o Hari Disparar.</p>
+<p>Comunicação clara é difícil durante uma luta! É barulhento, você não tem muito tempo (nem fôlego!), e todo mundo está bem ocupado tentando não morrer. Não deixe os jogadores darem ordens elaboradas e detalhadas enquanto a luta rola. Umas poucas palavras ou sinais de mão é provavelmente tudo o que conseguem!</p>
+<p>Se as ordens de um PJ forem vagas, pergunte o que ele pretende e como o seguidor saberia disso. Dê margem se ele trabalha com o seguidor há muito tempo. A tropa do Marechal treinou e lutou lado a lado por anos, então &quot;Hari, atrás de você!&quot; poderia transmitir &quot;Hari, tem um inimigo atrás de você, vira e ataca!&quot; Mas com um seguidor novo, um aviso desses só o faria se esquivar, na melhor das hipóteses!</p>
+<p>Para exemplos de <strong>seguidores em lutas</strong>, veja as <a class="wiki-link" href="player-moves.html" data-slug="player-moves" >Movimentos dos Jogadores</a> · <a class="wiki-link" href="player-moves.html" data-slug="player-moves" >Movimentos dos Jogadores</a> · <a class="wiki-link" href="../dangers.html" data-slug="dangers" >Dangers</a> · <a class="wiki-link" href="#follower-moves" data-slug="npcs-followers" data-fragment="follower-moves">Movimentos de seguidor</a> e 472.</p>
+<h2 id="when-followers-defend">Quando seguidores Defendem</h2>
+<p>Quando um PJ Comanda Seguidores para Defender e tira 7+, o <em>seguidor</em> guarda Prontidão, mas é o jogador que decide quando e como gastá-la.</p>
+<p>Quando um jogador gasta a Prontidão do seguidor, considere se o seguidor faria mesmo o que o jogador quer.</p>
+<p>Ele sofreria mesmo esse ataque no lugar do protegido? Atrairia mesmo toda a atenção para si? Se a resposta parecer &quot;não&quot;, então o jogador tem que gastar</p>
+<p>1 de Prontidão <em>e</em> 1 de Lealdade — dificilmente vai ter tempo de Persuadir o seguidor!</p>
+<p>Quando um PJ Defende e um seguidor o Ajuda, esse PJ guarda a Prontidão, mas pode gastá-la para fazer o <em>seguidor</em> sofrer o dano/os efeitos de um ataque, ou para fazer o <em>seguidor</em> atrair toda a atenção do protegido para si. Pergunte ao jogador como isso é. Se ele estiver usando o seguidor de escudo humano de forma manhosa, o seguidor não tem muito o que dizer sobre isso (mas pode ter muito o que dizer se sobreviver).</p>
+<p>Se o jogador simplesmente espera que o seguidor se sacrifique pelo grupo, bem… isso pode</p>
+<p>exigir gastar Lealdade também.</p>
+<h2 id="followers-at-0-hp">Seguidores com 0 HP</h2>
+<p>Quando um seguidor é reduzido a 0 HP, o destino dele está nas suas mãos. Se a fonte do dano era potencialmente letal, ele está fora de ação e você escolhe 1:</p>
+<ul class="bullets"><li>Está morto, imediatamente</li><li>Ele dispara À Beira da Morte (mesmo que o PJ dele não tenha orientado isso). O jogador do PJ dele rola</li><li>Está morrendo, e vai morrer ou disparar À Beira da Morte em breve se ninguém intervier Lembre-se: não é seu trabalho proteger seus NPCs, e seguidores são NPCs! <strong>Deixe as coisas queimarem</strong>.</li></ul>
+<p>Se a fonte do dano não era letal, o seguidor fica fora de ação até você dizer o contrário ou ele recuperar HP (por magia, pelo movimento de alguém, ou porque alguém cuida dos ferimentos dele e ele se Recupera).</p>
+<p>Nota: o companheiro animal do Patrulheiro é uma exceção. Ele tem um movimento especial, <strong>Leal até o Fim</strong> <a class="wiki-link" href="animal-companion.html" data-slug="animal-companion" >Companheiro Animal</a>, que determina o que acontece quando chega a 0 HP. Ninguém quer ver o cachorro morrer.</p>
+<h2 id="group-followers">Seguidores em grupo</h2>
+<p>Um seguidor com a etiqueta <em>grupo</em> representa vários indivíduos que compartilham atributos e muitas vezes agem como um só. A tropa do Marechal é o exemplo mais óbvio. Outros grupos incluem o bando de aldeões que os PJs recrutam para lidar com os crinwin, ou o trio de espectros preso àquele manto esfarrapado (o enfeitado com dentes).</p>
+<p>Os membros de um grupo têm as mesmas etiquetas, HP máximo, armadura, dano, instinto, movimentos e custo. Guardam uma reserva comum de Lealdade, mas cada um tem o próprio HP atual.</p>
+<p>Normalmente se Equipam com o mesmo material.</p>
+<hr>
+<blockquote><p><em>Os PJs e a tropa da Rhianna rastrearam as aranhas gigantes pelos caminhos Fae até um zigurate antigo na Grande Mata. Eles acham que a Nia está lá dentro. Cada membro da tropa tem 8 HP e carrega um</em> ◇ <em>arco com flechas de bronze, uma</em></p></blockquote>
+<ul>
+<li>◇ machadinha de bronze, ◇◇ peles grossas e dois ◇ indefinidos. No momento guardam 1 de Lealdade como grupo.</li>
+</ul>
+<hr>
+<p>O PJ que lidera um seguidor em grupo muitas vezes vai <strong>orientá-lo a agir como um todo</strong>. Se isso levar o grupo a disparar um movimento de jogador (conforme Comandar Seguidores), o jogador rola uma vez, aplicando bônus (e/ou desvantagem) com base nas etiquetas compartilhadas pelo grupo.</p>
+<hr>
+<blockquote><p><em>A Rhianna diz: &quot;Eu sinalizo para a tropa se aproximar sorrateira e tomar posição. Quero eles nos cobrindo enquanto avançamos.&quot; Ela está Comandando Seguidores, fazendo com que Desafiem o Perigo (o perigo é serem notados ou até emboscados). Ela rola por eles, somando +1 pela etiqueta</em> furtivos<em>, e tira 7.</em></p></blockquote>
+<hr>
+<p><strong>Quando um seguidor em grupo faz um movimento e sofre algum tipo de consequência</strong>, você pode fazer essa consequência afetar o grupo como um todo ou membros individuais do grupo.</p>
+<hr>
+<blockquote><p><em>Opto por um sucesso menor. &quot;Certo, eles se esgueiram adiante e tomam posição, todos menos um deles. Ele está no meio do caminho até o zigurate, olhando para baixo, como se estivesse preso em alguma coisa. Ah, droga, você percebe que é uma teia! E se ele continuar puxando assim, as aranhas com certeza vão notar.&quot;</em></p></blockquote>
+<hr>
+<p><strong>Quando um membro do grupo se destaca pela primeira vez</strong>, desenvolva-o com o nível de detalhe que fizer sentido naquele momento.</p>
+<p>Dê a ele um nome, um traço memorável e talvez uma etiqueta extra. Faça perguntas sobre ele. Anote, ou peça ao jogador que anote!</p>
+<hr>
+<blockquote><p><em>Pergunto à Rhianna qual da tropa dela ficou preso, e ela decide que é um dos membros até então indefinidos. Ela olha o encarte de Tropa dela, que tem nomes, etiquetas e traços possíveis. &quot;Ahn, o Glaw. Ele é</em> pequeno<em>, tipo baixo e magricela, e acho que ele é sério demais. Tem um pouco de síndrome de homem baixo ali.&quot; Ela o acrescenta ao encarte.</em></p><p><em>&quot;Mas ele é um caçador veterano, né? Então por que você acha que ele está meio surtando agora?&quot;</em></p><p><em>&quot;Ah, acho que ele costuma ser alvo das piadas da tropa, e ele sabe que eles não vão calar a boca sobre isso. Então ele não está tipo em pânico. Mas está a ponto de xingar até não poder mais.&quot;</em></p></blockquote>
+<hr>
+<p><strong>Quando um PJ orienta um membro individual de um grupo</strong>, esse membro pode disparar movimentos como se fosse um seguidor por si só. As etiquetas e os movimentos do grupo valem, mais quaisquer etiquetas ou movimentos únicos que ele tenha como indivíduo.</p>
+<hr>
+<blockquote><p><em>A Rhianna avança de mansinho e ajuda o Glaw a se cortar livre, ela mesma Desafiando o Perigo com um 10. Eu então</em> <strong><em>ofereço uma oportunidade</em></strong> <em>e aponto uma árvore alta e fina que se inclina sobre a clareira. Seria uma escalada complicada, mas daria uma visão clara do buraco no telhado do zigurate. &quot;O que você faz?&quot;</em></p><p><em>&quot;Alta e magrinha, você disse? Parece trabalho para alguém… pequeno. Eu mando o Glaw escalar. &#x27;Não precisa os outros saberem das teias, né? Eu, ahn, fico feliz que você tenha visto essa árvore e me chamado.&#x27; Pisco o olho.&quot; Ela está pedindo a ele que faça algo perigoso, mas acho que ela abordou muito bem. Não vejo razão para ele resistir.</em></p><p><em>&quot;Ele olha a árvore magrinha e assente, depois larga o arco e o equipamento extra e começa a escalar. Acho que ele está Desafiando o Perigo de novo; ele arrisca cair ou fazer muito barulho.&quot; Olhamos as etiquetas dele e decidimos que tanto</em> furtivo <em>(do grupo) quanto</em> pequeno <em>(etiqueta pessoal dele) poderiam se aplicar, mas isso ainda significa só um bônus de +1.</em></p><p><em>A Rhianna tira 11, então o Glaw sobe correndo pela árvore, espia lá dentro e desce sem problema. Está pálido feito papel, porém. &quot;A Nia está lá dentro, sim. Ela está… está parada, imóvel, só encarando essa… tapeçaria? De tipo uma aranha enorme. E a tapeçaria está meio que… ondulando. É… é muito sinistro.&quot;</em></p></blockquote>
+<hr>
+<p>Um seguidor em grupo guarda uma reserva comum de Lealdade, que pode ser gasta para afetar o grupo inteiro ou membros individuais.</p>
+<p>O custo do grupo normalmente precisa ser pago ao grupo como um todo, mas se o jogador achar que vale a pena gastar Lealdade com um membro do grupo, pode!</p>
+<hr>
+<blockquote><p><em>O Glaw acabou de ver algo sinistro e sobrenatural, e a tropa da Rhianna tem o instinto de &quot;ater-se à tradição e à superstição&quot;. Então eu</em> <strong><em>mostro uma desvantagem</em></strong> <em>e digo à Rhianna que o Glaw está claramente abalado, a ponto de entrar em pânico. Mas é só ele. &quot;O que você faz?&quot;</em></p><p><em>&quot;Ponho a mão no ombro dele. &#x27;A Nia está lá dentro, e ela é dos nossos. Eu vou entrar com a Abençoada, o Vahid e o Caradoc. Mas preciso de você atento aqui fora.&#x27;&quot; Pergunto se ela está Persuadindo-o a manter a calma ou gastando Lealdade para fazê-lo superar o medo. &quot;Vou gastar a Lealdade. Não vou arriscar um 6- aqui.&quot; A tropa só guardava 1 de Lealdade para começar, e agora acabou. Mas o Glaw vai se manter firme!</em></p></blockquote>
+<hr>
+<p><strong>Cada membro de um grupo tem o próprio HP</strong>, e eles sofrem dano e perdem HP individualmente. Se vários membros do</p>
+<p>grupo sofrerem dano de uma vez, role o dano separadamente para cada um e desconte do HP atual dele.</p>
+<hr>
+<blockquote><p><em>A Mãe das Aranhas manda uma onda de aracnídeos atrás dos PJs enquanto eles fogem do zigurate com a Nia. A tropa da Rhianna dá fogo de cobertura (Ajudando os PJs enquanto eles Lutam como Um Só), mas isso chama a atenção do enxame.</em></p><p><em>A Rhianna grita para eles correrem até a pedra-guia. Todos concordamos que estão Desafiando o Perigo. A Rhianna rola +0 (nenhuma das etiquetas deles se aplica a uma corrida pura) e, infelizmente, tira 2.</em></p><p><em>&quot;Isso não é bom&quot;, eu digo. &quot;Para começar, cada um deles sofre <button type="button" class="dice-roll" data-dice="1d8" title="Clique para rolar 1d8 — Shift: vantagem · Ctrl: desvantagem">1d8</button> de dano.&quot; A Rhianna rola 1, 4, 5, 5, 6 e 8, menos 1 em cada pela armadura da tropa. &quot;Então o Glaw não sofreu dano nenhum? Bom, ele alcança vocês, mas vocês ouvem os outros gritarem. Vahid, você olha para trás e vê o Hari ser derrubado. O que cada um de vocês faz?&quot;</em></p></blockquote>
+<hr>
+<p>Os membros de um grupo costumam se Equipar com o mesmo material, mas o jogador pode fazer indivíduos carregarem itens diferentes, se estiver disposto à contabilidade extra.</p>
+<p>Da mesma forma, o PJ pode orientar um membro da tropa a Ter o Necessário e acrescentar um item ao inventário dele, sem que o resto da tropa produza cada um o mesmo item. Acompanhar isso é responsabilidade do jogador, porém!</p>
+<p>Em geral, não se preocupe com itens pequenos nem com qual membro está carregando exatamente quantos usos de suprimentos. Os jogadores podem acompanhar esse nível de detalhe se realmente quiserem, mas raramente vale o esforço.</p>
+<hr>
+<blockquote><p><em>O Vahid espanta as aranhas usando o arcano Medo da Chama dele. A Rhianna volta e arrasta o Hari para fora de lá. Todos conseguem voltar à pedra-guia, onde o Dedo-de-Espinho, o spriggan, estava esperando por eles.</em></p><p><em>Antes de voltar pelos caminhos Fae, a Blodwen cuida do Hari, restaurando o HP dele e estabilizando-o, mas ele continua paralisado. A Rhianna manda a Lowri transformar os 2</em> ◇ <em>indefinidos dele numa maca enrolável para carregar o Hari. Ela escreve &quot;</em> ◇◇ <em>maca (Lowri)&quot; na lista de inventário da tropa.</em></p><p><em>Depois manda o resto da tropa transformar cada um</em></p></blockquote>
+<p><em>um</em> ◇ <em>indefinido em</em> ◇ <em>suprimentos,</em></p>
+<blockquote><p><em>num total de 20 usos (cinco seguidores, 4 usos cada). Os quatro PJs então se Recuperam, assim como os quatro seguidores que estão com HP baixo, usando ataduras, uísque e comida que os seguidores trouxeram. Os seguidores ficam com 12 usos de suprimentos.</em></p><p><em>A Rhianna poderia decidir que o Glaw e a Eira gastaram todos os suprimentos deles e agora cada um carrega só cinco</em> ◇ <em>no total, mas isso não importa muito a esta altura. Se ficar importante depois (tipo, se um dos membros da tropa se separar do grupo), a gente pode decidir na hora quem carregava o quê.</em></p></blockquote>
+<hr>
+<h2 id="when-a-group">Quando um grupo…</h2>
+<ul class="ellipsis"><li><strong>Cruza Lâminas ou Dispara</strong> (ou Ajuda um PJ a fazê-lo), o ataque pode ferir vários inimigos. Eles rolam o movimento uma vez e rolam o dano separadamente contra cada inimigo (veja <a class="wiki-link" href="../dangers.html" data-slug="dangers" >Dangers</a>). <a class="wiki-link" href="../dangers.html" data-slug="dangers" >Considere abstrair a troca</a>.</li><li><strong>Cruza Lâminas com ou Dispara contra um único inimigo</strong> (ou Ajuda um PJ a fazê-lo), rola o movimento uma vez (provavelmente com vantagem) e rola o dano de um atacante, +1 para cada atacante adicional (veja <a class="wiki-link" href="../dangers.html" data-slug="dangers" >Dangers</a>).</li><li><strong>Defende</strong>, o grupo guarda uma reserva comum de Prontidão. O PJ a gasta em nome do grupo como um todo ou de um membro individual, conforme fizer sentido.</li><li><strong>Se Recupera</strong>, cada membro que recupera HP precisa consumir 1 uso de Suprimentos.</li><li><strong>Busca Discernimento</strong>, o PJ pode fazer 3 perguntas ou 1 pergunta no total, não 3 ou 1 por membro do grupo.</li><li><strong>Luta como Um Só</strong> junto com um ou mais PJs, role uma vez pelo grupo. Com 6-, decida qual (ou quais) membro do grupo colocar em apuros. Com 10+, pergunte ao jogador quem se adianta para salvar alguém, e como.</li><li><strong>arca com um custo, sofre um ataque, é posto em perigo, atrai atenção indesejada</strong>, etc., você decide quais membros são afetados, e como.</li></ul>
+<h2 id="creating-followers">Criando seguidores</h2>
+<p>Os PJs podem ganhar seguidores…</p>
+<ul class="ellipsis"><li>por um livreto, antecedente, movimento ou posse especial;</li><li>desvendando os mistérios de certos arcanos; ou</li><li>organicamente, ao longo do jogo.</li></ul>
+<p>Quando uma mecânica de jogo diz que um PJ ganha um seguidor, ela ou fornece os atributos do seguidor ou faz o jogador escolher atributos entre várias opções. Trabalhe com o jogador para desenvolver o seguidor como faria com qualquer NPC. Mas você não precisa se preocupar em atribuir os atributos — a mecânica faz isso por você!</p>
+<p>Seguidores que surgem organicamente no jogo são outra história. Podem vir de qualquer lugar e ser praticamente qualquer um.</p>
+<p>Um NPC pode começar a seguir um dos PJs por aí e fazer o que ele manda.</p>
+<p>Um PJ pode Comerciar e Barganhar para conseguir um cão de caça, ou Requisitar um dos cavalos da aldeia. Talvez recrutem alguns aldeões para caçar crinwin, ou salvem um mercador de bandidos, ou se juntem a um cavaleiro do Povo das Colinas para matar alguma fera medonha.</p>
+<p>Antes de escrever alguém como seguidor, pergunte a si mesmo:</p>
+<ul class="questions"><li>Essa pessoa vai seguir a liderança de um PJ e em geral receber ordens dele?</li><li>Você e seus jogadores se importam com esse NPC o bastante para dar atributos a ele?</li><li>Você quer deixar os dados decidirem o destino dele quando o PJ o mandar ao perigo (em vez de decidir você mesmo o que acontece)?</li><li>Você está de boa com a contabilidade extra, as mecânicas e o tempo de holofotes que um seguidor acarreta?</li></ul>
+<p><strong>Se você responder &quot;não&quot; a qualquer uma das questões acima,</strong> não trate o NPC como seguidor. Isso não é uma regra rígida, porém. O seu grupo pode querer tratar os cavalos da aldeia como seguidores, e outros grupos não.</p>
+<p>As respostas também podem mudar com o tempo.</p>
+<p>O garoto refugiado problemático pode não ser seguidor no começo, mas depois de uma estação morando com o Brutamontes, pode virar!</p>
+<p>Da mesma forma, um NPC pode agir como seguidor enquanto está numa expedição específica com os PJs e deixar de ser um assim que voltam para casa.</p>
+<hr>
+<blockquote><p><em>Os PJs estão se preparando para a viagem à Cava de Gordin. Eles Convocaram a aldeia e identificaram dois NPCs úteis: o Elios (que a Rhianna vai deixar no comando das defesas enquanto estiverem fora) e o Andras (um recruta novo para a tropa dela). Eles também Requisitaram um dos cavalos da aldeia e uma carroça.</em></p><p><em>O Elios não vai com eles, e eu não o vejo apenas fazendo o que a Rhianna pede; ele não é seguidor dela. O Andras, porém, é um garoto ansioso que quer entrar na tropa dela. Vou tratá-lo como seguidor, com certeza.</em></p><p><em>O cavalo da aldeia já vem com atributos de seguidor, mas de início não pensamos nele como seguidor. Mas conforme os PJs partem, fica claro que a Blodwen e a égua (Fflur) são bem próximas. Eu gostaria de abrir mão de algumas decisões quando o assunto for o destino da Fflur, e não me importo de fazer malabarismo com um seguidor a mais, então seguidora ela se torna!</em></p></blockquote>
+<hr>
+<p>Se um NPC não é seguidor, então ele não dispara movimentos quando age sob ordens do PJ, e não tem custo nem guarda Lealdade. Ainda pode ter atributos, e ainda pode ser <strong>monstro</strong> <a class="wiki-link" href="../dangers.html" data-slug="dangers" >Dangers</a> ou <strong>ameaça</strong> <a class="wiki-link" href="threats.html" data-slug="threats" >Ameaças</a>.</p>
+<p>Se você decidir que um NPC é seguidor, descubra qual PJ ele segue. Além disso, ele precisa de atributos: etiquetas, HP, armadura, dano, instinto, custo e talvez alguns movimentos de Mestre.</p>
+<p>Alguns seguidores já vão ter atributos, vindos de uma entrada do <em>Livro II</em> ou de um encarte de jogador.</p>
+<p>Por exemplo, os cavalos da aldeia têm atributos no livreto do povoado de Stonetop, e você encontra atributos de seguidor para cão, mula ou cavalo no encarte de Movimentos e Equipamento. Se decidir tratá-los como seguidores, use esses atributos.</p>
+<p>Nota: você não precisa tratar alguém ou algo como seguidor só porque tem atributos numa entrada do <em>Livro II</em> ou num encarte. Se um PJ acabou de adquirir um cão de caça mas não teve chance de treiná-lo, ele não é seguidor. Se você simplesmente não tem energia para tratar o guia caminhante-do-brejo como seguidor, não trate!</p>
+<p>Se você decidir que um monstro vira seguidor, ele já tem atributos. Para converter um monstro em seguidor:</p>
+<p><strong>1)</strong> Acrescente as etiquetas que achar adequadas, para refletir a natureza ou as capacidades dele.</p>
+<p><strong>2)</strong> Escolha (ou invente) um <strong>custo</strong>, usando os exemplos da <a class="wiki-link" href="#8-cost" data-slug="npcs-followers" data-fragment="8-cost">8 Cost</a> como orientação.</p>
+<p><strong>3)</strong> Acrescente um espaço para acompanhar a Lealdade dele (máx. 3).</p>
+<p>Fora isso, use os atributos como estão.</p>
+<p>Se ainda não existem atributos para o seguidor, você precisa criá-los. Para isso:</p>
+<p><strong>1)</strong> <a class="wiki-link" href="#creating-npcs" data-slug="npcs-followers" data-fragment="creating-npcs">Crie-o como NPC</a>.</p>
+<p><strong>2)</strong> Dê etiquetas a ele.</p>
+<p><strong>3)</strong> Calcule os pontos de vida.</p>
+<p><strong>4)</strong> Calcule a armadura.</p>
+<p><strong>5)</strong> Calcule o dano.</p>
+<p><strong>6)</strong> Escreva o instinto dele.</p>
+<p><strong>7)</strong> (Opcional) Escreva os movimentos dele.</p>
+<p><strong>8)</strong> Escreva o custo dele.</p>
+<p><strong>9)</strong> Equipe-o.</p>
+<p>Este procedimento é detalhado nas páginas seguintes.</p>
+<h2 id="1-basics"><span class="step-badge">1</span> Básico</h2>
+<p>Se ainda não fez isso, desenvolva esse seguidor como NPC. Dê um nome a ele, desenvolva o conceito dele e pense em como vai descrevê-lo. Acrescente detalhes adicionais se parecerem importantes ou valiosos. Veja a <a class="wiki-link" href="#creating-npcs" data-slug="npcs-followers" data-fragment="creating-npcs">Criando NPCs</a> para orientações.</p>
+<hr>
+<blockquote><p><em>O Andras é um rapaz jovem que quer muito virar um dos caçadores da aldeia.</em></p><p><em>Primeiro, desenvolvemos ele como NPC. Faço algumas perguntas aos PJs e ficamos sabendo que ele é filho do Padraig e só uns meses mais novo que o Caradoc. O jogador do Caradoc também sugere que ele é caidinho pela Blodwen, mas não criou coragem de dizer nada. Já dá bastante para trabalhar!</em></p></blockquote>
+<hr>
+<h2 id="2-tags"><span class="step-badge">2</span> Etiquetas</h2>
+<p>Dê a cada seguidor de 2 a 4 etiquetas, às vezes mais. Etiquetas são adjetivos ou substantivos, e devem completar a frase: &quot;Este seguidor é/é um __.&quot;</p>
+<p>As etiquetas <strong>servem de guia quando você interpreta o seguidor</strong>, orientando como ele age ou o que vai ou não querer fazer. As etiquetas também afetam <strong>o que o jogador rola quando Comanda Seguidores</strong> <a class="wiki-link" href="#follower-moves" data-slug="npcs-followers" data-fragment="follower-moves">Movimentos de seguidor</a>.</p>
+<p>Evite etiquetas amplas demais como <em>experiente</em>, <em>invencível</em>, <em>habilidoso</em>, <em>incompetente</em>, etc. Você quer etiquetas que se apliquem em algumas situações, não em todas!</p>
+<p>Dê aos seguidores uma mistura de etiquetas úteis, problemáticas e ambíguas. Seguidores mais competentes devem ter mais etiquetas úteis e menos problemáticas, mas mesmo seguidores muito habilidosos podem ter manias desagradáveis.</p>
+<p>Se o seguidor for realmente extraordinário, dê a ele a etiqueta <em>excepcional</em> (veja <a class="wiki-link" href="#follower-moves" data-slug="npcs-followers" data-fragment="follower-moves">Movimentos de seguidor</a>). Seguidores assim devem ser raros; guarde essa etiqueta para os melhores dos melhores.</p>
+<p>Se estiver criando um seguidor em <em>grupo</em>, escolha etiquetas que se apliquem ao grupo inteiro.</p>
+<p>Conforme membros individuais se destacarem, considere dar a cada um uma etiqueta única.</p>
+<hr>
+<p><em>Peço à Rhianna que escolha duas etiquetas da tropa que o Andras já tem. &quot;Hmm. Acho que ele já é bom com arco, então</em> arqueiro<em>. E acho que ele é</em> observador<em>.</em></p>
+<p><em>Esse é um daqueles traços difíceis de ensinar, sabe?&quot;</em></p>
+<p><em>Os dois são traços úteis, então acrescento</em> ansioso <em>(uma bênção ambígua) e</em> novato</p>
+<p><em>(problemático, sem dúvida).</em></p>
+<hr>
+<h2 id="tag-examples">Exemplos de etiquetas</h2>
+<p><strong>Etiquetas úteis:</strong> <em>ágil</em>, <em>arqueiro</em>, <em>atlético</em>,</p>
+<p><em>belo</em>, <em>corajoso</em>, <em>astuto</em>, <em>rápido</em>, <em>feroz</em>, <em>resistente</em>, <em>curandeiro</em>, <em>intimidador</em>, <em>mágico</em>, <em>observador</em>, <em>organizado</em>, <em>paciente</em>, <em>respeitado</em>, <em>autossuficiente</em>, <em>olho-afiado</em>, <em>furtivo</em>, <em>incansável</em>, <em>rastreador</em>,</p>
+<p><em>guerreiro</em>, <em>sabido em ___</em></p>
+<p><strong>Etiquetas problemáticas:</strong> <em>preconceituoso</em>, <em>bêbado</em>,</p>
+<p><em>ganancioso</em>, <em>crédulo</em>, <em>lascivo</em>, <em>ingênuo</em>, <em>orgulhoso</em>, <em>novato</em>, <em>imprudente</em>, <em>pavio-curto</em>, <em>teimoso</em>, <em>frágil</em></p>
+<p><strong>Etiquetas de bênção ambígua:</strong> <em>amante-de-animais</em>,</p>
+<p><em>irritante</em>, <em>grandalhão</em>, <em>valentão</em>, <em>insensível</em>, <em>cauteloso</em>, <em>traiçoeiro</em>, <em>ansioso</em>, <em>ladrão</em>, <em>fofoqueiro</em>, <em>honesto</em>, <em>gentil</em>, <em>miúdo</em>, <em>sem-vergonha</em>, <em>aterrorizante</em></p>
+<h2 id="3-hit-points"><span class="step-badge">3</span> Pontos de vida</h2>
+<p>Determine o HP máximo do</p>
+<p>seguidor respondendo às perguntas abaixo:</p>
+<hr>
+<p><strong>Quão resistente ele é?</strong> (escolha 1) hp</p>
+<hr>
+<p>Fraco/frágil/mole 3</p>
+<p>Apto 6</p>
+<p>Durão/forte/rijo 9</p>
+<hr>
+<p><strong>O que mais se aplica?</strong> (escolha tudo que se aplicar) hp</p>
+<hr>
+<p>Ele é minúsculo -2</p>
+<p>Ele é <em>grande</em> +4</p>
+<p>O destino sorri para ele +2</p>
+<hr>
+<blockquote><p><em>O Andras me parece apto — um rapaz saudável com força para puxar um arco. Ele não é</em> minúsculo <em>nem</em> grande<em>, e não tenho razão para achar que o destino sorri para ele, então tem 6 HP.</em></p></blockquote>
+<hr>
+<h2 id="4-armor"><span class="step-badge">4</span> Armadura</h2>
+<p>Responda ao seguinte:</p>
+<hr>
+<p><strong>O que o protege?</strong> (escolha 1) armadura</p>
+<p>Nada além de pano e carne 0</p>
+<p>Couro ou pele grossa 1</p>
+<p>Malha, escamas ou similar 2 Aço, placas ósseas, carapaça 3</p>
+<p>Proteções mágicas potentes ou 4 resistência sobrenatural</p>
+<hr>
+<p><strong>O que mais se aplica?</strong> (escolha tudo que se aplicar) armadura</p>
+<hr>
+<p>Ele é <em>minúsculo</em> +1 Ele porta escudo ou similar +1</p>
+<p>Ele é habilidoso em defesa +1</p>
+<p>Ele não tem órgãos vitais +1</p>
+<hr>
+<blockquote><p><em>O Andras é só um rapaz jovem, sem habilidades nem proteções especiais. Tem 0 de armadura, a não ser que a Rhianna opte por Equipá-lo com peles grossas ou um escudo.</em></p></blockquote>
+<hr>
+<h2 id="5-damage"><span class="step-badge">5</span> Dano</h2>
+<p>Responda ao seguinte:</p>
+<hr>
+<p><strong>Quão perigoso ele é?</strong> (escolha 1) dano</p>
+<hr>
+<h2><button type="button" class="dice-roll" data-dice="d4" title="Clique para rolar d4 — Shift: vantagem · Ctrl: desvantagem">d4</button> <span class="roll-label">Not Very</span></h2>
+<p>Consegue se defender <button type="button" class="dice-roll" data-dice="d6" title="Clique para rolar d6 — Shift: vantagem · Ctrl: desvantagem">d6</button> Lutador veterano ou predador <button type="button" class="dice-roll" data-dice="d8" title="Clique para rolar d8 — Shift: vantagem · Ctrl: desvantagem">d8</button> O alcance e as demais etiquetas dependem do equipamento dele. Para seguidores monstruosos, use as diretrizes de dano dos <strong>monstros</strong> <a class="wiki-link" href="../dangers.html" data-slug="dangers" >Dangers</a>.</p>
+<hr>
+<blockquote><p><em>De novo, o Andras é um jovem apto e bom com arco. É novato, mas acho que consegue se defender numa boa. Ele causa <button type="button" class="dice-roll" data-dice="1d6" title="Clique para rolar 1d6 — Shift: vantagem · Ctrl: desvantagem">1d6</button> de dano.</em></p></blockquote>
+<hr>
+<h2 id="6-instinct"><span class="step-badge">6</span> Instinto</h2>
+<p>O que o seguidor faz naturalmente que causa encrenca para o PJ que ele segue? Escreva o instinto dele neste formato:</p>
+<p>&quot;fazer [alguma coisa]&quot;. Exemplos de instintos de seguidores incluem:</p>
+<ul class="bullets"><li>Levar as coisas longe demais</li><li>Questionar a liderança e a autoridade</li><li>Agarrar-se com força à tradição</li><li>Agir por impulso</li><li>Ceder à tentação</li><li>Não levar as coisas a sério</li><li>Travar diante do perigo</li></ul>
+<hr>
+<blockquote><p><em>Quero dar destaque à ansiedade do Andras, de que gosto como contraste com o Caradoc, que está deixando para trás o papel de &quot;juventude impetuosa&quot;. Reforço a etiqueta</em> ansioso <em>dele e lhe dou um instinto de &quot;tentar impressionar a Rhianna&quot;. Isso deve ser levemente exasperante e provavelmente vai empurrá-lo a fazer umas bobagens, sem torná-lo um estorvo completo.</em></p></blockquote>
+<hr>
+<h2 id="7-moves-optional"><span class="step-badge">7</span> Movimentos (opcional)</h2>
+<p>Escreva até 3 movimentos de Mestre. Escreva-os de modo a completar a frase:</p>
+<p>&quot;O seguidor pode/vai ___.&quot; Por exemplo:</p>
+<ul>
+<li>Farejar encrenca no vento</li>
+<li>Tecer um glamour menor</li>
+<li>Sair vagando por conta própria Os movimentos de um seguidor podem refletir habilidades não cobertas por etiquetas, ou como ele usa uma etiqueta específica, e/ou comportamentos comuns (bons ou ruins).</li>
+</ul>
+<p>Esses movimentos são sobretudo para você e este passo é totalmente opcional, mas o jogador os vê e eles podem afetar o que o jogador rola quando <strong>Comanda Seguidores</strong> <a class="wiki-link" href="#follower-moves" data-slug="npcs-followers" data-fragment="follower-moves">Movimentos de seguidor</a>.</p>
+<hr>
+<blockquote><p><em>Penso em dar ao Andras alguns movimentos de Mestre como &quot;suspirar pela Blodwen&quot; ou &quot;cometer um erro de novato&quot;, mas francamente não sinto que preciso deles. Esses movimentos não afetariam nenhuma rolagem que a Rhianna faz em nome dele, e não são materialmente diferentes das etiquetas ou dos traços dele. Então, sem movimentos, pelo menos por ora.</em></p></blockquote>
+<hr>
+<h2 id="8-cost"><span class="step-badge">8</span> Custo</h2>
+<p>O custo de um seguidor descreve o que o mantém seguindo a liderança de um PJ. Costuma ser umas poucas palavras, como &quot;moedas, pagamento, tesouro&quot; ou &quot;afeto, respeito&quot; ou &quot;treinamento&quot;.</p>
+<p>Escolha um da lista abaixo ou invente algo. Quando o custo dele é pago, ele guarda +1 de Lealdade (máx. 3), conforme o movimento <strong>Fortaleça Seu Vínculo</strong> <a class="wiki-link" href="#loyalty" data-slug="npcs-followers" data-fragment="loyalty">Lealdade</a>.</p>
+<ul class="bullets"><li>Moedas, pagamento, tesouro</li><li>Renome, reconhecimento público</li><li>Afeto, respeito (vindo de você)</li><li>Conhecimento (sobre o quê?)</li><li>Injustiças reparadas, boas ações feitas</li><li>Diversão, entretenimento</li><li>Progresso (rumo a um objetivo específico)</li></ul>
+<hr>
+<blockquote><p><em>O Andras é um rapaz jovem, ansioso e novato, com o instinto de &quot;tentar impressionar a Rhianna&quot;. Acho que uma palavra de elogio da Rhianna, principalmente em público, significaria o mundo para esse garoto. E então faço disso o custo dele: &quot;Reconhecimento&quot;.</em></p></blockquote>
+<hr>
+<h2 id="9-equipment"><span class="step-badge">9</span> Equipamento</h2>
+<p>Decida que material o seguidor está carregando ou peça ao jogador que o Equipe como se fosse um PJ.</p>
+<hr>
+<blockquote><p><em>Para esta primeira expedição até a Cava de Gordin, decido que ele vai aparecer com o arco dele, um manto de segunda mão, alguns</em></p></blockquote>
+<p>◇ <em>suprimentos e uma faca de ferro.</em></p>
+<p>Anoto isso num cartão e entrego à jogadora da Rhianna quando ele aparece para a partida:</p>
+<p>ANDRAS, aprendiz de caçador</p>
+<div class="stat-block follower" id="archer-2"><h3 class="stat-name">Arqueiro</h3><p class="stat-stats"><strong>HP</strong> 6; Armadura 0<br>Dano faca <button type="button" class="dice-roll" data-dice="1d6" title="Clique para rolar 1d6 — Shift: vantagem · Ctrl: desvantagem">1d6</button> (mão) ou arco <button type="button" class="dice-roll" data-dice="1d6" title="Clique para rolar 1d6 — Shift: vantagem · Ctrl: desvantagem">1d6</button> (próximo, O pouca munição, O acabou)<br>Instinto: tentar impressionar a Rhianna<br>Custo: reconhecimento (Lealdade OOO)</p><ul class="stat-moves"><li>&lt;&gt; Arco e flechas de ferro (próximo)</li><li>&lt;&gt; Manto velho (quente)</li><li>&lt;&gt; Suprimentos (usos OOOO)</li><li>◇ indefinidos ao equipamento dele.</li></ul><p class="stat-note">observador, ansioso, novato</p><p class="stat-note">Rapaz jovem, filho do Padraig. Caidinho pela Blodwen. Se esforça muito, faz um monte de perguntas.</p><p class="stat-note">Faca de ferro (mão)</p><p class="stat-note">O Caradoc enche o saco dele por levar um manto com o tempo ainda tão quente (para o outono). A Rhianna, porém, assente com aprovação. &quot;Você sabe cozinhar, garoto?&quot; Ele começa a gabar o (pequeno) punhado de pratos que sabe fazer e ela solta: &quot;É, ótimo, garoto&quot;, e acrescenta um kit de panelas e dois ◇</p></div>
+<hr>
+<h2 id="updating-followers">Atualizando seguidores</h2>
+<p>Seguidores podem mudar com o tempo. Podem mudar mecanicamente, como quando o Marechal pega o movimento &quot;Tropa Veterana&quot;.</p>
+<p>Mas muitas vezes vão mudar naturalmente ao longo do jogo.</p>
+<p>Entre as sessões, revise os seguidores que os PJs têm. Para cada um, se…</p>
+<ul class="ellipsis"><li><strong>o instinto e/ou o custo dele já não parecerem verdadeiros</strong>, revise-os.</li><li><strong>alguma das etiquetas ou dos movimentos já não parecer verdadeiro,</strong> apague ou revise, o que fizer mais sentido</li><li><strong>ele tiver mostrado uma aptidão, habilidade ou comportamento novo</strong>, considere acrescentar isso como etiqueta ou movimento.</li><li><strong>ele tiver ficado mais resistente, ou menos resistente</strong> (por crescimento pessoal, ferimento, doença, etc.), ajuste o HP máximo dele.</li><li><strong>ele tiver ficado consideravelmente mais ou menos perigoso</strong>, ajuste o dado de dano dele.</li><li><strong>ele tiver virado fonte de encrenca contínua e ativa</strong> para um dos PJs ou para a aldeia em geral, escreva-o como <strong>ameaça</strong> <a class="wiki-link" href="threats.html" data-slug="threats" >Ameaças</a> além de ou em vez de seguidor.</li><li><strong>for um seguidor em <em>grupo</em> ,</strong> alguém saiu do grupo, ou entrou? Atualize a lista do grupo para refletir isso.</li><li><strong>ele já não olhar para o PJ em busca de liderança, ou já não aceitar ordens dele</strong>, então ele não é mais seguidor (veja a próxima coluna).</li><li><strong>ele transferir a lealdade de um PJ para outro</strong> (ou o líder atual passar a responsabilidade por ele a outro PJ), conte aos jogadores e talvez demonstre isso numa cena da próxima sessão. Diga aos jogadores para atualizarem as anotações.</li></ul>
+<h2 id="losing-followers">Perdendo seguidores</h2>
+<p>Seguidores podem morrer, claro. Mas também podem deixar de ser seguidores por vários motivos.</p>
+<p><strong>A relação entre seguidor e PJ pode ser temporária ou circunstancial</strong>.</p>
+<p>Quando deixar de fazer sentido que ele receba ordens do PJ, ele para de ser seguidor. Pode voltar a ser seguidor depois, mas por ora tem a própria vida para viver!</p>
+<hr>
+<blockquote><p><em>A Fflur virou seguidora da Blodwen na viagem à Cava de Gordin, mas depois que voltam para casa isso não faz muito sentido. O filho do taverneiro cuida dos cavalos, Fflur e Celyn, e eles ficam quase sempre nos campos.</em></p><p><em>Se os PJs levarem a Fflur em outra expedição, provavelmente vamos tratá-la como seguidora da Blodwen de novo. Mas pela aldeia, ela é só uma égua com quem a Blodwen tem amizade.</em></p></blockquote>
+<hr>
+<p><strong>Um seguidor pode mudar de um jeito que faz com que deixe de seguir o PJ dele</strong>. Talvez perca a coragem, ou se mude, ou tenha filhos e se acomode, e por aí vai.</p>
+<p>Ele ainda pode estar por perto como NPC, mas não é mais seguidor.</p>
+<hr>
+<blockquote><p><em>A Eira sobrevive ao encontro com a morte, e a Blodwen cura a alma ferida dela, mas ela nunca mais é a mesma. É como se tivesse envelhecido 20 anos numa semana, e na sessão seguinte ela diz à Rhianna que está fora. É uma cena emocionante, e a gente chega a ver a Rhianna chorar. Quando acaba, ela apaga a Eira do encarte de Tropa e eu acrescento &quot;aposentada&quot; à entrada dela no livreto do povoado.</em></p></blockquote>
+<hr>
+<p>Claro, nem sempre é amigável quando um seguidor se separa do PJ dele. Se o rompimento for feio, o seguidor bem pode virar uma <strong>ameaça</strong> <a class="wiki-link" href="threats.html" data-slug="threats" >Ameaças</a>. Se o seguidor vinha guardando ressentimento crescente pelo PJ dele, pode até traí-lo de forma súbita e dramática.</p>
+<hr>
+<blockquote><p><em>O sofrido espírito de vento do Vahid volta de espionar o Dedo-de-Espinho, cheio de novidades e energia brincalhona — bem na hora em que o Vahid se senta para jantar com a viúva Maire. Ele sai e implora ao espírito que se comporte por ora, e promete tocar a flauta lá nos campos depois, para que o espírito possa dançar e folgar.</em></p><p><em>O andalau está sem Lealdade, então o Vahid rola para Persuadir. Infelizmente, tira 4. Pergunto ao Vahid como ele acha que estraga tudo, e ele diz que perde a paciência e começa a gritar, tentando forçar o espírito a se comportar.</em></p><p><em>Decido que o espírito já cansou. &quot;Fica quieto e parado. E então, olha só. O vento aumenta, cada vez mais, ficando mais forte. Deuses, você não imaginava que ele pudesse ser tão forte assim. Ele uiva, grita e arranca a flauta.&quot; O Vahid tenta segurar firme, mas tira 3 ao Desafiar o Perigo, e a flauta se estilhaça contra a Pedra.</em></p><p><em>O espírito estava atado àquela flauta, e agora não está mais. Com certeza não é mais seguidor. Um espírito desatado normalmente se dissiparia, mas acho que este guarda rancor. Ele some por ora, mas entre as sessões eu o escrevo como ameaça (uma</em> entidade mágica<em>,</em> <strong><em>Instinto</em></strong> <em>atormentar o</em></p></blockquote>
+<p><em>Vahid).</em></p>
+<hr>
+        </main>
+      </div>
+    </div>
+  </div>
+  <div id="wiki-preview" class="wiki-preview" hidden></div>
+  <div id="dice-toast" class="dice-toast" hidden></div>
+  <script src="../js/wiki.js"></script>
+</body>
+</html>
