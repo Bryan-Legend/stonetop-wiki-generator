@@ -480,57 +480,57 @@ P	A perna de Garet foi dilacerada por dracos emplumados; Blodwen o remendou, mas
 C	O ferimento não cicatriza bem, Garet fica fraco e lento
 C	O ferimento infecciona e a perna precisa ser amputada
 C	Garet fica febril, delirante
-C	<b>Impending doom:</b> Garet dies
-P	<b>Stakes:</b> What decisions will Rhianna make? How will Blodwen handle it?
-P	MUTRA THE TEETH (<i>villain</i>)
-P	<b>Instinct</b> to acquire
-P	A boss in Gordin's Delve. His crews mine, salvage artifacts. Bought Green Lord stuff from Vahid, Rhianna; wants to know/acquire more.
-C	Pays merchants, travelers to scope out Stonetop
-C	Embeds agent(s) in Stonetop
-C	Agent(s) identify key treasure(s)
-C	Mutra demands treasure(s) for a pittance, or else
-C	<b>Impending doom:</b> Agent(s) kill someone, steal treasure(s)
-P	<b>GM moves:</b>
-P	• Interrupt trade with Gordin's Delve
-P	• Turn old allies against Stonetop
-P	CRINWIN (<i>rabble</i>)
-P	<b>Instinct</b> to covet humanity
-P	Free of Sajra's control, they'll become more obsessed with Stonetop.
-C	Reestablish nests, numbers
-C	Attacks on folks in the Wood
-C	Nighttime raids on village, stealing stuff and killing livestock
-C	More/bigger nests nearby, anyone in the Wood is attacked/abducted
-C	<b>Impending doom:</b> Full on invasion, with intent to move in, take over
-P	When you <b><i>Deploy the village militia</i></b> <b><i>against crinwin raids</i></b>, add this to the list of choices for a 7-9:
-B	The crinwin steal 1d4 Surplus
-B	An important item goes missing
+C	<b>Catástrofe iminente:</b> Garet morre
+P	<b>Apostas:</b> Que decisões Rhianna vai tomar? Como Blodwen vai lidar com isso?
+P	MUTRA, O DENTES (<i>vilão</i>)
+P	<b>Instinto</b> adquirir
+P	Um chefe na Cava de Gordin. As turmas dele mineram e recuperam artefatos. Comprou coisas dos Senhores Verdes de Vahid e Rhianna; quer saber/conseguir mais.
+C	Paga mercadores e viajantes para sondar Stonetop
+C	Infiltra agente(s) em Stonetop
+C	O(s) agente(s) identifica(m) tesouro(s) importante(s)
+C	Mutra exige o(s) tesouro(s) por uma ninharia, senão…
+C	<b>Catástrofe iminente:</b> O(s) agente(s) mata(m) alguém e rouba(m) o(s) tesouro(s)
+P	<b>Movimentos de Mestre:</b>
+P	• Interromper o comércio com a Cava de Gordin
+P	• Voltar antigos aliados contra Stonetop
+P	CRINWIN (<i>corja</i>)
+P	<b>Instinto</b> cobiçar a humanidade
+P	Livres do controle de Sajra, vão ficar mais obcecados por Stonetop.
+C	Restabelecem ninhos e números
+C	Ataques a quem estiver na Mata
+C	Ataques noturnos à aldeia, roubando coisas e matando criação
+C	Ninhos maiores e mais numerosos por perto; qualquer um na Mata é atacado/raptado
+C	<b>Catástrofe iminente:</b> Invasão completa, com intenção de se mudar e tomar conta
+P	Quando você <b><i>Mobiliza a milícia da aldeia</i></b> <b><i>contra os ataques dos crinwin</i></b>, acrescente isto à lista de escolhas do 7-9:
+B	Os crinwin roubam 1d4 de Excedente
+B	Um item importante desaparece
 PAGE	296
-P	THE PALE CRINWIN (<i>wildcard</i>)
-P	<b>Instinct</b> to learn more and more
-P	A curious, "friendly" crinwin somewhat exiled from its peers. Vahid communicated with "him," sort of. It's fascinated with writing, drawings.
-P	<b>Stakes:</b> Will the PCs figure out how to reliably communicate with "him?"
-P	Will the villagers accept crinwin as anything but vermin or monsters?
-P	When you <b><i>try to communicate with</i></b> <b><i>the pale crinwin through noises or</i></b> <b><i>pantomime</i></b>, describe what you're trying to convey and roll +INT: <b>on a</b> <b>10+</b>, message received; <b>on a 7-9</b>, he gets the gist but not the details; <b>on a</b> <b>6-</b>, hoo boy does he get it wrong.
-P	NAILADD SWARM (<i>beasts</i>)
-P	<b>Instinct</b> to breed and spread out.
-P	Giant spiders, spreading out via the waystones at the behest of the Mother-of-Spiders.
-C	Nearest waystone is infested, nailadd hunting near Stonetop
-C	Game is scarce, hunters/trappers are attacked, stay in town
-C	Spiders raid Stonetop, killing some, dragging off others
-C	<b>Impending doom:</b> Overrun and infest the village!
-P	<b>Stakes:</b> Will Blodwen bring herself to help kill them? Will Andras overcome his fear of spiders?
-P	FARMERS GUILD (<i>rabble</i>)
-P	<b>Instinct</b> to improve their lot in life
-P	Idealists led by Dermos and Tierney, maybe 100 backers. Want a spot on the Marshedge town council to start.
-C	Council refuses to recognize them
-C	Guild organizes a strike in protest
-C	Brennan has Claws/new recruits break strike, kill Dermos/Tierney
-C	Resentment grows, loyalists from the watch side with farmers
-C	<b>Impending doom:</b> Riots, looting, killing, Marshedge in flames
-P	<b>Stakes:</b> Will Dermos and Brin get together? Will Kiran follow orders or his conscience?
-P	THE MARSHEDGE COUNCIL
-P	(<i>institution</i>)
-P	<b>Instinct</b> to preserve the status quo.
+P	O CRINWIN PÁLIDO (<i>curinga</i>)
+P	<b>Instinto</b> aprender cada vez mais
+P	Um crinwin curioso e "amigável", meio exilado dos seus. Vahid se comunicou com "ele", mais ou menos. É fascinado por escrita e desenhos.
+P	<b>Apostas:</b> Os PJs vão descobrir como se comunicar de forma confiável com "ele"?
+P	Os aldeões vão aceitar os crinwin como algo além de vermes ou monstros?
+P	Quando você <b><i>tenta se comunicar com</i></b> <b><i>o crinwin pálido por ruídos ou</i></b> <b><i>mímica</i></b>, descreva o que está tentando transmitir e role +INT: <b>com</b> <b>10+</b>, mensagem recebida; <b>com 7-9</b>, ele pega a ideia geral, mas não os detalhes; <b>com</b> <b>6-</b>, nossa, como ele entende errado.
+P	ENXAME DE NAILADD (<i>feras</i>)
+P	<b>Instinto</b> procriar e se espalhar.
+P	Aranhas gigantes, espalhando-se pelas pedras-guia a mando da Mãe das Aranhas.
+C	A pedra-guia mais próxima está infestada, nailadd caçando perto de Stonetop
+C	A caça fica escassa, caçadores são atacados e ficam na aldeia
+C	As aranhas atacam Stonetop, matando alguns e arrastando outros
+C	<b>Catástrofe iminente:</b> Tomam e infestam a aldeia!
+P	<b>Apostas:</b> Blodwen vai conseguir ajudar a matá-las? Andras vai superar o medo de aranhas?
+P	GUILDA DOS LAVRADORES (<i>corja</i>)
+P	<b>Instinto</b> melhorar de vida
+P	Idealistas liderados por Dermos e Tierney, com uns 100 apoiadores. Querem, para começar, uma cadeira no conselho de Marshedge.
+C	O conselho se recusa a reconhecê-los
+C	A guilda organiza uma greve em protesto
+C	Brennan manda as Garras/recrutas novos quebrarem a greve e matarem Dermos/Tierney
+C	O ressentimento cresce, leais da guarda ficam do lado dos lavradores
+C	<b>Catástrofe iminente:</b> Tumultos, saques, mortes, Marshedge em chamas
+P	<b>Apostas:</b> Dermos e Brin vão ficar juntos? Kiran vai seguir ordens ou a consciência?
+P	O CONSELHO DE MARSHEDGE
+P	(<i>instituição</i>)
+P	<b>Instinto</b> preservar as coisas como estão.
 P	O chefe de cada guilda (inclusive a dos andarilhos do brejo) e um representante de cada uma das Famílias Antigas. <b>Brennan</b> não está no conselho, mas com certeza o influencia.
 P	<b>Movimentos de Mestre:</b>
 P	• Cortar o fornecimento de alguma coisa a Stonetop
@@ -589,7 +589,7 @@ P	<b>Pense também: você introduziu alguma</b> <b>ameaça nova em jogo</b>? Sur
 PAGE	299
 HR
 P	<i>Acabamos de terminar nossa primeira sessão de jogo</i> <i>de verdade. Rheinal chegou cambaleando. Os crinwin</i> <i>raptaram Pryder. Os PJs organizaram uma</i> <i>expedição para resgatá-lo. Houve bastante</i> <i>interação com os NPCs da aldeia,</i> <i>e não pouco drama.</i>
-P	<i>Eu tinha escrito Tegwen,</i> <i>mãe de Blodwen, como ameaça do tipo</i> curinga <i>("implicar</i> <i>e alfinetar"). Mas, em jogo, me vi</i> <i>interpretando-a bem mais cruel,</i> <i>mais abusiva e manipuladora. O jogador de Blodwen</i> <i>topou isso, então atualizo</i> <i>o instinto dela para "diminuir o valor dos</i> <i>outros", anoto a atitude dela em relação aos</i> <i>vários PJs e escrevo algumas perguntas de</i> <i>apostas ("Até onde ela vai para controlar</i> <i>Blodwen? Quanto Blodwen vai aguentar?").</i>
+P	<i>Eu tinha escrito Tegwen,</i> <i>mãe de Blodwen, como ameaça do tipo</i> curinga <i>("implicar</i> <i>e alfinetar"). Mas, em jogo, me vi</i> <i>interpretando-a bem mais cruel,</i> <i>mais abusiva e manipuladora. O jogador de Blodwen</i> <i>topou isso, então atualizo</i> <i>o instinto dela para "diminuir o valor dos</i> <i>outros", anoto a atitude dela em relação aos</i> <i>vários PJs e escrevo algumas perguntas de</i> <i>apostas ("Até onde ela vai para controlar</i> <i>Blodwen? Quanto Blodwen vai</i> <i>aguentar?").</i>
 HR
 P	<i>Naquela primeira sessão de jogo, também</i> <i>conhecemos Owain, cuja filha sumiu</i> <i>no inverno anterior. Ele e Glenys (tia de Caradoc e mãe de Wynfor, que foi</i> <i>raptado no ataque dos crinwin no fim do inverno)</i> <i>estavam amargurados e ríspidos com os PJs,</i> <i>sobretudo com Rhianna.</i>
 P	<i>Começo a escrevê-los como ameaça do tipo</i> corja<i>,</i> <i>mas, quando olho os movimentos de ameaça, percebo que não, os pais não são a ameaça.</i> <i>A ameaça é "Desconfiança dos PJs", uma</i> aflição<i>, e os pais estão só envolvidos</i> <i>nela. Escrevo isso como ameaça (</i><b><i>Instinto</i></b> <i>apodrecer). Ainda não tenho noção de aonde isso</i> <i>vai dar, então não escrevo catástrofe iminente. Mas fico curioso: Rhianna consegue</i> <i>reconquistar o respeito de Owain e Glenys?</i> <i>Glenys algum dia vai perdoar Caradoc? Anoto isso</i> <i>como perguntas de apostas.</i>
