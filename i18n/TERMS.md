@@ -280,6 +280,38 @@ Pull Together · Deploy · Seasons Change · Death's Door.
 Recorded per language as pages are completed, so a later page agrees with an
 earlier one. Add to this table rather than re-deciding.
 
+### Playing the Game — zh-Hans (2026-09-16)
+
+Chapter title 玩游戏. Page refs kept as English `page N` so the linker still matches (CJK has no word-then-number page word yet). First mention of the village/game is 石顶（Stonetop）, then 石顶 / <i>石顶</i>. GM / NPC / HP / XP / PC stay Latin; 玩家角色 on first PC mention. Aid and Interfere are separate moves here (相助 / 阻挠), not the combined 相助或阻挠.
+
+| English | zh-Hans |
+|---|---|
+| the fiction / agenda / trigger | 虚构 / 议程 / 触发条件 |
+| strong hit / weak hit / miss | 强命中 / 弱命中 / 失手 |
+| Die of Fate / fictional positioning | 命运骰 / 虚构定位 |
+| scenes / loose play | 场景 / 松散玩法 |
+| hold / Readiness / Preparation | 持有 / 戒备 / 准备 |
+| End of Session / Level Up / Burn Brightly | 会末 / 升级 / 燃得更旺 |
+| Aid / Interfere (as separate moves) | 相助 / 阻挠 |
+| Chart a Course / Keep Company / Bolster | 规划路线 / 结伴同行 / 积蓄 |
+| Return Triumphant / Meet with Disaster / Make a Plan | 凯旋归来 / 灾祸降临 / 拟定计划 |
+| Order Followers | 号令追随者 |
+| Lady of Crows | 鸦母 |
+| light / normal / heavy load / Undefined | 轻负 / 常负 / 重负 / 未定 |
+| Value | 价值 |
+| Improved Stat / Superior Stat / Potential for Greatness | 属性提升 / 属性精进 / 伟大潜质 |
+| Storm-marked / Beast-bonded | 风暴印记 / 兽契 |
+| Acumen / Power (held currency) | 洞察 / 权能 |
+| Laoj Davith's Galvanic Infusion | 劳杰·达维斯的电流灌注 |
+| aetherium | 以太矿 |
+| Titan Bones | 泰坦遗骨 |
+| Quiet Twins / Chronicle | 寂静双子 / 编年史 |
+| beznpol | 贝兹波尔 |
+| The Swap / Edgemarket | 互换市 / 边市 |
+| messy / grabby / crude / cumbersome / awkward | 狼藉 / 抓取 / 粗陋 / 笨重 / 笨拙 |
+| fragile / warm / reload / slow / thrown / dangerous / immobile | 易碎 / 保暖 / 装填 / 缓慢 / 投掷 / 危险 / 无法携带 |
+| Running the Game / Running combat | 主持游戏 / 主持战斗 |
+
 ### Recurring sheet & insert vocabulary — tr · hu · fi
 
 | English | tr | hu | fi |
