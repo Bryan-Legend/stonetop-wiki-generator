@@ -884,7 +884,8 @@ h3 .book-icon,
 
 /* Chapter info box (steading summary) */
 .infobox {
-  break-inside: avoid;
+  /* may span columns: a tall block that refuses to break leaves the column before it empty */
+  break-inside: auto;
   margin: 0.35rem 0 0.85rem;
   padding: 0.55rem 0.7rem 0.6rem;
   border: 1px solid var(--rule);
@@ -971,7 +972,8 @@ h3 .book-icon,
 /* Enemy / monster blocks — tight, card-like (arcana wash + elevated shell) */
 .stat-block,
 .hazard-block {
-  break-inside: avoid;
+  /* may span columns: a tall block that refuses to break leaves the column before it empty */
+  break-inside: auto;
   margin: 0.4rem 0 0.55rem;
   padding: 0.45rem 0.6rem 0.5rem;
   background: var(--panel);
@@ -1652,7 +1654,8 @@ h3.arcana-title-line,
 /* Steading improvements + requirement checkboxes */
 .steading-improvement,
 .requirement-block {
-  break-inside: avoid;
+  /* may span columns: a tall block that refuses to break leaves the column before it empty */
+  break-inside: auto;
   margin: 0.75rem 0 1rem;
   padding: 0.55rem 0.8rem 0.75rem; /* same head room as .follower-sheet */
   border: 1px solid var(--rule);
@@ -1730,7 +1733,8 @@ li.check-item input.wiki-check:checked + span {
 
 /* Artifact / tagged-discovery blocks */
 .discovery-block {
-  break-inside: avoid;
+  /* may span columns: a tall block that refuses to break leaves the column before it empty */
+  break-inside: auto;
   margin: 0.5rem 0 0.7rem;
   padding: 0.5rem 0.65rem 0.55rem;
   background: var(--panel);
@@ -1766,7 +1770,8 @@ li.check-item input.wiki-check:checked + span {
 
 /* Custom move blocks (ASK AROUND, CAROUSE, RECRUIT, …) */
 .move-block {
-  break-inside: avoid;
+  /* may span columns: a tall block that refuses to break leaves the column before it empty */
+  break-inside: auto;
   margin: 0.6rem 0 0.85rem;
   padding: 0.55rem 0.7rem 0.65rem;
   border: 1px solid var(--rule);
@@ -2470,7 +2475,8 @@ li.check-item input.wiki-check:checked + span {
 /* ----- the stat block ----- */
 .pb-stats {
   margin: .6rem 0 .8rem;
-  break-inside: avoid;
+  /* may span columns: a tall block that refuses to break leaves the column before it empty */
+  break-inside: auto;
 }
 .pb-stats > h2 { margin-top: 0; }
 .pb-stats-gloss {
@@ -3395,7 +3401,8 @@ textarea.wiki-field { width: 100%; min-height: 4.5rem; resize: none; display: bl
   padding: .4rem .5rem;
   border: 1px solid rgba(var(--head-rgb), .28);
   border-radius: var(--radius-panel);
-  break-inside: avoid;
+  /* may span columns: a tall block that refuses to break leaves the column before it empty */
+  break-inside: auto;
 }
 .fs-type-head { display: flex; align-items: baseline; gap: .35rem; flex-wrap: wrap; }
 .fs-type-head label { display: inline-flex; align-items: center; gap: .35rem; cursor: pointer; }
@@ -3454,6 +3461,9 @@ table.fs-table th:nth-child(2):not(:last-child) { width: 15%; }
 .content table thead { display: table-header-group; }
 .fs-person, .fs-stats, .fs-type, .pb-track { break-inside: avoid; }
 .follower-sheet > h2, .follower-sheet > h3 { break-after: avoid; }
+/* A card that spans columns keeps its title with the line under it. */
+.si-title, .stat-block .stat-name, .hazard-block .stat-name, .discovery-name,
+.move-block .move-name, .fs-type-head, .pb-stats > h2, .infobox > :first-child { break-after: avoid; }
 
 /* Names, stats and spinboxes are set in the display face; every other box
    (tags, traits, gear, notes, the tables) is ordinary type. */
