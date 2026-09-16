@@ -960,6 +960,10 @@ def main(argv: list[str] | None = None) -> None:
         lang_source,
         lang_targets,
         only_pages=only_pages,
+        previews=previews,
+        search_docs=search_docs,
+        sections_by_slug=sections_by_slug,
+        page_maps=page_maps,
     )
     if only_pages is None:
         # The home page lists every page, so it needs the whole run's

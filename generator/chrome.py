@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import datetime
 import html
+import json
 import re
 import shutil
 from pathlib import Path
@@ -21,8 +22,14 @@ from .i18n import (
 )
 from .corpus import parse_text
 from .sheet import render_sheet, sheet_excerpt
-from .structure import T_english
-from .text import _is_all_caps_label, normalize_section_key, slugify_id, titlecase_label
+from .structure import T_english, extract_section_html_blocks
+from .text import (
+    _is_all_caps_label,
+    html_to_search_text,
+    normalize_section_key,
+    slugify_id,
+    titlecase_label,
+)
 
 # Project credit in the wiki sidebar footer.
 GITHUB_PROJECT_URL = "https://github.com/Bryan-Legend/stonetop-wiki-generator"
@@ -64,6 +71,14 @@ def sidebar_foot_html(ui: dict | None = None, lang_switch: str = "") -> str:
 
 
 BUILD_MANIFEST = ".build-manifest"
+# How much of the wiki a language must hold before it is given its own
+# previews/search data rather than reading the English pair at the root.
+# Its own copy costs ~15 MB, nearly all of it the stat blocks the hover
+# previews carry, so a language holding a handful of pages would be shipping
+# the English file back with a few entries swapped. Below the bar it keeps
+# reading the root's, which is right while coverage is partial — results lead
+# to the pages that exist.
+DATA_COVERAGE = 0.5
 SITE_BASE_URL = "https://stonetop-wiki.github.io"
 
 
@@ -709,6 +724,32 @@ def build_nav_items(
     return items
 
 
+def ui_script_html(locale: dict | None) -> str:
+    """``window.WIKI_UI`` — the strings ``js/wiki.js`` needs, for this page.
+
+    The search box, the hover previews and the feedback form are built in the
+    browser, and ``js/wiki.js`` is chrome the build never writes, so their
+    words cannot be generated into the markup the way the sidebar's are. They
+    ride on the page instead: an inline object, English defaults living in
+    ``wiki.js`` itself. Inline rather than a per-language file because the
+    wiki is opened off a disk as often as it is served, and because it is a
+    few hundred bytes.
+    """
+    if not locale:
+        return ""  # English is what wiki.js already says
+    ui = locale.get("ui") or {}
+    keys = ("books", "page_words", "english_only")
+    data = {k: ui[k] for k in keys if ui.get(k)}
+    if ui.get("js"):
+        data["js"] = ui["js"]
+    if not data:
+        return ""
+    # </script> inside a string would close this one; JSON has no other way
+    # to produce that sequence, so escaping the slash is enough.
+    blob = json.dumps(data, ensure_ascii=False).replace("</", "<\\/")
+    return "  <script>window.WIKI_UI=" + blob + ";</script>\n"
+
+
 def page_shell(
     title: str,
     slug: str,
@@ -761,6 +802,7 @@ def page_shell(
     # rel_prefix, so search and hover previews keep working from a translated
     # page and lead back to the English pages that are not translated yet.
     root_attr = f' data-wiki-root="{e(rel_prefix)}"' if rel_prefix else ""
+    ui_script = ui_script_html(locale)
 
     return f"""<!DOCTYPE html>
 <html lang="{e(code)}"{dir_attr}>
@@ -801,10 +843,82 @@ def page_shell(
   </div>
   <div id="wiki-preview" class="wiki-preview" hidden></div>
   <div id="dice-toast" class="dice-toast" hidden></div>
-  <script src="{rel_prefix}js/wiki.js"></script>
+{ui_script}  <script src="{rel_prefix}js/wiki.js"></script>
 </body>
 </html>
 """
+
+
+def write_localized_data(
+    lang_dir: Path,
+    code: str,
+    previews: dict,
+    search_docs: list[dict],
+    page_maps: dict,
+    local: dict[str, dict],
+    titles: dict[str, str],
+) -> None:
+    """``<lang>/js/previews-data.js`` and ``<lang>/js/search-index.js``.
+
+    Hover previews and search were reading the English data from the wiki
+    root on every localized page — right while a language held a handful of
+    pages, wrong once it holds all of them: a reader searching in Portuguese
+    matched English text and hovered an English card. Each language gets its
+    own pair, the English entry kept for any page it has not translated, so
+    the index still leads somewhere for those.
+    """
+    pv = {}
+    for slug, entry in previews.items():
+        got = local.get(slug)
+        if not got:
+            pv[slug] = entry
+            continue
+        pv[slug] = {**entry, **got}
+    docs = []
+    for doc in search_docs:
+        got = local.get(doc["slug"])
+        if not got:
+            docs.append(doc)
+            continue
+        docs.append(
+            {
+                **doc,
+                "title": got.get("title") or doc["title"],
+                "excerpt": (got.get("excerpt") or "")[:280],
+                "text": got.get("text") or doc["text"],
+                # This page is a sibling, not one directory up.
+                "local": 1,
+            }
+        )
+    # "see page 18" resolves against this map; its titles are what the reader
+    # is shown, so they follow the language too.
+    maps = {}
+    for bid, page_map in page_maps.items():
+        maps[bid] = {
+            num: (
+                {**hit, "title": titles[hit["slug"]]}
+                if hit.get("slug") in titles
+                else hit
+            )
+            for num, hit in page_map.items()
+        }
+    js_dir = lang_dir / "js"
+    js_dir.mkdir(parents=True, exist_ok=True)
+    nl = "\n"
+    (js_dir / "previews-data.js").write_text(
+        "window.WIKI_PREVIEWS = "
+        + json.dumps(pv, ensure_ascii=False, indent=2)
+        + ";" + nl + "window.WIKI_PAGE_MAP = "
+        + json.dumps(maps, ensure_ascii=False, indent=2)
+        + ";" + nl,
+        encoding="utf-8",
+    )
+    (js_dir / "search-index.js").write_text(
+        "window.WIKI_SEARCH_INDEX = "
+        + json.dumps(docs, ensure_ascii=False, separators=(",", ":"))
+        + ";" + nl,
+        encoding="utf-8",
+    )
 
 
 def write_localized_pages(
@@ -815,6 +929,11 @@ def write_localized_pages(
     source: dict,
     targets: list[dict],
     only_pages: set[str] | None = None,
+    *,
+    previews: dict | None = None,
+    search_docs: list[dict] | None = None,
+    sections_by_slug: dict[str, list[dict]] | None = None,
+    page_maps: dict | None = None,
 ) -> list[str]:
     """Write ``<out>/<lang>/<slug>.html`` for every translated page.
 
@@ -833,8 +952,18 @@ def write_localized_pages(
         # The arcana indexes are generated into every language directory
         # (write_localized_arcana_hubs), so the sidebar links to them beside
         # this page rather than marking them English-only.
+        ui = locale.get("ui") or {}
         translated = set(locale["pages"]) | arcana_hub_slugs(articles)
         stale = []
+        # What this language's own previews / search index are made of.
+        # Whether it gets them at all is known before the loop, and building
+        # the material for a language that will not use it is the expensive
+        # part — re-extracting every section block on every page.
+        local_data: dict[str, dict] = {}
+        local_titles: dict[str, str] = {}
+        covered = bool(previews) and len(translated) >= DATA_COVERAGE * len(
+            previews
+        )
         for slug, page in sorted(locale["pages"].items()):
             if only_pages is not None and slug not in only_pages:
                 continue
@@ -880,6 +1009,54 @@ def write_localized_pages(
             )
             (lang_dir / f"{slug}.html").write_text(html_out, encoding="utf-8")
             written.append(f"{code}/{slug}.html")
+            if covered:
+                local_titles[slug] = title
+                entry = {
+                    "title": title,
+                    "excerpt": page.get("description") or "",
+                    "sections": extract_section_html_blocks(
+                        body, (sections_by_slug or {}).get(slug, [])
+                    ),
+                    "text": html_to_search_text(body),
+                }
+                # An arcanum's hover popup is the card itself, and the card is
+                # the whole body here, so the translated card is the preview.
+                english = previews.get(slug) or {}
+                if english.get("kind") == "arcana":
+                    entry["html"] = body
+                local_data[slug] = entry
+        if covered and search_docs is not None and local_data:
+            # The arcana indexes are written after this pass, but they are
+            # pages of this language too — without them a reader searching in
+            # it would be sent up to the English index instead.
+            for art in articles:
+                if art.get("kind") != "arcana-hub":
+                    continue
+                words = arcana_hub_strings(art, ui)
+                hub_body = arcana_hub_html(
+                    art,
+                    ui=ui,
+                    translated=set(locale["pages"]),
+                    page_titles=local_titles,
+                    rel_prefix="../",
+                    english_only=ui.get("english_only") or "",
+                )
+                local_titles[art["slug"]] = words["title"]
+                local_data[art["slug"]] = {
+                    "title": words["title"],
+                    "excerpt": words["lede"],
+                    "sections": {},
+                    "text": words["title"] + " " + html_to_search_text(hub_body),
+                }
+            write_localized_data(
+                lang_dir,
+                code,
+                previews,
+                search_docs,
+                page_maps or {},
+                local_data,
+                local_titles,
+            )
         if stale:
             print(
                 f"  i18n: {code} stale against the English text: "

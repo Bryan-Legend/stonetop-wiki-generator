@@ -2,6 +2,64 @@
 (function () {
   "use strict";
 
+  /* ---------- Chrome built in the browser, in the reader's language --------
+   *
+   * The sidebar, the page title and the article are generated, so the build
+   * writes them in whatever language the page is. The search results, the
+   * hover previews and the feedback form are built here instead, and this
+   * file is chrome the build never writes — so their words arrive on the
+   * page as window.WIKI_UI (generator/chrome.py, ui_script_html) and the
+   * English below is the default when there is none, which is every page at
+   * the wiki root.
+   *
+   * UI("search_empty", "No pages match “{query}”.", { query: q })
+   * ---------------------------------------------------------------------- */
+  var UI_DEFAULTS = {
+    feedback_link: "Send feedback about this page",
+    feedback_head: "Send feedback",
+    feedback_about: "About",
+    feedback_what: "What should change?",
+    feedback_placeholder:
+      "A wrong number, a missing move, a table that came out mangled…",
+    feedback_email: "Email (optional, for a reply)",
+    feedback_send: "Send",
+    feedback_cancel: "Cancel",
+    feedback_close: "Close",
+    feedback_sending: "Sending…",
+    feedback_sent: "Feedback sent — thank you.",
+    feedback_failed:
+      "Couldn’t send ({error}). Try again, or email Bryan directly.",
+    feedback_network: "network error",
+    search_empty: "No pages match “{query}”.",
+    search_pages_one: "1 page",
+    search_pages_many: "{n} pages",
+    search_showing: " (showing {n})",
+    search_in_title_text: "title + text",
+    search_in_title: "title",
+    search_in_text: "in text",
+    preview_no_summary: "No summary available.",
+    preview_missing: "No preview entry for this link."
+  };
+
+  function UI(key, vars) {
+    var page = (window.WIKI_UI && window.WIKI_UI.js) || {};
+    var s = page[key];
+    if (typeof s !== "string") s = UI_DEFAULTS[key];
+    if (typeof s !== "string") return "";
+    if (!vars) return s;
+    return s.replace(/\{(\w+)\}/g, function (whole, name) {
+      return Object.prototype.hasOwnProperty.call(vars, name)
+        ? String(vars[name])
+        : whole;
+    });
+  }
+
+  /* The book labels the sidebar already carries, for the search results. */
+  function bookLabel(book) {
+    var books = (window.WIKI_UI && window.WIKI_UI.books) || {};
+    return books[book] || "";
+  }
+
   /* ---------- StonetopStore: the table's shared state ----------------------
    *
    * Everything the wiki remembers — ticked steading improvements, danger
@@ -945,9 +1003,15 @@
         };
         document.head.appendChild(s);
       }
-      var sources = [SCRIPT_BASE + "js/previews-data.js"];
+      var sources = [];
       var root =
         document.body && document.body.getAttribute("data-wiki-root");
+      // A language directory carries its own previews, so a reader of that
+      // language hovers a card in their language. It is tried first and the
+      // root English one is the fallback, which is what a language that has
+      // no data of its own — or a site sheet on another origin — lands on.
+      if (root) sources.push("js/previews-data.js");
+      sources.push(SCRIPT_BASE + "js/previews-data.js");
       if (root) {
         if (root.slice(-1) !== "/") root += "/";
         var alt = root + "js/previews-data.js";
@@ -2172,7 +2236,7 @@
     }
     var defaultBook = book || "book2";
     var mapDefault = resolveBookMap(rawMap, defaultBook);
-    var escaped = escapeHtml(text || "No summary available.");
+    var escaped = escapeHtml(text || UI("preview_no_summary"));
 
     function pageHref(slug) {
       return wikiRootPrefix() + slug + ".html";
@@ -2362,7 +2426,7 @@
         thumb +
         '<p class="pv-excerpt">' +
         linkifyPageRefs(
-          data.excerpt || "No summary available.",
+          data.excerpt || UI("preview_no_summary"),
           map,
           data.book || "book2"
         ) +
@@ -2417,7 +2481,7 @@
             link,
             empty
               ? "Preview data is missing. Build the Stonetop wiki to enable hover previews."
-              : "No preview entry for this link."
+              : UI("preview_missing")
           );
           return;
         }
@@ -2482,17 +2546,28 @@
     }
     if (searchIndexPromise) return searchIndexPromise;
     searchIndexPromise = new Promise(function (resolve) {
-      const s = document.createElement("script");
-      s.src = SCRIPT_BASE + "js/search-index.js";
-      s.onload = function () {
-        searchIndex = window.WIKI_SEARCH_INDEX || [];
-        resolve(searchIndex);
-      };
-      s.onerror = function () {
-        searchIndex = [];
-        resolve(searchIndex);
-      };
-      document.head.appendChild(s);
+      // Same as the previews: this language's index first, English after.
+      var srcs = [];
+      var r = document.body && document.body.getAttribute("data-wiki-root");
+      if (r) srcs.push("js/search-index.js");
+      srcs.push(SCRIPT_BASE + "js/search-index.js");
+      var at = 0;
+      function tryNext() {
+        if (at >= srcs.length) {
+          searchIndex = [];
+          resolve(searchIndex);
+          return;
+        }
+        const s = document.createElement("script");
+        s.src = srcs[at++];
+        s.onload = function () {
+          searchIndex = window.WIKI_SEARCH_INDEX || [];
+          resolve(searchIndex);
+        };
+        s.onerror = tryNext;
+        document.head.appendChild(s);
+      }
+      tryNext();
     });
     return searchIndexPromise;
   }
@@ -2685,9 +2760,9 @@
       if (!hits.length) {
         resultsEl.hidden = false;
         resultsEl.innerHTML =
-          '<p class="search-empty">No pages match “' +
-          escapeHtmlSearch(current) +
-          '”.</p>';
+          '<p class="search-empty">' +
+          escapeHtmlSearch(UI("search_empty", { query: current })) +
+          "</p>";
         positionSearchResults();
         return;
       }
@@ -2695,27 +2770,40 @@
       var html = [];
       html.push(
         '<p class="search-results-meta">' +
-          hits.length +
-          (hits.length === 1 ? " page" : " pages") +
-          (hits.length > maxShow ? " (showing " + maxShow + ")" : "") +
+          escapeHtmlSearch(
+            (hits.length === 1
+              ? UI("search_pages_one", { n: hits.length })
+              : UI("search_pages_many", { n: hits.length })) +
+              (hits.length > maxShow
+                ? UI("search_showing", { n: maxShow })
+                : "")
+          ) +
           "</p>"
       );
       for (var h = 0; h < hits.length && h < maxShow; h++) {
         var hit = hits[h];
         var where =
-          hit.book === "book1"
+          bookLabel(hit.book) ||
+          (hit.book === "book1"
             ? "Book I"
             : hit.book === "book2"
               ? "Book II"
               : hit.book === "sites"
                 ? "Site"
-                : "";
-        if (hit.titleHit && hit.textHit) where += (where ? " · " : "") + "title + text";
-        else if (hit.titleHit) where += (where ? " · " : "") + "title";
-        else where += (where ? " · " : "") + "in text";
+                : "");
+        var how = hit.titleHit && hit.textHit
+          ? UI("search_in_title_text")
+          : hit.titleHit
+            ? UI("search_in_title")
+            : UI("search_in_text");
+        where += (where ? " · " : "") + how;
         html.push(
           '<a class="search-hit" href="' +
-            (hit.href ? hrefFromRoot(hit.href) : pageHrefFromSlug(hit.slug)) +
+            (hit.href
+              ? hrefFromRoot(hit.href)
+              : hit.local
+                ? hit.slug + ".html"
+                : pageHrefFromSlug(hit.slug)) +
             '">' +
             '<span class="search-hit-title">' +
             escapeHtmlSearch(hit.title) +
@@ -4575,7 +4663,7 @@
     var link = document.createElement("a");
     link.href = "#feedback";
     link.className = "page-feedback-link";
-    link.textContent = "Send feedback about this page";
+    link.textContent = UI("feedback_link");
     foot.appendChild(link);
     host.appendChild(foot);
 
@@ -4595,9 +4683,9 @@
       overlay.hidden = true;
       overlay.innerHTML =
         '<form class="feedback-panel" method="POST" action="' + ENDPOINT + '" role="dialog" aria-modal="true" aria-labelledby="feedback-head">' +
-        '<button type="button" class="feedback-close" aria-label="Close">×</button>' +
-        '<h2 class="sync-head" id="feedback-head">Send feedback</h2>' +
-        '<p class="feedback-page">About <span class="feedback-page-title">' + esc(pageTitle || pageUrl) + "</span></p>" +
+        '<button type="button" class="feedback-close" aria-label="' + esc(UI("feedback_close")) + '">×</button>' +
+        '<h2 class="sync-head" id="feedback-head">' + esc(UI("feedback_head")) + "</h2>" +
+        '<p class="feedback-page">' + esc(UI("feedback_about")) + ' <span class="feedback-page-title">' + esc(pageTitle || pageUrl) + "</span></p>" +
         '<input type="hidden" name="Page" value="' + esc(pageUrl) + '">' +
         '<input type="hidden" name="Title" value="' + esc(pageTitle) + '">' +
         '<input type="hidden" name="_subject" value="Stonetop Wiki feedback: ' + esc(pageTitle || pageUrl) + '">' +
@@ -4605,13 +4693,13 @@
         '<input type="hidden" name="_captcha" value="false">' +
         '<input type="hidden" name="_next" value="' + esc(pageUrl) + '">' +
         '<input type="text" name="_honey" class="feedback-honey" tabindex="-1" autocomplete="off">' +
-        '<label class="sync-field"><span>What should change?</span>' +
-        '<textarea name="Feedback" rows="6" required placeholder="A wrong number, a missing move, a table that came out mangled…"></textarea></label>' +
-        '<label class="sync-field"><span>Email (optional, for a reply)</span>' +
+        '<label class="sync-field"><span>' + esc(UI("feedback_what")) + "</span>" +
+        '<textarea name="Feedback" rows="6" required placeholder="' + esc(UI("feedback_placeholder")) + '"></textarea></label>' +
+        '<label class="sync-field"><span>' + esc(UI("feedback_email")) + "</span>" +
         '<input type="email" name="email" autocomplete="email"></label>' +
         '<div class="feedback-actions">' +
-        '<button type="submit" class="sync-action is-primary">Send</button>' +
-        '<button type="button" class="sync-action is-quiet feedback-cancel">Cancel</button>' +
+        '<button type="submit" class="sync-action is-primary">' + esc(UI("feedback_send")) + "</button>" +
+        '<button type="button" class="sync-action is-quiet feedback-cancel">' + esc(UI("feedback_cancel")) + "</button>" +
         "</div>" +
         '<p class="sync-note feedback-status" aria-live="polite"></p>' +
         "</form>";
@@ -4653,7 +4741,7 @@
         if (k !== "_next") data[k] = v;
       });
       send.disabled = true;
-      status.textContent = "Sending…";
+      status.textContent = UI("feedback_sending");
       fetch(AJAX, {
         method: "POST",
         headers: { "Content-Type": "application/json", Accept: "application/json" },
@@ -4668,11 +4756,13 @@
           send.disabled = false;
           msg.value = "";
           close();
-          showToast("Feedback sent — thank you.", 3200);
+          showToast(UI("feedback_sent"), 3200);
         })
         .catch(function (err) {
           send.disabled = false;
-          status.textContent = "Couldn’t send (" + (err && err.message ? err.message : "network error") + "). Try again, or email Bryan directly.";
+          status.textContent = UI("feedback_failed", {
+            error: err && err.message ? err.message : UI("feedback_network")
+          });
         });
     }
 
