@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="pt-BR" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dano e Cura — Stonetop Wiki</title>
+  <meta name="description" content="Como o dano funciona em Stonetop: HP, armadura, debilidades, ferimentos problemáticos, cura e o movimento À Beira da Morte.">
+  <link rel="canonical" href="https://stonetop-wiki.github.io/pt-BR/harm-healing.html">
+  <meta property="og:site_name" content="Stonetop Wiki">
+  <meta property="og:title" content="Dano e Cura — Stonetop Wiki">
+  <meta property="og:description" content="Como o dano funciona em Stonetop: HP, armadura, debilidades, ferimentos problemáticos, cura e o movimento À Beira da Morte.">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="pt_BR">
+  <meta property="og:url" content="https://stonetop-wiki.github.io/pt-BR/harm-healing.html">
+  <meta property="og:image" content="https://stonetop-wiki.github.io/images/favicon.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="alternate" hreflang="en" href="https://stonetop-wiki.github.io/harm-healing.html">
+  <link rel="alternate" hreflang="pt-BR" href="https://stonetop-wiki.github.io/pt-BR/harm-healing.html">
+  <link rel="alternate" hreflang="x-default" href="https://stonetop-wiki.github.io/harm-healing.html">
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="../images/favicon.ico" sizes="16x16 32x32 48x48 64x64">
+  <link rel="stylesheet" href="../css/wiki.css">
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4536408101e64ba59733ed69779dd45c"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body data-wiki-root="../">
+  <a class="skip-link" href="#main">Ir para o conteúdo</a>
+  <button type="button" class="sidebar-toggle" id="sidebar-toggle" aria-label="Alternar navegação">☰</button>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-head">
+        <a class="wiki-title" href="../index.html">Stonetop Wiki</a>
+        <input type="search" id="nav-filter" class="nav-filter" placeholder="Pesquisar na wiki…" autocomplete="off" aria-label="Pesquisar na wiki">
+        <div id="search-results" class="search-results" hidden></div>
+      </div>
+      <nav class="toc" aria-label="Tópicos">
+        <ul id="nav-list">
+          <li class="nav-book-label">Livro I</li>
+<li class="has-sections"><a href="welcome-to-stonetop.html">Bem-vindo a Stonetop</a><ul class="nav-sections"><li class="nav-section"><a href="welcome-to-stonetop.html#expectations">Expectativas</a></li><li class="nav-section"><a href="welcome-to-stonetop.html#the-setting">O cenário</a></li><li class="nav-section"><a href="welcome-to-stonetop.html#why-play">Por que jogar?</a></li></ul></li>
+<li class="has-sections"><a href="../getting-started.html" class="nav-en" title="Disponível apenas em inglês" hreflang="en">Getting Started</a><ul class="nav-sections"><li class="nav-section"><a href="../getting-started.html#review-the-setting">Review the setting</a></li><li class="nav-section"><a href="../getting-started.html#set-expectations">Set expectations</a></li><li class="nav-section"><a href="../getting-started.html#discuss-tone-and-content">Discuss tone and content</a></li><li class="nav-section"><a href="../getting-started.html#create-characters">Create characters</a></li><li class="nav-section"><a href="../getting-started.html#intro-the-pcs">Intro the PCs</a></li><li class="nav-section"><a href="../getting-started.html#let-spring-burst-forth">Let spring burst forth</a></li><li class="nav-section"><a href="../getting-started.html#after-the-session">After the session</a></li></ul></li>
+<li class="has-sections"><a href="../playing-the-game.html" class="nav-en" title="Disponível apenas em inglês" hreflang="en">Playing the Game</a><ul class="nav-sections"><li class="nav-section"><a href="../playing-the-game.html#the-conversation">The conversation</a></li><li class="nav-section"><a href="../playing-the-game.html#your-agenda">Your agenda</a></li><li class="nav-section"><a href="../playing-the-game.html#flow-of-play">Flow of play</a></li><li class="nav-section"><a href="../playing-the-game.html#dice-and-moves">Dice and moves</a></li><li class="nav-section"><a href="../playing-the-game.html#your-principles">Your principles</a></li><li class="nav-section"><a href="../playing-the-game.html#other-things-to-do">Other things to do</a></li><li class="nav-section"><a href="../playing-the-game.html#your-character">Your character</a></li><li class="nav-section"><a href="../playing-the-game.html#arcana">Arcana</a></li><li class="nav-section"><a href="../playing-the-game.html#followers">Followers</a></li><li class="nav-section"><a href="../playing-the-game.html#your-home">Your home</a></li><li class="nav-section"><a href="../playing-the-game.html#moves">Moves</a></li><li class="nav-section"><a href="../playing-the-game.html#gear-and-possessions">Gear and possessions</a></li><li class="nav-section"><a href="../playing-the-game.html#if-you-want-to">If you want to…</a></li></ul></li>
+<li class="nav-hub has-sections"><a href="playbooks-inserts.html">Livretos e Encartes</a><ul class="nav-sections"><li class="nav-section"><a href="the-blessed.html">O Abençoado</a></li><li class="nav-section"><a href="the-fox.html">A Raposa</a></li><li class="nav-section"><a href="the-heavy.html">O Brutamontes</a></li><li class="nav-section"><a href="the-judge.html">O Juiz</a></li><li class="nav-section"><a href="the-lightbearer.html">Portador da Luz</a></li><li class="nav-section"><a href="the-marshal.html">Marechal</a></li><li class="nav-section"><a href="the-ranger.html">O Patrulheiro</a></li><li class="nav-section"><a href="the-seeker.html">Buscador</a></li><li class="nav-section"><a href="the-would-be-hero.html">Aspirante a Herói</a></li><li class="nav-section"><a href="inserts.html">Encartes</a></li><li class="nav-section"><a href="inventory.html">Inventário</a></li><li class="nav-section"><a href="animal-companion.html">Companheiro Animal</a></li><li class="nav-section"><a href="crew.html">Tropa</a></li><li class="nav-section"><a href="initiates-of-danu.html">Iniciados de Danu</a></li><li class="nav-section"><a href="invocations.html">Invocações</a></li><li class="nav-section"><a href="followers.html">Seguidores</a></li><li class="nav-section"><a href="ghost.html">Fantasma</a></li><li class="nav-section"><a href="revenant.html">Revenante</a></li><li class="nav-section"><a href="thrall.html">Servo</a></li><li class="nav-section"><a href="steading-playbook.html">Livreto do Povoado</a></li></ul></li>
+<li class="has-sections"><a href="../running-the-game.html" class="nav-en" title="Disponível apenas em inglês" hreflang="en">Running the Game</a><ul class="nav-sections"><li class="nav-section"><a href="../running-the-game.html#your-agenda">Your agenda</a></li><li class="nav-section"><a href="../running-the-game.html#the-core-loop">The core loop</a></li><li class="nav-section"><a href="../running-the-game.html#the-spotlight">The spotlight</a></li><li class="nav-section"><a href="../running-the-game.html#scenes-and-loose-play">Scenes and loose play</a></li><li class="nav-section"><a href="../running-the-game.html#your-gm-moves">Your GM moves</a></li><li class="nav-section"><a href="../running-the-game.html#example-of-play">Example of play</a></li><li class="nav-section"><a href="../running-the-game.html#your-principles">Your principles</a></li><li class="nav-section"><a href="../running-the-game.html#other-things-to-do">Other things to do</a></li><li class="nav-section"><a href="../running-the-game.html#gming-is-a-practice">GMing is a practice</a></li><li class="nav-section"><a href="../running-the-game.html#prep">Prep</a></li></ul></li>
+<li class="has-sections"><a href="player-moves.html">Movimentos dos Jogadores</a><ul class="nav-sections"><li class="nav-section"><a href="player-moves.html#defy-danger">Desafiar o Perigo</a></li><li class="nav-section"><a href="player-moves.html#aid">Ajudar</a></li><li class="nav-section"><a href="player-moves.html#clash">Cruzar Lâminas</a></li><li class="nav-section"><a href="player-moves.html#defend">Defender</a></li><li class="nav-section"><a href="player-moves.html#interfere">Interferir</a></li><li class="nav-section"><a href="player-moves.html#know-things">Saber Das Coisas</a></li><li class="nav-section"><a href="player-moves.html#let-fly">Disparar</a></li><li class="nav-section"><a href="player-moves.html#seek-insight">Buscar Discernimento</a></li><li class="nav-section"><a href="player-moves.html#special-moves">Movimentos especiais</a></li><li class="nav-section"><a href="player-moves.html#advantage-disadvantage">Vantagem/Desvantagem</a></li><li class="nav-section"><a href="player-moves.html#burn-brightly">Arder com Intensidade</a></li><li class="nav-section"><a href="player-moves.html#end-of-session">Fim de Sessão</a></li><li class="nav-section"><a href="player-moves.html#deaths-door">À Beira da Morte</a></li></ul></li>
+<li class="has-sections current"><a href="harm-healing.html">Dano e Cura</a><ul class="nav-sections"><li class="nav-section"><a href="harm-healing.html#hit-points-and-damage">Pontos de vida e dano</a></li><li class="nav-section"><a href="harm-healing.html#debilities">Debilidades</a></li><li class="nav-section"><a href="harm-healing.html#problematic-wounds">Ferimentos problemáticos</a></li><li class="nav-section"><a href="harm-healing.html#death-and-dying">Morte e agonia</a></li></ul></li>
+<li class="has-sections"><a href="first-adventure.html">A Primeira Aventura</a><ul class="nav-sections"><li class="nav-section"><a href="first-adventure.html#structure">Estrutura</a></li><li class="nav-section"><a href="first-adventure.html#background">Pano de fundo</a></li><li class="nav-section"><a href="first-adventure.html#setup-questions">Perguntas de preparação</a></li><li class="nav-section"><a href="first-adventure.html#setting-the-scene">Enquadrando a cena</a></li><li class="nav-section"><a href="first-adventure.html#dropping-the-hook">Soltando o gancho</a></li><li class="nav-section"><a href="first-adventure.html#heading-out">Partindo</a></li></ul></li>
+<li class="has-sections"><a href="../threats.html" class="nav-en" title="Disponível apenas em inglês" hreflang="en">Threats</a><ul class="nav-sections"><li class="nav-section"><a href="../threats.html#when-to-write-up-threats">When to write up threats</a></li><li class="nav-section"><a href="../threats.html#writing-a-threat">Writing a threat</a></li><li class="nav-section"><a href="../threats.html#example-threats">Example threats</a></li><li class="nav-section"><a href="../threats.html#updating">Updating</a></li></ul></li>
+<li class="has-sections"><a href="../expeditions.html" class="nav-en" title="Disponível apenas em inglês" hreflang="en">Expeditions</a><ul class="nav-sections"><li class="nav-section"><a href="../expeditions.html#preparations">Preparations</a></li><li class="nav-section"><a href="../expeditions.html#running-the-journey">Running the journey</a></li><li class="nav-section"><a href="../expeditions.html#player-moves">Player moves</a></li><li class="nav-section"><a href="../expeditions.html#going-home">Going home</a></li><li class="nav-section"><a href="../expeditions.html#what-to-prep">What to prep</a></li></ul></li>
+<li class="has-sections"><a href="../sites.html" class="nav-en" title="Disponível apenas em inglês" hreflang="en">Sites</a><ul class="nav-sections"><li class="nav-section"><a href="../sites.html#environmental-storytelling">Environmental storytelling</a></li><li class="nav-section"><a href="../sites.html#running-sites">Running sites</a></li><li class="nav-section"><a href="../sites.html#exploring-sites">Exploring sites</a></li><li class="nav-section"><a href="../sites.html#creating-sites">Creating sites</a></li><li class="nav-section"><a href="../sites.html#the-green-lords-tomb">THE GREEN LORD&#x27;S TOMB</a></li></ul></li>
+<li class="has-sections"><a href="../dangers.html" class="nav-en" title="Disponível apenas em inglês" hreflang="en">Dangers</a><ul class="nav-sections"><li class="nav-section"><a href="../dangers.html#hazards">Hazards</a></li><li class="nav-section"><a href="../dangers.html#monsters">Monsters</a></li><li class="nav-section"><a href="../dangers.html#running-combat">Running combat</a></li></ul></li>
+<li class="has-sections"><a href="../discoveries.html" class="nav-en" title="Disponível apenas em inglês" hreflang="en">Discoveries</a><ul class="nav-sections"><li class="nav-section"><a href="../discoveries.html#clues">Clues</a></li><li class="nav-section"><a href="../discoveries.html#sites">Sites</a></li><li class="nav-section"><a href="../discoveries.html#encounters">Encounters</a></li><li class="nav-section"><a href="../discoveries.html#opportunities">Opportunities</a></li><li class="nav-section"><a href="../discoveries.html#artifacts">Artifacts</a></li><li class="nav-section"><a href="../discoveries.html#arcana">Arcana</a></li></ul></li>
+<li class="has-sections"><a href="../npcs-followers.html" class="nav-en" title="Disponível apenas em inglês" hreflang="en">NPCs &amp; Followers</a><ul class="nav-sections"><li class="nav-section"><a href="../npcs-followers.html#npcs-in-play">NPCs in play</a></li><li class="nav-section"><a href="../npcs-followers.html#creating-npcs">Creating NPCs</a></li><li class="nav-section"><a href="../npcs-followers.html#follower-moves">Follower moves</a></li><li class="nav-section"><a href="../npcs-followers.html#order-followers">Order Followers</a></li><li class="nav-section"><a href="../npcs-followers.html#strengthen-your-bond">Strengthen Your Bond</a></li><li class="nav-section"><a href="../npcs-followers.html#followers-in-play">Followers in play</a></li><li class="nav-section"><a href="../npcs-followers.html#creating-followers">Creating followers</a></li><li class="nav-section"><a href="../npcs-followers.html#updating-followers">Updating followers</a></li><li class="nav-section"><a href="../npcs-followers.html#losing-followers">Losing followers</a></li></ul></li>
+<li class="has-sections"><a href="../homefront.html" class="nav-en" title="Disponível apenas em inglês" hreflang="en">Homefront</a><ul class="nav-sections"><li class="nav-section"><a href="../homefront.html#bringing-the-village-to-life">Bringing the village to life</a></li><li class="nav-section"><a href="../homefront.html#running-the-homefront">Running the homefront</a></li><li class="nav-section"><a href="../homefront.html#aftermath">Aftermath</a></li><li class="nav-section"><a href="../homefront.html#the-steading-playbook">The steading playbook</a></li><li class="nav-section"><a href="../homefront.html#seasons-change">Seasons Change</a></li><li class="nav-section"><a href="../homefront.html#player-moves">Player moves</a></li><li class="nav-section"><a href="../homefront.html#bolster">Bolster</a></li><li class="nav-section"><a href="../homefront.html#convalesce">Convalesce</a></li><li class="nav-section"><a href="../homefront.html#deploy">Deploy</a></li><li class="nav-section"><a href="../homefront.html#level-up">Level Up</a></li><li class="nav-section"><a href="../homefront.html#make-a-plan">Make a Plan</a></li><li class="nav-section"><a href="../homefront.html#meet-with-disaster">Meet with Disaster</a></li><li class="nav-section"><a href="../homefront.html#muster">Muster</a></li><li class="nav-section"><a href="../homefront.html#pull-together">Pull Together</a></li><li class="nav-section"><a href="../homefront.html#trade-barter">Trade &amp; Barter</a></li><li class="nav-section"><a href="../homefront.html#what-to-prep">What to prep</a></li></ul></li>
+<li><a href="writing-moves-love-letters.html">Escrevendo Movimentos e Cartas de Amor</a></li>
+<li class="has-sections"><a href="the-game-ongoing.html">O Jogo em Andamento</a><ul class="nav-sections"><li class="nav-section"><a href="the-game-ongoing.html#ending-a-session">Encerrando uma sessão</a></li><li class="nav-section"><a href="the-game-ongoing.html#between-sessions">Entre as sessões</a></li><li class="nav-section"><a href="the-game-ongoing.html#starting-a-session">Começando uma sessão</a></li><li class="nav-section"><a href="the-game-ongoing.html#pacing">Ritmo</a></li><li class="nav-section"><a href="the-game-ongoing.html#advancement">Evolução</a></li><li class="nav-section"><a href="the-game-ongoing.html#retiring-pcs">Aposentando PJs</a></li><li class="nav-section"><a href="the-game-ongoing.html#new-pcs">PJs novos</a></li><li class="nav-section"><a href="the-game-ongoing.html#conflict-between-pcs">Conflito entre PJs</a></li><li class="nav-section"><a href="the-game-ongoing.html#time-skips">Saltos no tempo</a></li><li class="nav-section"><a href="the-game-ongoing.html#shake-ups">Reviravoltas</a></li><li class="nav-section"><a href="the-game-ongoing.html#ending-your-game">Encerrando seu jogo</a></li></ul></li>
+<li><a href="acknowledgements.html">Agradecimentos</a></li>
+<li><a href="mediography.html">Mediografia</a></li>
+<li class="nav-book-label">Livro II</li>
+<li><a href="welcome-to-the-worlds-end.html">Bem-vindo ao Fim do Mundo</a></li>
+<li><a href="the-village-of-stonetop.html">Aldeia de Stonetop</a></li>
+<li><a href="aratis-the-lawkeeper.html">Aratis, a Guardiã da Lei</a></li>
+<li><a href="barrier-pass.html">Passo da Barreira</a></li>
+<li><a href="barrow-builders.html">Construtores de Túmulos</a></li>
+<li><a href="blackwater-lake.html">Lago das Águas Negras</a></li>
+<li><a href="crinwin.html">Crinwin</a></li>
+<li><a href="the-crombil.html">Crombil</a></li>
+<li><a href="danu-the-earth-mother.html">Danu, a Mãe Terra</a></li>
+<li><a href="death-and-the-undying.html">Morte e os Que Não Morrem</a></li>
+<li><a href="the-dread-river.html">Rio Pavor</a></li>
+<li><a href="fae.html">Fae</a></li>
+<li><a href="ferriers-fen.html">Brejo de Ferrier</a></li>
+<li><a href="the-flats.html">Planícies</a></li>
+<li><a href="fomoraij.html">Fomoraij</a></li>
+<li><a href="the-foothills.html">Contrafortes</a></li>
+<li><a href="forest-folk.html">Povo da Floresta</a></li>
+<li><a href="forge-lords.html">Senhores da Forja</a></li>
+<li><a href="the-frozen-wastes.html">Ermos Gelados</a></li>
+<li><a href="gods-and-religion.html">Deuses e Religião</a></li>
+<li><a href="the-golden-oak.html">Carvalho Dourado</a></li>
+<li><a href="gordins-delve.html">Cava de Gordin</a></li>
+<li><a href="the-great-wood.html">Grande Mata</a></li>
+<li><a href="green-lords.html">Senhores Verdes</a></li>
+<li><a href="helior-the-daybringer.html">Helior, o Traz-o-Dia</a></li>
+<li><a href="hillfolk.html">Povo das Colinas</a></li>
+<li><a href="huffel-peaks.html">Picos de Huffel</a></li>
+<li><a href="the-labyrinth.html">Labirinto</a></li>
+<li><a href="lygos-and-the-south.html">Lygos e o Sul</a></li>
+<li><a href="the-makers.html">Construtores</a></li>
+<li><a href="the-makers-roads.html">Estradas dos Construtores</a></li>
+<li><a href="marshedge.html">Beira-Brejo</a></li>
+<li><a href="the-maw.html">Goela</a></li>
+<li><a href="north-manmarch.html">Marcha Norte</a></li>
+<li><a href="the-pale-hunter.html">Caçador Pálido</a></li>
+<li><a href="primordial-powers.html">Poderes Primordiais</a></li>
+<li><a href="red-groves.html">Bosques Vermelhos</a></li>
+<li><a href="rime-lords.html">Senhores da Geada</a></li>
+<li><a href="the-ruined-tower.html">Torre em Ruínas</a></li>
+<li><a href="south-manmarch.html">Marcha Sul</a></li>
+<li><a href="spirits-of-the-wild.html">Espíritos do Ermo</a></li>
+<li><a href="the-steplands.html">Terras Escalonadas</a></li>
+<li><a href="stone-lords.html">Senhores da Pedra</a></li>
+<li><a href="the-stream.html">Riacho</a></li>
+<li><a href="tempest-lords.html">Senhores da Tempestade</a></li>
+<li><a href="the-things-below.html">Coisas de Baixo</a></li>
+<li><a href="three-coven-lake.html">Lago das Três Assembleias</a></li>
+<li><a href="titan-bones.html">Ossos do Titã</a></li>
+<li><a href="tor-the-rain-maker.html">Tor, o Traz-Chuva</a></li>
+<li><a href="useful-or-valuable-flora.html">Flora Útil ou Valiosa</a></li>
+<li><a href="ustrina.html">Ustrina</a></li>
+<li><a href="vor-svetelik.html">Vor Svetelik</a></li>
+<li><a href="waystones.html">Pedras-Guia</a></li>
+<li><a href="the-whitefang-mountains.html">Montanhas Presa-Branca</a></li>
+<li><a href="appendix-a-ages-of-the-world.html">Apêndice A: As Eras do Mundo</a></li>
+<li><a href="appendix-b-artifact-creation.html">Apêndice B: Criação de Artefatos</a></li>
+<li class="nav-hub"><a href="../appendix-c-minor-arcana.html" class="nav-en" title="Disponível apenas em inglês" hreflang="en">Appendix C: Minor Arcana</a></li>
+<li class="nav-arcana"><a href="minor-laoj-daveths-galvanic-infusion.html">1. A Infusão Galvânica de Laoj Daveth</a></li>
+<li class="nav-arcana"><a href="minor-truth-seeds.html">2. As Sementes da Verdade</a></li>
+<li class="nav-arcana"><a href="minor-old-mothers-wine.html">3. O Vinho da Velha Mãe</a></li>
+<li class="nav-arcana"><a href="minor-aalz-galts-sudden-sinkhole.html">4. O Sumidouro Súbito de Aalz Galt</a></li>
+<li class="nav-arcana"><a href="minor-shell-game-of-souls.html">5. O Jogo de Almas</a></li>
+<li class="nav-arcana"><a href="minor-thunderous-bellow.html">6. O Bramido Trovejante</a></li>
+<li class="nav-arcana"><a href="minor-the-fiery-veil.html">7. O Véu Flamejante</a></li>
+<li class="nav-arcana"><a href="minor-the-tomb-bogs-mark.html">8. A Marca do Brejo-Túmulo</a></li>
+<li class="nav-arcana"><a href="minor-fear-of-the-flame.html">9. O Medo da Chama</a></li>
+<li class="nav-arcana"><a href="minor-mantle-wraiths.html">10. Os Espectros do Manto</a></li>
+<li class="nav-arcana"><a href="minor-shattering-words-of-aalz-childric.html">11. As Palavras Estilhaçantes de Aalz Childric</a></li>
+<li class="nav-arcana"><a href="minor-ffyrnig-tonic.html">12. O Tônico de Ffyrnig</a></li>
+<li class="nav-arcana"><a href="minor-song-of-the-dool-trees.html">13. A Canção das Árvores Dool</a></li>
+<li class="nav-arcana"><a href="minor-ward-of-still-waters.html">14. A Proteção das Águas Paradas</a></li>
+<li class="nav-arcana"><a href="minor-ice-weaving.html">15. O Tecer do Gelo</a></li>
+<li class="nav-arcana"><a href="minor-the-six-locks-of-sajua.html">16. Os Seis Cadeados de Sajua</a></li>
+<li class="nav-arcana"><a href="minor-heliors-shining-ring.html">17. O Anel Reluzente de Helior</a></li>
+<li class="nav-arcana"><a href="minor-nerth-serpents-vigor.html">18. O Vigor da Serpente de Nerth</a></li>
+<li class="nav-arcana"><a href="minor-goldleaf-cloak.html">19. O Manto de Folha Dourada</a></li>
+<li class="nav-arcana"><a href="minor-opening-the-way.html">20. Abrir o Caminho</a></li>
+<li class="nav-arcana"><a href="minor-the-drowning-scale.html">21. A Escama do Afogamento</a></li>
+<li class="nav-arcana"><a href="minor-preserving-runes.html">22. As Runas da Preservação</a></li>
+<li class="nav-arcana"><a href="minor-peacebond.html">23. O Selo de Paz</a></li>
+<li class="nav-arcana"><a href="minor-the-eye-opened.html">24. O Olho, Aberto</a></li>
+<li class="nav-arcana"><a href="minor-sanctifying-mark.html">25. A Marca Santificante</a></li>
+<li class="nav-arcana"><a href="minor-the-green-lords-shade.html">26. A Sombra do Senhor Verde</a></li>
+<li class="nav-arcana"><a href="minor-chimeric-transmogrification.html">27. A Transmutação Quimérica</a></li>
+<li class="nav-arcana"><a href="minor-the-sylvan-web.html">28. A Teia Silvestre</a></li>
+<li class="nav-arcana"><a href="minor-flying-cloak.html">29. O Manto Voador</a></li>
+<li class="nav-arcana"><a href="minor-satchel-of-plenty.html">30. A Bolsa da Fartura</a></li>
+<li class="nav-arcana"><a href="minor-dancing-wind-spirit.html">31. O Espírito do Vento Dançante</a></li>
+<li class="nav-arcana"><a href="minor-call-of-the-hunt.html">32. O Chamado da Caçada</a></li>
+<li class="nav-arcana"><a href="minor-convocation-of-the-soil.html">33. A Convocação do Solo</a></li>
+<li class="nav-arcana"><a href="minor-unliving-chimera.html">34. A Quimera Sem Vida</a></li>
+<li class="nav-arcana"><a href="minor-impudent-polymorph.html">35. A Metamorfose Impudente</a></li>
+<li class="nav-arcana"><a href="minor-make-pliant-the-stone.html">36. Amolecer a Pedra</a></li>
+<li class="nav-arcana"><a href="minor-plaster-of-joining.html">37. O Emplastro da União</a></li>
+<li class="nav-arcana"><a href="minor-cold-mind-iron-body.html">38. Mente Fria, Corpo de Ferro</a></li>
+<li class="nav-arcana"><a href="minor-little-friend.html">39. Pequeno Amigo</a></li>
+<li class="nav-arcana"><a href="minor-revealing-light.html">40. A Luz Reveladora</a></li>
+<li class="nav-arcana"><a href="minor-darkwalker-cloak.html">41. O Manto do Andarilho das Trevas</a></li>
+<li class="nav-arcana"><a href="minor-the-flesh-is-like-clay.html">42. A Carne É Como Barro</a></li>
+<li class="nav-arcana"><a href="minor-fetchs-mask.html">43. A Máscara do Duplo</a></li>
+<li class="nav-arcana"><a href="minor-witch-bottle.html">44. A Garrafa da Bruxa</a></li>
+<li class="nav-arcana"><a href="minor-wishing-candles.html">45. As Velas dos Desejos</a></li>
+<li class="nav-arcana"><a href="minor-baleful-utterance.html">46. A Palavra Funesta</a></li>
+<li class="nav-arcana"><a href="minor-aetherium-spear.html">47. A Lança de Etério</a></li>
+<li class="nav-arcana"><a href="minor-staff-of-magnetism.html">48. O Cajado do Magnetismo</a></li>
+<li class="nav-arcana"><a href="minor-groundskimmer.html">49. O Rasante</a></li>
+<li class="nav-arcana"><a href="minor-thunderbolt-bow.html">50. O Arco do Trovão</a></li>
+<li class="nav-arcana"><a href="minor-bronze-protector.html">51. O Protetor de Bronze</a></li>
+<li class="nav-arcana"><a href="minor-sublime-words.html">52. As Palavras Sublimes</a></li>
+<li class="nav-arcana"><a href="minor-flaming-sword.html">53. A Espada Flamejante</a></li>
+<li class="nav-arcana"><a href="minor-searing-touch.html">54. O Toque Escaldante</a></li>
+<li class="nav-arcana"><a href="minor-sigil-of-authority.html">55. O Sigilo da Autoridade</a></li>
+<li class="nav-arcana"><a href="minor-horn-of-storms.html">56. O Chifre das Tempestades</a></li>
+<li class="nav-arcana"><a href="minor-moonstone.html">57. A Pedra da Lua</a></li>
+<li class="nav-arcana"><a href="minor-hand-of-aals-sannan.html">58. A Mão de Aals Sannan</a></li>
+<li class="nav-arcana"><a href="minor-bittersweet-elixir.html">59. O Elixir Agridoce</a></li>
+<li class="nav-arcana"><a href="minor-the-brooms-lullaby.html">60. A Canção de Ninar da Vassoura</a></li>
+<li class="nav-arcana"><a href="minor-the-angry-little-god.html">61. O Deusinho Raivoso</a></li>
+<li class="nav-arcana"><a href="minor-the-silver-branch.html">62. O Ramo de Prata</a></li>
+<li class="nav-arcana"><a href="minor-void-elemental.html">63. O Elemental do Vazio</a></li>
+<li class="nav-arcana"><a href="minor-runes-of-creation.html">64. As Runas da Criação</a></li>
+<li class="nav-hub"><a href="../appendix-d-major-arcana.html" class="nav-en" title="Disponível apenas em inglês" hreflang="en">Appendix D: Major Arcana</a></li>
+<li class="nav-arcana"><a href="major-staff-of-the-lidless-orb.html">1. O Cajado do Olho sem Pálpebra</a></li>
+<li class="nav-arcana"><a href="major-twisted-spear.html">2. A Lança Retorcida</a></li>
+<li class="nav-arcana"><a href="major-demonhide-cloak.html">3. O Manto de Pele de Demônio</a></li>
+<li class="nav-arcana"><a href="major-norubas-ice-sphere.html">4. A Esfera de Gelo de Noruba</a></li>
+<li class="nav-arcana"><a href="major-mindgem.html">5. A Gema da Mente</a></li>
+<li class="nav-arcana"><a href="major-whispering-rocks.html">6. As Pedras Sussurrantes</a></li>
+<li class="nav-arcana"><a href="major-blood-quenched-sword.html">7. A Espada Temperada em Sangue</a></li>
+<li class="nav-arcana"><a href="major-shield-of-the-wisent-witch.html">8. O Escudo da Bruxa do Bisão</a></li>
+<li class="nav-arcana"><a href="major-hectumel-codex.html">9. O Códice de Hec&#x27;tumel</a></li>
+<li class="nav-arcana"><a href="major-red-scepter.html">10. O Cetro Vermelho</a></li>
+<li class="nav-arcana"><a href="major-ring-of-daagon.html">11. O Anel de Daagon</a></li>
+<li class="nav-arcana"><a href="major-rune-laden-scales.html">12. As Escamas Rúnicas</a></li>
+<li class="nav-arcana"><a href="major-blackwood-fetishes.html">13. Os Fetiches de Madeira Negra</a></li>
+<li class="nav-arcana"><a href="major-storm-markings.html">14. As Marcas da Tempestade</a></li>
+<li class="nav-arcana"><a href="major-ineffable-words.html">15. As Palavras Inefáveis</a></li>
+<li class="nav-arcana"><a href="major-redwood-effigy.html">16. A Efígie de Sequoia</a></li>
+<li class="nav-arcana"><a href="major-hungering-maw-of-hlad.html">17. A Bocarra Faminta de Hlad</a></li>
+<li class="nav-arcana"><a href="major-azure-hand.html">18. A Mão Azul</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-foot"><details class="lang-switch"><summary title="Idioma"><span class="lang-globe" aria-hidden="true">🌐</span><span class="lang-code" aria-hidden="true">PT</span><span class="lang-label">Idioma</span><span class="lang-now">Português (Brasil)</span></summary><ul class="lang-list"><li><a href="../harm-healing.html" hreflang="en" lang="en">English</a></li><li><span class="lang-current" aria-current="page" lang="pt-BR">Português (Brasil)</span></li></ul></details><span class="sidebar-credit">Texto de <em>Stonetop</em>, por Jeremy Strandberg, <a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">CC BY-SA 4.0</a></span><a class="sidebar-github" href="https://github.com/Bryan-Legend/stonetop-wiki-generator">GitHub</a><button type="button" class="sound-toggle" id="sound-toggle" aria-pressed="true" title="Som dos dados"><span class="sound-on" aria-hidden="true">🔊</span><span class="sound-off" aria-hidden="true">🔇</span><span class="sound-label">Som dos dados</span></button></div>
+    </aside>
+    <div class="main-wrap">
+      <div class="content-scroll" id="main">
+        <main class="content">
+          <h1 class="page-title">Dano e Cura</h1>
+<p>Os personagens dos jogadores e seus seguidores muitas vezes se veem em perigo, expostos a ferimentos e danos. Ver que eles se machucam e depois ver como lidam com isso é boa parte de <strong>jogar para descobrir o que acontece</strong>.</p>
+<p>Existem basicamente quatro tipos de dano que um personagem pode sofrer:</p>
+<ul class="bullets"><li>Dano aos Pontos de Vida (HP)</li><li>Debilidades</li><li>Ferimentos problemáticos na ficção</li><li>Morte ou um ferimento letal</li></ul>
+<p>Sempre que um personagem (PJ ou NPC) se machuca na ficção, ele sofre alguns desses tipos de dano ou todos eles. Cada um afeta o personagem de um jeito.</p>
+<h2 id="hit-points-and-damage">Pontos de vida e dano</h2>
+<p>Todo personagem (PJ, NPC e monstro) tem Pontos de Vida (HP). Quando um personagem se machuca, leva pancada, apanha ou sofre maus-tratos de algum tipo, ele perde HP. Isso se chama “sofrer dano”; quando você faz isso com outra pessoa, chama-se “causar dano”.</p>
+<p>Quando alguém é reduzido a 0 HP, está fora de ação e bem possivelmente morto ou morrendo.</p>
+<p>HP são um elemento de jogo: não representam nenhuma coisa específica na ficção. São uma mistura de garra, determinação, coragem, sorte e habilidade; a capacidade de transformar o que deveria ser um golpe letal num arranhão. HP decididamente <em>não</em> são uma medida de quão ferido ou ileso um personagem está.</p>
+<p>Mecanicamente, HP funcionam como blindagem narrativa e como mecanismo de ritmo. Um PJ com 20 HP pode confiar que sobreviverá à primeira troca de golpes numa luta. Mas quando um PJ só tem 5 ou 6 HP restantes, qualquer golpe de qualquer inimigo pode tirá-lo de ação — e isso torna tudo mais tenso e perigoso.</p>
+<p>Os PJs em geral têm mais HP que NPCs ou monstros. Isso porque são os protagonistas; estamos contando a história deles, então têm mais golpes de sorte e escapadas por pouco.</p>
+<h2 id="damage">Dano</h2>
+<p>Sofrer dano significa perder HP e, possivelmente, ser tirado de ação. Um personagem sofre dano quando...</p>
+<ul class="ellipsis"><li>um movimento voltado ao jogador diz especificamente que sim;</li><li>você <strong>o machuca</strong> (ele sofre dano junto com o ferimento na ficção);</li><li>você <strong>consome os recursos dele</strong>, e os HP são o recurso consumido; ou</li><li>você faz qualquer movimento de mestre que envolva ele ser atingido, levar pancada, apanhar, sentir dor etc.</li></ul>
+<p>Se você fizer um movimento de mestre que, em tese, poderia matar, incapacitar ou nocautear uma pessoa comum, então cause dano também. Causar dano quase nunca deve ser o seu movimento, mas muitas vezes será <em>parte</em> dele.</p>
+<h3 id="how-much-damage">Quanto dano?</h3>
+<p>Se a fonte do dano for um <strong>perigo</strong> <a class="wiki-link" href="../dangers.html" data-slug="dangers" >preparado</a>, use os atributos do perigo.</p>
+<p>Por exemplo, se seu movimento é um hagr arrancar um PJ do chão e começar a sufocá-lo, você causaria os</p>
+<p><button type="button" class="dice-roll" data-dice="1d10+3" title="Clique para rolar 1d10+3 — Shift: vantagem · Ctrl: desvantagem">1d10+3</button> de dano do hagr.</p>
+<p><strong>Quando vários combatentes causam dano ao mesmo tempo</strong>, role o maior dado de dano entre eles e some +1 para cada combatente adicional. Valem as etiquetas de todos os combatentes. Então, se seis coedwig (espíritos-espinho, causando <button type="button" class="dice-roll" data-dice="d6" title="Clique para rolar d6 — Shift: vantagem · Ctrl: desvantagem">d6</button> de dano, 1 perfurante) e uma birdwraig (espírito de árvore, <button type="button" class="dice-roll" data-dice="d8+3" title="Clique para rolar d8+3 — Shift: vantagem · Ctrl: desvantagem">d8+3</button> de dano, <em>contundente</em>) baterem no Brutamontes ao mesmo tempo, ele sofre <button type="button" class="dice-roll" data-dice="d8+9" title="Clique para rolar d8+9 — Shift: vantagem · Ctrl: desvantagem">d8+9</button> de dano (1 perfurante, <em>contundente</em>) — e provavelmente está tendo um dia muito ruim.</p>
+<p><strong>Se o dano não estiver associado a um perigo preparado</strong>, pergunte-se o que ele provavelmente faria com uma pessoa comum. Se o pior que pode fazer é…</p>
+<ul class="ellipsis"><li>causar hematomas e arranhões, dor ou queimaduras leves, ele causa <button type="button" class="dice-roll" data-dice="d4" title="Clique para rolar d4 — Shift: vantagem · Ctrl: desvantagem">d4</button> de dano.</li><li>causar ferimentos feios, hematomas ou queimaduras, ele causa <button type="button" class="dice-roll" data-dice="d6" title="Clique para rolar d6 — Shift: vantagem · Ctrl: desvantagem">d6</button> de dano.</li><li>quebrar ossos, causar queimaduras profundas/extensas ou incapacitar de dor, ele causa <button type="button" class="dice-roll" data-dice="d8" title="Clique para rolar d8 — Shift: vantagem · Ctrl: desvantagem">d8</button> de dano.</li><li>causar morte ou mutilação, ele causa <button type="button" class="dice-roll" data-dice="d10" title="Clique para rolar d10 — Shift: vantagem · Ctrl: desvantagem">d10</button> de dano.</li></ul>
+<h2 id="armor">Armadura</h2>
+<p>Subtraia o valor de armadura da vítima do dano que ela sofre. Isso pode reduzir o dano a 0, ou seja, ela não perde HP algum. Ótimo para ela! Mesmo assim ela foi atingida/arremessada/o que for, mas isso não consumiu nada da vitalidade, da sorte nem da blindagem narrativa dela.</p>
+<p>Se o ataque tiver a etiqueta “[<em>n</em>] perfurante”, ignore [<em>n</em>] pontos de armadura para esse ataque.</p>
+<p>Então, se você causar 5 de dano (1 perfurante) e o alvo tiver 2 de armadura, a armadura dele vale só 1 para esse ataque; ele perde 4 HP (mas o valor de armadura continua sendo 2 contra ataques futuros).</p>
+<p>Se o ataque “ignora armadura”, então a armadura não se aplica. O alvo sofre o dano inteiro. Aplique esta etiqueta na hora, quando a ficção pedir: cota de malha não ajuda quando você está envolto em chamas, e nenhuma armadura física protege de um ataque psíquico.</p>
+<p>Alguns movimentos voltados ao jogador dizem para o jogador “perder [<em>n</em>] HP” (em vez de “sofrer [<em>n</em>] de dano”). A armadura nunca se aplica a esse tipo de perda de HP.</p>
+<h2 id="taking-damage">Sofrendo dano</h2>
+<p>Quando um personagem sofre dano, reduz seus HP atuais nessa quantidade. Se for reduzido a 0 HP, fica fora de ação.</p>
+<p><strong>Quando um personagem de jogador é reduzido a 0 HP e a fonte do dano era potencialmente letal</strong>, o PJ está À Beira da Morte e faz esse movimento (veja a <a class="wiki-link" href="#death-and-dying" data-slug="harm-healing" data-fragment="death-and-dying">Morte e agonia</a>). <strong>Se a fonte do dano dificilmente mataria alguém</strong>, o PJ está simplesmente fora de ação: inconsciente, ofegante, em pânico, preso etc.</p>
+<p>Considere perguntar ao jogador como ou por que ele é tirado de ação. Um personagem incapacitado assim não consegue se salvar sozinho; ele continua incapacitado até que alguém o ajude, ou até você dizer o contrário.</p>
+<p><strong>Quando um NPC ou monstro é reduzido a 0 HP</strong>, o destino dele está nas suas mãos. Se a fonte do dano era potencialmente letal, ele provavelmente está morto ou logo estará. Caso contrário, está fora de ação e fora da luta, mas cabe a você dizer como. Lembre-se, porém: não é seu trabalho proteger seus NPCs ou monstros. <strong>Deixe queimar.</strong></p>
+<p><strong>Seguidores</strong> <a class="wiki-link" href="../npcs-followers.html" data-slug="npcs-followers" >NPCs &amp; Followers</a> são NPCs, então cabe a você decidir o que acontece com eles a 0 HP. Você pode, contudo, escolher que o jogador role À Beira da Morte por eles.</p>
+<p>Se você <strong>o machucar</strong>, os HP perdidos fazem parte do ferimento na ficção. Fora isso, sofrer dano significa arranhões e hematomas, músculos doloridos, dentes chacoalhados, lábios cortados e narizes sangrando, falta de ar, tontura, dor, cansaço e fadiga. É o desgaste que vai moendo alguém sem tirá-lo da luta.</p>
+<h2 id="regaining-hit-points">Recuperando pontos de vida</h2>
+<p>Um PJ ou seguidor recupera HP quando...</p>
+<ul class="ellipsis"><li>ele se <strong>Recupera</strong> <a class="wiki-link" href="../expeditions.html" data-slug="expeditions" >Expeditions</a>;</li><li>ele <strong>Acampa</strong> <a class="wiki-link" href="../expeditions.html" data-slug="expeditions" >Expeditions</a> e escolhe recuperar HP;</li><li>ele está <strong>À Beira da Morte</strong> <a class="wiki-link" href="#death-and-dying" data-slug="harm-healing" data-fragment="death-and-dying">Morte e agonia</a> e tira 10+;</li><li>ele tem alguns dias de descanso e <strong>Convalesce</strong> <a class="wiki-link" href="#and-recovery" data-slug="harm-healing" data-fragment="and-recovery">e recuperação</a>;</li><li>outro movimento diz que sim; ou</li><li>você <strong>oferece a ele uma oportunidade</strong> de recuperar HP e ele aceita.</li></ul>
+<p>NPCs que não são seguidores e monstros recuperam</p>
+<p>HP quando você decidir. Use os movimentos dos jogadores como guia: alguns minutos de descanso e acesso a suprimentos restauram 3 a 5 HP; uma noite de descanso restaura HP igual à metade do máximo; alguns dias de descanso e recuperação restauram os HP por completo. A ficção, claro, tem prioridade. Uma criatura sobrenaturalmente dura e resistente pode restaurar HP mais rápido; um constructo mágico pode não recuperar HP a menos que alguém ou algo o conserte ou recarregue.</p>
+<p>Lembre-se: HP não são “pontos de carne”.</p>
+<p>Recuperar HP não significa que os ferimentos fecharam ou que os ossos soldaram; significa que a pessoa se acostumou com a dor, conseguiu estancar o sangue, recuperou o fôlego. Os ferimentos continuam ali até sararem. É só que o personagem tem mais luta dentro de si e está de novo mais longe de um golpe letal.</p>
+<h2 id="debilities">Debilidades</h2>
+<p>Os personagens dos jogadores podem sofrer até três debilidades diferentes:</p>
+<ul class="bullets"><li><strong><em>Enfraquecido</em></strong>: o personagem está fatigado, cansado, lerdo, trêmulo. Ele sofre desvantagem ao rolar +STR ou +DEX.</li><li><strong><em>Atordoado</em></strong>: o personagem está fora de si, confuso, sem pensar direito. Ele sofre desvantagem ao rolar +INT ou +WIS.</li><li><strong><em>Abatido</em></strong>: o personagem está muito angustiado, rabugento ou irritado, adoentado, com dor. Ele sofre desvantagem ao rolar +CON ou +CHA.</li></ul>
+<p>Além da penalidade mecânica, as debilidades têm consequências ficcionais. Um personagem <em>abatido</em> está abatido, e você deve tecer isso nas suas descrições e nos seus movimentos de mestre. Uma debilidade pode fazer com que alguém precise Desafiar o Perigo quando normalmente não precisaria.</p>
+<h2 id="marking-debilities">Marcando debilidades</h2>
+<p>Os jogadores marcam as debilidades na ficha para indicar que o personagem sofre delas. Os personagens dos jogadores podem marcar uma debilidade porque...</p>
+<ul class="ellipsis"><li>eles disparam um movimento de jogador, e o movimento diz que marcam uma debilidade;</li><li>você os machuca, e o dano infligido inclui marcar uma debilidade;</li><li>você mostra uma desvantagem, ou oferece uma oportunidade com um custo, ou diz a eles as consequências, e a desvantagem/o custo/a consequência é marcar uma debilidade; ou</li><li>você faz qualquer outro movimento de mestre que envolva eles ficarem <em>enfraquecidos</em>, <em>atordoados</em> ou <em>abatidos</em>, e pede que marquem essa debilidade.</li></ul>
+<p>Em outras palavras: marcar debilidades é tanto prescritivo quanto descritivo. Prescritivo:</p>
+<p>um movimento diz que eles marcam a debilidade, e então eles sofrem dessa condição na ficção. Descritivo: algo acontece na ficção que deixaria o personagem <em>enfraquecido</em>, <em>atordoado</em> ou <em>abatido</em>, e por isso ele marca a debilidade e sofre a penalidade mecânica.</p>
+<p>Se um movimento disser ao jogador para “marcar uma debilidade”, ele pode escolher qual marcar.</p>
+<p>Pergunte a ele como isso aparece na ficção. A invocação do Portador da Luz o deixou <em>abatido</em>? Por que essa debilidade? Quais são os sintomas? Como isso parece para todos os outros?</p>
+<p>Se um movimento faz o jogador marcar uma debilidade específica e ela já está marcada, ele teve sorte. Talvez a condição piore um pouco na ficção, mas a penalidade mecânica continua a mesma. Se marcar a debilidade específica for uma escolha opcional e ela já estiver marcada, então ele não pode escolher essa opção.</p>
+<p>Se um movimento exigir que o PJ marque uma debilidade como parte do gatilho, e a debilidade já estiver marcada, ele não pode disparar o movimento. Por exemplo, se o Brutamontes já tiver as três debilidades marcadas, não pode disparar Sem Amarras.</p>
+<h2 id="clearing-debilities">Limpando debilidades</h2>
+<p>Um personagem de jogador pode limpar uma debilidade quando...</p>
+<ul class="ellipsis"><li>ele se <strong>Recupera</strong> <a class="wiki-link" href="#and-recovery" data-slug="harm-healing" data-fragment="and-recovery">e recuperação</a> e explica como está tratando a debilidade;</li><li>ele <strong>Acampa</strong> <a class="wiki-link" href="#and-recovery" data-slug="harm-healing" data-fragment="and-recovery">e recuperação</a> e escolhe limpar uma debilidade;</li><li>ele tem alguns dias de descanso para <strong>Convalescer</strong> <a class="wiki-link" href="#and-recovery" data-slug="harm-healing" data-fragment="and-recovery">e recuperação</a>;</li><li>outro movimento diz que sim; ou</li><li>você <strong>oferece a ele uma oportunidade</strong> de limpar uma debilidade e ele aceita.</li></ul>
+<p>Limpar uma debilidade significa: ele apaga a marca na ficha, deixa de sofrer a penalidade mecânica e o personagem não está mais ativamente prejudicado pelos efeitos na ficção.</p>
+<p>Limpar uma debilidade não significa que o ferimento correspondente sarou — significa que ele foi tratado o melhor possível e não atrapalha mais de forma ativa. Se ele marcou <em>enfraquecido</em> por causa de um bíceps rasgado, limpar a debilidade provavelmente significa que o braço está enfaixado e na tipoia. Ainda vai levar tempo até sarar por completo.</p>
+<h2 id="npcs-monsters-and-debilities">NPCs, monstros e debilidades</h2>
+<p>Monstros e NPCs não marcam debilidades, e os movimentos voltados ao jogador nunca permitem que os PJs as imponham a NPCs ou monstros.</p>
+<p>Monstros e a maioria dos NPCs não rolam movimentos, então sofrer desvantagem em dois atributos não faria sentido.</p>
+<p>Então: se um monstro sofrer um efeito que o deixaria enfraquecido, ele não marca <em>enfraquecido</em> — você simplesmente o descreve como mais lento ou trêmulo. Talvez você <strong>ofereça aos PJs uma oportunidade</strong> por causa disso?</p>
+<p><strong>Seguidores</strong> <a class="wiki-link" href="../npcs-followers.html" data-slug="npcs-followers" >NPCs &amp; Followers</a> podem disparar movimentos de jogador. Se quiser, atribua uma debilidade a um seguidor como etiqueta temporária (<em>enfraquecido</em>, <em>atordoado</em> ou <em>abatido</em>), impondo desvantagem em quaisquer rolagens relevantes. Mas, na maior parte do tempo, você deve refletir o estado atual do seguidor no modo como o retrata, em como ele age e no que é capaz ou está disposto a fazer.</p>
+<h2 id="problematic-wounds">Ferimentos problemáticos</h2>
+<p>Um ferimento problemático é aquele com consequências ficcionais duradouras. Os personagens os sofrem quando você <strong>os machuca</strong> ou faz outro movimento de mestre que envolva um personagem se machucando de um jeito específico e relevante.</p>
+<p>Simplesmente descreva o ferimento na ficção.</p>
+<p>Agora é verdade! Um tornozelo torcido não aguenta peso. Uma pancada na cabeça deixa a pessoa cambaleante e tonta. Uma mão decepada está decepada, e ela provavelmente está sangrando até morrer (e em choque). Esse tipo de ferimento problemático deve ser especialmente comum quando ataques <em>sujos</em> estão envolvidos.</p>
+<p>Ferimentos problemáticos muitas vezes envolvem os PJs marcarem debilidades e sempre envolvem sofrer dano (ou seja, perder HP). Se um NPC quebrar os dedos de um PJ, ele não consegue fechar o punho, provavelmente fica <em>enfraquecido</em>, <em>atordoado</em> ou <em>abatido</em> de dor e vai sofrer <button type="button" class="dice-roll" data-dice="1d8" title="Clique para rolar 1d8 — Shift: vantagem · Ctrl: desvantagem">1d8</button> de dano (ignora armadura). O dano não o matará se ele cair a 0 HP, mas pode tirá-lo de ação.</p>
+<h2 id="how-do-you-decide">Como você decide?</h2>
+<p>Os PJs acabaram de sofrer um ataque, ignoraram uma ameaça ou tiraram 6-, e você acha que vai causar dano.</p>
+<p>Você causa dano? Pede que marquem uma debilidade? Inflige um ferimento problemático e, se sim, quão grave?</p>
+<p>Não há regra fixa, mas você deve seguir seus princípios e fazer um movimento de mestre que flua da ficção. Muitas vezes, você escolherá um movimento de mestre (como <strong>colocá-los numa enrascada</strong> ou um movimento de monstro como <strong>derrubar a presa no chão, sem sentidos</strong>), e a ficção específica do seu movimento faz com que eles também sofram dano ou marquem uma debilidade.</p>
+<p>Outras vezes, você saberá que quer fazer algo danoso, mas não terá um movimento específico em mente.</p>
+<p>Nesse caso, peça ao jogador que role o dano sofrido e deixe isso informar a natureza e a gravidade do seu movimento. Veja a <a class="wiki-link" href="../running-the-game.html" data-slug="running-the-game" >Running the Game</a> para mais orientações.</p>
+<p>Tenha em mente as etiquetas dos ataques envolvidos. Ataques <em>sujos</em> são especialmente destrutivos e muitas vezes devem <strong>machucar eles</strong> ou <strong>consumir os recursos deles</strong> (destruindo escudos, armas ou equipamento).</p>
+<p>Ataques <em>contundentes</em> jogam as vítimas de um lado para outro; mesmo que não causem dano, ainda devem mudar o ímpeto ou o posicionamento da luta.</p>
+<p>Quando os PJs ou seguidores causam dano a monstros, use a descrição do ataque deles, a quantidade de dano causada, quantos HP restam ao inimigo e as etiquetas do ataque para informar os resultados na ficção.</p>
+<hr>
+<blockquote><p><strong><em>Anunciar um problema (futuro ou fora de cena):</em></strong> <em>“Andras está branco feito papel, e aquela picada de cobra está vermelha e inchada, e você vê linhas vermelhas e inflamadas subindo pelas veias do braço dele. O que você faz?”</em></p></blockquote>
+<hr>
+<blockquote><p><strong><em>Revelar uma verdade indesejada:</em></strong> <em>“Eita. É, Blodwen, você afasta as bandagens do ferimento do Garet e… não está bom. O cheiro é ruim, a carne está meio preta e há um pus esverdeado. Está infeccionado, e vai piorar. O que você faz?”</em></p></blockquote>
+<hr>
+<blockquote><p><strong><em>Colocar alguém numa enrascada:</em></strong> <em>“Ele arranha seu rosto antes de você arremessá-lo longe. Sofra <button type="button" class="dice-roll" data-dice="d6" title="Clique para rolar d6 — Shift: vantagem · Ctrl: desvantagem">d6</button> de dano. Você ainda está de pé? Certo, acho que ele rasgou sua testa e o sangue começa a escorrer para dentro dos seus olhos. Você quase não enxerga, mas ouve ele se remexendo, se preparando para atacar de novo. O que você faz?”</em></p></blockquote>
+<hr>
+<h2 id="problematic-wounds-in-play">Ferimentos problemáticos no jogo</h2>
+<p>Incorpore os ferimentos problemáticos à ficção e aos seus movimentos de mestre. Quando um jogador tirar 7-9 ou 6-, talvez use o ferimento problemático para justificar o resultado.</p>
+<p>Use seus movimentos para trazer um ferimento ao primeiro plano da história ou para que ele complique a situação.</p>
+<blockquote><p><strong><em>Consumir os recursos deles:</em></strong> <em>“Você consegue subir e sair daquela ravina, mas o ferimento no seu flanco ainda está sangrando. Você tem uma onda de tontura ao se levantar. Ela passa, mas sofra mais <button type="button" class="dice-roll" data-dice="1d6" title="Clique para rolar 1d6 — Shift: vantagem · Ctrl: desvantagem">1d6</button> de dano, ignorando armadura. Você continua de pé?”</em></p></blockquote>
+<hr>
+<blockquote><p><strong><em>Mostrar uma desvantagem:</em></strong> <em>(depois de tirar 7-9 para Desafiar o Perigo e escapar de um hagr) “Como você disse… você se abaixa sob o tronco enquanto ele o balança e passa correndo antes que ele se recupere. Mas uns cinco passos adiante, seu joelho cede e você desaba no chão. É aquele ferimento de antes. Seu joelho é só uma massa ardente de dor, e você ouve o hagr grunhir e arrancar o tronco do lugar e começar a vir pesado na sua direção, o que você faz?”</em></p></blockquote>
+<hr>
+<blockquote><p><strong><em>Dizer a eles as consequências:</em></strong> <em>“Você está jorrando sangue. Se não fizer um torniquete logo, vai sangrar até morrer. Claro, suas mãos — bom, sua mão — está tremendo e tudo parece dormente. Marque</em> enfraquecido<em>, e você vai Desafiar o Perigo para fazer qualquer coisa que exija controle motor fino. O que você faz?”</em></p></blockquote>
+<hr>
+<blockquote><p><strong><em>Dizer a eles os requisitos:</em></strong> <em>“Se você quiser andar com esse tornozelo, vai precisar imobilizá-lo e achar uma bengala ou uma muleta. E alguma coisa para amenizar a dor também seria bom. O que você faz?”</em></p></blockquote>
+<h2 id="death-and-dying">Morte e agonia</h2>
+<p>Quando um PJ é reduzido a 0 HP por um ataque que poderia matá-lo, ele está morrendo e precisa fazer este movimento. Ele também pode estar morrendo porque a ficção exige: se cair</p>
+<p>de 30 metros sobre pedras, ele não sofre dano, está a 0 HP e À Beira da Morte.</p>
+<div class="move-block" id="deaths-door"><h3 class="move-name">Death&#x27;s Door</h3><p class="move-trigger">Quando você <strong><em>está morrendo</em></strong>, vislumbra a Última Porta e a Senhora dos Corvos (descreva-as). Então, role +nada: <strong>com 10+</strong>, você se arranca de volta para o mundo dos vivos — volte a 1 HP, mas diga como esse encontro com a morte o marcou; <strong>com 7-9</strong>, a Senhora manda você voltar — você não está mais morrendo, mas está fora de ação; <strong>com 6-</strong>, sua hora chegou — escolha 1:</p><ul class="bullets"><li>Fazer um último movimento como se tivesse tirado 12+ e então atravessar a Última Porta</li><li>Recusar-se a ir; ganhe o encarte Revenante ou Fantasma</li><li>Chamar uma das Coisas de Baixo pelo nome e implorar que ela interceda; ganhe o encarte Servo</li></ul>
+<p>Se quiser, você pode adiar a resolução deste movimento até a cena terminar ou até os outros PJs terem um pouco de destaque. Se alguém tentar salvar o PJ que está morrendo (cuidando dos ferimentos etc.), essa pessoa está Ajudando na rolagem de À Beira da Morte. Os “riscos, custos ou consequências” a que ela se expõe dependem muito de como Ajuda, da interpretação que sua mesa faz da Senhora dos Corvos e do resultado da rolagem.</p>
+<p>A Senhora dos Corvos e a Última Porta ficam a cargo de você e da sua mesa para descrever. Elas podem até aparecer de formas diferentes para personagens diferentes.</p>
+<p>Com 10+, o personagem volta à ação e não está mais morrendo, mas fica marcado na mente, no corpo ou na alma. O jogador decide como, mas sinta-se à vontade para dar sugestões, como uma cicatriz feia, a perda de um olho, visões da Última Porta ou um bando de corvos sempre por perto. Seja o que for que ele escolher, traga essa marca à tona com frequência no jogo. Talvez até a escreva como uma ameaça (uma <strong><em>aflição</em></strong>, <a class="wiki-link" href="../threats.html" data-slug="threats" >Threats</a>).</p>
+<p>Com 7-9, o personagem não está mais morrendo, mas fica inconsciente (ou quase) até você dizer o contrário.</p>
+<p>Com 6-, a hora dele chegou, e o mais sensato é atravessar a Última Porta.</p>
+<p>Ele pode fazer um último movimento, mas depois disso está morto. Não há como salvá-lo. Ele não pode usar esse último movimento para evitar a morte. Só a mais rara das magias pode trazê-lo de volta.</p>
+<p>Se ele se recusar a ir, pergunte por quê. Peça que olhe os encartes Fantasma ou Revenante e escolha seu Propósito Terrível. Se ele não souber dizer, não deveria escolher esta opção.</p>
+<p>Para se tornar um Servo, o PJ precisa saber o nome de uma Coisa de Baixo. Se nenhuma das Coisas de Baixo apareceu no jogo, talvez o PJ possa Saber das Coisas antes de morrer?</p>
+<p>Se o personagem “continuar por aqui”, ele entra numa decadência constante, ficando cada vez mais instável e monstruoso.</p>
+<p>Explore o horror. Mostre como a “vida” dele não é mais a mesma. Traga o Propósito</p>
+<p>Terrível ou o Impulso dele para o jogo. Para um Fantasma ou Revenante, crie o Propósito Terrível como uma aflição; para um Servo, crie o mestre dele como uma <em>entidade mágica</em> (veja <strong>Ameaças</strong>, <a class="wiki-link" href="../threats.html" data-slug="threats" >Threats</a>).</p>
+<p>Um PJ morto-vivo deve sentir que está em tempo emprestado — porque está. Os outros PJs devem ficar de olho no aliado morto-vivo.</p>
+<p>De olho, no mínimo.</p></div>
+<h2 id="and-recovery">e recuperação</h2>
+<p>Os movimentos a seguir tratam de recuperar HP, limpar debilidades e tratar ferimentos problemáticos ou se recuperar deles.</p>
+<div class="move-block" id="recover"><h3 class="move-name">Recover</h3><p class="move-trigger">Quando você <strong><em>tira um tempo para recuperar o fôlego e cuidar do que o aflige</em></strong>, gaste 1 uso de suprimentos e recupere HP igual a 4+Prosperidade. Você não pode ter este benefício de novo até sofrer mais dano. Quando você <strong><em>cuida de uma debilidade ou de um ferimento problemático</em></strong>, diga como. O mestre dirá que está resolvido ou dirá o que é preciso para resolver (Desafiar o Perigo, gastar suprimentos ou outro recurso, encontrar ___, Acampar etc.). Como em qualquer movimento: pergunte a eles como é isso. Estão cuidando de ferimentos? Fazendo um lanche? Aplicando uma cataplasma? Mascando casca de salgueiro? O quê? Muitas vezes vários PJs vão se Recuperar ao mesmo tempo. Tudo bem. É uma boa hora para <strong>fazer perguntas provocativas</strong> e incentivá-los a interpretar um pouco entre si. Cada personagem que recupera HP precisa gastar 1 uso de suprimentos, ou alguém precisa gastar um uso por ele. A Prosperidade do povoado afeta diretamente a qualidade desses suprimentos e, portanto, a quantidade de HP recuperada. Um povoado com Prosperidade +1 pode fornecer comida mais reforçada e ervas mais potentes do que um com Prosperidade +0. Depois que um personagem recupera HP pelo movimento Recuperar-se, não pode fazê-lo de novo até sofrer mais dano. Um PJ não pode, digamos, sofrer 12 de dano e voltar ao máximo de HP com uma pausa curta e um gole de uísque. Esse tipo de perda de HP exige descanso de verdade. (E não, um PJ não pode simplesmente “se cortar no braço para perder 1 HP” a fim de se Recuperar de novo. Não funciona assim.) Lembre-se: recuperar HP não significa curar ferimentos. Aqueles hematomas, arranhões etc. continuam lá. Quanto a debilidades e ferimentos problemáticos, peça que descrevam como cuidam do ferimento. Se parecer razoável e eficaz, simplesmente diga: “Beleza, está resolvido”. Mas você também pode dizer o que mais é preciso, como...</p><ul class="ellipsis"><li>Saber das Coisas para saber o que fazer;</li><li>Desafiar o Perigo, sendo o perigo...</li><li>a dor.</li><li>a pessoa se debater enquanto você trabalha.</li><li>o ferimento/a condição piorar.</li><li>que ___ chegue/aconteça antes de você terminar.</li><li>atrair a atenção de ___</li><li>que você precise consumir/usar mais ___;</li><li>gastar (mais) suprimentos, uísque etc.;</li><li>encontrar ___ (uma erva, o antídoto, água limpa, algo para usar como dreno etc.);</li><li>Acampar/deixar a pessoa descansar; ou</li><li>fazer algo drástico (cauterizar, amputar, cirurgia improvisada etc.).</li></ul>
+<p>Combine esses requisitos com “e” e “ou” como achar melhor. Se eles cumprirem os requisitos, a debilidade é limpa e/ou o ferimento problemático é estabilizado (embora quase certamente não curado).</p></div>
+<hr>
+<blockquote><p><em>Eles deram conta dos ursos na caverna, mas o Caradoc levou uma surra no processo. Ele perdeu 9 HP e está</em> atordoado <em>— levou uma pancada no escudo e foi jogado contra a parede da caverna. Está sem fôlego e dolorido, mas eu nunca estabeleci um ferimento específico.</em></p><p><em>Enquanto os outros investigam a caverna, Caradoc pergunta: “Posso me Recuperar?” Pode, mas eu pergunto como é isso, que tipo de suprimentos ele usa. “Acho que vou me encostar na parede da caverna, largar o escudo e a lança, dar algumas respiradas fundas. Talvez tomar um gole de uísque e comer um pão achatado.” Legal! Ele marca um uso de suprimentos e recupera 4 HP (a Prosperidade do povoado é 0 no momento). Acho que isso também basta para limpar a debilidade</em> atordoado<em>.</em></p><p><em>Ele ainda está 5 HP abaixo e pergunta se pode se Recuperar de novo. “Não”, eu digo. “Só quando você sofrer mais dano.”</em></p></blockquote>
+<hr>
+<blockquote><p><em>Garet (um da tropa da Rhianna) teve a perna rasgada por um dragonete emplumado. Ele ainda está consciente, mas a 0 HP e sangrando muito. Não vai durar muito.</em></p><p><em>A luta acabou, e Rhianna e Blodwen correm até lá para ver se conseguem salvar a vida dele. Blodwen assume o comando. “Rhianna, faça pressão acima do ferimento. Eu faço um torniquete. Depois, sei lá, costuro ele, acho?”</em></p><p><em>Ela está cuidando de um ferimento problemático, que é um dos gatilhos de Recuperar-se. Olhando minha lista de requisitos possíveis, acho que ela está Desafiando o Perigo com INT, sendo o perigo que Garet sangre até morrer</em></p></blockquote>
+<hr>
+<blockquote><p><em>antes que consigam estancar o sangramento. Além disso, elas vão precisar gastar um uso de suprimentos para o torniquete e os pontos. “Você faz?” eu pergunto. Ela faz, e pega os dados.</em></p><p><em>Ela tira 8 e eu dou a ela uma escolha entre um custo e um sucesso parcial. “Você estanca o sangramento e salva a vida dele, mas ele está em mau estado. Você pode gastar um segundo uso de suprimentos para mantê-lo de pé com algum tipo de erva estimulante. Ele vai ficar acordado com 4 HP e conseguir se mover devagar, mas vai sentir muita dor e provavelmente vai se machucar de novo. Ou você pode deixá-lo, estável, mas entrando e saindo da consciência, sem conseguir andar sozinho. O que você faz?”</em></p></blockquote>
+<div class="move-block" id="make-camp"><h3 class="move-name">Make Camp</h3><p class="move-trigger">Quando você <strong><em>se acomoda para descansar numa área insegura</em></strong>, responda às perguntas do mestre sobre o acampamento. Cada membro do grupo precisa consumir 1 uso de suprimentos ou provisões; se você usar um ◇ kit de cozinha (<em>exige fogo e água</em>), 1 uso pode servir até quatro pessoas. Se você <strong><em>comer e beber até se saciar</em></strong> e <strong><em>dormir ao menos algumas horas</em></strong>, escolha 1.</p><ul class="bullets"><li>Recuperar HP igual à metade do seu máximo</li><li>Limpar uma debilidade</li></ul>
+<p>Se <strong><em>o descanso tiver sido especialmente tranquilo, confortável ou agradável,</em></strong> você também ganha vantagem na próxima rolagem.</p>
+<p>Quando os PJs estão machucados ou exaustos, vão querer Acampar. Se tiverem tempo, um kit de cozinha, fogo e água, ◇ podem recuperar muitos HP e/ou limpar algumas debilidades com apenas 1 ou 2 usos de suprimentos.</p>
+<p>Para fazer uma escolha, eles precisam dos três: comida, bebida e sono. Quem também usar um ◇ saco de dormir recupera +<button type="button" class="dice-roll" data-dice="1d6" title="Clique para rolar 1d6 — Shift: vantagem · Ctrl: desvantagem">1d6</button> HP, seja qual for a escolha.</p>
+<p>Recuperar HP ou limpar uma debilidade não faz os ferimentos problemáticos sumirem. Os PJs precisam tratá-los com o movimento Recuperar-se, e esses ferimentos levam tempo para sarar por completo.</p>
+<p>Para ganhar vantagem na próxima rolagem, as coisas precisam estar <em>ótimas</em>, não apenas aceitáveis. Isso deve ser exceção, não regra.</p>
+<p>Para saber mais sobre Acampar e sobre como decidir o que (se é que algo) acontece durante a noite, veja a <a class="wiki-link" href="../expeditions.html" data-slug="expeditions" >Expeditions</a>.</p></div>
+<hr>
+<blockquote><p><em>O grupo está a caminho de Beira-Brejo e teve um encontro quase desastroso com os nosgolau enquanto acampava perto dos Ossos de Titã. Eles recuperaram o Vahid (por pouco), mas ele está</em> atordoado <em>e</em> enfraquecido<em>. Também sofreu bastante dano e está com 6 dos seus 16 HP. Caradoc e Rhianna também sofreram algum dano. Blodwen está numa boa.</em></p><p><em>Assim que voltam ao acampamento, todos dormem algumas horas. Eles comeram e beberam antes do ataque, então cada um pode fazer uma escolha.</em></p><p><em>Blodwen já está com HP no máximo e não tem debilidade alguma. “Então eu ganho vantagem?” ela pergunta. Não! Ela pode não estar machucada, mas ainda está dormindo em lajes duras e encolhida num manto.</em></p><p><em>Caradoc e Rhianna optam por recuperar HP. Caradoc tem 16 HP de máximo e só 7 restantes. Ele recupera 8 HP (metade do máximo) e fica com 15 HP. Poderia se Recuperar para retomar aquele último 1 HP, mas decide que não vale a pena. Rhianna perdeu menos da metade do máximo, então volta ao total.</em></p><p><em>Vahid tem uma escolha difícil: pode limpar uma das debilidades ou recuperar HP. “Que tal eu recuperar HP por Acampar e depois me Recuperar para limpar essas debilidades?” Eu pergunto como ele cuida das debilidades. “Ah, vou comer uma refeição enorme, muito mais do que pareceria que eu conseguiria enfiar.”</em></p><p><em>“Certo, então vamos fazer assim. Você recupera metade do seu máximo de HP, voltando a 14. E se comer 1 uso de suprimentos, você pode limpar</em> enfraquecido<em>. Mas ainda vai ficar</em> atordoado <em>até Acampar de novo e dormir bem. Combinado?”</em></p></blockquote>
+<hr>
+<div class="move-block" id="convalesce"><h3 class="move-name">Convalesce</h3><p class="move-trigger">Quando você <strong><em>descansa por alguns dias em segurança e conforto,</em></strong> volte seus HP ao máximo e limpe todas as suas debilidades. Quando você <strong><em>descansa por algumas semanas sob os cuidados de um curandeiro</em></strong>, você cura quaisquer ferimentos problemáticos que possam ser curados. Se você <strong><em>sofreu um ferimento ou incapacidade permanente</em></strong>, ou se aposente, ou Faça um Plano para se adaptar a isso. Este movimento permite que os PJs “reiniciem” entre expedições. É uma oportunidade de deixar o tempo passar e as estações mudarem. Também é uma ótima hora para fazer perguntas e usar seus <strong>movimentos de aldeia</strong> <a class="wiki-link" href="../homefront.html" data-slug="homefront" >Homefront</a>. Convalescer cura a maioria dos ferimentos, mas não faz membros perdidos crescerem de novo nem conserta um joelho destroçado. O personagem pode ou se aposentar, ou Fazer um Plano e se adaptar. Se um PJ se aposenta, o jogador para de jogá-lo ativamente. O personagem perdeu a garra e o sangue-frio que fazem dele um PJ. O jogador deve criar um personagem novo, e o aposentado vira um NPC. Se o jogador quiser que o PJ se adapte, use o movimento <strong>Fazer um Plano</strong> <a class="wiki-link" href="../homefront.html" data-slug="homefront" >Homefront</a> para esclarecer o objetivo dele e o que é preciso para alcançá-lo. Isso pode envolver algo extraordinário (como conseguir uma mão mecânica com os Ustrina), mas em geral é uma questão de engenhosidade, prática e teimosia. Não torne os requisitos difíceis demais. Seu trabalho é <strong>ser fã dos personagens dos jogadores</strong> e <strong>pontuar a vida deles com aventura</strong>. Não é penalizá-los por terem se machucado. Você quer ver esses personagens duros, determinados e engenhosos se adaptarem aos reveses. Dê a eles um caminho de recuperação e veja como se saem.</p></div>
+<hr>
+<blockquote><p><em>Rhianna perdeu o braço direito no Lago dos Três Covens (e ela se saiu bem; o Andras não voltou para casa). Um raciocínio rápido salvou a vida dela, mas ela não sabe como será uma guerreira e arqueira eficaz. Mas não pensa em se aposentar.</em></p><p><em>Então, Fazemos um Plano. “O que você espera alcançar? Você quer substituir ou fazer o braço crescer de novo com magia? Ou aprender a atirar com uma mão só?” Rhianna é prática demais e nem considera a opção mágica. Eu olho a lista de requisitos possíveis e anoto:</em></p></blockquote>
+<p>O Você precisa projetar e fazer alguma prótese ou dispositivo para retesar</p>
+<p>e soltar um arco com uma mão só O Você precisa aprender a usar o dispositivo O Vai levar meses de prática <em>Decidimos que uma tira de couro para morder presa à corda do arco permitiria a ela puxar e soltar. É uma coisa simples de fazer com a ajuda do Sawyl, o curtidor.</em></p>
+<blockquote><p><em>Mais tarde, eu monto uma cena com Rhianna praticando com o novo arranjo. Eu pergunto como é isso, com o que ela está tendo dificuldade. Então a mãe do Andras aparece e agradece a Rhianna por ter tomado conta dele, dizendo o quanto tinha orgulho de ter o Andras protegendo a aldeia. Rhianna fica cheia de amargura por tê-lo perdido em busca da maldita joia de fogo do Vahid.</em></p><p><em>O outono chega antes de Rhianna ter tido os meses de prática de que precisa, e os PJs acabam caçando uma presença sombria que anda espreitando a Mata. “Por ora”, eu digo, “seu arco terá a etiqueta</em> recarga <em>e você vai Disparar com desvantagem. Mas quando tiver mais um mês de prática, você atirará e Disparará sem penalidade.”</em></p></blockquote>
+<hr>
+        </main>
+      </div>
+    </div>
+  </div>
+  <div id="wiki-preview" class="wiki-preview" hidden></div>
+  <div id="dice-toast" class="dice-toast" hidden></div>
+  <script src="../js/wiki.js"></script>
+</body>
+</html>
