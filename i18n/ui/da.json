@@ -90,5 +90,13 @@
     "lede_major": "De store arkana fra Bog II, ét ad gangen. Hvert opslag er sin egen side.",
     "all_minor": "Alle små arkana",
     "all_major": "Alle store arkana"
+  },
+  "home": {
+    "title": "Stonetop-wikien",
+    "topics": "Emner",
+    "lede_html": "En statisk wiki med hyperlinks til <em>Stonetop</em> {books}. Sidetal er links; terningudtryk slås med et klik; hold musen over et link for en forhåndsvisning (hele statblokken ved dybe links).",
+    "remembers_html": "<strong>Den husker.</strong> Sæt et flueben, svar på et spørgsmål, udfyld et tomt felt, fordel dine egenskaber – wikien gemmer det hele.",
+    "defects_html": "Disse sider er trukket automatisk ud af bøgernes PDF’er, så <strong>forvent fejl</strong>. Ser du en, så <a href=\"{issues}\">opret en issue på GitHub</a>.",
+    "license_html": "Bøgernes <strong>tekst</strong> er skrevet af Jeremy Strandberg under <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>."
   }
 }

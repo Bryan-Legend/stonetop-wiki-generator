@@ -90,5 +90,13 @@
     "lede_major": "A II. könyv nagy arkánumai, egyenként. Minden tétel külön oldal.",
     "all_minor": "Az összes kis arkánum",
     "all_major": "Az összes nagy arkánum"
+  },
+  "home": {
+    "title": "Stonetop wiki",
+    "topics": "Témák",
+    "lede_html": "Statikus, hivatkozásokkal átszőtt wiki a <em>Stonetop</em> {books} anyagához. Az oldalszámok hivatkozások; a kockakifejezések kattintásra dobnak; vidd az egeret egy hivatkozás fölé az előnézethez (mély hivatkozásnál a teljes statisztikablokk).",
+    "remembers_html": "<strong>Megjegyzi.</strong> Pipálj ki egy négyzetet, válaszolj egy kérdésre, tölts ki egy üres helyet, oszd el a tulajdonságaidat – a wiki mindent megőriz.",
+    "defects_html": "Ezek az oldalak a könyvek PDF-jeiből automatikusan kinyert szövegek, ezért <strong>számíts hibákra</strong>. Ha látsz egyet, <a href=\"{issues}\">nyiss egy issue-t a GitHubon</a>.",
+    "license_html": "A könyvek <strong>szövege</strong> Jeremy Strandberg műve, <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a> licenc alatt."
   }
 }

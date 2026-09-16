@@ -90,5 +90,13 @@
     "lede_major": "第二卷中的各件大秘宝。每个条目都是单独一页。",
     "all_minor": "全部小秘宝",
     "all_major": "全部大秘宝"
+  },
+  "home": {
+    "title": "石顶 Wiki",
+    "topics": "主题",
+    "lede_html": "<em>石顶</em>（Stonetop）{books}的静态超链接 Wiki。页码即链接；骰子表达式点击即可投掷；将鼠标悬停在链接上可查看预览（深层链接会显示完整的属性块）。",
+    "remembers_html": "<strong>它会记住。</strong>勾选一个方框、回答一个问题、填上一处空白、分配你的属性——Wiki 会全部保存下来。",
+    "defects_html": "这些页面是从书籍 PDF 中自动提取的，因此<strong>难免有缺陷</strong>。如果你发现了，请<a href=\"{issues}\">在 GitHub 上提交 issue</a>。",
+    "license_html": "书籍的<strong>正文</strong>由 Jeremy Strandberg 撰写，以 <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a> 许可发布。"
   }
 }

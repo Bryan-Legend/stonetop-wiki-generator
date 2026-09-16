@@ -90,5 +90,13 @@
     "lede_major": "Kirja II:n suuret arkanat yksitellen. Jokainen kohta on oma sivunsa.",
     "all_minor": "Kaikki pienet arkanat",
     "all_major": "Kaikki suuret arkanat"
+  },
+  "home": {
+    "title": "Stonetop-wiki",
+    "topics": "Aiheet",
+    "lede_html": "Staattinen, linkitetty wiki <em>Stonetop</em>-pelin {books} materiaaliin. Sivunumerot ovat linkkejä; noppalausekkeet heitetään napsauttamalla; vie osoitin linkin päälle nähdäksesi esikatselun (syvälinkeissä koko tilastolohko).",
+    "remembers_html": "<strong>Se muistaa.</strong> Rastita ruutu, vastaa kysymykseen, täytä tyhjä kohta, jaa ominaisuutesi – wiki säilyttää kaiken.",
+    "defects_html": "Nämä sivut on poimittu kirjojen PDF-tiedostoista automaattisesti, joten <strong>odota virheitä</strong>. Jos huomaat sellaisen, <a href=\"{issues}\">avaa issue GitHubissa</a>.",
+    "license_html": "Kirjojen <strong>teksti</strong> on Jeremy Strandbergin, lisenssillä <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>."
   }
 }

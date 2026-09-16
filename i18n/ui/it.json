@@ -90,5 +90,13 @@
     "lede_major": "Gli arcani maggiori del Libro II, uno per uno. Ogni voce è una pagina a sé.",
     "all_minor": "Tutti gli arcani minori",
     "all_major": "Tutti gli arcani maggiori"
+  },
+  "home": {
+    "title": "Wiki di Stonetop",
+    "topics": "Argomenti",
+    "lede_html": "Un wiki statico e ipertestuale per <em>Stonetop</em> {books}. I numeri di pagina sono link; le espressioni dei dadi si tirano con un clic; passa il mouse su un link per un’anteprima (blocco statistiche completo con i link profondi).",
+    "remembers_html": "<strong>Si ricorda tutto.</strong> Spunta una casella, rispondi a una domanda, riempi uno spazio, assegna le caratteristiche: il wiki conserva ogni cosa.",
+    "defects_html": "Queste pagine sono estratte automaticamente dai PDF dei libri, quindi <strong>aspettati dei difetti</strong>. Se ne trovi uno, <a href=\"{issues}\">apri una segnalazione su GitHub</a>.",
+    "license_html": "Il <strong>testo</strong> dei libri è di Jeremy Strandberg, con licenza <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>."
   }
 }

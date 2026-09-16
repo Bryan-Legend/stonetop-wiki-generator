@@ -90,5 +90,13 @@
     "lede_major": "De grote arcana uit Boek II, stuk voor stuk. Elk item is een eigen pagina.",
     "all_minor": "Alle kleine arcana",
     "all_major": "Alle grote arcana"
+  },
+  "home": {
+    "title": "Stonetop Wiki",
+    "topics": "Onderwerpen",
+    "lede_html": "Een statische wiki met hyperlinks voor <em>Stonetop</em> {books}. Paginanummers zijn links; dobbelsteenuitdrukkingen rollen bij een klik; beweeg over een link voor een voorbeeld (volledig statistiekenblok bij een diepe link).",
+    "remembers_html": "<strong>Hij onthoudt het.</strong> Vink een vakje aan, beantwoord een vraag, vul een blanco in, verdeel je statistieken – de wiki bewaart het allemaal.",
+    "defects_html": "Deze pagina’s worden automatisch uit de pdf’s van de boeken gehaald, dus <strong>verwacht fouten</strong>. Zie je er een, <a href=\"{issues}\">open dan een issue op GitHub</a>.",
+    "license_html": "De <strong>tekst</strong> van de boeken is van Jeremy Strandberg, onder <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>."
   }
 }

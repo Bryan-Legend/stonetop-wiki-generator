@@ -90,5 +90,13 @@
     "lede_major": "Velká arkána z Kniha II, jedno po druhém. Každá položka má vlastní stránku.",
     "all_minor": "Všechna malá arkána",
     "all_major": "Všechna velká arkána"
+  },
+  "home": {
+    "title": "Wiki Stonetop",
+    "topics": "Témata",
+    "lede_html": "Statická, provázaná wiki ke hře <em>Stonetop</em> {books}. Čísla stránek jsou odkazy; výrazy s kostkami se hází kliknutím; najeďte na odkaz a zobrazí se náhled (u hlubokého odkazu celý blok statistik).",
+    "remembers_html": "<strong>Pamatuje si.</strong> Zaškrtněte políčko, odpovězte na otázku, vyplňte mezeru, rozdělte si vlastnosti – wiki si to všechno uchová.",
+    "defects_html": "Tyto stránky jsou z PDF knih vytaženy automaticky, takže <strong>počítejte s chybami</strong>. Když nějakou najdete, <a href=\"{issues}\">založte issue na GitHubu</a>.",
+    "license_html": "<strong>Text</strong> knih napsal Jeremy Strandberg a je pod licencí <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>."
   }
 }

@@ -90,5 +90,13 @@
     "lede_major": "Die großen Arkana aus Buch II, einzeln. Jeder Eintrag ist eine eigene Seite.",
     "all_minor": "Alle kleinen Arkana",
     "all_major": "Alle großen Arkana"
+  },
+  "home": {
+    "title": "Stonetop Wiki",
+    "topics": "Themen",
+    "lede_html": "Ein statisches, verlinktes Wiki zu <em>Stonetop</em> {books}. Seitenzahlen sind Links; Würfelausdrücke würfeln per Klick; fahre über einen Link, um eine Vorschau zu sehen (bei Deep Links mit vollständigem Werteblock).",
+    "remembers_html": "<strong>Es merkt sich alles.</strong> Hake ein Kästchen ab, beantworte eine Frage, fülle eine Lücke aus, verteile deine Werte – das Wiki behält es.",
+    "defects_html": "Diese Seiten werden automatisch aus den PDFs der Bücher extrahiert, also <strong>rechne mit Fehlern</strong>. Wenn dir einer auffällt, <a href=\"{issues}\">eröffne ein Issue auf GitHub</a>.",
+    "license_html": "Der <strong>Text</strong> der Bücher stammt von Jeremy Strandberg und steht unter <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>."
   }
 }

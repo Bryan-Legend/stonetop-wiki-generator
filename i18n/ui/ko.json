@@ -90,5 +90,13 @@
     "lede_major": "제2권의 대 아르카눔을 하나씩. 각 항목이 별도의 페이지입니다.",
     "all_minor": "소 아르카눔 전체",
     "all_major": "대 아르카눔 전체"
+  },
+  "home": {
+    "title": "스톤탑 위키",
+    "topics": "주제",
+    "lede_html": "<em>스톤탑</em>(Stonetop) {books}의 정적 하이퍼링크 위키입니다. 쪽 번호는 링크이고, 주사위 표기는 클릭하면 굴려집니다. 링크에 마우스를 올리면 미리보기가 뜹니다(깊은 링크에서는 스탯 블록 전체).",
+    "remembers_html": "<strong>기억합니다.</strong> 체크박스를 표시하고, 질문에 답하고, 빈칸을 채우고, 능력치를 배정하세요. 위키가 그 모두를 보관합니다.",
+    "defects_html": "이 페이지들은 책의 PDF에서 자동으로 추출한 것이므로 <strong>오류가 있을 수 있습니다</strong>. 발견하면 <a href=\"{issues}\">GitHub에 이슈를 열어 주세요</a>.",
+    "license_html": "책의 <strong>본문</strong>은 Jeremy Strandberg가 썼으며 <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a> 라이선스로 배포됩니다."
   }
 }

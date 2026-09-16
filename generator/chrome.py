@@ -1290,6 +1290,11 @@ def write_localized_index(
                 excerpt = page.get("description") or strip_page_refs(
                     (previews.get(slug, {}) or {}).get("excerpt") or ""
                 )
+                if art.get("kind") == "arcana-hub":
+                    # A generated index: its words are the language's own
+                    # (ui → arcana_hub), the same as on the page itself.
+                    words = arcana_hub_strings(art, ui)
+                    title, excerpt = words["title"], words["lede"]
                 href = f"{slug}.html" if slug in translated else f"../{slug}.html"
                 cards.append(
                     f'<a class="index-card" href="{html.escape(href)}">'

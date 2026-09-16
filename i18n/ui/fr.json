@@ -90,5 +90,13 @@
     "lede_major": "Les arcanes majeurs du Livre II, un par un. Chaque entrée a sa propre page.",
     "all_minor": "Tous les arcanes mineurs",
     "all_major": "Tous les arcanes majeurs"
+  },
+  "home": {
+    "title": "Wiki Stonetop",
+    "topics": "Sujets",
+    "lede_html": "Un wiki statique et hyperlié pour <em>Stonetop</em> {books}. Les numéros de page sont des liens ; les expressions de dés se lancent d’un clic ; survolez un lien pour un aperçu (bloc de caractéristiques complet quand le lien est profond).",
+    "remembers_html": "<strong>Il se souvient.</strong> Cochez une case, répondez à une question, remplissez un blanc, répartissez vos caractéristiques : le wiki garde tout.",
+    "defects_html": "Ces pages sont extraites automatiquement des PDF des livres, alors <strong>attendez-vous à des défauts</strong>. Si vous en repérez un, <a href=\"{issues}\">ouvrez un ticket sur GitHub</a>.",
+    "license_html": "Le <strong>texte</strong> des livres est de Jeremy Strandberg, sous licence <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>."
   }
 }

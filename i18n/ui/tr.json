@@ -90,5 +90,13 @@
     "lede_major": "Kitap II’deki büyük arkanalar, tek tek. Her madde kendi sayfasıdır.",
     "all_minor": "Tüm küçük arkanalar",
     "all_major": "Tüm büyük arkanalar"
+  },
+  "home": {
+    "title": "Stonetop Wiki",
+    "topics": "Konular",
+    "lede_html": "<em>Stonetop</em> {books} için statik, bağlantılı bir wiki. Sayfa numaraları bağlantıdır; zar ifadeleri tıklayınca atılır; önizleme için imleci bir bağlantının üzerine getirin (derin bağlantılarda tam stat bloğu).",
+    "remembers_html": "<strong>Hatırlar.</strong> Bir kutuyu işaretleyin, bir soruyu yanıtlayın, bir boşluğu doldurun, statlarınızı dağıtın; wiki hepsini saklar.",
+    "defects_html": "Bu sayfalar kitapların PDF’lerinden otomatik olarak çıkarılır, bu yüzden <strong>kusur bekleyin</strong>. Bir tane görürseniz <a href=\"{issues}\">GitHub’da bir issue açın</a>.",
+    "license_html": "Kitapların <strong>metni</strong> Jeremy Strandberg’e aittir ve <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a> lisansıyla sunulur."
   }
 }
