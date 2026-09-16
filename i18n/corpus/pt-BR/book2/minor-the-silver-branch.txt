@@ -21,7 +21,7 @@ C	… conseguir voltar para casa.
 H3	O Ramo de Prata
 P	◇, <i>mágica</i>, <i>belo</i>
 C	◇ fresco, ◇ murchando, ◇ nu Com pouco mais de meio metro, carregado de flores brancas e frutos dourados que tilintam. Surpreendentemente resistente, e permanece fresco indefinidamente, a menos que seus poderes sejam usados. Só um ramo desses pode deixar o domínio Fae por vez.
-P	Quando você <b><i>faz o ramo de prata tilintar</i></b>, todos que o ouvem (<i>alcance</i>, <i>área</i>, exceto você) se enchem de êxtase e esquecem suas aflições por algumas horas. Role +CHA:
+P	Quando você <b><i>faz o ramo de prata tilintar</i></b>, todos que o ouvem (<i>alcance</i>, <i>área</i>, exceto você) se enchem de êxtase e esquecem suas aflições por algumas horas. Role +CAR:
 P	<b>com 10+</b>, escolha 1; <b>com 7-9</b>, escolha 1 e o mestre escolhe outra; <b>com 6-</b>, as 3.
 B	O ramo começa a murchar; se já estava murchando, fica nu, com os poderes perdidos
 B	Alguns (o mestre escolhe quem) ficam em êxtase por dias ou semanas, enfraquecendo e definhando nesse meio-tempo

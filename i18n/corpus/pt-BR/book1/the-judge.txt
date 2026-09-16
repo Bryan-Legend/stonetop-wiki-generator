@@ -23,7 +23,7 @@ P	Quando você <b><i>recorre ao Juiz de outro povoado</i></b> <b><i>em busca de 
 P	Você também é obrigado por juramento a apoiá-los.
 P	Você tem um aviário além da sua escolha habitual de posses especiais (marque-o agora). Quando você <b><i>envia uma mensagem por meio de uma ave treinada</i></b>, como é o costume dos Juízes da sua ordem, o mestre dirá se e quando você recebe uma resposta, e o que ela diz.
 C	<b>PROFETA</b> ◇◇ A linhagem de Juízes foi rompida há muito tempo, e a Crônica se perdeu ou caiu em ruínas. Aratis chamou você pessoalmente ao seu serviço por meio de sonhos, presságios e visões. Alguns na vila se ressentem da autoridade que você assumiu.
-P	Quando você <b><i>passa alguns dias em comunhão com Aratis</i></b> <b><i>sobre uma ameaça que paira sobre Stonetop ou sobre a</i></b> <b><i>civilização como um todo</i></b>, role +WIS: <b>com 7+</b>, Aratis revela o curso de ação que deseja que você tome; <b>com 10+</b>, você também guarda 2 de Sanção. Enquanto <b><i>agir sob as ordens dela</i></b>, gaste 1 de Sanção para somar +1 a uma rolagem que acabou de fazer.
+P	Quando você <b><i>passa alguns dias em comunhão com Aratis</i></b> <b><i>sobre uma ameaça que paira sobre Stonetop ou sobre a</i></b> <b><i>civilização como um todo</i></b>, role +SAB: <b>com 7+</b>, Aratis revela o curso de ação que deseja que você tome; <b>com 10+</b>, você também guarda 2 de Sanção. Enquanto <b><i>agir sob as ordens dela</i></b>, gaste 1 de Sanção para somar +1 a uma rolagem que acabou de fazer.
 H2	Instinto (Escolha 1)
 C	<b>AMBIÇÃO</b> Aumentar seu status ou sua influência.
 HR
@@ -112,7 +112,7 @@ C2	<b>A UNIÃO FAZ A FORÇA</b>
 P	(Requer Muitas mãos aliviam o trabalho)
 P	Quando vocês Lutam como Um Só, você e um aliado à sua escolha têm vantagem.
 PAGE	119
-C	<b>O MARTELO E O LIVRO</b> Quando você <b><i>golpeia algo de caos sobrenatural</i></b>, role +WIS: <b>com 10+</b>, cause seu dano e escolha 1 da lista abaixo; <b>com 7-9</b>, cause dano e escolha 1, mas você também se expõe a dano ou a atenção indesejada.
+C	<b>O MARTELO E O LIVRO</b> Quando você <b><i>golpeia algo de caos sobrenatural</i></b>, role +SAB: <b>com 10+</b>, cause seu dano e escolha 1 da lista abaixo; <b>com 7-9</b>, cause dano e escolha 1, mas você também se expõe a dano ou a atenção indesejada.
 B	Cause +1d6 de dano
 B	Ignore a armadura ou outras defesas da coisa
 B	Suprima um de seus poderes antinaturais
@@ -124,7 +124,7 @@ P	(Requer Verdade ou consequência)
 P	Quando você <b><i>testemunha a promessa ou o</i></b> <b><i>juramento de alguém</i></b>, dali em diante pode perguntar ao jogador se o personagem cumpriu a palavra. Ele deve responder com honestidade.
 P	O personagem não precisa estar presente. Se <b><i>ele tiver</i></b> <b><i>quebrado a palavra</i></b>, você ganha vantagem em todas as rolagens contra ele até que admita o erro e sofra uma consequência apropriada (você decide).
 C	<b>VISÃO LÍMPIDA</b> Quando você <b><i>Busca Discernimento</i></b>, pode sempre perguntar de graça “O que aqui está oculto por ilusão ou magia?”, mesmo com 6-.
-C	<b>LETRADO</b> Quando você <b><i>cita a fonte em que leu sobre</i></b> <b><i>o assunto em questão</i></b>, role +WIS para Saber das Coisas em vez de +INT.
+C	<b>LETRADO</b> Quando você <b><i>cita a fonte em que leu sobre</i></b> <b><i>o assunto em questão</i></b>, role +SAB para Saber das Coisas em vez de +INT.
 C	<b>UMA MURALHA PODEROSA</b> (Requer nível 6+; substitui Baluarte) Enquanto você <b><i>guardar Prontidão</i></b> (de Defender), não pode ser forçado a sair da sua posição. Além disso, pode gastar 1 de Prontidão para ignorar completamente os efeitos/o dano de um ataque que sofrer.
 C	<b>ARMISTÍCIO</b> (Requer nível 6+ e Dar testemunho) Quando você <b><i>se aproxima de um inimigo para negociar de boa</i></b> <b><i>fé</i></b>, ele ao menos ouvirá você. Até o inimigo mais degenerado e selvagem adiará a violência até que você tenha dito o que tem a dizer.
 C	<b>CONDENAÇÃO</b> (Requer nível 6+ e Censura) Quando você <b><i>Censura alguém</i></b>, a pessoa fica marcada com um estigma místico que não pode ser removido nem escondido até que você o dispense. Qualquer criatura inteligente que veja a marca reconhece o portador como agente do caos e anátema da civilização.

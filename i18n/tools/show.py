@@ -13,6 +13,7 @@ SKIP = ("front", "back", "moves")
 
 
 def main() -> int:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     t0 = time.perf_counter()
     slugs = sys.argv[1:]
     n = 0

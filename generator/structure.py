@@ -1535,9 +1535,11 @@ def render_playbook_stats(block: dict, slug: str, link_fn) -> str:
             sign=True,
         )
         + f'<button type="button" class="pb-stat-abbr pb-roll" '
+        # data-roll-stat is the key the debilities and js match on, so it
+        # stays English; only the printed abbreviation is localized.
         f'data-roll-stat="{html.escape(abbr)}" '
-        f'title="{html.escape(UI("stat_roll_title", STAT_ROLL_TITLE, stat=abbr))}">'
-        f"({html.escape(abbr)})</button></div>"
+        f'title="{html.escape(UI("stat_roll_title", STAT_ROLL_TITLE, stat=UI("stat_abbr/" + abbr, abbr)))}">'
+        f"({html.escape(UI('stat_abbr/' + abbr, abbr))})</button></div>"
         for name, abbr in stats
     )
     debils = "".join(

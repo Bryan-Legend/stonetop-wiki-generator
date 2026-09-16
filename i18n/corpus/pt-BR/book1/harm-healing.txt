@@ -66,9 +66,9 @@ P	Recuperar HP não significa que os ferimentos fecharam ou que os ossos soldara
 PAGE	241
 H2	Debilidades
 P	Os personagens dos jogadores podem sofrer até três debilidades diferentes:
-B	<b><i>Enfraquecido</i></b>: o personagem está fatigado, cansado, lerdo, trêmulo. Ele sofre desvantagem ao rolar +STR ou +DEX.
-B	<b><i>Atordoado</i></b>: o personagem está fora de si, confuso, sem pensar direito. Ele sofre desvantagem ao rolar +INT ou +WIS.
-B	<b><i>Abatido</i></b>: o personagem está muito angustiado, rabugento ou irritado, adoentado, com dor. Ele sofre desvantagem ao rolar +CON ou +CHA.
+B	<b><i>Enfraquecido</i></b>: o personagem está fatigado, cansado, lerdo, trêmulo. Ele sofre desvantagem ao rolar +FOR ou +DES.
+B	<b><i>Atordoado</i></b>: o personagem está fora de si, confuso, sem pensar direito. Ele sofre desvantagem ao rolar +INT ou +SAB.
+B	<b><i>Abatido</i></b>: o personagem está muito angustiado, rabugento ou irritado, adoentado, com dor. Ele sofre desvantagem ao rolar +CON ou +CAR.
 P	Além da penalidade mecânica, as debilidades têm consequências ficcionais. Um personagem <i>abatido</i> está abatido, e você deve tecer isso nas suas descrições e nos seus movimentos de mestre. Uma debilidade pode fazer com que alguém precise Desafiar o Perigo quando normalmente não precisaria.
 H2	Marcando debilidades
 P	Os jogadores marcam as debilidades na ficha para indicar que o personagem sofre delas. Os personagens dos jogadores podem marcar uma debilidade porque...

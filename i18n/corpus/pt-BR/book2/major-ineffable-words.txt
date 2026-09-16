@@ -16,7 +16,7 @@ P	Quando você <b><i>entra num delírio extático e deixa as Palavras Inefáveis
 B	A Verdade é enigmática, vaga, incompleta
 B	Você é dominado e desaba numa convulsão por todo o corpo
 B	Você atrai atenção indesejada
-P	Quando você <b><i>passa semanas em contemplação ascética das palavras incomunicáveis dentro de você</i></b>, role +WIS:
+P	Quando você <b><i>passa semanas em contemplação ascética das palavras incomunicáveis dentro de você</i></b>, role +SAB:
 P	<b>com 10+</b>, você compreende o poder dentro de você — marque 1 abaixo; <b>com 7-9</b>, ganhe vantagem na próxima tentativa de contemplar as palavras.
 MARK	3
 P	Quando você <b><i>faz a última marca</i></b>, desvenda os mistérios das Palavras Inefáveis e pode Pronunciar o Impronunciável (veja o verso). Escolha 1 Palavra que você dominou e apague todas as marcas acima. Daí em diante, quando você <b><i>fizer a última marca</i></b>, escolha outra Palavra para dominar e apague todas as marcas.

@@ -68,10 +68,10 @@ HR
 C	<b>UMA VELA CONTRA A ESCURIDÃO</b> Quando você <b><i>empunha uma luz sagrada mas está de resto desarmado</i></b>, você tem 2 de armadura.
 C2	<b>ESCUDO LUMINOSO</b>
 P	(Requer Uma vela contra a escuridão)
-P	Quando você <b><i>brande uma luz sagrada para desviar um</i></b> <b><i>ataque contra corpo, mente ou alma</i></b>, role +CHA: <b>com</b> <b>10+</b>, o ataque é desviado e, se o atacante estiver ao alcance da sua luz, fica brevemente cego;
+P	Quando você <b><i>brande uma luz sagrada para desviar um</i></b> <b><i>ataque contra corpo, mente ou alma</i></b>, role +CAR: <b>com</b> <b>10+</b>, o ataque é desviado e, se o atacante estiver ao alcance da sua luz, fica brevemente cego;
 P	<b>com 7-9</b>, o ataque é desviado, mas sua luz sagrada tremula e esmorece, ameaçando se apagar;
 P	<b>com 6-</b>, sua luz se apaga e o ataque passa sem impedimento.
-C	<b>TUDO ESTÁ ILUMINADO</b> Quando você <b><i>olha atentamente para alguém e vê sua alma</i></b> <b><i>desnudada</i></b>, role +WIS: <b>com 10+</b>, faça ao jogador dessa pessoa 1 pergunta da lista abaixo, mais "E o que a faria se sentir amada, bela ou digna?"; <b>com</b> <b>7-9</b>, faça 1 pergunta da lista. Em qualquer caso, a resposta deve ser verdadeira.
+C	<b>TUDO ESTÁ ILUMINADO</b> Quando você <b><i>olha atentamente para alguém e vê sua alma</i></b> <b><i>desnudada</i></b>, role +SAB: <b>com 10+</b>, faça ao jogador dessa pessoa 1 pergunta da lista abaixo, mais "E o que a faria se sentir amada, bela ou digna?"; <b>com</b> <b>7-9</b>, faça 1 pergunta da lista. Em qualquer caso, a resposta deve ser verdadeira.
 Q	Do que essa pessoa mais se envergonha?
 Q	O que ela mais deseja ou cobiça?
 Q	De que esperança ela desistiu?
@@ -80,36 +80,36 @@ C	<b>E EIS UM CAVALO AMARELO</b> Quando você <b><i>passa a noite contemplando u
 CX	<b>CHAMA CONSAGRADA</b>
 P	Quando você <b><i>sussurra palavras de consagração a uma chama</i></b>, a chama lança uma luz sagrada. A luz sagrada é incômoda de olhar para as criaturas das trevas, mas não causa dano de verdade. A luz sagrada dura até a chama se apagar ou até você consagrar outra chama, o que vier primeiro.
 C	<b>FOGO INTERIOR</b> Quando você <b><i>está no escuro</i></b>, consegue enxergar à luz do seu fogo interior. Quando você <b><i>sofre dano de</i></b> <b><i>frio ou fogo</i></b>, reduza esse dano em 2.
-C	<b>LUZ GUIA</b> Quando você <b><i>conduz um ou mais NPCs através do perigo</i></b>, role +CHA: <b>com 10+</b>, todos conseguem passar (louvado seja Helior); <b>com 7-9</b>, o mestre dirá o que é preciso para levar todos a salvo.
-C	<b>O OLHO QUE NÃO PISCA DE HELIOR</b> Quando você <b><i>encara o sol por tempo suficiente para perder a</i></b> <b><i>visão</i></b>, nomeie uma pessoa ou um lugar que conheça e role +WIS: <b>com 10+</b>, você vislumbra brevemente o alvo como se de grande altura, e escolha 2 da lista abaixo; <b>com 7-9</b>, você vislumbra brevemente o alvo como se de grande altura, e escolha 1:
+C	<b>LUZ GUIA</b> Quando você <b><i>conduz um ou mais NPCs através do perigo</i></b>, role +CAR: <b>com 10+</b>, todos conseguem passar (louvado seja Helior); <b>com 7-9</b>, o mestre dirá o que é preciso para levar todos a salvo.
+C	<b>O OLHO QUE NÃO PISCA DE HELIOR</b> Quando você <b><i>encara o sol por tempo suficiente para perder a</i></b> <b><i>visão</i></b>, nomeie uma pessoa ou um lugar que conheça e role +SAB: <b>com 10+</b>, você vislumbra brevemente o alvo como se de grande altura, e escolha 2 da lista abaixo; <b>com 7-9</b>, você vislumbra brevemente o alvo como se de grande altura, e escolha 1:
 B	O vislumbre dura quanto você quiser
 B	Seu ponto de vista se aproxima bem de perto
 B	Você recupera a visão rapidamente
 C	<b>ATRIBUTO APRIMORADO</b> Cada vez que pegar este movimento, aumente um dos seus atributos em 1 (até o máximo de +2).
 CX	<b>INVOCAR O DEUS SOL</b>
-P	Quando você <b><i>imbui uma luz sagrada com o poder de Helior</i></b>, escolha uma Invocação que conheça e role +WIS: <b>com</b> <b>10+</b>, ela funciona como descrito, mas você deve escolher 1 consequência da lista abaixo; <b>com 7-9</b>, funciona como descrito, mas você e o mestre escolhem 1 cada.
+P	Quando você <b><i>imbui uma luz sagrada com o poder de Helior</i></b>, escolha uma Invocação que conheça e role +SAB: <b>com</b> <b>10+</b>, ela funciona como descrito, mas você deve escolher 1 consequência da lista abaixo; <b>com 7-9</b>, funciona como descrito, mas você e o mestre escolhem 1 cada.
 B	A Invocação tem seu efeito <i>reduzido</i>
 B	O esforço cobra seu preço; marque uma debilidade
 B	A luz se apaga quando a Invocação termina, seu combustível consumido
 B	Você precisa se banhar ao sol por cerca de uma hora antes de usar essa Invocação de novo Veja o encarte <b>Invocações</b> para detalhes.
 PAGE	123
-C	<b>MANTER ACESO O FOGO DO LAR</b> Quando você <b><i>acende uma fogueira e a polvilha com cinzas</i></b> <b><i>da sua própria lareira,</i></b> quem Acampar com você fica livre de pesadelos ou sonhos ruins e recupera HP (extra) igual ao seu CHA.
+C	<b>MANTER ACESO O FOGO DO LAR</b> Quando você <b><i>acende uma fogueira e a polvilha com cinzas</i></b> <b><i>da sua própria lareira,</i></b> quem Acampar com você fica livre de pesadelos ou sonhos ruins e recupera HP (extra) igual ao seu CAR.
 C	<b>ACENDEDOR DE LAMPIÕES</b> Quando você <b><i>sussurra para um objeto inflamável</i></b> (uma tocha, um pavio, gravetos etc.), ele pega fogo em instantes.
 C	<b>PIEDADE</b> ◇ Quando você <b><i>passa pelo menos uma hora em devida adoração</i></b> <b><i>a Helior,</i></b> guarde 1 Bênção. Outros PJs fiéis que participem dessa adoração também guardam 1 Bênção. A qualquer momento, você pode gastar 1 Bênção para somar +1 a uma rolagem que acabou de fazer em prol de uma causa justa.
 C	<b>CHAMAS PURIFICADORAS</b> Quando você <b><i>empunha uma luz sagrada contra uma criatura das</i></b> <b><i>trevas</i></b>, ela conta como uma arma (d10 de dano, <i>mão</i>, <i>perto</i>, <i>área</i>, 2 perfurante) e você pode escolher rolar
-P	+WIS para Cruzar Lâminas.
+P	+SAB para Cruzar Lâminas.
 C	<b>SEMBLANTE RADIANTE</b> Quando você <b><i>dá a alguém sua atenção afetuosa</i></b>, pode então Persuadi-lo com vantagem. Se for um seguidor, você pode, em vez disso, escolher Fortaleça o Vínculo (como se tivesse pago o custo dele).
-C	<b>ERGUER-SE COMO O SOL</b> Quando você <b><i>atrai a atenção para si com palavras ou atos</i></b>, role +CHA: <b>com 10+</b>, todos se viram e olham, e você prende os olhares enquanto continuar lhes dando motivo para olhar; <b>com 7-9</b>, todos se viram e olham.
+C	<b>ERGUER-SE COMO O SOL</b> Quando você <b><i>atrai a atenção para si com palavras ou atos</i></b>, role +CAR: <b>com 10+</b>, todos se viram e olham, e você prende os olhares enquanto continuar lhes dando motivo para olhar; <b>com 7-9</b>, todos se viram e olham.
 C	<b>O PRIMEIRO DEGELO DA PRIMAVERA</b> Quando você <b><i>passa um tempo (uma hora ao menos, talvez mais)</i></b>
 P	<b><i>tentando despertar esperança, bondade ou misericórdia num NPC</i></b>,
-P	role +CHA: <b>com 10+</b>, você acende um fogo no fundo dele e causa uma mudança duradoura; <b>com 7-9</b>, você aviva a bondade no coração dele por ora, mas um dia ele voltará aos velhos hábitos; <b>com 6-</b>, o coração dele endurece e, diga o mestre o que disser, você não pode usar este movimento nele de novo.
+P	role +CAR: <b>com 10+</b>, você acende um fogo no fundo dele e causa uma mudança duradoura; <b>com 7-9</b>, você aviva a bondade no coração dele por ora, mas um dia ele voltará aos velhos hábitos; <b>com 6-</b>, o coração dele endurece e, diga o mestre o que disser, você não pode usar este movimento nele de novo.
 C	<b>ARDER COM O DOBRO DO BRILHO</b> (Requer nível 6+ e Invocar o Deus Sol) Quando você <b><i>Invocar o Deus Sol</i></b>, pode marcar uma debilidade para usar 2 Invocações de uma vez. Role uma vez e aplique as consequências às duas Invocações.
 C	<b>INVOCAÇÕES FORTALECIDAS</b> (Requer nível 6+ e Invocar o Deus Sol) Quando você Invocar o Deus Sol, pode escolher uma consequência extra antes de rolar. Se fizer isso, a Invocação tem seu efeito <i>fortalecido</i>.
 C	<b>SERVO GLORIOSO</b> (Requer nível 6+ e Invocar o Deus Sol) Quando você <b><i>Invocar o Deus Sol e tirar 10+</i></b>, não precisa escolher consequência; <b>com 7-9</b>, você escolhe uma consequência, mas o mestre não.
 C	<b>CHAMAS FAMINTAS</b> (Requer nível 6+ e Chamas purificadoras) Quando você <b><i>causa dano com uma luz sagrada</i></b>, causa +1d6 de dano e o alvo é envolto em luz sagrada e chamas.
 C	<b>LUZ, MAIS LUZ</b> (Requer nível 6+ e Chama consagrada) Quando você <b><i>consagra uma chama</i></b>, ela arde mais forte que o normal. Uma lamparina de junco ou uma vela ilumina até <i>alcance</i>, uma lamparina a óleo, lanterna ou tocha até <i>próximo</i>, e uma lanterna furta-fogo até <i>longe</i>.
 C	<b>ATRIBUTO SUPERIOR</b> (Requer nível 6+) Aumente um dos seus atributos em +1 (até o máximo de +3).
-C	<b>PORTADOR DA CHAMA BRANCA</b> (Requer nível 6+ e Invocar o Deus Sol) Quando você <b><i>canaliza a essência de Helior para um objeto que</i></b> <b><i>carrega</i></b>, role +WIS: <b>com 10+</b>, ele se acende com uma chama branca que lança uma luz sagrada (<i>alcance</i>, <i>área</i>) e não queima nem você nem o objeto, e você pode Invocar o Deus Sol agora mesmo como se tivesse tirado 10+; <b>com 7-9</b>, ele se acende com uma chama branca que lança uma luz sagrada (<i>alcance</i>, <i>área</i>) e não queima nem você nem o objeto.
+C	<b>PORTADOR DA CHAMA BRANCA</b> (Requer nível 6+ e Invocar o Deus Sol) Quando você <b><i>canaliza a essência de Helior para um objeto que</i></b> <b><i>carrega</i></b>, role +SAB: <b>com 10+</b>, ele se acende com uma chama branca que lança uma luz sagrada (<i>alcance</i>, <i>área</i>) e não queima nem você nem o objeto, e você pode Invocar o Deus Sol agora mesmo como se tivesse tirado 10+; <b>com 7-9</b>, ele se acende com uma chama branca que lança uma luz sagrada (<i>alcance</i>, <i>área</i>) e não queima nem você nem o objeto.
 PAGE	124
 H2	Louvado seja o dia
 P	Você é o servo designado de Helior, o Portador do Dia, deus do sol e da luz, farol de esperança e misericórdia.

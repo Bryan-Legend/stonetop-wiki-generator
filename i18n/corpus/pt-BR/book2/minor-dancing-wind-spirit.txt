@@ -11,7 +11,7 @@ P	◇, <i>rústico</i>, <i>mágica</i>
 P	Uma flauta longa e grossa entalhada em sequoia, com uma rachadura fina mas visível na parte de baixo. Ela pega o vento com facilidade e faz um som agudo.
 P	Qualquer um que toque algumas notas na flauta percebe que há magia aqui.
 P	Quando você <b><i>passa alguns dias praticando, tocando</i></b> <b><i>a flauta onde o vento possa ouvi-lo</i></b>, role
-P	+CHA: <b>com 10+</b>, marque 1 círculo; <b>com 7-9</b>, marque 1 círculo, mas você invoca um espírito de zéfiro irritado;
+P	+CAR: <b>com 10+</b>, marque 1 círculo; <b>com 7-9</b>, marque 1 círculo, mas você invoca um espírito de zéfiro irritado;
 P	<b>com 6-</b>, você não avança em nada, mas consegue invocar um zéfiro irritado.
 MARK	3
 P	Quando você <b><i>marca os três círculos</i></b>, desvenda os mistérios da flauta.

@@ -50,6 +50,14 @@
       "all_major": "Todos os arcanos maiores",
       "all_minor": "Todos os arcanos menores",
       "uses": "Usos"
+    },
+    "stat_abbr": {
+      "STR": "FOR",
+      "DEX": "DES",
+      "INT": "INT",
+      "WIS": "SAB",
+      "CON": "CON",
+      "CHA": "CAR"
     }
   },
   "page_words": [

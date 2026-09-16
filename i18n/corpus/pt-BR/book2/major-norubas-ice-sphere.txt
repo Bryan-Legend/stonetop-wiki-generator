@@ -44,7 +44,7 @@ C	<b>Andarilho Distante</b> Quando você <b><i>caminha em mente</i></b>, pode ga
 HR
 C	<b>Telepatia</b> Quando você <b><i>caminha em mente</i></b>, pode gastar 1 de Poder para conseguir se comunicar mentalmente com alguém por perto, enquanto permanecer na presença dessa pessoa. Ela pode escolher se responde e pode tentar ignorá-lo, mas não consegue bloqueá-lo por completo sem magia própria.
 HR
-C	<b>Moldador de Pensamentos</b> Quando você <b><i>caminha em mente</i></b>, pode gastar 1 de Poder para animar uma massa de material solto (cascalho, neve, folhas etc.) num corpo não maior que o seu. Quando fosse rolar STR, DEX ou CON nesta forma, use INT em vez disso. Esta forma tem 10 HP. Quando reduzida a 0 HP, ela se desfaz e você volta ao seu corpo físico.
+C	<b>Moldador de Pensamentos</b> Quando você <b><i>caminha em mente</i></b>, pode gastar 1 de Poder para animar uma massa de material solto (cascalho, neve, folhas etc.) num corpo não maior que o seu. Quando fosse rolar FOR, DES ou CON nesta forma, use INT em vez disso. Esta forma tem 10 HP. Quando reduzida a 0 HP, ela se desfaz e você volta ao seu corpo físico.
 HR
 H2	Consequências
 HR

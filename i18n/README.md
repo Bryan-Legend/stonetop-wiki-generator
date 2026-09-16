@@ -141,8 +141,11 @@ Latin script, so nothing about names or layout needs rethinking; Simplified
 Chinese next because it is the largest audience outright and the one where the
 English pages help a reader least.
 
-Current pt-BR coverage: Book II 138/138, Book I 35/39, all six sheets.
-Still to do: `dangers`, `expeditions`, `homefront`, `playing-the-game`.
+**pt-BR is complete** (2026-09-16): Book II 138/138, Book I 39/39, all six
+sheets — 178 pages. A leak sweep over all of them turns up nothing but the
+known false positives (real book and film titles in the mediography and
+`first-adventure`, and a localized name carrying its English gloss).
+Next: **zh-Hans**, same order — Book II first, then Book I.
 
 ### Working a long chapter
 
@@ -221,6 +224,22 @@ way while pt-BR was being written, all now corrected and recorded in
 | **NPC** | *PdM* | the obvious calque, but the corpus keeps NPC in English like HP and XP |
 | **À Beira da Morte** (Death's Door) | *Porta da Morte* | the literal reading; the move is named for the state, not the door |
 | **Beira-Brejo** (Marshedge) | *Marshedge* | Latin-script languages keep *Stonetop*, but not every name |
+| **FOR · DES · CON · INT · SAB · CAR** | *STR · DEX · WIS · CHA* | the stat abbreviation was English in 26 files and Portuguese in the rest — see below |
+
+**When the drift is in the generator, fix the generator.** The stat
+abbreviation was the awkward one: a playbook sheet printed `(STR)` in every
+language, because `PLAYBOOK_STATS` in `generator/extract.py` is structural data
+a translator never sees, so half the prose had been written to match the sheet
+and half to match the language. Neither half was wrong on its own. The fix was
+`i18n/ui/<code>.json` → `sheet.stat_abbr`, read by `structure.py` for the
+printed abbreviation and the roll tooltip only — `data-roll-stat` and the field
+key (`the-ranger:stat-str`) stay English, like every other id on the site, so a
+score typed on the English sheet is still there on the Portuguese one. Then the
+prose was swept to the majority form.
+
+One caution about sweeping: `apply` reads the **work** file, so a page whose
+work file is gone cannot be re-applied, and at that point the corpus file is the
+only copy. Check which slugs still have a work file before planning a sweep.
 
 Names carry the English in parentheses on **first mention per page**
 (`Beira-Brejo (Marshedge)`), so a bare English name later in a page is fine and

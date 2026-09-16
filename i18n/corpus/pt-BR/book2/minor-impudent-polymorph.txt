@@ -22,4 +22,4 @@ P	Quando você <b><i>interrompe a vida após a morte idílica do</i></b> <b><i>S
 B	A mudança dura o quanto você quiser (caso contrário, dura até você tirar 6- num movimento)
 B	A mudança é rápida e fácil (caso contrário, leva minutos ou até horas)
 B	Você se adapta depressa à nova forma (caso contrário, marque uma debilidade)
-B	Escolha 2 dos seus atributos; troque os valores deles até a mudança acabar Depois role +CHA: <b>com 10+</b>, o espírito realiza a mudança, exatamente como você pediu; <b>com 7-9</b>, ele realiza a mudança, mas você ganha Ira igual ao número de escolhas que fez; <b>com 6-</b>, o espírito se rebela e atormenta seu corpo, causando 1d10 de dano por Ira que você guarda. Se sobreviver, limpe toda a Ira.
+B	Escolha 2 dos seus atributos; troque os valores deles até a mudança acabar Depois role +CAR: <b>com 10+</b>, o espírito realiza a mudança, exatamente como você pediu; <b>com 7-9</b>, ele realiza a mudança, mas você ganha Ira igual ao número de escolhas que fez; <b>com 6-</b>, o espírito se rebela e atormenta seu corpo, causando 1d10 de dano por Ira que você guarda. Se sobreviver, limpe toda a Ira.

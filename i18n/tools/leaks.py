@@ -35,6 +35,7 @@ def leaks(code: str, slug: str) -> list[str]:
 
 
 def main() -> int:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     t0 = time.perf_counter()
     code, slugs = sys.argv[1], sys.argv[2:]
     total = 0

@@ -168,13 +168,13 @@ PAGE	279
 H2	Movimentos
 HR
 P	<b>PERGUNTAR POR AÍ</b>
-P	Quando você <b><i>gasta uma bolsa de cobres e</i></b> <b><i>algumas horas perguntando pela vila</i></b>, diga o que espera descobrir e role +CHA: <b>com 10+</b>, você tem uma resposta clara e útil; <b>com 7-9</b>, você tem uma resposta, mas escolha 1:
+P	Quando você <b><i>gasta uma bolsa de cobres e</i></b> <b><i>algumas horas perguntando pela vila</i></b>, diga o que espera descobrir e role +CAR: <b>com 10+</b>, você tem uma resposta clara e útil; <b>com 7-9</b>, você tem uma resposta, mas escolha 1:
 B	Ela é incompleta, contraditória ou confusa; pergunte ao mestre como você poderia descobrir mais
 B	Vai lhe custar outra bolsa de cobres
 B	Você atraiu atenção indesejada ou se meteu numa situação à escolha do mestre
 HR
 P	<b>FARREAR</b>
-P	Quando você <b><i>gasta um punhado de pratas se</i></b> <b><i>divertindo</i></b>, role +CHA: <b>com 10+</b>, escolha 2;
+P	Quando você <b><i>gasta um punhado de pratas se</i></b> <b><i>divertindo</i></b>, role +CAR: <b>com 10+</b>, escolha 2;
 P	<b>com 7-9</b>, escolha 1:
 B	Você espalha um boato ou uma história por toda parte
 B	Você faz um novo amigo leal
@@ -273,4 +273,4 @@ P	• Agarrar algo e escapulir sem ser notado
 P	• Sumir na multidão ou num beco
 P	• Farejar um alvo fácil
 P	• Escapar se contorcendo
-P	Quando você <b><i>entra desprevenido na correria</i></b> <b><i>do Mercado da Borda ou nas ruas cheias da</i></b> <b><i>Descida</i></b>, role +WIS: <b>com 10+</b>, você vê o batedor de carteiras chegando ou o pega no ato; <b>com 7-9</b>, ele leva só ninharias (1d4 usos de Suprimentos, uma bolsa de cobres, um odre de uísque etc.); <b>com 6-</b>, seja lá o que ele levou, você vai sentir falta.
+P	Quando você <b><i>entra desprevenido na correria</i></b> <b><i>do Mercado da Borda ou nas ruas cheias da</i></b> <b><i>Descida</i></b>, role +SAB: <b>com 10+</b>, você vê o batedor de carteiras chegando ou o pega no ato; <b>com 7-9</b>, ele leva só ninharias (1d4 usos de Suprimentos, uma bolsa de cobres, um odre de uísque etc.); <b>com 6-</b>, seja lá o que ele levou, você vai sentir falta.

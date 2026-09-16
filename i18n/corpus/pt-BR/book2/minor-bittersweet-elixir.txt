@@ -20,7 +20,7 @@ P	Quando você <b><i>enche a bacia com alguns anos da sua</i></b> <b><i>vida</i>
 P	Ou marque a próxima idade acima (e atualize sua aparência) enquanto os anos perdidos o alcançam, ou marque um dos seguintes (à sua escolha):
 C	Seu humor muda drasticamente (como?)
 C	Você vê a Última Porta (como ela é?)
-C	Reduza STR, DEX ou CON em 1
+C	Reduza FOR, DES ou CON em 1
 C	Você tem menos de um ano de vida
 P	Quando alguém <b><i>bebe todo o elixir agridoce, direto da bacia</i></b>, escolhe 1:
 B	Recuperar todos os HP, limpar todas as debilidades e curar quaisquer ferimentos problemáticos ativos

@@ -16,7 +16,7 @@ C	… contar à máscara o segredo de outra pessoa, algo que você prometeu nunc
 H3	A Máscara do Duplo
 P	Sagacidade ◇◇◇
 P	Quando você <b><i>veste a máscara e come um fio de cabelo, sangue,</i></b> <b><i>unha etc. de alguém</i></b>, você e a máscara se tornam o duplo perfeito dessa pessoa até o próximo nascer do sol ou até você tirar a máscara.
-P	Quando você <b><i>interage com um NPC que conhece</i></b> <b><i>a pessoa cujo rosto você usa</i></b>, role +CHA: <b>com 10+</b>, guarde 3 de Sagacidade; <b>com 7-9</b>, guarde 1 de Sagacidade; <b>com 6-</b>, ele fica profundamente desconfiado. Enquanto interage com ele, gaste Sagacidade, 1 por 1, para perguntar ao mestre:
+P	Quando você <b><i>interage com um NPC que conhece</i></b> <b><i>a pessoa cujo rosto você usa</i></b>, role +CAR: <b>com 10+</b>, guarde 3 de Sagacidade; <b>com 7-9</b>, guarde 1 de Sagacidade; <b>com 6-</b>, ele fica profundamente desconfiado. Enquanto interage com ele, gaste Sagacidade, 1 por 1, para perguntar ao mestre:
 B	O que ele espera que eu faça/diga?
 B	O que ele espera/quer de mim?
 B	Que segredo eu guardo dele?

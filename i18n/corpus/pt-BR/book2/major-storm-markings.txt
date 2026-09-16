@@ -12,7 +12,7 @@ P	<i>implantado</i>, <i>mágica</i>
 P	Uma série de marcas ramificadas, como árvores, percorrendo sua pele de cima a baixo. Em geral azul-claras, quase como veias, mas quando você se agita elas parecem brilhar, pulsar e ondular de luz.
 P	As marcas costumam ser vistas como uma bênção de Tor (fazedor de chuva, nuvem de trovão, matador de feras). Mas, como a maioria das bênçãos dos deuses, também são um grande fardo.
 HR
-P	Quando você <b><i>ferve de raiva</i></b>, causa +1 de dano até se acalmar. Mas quando você <b><i>tenta controlar seu</i></b> <b><i>temperamento</i></b>, role +WIS: <b>com 10+</b>, você mantém a calma e age como quiser; <b>com 7-9</b>, escolha 1 da lista abaixo; <b>com 6-</b>, você simplesmente perde a cabeça — conte ao mestre que besteira você acaba fazendo.
+P	Quando você <b><i>ferve de raiva</i></b>, causa +1 de dano até se acalmar. Mas quando você <b><i>tenta controlar seu</i></b> <b><i>temperamento</i></b>, role +SAB: <b>com 10+</b>, você mantém a calma e age como quiser; <b>com 7-9</b>, escolha 1 da lista abaixo; <b>com 6-</b>, você simplesmente perde a cabeça — conte ao mestre que besteira você acaba fazendo.
 B	Respirar fundo algumas vezes e contar até dez, fumegando o tempo todo
 B	Descarregar sua raiva, mas contar para nós como e em quê
 P	Quando você <b><i>é atingido por um raio ou uma descarga elétrica</i></b>, marque 1, não sofra dano e nenhum efeito nocivo (seu equipamento, infelizmente, não tem essa proteção):

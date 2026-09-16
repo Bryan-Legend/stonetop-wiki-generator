@@ -12,7 +12,7 @@ P	Os jogadores podem disparar um movimento de propósito, descrevendo ações qu
 P	O contrário também vale: <b>se eles fazem,</b> <b>eles fizeram</b>. Quando dizem que passam correndo pelos crinwin e você julga que é perigoso, arriscado e com muito em jogo, eles estão Desafiando o Perigo. Podem voltar atrás (“Ah, não tinha entendido, não quero fazer isso”), mas se seguirem em frente, o movimento dispara e eles precisam rolar.
 P	É tarefa de todos ficar de olho nos movimentos que disparam, mesmo que em geral seja você quem decide. Qualquer jogador pode, a qualquer momento, dizer “isso não é Defender?”, e se a mesa concordar, quem disparou pega os dados. Se houver desacordo sobre um movimento ter disparado, ou sobre qual movimento disparou, conversem, façam perguntas e lembrem-se de seguir seus princípios e perseguir sua agenda.
 PAGE	209
-P	Quando um movimento diz “role +[ATRIBUTO]”, isso significa: role 2d6 e some o atributo indicado (STR, DEX etc.). Um resultado de 10+ é um acerto forte; 7-9 é um acerto fraco (mas ainda um acerto). Todos os movimentos básicos dizem o que acontece com 10+ ou 7-9.
+P	Quando um movimento diz “role +[ATRIBUTO]”, isso significa: role 2d6 e some o atributo indicado (FOR, DES etc.). Um resultado de 10+ é um acerto forte; 7-9 é um acerto fraco (mas ainda um acerto). Todos os movimentos básicos dizem o que acontece com 10+ ou 7-9.
 P	Com 6 ou menos, é uma falha. Isso significa:
 B	Eles marcam XP
 B	Você faz um <b>movimento duro de mestre</b> (página 178) Seu movimento duro pode refletir o PJ se atrapalhando, mas também pode refletir algo que o impede de ter sucesso ou até de tentar a ação declarada. Pode até refletir que ele faz o que pretendia, mas com consequências terríveis.
@@ -25,17 +25,17 @@ P	Veja a página 230 para uma explicação completa de vantagem e desvantagem.
 PAGE	210
 P	<b>DESAFIAR O PERIGO</b>
 P	Quando <b><i>o perigo se aproxima, há muito em</i></b> <b><i>jogo e você faz algo arriscado</i></b>, verifique se outro movimento se aplica. Se não, role...
-E	+STR para forçar caminho ou testar sua força
-E	+DEX para usar velocidade, agilidade ou precisão
+E	+FOR para forçar caminho ou testar sua força
+E	+DES para usar velocidade, agilidade ou precisão
 E	+CON para suportar ou se manter firme
 E	+INT para aplicar seu conhecimento ou executar um plano esperto
-E	+WIS para impor sua força de vontade ou confiar nos sentidos
-E	+CHA para encantar, blefar, impressionar ou se enturmar <b>Com 10+</b>, você se sai tão bem quanto se poderia esperar; <b>com 7-9</b>, você consegue, mas o mestre apresentará um sucesso parcial, um custo ou uma consequência (e talvez uma escolha entre eles, ou a chance de recuar).
+E	+SAB para impor sua força de vontade ou confiar nos sentidos
+E	+CAR para encantar, blefar, impressionar ou se enturmar <b>Com 10+</b>, você se sai tão bem quanto se poderia esperar; <b>com 7-9</b>, você consegue, mas o mestre apresentará um sucesso parcial, um custo ou uma consequência (e talvez uma escolha entre eles, ou a chance de recuar).
 P	Se a ação de um PJ puder disparar tanto Desafiar o Perigo quanto outro movimento (como dar uma machadada no dragonete que está mastigando a perna dele), o outro movimento tem prioridade (neste caso, Cruzar Lâminas).
 P	Não peça Desafiar o Perigo só porque você acha que “eles têm que rolar alguma coisa”. Se um personagem faz algo arriscado, mas não há perigo à espreita nem muito em jogo, não role. Simplesmente decida e diga o que acontece, seguindo seus princípios e sua agenda.
 P	Quando pedir Desafiar o Perigo, diga qual é o perigo e/ou o que está em jogo. “Isso soa como Desafiar o Perigo; o perigo é que ele perceba antes de você conseguir esfaqueá-lo.”
 P	Ou “acho que isso é Desafiar o Perigo, e numa falha você congela de medo”. Se você não consegue dizer qual é o perigo ou o que está em jogo, então não é Desafiar o Perigo.
-P	Se não estiver claro qual atributo eles usam, faça perguntas até ficar. Se puder ser um ou outro, diga o que você está pensando e deixe o jogador escolher. “Isso pode ser testar sua força ou suportar, então STR ou CON, você escolhe.”
+P	Se não estiver claro qual atributo eles usam, faça perguntas até ficar. Se puder ser um ou outro, diga o que você está pensando e deixe o jogador escolher. “Isso pode ser testar sua força ou suportar, então FOR ou CON, você escolhe.”
 P	Não aceite bobagem. Se você diz “uma flecha vem voando na sua direção, o que você faz?” e o jogador responde algo como “abro um sorriso para a flecha e a encanto para que erre”, ele não está Desafiando o Perigo — está levando uma flecha na cara. <b>Diga a ele as</b> <b>consequências e pergunte</b> se ele ainda quer fazer isso.
 P	Com 10+, ele faz tão bem quanto se poderia esperar. Descreva o que acontece (ou peça que ele descreva). Muitas vezes, você dará a ele uma oportunidade de agir. Mas se o perigo era especialmente terrível ou a ação especialmente desesperada (ou imprudente), talvez o melhor que se pudesse esperar fosse simplesmente evitar o pior.
 PAGE	211
@@ -48,14 +48,14 @@ P	Considere dar a eles uma escolha entre dois ou mais sucessos parciais/custos/c
 P	Lembre-se: um 7-9 ainda é, no fundo, um sucesso. Não faça o sucesso parcial, o custo ou a consequência tão ruins a ponto de teria sido melhor não fazer nada.
 P	Mas com 6-? Solte os cachorros. O perigo se concretiza antes que eles possam agir, ou no momento em que agem. Ou a ação deles dá certo, mas as coisas pioram muito por causa disso. Faça algo que flua naturalmente da ficção e da sua preparação. <b>Deixe queimar.</b>
 HR
-P	<i>Caradoc está pendurado numa árvore, com</i> <i>a pegada escorregando. Ele joga as pernas</i> <i>em volta do galho e se puxa para cima.</i> <i>“É, isso é Desafiar o Perigo — o perigo</i> <i>é você cair uns 25 metros. Parece</i> <i>testar sua força, então +STR?”</i>
+P	<i>Caradoc está pendurado numa árvore, com</i> <i>a pegada escorregando. Ele joga as pernas</i> <i>em volta do galho e se puxa para cima.</i> <i>“É, isso é Desafiar o Perigo — o perigo</i> <i>é você cair uns 25 metros. Parece</i> <i>testar sua força, então +FOR?”</i>
 P	<i>“Faz sentido”, ele diz, e rola. Num</i> <i>7-9, vou de custo e mando ele</i> <i>marcar</i> enfraquecido <i>de medo e cansaço.</i>
 P	<i>Mas não, ele tira 10, então eu digo “Beleza,</i> <i>você consegue, do jeitinho que disse”. Aí</i> <b><i>eu ofereço uma</i></b> <b><i>oportunidade</i></b><i>. “Leva um instante para</i> <i>recuperar o fôlego, mas daqui é uma subida</i> <i>fácil até o ninho. O que você faz?”</i>
 HR
 P	<i>Blodwen fica paralisada ao ouvir os trinados dos</i> <i>dragonetes que a cercam no mato.</i> <i>Ela saca um pote de barro e o joga,</i> <i>na esperança de distraí-los.</i>
-P	<i>“Esperto! Parece Desafiar o Perigo</i> <i>com INT.” Ela tira 7 e eu dou uma</i> <i>escolha a ela: “Eles caem na isca, mas você ainda não</i> <i>está livre. Você pode marcar</i> <i>mais 2 usos de suprimentos e jogar mais</i> <i>coisas para longe deles, para atraí-los. Ou</i> <i>pode tentar escapulir agora, Desafiando</i> <i>o Perigo com DEX. O que você faz?”</i>
+P	<i>“Esperto! Parece Desafiar o Perigo</i> <i>com INT.” Ela tira 7 e eu dou uma</i> <i>escolha a ela: “Eles caem na isca, mas você ainda não</i> <i>está livre. Você pode marcar</i> <i>mais 2 usos de suprimentos e jogar mais</i> <i>coisas para longe deles, para atraí-los. Ou</i> <i>pode tentar escapulir agora, Desafiando</i> <i>o Perigo com DES. O que você faz?”</i>
 HR
-P	<i>Rhianna passa correndo pelos crinwin. “Acho</i> <i>que você está Desafiando o Perigo aqui, com</i> <i>DEX para confiar na velocidade.” Num 10+ ela</i> <i>passa por eles sem problema e chega</i> <i>à boca da caverna.</i>
+P	<i>Rhianna passa correndo pelos crinwin. “Acho</i> <i>que você está Desafiando o Perigo aqui, com</i> <i>DES para confiar na velocidade.” Num 10+ ela</i> <i>passa por eles sem problema e chega</i> <i>à boca da caverna.</i>
 P	<i>Mas ela tira 9 e eu opto por uma consequência: “Quando você passa correndo, dois</i> <i>se viram e derrubam você.” A jogadora de Rhianna</i> <i>reclama — um 7-9 ainda deve ser</i> <i>fundamentalmente um sucesso. “Ah, é mesmo!”</i> <i>eu digo. “Você chega à boca da caverna,</i> <i>mas dois crinwin vêm saltando atrás de você,</i> <i>colados no seu rastro, o que você faz?”</i>
 HR
 PAGE	212
@@ -78,7 +78,7 @@ P	<i>“Não, vamos dizer que ele está Ajudando o Vahid”, eu digo.</i> <i>“
 P	<i>“Quanto tempo a gente economizaria?” pergunta Rhianna.</i> <i>Eu digo que economizaria talvez meia</i> <i>hora. “Hmm. Não, vamos fazer direito. Vou pedir para o</i> <i>Lowri dar apoio e conselho ao Vahid.”</i>
 P	<i>“Certo! Vahid, role para Buscar Discernimento com</i> <i>vantagem.”</i>
 HR
-P	<i>Caradoc está preso sob um nailadd — uma aranha</i> <i>gigante — e ela está prestes a mordê-lo com</i> <i>aquelas mandíbulas venenosas. Ele se contorce e a empurra,</i> <i>tentando se soltar, e todos nós concordamos</i> <i>que isso é Desafiar o Perigo com STR.</i>
+P	<i>Caradoc está preso sob um nailadd — uma aranha</i> <i>gigante — e ela está prestes a mordê-lo com</i> <i>aquelas mandíbulas venenosas. Ele se contorce e a empurra,</i> <i>tentando se soltar, e todos nós concordamos</i> <i>que isso é Desafiar o Perigo com FOR.</i>
 P	<i>“Posso ajudar?” pergunta Blodwen.</i>
 P	<i>“Claro, o que você faz para ajudar?”</i>
 P	<i>“Vou chegar perto e começar a gritar com ela, cutucando-a</i> <i>com meu cajado. Mas não quero machucá-la!”</i> <i>(Blodwen tem um fraco por bichos.)</i>
@@ -90,14 +90,14 @@ P	<i>Quem ele pega?”</i>
 P	<i>“Eu tenho que escolher?”</i>
 P	<i>“Tem.”</i>
 HR
-P	<i>Blodwen invocou um espírito do vento e</i> <i>está pedindo que ele explore as ruínas em frangalhos.</i> <i>“Você vai ter que rolar +CHA para</i> <i>Persuadir”, eu digo.</i>
+P	<i>Blodwen invocou um espírito do vento e</i> <i>está pedindo que ele explore as ruínas em frangalhos.</i> <i>“Você vai ter que rolar +CAR para</i> <i>Persuadir”, eu digo.</i>
 P	<i>“Posso ajudar?” pergunta Vahid. Eu pergunto como ele</i> <i>faz isso. “Talvez eu saiba alguma coisa sobre esses</i> <i>espíritos, tipo o que os motiva?” Mas isso não é</i> <i>Ajudar, é Saber das Coisas. Talvez</i> <i>ele Saiba das Coisas e use o que eu contar</i> <i>para Ajudar, mas ele não está Ajudando agora!</i>
 HR
-P	<i>A câmara desaba, prendendo Blodwen</i> <i>sob uma pilha de entulho e vigas. Caradoc cambaleia até lá e ergue uma das</i> <i>vigas. “Você ainda está presa sob um monte de</i> <i>escombros, Blodwen. Se quiser cavar para</i> <i>se soltar, isso é Desafiar o Perigo com STR.</i> <i>O perigo é que você não consiga se soltar antes</i> <i>que a força do Caradoc acabe.”</i>
+P	<i>A câmara desaba, prendendo Blodwen</i> <i>sob uma pilha de entulho e vigas. Caradoc cambaleia até lá e ergue uma das</i> <i>vigas. “Você ainda está presa sob um monte de</i> <i>escombros, Blodwen. Se quiser cavar para</i> <i>se soltar, isso é Desafiar o Perigo com FOR.</i> <i>O perigo é que você não consiga se soltar antes</i> <i>que a força do Caradoc acabe.”</i>
 P	<i>Caradoc pergunta se ele está Ajudando. “Está!” eu digo.</i> <i>“Você está dando a ela a chance de tentar se</i> <i>soltar. Mas ela não vai ganhar vantagem, se</i> <i>é isso que você quer dizer.”</i>
 PAGE	214
 P	<b>CRUZAR LÂMINAS</b>
-P	Quando você <b><i>luta corpo a corpo ou de</i></b> <b><i>perto</i></b>, role +STR: <b>com 10+</b>, sua manobra funciona como esperado (cause seu dano) e escolha 1:
+P	Quando você <b><i>luta corpo a corpo ou de</i></b> <b><i>perto</i></b>, role +FOR: <b>com 10+</b>, sua manobra funciona como esperado (cause seu dano) e escolha 1:
 B	Evitar, impedir ou revidar o ataque do inimigo
 B	Golpear com força e rapidez, causando 1d6 de dano extra, mas sofrer o ataque do inimigo
 P	<b>Com 7-9</b>, sua manobra funciona, mais ou menos (cause seu dano), mas você sofre o ataque do inimigo.
@@ -117,10 +117,10 @@ P	<i>O nailadd solta Caradoc e se lança sobre</i> <i>Blodwen, mordendo-a com ve
 P	<i>“Provavelmente, sim. Como é isso?”</i>
 P	<i>“Eu me ponho de pé, pego meu escudo e avanço</i> <i>para tirá-la de cima dela com uma pancada.”</i>
 P	<i>Blodwen pergunta se é mesmo Cruzar Lâminas, já que ela está focada nela. “É”, eu digo, “ela acabou de envenenar</i> <i>você, e é muito rápida. Acho que consegue</i> <i>se defender do Caradoc.”</i>
-P	<i>Então Caradoc rola +STR e tira 11,</i> <i>escolhendo sabiamente evitar o ataque do inimigo.</i> <i>Infelizmente, o dano dele é só 2, não o bastante</i> <i>para passar pela armadura da aranha. “Então não</i> <i>acontece nada?” ele pergunta.</i>
+P	<i>Então Caradoc rola +FOR e tira 11,</i> <i>escolhendo sabiamente evitar o ataque do inimigo.</i> <i>Infelizmente, o dano dele é só 2, não o bastante</i> <i>para passar pela armadura da aranha. “Então não</i> <i>acontece nada?” ele pergunta.</i>
 P	<i>“Ela não sofre dano, mas sua manobra</i> <i>funciona. Você a joga para longe de Blodwen, e</i> <i>ela cai de costas, se debatendo um pouco enquanto</i> <i>tenta se virar. O que você faz?”</i>
 HR
-P	<i>O crinwin tem Rhianna presa no chão, fazendo</i> <i>uns arrulhos estranhos enquanto tenta sufocá-la.</i> <i>“Eu o empurro com uma das mãos e saco</i> <i>minha faca com a outra. Facada, facada.” Isso é</i> <i>lutar de perto, então ela rola +STR</i> <i>para Cruzar Lâminas. Ela tira 12!</i>
+P	<i>O crinwin tem Rhianna presa no chão, fazendo</i> <i>uns arrulhos estranhos enquanto tenta sufocá-la.</i> <i>“Eu o empurro com uma das mãos e saco</i> <i>minha faca com a outra. Facada, facada.” Isso é</i> <i>lutar de perto, então ela rola +FOR</i> <i>para Cruzar Lâminas. Ela tira 12!</i>
 HR
 P	Quando vários combatentes causam dano a um único inimigo, role o dano de um deles (em geral o melhor) e some +1 de dano para cada atacante capaz além do primeiro. Aplique as etiquetas de todos os atacantes conforme fizer sentido.
 P	Veja também <b>Conduzindo o combate</b> (página 406), em especial <b>Inimigos que eles não conseguem ferir</b> (página 412), <b>Vários combatentes</b> (página 414) e <b>Mantendo as lutas interessantes</b> (página 417).
@@ -176,12 +176,12 @@ P	<i>“Certo, Blodwen, enquanto isso acontece...”</i>
 PAGE	218
 P	<b>INTERFERIR</b>
 P	Quando você tenta frustrar a ação de outro PJ e nenhum dos dois recua, role...
-E	+STR para forçar caminho ou testar sua força
-E	+DEX para usar velocidade, agilidade ou precisão
+E	+FOR para forçar caminho ou testar sua força
+E	+DES para usar velocidade, agilidade ou precisão
 E	+CON para suportar ou se manter firme
 E	+INT para aplicar seu conhecimento ou executar um plano esperto
-E	+WIS para impor sua força de vontade ou confiar nos sentidos
-E	+CHA para encantar, blefar, impressionar ou se enturmar <b>Com 10+</b>, a outra pessoa escolhe 1 da lista abaixo; <b>com 7-9</b>, ela escolhe 1 da lista abaixo, mas você fica desequilibrado, exposto ou vulnerável de algum jeito.
+E	+SAB para impor sua força de vontade ou confiar nos sentidos
+E	+CAR para encantar, blefar, impressionar ou se enturmar <b>Com 10+</b>, a outra pessoa escolhe 1 da lista abaixo; <b>com 7-9</b>, ela escolhe 1 da lista abaixo, mas você fica desequilibrado, exposto ou vulnerável de algum jeito.
 B	Fazer assim mesmo, mas com desvantagem na (próxima) rolagem dela
 B	Ceder, mudar de rumo ou de outro modo deixar que o movimento dela seja frustrado Invoque este movimento quando um PJ age, outro PJ tenta detê-lo e o primeiro insiste. Pare e discuta a situação, dando aos dois jogadores a chance de desistir.
 P	Qualquer um dos dois pode ceder sem ir aos dados.
@@ -204,12 +204,12 @@ P	<i>Caradoc ainda ouve a voz do swyn,</i> <i>sibilando más ideias na cabeça d
 P	<i>“Eu rosno e giro meu escudo contra ela, tipo</i> <i>CALA A BOCA! Cruzar Lâminas?”</i>
 P	<i>“Provavelmente, mas espera aí. Rhianna, o Caradoc</i> <i>está atacando você, o que você faz?”</i>
 P	<i>“O quê? Não. Eu dou um passo atrás, desviando daquele escudo</i> <i>e chutando a perna dele para derrubá-lo.”</i>
-P	<i>Caradoc não recua, e Rhianna também não,</i> <i>então ela rola +DEX para Interferir.</i> <i>Ela tira 7. Caradoc pode Cruzar Lâminas com</i> <i>desvantagem ou deixar seu ataque ser frustrado. Ele</i> <i>deixa ser frustrado, mas Rhianna fica desequilibrada</i> <i>e/ou vulnerável.</i>
+P	<i>Caradoc não recua, e Rhianna também não,</i> <i>então ela rola +DES para Interferir.</i> <i>Ela tira 7. Caradoc pode Cruzar Lâminas com</i> <i>desvantagem ou deixar seu ataque ser frustrado. Ele</i> <i>deixa ser frustrado, mas Rhianna fica desequilibrada</i> <i>e/ou vulnerável.</i>
 P	<i>“Rhianna, você chuta a perna do Caradoc, mas ele</i> <i>tomba em cima de você. Os dois caem, ele por cima.</i> <i>Caradoc, você está de costas, Rhianna embaixo</i> <i>de você, o rosto dela bem ao lado do seu cotovelo, e aquela</i> <i>voz sibilando ‘golpeia elaaa!’. O que você faz?”</i>
 HR
 P	<i>Rhianna fica para trás e caminha um pouco com Vahid.</i> <i>“Vahid, o que está rolando entre você e</i> <i>a Eira? Você está deixando ela desconfortável.” Vahid é</i> <i>evasivo, e Rhianna fala: “É, eu paro</i> <i>e olho através dessa sua pose de velho enigmático.</i> <i>Buscar Discernimento?”</i>
 P	<i>“Claro”, eu digo. Vahid pergunta se há algo</i> <i>que ele possa fazer quanto a isso. “Você pode Interferir.</i> <i>Mas conte para nós como é isso.”</i>
-P	<i>“Eu sorrio sem jeito e digo alguma coisa</i> <i>sobre ser um velho solitário olhando para uma</i> <i>mulher mais jovem e bonita, mesmo que não seja</i> <i>nada disso.” Interessante! Nós</i> <i>concordamos que ele está Interferindo e rola +CHA.</i> <i>Ele tira 4.</i>
+P	<i>“Eu sorrio sem jeito e digo alguma coisa</i> <i>sobre ser um velho solitário olhando para uma</i> <i>mulher mais jovem e bonita, mesmo que não seja</i> <i>nada disso.” Interessante! Nós</i> <i>concordamos que ele está Interferindo e rola +CAR.</i> <i>Ele tira 4.</i>
 P	<i>Eu penso em</i> <b><i>virar o movimento dele contra ele</i></b> <i>e dar vantagem à Rhianna para Buscar</i> <i>Discernimento. Mas prefiro deixar essa questão cozinhando em fogo baixo, então eu</i> <b><i>anuncio um problema</i></b> <i>e encerro a</i> <i>conversa. “Rhianna, ele te dá aquela</i> <i>desculpa esfarrapada, mas antes que você processe,</i> <i>o Garet grita ‘DRAGONETES!’ e há um rosnado</i> <i>e gritaria ali na frente, o que você faz?”</i>
 HR
 P	<i>Thornthumb oferece uma flor bonita a Blodwen,</i> <i>e ela vai pegá-la. Vahid Interfere, tentando dar um tapa para tirá-la da mão do spriggan. Ele</i> <i>tira 10, mas Blodwen decide pegar a</i> <i>flor mesmo assim. “Acho que ele derruba a flor da</i> minha <i>mão, e eu falo: ‘Vahid! Peça desculpa!’”</i> <i>Vahid cerra o maxilar e pede desculpa, depois</i> <i>sai pisando duro. Thornthumb sorri enquanto ele vai.</i>
@@ -253,15 +253,15 @@ P	<i>“Claro”, eu digo. “Mas qual delas?” E, a menos</i> <i>que ela faça
 PAGE	222
 P	<b>DISPARAR</b>
 P	Quando você <b><i>dá um tiro fácil com uma</i></b> <b><i>arma à distância</i></b>, cause seu dano.
-P	Se <b><i>o tiro for complicado ou você estiver sob</i></b> <b><i>pressão</i></b>, primeiro role +DEX: <b>com 10+</b>, você tem um tiro limpo, cause seu dano; <b>com 7-9</b>, escolha 1:
+P	Se <b><i>o tiro for complicado ou você estiver sob</i></b> <b><i>pressão</i></b>, primeiro role +DES: <b>com 10+</b>, você tem um tiro limpo, cause seu dano; <b>com 7-9</b>, escolha 1:
 B	Causar seu dano, mas esgotar sua munição (marque o próximo estado ao lado da sua arma; não escolha isto se sua arma não tiver esses estados)
 B	Manter a mira e esperar por um tiro limpo; quando o momento chegar (o mestre decide), cause seu dano
 B	Mover-se para conseguir um tiro limpo — expondo-se ao perigo ou abrindo mão de alguma vantagem (o mestre diz como) — e então causar seu dano
-B	Apressar o tiro e causar seu dano, o que leva a um custo ou complicação à escolha do mestre O que conta como tiro “fácil” varia conforme o personagem e a situação. Um Patrulheiro com pontaria certeira pode simplesmente rolar dano para acertar um inimigo desavisado a partir de uma cobertura. Mas um Buscador que nunca matou estaria “sob pressão” e precisaria rolar +DEX.
+B	Apressar o tiro e causar seu dano, o que leva a um custo ou complicação à escolha do mestre O que conta como tiro “fácil” varia conforme o personagem e a situação. Um Patrulheiro com pontaria certeira pode simplesmente rolar dano para acertar um inimigo desavisado a partir de uma cobertura. Mas um Buscador que nunca matou estaria “sob pressão” e precisaria rolar +DES.
 P	Como Cruzar Lâminas, Disparar só dispara se houver chance real de ferir o alvo. Se não houver, e mesmo assim atirarem, então <b>revele uma verdade indesejada</b>, <b>diga a eles as</b> <b>consequências</b> ou <b>coloque-os numa enrascada</b>.
 P	Se o tiro for possível, mas muito difícil, então <b>diga</b> <b>a eles os requisitos</b> (“você vai precisar de tempo para mirar direito”) e/ou <b>as consequências</b> (“e num 6-, você acerta o refém”).
 P	Se um PJ conseguir atacar vários inimigos de uma vez, ele rola para Disparar uma vez só, mas rola o dano separadamente para cada alvo.
-P	A rolagem +DEX nos diz se o PJ consegue um tiro limpo ou o que é preciso para conseguir um. A rolagem de dano (e a armadura e os HP do inimigo) nos diz quão eficaz foi o tiro.
+P	A rolagem +DES nos diz se o PJ consegue um tiro limpo ou o que é preciso para conseguir um. A rolagem de dano (e a armadura e os HP do inimigo) nos diz quão eficaz foi o tiro.
 P	Se o dano for insignificante, foi só de raspão.
 P	Se o dano for anulado, o tiro ricocheteia na armadura ou o alvo desvia.
 P	Seja qual for o dano causado, diga como o inimigo reage. Ele uiva de dor? Mergulha atrás de cobertura? Muitas vezes, você vai <b>oferecer uma oportunidade</b> aos PJs em consequência disso. Alguns inimigos, porém, são duros demais para vacilar (mesmo levando um golpe sólido), e isso é uma reviravolta ótima e assustadora.
@@ -283,7 +283,7 @@ HR
 P	Com 6-, cabe a você decidir o que acontece, e é quase certo que seja ruim. Não presuma que o tiro errou! Eles podem ser interrompidos antes de atirar, ou podem atirar (e até acertar), mas algo ruim acontece por causa disso. Se um aliado ou um transeunte estava por perto, pode ser ele quem leva o tiro.
 P	<i>Blodwen pesca uma pedra-de-estrada quebrada.</i> <i>“Essas coisas machucam espíritos malignos, né? Eu</i> <i>arremesso!” O alvo dela é uma sombra esvoaçante e intangível</i> <i>com pouca luz, então eu</i> <b><i>digo a ela os</i></b> <b><i>requisitos</i></b><i>: ela vai precisar chegar mais perto para ao menos</i> <i>ter uma chance. “Tudo bem”, ela diz. Ela avança</i> <i>e tira 8 para Disparar. “Hmm... Acho que vou</i> <i>manter a mira e esperar meu tiro. Talvez ela</i> <i>tipo se esgueire para longe bem na hora em que eu vou arremessar?”</i>
 P	<i>“Isso mesmo! Seus olhos correm de um lado para o outro,</i> <i>procurando por ela, quando, Caradoc, ela salta</i> <i>da escuridão em você, o que você faz?” Ele</i> <i>se arrasta para trás, Desafiando o Perigo e tirando</i> <i>10. “Blodwen, lá está ela, dê seu tiro!”</i>
-P	<i>“Certo! Preciso rolar +DEX de novo?”</i> <i>Não, ela já fez isso. O tiro dela agora está</i> <i>limpo, então ela pode simplesmente arremessar a pedra e rolar</i> <i>o dano.</i>
+P	<i>“Certo! Preciso rolar +DES de novo?”</i> <i>Não, ela já fez isso. O tiro dela agora está</i> <i>limpo, então ela pode simplesmente arremessar a pedra e rolar</i> <i>o dano.</i>
 HR
 P	<i>Rhianna e sua tropa se aproximaram sorrateiramente do</i> <i>sítio de escavação. Os três crinwin não os notaram,</i> <i>e ela dá sinal para a tropa atirar.</i> <i>“Beleza, como são uns seis de vocês, vocês</i> <i>com certeza pegam os três. Role para Disparar</i> <i>uma vez para a salva inteira.”</i>
 P	<i>“A gente precisa mesmo rolar?” ela pergunta. “Somos</i> <i>caçadores profissionais, e eles não sabem</i> <i>que estamos aqui. Para mim parece tiro fácil.”</i>
@@ -291,7 +291,7 @@ P	<i>“Hã. Acho que sim. É, então role só o dano</i> <i>da sua tropa, uma v
 PAGE	224
 P	<b>PERSUADIR (contra NPCs)</b>
 P	Quando você <b><i>pressiona ou seduz um NPC</i></b>, diga o que quer que ele faça (ou não faça). Se ele <b><i>tiver motivo para resistir</i></b>, role
-P	+CHA: <b>com 10+</b>, ele faz o que você quer ou revela o jeito mais fácil de convencê-lo; <b>com 7-9</b>, ele revela algo que você pode fazer para convencê-lo, embora provavelmente seja caro, complicado ou desagradável.
+P	+CAR: <b>com 10+</b>, ele faz o que você quer ou revela o jeito mais fácil de convencê-lo; <b>com 7-9</b>, ele revela algo que você pode fazer para convencê-lo, embora provavelmente seja caro, complicado ou desagradável.
 P	Esta versão de Persuadir dispara quando um PJ tenta convencer um NPC a fazer algo. Se você, como NPC, resistir e o PJ insistir, é Persuadir. Esclareça o que ele quer que o NPC faça/não faça, e questione a abordagem se ela não fizer sentido. “Como ela saberia que você quer que ela faça isso? Você, tipo, pergunta?”
 P	Definido o objetivo, decida se o NPC tem motivo para resistir. Considere o instinto, a personalidade, o passado, os desejos, as necessidades, os medos dele etc. Se não tiver motivo para resistir, ele faz. Mas se o NPC tiver um motivo (mesmo irracional), peça a rolagem.
 P	Com 10+, pese a abordagem do PJ contra a resistência do NPC. Se a resistência era fraca ou a abordagem do PJ é forte, simplesmente faça o NPC obedecer. Mas se você achar que a abordagem do PJ não bastaria, revele o jeito mais fácil de o PJ convencê-lo.
@@ -316,7 +316,7 @@ HR
 P	<i>Os PJs acabaram de matar um bando de crinwin, só</i> <i>para ver mais olhos pálidos e sem piscar encarando</i> <i>do alto. “Argh”, diz Rhianna, “a gente</i> <i>mal deu conta desse bando. Vou tentar assustar</i> <i>os outros. Persuadir?”</i>
 P	<i>“Legal. O que você faz, exatamente?”</i>
 P	<i>“Eu ergo o cadáver de crinwin mais próximo pela</i> <i>cabeça. Encaro os outros crinwin. Depois</i> <i>serro a cabeça fora, começo a gritar e arremesso</i> <i>a cabeça na mata. E continuo gritando.”</i>
-P	<i>Eita! E ainda assim, os crinwin estão em maior número</i> <i>e os PJs estão bem machucados, então</i> <i>acho que eles têm motivo para resistir. Rhianna</i> <i>rola +CHA e tira 11. Acho que aquela</i> <i>exibiçãozinha foi mais que suficiente, então eu digo: “Eles</i> <i>somem correndo e você fica parada</i> <i>ali, coberta de sangue preto. Caradoc, como</i> <i>você está se sentindo em relação à Rhianna agora?”</i>
+P	<i>Eita! E ainda assim, os crinwin estão em maior número</i> <i>e os PJs estão bem machucados, então</i> <i>acho que eles têm motivo para resistir. Rhianna</i> <i>rola +CAR e tira 11. Acho que aquela</i> <i>exibiçãozinha foi mais que suficiente, então eu digo: “Eles</i> <i>somem correndo e você fica parada</i> <i>ali, coberta de sangue preto. Caradoc, como</i> <i>você está se sentindo em relação à Rhianna agora?”</i>
 HR
 P	<i>Caradoc está de vigia com Garet e</i> <i>puxa um pouco de conversa. “‘Você está com a tropa da</i> <i>Rhianna faz tempo, né? Já viu</i> <i>alguma coisa tipo… ãh, tipo aquilo?’ Estou tentando</i> <i>fazer ele falar, talvez descobrir algo</i> <i>sobre o passado da Rhianna. Persuadir?”</i>
 P	<i>Eu penso em pedir a rolagem, mas percebo</i> <i>que o Garet não tem motivo real para resistir.</i> <i>“Pode, mas nem precisa rolar, ele fica feliz</i> <i>em falar. Rhianna, qual seria uma boa história para</i> <i>ele contar ao Caradoc? Tipo, uma vez em que você fez</i> <i>algo sangrento e implacável?”</i>
@@ -334,7 +334,7 @@ PAGE	226
 P	<b>PERSUADIR (contra PJs)</b>
 P	Quando você <b><i>pressiona ou seduz um PJ e</i></b> <b><i>ele resiste</i></b>, pergunte ao jogador dele: “Eu teria alguma chance de te convencer a fazer isso, sim ou não?”
 P	Se ele disser “não”, deixe para lá.
-P	Se ele disser “sim”, você pode rolar +CHA:
+P	Se ele disser “sim”, você pode rolar +CAR:
 P	<b>com 10+</b>, ele marca XP se fizer o que você quer, e se não fizer, precisa dizer como você poderia convencê-lo; <b>com 7-9</b>, ele marca XP se fizer o que você quer (mas pode recusar ou fazer uma contraproposta, se quiser).
 P	Quando um PJ quer que outro PJ faça algo, e o outro PJ resiste, invoque este movimento.
 P	A primeira parte do movimento — em que o primeiro jogador pergunta se poderia mesmo convencer o personagem do outro — é crucial. Ela impede que as regras pressionem um jogador a fazer algo que ele não acha que seu personagem faria.
@@ -353,17 +353,17 @@ P	<i>Rhianna resiste, então eu encaminho o jogador do</i> <i>Vahid para este mo
 P	<i>A jogadora de Rhianna diz bem rápido: “Não”. Eu</i> <i>pergunto como é isso, como o Vahid percebe</i> <i>que ela não vai ceder. “Ah, eu perco a paciência. ‘Droga,</i> <i>Vahid. A gente vai embora e ponto final!’”</i>
 P	<i>Vahid responde: “Tudo bem. Então vá. Mas</i> <i>eu fico. Sei voltar sozinho para casa.”</i>
 P	<i>Rhianna suspira, aperta a ponte do</i> <i>nariz e diz, bem calma: “Não, Vahid. Você</i> <i>não sabe. Você vai se perder. E morrer. Por favor,</i> <i>venha com a gente.” Então agora é</i> ela <i>quem está pressionando</i> ele<i>.</i>
-P	<i>Mas Vahid não cede. “Você poderia me</i> <i>convencer”, ele diz, “mas vai ter que rolar. E</i> <i>eu vou Interferir sendo teimoso pra caramba.”</i> <i>Rhianna diz que vai rolar Persuadir, e Vahid</i> <i>rola para Interferir (com WIS, por força de vontade).</i> <i>Ele tira 11, e Rhianna decide continuar</i>
+P	<i>Mas Vahid não cede. “Você poderia me</i> <i>convencer”, ele diz, “mas vai ter que rolar. E</i> <i>eu vou Interferir sendo teimoso pra caramba.”</i> <i>Rhianna diz que vai rolar Persuadir, e Vahid</i> <i>rola para Interferir (com SAB, por força de vontade).</i> <i>Ele tira 11, e Rhianna decide continuar</i>
 HR
 P	<i>pressionando e rolar com desvantagem.</i> <i>“Eu Ajudo”, diz Blodwen. “Chego atrás da</i> <i>Rhianna e faço olhinhos para ele. ‘Vahid.</i> <i>Por favor.’” Concordamos que isso ajudaria, e</i> <i>a vantagem da Ajuda dela anula a</i> <i>desvantagem do Interferir do Vahid.</i>
-P	<i>“Certo, então eu rolo +CHA? É</i> <i>isso?” É, e ela tira 10. Se o Vahid concordar</i> <i>em vir agora, sem mais discussão, ele</i> <i>marca XP. Mas se recusar, precisa revelar</i> <i>como poderiam convencê-lo.</i>
+P	<i>“Certo, então eu rolo +CAR? É</i> <i>isso?” É, e ela tira 10. Se o Vahid concordar</i> <i>em vir agora, sem mais discussão, ele</i> <i>marca XP. Mas se recusar, precisa revelar</i> <i>como poderiam convencê-lo.</i>
 P	<i>“Tá, tá... eu vou. Mas só se vocês me deixarem</i> <i>colocar marcas santificantes nas entradas.</i> <i>E me prometerem que voltaremos para</i> <i>explorar este lugar. E não contarem para mais ninguém</i> <i>sobre ele. Combinado?”</i>
 P	<i>Eu esclareço que ele está revelando como podem convencê-lo, em vez de concordar de cara. Se</i> <i>ele quiser o XP, tem que simplesmente concordar sem</i> <i>essas condições. “Isso!” ele diz.</i>
 P	<i>“Tudo bem”, suspira Rhianna. “Você tem dez</i> <i>minutos. Vá fazer suas marcas. Blodwen,</i> <i>fique de olho nele.”</i>
 PAGE	228
 P	<b>BUSCAR DISCERNIMENTO</b>
 P	Quando você <b><i>estuda uma situação ou pessoa</i></b>, buscando no mestre algum discernimento, role
-P	+WIS: <b>com 10+</b>, faça ao mestre 3 perguntas da lista abaixo; <b>com 7-9</b>, faça
+P	+SAB: <b>com 10+</b>, faça ao mestre 3 perguntas da lista abaixo; <b>com 7-9</b>, faça
 P	1; <b>de todo modo</b>, ganhe vantagem no próximo movimento para agir conforme as respostas.
 Q	O que aconteceu aqui recentemente?
 Q	O que está prestes a acontecer?
@@ -389,7 +389,7 @@ PAGE	229
 P	Quando tirarem 6- em Buscar Discernimento numa situação “segura”, você pode usar seu movimento para <b>anunciar um problema</b> que não existia antes. Pode <b>revelar uma verdade</b> <b>indesejada</b> ou <b>avançar rumo à catástrofe</b> <b>iminente</b>, decidindo que algo ruim aconteceu fora de cena antes de eles chegarem. Ou pode <b>consumir os recursos deles</b> e dizer que eles não descobrem nada, mas as tochas estão acabando.
 HR
 P	<i>Os PJs estão olhando para cima, para um ninho de crinwin.</i> <i>Eles perguntam sobre o tamanho (“grande como uma casa”), a</i> <i>árvore em que está (“tipo uma sequoia”) e se</i> <i>há movimento no ninho (“não”). Então</i> <i>Rhianna pergunta: “Alguma atividade recente? Vamos</i> <i>procurar pegadas e coisas assim.” Isso me parece</i> <i>Buscar Discernimento. Rhianna concorda.</i>
-P	<i>Ela rola +WIS (com vantagem pela</i> <i>Ajuda da tropa) e tira 10. “O ninho ainda</i> <i>está ativo? Há sinais de atividade recente?” ela pergunta.</i> <i>Eu a oriento a fazer uma pergunta da lista.</i>
+P	<i>Ela rola +SAB (com vantagem pela</i> <i>Ajuda da tropa) e tira 10. “O ninho ainda</i> <i>está ativo? Há sinais de atividade recente?” ela pergunta.</i> <i>Eu a oriento a fazer uma pergunta da lista.</i>
 P	<i>“Ah, é. Hum, com o que eu devo tomar</i> <i>cuidado? Tipo, ainda há crinwin</i> <i>por aqui?” Eu digo que não, nada com que tomar</i> <i>cuidado. O ninho está desocupado, até</i> <i>danificado. Garet (da tropa dela) a chama</i> <i>e mostra os corpos de crinwin que encontrou,</i> <i>apodrecendo no mato.</i>
 P	<i>“Uau. Ãh… o que aconteceu aqui recentemente?”</i>
 P	<i>Eles encontram mais cadáveres de crinwin, e alguns</i> <i>que parecem ter se matado uns aos outros. “Têm uns</i> <i>meses, no mínimo. Mas não há cadáveres suficientes</i> <i>para um ninho inteiro. E vocês encontram sinais de crinwin</i> <i>arrastando outros crinwin, na mesma</i> <i>direção geral em que levaram o Pryder.”</i>
@@ -514,7 +514,7 @@ H2	Movimentos personalizados
 P	O <i>Livro II: O Mundo Mais Amplo e Outras Maravilhas</i> contém dezenas de movimentos personalizados que você pode usar no seu jogo. Esses movimentos se aplicam apenas a elementos específicos do jogo ou do cenário, e só se você escolher usá-los.
 P	A maioria dos movimentos personalizados não tem nome; eles simplesmente aparecem como parte da descrição de um elemento do cenário.
 P	Por exemplo, as <b>Estradas dos Construtores</b> (<i>Livro II</i>, página 270) têm alguns movimentos personalizados. Eis um deles, ligado às proteções contra a violência:
-P	Quando você <b><i>tenta cometer violência</i></b> <b><i>na estrada</i></b>, ou ferir a estrada ou qualquer coisa sobre ela, você hesita. Se impuser sua vontade para continuar, perca 1d4 HP e role +WIS: <b>com 10+</b>, vá em frente;
+P	Quando você <b><i>tenta cometer violência</i></b> <b><i>na estrada</i></b>, ou ferir a estrada ou qualquer coisa sobre ela, você hesita. Se impuser sua vontade para continuar, perca 1d4 HP e role +SAB: <b>com 10+</b>, vá em frente;
 P	<b>com 7-9</b>, você age, mas tem desvantagem em quaisquer rolagens para cometer violência (inclusive de dano); <b>com 6-</b>, você não consegue agir e marca <i>atordoado</i>.
 P	Este é um exemplo de movimento personalizado que estabelece como algo funciona. Ele diz o que acontece se um PJ tentar lutar nas estradas e quais são os resultados possíveis.
 P	E embora um movimento personalizado assim não se aplique diretamente a NPCs ou monstros, você pode usá-lo como guia de como eles seriam afetados. A maioria das pessoas não consegue lutar nas estradas, mas um NPC de vontade forte pode se obrigar a isso.
@@ -533,7 +533,7 @@ P	Eis outro movimento personalizado, associado a um artefato. Neste não há rol
 P	Quando você <b><i>golpeia uma entidade das trevas,</i></b> <b><i>do caos ou da morte com uma pedra-de-estrada quebrada</i></b> (<i>mão</i>, <i>arremessável</i>, <i>rústico</i>), ela sofre 1d8 de dano (ignora armadura), mas a pedra então se desfaz em pó.
 PAGE	235
 P	E eis um último exemplo de movimento personalizado, este associado a um perigo — os misteriosos nosgalau, que atraem viajantes para fora das estradas à noite:
-P	Quando você <b><i>ouve o chamado dos nosgalau</i></b>, diga de quem é a voz que você ouve no vento e por que se sente compelido a segui-la. Depois, role +WIS: <b>com 10+</b>, diga como você percebe o engano, e nunca mais ouvirá o chamado deles; <b>com 7-9</b>, ou marque XP e siga o chamado, ou conte para nós como você detecta a mentira desta vez; <b>com 6-</b>, você atende ao chamado e vai até os nosgalau, a menos que seus aliados o segurem.
+P	Quando você <b><i>ouve o chamado dos nosgalau</i></b>, diga de quem é a voz que você ouve no vento e por que se sente compelido a segui-la. Depois, role +SAB: <b>com 10+</b>, diga como você percebe o engano, e nunca mais ouvirá o chamado deles; <b>com 7-9</b>, ou marque XP e siga o chamado, ou conte para nós como você detecta a mentira desta vez; <b>com 6-</b>, você atende ao chamado e vai até os nosgalau, a menos que seus aliados o segurem.
 P	Note como este movimento é reativo. Não são os jogadores que escolhem dispará-lo, é você! Você faz um movimento de mestre como <b>anunciar um problema</b> (“Você vem observando as luzes lá longe nas Planícies, quando o vento muda e você ouve um sussurro fraco…”), e isso dispara o movimento. A maioria dos movimentos personalizados que funcionam assim está ligada a perigos e reflete um efeito especialmente cruel ou sutil.
 P	Note também como o movimento acima resolve uma situação de um jeito específico e temático. Você não precisa tentar atrair os PJs para fora da estrada e torcer para os jogadores entrarem na brincadeira. O movimento afirma que o PJ é compelido a deixar a estrada e pede ao jogador que conte para nós como e por quê. A rolagem então nos diz se o PJ percebe o engano ou não. Isso garante que até o PJ do jogador mais desconfiado possa cair nas garras dos nosgalau, e ainda o convida a revelar algo sobre o personagem no processo. Bem bacana, não?
 P	Revele o texto de um movimento personalizado aos jogadores assim que ele for relevante para eles. Os jogadores devem saber que o movimento está em jogo e como funciona, para que possam escolher se envolver com ele (ou evitá-lo). Jogue uma cópia do movimento na mesa ou no chat do grupo e peça que um jogador leia em voz alta. Ou leia você mesmo.

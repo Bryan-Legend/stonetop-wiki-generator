@@ -51,6 +51,7 @@ Pull Together · Deploy · Seasons Change · Death's Door.
 - **Inserts:** Encartes · Inventário · Companheiro Animal · Tropa (Crew) · Iniciados de Danu · Invocações · Seguidores · Fantasma · Revenante · Servo (Thrall) · Livreto do Povoado
 - **Terms:** playbook = livreto · insert = encarte · steading = povoado · arcanum = arcano · move = movimento · follower = seguidor · hold = reserva · advantage/disadvantage = vantagem/desvantagem · uses = usos · provisions/supplies = provisões/suprimentos · Loyalty = Lealdade · Cost = Custo · Instinct = Instinto
 - **Stats:** Força · Destreza · Constituição · Inteligência · Sabedoria · Carisma
+- **Stat abbreviations:** FOR · DES · CON · INT · SAB · CAR — the prose and the playbook sheets must agree, so `i18n/ui/pt-BR.json` → `sheet.stat_abbr` localizes the abbreviation the sheet prints. The *key* stays English (`data-roll-stat`, `stat-str`), like every other id.
 - **Debilities:** enfraquecido · atordoado · abatido
 - **Moves:** Desafiar o Perigo · Lutar como Um Só · Disparar · Cruzar Lâminas · Defender · Saber das Coisas · Buscar Discernimento · Persuadir · Ajudar ou Interferir · Acampar · Forragear · Recuperar-se · Convalescer · Comerciar e Barganhar · Ter o Necessário · Equipar-se · Requisitar · Convocar · Unir Esforços · Mobilizar · As Estações Mudam · À Beira da Morte
 - **Sheet headings:** Antecedente (Escolha 1) · Instinto (Escolha 1) · Aparência · Lugar de origem e nome · Atributos · Posses especiais · Movimentos · Apresentações
@@ -61,6 +62,12 @@ Pull Together · Deploy · Seasons Change · Death's Door.
 - **More names:** os Senhores da Pedra (Stone Lords) · os Senhores Verdes (Green Lords) · os Senhores da Forja (Forge Lords) · os Senhores da Tempestade (Tempest Lords) · o Povo da Floresta (Forest Folk) · as Montanhas Presa-Branca (Whitefang) · o Lago das Três Assembleias (Three Coven Lake) · a Gema da Mente (Mindgem) · o Dedo-de-Espinho (Thornthumb) · vidro dos Construtores (makerglass) · as Profundezas (the Deeps)
 - **More moves:** Ler o terreno (Read the Land) · Rastreador Perito · Sondar (Seek Out) · Traçar um Rumo (Chart a Course) · Fazer Companhia (Keep Company) · Debaixo da Pele (Under Your Skin) · Bom de Papo (Up With People)
 - **More terms:** movimento de Mestre = GM move · movimento suave/duro = soft/hard move · holofotes = spotlight · jogo solto = loose play · ciclo central = core loop · sítio = site · risco = hazard · perigo = danger · descoberta = discovery · ameaça = threat · catástrofe iminente = impending doom · presságios sombrios = grim portents · Dado do Destino = Die of Fate · aventura inicial = adventure starter · narrativa pelo ambiente = environmental storytelling
+
+- **Steading:** Fortuna (Fortunes) · População · Prosperidade · Defesas · Excedente (Surplus) · Tamanho · Debilidades · Melhorias do povoado · Bens (assets) · lugarejo (hamlet) · vilarejo (village) · vila (town) · cidade (city) · diminuído · carente · descontente · Prontidão (Readiness) · Preparação (Bolster's hold) · ganho sazonal
+- **Gear tags:** desajeitado (awkward) · tosco (crude) · incômodo (cumbersome) · perigoso (dangerous) · vigoroso (forceful) · frágil (fragile) · imóvel (immobile) · cruento (messy) · recarga (reload) · lento (slow) · arremesso (thrown) · quente (warm) · x perfurante (x piercing) · carga leve/normal/pesada
+- **Trade:** Valor (Value) · itens comuns/especiais · bolsa de cobres/pratas (purse) · punhado (handful) · bens de troca (trade goods) · A Troca (the Swap, Gordin's Delve) · Mercado da Borda (Edgemarket, Marshedge)
+- **Improvements:** Paliçada · Muralha de Pedra · Guarda Permanente (Standing Watch) · Milícia Bem Treinada · Armas de Guerra · Ofícios Ampliados (Expanded Trades) · Mercado · Vila (Township)
+- **Beasts:** beznpol (kept) · ceirwmawr (kept) · bisões (wisents) · alces (elk) · ursos-das-cavernas · faro apurado (keen-nosed) · pé firme (sure-footed) · agarrador (grabby) · glutão · lanosa (wooly) · estéril (sterile)
 
 ## de — Deutsch
 

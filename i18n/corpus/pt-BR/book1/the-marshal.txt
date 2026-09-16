@@ -13,7 +13,7 @@ C	<b>HERDEIRO</b> Você cresceu aqui, descendente de uma longa linhagem. Alguns 
 P	Você começa com o movimento Tropa Veterana, além dos seus movimentos normais. Marque-o agora.
 P	Quando você <b><i>cria sua Tropa</i></b>, ela tem automaticamente a tag <i>respeitados</i> (além das suas escolhas normais e das que obtiver de Tropa Veterana).
 C	<b>PENITENTE</b> Antes de vir para cá, você liderava um bando de malfeitores: bandidos, saqueadores ou mercenários de mãos sujas de sangue. Mas algo mudou. Um momento de verdade levou você e seus seguidores (pelo menos alguns) a deixar essa vida para trás. E, por algum motivo, o povo de Stonetop acolheu vocês.
-P	Quando você <b><i>recorre ao seu passado sangrento para Saber das Coisas</i></b>, pode rolar +STR em vez de +INT. Se fizer isso, o mestre vai perguntar a quem você fez mal naquela época ou quem ainda pode guardar rancor. Responda agora.
+P	Quando você <b><i>recorre ao seu passado sangrento para Saber das Coisas</i></b>, pode rolar +FOR em vez de +INT. Se fizer isso, o mestre vai perguntar a quem você fez mal naquela época ou quem ainda pode guardar rancor. Responda agora.
 P	Quando você <b><i>cria sua Tropa</i></b>, ela tem automaticamente a tag <i>guerreiros</i> (além das suas escolhas normais).
 C	<b>LUMINAR</b> Você é um líder nato: suas palavras inspiram, seus planos vencem o dia, seus feitos são contados por toda parte. Você foi tocado pelos deuses? Corre sangue antigo nas suas veias? Ou é simplesmente o campeão de que Stonetop precisa nestes tempos difíceis?
 P	Você começa com o movimento Nós, os Poucos Felizes, além dos seus movimentos normais. Marque-o agora.
@@ -91,7 +91,7 @@ P	(Requer Ler o terreno)
 P	Quando você <b><i>faz seus aliados fortificarem uma posição e</i></b> <b><i>aguardarem a batalha</i></b>, guarde 1 Surpresa se estiver com pressa ou 2 Surpresas se puder levar o tempo que precisar.
 P	Depois que a batalha começar, gaste 1 Surpresa para revelar um ardil, defesa ou truque sujo que preparou de antemão e role +INT: <b>com 10+</b>, funciona tão bem quanto se poderia esperar, e você ainda tem cartas na manga: recupere 1 Surpresa; <b>com 7-9</b>, funciona tão bem quanto se poderia esperar.
 C	<b>GOLPE PREPARATÓRIO</b> Quando você <b><i>Cruza Lâminas e tira 7+</i></b>, pode escolher causar dano com desvantagem. Se fizer isso, cria uma abertura para um aliado agir, como se tivesse Ajudado. Descreva!
-C	<b>SACODE A POEIRA</b> Quando você <b><i>ordena que um aliado supere o medo, a dor,</i></b> <b><i>a dúvida ou o delírio</i></b>, role +CHA: <b>com 10+</b>, ele supera;
+C	<b>SACODE A POEIRA</b> Quando você <b><i>ordena que um aliado supere o medo, a dor,</i></b> <b><i>a dúvida ou o delírio</i></b>, role +CAR: <b>com 10+</b>, ele supera;
 P	<b>com 7-9</b>, um PJ ganha vantagem para superar; um NPC vai superar, mas vai precisar de tempo, vai se ressentir de você ou vai se sentir humilhado (o mestre decide).
 C	<b>PAREDE DE ESCUDOS</b> Quando você <b><i>faz sua tropa formar uma parede de escudos</i></b>, eles Defendem com vantagem e <b>com 7+</b> guardam +2 de Prontidão (em vez do +1 normal por escudos). <b><i>Enquanto</i></b> <b><i>mantiverem a formação</i></b>, podem partir para a ofensiva sem perder Prontidão.
 PAGE	127
@@ -105,7 +105,7 @@ Q	Posso confiar nela (para ______ )?
 Q	O que ela pretende fazer?
 Q	Em que ela é mais útil/perigosa?
 Q	Que fraqueza dela posso explorar?
-C	<b>NÓS, OS POUCOS FELIZES</b> Quando você <b><i>faz um discurso inspirador para seus aliados</i></b> <b><i>antes de enfrentar uma ameaça terrível</i></b>, role +CHA: <b>com 10+</b>, cada aliado guarda 2 de Inspiração; <b>com 7-9</b>, cada aliado guarda 1 de Inspiração; <b>com 6-</b>, cada aliado guarda 1, mas você tem desvantagem em todas as rolagens até compartilhar suas dúvidas persistentes com outra pessoa.
+C	<b>NÓS, OS POUCOS FELIZES</b> Quando você <b><i>faz um discurso inspirador para seus aliados</i></b> <b><i>antes de enfrentar uma ameaça terrível</i></b>, role +CAR: <b>com 10+</b>, cada aliado guarda 2 de Inspiração; <b>com 7-9</b>, cada aliado guarda 1 de Inspiração; <b>com 6-</b>, cada aliado guarda 1, mas você tem desvantagem em todas as rolagens até compartilhar suas dúvidas persistentes com outra pessoa.
 P	Depois que a batalha começar, seus aliados podem gastar sua
 P	Inspiração a qualquer momento, 1 por 1, para:
 B	Agir sem medo diante do terror ou de chances esmagadoras

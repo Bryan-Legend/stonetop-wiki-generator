@@ -17,7 +17,7 @@ H3	As Palavras Sublimes
 P	◇ voz rouca, ◇ acessos de tosse, ◇ mudez
 P	Quando você <b><i>gasta suprimentos (Valor 2) e uma estação</i></b>
 P	<b><i>inteira trabalhando, entoando as Palavras Sublimes</i></b>
-P	<b><i>o tempo todo,</i></b> role +WIS. Não importa o resultado, você danificou a voz (marque um estado acima), mas fez uma coisa de verdadeira beleza (Valor 4). <b>Com 10+</b>, escolha 1, ou 2 e danifique ainda mais a voz; <b>com</b> <b>7-9</b>, escolha 1 e danifique ainda mais a voz.
+P	<b><i>o tempo todo,</i></b> role +SAB. Não importa o resultado, você danificou a voz (marque um estado acima), mas fez uma coisa de verdadeira beleza (Valor 4). <b>Com 10+</b>, escolha 1, ou 2 e danifique ainda mais a voz; <b>com</b> <b>7-9</b>, escolha 1 e danifique ainda mais a voz.
 B	A beleza dela atravessará as eras
 B	Ela alivia a dor e ameniza o luto
 B	Ela inspira os outros a se tornarem melhores

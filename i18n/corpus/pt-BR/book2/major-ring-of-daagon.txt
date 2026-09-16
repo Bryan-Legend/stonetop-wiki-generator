@@ -51,7 +51,7 @@ P	_____ <b>Movimentos:</b> escolha um número igual ao dado atribuído.
 P	• Livrar-se de perigo/amarras Curar-se num ritmo prodigioso
 P	• Sufocá-los/constringi-los/engolfá-los Dissolver material orgânico
 P	• Hipnotizar os de vontade fraca Paralisá-los com veneno
-P	Quando você <b><i>os manda de volta de onde vieram</i></b>, role +CHA: <b>com 10+</b>, eles vão, agora; <b>com 7-9</b>, eles vão, mas sem pressa e provavelmente causando algum estrago pelo caminho; <b>com 6-</b>, gaste a Lealdade deles ou marque uma consequência, e eles acabarão indo (como no 7-9); caso contrário, este grupo se liberta do seu controle e deixa de ser seguidor.
+P	Quando você <b><i>os manda de volta de onde vieram</i></b>, role +CAR: <b>com 10+</b>, eles vão, agora; <b>com 7-9</b>, eles vão, mas sem pressa e provavelmente causando algum estrago pelo caminho; <b>com 6-</b>, gaste a Lealdade deles ou marque uma consequência, e eles acabarão indo (como no 7-9); caso contrário, este grupo se liberta do seu controle e deixa de ser seguidor.
 HR
 H2	Consequências
 HR

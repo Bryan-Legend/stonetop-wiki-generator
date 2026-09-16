@@ -17,7 +17,7 @@ P	Quando você <b><i>sangra uma criatura viva e indefesa e mergulha o cristal do
 HR
 P	<b>Inflamar</b>
 P	Quando você <b><i>empunha o Cetro e incita alguém à ação violenta</i></b>, pode apagar 1 carga para rolar
-P	+CHA: <b>com 10+</b>, a pessoa precisa escolher 1 da lista abaixo; <b>com 7-9</b>, ela pode escolher entre atacar violentamente um alvo de sua escolha ou escolher 1 da lista abaixo.
+P	+CAR: <b>com 10+</b>, a pessoa precisa escolher 1 da lista abaixo; <b>com 7-9</b>, ela pode escolher entre atacar violentamente um alvo de sua escolha ou escolher 1 da lista abaixo.
 B	Agir como você sugere, sem dúvida nem medo, causando +1d4 de dano enquanto o faz
 B	Resistir, mas sofrer queimaduras dolorosas (2d4 de dano, ignora armadura).
 P	Quando você <b><i>Inflama alguém e essa pessoa mata um ou mais seres vivos em consequência</i></b>, marque 1:
@@ -31,7 +31,7 @@ H3	Mysteries of the Red Scepter
 HR
 H2	Moves
 HR
-C	<b>Ódio Ardente</b> <i>(próximo, mágica, recarga)</i> Quando você <b><i>aponta o Cetro Vermelho para um objeto do seu ódio e apaga 1 carga</i></b>, role +CHA: <b>com 10+</b>, o Cetro causa 2d4 de dano (<i>sujo</i>, ignora armadura), manifestado como queimaduras com bolhas; <b>com 7-9</b>, como no 10+, mas escolha 1:
+C	<b>Ódio Ardente</b> <i>(próximo, mágica, recarga)</i> Quando você <b><i>aponta o Cetro Vermelho para um objeto do seu ódio e apaga 1 carga</i></b>, role +CAR: <b>com 10+</b>, o Cetro causa 2d4 de dano (<i>sujo</i>, ignora armadura), manifestado como queimaduras com bolhas; <b>com 7-9</b>, como no 10+, mas escolha 1:
 B	Marque uma consequência
 B	Passe alguns segundos entoando e murmurando antes de causar o dano
 B	Faça qualquer item exposto e combustível ao alcance pegar fogo
@@ -39,7 +39,7 @@ P	<b>Com 6-</b>, o mestre diz o que acontece (o que pode ou não envolver marcar
 P	Quando você <b><i>marca 3 Consequências</i></b>, ganha Atiçar as Chamas.
 HR
 C	<b>Atiçar as Chamas</b> Quando você <b><i>usa Inflamar</i></b>, pode incitar à ação violenta todos que conseguem ouvi-lo, não só uma pessoa. Se fizer isso, role uma vez para a multidão inteira, mas cada alvo faz as próprias escolhas. <b>Com 7-9</b>, você também precisa escolher uma Consequência; <b>com 6-</b>, o mestre escolhe uma Consequência para você, além do que mais acontecer.
-P	Quando você <b><i>usa Ódio Ardente</i></b>, pode marcar uma consequência para atingir não só a pessoa ou coisa que odeia, mas também tudo o que estiver perto dela. Role +CHA uma vez, mas role o dano para cada vítima. Quaisquer combustíveis nos alvos também irrompem em chamas.
+P	Quando você <b><i>usa Ódio Ardente</i></b>, pode marcar uma consequência para atingir não só a pessoa ou coisa que odeia, mas também tudo o que estiver perto dela. Role +CAR uma vez, mas role o dano para cada vítima. Quaisquer combustíveis nos alvos também irrompem em chamas.
 HR
 H2	Consequências
 HR

@@ -40,7 +40,7 @@ H2	Consequências
 HR
 C	Você se perde numa fúria sanguinária, deixando de distinguir amigo, inimigo e espectador.
 P	Quando você <b><i>ataca a criatura viva mais próxima</i></b>, tem vantagem nas rolagens de dano.
-P	Quando você <b><i>tenta conter a mão</i></b>, role +WIS: <b>com 10+</b>, você consegue e pode escolher se acalmar e encerrar a fúria com alguns momentos de concentração; <b>com 7-9</b>, você contém a mão, mas precisa escolher outro alvo para sua fúria; <b>com 6-</b>, ataque sem piedade nem dúvida.
+P	Quando você <b><i>tenta conter a mão</i></b>, role +SAB: <b>com 10+</b>, você consegue e pode escolher se acalmar e encerrar a fúria com alguns momentos de concentração; <b>com 7-9</b>, você contém a mão, mas precisa escolher outro alvo para sua fúria; <b>com 6-</b>, ataque sem piedade nem dúvida.
 C	Escolha alguém que sobreviva a esta batalha (amigo ou inimigo). Você está convencido de que essa pessoa cobiça a Espada Temperada em Sangue. Até colocá-la em seu devido lugar, você fica <i>atordoado</i> ou <i>abatido</i> (à sua escolha).
 C	Seu instinto passa a ser “Paranoia: acusar alguém de conspirar contra você ou de querer roubar a Espada Temperada em Sangue, e fazer algo a respeito.”
 C	Você não consegue mais dormir nem descansar sem a Espada Temperada em Sangue ao alcance da mão.

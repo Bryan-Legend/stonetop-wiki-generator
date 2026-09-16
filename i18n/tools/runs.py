@@ -27,6 +27,7 @@ def load(path: str) -> dict[str, str]:
 
 
 def main() -> int:
+    sys.stdout.reconfigure(encoding="utf-8", errors="replace")
     t0 = time.perf_counter()
     slug = sys.argv[1]
     code = sys.argv[2] if len(sys.argv) > 2 else "pt-BR"

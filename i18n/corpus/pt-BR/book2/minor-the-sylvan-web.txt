@@ -14,7 +14,7 @@ C	… deitar-se no musgo e deixar os filamentos dele se fundirem à sua pele.
 C	… deixar sua consciência vagar para dentro da própria floresta, com o risco de se perder ou de atrair a ira de espíritos hostis.
 C	… passar semanas visitando o musgo, soltando a mente, aprendendo a perceber o mundo pelos sentidos da floresta.
 H3	A Teia Silvestre
-P	Quando você <b><i>se deita no musgo arco-íris e lança</i></b> <b><i>sua mente na Grande Mata</i></b>, diga o que está procurando e role +WIS: <b>com 10+</b>, escolha 3; <b>com</b> <b>7-9</b>, escolha 1.
+P	Quando você <b><i>se deita no musgo arco-íris e lança</i></b> <b><i>sua mente na Grande Mata</i></b>, diga o que está procurando e role +SAB: <b>com 10+</b>, escolha 3; <b>com</b> <b>7-9</b>, escolha 1.
 B	Você descobre a localização do que procura
 B	Você tem uma noção das atividades recentes do que procura, ou do que acontece ao redor
 B	Você descobre algo inesperado sobre a floresta, ou sobre o que se encontra dentro dela (pergunte ao mestre o que você descobre)

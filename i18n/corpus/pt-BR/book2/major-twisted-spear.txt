@@ -42,7 +42,7 @@ HR
 H2	Consequências
 HR
 C	Bem no fundo, sob a árvore ancestral da qual a Lança foi talhada, algo sombrio e terrível se mexe e força as raízes que o prendem.
-C	De agora em diante, na primeira vez que você Acampar em cada sessão, role +WIS: <b>com 10+</b>, seus sonhos são desagradáveis e claustrofóbicos, mas seu sono é reparador; <b>com 7-9</b>, você sonha com aquilo que está preso pela árvore ancestral da qual a Lança foi talhada — sofra desvantagem na próxima rolagem, mas pergunte ao mestre o que você descobre; <b>com 6-</b>, a coisa presa pela árvore também vê você. Você acorda sem descansar e não descansará esta noite.
+C	De agora em diante, na primeira vez que você Acampar em cada sessão, role +SAB: <b>com 10+</b>, seus sonhos são desagradáveis e claustrofóbicos, mas seu sono é reparador; <b>com 7-9</b>, você sonha com aquilo que está preso pela árvore ancestral da qual a Lança foi talhada — sofra desvantagem na próxima rolagem, mas pergunte ao mestre o que você descobre; <b>com 6-</b>, a coisa presa pela árvore também vê você. Você acorda sem descansar e não descansará esta noite.
 C	Você é tomado por uma visão da coisa presa pela árvore da Lança, seu passado e seus desejos terríveis.
 C	A árvore ancestral da qual a Lança foi talhada estremece e racha, ainda inteira, mas ferida e enfraquecida.
 C	Um mal menor escapa das raízes da árvore. Pergunte ao mestre o que agora está solto no mundo.

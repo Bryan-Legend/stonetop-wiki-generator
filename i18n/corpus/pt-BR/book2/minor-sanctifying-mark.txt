@@ -11,7 +11,7 @@ P	<i>mágica</i>
 P	Num raro trecho seco do Brejo de Ferrier, cercado de imundície, há um arco antigo que ainda — improvavelmente — se mantém de pé. Liquens e musgos crescem densos e saudáveis, mas a pedra angular continua limpa, gravada com um sigilo que faz os olhos lacrimejarem e que afugenta o mal.
 P	Você pode aprender os segredos da marca santificante, mas para isso precisa…
 C	… purificar-se em água fresca e limpa.
-C	… acalmar a mente, contemplar o sigilo e rolar +WIS: <b>com 10+</b>, o sigilo fica claro; <b>com 7-9</b>, o sigilo ficará claro depois de mais alguns dias de contemplação;
+C	… acalmar a mente, contemplar o sigilo e rolar +SAB: <b>com 10+</b>, o sigilo fica claro; <b>com 7-9</b>, o sigilo ficará claro depois de mais alguns dias de contemplação;
 P	<b>com 6-</b>, o sigilo está além da sua capacidade de aprender.
 C	… passar alguns dias memorizando e praticando o sigilo.
 H3	A Marca Santificante
