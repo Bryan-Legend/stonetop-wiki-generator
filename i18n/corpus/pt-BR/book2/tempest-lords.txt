@@ -124,7 +124,7 @@ P	9-10 Soterrada, tomada pelo mato ou escondida, mas quase intacta
 P	11-12 Totalmente visível e estranhamente bem preservada Para mais exemplos, veja a <b>Torre em Ruínas</b> (página 332).
 PAGE	403
 HR
-P	<i>Um dos PJs está indo para os</i> <b><i>Ossos do Titã</i></b> <i>e eu gostaria de ter alguma noção do que há</i> <i>por lá. Acho que guardam uma ruína de Senhores da Tempestade, provavelmente ligada um dia a Colhe-Tempestades</i> <i>e à hoje </i><b><i>Torre em Ruínas</i></b> (página 332)<i>.</i>
+P	<i>Um dos PJs está indo para os</i> <b><i>Ossos do Titã</i></b> <i>por lá. Acho que guardam uma ruína de Senhores da Tempestade, provavelmente ligada um dia a Colhe-Tempestades</i> <i>e à hoje </i><b><i>Torre em Ruínas</i></b> (página 332)<i>.</i>
 P	<i>Rolo 3 para o tema ("os céus: tempo e nuvens..."), 4 para a estrutura ("bunker/</i> <i>cofre"), 3 para o propósito ("infraestrutura") e 11 para os elementos arquitetônicos ("verti-</i>
 P	<i>com isto:</i>
 P	<i>Colhe-Tempestades ergueu uma agulha nos Ossos do Titã, como um farol, encimada por um cata-vento</i> <i>de etério que modulava o tempo. Quando os servos rebeldes dos Senhores da Pedra</i> <i>atacaram, o zelador da torre pegou o cata-vento e se escondeu sob a agulha. A agulha</i> <i>caiu e o zelador ficou preso. Tudo o que resta são pedras espalhadas e um alicerce</i> <i>circular. E, sob séculos de terra e entulho, há um alçapão trancado. Ele revela uma</i> <i>escada em espiral, um poço fundo, um porão intacto, um esqueleto e um cata-vento de etério.</i>
