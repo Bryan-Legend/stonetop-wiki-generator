@@ -77,6 +77,44 @@ from .text import heading_pages, html_to_search_text
 from .translate import render_translated
 
 
+class BuildClock:
+    """Per-phase wall-clock for the build report.
+
+    ``phase(name)`` closes the running phase and opens the next; ``lap(bucket,
+    key, t0)`` adds a page's or a language's cost to a named bucket, so the
+    report can list the slowest pages and the cost of each language.
+    """
+
+    def __init__(self, enabled: bool):
+        self.enabled = enabled
+        self.phases: list[tuple[str, float]] = []
+        self.buckets: dict[str, dict[str, float]] = {}
+        self._name: str | None = None
+        self._t0 = time.perf_counter()
+
+    def phase(self, name: str | None) -> None:
+        now = time.perf_counter()
+        if self._name is not None:
+            self.phases.append((self._name, now - self._t0))
+        self._name, self._t0 = name, now
+
+    def lap(self, bucket: str, key: str, t0: float) -> None:
+        if self.enabled:
+            b = self.buckets.setdefault(bucket, {})
+            b[key] = b.get(key, 0.0) + (time.perf_counter() - t0)
+
+    def report(self, total: float) -> None:
+        self.phase(None)
+        print("Profile:")
+        for name, secs in self.phases:
+            print(f"  {secs:7.2f}s  {100 * secs / total:5.1f}%  {name}")
+        for bucket, laps in self.buckets.items():
+            top = sorted(laps.items(), key=lambda kv: -kv[1])
+            print(f"  {bucket} ({sum(laps.values()):.2f}s over {len(laps)}):")
+            for key, secs in top[:12]:
+                print(f"    {secs:7.2f}s  {key}")
+
+
 def arcana_back_html(art: dict, ui: dict | None = None) -> str:
     """The link an arcanum's page opens with, back to its hub, and the
     number printed on the card — in the page's language when ``ui`` has it."""
@@ -198,6 +236,14 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
             "and indexed, so links and deep links are right, but the site-wide "
             "files (index.html, the search index, hover previews, sitemap) and "
             "every other page are left as they are. Handy while translating."
+        ),
+    )
+    p.add_argument(
+        "--profile",
+        action="store_true",
+        help=(
+            "Print where the build's time goes: each phase, the slowest "
+            "pages to render, and the cost of each language."
         ),
     )
     p.add_argument(
@@ -330,6 +376,8 @@ def main(argv: list[str] | None = None) -> None:
             pass
     args = parse_args(argv)
     t_start = time.perf_counter()
+    clock = BuildClock(args.profile)
+    clock.phase("read corpus / extract")
     input_dir = args.input.expanduser().resolve()
     out = (
         args.output.expanduser().resolve()
@@ -416,7 +464,9 @@ def main(argv: list[str] | None = None) -> None:
     only_langs = args.langs
     if only_langs and len(only_langs) == 1 and only_langs[0].lower() == "none":
         only_langs = []
+    clock.phase("load translations")
     lang_source, lang_targets = load_locales(only_langs)
+    clock.phase("prepare")
 
     if legacy_out.is_dir() and not out.exists():
         try:
@@ -529,6 +579,7 @@ def main(argv: list[str] | None = None) -> None:
         )
 
     print("Indexing sections (for deep links)…")
+    clock.phase("index sections (first render of every page)")
     sections_by_slug: dict[str, list[dict]] = {}
     head_pages_by_slug: dict[str, list] = {}
     for art in articles:
@@ -539,6 +590,7 @@ def main(argv: list[str] | None = None) -> None:
             continue
         lines, pages = texts[slug]
         lookup = lookups[book_id]
+        t_page = time.perf_counter()
         common = dict(
             current_slug=slug,
             section_index=None,
@@ -568,7 +620,9 @@ def main(argv: list[str] | None = None) -> None:
                 )
             )
         sections_by_slug[slug] = sections
+        clock.lap("index: slowest pages", slug, t_page)
 
+    clock.phase("section navs / indexes")
     section_navs: dict[str, list[dict]] = {}
     for art in articles:
         toc_labels = art.get("toc_labels") or []
@@ -601,6 +655,7 @@ def main(argv: list[str] | None = None) -> None:
     print(f"  Indexed {n_sec} sections/monsters across {len(sections_by_slug)} pages")
 
     print("Building pages…")
+    clock.phase("build english pages (second render)")
     search_docs: list[dict] = []
     # Each page's English body, kept so the localized pass can tell a
     # translation still matching its source from one gone stale.
@@ -615,6 +670,7 @@ def main(argv: list[str] | None = None) -> None:
 
         lookup = lookups[book_id]
         section_index = section_indexes[book_id]
+        t_page = time.perf_counter()
         body = ""
         excerpt = ""
         card_preview_html = None
@@ -683,11 +739,13 @@ def main(argv: list[str] | None = None) -> None:
                     ov, body, slug=slug, link_fn=page_link_fn(lookup, common)
                 )
                 excerpt = override_excerpt(ov) or excerpt
+            clock.lap("build: slowest english renders", slug, t_page)
             # The same page in every language that has its corpus translated.
             for locale in lang_targets:
                 tr = locale["pages"].get(slug)
                 if not tr or "corpus" not in tr:
                     continue
+                t_tr = time.perf_counter()
                 if art.get("kind") not in ("article", "arcana"):
                     print(f"  i18n: {locale['code']}/{slug}: only articles, arcana and sheets render from a corpus translation yet")
                     del locale["pages"][slug]
@@ -709,6 +767,8 @@ def main(argv: list[str] | None = None) -> None:
                         arcana_back_html(art, locale.get("ui")) + page_tr["body_html"]
                     )
                 tr.update(page_tr)
+                clock.lap("build: translated renders per language", locale["code"], t_tr)
+                clock.lap("build: slowest translated renders", f"{locale['code']}/{slug}", t_tr)
             # A split chapter: the hub lists its parts, and each part links
             # back the way an arcanum does.
             if art.get("children") and art.get("kind") == "article":
@@ -737,6 +797,7 @@ def main(argv: list[str] | None = None) -> None:
                     body = lead + sep + head + "\n" + rest
                 else:
                     body = head + "\n" + body
+            t_shell = time.perf_counter()
             page_html = page_shell(
                 display_title(art),
                 slug,
@@ -752,7 +813,9 @@ def main(argv: list[str] | None = None) -> None:
                 ),
                 alternates=alternates_for(slug, lang_source, lang_targets),
             )
+            clock.lap("build: page_shell (english)", "all pages", t_shell)
 
+        t_page = time.perf_counter()
         section_blocks: dict[str, dict] = {}
         if art["kind"] not in ("maps", "arcana-hub") and body:
             section_blocks = extract_section_html_blocks(
@@ -815,7 +878,9 @@ def main(argv: list[str] | None = None) -> None:
                 "text": combined,
             }
         )
+        clock.lap("build: previews + search text", "all pages", t_page)
 
+    clock.phase("write previews / search index / home")
     previews_json = json.dumps(previews, ensure_ascii=False, indent=2)
 
     page_maps: dict[str, dict] = {}
@@ -861,6 +926,7 @@ def main(argv: list[str] | None = None) -> None:
     if only_pages is None:
         for code in prune_language_dirs(out, lang_targets):
             print(f"  i18n: removed stale {code}/")
+    clock.phase("write localized pages")
     localized = write_localized_pages(
         out,
         articles,
@@ -873,12 +939,16 @@ def main(argv: list[str] | None = None) -> None:
     if only_pages is None:
         # The home page lists every page, so it needs the whole run's
         # previews — a --pages run has only the pages it rebuilt.
+        clock.phase("write localized home pages")
         localized += write_localized_index(
             out, articles, previews, lang_source, lang_targets
         )
+        clock.phase("sitemap / robots / manifest")
         write_sitemap(out, articles, base_url=args.base_url, extra=localized)
         write_robots(out, base_url=args.base_url)
         write_build_manifest(out, page_files + ["sitemap.xml", "robots.txt"])
+    if args.profile:
+        clock.report(time.perf_counter() - t_start)
     print(
         f"Done in {time.perf_counter() - t_start:.1f}s. "
         f"Open {out / 'index.html'}"
