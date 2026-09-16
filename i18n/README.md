@@ -121,6 +121,92 @@ Stats heading, the dice and roll tooltips, "You start with this" — is not in
 any work file: it is translated once per language in `ui/<code>.json` under
 `sheet`, and the renderer reads it through `UI()` in `generator/structure.py`.
 
+## Strategy: depth before breadth
+
+Nineteen of the twenty languages hold a handful of pages each — the shape a
+site takes when you translate the *same* interesting pages into everything.
+That is the worst shape to be in: twenty directories of mostly-English pages
+is exactly the thin translated content search engines discount, and no reader
+can use any of them to run a game.
+
+**So: one language at a time, front to back.** Finish a language's Book II
+(the setting articles, which are short and self-contained) and then its Book I
+(the rules chapters, which are long), and only then start the next language.
+A complete language is a site someone can play from; twenty partial ones are
+twenty dead ends.
+
+The order (Bryan, 2026-09-15): **pt-BR first**, then **zh-Hans**. Portuguese
+because it is the largest under-served market for tabletop RPGs and shares the
+Latin script, so nothing about names or layout needs rethinking; Simplified
+Chinese next because it is the largest audience outright and the one where the
+English pages help a reader least.
+
+Current pt-BR coverage: Book II 138/138, Book I 33/39, all six sheets.
+Still to do: `sites`, `npcs-followers`, `dangers`, `expeditions`, `homefront`,
+`playing-the-game`.
+
+### Working a long chapter
+
+A Book I chapter runs 500–1400 work lines, which is more than one sitting.
+The loop that holds up:
+
+```bash
+python i18n/corpus_xlate.py extract <slug>          # English work file
+python i18n/_work/show.py <slug> | sed -n '1,80p'   # read a slice
+#   translate the slice into i18n/_work/batch.txt
+cat i18n/_work/batch.txt >> i18n/_work/corpus/pt-BR/<slug>.work.txt
+#   …repeat until the chapter is done, then:
+python i18n/corpus_xlate.py apply pt-BR <slug>
+python stonetop-wiki-generator.py                   # ~16 s, every language
+python i18n/_work/leaks.py pt-BR <slug>             # expect: <slug> 0
+```
+
+Three rules this loop exists to enforce:
+
+- **Every line keeps the English line's `<b>` and `<i>` run counts exactly.**
+  The book breaks a bold or italic passage at each typeset line, so one
+  sentence often arrives as six `<i>…</i>` runs; the translation needs six
+  too, split wherever Portuguese wants to break. A mismatch is an *alignment
+  problem* and `apply` reports it per line. Where the prose won't divide the
+  same way, merge or split runs on the translated side — the run boundaries
+  carry no meaning, only the count does.
+- **Work files, never corpus files.** `i18n/corpus/**` is written by `apply`.
+  Fix the work file and re-apply; a hand edit is lost the next time.
+- **`META title / nav_label / description` come back filled in.** The English
+  work file leaves them blank (the title is the article's, not the book's), so
+  they are easy to skip — and a page with no translated title shows an English
+  one in the sidebar, the `<title>`, the search index and the home page card.
+
+### Finish with a full build
+
+`--pages <slug>` is for a spot check mid-chapter. **It is not what you commit**:
+a `--langs pt-BR` run deletes the other nineteen language directories, and a
+`--pages` run leaves the home pages, sitemap, search index and hover previews
+describing the site as it was. A full build is ~16 s since the provenance-tag
+rewrite (2026-09-16), so there is no longer a reason to commit a partial one.
+
+### Localized home pages
+
+`write_localized_index()` in `generator/chrome.py` writes `<lang>/index.html`
+for every language that has any page, so a reader landing on `/pt-BR/` gets
+their own front door rather than the English one. Its prose — the lede, the
+"what your browser remembers" note, the defects note and the license line —
+lives in `ui/<code>.json` under `home`, with `{books}`, `{issues}` and
+`{license}` placeholders; a language without a `home` block falls back to
+English (`HOME_FALLBACK`). Cards use the page's translated title and
+description where there is one, and link to `../<slug>.html` where there
+isn't. Home pages are site-wide, so a `--pages` run skips them.
+
+### Two details that only show up in a translated page
+
+- **"(page 200)" is a link**, and the linker has to recognise the word the
+  translation actually used. `ui/<code>.json` → `page_words` lists them
+  (`["página", "pág."]` for pt-BR); English is always understood as well.
+  Without it every page reference in the chapter renders as plain text.
+- **A page reference with no label is named after its target**, so on a
+  translated page it should read as that page's title *in that language*.
+  The build passes each locale's slug→title map down to the linker for this.
+
 ## Legacy JSON pages
 
 `pages/<code>/<slug>.json` holds pages translated before the corpus route
@@ -129,7 +215,8 @@ still publishes them (and prints them `stale` when the English body's hash
 moves), but **the route is closed** — its tools are gone, and no page is
 added to it or edited in it. To fix or refresh one, translate the page through
 the corpus; the corpus translation outranks the JSON page of the same slug,
-which can then be deleted.
+which can then be deleted. **pt-BR holds none left** — every Portuguese page
+was retranslated through the corpus and `i18n/pages/pt-BR/` is gone.
 
 Read `GLOSSARY.md` before translating anything. One rendering per term, per
 language, everywhere — inconsistent terminology is what makes a translated
