@@ -144,7 +144,7 @@ B	Uma carroçada de madeira (Valor 2) a cada estação por um ano, em troca de 1
 B	Um artífice (engenheiro, mestre de obras, ferreiro etc.) disposto a se mudar para Stonetop por um preço
 B	Um arcano dos <b>Senhores da Pedra</b> (página 382), dos <b>Senhores da Forja</b> (página 156) ou das <b>Coisas de Baixo</b> (página 412).
 PAGE	194
-H2	Moves
+H2	Movimentos
 HR
 P	<b>PERGUNTAR POR AÍ</b>
 P	Quando você <b><i>gasta uma bolsa de cobres e algumas</i></b> <b><i>horas perguntando por aí pela cidade</i></b>, diga o que espera descobrir e role +CAR: <b>com</b> <b>10+</b>, você recebe uma resposta clara e útil; <b>com</b> <b>7-9</b>, recebe uma resposta, mas escolha 1:
@@ -153,7 +153,7 @@ B	Vai lhe custar outra bolsa de cobres
 B	Você atraiu atenção indesejada ou se meteu numa situação à escolha da SL
 HR
 P	<b>FARREAR</b>
-P	Quando você <b><i>gasta um punhado de pratas se divertindo</i></b>, role +CAR: <b>com 10+</b>, escolha 2; <b>com</b> <b>7-9</b>, escolha 1:
+P	Quando você <b><i>gasta um punhado de pratas</i></b> <b><i>se divertindo</i></b>, role +CAR: <b>com 10+</b>, escolha 2; <b>com</b> <b>7-9</b>, escolha 1:
 B	Você espalha um boato ou uma história por toda parte
 B	Você faz um novo amigo leal
 B	Você descobre algo útil ou suculento
