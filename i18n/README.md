@@ -141,9 +141,8 @@ Latin script, so nothing about names or layout needs rethinking; Simplified
 Chinese next because it is the largest audience outright and the one where the
 English pages help a reader least.
 
-Current pt-BR coverage: Book II 138/138, Book I 33/39, all six sheets.
-Still to do: `sites`, `npcs-followers`, `dangers`, `expeditions`, `homefront`,
-`playing-the-game`.
+Current pt-BR coverage: Book II 138/138, Book I 35/39, all six sheets.
+Still to do: `dangers`, `expeditions`, `homefront`, `playing-the-game`.
 
 ### Working a long chapter
 
@@ -151,15 +150,38 @@ A Book I chapter runs 500–1400 work lines, which is more than one sitting.
 The loop that holds up:
 
 ```bash
-python i18n/corpus_xlate.py extract <slug>          # English work file
-python i18n/_work/show.py <slug> | sed -n '1,80p'   # read a slice
+python i18n/corpus_xlate.py extract <slug>           # English work file
+python i18n/tools/show.py <slug> | sed -n '1,115p'   # read a slice
 #   translate the slice into i18n/_work/batch.txt
 cat i18n/_work/batch.txt >> i18n/_work/corpus/pt-BR/<slug>.work.txt
+python i18n/tools/runs.py <slug>                     # <1 s: missing refs, run counts
 #   …repeat until the chapter is done, then:
 python i18n/corpus_xlate.py apply pt-BR <slug>
-python stonetop-wiki-generator.py                   # ~16 s, every language
-python i18n/_work/leaks.py pt-BR <slug>             # expect: <slug> 0
+python stonetop-wiki-generator.py                    # ~16 s, every language
+python i18n/tools/leaks.py pt-BR <slug>              # expect: <slug> 0
 ```
+
+**Let the tools do the checking.** The three helpers live in `i18n/tools/`
+(tracked — `i18n/_work/` beside it is scratch and is not), and each prints
+how long it took, so it is obvious when one stops being cheap:
+
+| | |
+|---|---|
+| `tools/show.py <slug>` | the English work file, ready to read |
+| `tools/runs.py <slug> [code]` | missing refs + `<b>`/`<i>` mismatches, both sides quoted |
+| `tools/leaks.py <code> <slug>…` | English that reached the built page |
+
+`runs.py` is the important one, and it runs in about a millisecond.
+**Counting formatting runs by eye before writing a chunk is the single most
+expensive thing in this loop, and the script does it better** — write the
+chunk, run the script, fix what it names. Same for the rest: `apply` reports
+coverage, the build reports `not shown whole`, `leaks.py` reports English
+that reached the reader. Between them there is nothing left worth verifying
+by hand.
+
+**Read and write in big slices.** ~110 corpus lines a pass, not 40. Every
+round trip costs a read, a write and an append; the translation itself is
+the same work either way, so fewer, larger passes are strictly cheaper.
 
 Three rules this loop exists to enforce:
 
@@ -167,9 +189,9 @@ Three rules this loop exists to enforce:
   The book breaks a bold or italic passage at each typeset line, so one
   sentence often arrives as six `<i>…</i>` runs; the translation needs six
   too, split wherever Portuguese wants to break. A mismatch is an *alignment
-  problem* and `apply` reports it per line. Where the prose won't divide the
-  same way, merge or split runs on the translated side — the run boundaries
-  carry no meaning, only the count does.
+  problem*; `runs.py` catches it before `apply` does. Where the prose won't
+  divide the same way, merge or split runs on the translated side — the run
+  boundaries carry no meaning, only the count does.
 - **Work files, never corpus files.** `i18n/corpus/**` is written by `apply`.
   Fix the work file and re-apply; a hand edit is lost the next time.
 - **`META title / nav_label / description` come back filled in.** The English
@@ -205,6 +227,10 @@ Names carry the English in parentheses on **first mention per page**
 a bare English name on first mention is not.
 
 ### Finish with a full build
+
+Mid-chapter, when you do want to see a page, `--pages <slug> --langs pt-BR`
+renders it in ~3 s instead of ~16 s — worth it for a spot check, never worth
+it as the last build before a commit.
 
 `--pages <slug>` is for a spot check mid-chapter. **It is not what you commit**:
 a `--langs pt-BR` run deletes the other nineteen language directories, and a

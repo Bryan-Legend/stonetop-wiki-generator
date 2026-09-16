@@ -37,7 +37,8 @@ Thumbs.db
 .vscode/
 *.tmp.*
 
-# Translation scratch: numbered segment files and the assembled bodies they
-# apply to. The translation itself is i18n/pages/<code>/<slug>.json; these are
-# regenerable with `python i18n/xlate.py extract <slug>`.
+# Translation scratch: the English work files and the translated ones being
+# written against them, regenerable with `python i18n/corpus_xlate.py extract
+# <slug>`. The translation itself is i18n/corpus/<code>/…, which is tracked,
+# and the helpers the loop uses live in i18n/tools/, which is tracked too.
 i18n/_work/
