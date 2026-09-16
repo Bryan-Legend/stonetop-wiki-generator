@@ -754,23 +754,27 @@ def write_localized_pages(
     english_bodies: dict[str, str],
     source: dict,
     targets: list[dict],
+    only_pages: set[str] | None = None,
 ) -> list[str]:
     """Write ``<out>/<lang>/<slug>.html`` for every translated page.
 
     Returns the hrefs written, for the sitemap. Each language directory is
     rewritten from scratch, so a translation file that is deleted takes its
-    page with it.
+    page with it — unless ``only_pages`` names the slugs to write, in which
+    case the rest of the directory is left as it is.
     """
     written: list[str] = []
     for locale in targets:
         code = locale["code"]
         lang_dir = out / code
-        if lang_dir.exists():
+        if only_pages is None and lang_dir.exists():
             shutil.rmtree(lang_dir)
-        lang_dir.mkdir(parents=True)
+        lang_dir.mkdir(parents=True, exist_ok=True)
         translated = set(locale["pages"])
         stale = []
         for slug, page in sorted(locale["pages"].items()):
+            if only_pages is not None and slug not in only_pages:
+                continue
             english = english_bodies.get(slug)
             if english is None:
                 print(f"  i18n: {code}/{slug} has no English page — skipped")

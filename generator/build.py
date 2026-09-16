@@ -187,6 +187,19 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         ),
     )
     p.add_argument(
+        "--pages",
+        nargs="+",
+        default=None,
+        metavar="SLUG",
+        help=(
+            "Write only these pages (e.g. marshedge the-maw), in English and "
+            "in every language that translates them. Everything is still read "
+            "and indexed, so links and deep links are right, but the site-wide "
+            "files (index.html, the search index, hover previews, sitemap) and "
+            "every other page are left as they are. Handy while translating."
+        ),
+    )
+    p.add_argument(
         "--maps",
         action="store_true",
         help=(
@@ -442,6 +455,16 @@ def main(argv: list[str] | None = None) -> None:
 
     ensure_unique_slugs(articles)
 
+    # --pages: write these slugs and nothing else. The build still reads and
+    # indexes every article, so cross-page links and deep links stay right.
+    only_pages = set(args.pages) if args.pages else None
+    if only_pages:
+        unknown = only_pages - {a["slug"] for a in articles}
+        if unknown:
+            raise SystemExit(
+                "Unknown page(s): " + ", ".join(sorted(unknown))
+            )
+
     print("Articles:")
     last_book = None
     for art in articles:
@@ -566,6 +589,10 @@ def main(argv: list[str] | None = None) -> None:
     english_bodies: dict[str, str] = {}
     for art in articles:
         slug = art["slug"]
+        # --pages: only the named pages are rendered; the rest of the site
+        # keeps the HTML it already has.
+        if only_pages is not None and slug not in only_pages:
+            continue
         book_id = art.get("book") or "book2"
 
         lookup = lookups[book_id]
@@ -749,7 +776,8 @@ def main(argv: list[str] | None = None) -> None:
             if art.get("number") is not None:
                 previews[slug]["number"] = art["number"]
                 previews[slug]["arcana_type"] = art.get("arcana_type") or ""
-        (out / f"{slug}.html").write_text(page_html, encoding="utf-8")
+        if only_pages is None or slug in only_pages:
+            (out / f"{slug}.html").write_text(page_html, encoding="utf-8")
         english_bodies[slug] = body
 
         search_text = html_to_search_text(body)
@@ -788,29 +816,32 @@ def main(argv: list[str] | None = None) -> None:
         page_maps[bid] = page_map
     page_map_json = json.dumps(page_maps, ensure_ascii=False, indent=2)
     # JS globals (not separate JSON) so hover previews work over file://
-    (out / "js" / "previews-data.js").write_text(
-        "window.WIKI_PREVIEWS = "
-        + previews_json
-        + ";\nwindow.WIKI_PAGE_MAP = "
-        + page_map_json
-        + ";\n",
-        encoding="utf-8",
-    )
+    if only_pages is None:
+        (out / "js" / "previews-data.js").write_text(
+            "window.WIKI_PREVIEWS = "
+            + previews_json
+            + ";\nwindow.WIKI_PAGE_MAP = "
+            + page_map_json
+            + ";\n",
+            encoding="utf-8",
+        )
     search_json = json.dumps(search_docs, ensure_ascii=False, separators=(",", ":"))
-    (out / "js" / "search-index.js").write_text(
-        "window.WIKI_SEARCH_INDEX = " + search_json + ";\n",
-        encoding="utf-8",
-    )
-    print(f"  Search index: {len(search_docs)} pages, {len(search_json)//1024} KB")
-    write_index_custom(articles, previews, out / "index.html")
+    if only_pages is None:
+        (out / "js" / "search-index.js").write_text(
+            "window.WIKI_SEARCH_INDEX = " + search_json + ";\n",
+            encoding="utf-8",
+        )
+        print(f"  Search index: {len(search_docs)} pages, {len(search_json)//1024} KB")
+        write_index_custom(articles, previews, out / "index.html")
 
     page_files = ["index.html"] + [
         f"{a['slug']}.html" for a in articles
     ]
     # A language directory this build no longer produces is removed whole,
     # so dropping a language from langs.json takes its pages off the site.
-    for code in prune_language_dirs(out, lang_targets):
-        print(f"  i18n: removed stale {code}/")
+    if only_pages is None:
+        for code in prune_language_dirs(out, lang_targets):
+            print(f"  i18n: removed stale {code}/")
     localized = write_localized_pages(
         out,
         articles,
@@ -818,10 +849,12 @@ def main(argv: list[str] | None = None) -> None:
         english_bodies,
         lang_source,
         lang_targets,
+        only_pages=only_pages,
     )
-    write_sitemap(out, articles, base_url=args.base_url, extra=localized)
-    write_robots(out, base_url=args.base_url)
-    write_build_manifest(out, page_files + ["sitemap.xml", "robots.txt"])
+    if only_pages is None:
+        write_sitemap(out, articles, base_url=args.base_url, extra=localized)
+        write_robots(out, base_url=args.base_url)
+        write_build_manifest(out, page_files + ["sitemap.xml", "robots.txt"])
     print(
         f"Done in {time.perf_counter() - t_start:.1f}s. "
         f"Open {out / 'index.html'}"
