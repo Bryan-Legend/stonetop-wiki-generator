@@ -2120,7 +2120,7 @@ def structure_html(
             if line.startswith(M_H4):
                 txt = line[len(M_H4):].strip()
                 pending_icon = None
-                out.append(f"<h4>{html.escape(txt)}</h4>")
+                out.append(f"<h4>{html.escape(T(txt))}</h4>")
                 i += 1
                 continue
             if line.startswith(M_H3):
