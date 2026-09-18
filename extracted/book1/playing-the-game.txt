@@ -518,40 +518,34 @@ P	, your connection to your body weakens—mark a debility and mark 1 circle.
 MARK	2
 P	, you unlock the mysteries of the Ice Sphere and can front
 PAGE	62
-P	. major arcanum
+P	. major arcanum major arcanum.
 H3	Mysteries of Noruba's Ice Sphere
 HR
 H3	Moves
 HR
-C	<b>MINDWALKING</b> ◇◇◇◇ When you <b><i>use the Ice Sphere as a psychic anchor</i></b> and walks the world as a spirit, invisible and insubstantial. Roll +INT: 3 Power; <b>on a 7-9</b>, hold 2 Power; <b>on a 6-</b> While mindwalking, you may spend your Power, 1-for-1 to:
+C	<b>MINDWALKING</b> ◇◇◇◇ When you <b><i>use the Ice Sphere as a psychic anchor</i></b>, your consciousness leaves your body and walks the world as a spirit, invisible and insubstantial. Roll +INT: <b>on a 10+</b>, hold 3 Power; <b>on a 7-9</b>, hold 2 Power; <b>on a 6-</b>, hold 2 Power and mark a Consequence. While mindwalking, you may spend your Power, 1-for-1 to:
 B	Manifest as a ghostly voice and/or presence
 B	Manipulate a small (weight 0), unattended object
 B	Return instantly to the Ice Sphere from any distance For every 2 Consequences you mark, gain one of the following moves:
 HR
 C	<b>A MIGHTY WILL</b> When you <b><i>mindwalk</i></b>, hold +1 Power.
 HR
-C	<b>FARWALKER</b> When you <b><i>mindwalk</i></b> any place you have ever visited, physically or mentally.
+C	<b>FARWALKER</b> When you <b><i>mindwalk</i></b>, you may spend 1 Power to instantly send your mind to any place you have ever visited, physically or mentally.
 HR
-C	<b>TELEPATHY</b> When you <b><i>mindwalk</i></b> out completely without magic of their own.
+C	<b>TELEPATHY</b> When you <b><i>mindwalk</i></b>, you may spend 1 Power to become able to communicate mentally with someone nearby, as long as you remain in their presence. They can choose whether to respond, and can attempt to ignore you, but cannot shut you out completely without magic of their own.
 HR
-C	<b>TULPA</b> When you <b><i>mindwalk</i></b>
+C	<b>TULPA</b> When you <b><i>mindwalk</i></b>, you may spend 1 Power to animate a mass of loose material (gravel, snow, leaves, etc.) into a body no larger than your own. When you would roll STR, DEX, or CON in this form, use INT instead. This form has 10 HP. When reduced to 0 HP, it dissipates and you return to your physical body.
 HR
 H3	Consequences
 HR
-C	Your physical body withers and fades—permanently mark the
+C	Your physical body withers and fades—permanently mark the <i>weakened</i> debility
 C	Your emotions dull. You can no longer be affected by fear, hate, or other powerful emotions (for good or ill).
 C	Replace your instinct with "Detachment: To distance yourself from human connections and emotions."
-P	by even the bitterest cold, but find heat and warmth unbearable.
+C	Your skin tinges bluish; your body becomes cold to the touch. You are unaffected by even the bitterest cold, but find heat and warmth unbearable.
+C	When you take damage from fire, roll twice and take the higher result.
 C	You draw the attention of some powerful, hungry entity of the spirit world. It has your scent. Should you destroy or bind it, erase this mark.
-P	(with the Ice Sphere as your tether).
-P	major arcanum.
-P	, your consciousness leaves your body <b>on a 10+</b>, hold
-P	, hold 2 Power and mark a Consequence.
-P	, you may spend 1 Power to instantly send your mind to , you may spend 1 Power to become able to communicate mentally with someone nearby, as long as you remain in their presence. They can choose whether to respond, and can attempt to ignore you, but cannot shut you
-P	, you may spend 1 Power to animate a mass of loose material (gravel, snow, leaves, etc.) into a body no larger than your own. When you would roll STR, DEX, or CON in this form, use INT instead. This form has 10 HP. When reduced to 0 HP, it dissipates and you return to your physical body.
-P	<i>weakened</i> debility Your skin tinges bluish; your body becomes cold to the touch. You are unaffected
-P	When you take damage from fire, roll twice and take the higher result.
-P	When you roll 6- at Death's Door, you have no choice: gain the Ghost insert back
+C	When you roll 6- at Death's Door, you have no choice: gain the Ghost insert (with the Ice Sphere as your tether).
+P	back
 PAGE	63
 H3	Sharing major arcana
 P	You can share a major arcanum with another PC or even an NPC, as long as it makes sense to do so. In general:

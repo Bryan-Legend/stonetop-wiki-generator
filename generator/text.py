@@ -156,7 +156,9 @@ def normalize_text(s: str) -> str:
     # Object replacement char: the PDF's stand-in for an inline image (the
     # threat-type icons), never text. Left in, it renders as an OBJ tofu.
     s = s.replace("\ufffc", "")
-    s = s.replace("ä", "•")  # PDF dingbat often extracted as ä
+    # The books' bullet glyph extracts as "ä" — but only ever on its own;
+    # an "ä" between letters is a letter (Nausicaä, in the mediography).
+    s = re.sub(r"(?<![^\W\d_])ä(?![^\W\d_])", "•", s)
     s = re.sub(r"[ \t]+", " ", s)
     return s.strip()
 

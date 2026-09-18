@@ -505,12 +505,11 @@ P	If the being is a spirit, alter its manifestation to reflect the themes and as
 P	How has corruption changed the being's behavior? Are they merely a conduit for their master's instinct? Do they struggle to maintain their own identity? Has their corruption combined with their original personality in an unusual way? Rewrite their instinct to suit.
 PAGE	433
 HR
-P	<i>The Seasons Change roll indicates that a threat makes itself known or gets worse. I decide that</i> <i>Iwan, an aggrieved villager, has unwittingly started to dally with a corrupted spirit. I like</i> <i>the idea of an evil</i> <b><i>glasbren</i></b> <i>I start by working up the glasbren's tree as a corrupted site. I get 4 for a feature (signs of</i> <i>great destruction), an 11 for the cause (seal/binding weakened and roll 1d10 again), and</i> <i>a 4 on the reroll (an artifact/remains festering). For severity, I roll a 9 (a poisonous place).</i> <i>I think some evil artifact was bound by an old tree in the glasbren's grove, but a fire swept</i> <i>through and only the glasbren survived. It's deeply scarred and corrupted by the artifact.</i>
-P	<i>Looking at the names of Things Below, my eye catches on "Ta'l Themyin (Burning Child,</i> <i>Cruel Infant, Prince of Rage)." I pick themes of "destruction/chaos/ruin/ignorance (fire,</i> <i>ash, dust)" and "cruelty/torture/violence/rage (red crystal, spilled blood)." I pick aspects of</i> <i>"fire/light/haze/cloud/vortex/void" and "a youth/a child/an infant." For instinct, I pick</i> <i>"to inflict harm, cruelly and unnecessarily." I think the</i> <i>artifact buried in the glasbren's grove!</i>
+P	<i>The Seasons Change roll indicates that a threat makes itself known or gets worse. I decide that</i> <i>Iwan, an aggrieved villager, has unwittingly started to dally with a corrupted spirit. I like</i> <i>the idea of an evil</i> <b><i>glasbren</i></b> <i>(page 366) sensing Iwan's resentments and "courting" him.</i>
+P	<i>I start by working up the glasbren's tree as a corrupted site. I get 4 for a feature (signs of</i> <i>great destruction), an 11 for the cause (seal/binding weakened and roll 1d10 again), and</i> <i>a 4 on the reroll (an artifact/remains festering). For severity, I roll a 9 (a poisonous place).</i> <i>I think some evil artifact was bound by an old tree in the glasbren's grove, but a fire swept</i> <i>through and only the glasbren survived. It's deeply scarred and corrupted by the artifact.</i>
+P	<i>Looking at the names of Things Below, my eye catches on "Ta'l Themyin (Burning Child,</i> <i>Cruel Infant, Prince of Rage)." I pick themes of "destruction/chaos/ruin/ignorance (fire,</i> <i>ash, dust)" and "cruelty/torture/violence/rage (red crystal, spilled blood)." I pick aspects of</i> <i>"fire/light/haze/cloud/vortex/void" and "a youth/a child/an infant." For instinct, I pick</i> <i>"to inflict harm, cruelly and unnecessarily." I think the</i> <b><i>Red Scepter</i></b> (page 558) <i>is the</i> <i>artifact buried in the glasbren's grove!</i>
 P	<i>I pick gifts of "immunity to certain harms" (fire), "serendipity/luck/hexes/misfortune, bestowed on others," and "vicious/terrible physical attacks" (a fiery grasp). I think it is marked</i> <i>by "strange appetites" (burnt and bloody offerings). Combining these elements with the</i> <i>glasbren's curiosity and penchant for bonding with mortals, I end up with this stat block:</i>
-HR
-P	<i>(page 366) sensing Iwan's resentments and "courting" him.</i>
-P	<b><i>Red Scepter</i></b> (page 558) <i>is the</i> CORRUPTED GLASBREN
+P	CORRUPTED GLASBREN
 P	Solitary, spirit, devious, magical, fiery, beautiful, corrupted
 P	HP 19; ARMOR 1 (lacks organs)
 P	DAMAGE searing grasp d10 (hand, grabby)
@@ -520,6 +519,7 @@ P	> Sense resentment, anger, wrath, and cruelty
 P	> Manifest a beautiful form of cinders and flame (unharmed by stabbing, vulnerable to water and bronze)
 P	> Stoke the flames of conflict
 P	> Offer affection/confidence/power in exchange for "gifts" of fire and blood
+HR
 PAGE	434
 HR
 ICON	icons/beast.svg

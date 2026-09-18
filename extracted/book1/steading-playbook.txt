@@ -317,25 +317,21 @@ P	<b>Effects</b>
 PAGE	161
 H2	Assets
 P	Owned by the residents of Stonetop in common.To take them on an expedition or otherwise put them at risk, you must Requisition.
-B	A pair of hardy draft horses, followers (<i>large</i> Damage d6+3 (<i>hand</i>, <i>close</i>, <i>forceful</i>
+B	A pair of hardy draft horses, followers (<i>large</i>, <i>powerful</i>, <i>keen-nosed</i>, <i>hardy</i>): HP 10 each; Damage d6+3 (<i>hand</i>, <i>close</i>, <i>forceful</i>); Instinct: to panic; Cost: care & grooming.
 B	A pair of horse-drawn plows, iron
 B	A pair of carts (plus horse harness)
 B	A wagon (plus horse harness)
 HR
 H3	Silver
-P	<b>Purses Handfuls</b>
+P	<b>Purses Handfuls Coins</b>
 H3	Gold
-P	<b>Purses Handfuls</b>
-P	, <i>powerful</i>, <i>keen-nosed</i>, <i>hardy</i>): HP 10 each;
-P	); Instinct: to panic; Cost: care & grooming.
-P	<b>Coins</b>
-P	<b>Coins</b>
+P	<b>Purses Handfuls Coins</b>
 PAGE	162
 HR
 H2	Residents of Stonetop
 P	Add each NPC that is named during introductions or play.
 P	Give each an occupation (even if just farmer or homemaker) and at least 1 trait.
-P	name (pronouns) occupation
+P	name (pronouns) occupation traits, relations, etc.
 HR
 P	publican
 HR
@@ -347,7 +343,6 @@ P	potter
 HR
 P	midwife
 HR
-P	traits, relations, etc.
 PAGE	163
 P	<b>NAMES</b>
 P	Aderyn, Aeronwen, Afanen, Afon, Alun, Andras, Aneirin, Awstin, Bedwyr, Berwyn, Betrys, Braith, Briallen, Bronwen, Bryn, Cadi, Cadoc, Cadwygan, Caron, Cefin, Ceinwen, Ceridwyn, Cerys, Colwyn, Deiniol, Dilwen, Dylis, Eifion, Eirlys, Eluned, Emrys, Enfys, Eurwen, Gaenor, Garet, Gethin, Glyndir, Heledd, Hywel, Ifan, Iorwerth, Iwan, Lewela, Leuca, Linos, Mado, Maldwyn, Malon, Mared, Marged, Martyn, Meirion, Menwen, Mererid, Neirin, Nia, Ofydd, Olwyn, Owain, Padrig, Parry, Pryce, Pryder, Rheinal, Rhisiart, Rhosyn, Rydderch, Sawyl, Siana, Sioned, Talfryn, Tegid, Tiwlip, Tomos, Tudyr, Winifred, Yorath
@@ -359,9 +354,8 @@ PAGE	164
 HR
 H2	Notable neighbors of Stonetop
 P	Add NPCs from neighboring areas when instructed by a playbook, or as needed.
-P	name (pronouns) home
+P	name (pronouns) home occupation traits, relations, etc.
 HR
-P	occupation traits, relations, etc.
 PAGE	165
 HR
 H3	Marshedge

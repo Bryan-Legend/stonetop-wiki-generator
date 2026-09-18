@@ -393,9 +393,10 @@ PAGE	330
 HR
 ICON	icons/beast-large.svg
 H3	Rime Lord
-P	<i>Solitary</i>, <i>large</i>, <i>cautious</i>, <i>cunning</i>, <i>magical</i> <i>terrifying</i>
+P	<i>Solitary</i>, <i>large</i>, <i>cautious</i>, <i>cunning</i>, <i>magical</i>, <i>organized</i>, <i>terrifying</i>
 P	<b>HP</b> 26; <b>Armor</b> 5 (potent wards, skill)
-P	<b>Damage</b> conjured ice d12+3 (any range, <i>area</i> <i>forceful</i>) or heat-drain d12+1 (<i>reach</i> <b>Special Qualities</b> spirit sight; telepathic; cold-proof; ageless; no need to eat/drink/sleep/breathe; aura of bitter cold <b>Instinct</b> to seek perfection (in themselves, in their surroundings, in others)
+P	<b>Damage</b> conjured ice d12+3 (any range, <i>area</i>, <i>grabby</i>, <i>forceful</i>) or heat-drain d12+1 (<i>reach</i>, ignores armor)
+P	<b>Special Qualities</b> spirit sight; telepathic; cold-proof; ageless; no need to eat/drink/sleep/breathe; aura of bitter cold <b>Instinct</b> to seek perfection (in themselves, in their surroundings, in others)
 P	• Overawe those in its presence
 P	• Act simultaneously in both the physical and spirit worlds
 P	• Impose its mighty will on the world: stilling emotions, freezing time, dismissing magic, reshaping reality, etc.
@@ -403,5 +404,3 @@ P	• Create a tulpa or thoughtform
 P	Only thirteen Rime Lords survive; each remains in stasis in some key place of power. Their spirits are merged in an eternal dance and song, continuously weaving the dark ice glacier that keeps the voice of Y'aaw'kara bound and prevents madness from spreading unchecked across the world.
 P	Pray, o mortal. Pray that they continue their vigil. Pray that their wills do not falter. Pray that no interloper is so foolish as to disturb them. Pray for your family, your friends, and all that you know.
 P	Pray that they do not wake.
-P	, <i>organized</i>, , <i>grabby</i>,
-P	, ignores armor)

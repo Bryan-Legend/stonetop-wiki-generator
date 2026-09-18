@@ -973,6 +973,9 @@ def extract_page_rich(
                         (g["badge"] for g in text_spans if g.get("badge")), None
                     ),
                     "fell_head": fell_head,
+                    "fell_solo": len(text_spans) == 1
+                    and "FellType" in text_spans[0]["font"]
+                    and not has_value,
                     "icon_xref": icon_xref,
                 }
             )
@@ -1133,6 +1136,26 @@ def extract_page_rich(
             is_fell = "FellType" in font and (
                 rec["size"] >= 10.5 or rec.get("fell_head")
             )
+
+            # A small-caps head set alone on its line, at the column edge,
+            # with a paragraph's space above it (the mediography's "caveat
+            # emptor"). An inline cross-ref in the same 9pt Fell ("terrain",
+            # "appendix c") shares its baseline with roman type, or hangs
+            # off the line above at the leading.
+            if (
+                rec.get("fell_solo")
+                and not is_fell
+                and table is None
+                and rec["size"] < 10.5
+                and abs(rec["x"] - col_x0) <= 2.0
+                and gap >= 1.8 * rec["size"]
+                and len(dtext) <= 40
+            ):
+                state["last_line"] = ""
+                entry_active = False
+                list_kind = None
+                out.append(M_H3 + dtext[:1].upper() + dtext[1:])
+                continue
 
             # Headings end any open table
             if is_avara or is_fell:
@@ -1493,21 +1516,35 @@ def extract_page_rich(
             last_mid: float | None = None
             for sp in row:
                 mid = _span_mid_x(sp)
-                # Never glue a left-col span to a right-col one, even when
-                # the gap at the gutter is under 8pt (Sites example notes).
+                # Never glue a left-col span to a right-col one across a
+                # gap, even one under 8pt at the gutter (Sites example
+                # notes). Spans that abut are one run of type whichever
+                # side they fall on: a full-measure line set in two faces
+                # (the mediography's italic titles) breaks into spans at
+                # the change of face, never at the gutter.
                 same_side = last_mid is None or (last_mid < gutter) == (
                     mid < gutter
                 )
-                if segs and same_side and sp["x"] - segs[-1][1] <= 8.0:
+                gap = sp["x"] - segs[-1][1] if segs else None
+                if segs and (gap <= 1.0 or (same_side and gap <= 8.0)):
                     segs[-1][1] = max(segs[-1][1], sp["x1"])
                 else:
                     segs.append([sp["x"], sp["x1"]])
                 last_mid = mid
-            mids = [_span_mid_x(sp) for sp in row]
+            # A run that straddles the gutter by a clear margin is a
+            # full-measure line; a column that starts a hair left of the
+            # gutter (Sites, p. 365) is not. Only a baseline broken at the
+            # gutter — runs centered on either side — is two-column evidence.
+            crossed = sum(
+                1 for x0, x1 in segs if x0 < gutter - 4.0 and x1 > gutter + 4.0
+            )
+            if crossed:
+                crossing += crossed
+                continue
+            mids = [(x0 + x1) / 2 for x0, x1 in segs]
             if any(m < gutter for m in mids) and any(m >= gutter for m in mids):
                 two_col = True
                 break
-            crossing += sum(1 for x0, x1 in segs if x0 < gutter < x1)
         if not two_col and crossing >= 3:
             gutter = page.rect.width + 1
 
