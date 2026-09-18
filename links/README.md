@@ -13,6 +13,7 @@ Each entry:
 |---|---|
 | `title` | the title exactly as the book prints it (the italic name, the quoted essay title, or the bare phrase) |
 | `match` | optional: the HTML to look for instead, when the printed title carries markup (`<em>Apocalypse World</em>: Crossing the Line`) |
+| `also` | optional: fallback phrases tried when the title is not found as printed, for a translation that renders it (`Driftless` inside a Chinese sentence) |
 | `kind` | `rpg`, `book`, `film`, `tv`, `game`, `comic`, `album`, `podcast`, `blog`, `post`, `place` |
 | `url` | where it lives: a film or series on the streaming service that carries it in the US, else its JustWatch page; a book on Amazon, or a free text for public-domain work; a podcast, blog or post at its own site; a game at its publisher, else DriveThruRPG or itch.io |
 | `site` | the site's short name, shown as the link's tooltip |

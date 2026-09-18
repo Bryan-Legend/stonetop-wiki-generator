@@ -68,16 +68,21 @@ def apply_reference_links(body: str, slug: str) -> tuple[str, list[str]]:
         return body, []
     missing: list[str] = []
     for entry in entries:
-        needle = entry.get("match") or html.escape(entry["title"], quote=True)
-        esc = re.escape(needle)
-        # The italic name, the quoted essay title, then the bare phrase —
-        # in that order, so a short name ("Rome") is taken where the book
-        # sets it as a title and not from a passing mention.
-        patterns = [
-            rf"(<em>)({esc})(</em>)",
-            rf"(&quot;)({esc})(?=[,.;:!?]?&quot;)",
-            rf"(?<![\w&#;])({esc})(?![\w;])",
-        ]
+        needles = [entry.get("match") or html.escape(entry["title"], quote=True)]
+        # Fallback phrases, for a translation that renders the title
+        # ("Driftless" inside a Chinese sentence).
+        needles += [html.escape(a, quote=True) for a in entry.get("also") or []]
+        patterns = []
+        for needle in needles:
+            esc = re.escape(needle)
+            # The italic name, the quoted essay title, then the bare phrase
+            # — in that order, so a short name ("Rome") is taken where the
+            # book sets it as a title and not from a passing mention.
+            patterns += [
+                rf"(<em>)({esc})(</em>)",
+                rf"(&quot;)({esc})(?=[,.;:!?]?&quot;)",
+                rf"(?<![\w&#;])({esc})(?![\w;])",
+            ]
         done = False
         for pat in patterns:
             for m in re.finditer(pat, body):

@@ -8,83 +8,83 @@
 PAGE	598
 HR
 H2	Influências diretas de jogo
-P	The following works directly inspired <i>Stonetop</i>'s mechanics, techniques, setting, themes, and approach to information design.
-B	<i>Dungeon World</i>, Adam Koebel & Sage LaTorra, Sage Kobold Productions, 2012
-B	<i>Apocalypse World</i>, D. Vincent Baker & Meguey Baker, lumpley games, 2010
-B	<i>Storming the Wizard's Tower</i>, D. Vincent Baker, unpublished, 2008
-B	<i>Dungeons & Dragons</i> (4th Edition), Rob Heinsoo, Andy Collins, and James Wyatt; Wizards of the Coast, 2008
+P	As obras a seguir inspiraram diretamente as mecânicas, as técnicas, a ambientação, os temas e a abordagem de design de informação de <i>Stonetop</i>.
+B	<i>Dungeon World</i>, Adam Koebel e Sage LaTorra, Sage Kobold Productions, 2012
+B	<i>Apocalypse World</i>, D. Vincent Baker e Meguey Baker, lumpley games, 2010
+B	<i>Storming the Wizard's Tower</i>, D. Vincent Baker, inédito, 2008
+B	<i>Dungeons & Dragons</i> (4ª Edição), Rob Heinsoo, Andy Collins e James Wyatt; Wizards of the Coast, 2008
 B	<i>Blades in the Dark</i>, John Harper, Evil Hat Productions, 2017
-B	<i>Beyond the Wall and Other Adventures</i>, John Cocking & Peter S. Williams, Flatland Games, 2013
+B	<i>Beyond the Wall and Other Adventures</i>, John Cocking e Peter S. Williams, Flatland Games, 2013
 B	<i>The Perilous Wilds</i>, Jason Lutes, Lampblack & Brimstone, 2016
-B	<i>20 Dungeon Starters</i>, Marshall Miller & Mark Tygart, Lampblack & Brimstone, 2016
+B	<i>20 Dungeon Starters</i>, Marshall Miller e Mark Tygart, Lampblack & Brimstone, 2016
 B	<i>Trilemma Adventures</i>, Michael Prescott, Trilemma Adventures, 2019
-B	<i>Ars Magica</i>, Mark Rein-Hagen & Jonathan Tweet, Lion Rampant Games, 1987
+B	<i>Ars Magica</i>, Mark Rein-Hagen e Jonathan Tweet, Lion Rampant Games, 1987
 H2	Blogs
-P	You can find a lot of writing about <i>Stonetop</i> and its development at Jeremy's blog, <i>Spouting Lore</i> (2018-2023). Additionally, the following essays and series either influenced techniques and approaches presented in this game or demonstrate the game in action.
-B	"<i>Apocalypse World</i>: Crossing the Line," John Harper, <i>The Mighty Atom</i>, 2010
-B	"Paint the Scene," Jason Cordova, <i>The Gauntlet Blog</i>, 2018
-B	"The 7-3-1 Technique," Jason Cordova, <i>The Gauntlet Blog</i>, 2018
+P	Você encontra muitos textos sobre <i>Stonetop</i> e seu desenvolvimento no blog do Jeremy, <i>Spouting Lore</i> (2018-2023). Além disso, os ensaios e séries a seguir influenciaram técnicas e abordagens apresentadas neste jogo ou mostram o jogo em ação.
+B	"<i>Apocalypse World</i>: Crossing the Line", John Harper, <i>The Mighty Atom</i>, 2010
+B	"Paint the Scene", Jason Cordova, <i>The Gauntlet Blog</i>, 2018
+B	"The 7-3-1 Technique", Jason Cordova, <i>The Gauntlet Blog</i>, 2018
 B	"A 16 HP Dragon", Stras Acimovic, republicado por Sage LaTorra, Latorra.org, 2012
-B	"Powered by the Apocalypse" (12-part series), D. Vincent Baker, <i>lumpley games</i>, 2019-2025
-B	<i>A Collection of Unmitigated Pedantry</i>, Bret Devereaux, 2019-present (especially the "Practical Polytheism" series and the "Iron, How Did They Make It?" series)
-B	"Xandering the Dungeon," Justin Alexander, <i>The Alexandrian</i>, 2010
+B	"Powered by the Apocalypse" (série em 12 partes), D. Vincent Baker, <i>lumpley games</i>, 2019-2025
+B	<i>A Collection of Unmitigated Pedantry</i>, Bret Devereaux, 2019-presente (especialmente a série "Practical Polytheism" e a série "Iron, How Did They Make It?")
+B	"Xandering the Dungeon", Justin Alexander, <i>The Alexandrian</i>, 2010
 B	"Dungeon Checklist", Arnold K., <i>Goblin Punch</i>
-B	"PTFO: Stonetop" (solo actual-play series), SGH, <i>PTFO</i> on Substack, 2022-present
+B	"PTFO: Stonetop" (série de actual play solo), SGH, <i>PTFO</i> no Substack, 2022-presente
 H2	Referências
-P	There's no one thing you can point at and say "<i>Stonetop</i> is just like this." But here's some stuff that you might look to for vibes.
+P	Não há uma única coisa que se possa apontar e dizer "<i>Stonetop</i> é exatamente assim". Mas aqui vão algumas coisas a que você pode recorrer para pegar o clima.
 B	<i>Barbarians</i> (série de TV), Andreas Heckmann et al, Gaumont Germany, 2020-2022
-B	<i>The Bear and the Nightingale</i> (book; and to a lesser extent the whole <i>Winternight</i> trilogy), Katherine Arden, Del Rey, 2017
-B	<i>The Chronicles of Prydain</i> (book series), Lloyd Alexander; Holt, Reinhart, and Winston; 1964-1968
-B	<i>The Dark is Rising Sequence</i> (book series), Susan Cooper, Random House, 1965-1977
-B	<i>The Demon Cycle</i> (book series), Peter V. Brett, Penguin Random House, 2010-2017
+B	<i>The Bear and the Nightingale</i> (O Urso e o Rouxinol) (livro; e, em menor grau, toda a trilogia <i>Winternight</i>), Katherine Arden, Del Rey, 2017
+B	<i>The Chronicles of Prydain</i> (As Crônicas de Prydain) (série de livros), Lloyd Alexander; Holt, Reinhart, and Winston; 1964-1968
+B	<i>The Dark is Rising Sequence</i> (série de livros), Susan Cooper, Random House, 1965-1977
+B	<i>The Demon Cycle</i> (série de livros), Peter V. Brett, Penguin Random House, 2010-2017
 B	<i>Farseer</i> (trilogia de livros), Robin Hobb, Spectra, 1995-1997
 B	<i>The First Law</i> (série de livros), Joe Abercrombie, Orbit Books, 2006-presente
-B	<i>O Hobbit</i> (livro), J.R.R. Tolkien, George Allen & Unwin, 1937
-B	<i>King of Dragon Pass</i> (video game), David Dunham, A Sharp, 1999 (or anything else related to the Glorantha setting by Greg Stafford (so I'm told))
+B	<i>The Hobbit</i> (O Hobbit) (livro), J.R.R. Tolkien, George Allen & Unwin, 1937
+B	<i>King of Dragon Pass</i> (videogame), David Dunham, A Sharp, 1999 (ou qualquer outra coisa relacionada ao cenário de Glorantha, de Greg Stafford (pelo que me dizem))
 PAGE	599
-B	<i>The Last Kingdom</i> (TV series), Stephen Butchard et al, Carnival Film and Television, 2015-2017
-B	<i>Nausicaä of the Valley of the Wind</i> (film), Hayao Miyazaki, Studio Ghibli, 1984
+B	<i>The Last Kingdom</i> (O Último Reino) (série de TV), Stephen Butchard et al, Carnival Film and Television, 2015-2017
+B	<i>Nausicaä of the Valley of the Wind</i> (Nausicaä do Vale do Vento) (filme), Hayao Miyazaki, Studio Ghibli, 1984
 B	<i>Northlanders</i> (série de quadrinhos), Brian Wood, Vertigo, 2008-2012
-B	<i>Princesa Mononoke</i> (filme), Hayao Miyazaki, Studio Ghibli, 1984
+B	<i>Princess Mononoke</i> (Princesa Mononoke) (filme), Hayao Miyazaki, Studio Ghibli, 1984
 B	<i>Redwall</i> (série de livros), Brian Jacques, Penguin Books, 1986-2011
 B	<i>Rome</i> (série de TV), John Milius et al, HBO, 2005-2007
-B	<i>The Secret of Kells</i> (film), Tomm Moore & Nora Twomey, Les Armateurs, 2009
-B	<i>The Sharing Knife</i> (book series), Lois McMaster Bujold, HarperCollins, 2006-2019
+B	<i>The Secret of Kells</i> (O Segredo de Kells) (filme), Tomm Moore e Nora Twomey, Les Armateurs, 2009
+B	<i>The Sharing Knife</i> (série de livros), Lois McMaster Bujold, HarperCollins, 2006-2019
 B	<i>Shattered Sea</i> (trilogia de livros) Joe Abercrombie, Del Rey, 2014-2015
 B	<i>Vikings</i> (série de TV), Michael Hirst, TM Productions et al, 2013-2021
-B	<i>Um Mago de Terramar</i> (livro), Ursula K. Le Guin, Parnassus Press, 1968
-B	The Driftless region of Wisconsin, and Texas Hill Country
+B	<i>A Wizard of Earthsea</i> (O Feiticeiro de Terramar) (livro), Ursula K. Le Guin, Parnassus Press, 1968
+B	The Driftless region of Wisconsin (a região Driftless, em Wisconsin) e o Texas Hill Country
 H2	E também...
-P	The following influenced or inspired certain specific elements of <i>Stonetop</i>, or resonate strongly with some of its themes. Maybe they'll inspire you, too.
-B	<i>At the Mountains of Madness</i> (novella), H.P. Lovecraft, <i>Astounding Stories</i>, 1936 (and other stories by Lovecraft)
+P	As obras a seguir influenciaram ou inspiraram certos elementos específicos de <i>Stonetop</i>, ou ressoam fortemente com alguns de seus temas. Talvez inspirem você também.
+B	<i>At the Mountains of Madness</i> (Nas Montanhas da Loucura) (novela), H.P. Lovecraft, <i>Astounding Stories</i>, 1936 (e outros contos de Lovecraft)
 B	<i>The Black Company</i> (série de livros), Glen Cook, 1984-presente, Tor Fantasy
 B	<i>Black Spot</i> (série de TV), Mathieu Missoffe, Ego Productions et al, 2017-2019
-B	<i>Chronos</i> (film), Guillermo del Toro, Fondo de Fomento Cinematográfico et al, 1992
-B	The "Conan" stories (books and adaptations); Robert E. Howard, L. Sprague de Camp, and Lin Carter; various publishers, 1950-1977 (especially "Red Nails")
+B	<i>Chronos</i> (Cronos) (filme), Guillermo del Toro, Fondo de Fomento Cinematográfico et al, 1992
+B	The "Conan" stories (os contos de "Conan"; livros e adaptações); Robert E. Howard, L. Sprague de Camp e Lin Carter; várias editoras, 1950-1977 (especialmente "Red Nails")
 B	<i>Deadwood</i> (série de TV), David Milch, Roscoe Productions et al, 2004-2006
-B	<i>Discern Realities</i> (podcast), Jason Cordova & David LaFrieniere, The Gauntlet, 2015-2019
+B	<i>Discern Realities</i> (podcast), Jason Cordova e David LaFrieniere, The Gauntlet, 2015-2019
 B	<i>Gentleman Bastard</i> (série de livros), Scott Lynch, Bantam Books, 2006-2013
-B	<i>Gladiador</i> (filme), Ridley Scott, DreamWorks Pictures et al, 2000
+B	<i>Gladiator</i> (Gladiador) (filme), Ridley Scott, DreamWorks Pictures et al, 2000
 B	<i>Heart Shaped Box</i> (livro), Joe Hill, William Morrow, 2007
 B	<i>Hillfolk</i> (RPG), Robin Laws, Pelgrane Press, 2013
-B	<i>Marcas da Violência</i> (filme), David Cronenberg, BenderSpink et al, 2005
-B	<i>Jonathan Strange and Mr Norrell</i> (book), Susanna Clarke, Bloomsbury, 2004
+B	<i>A History of Violence</i> (Marcas da Violência) (filme), David Cronenberg, BenderSpink et al, 2005
+B	<i>Jonathan Strange and Mr Norrell</i> (livro), Susanna Clarke, Bloomsbury, 2004
 B	<i>Legacy: Life Among the Ruins</i> (RPG), Minerva McJanda, UFO Press, 2015
-B	<i>Little House on the Prairie</i> (book series), Laura Ingalls Wilder, Harper & Brothers, 1932-1971
+B	<i>Little House on the Prairie</i> (série de livros), Laura Ingalls Wilder, Harper & Brothers, 1932-1971
 B	<i>Low Country</i> (álbum), The Sword, Razor & Tie, 2016
-B	<i>The Magnus Archives</i> (podcast), Jonathan Simms & Alexander J. Newall, Rusty Quill, 2016-2021
-B	<i>Mouse Guard</i> (comic book series), David Petersen, Archaia Studios Press, 2006-present
+B	<i>The Magnus Archives</i> (podcast), Jonathan Simms e Alexander J. Newall, Rusty Quill, 2016-2021
+B	<i>Mouse Guard</i> (série de quadrinhos), David Petersen, Archaia Studios Press, 2006-presente
 B	<i>Monster Man</i> (podcast), James Holloway, 2018-presente
 B	<i>No Country for Old Kobolds</i> (RPG), Steve Wallace, Steve Wallace Art, 2016
-B	<i>Old Gods of Appalachia</i> (podcast), Steve Shell & Cam Collins, Deepnerd Media, 2019-present
-B	<i>O Labirinto do Fauno</i> (filme, 2006), Guillermo del Toro, Estudios Picasso et al, 2006
-B	<i>Predador: A Caçada</i> (filme), Dan Trachtenberg, 20th Century Studios et al, 2022
-B	<i>The Revenant</i> (film), Alejandro González Iñárritu, Regency Enterprises et al, 2015
-B	<i>O Ritual</i> (filme), David Bruckner, The Imaginarium, 2017
+B	<i>Old Gods of Appalachia</i> (podcast), Steve Shell e Cam Collins, Deepnerd Media, 2019-presente
+B	<i>Pan's Labyrinth</i> (O Labirinto do Fauno) (filme, 2006), Guillermo del Toro, Estudios Picasso et al, 2006
+B	<i>Prey</i> (Predador: A Caçada) (filme), Dan Trachtenberg, 20th Century Studios et al, 2022
+B	<i>The Revenant</i> (O Regresso) (filme), Alejandro González Iñárritu, Regency Enterprises et al, 2015
+B	<i>The Ritual</i> (O Ritual) (filme), David Bruckner, The Imaginarium, 2017
 B	<i>Sagas of the Icelanders</i> (RPG), Gregor Vuga, 2013
-B	<i>O Segredo de NIMH</i> (filme), Don Bluth, United Artists, 1982
-B	<i>Under Hollow Hills</i> (RPG), Meguey Baker & D. Vincent Baker, lumpley games, 2021
-B	<i>The Wardstone Chronicles</i> (book series), Joseph Delaney, Greenwillow Books, 2004-2013
+B	<i>The Secret of NIMH</i> (A Ratinha Valente) (filme), Don Bluth, United Artists, 1982
+B	<i>Under Hollow Hills</i> (RPG), Meguey Baker e D. Vincent Baker, lumpley games, 2021
+B	<i>The Wardstone Chronicles</i> (série de livros), Joseph Delaney, Greenwillow Books, 2004-2013
 H3	Caveat emptor
 P	Tudo o que está acima é relevante e potencialmente útil como inspiração, mas não é necessariamente tudo bom.
-P	And some of the creators held and espoused hurtful beliefs, which permeates their work. Others have done or been accused of terrible things. People, like art and our consumption of it, are complicated.
+P	E alguns dos criadores tinham e defendiam crenças nocivas, o que permeia suas obras. Outros fizeram, ou foram acusados de fazer, coisas terríveis. As pessoas, como a arte e o nosso consumo dela, são complicadas.

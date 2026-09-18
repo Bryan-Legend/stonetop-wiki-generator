@@ -8,83 +8,83 @@
 PAGE	598
 HR
 H2	直接的游戏影响
-P	The following works directly inspired <i>Stonetop</i>'s mechanics, techniques, setting, themes, and approach to information design.
-B	<i>Dungeon World</i>, Adam Koebel & Sage LaTorra, Sage Kobold Productions, 2012
+P	以下作品直接启发了<i>石顶</i>（Stonetop）的机制、技巧、设定、主题，以及信息设计的思路。
+B	<i>Dungeon World</i>，Adam Koebel 与 Sage LaTorra，Sage Kobold Productions，2012
 B	<i>Apocalypse World</i>，D. Vincent Baker 与 Meguey Baker，lumpley games，2010
-B	<i>Storming the Wizard's Tower</i>, D. Vincent Baker, unpublished, 2008
-B	<i>Dungeons & Dragons</i> (4th Edition), Rob Heinsoo, Andy Collins, and James Wyatt; Wizards of the Coast, 2008
+B	<i>Storming the Wizard's Tower</i>，D. Vincent Baker，未出版，2008
+B	<i>Dungeons & Dragons</i>（第4版），Rob Heinsoo、Andy Collins 与 James Wyatt；Wizards of the Coast，2008
 B	<i>Blades in the Dark</i>，John Harper，Evil Hat Productions，2017
-B	<i>Beyond the Wall and Other Adventures</i>, John Cocking & Peter S. Williams, Flatland Games, 2013
+B	<i>Beyond the Wall and Other Adventures</i>，John Cocking 与 Peter S. Williams，Flatland Games，2013
 B	<i>The Perilous Wilds</i>，Jason Lutes，Lampblack & Brimstone，2016
-B	<i>20 Dungeon Starters</i>, Marshall Miller & Mark Tygart, Lampblack & Brimstone, 2016
+B	<i>20 Dungeon Starters</i>，Marshall Miller 与 Mark Tygart，Lampblack & Brimstone，2016
 B	<i>Trilemma Adventures</i>，Michael Prescott，Trilemma Adventures，2019
-B	<i>Ars Magica</i>, Mark Rein-Hagen & Jonathan Tweet, Lion Rampant Games, 1987
+B	<i>Ars Magica</i>，Mark Rein-Hagen 与 Jonathan Tweet，Lion Rampant Games，1987
 H2	博客
-P	You can find a lot of writing about <i>Stonetop</i> and its development at Jeremy's blog, <i>Spouting Lore</i> (2018-2023). Additionally, the following essays and series either influenced techniques and approaches presented in this game or demonstrate the game in action.
-B	"<i>Apocalypse World</i>: Crossing the Line," John Harper, <i>The Mighty Atom</i>, 2010
-B	"Paint the Scene," Jason Cordova, <i>The Gauntlet Blog</i>, 2018
-B	"The 7-3-1 Technique," Jason Cordova, <i>The Gauntlet Blog</i>, 2018
+P	在 Jeremy 的博客 <i>Spouting Lore</i>（2018-2023）上可以找到大量关于<i>石顶</i>及其开发历程的文章。此外，以下文章与系列或是影响了本游戏所呈现的技巧与思路，或是展示了游戏的实际运作。
+B	“<i>Apocalypse World</i>: Crossing the Line”，John Harper，<i>The Mighty Atom</i>，2010
+B	“Paint the Scene”，Jason Cordova，<i>The Gauntlet Blog</i>，2018
+B	“The 7-3-1 Technique”，Jason Cordova，<i>The Gauntlet Blog</i>，2018
 B	“A 16 HP Dragon”，Stras Acimovic，由 Sage LaTorra 转载，Latorra.org，2012
-B	"Powered by the Apocalypse" (12-part series), D. Vincent Baker, <i>lumpley games</i>, 2019-2025
-B	<i>A Collection of Unmitigated Pedantry</i>, Bret Devereaux, 2019-present (especially the "Practical Polytheism" series and the "Iron, How Did They Make It?" series)
-B	"Xandering the Dungeon," Justin Alexander, <i>The Alexandrian</i>, 2010
+B	“Powered by the Apocalypse”（12篇系列），D. Vincent Baker，<i>lumpley games</i>，2019-2025
+B	<i>A Collection of Unmitigated Pedantry</i>，Bret Devereaux，2019-至今（尤其是“Practical Polytheism”系列与“Iron, How Did They Make It?”系列）
+B	“Xandering the Dungeon”，Justin Alexander，<i>The Alexandrian</i>，2010
 B	“Dungeon Checklist”，Arnold K.，<i>Goblin Punch</i>
-B	"PTFO: Stonetop" (solo actual-play series), SGH, <i>PTFO</i> on Substack, 2022-present
+B	“PTFO: Stonetop”（单人实录系列），SGH，Substack 上的 <i>PTFO</i>，2022-至今
 H2	参照作品
-P	There's no one thing you can point at and say "<i>Stonetop</i> is just like this." But here's some stuff that you might look to for vibes.
+P	没有哪一样东西可以让你指着说“<i>石顶</i>就是这样”。不过这里有一些东西，你可以从中找找感觉。
 B	<i>Barbarians</i>（电视剧），Andreas Heckmann 等，Gaumont Germany，2020-2022
-B	<i>The Bear and the Nightingale</i> (book; and to a lesser extent the whole <i>Winternight</i> trilogy), Katherine Arden, Del Rey, 2017
-B	<i>The Chronicles of Prydain</i> (book series), Lloyd Alexander; Holt, Reinhart, and Winston; 1964-1968
-B	<i>The Dark is Rising Sequence</i> (book series), Susan Cooper, Random House, 1965-1977
-B	<i>The Demon Cycle</i> (book series), Peter V. Brett, Penguin Random House, 2010-2017
+B	<i>The Bear and the Nightingale</i>（书；其次是整个 <i>Winternight</i> 三部曲），Katherine Arden，Del Rey，2017
+B	<i>The Chronicles of Prydain</i>（书系列），Lloyd Alexander；Holt, Reinhart, and Winston；1964-1968
+B	<i>The Dark is Rising Sequence</i>（书系列），Susan Cooper，Random House，1965-1977
+B	<i>The Demon Cycle</i>（书系列），Peter V. Brett，Penguin Random House，2010-2017
 B	<i>Farseer</i>（书三部曲），Robin Hobb，Spectra，1995-1997
 B	<i>The First Law</i>（书系列），Joe Abercrombie，Orbit Books，2006-至今
 B	<i>The Hobbit</i>（书），J.R.R. Tolkien，George Allen & Unwin，1937
-B	<i>King of Dragon Pass</i> (video game), David Dunham, A Sharp, 1999 (or anything else related to the Glorantha setting by Greg Stafford (so I'm told))
+B	<i>King of Dragon Pass</i>（电子游戏），David Dunham，A Sharp，1999（或任何与 Greg Stafford 的 Glorantha 设定相关的东西（据说如此））
 PAGE	599
-B	<i>The Last Kingdom</i> (TV series), Stephen Butchard et al, Carnival Film and Television, 2015-2017
-B	<i>Nausicaä of the Valley of the Wind</i> (film), Hayao Miyazaki, Studio Ghibli, 1984
+B	<i>The Last Kingdom</i>（电视剧），Stephen Butchard 等，Carnival Film and Television，2015-2017
+B	<i>Nausicaä of the Valley of the Wind</i>（电影），Hayao Miyazaki，Studio Ghibli，1984
 B	<i>Northlanders</i>（漫画系列），Brian Wood，Vertigo，2008-2012
 B	<i>Princess Mononoke</i>（电影），Hayao Miyazaki，Studio Ghibli，1984
 B	<i>Redwall</i>（书系列），Brian Jacques，Penguin Books，1986-2011
 B	<i>Rome</i>（电视剧），John Milius 等，HBO，2005-2007
-B	<i>The Secret of Kells</i> (film), Tomm Moore & Nora Twomey, Les Armateurs, 2009
-B	<i>The Sharing Knife</i> (book series), Lois McMaster Bujold, HarperCollins, 2006-2019
+B	<i>The Secret of Kells</i>（电影），Tomm Moore 与 Nora Twomey，Les Armateurs，2009
+B	<i>The Sharing Knife</i>（书系列），Lois McMaster Bujold，HarperCollins，2006-2019
 B	<i>Shattered Sea</i>（书三部曲）Joe Abercrombie，Del Rey，2014-2015
 B	<i>Vikings</i>（电视剧），Michael Hirst，TM Productions 等，2013-2021
 B	<i>A Wizard of Earthsea</i>（书），Ursula K. Le Guin，Parnassus Press，1968
-B	The Driftless region of Wisconsin, and Texas Hill Country
+B	威斯康星州的 Driftless 地区，以及得克萨斯州的 Hill Country（丘陵地带）
 H2	还有……
-P	The following influenced or inspired certain specific elements of <i>Stonetop</i>, or resonate strongly with some of its themes. Maybe they'll inspire you, too.
-B	<i>At the Mountains of Madness</i> (novella), H.P. Lovecraft, <i>Astounding Stories</i>, 1936 (and other stories by Lovecraft)
+P	以下作品影响或启发了<i>石顶</i>的某些具体元素，或与它的某些主题强烈共鸣。也许它们也会启发你。
+B	<i>At the Mountains of Madness</i>（中篇小说），H.P. Lovecraft，<i>Astounding Stories</i>，1936（以及 Lovecraft 的其他故事）
 B	<i>The Black Company</i>（书系列），Glen Cook，1984-至今，Tor Fantasy
 B	<i>Black Spot</i>（电视剧），Mathieu Missoffe，Ego Productions 等，2017-2019
-B	<i>Chronos</i> (film), Guillermo del Toro, Fondo de Fomento Cinematográfico et al, 1992
-B	The "Conan" stories (books and adaptations); Robert E. Howard, L. Sprague de Camp, and Lin Carter; various publishers, 1950-1977 (especially "Red Nails")
+B	<i>Chronos</i>（电影），Guillermo del Toro，Fondo de Fomento Cinematográfico 等，1992
+B	“Conan”系列故事（书及改编作品）；Robert E. Howard、L. Sprague de Camp 与 Lin Carter；多家出版社，1950-1977（尤其是“Red Nails”）
 B	<i>Deadwood</i>（电视剧），David Milch，Roscoe Productions 等，2004-2006
-B	<i>Discern Realities</i> (podcast), Jason Cordova & David LaFrieniere, The Gauntlet, 2015-2019
+B	<i>Discern Realities</i>（播客），Jason Cordova 与 David LaFrieniere，The Gauntlet，2015-2019
 B	<i>Gentleman Bastard</i>（书系列），Scott Lynch，Bantam Books，2006-2013
 B	<i>Gladiator</i>（电影），Ridley Scott，DreamWorks Pictures 等，2000
 B	<i>Heart Shaped Box</i>（书），Joe Hill，William Morrow，2007
 B	<i>Hillfolk</i>（RPG），Robin Laws，Pelgrane Press，2013
 B	<i>A History of Violence</i>（电影），David Cronenberg，BenderSpink 等，2005
-B	<i>Jonathan Strange and Mr Norrell</i> (book), Susanna Clarke, Bloomsbury, 2004
-B	<i>Legacy: Life Among the Ruins</i> (RPG), Minerva McJanda, UFO Press, 2015
-B	<i>Little House on the Prairie</i> (book series), Laura Ingalls Wilder, Harper & Brothers, 1932-1971
+B	<i>Jonathan Strange and Mr Norrell</i>（书），Susanna Clarke，Bloomsbury，2004
+B	<i>Legacy: Life Among the Ruins</i>（RPG），Minerva McJanda，UFO Press，2015
+B	<i>Little House on the Prairie</i>（书系列），Laura Ingalls Wilder，Harper & Brothers，1932-1971
 B	<i>Low Country</i>（专辑），The Sword，Razor & Tie，2016
-B	<i>The Magnus Archives</i> (podcast), Jonathan Simms & Alexander J. Newall, Rusty Quill, 2016-2021
-B	<i>Mouse Guard</i> (comic book series), David Petersen, Archaia Studios Press, 2006-present
+B	<i>The Magnus Archives</i>（播客），Jonathan Simms 与 Alexander J. Newall，Rusty Quill，2016-2021
+B	<i>Mouse Guard</i>（漫画系列），David Petersen，Archaia Studios Press，2006-至今
 B	<i>Monster Man</i>（播客），James Holloway，2018-至今
-B	<i>No Country for Old Kobolds</i> (RPG), Steve Wallace, Steve Wallace Art, 2016
-B	<i>Old Gods of Appalachia</i> (podcast), Steve Shell & Cam Collins, Deepnerd Media, 2019-present
+B	<i>No Country for Old Kobolds</i>（RPG），Steve Wallace，Steve Wallace Art，2016
+B	<i>Old Gods of Appalachia</i>（播客），Steve Shell 与 Cam Collins，Deepnerd Media，2019-至今
 B	<i>Pan's Labyrinth</i>（电影，2006），Guillermo del Toro，Estudios Picasso 等，2006
 B	<i>Prey</i>（电影），Dan Trachtenberg，20th Century Studios 等，2022
-B	<i>The Revenant</i> (film), Alejandro González Iñárritu, Regency Enterprises et al, 2015
+B	<i>The Revenant</i>（电影），Alejandro González Iñárritu，Regency Enterprises 等，2015
 B	<i>The Ritual</i>（电影），David Bruckner，The Imaginarium，2017
 B	<i>Sagas of the Icelanders</i>（RPG），Gregor Vuga，2013
 B	<i>The Secret of NIMH</i>（电影），Don Bluth，United Artists，1982
-B	<i>Under Hollow Hills</i> (RPG), Meguey Baker & D. Vincent Baker, lumpley games, 2021
-B	<i>The Wardstone Chronicles</i> (book series), Joseph Delaney, Greenwillow Books, 2004-2013
-H3	Caveat emptor
+B	<i>Under Hollow Hills</i>（RPG），Meguey Baker 与 D. Vincent Baker，lumpley games，2021
+B	<i>The Wardstone Chronicles</i>（书系列），Joseph Delaney，Greenwillow Books，2004-2013
+H3	Caveat emptor（购者自慎）
 P	以上全部都相关，并可能作为灵感有用，但它们并不一定都好。
-P	And some of the creators held and espoused hurtful beliefs, which permeates their work. Others have done or been accused of terrible things. People, like art and our consumption of it, are complicated.
+P	而且其中一些创作者曾持有并宣扬伤害性的观念，这些观念渗透在他们的作品里。另一些人做过或被指控做过可怕的事。人，就像艺术和我们对艺术的消费一样，是复杂的。

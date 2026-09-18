@@ -76,7 +76,7 @@ from .structure import (
     linkify_pages,
 )
 from .text import TAG_RE, heading_pages, html_to_search_text, strip_tags
-from .translate import render_translated, tag_lines
+from .translate import TextMemory, check_alignment, render_translated, tag_lines
 from .reflinks import apply_reference_links
 
 
@@ -675,8 +675,24 @@ def main(argv: list[str] | None = None) -> None:
     for art in articles:
         slug = art["slug"]
         # --pages: only the named pages are rendered; the rest of the site
-        # keeps the HTML it already has.
+        # keeps the HTML it already has. The sidebar of every page written
+        # still names this page's sections in each language, so take the
+        # labels off the translation's headings without rendering it.
         if only_pages is not None and slug not in only_pages:
+            secs = section_navs.get(slug)
+            if secs and slug in texts:
+                en_lines = texts[slug][0]
+                for locale in lang_targets:
+                    tr = locale["pages"].get(slug)
+                    if not tr or "corpus" not in tr or "book" not in tr["corpus"]:
+                        continue
+                    tr_lines = tr["corpus"]["book"][0]
+                    if check_alignment(en_lines, tr_lines):
+                        continue
+                    tm = TextMemory.from_lines(en_lines, tr_lines)
+                    tr["sections"] = {
+                        sec["id"]: tm.get(sec["name"]) or sec["name"] for sec in secs
+                    }
             continue
         book_id = art.get("book") or "book2"
 

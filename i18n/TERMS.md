@@ -726,3 +726,27 @@ es Consecuencias · pt-BR Consequências · fr Conséquences · it Conseguenze �
 pl Konsekwencje · sv/da/nb Konsekvenser · cs Následky · fi Seuraukset ·
 hu Következmények · tr Sonuçlar · ru Последствия · uk Наслідки · ja 代償 ·
 ko 대가 · zh 后果.
+
+### Mediography — pt-BR · zh-Hans (2026-09-18, corpus route)
+
+The cited works' titles stay exactly as printed in English — the build links
+each one by matching its text (`links/mediography.json`); a local-market
+title goes in parentheses after it (<i>The Hobbit</i> (O Hobbit)). Names of
+people, publishers, blogs and sites stay as printed. `Caveat emptor` stays
+Latin as a heading (zh-Hans glosses it 购者自慎). The three bare-phrase
+entries — the "Conan" stories, the Driftless region, Texas Hill Country — are
+linked through fallback phrases, so a translation may render them.
+
+| English | pt-BR | zh-Hans |
+|---|---|---|
+| Mediography | Mediografia | 媒介志 |
+| Immediate game influences / Blogs / Touchstones / And also... | Influências diretas de jogo / Blogs / Referências / E também... | 直接的游戏影响 / 博客 / 参照作品 / 还有…… |
+| (book) / (book series) / (book trilogy) / (novella) | (livro) / (série de livros) / (trilogia de livros) / (novela) | （书）/（书系列）/（书三部曲）/（中篇小说） |
+| (TV series) / (film) / (podcast) / (album) / (comic book series) / (video game) / (RPG) | (série de TV) / (filme) / (podcast) / (álbum) / (série de quadrinhos) / (videogame) / (RPG) | （电视剧）/（电影）/（播客）/（专辑）/（漫画系列）/（电子游戏）/（RPG） |
+| (4th Edition) / unpublished / reposted by | (4ª Edição) / inédito / republicado por | （第4版）/ 未出版 / 由 … 转载 |
+| 12-part series / solo actual-play series | série em 12 partes / série de actual play solo | 12篇系列 / 单人实录系列 |
+| especially / various publishers / books and adaptations | especialmente / várias editoras / livros e adaptações | 尤其是 / 多家出版社 / 书及改编作品 |
+| and other stories by Lovecraft | e outras histórias de Lovecraft | 以及 Lovecraft 的其他故事 |
+| look to for vibes | para pegar o clima | 找找感觉 |
+| information design | design de informação | 信息设计 |
+| & between two authors / et al / present | e / et al / presente | 与 / 等 / 至今 |

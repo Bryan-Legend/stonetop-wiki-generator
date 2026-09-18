@@ -1,5 +1,5 @@
 {
-  "_about": "Where the works the mediography cites live. The build wraps each title's first mention on mediography.html (every language) in a link. title = the title as printed; match = the HTML to match instead when the title carries markup; kind: rpg, book, film, tv, game, comic, album, podcast, blog, post, place. See links/README.md.",
+  "_about": "Where the works the mediography cites live. The build wraps each title's first mention on mediography.html (every language) in a link. title = the title as printed; match = the HTML to match instead when the title carries markup; also = fallback phrases to try when the title is not found as printed (a translation that renders it); kind: rpg, book, film, tv, game, comic, album, podcast, blog, post, place. See links/README.md.",
   "links": [
     {
       "title": "Dungeon World",
@@ -278,13 +278,19 @@
       "title": "The Driftless region of Wisconsin",
       "kind": "place",
       "url": "https://en.wikipedia.org/wiki/Driftless_Area",
-      "site": "Wikipedia"
+      "site": "Wikipedia",
+      "also": [
+        "Driftless"
+      ]
     },
     {
       "title": "Texas Hill Country",
       "kind": "place",
       "url": "https://en.wikipedia.org/wiki/Texas_Hill_Country",
-      "site": "Wikipedia"
+      "site": "Wikipedia",
+      "also": [
+        "Hill Country"
+      ]
     },
     {
       "title": "At the Mountains of Madness",
@@ -319,7 +325,10 @@
       "kind": "book",
       "url": "https://en.wikisource.org/wiki/Author:Robert_Ervin_Howard",
       "site": "Wikisource",
-      "note": "Howard's public-domain texts; Del Rey's The Coming of Conan the Cimmerian is https://www.amazon.com/Coming-Conan-Cimmerian-Cimmeria-Book/dp/0345483855"
+      "note": "Howard's public-domain texts; Del Rey's The Coming of Conan the Cimmerian is https://www.amazon.com/Coming-Conan-Cimmerian-Cimmeria-Book/dp/0345483855",
+      "also": [
+        "Conan"
+      ]
     },
     {
       "title": "Red Nails",
