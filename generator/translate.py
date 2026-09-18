@@ -1024,6 +1024,7 @@ def render_translated(
     from .sheet import sheet_excerpt
     from .arcana import major_arcana_html, minor_arcana_html
     from .structure import article_html, linkify_pages, set_translation
+    from .reflinks import apply_reference_links
 
     slug = art["slug"]
     meta = tr.get("meta") or {}
@@ -1076,6 +1077,12 @@ def render_translated(
         if ov is not None:
             body = apply_override(ov, body, slug=slug, link_fn=link_fn, lines=sheet_lines)
             secs = override_sections(body)
+        if render is article_html:
+            # The works the page cites, linked where the translation keeps
+            # the title as printed (links/<slug>.json).
+            body, unlinked = apply_reference_links(body, slug)
+            if unlinked:
+                notes.append(f"{where}: reference links not placed: " + "; ".join(unlinked))
     finally:
         set_translation(None)
     if has_tags(body):

@@ -1,0 +1,484 @@
+{
+  "_about": "Where the works the mediography cites live. The build wraps each title's first mention on mediography.html (every language) in a link. title = the title as printed; match = the HTML to match instead when the title carries markup; kind: rpg, book, film, tv, game, comic, album, podcast, blog, post, place. See links/README.md.",
+  "links": [
+    {
+      "title": "Dungeon World",
+      "kind": "rpg",
+      "url": "https://www.dungeon-world.com/",
+      "site": "Dungeon World"
+    },
+    {
+      "title": "Apocalypse World",
+      "kind": "rpg",
+      "url": "https://lumpley.games/apocalypseworld/",
+      "site": "lumpley games"
+    },
+    {
+      "title": "Storming the Wizard's Tower",
+      "kind": "rpg",
+      "url": "http://lumpley.com/index.php/anyway/thread/392",
+      "site": "lumpley (anyway)",
+      "note": "Baker's 2008 playtest-rules post; the PDF host is dead. A Google Docs copy is linked from https://lumpley.games/thebarf/index.php?topic=6473.0"
+    },
+    {
+      "title": "Dungeons & Dragons",
+      "kind": "rpg",
+      "url": "https://www.drivethrurpg.com/en/product/161671/player-s-handbook-4e",
+      "site": "DriveThruRPG",
+      "note": "4e Player's Handbook; Wizards has no live 4e product page."
+    },
+    {
+      "title": "Blades in the Dark",
+      "kind": "rpg",
+      "url": "https://bladesinthedark.com/",
+      "site": "Blades in the Dark"
+    },
+    {
+      "title": "Beyond the Wall and Other Adventures",
+      "kind": "rpg",
+      "url": "https://www.flatlandgames.com/btw/",
+      "site": "Flatland Games"
+    },
+    {
+      "title": "The Perilous Wilds",
+      "kind": "rpg",
+      "url": "https://lampblack-brimstone.itch.io/the-perilous-wilds-revised-edition",
+      "site": "itch.io",
+      "note": "The publisher's own itch.io store; lampblack-and-brimstone.com does not resolve."
+    },
+    {
+      "title": "20 Dungeon Starters",
+      "kind": "rpg",
+      "url": "https://www.lampblackandbrimstone.com/store/products/20-dungeon-starters-pdf",
+      "site": "Lampblack & Brimstone"
+    },
+    {
+      "title": "Trilemma Adventures",
+      "kind": "rpg",
+      "url": "https://trilemma.com/",
+      "site": "Trilemma Adventures"
+    },
+    {
+      "title": "Ars Magica",
+      "kind": "rpg",
+      "url": "https://www.atlas-games.com/arsmagica",
+      "site": "Atlas Games"
+    },
+    {
+      "title": "Spouting Lore",
+      "kind": "blog",
+      "url": "https://spoutinglore.blogspot.com/p/stonetop.html",
+      "site": "Spouting Lore",
+      "note": "The blog's Stonetop index; the blog itself is https://spoutinglore.blogspot.com/"
+    },
+    {
+      "title": "Apocalypse World: Crossing the Line",
+      "kind": "post",
+      "url": "http://mightyatom.blogspot.com/2010/10/apocalypse-world-crossing-line.html",
+      "site": "The Mighty Atom",
+      "match": "<em>Apocalypse World</em>: Crossing the Line"
+    },
+    {
+      "title": "Paint the Scene",
+      "kind": "post",
+      "url": "https://www.gauntlet-rpg.com/blog/paint-the-scene",
+      "site": "The Gauntlet"
+    },
+    {
+      "title": "The 7-3-1 Technique",
+      "kind": "post",
+      "url": "https://www.gauntlet-rpg.com/blog/the-7-3-1-technique",
+      "site": "The Gauntlet"
+    },
+    {
+      "title": "A 16 HP Dragon",
+      "kind": "post",
+      "url": "https://www.latorra.org/2012/05/15/a-16-hp-dragon/",
+      "site": "LaTorra.org"
+    },
+    {
+      "title": "Powered by the Apocalypse",
+      "kind": "post",
+      "url": "https://lumpley.games/2019/12/30/powered-by-the-apocalypse-part-1/",
+      "site": "lumpley games",
+      "note": "Part 1 carries the index of parts 2-12."
+    },
+    {
+      "title": "A Collection of Unmitigated Pedantry",
+      "kind": "blog",
+      "url": "https://acoup.blog/",
+      "site": "ACOUP"
+    },
+    {
+      "title": "Practical Polytheism",
+      "kind": "post",
+      "url": "https://acoup.blog/2019/10/25/collections-practical-polytheism-part-i-knowledge/",
+      "site": "ACOUP",
+      "note": "Part I of four."
+    },
+    {
+      "title": "Iron, How Did They Make It?",
+      "kind": "post",
+      "url": "https://acoup.blog/2020/09/18/collections-iron-how-did-they-make-it-part-i-mining/",
+      "site": "ACOUP",
+      "note": "Part I of four."
+    },
+    {
+      "title": "Xandering the Dungeon",
+      "kind": "post",
+      "url": "https://thealexandrian.net/wordpress/13085/roleplaying-games/xandering-the-dungeon",
+      "site": "The Alexandrian",
+      "note": "Renamed from 'Jaquaying the Dungeon' in 2023; same URL."
+    },
+    {
+      "title": "Dungeon Checklist",
+      "kind": "post",
+      "url": "https://goblinpunch.blogspot.com/2016/01/dungeon-checklist.html",
+      "site": "Goblin Punch"
+    },
+    {
+      "title": "PTFO: Stonetop",
+      "kind": "post",
+      "url": "https://ptfo.substack.com/p/table-of-contents",
+      "site": "PTFO on Substack",
+      "note": "The series' table of contents; the Substack home is https://ptfo.substack.com/"
+    },
+    {
+      "title": "Barbarians",
+      "kind": "tv",
+      "url": "https://www.netflix.com/title/81024039",
+      "site": "Netflix"
+    },
+    {
+      "title": "The Bear and the Nightingale",
+      "kind": "book",
+      "url": "https://www.amazon.com/The-Bear-and-the-Nightingale/dp/0399593284",
+      "site": "Amazon"
+    },
+    {
+      "title": "The Chronicles of Prydain",
+      "kind": "book",
+      "url": "https://www.amazon.com/Chronicles-Prydain-Lloyd-Alexander/dp/1250000939",
+      "site": "Amazon",
+      "note": "Boxed set of all five; taken from search results, Amazon refused the fetch."
+    },
+    {
+      "title": "The Dark is Rising Sequence",
+      "kind": "book",
+      "url": "https://www.amazon.com/Dark-Rising-Boxed-Set-Greenwitch/dp/1416949968",
+      "site": "Amazon",
+      "note": "Boxed set of all five."
+    },
+    {
+      "title": "The Demon Cycle",
+      "kind": "book",
+      "url": "https://www.amazon.com/Warded-Man-Book-Demon-Cycle/dp/0345518705",
+      "site": "Amazon",
+      "note": "Book 1, The Warded Man."
+    },
+    {
+      "title": "Farseer",
+      "kind": "book",
+      "url": "https://www.amazon.com/Assassins-Apprentice-Illustrated-Farseer-Trilogy/dp/198481785X",
+      "site": "Amazon",
+      "note": "Book 1, Assassin's Apprentice."
+    },
+    {
+      "title": "The First Law",
+      "kind": "book",
+      "url": "https://www.amazon.com/Blade-Itself-First-Law-Trilogy/dp/0316387312",
+      "site": "Amazon",
+      "note": "Book 1, The Blade Itself."
+    },
+    {
+      "title": "The Hobbit",
+      "kind": "book",
+      "url": "https://www.amazon.com/Hobbit-J-R-Tolkien/dp/054792822X",
+      "site": "Amazon"
+    },
+    {
+      "title": "King of Dragon Pass",
+      "kind": "game",
+      "url": "https://store.steampowered.com/app/352220/King_of_Dragon_Pass/",
+      "site": "Steam",
+      "note": "Also on GOG and from A Sharp."
+    },
+    {
+      "title": "The Last Kingdom",
+      "kind": "tv",
+      "url": "https://www.netflix.com/title/80074249",
+      "site": "Netflix"
+    },
+    {
+      "title": "Nausicaä of the Valley of the Wind",
+      "kind": "film",
+      "url": "https://www.hbomax.com/movies/nausicaa-of-the-valley-of-the-wind/ed66031b-6353-4019-ba54-35488468a4db",
+      "site": "HBO Max"
+    },
+    {
+      "title": "Northlanders",
+      "kind": "comic",
+      "url": "https://www.dc.com/graphic-novels/northlanders-2007/northlanders-book-one-the-anglo-saxon-saga",
+      "site": "DC Comics",
+      "note": "Book One; on Amazon at https://www.amazon.com/Northlanders-Book-1-Anglo-Saxon-Saga/dp/1401263313"
+    },
+    {
+      "title": "Princess Mononoke",
+      "kind": "film",
+      "url": "https://www.hbomax.com/movies/princess-mononoke/e31c2dc2-cb8b-416e-9eda-769be3bb3a6b",
+      "site": "HBO Max"
+    },
+    {
+      "title": "Redwall",
+      "kind": "book",
+      "url": "https://www.amazon.com/Redwall-Brian-Jacques/dp/0142302376",
+      "site": "Amazon",
+      "note": "Book 1."
+    },
+    {
+      "title": "Rome",
+      "kind": "tv",
+      "url": "https://www.hbomax.com/show/16ffed0e-6650-4d35-8c35-96c5b42863cc",
+      "site": "HBO Max"
+    },
+    {
+      "title": "The Secret of Kells",
+      "kind": "film",
+      "url": "https://www.justwatch.com/us/movie/the-secret-of-kells",
+      "site": "JustWatch",
+      "note": "Rent or buy only in the US as of 2026-09; no subscription service carries it."
+    },
+    {
+      "title": "The Sharing Knife",
+      "kind": "book",
+      "url": "https://www.amazon.com/Beguilement-Sharing-Knife-Book-1/dp/0061139076",
+      "site": "Amazon",
+      "note": "Book 1, Beguilement."
+    },
+    {
+      "title": "Shattered Sea",
+      "kind": "book",
+      "url": "https://www.amazon.com/Half-King-Shattered-Sea-Abercrombie/dp/0804178410",
+      "site": "Amazon",
+      "note": "Book 1, Half a King."
+    },
+    {
+      "title": "Vikings",
+      "kind": "tv",
+      "url": "https://www.netflix.com/title/70301870",
+      "site": "Netflix"
+    },
+    {
+      "title": "A Wizard of Earthsea",
+      "kind": "book",
+      "url": "https://www.amazon.com/Wizard-Earthsea-Cycle/dp/0547722028",
+      "site": "Amazon"
+    },
+    {
+      "title": "The Driftless region of Wisconsin",
+      "kind": "place",
+      "url": "https://en.wikipedia.org/wiki/Driftless_Area",
+      "site": "Wikipedia"
+    },
+    {
+      "title": "Texas Hill Country",
+      "kind": "place",
+      "url": "https://en.wikipedia.org/wiki/Texas_Hill_Country",
+      "site": "Wikipedia"
+    },
+    {
+      "title": "At the Mountains of Madness",
+      "kind": "book",
+      "url": "https://www.hplovecraft.com/writings/texts/fiction/mm.aspx",
+      "site": "H.P. Lovecraft Archive",
+      "note": "Free full text; public domain."
+    },
+    {
+      "title": "The Black Company",
+      "kind": "book",
+      "url": "https://www.amazon.com/dp/B07F7QNRGM",
+      "site": "Amazon",
+      "note": "Series page; taken from search results, Amazon refused the fetch."
+    },
+    {
+      "title": "Black Spot",
+      "kind": "tv",
+      "url": "https://www.justwatch.com/us/tv-show/zone-blanche",
+      "site": "JustWatch",
+      "note": "Zone Blanche; left Netflix US."
+    },
+    {
+      "title": "Chronos",
+      "kind": "film",
+      "url": "https://www.hbomax.com/movies/cronos/c883948a-cad4-4231-9f02-11a049fa32bb",
+      "site": "HBO Max",
+      "note": "Spelled Cronos; also on the Criterion Channel."
+    },
+    {
+      "title": "The \"Conan\" stories",
+      "kind": "book",
+      "url": "https://en.wikisource.org/wiki/Author:Robert_Ervin_Howard",
+      "site": "Wikisource",
+      "note": "Howard's public-domain texts; Del Rey's The Coming of Conan the Cimmerian is https://www.amazon.com/Coming-Conan-Cimmerian-Cimmeria-Book/dp/0345483855"
+    },
+    {
+      "title": "Red Nails",
+      "kind": "book",
+      "url": "https://en.wikisource.org/wiki/Red_Nails",
+      "site": "Wikisource"
+    },
+    {
+      "title": "Deadwood",
+      "kind": "tv",
+      "url": "https://www.hbomax.com/shows/deadwood/065d80dc-68c4-4770-8f7b-00279f91c6da",
+      "site": "HBO Max"
+    },
+    {
+      "title": "Discern Realities",
+      "kind": "podcast",
+      "url": "https://www.gauntlet-rpg.com/discern-realities",
+      "site": "The Gauntlet"
+    },
+    {
+      "title": "Gentleman Bastard",
+      "kind": "book",
+      "url": "https://www.amazon.com/dp/B074C2XKT4",
+      "site": "Amazon",
+      "note": "Series page; taken from search results. Book 1: https://www.amazon.com/Lies-Locke-Lamora-Gentleman-Bastards/dp/055358894X"
+    },
+    {
+      "title": "Gladiator",
+      "kind": "film",
+      "url": "https://www.paramountplus.com/movies/video/UAhaBnkT1Lm68ZAFQx1CgMeXalb4vxwz/",
+      "site": "Paramount+",
+      "note": "Also on MGM+."
+    },
+    {
+      "title": "Heart Shaped Box",
+      "kind": "book",
+      "url": "https://www.amazon.com/Heart-Shaped-Box-Joe-Hill/dp/0061147931",
+      "site": "Amazon"
+    },
+    {
+      "title": "Hillfolk",
+      "kind": "rpg",
+      "url": "https://pelgranepress.com/product/hillfolk/",
+      "site": "Pelgrane Press"
+    },
+    {
+      "title": "A History of Violence",
+      "kind": "film",
+      "url": "https://www.hbomax.com/movies/history-of-violence/5398afdd-7a13-45b3-b9c5-ccdd7be6b8f2",
+      "site": "HBO Max"
+    },
+    {
+      "title": "Jonathan Strange and Mr Norrell",
+      "kind": "book",
+      "url": "https://www.amazon.com/Jonathan-Strange-Norrell-Susanna-Clarke/dp/1608190862",
+      "site": "Amazon"
+    },
+    {
+      "title": "Legacy: Life Among the Ruins",
+      "kind": "rpg",
+      "url": "https://ufopress.co.uk/product/legacy-life-among-the-ruins-2nd-edition/",
+      "site": "UFO Press",
+      "note": "Only the 2nd edition (2018) is sold now."
+    },
+    {
+      "title": "Little House on the Prairie",
+      "kind": "book",
+      "url": "https://www.amazon.com/dp/B07FK5BWFG",
+      "site": "Amazon",
+      "note": "Series page; taken from search results. Box set: https://www.amazon.com/Little-House-Volumes-Set/dp/0064400409"
+    },
+    {
+      "title": "Low Country",
+      "kind": "album",
+      "url": "https://thesword.bandcamp.com/album/low-country",
+      "site": "Bandcamp"
+    },
+    {
+      "title": "The Magnus Archives",
+      "kind": "podcast",
+      "url": "https://rustyquill.com/show/the-magnus-archives/",
+      "site": "Rusty Quill"
+    },
+    {
+      "title": "Mouse Guard",
+      "kind": "comic",
+      "url": "https://www.mouseguard.net/",
+      "site": "mouseguard.net"
+    },
+    {
+      "title": "Monster Man",
+      "kind": "podcast",
+      "url": "https://www.monsterman.org/monsterman",
+      "site": "monsterman.org"
+    },
+    {
+      "title": "No Country for Old Kobolds",
+      "kind": "rpg",
+      "url": "https://nocountryforoldkobolds.com/",
+      "site": "nocountryforoldkobolds.com"
+    },
+    {
+      "title": "Old Gods of Appalachia",
+      "kind": "podcast",
+      "url": "https://www.oldgodsofappalachia.com/",
+      "site": "oldgodsofappalachia.com"
+    },
+    {
+      "title": "Pan's Labyrinth",
+      "kind": "film",
+      "url": "https://www.justwatch.com/us/movie/pans-labyrinth",
+      "site": "JustWatch",
+      "note": "Rent or buy only in the US as of 2026-09."
+    },
+    {
+      "title": "Prey",
+      "kind": "film",
+      "url": "https://www.hulu.com/movie/prey-55349764-323e-4d0e-898f-a4c12c9bf615",
+      "site": "Hulu"
+    },
+    {
+      "title": "The Revenant",
+      "kind": "film",
+      "url": "https://www.hbomax.com/movie/175d821c-276e-4b5f-9cfd-b2f89db35631",
+      "site": "HBO Max",
+      "note": "Added 2026-09-01; streaming windows rotate."
+    },
+    {
+      "title": "The Ritual",
+      "kind": "film",
+      "url": "https://www.netflix.com/title/80217312",
+      "site": "Netflix"
+    },
+    {
+      "title": "Sagas of the Icelanders",
+      "kind": "rpg",
+      "url": "https://gregor-vuga.itch.io/sagas-of-the-icelanders",
+      "site": "itch.io",
+      "note": "Self-published; also DriveThruRPG product 254224."
+    },
+    {
+      "title": "The Secret of NIMH",
+      "kind": "film",
+      "url": "https://tubitv.com/movies/310149/the-secret-of-nimh",
+      "site": "Tubi",
+      "note": "Free with ads."
+    },
+    {
+      "title": "Under Hollow Hills",
+      "kind": "rpg",
+      "url": "https://lumpley.games/under-hollow-hills/",
+      "site": "lumpley games"
+    },
+    {
+      "title": "The Wardstone Chronicles",
+      "kind": "book",
+      "url": "https://www.amazon.com/dp/B07F7LS683",
+      "site": "Amazon",
+      "note": "Published in the US as The Last Apprentice; series page taken from search results."
+    }
+  ]
+}

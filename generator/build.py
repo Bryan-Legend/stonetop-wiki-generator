@@ -77,6 +77,7 @@ from .structure import (
 )
 from .text import TAG_RE, heading_pages, html_to_search_text, strip_tags
 from .translate import render_translated, tag_lines
+from .reflinks import apply_reference_links
 
 
 class BuildClock:
@@ -754,6 +755,10 @@ def main(argv: list[str] | None = None) -> None:
                 body, excerpt, _secs = article_html(
                     tagged, art["title"], lookup, articles, **common
                 )
+                # The works a page cites, linked (links/<slug>.json).
+                body, unlinked = apply_reference_links(body, slug)
+                if unlinked:
+                    print(f"  note: {slug}: reference links not placed: " + "; ".join(unlinked))
             if TAG_RE.search(body) or TAG_RE.search(excerpt):
                 # Text reached the HTML without going through T(). It is
                 # English here, so nothing is lost but the tags — and a
