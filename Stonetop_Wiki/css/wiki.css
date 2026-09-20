@@ -1258,6 +1258,9 @@ main.maps-page {
   line-height: 0;
 }
 .map-canvas[data-full] { cursor: zoom-in; }
+/* The Maps page without the maps: the places each spread labels. */
+.maps-places { margin: .4rem 0 1.2rem; }
+
 .maps-strip img {
   display: block;
   height: 100%;
@@ -2013,6 +2016,25 @@ li.check-item input.wiki-check:checked + span {
 
 
 /* Index */
+/* The "what is Stonetop" intro, between the page's title and the cards: the
+   one place on the site that says what the game is to a reader who arrived
+   from a search engine knowing nothing. */
+.index-intro {
+  max-width: 44rem;
+  margin: 0 0 1.4rem;
+}
+.index-intro p {
+  margin: 0 0 0.7rem;
+  color: var(--ink);
+  font-size: 1.02rem;
+  line-height: 1.6;
+}
+.index-intro p:last-child { margin-bottom: 0; }
+.index-intro strong { color: var(--head); }
+.index-intro em { font-style: italic; }
+.index-intro a { color: var(--link); }
+.index-intro a:hover { color: var(--link-hover); }
+
 /* The prose now sits under the cards, so it is a footer, not a hero. */
 .index-hero {
   padding: 1.4rem 0 1.6rem;

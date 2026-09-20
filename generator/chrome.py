@@ -1107,9 +1107,48 @@ def write_localized_pages(
     return written
 
 
+HOME_INTRO_HTML = (
+    "<p><strong>Stonetop</strong> is a hearth fantasy tabletop roleplaying "
+    "game (RPG) by Jeremy Strandberg, set in an iron age that never was. "
+    "Three to five of you sit down together — one as GM, the rest playing "
+    "the heroes of a single small, isolated village at the world's end. You "
+    "have kin there, a trade, neighbors who knew you as a child, and the "
+    "dangers you face are the ones that threaten home — so "
+    "between adventures the game turns to the "
+    '<a href="{homefront}">Homefront</a>, where the village has a '
+    "playbook of its own and grows, suffers and changes alongside the "
+    "characters. That is what sets this TTRPG apart from dungeon-crawling "
+    "fantasy RPGs: the place you defend is the place you live.</p>"
+    "<p>Under the hood it is a Powered by the Apocalypse RPG built on "
+    "<em>Dungeon World</em>'s bones: roll 2d6 plus a stat — 10+ and it "
+    "goes your way, 7-9 and it costs you something, 6- and the GM makes a "
+    "move. This wiki is a free, searchable web edition of the TTRPG's two "
+    "rulebooks: every move, playbook, monster, danger, steading, deity and "
+    "arcanum in the game. If the game is new to you, start with "
+    '<a href="{welcome}">Welcome to Stonetop</a>, then '
+    '<a href="{playing}">Playing the Game</a> — or '
+    "browse the topics below.</p>"
+)
+
+
+def home_intro_html(template: str, href) -> str:
+    """The home page's "what is Stonetop" intro, with its three links resolved.
+
+    ``href`` takes a slug and returns the path to it from the home page being
+    written — a localized home links to the translated page where there is
+    one and up to the English page where there is not.
+    """
+    return template.format(
+        homefront=html.escape(href("homefront")),
+        welcome=html.escape(href("welcome-to-stonetop")),
+        playing=html.escape(href("playing-the-game")),
+    )
+
+
 HOME_FALLBACK = {
     "title": "Stonetop",
     "topics": "Topics",
+    "intro_html": HOME_INTRO_HTML,
     "lede_html": (
         "A static, hyperlinked wiki for <em>Stonetop</em> {books}. "
         "Page numbers are links; dice expressions roll on click; hover a "
@@ -1328,9 +1367,16 @@ def write_localized_index(
             f'{home["license_html"].format(license=html.escape(LICENSE_URL))}'
             "</p></div>"
         )
+        intro = home_intro_html(
+            home["intro_html"],
+            lambda slug: (
+                f"{slug}.html" if slug in translated else f"../{slug}.html"
+            ),
+        )
         title = home["title"]
         body = (
             f'<h1 class="page-title">{html.escape(title)}</h1>'
+            f'<div class="index-intro">{intro}</div>'
             + "".join(sections)
             + hero
         )
@@ -1362,6 +1408,111 @@ MAP_PIN_COLORS = [
     "#4a90d9",  # blue
     "#9b6dc4",  # purple
 ]
+
+
+# What each of Book II's two map spreads labels, in reading order. The
+# drawings are artwork and are never published (see the licence note on the
+# home page), but the places they name are pages of this wiki, so the stub
+# stands in for the spread: a gazetteer of the map, linked.
+MAPS_SPREADS = [
+    {
+        "id": "the-vicinity",
+        "name": "The Vicinity",
+        "pages": "pages 8-9",
+        "gloss": (
+            "Stonetop and the country within a few days' walk of it — the "
+            "bluff, the wood below it, the roads out."
+        ),
+        "places": [
+            ("the-village-of-stonetop", "Stonetop"),
+            ("the-great-wood", "The Great Wood"),
+            ("the-flats", "The Flats"),
+            ("the-foothills", "The Foothills"),
+            ("the-stream", "The Stream"),
+            ("the-maw", "The Maw"),
+            ("red-groves", "The Red Groves"),
+            ("the-ruined-tower", "The Ruined Tower"),
+            ("the-makers-roads", "The Highway and the West Road"),
+            ("gordins-delve", "Gordin's Delve"),
+            ("barrier-pass", "Barrier Pass"),
+            ("the-steplands", "The Steplands"),
+            ("marshedge", "Marshedge"),
+        ],
+    },
+    {
+        "id": "the-worlds-end",
+        "name": "The World's End",
+        "pages": "pages 10-11",
+        "gloss": (
+            "The whole region: mountains and marsh, the lakes, the Manmarch, "
+            "and the road south out of the world's end."
+        ),
+        "places": [
+            ("the-village-of-stonetop", "Stonetop"),
+            ("the-flats", "The Flats"),
+            ("the-great-wood", "The Great Wood"),
+            ("the-steplands", "The Steplands"),
+            ("titan-bones", "Titan Bones"),
+            ("three-coven-lake", "Three Coven Lake"),
+            ("blackwater-lake", "Blackwater Lake"),
+            ("huffel-peaks", "The Huffel Peaks"),
+            ("the-whitefang-mountains", "The Whitefang Mountains (Tor's Fist)"),
+            ("gordins-delve", "Gordin's Delve"),
+            ("barrier-pass", "Barrier Pass"),
+            ("marshedge", "Marshedge"),
+            ("ferriers-fen", "Ferrier's Fen"),
+            ("the-dread-river", "The Dread River"),
+            ("north-manmarch", "North Manmarch"),
+            ("south-manmarch", "South Manmarch"),
+            ("lygos-and-the-south", "Lygos and points south"),
+        ],
+    },
+]
+
+MAPS_STUB_EXCERPT = (
+    "Book II's two map spreads — The Vicinity (pp. 8-9) and The World's "
+    "End (pp. 10-11) — and every place they label, linked to its entry."
+)
+
+
+def maps_stub_html(articles: list[dict]) -> str:
+    """The Maps page without the maps.
+
+    The spreads are Lucie Arnoux's artwork, so a published build has no images
+    to show (``--maps`` is a local build). The chapter still exists in the
+    book, and Book II sends the reader to it on its first page, so the page
+    stands rather than 404s: what each spread covers, and the places it labels
+    as links. Only slugs this build actually produced are linked.
+    """
+    have = {a["slug"] for a in articles}
+    lic = (
+        f' (<a href="{html.escape(LICENSE_URL)}" rel="license">CC BY-SA 4.0</a>)'
+    )
+    parts = [
+        '<h1 class="page-title">Maps</h1>',
+        '<p class="lede">Book II opens with two map spreads: '
+        "<strong>The Vicinity</strong> (pages 8-9) and "
+        "<strong>The World's End</strong> (pages 10-11).</p>",
+        "<p>The maps are <strong>artwork</strong> — &copy; Lucie Arnoux — and "
+        "this wiki publishes only the books' text" + lic + ", so the drawings "
+        "are not reproduced here. Open the Book II PDF to pages 8-11 for them. "
+        "What follows is what the spreads name, linked to its entry.</p>",
+    ]
+    for spread in MAPS_SPREADS:
+        links = [
+            f'<li><a href="{html.escape(slug)}.html">{html.escape(label)}</a></li>'
+            for slug, label in spread["places"]
+            if slug in have
+        ]
+        if not links:
+            continue
+        parts.append(
+            f'<h2 id="{html.escape(spread["id"])}">'
+            f'{html.escape(spread["name"])} ({html.escape(spread["pages"])})</h2>'
+        )
+        parts.append(f'<p>{spread["gloss"]}</p>')
+        parts.append(f'<ul class="maps-places">{"".join(links)}</ul>')
+    return "\n".join(parts)
 
 
 def maps_body_html(images: list[dict]) -> str:
@@ -1490,11 +1641,12 @@ def write_index_custom(
         lede_books = labels[0]
     issues_url = html.escape(ISSUES_URL)
     license_url = html.escape(LICENSE_URL)
+    intro_html = home_intro_html(HOME_INTRO_HTML, lambda slug: f"{slug}.html")
     home_meta = social_meta_html(
         "Stonetop",
-        "A searchable web edition of Stonetop and The Wider World and Other "
-        "Wonders by Jeremy Strandberg — moves, gear, threats, places, and "
-        "arcana.",
+        "Stonetop is a hearth fantasy tabletop RPG by Jeremy Strandberg. A "
+        "free, searchable wiki of both rulebooks: moves, playbooks, gear, "
+        "threats, places and arcana.",
         "",
         alternates=alternates,
     )
@@ -1507,7 +1659,7 @@ def write_index_custom(
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Stonetop</title>
+  <title>Stonetop — hearth fantasy tabletop RPG (TTRPG) wiki</title>
 {home_meta}
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="images/favicon.ico" sizes="16x16 32x32 48x48 64x64">
@@ -1534,6 +1686,7 @@ def write_index_custom(
     <div class="main-wrap">
       <div class="content-scroll" id="main">
         <main class="content"><h1 class="page-title">Stonetop</h1>
+        <div class="index-intro">{intro_html}</div>
         {cards_html}
         <div class="index-hero">
           <p class="lede">A static, hyperlinked wiki for <em>Stonetop</em>

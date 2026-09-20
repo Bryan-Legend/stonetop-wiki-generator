@@ -33,7 +33,9 @@ from .chrome import (
     display_title,
     ensure_wiki_chrome,
     is_sheet_body,
+    MAPS_STUB_EXCERPT,
     maps_body_html,
+    maps_stub_html,
     override_excerpt,
     override_sections,
     page_override,
@@ -498,20 +500,25 @@ def main(argv: list[str] | None = None) -> None:
                 pass
 
     # The books' text is CC BY-SA 4.0, but "all artwork herein is
-    # © 2026 by Lucie Arnoux" — maps are artwork. Drop the Maps page (and its
-    # image extraction) unless a local build explicitly asks for it. The
-    # images come off the PDF, so that page also needs the book at hand.
+    # © 2026 by Lucie Arnoux" — maps are artwork. The map *images* are only
+    # extracted when a local build asks for them (--maps, which needs the book
+    # at hand). The Maps page itself always stands: Book II's first page sends
+    # the reader to it, so without one both that reference and the chapter go
+    # missing. With no images it renders as a stub (maps_stub_html) — what the
+    # two spreads cover, and every place they label, linked.
     maps_art = next((a for a in articles if a.get("kind") == "maps"), None)
-    if maps_art and args.maps and maps_art["book"] not in docs:
+    draw_maps = bool(maps_art and args.maps)
+    if draw_maps and maps_art["book"] not in docs:
         book = next(b for b in BOOKS if b["id"] == maps_art["book"])
         pdf = input_dir / book["filename"]
         if pdf.exists() and fitz is not None:
             docs[book["id"]] = fitz.open(str(pdf))
         else:
-            print(f"  note: --maps needs {book['filename']} in {input_dir} — skipping maps")
-            maps_art = None
-    if not (args.maps and maps_art):
-        articles = [a for a in articles if a.get("kind") != "maps"]
+            print(
+                f"  note: --maps needs {book['filename']} in {input_dir}"
+                " — the Maps page falls back to its text stub"
+            )
+            draw_maps = False
 
     ensure_unique_slugs(articles)
 
@@ -583,7 +590,7 @@ def main(argv: list[str] | None = None) -> None:
 
     # Campaign maps + PDF map spreads (maps page only; Book II)
     map_images: list[dict] = []
-    if maps_art and args.maps:
+    if draw_maps:
         print("Preparing maps…")
         map_images = prepare_map_images(
             docs[maps_art["book"]], maps_art, out / "images", input_dir
@@ -705,6 +712,15 @@ def main(argv: list[str] | None = None) -> None:
 
         if art["kind"] == "maps":
             body = maps_body_html(map_images)
+            drawn = bool(body)
+            if drawn:
+                excerpt = (
+                    "Maps of Stonetop, the vicinity, and the World's End — "
+                    "campaign sheets and PDF spreads."
+                )
+            else:
+                body = maps_stub_html(articles)
+                excerpt = MAPS_STUB_EXCERPT
             page_html = page_shell(
                 art["title"],
                 slug,
@@ -712,13 +728,9 @@ def main(argv: list[str] | None = None) -> None:
                 articles,
                 rel_prefix="",
                 section_navs=section_navs,
-                content_class="content maps-page",
+                content_class="content maps-page" if drawn else "content",
                 description=excerpt,
                 alternates=alternates_for(slug, lang_source, lang_targets),
-            )
-            excerpt = (
-                "Maps of Stonetop, the vicinity, and the World's End — "
-                "campaign sheets and PDF spreads."
             )
         elif art.get("kind") == "arcana-hub":
             body = arcana_hub_html(art)

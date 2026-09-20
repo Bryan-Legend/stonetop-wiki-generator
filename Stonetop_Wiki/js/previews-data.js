@@ -5420,7 +5420,7 @@ window.WIKI_PREVIEWS = {
     "sections": {
       "immediate-game-influences": {
         "name": "Immediate game influences",
-        "html": "<h2 id=\"immediate-game-influences\">Immediate game influences</h2>\n<p>The following works directly inspired <em>Stonetop</em>&#x27;s mechanics, techniques, setting, themes, and approach to information design.</p>\n<ul class=\"bullets\"><li><em><a href=\"https://www.dungeon-world.com/\" class=\"ref-link\" target=\"_blank\" rel=\"noopener\" title=\"Dungeon World\">Dungeon World</a></em>, Adam Koebel &amp; Sage LaTorra, Sage Kobold Productions, 2012</li><li><em><a href=\"https://lumpley.games/apocalypseworld/\" class=\"ref-link\" target=\"_blank\" rel=\"noopener\" title=\"lumpley games\">Apocalypse World</a></em>, D. Vincent Baker &amp; Meguey Baker, lumpley games, 2010</li><li><em><a href=\"http://lumpley.com/index.php/anyway/thread/392\" class=\"ref-link\" target=\"_blank\" rel=\"noopener\" title=\"lumpley (anyway)\">Storming the Wizard&#x27;s Tower</a></em>, D. Vincent Baker, unpublished, 2008</li><li><em><a href=\"https://www.drivethrurpg.com/en/product/161671/player-s-handbook-4e\" class=\"ref-link\" target=\"_blank\" rel=\"noopener\" title=\"DriveThruRPG\">Dungeons &amp; Dragons</a></em> (4th Edition), Rob Heinsoo, Andy Collins, and James Wyatt; Wizards of the Coast, 2008</li><li><em><a href=\"https://bladesinthedark.com/\" class=\"ref-link\" target=\"_blank\" rel=\"noopener\" title=\"Blades in the Dark\">Blades in the Dark</a></em>, John Harper, Evil Hat Productions, 2017</li><li><em><a href=\"https://www.flatlandgames.com/btw/\" class=\"ref-link\" target=\"_blank\" rel=\"noopener\" title=\"Flatland Games\">Beyond the Wall and Other Adventures</a></em>, John Cocking &amp; Peter S. Williams, Flatland Games, 2013</li><li><em><a href=\"https://lampblack-brimstone.itch.io/the-perilous-wilds-revised-edition\" class=\"ref-link\" target=\"_blank\" rel=\"noopener\" title=\"itch.io\">The Perilous Wilds</a></em>, Jason Lutes, Lampblack &amp; Brimstone, 2016</li><li><em><a href=\"https://www.lampblackandbrimstone.com/store/products/20-dungeon-starters-pdf\" class=\"ref-link\" target=\"_blank\" rel=\"noopener\" title=\"Lampblack &amp; Brimstone\">20 Dungeon Starters</a></em>, Marshall Miller &amp; Mark Tygart, Lampblack &amp; Brimstone, 2016</li><li><em><a href=\"https://trilemma.com/\" class=\"ref-link\" target=\"_blank\" rel=\"noopener\" title=\"Trilemma Adventures\">Trilemma Adventures</a></em>, Michael Prescott, Trilemma Adventures, 2019</li><li><em><a href=\"https://www.atlas-games.com/arsmagica\" class=\"ref-link\" target=\"_blank\" rel=\"noopener\" title=\"Atlas Games\">Ars Magica</a></em>, Mark Rein-Hagen &amp; Jonathan Tweet, Lion Rampant Games, 1987</li></ul>",
+        "html": "<h2 id=\"immediate-game-influences\">Immediate game influences</h2>\n<p>The following works directly inspired <em>Stonetop</em>&#x27;s mechanics, techniques, setting, themes, and approach to information design.</p>\n<ul class=\"bullets\"><li><em><a href=\"https://www.dungeon-world.com/\" class=\"ref-link\" target=\"_blank\" rel=\"noopener\" title=\"Dungeon World\">Dungeon World</a></em>, Adam Koebel &amp; Sage LaTorra, Sage Kobold Productions, 2012</li><li><em><a href=\"https://lumpley.games/apocalypseworld/\" class=\"ref-link\" target=\"_blank\" rel=\"noopener\" title=\"lumpley games\">Apocalypse World</a></em>, D. Vincent Baker &amp; Meguey Baker, lumpley games, 2010</li><li><em><a href=\"http://lumpley.com/index.php/anyway/thread/392\" class=\"ref-link\" target=\"_blank\" rel=\"noopener\" title=\"lumpley (anyway)\">Storming the Wizard&#x27;s Tower</a></em>, D. Vincent Baker, unpublished, 2008</li><li><em><a href=\"https://www.drivethrurpg.com/en/product/161671/player-s-handbook-4e\" class=\"ref-link\" target=\"_blank\" rel=\"noopener\" title=\"DriveThruRPG\">Dungeons &amp; Dragons</a></em> (4th Edition), Rob Heinsoo, Andy Collins, and James Wyatt; Wizards of the Coast, 2008</li><li><em><a href=\"https://bladesinthedark.com/\" class=\"ref-link\" target=\"_blank\" rel=\"noopener\" title=\"Blades in the Dark\">Blades in the Dark</a></em>, John Harper, Evil Hat Productions, 2017</li><li><em><a href=\"https://www.flatlandgames.com/btw/\" class=\"ref-link\" target=\"_blank\" rel=\"noopener\" title=\"Flatland Games\">Beyond the Wall and Other Adventures</a></em>, John Cocking &amp; Peter S. Williams, Flatland Games, 2013</li><li><em><a href=\"https://www.drivethrurpg.com/en/product/407161/the-perilous-wilds-revised-edition\" class=\"ref-link\" target=\"_blank\" rel=\"noopener\" title=\"DriveThruRPG\">The Perilous Wilds</a></em>, Jason Lutes, Lampblack &amp; Brimstone, 2016</li><li><em><a href=\"https://www.lampblackandbrimstone.com/store/products/20-dungeon-starters-pdf\" class=\"ref-link\" target=\"_blank\" rel=\"noopener\" title=\"Lampblack &amp; Brimstone\">20 Dungeon Starters</a></em>, Marshall Miller &amp; Mark Tygart, Lampblack &amp; Brimstone, 2016</li><li><em><a href=\"https://trilemma.com/\" class=\"ref-link\" target=\"_blank\" rel=\"noopener\" title=\"Trilemma Adventures\">Trilemma Adventures</a></em>, Michael Prescott, Trilemma Adventures, 2019</li><li><em><a href=\"https://www.atlas-games.com/arsmagica\" class=\"ref-link\" target=\"_blank\" rel=\"noopener\" title=\"Atlas Games\">Ars Magica</a></em>, Mark Rein-Hagen &amp; Jonathan Tweet, Lion Rampant Games, 1987</li></ul>",
         "kind": "section"
       },
       "blogs": {
@@ -5453,7 +5453,7 @@ window.WIKI_PREVIEWS = {
     "sections": {
       "how-to-use-this-book": {
         "name": "How to use this book",
-        "html": "<h2 id=\"how-to-use-this-book\">How to use this book</h2>\n<p>If you&#x27;re the GM, or thinking about running a game of Stonetop, then this book is for you.</p>\n<p>Before your first session, browse this book to familiarize yourself with the setting and to get excited for play. Start with the <strong>maps</strong> p. 8 · p. 11 to get a sense of place.</p>\n<p>Skim the <strong>village of Stonetop</strong> <a class=\"wiki-link\" href=\"the-village-of-stonetop.html\" data-slug=\"the-village-of-stonetop\" >entry</a>. When it mentions a topic that catches your interest, jump to that topic and read it, too.</p>\n<p>Topics are cross-referenced. If you&#x27;re reading this as a physical book, use a bookmark or two to keep track of where you came from. If you&#x27;re reading this as a PDF, all the page references are hyperlinked and the &quot;back&quot; button (or ALT + left arrow in most PDF readers) is your friend.</p>\n<p>Between sessions, review topics that you think will be relevant soon. Use the details and resources therein to help you prep.</p>\n<p>During play, refer to this book to help you describe the environment, to ask questions, and to make GM moves. Use it to introduce dangers and discoveries, or to improvise sites for the PCs to explore.</p>",
+        "html": "<h2 id=\"how-to-use-this-book\">How to use this book</h2>\n<p>If you&#x27;re the GM, or thinking about running a game of Stonetop, then this book is for you.</p>\n<p>Before your first session, browse this book to familiarize yourself with the setting and to get excited for play. Start with the <a class=\"wiki-link\" href=\"maps.html\" data-slug=\"maps\" ><strong>maps</strong></a> to get a sense of place.</p>\n<p>Skim the <strong>village of Stonetop</strong> <a class=\"wiki-link\" href=\"the-village-of-stonetop.html\" data-slug=\"the-village-of-stonetop\" >entry</a>. When it mentions a topic that catches your interest, jump to that topic and read it, too.</p>\n<p>Topics are cross-referenced. If you&#x27;re reading this as a physical book, use a bookmark or two to keep track of where you came from. If you&#x27;re reading this as a PDF, all the page references are hyperlinked and the &quot;back&quot; button (or ALT + left arrow in most PDF readers) is your friend.</p>\n<p>Between sessions, review topics that you think will be relevant soon. Use the details and resources therein to help you prep.</p>\n<p>During play, refer to this book to help you describe the environment, to ask questions, and to make GM moves. Use it to introduce dangers and discoveries, or to improvise sites for the PCs to explore.</p>",
         "kind": "section"
       },
       "exploit-the-setting-guide": {
@@ -5467,6 +5467,13 @@ window.WIKI_PREVIEWS = {
         "kind": "section"
       }
     }
+  },
+  "maps": {
+    "title": "Maps",
+    "excerpt": "Book II's two map spreads — The Vicinity (pp. 8-9) and The World's End (pp. 10-11) — and every place they label, linked to its entry.",
+    "image": null,
+    "book": "book2",
+    "sections": {}
   },
   "the-village-of-stonetop": {
     "title": "The Village of Stonetop",
@@ -60010,6 +60017,26 @@ window.WIKI_PAGE_MAP = {
         "should the players read this": "should-the-players-read-this",
         "should the players read this?": "should-the-players-read-this"
       }
+    },
+    "8": {
+      "slug": "maps",
+      "title": "Maps",
+      "sections": {}
+    },
+    "9": {
+      "slug": "maps",
+      "title": "Maps",
+      "sections": {}
+    },
+    "10": {
+      "slug": "maps",
+      "title": "Maps",
+      "sections": {}
+    },
+    "11": {
+      "slug": "maps",
+      "title": "Maps",
+      "sections": {}
     },
     "12": {
       "slug": "the-village-of-stonetop",
