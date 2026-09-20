@@ -44,6 +44,7 @@ from .chrome import (
     write_build_manifest,
     home_alternates,
     write_index_custom,
+    write_llms_txt,
     write_localized_arcana_hubs,
     write_localized_index,
     write_localized_pages,
@@ -1021,10 +1022,19 @@ def main(argv: list[str] | None = None) -> None:
         localized += write_localized_arcana_hubs(
             out, articles, section_navs, lang_source, lang_targets
         )
-        clock.phase("sitemap / robots / manifest")
+        clock.phase("sitemap / robots / llms.txt / manifest")
         write_sitemap(out, articles, base_url=args.base_url, extra=localized)
         write_robots(out, base_url=args.base_url)
-        write_build_manifest(out, page_files + ["sitemap.xml", "robots.txt"])
+        write_llms_txt(
+            out,
+            articles,
+            previews,
+            base_url=args.base_url,
+            languages=[t["code"] for t in lang_targets],
+        )
+        write_build_manifest(
+            out, page_files + ["sitemap.xml", "robots.txt", "llms.txt"]
+        )
     if args.profile:
         clock.report(time.perf_counter() - t_start)
     print(

@@ -2895,6 +2895,24 @@
     );
     // Prefetch index so first search is snappy
     loadSearchIndex();
+
+    /* A search is an address: /?q=term (or any page ?q=term) opens with the
+       box filled and the results showing. That is what makes the site's
+       declared SearchAction (the JSON-LD on the home page) a real address
+       rather than a claim, and it lets a search be linked and bookmarked. */
+    var asked = (function () {
+      var m = /[?&]q=([^&#]*)/.exec(location.search || "");
+      if (!m) return "";
+      try {
+        return decodeURIComponent(m[1].replace(/\+/g, " ")).trim();
+      } catch (e) {
+        return "";
+      }
+    })();
+    if (asked) {
+      filter.value = asked;
+      runSearch(asked);
+    }
   }
 
   const toggle = document.getElementById("sidebar-toggle");

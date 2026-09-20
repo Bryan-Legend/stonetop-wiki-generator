@@ -1,3 +1,10 @@
+# Everything here is open to every crawler, AI crawlers included:
+# the books' text is CC BY-SA 4.0 and the site exists to be read and
+# quoted. A named user-agent group would replace this one for that
+# bot, so there are none — one group, allowing all of it.
 User-agent: *
 Allow: /
+
 Sitemap: https://stonetop-wiki.github.io/sitemap.xml
+# llms.txt (llmstxt.org): the site described for a language model.
+# https://stonetop-wiki.github.io/llms.txt

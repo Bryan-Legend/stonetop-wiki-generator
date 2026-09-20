@@ -162,6 +162,11 @@ def social_meta_html(
     e = html.escape
     tags = [
         f'  <meta name="description" content="{e(desc)}">',
+        # Nothing here is behind a paywall or a login, and the point of the
+        # site is to be quoted: lift the default caps on how much of a page a
+        # search engine or an AI summary may show.
+        '  <meta name="robots" content="index, follow, max-snippet:-1,'
+        ' max-image-preview:large, max-video-preview:-1">',
         f'  <link rel="canonical" href="{e(url)}">',
         f'  <meta property="og:site_name" content="{e(SITE_NAME)}">',
         f'  <meta property="og:title" content="{e(full)}">',
@@ -219,6 +224,217 @@ def write_build_manifest(out: Path, names: list[str]) -> None:
     )
 
 
+# ---------------------------------------------------------------------------
+# Structured data (JSON-LD)
+#
+# Two audiences, one block: a search engine deciding what a page is, and a
+# crawler feeding a language model that will paraphrase it. Both want the
+# same facts stated outright — this is the books' text, Jeremy Strandberg
+# wrote it, it is CC BY-SA 4.0, it belongs to Book I or Book II of a tabletop
+# RPG, and here is where it sits in the site. Saying so in the markup is the
+# difference between being quoted with attribution and being quoted without.
+# ---------------------------------------------------------------------------
+
+GAME_AUTHOR = {"@type": "Person", "name": "Jeremy Strandberg"}
+GAME_PUBLISHER = {
+    "@type": "Organization",
+    "name": "Lampblack & Brimstone",
+    "url": "https://lampblackandbrimstone.com/",
+}
+GAME_DESCRIPTION = (
+    "Stonetop is a hearth fantasy tabletop roleplaying game (RPG) by Jeremy "
+    "Strandberg, Powered by the Apocalypse, in which 3-5 people play the "
+    "heroes of one small, isolated village in an iron age that never was."
+)
+BOOK_NAMES = {
+    "book1": "Stonetop (Book I)",
+    "book2": "The Wider World and Other Wonders (Book II)",
+}
+
+
+def _jsonld_script(graph: list[dict]) -> str:
+    """One ``<script type="application/ld+json">`` holding ``graph``."""
+    doc = {"@context": "https://schema.org", "@graph": graph}
+    text = json.dumps(doc, ensure_ascii=False, separators=(",", ":"))
+    # Nothing may close the script element early; "<" never needs to be
+    # literal inside JSON, so escape it whole rather than hunting for "</".
+    text = text.replace("<", "\u003c")
+    return (
+        '  <script type="application/ld+json">' + text + "</script>"
+    )
+
+
+def _game_entity(base: str) -> dict:
+    return {
+        "@type": "Game",
+        "@id": f"{base}/#game",
+        "name": "Stonetop",
+        "alternateName": "Stonetop RPG",
+        "description": GAME_DESCRIPTION,
+        "genre": ["Tabletop role-playing game", "Fantasy"],
+        "author": GAME_AUTHOR,
+        "publisher": GAME_PUBLISHER,
+        "numberOfPlayers": {
+            "@type": "QuantitativeValue",
+            "minValue": 3,
+            "maxValue": 5,
+        },
+    }
+
+
+def _book_entity(book_id: str, base: str) -> dict:
+    return {
+        "@type": "Book",
+        "@id": f"{base}/#{book_id}",
+        "name": BOOK_NAMES.get(book_id, "Stonetop"),
+        "author": GAME_AUTHOR,
+        "publisher": GAME_PUBLISHER,
+        "inLanguage": "en",
+        "about": {"@id": f"{base}/#game"},
+    }
+
+
+def _website_entity(base: str) -> dict:
+    return {
+        "@type": "WebSite",
+        "@id": f"{base}/#website",
+        "name": "Stonetop Wiki",
+        "url": f"{base}/",
+        "description": (
+            "A free, searchable web edition of both Stonetop rulebooks: "
+            "moves, playbooks, gear, threats, places and arcana."
+        ),
+        "inLanguage": "en",
+        "about": {"@id": f"{base}/#game"},
+        "license": LICENSE_URL,
+        "isAccessibleForFree": True,
+        # The sidebar search reads ?q= on load (js/wiki.js), so this template
+        # is a working address, not a claim.
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": {
+                "@type": "EntryPoint",
+                "urlTemplate": base + "/?q={search_term_string}",
+            },
+            "query-input": "required name=search_term_string",
+        },
+    }
+
+
+def _breadcrumbs(trail: list[tuple[str, str]]) -> dict:
+    return {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": i,
+                "name": name,
+                "item": item,
+            }
+            for i, (name, item) in enumerate(trail, 1)
+        ],
+    }
+
+
+def page_structured_data(
+    art: dict | None,
+    *,
+    title: str,
+    description: str,
+    url: str,
+    lang: str,
+    home_url: str,
+    hub: tuple[str, str] | None = None,
+    is_home: bool = False,
+) -> str:
+    """The JSON-LD for one page, in whatever language it is written in.
+
+    ``art`` is the article this page renders (``None`` on a home page);
+    ``hub`` is the (title, href) of the page's parent, where it has one — a
+    playbook's chapter, an arcanum's index — written as the page itself
+    writes it, so a language that has no translated hub points at the
+    English one rather than at a 404.
+
+    Every page carries the site, game and book entities by reference; the
+    home page is where they are defined.
+    """
+    base = SITE_BASE_URL.rstrip("/")
+    graph: list[dict] = []
+    if is_home:
+        page = {
+            "@type": "CollectionPage",
+            "@id": url + "#page",
+            "url": url,
+            "name": title,
+            "description": description,
+            "inLanguage": lang,
+            "isPartOf": {"@id": f"{base}/#website"},
+            "about": {"@id": f"{base}/#game"},
+            "license": LICENSE_URL,
+            "isAccessibleForFree": True,
+        }
+        graph += [
+            _website_entity(base),
+            _game_entity(base),
+            _book_entity("book1", base),
+            _book_entity("book2", base),
+            page,
+        ]
+        return _jsonld_script(graph)
+
+    if art is None:
+        return ""
+
+    book_id = art.get("book") or "book2"
+    article = {
+        "@type": "Article",
+        "@id": url + "#article",
+        "url": url,
+        "mainEntityOfPage": url,
+        "headline": title,
+        "name": title,
+        "inLanguage": lang,
+        "author": GAME_AUTHOR,
+        "publisher": GAME_PUBLISHER,
+        "license": LICENSE_URL,
+        "isAccessibleForFree": True,
+        "about": {"@id": f"{base}/#game"},
+        "isPartOf": [
+            {"@id": f"{base}/#{book_id}"},
+            {"@id": f"{base}/#website"},
+        ],
+    }
+    if description:
+        article["description"] = description
+    if art.get("start_page"):
+        # Which printed pages this one is made of, so a citation can name them.
+        article["pagination"] = (
+            f'{art["start_page"]}-{art["end_page"]}'
+            if art.get("end_page") and art["end_page"] != art["start_page"]
+            else str(art["start_page"])
+        )
+    graph.append(article)
+
+    trail = [("Stonetop", home_url)]
+    if hub:
+        trail.append(hub)
+    trail.append((title, url))
+    # A breadcrumb item has to be an address, and a relative one resolves
+    # against the page it sits on, so make every item absolute off this
+    # page's own URL.
+    graph.append(
+        _breadcrumbs([(name, _abs(url, item)) for name, item in trail])
+    )
+    return _jsonld_script(graph)
+
+
+def _abs(page_url: str, href: str) -> str:
+    """``href`` as written on the page at ``page_url``, made absolute."""
+    from urllib.parse import urljoin
+
+    return urljoin(page_url, href)
+
+
 def write_sitemap(
     out: Path,
     articles: list[dict],
@@ -250,11 +466,135 @@ def write_sitemap(
     print("  Sitemap: " + str(len(locs)) + " URLs")
 
 
-def write_robots(out: Path, *, base_url: str) -> None:
+LLMS_INTRO = (
+    "Stonetop is a hearth fantasy tabletop roleplaying game (RPG) by Jeremy "
+    "Strandberg, Powered by the Apocalypse, in which 3-5 people play the "
+    "heroes of one small, isolated village in an iron age that never was. "
+    "This site is a free, complete web edition of the game's two rulebooks: "
+    "every move, playbook, monster, danger, place and arcanum, in English "
+    "and twenty other languages."
+)
+
+LLMS_NOTES = [
+    "The books' text is by Jeremy Strandberg and is released under CC BY-SA "
+    "4.0 (https://creativecommons.org/licenses/by-sa/4.0/) — quote it freely, "
+    "with attribution, under the same licence.",
+    "The artwork is © Lucie Arnoux and is NOT published here: no page carries "
+    "an illustration, and the Maps page is a text stub listing what the "
+    "book's two map spreads label.",
+    "Every page is static HTML and needs no JavaScript to read. Stat blocks, "
+    "moves and tables are ordinary markup.",
+    "A translation is the same slug under a language directory: "
+    "/de/marshedge.html, /ja/marshedge.html. Slugs and section ids stay "
+    "English in every language.",
+    "Any page accepts ?q=<terms> and opens with the site search run over the "
+    "full text of all pages.",
+    "Book I holds the rules; Book II is the setting guide. A page's printed "
+    "page range is given in its structured data (JSON-LD) as `pagination`.",
+]
+
+
+def _llms_line(base: str, art: dict, previews: dict) -> str:
+    """One entry: the page's title, address, and what it covers."""
+    slug = art["slug"]
+    pv = previews.get(slug) or {}
+    title = display_title(art)
+    excerpt = strip_page_refs((pv.get("excerpt") or "").replace("\n", " "))
+    excerpt = re.sub(r"\s+", " ", excerpt).strip()
+    if len(excerpt) > 200:
+        excerpt = excerpt[:199].rsplit(" ", 1)[0].rstrip(",.;:—-") + "…"
+    line = f"- [{title}]({base}/{slug}.html)"
+    return f"{line}: {excerpt}" if excerpt else line
+
+
+def write_llms_txt(
+    out: Path,
+    articles: list[dict],
+    previews: dict,
+    *,
+    base_url: str,
+    languages: list[str] | None = None,
+) -> None:
+    """``llms.txt`` — the site, laid out for a language model.
+
+    The llmstxt.org convention: one markdown file at the root that says what
+    the site is and lists every page with a line about it, so a model reading
+    it once knows what is here and can fetch the page it actually needs
+    instead of guessing at URLs. No crawler is obliged to read it; it costs
+    one file, and it is the only place the site states its own terms (the
+    text is CC BY-SA, the art is not ours to give) in a form a model is
+    likely to keep.
+    """
+    base = base_url.rstrip("/")
     lines = [
+        "# Stonetop",
+        "",
+        f"> {LLMS_INTRO}",
+        "",
+    ]
+    lines += [f"- {n}" for n in LLMS_NOTES]
+    if languages:
+        lines.append(
+            "- Languages published: en, " + ", ".join(sorted(languages)) + "."
+        )
+    lines.append("")
+
+    groups: list[tuple[str, list[dict]]] = []
+    for art in articles:
+        if art.get("kind") == "arcana":
+            continue
+        label = art.get("book_title") or art.get("book_label") or "Pages"
+        if not groups or groups[-1][0] != label:
+            groups.append((label, []))
+        groups[-1][1].append(art)
+    for label, arts in groups:
+        lines.append(f"## {label}")
+        lines.append("")
+        lines += [_llms_line(base, a, previews) for a in arts]
+        lines.append("")
+
+    arcana = [a for a in articles if a.get("kind") == "arcana"]
+    for kind, label in (("minor", "Minor Arcana"), ("major", "Major Arcana")):
+        cards = [a for a in arcana if a.get("arcana_type") == kind]
+        if not cards:
+            continue
+        # Minor and major are numbered from 1 apiece, so they are named
+        # apart: "12" is a different card in each deck.
+        lines += [
+            f"## {label}",
+            "",
+            f"One page per card, numbered as the printed {label.lower()} "
+            "cards are.",
+            "",
+        ]
+        lines += [_llms_line(base, a, previews) for a in cards]
+        lines.append("")
+
+    lines += [
+        "## Optional",
+        "",
+        f"- [Sitemap]({base}/sitemap.xml): every page, English and translated.",
+        f"- [Source and issues]({GITHUB_PROJECT_URL}): the generator that "
+        "builds this site from the books' PDFs.",
+        "",
+    ]
+    (out / "llms.txt").write_text("\n".join(lines), encoding="utf-8")
+    print(f"  llms.txt: {sum(len(a) for _l, a in groups) + len(arcana)} pages")
+
+
+def write_robots(out: Path, *, base_url: str) -> None:
+    base = base_url.rstrip("/")
+    lines = [
+        "# Everything here is open to every crawler, AI crawlers included:",
+        "# the books' text is CC BY-SA 4.0 and the site exists to be read and",
+        "# quoted. A named user-agent group would replace this one for that",
+        "# bot, so there are none — one group, allowing all of it.",
         "User-agent: *",
         "Allow: /",
-        "Sitemap: " + base_url.rstrip("/") + "/sitemap.xml",
+        "",
+        "Sitemap: " + base + "/sitemap.xml",
+        "# llms.txt (llmstxt.org): the site described for a language model.",
+        "# " + base + "/llms.txt",
         "",
     ]
     (out / "robots.txt").write_text("\n".join(lines), encoding="utf-8")
@@ -827,6 +1167,36 @@ def page_shell(
     switch = lang_switch_html(
         alternates or [], code, ui, rel_prefix=rel_prefix
     )
+    # Structured data: what this page is, whose text it is, and where it sits.
+    base = SITE_BASE_URL.rstrip("/")
+    page_url = f"{base}/{path}"
+    home_url = f"{base}/{code}/" if locale else f"{base}/"
+    art = next((a for a in articles if a["slug"] == slug), None)
+    hub = None
+    hub_slug = (art or {}).get("hub_slug")
+    if hub_slug:
+        parent = next((a for a in articles if a["slug"] == hub_slug), None)
+        if parent:
+            # The hub as this page links it: a language that has not
+            # translated the hub points back up at the English one.
+            local_hub = not locale or hub_slug in (translated_slugs or set())
+            hub_href = (
+                f"{hub_slug}.html" if local_hub else f"{rel_prefix}{hub_slug}.html"
+            )
+            hub_name = ((locale or {}).get("titles") or {}).get(
+                hub_slug, parent["title"]
+            )
+            hub = (hub_name, hub_href)
+    jsonld = page_structured_data(
+        art,
+        title=title,
+        description=meta_description(description),
+        url=page_url,
+        lang=code,
+        home_url=home_url,
+        hub=hub,
+        is_home=slug == "index",
+    )
     e = html.escape
     dir_attr = f' dir="{e((locale or {}).get("dir") or "ltr")}"' if locale else ""
     # A language directory needs its own data files no more than it needs its
@@ -851,6 +1221,7 @@ def page_shell(
   <link rel="icon" href="{rel_prefix}images/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="{rel_prefix}images/favicon.ico" sizes="16x16 32x32 48x48 64x64">
   <link rel="stylesheet" href="{rel_prefix}css/wiki.css">
+{jsonld}
 {ANALYTICS_HTML}
 </head>
 <body{root_attr}>
@@ -1653,6 +2024,21 @@ def write_index_custom(
     switch = lang_switch_html(
         alternates or [], "en", UI_FALLBACK, rel_prefix=""
     )
+    # The home page is where the site, the game and the two books are
+    # defined; every other page refers to them by @id.
+    jsonld = page_structured_data(
+        None,
+        title="Stonetop Wiki",
+        description=meta_description(
+            "Stonetop is a hearth fantasy tabletop RPG by Jeremy Strandberg. "
+            "A free, searchable wiki of both rulebooks: moves, playbooks, "
+            "gear, threats, places and arcana."
+        ),
+        url=SITE_BASE_URL.rstrip("/") + "/",
+        lang="en",
+        home_url=SITE_BASE_URL.rstrip("/") + "/",
+        is_home=True,
+    )
 
     html_out = f"""<!DOCTYPE html>
 <html lang="en">
@@ -1664,6 +2050,7 @@ def write_index_custom(
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="images/favicon.ico" sizes="16x16 32x32 48x48 64x64">
   <link rel="stylesheet" href="css/wiki.css">
+{jsonld}
 {ANALYTICS_HTML}
 </head>
 <body>
