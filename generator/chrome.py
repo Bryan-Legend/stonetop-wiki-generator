@@ -583,18 +583,10 @@ def write_llms_txt(
 
 
 def write_robots(out: Path, *, base_url: str) -> None:
-    base = base_url.rstrip("/")
     lines = [
-        "# Everything here is open to every crawler, AI crawlers included:",
-        "# the books' text is CC BY-SA 4.0 and the site exists to be read and",
-        "# quoted. A named user-agent group would replace this one for that",
-        "# bot, so there are none — one group, allowing all of it.",
         "User-agent: *",
         "Allow: /",
-        "",
-        "Sitemap: " + base + "/sitemap.xml",
-        "# llms.txt (llmstxt.org): the site described for a language model.",
-        "# " + base + "/llms.txt",
+        "Sitemap: " + base_url.rstrip("/") + "/sitemap.xml",
         "",
     ]
     (out / "robots.txt").write_text("\n".join(lines), encoding="utf-8")
