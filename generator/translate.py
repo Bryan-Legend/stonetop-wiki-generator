@@ -576,6 +576,9 @@ def _join_dehyphenated(parts) -> str:
     return out
 
 
+_CALLOUT_RE = re.compile(r"^(.*\S)\s+(\d{1,2})$")
+
+
 def derive_variants(
     en: str, tr: str, tag: str = "P"
 ) -> tuple[list[tuple[str, str, bool]], bool]:
@@ -625,6 +628,11 @@ def derive_variants(
         for xa, xb in zip(ra, rb):
             add(xa, xb)
     da, db = _defmt(en), _defmt(tr)
+    # A stat block's heading drops a callout number the book set after it
+    # (Book I's anatomy of a monster: "Crinwin 1").
+    ca, cb = _CALLOUT_RE.match(da), _CALLOUT_RE.match(db)
+    if ca and cb and ca.group(2) == cb.group(2):
+        add(ca.group(1), cb.group(1))
     # A roll table's row drops the numbers it opens with ("4-5 Clearing,
     # meadow, sparse trees").
     na, nb = _ROLL_ROW_RE.match(da), _ROLL_ROW_RE.match(db)

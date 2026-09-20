@@ -3742,9 +3742,9 @@ window.WIKI_PREVIEWS = {
     "image": null,
     "book": "book1",
     "sections": {
-      "crinwin-1": {
-        "name": "Crinwin 1",
-        "html": "<div class=\"stat-block\" id=\"crinwin-1\"><h3 class=\"stat-name\"><img class=\"book-icon\" src=\"images/icons/default.svg\" alt=\"\" width=\"18\" height=\"18\" loading=\"lazy\">Crinwin 1</h3><p class=\"stat-tags\">Horde, small, hoarder, cautious, stealthy 2</p><p class=\"stat-stats\"><strong>HP</strong> 3; <strong>Armor</strong> 1 (reflexes)<br><strong>Damage</strong> claws, rocks, choking <button type=\"button\" class=\"dice-roll\" data-dice=\"d6\" title=\"Click to roll d6 — Shift: advantage · Ctrl: disadvantage\">d6</button> (hand)<br><strong>Special quality</strong> climbs/jumps like a squirrel<br><strong>Instinct</strong> to covet<br><strong>Special qualities</strong> can be advantageous (&quot;echolocation&quot; or &quot;immune to heat/fire&quot;), disadvantageous (&quot;blind&quot; or &quot;vulnerable to water/cold&quot;), or neutral (&quot;made of crystalline rock&quot;). These aren&#x27;t GM moves, per se, but they can and should inform the fiction that you establish and the GM moves that you make.</p><ul class=\"stat-moves\"><li>Mimic noises, words, cries for help</li><li>Hide or vanish into the trees</li><li>Snatch something and dart away</li></ul><p class=\"stat-note\">They&#x27;ve always been there, in the Wood, lurking in the trees. For generations, the Forest Folk hunted them and kept their numbers in check. No longer.</p><p class=\"stat-note\">• Out-of-place noises: partial bird calls, off-season insect buzz, a bear&#x27;s growl from the treetops, snippets of nonsense speech</p><p class=\"stat-note\">• Figures scurrying, leaping, swinging through the branches</p><p class=\"stat-note\">• Sinewy strong fingers around your throat</p><p class=\"stat-note\">• Clammy, blackish blood; too cold and putrid to be natural Something interesting: there&#x27;s something that everyone agrees will keep crinwin at bay (a smell, a charm, a sound, a little ritual, etc.). What is it, and why are you sure that it&#x27;s next to worthless?</p><p class=\"stat-note\">Something useful: there really is something that keeps crinwin at bay, but it involves something uncommon, impractical, or both.</p><p class=\"stat-note\">What is it, and why isn&#x27;t it common knowledge (or at least commonly accepted)?</p><p class=\"stat-note\">4 Damage: how the monster typically attacks, the damage it does, and the tags associated with that damage (see <a class=\"wiki-link\" href=\"#6-damage\" data-slug=\"dangers\" data-fragment=\"6-damage\">6 Damage</a> for descriptions).</p><p class=\"stat-note\">5 Special qualities: (optional) innate traits that impact play but aren&#x27;t otherwise obvious or described by tags.</p><p class=\"stat-note\">6 Instinct: what the monster typically does that brings it into conflict with others. Use its instinct as a guide to its behavior. When you&#x27;re unsure what a monster would do, go with what its instinct suggests.</p><p class=\"stat-note\">7 Moves: GM moves that you can make with this monster. You&#x27;re not limited to these moves—you can and will use all your standard GM moves like announce trouble or use up their resources—but monster moves describe specific ways that the monster fights or causes trouble.</p><p class=\"stat-note\">8 Description: the monster&#x27;s appearance, habitat, behaviors, etc. Might include impressions or tips for portraying it.</p><p class=\"stat-note\">9 Optional elements: including lore (something interesting and something useful, for when someone Knows Things), or custom player moves (e.g., &quot;When you lock eyes with the swyn, roll…&quot;).</p></div>",
+      "crinwin": {
+        "name": "Crinwin",
+        "html": "<div class=\"stat-block\" id=\"crinwin\"><h3 class=\"stat-name\"><img class=\"book-icon\" src=\"images/icons/default.svg\" alt=\"\" width=\"18\" height=\"18\" loading=\"lazy\">Crinwin</h3><p class=\"stat-tags\">Horde, small, hoarder, cautious, stealthy</p><p class=\"stat-stats\"><strong>HP</strong> 3; <strong>Armor</strong> 1 (reflexes)<br><strong>Damage</strong> claws, rocks, choking <button type=\"button\" class=\"dice-roll\" data-dice=\"d6\" title=\"Click to roll d6 — Shift: advantage · Ctrl: disadvantage\">d6</button> (hand)<br><strong>Special quality</strong> climbs/jumps like a squirrel<br><strong>Instinct</strong> to covet<br><strong>Special qualities</strong> can be advantageous (&quot;echolocation&quot; or &quot;immune to heat/fire&quot;), disadvantageous (&quot;blind&quot; or &quot;vulnerable to water/cold&quot;), or neutral (&quot;made of crystalline rock&quot;). These aren&#x27;t GM moves, per se, but they can and should inform the fiction that you establish and the GM moves that you make.</p><ul class=\"stat-moves\"><li>Mimic noises, words, cries for help</li><li>Hide or vanish into the trees</li><li>Snatch something and dart away</li></ul><p class=\"stat-note\">They&#x27;ve always been there, in the Wood, lurking in the trees. For generations, the Forest Folk hunted them and kept their numbers in check. No longer.</p><p class=\"stat-note\">• Out-of-place noises: partial bird calls, off-season insect buzz, a bear&#x27;s growl from the treetops, snippets of nonsense speech</p><p class=\"stat-note\">• Figures scurrying, leaping, swinging through the branches</p><p class=\"stat-note\">• Sinewy strong fingers around your throat</p><p class=\"stat-note\">• Clammy, blackish blood; too cold and putrid to be natural Something interesting: there&#x27;s something that everyone agrees will keep crinwin at bay (a smell, a charm, a sound, a little ritual, etc.). What is it, and why are you sure that it&#x27;s next to worthless?</p><p class=\"stat-note\">Something useful: there really is something that keeps crinwin at bay, but it involves something uncommon, impractical, or both.</p><p class=\"stat-note\">What is it, and why isn&#x27;t it common knowledge (or at least commonly accepted)?</p><p class=\"stat-note\">4 Damage: how the monster typically attacks, the damage it does, and the tags associated with that damage (see <a class=\"wiki-link\" href=\"#6-damage\" data-slug=\"dangers\" data-fragment=\"6-damage\">6 Damage</a> for descriptions).</p><p class=\"stat-note\">5 Special qualities: (optional) innate traits that impact play but aren&#x27;t otherwise obvious or described by tags.</p><p class=\"stat-note\">6 Instinct: what the monster typically does that brings it into conflict with others. Use its instinct as a guide to its behavior. When you&#x27;re unsure what a monster would do, go with what its instinct suggests.</p><p class=\"stat-note\">7 Moves: GM moves that you can make with this monster. You&#x27;re not limited to these moves—you can and will use all your standard GM moves like announce trouble or use up their resources—but monster moves describe specific ways that the monster fights or causes trouble.</p><p class=\"stat-note\">8 Description: the monster&#x27;s appearance, habitat, behaviors, etc. Might include impressions or tips for portraying it.</p><p class=\"stat-note\">9 Optional elements: including lore (something interesting and something useful, for when someone Knows Things), or custom player moves (e.g., &quot;When you lock eyes with the swyn, roll…&quot;).</p></div>",
         "kind": "stat-block"
       },
       "the-almtakers-guardian-fae": {
@@ -3809,7 +3809,7 @@ window.WIKI_PREVIEWS = {
       },
       "monster-format": {
         "name": "Monster format",
-        "html": "<h2 id=\"monster-format\">Monster format</h2>\n<p>Almanac entries in <em>The Wider</em> <strong>0</strong></p>\n<p><em>World</em> include many monster <strong>3</strong> write-ups like this—use them <strong>4</strong> when you can, either as-is or <strong>5</strong> slightly modified. <strong>6</strong></p>\n<ul class=\"bullets\"><li><strong>0 Icon</strong>: A quick visual iden- <strong>7</strong> <a class=\"wiki-link\" href=\"#monster-types\" data-slug=\"dangers\" data-fragment=\"monster-types\">tifier for different monster types</a>. You don&#x27;t need to include these in monsters you <strong>8</strong> write up.</li><li><strong>1 Name</strong>: What the monster is called (by itself, by the people who deal with it most, or by you, the GM, for your own reference).</li><li><strong>2 Tags</strong>: Terms that help describe the monster. All monsters have an organization tag (<em>solitary</em>, <em>group</em>, or <em>horde</em>) that indicates how they hunt and fight; many have a size tag (<em>tiny</em>, <em>small</em>, <em>large</em>, or <em>huge</em>) that describe how big they are. Other tags describe a monster&#x27;s basic na-</li></ul>\n<p><strong>9</strong></p>\n<p>ture (e.g. <em>construct</em>, <em>spirit</em>, <em>undead</em>), its traits (e.g. <em>stealthy</em>, <em>terrifying</em>), or its behaviors (e.g. <em>organized</em>, <em>cautious</em>).</p>\n<p>See <a class=\"wiki-link\" href=\"#3-tags\" data-slug=\"dangers\" data-fragment=\"3-tags\">3 Tags</a> for context.</p>\n<ul class=\"bullets\"><li><strong>3 Hit points (HP) and Armor</strong>: How much damage the monster can take, and how well protected it is. When a monster is reduced to 0 HP, it&#x27;s out of the action (unconscious, disabled, dying, or dead—your call). When a monster suffers damage, reduce that damage by its armor. The description after the armor rating describes its source, and any exceptions.</li></ul>\n<div class=\"stat-block\" id=\"crinwin-1\"><h3 class=\"stat-name\"><img class=\"book-icon\" src=\"images/icons/default.svg\" alt=\"\" width=\"18\" height=\"18\" loading=\"lazy\">Crinwin 1</h3><p class=\"stat-tags\">Horde, small, hoarder, cautious, stealthy 2</p><p class=\"stat-stats\"><strong>HP</strong> 3; <strong>Armor</strong> 1 (reflexes)<br><strong>Damage</strong> claws, rocks, choking <button type=\"button\" class=\"dice-roll\" data-dice=\"d6\" title=\"Click to roll d6 — Shift: advantage · Ctrl: disadvantage\">d6</button> (hand)<br><strong>Special quality</strong> climbs/jumps like a squirrel<br><strong>Instinct</strong> to covet<br><strong>Special qualities</strong> can be advantageous (&quot;echolocation&quot; or &quot;immune to heat/fire&quot;), disadvantageous (&quot;blind&quot; or &quot;vulnerable to water/cold&quot;), or neutral (&quot;made of crystalline rock&quot;). These aren&#x27;t GM moves, per se, but they can and should inform the fiction that you establish and the GM moves that you make.</p><ul class=\"stat-moves\"><li>Mimic noises, words, cries for help</li><li>Hide or vanish into the trees</li><li>Snatch something and dart away</li></ul><p class=\"stat-note\">They&#x27;ve always been there, in the Wood, lurking in the trees. For generations, the Forest Folk hunted them and kept their numbers in check. No longer.</p><p class=\"stat-note\">• Out-of-place noises: partial bird calls, off-season insect buzz, a bear&#x27;s growl from the treetops, snippets of nonsense speech</p><p class=\"stat-note\">• Figures scurrying, leaping, swinging through the branches</p><p class=\"stat-note\">• Sinewy strong fingers around your throat</p><p class=\"stat-note\">• Clammy, blackish blood; too cold and putrid to be natural Something interesting: there&#x27;s something that everyone agrees will keep crinwin at bay (a smell, a charm, a sound, a little ritual, etc.). What is it, and why are you sure that it&#x27;s next to worthless?</p><p class=\"stat-note\">Something useful: there really is something that keeps crinwin at bay, but it involves something uncommon, impractical, or both.</p><p class=\"stat-note\">What is it, and why isn&#x27;t it common knowledge (or at least commonly accepted)?</p><p class=\"stat-note\">4 Damage: how the monster typically attacks, the damage it does, and the tags associated with that damage (see <a class=\"wiki-link\" href=\"#6-damage\" data-slug=\"dangers\" data-fragment=\"6-damage\">6 Damage</a> for descriptions).</p><p class=\"stat-note\">5 Special qualities: (optional) innate traits that impact play but aren&#x27;t otherwise obvious or described by tags.</p><p class=\"stat-note\">6 Instinct: what the monster typically does that brings it into conflict with others. Use its instinct as a guide to its behavior. When you&#x27;re unsure what a monster would do, go with what its instinct suggests.</p><p class=\"stat-note\">7 Moves: GM moves that you can make with this monster. You&#x27;re not limited to these moves—you can and will use all your standard GM moves like announce trouble or use up their resources—but monster moves describe specific ways that the monster fights or causes trouble.</p><p class=\"stat-note\">8 Description: the monster&#x27;s appearance, habitat, behaviors, etc. Might include impressions or tips for portraying it.</p><p class=\"stat-note\">9 Optional elements: including lore (something interesting and something useful, for when someone Knows Things), or custom player moves (e.g., &quot;When you lock eyes with the swyn, roll…&quot;).</p></div>",
+        "html": "<h2 id=\"monster-format\">Monster format</h2>\n<p>Almanac entries in <em>The Wider</em> <strong>0</strong></p>\n<p><em>World</em> include many monster <strong>3</strong> write-ups like this—use them <strong>4</strong> when you can, either as-is or <strong>5</strong> slightly modified. <strong>6</strong></p>\n<ul class=\"bullets\"><li><strong>0 Icon</strong>: A quick visual iden- <strong>7</strong> <a class=\"wiki-link\" href=\"#monster-types\" data-slug=\"dangers\" data-fragment=\"monster-types\">tifier for different monster types</a>. You don&#x27;t need to include these in monsters you <strong>8</strong> write up.</li><li><strong>1 Name</strong>: What the monster is called (by itself, by the people who deal with it most, or by you, the GM, for your own reference).</li><li><strong>2 Tags</strong>: Terms that help describe the monster. All monsters have an organization tag (<em>solitary</em>, <em>group</em>, or <em>horde</em>) that indicates how they hunt and fight; many have a size tag (<em>tiny</em>, <em>small</em>, <em>large</em>, or <em>huge</em>) that describe how big they are. Other tags describe a monster&#x27;s basic na-</li></ul>\n<p><strong>9</strong></p>\n<p>ture (e.g. <em>construct</em>, <em>spirit</em>, <em>undead</em>), its traits (e.g. <em>stealthy</em>, <em>terrifying</em>), or its behaviors (e.g. <em>organized</em>, <em>cautious</em>).</p>\n<p>See <a class=\"wiki-link\" href=\"#3-tags\" data-slug=\"dangers\" data-fragment=\"3-tags\">3 Tags</a> for context.</p>\n<ul class=\"bullets\"><li><strong>3 Hit points (HP) and Armor</strong>: How much damage the monster can take, and how well protected it is. When a monster is reduced to 0 HP, it&#x27;s out of the action (unconscious, disabled, dying, or dead—your call). When a monster suffers damage, reduce that damage by its armor. The description after the armor rating describes its source, and any exceptions.</li></ul>\n<div class=\"stat-block\" id=\"crinwin\"><h3 class=\"stat-name\"><img class=\"book-icon\" src=\"images/icons/default.svg\" alt=\"\" width=\"18\" height=\"18\" loading=\"lazy\">Crinwin</h3><p class=\"stat-tags\">Horde, small, hoarder, cautious, stealthy</p><p class=\"stat-stats\"><strong>HP</strong> 3; <strong>Armor</strong> 1 (reflexes)<br><strong>Damage</strong> claws, rocks, choking <button type=\"button\" class=\"dice-roll\" data-dice=\"d6\" title=\"Click to roll d6 — Shift: advantage · Ctrl: disadvantage\">d6</button> (hand)<br><strong>Special quality</strong> climbs/jumps like a squirrel<br><strong>Instinct</strong> to covet<br><strong>Special qualities</strong> can be advantageous (&quot;echolocation&quot; or &quot;immune to heat/fire&quot;), disadvantageous (&quot;blind&quot; or &quot;vulnerable to water/cold&quot;), or neutral (&quot;made of crystalline rock&quot;). These aren&#x27;t GM moves, per se, but they can and should inform the fiction that you establish and the GM moves that you make.</p><ul class=\"stat-moves\"><li>Mimic noises, words, cries for help</li><li>Hide or vanish into the trees</li><li>Snatch something and dart away</li></ul><p class=\"stat-note\">They&#x27;ve always been there, in the Wood, lurking in the trees. For generations, the Forest Folk hunted them and kept their numbers in check. No longer.</p><p class=\"stat-note\">• Out-of-place noises: partial bird calls, off-season insect buzz, a bear&#x27;s growl from the treetops, snippets of nonsense speech</p><p class=\"stat-note\">• Figures scurrying, leaping, swinging through the branches</p><p class=\"stat-note\">• Sinewy strong fingers around your throat</p><p class=\"stat-note\">• Clammy, blackish blood; too cold and putrid to be natural Something interesting: there&#x27;s something that everyone agrees will keep crinwin at bay (a smell, a charm, a sound, a little ritual, etc.). What is it, and why are you sure that it&#x27;s next to worthless?</p><p class=\"stat-note\">Something useful: there really is something that keeps crinwin at bay, but it involves something uncommon, impractical, or both.</p><p class=\"stat-note\">What is it, and why isn&#x27;t it common knowledge (or at least commonly accepted)?</p><p class=\"stat-note\">4 Damage: how the monster typically attacks, the damage it does, and the tags associated with that damage (see <a class=\"wiki-link\" href=\"#6-damage\" data-slug=\"dangers\" data-fragment=\"6-damage\">6 Damage</a> for descriptions).</p><p class=\"stat-note\">5 Special qualities: (optional) innate traits that impact play but aren&#x27;t otherwise obvious or described by tags.</p><p class=\"stat-note\">6 Instinct: what the monster typically does that brings it into conflict with others. Use its instinct as a guide to its behavior. When you&#x27;re unsure what a monster would do, go with what its instinct suggests.</p><p class=\"stat-note\">7 Moves: GM moves that you can make with this monster. You&#x27;re not limited to these moves—you can and will use all your standard GM moves like announce trouble or use up their resources—but monster moves describe specific ways that the monster fights or causes trouble.</p><p class=\"stat-note\">8 Description: the monster&#x27;s appearance, habitat, behaviors, etc. Might include impressions or tips for portraying it.</p><p class=\"stat-note\">9 Optional elements: including lore (something interesting and something useful, for when someone Knows Things), or custom player moves (e.g., &quot;When you lock eyes with the swyn, roll…&quot;).</p></div>",
         "kind": "section"
       },
       "monsters": {
@@ -5940,9 +5940,9 @@ window.WIKI_PREVIEWS = {
         "html": "<div class=\"roll-table\" id=\"current-state\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d12\" title=\"Click to roll 1d12 — Shift: advantage · Ctrl: disadvantage\">1d12</button> <span class=\"roll-label\">Current State</span></div><table><tbody><tr><th scope=\"row\">1-3</th><td>Greatly diminished, perhaps destroyed and waiting to return</td></tr><tr><th scope=\"row\">4-6</th><td>Imprisoned and largely forgotten</td></tr><tr><th scope=\"row\">7-9</th><td>Hidden, apathetic, self-involved</td></tr><tr><th scope=\"row\">10</th><td>Trapped, but with some influence</td></tr><tr><th scope=\"row\">11</th><td>Secretly active, pursuing schemes</td></tr><tr><th scope=\"row\">12</th><td>Roll <button type=\"button\" class=\"dice-roll\" data-dice=\"1d10\" title=\"Click to roll 1d10 — Shift: advantage · Ctrl: disadvantage\">1d10</button> twice  I&#x27;ve established that the Mindgem&#x27;s fiery heart is in the clutches of a deathless sorcerer, whose soul inhabits an arcane device <a class=\"wiki-link\" href=\"stone-lords.html\" data-slug=\"stone-lords\" >that controls a number of lithic servants</a>. <a class=\"wiki-link\" href=\"the-things-below.html#sorcerer\" data-slug=\"the-things-below\" data-fragment=\"sorcerer\" >I start with a sorcerer</a>, <a class=\"wiki-link\" href=\"the-things-below.html#elrash-orra-lord-of-orbs-the-many-eyes\" data-slug=\"the-things-below\" data-fragment=\"elrash-orra-lord-of-orbs-the-many-eyes\" >corrupted by El&#x27;rash-Orra</a>. For gifts, I give him a terrifying gaze and the ability to inflict false sensations. For marks, I give him slow-healing wounds and strange fascinations (he&#x27;s a voyeur). I already decided that he had &quot;anchored his soul&quot; to an arcane device in a Stone Lord manor (immobile, fragile). For a limitation, I think the device &quot;must be fed/charged/maintained,&quot; and that &quot;its destruction results in his final death.&quot; For a current state, I think he&#x27;s &quot;trapped, but with some influence&quot; via the lithic servants he can possess. I picture him in his oversized manor, seated on a makeshift throne, permanently wounded, unable to move on his own. A dozen faceless stone servants attend him, moving him like a puppet when needed. Behind the throne is a contraption of rune-carved stone and crystal, the makerglass heart burning at its core. His mind is spread among his servants, some of whom scour Three Coven Lake for artifacts, gossip, and materials to maintain his device. Should the device fail, his consciousness will splinter and his body will finally die. The servants, each containing a splinter of his soul, will fight each other for primacy. None will succeed.</td></tr></tbody></table></div>",
         "kind": "roll-table"
       },
-      "solitary-undead-corrupted-paranoid": {
-        "name": "Solitary, undead, corrupted, paranoid,",
-        "html": "<div class=\"stat-block\" id=\"solitary-undead-corrupted-paranoid\"><h3 class=\"stat-name\">Solitary, Undead, Corrupted, Paranoid,</h3><p class=\"stat-tags\">magical, hoarder, terrifying</p><p class=\"stat-stats\"><strong>HP</strong> 16; ARMOR 4 (wards)<br>DAMAGE word of false pain <button type=\"button\" class=\"dice-roll\" data-dice=\"d8\" title=\"Click to roll d8 — Shift: advantage · Ctrl: disadvantage\">d8</button> (near, area, ignores armor)<br>SPECIAL QUALITIES tethered to the device; broken body; aware of all that his servants perceive INSTINCT to jealously hoard secrets</p><p class=\"stat-note\">&gt; Inflict false sensations on others</p><p class=\"stat-note\">&gt; Fix someone with his terrible gaze</p><p class=\"stat-note\">&gt; Reveal a plan or a horrid truth</p><p class=\"stat-note\">&gt; Control his lithic servants like they were extensions of himself</p><p class=\"stat-note\">&gt; Recover from any wound, slowly and never fully</p></div>",
+      "myghal-deathless-sorcerer": {
+        "name": "MYGHAL, DEATHLESS SORCERER",
+        "html": "<div class=\"stat-block\" id=\"myghal-deathless-sorcerer\"><h3 class=\"stat-name\">Myghal, Deathless Sorcerer</h3><p class=\"stat-tags\">Solitary, undead, corrupted, paranoid, magical, hoarder, terrifying</p><p class=\"stat-stats\"><strong>HP</strong> 16; ARMOR 4 (wards)<br>DAMAGE word of false pain <button type=\"button\" class=\"dice-roll\" data-dice=\"d8\" title=\"Click to roll d8 — Shift: advantage · Ctrl: disadvantage\">d8</button> (near, area, ignores armor)<br>SPECIAL QUALITIES tethered to the device; broken body; aware of all that his servants perceive INSTINCT to jealously hoard secrets</p><p class=\"stat-note\">&gt; Inflict false sensations on others</p><p class=\"stat-note\">&gt; Fix someone with his terrible gaze</p><p class=\"stat-note\">&gt; Reveal a plan or a horrid truth</p><p class=\"stat-note\">&gt; Control his lithic servants like they were extensions of himself</p><p class=\"stat-note\">&gt; Recover from any wound, slowly and never fully</p></div>",
         "kind": "stat-block"
       },
       "names": {
@@ -5992,7 +5992,7 @@ window.WIKI_PREVIEWS = {
       },
       "dangers": {
         "name": "Dangers",
-        "html": "<h2 id=\"dangers\">Dangers</h2>\n<h3 id=\"hazards\">Hazards</h3>\n<ul class=\"bullets\"><li><a class=\"wiki-link\" href=\"stone-lords.html#unstable-construction\" data-slug=\"stone-lords\" data-fragment=\"unstable-construction\" ><strong>Unstable construction</strong></a></li><li><a class=\"wiki-link\" href=\"stone-lords.html#perilous-stone\" data-slug=\"stone-lords\" data-fragment=\"perilous-stone\" ><strong>Perilous stone</strong></a></li><li><a class=\"wiki-link\" href=\"the-dread-river.html#cursed-object\" data-slug=\"the-dread-river\" data-fragment=\"cursed-object\" ><strong>Cursed objects</strong></a></li><li>Darkness, deep in a barrow</li><li>Low ceilings, cramped quarters, poor lines of sight</li></ul>\n<hr>\n<div class=\"hazard-block\" id=\"banefire\"><h3 class=\"stat-name\"><img class=\"book-icon\" src=\"images/icons/danger.svg\" alt=\"\" width=\"18\" height=\"18\" loading=\"lazy\">Banefire</h3><p>Curtains or pillars of heatless flame, blue or green or purple, with no obvious source of fuel. Banefire features in many tales of the barrows: to repel, to imprison, or just as an uncanny feature of the mounds.</p><ul class=\"bullets\"><li>Spring forth with little/no warning</li><li>Blind them with sudden light</li><li>Block a path or a line of sight</li><li>Burn spirits, the undead, and living souls (<button type=\"button\" class=\"dice-roll\" data-dice=\"d8\" title=\"Click to roll d8 — Shift: advantage · Ctrl: disadvantage\">d8</button> damage, ignores armor)</li></ul><p>Something interesting: Ghosts and other spirits fear banefire as much as mortals, but the inhabitants of some barrows can control it.</p><p>Something useful: Banefire burns only where it&#x27;s meant to; it never spreads. Each banefire is anchored to a blackened bone, all that remains of the mortal whose body and soul were sacrificed to fuel the flames.</p></div>\n<hr>\n<div class=\"hazard-block\" id=\"traps\"><h3 class=\"stat-name\"><img class=\"book-icon\" src=\"images/icons/danger.svg\" alt=\"\" width=\"18\" height=\"18\" loading=\"lazy\">Traps</h3><p>They put all that effort into building barrows. They weren&#x27;t going to leave them unguarded.</p><p>To create a trap, consider the barrow&#x27;s purpose and what it contains, and where the trap is found. Then pick or roll for the trap&#x27;s intent, its trigger, its tell, and as many elements as makes sense. Imagine how it works. If you like, prep GM moves and/or an impending doom for the trap, and maybe a custom player move.</p></div>\n<div class=\"roll-table\" id=\"intent\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d12\" title=\"Click to roll 1d12 — Shift: advantage · Ctrl: disadvantage\">1d12</button> <span class=\"roll-label\">Intent</span></div><table><tbody><tr><th scope=\"row\">1-2</th><td>To kill/maim/injure</td></tr><tr><th scope=\"row\">3-4</th><td>To repel/separate/deny/isolate</td></tr><tr><th scope=\"row\">5-6</th><td>To weaken/hinder/delay</td></tr><tr><th scope=\"row\">7-8</th><td>To capture/punish/torment</td></tr><tr><th scope=\"row\">9-10</th><td>To alert/awaken/prepare</td></tr><tr><th scope=\"row\">11-12</th><td>Roll <button type=\"button\" class=\"dice-roll\" data-dice=\"d10\" title=\"Click to roll d10 — Shift: advantage · Ctrl: disadvantage\">d10</button> twice</td></tr></tbody></table></div>\n<div class=\"roll-table\" id=\"trigger\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d12\" title=\"Click to roll 1d12 — Shift: advantage · Ctrl: disadvantage\">1d12</button> <span class=\"roll-label\">Trigger</span></div><table><tbody><tr><th scope=\"row\">1-2</th><td>Stepping/entering/being/staying somewhere</td></tr><tr><th scope=\"row\">3-4</th><td>Touching something</td></tr><tr><th scope=\"row\">5-6</th><td>Moving something/picking it up</td></tr><tr><th scope=\"row\">7-8</th><td>Breaking/disturbing something</td></tr><tr><th scope=\"row\">9-10</th><td>Opening/closing something</td></tr><tr><th scope=\"row\">11-12</th><td>Perceiving/examining/tinkering with something</td></tr></tbody></table></div>\n<div class=\"roll-table\" id=\"tell\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d12\" title=\"Click to roll 1d12 — Shift: advantage · Ctrl: disadvantage\">1d12</button> <span class=\"roll-label\">Tell</span></div><table><tbody><tr><th scope=\"row\">1</th><td>A brief warning before it goes off</td></tr><tr><th scope=\"row\">2-4</th><td>A tiny detail, easy to miss</td></tr><tr><th scope=\"row\">5-7</th><td>Unusual construction/decor</td></tr><tr><th scope=\"row\">8-10</th><td>Bait</td></tr><tr><th scope=\"row\">11-12</th><td>Clear signs—it&#x27;s obviously a trap</td></tr></tbody></table></div>\n<div class=\"roll-table\" id=\"elements\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d12\" title=\"Click to roll 1d12 — Shift: advantage · Ctrl: disadvantage\">1d12</button> <span class=\"roll-label\">Elements</span></div><table><tbody><tr><th scope=\"row\">1</th><td>Camouflage/illusion/deception</td></tr><tr><th scope=\"row\">2</th><td>Gravity/weight/mass/hardness</td></tr><tr><th scope=\"row\">3</th><td>Blades/spikes/needles/pointy bits</td></tr><tr><th scope=\"row\">4</th><td>Wire/rope/pulleys/contraptions</td></tr><tr><th scope=\"row\">5</th><td>Tension/pressure/springs/balance</td></tr><tr><th scope=\"row\">6</th><td>Chemics/poison/acid/gas/fire</td></tr><tr><th scope=\"row\">7</th><td>Special materials (see below)</td></tr><tr><th scope=\"row\">8</th><td>Runes/glyphs/sigils/marks/spells</td></tr><tr><th scope=\"row\">9</th><td>Light/dark/heat/cold/noise/quiet</td></tr><tr><th scope=\"row\">10</th><td>Thoughts/emotions/mind games</td></tr><tr><th scope=\"row\">11</th><td>Spirits/constructs/undead/vermin</td></tr><tr><th scope=\"row\">12</th><td>Previously triggered/<a class=\"wiki-link\" href=\"green-lords.html\" data-slug=\"green-lords\" >disarmed Special materials might include hazardous growths</a>, <a class=\"wiki-link\" href=\"forge-lords.html#orichalcum\" data-slug=\"forge-lords\" data-fragment=\"orichalcum\" >orichalcum</a>, <a class=\"wiki-link\" href=\"primordial-powers.html#black-iron\" data-slug=\"primordial-powers\" data-fragment=\"black-iron\" >black iron</a>, <a class=\"wiki-link\" href=\"rime-lords.html#dark-ice\" data-slug=\"rime-lords\" data-fragment=\"dark-ice\" >dark ice</a>, <a class=\"wiki-link\" href=\"stone-lords.html#makerglass\" data-slug=\"stone-lords\" data-fragment=\"makerglass\" >makerglass</a>, <a class=\"wiki-link\" href=\"tempest-lords.html#aetherium\" data-slug=\"tempest-lords\" data-fragment=\"aetherium\" >aetherium</a>, <a class=\"wiki-link\" href=\"the-things-below.html#red-crystal\" data-slug=\"the-things-below\" data-fragment=\"red-crystal\" >red crystal</a>, and/or other things of your devising.</td></tr></tbody></table></div>\n<p>Examples:</p>\n<ul class=\"bullets\"><li>A pit, 15-feet deep, the bottom lined with rusty spikes; covered by taut fabric, pebbles, and dust</li><li>A gap runs down the ceiling of a low tunnel; stepping on a flagstone releases a swinging axe</li><li>A puzzle-box on a decoy coffin; futzing with it releases stabby little constructs from the coffin</li><li>A corpse&#x27;s sword; moving it pulls a wire, which upends an urn full of salt and releases a trapped wraith</li><li>A rune-etched doorway; any who try to enter stop, turn around, and forget the last few minutes</li><li>Opening the door to the final vault</li></ul>\n<p>requires removing a keystone; the whole barrow will collapse</p>\n<ul class=\"bullets\"><li>Sconces of glowing makerglass; break the rune-seal on the sarcophagus, get fried by lightning</li><li>A dead-end, the word VIGILANCE carved on the far wall, the room full of colorless, odorless gas; causes headaches, irritability, fainting, death</li></ul>\n<hr>\n<h3 id=\"people\">People</h3>\n<ul class=\"bullets\"><li><a class=\"wiki-link\" href=\"hillfolk.html\" data-slug=\"hillfolk\" ><strong>Hillfolk</strong></a>, warning away explorers or chasing them off</li><li>A <a class=\"wiki-link\" href=\"hillfolk.html#hdour\" data-slug=\"hillfolk\" data-fragment=\"hdour\" ><strong>hdour</strong></a>, <a class=\"wiki-link\" href=\"lygos-and-the-south.html#antiquarian\" data-slug=\"lygos-and-the-south\" data-fragment=\"antiquarian\" ><strong>antiquarian</strong></a>, or <a class=\"wiki-link\" href=\"the-things-below.html#sorcerer\" data-slug=\"the-things-below\" data-fragment=\"sorcerer\" ><strong>sorcerer</strong></a>, seeking knowledge/artifacts</li><li><a class=\"wiki-link\" href=\"lygos-and-the-south.html#adventurer\" data-slug=\"lygos-and-the-south\" data-fragment=\"adventurer\" ><strong>Adventurers</strong></a>, hunting treasure</li><li>A <a class=\"wiki-link\" href=\"death-and-the-undying.html#necromancer\" data-slug=\"death-and-the-undying\" data-fragment=\"necromancer\" ><strong>necromancer</strong></a>, consulting with those long-dead</li></ul>\n<hr>\n<h3 id=\"monsters\">Monsters</h3>\n<ul class=\"bullets\"><li><a class=\"wiki-link\" href=\"death-and-the-undying.html#ghosts\" data-slug=\"death-and-the-undying\" data-fragment=\"ghosts\" ><strong>Ghosts</strong></a> and <a class=\"wiki-link\" href=\"death-and-the-undying.html#revenants\" data-slug=\"death-and-the-undying\" data-fragment=\"revenants\" ><strong>revenants</strong></a>, haunting barrows, reclaimed ruins, old battlegrounds mass graves</li><li><a class=\"wiki-link\" href=\"stone-lords.html#construct\" data-slug=\"stone-lords\" data-fragment=\"construct\" ><strong>Constructs</strong></a>, stolen from the Stone Lords or made using their arts</li><li><a class=\"wiki-link\" href=\"the-things-below.html#corrupted-being\" data-slug=\"the-things-below\" data-fragment=\"corrupted-being\" ><strong>Corrupted beings</strong></a>, ancient pets of ancient sorcerers, or local fauna affected by lingering evil</li><li><a class=\"wiki-link\" href=\"spirits-of-the-wild.html\" data-slug=\"spirits-of-the-wild\" ><strong>Spirits of the wild</strong></a>, bound by old spells</li></ul>\n<div class=\"stat-block\" id=\"barrow-wight\"><h3 class=\"stat-name\"><img class=\"book-icon\" src=\"images/icons/undead.svg\" alt=\"\" width=\"18\" height=\"18\" loading=\"lazy\">Barrow Wight</h3><p class=\"stat-tags\">Group, undead, corrupted, terrifying, hardy, hoarder</p><p class=\"stat-stats\"><strong>HP</strong> 14; <strong>Armor</strong> 4 (resilience), 2 vs. bronze or fire (mail)<br><strong>Damage</strong> rusty sword <button type=\"button\" class=\"dice-roll\" data-dice=\"d8+2\" title=\"Click to roll d8+2 — Shift: advantage · Ctrl: disadvantage\">d8+2</button> (close, forceful) or crushing grip <button type=\"button\" class=\"dice-roll\" data-dice=\"d8+2\" title=\"Click to roll d8+2 — Shift: advantage · Ctrl: disadvantage\">d8+2</button> (hand, grabby, forceful)<br><strong>Special qualities</strong> bound to their barrow<br><strong>Instinct</strong> to protect their hoard</p><ul class=\"stat-moves\"><li>Utter an echoing warning</li><li>Block an exit</li><li>Stand fast, refusing to be moved</li><li>Keep fighting with or reattach a severed limb</li></ul><p class=\"stat-note\">As you might expect, grave robbing was always a problem for the Barrow Builders.</p><p class=\"stat-note\">But a clever sorcerer had a solution! So many hateful spirits roamed the world in those days. Why not bind some to the corpses of the deceased, and let the dead guard their own treasure?</p></div>\n<div class=\"stat-block\" id=\"phantom-rider\"><h3 class=\"stat-name\"><img class=\"book-icon\" src=\"images/icons/undead.svg\" alt=\"\" width=\"18\" height=\"18\" loading=\"lazy\">Phantom Rider</h3><p class=\"stat-tags\">Group, large, spirit, undead, organized</p><p class=\"stat-stats\"><strong>HP</strong> 14; <strong>Armor</strong> 2 (lacks organs, shield)<br><strong>Damage</strong> spear <button type=\"button\" class=\"dice-roll\" data-dice=\"1d8\" title=\"Click to roll 1d8 — Shift: advantage · Ctrl: disadvantage\">1d8</button> (close, thrown) or trample <button type=\"button\" class=\"dice-roll\" data-dice=\"d8+2\" title=\"Click to roll d8+2 — Shift: advantage · Ctrl: disadvantage\">d8+2</button> (hand, forceful) or bow <button type=\"button\" class=\"dice-roll\" data-dice=\"d8\" title=\"Click to roll d8 — Shift: advantage · Ctrl: disadvantage\">d8</button> (near)<br><strong>Special qualities</strong> bound to their bones; can travel far and wide; can&#x27;t manifest in daylight; takes +<button type=\"button\" class=\"dice-roll\" data-dice=\"1d4\" title=\"Click to roll 1d4 — Shift: advantage · Ctrl: disadvantage\">1d4</button> damage from silver<br><strong>Instinct</strong> to seek tribute, to lord over others</p><ul class=\"stat-moves\"><li>Speed across the landscape like the wind itself</li><li>Form a body of soil, dust, and mist</li><li>Flank and harry their foes</li></ul><p class=\"stat-note\">For a time, it was common for warriors to pledge both their lives and their deaths to their lieges, and to be interred with their horses and their fellows in their master&#x27;s tomb. Thus, they could live on in death, still basking in a grim and joyless glory.</p></div>\n<div class=\"hazard-block\" id=\"deathless-ones\"><h3 class=\"stat-name\"><img class=\"book-icon\" src=\"images/icons/undead.svg\" alt=\"\" width=\"18\" height=\"18\" loading=\"lazy\">Deathless Ones</h3><p>In the time of the Barrow Builders, many warlords and sorcerers were obsessed with immortality. A number of them found it—or something like it—through undeath.</p><p>To create a deathless one, imagine a warlord (someone similar to a Manmarcher chief, <a class=\"wiki-link\" href=\"north-manmarch.html\" data-slug=\"north-manmarch\" >North Manmarch</a>), <a class=\"wiki-link\" href=\"the-things-below.html#sorcerer\" data-slug=\"the-things-below\" data-fragment=\"sorcerer\" >a sorcerer</a>, <a class=\"wiki-link\" href=\"death-and-the-undying.html#necromancer\" data-slug=\"death-and-the-undying\" data-fragment=\"necromancer\" >a necromancer</a>, or a <a class=\"wiki-link\" href=\"hillfolk.html#hdour\" data-slug=\"hillfolk\" data-fragment=\"hdour\" >hdour</a>. <a class=\"wiki-link\" href=\"the-things-below.html\" data-slug=\"the-things-below\" >Consider making them corrupted</a> by the Things Below. Add the undead tag, and give them +4 HP because they are animated by more than biology.</p><p>From there, pick or roll for the tether that sustains them, how it sustains them, and its limitation. Then pick or roll for the deathless one&#x27;s current state. Consider where and how they (or their influence) might be encountered. Let this all inform their story, their personality, and their stat block.</p></div>\n<div class=\"roll-table\" id=\"tether\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d12\" title=\"Click to roll 1d12 — Shift: advantage · Ctrl: disadvantage\">1d12</button> <span class=\"roll-label\">Tether</span></div><table><tbody><tr><th scope=\"row\">1-2</th><td>Small (needle, torc, ring, etc.)</td></tr><tr><th scope=\"row\">3-4</th><td>◇ (sword, scepter, crown, scroll, mummified hand, etc.)</td></tr><tr><th scope=\"row\">5-6</th><td>◇◇ (shield, standard, urn, etc.)</td></tr><tr><th scope=\"row\">7-8</th><td>◇◇, cumbersome (bust, cauldron, coffer, tapestry, etc.)</td></tr><tr><th scope=\"row\">9-10</th><td>immobile (hoard, tree, cave, statue, sarcophagus, etc.)</td></tr><tr><th scope=\"row\">11-12</th><td>fragile and roll <button type=\"button\" class=\"dice-roll\" data-dice=\"d10\" title=\"Click to roll d10 — Shift: advantage · Ctrl: disadvantage\">d10</button> again (egg, porcelain, mirror, device, etc.)</td></tr></tbody></table></div>\n<div class=\"roll-table\" id=\"how-it-sustains-them\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d12\" title=\"Click to roll 1d12 — Shift: advantage · Ctrl: disadvantage\">1d12</button> <span class=\"roll-label\">How It Sustains Them</span></div><table><tbody><tr><th scope=\"row\">1-2</th><td>It hides their death/heart/soul</td></tr><tr><th scope=\"row\">3-4</th><td>It anchors their soul to the world</td></tr><tr><th scope=\"row\">5-6</th><td>It feeds/renews/recharges them</td></tr><tr><th scope=\"row\">7-8</th><td>It gives <a class=\"wiki-link\" href=\"death-and-the-undying.html#the-lady-of-crows\" data-slug=\"death-and-the-undying\" data-fragment=\"the-lady-of-crows\" >them leverage over the Lady of Crows</a></td></tr><tr><th scope=\"row\">9-10</th><td>It shields them from the Lady and <a class=\"wiki-link\" href=\"the-pale-hunter.html\" data-slug=\"the-pale-hunter\" >the Pale Hunter</a></td></tr><tr><th scope=\"row\">11-12</th><td>It suffers age/death/decrepitude in their place Unless their tether fails or is destroyed, they cannot truly die. Their body will eventually heal or regenerate, or their spirit will possess some hapless victim.</td></tr></tbody></table></div>\n<div class=\"roll-table\" id=\"limitation\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d12\" title=\"Click to roll 1d12 — Shift: advantage · Ctrl: disadvantage\">1d12</button> <span class=\"roll-label\">Limitation</span></div><table><tbody><tr><th scope=\"row\">1-2</th><td>They can&#x27;t leave its presence</td></tr><tr><th scope=\"row\">3-4</th><td>It must be fed/charged/maintained</td></tr><tr><th scope=\"row\">5-6</th><td>It must be relocated often</td></tr><tr><th scope=\"row\">7-8</th><td>Its destruction results in their instant, terrible, final death</td></tr><tr><th scope=\"row\">9-10</th><td>If &quot;killed,&quot; they require outside aid to be restored</td></tr><tr><th scope=\"row\">11-12</th><td>Roll <button type=\"button\" class=\"dice-roll\" data-dice=\"1d10\" title=\"Click to roll 1d10 — Shift: advantage · Ctrl: disadvantage\">1d10</button> twice</td></tr></tbody></table></div>\n<div class=\"roll-table\" id=\"current-state\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d12\" title=\"Click to roll 1d12 — Shift: advantage · Ctrl: disadvantage\">1d12</button> <span class=\"roll-label\">Current State</span></div><table><tbody><tr><th scope=\"row\">1-3</th><td>Greatly diminished, perhaps destroyed and waiting to return</td></tr><tr><th scope=\"row\">4-6</th><td>Imprisoned and largely forgotten</td></tr><tr><th scope=\"row\">7-9</th><td>Hidden, apathetic, self-involved</td></tr><tr><th scope=\"row\">10</th><td>Trapped, but with some influence</td></tr><tr><th scope=\"row\">11</th><td>Secretly active, pursuing schemes</td></tr><tr><th scope=\"row\">12</th><td>Roll <button type=\"button\" class=\"dice-roll\" data-dice=\"1d10\" title=\"Click to roll 1d10 — Shift: advantage · Ctrl: disadvantage\">1d10</button> twice  I&#x27;ve established that the Mindgem&#x27;s fiery heart is in the clutches of a deathless sorcerer, whose soul inhabits an arcane device <a class=\"wiki-link\" href=\"stone-lords.html\" data-slug=\"stone-lords\" >that controls a number of lithic servants</a>. <a class=\"wiki-link\" href=\"the-things-below.html#sorcerer\" data-slug=\"the-things-below\" data-fragment=\"sorcerer\" >I start with a sorcerer</a>, <a class=\"wiki-link\" href=\"the-things-below.html#elrash-orra-lord-of-orbs-the-many-eyes\" data-slug=\"the-things-below\" data-fragment=\"elrash-orra-lord-of-orbs-the-many-eyes\" >corrupted by El&#x27;rash-Orra</a>. For gifts, I give him a terrifying gaze and the ability to inflict false sensations. For marks, I give him slow-healing wounds and strange fascinations (he&#x27;s a voyeur). I already decided that he had &quot;anchored his soul&quot; to an arcane device in a Stone Lord manor (immobile, fragile). For a limitation, I think the device &quot;must be fed/charged/maintained,&quot; and that &quot;its destruction results in his final death.&quot; For a current state, I think he&#x27;s &quot;trapped, but with some influence&quot; via the lithic servants he can possess. I picture him in his oversized manor, seated on a makeshift throne, permanently wounded, unable to move on his own. A dozen faceless stone servants attend him, moving him like a puppet when needed. Behind the throne is a contraption of rune-carved stone and crystal, the makerglass heart burning at its core. His mind is spread among his servants, some of whom scour Three Coven Lake for artifacts, gossip, and materials to maintain his device. Should the device fail, his consciousness will splinter and his body will finally die. The servants, each containing a splinter of his soul, will fight each other for primacy. None will succeed.</td></tr></tbody></table></div>\n<p><em>I write up his stat block like this:</em></p>\n<h3 id=\"myghal-deathless-sorcerer\">MYGHAL, DEATHLESS SORCERER</h3>\n<div class=\"stat-block\" id=\"solitary-undead-corrupted-paranoid\"><h3 class=\"stat-name\">Solitary, Undead, Corrupted, Paranoid,</h3><p class=\"stat-tags\">magical, hoarder, terrifying</p><p class=\"stat-stats\"><strong>HP</strong> 16; ARMOR 4 (wards)<br>DAMAGE word of false pain <button type=\"button\" class=\"dice-roll\" data-dice=\"d8\" title=\"Click to roll d8 — Shift: advantage · Ctrl: disadvantage\">d8</button> (near, area, ignores armor)<br>SPECIAL QUALITIES tethered to the device; broken body; aware of all that his servants perceive INSTINCT to jealously hoard secrets</p><p class=\"stat-note\">&gt; Inflict false sensations on others</p><p class=\"stat-note\">&gt; Fix someone with his terrible gaze</p><p class=\"stat-note\">&gt; Reveal a plan or a horrid truth</p><p class=\"stat-note\">&gt; Control his lithic servants like they were extensions of himself</p><p class=\"stat-note\">&gt; Recover from any wound, slowly and never fully</p></div>",
+        "html": "<h2 id=\"dangers\">Dangers</h2>\n<h3 id=\"hazards\">Hazards</h3>\n<ul class=\"bullets\"><li><a class=\"wiki-link\" href=\"stone-lords.html#unstable-construction\" data-slug=\"stone-lords\" data-fragment=\"unstable-construction\" ><strong>Unstable construction</strong></a></li><li><a class=\"wiki-link\" href=\"stone-lords.html#perilous-stone\" data-slug=\"stone-lords\" data-fragment=\"perilous-stone\" ><strong>Perilous stone</strong></a></li><li><a class=\"wiki-link\" href=\"the-dread-river.html#cursed-object\" data-slug=\"the-dread-river\" data-fragment=\"cursed-object\" ><strong>Cursed objects</strong></a></li><li>Darkness, deep in a barrow</li><li>Low ceilings, cramped quarters, poor lines of sight</li></ul>\n<hr>\n<div class=\"hazard-block\" id=\"banefire\"><h3 class=\"stat-name\"><img class=\"book-icon\" src=\"images/icons/danger.svg\" alt=\"\" width=\"18\" height=\"18\" loading=\"lazy\">Banefire</h3><p>Curtains or pillars of heatless flame, blue or green or purple, with no obvious source of fuel. Banefire features in many tales of the barrows: to repel, to imprison, or just as an uncanny feature of the mounds.</p><ul class=\"bullets\"><li>Spring forth with little/no warning</li><li>Blind them with sudden light</li><li>Block a path or a line of sight</li><li>Burn spirits, the undead, and living souls (<button type=\"button\" class=\"dice-roll\" data-dice=\"d8\" title=\"Click to roll d8 — Shift: advantage · Ctrl: disadvantage\">d8</button> damage, ignores armor)</li></ul><p>Something interesting: Ghosts and other spirits fear banefire as much as mortals, but the inhabitants of some barrows can control it.</p><p>Something useful: Banefire burns only where it&#x27;s meant to; it never spreads. Each banefire is anchored to a blackened bone, all that remains of the mortal whose body and soul were sacrificed to fuel the flames.</p></div>\n<hr>\n<div class=\"hazard-block\" id=\"traps\"><h3 class=\"stat-name\"><img class=\"book-icon\" src=\"images/icons/danger.svg\" alt=\"\" width=\"18\" height=\"18\" loading=\"lazy\">Traps</h3><p>They put all that effort into building barrows. They weren&#x27;t going to leave them unguarded.</p><p>To create a trap, consider the barrow&#x27;s purpose and what it contains, and where the trap is found. Then pick or roll for the trap&#x27;s intent, its trigger, its tell, and as many elements as makes sense. Imagine how it works. If you like, prep GM moves and/or an impending doom for the trap, and maybe a custom player move.</p></div>\n<div class=\"roll-table\" id=\"intent\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d12\" title=\"Click to roll 1d12 — Shift: advantage · Ctrl: disadvantage\">1d12</button> <span class=\"roll-label\">Intent</span></div><table><tbody><tr><th scope=\"row\">1-2</th><td>To kill/maim/injure</td></tr><tr><th scope=\"row\">3-4</th><td>To repel/separate/deny/isolate</td></tr><tr><th scope=\"row\">5-6</th><td>To weaken/hinder/delay</td></tr><tr><th scope=\"row\">7-8</th><td>To capture/punish/torment</td></tr><tr><th scope=\"row\">9-10</th><td>To alert/awaken/prepare</td></tr><tr><th scope=\"row\">11-12</th><td>Roll <button type=\"button\" class=\"dice-roll\" data-dice=\"d10\" title=\"Click to roll d10 — Shift: advantage · Ctrl: disadvantage\">d10</button> twice</td></tr></tbody></table></div>\n<div class=\"roll-table\" id=\"trigger\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d12\" title=\"Click to roll 1d12 — Shift: advantage · Ctrl: disadvantage\">1d12</button> <span class=\"roll-label\">Trigger</span></div><table><tbody><tr><th scope=\"row\">1-2</th><td>Stepping/entering/being/staying somewhere</td></tr><tr><th scope=\"row\">3-4</th><td>Touching something</td></tr><tr><th scope=\"row\">5-6</th><td>Moving something/picking it up</td></tr><tr><th scope=\"row\">7-8</th><td>Breaking/disturbing something</td></tr><tr><th scope=\"row\">9-10</th><td>Opening/closing something</td></tr><tr><th scope=\"row\">11-12</th><td>Perceiving/examining/tinkering with something</td></tr></tbody></table></div>\n<div class=\"roll-table\" id=\"tell\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d12\" title=\"Click to roll 1d12 — Shift: advantage · Ctrl: disadvantage\">1d12</button> <span class=\"roll-label\">Tell</span></div><table><tbody><tr><th scope=\"row\">1</th><td>A brief warning before it goes off</td></tr><tr><th scope=\"row\">2-4</th><td>A tiny detail, easy to miss</td></tr><tr><th scope=\"row\">5-7</th><td>Unusual construction/decor</td></tr><tr><th scope=\"row\">8-10</th><td>Bait</td></tr><tr><th scope=\"row\">11-12</th><td>Clear signs—it&#x27;s obviously a trap</td></tr></tbody></table></div>\n<div class=\"roll-table\" id=\"elements\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d12\" title=\"Click to roll 1d12 — Shift: advantage · Ctrl: disadvantage\">1d12</button> <span class=\"roll-label\">Elements</span></div><table><tbody><tr><th scope=\"row\">1</th><td>Camouflage/illusion/deception</td></tr><tr><th scope=\"row\">2</th><td>Gravity/weight/mass/hardness</td></tr><tr><th scope=\"row\">3</th><td>Blades/spikes/needles/pointy bits</td></tr><tr><th scope=\"row\">4</th><td>Wire/rope/pulleys/contraptions</td></tr><tr><th scope=\"row\">5</th><td>Tension/pressure/springs/balance</td></tr><tr><th scope=\"row\">6</th><td>Chemics/poison/acid/gas/fire</td></tr><tr><th scope=\"row\">7</th><td>Special materials (see below)</td></tr><tr><th scope=\"row\">8</th><td>Runes/glyphs/sigils/marks/spells</td></tr><tr><th scope=\"row\">9</th><td>Light/dark/heat/cold/noise/quiet</td></tr><tr><th scope=\"row\">10</th><td>Thoughts/emotions/mind games</td></tr><tr><th scope=\"row\">11</th><td>Spirits/constructs/undead/vermin</td></tr><tr><th scope=\"row\">12</th><td>Previously triggered/<a class=\"wiki-link\" href=\"green-lords.html\" data-slug=\"green-lords\" >disarmed Special materials might include hazardous growths</a>, <a class=\"wiki-link\" href=\"forge-lords.html#orichalcum\" data-slug=\"forge-lords\" data-fragment=\"orichalcum\" >orichalcum</a>, <a class=\"wiki-link\" href=\"primordial-powers.html#black-iron\" data-slug=\"primordial-powers\" data-fragment=\"black-iron\" >black iron</a>, <a class=\"wiki-link\" href=\"rime-lords.html#dark-ice\" data-slug=\"rime-lords\" data-fragment=\"dark-ice\" >dark ice</a>, <a class=\"wiki-link\" href=\"stone-lords.html#makerglass\" data-slug=\"stone-lords\" data-fragment=\"makerglass\" >makerglass</a>, <a class=\"wiki-link\" href=\"tempest-lords.html#aetherium\" data-slug=\"tempest-lords\" data-fragment=\"aetherium\" >aetherium</a>, <a class=\"wiki-link\" href=\"the-things-below.html#red-crystal\" data-slug=\"the-things-below\" data-fragment=\"red-crystal\" >red crystal</a>, and/or other things of your devising.</td></tr></tbody></table></div>\n<p>Examples:</p>\n<ul class=\"bullets\"><li>A pit, 15-feet deep, the bottom lined with rusty spikes; covered by taut fabric, pebbles, and dust</li><li>A gap runs down the ceiling of a low tunnel; stepping on a flagstone releases a swinging axe</li><li>A puzzle-box on a decoy coffin; futzing with it releases stabby little constructs from the coffin</li><li>A corpse&#x27;s sword; moving it pulls a wire, which upends an urn full of salt and releases a trapped wraith</li><li>A rune-etched doorway; any who try to enter stop, turn around, and forget the last few minutes</li><li>Opening the door to the final vault</li></ul>\n<p>requires removing a keystone; the whole barrow will collapse</p>\n<ul class=\"bullets\"><li>Sconces of glowing makerglass; break the rune-seal on the sarcophagus, get fried by lightning</li><li>A dead-end, the word VIGILANCE carved on the far wall, the room full of colorless, odorless gas; causes headaches, irritability, fainting, death</li></ul>\n<hr>\n<h3 id=\"people\">People</h3>\n<ul class=\"bullets\"><li><a class=\"wiki-link\" href=\"hillfolk.html\" data-slug=\"hillfolk\" ><strong>Hillfolk</strong></a>, warning away explorers or chasing them off</li><li>A <a class=\"wiki-link\" href=\"hillfolk.html#hdour\" data-slug=\"hillfolk\" data-fragment=\"hdour\" ><strong>hdour</strong></a>, <a class=\"wiki-link\" href=\"lygos-and-the-south.html#antiquarian\" data-slug=\"lygos-and-the-south\" data-fragment=\"antiquarian\" ><strong>antiquarian</strong></a>, or <a class=\"wiki-link\" href=\"the-things-below.html#sorcerer\" data-slug=\"the-things-below\" data-fragment=\"sorcerer\" ><strong>sorcerer</strong></a>, seeking knowledge/artifacts</li><li><a class=\"wiki-link\" href=\"lygos-and-the-south.html#adventurer\" data-slug=\"lygos-and-the-south\" data-fragment=\"adventurer\" ><strong>Adventurers</strong></a>, hunting treasure</li><li>A <a class=\"wiki-link\" href=\"death-and-the-undying.html#necromancer\" data-slug=\"death-and-the-undying\" data-fragment=\"necromancer\" ><strong>necromancer</strong></a>, consulting with those long-dead</li></ul>\n<hr>\n<h3 id=\"monsters\">Monsters</h3>\n<ul class=\"bullets\"><li><a class=\"wiki-link\" href=\"death-and-the-undying.html#ghosts\" data-slug=\"death-and-the-undying\" data-fragment=\"ghosts\" ><strong>Ghosts</strong></a> and <a class=\"wiki-link\" href=\"death-and-the-undying.html#revenants\" data-slug=\"death-and-the-undying\" data-fragment=\"revenants\" ><strong>revenants</strong></a>, haunting barrows, reclaimed ruins, old battlegrounds mass graves</li><li><a class=\"wiki-link\" href=\"stone-lords.html#construct\" data-slug=\"stone-lords\" data-fragment=\"construct\" ><strong>Constructs</strong></a>, stolen from the Stone Lords or made using their arts</li><li><a class=\"wiki-link\" href=\"the-things-below.html#corrupted-being\" data-slug=\"the-things-below\" data-fragment=\"corrupted-being\" ><strong>Corrupted beings</strong></a>, ancient pets of ancient sorcerers, or local fauna affected by lingering evil</li><li><a class=\"wiki-link\" href=\"spirits-of-the-wild.html\" data-slug=\"spirits-of-the-wild\" ><strong>Spirits of the wild</strong></a>, bound by old spells</li></ul>\n<div class=\"stat-block\" id=\"barrow-wight\"><h3 class=\"stat-name\"><img class=\"book-icon\" src=\"images/icons/undead.svg\" alt=\"\" width=\"18\" height=\"18\" loading=\"lazy\">Barrow Wight</h3><p class=\"stat-tags\">Group, undead, corrupted, terrifying, hardy, hoarder</p><p class=\"stat-stats\"><strong>HP</strong> 14; <strong>Armor</strong> 4 (resilience), 2 vs. bronze or fire (mail)<br><strong>Damage</strong> rusty sword <button type=\"button\" class=\"dice-roll\" data-dice=\"d8+2\" title=\"Click to roll d8+2 — Shift: advantage · Ctrl: disadvantage\">d8+2</button> (close, forceful) or crushing grip <button type=\"button\" class=\"dice-roll\" data-dice=\"d8+2\" title=\"Click to roll d8+2 — Shift: advantage · Ctrl: disadvantage\">d8+2</button> (hand, grabby, forceful)<br><strong>Special qualities</strong> bound to their barrow<br><strong>Instinct</strong> to protect their hoard</p><ul class=\"stat-moves\"><li>Utter an echoing warning</li><li>Block an exit</li><li>Stand fast, refusing to be moved</li><li>Keep fighting with or reattach a severed limb</li></ul><p class=\"stat-note\">As you might expect, grave robbing was always a problem for the Barrow Builders.</p><p class=\"stat-note\">But a clever sorcerer had a solution! So many hateful spirits roamed the world in those days. Why not bind some to the corpses of the deceased, and let the dead guard their own treasure?</p></div>\n<div class=\"stat-block\" id=\"phantom-rider\"><h3 class=\"stat-name\"><img class=\"book-icon\" src=\"images/icons/undead.svg\" alt=\"\" width=\"18\" height=\"18\" loading=\"lazy\">Phantom Rider</h3><p class=\"stat-tags\">Group, large, spirit, undead, organized</p><p class=\"stat-stats\"><strong>HP</strong> 14; <strong>Armor</strong> 2 (lacks organs, shield)<br><strong>Damage</strong> spear <button type=\"button\" class=\"dice-roll\" data-dice=\"1d8\" title=\"Click to roll 1d8 — Shift: advantage · Ctrl: disadvantage\">1d8</button> (close, thrown) or trample <button type=\"button\" class=\"dice-roll\" data-dice=\"d8+2\" title=\"Click to roll d8+2 — Shift: advantage · Ctrl: disadvantage\">d8+2</button> (hand, forceful) or bow <button type=\"button\" class=\"dice-roll\" data-dice=\"d8\" title=\"Click to roll d8 — Shift: advantage · Ctrl: disadvantage\">d8</button> (near)<br><strong>Special qualities</strong> bound to their bones; can travel far and wide; can&#x27;t manifest in daylight; takes +<button type=\"button\" class=\"dice-roll\" data-dice=\"1d4\" title=\"Click to roll 1d4 — Shift: advantage · Ctrl: disadvantage\">1d4</button> damage from silver<br><strong>Instinct</strong> to seek tribute, to lord over others</p><ul class=\"stat-moves\"><li>Speed across the landscape like the wind itself</li><li>Form a body of soil, dust, and mist</li><li>Flank and harry their foes</li></ul><p class=\"stat-note\">For a time, it was common for warriors to pledge both their lives and their deaths to their lieges, and to be interred with their horses and their fellows in their master&#x27;s tomb. Thus, they could live on in death, still basking in a grim and joyless glory.</p></div>\n<div class=\"hazard-block\" id=\"deathless-ones\"><h3 class=\"stat-name\"><img class=\"book-icon\" src=\"images/icons/undead.svg\" alt=\"\" width=\"18\" height=\"18\" loading=\"lazy\">Deathless Ones</h3><p>In the time of the Barrow Builders, many warlords and sorcerers were obsessed with immortality. A number of them found it—or something like it—through undeath.</p><p>To create a deathless one, imagine a warlord (someone similar to a Manmarcher chief, <a class=\"wiki-link\" href=\"north-manmarch.html\" data-slug=\"north-manmarch\" >North Manmarch</a>), <a class=\"wiki-link\" href=\"the-things-below.html#sorcerer\" data-slug=\"the-things-below\" data-fragment=\"sorcerer\" >a sorcerer</a>, <a class=\"wiki-link\" href=\"death-and-the-undying.html#necromancer\" data-slug=\"death-and-the-undying\" data-fragment=\"necromancer\" >a necromancer</a>, or a <a class=\"wiki-link\" href=\"hillfolk.html#hdour\" data-slug=\"hillfolk\" data-fragment=\"hdour\" >hdour</a>. <a class=\"wiki-link\" href=\"the-things-below.html\" data-slug=\"the-things-below\" >Consider making them corrupted</a> by the Things Below. Add the undead tag, and give them +4 HP because they are animated by more than biology.</p><p>From there, pick or roll for the tether that sustains them, how it sustains them, and its limitation. Then pick or roll for the deathless one&#x27;s current state. Consider where and how they (or their influence) might be encountered. Let this all inform their story, their personality, and their stat block.</p></div>\n<div class=\"roll-table\" id=\"tether\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d12\" title=\"Click to roll 1d12 — Shift: advantage · Ctrl: disadvantage\">1d12</button> <span class=\"roll-label\">Tether</span></div><table><tbody><tr><th scope=\"row\">1-2</th><td>Small (needle, torc, ring, etc.)</td></tr><tr><th scope=\"row\">3-4</th><td>◇ (sword, scepter, crown, scroll, mummified hand, etc.)</td></tr><tr><th scope=\"row\">5-6</th><td>◇◇ (shield, standard, urn, etc.)</td></tr><tr><th scope=\"row\">7-8</th><td>◇◇, cumbersome (bust, cauldron, coffer, tapestry, etc.)</td></tr><tr><th scope=\"row\">9-10</th><td>immobile (hoard, tree, cave, statue, sarcophagus, etc.)</td></tr><tr><th scope=\"row\">11-12</th><td>fragile and roll <button type=\"button\" class=\"dice-roll\" data-dice=\"d10\" title=\"Click to roll d10 — Shift: advantage · Ctrl: disadvantage\">d10</button> again (egg, porcelain, mirror, device, etc.)</td></tr></tbody></table></div>\n<div class=\"roll-table\" id=\"how-it-sustains-them\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d12\" title=\"Click to roll 1d12 — Shift: advantage · Ctrl: disadvantage\">1d12</button> <span class=\"roll-label\">How It Sustains Them</span></div><table><tbody><tr><th scope=\"row\">1-2</th><td>It hides their death/heart/soul</td></tr><tr><th scope=\"row\">3-4</th><td>It anchors their soul to the world</td></tr><tr><th scope=\"row\">5-6</th><td>It feeds/renews/recharges them</td></tr><tr><th scope=\"row\">7-8</th><td>It gives <a class=\"wiki-link\" href=\"death-and-the-undying.html#the-lady-of-crows\" data-slug=\"death-and-the-undying\" data-fragment=\"the-lady-of-crows\" >them leverage over the Lady of Crows</a></td></tr><tr><th scope=\"row\">9-10</th><td>It shields them from the Lady and <a class=\"wiki-link\" href=\"the-pale-hunter.html\" data-slug=\"the-pale-hunter\" >the Pale Hunter</a></td></tr><tr><th scope=\"row\">11-12</th><td>It suffers age/death/decrepitude in their place Unless their tether fails or is destroyed, they cannot truly die. Their body will eventually heal or regenerate, or their spirit will possess some hapless victim.</td></tr></tbody></table></div>\n<div class=\"roll-table\" id=\"limitation\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d12\" title=\"Click to roll 1d12 — Shift: advantage · Ctrl: disadvantage\">1d12</button> <span class=\"roll-label\">Limitation</span></div><table><tbody><tr><th scope=\"row\">1-2</th><td>They can&#x27;t leave its presence</td></tr><tr><th scope=\"row\">3-4</th><td>It must be fed/charged/maintained</td></tr><tr><th scope=\"row\">5-6</th><td>It must be relocated often</td></tr><tr><th scope=\"row\">7-8</th><td>Its destruction results in their instant, terrible, final death</td></tr><tr><th scope=\"row\">9-10</th><td>If &quot;killed,&quot; they require outside aid to be restored</td></tr><tr><th scope=\"row\">11-12</th><td>Roll <button type=\"button\" class=\"dice-roll\" data-dice=\"1d10\" title=\"Click to roll 1d10 — Shift: advantage · Ctrl: disadvantage\">1d10</button> twice</td></tr></tbody></table></div>\n<div class=\"roll-table\" id=\"current-state\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d12\" title=\"Click to roll 1d12 — Shift: advantage · Ctrl: disadvantage\">1d12</button> <span class=\"roll-label\">Current State</span></div><table><tbody><tr><th scope=\"row\">1-3</th><td>Greatly diminished, perhaps destroyed and waiting to return</td></tr><tr><th scope=\"row\">4-6</th><td>Imprisoned and largely forgotten</td></tr><tr><th scope=\"row\">7-9</th><td>Hidden, apathetic, self-involved</td></tr><tr><th scope=\"row\">10</th><td>Trapped, but with some influence</td></tr><tr><th scope=\"row\">11</th><td>Secretly active, pursuing schemes</td></tr><tr><th scope=\"row\">12</th><td>Roll <button type=\"button\" class=\"dice-roll\" data-dice=\"1d10\" title=\"Click to roll 1d10 — Shift: advantage · Ctrl: disadvantage\">1d10</button> twice  I&#x27;ve established that the Mindgem&#x27;s fiery heart is in the clutches of a deathless sorcerer, whose soul inhabits an arcane device <a class=\"wiki-link\" href=\"stone-lords.html\" data-slug=\"stone-lords\" >that controls a number of lithic servants</a>. <a class=\"wiki-link\" href=\"the-things-below.html#sorcerer\" data-slug=\"the-things-below\" data-fragment=\"sorcerer\" >I start with a sorcerer</a>, <a class=\"wiki-link\" href=\"the-things-below.html#elrash-orra-lord-of-orbs-the-many-eyes\" data-slug=\"the-things-below\" data-fragment=\"elrash-orra-lord-of-orbs-the-many-eyes\" >corrupted by El&#x27;rash-Orra</a>. For gifts, I give him a terrifying gaze and the ability to inflict false sensations. For marks, I give him slow-healing wounds and strange fascinations (he&#x27;s a voyeur). I already decided that he had &quot;anchored his soul&quot; to an arcane device in a Stone Lord manor (immobile, fragile). For a limitation, I think the device &quot;must be fed/charged/maintained,&quot; and that &quot;its destruction results in his final death.&quot; For a current state, I think he&#x27;s &quot;trapped, but with some influence&quot; via the lithic servants he can possess. I picture him in his oversized manor, seated on a makeshift throne, permanently wounded, unable to move on his own. A dozen faceless stone servants attend him, moving him like a puppet when needed. Behind the throne is a contraption of rune-carved stone and crystal, the makerglass heart burning at its core. His mind is spread among his servants, some of whom scour Three Coven Lake for artifacts, gossip, and materials to maintain his device. Should the device fail, his consciousness will splinter and his body will finally die. The servants, each containing a splinter of his soul, will fight each other for primacy. None will succeed.</td></tr></tbody></table></div>\n<p><em>I write up his stat block like this:</em></p>\n<div class=\"stat-block\" id=\"myghal-deathless-sorcerer\"><h3 class=\"stat-name\">Myghal, Deathless Sorcerer</h3><p class=\"stat-tags\">Solitary, undead, corrupted, paranoid, magical, hoarder, terrifying</p><p class=\"stat-stats\"><strong>HP</strong> 16; ARMOR 4 (wards)<br>DAMAGE word of false pain <button type=\"button\" class=\"dice-roll\" data-dice=\"d8\" title=\"Click to roll d8 — Shift: advantage · Ctrl: disadvantage\">d8</button> (near, area, ignores armor)<br>SPECIAL QUALITIES tethered to the device; broken body; aware of all that his servants perceive INSTINCT to jealously hoard secrets</p><p class=\"stat-note\">&gt; Inflict false sensations on others</p><p class=\"stat-note\">&gt; Fix someone with his terrible gaze</p><p class=\"stat-note\">&gt; Reveal a plan or a horrid truth</p><p class=\"stat-note\">&gt; Control his lithic servants like they were extensions of himself</p><p class=\"stat-note\">&gt; Recover from any wound, slowly and never fully</p></div>",
         "kind": "section"
       },
       "hazards": {
@@ -6008,11 +6008,6 @@ window.WIKI_PREVIEWS = {
       "monsters": {
         "name": "Monsters",
         "html": "<h3 id=\"monsters\">Monsters</h3>\n<ul class=\"bullets\"><li><a class=\"wiki-link\" href=\"death-and-the-undying.html#ghosts\" data-slug=\"death-and-the-undying\" data-fragment=\"ghosts\" ><strong>Ghosts</strong></a> and <a class=\"wiki-link\" href=\"death-and-the-undying.html#revenants\" data-slug=\"death-and-the-undying\" data-fragment=\"revenants\" ><strong>revenants</strong></a>, haunting barrows, reclaimed ruins, old battlegrounds mass graves</li><li><a class=\"wiki-link\" href=\"stone-lords.html#construct\" data-slug=\"stone-lords\" data-fragment=\"construct\" ><strong>Constructs</strong></a>, stolen from the Stone Lords or made using their arts</li><li><a class=\"wiki-link\" href=\"the-things-below.html#corrupted-being\" data-slug=\"the-things-below\" data-fragment=\"corrupted-being\" ><strong>Corrupted beings</strong></a>, ancient pets of ancient sorcerers, or local fauna affected by lingering evil</li><li><a class=\"wiki-link\" href=\"spirits-of-the-wild.html\" data-slug=\"spirits-of-the-wild\" ><strong>Spirits of the wild</strong></a>, bound by old spells</li></ul>\n<div class=\"stat-block\" id=\"barrow-wight\">",
-        "kind": "section"
-      },
-      "myghal-deathless-sorcerer": {
-        "name": "MYGHAL, DEATHLESS SORCERER",
-        "html": "<h3 id=\"myghal-deathless-sorcerer\">MYGHAL, DEATHLESS SORCERER</h3>\n<div class=\"stat-block\" id=\"solitary-undead-corrupted-paranoid\">",
         "kind": "section"
       }
     }
@@ -10208,9 +10203,9 @@ window.WIKI_PREVIEWS = {
         "html": "<div class=\"stat-block\" id=\"base-archon\"><h3 class=\"stat-name\"><img class=\"book-icon\" src=\"images/icons/primordial.svg\" alt=\"\" width=\"18\" height=\"18\" loading=\"lazy\">Base Archon</h3><p class=\"stat-tags\">Solitary, large, primordial, spirit, construct, magical, terrifying</p><p class=\"stat-stats\"><strong>HP</strong> 23; <strong>Armor</strong> 5 (resilience, lacks vitals), 1 vs. black iron<br><strong>Damage</strong> physical blows <button type=\"button\" class=\"dice-roll\" data-dice=\"d12+3\" title=\"Click to roll d12+3 — Shift: advantage · Ctrl: disadvantage\">d12+3</button> w/advantage (close, reach, forceful)<br><strong>Special qualities</strong> ageless, immune to the elements, perceives thought and matter, omnilingual<br><strong>Instinct</strong> per its purpose</p><p class=\"stat-note\">For an example, see Tcaventes, <a class=\"wiki-link\" href=\"the-labyrinth.html#tcaventes-shackle-and-key\" data-slug=\"the-labyrinth\" data-fragment=\"tcaventes-shackle-and-key\" >Shackle and Key</a>.</p><div class=\"roll-table roll-table-inline\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d12\" title=\"Click to roll 1d12 — Shift: advantage · Ctrl: disadvantage\">1d12</button> <span class=\"roll-label\">Purpose</span></div><table><tbody><tr><th scope=\"row\">1</th><td>To seek out and destroy</td></tr><tr><th scope=\"row\">2</th><td>To find, judge, and punish</td></tr><tr><th scope=\"row\">3-4</th><td>To capture/retrieve</td></tr><tr><th scope=\"row\">5-6</th><td>To warn/castigate/correct</td></tr><tr><th scope=\"row\">7-12</th><td>To stand watch and protect</td></tr></tbody></table></div><div class=\"roll-table roll-table-inline\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d12\" title=\"Click to roll 1d12 — Shift: advantage · Ctrl: disadvantage\">1d12</button> <span class=\"roll-label\">Manifestation</span></div><table><tbody><tr><th scope=\"row\">1-2</th><td>Pure energy/light/fire: harmed only by black iron</td></tr><tr><th scope=\"row\">3-4</th><td>A construct/animate statue: -spirit, Armor 6, or 4 vs. black iron</td></tr><tr><th scope=\"row\">5-6</th><td>A mass of vapor/dust/ash/soil/ etc.: takes half damage except from black iron</td></tr><tr><th scope=\"row\">7-8</th><td>A ripple in reality: +stealthy, harmed only by black iron</td></tr><tr><th scope=\"row\">9-10</th><td>Someone plucked from the mind of whoever it interacts with</td></tr><tr><th scope=\"row\">11-12</th><td>An impossible entity, surreal and weird and awe-inspiring</td></tr></tbody></table></div><div class=\"roll-table roll-table-inline\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d12\" title=\"Click to roll 1d12 — Shift: advantage · Ctrl: disadvantage\">1d12</button> <span class=\"roll-label\">Powers</span></div><table><tbody><tr><th scope=\"row\">1</th><td>Smites at range (far or near, area)</td></tr><tr><th scope=\"row\">2</th><td>Manipulates the environment</td></tr><tr><th scope=\"row\">3</th><td>Teleports, or close enough</td></tr><tr><th scope=\"row\">4</th><td>Pierces deception, compels truth</td></tr><tr><th scope=\"row\">5</th><td>Stuns/deafens/blinds/hobbles foes</td></tr><tr><th scope=\"row\">6</th><td>Marks/curses/binds targets</td></tr><tr><th scope=\"row\">7</th><td>Compels mortals/lesser spirits to __</td></tr><tr><th scope=\"row\">8</th><td>Foresees the future, likely outcomes</td></tr><tr><th scope=\"row\">9</th><td>Harms weapons used against them</td></tr><tr><th scope=\"row\">10</th><td>Dispels/disenchants magical effects</td></tr><tr><th scope=\"row\">11</th><td>Quells emotions, instills peace</td></tr><tr><th scope=\"row\">12</th><td>Something special, unique, thematic Archons have unique names with unlikely combinations of sounds, with majestic and enigmatic titles. For example: Qrenithar, Dawn Herald; Klythorim, Arrow of Time; Xezaltran the Inevitable; Jharvakus, the Silent Witness; Phrysthalin, Bearer of Scales; and Lyvontis, the Judge Incorruptible.</td></tr></tbody></table></div></div>",
         "kind": "stat-block"
       },
-      "solitary-large-primordial-spirit": {
-        "name": "Solitary, large, primordial, spirit,",
-        "html": "<div class=\"stat-block\" id=\"solitary-large-primordial-spirit\"><h3 class=\"stat-name\">Solitary, Large, Primordial, Spirit,</h3><p class=\"stat-tags\">construct, magical, terrifying</p><p class=\"stat-stats\"><strong>HP</strong> 23, ARMOR 1 (lacks vitals), harmed only by black iron<br>DAMAGE white flame <button type=\"button\" class=\"dice-roll\" data-dice=\"d12+3\" title=\"Click to roll d12+3 — Shift: advantage · Ctrl: disadvantage\">d12+3</button> w/ advantage (hand, close, forceful, messy, 3 piercing)<br>SPECIAL QUALITIES: ageless, immune to the elements, perceives thought and matter, omnilingual<br>INSTINCT: to correct mistakes</p><ul class=\"stat-moves\"><li>&gt; Detect magic run amok</li><li>&gt; Appear as a column of white flame, painful to look upon</li><li>&gt; Vanish, maybe appear elsewhere</li><li>&gt; Burn magic away from the world</li></ul></div>",
+      "livrothos-cleansing-flame": {
+        "name": "LIVROTHOS, CLEANSING FLAME",
+        "html": "<div class=\"stat-block\" id=\"livrothos-cleansing-flame\"><h3 class=\"stat-name\">Livrothos, Cleansing Flame</h3><p class=\"stat-tags\">Solitary, large, primordial, spirit, construct, magical, terrifying</p><p class=\"stat-stats\"><strong>HP</strong> 23, ARMOR 1 (lacks vitals), harmed only by black iron<br>DAMAGE white flame <button type=\"button\" class=\"dice-roll\" data-dice=\"d12+3\" title=\"Click to roll d12+3 — Shift: advantage · Ctrl: disadvantage\">d12+3</button> w/ advantage (hand, close, forceful, messy, 3 piercing)<br>SPECIAL QUALITIES: ageless, immune to the elements, perceives thought and matter, omnilingual<br>INSTINCT: to correct mistakes</p><ul class=\"stat-moves\"><li>&gt; Detect magic run amok</li><li>&gt; Appear as a column of white flame, painful to look upon</li><li>&gt; Vanish, maybe appear elsewhere</li><li>&gt; Burn magic away from the world</li></ul></div>",
         "kind": "stat-block"
       },
       "marker": {
@@ -10380,12 +10375,7 @@ window.WIKI_PREVIEWS = {
       },
       "archons": {
         "name": "Archons",
-        "html": "<h2 id=\"archons\">Archons</h2>\n<p>Archons are constructed <a class=\"wiki-link\" href=\"spirits-of-the-wild.html\" data-slug=\"spirits-of-the-wild\" ><strong>spirits</strong></a>, made by the First Creators or one of the great spirits as guardians and enforcers of the cosmic order.</p>\n<p>Start with the base archon stat block below. Pick or roll for their purpose, their manifestation, and up to 3 powers. Adjust the stat block to reflect these choices or results, writing at least one move to reflect its purpose and one to reflect it manifesting (unless its manifestation is a construct/ animate statue).</p>\n<hr>\n<div class=\"stat-block\" id=\"base-archon\"><h3 class=\"stat-name\"><img class=\"book-icon\" src=\"images/icons/primordial.svg\" alt=\"\" width=\"18\" height=\"18\" loading=\"lazy\">Base Archon</h3><p class=\"stat-tags\">Solitary, large, primordial, spirit, construct, magical, terrifying</p><p class=\"stat-stats\"><strong>HP</strong> 23; <strong>Armor</strong> 5 (resilience, lacks vitals), 1 vs. black iron<br><strong>Damage</strong> physical blows <button type=\"button\" class=\"dice-roll\" data-dice=\"d12+3\" title=\"Click to roll d12+3 — Shift: advantage · Ctrl: disadvantage\">d12+3</button> w/advantage (close, reach, forceful)<br><strong>Special qualities</strong> ageless, immune to the elements, perceives thought and matter, omnilingual<br><strong>Instinct</strong> per its purpose</p><p class=\"stat-note\">For an example, see Tcaventes, <a class=\"wiki-link\" href=\"the-labyrinth.html#tcaventes-shackle-and-key\" data-slug=\"the-labyrinth\" data-fragment=\"tcaventes-shackle-and-key\" >Shackle and Key</a>.</p><div class=\"roll-table roll-table-inline\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d12\" title=\"Click to roll 1d12 — Shift: advantage · Ctrl: disadvantage\">1d12</button> <span class=\"roll-label\">Purpose</span></div><table><tbody><tr><th scope=\"row\">1</th><td>To seek out and destroy</td></tr><tr><th scope=\"row\">2</th><td>To find, judge, and punish</td></tr><tr><th scope=\"row\">3-4</th><td>To capture/retrieve</td></tr><tr><th scope=\"row\">5-6</th><td>To warn/castigate/correct</td></tr><tr><th scope=\"row\">7-12</th><td>To stand watch and protect</td></tr></tbody></table></div><div class=\"roll-table roll-table-inline\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d12\" title=\"Click to roll 1d12 — Shift: advantage · Ctrl: disadvantage\">1d12</button> <span class=\"roll-label\">Manifestation</span></div><table><tbody><tr><th scope=\"row\">1-2</th><td>Pure energy/light/fire: harmed only by black iron</td></tr><tr><th scope=\"row\">3-4</th><td>A construct/animate statue: -spirit, Armor 6, or 4 vs. black iron</td></tr><tr><th scope=\"row\">5-6</th><td>A mass of vapor/dust/ash/soil/ etc.: takes half damage except from black iron</td></tr><tr><th scope=\"row\">7-8</th><td>A ripple in reality: +stealthy, harmed only by black iron</td></tr><tr><th scope=\"row\">9-10</th><td>Someone plucked from the mind of whoever it interacts with</td></tr><tr><th scope=\"row\">11-12</th><td>An impossible entity, surreal and weird and awe-inspiring</td></tr></tbody></table></div><div class=\"roll-table roll-table-inline\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d12\" title=\"Click to roll 1d12 — Shift: advantage · Ctrl: disadvantage\">1d12</button> <span class=\"roll-label\">Powers</span></div><table><tbody><tr><th scope=\"row\">1</th><td>Smites at range (far or near, area)</td></tr><tr><th scope=\"row\">2</th><td>Manipulates the environment</td></tr><tr><th scope=\"row\">3</th><td>Teleports, or close enough</td></tr><tr><th scope=\"row\">4</th><td>Pierces deception, compels truth</td></tr><tr><th scope=\"row\">5</th><td>Stuns/deafens/blinds/hobbles foes</td></tr><tr><th scope=\"row\">6</th><td>Marks/curses/binds targets</td></tr><tr><th scope=\"row\">7</th><td>Compels mortals/lesser spirits to __</td></tr><tr><th scope=\"row\">8</th><td>Foresees the future, likely outcomes</td></tr><tr><th scope=\"row\">9</th><td>Harms weapons used against them</td></tr><tr><th scope=\"row\">10</th><td>Dispels/disenchants magical effects</td></tr><tr><th scope=\"row\">11</th><td>Quells emotions, instills peace</td></tr><tr><th scope=\"row\">12</th><td>Something special, unique, thematic Archons have unique names with unlikely combinations of sounds, with majestic and enigmatic titles. For example: Qrenithar, Dawn Herald; Klythorim, Arrow of Time; Xezaltran the Inevitable; Jharvakus, the Silent Witness; Phrysthalin, Bearer of Scales; and Lyvontis, the Judge Incorruptible.</td></tr></tbody></table></div></div>\n<blockquote><p><em>The Seeker acquires the</em> <strong><em>Ineffable Words</em></strong> <em><a class=\"wiki-link\" href=\"major-ineffable-words.html\" data-slug=\"major-ineffable-words\" >arcanum</a> and eventually unlocks their mysteries, only to then mark a consequence that has an &quot;eternal, ancient being of Order&quot; seek them out and reprimand them. That sounds like an archon to me!</em></p><p><em>I pick a purpose of &quot;To warn/castigate/ correct,&quot; and roll a 2 for its manifestation (&quot;pure energy/light/fire&quot;). For powers, I roll a 3 (&quot;teleports, or close enough&quot;) and pick both &quot;stuns/deafens/ blinds/hobbles&quot; (it&#x27;s made of light!) and &quot;dispels/disenchants magic.&quot; I ponder a little, and write up the following:</em></p></blockquote>\n<p>LIVROTHOS,</p>\n<h3 id=\"cleansing-flame\">CLEANSING FLAME</h3>\n<div class=\"stat-block\" id=\"solitary-large-primordial-spirit\"><h3 class=\"stat-name\">Solitary, Large, Primordial, Spirit,</h3><p class=\"stat-tags\">construct, magical, terrifying</p><p class=\"stat-stats\"><strong>HP</strong> 23, ARMOR 1 (lacks vitals), harmed only by black iron<br>DAMAGE white flame <button type=\"button\" class=\"dice-roll\" data-dice=\"d12+3\" title=\"Click to roll d12+3 — Shift: advantage · Ctrl: disadvantage\">d12+3</button> w/ advantage (hand, close, forceful, messy, 3 piercing)<br>SPECIAL QUALITIES: ageless, immune to the elements, perceives thought and matter, omnilingual<br>INSTINCT: to correct mistakes</p><ul class=\"stat-moves\"><li>&gt; Detect magic run amok</li><li>&gt; Appear as a column of white flame, painful to look upon</li><li>&gt; Vanish, maybe appear elsewhere</li><li>&gt; Burn magic away from the world</li></ul></div>",
-        "kind": "section"
-      },
-      "cleansing-flame": {
-        "name": "CLEANSING FLAME",
-        "html": "<h3 id=\"cleansing-flame\">CLEANSING FLAME</h3>\n<div class=\"stat-block\" id=\"solitary-large-primordial-spirit\">",
+        "html": "<h2 id=\"archons\">Archons</h2>\n<p>Archons are constructed <a class=\"wiki-link\" href=\"spirits-of-the-wild.html\" data-slug=\"spirits-of-the-wild\" ><strong>spirits</strong></a>, made by the First Creators or one of the great spirits as guardians and enforcers of the cosmic order.</p>\n<p>Start with the base archon stat block below. Pick or roll for their purpose, their manifestation, and up to 3 powers. Adjust the stat block to reflect these choices or results, writing at least one move to reflect its purpose and one to reflect it manifesting (unless its manifestation is a construct/ animate statue).</p>\n<hr>\n<div class=\"stat-block\" id=\"base-archon\"><h3 class=\"stat-name\"><img class=\"book-icon\" src=\"images/icons/primordial.svg\" alt=\"\" width=\"18\" height=\"18\" loading=\"lazy\">Base Archon</h3><p class=\"stat-tags\">Solitary, large, primordial, spirit, construct, magical, terrifying</p><p class=\"stat-stats\"><strong>HP</strong> 23; <strong>Armor</strong> 5 (resilience, lacks vitals), 1 vs. black iron<br><strong>Damage</strong> physical blows <button type=\"button\" class=\"dice-roll\" data-dice=\"d12+3\" title=\"Click to roll d12+3 — Shift: advantage · Ctrl: disadvantage\">d12+3</button> w/advantage (close, reach, forceful)<br><strong>Special qualities</strong> ageless, immune to the elements, perceives thought and matter, omnilingual<br><strong>Instinct</strong> per its purpose</p><p class=\"stat-note\">For an example, see Tcaventes, <a class=\"wiki-link\" href=\"the-labyrinth.html#tcaventes-shackle-and-key\" data-slug=\"the-labyrinth\" data-fragment=\"tcaventes-shackle-and-key\" >Shackle and Key</a>.</p><div class=\"roll-table roll-table-inline\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d12\" title=\"Click to roll 1d12 — Shift: advantage · Ctrl: disadvantage\">1d12</button> <span class=\"roll-label\">Purpose</span></div><table><tbody><tr><th scope=\"row\">1</th><td>To seek out and destroy</td></tr><tr><th scope=\"row\">2</th><td>To find, judge, and punish</td></tr><tr><th scope=\"row\">3-4</th><td>To capture/retrieve</td></tr><tr><th scope=\"row\">5-6</th><td>To warn/castigate/correct</td></tr><tr><th scope=\"row\">7-12</th><td>To stand watch and protect</td></tr></tbody></table></div><div class=\"roll-table roll-table-inline\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d12\" title=\"Click to roll 1d12 — Shift: advantage · Ctrl: disadvantage\">1d12</button> <span class=\"roll-label\">Manifestation</span></div><table><tbody><tr><th scope=\"row\">1-2</th><td>Pure energy/light/fire: harmed only by black iron</td></tr><tr><th scope=\"row\">3-4</th><td>A construct/animate statue: -spirit, Armor 6, or 4 vs. black iron</td></tr><tr><th scope=\"row\">5-6</th><td>A mass of vapor/dust/ash/soil/ etc.: takes half damage except from black iron</td></tr><tr><th scope=\"row\">7-8</th><td>A ripple in reality: +stealthy, harmed only by black iron</td></tr><tr><th scope=\"row\">9-10</th><td>Someone plucked from the mind of whoever it interacts with</td></tr><tr><th scope=\"row\">11-12</th><td>An impossible entity, surreal and weird and awe-inspiring</td></tr></tbody></table></div><div class=\"roll-table roll-table-inline\"><div class=\"roll-table-head\"><button type=\"button\" class=\"dice-roll\" data-dice=\"1d12\" title=\"Click to roll 1d12 — Shift: advantage · Ctrl: disadvantage\">1d12</button> <span class=\"roll-label\">Powers</span></div><table><tbody><tr><th scope=\"row\">1</th><td>Smites at range (far or near, area)</td></tr><tr><th scope=\"row\">2</th><td>Manipulates the environment</td></tr><tr><th scope=\"row\">3</th><td>Teleports, or close enough</td></tr><tr><th scope=\"row\">4</th><td>Pierces deception, compels truth</td></tr><tr><th scope=\"row\">5</th><td>Stuns/deafens/blinds/hobbles foes</td></tr><tr><th scope=\"row\">6</th><td>Marks/curses/binds targets</td></tr><tr><th scope=\"row\">7</th><td>Compels mortals/lesser spirits to __</td></tr><tr><th scope=\"row\">8</th><td>Foresees the future, likely outcomes</td></tr><tr><th scope=\"row\">9</th><td>Harms weapons used against them</td></tr><tr><th scope=\"row\">10</th><td>Dispels/disenchants magical effects</td></tr><tr><th scope=\"row\">11</th><td>Quells emotions, instills peace</td></tr><tr><th scope=\"row\">12</th><td>Something special, unique, thematic Archons have unique names with unlikely combinations of sounds, with majestic and enigmatic titles. For example: Qrenithar, Dawn Herald; Klythorim, Arrow of Time; Xezaltran the Inevitable; Jharvakus, the Silent Witness; Phrysthalin, Bearer of Scales; and Lyvontis, the Judge Incorruptible.</td></tr></tbody></table></div></div>\n<blockquote><p><em>The Seeker acquires the</em> <strong><em>Ineffable Words</em></strong> <em><a class=\"wiki-link\" href=\"major-ineffable-words.html\" data-slug=\"major-ineffable-words\" >arcanum</a> and eventually unlocks their mysteries, only to then mark a consequence that has an &quot;eternal, ancient being of Order&quot; seek them out and reprimand them. That sounds like an archon to me!</em></p><p><em>I pick a purpose of &quot;To warn/castigate/ correct,&quot; and roll a 2 for its manifestation (&quot;pure energy/light/fire&quot;). For powers, I roll a 3 (&quot;teleports, or close enough&quot;) and pick both &quot;stuns/deafens/ blinds/hobbles&quot; (it&#x27;s made of light!) and &quot;dispels/disenchants magic.&quot; I ponder a little, and write up the following:</em></p></blockquote>\n<div class=\"stat-block\" id=\"livrothos-cleansing-flame\"><h3 class=\"stat-name\">Livrothos, Cleansing Flame</h3><p class=\"stat-tags\">Solitary, large, primordial, spirit, construct, magical, terrifying</p><p class=\"stat-stats\"><strong>HP</strong> 23, ARMOR 1 (lacks vitals), harmed only by black iron<br>DAMAGE white flame <button type=\"button\" class=\"dice-roll\" data-dice=\"d12+3\" title=\"Click to roll d12+3 — Shift: advantage · Ctrl: disadvantage\">d12+3</button> w/ advantage (hand, close, forceful, messy, 3 piercing)<br>SPECIAL QUALITIES: ageless, immune to the elements, perceives thought and matter, omnilingual<br>INSTINCT: to correct mistakes</p><ul class=\"stat-moves\"><li>&gt; Detect magic run amok</li><li>&gt; Appear as a column of white flame, painful to look upon</li><li>&gt; Vanish, maybe appear elsewhere</li><li>&gt; Burn magic away from the world</li></ul></div>",
         "kind": "section"
       },
       "titans": {
@@ -15612,6 +15602,13 @@ window.WIKI_PREVIEWS = {
     "kind": "arcana",
     "number": 18,
     "arcana_type": "major"
+  },
+  "bestiary": {
+    "title": "Bestiary",
+    "excerpt": "Every stat block in both Stonetop books, A to Z — 254 creatures, spirits and people, each linked to its block and the page it lives on.",
+    "image": null,
+    "book": "book2",
+    "sections": {}
   }
 };
 window.WIKI_PAGE_MAP = {
@@ -44270,7 +44267,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -44319,7 +44316,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -44368,7 +44365,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -44417,7 +44414,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -44466,7 +44463,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -44515,7 +44512,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -44564,7 +44561,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -44613,7 +44610,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -44662,7 +44659,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -44711,7 +44708,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -44760,7 +44757,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -44809,7 +44806,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -44858,7 +44855,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -44907,7 +44904,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -44956,7 +44953,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -45005,7 +45002,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -45054,7 +45051,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -45103,7 +45100,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -45152,7 +45149,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -45201,7 +45198,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -45250,7 +45247,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -45299,7 +45296,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -45348,7 +45345,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -45397,7 +45394,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -45446,7 +45443,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -45495,7 +45492,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -45544,7 +45541,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -45593,7 +45590,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -45642,7 +45639,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -45691,7 +45688,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -45740,7 +45737,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -45789,7 +45786,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -45838,7 +45835,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -45887,7 +45884,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -45936,7 +45933,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -45985,7 +45982,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -46034,7 +46031,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -46083,7 +46080,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -46132,7 +46129,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -46181,7 +46178,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -46230,7 +46227,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -46279,7 +46276,7 @@ window.WIKI_PAGE_MAP = {
         "as player moves": "as-player-moves",
         "as a combination": "as-a-combination",
         "monster format": "monster-format",
-        "crinwin 1": "crinwin-1",
+        "crinwin": "crinwin",
         "monsters": "monsters",
         "monster types": "monster-types",
         "1 concept": "1-concept",
@@ -60717,9 +60714,7 @@ window.WIKI_PAGE_MAP = {
         "limitation": "limitation",
         "current state": "current-state",
         "myghal deathless sorcerer": "myghal-deathless-sorcerer",
-        "myghal, deathless sorcerer": "myghal-deathless-sorcerer",
-        "solitary undead corrupted paranoid": "solitary-undead-corrupted-paranoid",
-        "solitary, undead, corrupted, paranoid,": "solitary-undead-corrupted-paranoid"
+        "myghal, deathless sorcerer": "myghal-deathless-sorcerer"
       }
     },
     "35": {
@@ -60773,9 +60768,7 @@ window.WIKI_PAGE_MAP = {
         "limitation": "limitation",
         "current state": "current-state",
         "myghal deathless sorcerer": "myghal-deathless-sorcerer",
-        "myghal, deathless sorcerer": "myghal-deathless-sorcerer",
-        "solitary undead corrupted paranoid": "solitary-undead-corrupted-paranoid",
-        "solitary, undead, corrupted, paranoid,": "solitary-undead-corrupted-paranoid"
+        "myghal, deathless sorcerer": "myghal-deathless-sorcerer"
       }
     },
     "36": {
@@ -60829,9 +60822,7 @@ window.WIKI_PAGE_MAP = {
         "limitation": "limitation",
         "current state": "current-state",
         "myghal deathless sorcerer": "myghal-deathless-sorcerer",
-        "myghal, deathless sorcerer": "myghal-deathless-sorcerer",
-        "solitary undead corrupted paranoid": "solitary-undead-corrupted-paranoid",
-        "solitary, undead, corrupted, paranoid,": "solitary-undead-corrupted-paranoid"
+        "myghal, deathless sorcerer": "myghal-deathless-sorcerer"
       }
     },
     "37": {
@@ -60885,9 +60876,7 @@ window.WIKI_PAGE_MAP = {
         "limitation": "limitation",
         "current state": "current-state",
         "myghal deathless sorcerer": "myghal-deathless-sorcerer",
-        "myghal, deathless sorcerer": "myghal-deathless-sorcerer",
-        "solitary undead corrupted paranoid": "solitary-undead-corrupted-paranoid",
-        "solitary, undead, corrupted, paranoid,": "solitary-undead-corrupted-paranoid"
+        "myghal, deathless sorcerer": "myghal-deathless-sorcerer"
       }
     },
     "38": {
@@ -60941,9 +60930,7 @@ window.WIKI_PAGE_MAP = {
         "limitation": "limitation",
         "current state": "current-state",
         "myghal deathless sorcerer": "myghal-deathless-sorcerer",
-        "myghal, deathless sorcerer": "myghal-deathless-sorcerer",
-        "solitary undead corrupted paranoid": "solitary-undead-corrupted-paranoid",
-        "solitary, undead, corrupted, paranoid,": "solitary-undead-corrupted-paranoid"
+        "myghal, deathless sorcerer": "myghal-deathless-sorcerer"
       }
     },
     "39": {
@@ -60997,9 +60984,7 @@ window.WIKI_PAGE_MAP = {
         "limitation": "limitation",
         "current state": "current-state",
         "myghal deathless sorcerer": "myghal-deathless-sorcerer",
-        "myghal, deathless sorcerer": "myghal-deathless-sorcerer",
-        "solitary undead corrupted paranoid": "solitary-undead-corrupted-paranoid",
-        "solitary, undead, corrupted, paranoid,": "solitary-undead-corrupted-paranoid"
+        "myghal, deathless sorcerer": "myghal-deathless-sorcerer"
       }
     },
     "40": {
@@ -61053,9 +61038,7 @@ window.WIKI_PAGE_MAP = {
         "limitation": "limitation",
         "current state": "current-state",
         "myghal deathless sorcerer": "myghal-deathless-sorcerer",
-        "myghal, deathless sorcerer": "myghal-deathless-sorcerer",
-        "solitary undead corrupted paranoid": "solitary-undead-corrupted-paranoid",
-        "solitary, undead, corrupted, paranoid,": "solitary-undead-corrupted-paranoid"
+        "myghal, deathless sorcerer": "myghal-deathless-sorcerer"
       }
     },
     "41": {
@@ -61109,9 +61092,7 @@ window.WIKI_PAGE_MAP = {
         "limitation": "limitation",
         "current state": "current-state",
         "myghal deathless sorcerer": "myghal-deathless-sorcerer",
-        "myghal, deathless sorcerer": "myghal-deathless-sorcerer",
-        "solitary undead corrupted paranoid": "solitary-undead-corrupted-paranoid",
-        "solitary, undead, corrupted, paranoid,": "solitary-undead-corrupted-paranoid"
+        "myghal, deathless sorcerer": "myghal-deathless-sorcerer"
       }
     },
     "42": {
@@ -61165,9 +61146,7 @@ window.WIKI_PAGE_MAP = {
         "limitation": "limitation",
         "current state": "current-state",
         "myghal deathless sorcerer": "myghal-deathless-sorcerer",
-        "myghal, deathless sorcerer": "myghal-deathless-sorcerer",
-        "solitary undead corrupted paranoid": "solitary-undead-corrupted-paranoid",
-        "solitary, undead, corrupted, paranoid,": "solitary-undead-corrupted-paranoid"
+        "myghal, deathless sorcerer": "myghal-deathless-sorcerer"
       }
     },
     "43": {
@@ -61221,9 +61200,7 @@ window.WIKI_PAGE_MAP = {
         "limitation": "limitation",
         "current state": "current-state",
         "myghal deathless sorcerer": "myghal-deathless-sorcerer",
-        "myghal, deathless sorcerer": "myghal-deathless-sorcerer",
-        "solitary undead corrupted paranoid": "solitary-undead-corrupted-paranoid",
-        "solitary, undead, corrupted, paranoid,": "solitary-undead-corrupted-paranoid"
+        "myghal, deathless sorcerer": "myghal-deathless-sorcerer"
       }
     },
     "44": {
@@ -61277,9 +61254,7 @@ window.WIKI_PAGE_MAP = {
         "limitation": "limitation",
         "current state": "current-state",
         "myghal deathless sorcerer": "myghal-deathless-sorcerer",
-        "myghal, deathless sorcerer": "myghal-deathless-sorcerer",
-        "solitary undead corrupted paranoid": "solitary-undead-corrupted-paranoid",
-        "solitary, undead, corrupted, paranoid,": "solitary-undead-corrupted-paranoid"
+        "myghal, deathless sorcerer": "myghal-deathless-sorcerer"
       }
     },
     "45": {
@@ -61333,9 +61308,7 @@ window.WIKI_PAGE_MAP = {
         "limitation": "limitation",
         "current state": "current-state",
         "myghal deathless sorcerer": "myghal-deathless-sorcerer",
-        "myghal, deathless sorcerer": "myghal-deathless-sorcerer",
-        "solitary undead corrupted paranoid": "solitary-undead-corrupted-paranoid",
-        "solitary, undead, corrupted, paranoid,": "solitary-undead-corrupted-paranoid"
+        "myghal, deathless sorcerer": "myghal-deathless-sorcerer"
       }
     },
     "46": {
@@ -61389,9 +61362,7 @@ window.WIKI_PAGE_MAP = {
         "limitation": "limitation",
         "current state": "current-state",
         "myghal deathless sorcerer": "myghal-deathless-sorcerer",
-        "myghal, deathless sorcerer": "myghal-deathless-sorcerer",
-        "solitary undead corrupted paranoid": "solitary-undead-corrupted-paranoid",
-        "solitary, undead, corrupted, paranoid,": "solitary-undead-corrupted-paranoid"
+        "myghal, deathless sorcerer": "myghal-deathless-sorcerer"
       }
     },
     "47": {
@@ -61445,9 +61416,7 @@ window.WIKI_PAGE_MAP = {
         "limitation": "limitation",
         "current state": "current-state",
         "myghal deathless sorcerer": "myghal-deathless-sorcerer",
-        "myghal, deathless sorcerer": "myghal-deathless-sorcerer",
-        "solitary undead corrupted paranoid": "solitary-undead-corrupted-paranoid",
-        "solitary, undead, corrupted, paranoid,": "solitary-undead-corrupted-paranoid"
+        "myghal, deathless sorcerer": "myghal-deathless-sorcerer"
       }
     },
     "48": {
@@ -72058,9 +72027,8 @@ window.WIKI_PAGE_MAP = {
         "beautiful": "beautiful",
         "archons": "archons",
         "base archon": "base-archon",
-        "cleansing flame": "cleansing-flame",
-        "solitary large primordial spirit": "solitary-large-primordial-spirit",
-        "solitary, large, primordial, spirit,": "solitary-large-primordial-spirit",
+        "livrothos cleansing flame": "livrothos-cleansing-flame",
+        "livrothos, cleansing flame": "livrothos-cleansing-flame",
         "titans": "titans",
         "sites": "sites",
         "marker": "marker",
@@ -72122,9 +72090,8 @@ window.WIKI_PAGE_MAP = {
         "beautiful": "beautiful",
         "archons": "archons",
         "base archon": "base-archon",
-        "cleansing flame": "cleansing-flame",
-        "solitary large primordial spirit": "solitary-large-primordial-spirit",
-        "solitary, large, primordial, spirit,": "solitary-large-primordial-spirit",
+        "livrothos cleansing flame": "livrothos-cleansing-flame",
+        "livrothos, cleansing flame": "livrothos-cleansing-flame",
         "titans": "titans",
         "sites": "sites",
         "marker": "marker",
@@ -72186,9 +72153,8 @@ window.WIKI_PAGE_MAP = {
         "beautiful": "beautiful",
         "archons": "archons",
         "base archon": "base-archon",
-        "cleansing flame": "cleansing-flame",
-        "solitary large primordial spirit": "solitary-large-primordial-spirit",
-        "solitary, large, primordial, spirit,": "solitary-large-primordial-spirit",
+        "livrothos cleansing flame": "livrothos-cleansing-flame",
+        "livrothos, cleansing flame": "livrothos-cleansing-flame",
         "titans": "titans",
         "sites": "sites",
         "marker": "marker",
@@ -72250,9 +72216,8 @@ window.WIKI_PAGE_MAP = {
         "beautiful": "beautiful",
         "archons": "archons",
         "base archon": "base-archon",
-        "cleansing flame": "cleansing-flame",
-        "solitary large primordial spirit": "solitary-large-primordial-spirit",
-        "solitary, large, primordial, spirit,": "solitary-large-primordial-spirit",
+        "livrothos cleansing flame": "livrothos-cleansing-flame",
+        "livrothos, cleansing flame": "livrothos-cleansing-flame",
         "titans": "titans",
         "sites": "sites",
         "marker": "marker",
@@ -72314,9 +72279,8 @@ window.WIKI_PAGE_MAP = {
         "beautiful": "beautiful",
         "archons": "archons",
         "base archon": "base-archon",
-        "cleansing flame": "cleansing-flame",
-        "solitary large primordial spirit": "solitary-large-primordial-spirit",
-        "solitary, large, primordial, spirit,": "solitary-large-primordial-spirit",
+        "livrothos cleansing flame": "livrothos-cleansing-flame",
+        "livrothos, cleansing flame": "livrothos-cleansing-flame",
         "titans": "titans",
         "sites": "sites",
         "marker": "marker",
@@ -72378,9 +72342,8 @@ window.WIKI_PAGE_MAP = {
         "beautiful": "beautiful",
         "archons": "archons",
         "base archon": "base-archon",
-        "cleansing flame": "cleansing-flame",
-        "solitary large primordial spirit": "solitary-large-primordial-spirit",
-        "solitary, large, primordial, spirit,": "solitary-large-primordial-spirit",
+        "livrothos cleansing flame": "livrothos-cleansing-flame",
+        "livrothos, cleansing flame": "livrothos-cleansing-flame",
         "titans": "titans",
         "sites": "sites",
         "marker": "marker",
@@ -72442,9 +72405,8 @@ window.WIKI_PAGE_MAP = {
         "beautiful": "beautiful",
         "archons": "archons",
         "base archon": "base-archon",
-        "cleansing flame": "cleansing-flame",
-        "solitary large primordial spirit": "solitary-large-primordial-spirit",
-        "solitary, large, primordial, spirit,": "solitary-large-primordial-spirit",
+        "livrothos cleansing flame": "livrothos-cleansing-flame",
+        "livrothos, cleansing flame": "livrothos-cleansing-flame",
         "titans": "titans",
         "sites": "sites",
         "marker": "marker",
@@ -72506,9 +72468,8 @@ window.WIKI_PAGE_MAP = {
         "beautiful": "beautiful",
         "archons": "archons",
         "base archon": "base-archon",
-        "cleansing flame": "cleansing-flame",
-        "solitary large primordial spirit": "solitary-large-primordial-spirit",
-        "solitary, large, primordial, spirit,": "solitary-large-primordial-spirit",
+        "livrothos cleansing flame": "livrothos-cleansing-flame",
+        "livrothos, cleansing flame": "livrothos-cleansing-flame",
         "titans": "titans",
         "sites": "sites",
         "marker": "marker",
@@ -72570,9 +72531,8 @@ window.WIKI_PAGE_MAP = {
         "beautiful": "beautiful",
         "archons": "archons",
         "base archon": "base-archon",
-        "cleansing flame": "cleansing-flame",
-        "solitary large primordial spirit": "solitary-large-primordial-spirit",
-        "solitary, large, primordial, spirit,": "solitary-large-primordial-spirit",
+        "livrothos cleansing flame": "livrothos-cleansing-flame",
+        "livrothos, cleansing flame": "livrothos-cleansing-flame",
         "titans": "titans",
         "sites": "sites",
         "marker": "marker",
@@ -72634,9 +72594,8 @@ window.WIKI_PAGE_MAP = {
         "beautiful": "beautiful",
         "archons": "archons",
         "base archon": "base-archon",
-        "cleansing flame": "cleansing-flame",
-        "solitary large primordial spirit": "solitary-large-primordial-spirit",
-        "solitary, large, primordial, spirit,": "solitary-large-primordial-spirit",
+        "livrothos cleansing flame": "livrothos-cleansing-flame",
+        "livrothos, cleansing flame": "livrothos-cleansing-flame",
         "titans": "titans",
         "sites": "sites",
         "marker": "marker",
@@ -72698,9 +72657,8 @@ window.WIKI_PAGE_MAP = {
         "beautiful": "beautiful",
         "archons": "archons",
         "base archon": "base-archon",
-        "cleansing flame": "cleansing-flame",
-        "solitary large primordial spirit": "solitary-large-primordial-spirit",
-        "solitary, large, primordial, spirit,": "solitary-large-primordial-spirit",
+        "livrothos cleansing flame": "livrothos-cleansing-flame",
+        "livrothos, cleansing flame": "livrothos-cleansing-flame",
         "titans": "titans",
         "sites": "sites",
         "marker": "marker",
@@ -72762,9 +72720,8 @@ window.WIKI_PAGE_MAP = {
         "beautiful": "beautiful",
         "archons": "archons",
         "base archon": "base-archon",
-        "cleansing flame": "cleansing-flame",
-        "solitary large primordial spirit": "solitary-large-primordial-spirit",
-        "solitary, large, primordial, spirit,": "solitary-large-primordial-spirit",
+        "livrothos cleansing flame": "livrothos-cleansing-flame",
+        "livrothos, cleansing flame": "livrothos-cleansing-flame",
         "titans": "titans",
         "sites": "sites",
         "marker": "marker",
@@ -72826,9 +72783,8 @@ window.WIKI_PAGE_MAP = {
         "beautiful": "beautiful",
         "archons": "archons",
         "base archon": "base-archon",
-        "cleansing flame": "cleansing-flame",
-        "solitary large primordial spirit": "solitary-large-primordial-spirit",
-        "solitary, large, primordial, spirit,": "solitary-large-primordial-spirit",
+        "livrothos cleansing flame": "livrothos-cleansing-flame",
+        "livrothos, cleansing flame": "livrothos-cleansing-flame",
         "titans": "titans",
         "sites": "sites",
         "marker": "marker",
@@ -72890,9 +72846,8 @@ window.WIKI_PAGE_MAP = {
         "beautiful": "beautiful",
         "archons": "archons",
         "base archon": "base-archon",
-        "cleansing flame": "cleansing-flame",
-        "solitary large primordial spirit": "solitary-large-primordial-spirit",
-        "solitary, large, primordial, spirit,": "solitary-large-primordial-spirit",
+        "livrothos cleansing flame": "livrothos-cleansing-flame",
+        "livrothos, cleansing flame": "livrothos-cleansing-flame",
         "titans": "titans",
         "sites": "sites",
         "marker": "marker",
@@ -72954,9 +72909,8 @@ window.WIKI_PAGE_MAP = {
         "beautiful": "beautiful",
         "archons": "archons",
         "base archon": "base-archon",
-        "cleansing flame": "cleansing-flame",
-        "solitary large primordial spirit": "solitary-large-primordial-spirit",
-        "solitary, large, primordial, spirit,": "solitary-large-primordial-spirit",
+        "livrothos cleansing flame": "livrothos-cleansing-flame",
+        "livrothos, cleansing flame": "livrothos-cleansing-flame",
         "titans": "titans",
         "sites": "sites",
         "marker": "marker",
@@ -73018,9 +72972,8 @@ window.WIKI_PAGE_MAP = {
         "beautiful": "beautiful",
         "archons": "archons",
         "base archon": "base-archon",
-        "cleansing flame": "cleansing-flame",
-        "solitary large primordial spirit": "solitary-large-primordial-spirit",
-        "solitary, large, primordial, spirit,": "solitary-large-primordial-spirit",
+        "livrothos cleansing flame": "livrothos-cleansing-flame",
+        "livrothos, cleansing flame": "livrothos-cleansing-flame",
         "titans": "titans",
         "sites": "sites",
         "marker": "marker",

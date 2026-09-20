@@ -404,6 +404,14 @@ def page_structured_data(
             {"@id": f"{base}/#website"},
         ],
     }
+    if art.get("kind") == "bestiary":
+        # The wiki's own compilation, not a chapter of either book: it is
+        # made from both, and part of neither.
+        article["isPartOf"] = {"@id": f"{base}/#website"}
+        article["isBasedOn"] = [
+            {"@id": f"{base}/#book1"},
+            {"@id": f"{base}/#book2"},
+        ]
     if description:
         article["description"] = description
     if art.get("start_page"):
@@ -1771,6 +1779,138 @@ MAP_PIN_COLORS = [
     "#4a90d9",  # blue
     "#9b6dc4",  # purple
 ]
+
+
+# ---------------------------------------------------------------------------
+# Bestiary
+#
+# Not in either printed book. The books set their stat blocks where the
+# creature lives — the swyn in the Great Wood, the guardians at Barrier Pass,
+# the crinwin in Dangers — which is right for reading and slow at the table,
+# where the question is "where is this thing's block". This is every stat
+# block in both books, one line each, A-Z: the name, which links to the block
+# (hover shows the whole thing), and the page it lives on. Filed in the
+# sidebar after Book II's four appendices.
+# ---------------------------------------------------------------------------
+
+BESTIARY_SLUG = "bestiary"
+BESTIARY_TITLE = "Bestiary"
+
+_STAT_NAME_RE = re.compile(r'<h3 class="stat-name">(.*?)</h3>', re.S)
+_ICON_RE = re.compile(r'<img class="book-icon"[^>]*>')
+
+
+def bestiary_article(book2: dict) -> dict:
+    """The bestiary's article: Book II's, after its last appendix.
+
+    ``book2`` is any Book II article, whose book fields it copies so the
+    sidebar, the home page and llms.txt file it with the appendices. It has
+    no printed pages (``start_page`` 0, an empty range), so no "page N"
+    reference resolves to it.
+    """
+    return {
+        "title": BESTIARY_TITLE,
+        "slug": BESTIARY_SLUG,
+        "kind": "bestiary",
+        "book": book2.get("book") or "book2",
+        "book_label": book2.get("book_label") or "Book II",
+        "book_title": book2.get("book_title") or "Book II",
+        "start_page": 0,
+        "end_page": -1,
+    }
+
+
+def _bestiary_key(name: str) -> str:
+    """Sort key: "The Bear of Winter" files under B, as a reader expects."""
+    n = re.sub(r"^(the|a|an)\s+", "", name.strip().lower())
+    return re.sub(r"[^a-z0-9]+", " ", n).strip()
+
+
+def bestiary_entries(articles: list[dict], previews: dict) -> list[dict]:
+    """Every stat block the build found, in A-Z order.
+
+    Read off the pages' deep-link blocks (``previews[slug]["sections"]``), so
+    an entry names the block exactly as its page does. A creature printed in
+    two places is listed twice, once per page, since the blocks differ.
+    """
+    entries: list[dict] = []
+    for art in articles:
+        slug = art["slug"]
+        if slug == BESTIARY_SLUG:
+            continue
+        secs = (previews.get(slug) or {}).get("sections") or {}
+        for sid, sec in secs.items():
+            if sec.get("kind") != "stat-block":
+                continue
+            block = sec.get("html") or ""
+            m = _STAT_NAME_RE.search(block)
+            name_html = m.group(1) if m else html.escape(sec.get("name") or sid)
+            icon = _ICON_RE.search(name_html)
+            name = html.unescape(re.sub(r"<[^>]+>", "", name_html)).strip()
+            if not name:
+                continue
+            entries.append(
+                {
+                    "slug": slug,
+                    "id": sid,
+                    "name": name,
+                    "icon": icon.group(0) if icon else "",
+                    "from": display_title(art),
+                }
+            )
+    entries.sort(key=lambda e: (_bestiary_key(e["name"]), e["from"]))
+    return entries
+
+
+def bestiary_excerpt(count: int) -> str:
+    return (
+        f"Every stat block in both Stonetop books, A to Z — {count} "
+        "creatures, spirits and people, each linked to its block and the "
+        "page it lives on."
+    )
+
+
+def bestiary_html(entries: list[dict]) -> str:
+    """The page body: a letter bar, then one line per stat block."""
+    e = html.escape
+    letters: list[str] = []
+    groups: dict[str, list[dict]] = {}
+    for ent in entries:
+        key = _bestiary_key(ent["name"])
+        letter = key[:1].upper() if key[:1].isalpha() else "#"
+        if letter not in groups:
+            groups[letter] = []
+            letters.append(letter)
+        groups[letter].append(ent)
+
+    def letter_id(letter: str) -> str:
+        return "letter-" + ("num" if letter == "#" else letter.lower())
+
+    parts = [
+        f'<h1 class="page-title">{e(BESTIARY_TITLE)}</h1>',
+        f'<p class="lede">Every stat block in both books, A to Z — '
+        f"{len(entries)} of them. Hover a name for the whole block; click it "
+        "to go there.</p>",
+        '<p class="be-note">Not in the printed books: the wiki assembles '
+        "this list from their stat blocks.</p>",
+        '<p class="be-letters">'
+        + " ".join(f'<a href="#{letter_id(l)}">{e(l)}</a>' for l in letters)
+        + "</p>",
+    ]
+    for letter in letters:
+        parts.append(f'<h2 id="{letter_id(letter)}">{e(letter)}</h2>')
+        items = []
+        for ent in groups[letter]:
+            href = f'{ent["slug"]}.html#{ent["id"]}'
+            items.append(
+                f'<li>{ent["icon"]}<a class="wiki-link" href="{e(href)}" '
+                f'data-slug="{e(ent["slug"])}">{e(ent["name"])}</a> '
+                f'<span class="be-from"><a class="wiki-link" '
+                f'href="{e(ent["slug"])}.html" data-slug="{e(ent["slug"])}">'
+                f'{e(ent["from"])}</a></span></li>'
+            )
+        parts.append('<ul class="bestiary">' + "".join(items) + "</ul>")
+    return "\n".join(parts)
 
 
 # What each of Book II's two map spreads labels, in reading order. The

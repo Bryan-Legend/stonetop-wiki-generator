@@ -1040,6 +1040,41 @@ h3 .book-icon,
   color: var(--ink);
   font-size: inherit;
 }
+/* The bestiary: one line per stat block — the name (hover for the block)
+   and, muted, the page it lives on. */
+.be-note { color: var(--muted); font-size: 0.92rem; }
+.be-letters {
+  font-family: var(--font-serif);
+  font-size: 1.05rem;
+  word-spacing: 0.35rem;
+}
+ul.bestiary {
+  list-style: none;
+  margin: 0.2rem 0 1rem;
+  padding: 0;
+}
+ul.bestiary li {
+  margin: 0 0 0.2rem;
+  padding-left: 1.4rem;
+  text-indent: -1.4rem;
+  break-inside: avoid;
+  line-height: 1.35;
+}
+ul.bestiary li .book-icon {
+  width: 1.05em;
+  height: 1.05em;
+  vertical-align: -0.15em;
+  margin-right: 0.35rem;
+  text-indent: 0;
+}
+ul.bestiary .be-from {
+  font-size: 0.85em;
+  color: var(--muted);
+}
+ul.bestiary .be-from::before { content: "— "; }
+ul.bestiary .be-from a { color: inherit; }
+ul.bestiary .be-from a:hover { color: var(--link-hover); }
+
 /* Deep-link :target — scroll still works; no outline flash on jump */
 
 /* --- Section links -------------------------------------------------------

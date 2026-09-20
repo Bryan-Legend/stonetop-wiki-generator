@@ -953,9 +953,13 @@ def render_value_table(
 
 def _stat_name(name: str) -> str:
     """A stat block's name as shown: translated when a translation has it
-    (and then left as the translator cased it), title-cased otherwise."""
+    (and then left as the translator cased it), title-cased otherwise — and
+    title-cased too when the translator kept the book's capitals, as the
+    English is ("LIVROTHOS, CHAMA PURIFICADORA")."""
     name, shown = strip_tags(name), T(name)
-    return titlecase_name(name) if shown == name else shown
+    if shown == name or shown.isupper():
+        return titlecase_name(shown)
+    return shown
 
 
 def render_stat_block(
@@ -970,6 +974,7 @@ def render_stat_block(
     icon_html: str = "",
     variant: str | None = None,
     tags: str = "",
+    name_tags: str = "",
 ) -> str:
     """Compact monster/enemy/threat block — minimal vertical space.
 
@@ -1203,7 +1208,7 @@ def render_stat_block(
     parts = [
         f'<div class="{cls}"{id_attr}>'
         f'<h3 class="stat-name">{icon_html}'
-        f'{html.escape(_stat_name(pv(name)))}</h3>'
+        f'{html.escape(_stat_name(name + name_tags if name_tags else pv(name)))}</h3>'
     ]
     if tags:
         parts.append(f'<p class="stat-tags">{rr(pv(tags))}</p>')
@@ -2016,6 +2021,54 @@ def try_parse_improvement_block(
     return "\n".join(parts), j
 
 
+def _join_wrapped_stat_heads(lines: list[str]) -> list[str]:
+    """Rejoin a stat block's name or tag line that the book wrapped.
+
+    The worked examples in Book II's design sidebars (Livrothos in Primordial
+    Powers, Myghal in Barrow Builders) set a stat block in plain type, and
+    wrap both the name ("LIVROTHOS," / "CLEANSING FLAME") and the tags
+    ("Solitary, undead, corrupted, paranoid," / "magical, hoarder,
+    terrifying"). Read line by line, the second half of the tags looks like
+    the tag line and the first half like the creature's name — which is how
+    both came out named "Solitary, …,". Joined, they are the name and tag
+    lines the creature detector expects.
+
+    Only a line ending on a comma is joined — a name or a tag list never ends
+    on one, so the comma is the wrap — and only just above an HP line, and
+    only two tag lines, or two all-caps lines. Plain lines only: nothing
+    carrying a structural marker is touched. Joining keeps both lines'
+    provenance tags, so a translation still finds its fields.
+    """
+    def caps(t: str) -> bool:
+        letters = [c for c in t if c.isalpha()]
+        return bool(letters) and all(c.isupper() for c in letters)
+
+    out = list(lines)
+    i = 0
+    while i < len(out) - 1:
+        a, b = out[i], out[i + 1]
+        if a.startswith("\x02") or b.startswith("\x02"):
+            i += 1
+            continue
+        da, db = _defmt(a).strip(), _defmt(b).strip()
+        if not da.endswith(",") or not db:
+            i += 1
+            continue
+        near_hp = any(
+            HP_LINE_RE.search(_defmt(out[j]))
+            for j in range(i + 2, min(i + 5, len(out)))
+            if not out[j].startswith("\x02")
+        )
+        tag_wrap = looks_like_tag_line(da) and looks_like_tag_line(db)
+        name_wrap = caps(da) and caps(db) and len(db) <= 40
+        if near_hp and (tag_wrap or name_wrap):
+            out[i] = a.rstrip() + " " + b.lstrip()
+            del out[i + 1]
+            continue  # the joined line may wrap on into the next
+        i += 1
+    return out
+
+
 def structure_html(
     lines: list[str],
     article_title: str,
@@ -2033,7 +2086,7 @@ def structure_html(
 
     Returns (html, sections) where sections is [{id, name, norm}, ...].
     """
-    lines = list(lines)  # this function rewrites entries in place
+    lines = _join_wrapped_stat_heads(list(lines))  # rewritten in place below
     out: list[str] = []
     i = 0
     n = len(lines)
@@ -2243,6 +2296,17 @@ def structure_html(
                         break
                 if creature:
                     forced_creature.add(i)
+                    # Book I's anatomy of a monster (Dangers) numbers the parts
+                    # of its example block with callouts set in bold after
+                    # them: "Crinwin 1", then a tag line ending "stealthy 2".
+                    # A bold number closing the tag line says the heading's
+                    # own trailing number is the callout before it.
+                    call = re.search(r"\s*\x04(\d{1,2})\x05\s*$", peek(1))
+                    if call:
+                        m_num = re.search(r"\s+(\d{1,2})$", bare)
+                        if m_num and int(m_num.group(1)) == int(call.group(1)) - 1:
+                            bare = bare[: m_num.start()]
+                            lines[i + 1] = peek(1)[: call.start()]
                     lines[i] = bare
                     # keep pending_icon for the stat-block name
                     continue
@@ -3026,6 +3090,7 @@ def structure_html(
         )
         if is_creature_start:
             name = line
+            name_tags = "".join(TAG_RE.findall(orig_line))
             inline_rest = ""
             if looks_like_inline_creature(line) and ":" in line:
                 name, inline_rest = line.split(":", 1)
@@ -3244,6 +3309,11 @@ def structure_html(
                     check_id=next_check_id(name),
                     icon_html=creature_icon,
                     variant="follower" if is_follower else None,
+                    # The name is read off de-tokenized text, so it has lost
+                    # the tags of the line(s) it came from; hand them back,
+                    # or a name joined from two lines (Livrothos) matches no
+                    # one line of a translation and is shown in English.
+                    name_tags=name_tags,
                 )
             )
             continue

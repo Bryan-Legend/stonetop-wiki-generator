@@ -33,7 +33,12 @@ from .chrome import (
     display_title,
     ensure_wiki_chrome,
     is_sheet_body,
+    BESTIARY_SLUG,
     MAPS_STUB_EXCERPT,
+    bestiary_article,
+    bestiary_entries,
+    bestiary_excerpt,
+    bestiary_html,
     maps_body_html,
     maps_stub_html,
     override_excerpt,
@@ -372,6 +377,19 @@ def page_link_fn(lookup: dict[int, dict], common: dict):
     )
 
 
+def _recorded_previews(out: Path) -> dict:
+    """The page previews the last full build wrote to ``js/previews-data.js``
+    (empty when there is none yet)."""
+    path = out / "js" / "previews-data.js"
+    try:
+        text = path.read_text(encoding="utf-8")
+        start = text.index("=") + 1
+        end = text.index(";\nwindow.WIKI_PAGE_MAP")
+        return json.loads(text[start:end])
+    except (OSError, ValueError):
+        return {}
+
+
 def main(argv: list[str] | None = None) -> None:
     # A Windows console is often cp1252; the build's progress lines carry
     # arrows and ellipses, and a report must never crash the build.
@@ -520,6 +538,16 @@ def main(argv: list[str] | None = None) -> None:
                 " — the Maps page falls back to its text stub"
             )
             draw_maps = False
+
+    # The bestiary: the wiki's own index of every stat block, filed after
+    # Book II's last page. Rendered after every other page, since
+    # it is made of theirs.
+    book2_last = max(
+        (i for i, a in enumerate(articles) if a.get("book") == "book2"),
+        default=None,
+    )
+    if book2_last is not None:
+        articles.insert(book2_last + 1, bestiary_article(articles[book2_last]))
 
     ensure_unique_slugs(articles)
 
@@ -682,6 +710,8 @@ def main(argv: list[str] | None = None) -> None:
     english_bodies: dict[str, str] = {}
     for art in articles:
         slug = art["slug"]
+        if art.get("kind") == "bestiary":
+            continue  # written below, once every stat block is known
         # --pages: only the named pages are rendered; the rest of the site
         # keeps the HTML it already has. The sidebar of every page written
         # still names this page's sections in each language, so take the
@@ -946,6 +976,57 @@ def main(argv: list[str] | None = None) -> None:
             }
         )
         clock.lap("build: previews + search text", "all pages", t_page)
+
+    bestiary = next((a for a in articles if a.get("kind") == "bestiary"), None)
+    if bestiary:
+        clock.phase("bestiary")
+        known = previews
+        if only_pages is not None:
+            # A --pages run renders only the pages it names, and the bestiary
+            # is made of every page's stat blocks: take the rest from what the
+            # last full build recorded (previews-data.js is not rewritten by a
+            # partial build, so it is still that build's).
+            known = {**_recorded_previews(out), **previews}
+        entries = bestiary_entries(articles, known)
+        body = bestiary_html(entries)
+        excerpt = bestiary_excerpt(len(entries))
+        if only_pages is None or BESTIARY_SLUG in only_pages:
+            (out / f"{BESTIARY_SLUG}.html").write_text(
+                page_shell(
+                    bestiary["title"],
+                    BESTIARY_SLUG,
+                    body,
+                    articles,
+                    rel_prefix="",
+                    section_navs=section_navs,
+                    description=excerpt,
+                    alternates=alternates_for(
+                        BESTIARY_SLUG, lang_source, lang_targets
+                    ),
+                ),
+                encoding="utf-8",
+            )
+        previews[BESTIARY_SLUG] = {
+            "title": display_title(bestiary),
+            "excerpt": excerpt,
+            "image": None,
+            "book": bestiary.get("book"),
+            "sections": {},
+        }
+        search_docs.append(
+            {
+                "slug": BESTIARY_SLUG,
+                "title": display_title(bestiary),
+                "book": bestiary.get("book"),
+                "excerpt": excerpt[:280],
+                # The names alone: the blocks' full text is already indexed
+                # on the pages they come from, and a search should lead there.
+                "text": bestiary["title"]
+                + "\n"
+                + " ".join(e["name"] for e in entries),
+            }
+        )
+        print(f"  Bestiary: {len(entries)} stat blocks")
 
     clock.phase("write previews / search index / home")
     previews_json = json.dumps(previews, ensure_ascii=False, indent=2)
