@@ -10,12 +10,16 @@ import html
 import json
 import re
 
+from .blocks import cut_lines as block_cut_lines
+from .blocks import line_marks as block_line_marks
 from .text import (
     TAG_RE,
     strip_tags,
     BARE_PAGE_RE,
     B_OFF,
     B_ON,
+    I_OFF,
+    I_ON,
     CHECK_PART,
     DICE_RE,
     ENTRY_RE,
@@ -36,6 +40,7 @@ from .text import (
     M_H3,
     M_H4,
     M_HR,
+    M_PB,
     M_ICON,
     M_Q,
     M_STATS,
@@ -88,7 +93,18 @@ from .text import (
 
 
 STAT_LABEL_RE = re.compile(
-    r"(^|(?<=[\s>]))(HP(?=\s*\d)|Armor|Damage|Instinct|Special [Qq]ualit(?:y|ies)|Cost|Loyalty)\b(?!</strong>)"
+    r"(^|(?<=[\s>]))("
+    r"HP(?=\s*\d)|Armor|Damage|Instinct|Special [Qq]ualit(?:y|ies)|Cost|Loyalty"
+    # Book II's design sidebars set an example block's labels in capitals
+    # ("DAMAGE spurts of corrosive slime"), so those are labels too.
+    r"|ARMOR|DAMAGE|INSTINCT|SPECIAL QUALIT(?:Y|IES)|COST|LOYALTY"
+    r")\b(?!</strong>)"
+)
+
+
+_CAPS_LABEL_BREAK = re.compile(
+    r"(?<!<br>)\s+(?=<strong>(?:DAMAGE|INSTINCT|"
+    r"SPECIAL QUALIT(?:Y|IES)|COST)\b)"
 )
 
 
@@ -676,6 +692,15 @@ def linkify_pages(
     # "**Mudslides** (page 376)" / "**Ghosts (**page 76)" → make the *bold*
     # text the (deep) link and drop the now-redundant "(page N)".
     def repl_bold_pageref(m: re.Match) -> str:
+        out = _repl_bold_pageref(m)
+        if out == m.group(0):
+            return out
+        # The italic opened or closed between the name and its reference
+        # (see the pattern below) goes on after the link.
+        tail = m.group(0)[m.end("t") - m.start():]
+        return out + "".join(ch for ch in tail if ch in I_ON + I_OFF)
+
+    def _repl_bold_pageref(m: re.Match) -> str:
         inner = m.group("t")
         pages = parse_page_nums(m.group("pg"))
         poss = m.groupdict().get("poss") or ""
@@ -697,7 +722,11 @@ def linkify_pages(
             if art_by_title
             else resolve_section_fragment(pages[0], clean, art["slug"], sidx)
         )
-        disp_inner = re.sub(r"[\s(]+$", "", inner)
+        # `inner` may be several bold runs (a name broken over a line):
+        # drop their sentinels and set the whole name in one run.
+        disp_inner = re.sub(r"[]", "", inner)
+        disp_inner = re.sub(r"\s+", " ", disp_inner)
+        disp_inner = re.sub(r"[\s(]+$", "", disp_inner)
         # Keep possessive inside the link: "Stone Lords'"
         disp = html.escape(B_ON + disp_inner + B_OFF) + html.escape(poss)
         if art["slug"] == current_slug:
@@ -726,9 +755,9 @@ def linkify_pages(
     # Allow optional possessive between bold close and the page ref:
     # "Stone Lords' (page 382)"
     work = re.sub(
-        r"\x04(?P<t>[^\x04\x05]*?)\x05"
+        r"(?P<t>(?:\x04[^\x04\x05]*\x05\s*)*\x04[^\x04\x05]*\x05)"
         r"(?P<poss>(?:'|’)s?)?"
-        r"\s*\(?\s*(?:see\s+)?"
+        r"[\s\x06\x07]*\(?[\s\x06\x07]*(?:see\s+)?"
         r"pages?\s+(?P<pg>[\d,\s\-–—]+)\)",
         repl_bold_pageref,
         work,
@@ -739,7 +768,7 @@ def linkify_pages(
     # "use an **adventure starter**, see page 22." The explicit "see" keeps
     # this off unrelated neighbours ("**Danu**, page 30" stays as printed).
     work = re.sub(
-        r"\x04(?P<t>[^\x04\x05]*?)\x05"
+        r"(?P<t>(?:\x04[^\x04\x05]*\x05\s*)*\x04[^\x04\x05]*\x05)"
         r"(?P<poss>(?:'|’)s?)?"
         r"\s*,\s*see\s+pages?\s+(?P<pg>[\d,\s\-–—]+)",
         repl_bold_pageref,
@@ -1076,6 +1105,9 @@ def render_stat_block(
             and (
                 stats[-1].rstrip().endswith(",")
                 or stats[-1].count("(") > stats[-1].count(")")
+                # "Armor 4 (resilience), 1 vs." / "bronze (blubbery hide)":
+                # what the armor is weaker against is on the next line.
+                or re.search(r"\bvs\.?$", stats[-1].rstrip())
             )
         ):
             stats[-1] = _cat(stats[-1], line)
@@ -1128,8 +1160,11 @@ def render_stat_block(
                 stats.append(line)
         elif re.match(r"^\d{0,2}d\d+", low) and stats:
             stats[-1] = _cat(stats[-1], line)
-        elif line.startswith("•") or line.startswith("·"):
-            item = _same(line.lstrip("•· ").strip(), line)
+        # ">" is how Book II's design sidebars bullet a move — the only
+        # sign a move list has begun when the block's INSTINCT shares a line
+        # with its SPECIAL QUALITIES (the Infected Hagr).
+        elif line.startswith(("•", "·", ">")):
+            item = _same(line.lstrip("•·> ").strip(), line)
             # After flavor notes (or a Questions section), trailing bullets
             # are options/requirements — keep them in notes, not moves.
             if in_questions or (other and seen_instinct and moves):
@@ -1182,7 +1217,7 @@ def render_stat_block(
                     other.append(line)
                     continue
                 if len(line) < 100:
-                    moves.append(_same(line.lstrip("•· ").strip(), line))
+                    moves.append(_same(line.lstrip("•·> ").strip(), line))
                     continue
             if moves and not looks_like_heading(line) and line[0:1].islower():
                 moves[-1] = _cat(moves[-1], line)
@@ -1227,6 +1262,12 @@ def render_stat_block(
                 if p.strip(" ;")
             )
         compact = "<br>".join(bold_stat_labels(rr(pv(r))) for r in rows)
+        # The design sidebars run a whole stat block onto one line with
+        # its labels in capitals ("… (size) DAMAGE … INSTINCT …"). Break
+        # it after rendering, not before: a translation that writes those
+        # labels in its own script has none to find, and stays the one
+        # line it was written as rather than losing its translation.
+        compact = _CAPS_LABEL_BREAK.sub("<br>", compact)
         parts.append(f'<p class="stat-stats">{compact}</p>')
     if moves:
         parts.append('<ul class="stat-moves">')
@@ -2021,6 +2062,10 @@ def try_parse_improvement_block(
     return "\n".join(parts), j
 
 
+# The last few tags of a wrapped tag line: lowercase words, no digits.
+_TAG_TAIL_RE = re.compile(r"^[a-z][a-z\-\']*(?:,\s*[a-z][a-z\-\']*){0,2},?$")
+
+
 def _join_wrapped_stat_heads(lines: list[str]) -> list[str]:
     """Rejoin a stat block's name or tag line that the book wrapped.
 
@@ -2059,7 +2104,13 @@ def _join_wrapped_stat_heads(lines: list[str]) -> list[str]:
             for j in range(i + 2, min(i + 5, len(out)))
             if not out[j].startswith("\x02")
         )
-        tag_wrap = looks_like_tag_line(da) and looks_like_tag_line(db)
+        tag_wrap = looks_like_tag_line(da) and (
+            looks_like_tag_line(db)
+            # …or its last tag or two, too short to look like a tag line
+            # by themselves ("Solitary, large, terrifying, hardy," /
+            # "magical").
+            or bool(_TAG_TAIL_RE.match(db))
+        )
         name_wrap = caps(da) and caps(db) and len(db) <= 40
         if near_hp and (tag_wrap or name_wrap):
             out[i] = a.rstrip() + " " + b.lstrip()
@@ -2081,12 +2132,32 @@ def structure_html(
     lookups: dict[str, dict[int, dict]] | None = None,
     section_indexes: dict[str, dict] | None = None,
     current_book: str | None = None,
+    page_blocks: list[dict] | None = None,
 ) -> tuple[str, list[dict]]:
     """Turn cleaned lines into structured HTML (tables, stat blocks, lists).
 
     Returns (html, sections) where sections is [{id, name, norm}, ...].
     """
     lines = _join_wrapped_stat_heads(list(lines))  # rewritten in place below
+    # Where blocks.json says a block begins and ends on this page. A line an
+    # end stops part-way through is cut in two first; both are matched after
+    # the join above, so the indices are the ones the loop walks.
+    lines = block_cut_lines(page_blocks or [], lines)
+    # Paragraph space (M_PB): whatever the line above it is part of — a
+    # table's last row, a stat block — ends there. Read into the same
+    # end-of-block marks blocks.json sets, then dropped.
+    para_ends: set[int] = set()
+    kept: list[str] = []
+    for ln in lines:
+        if ln == M_PB:
+            if kept:
+                para_ends.add(len(kept) - 1)
+            continue
+        kept.append(ln)
+    lines = kept
+    listed_starts, listed_ends = block_line_marks(page_blocks or [], lines)
+    for k in para_ends:
+        listed_ends.setdefault(k, {"kind": "paragraph"})
     out: list[str] = []
     i = 0
     n = len(lines)
@@ -2268,7 +2339,8 @@ def structure_html(
                 # Creature/threat block: HP-carrying monsters, and also
                 # HP-less threats (Fire, Gylglyd vines, The Forest's Wrath)
                 # that lead with tags, Damage, Instinct, or "Threat (…)".
-                creature = False
+                # A heading blocks.json names is one whatever follows it.
+                creature = listed_starts.get(i, {}).get("kind") == "stat-block"
                 for k in range(1, 6):
                     cand = peek(k)
                     if not cand:
@@ -2287,7 +2359,7 @@ def structure_html(
                     ):
                         break
                     low = c.lower()
-                    if (
+                    if creature or (
                         HP_LINE_RE.search(c)
                         or re.match(r"^(damage|instinct|threat)\b", low)
                         or (k <= 3 and looks_like_tag_line(c))
@@ -2889,9 +2961,25 @@ def structure_html(
             i += 1  # move past header line(s); label+dice path already advanced once
             entries: list[tuple[str, str]] = []
             while i < n:
+                if i in listed_starts or (i - 1) in listed_ends:
+                    break  # the table ends here (blocks.json)
                 # Hairlines under dice headers are decorative — skip them so
                 # the entry list is not cut off (which broke roll tables).
+                # One under the last row is the rule the book draws before
+                # what follows the table (a sidebar, a note): if no row comes
+                # after it, the table ends there (Primordial Powers'
+                # constraint table ran on into the worked example).
                 if lines[i] == M_HR:
+                    j = i + 1
+                    while j < n and (lines[j] == M_HR or lines[j].startswith(M_ICON)):
+                        j += 1
+                    if (
+                        entries
+                        and j < n
+                        and not ENTRY_RE.match(_defmt(lines[j]))
+                        and not _defmt(lines[j]).lstrip()[:1].islower()
+                    ):
+                        break
                     i += 1
                     continue
                 if lines[i].startswith(M_ICON):
@@ -2907,6 +2995,8 @@ def structure_html(
                     i += 1
                     # continuations (also skip decorative HRs mid-entry)
                     while i < n:
+                        if i in listed_starts or (i - 1) in listed_ends:
+                            break  # the table ends here (blocks.json)
                         if lines[i] == M_HR:
                             # Peek past hairlines: a following roll header means
                             # the next table starts — do not consume the HR/header.
@@ -2917,6 +3007,8 @@ def structure_html(
                                 j += 1
                             if j < n and looks_like_roll_header(_defmt(lines[j])):
                                 break
+                            if j < n and not _defmt(lines[j]).lstrip()[:1].islower():
+                                break  # a rule, then a new paragraph: the row is done
                             i += 1
                             continue
                         if lines[i].startswith("\x02"):
@@ -3061,7 +3153,11 @@ def structure_html(
             "trade and barter",
         }
         dp1, dp2 = _defmt(peek(1)), _defmt(peek(2))
-        is_creature_start = i in forced_creature or (
+        listed = listed_starts.get(i)
+        is_creature_start = (
+            i in forced_creature
+            or (listed is not None and listed.get("kind") == "stat-block")
+        ) or (
             _defmt(line).lower() not in _not_creature
             and not looks_like_value_header(line)
             and not VALUE_ROW_RE.match(line)
@@ -3120,6 +3216,10 @@ def structure_html(
             # Trailing bullets, checklists, Questions, in-card roll tables, and
             # flavor all stay until one of those boundaries.
             while i < n:
+                if i in listed_starts:
+                    break  # the next block begins here (blocks.json)
+                if (i - 1) in listed_ends:
+                    break  # the line above was its last (blocks.json, or paragraph space)
                 L = lines[i]
                 if L == M_HR:
                     # Decorative HR mid-card before roll-table entries
@@ -3244,6 +3344,8 @@ def structure_html(
                         i += 1
                     entries_c: list[tuple[str, str]] = []
                     while i < n:
+                        if i in listed_starts or (i - 1) in listed_ends:
+                            break  # the table ends here (paragraph space, blocks.json)
                         if lines[i] == M_HR:
                             break
                         if lines[i].startswith("\x02"):
@@ -3260,6 +3362,8 @@ def structure_html(
                         while i < n and not lines[i].startswith("\x02"):
                             if lines[i] == M_HR:
                                 break
+                            if i in listed_starts or (i - 1) in listed_ends:
+                                break  # paragraph space, or blocks.json: the row ends
                             nxt_e = _plain(lines[i])
                             if ENTRY_RE.match(nxt_e):
                                 break
@@ -3291,6 +3395,8 @@ def structure_html(
                 else:
                     block_lines.append(pv(plain))
                 i += 1
+                if (i - 1) in listed_ends:
+                    break  # the block ends on that line (blocks.json)
             if tag_prefix:
                 block_lines.insert(0, ", ".join(tag_prefix))
             # A Cost is what a follower has and a monster never does
@@ -3537,9 +3643,14 @@ def article_html(
     lookups: dict[str, dict[int, dict]] | None = None,
     section_indexes: dict[str, dict] | None = None,
     current_book: str | None = None,
+    page_blocks: list[dict] | None = None,
 ) -> tuple[str, str, list[dict]]:
     """Article HTML from its extracted lines (``extract_article_lines`` or
     the corpus).
+
+    ``page_blocks`` is the page's entry in ``blocks.json``: the blocks it is
+    supposed to hold, whose ``start``/``end`` lines settle a boundary the
+    renderer would otherwise have to guess at.
 
     Returns (body_html, excerpt_text, sections).
     """
@@ -3553,6 +3664,7 @@ def article_html(
         lookups=lookups,
         section_indexes=section_indexes,
         current_book=current_book,
+        page_blocks=page_blocks,
     )
     # Excerpt: whole prose paragraphs until we have at least ~50 words,
     # always ending on a paragraph boundary

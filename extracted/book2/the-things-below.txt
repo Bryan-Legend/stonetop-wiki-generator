@@ -105,7 +105,9 @@ P	8 A predator/a warrior/a warlord/ a ruler
 P	9 Scales/sinew/suppleness
 P	10 Skulls/bones/corpses/death
 P	11 Vastness/immensity
-P	12 A youth/a child/an infant Remember that the Things Below are not bound by constraints of biology, physics, or reality. Make their aspects impossible and weird, things of fever-dream and drugfueled vision.
+P	12 A youth/a child/an infant
+PB
+P	Remember that the Things Below are not bound by constraints of biology, physics, or reality. Make their aspects impossible and weird, things of fever-dream and drugfueled vision.
 P	1d12 instinct
 HR
 P	1 To stoke conflict, confusion, distrust
@@ -119,7 +121,9 @@ P	8 To wantonly devour and consume
 P	9 To befoul and corrupt beauty/ strength/dignity
 P	10 To fight and hurt and kill and rage and hurt some more
 P	11 To dominate, punish, and crush
-P	12 To simply destroy, nothing more and nothing less Tweak the instinct you choose to reflect your growing understanding of this particular Thing Below.
+P	12 To simply destroy, nothing more and nothing less
+PB
+P	Tweak the instinct you choose to reflect your growing understanding of this particular Thing Below.
 PAGE	418
 H2	Names & titles
 HR
@@ -175,7 +179,9 @@ P	Threat (<i>magical entity</i>)
 P	<b>Themes</b> darkness/cold/despair, undeath/ death/loss/grief <b>Instinct</b> to smother life, hope, and light
 P	• Sense powerful longings/emotions
 P	• Offer services, secrets, or power
-P	• Twist a bargain to its favor 'Tis a pale thing, a dead thing, a long reptilian creature with skulls where it should have eyes. It slithers through darksome, bone-strewn caves. Caves that drip with tears and lost hopes. It raised up the first sorcerers, gave them the power they craved. It asked only for little things, harmless things, things they'd never miss. And it delighted, yesss it delighted so, when the gifts it gave brought their recipients low. Brought them low, and everything around them, yesss.
+P	• Twist a bargain to its favor
+PB
+P	'Tis a pale thing, a dead thing, a long reptilian creature with skulls where it should have eyes. It slithers through darksome, bone-strewn caves. Caves that drip with tears and lost hopes. It raised up the first sorcerers, gave them the power they craved. It asked only for little things, harmless things, things they'd never miss. And it delighted, yesss it delighted so, when the gifts it gave brought their recipients low. Brought them low, and everything around them, yesss.
 P	See also: the <b>Hec'tumel Codex</b> (page 556).
 ICON	icons/threat.svg
 H3	Hlad, the Devourer, the Eternal Maw
@@ -321,7 +327,9 @@ P	2 An item of luxury or status (Value 2)
 P	3 A precious item (Value 3)
 P	4 A "priceless" item (Value 4)
 P	5 A way to best your rivals or defeat your enemies
-P	6 A way to acquire great power or long life Whatever the gift, it arrives soon: while you sleep, in your dreams, or via vision or coincidence or happy accident.
+P	6 A way to acquire great power or long life
+PB
+P	Whatever the gift, it arrives soon: while you sleep, in your dreams, or via vision or coincidence or happy accident.
 PAGE	426
 HR
 ICON	icons/treasure.svg

@@ -17,7 +17,8 @@ P	When <b><i>the staff holds Charge and you focus your</i></b> <b><i>will and se
 P	When you <b><i>tap into the power stored within the</i></b> <b><i>staff</i></b>, pick 1:
 B	Extend its effects up to <i>far</i> range
 B	Move items quickly and suddenly, fast enough to attack or defend (<i>dangerous</i>)
-B	Manipulate an object of considerable mass, as much as you can deadlift Each time you tap into the staff's power, roll
+B	Manipulate an object of considerable mass, as much as you can deadlift
+P	Each time you tap into the staff's power, roll
 P	1d6. If you roll higher than the staff's current
 P	Charge, it loses 1 Charge.
 P	48

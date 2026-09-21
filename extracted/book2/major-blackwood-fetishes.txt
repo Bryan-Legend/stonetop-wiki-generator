@@ -43,4 +43,6 @@ P	Max. 10 lacks organs
 P	<b>Instinct</b> to second-guess your decisions
 P	Manifest a ghostly presence (harmed <b>Damage</b> ghostly touch d4 (<i>hand</i>, ignores armor) only by silver or salt) or host's weapon d6 (tags vary)
 P	Possess an inebriated victim <b>Cost</b> pleasures of the flesh Spot a weakness, want, or fear (Loyalty ◇◇◇ )
-P	• Spin plots and falsehoods back
+P	• Spin plots and falsehoods
+PB
+P	back

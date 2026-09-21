@@ -191,8 +191,10 @@ P	<b>Example</b> <b><i>MacGuffins</i></b><b>:</b>
 B	The Chronicle's vault of artifacts (<b>Instinct</b> to harbor badness)
 B	The Lore Tree of Yevena (<b>Instinct</b> to reveal dangerous secrets)
 B	The Blood-quenched Sword (<b>Instinct</b> to encourage violence)
-B	The aetherium weather vane (<b>Instinct</b> to inspire jealousy) threat type
+B	The aetherium weather vane (<b>Instinct</b> to inspire jealousy)
 PAGE	286
+PB
+P	threat type
 P	<b><i>Magical entity</i></b>
 P	<i>Magical entities</i> include spirits, many
 P	Fae, the Things Below, even gods or their agents. They are beings that live and breathe magic and power, for whom mundane concerns like food and shelter are alien or superfluous.
@@ -565,7 +567,9 @@ C	Earthquake sets it free
 C	Rampages through Great Wood, mindlessly stalking/feeding
 C	Catches "scent" of the Heart, moves towards Stonetop
 C	Starts attacking villagers at night
-C	<b>Impending doom:</b> Devours the Heart, becoming a permanent vortex of death and darkness <b>Stakes:</b> How will its link to Caradoc affect what happens?
+C	<b>Impending doom:</b> Devours the Heart, becoming a permanent vortex of death and darkness
+PB
+P	<b>Stakes:</b> How will its link to Caradoc affect what happens?
 PAGE	298
 H2	Updating
 P	Threats change over time. Between each session, review your threats and update them as needed. For each threat, if…

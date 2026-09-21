@@ -19,4 +19,5 @@ B	It will blaze with terrible heat (1d10 damage, <i>messy</i>), if only for a mo
 P	When you <b><i>speak the Silent Word that completes</i></b> <b><i>the spell</i></b> (<i>far</i> range) mark a debility as elemental forces flow through you into the object. The effect works, but roll +CON: <b>on a 10+</b>, pick 1; <b>on a 7-9</b>, pick 1 and the GM picks another; <b>on a 6-</b>, all 3.
 B	Mark another debility & lose 1d10 HP
 B	The elements run amok, triggering a fire/earthquake/avalanche/storm/etc.
-B	The effect lasts only while you focus on it, and then the object is damaged in a manner of the GM's choosing 64
+B	The effect lasts only while you focus on it, and then the object is damaged in a manner of the GM's choosing
+P	64

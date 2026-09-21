@@ -82,7 +82,9 @@ P	You can select:
 B	Items printed on the Inventory sheet
 B	Other common, mundane items
 B	Any of your special possessions
-B	Special items for which you Trade & Barter Tell the GM what you're bringing and answer their questions about your gear and where you got it.
+B	Special items for which you Trade & Barter
+PB
+P	Tell the GM what you're bringing and answer their questions about your gear and where you got it.
 P	When a player Outfits, they decide how many to mark on their Inventory insert, ◇ and thus how heavy a load they'll carry.
 P	Some playbook moves only work with a certain load or lighter, but mostly a character's load just informs the fiction and your GM moves. "The slope's steep, but with plenty of handholds. It's no problem unless you've got a heavy load—then you'll be Defying Danger. What do you do?"
 P	<b>Small items</b> don't count towards a character's load. They're things that could fit in a purse or boot with room to spare—some coins, a tinderbox, a knife, etc. The player can mark a number of in Small items equal to 4 + the steading's Prosperity.
@@ -440,7 +442,9 @@ P	1 A heavy storm; high winds, hail, thunder, lightning, tornadoes
 P	2 Blazing heat, still air, not a cloud in sight
 P	3 Hot and humid, with brief, drenching thunder storms
 P	4-5 Hot, muggy, some wind
-P	6 Warm, sunny, breezy, perfect autumn
+P	6 Warm, sunny, breezy, perfect
+PB
+P	autumn
 HR
 P	1d6 weather
 HR
@@ -454,13 +458,17 @@ P	1d6 weather
 P	1 A heavy storm; high winds, hail, thunder, lightning
 P	2 Steady, chilly rain
 P	3-4 Warm and windy, maybe some brief showers
-P	5-6 Warm, sunny, pleasant late summer/early autumn
+P	5-6 Warm, sunny, pleasant
+PB
+P	late summer/early autumn
 P	1d6 weather
 P	1 A powerful thunderstorm or cold, soaking rain
 P	2 Windy with a few rain showers
 P	3 Warm, clouds on the horizon, steady wind; roll again later with disadvantage
 P	4-5 Hot and dry during the day; cooler and windy at night
-P	6 Warm, sunny, breezy, perfect winter
+P	6 Warm, sunny, breezy, perfect
+PB
+P	winter
 P	1d6 weather
 P	1 Blizzard: wind, snow, all of it
 P	2 Intense cold and wind
@@ -754,7 +762,9 @@ HR
 P	<i>Let's think back to the first adventure.</i> <i>Crinwin (in service to a hypnotic, childcollecting swyn) are going to abduct Pryder.</i> <i>Rheinal, Pryder's father, will stagger back</i> <i>into town, injured and covered in crinwin</i> <i>blood. I expect the PCs to track the crinwin</i> <i>and try to rescue Pryder.</i>
 P	<i>I Chart a Course in advance, writing down</i> <i>these requirements:</i>
 P	O You must first travel to the scene of Pryder's abduction, and follow the tracks from there O You'll need to bring a decent tracker O It'll probably take at least a day there and back, maybe more O You risk getting lost (losing the trail)
-P	O You'll need to watch out for crinwin (obviously) and other dangers of the Wood like nailadd, feathered drakes, and Fae O You risk drawing the attention of crinwin <i>Next, I zoom in a little on the "Vicinity"</i> <i>map and expand it a little, showing the</i> <i>path that the crinwin took and the nearby</i> <i>landmarks (the Red Grove).</i>
+P	O You'll need to watch out for crinwin (obviously) and other dangers of the Wood like nailadd, feathered drakes, and Fae O You risk drawing the attention of crinwin
+PB
+P	<i>Next, I zoom in a little on the "Vicinity"</i> <i>map and expand it a little, showing the</i> <i>path that the crinwin took and the nearby</i> <i>landmarks (the Red Grove).</i>
 HR
 P	<i>I list my points of interest and legs of travel:</i>
 P	* The Stream. <i>It'll be the first time</i> <i>they cross the Stream in play. I note its</i> <i>page number in the almanac and skim it.</i>

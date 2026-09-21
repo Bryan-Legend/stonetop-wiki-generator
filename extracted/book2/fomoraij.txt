@@ -45,7 +45,9 @@ P	8 Vaulted tunnels lined with roots of iron-infused wood, rusted and bleeding
 P	9 Limestone caverns, the walls pulsing with <b>red crystal</b> (page 424)
 P	10 Limestone caves and columns, wet and dripping, festooned with slimy life
 P	11 Strangely smooth tunnels coated in warm, pulsing organic material
-P	12 A vast chamber of white stone, a mighty dead tree growing down from the ceiling Fomoraij lairs are always found underground and beneath the <b>Great Wood</b> (page 200), accessed via caves and <b>Green Lord</b> <b>ruins</b> (page 214). The sites above are often corrupted by the <b>Things Below</b> (page 412).
+P	12 A vast chamber of white stone, a mighty dead tree growing down from the ceiling
+PB
+P	Fomoraij lairs are always found underground and beneath the <b>Great Wood</b> (page 200), accessed via caves and <b>Green Lord</b> <b>ruins</b> (page 214). The sites above are often corrupted by the <b>Things Below</b> (page 412).
 PAGE	138
 P	<b>1d12</b> form
 HR
@@ -60,10 +62,14 @@ P	8 Powerful/burrowing/rending
 P	9 Plantlike (roots, rhizomes, bulbs)
 P	10 Slimy/oozing/mucous
 P	11 Sporting tentacles/tendrils/feelers/ antennae
-P	12 Worm-like/slug-like/grub-like Combine 2-3 of the above with the vaguely humanoid form it once had as a Green Lord.
+P	12 Worm-like/slug-like/grub-like
+PB
+P	Combine 2-3 of the above with the vaguely humanoid form it once had as a Green Lord.
 HR
 P	<i>The PCs have encountered some horrors</i> <i>in the Great Wood—some crinwin</i> <i>oozing silver slime and wasps with</i> <i>hallucinatory venom. I already decided</i> <i>that these things were corrupted by the</i> <i>Things Below, based on the themes of</i> <i>"insanity/chaos/ruin/quicksilver" and</i> <i>"corruption/disease/poison/vermin."</i>
-P	<i>Now I'm thinking that a Fomoraij is</i> <i>behind them. I keep the two themes, and</i> <i>roll a</i> constraint <i>of "confinement." For</i> <i>its</i> lair<i>, I roll "a series of underground</i> <i>streams, rivers, lakes, all teeming with</i> <i>horrors." For its</i> form<i>, I get "too many</i> <i>limbs/eyes/mouths," and "a swarm of</i> <i>smaller things" and "slimy/oozing/mucous." I ponder, and come up with:</i> <i>Yaarowslow the Many is trapped away</i> <i>on an island in an underground lake,</i> <i>fed by tiny rivulets of groundwater. It</i> <i>has transformed its flesh into an oozing,</i> <i>silvery nest, host to an endless swarm</i> <i>of skittering and buzzing horrors that</i> <i>serve as its eyes and hands and mouths.</i> <i>For centuries, the vermin have burrowed through stone to reach the surface.</i> <i>It has recently succeeded, and its silvery</i> <i>spawn now taint a spring deep in the</i> <i>Great Wood.</i>
+P	<i>Now I'm thinking that a Fomoraij is</i> <i>behind them. I keep the two themes, and</i> <i>roll a</i> constraint <i>of "confinement." For</i> <i>its</i> lair<i>, I roll "a series of underground</i> <i>streams, rivers, lakes, all teeming with</i> <i>horrors." For its</i> form<i>, I get "too many</i> <i>limbs/eyes/mouths," and "a swarm of</i> <i>smaller things" and "slimy/oozing/mucous." I ponder, and come up with:</i>
+PB
+P	<i>Yaarowslow the Many is trapped away</i> <i>on an island in an underground lake,</i> <i>fed by tiny rivulets of groundwater. It</i> <i>has transformed its flesh into an oozing,</i> <i>silvery nest, host to an endless swarm</i> <i>of skittering and buzzing horrors that</i> <i>serve as its eyes and hands and mouths.</i> <i>For centuries, the vermin have burrowed through stone to reach the surface.</i> <i>It has recently succeeded, and its silvery</i> <i>spawn now taint a spring deep in the</i> <i>Great Wood.</i>
 HR
 PAGE	139
 H2	Artifacts

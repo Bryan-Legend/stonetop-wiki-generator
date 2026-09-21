@@ -111,7 +111,9 @@ P	1 A whole tribal band, on the move
 P	2-3 A gang on patrol, wary but curious
 P	4 One or two, under attack by a rival band
 P	5 Foragers, eager to invite guests home
-P	6 Two groups in a tense parley See page 247 for more on the thraulgwyn.
+P	6 Two groups in a tense parley
+PB
+P	See page 247 for more on the thraulgwyn.
 P	1d6 other encounter
 HR
 P	1 A <b>thrall</b> (page 435), terribly marked, living down here all alone
@@ -202,7 +204,9 @@ P	2 Too-long limbs, fingers, necks
 P	3 Covered in weeping sores
 P	4 Grotesque/horrific behaviors (even for thraulgwyn)
 P	5 Subject to hallucinations
-P	6 Fear open flame See page 432 for more gifts and marks.
+P	6 Fear open flame
+PB
+P	See page 432 for more gifts and marks.
 P	1d6 asset
 HR
 P	1 Metal weapons, lovingly cared for
@@ -314,7 +318,9 @@ P	2 To weaken/hurt/degrade them
 P	3 To <b>corrupt</b> them (page 430)
 P	4 To turn them against each other
 P	5 To trap or ensnare them
-P	6 To coalesce into a full-fledged <b>emanation</b> (page 436) Play out the scene with dreamlike logic but very real potential consequences for the PCs. Make liberal use of <b>whispers and</b> <b>visions</b> (page 428) and <b>unnatural phenomena</b> (page 429). Should a simulacrum leave the tableau with the PCs, decide for yourself what happens; don't be afraid to get weird.
+P	6 To coalesce into a full-fledged <b>emanation</b> (page 436)
+PB
+P	Play out the scene with dreamlike logic but very real potential consequences for the PCs. Make liberal use of <b>whispers and</b> <b>visions</b> (page 428) and <b>unnatural phenomena</b> (page 429). Should a simulacrum leave the tableau with the PCs, decide for yourself what happens; don't be afraid to get weird.
 HR
 H3	Traversing the Deeps
 P	Time flows strangely down here. Visitors don't really need food or drink. Sleep is fleeting. Light sources might last indefinitely, only to snuff out at the worst moment. Distances are fluid, dreamlike. Those who wander without a purpose are sure to be trapped, or worse.

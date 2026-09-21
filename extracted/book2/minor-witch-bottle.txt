@@ -13,5 +13,6 @@ P	Sway ◇◇◇
 P	When you <b><i>tie strands of someone's hair around</i></b> <b><i>an item that they made or owned, set them afire,</i></b> <b><i>and drop them still-burning into the empty bottle,</i></b> hold 3 Sway over them. The cinders continue to burn and glow until the Sway is gone. Spend 1 Sway while speaking their true name to…
 B	Twist their senses, making them perceive something untrue
 B	Plague them with nightmares until they wash in rain or snow
-B	Cause an emotion in their heart to swell, possibly overwhelming them If the person you currently hold Sway over finds and breaks the Witch Bottle, you will yourself suffer all the torments you have ever inflicted with it.
+B	Cause an emotion in their heart to swell, possibly overwhelming them
+P	If the person you currently hold Sway over finds and breaks the Witch Bottle, you will yourself suffer all the torments you have ever inflicted with it.
 P	44

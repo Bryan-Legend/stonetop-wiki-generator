@@ -56,6 +56,8 @@ from .chrome import (
     write_robots,
     write_sitemap,
 )
+from . import blocks as blockdata
+from .coverage import report as report_unshown
 from .corpus import (
     TEXT_KINDS,
     CorpusError,
@@ -255,6 +257,15 @@ def parse_args(argv: list[str] | None = None) -> argparse.Namespace:
         help=(
             "Print where the build's time goes: each phase, the slowest "
             "pages to render, and the cost of each language."
+        ),
+    )
+    p.add_argument(
+        "--seed-blocks",
+        action="store_true",
+        help=(
+            "Rewrite blocks.json from what this build produced, instead of "
+            "checking against it. Run it after a change that is meant to "
+            "alter the blocks, and read the diff."
         ),
     )
     p.add_argument(
@@ -625,6 +636,9 @@ def main(argv: list[str] | None = None) -> None:
             docs[maps_art["book"]], maps_art, out / "images", input_dir
         )
 
+    # What each page is supposed to hold (blocks.json). A seeding run
+    # builds without it, to record what the renderer makes on its own.
+    listed_blocks = {} if args.seed_blocks else blockdata.load()
     print("Indexing sections (for deep links)…")
     clock.phase("index sections (first render of every page)")
     sections_by_slug: dict[str, list[dict]] = {}
@@ -658,7 +672,12 @@ def main(argv: list[str] | None = None) -> None:
             # 18" can name the section the reader is being sent to.
             head_pages_by_slug[slug] = heading_pages(lines, pages)
             _body, _ex, sections = article_html(
-                tagged, art["title"], lookup, articles, **common
+                tagged, art["title"], lookup, articles,
+                # The same blocks the page will be built with, or a block
+                # that exists only because blocks.json says so has no
+                # section to be linked to.
+                page_blocks=blockdata.for_slug(listed_blocks, book_id, slug),
+                **common,
             )
         ov = page_override(slug)
         if ov is not None:
@@ -705,6 +724,10 @@ def main(argv: list[str] | None = None) -> None:
     print("Building pages…")
     clock.phase("build english pages (second render)")
     search_docs: list[dict] = []
+    n_unshown = 0
+    n_drift = 0
+    # What each page is supposed to hold (blocks.json), and what it held.
+    built_blocks: dict[str, dict[str, list[dict]]] = {}
     # Each page's English body, kept so the localized pass can tell a
     # translation still matching its source from one gone stale.
     english_bodies: dict[str, str] = {}
@@ -812,7 +835,11 @@ def main(argv: list[str] | None = None) -> None:
                 )
             else:
                 body, excerpt, _secs = article_html(
-                    tagged, art["title"], lookup, articles, **common
+                    tagged, art["title"], lookup, articles,
+                    page_blocks=blockdata.for_slug(
+                        listed_blocks, book_id, slug
+                    ),
+                    **common,
                 )
                 # The works a page cites, linked (links/<slug>.json).
                 body, unlinked = apply_reference_links(body, slug)
@@ -824,6 +851,31 @@ def main(argv: list[str] | None = None) -> None:
                 # translation of the same page would show English there.
                 print(f"  note: {slug}: {len(TAG_RE.findall(body))} provenance tags leaked into the HTML")
                 body, excerpt = strip_tags(body), strip_tags(excerpt)
+            # Every line of the book should be on the page it built; what
+            # is missing is a layout the extractor or the renderer got wrong,
+            # and it is never silent (generator/coverage.py).
+            n_unshown += report_unshown(slug, lines, body)
+            # …and every block it is supposed to hold is on it, with nothing
+            # that is not listed (blocks.json).
+            found = blockdata.found_in_html(body)
+            built_blocks.setdefault(book_id, {})[slug] = found
+            if listed_blocks:
+                want = blockdata.for_slug(listed_blocks, book_id, slug)
+                gone, new = blockdata.drift(want, found)
+                for label, items in (("missing", gone), ("unlisted", new)):
+                    if items:
+                        n_drift += len(items)
+                        print(
+                            f"  WARNING: {slug}: {len(items)} {label} "
+                            f"block(s): " + "; ".join(items[:3])
+                            + (" …" if len(items) > 3 else "")
+                        )
+                for start in blockdata.missing_starts(want, lines):
+                    n_drift += 1
+                    print(
+                        f"  WARNING: {slug}: blocks.json names a start line "
+                        f"that is not in the corpus: {start[:60]}"
+                    )
             # A hand-authored body (pages/<slug>.html) replaces the extraction.
             ov = page_override(slug)
             if ov is not None:
@@ -846,6 +898,7 @@ def main(argv: list[str] | None = None) -> None:
                     tr["corpus"], locale["code"], art, lines, _pages, ov,
                     lookup, articles, common, ui=locale.get("ui"),
                     titles=locale.get("titles"),
+                    page_blocks=blockdata.for_slug(listed_blocks, book_id, slug),
                 )
                 for note in notes:
                     print(f"  i18n: {note}")
@@ -976,6 +1029,20 @@ def main(argv: list[str] | None = None) -> None:
             }
         )
         clock.lap("build: previews + search text", "all pages", t_page)
+
+    if n_unshown:
+        print(f"  {n_unshown} line(s) of book text not shown, in total")
+    if args.seed_blocks:
+        # Keep the hand-written start/end entries: a block that exists
+        # only because the file says so is not in a seeding build.
+        built_blocks = blockdata.merge(blockdata.load(), built_blocks)
+        path = blockdata.save(built_blocks)
+        n_blocks = sum(
+            len(v) for book in built_blocks.values() for v in book.values()
+        )
+        print(f"  Wrote {path.name}: {n_blocks} blocks — check `git diff`")
+    elif n_drift:
+        print(f"  {n_drift} block(s) differ from blocks.json, in total")
 
     bestiary = next((a for a in articles if a.get("kind") == "bestiary"), None)
     if bestiary:

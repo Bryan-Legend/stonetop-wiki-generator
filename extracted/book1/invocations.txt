@@ -3,7 +3,7 @@
 PAGE	146
 P	Invocations Lightbearer, you start knowing 2 Invocations.
 P	Each time you reach an even-numbered level, learn 1 new Invocation.
-P	While one Invocation is <i>ongoing</i> whenever you wish, and it will end immediately if your holy light is extinguished.
+P	While one Invocation is <i>ongoing</i>, you can't use another. You can end an Invocation whenever you wish, and it will end immediately if your holy light is extinguished.
 P	An invocation's range is equal to that of its light source.
 HR
 C	<b>BATH OF HEALING LIGHT</b> Cup your hands around your light and focus it. Your patient... (pick 2):
@@ -32,7 +32,6 @@ HR
 C	<b>DANCING LIGHT</b> (<i>ongoing</i>) Your light takes to the air, floating as you direct it, untethered from its fuel. You can move it anywhere that you can see it, and even change its shape or color.
 P	<b>Reduced</b>: it dims, reducing its range by one step.
 P	<b>Empowered</b>: you can use another Invocation through the Dancing Light while it is <i>ongoing</i>.
-P	, you can't use another. You can end an Invocation
 C	<b>GO BACK TO THE SHADOW</b> Spirits of darkness in your light take 2d8 damage (ignores armor). Roll damage for each spirit separately. A spirit reduced to 0 HP is either banished from this world or back to whatever tethers it here.
 P	<b>Reduced</b>: affected spirits take only 1d8 damage.
 P	<b>Empowered</b>: a spirit reduced to 0 HP is either utterly destroyed OR it's banished from the world and anything tethering it here is destroyed (GM's choice).

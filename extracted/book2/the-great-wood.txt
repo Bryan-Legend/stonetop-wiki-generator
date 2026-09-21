@@ -118,7 +118,9 @@ P	2 A place <b>haunted</b> by death and the undying (page 68)
 P	3 A place bearing traces of the <b>Forest</b> <b>Folk</b> (page 150)
 P	4 A place sacred to the <b>spirits of the</b> <b>wild</b> (page 356)
 P	5 A <b>Fae domain</b> (page 102) or <b>waystone</b> (page 478)
-P	6 A ruin or artifact of the <b>Green Lords</b> (page 210) If it's been there for at least 10 years, it's likely marked by Forest Folk <b>glyphs</b> (page 152).
+P	6 A ruin or artifact of the <b>Green Lords</b> (page 210)
+PB
+P	If it's been there for at least 10 years, it's likely marked by Forest Folk <b>glyphs</b> (page 152).
 PAGE	204
 H2	Dangers
 HR

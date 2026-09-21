@@ -139,7 +139,9 @@ P	6 A good place to hide
 P	7 A breather, as the Hunter and his hounds find the trail
 P	8 If part of the hunt, the quarry is in sight/reach; if the quarry, a place the hunter can't/won't go
 P	9 If part of the hunt, a chance for mercy, to let the quarry go; if the quarry, a chance to slip away or catch the Hunter off guard
-P	10 A final mad dash before dawn or to the edge of the Wood Change the <b>terrain</b> (page 202) with each scene or challenge.
+P	10 A final mad dash before dawn or to the edge of the Wood
+PB
+P	Change the <b>terrain</b> (page 202) with each scene or challenge.
 HR
 H3	Evading the Hunter
 P	Some ploys that might work include…

@@ -120,6 +120,113 @@ def cmd_check(args: argparse.Namespace) -> int:
     return 1 if bad else 0
 
 
+# ---------------------------------------------------------------- splits
+
+def _plain(text: str) -> str:
+    """Letters and digits only: how a split is recognised whatever the
+    whitespace between its pieces."""
+    import re
+    return re.sub(r"[\W_]+", "", re.sub(r"<[^>]+>", "", text)).lower()
+
+
+def _kind(ch: str) -> str:
+    """The shape of the character a piece opens with."""
+    if not ch:
+        return ""
+    if ch.isupper() or ch in "\"'“‘«「(『【":
+        return "open"  # a capital, or an opening quote/bracket
+    if ch.islower():
+        return "lower"
+    if ch.isdigit():
+        return "digit"
+    if "\u2e80" <= ch <= "\u9fff" or "\uac00" <= ch <= "\ud7af" or "\uf900" <= ch <= "\ufaff":
+        return "cjk"  # a script without capitals: it can open any piece
+    return "other"
+
+
+def split_translation(en_pieces: list[str], tr: str) -> list[str] | None:
+    """Cut one translated line into as many pieces as the English split into.
+
+    The extractor used to glue a table's last row to the note under it, a
+    column label to the row above it, a list item to the paragraph after it
+    — one line, where the book has two. Translators kept that shape, and the
+    seam is a single space in every language so far ("6 Evidentes e
+    intactas Glifos …", "6 明显且完好 “隐藏”的符记…"). So the cut goes at a
+    space: the one whose place in the line is nearest the English seam's,
+    preferring one where the next word opens the way the English piece
+    after the seam does (a capital or a quote, or a lowercase label).
+    Returns ``None`` when the line has no space to cut at, or two are too
+    close to call — that line is then reported and left in English.
+    """
+    if len(en_pieces) < 2:
+        return [tr]
+    tr = tr.strip()
+    total = sum(len(e) for e in en_pieces) + len(en_pieces) - 1
+    want = (len(en_pieces[0]) + 1) / total
+    nxt = _kind(en_pieces[1].lstrip()[:1])
+    # Where a seam can fall: at a space, or — in a script that sets no space
+    # between sentences — just before an opening bracket or quote
+    # ("…的存在/事物（page 264）。但…").
+    openers = "(\uff08\u201c\u300c\u300e\u3010"
+    cands = [
+        (i, i + 1) for i, ch in enumerate(tr)
+        if ch == " " and 0 < i < len(tr) - 1
+    ] + [
+        (i, i) for i, ch in enumerate(tr)
+        if ch in openers and 0 < i and tr[i - 1] != " "
+        and "\u2e80" <= tr[i - 1] <= "\u9fff"
+    ]
+    # never inside a table row's own number ("6 Evidentes")
+    cands = [
+        (i, t) for i, t in cands
+        if not tr[:i].strip().replace("-", "").replace("\u2013", "").isdigit()
+    ]
+    if not cands:
+        return None
+    def runs(t: str) -> tuple[int, int]:
+        return t.count("<b>"), t.count("<i>")
+
+    def closed(t: str) -> bool:
+        return t.count("<b>") == t.count("</b>") and t.count("<i>") == t.count("</i>")
+
+    def depth(t: str) -> int:
+        """Brackets left open, ASCII and full-width alike."""
+        return (t.count("(") + t.count("\uff08")) - (t.count(")") + t.count("\uff09"))
+
+    # The book's own formatting is the surest guide to the seam: each piece
+    # carries the bold and italic runs its English does, and no cut falls
+    # inside a run (the build checks both, and refuses a page that fails).
+    en_runs = runs(en_pieces[0])
+    en_depth = depth(en_pieces[0])
+    scored = []
+    for i, tail_at in cands:
+        head = tr[:i]
+        if not closed(head):
+            continue
+        if runs(head) != en_runs:
+            continue  # the book's formatting says this is not the seam
+        if depth(head) != en_depth:
+            continue  # nor inside a bracket the English piece does not open
+        cost = abs(i / len(tr) - want)
+        got = _kind(tr[tail_at])
+        if got != nxt and got != "cjk":
+            cost += 0.25
+        scored.append((cost, i, tail_at))
+    if not scored:
+        return None
+    scored.sort()
+    best_cost, best, tail_at = scored[0]
+    if len(scored) > 1 and scored[1][0] - best_cost < 0.02 and abs(scored[1][1] - best) > 3:
+        return None  # two seams equally likely: do not guess
+    head, tail = tr[:best].rstrip(), tr[tail_at:].strip()
+    if len(en_pieces) == 2 and runs(tail) != runs(en_pieces[1]):
+        return None
+    rest = split_translation(en_pieces[1:], tail)
+    if rest is None:
+        return None
+    return [head] + rest
+
+
 def cmd_realign(args: argparse.Namespace) -> int:
     """Re-key an applied translation to the English text as it is now."""
     import subprocess
@@ -132,6 +239,9 @@ def cmd_realign(args: argparse.Namespace) -> int:
     meta: dict[str, str] = {}
     work: list[str] = []
     changed: list[str] = []
+    split_report: list[tuple[str, list[str]]] = []
+    trunc_report: list[tuple[str, str]] = []
+    unsplit: list[str] = []
     for kind, prefix in (("sheet", "S"), ("book", "B")):
         if kind not in src or kind not in trp or not trp[kind].is_file():
             continue
@@ -159,6 +269,79 @@ def cmd_realign(args: argparse.Namespace) -> int:
         for en_raw, tr_raw in zip(old_body, tr_body):
             pool.setdefault(en_raw, []).append(tr_raw)
         sheet = kind == "sheet"
+        # A line the extractor now splits in two (or more): its translation
+        # is cut at the matching seam, so the pieces keep their translation.
+        new_body = [
+            ln for ln in _file_lines(new_text)
+            if ln and not ln.startswith("#") and not ln.startswith("PAGE\t")
+        ]
+        new_set = set(new_body)
+        split_tr: dict[int, str] = {}
+        for en_raw, tr_raw in zip(old_body, tr_body):
+            if en_raw in new_set or en_raw.startswith("PAGE\t"):
+                continue
+            _tag, parts = _split_file_line(en_raw)
+            if len(parts) != 1:
+                continue
+            want = _plain(parts[0])
+            for j, ln in enumerate(new_body):
+                if j in split_tr or ln in pool:
+                    continue
+                _t, p0 = _split_file_line(ln)
+                if len(p0) != 1 or not _plain(p0[0]) or not want.startswith(_plain(p0[0])):
+                    continue
+                pieces, acc, k = [p0[0]], _plain(p0[0]), j + 1
+                at = [j]
+                while len(acc) < len(want) and k < len(new_body):
+                    if new_body[k] == "PB":  # the break the extractor now marks
+                        k += 1
+                        continue
+                    _t2, pk = _split_file_line(new_body[k])
+                    if len(pk) != 1:
+                        break
+                    pieces.append(pk[0])
+                    at.append(k)
+                    acc += _plain(pk[0])
+                    k += 1
+                if acc != want or len(pieces) < 2:
+                    # Not a split — but the line may have been cut short, the
+                    # rest of it moved elsewhere (a stray half-line the
+                    # extractor used to append to a table's last row). Keep
+                    # the translation up to the matching seam.
+                    head_plain = _plain(p0[0])
+                    if len(head_plain) < len(want):
+                        seen = 0
+                        for cut_at, ch in enumerate(parts[0]):
+                            if seen == len(head_plain):
+                                break
+                            if _plain(ch):
+                                seen += 1
+                        rest_en = parts[0][cut_at:].strip()
+                        _tt, tparts = _split_file_line(tr_raw)
+                        cut = split_translation(
+                            [p0[0], rest_en], tparts[0] if tparts else ""
+                        )
+                        if cut is not None:
+                            split_tr[j] = cut[0]
+                            trunc_report.append((p0[0], cut[0]))
+                            break
+                    continue
+                _tt, tparts = _split_file_line(tr_raw)
+                cut = split_translation(pieces, tparts[0] if tparts else "")
+                if cut is None:
+                    unsplit.append(parts[0])
+                    break
+                for pos, piece in zip(at, cut):
+                    split_tr[pos] = piece
+                split_report.append((parts[0], cut))
+                break
+        body_pos: dict[int, int] = {}
+        _b = 0
+        for _n, _raw in enumerate(_file_lines(new_text), 1):
+            if not _raw or _raw.startswith("#") or _raw.startswith("PAGE\t"):
+                continue
+            body_pos[_n] = _b
+            _b += 1
         for n, raw in enumerate(_file_lines(new_text), 1):
             if not raw or raw.startswith("#") or raw.startswith("PAGE\t"):
                 continue
@@ -168,6 +351,10 @@ def cmd_realign(args: argparse.Namespace) -> int:
                 continue
             cands = pool.get(raw)
             if not cands:
+                pos = body_pos.get(n)
+                if pos is not None and pos in split_tr and len(idx) == 1:
+                    work.append(f"{prefix}{n}\t{tag}\t{split_tr[pos]}")
+                    continue
                 changed.append(f"{prefix}{n}\t{tag}\t" + "\t".join(parts[i] for i in idx))
                 continue
             _tr_tag, tr_parts = _split_file_line(cands.pop(0))
@@ -187,6 +374,24 @@ def cmd_realign(args: argparse.Namespace) -> int:
     ] + [f"META\t{k}\t{meta.get(k, '')}" for k in META_KEYS]
     out.write_text("\n".join(head + work) + "\n", encoding="utf-8", newline="\n")
     print(f"wrote {out.relative_to(ROOT)}: {len(work)} lines carried over")
+    _enc = sys.stdout.encoding or "utf-8"
+
+    def _say(t: str) -> str:
+        t = t if len(t) <= 100 else t[:97] + "..."
+        return t.encode(_enc, "replace").decode(_enc)
+
+    if split_report:
+        print(f"  {len(split_report)} line(s) the extractor split, their translation cut to match:")
+        for _en, cut in split_report:
+            print("    " + _say(" | ".join(cut)))
+    if trunc_report:
+        print(f"  {len(trunc_report)} line(s) the extractor cut short, their translation cut to match:")
+        for _en, tr in trunc_report:
+            print("    " + _say(tr))
+    if unsplit:
+        print(f"  {len(unsplit)} split line(s) whose translation had no clear seam (left English):")
+        for en in unsplit:
+            print("    " + _say(en))
     if changed:
         print(f"  {len(changed)} line(s) the extractor changed stay English until translated:")
         enc = sys.stdout.encoding or "utf-8"

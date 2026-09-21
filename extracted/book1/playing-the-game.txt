@@ -14,14 +14,18 @@ B	The world, the terrain, the weather
 B	Monsters and hazards
 B	Non-player characters (NPCs),
 B	What happened before the PCs got here
-B	What happens after they leave The GM will ask for input and ideas.
+B	What happens after they leave
+PB
+P	The GM will ask for input and ideas.
 P	They'll ask you to make up details about the world that your PC would know. But ultimately, the world beyond the PCs is the GM's domain. The GM describes how the world reacts to the PCs' actions, and they curate what is and isn't true about the world at large.
 PAGE	37
 H2	Your agenda
 P	When you play <i>Stonetop</i>, these should be your goals:
 B	Portray a compelling character
 B	Engage with the fictional world
-B	Play to find out what happens The game's rules and structure assume that you are pursuing these three goals, and no others. This isn't a game that you play to win. The game doesn't expect you to optimize your character. It's not a game about testing your skill, and it's not a game where you show up to be led through the GM's story.
+B	Play to find out what happens
+PB
+P	The game's rules and structure assume that you are pursuing these three goals, and no others. This isn't a game that you play to win. The game doesn't expect you to optimize your character. It's not a game about testing your skill, and it's not a game where you show up to be led through the GM's story.
 P	Your first and most important goal is to <b>portray a compelling character</b>. Your PC is one of the protagonists of the story.
 P	Make them worthy of that role. Don't treat them as just a set of stats and abilities.
 P	Portray them as a person, with hopes and dreams, inner conflicts, and relationships with others. Your <b>playbook</b> (page 50) will help you to sketch out a compelling character, but it's your job to bring that character to life, to portray a protagonist that you and your fellow players care about.
@@ -30,7 +34,9 @@ H2	The GM's agenda
 P	In case you're wondering, the GM's agenda is as follows:
 B	Portray a rich, mysterious world
 B	Punctuate the PCs' lives with adventure
-B	Play to find out what happens In other words, they're supposed to present you with a world that's worth engaging with. They're meant to present opportunities and threats and challenges to your PCs and the things they care about. And then—just like you—they're meant to let the game unfold and find out what happens as a result.
+B	Play to find out what happens
+PB
+P	In other words, they're supposed to present you with a world that's worth engaging with. They're meant to present opportunities and threats and challenges to your PCs and the things they care about. And then—just like you—they're meant to let the game unfold and find out what happens as a result.
 P	For more on the GM's agenda, see page 168.
 P	Finally, <b>play to find out what happens</b>. The rules and the dice are there to introduce uncertainty and surprises, to tell us what happens when things go wrong. Your character won't always get what they want. You often won't get what you expect.
 P	Have ideas for your character's arc and story, sure, but hold those ideas lightly.
@@ -100,7 +106,9 @@ P	<b>On a 10+</b> (meaning, a total roll of 10 or higher), you get a <b>strong h
 P	<b>On a 7-9</b> (meaning, a total roll of 7, 8, or 9), you get a <b>weak hit</b>. You get only some of what you wanted, or you get what you wanted but with a cost.
 P	<b>On a 6-</b> (meaning, a total roll of 6 or lower), you get a <b>miss</b>, which entails these effects:
 B	<b>You mark XP</b> (page 53), unless the move says otherwise
-B	<b>The GM says what happens</b>, and it will be bad <b>A 6- doesn't always mean you screwed up.</b>
+B	<b>The GM says what happens</b>, and it will be bad
+PB
+P	<b>A 6- doesn't always mean you screwed up.</b>
 P	It means something bad happens, something that your PC won't like. Your foe gets the jump on you. The branch breaks before you can jump. You find the missing villager, but oh no, they've been dead for hours.
 P	A few moves say what happens on a 6-, in which case the GM must abide by those results. But for most moves: <b>on a 6-, mark</b>
 P	<b>XP and prepare for the worst.</b>
@@ -279,7 +287,9 @@ B	Recapping sessions
 B	Explaining rules
 B	Wrangling players between sessions ("Hey everyone, did you level up?")
 B	Watching the clock, calling for breaks, nudging things along
-B	Watching for discomfort, calling time out, checking in with others Even if you don't take formal responsibility for these things, you can step in and help out as needed.
+B	Watching for discomfort, calling time out, checking in with others
+PB
+P	Even if you don't take formal responsibility for these things, you can step in and help out as needed.
 PAGE	49
 P	<b>Ask questions!</b> When you're unsure about some detail, ask for clarification. When you don't know what to do or how to answer a question, ask for advice.
 P	<b>Respect boundaries and wishes.</b> Before you start play, you'll talk about the content that you and your fellow players want to exclude from the game, or veil and handle "off screen," or handle in particular ways.
@@ -516,7 +526,9 @@ P	, your mind is cleared of strong emotions.
 P	<b><i>gaze deeply into the Ice Sphere and ponder a situation, puzzle, or mystery</i></b>, , hold 2 Acumen; <b>on a 7-9</b>, hold 1. ◇◇
 P	, your connection to your body weakens—mark a debility and mark 1 circle.
 MARK	2
-P	, you unlock the mysteries of the Ice Sphere and can front
+P	, you unlock the mysteries of the Ice Sphere and can
+PB
+P	front
 PAGE	62
 P	. major arcanum major arcanum.
 H3	Mysteries of Noruba's Ice Sphere
@@ -694,7 +706,9 @@ E	+DEX to employ speed, agility, or finesse
 E	+CON to endure or hold steady
 E	+INT to apply expertise or enact a clever plan
 E	+WIS to exert willpower or rely on your senses
-E	+CHA to charm, bluff, impress, or fit in <b>On a 10+</b>, you pull it off as well as one could hope; <b>on a 7-9</b>, you can do it, but the GM will present a lesser success, a cost, or a consequence (and maybe a choice between them, or a chance to back down).
+E	+CHA to charm, bluff, impress, or fit in
+PB
+P	<b>On a 10+</b>, you pull it off as well as one could hope; <b>on a 7-9</b>, you can do it, but the GM will present a lesser success, a cost, or a consequence (and maybe a choice between them, or a chance to back down).
 P	For more information, see page 210.
 PAGE	72
 P	<b>INTERFERE</b>
@@ -704,7 +718,9 @@ E	+DEX to employ speed, agility, or finesse
 E	+CON to endure or hold steady
 E	+INT to apply expertise or enact a clever plan
 E	+WIS to exert willpower or rely on your senses
-E	+CHA to charm, bluff, impress, or fit in <b>On a 10+</b>, they pick 1 from the list below; <b>on a 7-9</b>, they pick 1 from the list below but you are left off-balance, exposed, or otherwise vulnerable.
+E	+CHA to charm, bluff, impress, or fit in
+PB
+P	<b>On a 10+</b>, they pick 1 from the list below; <b>on a 7-9</b>, they pick 1 from the list below but you are left off-balance, exposed, or otherwise vulnerable.
 B	Do it anyway, but with disadvantage on their (next) roll
 B	Relent, change course, or otherwise allow their move to be foiled For more information, see page 218.
 P	<b>KNOW THINGS</b>
@@ -716,7 +732,9 @@ P	If <b><i>the shot is tricky or you're under</i></b> <b><i>pressure</i></b>, fi
 B	Deal your damage, but deplete your ammo (mark the next status by your weapon; don't pick this if your weapon lacks such statuses)
 B	Hold steady and wait for a clear shot; when the moment arrives (GM's call), deal your damage
 B	Move to get a clear shot—exposing yourself to danger or giving up some advantage (GM says how)—then deal your damage
-B	Rush the shot and deal your damage, leading to a cost or complication of the GM's choice For more information, see page 222.
+B	Rush the shot and deal your damage, leading to a cost or complication of the GM's choice
+PB
+P	For more information, see page 222.
 PAGE	73
 P	<b>PERSUADE (vs. NPCs)</b>
 P	When you <b><i>press or entice an NPC</i></b>, say what you want them to do (or not do). If they <b><i>have reason to resist</i></b>, roll
@@ -773,7 +791,9 @@ P	<b>on a 10+</b>, you wrest yourself back to the realm of the living—return t
 P	1 HP but say how your brush with death has marked you; <b>on a 7-9</b>, the Lady waves you off—you're no longer dying but you're out of the action; <b>on</b> <b>a 6-</b>, your time has come—choose 1:
 B	Make one last move as if you rolled a 12+, then step through the Last Door
 B	Refuse to go; gain the Revenant or Ghost insert
-B	Call on one of the Things Below by name and beseech it to intercede; gain the Thrall insert For more information, see page 245.
+B	Call on one of the Things Below by name and beseech it to intercede; gain the Thrall insert
+PB
+P	For more information, see page 245.
 PAGE	76
 H2	Follower moves
 P	These moves apply when you interact with your <b>followers</b> (page 64).
@@ -808,7 +828,9 @@ P	You can select...
 B	Items printed on the Inventory insert
 B	Other common, mundane items
 B	Any of your personal possessions
-B	Special items for which you Trade & Barter Tell the GM what you're bringing, and answer their questions about your gear and where you got it.
+B	Special items for which you Trade & Barter
+PB
+P	Tell the GM what you're bringing, and answer their questions about your gear and where you got it.
 P	For more information, see page 306.
 P	<b>REQUISITION</b>
 P	When you <b><i>borrow some of the</i></b> <b><i>steading's assets for an expedition</i></b> (like the horses or a plow), roll +Fortunes:
@@ -902,12 +924,16 @@ P	If <b><i>Fortunes would drop below -1</i></b> <b><i>for any reason</i></b> (no
 B	The steading marks <i>diminished</i> from injuries/sickness/doubt (disadvantage to Deploy, Muster, Pull Together)
 B	The steading marks <i>lacking</i> due to shortages/hoarding/distrust (treat Prosperity as 1 lower)
 B	The steading marks <i>malcontent</i> from fear/anger/despair (Fortunes reset to +0 each season, not +1; folks need Persuading more often than usual)
-B	Folks start to leave; reduce Population by 1 For more information, see page 532.
+B	Folks start to leave; reduce Population by 1
+PB
+P	For more information, see page 532.
 P	<b>MUSTER</b>
 P	When you <b><i>press every able body into</i></b> <b><i>the defense of a steading</i></b>, reduce Fortunes by 1 and roll +Population: <b>on a</b> <b>7+</b>, the steading is alert and ready for action until the threat passes, the Seasons Change, or you cease to oversee the muster. <b>On a 10+</b>, also pick 2; <b>on</b> <b>a 7-9</b>, also pick 1.
 B	Everyone's willing to pitch in; don't reduce Fortunes after all
 B	The muster holds together even without your presence
-B	1 or 2 individuals show real potential; ask the GM who and how For more information, see page 534.
+B	1 or 2 individuals show real potential; ask the GM who and how
+PB
+P	For more information, see page 534.
 PAGE	83
 P	<b>PULL TOGETHER</b>
 P	When you <b><i>set a community to work on</i></b> <b><i>improvements, to secure new resources,</i></b> <b><i>or to make major repairs</i></b>, spend whatever the GM says is required (time, material, Surplus, etc.) and roll
@@ -915,7 +941,9 @@ P	+Population: <b>on a 10+</b>, the job gets done; <b>on a 7-9</b>, pick 1:
 B	It gets done, but other work doesn't; reduce Fortunes by 1
 B	It gets done, but the work is shoddy, crude
 B	It gets done, but there's a consequence (bad blood, an injury, a threat unearthed, etc.)
-B	There's an unforeseen cost, requirement, or challenge; address it and the job gets done For more information, see page 536.
+B	There's an unforeseen cost, requirement, or challenge; address it and the job gets done
+PB
+P	For more information, see page 536.
 P	<b>TRADE & BARTER</b>
 P	When you <b><i>wish to acquire or sell a</i></b> <b><i>commonly available item</i></b>, you can.
 P	When you <b><i>seek to acquire or sell a special item</i></b>, roll +Prosperity and subtract the item's Value. In winter, you have disadvantage. <b>On a 10+</b>, you can get it or sell it for a fair price; <b>on a 7-9 when</b> <b>you're trying to buy</b>, the GM picks 1:
@@ -1172,7 +1200,9 @@ P	<b>A Value 4 item</b> is generally worth:
 B	A ◇ purse of gold coins
 B	A dozen or so good horses
 B	A "priceless" item (huge flawless gemstone, ◇ gold statuette, ◇ bejeweled scepter, etc.)
-P	* Exotic trade goods (like silks, spices, and the like) are +1 Value Commonly available items are Value 0, as are some special items like a bronze spear, a lantern, or a writing slate. Such special items aren't really valuable, but they aren't common, either, so you must still roll to Trade & Barter to see if you can acquire one. If you can, you can (likely) trade some commonly available item or a favor for it, or just borrow it.
+P	* Exotic trade goods (like silks, spices, and the like) are +1 Value
+PB
+P	Commonly available items are Value 0, as are some special items like a bronze spear, a lantern, or a writing slate. Such special items aren't really valuable, but they aren't common, either, so you must still roll to Trade & Barter to see if you can acquire one. If you can, you can (likely) trade some commonly available item or a favor for it, or just borrow it.
 H2	Coins
 P	Stonetop doesn't mint coins, and folks don't use them day-to-day. The local economy runs on trade, gifts and favors, debt and honor. Coin is used almost exclusively when trading with outsiders.
 P	Even then, coin is worth only what folks will trade for it. There's no government to set or enforce prices or exchange rates.

@@ -56,7 +56,9 @@ P	1-2 None to be found
 P	3 Hidden, incomplete/marred
 P	4 Hidden, intact
 P	5 Obvious but incomplete/marred
-P	6 Obvious and intact "Hidden" glyphs might be hidden intentionally, obscured by happenstance (vines, growth, etc.), and/or made with pigments that only the forest eyes can see.
+P	6 Obvious and intact
+PB
+P	"Hidden" glyphs might be hidden intentionally, obscured by happenstance (vines, growth, etc.), and/or made with pigments that only the forest eyes can see.
 P	To an outsider, these glyphs and pictograms seem like nonsense—arbitrary shapes and crude, stylized drawings. But the Forest Folk had an elaborate visual vocabulary, and most of these markings are rich with meaning.
 P	A PC can Know Things to attempt to discern the meanings of any such glyphs, with disadvantage if they are incomplete or marred. <b>On a 7-9</b>, they discern a vague concept, like "dangerous plants," "bound spirit" or "sorrow/loss". <b>On a 10+</b>, they glean the full meaning, like "these plants are dangerous to eat" or "this tree binds a spirit of darkness" or "many
 P	Forest Folk died here at the hands of a sorcerer."

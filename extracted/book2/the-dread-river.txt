@@ -113,7 +113,9 @@ P	1 A tomb, site, or artifact of the <b>Barrow Builders</b> (page 34)
 P	2 A site sacred to the <b>spirits of the</b> <b>wild</b> (page 356)
 P	3-4 A ruin or fortification of the <b>Stone</b> <b>Lords</b> (page 382)
 P	5 A ruin, site, or artifact of the <b>Tempest Lords</b> (page 398)
-P	6 A ruin or artifact of some other group of <b>Makers</b> (page 264) For any point of interest, decide or roll to see what taints it (if anything).
+P	6 A ruin or artifact of some other group of <b>Makers</b> (page 264)
+PB
+P	For any point of interest, decide or roll to see what taints it (if anything).
 P	1d6 what taints it
 HR
 P	1-2 The <b>Things Below</b> (page 412)

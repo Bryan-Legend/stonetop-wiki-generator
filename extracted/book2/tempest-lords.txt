@@ -116,11 +116,15 @@ HR
 P	1-4 Shattered and laid waste by time, disaster, or vandalism; mostly buried, overgrown, collapsed; its purpose unrecognizable
 P	5-8 Crumbling, largely buried, overgrown, or hidden away
 P	9-10 Buried, overgrown, or hidden, but mostly intact
-P	11-12 Fully visible and strangely well-preserved For more examples, see the <b>Ruined Tower</b> (page 332).
+P	11-12 Fully visible and strangely well-preserved
+PB
+P	For more examples, see the <b>Ruined Tower</b> (page 332).
 PAGE	403
 HR
 P	<i>One of the PCs is heading to</i> <b><i>Titan Bones</i></b> (page 448)<i>, and I'd like some sense of what's</i> <i>out there. I think it holds a Tempest Lord ruin, probably once associated with Stormcatcher</i> <i>and the now-</i><b><i>Ruined Tower</i></b> (page 332)<i>.</i>
-P	<i>I roll a 3 for theme ("the heavens: weather and clouds..."), a 4 for structure ("bunker/</i> <i>vault"), a 3 for purpose ("infrastructure"), and an 11 for architectural elementals ("verticality"). I then roll a 5 for condition ("largely buried... hidden"). I ponder a bit and come up</i> <i>with this:</i> <i>Stormcatcher erected a spire on Titan Bones, like a lighthouse, topped with an aetherium</i> <i>weathervane that modulated the weather. When the Stone Lords' rebellious servants</i> <i>attacked, the tower's custodian took the weathervane and hid beneath the spire. The spire</i> <i>fell and the custodian was trapped. All that remains are scattered stones and a circular</i> <i>foundation. And beneath centuries of dirt and rubble, there's a locked trapdoor. It reveals a</i> <i>spiral staircase, a deep shaft, an intact cellar, a skeleton, and an aetherium weathervane.</i>
+P	<i>I roll a 3 for theme ("the heavens: weather and clouds..."), a 4 for structure ("bunker/</i> <i>vault"), a 3 for purpose ("infrastructure"), and an 11 for architectural elementals ("verticality"). I then roll a 5 for condition ("largely buried... hidden"). I ponder a bit and come up</i> <i>with this:</i>
+PB
+P	<i>Stormcatcher erected a spire on Titan Bones, like a lighthouse, topped with an aetherium</i> <i>weathervane that modulated the weather. When the Stone Lords' rebellious servants</i> <i>attacked, the tower's custodian took the weathervane and hid beneath the spire. The spire</i> <i>fell and the custodian was trapped. All that remains are scattered stones and a circular</i> <i>foundation. And beneath centuries of dirt and rubble, there's a locked trapdoor. It reveals a</i> <i>spiral staircase, a deep shaft, an intact cellar, a skeleton, and an aetherium weathervane.</i>
 HR
 PAGE	404
 ICON	icons/material.svg

@@ -103,7 +103,9 @@ P	2 Moss and lichen, of striking colors, growing in decorative patterns
 P	3 Amber, agate, geodes, even unworked boulders of interesting shape
 P	4 Ivory, bone, horn, antler, fur, silk—sometimes fused with or growing from wood or stone
 P	5 Pillars, arches, or even walls of petrified wood, seemingly grown into shape
-P	6 Vines and tendrils (often petrified or metal-infused) clinging to surfaces in branching whorls, sigils, and runes Most Maker-ruins are sized for giants—people two or even three times as tall as humans—but often with smaller-scale rooms, passages, and so forth for their servants.
+P	6 Vines and tendrils (often petrified or metal-infused) clinging to surfaces in branching whorls, sigils, and runes
+PB
+P	Most Maker-ruins are sized for giants—people two or even three times as tall as humans—but often with smaller-scale rooms, passages, and so forth for their servants.
 P	1d6 condition
 HR
 P	1-2 Shattered and laid waste by time, war, or vandalism; mostly buried, submerged, and/or overgrown; its purpose unrecognizable
@@ -114,7 +116,9 @@ P	See <b>Vor Svetelik</b> (the ruined city of the Green Lords, page 468) for add
 P	Many Green Lord ruins feature (or are preserved by) <b>Fae domains</b> (page 102).
 PAGE	215
 HR
-P	<i>The PCs are tracking nailadd (giant jumping spiders) through the Great Wood, and I think</i> <i>that they're heading for a Green Lord ruin. I roll a 6 for theme (the spirits of the wild,</i> <i>bound or put to use), a 6 for structure (ziggurat/pyramid/dome), a 4 for purpose (production), a 4 for architectural elements (ivory, bone, horn, antler, fur, silk), and 3 for condition</i> <i>(crumbling, largely buried and overgrown). I ponder for a little, then come up with this:</i> <i>A crumbling ziggurat, half-collapsed and mostly covered with dirt, trees, and webs. Inside</i> <i>is a smaller ziggurat that bears a silk tapestry of the Mother-of-Spiders, a powerful</i> <i>elemental spirit. In days of yore, this place was filled with spiders of all sizes, spinning silk</i> <i>and weaving impossible fabrics for the Green Lords. Now, the spiders merely grow large,</i> <i>and hungry, and strangely intelligent.</i>
+P	<i>The PCs are tracking nailadd (giant jumping spiders) through the Great Wood, and I think</i> <i>that they're heading for a Green Lord ruin. I roll a 6 for theme (the spirits of the wild,</i> <i>bound or put to use), a 6 for structure (ziggurat/pyramid/dome), a 4 for purpose (production), a 4 for architectural elements (ivory, bone, horn, antler, fur, silk), and 3 for condition</i> <i>(crumbling, largely buried and overgrown). I ponder for a little, then come up with this:</i>
+PB
+P	<i>A crumbling ziggurat, half-collapsed and mostly covered with dirt, trees, and webs. Inside</i> <i>is a smaller ziggurat that bears a silk tapestry of the Mother-of-Spiders, a powerful</i> <i>elemental spirit. In days of yore, this place was filled with spiders of all sizes, spinning silk</i> <i>and weaving impossible fabrics for the Green Lords. Now, the spiders merely grow large,</i> <i>and hungry, and strangely intelligent.</i>
 HR
 PAGE	216
 H2	Artifacts

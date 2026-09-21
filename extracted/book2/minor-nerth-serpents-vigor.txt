@@ -16,4 +16,5 @@ P	Spend Vitality 1-for-1 to:
 B	Shrug off a poison, sickness, or curse
 B	Survive a lethal wound or injury
 B	Recover fully from a permanent injury or impairment (with a few days' rest)
-B	Perform a feat of extraordinary strength, prowess, or endurance Each time you spend Vitality, you manifest a permanent mark of the wild (antlers, hide-like skin, animal eyes, etc.) or such a mark becomes more pronounced. Tell us what it is.
+B	Perform a feat of extraordinary strength, prowess, or endurance
+P	Each time you spend Vitality, you manifest a permanent mark of the wild (antlers, hide-like skin, animal eyes, etc.) or such a mark becomes more pronounced. Tell us what it is.

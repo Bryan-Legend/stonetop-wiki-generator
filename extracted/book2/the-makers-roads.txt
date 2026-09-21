@@ -5,7 +5,9 @@ P	The West Road stretches from Stonetop to <b>Gordin's Delve</b> (page 190). Abo
 P	The roads are wide (~20 feet), grand, and humbling, clearly the work of the <b>Makers</b> (page 264). They have lasted for centuries, strangely well-preserved and free of growth.
 B	Big slabs of tiled basalt, gently beveled, stretching to the horizon
 B	Trickle of rainwater or snowmelt flowing down gutters that never clog
-B	The unnerving way that dust, seeds, leaves, etc. refuse to land on the pavestones Tip: speak quietly, reverently, like you were in a church or temple among the faithful.
+B	The unnerving way that dust, seeds, leaves, etc. refuse to land on the pavestones
+PB
+P	Tip: speak quietly, reverently, like you were in a church or temple among the faithful.
 H2	Questions
 HR
 Q	Which of you have travelled the Highway or the West Road before? When and to where?

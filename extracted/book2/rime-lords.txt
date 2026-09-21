@@ -148,7 +148,9 @@ P	4 Exceptionally hard, roll 1d6 for degree (otherwise, hard as mundane ice)
 P	5 Presents a tangible barrier to spirits, even when unmanifest
 P	6 Pieces persist when removed, instead of melting like normal ice
 P	7-8 Roll 1d6 twice and combine
-P	9-12 Just (just) a bit of never-melting ice Consider rolling 1d6 to inform how pristine the dark ice is.
+P	9-12 Just (just) a bit of never-melting ice
+PB
+P	Consider rolling 1d6 to inform how pristine the dark ice is.
 ICON	icons/treasure.svg
 H2	Artifacts
 H3	Various treasures

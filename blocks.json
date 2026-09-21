@@ -1,0 +1,5606 @@
+{
+ "version": 1,
+ "books": {
+  "book1": {
+   "welcome-to-stonetop": [],
+   "getting-started": [],
+   "playing-the-game": [
+    {
+     "kind": "move-block",
+     "name": "Clash",
+     "id": "clash"
+    },
+    {
+     "kind": "move-block",
+     "name": "Defend",
+     "id": "defend"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "An Old Scroll Case",
+     "id": "an-old-scroll-case"
+    },
+    {
+     "kind": "move-block",
+     "name": "Aid",
+     "id": "aid"
+    },
+    {
+     "kind": "move-block",
+     "name": "Clash",
+     "id": "clash-2"
+    },
+    {
+     "kind": "move-block",
+     "name": "Defend",
+     "id": "defend-2"
+    },
+    {
+     "kind": "move-block",
+     "name": "Defy Danger",
+     "id": "defy-danger"
+    },
+    {
+     "kind": "move-block",
+     "name": "Interfere",
+     "id": "interfere"
+    },
+    {
+     "kind": "move-block",
+     "name": "Know Things",
+     "id": "know-things"
+    },
+    {
+     "kind": "move-block",
+     "name": "Let Fly",
+     "id": "let-fly"
+    },
+    {
+     "kind": "move-block",
+     "name": "Seek Insight",
+     "id": "seek-insight"
+    },
+    {
+     "kind": "move-block",
+     "name": "Advantage/Disadvantage",
+     "id": "advantage-disadvantage"
+    },
+    {
+     "kind": "move-block",
+     "name": "Burn Brightly",
+     "id": "burn-brightly"
+    },
+    {
+     "kind": "move-block",
+     "name": "End of Session",
+     "id": "end-of-session"
+    },
+    {
+     "kind": "move-block",
+     "name": "Death's Door",
+     "id": "deaths-door"
+    },
+    {
+     "kind": "move-block",
+     "name": "Order Followers",
+     "id": "order-followers"
+    },
+    {
+     "kind": "move-block",
+     "name": "Strengthen Your Bond",
+     "id": "strengthen-your-bond"
+    },
+    {
+     "kind": "move-block",
+     "name": "Chart a Course",
+     "id": "chart-a-course"
+    },
+    {
+     "kind": "move-block",
+     "name": "Outfit",
+     "id": "outfit"
+    },
+    {
+     "kind": "move-block",
+     "name": "Requisition",
+     "id": "requisition"
+    },
+    {
+     "kind": "move-block",
+     "name": "Have What You Need",
+     "id": "have-what-you-need"
+    },
+    {
+     "kind": "move-block",
+     "name": "Recover",
+     "id": "recover"
+    },
+    {
+     "kind": "move-block",
+     "name": "Struggle as One",
+     "id": "struggle-as-one"
+    },
+    {
+     "kind": "move-block",
+     "name": "Keep Company",
+     "id": "keep-company"
+    },
+    {
+     "kind": "move-block",
+     "name": "Make Camp",
+     "id": "make-camp"
+    },
+    {
+     "kind": "move-block",
+     "name": "Forage",
+     "id": "forage"
+    },
+    {
+     "kind": "move-block",
+     "name": "Return Triumphant",
+     "id": "return-triumphant"
+    },
+    {
+     "kind": "move-block",
+     "name": "Bolster",
+     "id": "bolster"
+    },
+    {
+     "kind": "move-block",
+     "name": "Convalesce",
+     "id": "convalesce"
+    },
+    {
+     "kind": "move-block",
+     "name": "Deploy",
+     "id": "deploy"
+    },
+    {
+     "kind": "move-block",
+     "name": "Level Up",
+     "id": "level-up"
+    },
+    {
+     "kind": "move-block",
+     "name": "Make a Plan",
+     "id": "make-a-plan"
+    },
+    {
+     "kind": "move-block",
+     "name": "Meet with Disaster",
+     "id": "meet-with-disaster"
+    },
+    {
+     "kind": "move-block",
+     "name": "Muster",
+     "id": "muster"
+    },
+    {
+     "kind": "move-block",
+     "name": "Pull Together",
+     "id": "pull-together"
+    },
+    {
+     "kind": "move-block",
+     "name": "Trade & Barter",
+     "id": "trade-barter"
+    },
+    {
+     "kind": "move-block",
+     "name": "Seasons Change",
+     "id": "seasons-change"
+    },
+    {
+     "kind": "value-table",
+     "name": "Weapons",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Armor",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Clothing",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Fire & Light Sources",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Travel Gear",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Household Goods",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Weapons of War",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Bronze Weapons*",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Armor",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Light Sources",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Tools & Trades",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Writing Implements",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Transport",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Exotic Stuff",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Trade Goods",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Livestock & Other Beasts",
+     "id": ""
+    }
+   ],
+   "playbooks-inserts": [],
+   "the-blessed": [],
+   "the-fox": [],
+   "the-heavy": [],
+   "the-judge": [],
+   "the-lightbearer": [],
+   "the-marshal": [],
+   "the-ranger": [],
+   "the-seeker": [],
+   "the-would-be-hero": [],
+   "inserts": [],
+   "inventory": [],
+   "animal-companion": [
+    {
+     "kind": "move-block",
+     "name": "Order Followers",
+     "id": "order-followers"
+    },
+    {
+     "kind": "move-block",
+     "name": "Strengthen Your Bond",
+     "id": "strengthen-your-bond"
+    },
+    {
+     "kind": "move-block",
+     "name": "Loyal to the End",
+     "id": "loyal-to-the-end"
+    }
+   ],
+   "crew": [
+    {
+     "kind": "move-block",
+     "name": "Order Followers",
+     "id": "order-followers"
+    },
+    {
+     "kind": "move-block",
+     "name": "Strengthen Your Bond",
+     "id": "strengthen-your-bond"
+    }
+   ],
+   "initiates-of-danu": [
+    {
+     "kind": "stat-block",
+     "name": "Enfys, the Acolyte",
+     "id": "enfys-the-acolyte"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Afon, a Fellow Initiate",
+     "id": "afon-a-fellow-initiate"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Gwendyl, Your Mentor",
+     "id": "gwendyl-your-mentor"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Olwin, Your Anointed Lover",
+     "id": "olwin-your-anointed-lover"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Seren the Eldest",
+     "id": "seren-the-eldest"
+    },
+    {
+     "kind": "move-block",
+     "name": "Strengthen Your Bond",
+     "id": "strengthen-your-bond"
+    }
+   ],
+   "invocations": [],
+   "followers": [],
+   "ghost": [],
+   "revenant": [],
+   "thrall": [],
+   "steading-playbook": [
+    {
+     "kind": "infobox",
+     "name": "",
+     "id": ""
+    }
+   ],
+   "running-the-game": [
+    {
+     "kind": "roll-table",
+     "name": "",
+     "id": ""
+    }
+   ],
+   "player-moves": [
+    {
+     "kind": "move-block",
+     "name": "Defy Danger",
+     "id": "defy-danger"
+    },
+    {
+     "kind": "move-block",
+     "name": "Aid",
+     "id": "aid"
+    },
+    {
+     "kind": "move-block",
+     "name": "Clash",
+     "id": "clash"
+    },
+    {
+     "kind": "move-block",
+     "name": "Defend",
+     "id": "defend"
+    },
+    {
+     "kind": "move-block",
+     "name": "Interfere",
+     "id": "interfere"
+    },
+    {
+     "kind": "move-block",
+     "name": "Know Things",
+     "id": "know-things"
+    },
+    {
+     "kind": "move-block",
+     "name": "Let Fly",
+     "id": "let-fly"
+    },
+    {
+     "kind": "move-block",
+     "name": "Seek Insight",
+     "id": "seek-insight"
+    },
+    {
+     "kind": "move-block",
+     "name": "Advantage/Disadvantage",
+     "id": "advantage-disadvantage"
+    },
+    {
+     "kind": "move-block",
+     "name": "Burn Brightly",
+     "id": "burn-brightly"
+    },
+    {
+     "kind": "move-block",
+     "name": "End of Session",
+     "id": "end-of-session"
+    },
+    {
+     "kind": "move-block",
+     "name": "Death's Door",
+     "id": "deaths-door"
+    }
+   ],
+   "harm-healing": [
+    {
+     "kind": "move-block",
+     "name": "Death's Door",
+     "id": "deaths-door"
+    },
+    {
+     "kind": "move-block",
+     "name": "Recover",
+     "id": "recover"
+    },
+    {
+     "kind": "move-block",
+     "name": "Make Camp",
+     "id": "make-camp"
+    },
+    {
+     "kind": "move-block",
+     "name": "Convalesce",
+     "id": "convalesce"
+    }
+   ],
+   "first-adventure": [],
+   "threats": [],
+   "expeditions": [
+    {
+     "kind": "move-block",
+     "name": "Chart a Course",
+     "id": "chart-a-course"
+    },
+    {
+     "kind": "move-block",
+     "name": "Outfit",
+     "id": "outfit"
+    },
+    {
+     "kind": "move-block",
+     "name": "Requisition",
+     "id": "requisition"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Danger",
+     "id": "danger"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Weather",
+     "id": "weather-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Weather",
+     "id": "weather-3"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Weather",
+     "id": "weather-4"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Weather",
+     "id": "weather-5"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Weather",
+     "id": "weather-6"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Weather",
+     "id": "weather-7"
+    },
+    {
+     "kind": "move-block",
+     "name": "Have What You Need",
+     "id": "have-what-you-need"
+    },
+    {
+     "kind": "move-block",
+     "name": "Recover",
+     "id": "recover"
+    },
+    {
+     "kind": "move-block",
+     "name": "Struggle as One",
+     "id": "struggle-as-one"
+    },
+    {
+     "kind": "move-block",
+     "name": "Keep Company",
+     "id": "keep-company"
+    },
+    {
+     "kind": "move-block",
+     "name": "Make Camp",
+     "id": "make-camp"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Occurrence",
+     "id": "occurrence"
+    },
+    {
+     "kind": "move-block",
+     "name": "Forage",
+     "id": "forage"
+    },
+    {
+     "kind": "move-block",
+     "name": "Return Triumphant",
+     "id": "return-triumphant"
+    }
+   ],
+   "sites": [
+    {
+     "kind": "stat-block",
+     "name": "Moss Spirits (Horde, Spirits, Vain, Moody)",
+     "id": "moss-spirits-horde-spirits-vain-moody"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Wynfor & Tiwlip (Small, Entranced, Docile)",
+     "id": "wynfor-tiwlip-small-entranced-docile"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Spirit of the Spring (Solitary, Spirit, Anxious)",
+     "id": "spirit-of-the-spring-solitary-spirit-anxious"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Pryder (Woods-Wise, Handsome, Concussed)",
+     "id": "pryder-woods-wise-handsome-concussed"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Sajra's Disposition",
+     "id": "sajras-disposition"
+    }
+   ],
+   "dangers": [
+    {
+     "kind": "stat-block",
+     "name": "Crinwin",
+     "id": "crinwin"
+    },
+    {
+     "kind": "roll-table",
+     "name": "",
+     "id": ""
+    },
+    {
+     "kind": "roll-table",
+     "name": "",
+     "id": ""
+    },
+    {
+     "kind": "stat-block",
+     "name": "The Almtakers, Guardian Fae",
+     "id": "the-almtakers-guardian-fae"
+    }
+   ],
+   "discoveries": [
+    {
+     "kind": "discovery-block",
+     "name": "A Large Urn",
+     "id": "a-large-urn"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Half-Buried Plaque",
+     "id": "a-half-buried-plaque"
+    }
+   ],
+   "npcs-followers": [
+    {
+     "kind": "stat-block",
+     "name": "Rhianna's Crew, the Hunters",
+     "id": "rhiannas-crew-the-hunters"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Archer",
+     "id": "archer"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Fflur, a Draft Horse",
+     "id": "fflur-a-draft-horse"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Andalau of the Flute, Dancing Wind Spirit",
+     "id": "andalau-of-the-flute-dancing-wind-spirit"
+    },
+    {
+     "kind": "move-block",
+     "name": "Order Followers",
+     "id": "order-followers"
+    },
+    {
+     "kind": "move-block",
+     "name": "Strengthen Your Bond",
+     "id": "strengthen-your-bond"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Archer",
+     "id": "archer-2"
+    }
+   ],
+   "homefront": [
+    {
+     "kind": "move-block",
+     "name": "Seasons Change",
+     "id": "seasons-change-2"
+    },
+    {
+     "kind": "move-block",
+     "name": "Bolster",
+     "id": "bolster"
+    },
+    {
+     "kind": "move-block",
+     "name": "Convalesce",
+     "id": "convalesce"
+    },
+    {
+     "kind": "move-block",
+     "name": "Deploy",
+     "id": "deploy"
+    },
+    {
+     "kind": "move-block",
+     "name": "Level Up",
+     "id": "level-up"
+    },
+    {
+     "kind": "move-block",
+     "name": "Make a Plan",
+     "id": "make-a-plan"
+    },
+    {
+     "kind": "move-block",
+     "name": "Meet with Disaster",
+     "id": "meet-with-disaster"
+    },
+    {
+     "kind": "move-block",
+     "name": "Muster",
+     "id": "muster"
+    },
+    {
+     "kind": "move-block",
+     "name": "Pull Together",
+     "id": "pull-together"
+    },
+    {
+     "kind": "move-block",
+     "name": "Trade & Barter",
+     "id": "trade-barter"
+    }
+   ],
+   "writing-moves-love-letters": [
+    {
+     "kind": "move-block",
+     "name": "Misery Loves Company",
+     "id": "misery-loves-company"
+    },
+    {
+     "kind": "move-block",
+     "name": "Scout Ahead",
+     "id": "scout-ahead"
+    },
+    {
+     "kind": "move-block",
+     "name": "Burgle",
+     "id": "burgle"
+    }
+   ],
+   "the-game-ongoing": [
+    {
+     "kind": "move-block",
+     "name": "End of Session",
+     "id": "end-of-session"
+    },
+    {
+     "kind": "move-block",
+     "name": "Denouement",
+     "id": "denouement"
+    }
+   ],
+   "acknowledgements": [],
+   "mediography": []
+  },
+  "book2": {
+   "welcome-to-the-worlds-end": [],
+   "the-village-of-stonetop": [
+    {
+     "kind": "infobox",
+     "name": "",
+     "id": ""
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Spring",
+     "id": "spring"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Summer",
+     "id": "summer"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Autumn",
+     "id": "autumn"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Winter",
+     "id": "winter"
+    }
+   ],
+   "aratis-the-lawkeeper": [
+    {
+     "kind": "roll-table",
+     "name": "Theme",
+     "id": "theme"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Minor Arcana",
+     "id": "minor-arcana"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Minor Arcanum",
+     "id": "minor-arcanum"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Major Arcana",
+     "id": "major-arcana"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Judge of Aratis",
+     "id": "judge-of-aratis"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Oathbreaker's Curse",
+     "id": "oathbreakers-curse"
+    }
+   ],
+   "barrier-pass": [
+    {
+     "kind": "infobox",
+     "name": "",
+     "id": ""
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Stoic and Unfriendly",
+     "id": "stoic-and-unfriendly"
+    },
+    {
+     "kind": "steading-improvement",
+     "name": "Trade With",
+     "id": "trade-with"
+    },
+    {
+     "kind": "value-table",
+     "name": "Arms and Armor",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Goods",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Livestock",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Goods",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Service/Favor",
+     "id": ""
+    },
+    {
+     "kind": "stat-block",
+     "name": "Guardian",
+     "id": "guardian"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Monk",
+     "id": "monk"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Novice",
+     "id": "novice"
+    }
+   ],
+   "barrow-builders": [
+    {
+     "kind": "roll-table",
+     "name": "Theme",
+     "id": "theme"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Site",
+     "id": "site"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Origin",
+     "id": "origin"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Signs",
+     "id": "signs"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Current Condition",
+     "id": "current-condition"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Size",
+     "id": "size"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Purpose",
+     "id": "purpose"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Architectural Elements",
+     "id": "architectural-elements"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Condition",
+     "id": "condition"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Feature",
+     "id": "feature"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Various Treasures",
+     "id": "various-treasures"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "An Old Bronze Dagger",
+     "id": "an-old-bronze-dagger"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "The Three-star Crown",
+     "id": "the-three-star-crown"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Lead Bracelet",
+     "id": "a-lead-bracelet"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Minor Arcana",
+     "id": "minor-arcana"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Minor Arcanum",
+     "id": "minor-arcanum"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Major Arcana",
+     "id": "major-arcana"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Banefire",
+     "id": "banefire"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Traps",
+     "id": "traps"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Intent",
+     "id": "intent"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Trigger",
+     "id": "trigger"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Tell",
+     "id": "tell"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Elements",
+     "id": "elements"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Barrow Wight",
+     "id": "barrow-wight"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Phantom Rider",
+     "id": "phantom-rider"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Deathless Ones",
+     "id": "deathless-ones"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Tether",
+     "id": "tether"
+    },
+    {
+     "kind": "roll-table",
+     "name": "How It Sustains Them",
+     "id": "how-it-sustains-them"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Limitation",
+     "id": "limitation"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Current State",
+     "id": "current-state"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Myghal, Deathless Sorcerer",
+     "id": "myghal-deathless-sorcerer"
+    }
+   ],
+   "blackwater-lake": [
+    {
+     "kind": "roll-table",
+     "name": "Terrain",
+     "id": "terrain-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Ruin or Barrow",
+     "id": "ruin-or-barrow"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Discovery",
+     "id": "discovery"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Unnerving Tableau",
+     "id": "unnerving-tableau"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Encounter",
+     "id": "encounter"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Artifact Of",
+     "id": "artifact-of"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Opportunity",
+     "id": "opportunity"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Hazards",
+     "id": "hazards"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Fog",
+     "id": "fog"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "The Blackwater",
+     "id": "the-blackwater"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Drowning",
+     "id": "drowning"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Call of Daagon",
+     "id": "call-of-daagon"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Mouth of Daagon",
+     "id": "mouth-of-daagon"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Reward",
+     "id": "reward"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Servants of Daagon",
+     "id": "servants-of-daagon"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Number Appearing",
+     "id": ""
+    },
+    {
+     "kind": "roll-table",
+     "name": "Size",
+     "id": ""
+    },
+    {
+     "kind": "roll-table",
+     "name": "Trait",
+     "id": ""
+    },
+    {
+     "kind": "roll-table",
+     "name": "Additional Move",
+     "id": ""
+    }
+   ],
+   "crinwin": [
+    {
+     "kind": "stat-block",
+     "name": "Horde",
+     "id": "horde"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Broodfather",
+     "id": "broodfather"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Unstable Nest",
+     "id": "unstable-nest"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Wasps",
+     "id": "wasps"
+    }
+   ],
+   "the-crombil": [
+    {
+     "kind": "stat-block",
+     "name": "The Crombil, Awakened",
+     "id": "the-crombil-awakened"
+    }
+   ],
+   "danu-the-earth-mother": [
+    {
+     "kind": "roll-table",
+     "name": "Theme",
+     "id": "theme"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Minor Arcana",
+     "id": "minor-arcana"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Minor Arcanum",
+     "id": "minor-arcanum"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Major Arcana",
+     "id": "major-arcana"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Signs of Her Displeasure",
+     "id": "signs-of-her-displeasure"
+    }
+   ],
+   "death-and-the-undying": [
+    {
+     "kind": "roll-table",
+     "name": "Theme",
+     "id": "theme"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Feature",
+     "id": "feature"
+    },
+    {
+     "kind": "roll-table",
+     "name": "How Long",
+     "id": "how-long"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Origins",
+     "id": "origins"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Cause of Death",
+     "id": "cause-of-death"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Various Treasures",
+     "id": "various-treasures"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Blackened Splinter",
+     "id": "a-blackened-splinter"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Spindle of Fine Thread",
+     "id": "a-spindle-of-fine-thread"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Pale Wooden Sword",
+     "id": "a-pale-wooden-sword"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Tattered Standard",
+     "id": "a-tattered-standard"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Minor Arcana",
+     "id": "minor-arcana"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Minor Arcanum",
+     "id": "minor-arcanum"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Major Arcana",
+     "id": "major-arcana"
+    },
+    {
+     "kind": "roll-table",
+     "name": "What They Need",
+     "id": "what-they-need"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Manifestation",
+     "id": "manifestation"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Ability",
+     "id": "ability"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Weakness",
+     "id": "weakness"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Tether",
+     "id": "tether"
+    },
+    {
+     "kind": "roll-table",
+     "name": "How Tightly Bound",
+     "id": "how-tightly-bound"
+    },
+    {
+     "kind": "stat-block",
+     "name": "The Gwraig Wen",
+     "id": "the-gwraig-wen"
+    },
+    {
+     "kind": "stat-block",
+     "name": "The Ghostly Legion",
+     "id": "the-ghostly-legion"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Specter",
+     "id": "specter"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Wraith",
+     "id": "wraith"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Other Ghosts",
+     "id": "other-ghosts"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Brought Back By",
+     "id": "brought-back-by"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Visage",
+     "id": "visage"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Ability",
+     "id": "ability-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Weakness",
+     "id": "weakness-2"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Anan Gllo",
+     "id": "anan-gllo"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Dialeddwr",
+     "id": "dialeddwr"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Pyped",
+     "id": "pyped"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Ulliam Unlucky",
+     "id": "ulliam-unlucky"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Other Revenants",
+     "id": "other-revenants"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Dool Spirit",
+     "id": "dool-spirit"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Gwyllgi",
+     "id": "gwyllgi"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Death Curse",
+     "id": "death-curse"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Necromancer",
+     "id": "necromancer"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Shade",
+     "id": "shade"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Tomb-Bog Spirit",
+     "id": "tomb-bog-spirit"
+    }
+   ],
+   "the-dread-river": [
+    {
+     "kind": "hazard-block",
+     "name": "Spring",
+     "id": "spring"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Summer",
+     "id": "summer"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Autumn",
+     "id": "autumn"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Winter",
+     "id": "winter"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Terrain",
+     "id": "terrain-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Discovery",
+     "id": "discovery"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Encounter",
+     "id": "encounter"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Point of Interest",
+     "id": "point-of-interest"
+    },
+    {
+     "kind": "roll-table",
+     "name": "What Taints It",
+     "id": "what-taints-it"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Lesser Curse",
+     "id": "lesser-curse"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Greater Curse",
+     "id": "greater-curse"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Luglfsk",
+     "id": "luglfsk"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Jellied Horror",
+     "id": "jellied-horror"
+    },
+    {
+     "kind": "stat-block",
+     "name": "The Suileach",
+     "id": "the-suileach"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Totnatter",
+     "id": "totnatter"
+    }
+   ],
+   "fae": [
+    {
+     "kind": "roll-table",
+     "name": "Theme",
+     "id": "theme"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Preoccupation",
+     "id": "preoccupation"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Size",
+     "id": "size"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Aspects",
+     "id": "aspects"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Talent",
+     "id": "talent"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Bred To",
+     "id": "bred-to"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Role in the War",
+     "id": "role-in-the-war"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Lasting Mark",
+     "id": "lasting-mark"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Thornthumb",
+     "id": "thornthumb"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Entrance",
+     "id": "entrance"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Purpose",
+     "id": "purpose"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Anchor",
+     "id": "anchor"
+    },
+    {
+     "kind": "roll-table",
+     "name": "",
+     "id": ""
+    },
+    {
+     "kind": "roll-table",
+     "name": "Element",
+     "id": "element"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Fae Domain Hazards",
+     "id": "fae-domain-hazards"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Fluid Time",
+     "id": "fluid-time"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Encounter",
+     "id": "encounter"
+    },
+    {
+     "kind": "move-block",
+     "name": "Treasure Hunt",
+     "id": "treasure-hunt"
+    },
+    {
+     "kind": "move-block",
+     "name": "Haggle",
+     "id": "haggle"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Various Treasures",
+     "id": "various-treasures"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "Moonlight Raiment",
+     "id": "moonlight-raiment"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Pot of \"Gold\"",
+     "id": "a-pot-of-gold"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "The Red Pennant",
+     "id": "the-red-pennant"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Sturdy, Banded Box",
+     "id": "a-sturdy-banded-box"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Minor Arcana",
+     "id": "minor-arcana"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Minor Arcanum",
+     "id": "minor-arcanum"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Auntie Sallow",
+     "id": "auntie-sallow"
+    },
+    {
+     "kind": "stat-block",
+     "name": "The Bear of Winter",
+     "id": "the-bear-of-winter"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Blush-of-Dawn",
+     "id": "blush-of-dawn"
+    },
+    {
+     "kind": "stat-block",
+     "name": "The Bloody Boots",
+     "id": "the-bloody-boots"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Grimstew",
+     "id": "grimstew"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Hollow Fae",
+     "id": "hollow-fae"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Wee Folk",
+     "id": "wee-folk"
+    },
+    {
+     "kind": "stat-block",
+     "name": "The White Billies",
+     "id": "the-white-billies"
+    }
+   ],
+   "ferriers-fen": [
+    {
+     "kind": "hazard-block",
+     "name": "Spring",
+     "id": "spring"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Summer",
+     "id": "summer"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Autumn",
+     "id": "autumn"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Winter",
+     "id": "winter"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Fen-walker",
+     "id": "fen-walker"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Alastar",
+     "id": "alastar"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Fiadh",
+     "id": "fiadh"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Riona",
+     "id": "riona"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Terrain",
+     "id": "terrain-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Discovery",
+     "id": "discovery"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Encounter",
+     "id": "encounter"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Point of Interest",
+     "id": "point-of-interest"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Willow Witch",
+     "id": "willow-witch"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Disease",
+     "id": "disease"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Fen Blight",
+     "id": "fen-blight"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Fen-troll",
+     "id": "fen-troll"
+    },
+    {
+     "kind": "stat-block",
+     "name": "The Gliomor",
+     "id": "the-gliomor"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Snaplilies",
+     "id": "snaplilies"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Suarachan Hunters",
+     "id": "suarachan-hunters"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Suarachan Singers",
+     "id": "suarachan-singers"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Suarachan Soothsayer",
+     "id": "suarachan-soothsayer"
+    }
+   ],
+   "the-flats": [
+    {
+     "kind": "hazard-block",
+     "name": "Spring",
+     "id": "spring"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Summer",
+     "id": "summer"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Autumn",
+     "id": "autumn"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Winter",
+     "id": "winter"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Terrain",
+     "id": "terrain-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Discovery",
+     "id": "discovery"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Encounter",
+     "id": "encounter"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Pieces",
+     "id": "pieces"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Point of Interest",
+     "id": "point-of-interest-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Battlefield or Remains",
+     "id": "battlefield-or-remains-2"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Prairie Fire",
+     "id": "prairie-fire"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Aurochs",
+     "id": "aurochs"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Bandit",
+     "id": "bandit"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Bandit Chief",
+     "id": "bandit-chief"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Beznpol",
+     "id": "beznpol"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Frythanc",
+     "id": "frythanc"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Hlomren",
+     "id": "hlomren"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Klezln",
+     "id": "klezln"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Pack Drake",
+     "id": "pack-drake"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Shellback Drake",
+     "id": "shellback-drake"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Thunder Drake",
+     "id": "thunder-drake"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Wild Horse",
+     "id": "wild-horse"
+    }
+   ],
+   "fomoraij": [
+    {
+     "kind": "roll-table",
+     "name": "Constraint",
+     "id": "constraint"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Lair",
+     "id": "lair",
+     "end": "12 A vast chamber of white stone, a mighty dead tree growing down from the ceiling"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Form",
+     "id": "form",
+     "end": "12 Worm-like/slug-like/grub-like"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Various Treasures",
+     "id": "various-treasures"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Bloodshot Amber",
+     "id": "bloodshot-amber"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Dream-Lily Pool",
+     "id": "dream-lily-pool"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Minor Arcana",
+     "id": "minor-arcana"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Minor Arcanum",
+     "id": "minor-arcanum"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Major Arcana",
+     "id": "major-arcana"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Infected Servant",
+     "id": "infected-servant"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Infection",
+     "id": "infection"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Means of Control",
+     "id": "means-of-control"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Gift",
+     "id": "gift",
+     "end": "12 Unnatural resilience/vigor/durability"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Infected Hagr",
+     "id": "infected-hagr",
+     "start": "INFECTED HAGR",
+     "end": "> Spew forth an infectious, silvery cloud (reach, area, reload)"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Yaarowslow, the Many",
+     "start": "YAAROWSLOW, THE MANY",
+     "end": "> Regenerate wounds from anything but orichalcum"
+    },
+    {
+     "kind": "stat-block",
+     "name": "\"Typical\" Fomoraij",
+     "id": "typical-fomoraij",
+     "end": "• Regenerate wounds from anything but orichalcum (page 162)"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Swarm of Silvery Vermin",
+     "id": "swarm-of-silvery-vermin"
+    }
+   ],
+   "the-foothills": [
+    {
+     "kind": "hazard-block",
+     "name": "Spring",
+     "id": "spring"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Summer",
+     "id": "summer"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Autumn",
+     "id": "autumn"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Winter",
+     "id": "winter"
+    },
+    {
+     "kind": "steading-improvement",
+     "name": "Permanent Logging Camp",
+     "id": "permanent-logging-camp"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Terrain",
+     "id": "terrain-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Discovery",
+     "id": "discovery"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Folk from Barrier Pass",
+     "id": "folk-from-barrier-pass"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Encounter",
+     "id": "encounter"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Point of Interest",
+     "id": "point-of-interest"
+    }
+   ],
+   "forest-folk": [
+    {
+     "kind": "roll-table",
+     "name": "Markings",
+     "id": "markings"
+    },
+    {
+     "kind": "roll-table",
+     "name": "A Place Where They",
+     "id": "a-place-where-they"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Various Treasures",
+     "id": "various-treasures"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Wooden Mask",
+     "id": "a-wooden-mask"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "Crystal Knife",
+     "id": "crystal-knife"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Artifacts of Others",
+     "id": "artifacts-of-others"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Cursed Glyphs",
+     "id": "cursed-glyphs"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Trigger",
+     "id": "trigger"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Effect",
+     "id": "effect"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Opportunists",
+     "id": "opportunists"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Spirits",
+     "id": "spirits"
+    }
+   ],
+   "forge-lords": [
+    {
+     "kind": "roll-table",
+     "name": "Theme",
+     "id": "theme"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Site",
+     "id": "site"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Sign",
+     "id": "sign"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Structure",
+     "id": "structure"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Purpose",
+     "id": "purpose"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Architectural Elements",
+     "id": "architectural-elements"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Condition",
+     "id": "condition"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Ustrina Presence",
+     "id": "ustrina-presence"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Variety",
+     "id": "variety"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Various Treasures",
+     "id": "various-treasures"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "Orichalcum Spear",
+     "id": "orichalcum-spear"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "An Oversized Ring",
+     "id": "an-oversized-ring"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "Two Mirrors",
+     "id": "two-mirrors"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Minor Arcana",
+     "id": "minor-arcana"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Minor Arcanum",
+     "id": "minor-arcanum"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Major Arcana",
+     "id": "major-arcana"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Smoke, Fire, and Heat",
+     "id": "smoke-fire-and-heat"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Cinderwraith",
+     "id": "cinderwraith"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Metal Constructs",
+     "id": "metal-constructs"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Purpose",
+     "id": "purpose-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Structure",
+     "id": "structure-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Animation",
+     "id": "animation"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Attribute",
+     "id": "attribute"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Size",
+     "id": "size"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Condition",
+     "id": "condition-2"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Bronze Colossus",
+     "id": "bronze-colossus"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Clockwork Spider",
+     "id": "clockwork-spider"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Iron Hound",
+     "id": "iron-hound"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Singing Sword",
+     "id": "singing-sword"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Draventao",
+     "id": "draventao"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Particular Strength",
+     "id": ""
+    },
+    {
+     "kind": "roll-table",
+     "name": "Augmentation",
+     "id": ""
+    },
+    {
+     "kind": "roll-table",
+     "name": "What It Remembers",
+     "id": ""
+    }
+   ],
+   "the-frozen-wastes": [
+    {
+     "kind": "hazard-block",
+     "name": "Spring",
+     "id": "spring"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Summer",
+     "id": "summer"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Autumn",
+     "id": "autumn"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Winter",
+     "id": "winter"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Terrain",
+     "id": "terrain-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Discovery",
+     "id": "discovery"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Encounter",
+     "id": "encounter"
+    },
+    {
+     "kind": "value-table",
+     "name": "Goods",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Livestock",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Goods",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Service/Favor",
+     "id": ""
+    },
+    {
+     "kind": "stat-block",
+     "name": "Caribou",
+     "id": "caribou"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Mammoth",
+     "id": "mammoth"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Mammoth Herder",
+     "id": "mammoth-herder"
+    }
+   ],
+   "gods-and-religion": [
+    {
+     "kind": "stat-block",
+     "name": "Ancestral Spirits",
+     "id": "ancestral-spirits"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Garden Spirits",
+     "id": "garden-spirits"
+    },
+    {
+     "kind": "stat-block",
+     "name": "God of the Cistern",
+     "id": "god-of-the-cistern"
+    },
+    {
+     "kind": "stat-block",
+     "name": "God of Weaving",
+     "id": "god-of-weaving"
+    },
+    {
+     "kind": "stat-block",
+     "name": "God of Whisky",
+     "id": "god-of-whisky"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Hearth Spirit",
+     "id": "hearth-spirit"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Household Spirits",
+     "id": "household-spirits"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Threshold Spirit",
+     "id": "threshold-spirit"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Theme",
+     "id": "theme"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Relevant To",
+     "id": "relevant-to"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Standing",
+     "id": "standing"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Observance",
+     "id": "observance"
+    }
+   ],
+   "the-golden-oak": [
+    {
+     "kind": "roll-table",
+     "name": "Danger",
+     "id": "danger"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Discovery",
+     "id": "discovery"
+    },
+    {
+     "kind": "steading-improvement",
+     "name": "Golden Sapling",
+     "id": "golden-sapling"
+    }
+   ],
+   "gordins-delve": [
+    {
+     "kind": "infobox",
+     "name": "",
+     "id": ""
+    },
+    {
+     "kind": "roll-table",
+     "name": "Where They're From",
+     "id": "where-theyre-from"
+    },
+    {
+     "kind": "roll-table",
+     "name": "What Brought Them",
+     "id": "what-brought-them"
+    },
+    {
+     "kind": "value-table",
+     "name": "Weapons & Armor",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Goods",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Coin",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Food & Lodging",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Goods",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Food & Lodging",
+     "id": ""
+    },
+    {
+     "kind": "move-block",
+     "name": "Ask Around",
+     "id": "ask-around"
+    },
+    {
+     "kind": "move-block",
+     "name": "Carouse",
+     "id": "carouse"
+    },
+    {
+     "kind": "move-block",
+     "name": "Recruit",
+     "id": "recruit"
+    },
+    {
+     "kind": "value-table",
+     "name": "Services",
+     "id": ""
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Living Conditions",
+     "id": "living-conditions"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Folks from Elsewhere",
+     "id": "folks-from-elsewhere"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Alley Cutthroats",
+     "id": "alley-cutthroats"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Desperate Souls",
+     "id": "desperate-souls"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Dawa Eyegouger",
+     "id": "dawa-eyegouger"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Laborers",
+     "id": "laborers"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Shoddy Construction",
+     "id": "shoddy-construction"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Encounter",
+     "id": "encounter"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Disposition",
+     "id": "disposition"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Discovery",
+     "id": "discovery"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Signs of Violence/Disaster",
+     "id": "signs-of-violence-disaster"
+    }
+   ],
+   "the-great-wood": [
+    {
+     "kind": "hazard-block",
+     "name": "Spring",
+     "id": "spring"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Summer",
+     "id": "summer"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Autumn",
+     "id": "autumn"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Winter",
+     "id": "winter"
+    },
+    {
+     "kind": "steading-improvement",
+     "name": "Great Wood Timber",
+     "id": "great-wood-timber"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Terrain",
+     "id": "terrain-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Discovery",
+     "id": "discovery"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Game",
+     "id": "game"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Point of Interest",
+     "id": "point-of-interest"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Boar",
+     "id": "boar"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Butcherbird",
+     "id": "butcherbird"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Cave Bear",
+     "id": "cave-bear"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Ceirwmawr",
+     "id": "ceirwmawr"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Cougar",
+     "id": "cougar"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Cwisarff",
+     "id": "cwisarff"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Cynddaraig",
+     "id": "cynddaraig"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Feathered Drake",
+     "id": "feathered-drake"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Gylglyd Vines",
+     "id": "gylglyd-vines"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Hagr",
+     "id": "hagr"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Nailadd",
+     "id": "nailadd"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Raselbaedd",
+     "id": "raselbaedd"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Tal Gerdwyr",
+     "id": "tal-gerdwyr"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Wisent",
+     "id": "wisent"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Wolf",
+     "id": "wolf"
+    }
+   ],
+   "green-lords": [
+    {
+     "kind": "roll-table",
+     "name": "Theme",
+     "id": "theme"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Site",
+     "id": "site"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Sign",
+     "id": "sign"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Structure",
+     "id": "structure"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Purpose",
+     "id": "purpose"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Architectural Elements",
+     "id": "architectural-elements"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Condition",
+     "id": "condition"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Various Treasures",
+     "id": "various-treasures"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Large Urn",
+     "id": "a-large-urn"
+    },
+    {
+     "kind": "steading-improvement",
+     "name": "Rhoillyg Orchard",
+     "id": "rhoillyg-orchard"
+    },
+    {
+     "kind": "stat-block",
+     "name": "A Vine in a Rune-Carved Pot",
+     "id": "a-vine-in-a-rune-carved-pot"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Fang-Dagger",
+     "id": "a-fang-dagger"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Big Stone Coffer",
+     "id": "a-big-stone-coffer"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "Small Clay Jars",
+     "id": "small-clay-jars"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Minor Arcana",
+     "id": "minor-arcana"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Minor Arcanum",
+     "id": "minor-arcanum"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Major Arcana",
+     "id": "major-arcana"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Chimerae",
+     "id": "chimerae"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Purpose",
+     "id": "purpose-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Ability",
+     "id": "ability"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Size",
+     "id": "size"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Composition",
+     "id": "composition"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Hazardous Growth",
+     "id": "hazardous-growth"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Form",
+     "id": "form"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Peril",
+     "id": "peril"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "The Unquiet Dead",
+     "id": "the-unquiet-dead"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Llamudwr",
+     "id": "llamudwr"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Mummified Green Lord",
+     "id": "mummified-green-lord"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Mummified Servant",
+     "id": "mummified-servant"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Rhagedn",
+     "id": "rhagedn"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Swyn",
+     "id": "swyn"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Zrajedak",
+     "id": "zrajedak"
+    }
+   ],
+   "helior-the-daybringer": [
+    {
+     "kind": "roll-table",
+     "name": "Theme",
+     "id": "theme"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Various Treasures",
+     "id": "various-treasures"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Minor Arcana",
+     "id": "minor-arcana"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Minor Arcanum",
+     "id": "minor-arcanum"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Pilgrims",
+     "id": "pilgrims"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Fanatic",
+     "id": "fanatic"
+    }
+   ],
+   "hillfolk": [
+    {
+     "kind": "roll-table",
+     "name": "Trait",
+     "id": "trait"
+    },
+    {
+     "kind": "value-table",
+     "name": "Goods",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Livestock",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Goods",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Livestock",
+     "id": ""
+    },
+    {
+     "kind": "stat-block",
+     "name": "Keen-Nosed, Agile, Brave, Large);",
+     "id": "keen-nosed-agile-brave-large"
+    },
+    {
+     "kind": "value-table",
+     "name": "Service/Favor",
+     "id": ""
+    },
+    {
+     "kind": "stat-block",
+     "name": "Hdour",
+     "id": "hdour"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Group",
+     "id": "group"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Spirit-talker",
+     "id": "spirit-talker"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Upland Horse",
+     "id": "upland-horse"
+    }
+   ],
+   "huffel-peaks": [
+    {
+     "kind": "hazard-block",
+     "name": "Spring",
+     "id": "spring"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Summer",
+     "id": "summer"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Autumn",
+     "id": "autumn"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Winter",
+     "id": "winter"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Terrain",
+     "id": "terrain-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Discovery",
+     "id": "discovery"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Encounter",
+     "id": "encounter"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Point of Interest",
+     "id": "point-of-interest"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Resource",
+     "id": "resource"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Earthquake",
+     "id": "earthquake"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Caralandrao",
+     "id": "caralandrao"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Fire Drake",
+     "id": "fire-drake"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Frythanc Fledgling",
+     "id": "frythanc-fledgling"
+    }
+   ],
+   "the-labyrinth": [
+    {
+     "kind": "move-block",
+     "name": "Lost in the Dark",
+     "id": "lost-in-the-dark"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Terrain",
+     "id": "terrain-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Obstruction",
+     "id": "obstruction"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Feature",
+     "id": "feature"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Discovery",
+     "id": "discovery"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Thraulgwyn",
+     "id": "thraulgwyn"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Other Encounter",
+     "id": "other-encounter"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Opportunity",
+     "id": "opportunity"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Point of Interest",
+     "id": "point-of-interest"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Gift",
+     "id": "gift"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Mark",
+     "id": "mark"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Asset",
+     "id": "asset"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Quirk",
+     "id": "quirk"
+    },
+    {
+     "kind": "value-table",
+     "name": "Goods",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Goods",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Service/Favor",
+     "id": ""
+    },
+    {
+     "kind": "roll-table",
+     "name": "Crux",
+     "id": "crux"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Instinct",
+     "id": "instinct"
+    },
+    {
+     "kind": "move-block",
+     "name": "Seek Out",
+     "id": "seek-out"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Danger",
+     "id": "danger"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Magma Worm",
+     "id": "magma-worm"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Thraulgwyn Raider",
+     "id": "thraulgwyn-raider"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Soithech",
+     "id": "soithech"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Tcaventes, Shackle and Key",
+     "id": "tcaventes-shackle-and-key"
+    }
+   ],
+   "lygos-and-the-south": [
+    {
+     "kind": "stat-block",
+     "name": "Adventurer",
+     "id": "adventurer"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Antiquarian",
+     "id": "antiquarian"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Assassin",
+     "id": "assassin"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Caravan Guard",
+     "id": "caravan-guard"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Conquering Army",
+     "id": "conquering-army"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Invasion",
+     "id": "invasion"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Cavalry",
+     "id": "cavalry"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Infantry",
+     "id": "infantry"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Legionary",
+     "id": "legionary"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Skirmisher",
+     "id": "skirmisher"
+    }
+   ],
+   "the-makers": [
+    {
+     "kind": "roll-table",
+     "name": "Makers & Site Locations",
+     "id": "makers-site-locations"
+    }
+   ],
+   "the-makers-roads": [
+    {
+     "kind": "roll-table",
+     "name": "Traveler",
+     "id": "traveler"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Disposition",
+     "id": "disposition"
+    },
+    {
+     "kind": "steading-improvement",
+     "name": "Roadbuilding",
+     "id": "roadbuilding"
+    }
+   ],
+   "marshedge": [
+    {
+     "kind": "infobox",
+     "name": "",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Goods",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Coin",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Food & Lodging",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Goods",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Property",
+     "id": ""
+    },
+    {
+     "kind": "move-block",
+     "name": "Ask Around",
+     "id": "ask-around"
+    },
+    {
+     "kind": "move-block",
+     "name": "Carouse",
+     "id": "carouse"
+    },
+    {
+     "kind": "move-block",
+     "name": "Recruit",
+     "id": "recruit"
+    },
+    {
+     "kind": "value-table",
+     "name": "Services",
+     "id": ""
+    },
+    {
+     "kind": "stat-block",
+     "name": "Brennan",
+     "id": "brennan"
+    },
+    {
+     "kind": "stat-block",
+     "name": "The Guard",
+     "id": "the-guard"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Fire",
+     "id": "fire"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Thieves",
+     "id": "thieves"
+    }
+   ],
+   "the-maw": [],
+   "north-manmarch": [
+    {
+     "kind": "hazard-block",
+     "name": "Spring",
+     "id": "spring"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Summer",
+     "id": "summer"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Autumn",
+     "id": "autumn"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Winter",
+     "id": "winter"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Terrain",
+     "id": "terrain-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Discovery",
+     "id": "discovery"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Signs of Violence",
+     "id": "signs-of-violence"
+    },
+    {
+     "kind": "value-table",
+     "name": "Weapons of War",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Armor",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Goods",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Transport",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Livestock",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Goods",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Livestock",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Service",
+     "id": ""
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Chief",
+     "id": "chief"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Strength",
+     "id": "strength"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Flaw",
+     "id": "flaw"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Chosen Shield",
+     "id": "chosen-shield"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Manmarcher Recruit",
+     "id": "manmarcher-recruit"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Manmarcher Veteran",
+     "id": "manmarcher-veteran"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Tonnerhorn",
+     "id": "tonnerhorn"
+    },
+    {
+     "kind": "stat-block",
+     "name": "War-chariot",
+     "id": "war-chariot"
+    }
+   ],
+   "the-pale-hunter": [
+    {
+     "kind": "roll-table",
+     "name": "Quarry",
+     "id": "quarry"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Ghostly Hounds",
+     "id": "ghostly-hounds"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "The Call of the Hunt",
+     "id": "the-call-of-the-hunt"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "The Hunter's Regard",
+     "id": "the-hunters-regard"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Pursuit",
+     "id": "pursuit"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Claimed",
+     "id": "claimed"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Scene/Challenge",
+     "id": "scene-challenge"
+    },
+    {
+     "kind": "move-block",
+     "name": "Push On!",
+     "id": "push-on"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "Silvery Horn",
+     "id": "silvery-horn"
+    }
+   ],
+   "primordial-powers": [
+    {
+     "kind": "roll-table",
+     "name": "Theme",
+     "id": "theme"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Why It Incarnated",
+     "id": "why-it-incarnated"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Manifestation",
+     "id": "manifestation"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Constraint",
+     "id": "constraint"
+    },
+    {
+     "kind": "stat-block",
+     "name": "The Nightingale",
+     "id": "the-nightingale",
+     "end": "> Flit away, go elsewhere"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Base Archon",
+     "id": "base-archon"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Purpose",
+     "id": ""
+    },
+    {
+     "kind": "roll-table",
+     "name": "Manifestation",
+     "id": ""
+    },
+    {
+     "kind": "roll-table",
+     "name": "Powers",
+     "id": ""
+    },
+    {
+     "kind": "stat-block",
+     "name": "Livrothos, Cleansing Flame",
+     "id": "livrothos-cleansing-flame"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Marker",
+     "id": "marker"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Origin",
+     "id": "origin"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Features",
+     "id": "features"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Form",
+     "id": "form"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Size",
+     "id": "size"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Various Treasures",
+     "id": "various-treasures"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "A Bejeweled Helm",
+     "id": "a-bejeweled-helm"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Sealed Amphora",
+     "id": "a-sealed-amphora"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Fossilized Horn",
+     "id": "a-fossilized-horn"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Minor Arcana",
+     "id": "minor-arcana"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Minor Arcanum",
+     "id": "minor-arcanum"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Major Arcana",
+     "id": "major-arcana"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Fate",
+     "id": "fate"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Incomprehensible Knowledge",
+     "id": "incomprehensible-knowledge"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Primordial Flame",
+     "id": "primordial-flame"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Rift",
+     "id": "rift"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Fundamental",
+     "id": "fundamental"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Time",
+     "id": "time"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Gravity",
+     "id": "gravity"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Fate",
+     "id": "fate-2"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Light",
+     "id": "light"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Void",
+     "id": "void"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Order",
+     "id": "order"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Chaos",
+     "id": "chaos"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Voidblight",
+     "id": "voidblight"
+    }
+   ],
+   "red-groves": [
+    {
+     "kind": "stat-block",
+     "name": "The Forest's Wrath",
+     "id": "the-forests-wrath"
+    }
+   ],
+   "rime-lords": [
+    {
+     "kind": "roll-table",
+     "name": "Theme",
+     "id": "theme"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Site",
+     "id": "site"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Sign",
+     "id": "sign"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Structure",
+     "id": "structure"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Purpose",
+     "id": "purpose"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Architectural Elements",
+     "id": "architectural-elements"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Condition",
+     "id": "condition"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Form",
+     "id": "form"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Characteristic",
+     "id": "characteristic"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Column of Ice",
+     "id": "a-column-of-ice"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Dark Ice Knife",
+     "id": "a-dark-ice-knife"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Small Black Sphere",
+     "id": "a-small-black-sphere"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Minor Arcana",
+     "id": "minor-arcana"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Minor Arcanum",
+     "id": "minor-arcanum"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Major Arcana",
+     "id": "major-arcana"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Purpose",
+     "id": "purpose-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Size",
+     "id": "size"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Ability",
+     "id": "ability"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Tether",
+     "id": "tether"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Disposition",
+     "id": "disposition"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Gingkara",
+     "id": "gingkara"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Khyagseng",
+     "id": "khyagseng"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Mkhalang",
+     "id": "mkhalang"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Shaksa",
+     "id": "shaksa"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Deadly Cold",
+     "id": "deadly-cold"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Adept",
+     "id": "adept"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Instinct",
+     "id": ""
+    },
+    {
+     "kind": "roll-table",
+     "name": "Move",
+     "id": ""
+    },
+    {
+     "kind": "stat-block",
+     "name": "False Adept",
+     "id": "false-adept"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Rime Lord",
+     "id": "rime-lord"
+    }
+   ],
+   "the-ruined-tower": [
+    {
+     "kind": "roll-table",
+     "name": "Terrain",
+     "id": "terrain-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Building",
+     "id": "building"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Purpose",
+     "id": "purpose"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Discovery",
+     "id": "discovery"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Remnants of the Past",
+     "id": "remnants-of-the-past"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Encounter",
+     "id": "encounter"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Valuable",
+     "id": "valuable"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Size",
+     "id": "size"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Signs",
+     "id": "signs"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Blue Magpie",
+     "id": "blue-magpie"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Shape",
+     "id": "shape"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Feature",
+     "id": "feature"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Wonder",
+     "id": "wonder"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Discovery",
+     "id": "discovery-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Vignette of the Fall",
+     "id": "vignette-of-the-fall"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Encounter",
+     "id": "encounter-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Opportunity",
+     "id": "opportunity"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Treasure!",
+     "id": "treasure"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Vitrified Horrors",
+     "id": "vitrified-horrors"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Lightning Sconce",
+     "id": "lightning-sconce"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Star-mole",
+     "id": "star-mole"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Ferocedes Ogran",
+     "id": "ferocedes-ogran"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Patchwork Construct",
+     "id": "patchwork-construct"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Current Task",
+     "id": ""
+    },
+    {
+     "kind": "stat-block",
+     "name": "Skittering Horror",
+     "id": "skittering-horror"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Og'molok, the Faceless Horde",
+     "id": "ogmolok-the-faceless-horde"
+    }
+   ],
+   "south-manmarch": [
+    {
+     "kind": "hazard-block",
+     "name": "Spring",
+     "id": "spring"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Summer",
+     "id": "summer"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Autumn",
+     "id": "autumn"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Winter",
+     "id": "winter"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Terrain",
+     "id": "terrain-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Discovery",
+     "id": "discovery"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Beast",
+     "id": "beast"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Encounter",
+     "id": "encounter"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Point of Interest",
+     "id": "point-of-interest"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Battlefield or Remains",
+     "id": "battlefield-or-remains"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Horned Drake",
+     "id": "horned-drake"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Bandit",
+     "id": "bandit"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Bandit Chief",
+     "id": "bandit-chief"
+    }
+   ],
+   "spirits-of-the-wild": [
+    {
+     "kind": "roll-table",
+     "name": "Theme",
+     "id": "theme"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Beast Warden",
+     "id": "beast-warden"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Cave Spirit",
+     "id": "cave-spirit"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Cold Spirit",
+     "id": "cold-spirit"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Fertility Spirit",
+     "id": "fertility-spirit"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Fire Spirit",
+     "id": "fire-spirit"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Log Spirit",
+     "id": "log-spirit"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Meadow/Prairie/Grass Spirit",
+     "id": "meadow-prairie-grass-spirit"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Mist/Fog Spirit",
+     "id": "mist-fog-spirit"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Mud Spirit",
+     "id": "mud-spirit"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Peat/Bog/Fen Spirit",
+     "id": "peat-bog-fen-spirit"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Pond Spirit",
+     "id": "pond-spirit"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Rain Spirit",
+     "id": "rain-spirit"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Rock/Stone/Boulder/Hill Spirit",
+     "id": "rock-stone-boulder-hill-spirit"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Sapling Spirit",
+     "id": "sapling-spirit"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Snow Spirit",
+     "id": "snow-spirit"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Storm Spirit",
+     "id": "storm-spirit"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Stream/Creek Spirit",
+     "id": "stream-creek-spirit"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Trail Spirit",
+     "id": "trail-spirit"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Tree Spirit",
+     "id": "tree-spirit"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Wind Spirit",
+     "id": "wind-spirit"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Marker",
+     "id": "marker"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Activity",
+     "id": "activity"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Disposition",
+     "id": "disposition"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "Length of Braided Leather",
+     "id": "length-of-braided-leather"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Tightly-Woven Net",
+     "id": "a-tightly-woven-net"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Fur-Lined Bedroll",
+     "id": "a-fur-lined-bedroll"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Stone Cup",
+     "id": "a-stone-cup"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Cracked Femur",
+     "id": "a-cracked-femur"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Crown of Flowers",
+     "id": "a-crown-of-flowers"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Forked Stick of Redwood",
+     "id": "a-forked-stick-of-redwood"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Hunk of Amber",
+     "id": "a-hunk-of-amber"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Minor Arcana",
+     "id": "minor-arcana"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Minor Arcanum",
+     "id": "minor-arcanum"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Major Arcana",
+     "id": "major-arcana"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Glasbren",
+     "id": "glasbren"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Birdwaig",
+     "id": "birdwaig"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Hennain",
+     "id": "hennain"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Andalau",
+     "id": "andalau"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Ceffylwraig",
+     "id": "ceffylwraig"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Coedwaig",
+     "id": "coedwaig"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Fadyn",
+     "id": "fadyn"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Grwgnach",
+     "id": "grwgnach"
+    },
+    {
+     "kind": "stat-block",
+     "name": "The Halfeyd",
+     "id": "the-halfeyd"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Nerth Serpent",
+     "id": "nerth-serpent"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Prenysbyrd",
+     "id": "prenysbyrd"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Troelloff",
+     "id": "troelloff"
+    }
+   ],
+   "the-steplands": [
+    {
+     "kind": "hazard-block",
+     "name": "Spring",
+     "id": "spring"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Summer",
+     "id": "summer"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Autumn",
+     "id": "autumn"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Winter",
+     "id": "winter"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Terrain",
+     "id": "terrain-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Discovery",
+     "id": "discovery"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Point of Interest",
+     "id": "point-of-interest"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Hillfolk Encounter",
+     "id": "hillfolk-encounter"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Other Encounter",
+     "id": "other-encounter"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Mudslide",
+     "id": "mudslide"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Rockslide",
+     "id": "rockslide"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Bat Swarm",
+     "id": "bat-swarm"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Hillfolk",
+     "id": "hillfolk"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Brawzbedr",
+     "id": "brawzbedr"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Gouzadn",
+     "id": "gouzadn"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Sacred Wood",
+     "id": ""
+    },
+    {
+     "kind": "stat-block",
+     "name": "Grochslon",
+     "id": "grochslon"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Kleztigr",
+     "id": "kleztigr"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Spitting Drake",
+     "id": "spitting-drake"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Structure",
+     "id": "structure-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Clearance",
+     "id": "clearance"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Footing",
+     "id": "footing"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Water",
+     "id": "water"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Decoration",
+     "id": "decoration"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Inhabitant",
+     "id": "inhabitant"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Natural Beast or Spirit",
+     "id": "natural-beast-or-spirit"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Discovery",
+     "id": "discovery-2"
+    }
+   ],
+   "stone-lords": [
+    {
+     "kind": "roll-table",
+     "name": "Theme",
+     "id": "theme"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Site",
+     "id": "site"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Sign",
+     "id": "sign"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Structure",
+     "id": "structure"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Purpose",
+     "id": "purpose"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Architectural Elements",
+     "id": "architectural-elements"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Condition",
+     "id": "condition"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Form",
+     "id": "form"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Characteristic",
+     "id": "characteristic"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Chalky Potion",
+     "id": "a-chalky-potion"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "Power-crystal",
+     "id": "power-crystal"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Scarred Slab of Marble",
+     "id": "a-scarred-slab-of-marble"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Minor Arcana",
+     "id": "minor-arcana"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Minor Arcanum",
+     "id": "minor-arcanum"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Major Arcana",
+     "id": "major-arcana"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Unstable Construction",
+     "id": "unstable-construction"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Perilous Stone",
+     "id": "perilous-stone"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Form",
+     "id": "form-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Original Purpose",
+     "id": "original-purpose"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Peril",
+     "id": "peril"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Construct",
+     "id": "construct"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Purpose",
+     "id": "purpose-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Ability",
+     "id": "ability"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Size",
+     "id": "size"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Power",
+     "id": "power"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Sapience",
+     "id": "sapience"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Condition",
+     "id": "condition-2"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Lithic Servant",
+     "id": "lithic-servant"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Stone Sentinel",
+     "id": "stone-sentinel"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Mosaic Swarm",
+     "id": "mosaic-swarm"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Pacifier",
+     "id": "pacifier"
+    }
+   ],
+   "the-stream": [
+    {
+     "kind": "stat-block",
+     "name": "The Quiet Twins",
+     "id": "the-quiet-twins"
+    }
+   ],
+   "tempest-lords": [
+    {
+     "kind": "roll-table",
+     "name": "Theme",
+     "id": "theme"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Site",
+     "id": "site"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Sign",
+     "id": "sign"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Structure",
+     "id": "structure"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Purpose",
+     "id": "purpose"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Architectural Elements",
+     "id": "architectural-elements"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Condition",
+     "id": "condition"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Form",
+     "id": "form"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Characteristic",
+     "id": "characteristic"
+    },
+    {
+     "kind": "steading-improvement",
+     "name": "Aetherium Crucible",
+     "id": "aetherium-crucible"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Various Treasures",
+     "id": "various-treasures"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "Aetherium Urn",
+     "id": "aetherium-urn"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Bronze Ring",
+     "id": "bronze-ring"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "Floating Sash",
+     "id": "floating-sash"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "Silvery Tuning Fork",
+     "id": "silvery-tuning-fork"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "Storm-Cloud Potion",
+     "id": "storm-cloud-potion"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Minor Arcana",
+     "id": "minor-arcana"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Minor Arcanum",
+     "id": "minor-arcanum"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Major Arcana",
+     "id": "major-arcana"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Radiation",
+     "id": "radiation"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Vitrification",
+     "id": "vitrification"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Elemental Vortex",
+     "id": "elemental-vortex"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Hp Stats",
+     "id": "hp-stats"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Earth Vortex",
+     "id": "earth-vortex"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Fire Vortex",
+     "id": "fire-vortex"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Lightning Vortex",
+     "id": "lightning-vortex"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Water Vortex",
+     "id": "water-vortex"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Wind Vortex",
+     "id": "wind-vortex"
+    }
+   ],
+   "the-things-below": [
+    {
+     "kind": "roll-table",
+     "name": "Theme",
+     "id": "theme"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Aspect",
+     "id": "aspect"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Instinct",
+     "id": "instinct"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Daagon, Who Waits in Deep Waters",
+     "id": "daagon-who-waits-in-deep-waters"
+    },
+    {
+     "kind": "stat-block",
+     "name": "El'rash-Orra, Lord of Orbs, the Many-Eyes",
+     "id": "elrash-orra-lord-of-orbs-the-many-eyes"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Hec'tumel, Pale Serpent! Slitherer In Darkness! Death Is Its Eyes!",
+     "id": "hectumel-pale-serpent-slitherer-in-darkness-death-is-its-eyes"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Hlad, the Devourer, the Eternal Maw",
+     "id": "hlad-the-devourer-the-eternal-maw"
+    },
+    {
+     "kind": "stat-block",
+     "name": "L'bin'bozia, Flesh-Candle, the Wax Skull, Roiling Tomb",
+     "id": "lbinbozia-flesh-candle-the-wax-skull-roiling-tomb"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Y'aaw'kara, the Howling Wind, the Flayer of Flesh",
+     "id": "yaawkara-the-howling-wind-the-flayer-of-flesh"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Feature",
+     "id": "feature"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Cause",
+     "id": "cause"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Severity",
+     "id": "severity"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Black Menhir",
+     "id": "a-black-menhir"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "A Deep, Dark Shaft",
+     "id": "a-deep-dark-shaft"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Gift",
+     "id": "gift"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "An Iron Spider",
+     "id": "an-iron-spider"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "An Obsidian Pendant",
+     "id": "an-obsidian-pendant"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Serpentine Armband",
+     "id": "a-serpentine-armband"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "A Silken Noose",
+     "id": "a-silken-noose"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Minor Arcana",
+     "id": "minor-arcana"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Minor Arcanum",
+     "id": "minor-arcanum"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Major Arcana",
+     "id": "major-arcana"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Disquiet and Unease",
+     "id": "disquiet-and-unease"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Whispers and Visions",
+     "id": "whispers-and-visions"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Terror",
+     "id": "terror"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Unnatural Phenomena",
+     "id": "unnatural-phenomena"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Corruption",
+     "id": "corruption"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Corrupted Being",
+     "id": "corrupted-being"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Gift",
+     "id": "gift-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Mark",
+     "id": "mark"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Corrupted Glasbren",
+     "id": "corrupted-glasbren"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Cinderboar",
+     "id": "cinderboar"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Morgais",
+     "id": "morgais"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Cultist",
+     "id": "cultist"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Sorcerer",
+     "id": "sorcerer"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Thrall",
+     "id": "thrall"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Wretch",
+     "id": "wretch"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Emanation",
+     "id": "emanation"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Origin",
+     "id": "origin"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Hand of Daagon",
+     "id": "hand-of-daagon"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Voice of the Eternal Maw",
+     "id": "voice-of-the-eternal-maw"
+    }
+   ],
+   "three-coven-lake": [
+    {
+     "kind": "roll-table",
+     "name": "Bluffs Terrain",
+     "id": "bluffs-terrain"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Shoreline Terrain",
+     "id": "shoreline-terrain"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Stone Lord Site",
+     "id": "stone-lord-site"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Discovery",
+     "id": "discovery"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Opportunity",
+     "id": "opportunity"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Artifact Of",
+     "id": "artifact-of"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Encounter",
+     "id": "encounter"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Disposition",
+     "id": "disposition"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Related to the Portal",
+     "id": "related-to-the-portal"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Natural Hazards",
+     "id": "natural-hazards"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Unnatural Hazards",
+     "id": "unnatural-hazards"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "The Lake Itself",
+     "id": "the-lake-itself"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Drowning",
+     "id": "drowning"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Thin Ice",
+     "id": "thin-ice"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "The Whirlpool",
+     "id": "the-whirlpool"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "People",
+     "id": "people"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Witches or Their Ilk",
+     "id": "witches-or-their-ilk"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "The Restless Dead",
+     "id": "the-restless-dead"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Local Wildlife",
+     "id": "local-wildlife"
+    },
+    {
+     "kind": "stat-block",
+     "name": "The Chained Beast",
+     "id": "the-chained-beast"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Screech Eel",
+     "id": "screech-eel"
+    },
+    {
+     "kind": "stat-block",
+     "name": "The Blood-drunk Queen",
+     "id": "the-blood-drunk-queen"
+    }
+   ],
+   "titan-bones": [
+    {
+     "kind": "roll-table",
+     "name": "How Long",
+     "id": "how-long"
+    },
+    {
+     "kind": "roll-table",
+     "name": "While They Wait",
+     "id": "while-they-wait"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Disposition",
+     "id": "disposition"
+    }
+   ],
+   "tor-the-rain-maker": [
+    {
+     "kind": "roll-table",
+     "name": "Theme",
+     "id": "theme"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Various Treasures",
+     "id": "various-treasures"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Minor Arcana",
+     "id": "minor-arcana"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Minor Arcanum",
+     "id": "minor-arcanum"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Major Arcana",
+     "id": "major-arcana"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Harsh Weather",
+     "id": "harsh-weather"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Lightning",
+     "id": "lightning"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Drought",
+     "id": "drought"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Nine-Fingered Stranger",
+     "id": "nine-fingered-stranger"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Manifestation",
+     "id": "manifestation"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Challenge",
+     "id": "challenge"
+    }
+   ],
+   "useful-or-valuable-flora": [
+    {
+     "kind": "hazard-block",
+     "name": "Brightberry",
+     "id": "brightberry"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Sleeping Elksheart",
+     "id": "sleeping-elksheart"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Violet Lotus",
+     "id": "violet-lotus"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Twisting Pine",
+     "id": "twisting-pine"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Vanta's Blade",
+     "id": "vantas-blade"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Hartwood",
+     "id": "hartwood"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Snowembers",
+     "id": "snowembers"
+    },
+    {
+     "kind": "roll-table",
+     "name": "It's Useful/Valuable",
+     "id": "its-useful-valuable"
+    },
+    {
+     "kind": "roll-table",
+     "name": "In the Field",
+     "id": "in-the-field"
+    },
+    {
+     "kind": "roll-table",
+     "name": "To Folks Back Home",
+     "id": "to-folks-back-home"
+    },
+    {
+     "kind": "roll-table",
+     "name": "",
+     "id": ""
+    },
+    {
+     "kind": "roll-table",
+     "name": "Form-Factor",
+     "id": "form-factor"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Quality",
+     "id": "quality"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Distinctive Trait",
+     "id": "distinctive-trait"
+    }
+   ],
+   "ustrina": [
+    {
+     "kind": "roll-table",
+     "name": "What They're Offering",
+     "id": "what-theyre-offering"
+    },
+    {
+     "kind": "roll-table",
+     "name": "What They Want",
+     "id": "what-they-want"
+    },
+    {
+     "kind": "roll-table",
+     "name": "",
+     "id": ""
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Artificial Limb",
+     "id": "artificial-limb"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "Barrel of Anthracite",
+     "id": "barrel-of-anthracite"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "Brass Sphere",
+     "id": "brass-sphere"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "Bright-sticks",
+     "id": "bright-sticks"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "Clockwork Bird",
+     "id": "clockwork-bird"
+    },
+    {
+     "kind": "discovery-block",
+     "name": "Ever-Burning Ember",
+     "id": "ever-burning-ember"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Pale Metal Gauntlets",
+     "id": "pale-metal-gauntlets"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Self-Burning Lamp",
+     "id": "self-burning-lamp"
+    }
+   ],
+   "vor-svetelik": [
+    {
+     "kind": "roll-table",
+     "name": "Surface Terrain",
+     "id": "surface-terrain"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Undercity Terrain",
+     "id": "undercity-terrain"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Green Lord Ruin",
+     "id": "green-lord-ruin"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Discovery",
+     "id": "discovery"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Sign of Battle",
+     "id": "sign-of-battle"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Artifact Of",
+     "id": "artifact-of"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Encounter",
+     "id": "encounter"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Point of Interest",
+     "id": "point-of-interest"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Podburst Vines",
+     "id": "podburst-vines"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Explodes With",
+     "id": "explodes-with"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Deathgrip Vines",
+     "id": "deathgrip-vines"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Blade Wasps",
+     "id": "blade-wasps"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "The Undying",
+     "id": "the-undying"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Chimerae",
+     "id": "chimerae"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Other Creatures",
+     "id": "other-creatures"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Nemurvojak",
+     "id": "nemurvojak"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Plasmic Horror",
+     "id": "plasmic-horror"
+    }
+   ],
+   "waystones": [
+    {
+     "kind": "roll-table",
+     "name": "Lure",
+     "id": "lure"
+    }
+   ],
+   "the-whitefang-mountains": [
+    {
+     "kind": "hazard-block",
+     "name": "Spring",
+     "id": "spring"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Summer",
+     "id": "summer"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Autumn",
+     "id": "autumn"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Winter",
+     "id": "winter"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Terrain",
+     "id": "terrain-2"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Discovery",
+     "id": "discovery"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Encounter",
+     "id": "encounter"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Point of Interest",
+     "id": "point-of-interest"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Natural Resource",
+     "id": "natural-resource"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Settlement",
+     "id": "settlement"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Neighbors Say They Are",
+     "id": "neighbors-say-they-are"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Feature",
+     "id": "feature"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Everyone Here",
+     "id": "everyone-here"
+    },
+    {
+     "kind": "roll-table",
+     "name": "No One Here",
+     "id": "no-one-here"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Trait",
+     "id": "trait"
+    },
+    {
+     "kind": "value-table",
+     "name": "Goods",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Livestock",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Goods",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "Service/Favor",
+     "id": ""
+    },
+    {
+     "kind": "stat-block",
+     "name": "Avalanche",
+     "id": "avalanche"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Hypothermia & Frostbite",
+     "id": "hypothermia-frostbite"
+    },
+    {
+     "kind": "hazard-block",
+     "name": "Altitude Sickness",
+     "id": "altitude-sickness"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Bhoka",
+     "id": "bhoka"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Instinct/Moves",
+     "id": ""
+    },
+    {
+     "kind": "roll-table",
+     "name": "Special Trait",
+     "id": ""
+    },
+    {
+     "kind": "stat-block",
+     "name": "Guardian",
+     "id": "guardian"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Ice Drake",
+     "id": "ice-drake"
+    },
+    {
+     "kind": "stat-block",
+     "name": "The Howling Curse",
+     "id": "the-howling-curse"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Kyakaara",
+     "id": "kyakaara"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Monk",
+     "id": "monk"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Novice",
+     "id": "novice"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Mountain Ape",
+     "id": "mountain-ape"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Shantyara",
+     "id": "shantyara"
+    }
+   ],
+   "appendix-a-ages-of-the-world": [],
+   "appendix-b-artifact-creation": [
+    {
+     "kind": "roll-table",
+     "name": "Origin",
+     "id": "origin"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Nature",
+     "id": "nature"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Why They Might Care",
+     "id": "why-they-might-care"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Material",
+     "id": "material"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Red Crystal/Redwood",
+     "id": "red-crystal-redwood"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Priceless Because",
+     "id": "priceless-because"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Property",
+     "id": "property"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Extra Characteristic?",
+     "id": "extra-characteristic"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Type of Binding",
+     "id": "type-of-binding"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Spirit/Sentience",
+     "id": "spirit-sentience"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Knowledge Imparted",
+     "id": "knowledge-imparted"
+    },
+    {
+     "kind": "roll-table",
+     "name": "How It's Recorded",
+     "id": "how-its-recorded"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Function",
+     "id": "function"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Drawback",
+     "id": "drawback"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Usage",
+     "id": "usage"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Size",
+     "id": "size"
+    },
+    {
+     "kind": "roll-table",
+     "name": "What Is It?",
+     "id": "what-is-it"
+    },
+    {
+     "kind": "roll-table",
+     "name": "More Common",
+     "id": "more-common"
+    },
+    {
+     "kind": "roll-table",
+     "name": "Less Common",
+     "id": "less-common"
+    }
+   ],
+   "minor-laoj-daveths-galvanic-infusion": [],
+   "minor-truth-seeds": [],
+   "minor-old-mothers-wine": [],
+   "minor-aalz-galts-sudden-sinkhole": [],
+   "minor-shell-game-of-souls": [],
+   "minor-thunderous-bellow": [],
+   "minor-the-fiery-veil": [],
+   "minor-the-tomb-bogs-mark": [],
+   "minor-fear-of-the-flame": [],
+   "minor-mantle-wraiths": [
+    {
+     "kind": "stat-block",
+     "name": "Mantle Wraiths",
+     "id": "mantle-wraiths"
+    }
+   ],
+   "minor-shattering-words-of-aalz-childric": [],
+   "minor-ffyrnig-tonic": [],
+   "minor-song-of-the-dool-trees": [
+    {
+     "kind": "stat-block",
+     "name": "Dool Spirit",
+     "id": "dool-spirit"
+    }
+   ],
+   "minor-ward-of-still-waters": [],
+   "minor-ice-weaving": [],
+   "minor-the-six-locks-of-sajua": [],
+   "minor-heliors-shining-ring": [],
+   "minor-nerth-serpents-vigor": [],
+   "minor-goldleaf-cloak": [],
+   "minor-opening-the-way": [],
+   "minor-the-drowning-scale": [],
+   "minor-preserving-runes": [],
+   "minor-peacebond": [],
+   "minor-the-eye-opened": [],
+   "minor-sanctifying-mark": [],
+   "minor-the-green-lords-shade": [],
+   "minor-chimeric-transmogrification": [],
+   "minor-the-sylvan-web": [],
+   "minor-flying-cloak": [
+    {
+     "kind": "stat-block",
+     "name": "The Spirit in the Cloak",
+     "id": "the-spirit-in-the-cloak"
+    }
+   ],
+   "minor-satchel-of-plenty": [],
+   "minor-dancing-wind-spirit": [
+    {
+     "kind": "stat-block",
+     "name": "The Andalau of the Flute",
+     "id": "the-andalau-of-the-flute"
+    }
+   ],
+   "minor-call-of-the-hunt": [],
+   "minor-convocation-of-the-soil": [],
+   "minor-unliving-chimera": [
+    {
+     "kind": "stat-block",
+     "name": "Unliving Chimera",
+     "id": "unliving-chimera"
+    }
+   ],
+   "minor-impudent-polymorph": [],
+   "minor-make-pliant-the-stone": [],
+   "minor-plaster-of-joining": [],
+   "minor-cold-mind-iron-body": [],
+   "minor-little-friend": [
+    {
+     "kind": "stat-block",
+     "name": "Tulpa",
+     "id": "tulpa"
+    }
+   ],
+   "minor-revealing-light": [],
+   "minor-darkwalker-cloak": [],
+   "minor-the-flesh-is-like-clay": [],
+   "minor-fetchs-mask": [],
+   "minor-witch-bottle": [],
+   "minor-wishing-candles": [],
+   "minor-baleful-utterance": [],
+   "minor-aetherium-spear": [],
+   "minor-staff-of-magnetism": [],
+   "minor-groundskimmer": [],
+   "minor-thunderbolt-bow": [],
+   "minor-bronze-protector": [
+    {
+     "kind": "stat-block",
+     "name": "Bronze Protector",
+     "id": "bronze-protector"
+    }
+   ],
+   "minor-sublime-words": [],
+   "minor-flaming-sword": [],
+   "minor-searing-touch": [],
+   "minor-sigil-of-authority": [],
+   "minor-horn-of-storms": [],
+   "minor-moonstone": [],
+   "minor-hand-of-aals-sannan": [],
+   "minor-bittersweet-elixir": [],
+   "minor-the-brooms-lullaby": [],
+   "minor-the-angry-little-god": [
+    {
+     "kind": "stat-block",
+     "name": "All-mighty Thistlewisk",
+     "id": "all-mighty-thistlewisk"
+    }
+   ],
+   "minor-the-silver-branch": [],
+   "minor-void-elemental": [
+    {
+     "kind": "stat-block",
+     "name": "Void Elemental",
+     "id": "void-elemental"
+    }
+   ],
+   "minor-runes-of-creation": [],
+   "major-staff-of-the-lidless-orb": [],
+   "major-twisted-spear": [],
+   "major-demonhide-cloak": [
+    {
+     "kind": "stat-block",
+     "name": "The Cloak",
+     "id": "the-cloak"
+    }
+   ],
+   "major-norubas-ice-sphere": [],
+   "major-mindgem": [
+    {
+     "kind": "stat-block",
+     "name": "The Mighty Servant",
+     "id": "the-mighty-servant"
+    }
+   ],
+   "major-whispering-rocks": [],
+   "major-blood-quenched-sword": [],
+   "major-shield-of-the-wisent-witch": [],
+   "major-hectumel-codex": [],
+   "major-red-scepter": [],
+   "major-ring-of-daagon": [
+    {
+     "kind": "stat-block",
+     "name": "The Ring",
+     "id": "the-ring"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Servant of Daagon",
+     "id": "servant-of-daagon"
+    }
+   ],
+   "major-rune-laden-scales": [],
+   "major-blackwood-fetishes": [
+    {
+     "kind": "stat-block",
+     "name": "Astor",
+     "id": "astor"
+    },
+    {
+     "kind": "stat-block",
+     "name": "Halix",
+     "id": "halix"
+    }
+   ],
+   "major-storm-markings": [],
+   "major-ineffable-words": [],
+   "major-redwood-effigy": [],
+   "major-hungering-maw-of-hlad": [],
+   "major-azure-hand": []
+  }
+ }
+}

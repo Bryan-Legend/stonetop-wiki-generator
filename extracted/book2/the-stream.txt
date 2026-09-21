@@ -8,7 +8,9 @@ B	Vague sense of dread, of being watched
 B	<b>Spring</b>: cold snowmelt swelling
 B	<b>Summer</b>: dragonflies, lightning bugs
 B	<b>Spring/Autumn</b>: leaves in current
-B	<b>Winter</b>: eerie stillness, icy surface Tip: raise your voice a little, like you're talking over background sound
+B	<b>Winter</b>: eerie stillness, icy surface
+PB
+P	Tip: raise your voice a little, like you're talking over background sound
 H2	Questions
 HR
 Q	What little ritual do villagers perform every time they cross the Stream? Why?

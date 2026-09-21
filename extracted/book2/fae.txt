@@ -81,10 +81,14 @@ H2	Names
 HR
 P	Fae "names" tend to be titles, nouns, or descriptive phrases or borrowed from those they've met—simple, whimsical, ominous, or grandiose as befits their nature.
 P	Mix, match, and riff on words related to plants and beasts and rocks, features of the landscape, natural phenomena, colors, mundane objects, emotions or emotional activities, titles, relations, and local names.
-P	Some simple names: Acorn, Cobweb, Hob, Jackdaw, Kettle, Lark, Moth, Quills, Rill, Robin, Stewpot, Trillium, Uncle Whiskers, Whistler, Wobbles, Yellowtail Some whimsical names: Bellweather, Bitterlips, Moonbeam, Peasebottom, Poppy o' Twilight, Rainpetal, Stagthorn, Thistledust, Whiteoak, Yellow Britches
+P	Some simple names: Acorn, Cobweb, Hob, Jackdaw, Kettle, Lark, Moth, Quills, Rill, Robin, Stewpot, Trillium, Uncle Whiskers, Whistler, Wobbles, Yellowtail
+PB
+P	Some whimsical names: Bellweather, Bitterlips, Moonbeam, Peasebottom, Poppy o' Twilight, Rainpetal, Stagthorn, Thistledust, Whiteoak, Yellow Britches
 P	Some ominous names: Bonekettle, Father
 P	Longfingers, Grinning Nel, the Hangman, the King of Dirges, Old Sorrows, the Pale Sisters, Stonetooth, the Weeping Rose Some grandiose names: Dawnwhisper, Fireblossom, Breath of Thunder, Hare
-P	Starblade, the Midnight Mare, Rain Upon the Valley, Silverstag, the Storm King Some Fae might go by many names, or change their names over time. If a given
+P	Starblade, the Midnight Mare, Rain Upon the Valley, Silverstag, the Storm King
+PB
+P	Some Fae might go by many names, or change their names over time. If a given
 P	Fae is known to the locals, consider what they call it in their local tongue. A Fae named Moonbeam, for example, might be called "Pelydrlloer" in Stonetop or "Mondstrohl" by the Manmarchers.
 P	Perhaps each Fae has a true and secret name, by which they can be commanded and bound. If so, it must be their most treasured and precious secret.
 PAGE	98
@@ -237,7 +241,9 @@ P	6 Quick temper/fierce protectiveness
 P	7 Duties/obligations/debts
 P	8 Emptiness/loneliness/grief/ennui
 P	9-10 Scars/impairments/visible wounds
-P	11-12 Roll 1d10 twice, combine Also: are they <b>corrupted</b> (page 430) by the Things Below? Roll 1d6; on a 1, they are.
+P	11-12 Roll 1d10 twice, combine
+PB
+P	Also: are they <b>corrupted</b> (page 430) by the Things Below? Roll 1d6; on a 1, they are.
 P	Pick or create a <b>name</b> (page 97), and write up their stat block. All Fae have the <i>fae</i> tag; many are also <i>magical</i>. They have unnatural resilience (4 Armor, 0 vs. iron), being neither fully flesh nor fully spirit.
 HR
 P	<i>My little wicker-man clearly descends</i> <i>from a plant-spirit. I get an 11 for what</i> <i>he was bred to do ("work/labor/toil…"),</i> <i>a 2 for his role in the war ("victim…"),</i> <i>and a 12 for his lasting mark, followed</i> <i>by a 6 ("fierce protectiveness") and 3</i> <i>("enmity"). He's not corrupted.</i>
@@ -270,7 +276,9 @@ P	2 Megalith(s)/a <b>waystone</b> (page 478)
 P	3 A door/gate/opening, natural or made, literal or just an impression
 P	4 A ring of toadstools or some other distinctive pattern of flora (perhaps <b>useful or valuable</b>, page 458)
 P	5 A path/a climb/a descent/a fall
-P	6 Only active at certain times (in moonlight, at sunset, in winter, etc.) and roll again If an entrance in the Great Wood is at least 10 years old, it's likely to be marked by Forest Folk <b>glyphs</b> (page 152).
+P	6 Only active at certain times (in moonlight, at sunset, in winter, etc.) and roll again
+PB
+P	If an entrance in the Great Wood is at least 10 years old, it's likely to be marked by Forest Folk <b>glyphs</b> (page 152).
 P	For the domain itself, pick or roll for a theme (page 95), the domain's original purpose, the anchor that maintains it, and 1-2 elements. Maybe roll 1d6 to inform its size and scale.
 P	1d6 purpose
 HR
@@ -351,7 +359,9 @@ B	Eat Fae food or drink Fae drink
 B	Fall asleep
 B	Lose themselves to revels, work, etc.
 B	Insult/become indebted to the locals
-B	Disrupt a place held in stasis Threaten PCs with lost time, for sure. Use it to explain the absence of PCs whose players have to miss some sessions. But don't have the PCs lose years or decades unless you—and your players—really want to shake up your game.
+B	Disrupt a place held in stasis
+PB
+P	Threaten PCs with lost time, for sure. Use it to explain the absence of PCs whose players have to miss some sessions. But don't have the PCs lose years or decades unless you—and your players—really want to shake up your game.
 H3	Some Fae domains
 B	A little door in a rocky outcrop, leading to a dying crystal city of tiny Fae and their talking vole subjects.
 B	A natural arch of hawthorne trees. Beyond: a tree-lined hall, a runecarved hearth, endless drink & dance.
@@ -417,7 +427,9 @@ B	The price is Value 2, at least
 B	The price is irreplaceable, cherished, heartbreaking to lose
 B	The price is not truly yours to pay
 B	It involves a promise, condition, or obligation, sure to cause trouble
-B	You end up beholden to them Whatever the price, you've either agreed to it or you've insulted the Fae and the deal is off. Work together to figure out exactly what happened. Reneging on the deal is certain to insult the Fae and/or put you in their <b>debt</b> (page 99).
+B	You end up beholden to them
+PB
+P	Whatever the price, you've either agreed to it or you've insulted the Fae and the deal is off. Work together to figure out exactly what happened. Reneging on the deal is certain to insult the Fae and/or put you in their <b>debt</b> (page 99).
 TH	trade opportunities
 P	If the PCs get a trade opportunity (from the Seasons Change move), the Fae might offer the following. The PCs still need to Haggle for it, though!
 B	An impossible task, like a whole season's worth of work done in a night

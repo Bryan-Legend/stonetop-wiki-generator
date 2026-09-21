@@ -25,7 +25,9 @@ E	+DEX to employ speed, agility, or finesse
 E	+CON to endure or hold steady
 E	+INT to apply expertise or enact a clever plan
 E	+WIS to exert willpower or rely on your senses
-E	+CHA to charm, bluff, impress, or fit in <b>On a 10+</b>, you pull it off as well as one could hope; <b>on a 7-9</b>, you can do it, but the GM will present a lesser success, a cost, or a consequence (and maybe a choice between them, or a chance to back down).
+E	+CHA to charm, bluff, impress, or fit in
+PB
+P	<b>On a 10+</b>, you pull it off as well as one could hope; <b>on a 7-9</b>, you can do it, but the GM will present a lesser success, a cost, or a consequence (and maybe a choice between them, or a chance to back down).
 P	If a PC's action could trigger both Defy Danger and another move (like swinging a hatchet at the drake that's chewing on their leg), then the other move takes precedence (in this case, Clash).
 P	Don't call for Defy Danger just because you think "they should have to roll." If a character does something chancy, but there's no looming danger or the stakes just aren't that high, then don't roll. Just make a call and say what happens, following your principles and agenda.
 P	When you call for Defy Danger, say what the danger and/or the stakes are. "That sounds like Defy Danger, the danger is that it'll notice before you can stab it."
@@ -176,7 +178,9 @@ E	+DEX to employ speed, agility, or finesse
 E	+CON to endure or hold steady
 E	+INT to apply expertise or enact a clever plan
 E	+WIS to exert willpower or rely on your senses
-E	+CHA to charm, bluff, impress, or fit in <b>On a 10+</b>, they pick 1 from the list below; <b>on a 7-9</b>, they pick 1 from the list below but you are left off-balance, exposed, or otherwise vulnerable.
+E	+CHA to charm, bluff, impress, or fit in
+PB
+P	<b>On a 10+</b>, they pick 1 from the list below; <b>on a 7-9</b>, they pick 1 from the list below but you are left off-balance, exposed, or otherwise vulnerable.
 B	Do it anyway, but with disadvantage on their (next) roll
 B	Relent, change course, or otherwise allow their move to be foiled Invoke this move when a PC acts, another PC tries to stop them, and the first PC persists. Stop and discuss the situation, giving both players the chance to back off.
 P	Either player can relent without going to the dice.
@@ -252,7 +256,9 @@ P	If <b><i>the shot is tricky or you're under</i></b> <b><i>pressure</i></b>, fi
 B	Deal your damage, but deplete your ammo (mark the next status by your weapon; don't pick this if your weapon lacks such statuses)
 B	Hold steady and wait for a clear shot; when the moment arrives (GM's call), deal your damage
 B	Move to get a clear shot—exposing yourself to danger or giving up some advantage (GM says how)—then deal your damage
-B	Rush the shot and deal your damage, leading to a cost or complication of the GM's choice What counts as an "easy" shot varies based on the character and the situation. A deadeye Ranger can just roll damage to shoot a clueless foe from cover. But a Seeker who's never killed would be "under pressure" and need to roll +DEX.
+B	Rush the shot and deal your damage, leading to a cost or complication of the GM's choice
+PB
+P	What counts as an "easy" shot varies based on the character and the situation. A deadeye Ranger can just roll damage to shoot a clueless foe from cover. But a Seeker who's never killed would be "under pressure" and need to roll +DEX.
 P	Like Clash, Let Fly triggers only if there's a real chance of harming the target. If there isn't, and they shoot anyway, then <b>reveal an unwelcome truth</b>, <b>tell them the</b> <b>consequences</b>, or <b>put them in a spot</b>.
 P	If a shot is feasible but really hard, then <b>tell</b> <b>them the requirements</b> ("you'll need time to line it up") and/or <b>the consequences</b> ("and on a 6-, you'll hit the hostage").
 P	Should a PC manage to attack multiple foes at once, they roll to Let Fly one time but roll damage separately for each target.
@@ -302,7 +308,9 @@ B	Violence (or a credible threat thereof)
 B	Something they want or need (coin/ food/booze/etc.)
 B	Assurance/proof/corroboration
 B	Pressure/permission/help from ____
-B	Or anything else that makes sense Reveal how the NPC can be convinced via their words or reactions, and/or as insights that occur to the PC. It doesn't have to be easy, or even plausible, but the revelation has to be true.
+B	Or anything else that makes sense
+PB
+P	Reveal how the NPC can be convinced via their words or reactions, and/or as insights that occur to the PC. It doesn't have to be easy, or even plausible, but the revelation has to be true.
 P	It's okay to offer two or more alternatives on how the NPC could be convinced.
 P	"He's waiting for a bribe; a few coppers would do it. Or you could rough him up a bit, you're pretty sure that'd work, too."
 P	On a 6-, you might make it clear that the NPC won't be swayed, interrupt the conversation, and/or end the scene. Or, you might have the NPC comply but with complications (treachery, overzealousness, misunderstanding, etc.). Or maybe the whole interaction offends someone else, upsets the social order, or otherwise generates chaos. Your <b>threat</b> (page 284) and <b>homefront</b> moves (page 502) will be helpful here.
@@ -473,7 +481,9 @@ P	<b>on a 10+</b>, you wrest yourself back to the realm of the living—return t
 P	1 HP but say how your brush with death has marked you; <b>on a 7-9</b>, the Lady waves you off—you're no longer dying but you're out of the action; <b>on</b> <b>a 6-</b>, your time has come—choose 1:
 B	Make one last move as if you rolled a 12+, then step through the Last Door
 B	Refuse to go; gain the Revenant or Ghost insert
-B	Call on one of the Things Below by name and beseech it to intercede; gain the Thrall insert This move is discussed in detail on page
+B	Call on one of the Things Below by name and beseech it to intercede; gain the Thrall insert
+PB
+P	This move is discussed in detail on page
 P	245, in the <b>Harm and Healing</b> chapter.
 H2	Other player moves
 P	Other player moves are discussed in detail elsewhere:

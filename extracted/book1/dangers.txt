@@ -186,7 +186,9 @@ P	They've always been there, in the Wood, lurking in the trees. For generations,
 B	Out-of-place noises: partial bird calls, off-season insect buzz, a bear's growl from the treetops, snippets of nonsense speech
 B	Figures scurrying, leaping, swinging through the branches
 B	Sinewy strong fingers around your throat
-B	Clammy, blackish blood; too cold and putrid to be natural <b>Something interesting</b>: there's something that everyone agrees will keep crinwin at bay (a smell, a charm, a sound, a little ritual, etc.). What is it, and why are you sure that it's next to worthless?
+B	Clammy, blackish blood; too cold and putrid to be natural
+PB
+P	<b>Something interesting</b>: there's something that everyone agrees will keep crinwin at bay (a smell, a charm, a sound, a little ritual, etc.). What is it, and why are you sure that it's next to worthless?
 P	<b>Something useful</b>: there really is something that keeps crinwin at bay, but it involves something uncommon, impractical, or both.
 P	What is it, and why isn't it common knowledge (or at least commonly accepted)?
 PAGE	391
@@ -236,7 +238,9 @@ P	<b>11)</b> Write any appropriate optional elements: lore, player-facing moves,
 P	If you're improvising a monster during play, just quickly conceptualize it (step 1)
 P	and then calculate its HP, armor, and damage (steps 4-6). Use your standard GM moves to run it for now. Write it up in full between sessions, if it still matters.
 H2	Monster types
-P	<i>Book II: The</i> spirit/construct Maker
+P	<i>Book II: The</i>
+PB
+P	spirit/construct Maker
 ICON	icons/default.svg
 P	emanation
 ICON	icons/default.svg
@@ -377,7 +381,9 @@ P	Range tags (in <i>italics</i>) indicate the range at which an attack is useful
 P	<b><i>hand</i></b>: tight quarters; up close and personal <b><i>close</i></b>: melee range, 1-2 steps away <b><i>reach</i></b>: 3-4 steps away <b><i>near</i></b>: up to 30 or so steps away <b><i>far</i></b>: quite the distance; up to 100 steps, maybe more.
 P	Other tags (in <i>italics</i>) indicate extra fictional effects. Reflect tags in how you describe and resolve a monster's attacks.
 P	<b><i>area</i></b>: affects everything in an area <b><i>crude</i></b>: prone to break, wear out, etc.
-P	<b><i>forceful</i></b>: knocks foes around/down <b><i>grabby</i></b>: grapples, grabs, and restrains <b><i>messy</i></b>: especially destructive, rips foes and things apart Attacks with <b>[</b><b><i>n</i></b><b>] piercing</b> ignore <i>n</i> points of a foe's armor. Attacks that <b>ignore armor</b> treat armor as 0.
+P	<b><i>forceful</i></b>: knocks foes around/down <b><i>grabby</i></b>: grapples, grabs, and restrains <b><i>messy</i></b>: especially destructive, rips foes and things apart
+PB
+P	Attacks with <b>[</b><b><i>n</i></b><b>] piercing</b> ignore <i>n</i> points of a foe's armor. Attacks that <b>ignore armor</b> treat armor as 0.
 P	See page 94 for more tags & terms.
 HR
 P	<b>What is the nature of</b> <b>its attack?</b> (pick all that apply) add
@@ -491,7 +497,9 @@ HR
 P	<i>The Almtakers use spells and magic,</i> <i>work well together, and their primary</i> <i>danger isn't from the wounds they inflict. That gives me three moves to write.</i> <i>I go with:</i>
 P	> Lock eyes and teleport them away
 P	> Act in tandem, without hesitation
-P	> Lay a wasting curse on anyone who breaks their promise of respect and peace <i>That last one is a little wordy and unclear, so I split it up like so:</i>
+P	> Lay a wasting curse on anyone who breaks their promise of respect and peace
+PB
+P	<i>That last one is a little wordy and unclear, so I split it up like so:</i>
 P	> Require an oath of good intentions
 P	> Lay a wasting curse on oath-breakers
 HR
@@ -534,7 +542,9 @@ P	(group, large, Fae, magical, organized)
 P	<b>HP</b> 14; <b>Armor</b> 5 (resilience, skill), 2 vs. iron (hide, skill)
 P	<b>Damage</b> powerful blows d6+3 w/disadvantage (close, reach, forceful)
 P	<b>Special qualities</b> Fae nature (Book II, page 98), telepathic, can't lie or mislead; subtly warps local time
-P	& space <b>Instinct</b> to protect its master
+P	& space
+PB
+P	<b>Instinct</b> to protect its master
 P	> Lock eyes, then teleport them away
 P	> Act in tandem, without hesitation
 P	> Require an oath of good intentions

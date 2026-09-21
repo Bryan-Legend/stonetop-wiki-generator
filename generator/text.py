@@ -228,6 +228,11 @@ M_STATS = "\x02STATS "  # the stat block (payload: JSON)
 M_WRITE = "\x02WRITE "  # full-measure write-in box (payload: printed label)
 M_STEP = "\x02STEP "  # numbered step of a walkthrough (payload: n \x03 text)
 M_BAND = "\x02BAND"   # full-measure rule: end of a banded region
+# Paragraph space: the page set the line below apart from the one above,
+# where their words alone would have joined them (a table's last row and
+# the note under it). Whatever the line above is — a row, a stat block's
+# last move — it ends there.
+M_PB = "\x02PB"
 # A major arcanum's two pages: which face of the card the lines below are.
 M_FACE = "\x02FACE "  # payload: "front" | "back"
 
@@ -280,7 +285,7 @@ MARKERS: dict[str, str] = {
     for m in (
         M_B, M_B2, M_Q, M_BC, M_E, M_C, M_H2, M_H3, M_H4, M_TH, M_VT, M_VR,
         M_VA, M_VF, M_BOX, M_ENDBOX, M_MARK, M_HR, M_ICON, M_C2, M_CX, M_CX2,
-        M_STATS, M_WRITE, M_STEP, M_BAND, M_FACE,
+        M_STATS, M_WRITE, M_STEP, M_BAND, M_FACE, M_PB,
         M_SHEET, M_ENDSHEET, M_DIV, M_ENDDIV, M_FIELD, M_FIELDS, M_NOTES,
         M_STAT, M_DMG, M_HPMOUNT, M_TRACK, M_LIST, M_ENDLIST, M_CK, M_CKX,
         M_CKW, M_INV, M_INVW, M_ITEM, M_PLACE, M_LI, M_TYPE, M_STATLINE,

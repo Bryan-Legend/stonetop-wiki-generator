@@ -65,7 +65,9 @@ P	Unless you and your group actively decide to leave Stonetop behind and play a 
 P	Use <b>love letters</b> (<i>Book I</i>, page 568) to gloss over such a journey. Work with the player(s) to identify:
 B	What they hope to accomplish
 B	How they plan to go about it
-B	What valuables/resources they bring with them Think about what might go wrong, what might go well, and what obligations or simmering troubles they're leaving behind.
+B	What valuables/resources they bring with them
+PB
+P	Think about what might go wrong, what might go well, and what obligations or simmering troubles they're leaving behind.
 P	Think about elements of the setting or character that you want to explore or highlight. Weave these together into a love letter for each PC who makes the journey, and present it to each player when their PC returns to Stonetop.
 P	If some PCs remained behind while the others went to Lygos, you can write love letters for the PCs who stayed behind, summarizing events back home. Or, you can play one or more sessions with just those players. Or you can replace the travelling PCs with temporary PCs for a few sessions. Work with your group to decide on the best approach.
 PAGE	259
@@ -162,7 +164,9 @@ C	A company (200-400 troops) establishes a foothold in the <b>South Manmarch</b>
 C	2,000 soldiers march on <b>Marshedge</b> (page 274), their council surrenders, Brennan and the Claws flee
 C	The army invades the <b>North Manmarch</b> (page 282), conquering a number of settlements, hillforts
 C	Remaining Manmarch chiefs surrender; a company of soldiers besieges <b>Gordin's</b> <b>Delve</b> (page 190); another marches on Stonetop and demands surrender
-C	<b>Impending doom:</b> Stonetop is conquered and a garrison established <b>Stakes</b> Can the Hillfolk be united against the southerners? What about the Manmarchers? Will the PCs ally with Brennan?
+C	<b>Impending doom:</b> Stonetop is conquered and a garrison established
+PB
+P	<b>Stakes</b> Can the Hillfolk be united against the southerners? What about the Manmarchers? Will the PCs ally with Brennan?
 PAGE	263
 HR
 ICON	icons/people.svg

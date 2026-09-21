@@ -111,13 +111,17 @@ P	2 Seamless stone structures/tunnels, like they were poured or molded that way
 P	3 Runes carved into stone and shaped out of walls, roads, tunnels, etc.
 P	4 Crystals/makerglass: catching light/ wind, humming/glowing, chiming/ gonging
 P	5 Stones/crystals that emanate emotion/mood/thoughts/memories
-P	6 Grandiosity of scale, big enough to humble even the Makers Most Maker-ruins are sized for giants—people two or even three times as tall as humans—but often with smaller-scale rooms, passages, and so forth for their servants.
+P	6 Grandiosity of scale, big enough to humble even the Makers
+PB
+P	Most Maker-ruins are sized for giants—people two or even three times as tall as humans—but often with smaller-scale rooms, passages, and so forth for their servants.
 P	1d6 condition
 HR
 P	1-2 Shattered and laid waste by time, war, or vandalism; mostly buried, overgrown, collapsed; its purpose unrecognizable
 P	3-4 Crumbling, largely buried, overgrown, or hidden away
 P	5 Buried, overgrown, or hidden, but mostly intact
-P	6 Fully visible and strangely well-preserved Many Stone Lord ruins were <b>reclaimed</b> (page 36) by the Barrow Builders at some point. See <b>Blackwater Lake</b> (page 51) and <b>Three Coven Lake</b> (page 442).
+P	6 Fully visible and strangely well-preserved
+PB
+P	Many Stone Lord ruins were <b>reclaimed</b> (page 36) by the Barrow Builders at some point. See <b>Blackwater Lake</b> (page 51) and <b>Three Coven Lake</b> (page 442).
 PAGE	387
 HR
 P	<i>The PCs cut north from Three Coven Lake and seek out a place to</i> <i>camp. I decide that they find a Stone Lord ruin. I roll 6 for theme</i> <i>(authority/order/hierarchy/tradition), a 5 for structure (chambers</i> <i>dug into the sides of hills), a 6 for purpose (civic life), a 3 for</i> <i>architectural elements (crystals/makerglass), and 4 for condition</i> <i>(buried or hidden, mostly intact). I imagine some sort of belltower, once used to signal the hour and give order to the day.</i>
@@ -285,7 +289,9 @@ P	7 Ranged/area attack
 P	8 Transformation/multipart form/ swarm
 P	9 Prowess/mobility/speed
 P	10 Destructive/vicious weaponry
-P	11-12 Roll 1d10 twice Stone Lord constructs are typically blind but able to navigate by sound and sensing vibrations. Almost all are highly durable (+4 HP) and animated by more than biology (another +4 HP), with at least 3 Armor.
+P	11-12 Roll 1d10 twice
+PB
+P	Stone Lord constructs are typically blind but able to navigate by sound and sensing vibrations. Almost all are highly durable (+4 HP) and animated by more than biology (another +4 HP), with at least 3 Armor.
 P	<b>1d12</b> size
 HR
 P	1 Cat-sized or smaller (<i>tiny</i>)
@@ -298,7 +304,9 @@ HR
 P	1-3 Requires the presence of external source
 P	4-8 Stores power, but must return "home" to recharge
 P	9-11 Self-charging, but limited range/ activity
-P	12 Self-powered/indefinite charge Power sources might include: singing crystals that broadcast energy; ingots of <b>aetherium</b> (page 404); veins of special stone transmitting power through floors; crystals that absorb telluric currents/vibrations; spirits bound in makerglass; etc.
+P	12 Self-powered/indefinite charge
+PB
+P	Power sources might include: singing crystals that broadcast energy; ingots of <b>aetherium</b> (page 404); veins of special stone transmitting power through floors; crystals that absorb telluric currents/vibrations; spirits bound in makerglass; etc.
 PAGE	393
 P	1d12 sapience
 HR
@@ -306,7 +314,9 @@ P	1-3 Puppet: requires active control by outside intellect
 P	4-6 Bug-like: can follow limited range of programs/tasks
 P	7-10 Beast-like: can take basic direction, complete some complex tasks independently
 P	11 Automaton: can handle complex tasks, learn; lacks true emotion/ creativity
-P	12 Person: fully sapient, potentially quite intelligent Ask yourself: where does this construct's sapience come from? Clever scripting?
+P	12 Person: fully sapient, potentially quite intelligent
+PB
+P	Ask yourself: where does this construct's sapience come from? Clever scripting?
 P	Spirits bound to stone? The will drained from living servants? Something else?
 P	1d12 condition
 HR

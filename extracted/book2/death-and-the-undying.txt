@@ -43,7 +43,9 @@ B	That ghosts are bound to a <b>tether</b> (page 77), and what that entails
 B	That silver can harm most undead
 B	The tale of a prominent haunted site
 B	What a given entity is capable of
-B	What necromancers are capable of <b>Very few know:</b>
+B	What necromancers are capable of
+PB
+P	<b>Very few know:</b>
 B	The details of an obscure haunting
 B	The true nature of the Lady of Crows, the Last Door, the afterlife
 B	How necromancy works, exactly
@@ -95,7 +97,9 @@ P	9-10 An abandoned home/fort/steading
 P	11-12 A ruin of the <b>Makers</b> (page 264) or the <b>Barrow Builders</b> (page 34), or a lingering sign of their presence
 HR
 P	<i>The PCs are exploring</i> <b><i>Three Coven Lake</i></b>
-P	<b><i>Lord</i></b> (page 382) <i>nature of the site is established, so I don't roll for a feature. I roll a 6 for theme ("ignoble</i> <i>death"), a 6 for how long ("for generations"), and a 4 for origins ("the death of a few,</i> <i>("exposure/cold/thirst/starvation"). I ponder a bit, and come up with this:</i> <i>A century ago, some adventurers explored these chambers. A great slab of stone fell into</i> <i>place, trapping them in a side chamber. A grate in the ceiling (far out of reach) provided</i> <i>enough fresh air and rainwater to sustain them for several grueling weeks, but one of them</i>
+P	<b><i>Lord</i></b> (page 382) <i>nature of the site is established, so I don't roll for a feature. I roll a 6 for theme ("ignoble</i> <i>death"), a 6 for how long ("for generations"), and a 4 for origins ("the death of a few,</i> <i>("exposure/cold/thirst/starvation"). I ponder a bit, and come up with this:</i>
+PB
+P	<i>A century ago, some adventurers explored these chambers. A great slab of stone fell into</i> <i>place, trapping them in a side chamber. A grate in the ceiling (far out of reach) provided</i> <i>enough fresh air and rainwater to sustain them for several grueling weeks, but one of them</i>
 HR
 P	Once the site's physical nature is established, pick or roll a theme (page 68), how long it's been haunted, and the origins of the haunting.
 P	1d12 how long
@@ -106,7 +110,11 @@ P	4-5 Since the <b>Barrow Builders</b> (page 34), after the Makers' fall
 P	6-7 For generations, longer than the living remember
 P	8-9 For decades, within living memory
 P	10-11 For the past decade at most
-P	12 Not long at all, a recent change (page 438)<i>. They've found an ancient</i> <b><i>Stone</i></b> <i>workshop carved into a bluff above the lake. I think it's haunted! The</i> <i>intimate and intense"). Because deaths were involved, I roll another 5 for the cause of death</i> <i>murdered and ate his fellows before slowly wasting away.</i>
+P	12 Not long at all, a recent change
+PB
+P	(page 438)<i>. They've found an ancient</i> <b><i>Stone</i></b> <i>workshop carved into a bluff above the lake. I think it's haunted! The</i>
+PB
+P	<i>intimate and intense"). Because deaths were involved, I roll another 5 for the cause of death</i> <i>murdered and ate his fellows before slowly wasting away.</i>
 P	<i>His soul lingers as a</i> <b><i>wraith</i></b> (page 79)<i>, tethered</i>
 P	<i>to his bones.</i>
 PAGE	73
@@ -123,7 +131,9 @@ P	10 A ritual, magic, or artifice:
 P	failed or run amok
 P	11 A ritual, magic, or artifice:
 P	working as intended
-P	12 The loss or failure of an artifact/ ward/binding that kept the dead in check If the origins involved a death or deaths, pick or roll for the cause of death.
+P	12 The loss or failure of an artifact/ ward/binding that kept the dead in check
+PB
+P	If the origins involved a death or deaths, pick or roll for the cause of death.
 P	1d12 cause of death
 HR
 P	1 Old age/infirmity/malady/disease
@@ -133,7 +143,9 @@ P	6-7 Injury/trauma/wounds/poison
 P	8-9 Burning/drowning/suffocation
 P	10 Falling/accident/weather/disaster
 P	11 Exertion/exhaustion/shock/fright
-P	12 Magic/an entity/a curse From there, choose the <b>ghosts</b> (page 76), <b>revenants</b> (page 80), or other <b>dangers</b> (page 83) that haunt the place, and their <b>tether</b>(s) (page 77) if appropriate. Populate it with <b>artifacts</b> (page 74) tied to death and the undying, and dangers or discoveries appropriate to the surrounding area and/or whoever dwelt here in the past.
+P	12 Magic/an entity/a curse
+PB
+P	From there, choose the <b>ghosts</b> (page 76), <b>revenants</b> (page 80), or other <b>dangers</b> (page 83) that haunt the place, and their <b>tether</b>(s) (page 77) if appropriate. Populate it with <b>artifacts</b> (page 74) tied to death and the undying, and dangers or discoveries appropriate to the surrounding area and/or whoever dwelt here in the past.
 H2	Dool trees
 P	Dool trees often grow in or near haunted sites. A grove stands near the <b>Crossroads</b> (page 270), and lone dool trees are often found near <b>Barrow Builder</b> tombs (page 34).
 P	They are thick and knobby and multi-stemmed. The bark is papery, the color of bleached bone. The <b>Pale</b> <b>Hunter</b> (page 292) shuns them, and they are often home to <b>dool spirits</b> (page 83) if nothing else.

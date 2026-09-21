@@ -31,6 +31,7 @@ from .text import (
     M_B,
     M_B2,
     M_BAND,
+    M_PB,
     M_BC,
     M_BOX,
     M_C,
@@ -703,7 +704,13 @@ def extract_page_rich(
             write_label, used = found_box
             spans = [sp for sp in spans if id(sp) not in used]
 
-    def build_lines(region: list[dict], x_lo: float, x_hi: float) -> list[dict]:
+    def build_lines(
+        region: list[dict],
+        x_lo: float,
+        x_hi: float,
+        y_lo: float = float("-inf"),
+        y_hi: float = float("inf"),
+    ) -> list[dict]:
         """Cluster spans into visual lines, attach glyph markers."""
         # Only glyphs inside this region's x-range may mark its lines —
         # otherwise a bullet in the left column marks right-column lines
@@ -715,8 +722,14 @@ def extract_page_rich(
         r_tails = _loc(tails)
         r_diamonds = _loc(diamonds)
         r_checks = _loc(boxes_sq)
-        r_hrules = _loc(hrules)
-        r_icons = [ic for ic in icons if x_lo - 6 <= ic["x0"] <= x_hi]
+        # A rule or an icon belongs to the band it sits in, as well as to its
+        # column: a full-measure band spans every column's x-range, and
+        # without this it would collect the rules drawn under it too.
+        r_hrules = [r for r in _loc(hrules) if y_lo <= r.y0 < y_hi]
+        r_icons = [
+            ic for ic in icons
+            if x_lo - 6 <= ic["x0"] <= x_hi and y_lo <= ic.get("y0", 0.0) < y_hi
+        ]
 
         region = sorted(region, key=lambda s: (s["y"], s["x"]))
         lines: list[list[dict]] = []
@@ -955,6 +968,7 @@ def extract_page_rich(
                 {
                     "y": y_top,
                     "x": first_x,
+                    "x1": max(g["x1"] for g in text_spans),
                     "text": text,
                     "font": dom_font,
                     "size": dom_size,
@@ -988,6 +1002,10 @@ def extract_page_rich(
     def emit_region(recs: list[dict], col_x0: float, in_box: bool) -> list[str]:
         out: list[str] = []
         prev_y: float | None = None
+        # Where the column's type reaches on the right: justified lines run
+        # to it, a paragraph's last line stops short of it.
+        col_x1 = max((r.get("x1") or 0.0 for r in recs if r.get("text")), default=0.0)
+        prev_x1: float | None = None
         head_size: float | None = None  # type size of the last heading emitted
         head_x: float | None = None  # its left edge (continuations hang left)
         table = state.get("table") if not in_box else None
@@ -1081,6 +1099,7 @@ def extract_page_rich(
             gap = (y - prev_y) if prev_y is not None else 999.0
             prev_y = y
             prev_x, cur_x = cur_x, rec.get("x")
+            line_above_x1, prev_x1 = prev_x1, rec.get("x1")
             idx += 1
 
             # Page furniture
@@ -1447,6 +1466,33 @@ def extract_page_rich(
 
             entry_active = False  # a plain paragraph ends the current entry
             list_kind = None
+            # More space above this line than a line of type takes is the
+            # book's paragraph space: whatever the words look like, the line
+            # above ended there. The mark rides to merge_wrapped_lines, which
+            # never joins across it — the words alone cannot tell "6 Obvious
+            # and intact" (a table's last row) from a sentence that wraps,
+            # and the note under the table was being glued onto the row.
+            #
+            # Space alone is not proof: a wrapped sentence can have an
+            # illustration or a box between its lines. The line above must
+            # also stop short of the column's right margin, the way the last
+            # line of a paragraph (or a table's last row) does and a line
+            # that wraps does not.
+            # And a line that stops on a comma or semicolon has not finished
+            # its sentence, however much room is left after it.
+            # And a numbered table row is one line of type or a few at the
+            # leading; paragraph space under one ends the table, however the
+            # row ran (Primordial Powers' powers table: "12 Something special,
+            # unique, thematic" fills its line, and its number sits at the
+            # column edge the note under it starts at).
+            after_row = bool(ROW_START_RE.match(prev_tail))
+            if (
+                PARA_GAP_MIN * rec["size"] < gap < PARA_GAP_MAX
+                and line_above_x1 is not None
+                and (line_above_x1 < col_x1 - PARA_SHORT_BY or after_row)
+                and not prev_tail.rstrip().endswith((",", ";"))
+            ):
+                text = PARA_BREAK + text
             out.append(text)
 
         # A table still open at column end may continue in the next column
@@ -1508,9 +1554,11 @@ def extract_page_rich(
     for row in rows:
         row.sort(key=lambda sp: sp["x"])
 
+    full_top_band: float | None = None  # y below which the columns start
     if not single_column:
         two_col = False
         crossing = 0
+        row_kind: list[str] = []  # per baseline: "cross", "two", or "one"
         for row in rows:
             segs: list[list[float]] = []  # [x0, x1] per unbroken run
             last_mid: float | None = None
@@ -1540,22 +1588,65 @@ def extract_page_rich(
             )
             if crossed:
                 crossing += crossed
+                row_kind.append("cross")
                 continue
             mids = [(x0 + x1) / 2 for x0, x1 in segs]
             if any(m < gutter for m in mids) and any(m >= gutter for m in mids):
                 two_col = True
-                break
+                row_kind.append("two")
+                continue
+            row_kind.append("one")
         if not two_col and crossing >= 3:
             gutter = page.rect.width + 1
+        elif two_col and not playbook:
+            # A page that opens across the full measure and then breaks into
+            # two columns (Primordial Powers, p. 298: four lines of intro
+            # over the theme table and the questions). Split at the gutter,
+            # each full-measure line's right half went to the right column,
+            # read after the left one — the intro lost its middle, and the
+            # theme table's last row gained it. So the opening lines are a
+            # band of their own, read as one column, before the two.
+            #
+            # The band is the unbroken run of full-measure lines from the top
+            # of the page (a running header above it aside), cut just below
+            # the last of them: anything after the first line that does not
+            # cross the gutter is already the columns ("Gods and religion"
+            # crosses; "The village of Stonetop maintains a pavil-" under it
+            # is the left column's first line, not the band's last).
+            lead: list[list[dict]] = []
+            after = None
+            for row, kind in zip(rows, row_kind):
+                # Running text only: a heading may cross the gutter too
+                # (Book I p. 85 prints "Seasonal gains" twice, one copy
+                # straddling the gutter), and is read the same either way.
+                body_row = all(
+                    sp["size"] <= 10.5 and "Avara" not in sp["font"] for sp in row
+                )
+                if kind == "cross" and body_row:
+                    lead.append(row)
+                    continue
+                if not lead and row[0]["y"] < RUNNING_HEAD_Y:
+                    continue  # the running header over the page
+                after = row
+                break
+            # A paragraph, not a stray line: a single row across the gutter
+            # is a label or a rule's caption as often as it is text.
+            if len(lead) >= 2 and after is not None:
+                full_top_band = (lead[-1][0]["y"] + after[0]["y"]) / 2
 
     # A playbook page is banded by full-measure rules, and each band's two
     # columns belong to that band alone: read as two full-height columns, the
     # top band's right half lands in the middle of the bottom band's left one.
     bands: list[tuple[float, float]] = [(float("-inf"), float("inf"))]
+    band_gutters: list[float] = [gutter]
+    if full_top_band is not None:
+        bands = [(float("-inf"), full_top_band), (full_top_band, float("inf"))]
+        band_gutters = [page.rect.width + 1, gutter]
     if playbook:
         cuts = [y for y in playbook_band_ys(page) if 20.0 < y < page_h - 20.0]
         edges = [float("-inf")] + sorted(cuts) + [float("inf")]
         bands = [(lo, hi) for lo, hi in zip(edges, edges[1:])]
+        band_gutters = [gutter] * len(bands)
 
     if stats_json:
         result.append(M_STATS + stats_json)
@@ -1564,17 +1655,25 @@ def extract_page_rich(
         band_spans = [sp for sp in spans if band_lo <= sp["y"] < band_hi]
         if not band_spans:
             continue
-        if bi and result and result[-1] != M_BAND:
+        if bi and playbook and result and result[-1] != M_BAND:
             result.append(M_BAND)
+        band_gutter = band_gutters[bi]
         cols: list[list[dict]] = [[], []]
         for sp in band_spans:
-            cols[0 if _span_mid_x(sp) < gutter else 1].append(sp)
+            cols[0 if _span_mid_x(sp) < band_gutter else 1].append(sp)
         for ci, col in enumerate(cols):
             if not col:
                 continue
             col_x0 = min(sp["x"] for sp in col)
-            x_lo, x_hi = (0.0, gutter) if ci == 0 else (gutter, page.rect.width)
-            recs = build_lines(col, x_lo, x_hi)
+            x_lo, x_hi = (
+                (0.0, band_gutter) if ci == 0 else (band_gutter, page.rect.width)
+            )
+            # Only a full-measure band is bounded in height; a playbook's
+            # bands keep reading as they always have.
+            if full_top_band is not None:
+                recs = build_lines(col, x_lo, x_hi, band_lo, band_hi)
+            else:
+                recs = build_lines(col, x_lo, x_hi)
             # resume a table that carried over from the previous column/page
             carried = state.get("table")
             result.extend(emit_region(recs, col_x0, False))
@@ -1627,6 +1726,25 @@ def hyphen_is_compound(body: str, rest: str) -> bool:
     return bool(BOOK_TOKENS.get(x + "-" + y)) and not BOOK_TOKENS.get(x + y)
 
 
+# A paragraph break, as the page sets it: vertical space between two lines of
+# a column beyond what a line of type takes. Body type (9pt) runs on 13.1pt
+# baselines — 1.46x its size — and some sidebars on up to 18pt (2.0x); the
+# space before a new paragraph is 21.6pt or more (2.4x). Above PARA_GAP_MAX
+# the "gap" is the jump to another column or region, not spacing.
+PARA_GAP_MIN = 2.2
+PARA_GAP_MAX = 80.0
+# Above this, a line sits where the running header does, not the text.
+RUNNING_HEAD_Y = 62.0
+# A roll-table row as the extractor emits it: "12 …", "3-4 …", "1–2 …".
+ROW_START_RE = re.compile(r"^\s*\d{1,2}(?:\s*[-\u2013]\s*\d{1,2})?\s+\S")
+# ...and the line above stops at least this far short of the column's
+# right margin — about four characters of body type.
+PARA_SHORT_BY = 20.0
+# Marks a line that starts a paragraph, between emit_region and
+# merge_wrapped_lines only; it never reaches the corpus.
+PARA_BREAK = "\x0b"
+
+
 def merge_wrapped_lines(
     lines: list[str], pages: list[int] | None = None
 ) -> list[str] | tuple[list[str], list[int]]:
@@ -1640,10 +1758,24 @@ def merge_wrapped_lines(
         return ([], []) if pages is not None else []
     out: list[str] = []
     out_pages: list[int] = []
-    buf = lines[0]
+    buf = lines[0].lstrip(PARA_BREAK)
     buf_page = pages[0] if pages is not None else 0
     for i, nxt in enumerate(lines[1:], 1):
-        if should_join(buf, nxt):
+        new_para = nxt.startswith(PARA_BREAK)
+        nxt = nxt.lstrip(PARA_BREAK)
+        if new_para and should_join(buf, nxt):
+            # The words would have joined these two; the page says no. Keep
+            # them apart, and say so in the corpus (M_PB), or the renderer —
+            # which glues a stray line onto the table row above it as a
+            # matter of course — would join them all over again.
+            out.append(buf)
+            out_pages.append(buf_page)
+            out.append(M_PB)
+            out_pages.append(pages[i] if pages is not None else 0)
+            buf = nxt
+            buf_page = pages[i] if pages is not None else 0
+            continue
+        if not new_para and should_join(buf, nxt):
             # Test for a trailing hyphen past any inline-format sentinels, so a
             # bold/italic word wrapped across a line ("crys-" + "tal") still
             # de-hyphenates instead of becoming "crys- tal".

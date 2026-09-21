@@ -454,7 +454,9 @@ P	<b>Special qualities</b> blind; tremorsense; bioluminescent <b>Instinct</b> to
 P	• Soften stone with its spit, then dig through it
 P	• Spurt caustic blood when hurt
 P	• Scamper away, hide, act as bait
-P	• Trigger a collapse or cave-in Big, naked mole-rats, like 5' long, with saggy skin, glowing freckles, and clusters of wriggling feelers on their noses. They eat vermin and fungus that grow near leaking pipes. They also tunnel through bedrock, collapse passages, and expose sealed-off rooms.
+P	• Trigger a collapse or cave-in
+PB
+P	Big, naked mole-rats, like 5' long, with saggy skin, glowing freckles, and clusters of wriggling feelers on their noses. They eat vermin and fungus that grow near leaking pipes. They also tunnel through bedrock, collapse passages, and expose sealed-off rooms.
 P	Every so often, they wake a <b>skittering</b> <b>horror</b> (page 348) from its torpor. This spells doom for the colony, unless they can trap it or cut off access to the nest. They'll treat the PCs as a similar threat.
 ICON	icons/beast-large.svg
 H3	Ferocedes Ogran, ghostly

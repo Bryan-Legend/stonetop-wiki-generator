@@ -48,7 +48,9 @@ P	Every year or so, someone tries to carve out a piece of for themselves. A new 
 B	A family from Marshedge or the North Manmarch, starting their own farm
 B	An ambitious Lygosi merchant, investing in a new trading post or caravansary
 B	Some would-be chief or warlord from the <b>Manmarchers</b> (page 282), building a new hamlet or hillfort
-B	The <b>conquering armies</b> of the South (page 262), establishing a foothold Such settlements rarely last. They fall prey to natural disaster or roving beasts, to rivals or bandits, or to the certain wrath of the Hillfolk who claim these lands as theirs.
+B	The <b>conquering armies</b> of the South (page 262), establishing a foothold
+PB
+P	Such settlements rarely last. They fall prey to natural disaster or roving beasts, to rivals or bandits, or to the certain wrath of the Hillfolk who claim these lands as theirs.
 P	Or perhaps, if you believe the stories, there's something darker afoot. Perhaps these lands really are haunted. Haunted by the numerous souls who've died here. Or by foul things, slithering out of the Dread River. Perhaps the land is cursed, and no settlement can ever survive. Perhaps.
 H2	The Flintwash
 P	Draining out of the Steplands and into the Dread River, this watercourse draws thickets, copses of cottonwood, wildlife, and wanderers to its gentle banks. The Hillfolk call it <i>Maengwalc</i> in their own tongue—"Flintwash," after the stony plateau from which its headwaters spring.
@@ -128,7 +130,9 @@ P	2 From the <b>Time of Cataclysm</b> (page 413), when humanity rebelled and wok
 P	3-4 From a conflict among the <b>Barrow</b> <b>Builders</b> (page 34)
 P	5-7 From a previous attempt at settlement: burnt out, collapsed, overgrown
 P	8-10 Recent: Hillfolk, bandits, travelers, settlers, beasts
-P	11-12 Very recent: the buzzards and crows still feasting Many such places are <b>haunted</b> (page 72) by the dead.
+P	11-12 Very recent: the buzzards and crows still feasting
+PB
+P	Many such places are <b>haunted</b> (page 72) by the dead.
 PAGE	354
 H2	Dangers
 HR

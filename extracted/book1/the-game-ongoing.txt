@@ -197,7 +197,9 @@ P	Go over stuff that you want everyone to keep in mind or at least be aware of. 
 B	PC and/or follower instincts
 B	Relationship changes from the end of last session
 B	Outstanding wishes
-B	Goals you're working on, that you'd like the players to help you with Customize this list to match your needs and preferences. Not every group highlights the same things.
+B	Goals you're working on, that you'd like the players to help you with
+PB
+P	Customize this list to match your needs and preferences. Not every group highlights the same things.
 H2	Bookkeeping
 P	Have players update their playbooks and inserts if needed. Like, if they've had a few days at home since the last session, have them reset HP and clear debilities. If someone Leveled Up, make sure they've updated their XP and marked a new move.
 P	That sort of thing.
@@ -452,7 +454,9 @@ B	A struggle, an absence, grief
 B	A time of rebuilding, renewal, hope
 B	A lasting change, a transition
 B	A beginning, a fresh start, a birth
-B	A memory, a story, a legend Go around as many times as you like.
+B	A memory, a story, a legend
+PB
+P	Go around as many times as you like.
 P	Change who you ask each time, or just pick a scene to describe yourself.
 P	When you're done, thank your friends, wish them well, and say goodbye.
 P	The end.

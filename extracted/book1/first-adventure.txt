@@ -324,7 +324,9 @@ B	The homefront moves you plan to make, with whatever details you find useful.
 P	These aren't the only things you'll say or ask, and you can adjust them as needed, but they'll give you a solid starting point.
 PAGE	269
 HR
-P	<i>The trapper should stagger into town in the</i> <i>morning, giving the PCs some daylight to</i> <i>work with. The trapper and his son would</i> <i>have set off at first light, and the attack</i> <i>would have come a couple hours later. So,</i> <i>the trapper would get back to town midmorning. That's when I'll set the scene:</i> <i>"It's mid-morning. Farmers till the fields</i> <i>and folks go about their chores. It's another</i> <i>fine, clear day, still cool but likely to get</i> <i>warm."</i>
+P	<i>The trapper should stagger into town in the</i> <i>morning, giving the PCs some daylight to</i> <i>work with. The trapper and his son would</i> <i>have set off at first light, and the attack</i> <i>would have come a couple hours later. So,</i> <i>the trapper would get back to town midmorning. That's when I'll set the scene:</i>
+PB
+P	<i>"It's mid-morning. Farmers till the fields</i> <i>and folks go about their chores. It's another</i> <i>fine, clear day, still cool but likely to get</i> <i>warm."</i>
 P	<i>To play up the "unexpected bounty," I'll zoom</i> <i>in on Caradoc—he's the tanner's apprentice.</i>
 P	<i>"Caradoc, you're at work, hides and furs</i> <i>all over.</i>
 Q	<i>"What unsavory task does Sawyl</i> <i>have you working on this morning?</i>
@@ -380,7 +382,9 @@ B	<i>Rheinal, obviously</i>
 B	<i>Morwenna (Caradoc's crush),</i> <i>helping Rheinal up the cliffside path</i>
 B	<i>Gwendl the Matron (one of Blodwen's mentors, village healer) will</i> <i>arrive soon</i>
 B	<i>Sawyl the tanner (Caradoc's boss);</i> <i>the tannery is right there</i>
-B	<i>Eira (Rhianna's lieutenant, who</i> <i>Vahid secretly watches) will probably be</i> <i>talking to Rhianna, and will probably</i> <i>come along</i> <i>That's plenty of NPCs for the initial scene, but</i> <i>I also expect there to be some interaction with:</i>
+B	<i>Eira (Rhianna's lieutenant, who</i> <i>Vahid secretly watches) will probably be</i> <i>talking to Rhianna, and will probably</i> <i>come along</i>
+PB
+P	<i>That's plenty of NPCs for the initial scene, but</i> <i>I also expect there to be some interaction with:</i>
 B	<i>Glenys (Caradoc's aunt, Wynfor's mom)</i> <i>and the other missing child's parents.</i>
 B	<i>Tegwen, Blodwen's somewhat overbearing mother.</i>
 P	<i>I start thinking about some of the moves</i> <i>that these people might make:</i>

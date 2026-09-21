@@ -293,7 +293,9 @@ B	Things the players are interested in
 B	The PCs, their stuff, and their pasts
 B	Established NPCs and threats
 B	Previous events in-game
-B	The questions on your <b>"I wonder…"</b> list (page 33) Let these connections prompt questions, suggest answers, or just inspire new ideas.
+B	The questions on your <b>"I wonder…"</b> list (page 33)
+PB
+P	Let these connections prompt questions, suggest answers, or just inspire new ideas.
 P	Think about how all these elements fit together in your site.
 H3	Ask yourself questions
 P	Think about what you've got so far, and start asking questions. Write them down!
@@ -332,7 +334,9 @@ P	<i>Forest Folk descended from the Green Lord's</i> <i>mortal servants. There's
 P	<i>Blodwen's player is curious about the Forest</i> <i>Folk; she might be able to learn something</i> <i>about them here.</i>
 P	<i>Sajra is a swyn. The Green Lords made</i> <i>swyn with help from the Things Below, to</i> <i>fight the Fae. The Fae hunt swyn.</i>
 P	<i>Sajra moved in last autumn, and kicked</i> <i>out a Fae named Thornthumb. Thornthumb</i> <i>was a collector himself, so some of his hoard</i> <i>must still be there.</i>
-P	<i>Thornthumb would know all the ins and</i> <i>outs of the tomb. He would have known</i> <i>(and traded with?) the Forest Folk before</i> <i>they left, too</i> <i>Sajra has turned the crinwin into "fawning</i> <i>servants," but their instinct is "to covet."</i> <i>They're probably jealous of the children's</i> <i>place in Sajra's collection.</i>
+P	<i>Thornthumb would know all the ins and</i> <i>outs of the tomb. He would have known</i> <i>(and traded with?) the Forest Folk before</i> <i>they left, too</i>
+PB
+P	<i>Sajra has turned the crinwin into "fawning</i> <i>servants," but their instinct is "to covet."</i> <i>They're probably jealous of the children's</i> <i>place in Sajra's collection.</i>
 HR
 P	<i>From there, I make a list of questions and then</i> <i>start answering them.</i>
 P	• Why didn't the Fae gut the tomb during their uprising? <i>The inner vault is guarded</i> <i>by powerful, loyal Fae. The outer tunnels</i> <i>were looted and ransacked, but the vault</i> <i>and Green Lord are secure.</i>
@@ -385,7 +389,9 @@ B	<b>Clues</b> (page 424), especially those that the PCs need to achieve their g
 B	Other, smaller <b>sites</b> (page 426)
 B	Non-hostile <b>encounters</b> (page 426) with the site's denizens
 B	<b>Opportunities</b> (page 428)
-B	<b>Artifacts</b> (page 428) and <b>arcana</b> (page 438) found within the site Refer to the relevant entries in <i>Book II</i>, or make your own as needed.
+B	<b>Artifacts</b> (page 428) and <b>arcana</b> (page 438) found within the site
+PB
+P	Refer to the relevant entries in <i>Book II</i>, or make your own as needed.
 P	The goal here is to identify the elements that you want to include, and those that you need to to account for. Don't worry just yet about placing them within the site, or writing them up in detail. You can do that now, if it helps you make decisions or answer questions. But it's often best to wait until you're doing the site's final <b>write-up</b> (page 368).
 PAGE	363
 H3	Establish areas/rooms
@@ -431,7 +437,8 @@ P	• Grand, vaulted chambers and halls • White stone slabs, carved with plant
 PAGE	365
 P	<i>I do a second pass to firm up the fuzzy bits. I</i> <i>don't bother with the Fae or spirits who dwell</i> <i>in the Green Lord's false afterlife (I'm not</i> <i>sure that the PCs will even get in there),</i> <i>nor with Sajra's hoard or other treasures (In</i> <i>a pinch, I can pick stuff from</i> Book II<i>).</i>
 P	<i>For the inner vault, I think that the wards</i> <i>involve a series of tests, meant to ensure that</i> <i>petitioners approach the Green Lord with</i> <i>proper respect. I write down:</i>
-P	• Halls of Humility & Gratitude (dreamlike tests) • Hall of Offerings (guardian Fae, leads to false afterlife)
+P	• Halls of Humility & Gratitude (dreamlike tests)
+P	• Hall of Offerings (guardian Fae, leads to false afterlife)
 P	<i>I'm not sure what exactly these will entail;</i> <i>I'll come back to them later. I do spend time</i> <i>creating the</i> <b><i>Almtakers</i></b> <i>(page 405), the Fae</i> <i>who guard the Hall of Offerings. It seems</i> <i>important to understand them, even if they</i> <i>never appear in play.</i>
 P	<i>Now, where is Sajra's lair? It would be the</i> <i>grandest place that remained in the outer</i> <i>tomb. But what? I go back to the Green Lord</i> <i>sites and roll up a new one to represent this</i> <i>room. I get a theme of "spirits of the wild…</i> <i>bound or put to use" and a purpose of "Esoteric (laboratory, shrine, surgery, etc.)," and</i> <i>more stone slabs and carvings for architectural elements. I roll a theme from the</i> <b><i>spirits</i></b> <b><i>of the wild</i></b> <i>(</i>Book II<i>, page 357): "water/</i> <i>streams/ponds/lakes."</i>
 P	<i>Okay, I think this was a shrine (to Danu?),</i> <i>featuring a natural spring and tended by</i> <i>the spring's spirit. The Fae and Thornthumb</i> <i>left it intact, but Sajra has claimed it as its</i> <i>den. Ooh, and Sajra's presence is starting to</i> <i>corrupt the place. Cool! (I add "Spirit of the</i> <i>spring" to my list of denizens.)</i>
@@ -459,7 +466,9 @@ B	Loops, where areas/rooms connect to each other from multiple directions
 B	Different levels and sub-levels
 B	Multiple entry/exit points
 B	Hidden, difficult, or dangerous paths
-B	Paths that the site's denizens can use but the PCs can't Such additions make a site more interesting, but also more complicated to prep and run. And multiple paths, levels, and so on don't always make sense. Sometimes a simple, straightforward site is best—there can be plenty of exciting moments and meaningful decisions in a linear site!
+B	Paths that the site's denizens can use but the PCs can't
+PB
+P	Such additions make a site more interesting, but also more complicated to prep and run. And multiple paths, levels, and so on don't always make sense. Sometimes a simple, straightforward site is best—there can be plenty of exciting moments and meaningful decisions in a linear site!
 PAGE	367
 HR
 P	<i>I've been picturing the Green Lord's tomb</i> <i>as a series of halls and chambers encircling</i> <i>the inner tomb, reflecting its dome-like</i> <i>shape. I start by listing the areas and rooms,</i> <i>like so:</i>
@@ -610,7 +619,9 @@ H3	Entrance chamber (A)
 P	Dimly lit from outside. Soil and debris piled nearly 4 feet high at entrance, sloping down into the room. Beyond, the floor is filthy, muddy.
 B	Thick layer of leaf litter, slick underfoot
 B	Plants/shrubs/saplings growing in soil
-B	Moss/lichen/vines on the walls, especially near the entrance <b>Tracks</b>: Crinwin tracks in dirt, signs of them dragging Pryder towards central chamber (C). Faint, wavy marks in dirt, like a big snake trail, from Sajra going to/ from shrine (E).
+B	Moss/lichen/vines on the walls, especially near the entrance
+PB
+P	<b>Tracks</b>: Crinwin tracks in dirt, signs of them dragging Pryder towards central chamber (C). Faint, wavy marks in dirt, like a big snake trail, from Sajra going to/ from shrine (E).
 H3	Collapsed hallway (B)
 P	Caved in when Fae sacked tomb. Eight <b>mummified servants</b> (<i>Book II</i>, page 221) trapped in the rubble. Crinwin have dug out a tunnel that they/Sajra can squeeze through; also leads outside (via one of the burrows). Sajra's trail can be spotted.
 HR

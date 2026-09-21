@@ -24,7 +24,9 @@ P	8 The <b>Rime Lords</b> (page 316)
 P	9 <b>Spirits of the wild</b> (page 356) or the <b>Forest Folk</b> (page 150)*
 P	10 The <b>Stone Lords</b> (page 382)
 P	11 The <b>Tempest Lords</b> (page 398)
-P	12 The <b>Things Below</b> (page 412) * Use the theme table from the first listed entry. For example, use the Forge Lords themes for the Ustrina.
+P	12 The <b>Things Below</b> (page 412)
+PB
+P	* Use the theme table from the first listed entry. For example, use the Forge Lords themes for the Ustrina.
 PAGE	499
 HR
 H2	2	Nature
@@ -90,7 +92,9 @@ P	9 Transcendent, inspires those who see it (Value 4)
 P	10 Symbol of authority over a people (Value 5 to the right buyer)
 P	11 It has some other property that makes it Value 4 or 5
 P	12 It's a hoard of various treasures (Value 5, <i>immobile</i>); pick or roll
-P	1d6 for <b>form</b> (page 505, step 3) as many times as you like Still here? Go pick or roll for its <b>form</b> (page 505 step 3).
+P	1d6 for <b>form</b> (page 505, step 3) as many times as you like
+PB
+P	Still here? Go pick or roll for its <b>form</b> (page 505 step 3).
 PAGE	501
 HR
 H3	2d. Extraordinary property
@@ -127,7 +131,9 @@ P	1-2 Imprisoned and locked away (though imperfectly)
 P	3-5 Fettered, enslaved, forced to serve
 P	6-7 Serves willingly, bound by its own nature/desires
 P	8-9 Trapped by accident, desperation, twist of fate
-P	10-12 Dwells here naturally, spontaneously Then, pick a spirit or sentience appropriate to the binding, origin, and theme. If you're unsure, roll 1d12.
+P	10-12 Dwells here naturally, spontaneously
+PB
+P	Then, pick a spirit or sentience appropriate to the binding, origin, and theme. If you're unsure, roll 1d12.
 P	1d12 spirit/sentience
 HR
 P	1 A <b><i>corrupted</i></b> spirit (page 432), and roll again
@@ -204,7 +210,9 @@ P	7-8 A few charges, which might be lost with each use; recharges with time or e
 P	9 At will, but each time is riskier/less powerful/more costly; resets with effort or slowly over time
 P	10 At will, but there's a cost/risk with each use
 P	11 At will, though limited by practicalities
-P	12 Continuous; it's always going Now, go to step <b>3</b>, below, to pick or roll for its <b>form</b>.
+P	12 Continuous; it's always going
+PB
+P	Now, go to step <b>3</b>, below, to pick or roll for its <b>form</b>.
 HR
 H2	3	Form
 P	If it's not already established or clear to you, pick or roll for the artifact's size.

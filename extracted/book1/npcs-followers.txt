@@ -65,7 +65,9 @@ B	An instinct
 B	Their connections to others
 B	Their motivations
 B	How you'll embody them in play
-B	Game stats: tags, HP, armor, damage, and GM moves You might also add details to treat them as a <b>follower</b> (page 460), <b>monster</b> (page 391), and/or <b>threat</b> (page 282).
+B	Game stats: tags, HP, armor, damage, and GM moves
+PB
+P	You might also add details to treat them as a <b>follower</b> (page 460), <b>monster</b> (page 391), and/or <b>threat</b> (page 282).
 P	You'll often improvise these details in play and flesh out the NPC between sessions.
 P	But if you expect an NPC to appear in an upcoming session, prep some or all of these details in advance. As always, though, <b>prep only as much as you find useful and</b> <b>valuable</b>.
 H2	1	Name
@@ -133,7 +135,9 @@ P	Pick traits from the list of NPC Traits in the steading playbook, or make them
 P	An NPC's traits might flow naturally from what's already established, but you can also pick a trait that contrasts with what you know or what you'd expect. Maybe the burly smith also knows all the gossip. Maybe the Fox's kind-hearted spouse harbors a hatred for the Hillfolk. Such contrasts make NPCs more compelling and memorable.
 HR
 P	<i>Based on what we know, I jot down:</i>
-P	ELIOS (he/him): farmer, humorless, ex-mercenary, Blodwen's uncle <i>I check the NPC Traits list, looking for</i> <i>an interesting contrast. My eye catches</i> <i>on "just got married." I think it's a bit</i> <i>fraught, and ask the PCs why. Vahid</i> <i>pops in with, "He married a younger</i> <i>woman, someone very talkative and</i> <i>bubbly. It's a weird match, but they seem</i> <i>happy enough. Well, she does. Elios is</i> <i>never happy."</i>
+P	ELIOS (he/him): farmer, humorless, ex-mercenary, Blodwen's uncle
+PB
+P	<i>I check the NPC Traits list, looking for</i> <i>an interesting contrast. My eye catches</i> <i>on "just got married." I think it's a bit</i> <i>fraught, and ask the PCs why. Vahid</i> <i>pops in with, "He married a younger</i> <i>woman, someone very talkative and</i> <i>bubbly. It's a weird match, but they seem</i> <i>happy enough. Well, she does. Elios is</i> <i>never happy."</i>
 P	<i>I love it. I add "just married" to his</i> <i>write up, and make a note to figure out</i> <i>who his new wife is, too!</i>
 HR
 PAGE	456
@@ -445,7 +449,9 @@ H2	Followers at 0 HP
 P	When a follower is reduced to 0 HP, their fate is in your hands. If the source of damage was potentially lethal, then they're out of the action and you pick 1:
 B	They're dead, immediately
 B	They trigger Death's Door (even if they weren't directed to by their PC). Their PC's player rolls
-B	They're dying, and will either die or trigger Death's Door soon if no one intervenes Remember: it's not your job to protect your NPCs, and followers are NPCs! <b>Let things</b> <b>burn</b>.
+B	They're dying, and will either die or trigger Death's Door soon if no one intervenes
+PB
+P	Remember: it's not your job to protect your NPCs, and followers are NPCs! <b>Let things</b> <b>burn</b>.
 P	If the source of the damage wasn't lethal, then the follower is out of the action until you say otherwise or they regain HP (because of magic, someone's move, or because someone tends to their wounds and they Recover).
 P	Note: a Ranger's animal companion is an exception. They get a special move, <b>Loyal</b> <b>to the End</b> (page 143), that dictates what happens when they reach 0 HP. No one wants to see the dog die.
 PAGE	470

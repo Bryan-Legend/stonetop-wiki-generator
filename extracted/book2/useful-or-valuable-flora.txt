@@ -122,8 +122,10 @@ P	2 As a pouchful ◇
 P	3-4 As a ◇◇ sackful or bundle
 P	5-6 In large quantities (<i>immobile</i>)
 P	7-9 Roll 1d6 again, but it requires extensive effort to harvest/process/ make valuable
-P	10-12 Roll 1d8 again, but also it's <i>fragile</i> and/or <i>cumbersome</i> Next, pick or roll for 1d4 qualities and a distinctive trait.
+P	10-12 Roll 1d8 again, but also it's <i>fragile</i> and/or <i>cumbersome</i>
 PAGE	462
+PB
+P	Next, pick or roll for 1d4 qualities and a distinctive trait.
 P	1d12 quality
 HR
 P	1 Attracts/houses a pest or danger

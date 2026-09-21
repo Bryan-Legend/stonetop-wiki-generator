@@ -47,4 +47,6 @@ P	<b>Cost</b> chaos and wanton destruction (Loyalty ◇◇◇ )
 P	<b>Instinct</b> to bicker and argue (with you, with itself)
 P	• Reveal a dark and terrible secret, or part of one
 P	• Manifest a minor demonic effect
-P	• Possess you in your sleep back
+P	• Possess you in your sleep
+PB
+P	back

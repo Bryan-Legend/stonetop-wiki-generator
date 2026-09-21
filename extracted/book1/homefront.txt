@@ -155,7 +155,8 @@ P	<i>As the PCs near home, we take a break</i> <i>and I think about what's happe
 P	<i>They've been gone for four days. Things</i> <i>were quiet when they left, except that</i> <i>Rhianna had been drilling the militia</i> <i>on readiness and told them to run some</i> <i>patrols while they were gone. I think</i> <i>they'll encounter one of those on the way</i> <i>home. Otherwise, folks would be doing</i> <i>typical summertime stuff.</i>
 P	<i>The PCs didn't Requisition any town</i> <i>assets, and I've got no homefront threats</i> <i>with impending dooms. But before they</i> <i>left, Blodwen asked Seren to talk some</i> <i>sense into Tegwen, triggering Order</i> <i>Followers (Seren was Persuading on</i> <i>Blodwen's behalf). We didn't resolve it at</i> <i>the time, so I ask Blodwen to roll now.</i> <i>She gets a 4. Tegwen will not, in fact, be</i> <i>seeing sense.</i>
 P	<i>I make a quick list:</i>
-P	• Garet had sister: Cerys (widow, kids Wini & Hewyl, 12 and 9) • Patrols in Wood, by the Stream • Haymaking, weeding, plowing the fallows • Seren's 4 to Persuade Tegwen
+P	• Garet had sister: Cerys (widow, kids Wini & Hewyl, 12 and 9)
+P	• Patrols in Wood, by the Stream • Haymaking, weeding, plowing the fallows • Seren's 4 to Persuade Tegwen
 HR
 PAGE	492
 H2	2	Play out the return
@@ -229,7 +230,9 @@ P	<i>The PCs returned from the Green Lord's</i> <i>tomb with some sweet loot, wh
 B	<i>Vahid takes the cracked flute</i> <i>(a minor arcanum)</i>
 B	<i>Vahid also keeps the spool of uncut</i> <i>table (?) silk; he'll try to find something to do with it</i>
 B	<i>The old bronze hatchets go to the</i> <i>smith, Taliesyn, for restoration;</i> <i>Caradoc, Rhianna, and Rhianna's</i> <i>crew will take them as personal</i> <i>possessions when they're ready</i>
-B	<i>Rhianna hangs on to the sphere of</i> <i>silver filigree for now, but she thinks</i> <i>of it as a village asset</i> <i>"Over the next few weeks," I say, "you all</i> <i>settle back in to daily life. The days are</i> <i>hot and muggy, with showers that just</i> <i>make it muggier. Cerys and her kids are</i> <i>sad, of course, but getting by. So… what</i> <i>does life look like for each of you now?</i> <i>How's it different from before?"</i>
+B	<i>Rhianna hangs on to the sphere of</i> <i>silver filigree for now, but she thinks</i> <i>of it as a village asset</i>
+PB
+P	<i>"Over the next few weeks," I say, "you all</i> <i>settle back in to daily life. The days are</i> <i>hot and muggy, with showers that just</i> <i>make it muggier. Cerys and her kids are</i> <i>sad, of course, but getting by. So… what</i> <i>does life look like for each of you now?</i> <i>How's it different from before?"</i>
 P	<i>Caradoc says that he and Morwenna</i> <i>are openly courting now: holding hands,</i> <i>walks in the evenings, smooching, etc.</i>
 P	<i>Rhianna continues the readiness drills</i> <i>she started in early summer. Her crew</i> <i>are back out hunting, alert for signs of</i> <i>crinwin. But they're also taking turns,</i> <i>helping Cerys and the kids with chores</i> <i>and food and whatnot.</i>
 HR
@@ -480,7 +483,9 @@ P	<b><i>Village</i></b> (150-350 people): Consume 1d4
 P	+Population Surplus each winter
 P	<b><i>Town</i></b> (500-1500 people): Consume 2d6
 P	+Population Surplus each winter; Muster, Pull Together, and Trade & Barter with advantage
-P	<b><i>City</i></b> (2,500+ people): Tracking Surplus is out of scope for such a big place; Muster, Pull Together, and Trade & Barter with advantage Stonetop starts as a <i>village</i>, home to about
+P	<b><i>City</i></b> (2,500+ people): Tracking Surplus is out of scope for such a big place; Muster, Pull Together, and Trade & Barter with advantage
+PB
+P	Stonetop starts as a <i>village</i>, home to about
 P	300 souls. If things go very poorly in play, it could shrink and become a <i>hamlet</i>. If the PCs complete enough improvements, it can become a <i>town</i>. Becoming a <i>city</i> is beyond the default scope of the game.
 PAGE	510
 H2	Population
@@ -541,7 +546,9 @@ H2	Debilities
 P	During play, the steading can suffer debilities much like a PC can (page 241). There are three steading debilities:
 B	<b><i>Diminished</i></b>, by injury, sickness, doubt. Players have disadvantage to Deploy, Muster, or Pull Together
 B	<b><i>Lacking</i></b>, due to shortages, hoarding, distrust. Treat Prosperity as if it's 1 lower than it is.
-B	<b><i>Malcontent</i></b>, from fear, anger, and/ or despair. Fortunes reset to +0 each season, instead of +1 (page 517), and folks need Persuading more often than usual There's a space on the steading playbook to mark each debility.
+B	<b><i>Malcontent</i></b>, from fear, anger, and/ or despair. Fortunes reset to +0 each season, instead of +1 (page 517), and folks need Persuading more often than usual
+PB
+P	There's a space on the steading playbook to mark each debility.
 P	Debilities both reflect the fiction and dictate it. If something happens that results in the village's capacity being reduced by injury, sickness, or doubt, then have the players mark <i>diminished</i> to reflect that. If they mark <i>diminished</i> because a move tells them to, then that means injury, sickness, and/or doubt plague the steading.
 P	Steading debilities last until a move like <b>Return Triumphant</b> (page 339) says to clear them, or until the fiction changes such that the debility no longer applies.
 PAGE	514
@@ -586,7 +593,9 @@ P	The last two pages of the steading playbook are for tracking NPCs. Whenever yo
 P	A game of <i>Stonetop</i> can easily involve dozens of NPCs, and space on the steading playbook is limited. As such, you might opt to use a digital tool for tracking NPCs, such as:
 B	A relationship map that visually organizes PCs, NPCs, and how they're connected to each other
 B	A spreadsheet, with a row for each PC or NPC, and columns for traits and relationships
-B	A wiki or database, with entries for each PC and NPC and links between them to record relationships Even if you use the steading playbook to track all the established NPCs, you'll probably need to keep your own notes elsewhere for each NPC—especially if that NPC is a threat.
+B	A wiki or database, with entries for each PC and NPC and links between them to record relationships
+PB
+P	Even if you use the steading playbook to track all the established NPCs, you'll probably need to keep your own notes elsewhere for each NPC—especially if that NPC is a threat.
 PAGE	516
 H2	Seasons Change
 P	The Seasons Change move creates the long-term rhythm of the game. It breaks up downtime. It requires the PCs to care about the steading's <b>Fortunes</b> (page 508) and <b>Surplus</b> (page 509). It makes many of the steading improvements important and valuable to pursue.
@@ -765,7 +774,9 @@ P	<b>DEPLOY</b>
 P	When you <b><i>send a steading's people into</i></b> <b><i>danger or rally them against an attack</i></b>, roll +Defenses: <b>on a 10+</b>, it goes as well as can be expected; <b>on a 7-9</b>, it works but someone picks 1 from the list below. If the steading is acting from a position of strength, you choose. Otherwise, the GM chooses.
 B	It's less effective than you expected
 B	Injuries abound; the steading marks <i>diminished</i> (disadvantage to Deploy, Muster, Pull Together)
-B	The GM picks a named NPC involved in the action; they die Sending a steading's people into danger could mean a raid, a patrol, a pitched battle, or a trip through dangerous lands.
+B	The GM picks a named NPC involved in the action; they die
+PB
+P	Sending a steading's people into danger could mean a raid, a patrol, a pitched battle, or a trip through dangerous lands.
 P	Rallying them against attack might mean raising the alarm, or organizing a response, or standing shield-to-shield, blood splattered and weary, urging their neighbors to hold the line.
 P	Deploy only triggers if the PCs take charge. When villagers go into danger on their own initiative, or come under attack with no PC to rally them, the move doesn't trigger—you decide what happens, based on your principles, your prep, and the established fiction.
 P	Before the player rolls, say what a 10+ looks like. Does it mean winning the battle, or pulling off a single desperate ploy? Does it mean "rout the enemy, taking minimal casualties," or "fight to a draw but with heavy losses," or what? If there will be unavoidable costs, <b>tell them the consequences and ask</b> if they're sure.
@@ -862,7 +873,9 @@ HR
 P	<i>Vahid wants to lay down a perimeter of</i> <i>sanctified marks around the village, in order</i> <i>to help keep the crinwin at bay. "I'll carve</i> <i>marks in like two-dozen field stones, and</i> <i>add them to the Ringwall." Clever!</i>
 P	<i>The sanctifying mark arcanum doesn't</i> <i>require a roll by itself, but it does turn part</i> <i>of Vahid paler each time he makes one.</i> <i>And folks are somewhat distrustful of his</i> <i>weird magic. So I write down the following</i> <i>requirements:</i>
 P	O You'll need to obtain two-dozen good stones O It'll take a month or so to finish
-P	O You'll risk (more) suspicion and distrust, accusations of sorcery O A noticeable part of your body (your choice) will grow pale, then a shocking white <i>Vahid nods. "For the first part, is that really</i> <i>hard to do? We've got no shortage of stones</i> <i>in town. I'll just tell the kids what I'm</i> <i>looking for and make a game of it." Yeah,</i> <i>that makes sense. I tell him to mark that</i> <i>requirement as done.</i>
+P	O You'll risk (more) suspicion and distrust, accusations of sorcery O A noticeable part of your body (your choice) will grow pale, then a shocking white
+PB
+P	<i>Vahid nods. "For the first part, is that really</i> <i>hard to do? We've got no shortage of stones</i> <i>in town. I'll just tell the kids what I'm</i> <i>looking for and make a game of it." Yeah,</i> <i>that makes sense. I tell him to mark that</i> <i>requirement as done.</i>
 P	<i>He says that his hands fade to be a shocking</i> <i>white as he works over the month. And to</i> <i>avoid suspicion, he starts a habit of walking</i> <i>the Ringwall every dawn, quietly placing</i> <i>a newly warded stone each time. "Seems</i> <i>like Defying Danger with INT to me." He</i> <i>agrees, but rolls a 6. Just a few days into</i> <i>this new routine, I</i> <b><i>oppose his wishes</i></b> <i>and</i> <i>have Glenys confront him, waving one of</i> <i>the sanctified stones around, yelling about</i> <i>sorcery and clearly not happy.</i>
 PAGE	532
 P	<b>MEET WITH DISASTER</b>
@@ -871,7 +884,9 @@ P	When <b><i>Fortunes would drop below -1</i></b> <b><i>for any reason</i></b> (
 B	The steading marks diminished from injuries/sickness/doubt (disadvantage to Deploy, Muster, Pull Together)
 B	The steading marks <i>lacking</i> due to shortages/hoarding/distrust (treat Prosperity as 1 lower)
 B	The steading marks <i>malcontent</i> from fear/anger/despair (Fortunes reset to +0 each season, not +1; folks need Persuading more often than usual)
-B	Folks start to leave; reduce Population by 1 This move triggers when something clearly and undeniably bad happens to the steading: a building burns down, the village runs out of food, multiple people die suddenly, someone is killed or goes missing in a horrific or eerie way, etc.
+B	Folks start to leave; reduce Population by 1
+PB
+P	This move triggers when something clearly and undeniably bad happens to the steading: a building burns down, the village runs out of food, multiple people die suddenly, someone is killed or goes missing in a horrific or eerie way, etc.
 P	Meet With Disaster doesn't trigger from mere rumor or bad news from abroad, nor from the day-to-day hardships of life. It doesn't trigger when Gorlas fails to come home from checking his traps, or when someone reports seeing a shadowy figure in the Wood.
 P	Meet With Disaster <i>does</i> trigger when a threat looms, people freak out, and the PCs fail to do anything about it. So when Betrys finds poor old Gorlas's body just past the Stream—desiccated, skin slack and hand reaching towards home, every plant within five paces dead and brown and brittle—the PCs best act to prevent panic from spreading.
 P	This sort of thing should never come as a surprise. <b>Show how others really feel</b> and <b>announce trouble</b>. Give the PCs a chance to take charge and calm folks down. But if they don't, or they fail, the steading Meets with Disaster.
@@ -925,7 +940,9 @@ P	When you <b><i>set a community to work</i></b> <b><i>on improvements</i></b>, 
 B	It gets done, but other work doesn't; reduce Fortunes by 1
 B	It gets done, but the work is shoddy, crude
 B	It gets done, but there's a consequence (bad blood, an injury, a threat unearthed, etc.)
-B	There's an unforeseen cost, requirement, or challenge; address it and the job gets done The PCs might have the village Pull Together in order to:
+B	There's an unforeseen cost, requirement, or challenge; address it and the job gets done
+PB
+P	The PCs might have the village Pull Together in order to:
 B	Complete a steading improvement
 B	Complete some other project (per Make a Plan)
 B	Bolster the entire village in advance of some other steading-level move (like Deploy or Seasons Change)
@@ -1035,7 +1052,9 @@ P	<b>A Value 4 item</b> is generally worth:
 B	A ◇ purse of gold coins
 B	A dozen or so good horses
 B	A "priceless" item (huge flawless gemstone, a ◇ gold statuette, a ◇ bejeweled scepter, etc.)
-P	*Exotic trade goods are +1 Value A ◇ <b>purse of coins</b> contains about 10 handfuls. A <b>handful of coins</b> is about 10 individual coins, and so a purse contains around 100 coins.
+P	*Exotic trade goods are +1 Value
+PB
+P	A ◇ <b>purse of coins</b> contains about 10 handfuls. A <b>handful of coins</b> is about 10 individual coins, and so a purse contains around 100 coins.
 P	One <b>silver coin</b> is roughly worth a purse of coppers (or about 100 copper coins).
 P	And <b>one gold coin</b> is roughly worth a purse of silvers (around 100 silver coins, or an absolute pile of coppers.)
 P	Coins are rarely used between the residents of Stonetop; they're mostly used for trade with outsiders.
@@ -1085,7 +1104,9 @@ B	Decisions the players need to make
 B	Questions you want to ask the PCs
 B	Details that you want to establish
 B	Scenes you want to frame
-B	GM moves you'd like to make Put these items in roughly the order you expect them to come up, grouped however makes sense to you. Put tick boxes next to each item. During play, tick off the items as you introduce them. But stay loose! You might not get to them all, and some might cease to be relevant as the session plays out.
+B	GM moves you'd like to make
+PB
+P	Put these items in roughly the order you expect them to come up, grouped however makes sense to you. Put tick boxes next to each item. During play, tick off the items as you introduce them. But stay loose! You might not get to them all, and some might cease to be relevant as the session plays out.
 P	<b>For any scenes or situations you expect</b> <b>to frame</b>, write down the details you think will help during play: when and where, activities, impressions, questions, GM moves, lines of dialogue, etc.
 P	<b>Think about how you can involve PCs in</b> <b>each others' scenes</b>, or create interesting
 P	PC-PC-NPC triangles.
@@ -1140,5 +1161,7 @@ P	> Present a want: Owain wants Blodwen and Gwendyl to "fix" his daughter
 P	> Announce trouble: Caradoc sees
 P	Glenys shouting at Wynfor, very frustrated with him
 P	> Provide unwanted (?) advice:
-P	Tegwen approaches Garet while he's talking to Rhianna, invites him to woo Blodwen <i>The only new NPC here is Caradoc's</i> <i>grandma, so I do a little work to prep her</i> <i>(mostly, questions to ask Caradoc about</i> <i>her). I'm not too worried about portraying Pryder or Wynfor or anyone from</i> <i>Rhianna's crew (as they've been part of the</i> <i>past few sessions already), but I review my</i> <i>notes on Tegwen, Rheinal, Glenys, Owain,</i> <i>Seren, and Gwendyl.</i>
+P	Tegwen approaches Garet while he's talking to Rhianna, invites him to woo Blodwen
+PB
+P	<i>The only new NPC here is Caradoc's</i> <i>grandma, so I do a little work to prep her</i> <i>(mostly, questions to ask Caradoc about</i> <i>her). I'm not too worried about portraying Pryder or Wynfor or anyone from</i> <i>Rhianna's crew (as they've been part of the</i> <i>past few sessions already), but I review my</i> <i>notes on Tegwen, Rheinal, Glenys, Owain,</i> <i>Seren, and Gwendyl.</i>
 P	<i>I've probably got way more than I'll use</i> <i>in one session, but that's fine. I'm sure that</i> <i>some of these notes will still apply in the</i> <i>next session/season as well!</i>

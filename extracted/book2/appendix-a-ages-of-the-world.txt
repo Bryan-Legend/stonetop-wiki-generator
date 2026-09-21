@@ -26,7 +26,9 @@ B	<b>Stormcatcher</b> (page 332) establishes her Tower in the Flats
 B	Fae rebellion! the Green Lords call on the Things Below
 B	<b>Stone Lords</b> (page 382) destroy the heart of the Green Lord's territory, creating what is now <b>Ferrier's Fen</b> (page 116)
 B	Siege of <b>Vor Svetelik</b> (page 468); Green Lords retreat, become <b>Fomoraij</b> (page 136)
-B	Stone Lords' servants start to plot rebellion and embrace the Things Below Were the civilizations of the <b>South</b> (page 256) founded during the Time of the Makers, or even before? Or perhaps during the Time of the Barrow Builders?
+B	Stone Lords' servants start to plot rebellion and embrace the Things Below
+PB
+P	Were the civilizations of the <b>South</b> (page 256) founded during the Time of the Makers, or even before? Or perhaps during the Time of the Barrow Builders?
 PAGE	497
 H2	Time of Cataclysm
 P	Centuries ago, over a span of decades.

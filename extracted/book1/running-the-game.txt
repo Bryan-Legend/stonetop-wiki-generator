@@ -9,7 +9,9 @@ H2	Your agenda
 P	These are your goals when running <i>Stonetop</i>:
 B	Portray a rich and mysterious world
 B	Punctuate the characters' lives with adventure
-B	Play to find out what happens Everything you say and do as the GM is meant to support these three goals, and no others. It's <i>not</i> your agenda (for example) to challenge the players' skill, or to provide "fair" fights, or to punish the characters.
+B	Play to find out what happens
+PB
+P	Everything you say and do as the GM is meant to support these three goals, and no others. It's <i>not</i> your agenda (for example) to challenge the players' skill, or to provide "fair" fights, or to punish the characters.
 P	It's absolutely not your agenda to control the players or force "your" story to go the way you think it should. When in doubt, ask yourself: <b>this thing you're considering</b> <b>doing, which of these three goals does it</b> <b>support?</b> If the answer is "none of them," then don't do it. Do something else.
 P	Your first goal is to <b>portray a rich and</b> <b>mysterious world</b>: alive and breathing, filled with detail and humanity and depth.
 P	Mundane concerns—crops, trade, weather, the opinions of your neighbors—are important. Fantastic elements are important, too, but they are strange and scary and poorly understood. The past sleeps unquietly. Questions abound.

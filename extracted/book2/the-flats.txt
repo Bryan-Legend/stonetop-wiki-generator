@@ -137,7 +137,9 @@ P	2 Truly ancient: from the time of the <b>Makers</b> (page 264)
 P	3-4 From the <b>Time of Cataclysm</b> (page 413): when humanity rebelled and woke the Things Below
 P	5-7 From the days of the <b>Barrow</b> <b>Builders</b> (page 34)
 P	8-11 Recent: Hillfolk, bandits, travelers, beasts, etc.
-P	12 Very recent: the buzzards and crows still feasting Picking through the remains might yield valuables or artifacts, but might rouse the ire of <b>ghosts</b> (page 76) or <b>revenants</b> (page 80).
+P	12 Very recent: the buzzards and crows still feasting
+PB
+P	Picking through the remains might yield valuables or artifacts, but might rouse the ire of <b>ghosts</b> (page 76) or <b>revenants</b> (page 80).
 PAGE	130
 H2	Dangers
 HR

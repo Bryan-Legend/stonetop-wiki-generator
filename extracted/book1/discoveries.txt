@@ -54,7 +54,8 @@ HR
 P	<i>Vahid has dragged the PCs to Three</i> <i>Coven Lake, in search of the Mindgem's</i> <i>fiery makerglass heart. He's acquired an</i> <i>ancient scroll that hints at it once being</i> <i>here, powering some arcane device.</i>
 P	<i>In order to accomplish their goals, the</i> <i>PCs will need to learn where exactly the</i> <i>Mindgem's heart is. I've decided that it's</i> <i>still powering that arcane device, which</i> <i>animates a number of constructs. But a</i> <i>deathless sorcerer long ago fused his soul</i> <i>to that device, sending his consciousness</i> <i>out into those constructs.</i>
 P	<i>I think about potential clues, ways that</i> <i>the PCs could learn some or all of this.</i> <i>Then I write out the following:</i>
-P	• An old map of the city, showing a site marked with a sigil that's also prominent on the scroll. • The constructs bear that same sigil from the scroll; the PCs might interrogate one or follow it home. • A rival of the sorcerer tells the PCs where to find the arcane device, hoping to stir up conflict.
+P	• An old map of the city, showing a site marked with a sigil that's also prominent on the scroll.
+P	• The constructs bear that same sigil from the scroll; the PCs might interrogate one or follow it home. • A rival of the sorcerer tells the PCs where to find the arcane device, hoping to stir up conflict.
 P	<i>(And now I start thinking about who or</i> <i>what the sorcerer's rival might be, and</i> <i>how the PCs might encounter them…)</i>
 HR
 P	<b>Decide where and how the PCs could</b> <b>find any clues you prepare</b>. Some clues will be tied to a specific place, NPC, or monster. Other clues will be notional, things you can introduce whenever and wherever it makes sense.
@@ -141,7 +142,9 @@ B	An experience (a breathtaking view, a hallucinogenic mushroom, etc.)
 B	A resource that the PCs might come back for later (a mine, timber, etc.)
 B	A place of power (a shrine, a nexus of arcane energy, etc.)
 B	An <b>arcanum</b> (page 438)
-B	Anything else that comes to mind Not all opportunities are equal. Sometimes you'll <b>offer an opportunity</b> directly, but other times, you'll merely <b>hint at more</b> <b>than meets the eye</b> or <b>offer riches at a</b> <b>price</b>, and the PCs have to work a bit to take advantage of it. Some opportunities will be exactly what the PCs need. Others will be less obviously useful, or distractions from their larger goals. And some are there only because you think they should be, or because a table in <i>Book II</i> suggests it.
+B	Anything else that comes to mind
+PB
+P	Not all opportunities are equal. Sometimes you'll <b>offer an opportunity</b> directly, but other times, you'll merely <b>hint at more</b> <b>than meets the eye</b> or <b>offer riches at a</b> <b>price</b>, and the PCs have to work a bit to take advantage of it. Some opportunities will be exactly what the PCs need. Others will be less obviously useful, or distractions from their larger goals. And some are there only because you think they should be, or because a table in <i>Book II</i> suggests it.
 P	Once you put the opportunity in play, ask the PCs what they do and go from there.
 P	Often, they'll jump on it, or attempt to.
 P	But they might ignore it, or decide it's not worth the trouble, or pass it by for now with plans to come back later. Don't force it. <b>Play to find out what happens!</b>
@@ -233,7 +236,9 @@ P	If a PC wants to acquire such an artifact, they might:
 B	Know Things about where such things can be found, or who might have one (and then attempt to acquire it)
 B	Make a Plan with the GM
 B	Put out word that they're looking for such a thing, and then choose a "trade opportunity" when Seasons Change
-B	Tell the GM what they're after, and then choose "interesting news" when Seasons change If the PCs do find someone who possesses a specific or magical artifact, and the PCs attempt to negotiate a trade, then you'll have to decide what it's worth. Value 2-3 is typical, with some artifacts worth Value 4.
+B	Tell the GM what they're after, and then choose "interesting news" when Seasons change
+PB
+P	If the PCs do find someone who possesses a specific or magical artifact, and the PCs attempt to negotiate a trade, then you'll have to decide what it's worth. Value 2-3 is typical, with some artifacts worth Value 4.
 P	But if the NPC doesn't realize what they have, they might consider it to be as low as Value 1 or even 0.
 PAGE	434
 H2	Creating artifacts
@@ -243,7 +248,9 @@ P	1) Determine its <b>origin and theme</b>
 P	2) Determine its <b>nature</b> and any related characteristics
 P	3) Determine its <b>form</b>
 P	4) <b>Synthesize</b> these details
-P	5) <b>Write it up</b>, however makes sense These steps are presented in order, but they can generally work in whatever order makes sense to you. Maybe you find it more effective to pick an artifact's form prior to picking its nature! That's fine.
+P	5) <b>Write it up</b>, however makes sense
+PB
+P	These steps are presented in order, but they can generally work in whatever order makes sense to you. Maybe you find it more effective to pick an artifact's form prior to picking its nature! That's fine.
 HR
 P	<i>I'm coming up with other artifacts for</i> <i>the PCs to find in the Green Lord's</i> <i>tomb, and decide to create one from</i> <i>scratch—something that maybe got</i> <i>missed by Thornthumb when he cleared</i> <i>the place out. It could be very large,</i> <i>something he couldn't move. Or something small that he missed. Or maybe it's</i> <i>made of iron, so he left it behind? I don't</i> <i>know, but I'll find out!</i>
 HR

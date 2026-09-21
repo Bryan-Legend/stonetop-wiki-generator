@@ -4,7 +4,9 @@ PAGE	554
 FACE	front
 TH	appendix d: major arcana
 P	◇◇ <i>,</i> +1 armor, <i>close</i>, <i>forceful</i>, <i>magical</i>,
-P	+1 Readiness on a 7+ to Defend A shield of horn-oak, glossy from long use, shod in bronze and adorned with a stylized wisent skull.
+P	+1 Readiness on a 7+ to Defend
+PB
+P	A shield of horn-oak, glossy from long use, shod in bronze and adorned with a stylized wisent skull.
 P	It's heavier than it looks, but its heft gives you a feeling of confidence, like anyone would be a fool to mess with a titan such as you.
 HR
 P	When you <b><i>bear the Shield openly</i></b>, natural creatures give you wide berth and treat you with the respect that they would give a 1,000-lb. bison.

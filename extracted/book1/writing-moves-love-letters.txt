@@ -169,7 +169,8 @@ P	Revise your list, breaking it down into "definitely" and "maybe" results. Furt
 PAGE	557
 HR
 P	<i>Things that could happen when the PCs</i> <i>take shrooms near a waystone:</i>
-P	• Feel a profound connection to each other/the world/themselves • Hallucinate stuff that isn't real • See into the spirit world • Need a bigger dose • Get sick, nauseous, shaky • Get confused, overwhelmed • Freak out, have a bad trip • Draw attention from hostile spirits (maybe the shadowy presence!) • Access the Fae paths
+P	• Feel a profound connection to each other/the world/themselves
+P	• Hallucinate stuff that isn't real • See into the spirit world • Need a bigger dose • Get sick, nauseous, shaky • Get confused, overwhelmed • Freak out, have a bad trip • Draw attention from hostile spirits (maybe the shadowy presence!) • Access the Fae paths
 P	<i>The "get sick" and "get confused" options</i> <i>could be consolidated into "mark a debility."</i>
 P	<i>The "feel a profound connection" result seems</i> <i>mutually exclusive with the "freak out, have</i> <i>a bad trip" result. It doesn't really fit with</i> <i>the "mark a debility" result, either.</i>
 HR
@@ -286,7 +287,8 @@ HR
 P	<i>Okay, here's my full draft:</i>
 P	When you take shrooms together near a waystone, under a full moon, roll
 P	+WIS. If you've taken shrooms before, roll with advantage. On a 10+, you experience a profound sense of connectedness to your companions and the world; on a 7-9, pick 1:
-P	• Mark a debility • It's a bad trip, and you're kind of freaking out • You're not really feeling it—you need to take another dose and roll again at disadvantage
+P	• Mark a debility
+P	• It's a bad trip, and you're kind of freaking out • You're not really feeling it—you need to take another dose and roll again at disadvantage
 P	On a 6-, pick 2 from the list above and you draw unwanted attention from the spirit world.
 P	Regardless, you're hallucinating now, and your eyes are open to the spirit world and the Fae paths. Have fun!
 HR
@@ -354,9 +356,11 @@ P	<i>Then I imagine Vahid getting a 6- and</i> <i>picking "bad trip" and "not re
 P	<i>I think a bit and rewrite the move. As I do,</i> <i>I simplify the trigger—it didn't need to be</i> <i>so specific after all! I also run it by a player</i> <i>and incorporate some of their feedback. I</i> <i>end up with this:</i>
 P	When you <b>take shrooms in the Great</b> <b>Wood</b>, roll +WIS. If you've taken them before, you have advantage. On a 10+, ask one of these to one other player,
 P	and one to the GM who will answer for the world at large:
-P	• What do you love most about me? • What saddens you about me? • What is your dearest hope for me?
+P	• What do you love most about me?
+P	• What saddens you about me? • What is your dearest hope for me?
 P	On a 7-9, pick 1; on a 6-, all 3:
-P	• Mark a debility • Guilt and shame boil up within you; describe the vision/memory that comes with them • You draw unwanted attention from the spirit world
+P	• Mark a debility
+P	• Guilt and shame boil up within you; describe the vision/memory that comes with them • You draw unwanted attention from the spirit world
 P	Regardless, you're hallucinating now, and your eyes are open to the spirit world and the Fae paths. Have fun!
 P	<i>I run through all the combinations again</i> <i>and they all feel good. I consider posting it</i> <i>online for feedback, but the game starts in</i> <i>an hour. This is good enough!</i>
 PAGE	567
@@ -413,7 +417,8 @@ P	XOXO – your GM
 P	Dear Caradoc, You and Morwenna are still tied up, but you're at the greenhouse. Tell us what unpleasant truth you had to reveal to seal the deal, then roll
 P	+CHA: on a 10+, pick 2; on a 7-9, pick
 P	1; on a 6-, pick 1, mark XP, and your captors clearly know they're being followed—they're laying a trap!
-P	• You've slyly loosened your bonds • Morwenna's calm & playing along (else, she's freaking right out) • They haven't separated you and Morwenna yet (else, they have)
+P	• You've slyly loosened your bonds
+P	• Morwenna's calm & playing along (else, she's freaking right out) • They haven't separated you and Morwenna yet (else, they have)
 P	XOXO – your GM
 P	Dear Vahid, It's been a quiet, cozy winter, with plenty of time inside. What unlikely aspect of a personality has the Mindgem revealed, now that you've spent so much time with it?
 P	Now, ask the Mindgem a question about the Makers, their history, or their arts. You've gleaned a clear and useful answer, and even a few follow-up questions. But also, roll +WIS:

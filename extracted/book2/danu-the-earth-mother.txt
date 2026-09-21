@@ -62,7 +62,9 @@ B	incense and sage bark
 B	pure rain water
 B	metal nails and/or tools
 B	salt and crystals
-B	whisky or other alcohol Think about what the answers say about how this community sees Danu, and why?
+B	whisky or other alcohol
+PB
+P	Think about what the answers say about how this community sees Danu, and why?
 P	Do they see her as a nurturing mother? As an inscrutable natural force? As a hungry mother-of-monsters, a deity to appease and avoid? Or what?
 PAGE	66
 H3	Danu

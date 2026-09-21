@@ -40,7 +40,9 @@ P	Clarify and answer questions. Emphasize the importance of collaboration.
 P	Explain that you have an agenda and principles, too. Specifically, your agenda is to:
 B	Portray a rich and mysterious world
 B	Punctuate their lives with adventure
-B	Play to find out what happens Make it clear that you'll be <b>fleshing out</b> <b>the world together</b>. There are no "official" answers to many of the questions raised by the Setting Overview. There are many blanks to fill in. You (the GM) have a setting guide, but it's mostly filled with <i>ideas</i> rather than <i>truths</i>.
+B	Play to find out what happens
+PB
+P	Make it clear that you'll be <b>fleshing out</b> <b>the world together</b>. There are no "official" answers to many of the questions raised by the Setting Overview. There are many blanks to fill in. You (the GM) have a setting guide, but it's mostly filled with <i>ideas</i> rather than <i>truths</i>.
 PAGE	18
 H2	Discuss tone and content
 P	Talk to your group about <b>tone</b>: <i>Stonetop</i> takes itself seriously, grounding itself in human concerns. The PCs are exceptional, but they aren't super-human. Violence has consequences. Monsters are scary. Magic is strange and dangerous. People matter.

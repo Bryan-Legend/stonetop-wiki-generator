@@ -19,6 +19,7 @@ from .structure import (
     render_stat_block,
 )
 from .text import (
+    M_PB,
     strip_tags,
     M_FACE,
     BOLD_PREFIX_RE,
@@ -569,6 +570,7 @@ def structure_minor_arcana_html(
     current_book: str | None = None,
 ) -> tuple[str, list[dict]]:
     """Layout a minor arcanum from rich marker lines (front + back faces)."""
+    lines = [ln for ln in lines if ln != M_PB]
     anchors = AnchorRegistry()
     link_kw = {
         "lookups": lookups,
@@ -1029,6 +1031,7 @@ def structure_major_arcana_html(
     current_book: str | None = None,
 ) -> tuple[str, list[dict]]:
     """Layout a major arcanum from rich marker lines (front/back faces)."""
+    lines = [ln for ln in lines if ln != M_PB]
     anchors = AnchorRegistry()
     link_kw = {
         "lookups": lookups,

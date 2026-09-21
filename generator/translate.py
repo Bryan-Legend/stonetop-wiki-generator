@@ -505,7 +505,15 @@ def _split_tagged(s: str, leads: list[str]) -> list[tuple[int | None, str]]:
 
 _BULLET_RE = re.compile(r"^[•·]\s*")
 _NAMED_MOVE_TR_RE = re.compile(r"^\x04[^\x05]+\x05\s*(?:\x06([^\x07]*)\x07\s*)?(.*)$", re.S)
-_BOLD_SPLIT_RE = re.compile(r"\s+(?=\x04)")
+# A stat block cuts its line where a bold label opens. English sets a
+# space before the label; Chinese and Japanese set none after their full-
+# width punctuation ("HP 11；**护甲** 5"), so a cut there counts too, or
+# the two sides of a line are cut into different numbers of pieces and
+# nothing pairs up.
+_BOLD_SPLIT_RE = re.compile(r"\s+(?=\x04)|(?<=[；，。：、）])(?=\x04)")
+_GT_BULLET_RE = re.compile(r"^\s*>\s*")
+# A label in a translation that keeps the book's capitals, cut where one
+# begins: after a word that is not itself capitals, so a two-word label
 _ROLL_ROW_RE = re.compile(r"^(\d+(?:[-–]\d+)?)\s+(.+)$", re.S)
 # A move block sets its trigger apart from the words around it. The
 # trigger can be several formatted runs in a row (the book broke the
@@ -628,6 +636,12 @@ def derive_variants(
         for xa, xb in zip(ra, rb):
             add(xa, xb)
     da, db = _defmt(en), _defmt(tr)
+    # A move bulleted with ">" (Book II's design sidebars) is shown
+    # without it.
+    if _GT_BULLET_RE.match(da) and _GT_BULLET_RE.match(db):
+        add(_GT_BULLET_RE.sub("", da), _GT_BULLET_RE.sub("", db))
+    # A stat line is cut at each label, including the ones those
+    # sidebars set in capitals, and shown one label to a line.
     # A stat block's heading drops a callout number the book set after it
     # (Book I's anatomy of a monster: "Crinwin 1").
     ca, cb = _CALLOUT_RE.match(da), _CALLOUT_RE.match(db)
@@ -1019,6 +1033,7 @@ def render_translated(
     common: dict,
     ui: dict | None = None,
     titles: dict[str, str] | None = None,
+    page_blocks: list[dict] | None = None,
 ) -> tuple[dict | None, list[str]]:
     """One page in one language, from its corpus translation.
 
@@ -1079,8 +1094,12 @@ def render_translated(
 
     set_translation(tm, ui, titles)
     try:
+        # The page is built from its English lines, so it takes the same
+        # blocks.json entries the English page does: a start or end that
+        # settles a block must settle it in every language.
+        extra = {"page_blocks": page_blocks} if render is article_html else {}
         body, excerpt, secs = render(
-            tagged, art["title"], lookup, articles, **common
+            tagged, art["title"], lookup, articles, **common, **extra
         )
         if ov is not None:
             body = apply_override(ov, body, slug=slug, link_fn=link_fn, lines=sheet_lines)

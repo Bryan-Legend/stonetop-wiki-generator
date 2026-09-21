@@ -20,7 +20,9 @@ B	Striations in nearby outcrops, tilted towards the lake
 B	The damp, mineral smell of wet stone
 B	Clouds, stars, shoreline—all reflected in the lake
 B	Stillness, quiet, echoes of the slightest sound
-B	At times: thick banks of fog, wet, cloying, isolating Tip: lower your voice; speak slowly, softly, make them lean in to hear you.
+B	At times: thick banks of fog, wet, cloying, isolating
+PB
+P	Tip: lower your voice; speak slowly, softly, make them lean in to hear you.
 H2	Hooks
 HR
 B	<b>Servants of Daagon</b> (page 56) are roaming further from the lake than usual.
@@ -168,7 +170,9 @@ P	Breath.
 P	When you <b><i>make a move while under the</i></b> <b><i>Blackwater</i></b>, and that move involves a roll, choose 1 of the following after the move is resolved:
 B	Spend 1 Breath
 B	Mark a debility
-B	Lose yourself in the Blackwater When you <b><i>lose yourself in the Blackwater</i></b>, time seems to stop and you find yourself adrift in a watery, hungry void. Roll +WIS:
+B	Lose yourself in the Blackwater
+PB
+P	When you <b><i>lose yourself in the Blackwater</i></b>, time seems to stop and you find yourself adrift in a watery, hungry void. Roll +WIS:
 P	<b>on a 7+</b>, you snap back to reality, somehow holding 2 Breath. But also, <b>on a 10+</b>, choose 1; on a 7-9, choose 2:
 B	Gain a mark (page 432) of Daagon; you are now <i>corrupted</i>
 B	Name something you possess that you love or treasure; it's gone
@@ -192,7 +196,9 @@ P	2 An item of luxury or status (Value 2)
 P	3 A precious item (Value 3)
 P	4 A "priceless" item (Value 4)
 P	5 A way to best your rivals or defeat your enemies
-P	6 A way to acquire great power or long life Whatever the reward, it arrives soon: while you sleep, in your dreams, or via vision or coincidence or happy accident.
+P	6 A way to acquire great power or long life
+PB
+P	Whatever the reward, it arrives soon: while you sleep, in your dreams, or via vision or coincidence or happy accident.
 H3	Monsters
 B	<b>Pypeds</b> (page 82) or unbound <b>wraiths</b> (page 79), desperate and ever-hungry, drawn here by Daagon's call
 B	A <b>deathless one</b> (page 46), dwelling in or bound to a nearby barrow

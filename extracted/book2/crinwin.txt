@@ -6,7 +6,9 @@ P	They've always been there, in the Wood, lurking in the trees. For generations,
 B	Out-of-place noises: partial bird calls, off-season insect buzz, a bear's growl from the treetops, snippets of nonsense speech
 B	Figures scurrying, leaping, swinging through the branches
 B	Sinewy strong fingers around your throat
-B	Clammy, blackish blood; too cold and putrid to be natural <b>Tip:</b> pick a sound or word that the PCs have made, and repeat it over and over at different volumes and tones.
+B	Clammy, blackish blood; too cold and putrid to be natural
+PB
+P	<b>Tip:</b> pick a sound or word that the PCs have made, and repeat it over and over at different volumes and tones.
 H2	Questions
 HR
 Q	What odd noise, heard in the night, is attributed to the crinwin? What is it said to mean?

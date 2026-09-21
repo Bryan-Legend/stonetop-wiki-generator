@@ -255,7 +255,9 @@ P	3-4 Recently lost its presiding adept; succession unclear
 P	5-6 Home to multiple sects, each led by a different adept
 P	7-8 Hides/protects one of the last thirteen <b>Rime Lords</b> (page 316)
 P	9-10 Very small (Population -1, only ~10 to 15 souls); roll again with d8
-P	11-12 Relatively large (<i>village</i>, up to ~300 residents); roll again with d8 Use the ruin's theme(s), the adept's instinct and moves, and the fortress-monastery's details to inform the philosophy of the local sect(s). Name the sect(s), mixing and matching words from the list below. A fortress-monastery is typically named after its sect or a prominent local feature.
+P	11-12 Relatively large (<i>village</i>, up to ~300 residents); roll again with d8
+PB
+P	Use the ruin's theme(s), the adept's instinct and moves, and the fortress-monastery's details to inform the philosophy of the local sect(s). Name the sect(s), mixing and matching words from the list below. A fortress-monastery is typically named after its sect or a prominent local feature.
 P	Ape, Avalanche, Black, Breath, Bronze, Clear, Closed, Cloud, Crystal, Dancing, Dark, Day, Deep, East, Empty, Eye, Fire, Fist, Five, Flower, Flowing, Four, Frost, Grey, Hand, Heart, Ice, Implacable, Inner, Lake, Lonely, Mind, Mountain, Night, North, Open, Outer, Pale, Palm, Relentless, River, Silent, Single, Sky, Snow, South, Spirit, Spring, Still, Stone, Storm, Stream, Three, Tranquil, Two, Unmoved, Waking, West, White, Will, Wind, Winter
 PAGE	487
 H2	Trade & Barter

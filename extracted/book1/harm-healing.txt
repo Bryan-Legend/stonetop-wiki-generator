@@ -224,7 +224,9 @@ HR
 P	<i>Rhianna lost her right arm at Three</i> <i>Coven Lake (and she got off easy; Andras</i> <i>didn't make it home at all). Some quick</i> <i>thinking saved her life, but she's unsure</i> <i>how she'll be an effective warrior and</i> <i>archer. She's not about to retire, though.</i>
 P	<i>So, we Make a Plan. "What do you hope</i> <i>to accomplish? Are you looking to replace</i> <i>or regrow the arm through magic? Or</i> <i>learn to shoot one-handed?" Rhianna's</i> <i>practical to a fault, and doesn't even consider a magical option. I look at the list of</i> <i>possible requirements, and write down:</i>
 P	O You must design and make some prosthetic or device for drawing
-P	& releasing a bow one-handed O You must learn to use the device O It'll take months of practice <i>We decide that a leather mouth-bit</i> <i>attached to the bowstring would let her</i> <i>pull and release. It's a simple thing to</i> <i>make with help from Sawyl the tanner.</i>
+P	& releasing a bow one-handed O You must learn to use the device O It'll take months of practice
+PB
+P	<i>We decide that a leather mouth-bit</i> <i>attached to the bowstring would let her</i> <i>pull and release. It's a simple thing to</i> <i>make with help from Sawyl the tanner.</i>
 P	<i>Later, I frame a scene with Rhianna</i> <i>practicing her new setup. I ask what it</i> <i>looks like, what she's struggling with.</i> <i>Then Andras's mom comes by and thanks</i> <i>Rhianna for taking him under her</i> <i>wing, saying how proud she was to have</i> <i>Andras protecting the village. Rhianna's</i> <i>left feeling all sorts of bitter over losing</i> <i>him in search of Vahid's damn fire-jewel.</i>
 P	<i>Autumn comes before Rhianna's had the</i> <i>months of practice she needs, and the PCs</i> <i>end up hunting a dark presence that's</i> <i>been stalking the Wood. "For now," I say,</i> <i>"your bow will have the</i> reload <i>tag and</i> <i>you'll Let Fly with disadvantage. But</i> <i>once you get another month of practice,</i> <i>you'll shoot and Let Fly without penalty."</i>
 HR

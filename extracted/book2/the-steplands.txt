@@ -106,7 +106,9 @@ P	2 Herd of goats or sheep, tended by teen(s) and hound(s)
 P	3 Signs of their passing/encampment/borders
 P	4 Foragers, not far from camp
 P	5 A whole band, on the move
-P	6 A meeting between two or more bands For more about Hillfolk bands, see page 230.
+P	6 A meeting between two or more bands
+PB
+P	For more about Hillfolk bands, see page 230.
 P	1d6 other encounter
 HR
 P	1 Deadly beast, not actively hostile but easily provoked: a <b>brawzbedr</b> (page 377), <b>cave bear</b> (page 205), <b>thunder drake</b> (page 135), etc.

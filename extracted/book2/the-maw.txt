@@ -8,7 +8,9 @@ B	An unnatural quiet, the forest holding its breath
 B	A blighted patch, spreading out from the cave, where only grey lichen grows
 B	Bones strewn about, broken & chewed
 B	The black void of the cave mouth
-B	Those strange noises from within Tip: speak softly, hold very still. Pause a little longer between words, sentences.
+B	Those strange noises from within
+PB
+P	Tip: speak softly, hold very still. Pause a little longer between words, sentences.
 H2	Questions
 HR
 Q	Who among you have been here before? What brought you?

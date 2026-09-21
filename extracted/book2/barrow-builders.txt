@@ -97,16 +97,22 @@ HR
 P	1-4 Shattered and laid waste by time, disaster, or vandalism; mostly buried, overgrown, collapsed; its purpose unrecognizable
 P	5-8 Crumbling, largely buried, overgrown, or hidden away
 P	9-10 Buried, overgrown, or hidden, but mostly intact
-P	11-12 Fully visible and strangely well-preserved For more examples, see <b>Blackwater Lake</b> (page 51) and <b>Three Coven Lake</b> (page 442).
+P	11-12 Fully visible and strangely well-preserved
+PB
+P	For more examples, see <b>Blackwater Lake</b> (page 51) and <b>Three Coven Lake</b> (page 442).
 PAGE	37
 HR
 P	<i>The PCs are searching for the fiery heart of the</i> <b><i>Mindgem</i></b> <i>(page 548). I think it's in a</i> <i>Stone Lord ruin that the Barrow Builders reclaimed. Looking at the tables on page 386, I</i> <i>end up with a warren of multi-storied, brutalist apartments—housing for laborers—built</i> <i>around a single, giant-sized manor where the overseers dwelt. Maybe this was a plantation, with a small army of</i> <b><i>lithic servants</i></b> (page 393) <i>maintaining the complex?</i>
-P	<i>For the Barrow Builders' theme, I roll an 11 ("rulers clinging to power, even from the</i> <i>grave"). For signs, I roll a 5 ("damage/plunder/vandalism/graffiti") and 10 ("crude,</i> <i>human-sized" modifications). For the current condition, I roll a 9 ("buried, overgrown…</i> <i>mostly intact"). I ponder a bit, and come up with this:</i> <i>A sorcerer led the humans here to rise up against their overseers. The sorcerer then claimed</i> <i>the manor as his own, along with the device that charged and controlled the lithic servants</i> <i>—a device powered by the Mindgem's makerglass heart! He turned the manor into a crude</i> <i>palace and sent "his" people back to work the fields. When they eventually rebelled, he was</i> <i>mortally wounded but transferred his soul into the device that ran the lithic servants.</i> <i>With his mind now spread among the many constructs, he squashed the uprising. His rule</i> <i>grew increasingly erratic, brutal, and ineffective. The tenements became more squalid and</i> <i>desperate. Folks fled. The sorcerer didn't care.</i>
+P	<i>For the Barrow Builders' theme, I roll an 11 ("rulers clinging to power, even from the</i> <i>grave"). For signs, I roll a 5 ("damage/plunder/vandalism/graffiti") and 10 ("crude,</i> <i>human-sized" modifications). For the current condition, I roll a 9 ("buried, overgrown…</i> <i>mostly intact"). I ponder a bit, and come up with this:</i>
+PB
+P	<i>A sorcerer led the humans here to rise up against their overseers. The sorcerer then claimed</i> <i>the manor as his own, along with the device that charged and controlled the lithic servants</i> <i>—a device powered by the Mindgem's makerglass heart! He turned the manor into a crude</i> <i>palace and sent "his" people back to work the fields. When they eventually rebelled, he was</i> <i>mortally wounded but transferred his soul into the device that ran the lithic servants.</i> <i>With his mind now spread among the many constructs, he squashed the uprising. His rule</i> <i>grew increasingly erratic, brutal, and ineffective. The tenements became more squalid and</i> <i>desperate. Folks fled. The sorcerer didn't care.</i>
 P	<i>Now, the complex lies empty: overgrown, half-buried, stripped of anything of value, and home</i> <i>only to a dwindling army of lithic servants and the fractured mind of a paranoid sorcerer.</i>
 HR
 PAGE	38
 HR
-P	<i>The PCs are following the River Sruth out of</i> <b><i>Marshedge</i></b> (page 274) <i>and through the</i> <i>South Manmarch when they encounter a barrow. I roll a 10 for terrain ("tree(s), savannah, thickets"), a 9 for a theme ("conquest/oppression/enslavement"), a 12 for size ("manmade hill"), a 1 for purpose ("to honor the interred"), a 3 for architectural elements ("obvious entrance"), an 11 for condition ("strangely intact, fully visible"), and a 12 for features</i> <i>("roll twice"). I then get a 4 ("corrupted by the Things Below") and a 10 ("treasure," with a</i> <i>2 for the amount remaining). For the corruption, I turn to page 422 and come up with a</i> <i>poisonous place, with themes of death and broken bones, first caused by a blood-offering and</i> <i>then by a seal being broken. I ponder a little, and come up with this:</i> <i>A lone hill rising from sparse woods on the river's south bank. The daughter of a warlord commissioned it. Hundreds of slaves built it. When it was done, she had the slave's skulls caved</i> <i>in, to be interred with her father and his riches. After the daughter's brief reign ended, some</i> <i>fools pried open the stone doors to loot the warlord's tomb. They found chambers full of death,</i> <i>madness, and cursed gold. Those few who made it out were never the same. The barrow still</i> <i>lies open and treasure still remains, but no one with a lick of sense goes near it.</i>
+P	<i>The PCs are following the River Sruth out of</i> <b><i>Marshedge</i></b> (page 274) <i>and through the</i> <i>South Manmarch when they encounter a barrow. I roll a 10 for terrain ("tree(s), savannah, thickets"), a 9 for a theme ("conquest/oppression/enslavement"), a 12 for size ("manmade hill"), a 1 for purpose ("to honor the interred"), a 3 for architectural elements ("obvious entrance"), an 11 for condition ("strangely intact, fully visible"), and a 12 for features</i> <i>("roll twice"). I then get a 4 ("corrupted by the Things Below") and a 10 ("treasure," with a</i> <i>2 for the amount remaining). For the corruption, I turn to page 422 and come up with a</i> <i>poisonous place, with themes of death and broken bones, first caused by a blood-offering and</i> <i>then by a seal being broken. I ponder a little, and come up with this:</i>
+PB
+P	<i>A lone hill rising from sparse woods on the river's south bank. The daughter of a warlord commissioned it. Hundreds of slaves built it. When it was done, she had the slave's skulls caved</i> <i>in, to be interred with her father and his riches. After the daughter's brief reign ended, some</i> <i>fools pried open the stone doors to loot the warlord's tomb. They found chambers full of death,</i> <i>madness, and cursed gold. Those few who made it out were never the same. The barrow still</i> <i>lies open and treasure still remains, but no one with a lick of sense goes near it.</i>
 HR
 PAGE	39
 P	They are the most obvious remnants of these bloody times: dome shaped earthen mounds. Most folks assume they were all tombs, but that's hardly the case.
@@ -147,7 +153,9 @@ P	6 Connects to <b>caves</b> (page 380)
 P	7 Inhabited by local beasts/bandits
 P	8 <b>Useful or valuable flora</b> (page 458) growing on/in/near it
 P	9-10 Treasure (roll 1d6 to inform how much remains)
-P	11-12 Roll again, twice For more examples, see <b>Blackwater Lake</b> (page 51).
+P	11-12 Roll again, twice
+PB
+P	For more examples, see <b>Blackwater Lake</b> (page 51).
 PAGE	40
 H2	Artifacts
 HR
@@ -271,7 +279,9 @@ P	8 Runes/glyphs/sigils/marks/spells
 P	9 Light/dark/heat/cold/noise/quiet
 P	10 Thoughts/emotions/mind games
 P	11 Spirits/constructs/undead/vermin
-P	12 Previously triggered/disarmed Special materials might include <b>hazardous growths</b> (page 219), <b>orichalcum</b> (page 162), <b>black iron</b> (page 307), <b>dark ice</b> (page 322), <b>makerglass</b> (page 388), <b>aetherium</b> (page 404), <b>red crystal</b> (page 424), and/or other things of your devising.
+P	12 Previously triggered/disarmed
+PB
+P	Special materials might include <b>hazardous growths</b> (page 219), <b>orichalcum</b> (page 162), <b>black iron</b> (page 307), <b>dark ice</b> (page 322), <b>makerglass</b> (page 388), <b>aetherium</b> (page 404), <b>red crystal</b> (page 424), and/or other things of your devising.
 P	<b>Examples:</b>
 B	A pit, 15-feet deep, the bottom lined with rusty spikes; covered by taut fabric, pebbles, and dust
 B	A gap runs down the ceiling of a low tunnel; stepping on a flagstone releases a swinging axe
@@ -342,7 +352,9 @@ P	3-4 It anchors their soul to the world
 P	5-6 It feeds/renews/recharges them
 P	7-8 It gives them leverage over the <b>Lady of Crows</b> (page 71)
 P	9-10 It shields them from the Lady and the <b>Pale Hunter</b> (page 292)
-P	11-12 It suffers age/death/decrepitude in their place Unless their tether fails or is destroyed, they cannot truly die. Their body will eventually heal or regenerate, or their spirit will possess some hapless victim.
+P	11-12 It suffers age/death/decrepitude in their place
+PB
+P	Unless their tether fails or is destroyed, they cannot truly die. Their body will eventually heal or regenerate, or their spirit will possess some hapless victim.
 P	1d12 limitation
 HR
 P	1-2 They can't leave its presence
