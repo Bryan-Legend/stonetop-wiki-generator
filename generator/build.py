@@ -855,7 +855,10 @@ def main(argv: list[str] | None = None) -> None:
             # Every line of the book should be on the page it built; what
             # is missing is a layout the extractor or the renderer got wrong,
             # and it is never silent (generator/coverage.py).
-            n_unshown += report_unshown(slug, lines, body)
+            # (not on a hand-authored sheet: pages/<slug>.txt replaces the
+            # extraction by design)
+            if page_override(slug) is None:
+                n_unshown += report_unshown(slug, lines, body, title=art["title"])
             # Formatting sentinels are the renderer's private encoding; one
             # reaching the HTML shows up as a stray box in the reader's text.
             leaked = len(re.findall("[\x02-\x07]", body))

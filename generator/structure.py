@@ -51,6 +51,7 @@ from .text import (
     M_VR,
     M_VT,
     M_WRITE,
+    PAGE_NUMS,
     PAGE_REF_RE,
     ROLL_HEADER_DICE_ONLY,
     ROLL_HEADER_RE,
@@ -164,7 +165,7 @@ def _page_res() -> tuple:
         ) + ")"
     else:
         alt = "(?:pages?)"
-    nums = r"([\d,\s\-\u2013\u2014]+)"
+    nums = "(" + PAGE_NUMS + ")"
     paren = re.compile(r"\((?:see\s+)?" + alt + r"\s+" + nums + r"\)", re.IGNORECASE)
     bare = re.compile(
         r"(?<![\w/])(?:see\s+)?" + alt + r"\s+" + nums + r"(?![\w/])",
@@ -612,9 +613,13 @@ def linkify_pages(
             # sentence to close on a bare ", .".
             sec = _PAGE_SECTIONS.get((art["slug"], page))
             if sec:
+                # data-ref="page": the words are the section's name, standing
+                # in for "page N" — not the book's text (the build's coverage
+                # check reads past them).
+                ref = "" if label else ' data-ref="page"'
                 return (
                     f'<a class="wiki-link" href="#{sec["id"]}" '
-                    f'data-slug="{art["slug"]}" data-fragment="{sec["id"]}">'
+                    f'data-slug="{art["slug"]}" data-fragment="{sec["id"]}"{ref}>'
                     f'{html.escape(label or T(sec["name"]))}</a>'
                 )
             return html.escape(label) if label else f"page {page}"
@@ -624,10 +629,13 @@ def linkify_pages(
         href = f"{art['slug']}.html"
         if frag:
             href = f"{href}#{frag}"
+        # A page reference with no name to hang on is set as the name of the
+        # page it points to (data-ref="page": not the book's words).
+        ref = "" if label else 'data-ref="page" '
         return (
             f'<a class="wiki-link" href="{href}" data-slug="{art["slug"]}" '
             f'{f"data-fragment=\"{frag}\" " if frag else ""}'
-            f">{html.escape(text_out)}</a>"
+            f"{ref}>{html.escape(text_out)}</a>"
         )
 
     def links_for_pages(
@@ -682,7 +690,7 @@ def linkify_pages(
     work = re.sub(
         rf"Book{_FS}\s*{_FS}(?P<book>II|I|2|1){_FS}\s*[,:]?\s*{_FS}"
         rf"(?:see\s+)?(?:starting\s+on\s+)?"
-        rf"pages?{_FS}\s+{_FS}(?P<pages>[\d,\s\-–—]+)",
+        rf"pages?{_FS}\s+{_FS}(?P<pages>{PAGE_NUMS})",
         repl_book_page,
         work,
         flags=re.IGNORECASE,
@@ -758,7 +766,7 @@ def linkify_pages(
         r"(?P<t>(?:\x04[^\x04\x05]*\x05\s*)*\x04[^\x04\x05]*\x05)"
         r"(?P<poss>(?:'|’)s?)?"
         r"[\s\x06\x07]*\(?[\s\x06\x07]*(?:see\s+)?"
-        r"pages?\s+(?P<pg>[\d,\s\-–—]+)\)",
+        r"pages?\s+(?P<pg>" + PAGE_NUMS + r")\s*\)",
         repl_bold_pageref,
         work,
         flags=re.IGNORECASE,
@@ -770,7 +778,7 @@ def linkify_pages(
     work = re.sub(
         r"(?P<t>(?:\x04[^\x04\x05]*\x05\s*)*\x04[^\x04\x05]*\x05)"
         r"(?P<poss>(?:'|’)s?)?"
-        r"\s*,\s*see\s+pages?\s+(?P<pg>[\d,\s\-–—]+)",
+        r"\s*,\s*see\s+pages?\s+(?P<pg>" + PAGE_NUMS + r")",
         repl_bold_pageref,
         work,
         flags=re.IGNORECASE,
@@ -926,6 +934,11 @@ def _row_high(num: str) -> int:
     """The last number of a row's range ("3-4" → 4)."""
     nums = re.findall(r"\d+", num)
     return int(nums[-1]) if nums else 0
+
+
+def _pv_join(text: str, prov: dict) -> str:
+    """``text`` with the provenance of whatever it was cut from, if known."""
+    return text + prov.get(text, "") if text else ""
 
 
 def _pv_row(body, pv):
@@ -1131,6 +1144,9 @@ def render_stat_block(
             norm_lines.append(_plain(l))
     lines = norm_lines
     tags = _plain(tags)
+    # Tags the caller peeled off the name line may go on in the block's own
+    # tag line; only the first one, and only right away.
+    lead_tags_open = bool(tags)
     stats: list[str] = []
     moves: list[str] = []
     other: list[str] = []
@@ -1218,8 +1234,9 @@ def render_stat_block(
             # leftover identity of a following creature — stop via caller usually
             other.append(line)
             continue
-        if looks_like_tag_line(line) and not tags:
-            tags = line
+        if looks_like_tag_line(line) and (not tags or lead_tags_open):
+            tags = _cat(tags, line) if tags else line
+            lead_tags_open = False
         elif HP_LINE_RE.search(line) or low.startswith(
             (
                 "damage",
@@ -1311,7 +1328,14 @@ def render_stat_block(
     # Drop accidental second-creature tag lines from other
     notes = []
     for o in other:
-        if looks_like_tag_line(o) or HP_LINE_RE.search(o):
+        # A stat line opens with HP; a note may mention HP in passing ("A
+        # large Hollow Fae is tougher than shown above: 23 HP and +1
+        # damage…") and was being dropped as the next creature's.
+        # …and a tag line is a short list, never sentences: this note
+        # names *large*, *huge* and *reach* and read as one.
+        plain_o = _defmt(o)
+        stray_tags = looks_like_tag_line(o) and not re.search(r"[.!?:]\s", plain_o)
+        if stray_tags or re.match(r"\s*HP\s*\d", plain_o):
             continue
         notes.append(o)
 
@@ -3350,6 +3374,7 @@ def structure_html(
             if inline_rest:
                 block_lines.append(inline_rest)
             tag_prefix = list(extra_tags)  # folded into first real tag line
+            lead_tags = ""
             # Boundaries: horizontal rules and the next creature's icon/heading.
             # Trailing bullets, checklists, Questions, in-card roll tables, and
             # flavor all stay until one of those boundaries.
@@ -3447,7 +3472,9 @@ def structure_html(
                     if looks_like_tag_line(plain):
                         plain = _same(", ".join(tag_prefix) + ", " + plain, plain)
                     else:
-                        block_lines.append(", ".join(tag_prefix))
+                        # the block has no tag line of its own: these are
+                        # its tags, handed over as such (see below)
+                        lead_tags = ", ".join(tag_prefix)
                     tag_prefix = []
                 # In-card roll table header + rows (e.g. "1d6 current task")
                 # "d6 (hand, crude)" is the Damage line wrapping after its
@@ -3535,8 +3562,7 @@ def structure_html(
                 i += 1
                 if (i - 1) in listed_ends:
                     break  # the block ends on that line (blocks.json)
-            if tag_prefix:
-                block_lines.insert(0, ", ".join(tag_prefix))
+            lead_tags = lead_tags or ", ".join(tag_prefix)
             # A Cost is what a follower has and a monster never does
             is_follower = any(
                 re.search(r"(^|[;·] )Cost\b", _defmt(b)) for b in block_lines
@@ -3553,6 +3579,7 @@ def structure_html(
                     check_id=next_check_id(name),
                     icon_html=creature_icon,
                     variant="follower" if is_follower else None,
+                    tags=_pv_join(lead_tags, prov),
                     # The name is read off de-tokenized text, so it has lost
                     # the tags of the line(s) it came from; hand them back,
                     # or a name joined from two lines (Livrothos) matches no

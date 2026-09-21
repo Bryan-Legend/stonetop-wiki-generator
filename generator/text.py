@@ -67,13 +67,16 @@ DICE_RE = re.compile(
     r"(?![A-Za-z0-9_])",
     re.IGNORECASE,
 )
+# The numbers of a page reference: "12", "8-11", "282, 350", and a list
+# that closes on "and" ("336 and 350", "213, 223, and 472").
+PAGE_NUMS = r"\d+(?:\s*(?:[,–—-]|,?\s*and\b)\s*\d+)*"
 # (page 12), (pages 8-11), (page 282, 350), (see page 39)
 PAGE_REF_RE = re.compile(
-    r"\((?:see\s+)?pages?\s+([\d,\s\-–—]+)\)",
+    r"\((?:see\s+)?pages?\s+(" + PAGE_NUMS + r")\s*\)",
     re.IGNORECASE,
 )
 BARE_PAGE_RE = re.compile(
-    r"(?<![\w/])(?:see\s+)?pages?\s+([\d,\s\-–—]+)(?![\w/])",
+    r"(?<![\w/])(?:see\s+)?pages?\s+(" + PAGE_NUMS + r")(?![\w/])",
     re.IGNORECASE,
 )
 ROLL_HEADER_RE = re.compile(
@@ -636,7 +639,7 @@ def looks_like_heading(line: str) -> bool:
 def parse_page_nums(spec: str) -> list[int]:
     """Parse '12', '8-11', '282, 350', '282, 350-352' into page numbers (range ends only for ranges)."""
     nums: list[int] = []
-    for part in re.split(r"[,;]", spec):
+    for part in re.split(r"[,;]|\band\b", spec):
         part = part.strip()
         if not part:
             continue

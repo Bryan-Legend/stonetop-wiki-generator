@@ -25,6 +25,9 @@ import html as _html
 import re
 
 from .text import (
+    PAGE_NUMS,
+    M_H3,
+    undouble_words,
     M_BAND,
     M_BOX,
     M_ENDBOX,
@@ -53,14 +56,32 @@ _SKIP_MARKERS = (
     M_PB,
 )
 
-_PAGE_REF = re.compile(
-    r"\(?\s*(?:see\s+)?(?:Book\s+[IVX]+,?\s*)?pages?\s+[\d–,\-\s]+"
-    r"(?:for\s+context)?\)?",
-    re.I,
-)
+# The part of a page reference a link takes the place of: "page 438",
+# "pages 106 and 107" — not the "see" or the "Book II," around it, which
+# the page keeps.
+# (the same numbers the renderer reads: "336 and 350", "213, 223, and 472")
+_PAGE_REF = re.compile(r"\bpages?\s+" + PAGE_NUMS, re.I)
 _MAX_BOX = re.compile(r"\bMax\.?\s*\d+", re.I)
 _CALLOUT = re.compile(r"\s\d{1,2}$")
 _TAGS = re.compile(r"<[^>]+>")
+# A link that stands in for "page N" (``data-ref="page"``): its words are the
+# target's name, which the book never printed there.
+_PAGE_REF_LINK = re.compile(r'<a\b[^>]*\bdata-ref="page"[^>]*>.*?</a>', re.S)
+# A reference the corpus broke across two lines ("See page" / "514 for more
+# about improvements."): the page shows it whole, each half alone does not
+# match. Strip the dangling half from each line.
+_TRAILING_REF = re.compile(
+    r"\(?\s*(?:see\s+)?(?:Book(?:\s+[IVX]+,?)?\s*)?(?:pages?|page\s+\d+,?)?\s*$", re.I
+)
+# The inserts' HP box, whose label lands in the stat line ("…(0 vs. iron) HP
+# Damage bronze hatchet"): the renderer takes it out.
+_REPEATED_TAIL = re.compile(r"^(.*?)\s*\b(\S.*?\S)\s+\2\s*$")
+_HP_VALUE = re.compile(r"\bHP\s*\d")
+_HP_BOX = re.compile(r"\s+HP(?=\s*$|\s+(?:Damage|Instinct|Special|Cost)\b)")
+_LEADING_NUM = re.compile(
+    r"^\s*(?:I{1,2},\s*(?:pages?\s+)?)?"
+    r"(?:\d+(?:\s*(?:[-\u2013,]|and)\s*\d+)*)?\s*\)?[.,;:]?\s*"
+)
 _SCRIPT = re.compile(r"<(script|style)\b.*?</\1>", re.S | re.I)
 
 # Below this a line is too short to look for: "d6", "or", a lone numeral —
@@ -68,8 +89,12 @@ _SCRIPT = re.compile(r"<(script|style)\b.*?</\1>", re.S | re.I)
 _MIN_LEN = 12
 
 
+_REF_WORDS = re.compile(r"\b(?:see|book\s+i{1,2})\b", re.I)
+
+
 def _norm(text: str) -> str:
     text = _PAGE_REF.sub(" ", text)
+    text = _REF_WORDS.sub(" ", text)
     text = _MAX_BOX.sub(" ", text)
     text = _CALLOUT.sub("", text.strip())
     return re.sub(r"[^a-z0-9]+", "", text.lower())
@@ -78,27 +103,46 @@ def _norm(text: str) -> str:
 def page_text(body_html: str) -> str:
     """The page's words, normalised for comparison."""
     body = _SCRIPT.sub(" ", body_html)
+    body = _PAGE_REF_LINK.sub(" ", body)
     return _norm(_html.unescape(_TAGS.sub(" ", body)))
 
 
-def unshown_lines(lines: list[str], body_html: str) -> list[str]:
-    """The page's corpus lines whose words are not in the page it built."""
+def unshown_lines(lines: list[str], body_html: str, title: str = "") -> list[str]:
+    """The page's corpus lines whose words are not in the page it built.
+
+    ``title`` is the page's: a line that is a piece of it (a chapter title
+    set over two lines, "Writing" / "Moves & Love Letters") is shown as the
+    page's title, which is not in the body.
+    """
     shown = page_text(body_html)
+    title_key = _norm(title)
     missing: list[str] = []
     for line in lines:
         if line.startswith(_SKIP_MARKERS):
             continue
         text = strip_markers(line).strip()
-        key = _norm(text)
-        if len(key) < _MIN_LEN or key in shown:
+        # An arcanum's card leaves out its "Mysteries of…" heading, which the
+        # card's face already says; and a follower's HP box ("Starts at 13
+        # each") is folded into its stat line as "HP 13".
+        if line.startswith(M_H3) and text.startswith("Mysteries of"):
+            continue
+        if re.match(r"^Starts at \d+(?: each)?$", text):
+            continue
+        plain = _HP_BOX.sub("", text) if _HP_VALUE.search(text) else text
+        key = _norm(_LEADING_NUM.sub("", _TRAILING_REF.sub("", plain)))
+        # A line the extractor doubled ("A folktale folktale") is shown once.
+        undoubled = _norm(_REPEATED_TAIL.sub(r"\1 \2", undouble_words(plain)))
+        if len(key) < _MIN_LEN or key in shown or undoubled in shown or (title_key and key in title_key):
             continue
         missing.append(text)
     return missing
 
 
-def report(slug: str, lines: list[str], body_html: str, *, examples: int = 3) -> int:
+def report(
+    slug: str, lines: list[str], body_html: str, *, examples: int = 3, title: str = ""
+) -> int:
     """Print what the page dropped. Returns how many lines that was."""
-    missing = unshown_lines(lines, body_html)
+    missing = unshown_lines(lines, body_html, title)
     if not missing:
         return 0
     print(
