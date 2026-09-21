@@ -600,44 +600,40 @@ H2	3	Hit points
 P	Determine the follower's maximum
 P	HP by answering the following questions:
 HR
-P	<b>How resilient are they?</b> (pick 1) hp
-HR
-P	Weak/frail/soft 3
-P	Able-bodied 6
-P	Tough/strong/hard 9
-HR
-P	<b>What else applies?</b> (pick all that do) hp
-HR
-P	They are <i>tiny</i> -2
-P	They are <i>large</i> +4
-P	The fates smile on them +2
-HR
+VT	<b>How resilient are they?</b> (pick 1)	hp
+VR	Weak/frail/soft	3
+VR	Able-bodied	6
+VR	Tough/strong/hard	9
+VT	<b>What else applies?</b> (pick all that do)	hp
+VR	They are <i>tiny</i>	-2
+VR	They are <i>large</i>	+4
+VR	The fates smile on them	+2
 P	<i>Andras strikes me as able-bodied—a</i> <i>healthy young man with the strength to</i> <i>pull a bow. He's not</i> tiny <i>nor</i> large<i>, and</i> <i>I've no reason to think the fates smile on</i> <i>him, so he has 6 HP.</i>
 HR
 H2	4	Armor
 P	Answer the following:
 HR
-P	<b>What protects them?</b> (pick 1) armor
-P	Naught but cloth and flesh 0
-P	Leathers or thick hide 1
-P	Mail, scale, or similar 2 Steel, boney plates, carapace 3
-P	Potent magical wards or 4 supernatural resilience
-HR
-P	<b>What else applies?</b> (pick all that do) armor
-HR
-P	They are <i>tiny</i> +1 They bear a shield or similar +1
-P	They are skilled in defense +1
-P	They lack vital organs +1
-HR
+VT	<b>What protects them?</b> (pick 1)	armor
+VR	Naught but cloth and flesh	0
+VR	Leathers or thick hide	1
+VR	Mail, scale, or similar	2
+VR	Steel, boney plates, carapace	3
+VR	Potent magical wards or supernatural resilience	4
+VT	<b>What else applies?</b> (pick all that do)	armor
+VR	They are <i>tiny</i>	+1
+VR	They bear a shield or similar	+1
+VR	They are skilled in defense	+1
+VR	They lack vital organs	+1
 P	<i>Andras is just a young man, with no</i> <i>special skills or protections. He has 0</i> <i>armor unless Rhianna opts to Outfit him</i> <i>with thick hides or a shield.</i>
 HR
 H2	5	Damage
 P	Answer the following:
 HR
-P	<b>How dagerous are they?</b> (pick 1) damage
-HR
-P	Not very d4
-P	Can defend themselves d6 Veteran fighter or predator d8 Range and other tags are based on their gear. For monstrous followers, use the damage guidelines for <b>monsters</b> (page 398).
+VT	<b>How dagerous are they?</b> (pick 1)	damage
+VR	Not very	d4
+VR	Can defend themselves	d6
+VR	Veteran fighter or predator	d8
+P	Range and other tags are based on their gear. For monstrous followers, use the damage guidelines for <b>monsters</b> (page 398).
 HR
 P	<i>Again, Andras is an able-bodied youth</i> <i>who's good with a bow. He's a rookie, but</i> <i>I think he can defend himself just fine.</i> <i>He does 1d6 damage.</i>
 HR

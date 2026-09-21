@@ -570,6 +570,16 @@
    ],
    "dangers": [
     {
+     "kind": "value-table",
+     "name": "Worst Outcome",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "If...",
+     "id": ""
+    },
+    {
      "kind": "stat-block",
      "name": "Crinwin",
      "id": "crinwin"
@@ -582,6 +592,61 @@
     {
      "kind": "roll-table",
      "name": "",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "\u0004How Does It Hunt or Fight?\u0005 (Pick 1)",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "\u0004How Big Is It?\u0005 (Pick 1)",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "\u0004How Does It Hunt or Fight?\u0005 (Pick 1)",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "\u0004How Big Is It?\u0005 (Pick 1)",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "\u0004What Else Applies?\u0005 (Pick All That Do)",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "\u0004What Is It Protected by?\u0005 (Pick 1)",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "\u0004What Else Applies?\u0005 (Pick All That Do)",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "\u0004How Does It Hunt or Fight?\u0005 (Pick 1)",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "\u0004What Is the Nature of\u0005 \u0004Its Attack?\u0005 (Pick All That Apply)",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "\u0004How Big Is It?\u0005 (Pick 1)",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "\u0004What Else Applies?\u0005 (Pick All That Do)",
      "id": ""
     },
     {
@@ -632,6 +697,31 @@
      "kind": "move-block",
      "name": "Strengthen Your Bond",
      "id": "strengthen-your-bond"
+    },
+    {
+     "kind": "value-table",
+     "name": "\u0004How Resilient Are They?\u0005 (Pick 1)",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "\u0004What Else Applies?\u0005 (Pick All That Do)",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "\u0004What Protects Them?\u0005 (Pick 1)",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "\u0004What Else Applies?\u0005 (Pick All That Do)",
+     "id": ""
+    },
+    {
+     "kind": "value-table",
+     "name": "\u0004How Dagerous Are They?\u0005 (Pick 1)",
+     "id": ""
     },
     {
      "kind": "stat-block",

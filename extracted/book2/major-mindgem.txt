@@ -30,12 +30,14 @@ TH	appendix d: major arcana
 H3	Mysteries of the Mindgem
 HR
 ICON	icons/construct.svg
-H3	The Mighty Servant HP Armor
-P	<i>large</i>, <i>construct</i>, <i>Maker-wise</i>, <i>beautiful</i>, <i>meek</i>, 4 <i>hardy</i>, <i>slow</i>, <i>strong</i>, <i>exceptional</i>
-P	<b>Special qualities</b> living stone, tireless Max 24 Made of stone <b>Cost</b> wonder, excitement, joy, discovery <b>Damage</b> stone fists d10+1 (<i>hand, close</i>, (Loyalty ◇◇◇ ) disadvantage)
+H3	The Mighty Servant
+P	<i>large</i>, <i>construct</i>, <i>Maker-wise</i>, <i>beautiful</i>, <i>meek</i>, <i>hardy</i>, <i>slow</i>, <i>strong</i>, <i>exceptional</i>
+P	<b>Special qualities</b> living stone, tireless <b>Cost</b> wonder, excitement, joy, discovery (Loyalty ◇◇◇ )
 P	<b>Instinct</b> to misunderstand
 P	• Perform a mighty feat of strength
 P	• Carry on implacably
+P	<b>HP</b> 24; <b>Armor</b> 4 (Made of stone)
+P	<b>Damage</b> stone fists d10+1 (<i>hand, close</i>, disadvantage)
 HR
 P	When <b><i>the Mighty Servant makes a move at your behest</i></b> (see Order Followers), on a 6-, in addition to whatever the GM says, mark a consequence.
 HR

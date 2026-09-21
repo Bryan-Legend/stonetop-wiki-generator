@@ -99,7 +99,8 @@ BOOK_TEXT_TAGS = {
     "P", "H2", "H3", "H4", "B", "B2", "Q", "BC", "E", "C", "C2", "CX",
     "CX2", "TH", "VT", "VA", "VF", "WRITE",
 }
-BOOK_FIELD_TAGS = {"VR": [0], "STEP": [1]}
+# A value is translated when it has words in it ("free", "ignores armor").
+BOOK_FIELD_TAGS = {"VR": [0, 1], "STEP": [1]}
 # A playbook's stat block is one JSON payload; its text is the gloss under
 # the heading and the HP label with the sheet's cap. The rest of it — stat
 # names, debilities, tracks — is the same on every sheet and is translated

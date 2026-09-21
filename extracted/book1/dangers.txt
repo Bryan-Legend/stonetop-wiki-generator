@@ -38,30 +38,21 @@ P	<i>"I really want to check that out," says</i> <i>Vahid. After some discussion
 PAGE	383
 H2	Damage from hazards
 P	<b>If a hazard (improvised or prepared) deals</b> <b>damage</b>, ask yourself what it could likely do to a normal person.
-P	worst outcome die
-HR
-P	Bruises & scrapes, pain, light burns d4
-HR
-P	Nasty flesh wounds, bruises, burns d6
-HR
-P	Broken bones, bad burns, d8 debilitating pain
-HR
-P	Death or dismemberment d10 Then, assign effects to the hazard according to its capabilities (choose all that apply):
-P	if... effect
-HR
-E	armor can't protect ignores armor against it
-HR
-E	it slices through 1 piercing, leather/hide <i>messy</i>
-HR
-E	it can tear metal apart 3 piercing, <i>messy</i>
-HR
-E	it knocks them down <i>forceful</i> or around
-HR
-E	it's big/vicious/scary +2 damage
-HR
-E	the PCs have taken disadvantage precautions
-HR
-E	it catches them off-guard advantage Apply disadvantage to the damage roll if the PCs knew (or suspected) about the hazard and proactively did something to protect themselves. For example, if the hazard is a poisonous gas and they cover their faces and mouths with damp cloth before entering it, impose disadvantage on the damage roll. By contrast, if the hazard catches them flat-footed, hurting them even before they realize it's there, then apply advantage to the damage roll.
+VT	worst outcome	die
+VR	Bruises & scrapes, pain, light burns	d4
+VR	Nasty flesh wounds, bruises, burns	d6
+VR	Broken bones, bad burns, debilitating pain	d8
+VR	Death or dismemberment	d10
+P	Then, assign effects to the hazard according to its capabilities (choose all that apply):
+VT	if...	effect
+VR	... armor can't protect against it	ignores armor
+VR	... it slices through leather/hide	1 piercing, <i>messy</i>
+VR	... it can tear metal apart	3 piercing, <i>messy</i>
+VR	... it knocks them down or around	<i>forceful</i>
+VR	... it's big/vicious/scary	+2 damage
+VR	... the PCs have taken precautions	disadvantage
+VR	... it catches them off-guard	advantage
+P	Apply disadvantage to the damage roll if the PCs knew (or suspected) about the hazard and proactively did something to protect themselves. For example, if the hazard is a poisonous gas and they cover their faces and mouths with damp cloth before entering it, impose disadvantage on the damage roll. By contrast, if the hazard catches them flat-footed, hurting them even before they realize it's there, then apply advantage to the damage roll.
 H2	Certain death
 P	If a hazard (or other source of harm) would definitely, absolutely kill a normal person, then it shouldn't deal damage to the PCs—it should immediately reduce them to 0 HP and trigger the Death's Door move.
 P	If they survive, then that means they caught a break. You can and should still <b>hurt them</b>, badly.
@@ -285,18 +276,18 @@ PAGE	395
 H2	3	Tags
 P	Assemble a list of tags by answering the following questions.
 HR
-P	<b>How does it hunt or fight?</b> (pick 1) tag
-HR
-P	In large groups (6 or more) <i>horde</i> In small groups (2-5 per group) <i>group</i>
-P	By itself <i>solitary</i>
+VT	<b>How does it hunt or fight?</b> (pick 1)	tag
+VR	In large groups (6 or more)	<i>horde</i>
+VR	In small groups (2-5 per group)	<i>group</i>
+VR	By itself	<i>solitary</i>
 P	If an individual monster is part of a group, but it still fights or hunts mostly on its own, then give it the <i>solitary</i> tag (and appropriate HP and damage ratings; see below).
 HR
-P	<b>How big is it?</b> (pick 1) tag
-HR
-P	Cat-sized or smaller <i>tiny</i>
-P	Like a human child <i>small</i>
-P	Adult human-sized <i>-</i>Like a horse, cart, etc. <i>large</i> Like an elephant, or bigger <i>huge</i>
-HR
+VT	<b>How big is it?</b> (pick 1)	tag
+VR	Cat-sized or smaller	<i>tiny</i>
+VR	Like a human child	<i>small</i>
+VR	Adult human-sized	<i>-</i>
+VR	Like a horse, cart, etc.	<i>large</i>
+VR	Like an elephant, or bigger	<i>huge</i>
 P	<b>What is its nature?</b>
 P	(add all that apply) tag
 HR
@@ -325,22 +316,24 @@ H2	4	Hit points
 P	Determine the monster's maximum
 P	HP by answering the following questions:
 HR
-P	<b>How does it hunt or fight?</b> (pick 1) hp
+VT	<b>How does it hunt or fight?</b> (pick 1)	hp
+VR	In large groups (6 or more, <i>horde</i>)	3
+VR	In small groups (2-5, <i>group</i>)	6
+VR	By itself (<i>solitary</i>)	12
+P	Just to be clear: each monster in a <i>horde</i> has 3 HP, and each monster in a <i>group</i> has 6 HP. This isn't a shared pool of HP (unless you choose to abstract a group; see page 416).
 HR
-P	In large groups (6 or more, <i>horde</i>) 3 In small groups (2-5, <i>group</i>) 6
-P	By itself (<i>solitary</i>) 12 Just to be clear: each monster in a <i>horde</i> has 3 HP, and each monster in a <i>group</i> has 6 HP. This isn't a shared pool of HP (unless you choose to abstract a group; see page 416).
+VT	<b>How big is it?</b> (pick 1)	hp
+VR	Cat-sized or smaller (<i>tiny</i>)	-2
+VR	Like a human child (<i>small</i>)	<i>-</i>
+VR	Adult human-sized	<i>-</i>
+VR	Like a horse, cart, etc. (<i>large</i>)	+4
+VR	Like an elephant, or bigger (<i>huge</i>)	+8
 HR
-P	<b>How big is it?</b> (pick 1) hp
-HR
-P	Cat-sized or smaller (<i>tiny</i>) -2
-P	Like a human child (<i>small</i>) <i>-</i>
-P	Adult human-sized <i>-</i>Like a horse, cart, etc. (<i>large</i>) +4 Like an elephant, or bigger (<i>huge</i>) +8
-HR
-P	<b>What else applies?</b> (pick all that do) hp
-HR
-P	It's particularly tough/durable +4 It's smiled upon by the fates +2 It's animated by more than biology +4
-P	It lacks vital organs +3
-HR
+VT	<b>What else applies?</b> (pick all that do)	hp
+VR	It's particularly tough/durable	+4
+VR	It's smiled upon by the fates	+2
+VR	It's animated by more than biology	+4
+VR	It lacks vital organs	+3
 P	<i>The Almtakers fight as a pair, with the</i>
 P	group <i>tag, so they start with 6 HP each.</i>
 P	<i>They're also</i> large<i>, giving them +4 HP.</i>
@@ -350,19 +343,19 @@ PAGE	397
 H2	5	Armor
 P	Answer the following:
 HR
-P	<b>What is it protected by?</b> (pick 1) armor
+VT	<b>What is it protected by?</b> (pick 1)	armor
+VR	Naught but cloth and flesh	0
+VR	Leathers or thick hide	1
+VR	Mail, scale, or similar	2
+VR	Steel armor, boney plates, carapace	3
+VR	Potent magical wards or supernatural resilience	4
 HR
-P	Naught but cloth and flesh 0
-P	Leathers or thick hide 1
-P	Mail, scale, or similar 2 Steel armor, boney plates, carapace 3
-P	Potent magical wards or 4 supernatural resilience
-HR
-P	<b>What else applies?</b>
-P	(pick all that do) armor
-HR
-P	It's <i>tiny</i> +1 It bears a shield or similar +1
-P	It's skilled in defense +1
-P	It lacks vital organs +1 In parentheses after the armor rating, note the source(s) of the armor. Then list any variants or exceptions.
+VT	<b>What else applies?</b> (pick all that do)	armor
+VR	It's <i>tiny</i>	+1
+VR	It bears a shield or similar	+1
+VR	It's skilled in defense	+1
+VR	It lacks vital organs	+1
+P	In parentheses after the armor rating, note the source(s) of the armor. Then list any variants or exceptions.
 HR
 P	<i>The Almtakers have the Fae's typical</i> <i>resilience to anything but iron, so I</i> <i>start by giving them armor 4. Even</i> <i>against iron, they have wood-like flesh;</i> <i>I think that counts as "thick hide." They</i> <i>have organs and anatomy, so no bonus</i> <i>there, but I think that they're skilled in</i> <i>defense—they're guardians, after all. I</i> <i>write down:</i>
 P	Armor 5 (resilience, skill), 2 vs. iron (hide, skill)
@@ -372,10 +365,10 @@ PAGE	398
 H2	6	Damage
 P	What is the monster's typical form of attack? Write it down, along with the monster's damage rating and appropriate tags. To determine them, answer the following:
 HR
-P	<b>How does it hunt or fight?</b> (pick 1) damage
-HR
-P	In large groups (6 or more, <i>horde</i>) d6 In small groups (2-5, <i>group</i>) d8
-P	By itself (<i>solitary</i>) d10
+VT	<b>How does it hunt or fight?</b> (pick 1)	damage
+VR	In large groups (6 or more, <i>horde</i>)	d6
+VR	In small groups (2-5, <i>group</i>)	d8
+VR	By itself (<i>solitary</i>)	d10
 H2	Attack tags & terms
 P	Range tags (in <i>italics</i>) indicate the range at which an attack is useful.
 P	<b><i>hand</i></b>: tight quarters; up close and personal <b><i>close</i></b>: melee range, 1-2 steps away <b><i>reach</i></b>: 3-4 steps away <b><i>near</i></b>: up to 30 or so steps away <b><i>far</i></b>: quite the distance; up to 100 steps, maybe more.
@@ -386,13 +379,10 @@ PB
 P	Attacks with <b>[</b><b><i>n</i></b><b>] piercing</b> ignore <i>n</i> points of a foe's armor. Attacks that <b>ignore armor</b> treat armor as 0.
 P	See page 94 for more tags & terms.
 HR
-P	<b>What is the nature of</b> <b>its attack?</b> (pick all that apply) add
-HR
-P	Useful up close and personal <i>hand</i>
-HR
-P	Works well at sword's reach <i>close</i>
-HR
-P	Can keep foes at bay <i>reach</i>
+VT	<b>What is the nature of</b> <b>its attack?</b> (pick all that apply)	add
+VR	Useful up close and personal	<i>hand</i>
+VR	Works well at sword's reach	<i>close</i>
+VR	Can keep foes at bay	<i>reach</i>
 P	Useful at range <i>near</i> or <i>far</i> Can hurt many foes at once <i>area</i>
 HR
 P	Small and weak -1 die size
@@ -413,32 +403,21 @@ P	Bypasses armor entirely ignores armor
 HR
 P	Prone to breakage <i>crude</i>
 HR
-P	<b>How big is it?</b> (pick 1) add
-HR
-P	Cat-sized or smaller (<i>tiny</i>) -2 damage, reduce range
-HR
-P	Like a human child (<i>small</i>) reduce range
-HR
-P	Adult human-sized <i>-</i>
-HR
-P	Like a horse, cart, etc. +1 damage, (<i>large</i>) add a range
-HR
-P	Like an elephant, or bigger +3 damage, (<i>huge</i>) add a range
+VT	<b>How big is it?</b> (pick 1)	add
+VR	Cat-sized or smaller (<i>tiny</i>)	-2 damage, reduce range
+VR	Like a human child (<i>small</i>)	reduce range
+VR	Adult human-sized	<i>-</i>
+VR	Like a horse, cart, etc. (<i>large</i>)	+1 damage, add a range
+VR	Like an elephant, or bigger (<i>huge</i>)	+3 damage, add a range
 PAGE	399
 HR
-P	<b>What else applies?</b>
-P	(pick all that do) add
-HR
-P	It's impressively strong +2 damage,
-P	<i>forceful</i>
-HR
-P	It strikes deftly and precisely +1 piercing
-HR
-P	Physical injury is not the -1 die size worst danger it poses
-HR
-P	It is ancient and noteworthy +1 die size
-HR
-P	It abhors violence disadvantage <b>Advantage</b> means you roll damage twice and use the higher result; <b>disadvantage</b> means roll twice and use the lower result.
+VT	<b>What else applies?</b> (pick all that do)	add
+VR	It's impressively strong	+2 damage, <i>forceful</i>
+VR	It strikes deftly and precisely	+1 piercing
+VR	Physical injury is not the worst danger it poses	-1 die size
+VR	It is ancient and noteworthy	+1 die size
+VR	It abhors violence	disadvantage
+P	<b>Advantage</b> means you roll damage twice and use the higher result; <b>disadvantage</b> means roll twice and use the lower result.
 P	<b>Reduce range</b> means the attack's range tag(s) are one step lower (e.g. from <i>close</i> to <i>hand</i>), while <b>add a range</b> means the attack gets an additional range tag (e.g. if already <i>close</i>, it's now also <i>hand</i> or <i>reach</i>).
 P	If the monster has multiple, distinct modes of attack, write each down with its own damage rating and tags.
 HR

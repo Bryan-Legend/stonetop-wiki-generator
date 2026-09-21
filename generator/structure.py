@@ -1040,13 +1040,14 @@ def render_value_table(
     section_index: dict | None = None,
     link_kw: dict | None = None,
     notes: list[str] | None = None,
+    label: str | None = None,
 ) -> str:
     lkw = link_kw or {}
     body = []
     for item, val in rows:
         body.append(
             f"<tr><td>{linkify_pages(item, lookup, current_slug, section_index, **lkw)}</td>"
-            f'<td class="val">{html.escape(val)}</td></tr>'
+            f'<td class="val">{linkify_pages(val, lookup, current_slug, section_index, **lkw)}</td></tr>'
         )
     notes_html = "".join(
         f'<div class="value-note">{html.escape(T(nt))}</div>' for nt in (notes or [])
@@ -1058,12 +1059,25 @@ def render_value_table(
     head_plain = strip_tags(head_raw)
     head_tr = T(head_plain + "".join(TAG_RE.findall(head_raw)))
     head_name = smart_title(head_plain) if head_tr == head_plain else head_tr
+    head_cell = html.escape(head_name)
+    # A two-column table names its second column itself ("die", "effect"),
+    # and its first may be a question set in bold ("How big is it? (pick
+    # 1)"): shown as printed, only its first letter raised.
+    if label:
+        label_plain = strip_tags(label)
+        label_tr = T(label)
+        val_head = label_tr if label_tr != label_plain else label_plain
+        val_head = "HP" if val_head.lower() == "hp" else val_head[:1].upper() + val_head[1:]
+        head_cell = linkify_pages(title, lookup, current_slug, section_index, **lkw)
+        head_cell = re.sub(r"^((?:<[^>]+>)*)([a-z])", lambda m: m[1] + m[2].upper(), head_cell)
+    else:
+        val_head = "Value"
     return (
         f'<div class="value-table">'
         f"<table>"
         f'<thead><tr class="value-table-head">'
-        f"<th>{html.escape(head_name)}</th>"
-        f'<th class="vth-val">Value</th>'
+        f"<th>{head_cell}</th>"
+        f'<th class="vth-val">{html.escape(val_head)}</th>'
         f"</tr></thead>"
         f"<tbody>{''.join(body)}</tbody></table>"
         f"{notes_html}"
@@ -2618,8 +2632,10 @@ def structure_html(
                 continue
             if line.startswith((M_VT, M_VR, M_VF)):
                 vt_title: str | None = None
+                vt_label: str | None = None
                 if line.startswith(M_VT):
-                    vt_title = line[len(M_VT):].strip()
+                    vt_title, _, vt_label = line[len(M_VT):].strip().partition("\x03")
+                    vt_label = vt_label.strip() or None
                     i += 1
                 rows_v: list[tuple[str, str]] = []
                 notes_v: list[str] = []
@@ -2640,7 +2656,7 @@ def structure_html(
                     # continuation of the table we just rendered
                     row_html = "".join(
                         f"<tr><td>{link(item)}</td>"
-                        f'<td class="val">{html.escape(val)}</td></tr>'
+                        f'<td class="val">{link(val)}</td></tr>'
                         for item, val in rows_v
                     )
                     out[-1] = out[-1].replace(
@@ -2648,17 +2664,18 @@ def structure_html(
                     )
                     continue
                 pretty = re.sub(r"\s+", " ", (vt_title or "Value")).strip()
-                if not pretty.lower().endswith("value"):
+                if not vt_label and not pretty.lower().endswith("value"):
                     pretty = pretty + " value"
                 out.append(
                     render_value_table(
-                        pretty.title(),
+                        pretty if vt_label else pretty.title(),
                         rows_v,
                         lookup,
                         current_slug,
                         section_index,
                         link_kw=link_kw,
                         notes=notes_v,
+                        label=vt_label,
                     )
                 )
                 continue

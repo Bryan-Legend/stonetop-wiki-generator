@@ -97,6 +97,82 @@ def _span_mid_x(sp: dict) -> float:
     return (sp["x"] + sp["x1"]) / 2
 
 
+def _cell(spans: list[tuple]) -> str:
+    """One cell of a two-column table from its spans, bold and italic kept.
+    Spans that abut are one run of type ("(" + "tiny" + ")")."""
+    out = ""
+    prev_x1 = None
+    for x, x1, text, font in spans:
+        core = text.strip()
+        if not core:
+            continue
+        lead = text[: len(text) - len(text.lstrip())]
+        trail = text[len(text.rstrip()):]
+        if "Italic" in font:
+            core = I_ON + core + I_OFF
+        if "Bold" in font:
+            core = B_ON + core + B_OFF
+        if out and not lead and prev_x1 is not None and x - prev_x1 > 1.0:
+            lead = " "
+        out += lead + core + trail
+        prev_x1 = x1
+    return normalize_text(re.sub(r"\s+", " ", out)).strip()
+
+
+def _split_cells(spans: list[tuple], cut: float) -> tuple[list, list]:
+    """A two-column table's line cut into its cells: spans from ``cut`` on
+    are the second column's, unless glued to the span before them (the ")"
+    closing "(solitary" that runs past the cut)."""
+    left: list = []
+    right: list = []
+    for sp in spans:
+        x, x1, text, _font = sp
+        if not text.strip():
+            continue
+        prev = (right or left)[-1] if (right or left) else None
+        glued = prev is not None and x - prev[1] <= 1.0 and not text[:1].isspace()
+        if right or (x >= cut and not glued):
+            right.append(sp)
+        else:
+            left.append(sp)
+    return left, right
+
+
+def _follower_stat_lines(lines: list[str]) -> list[str]:
+    """The stat column of a follower's box, as the stat line a follower's
+    block is written with elsewhere. The card prints "HP" and "Armor" over
+    two boxes, the armor value in its box and a note under each ("Max. 13",
+    "lacks organs"): "<b>HP</b> 13; <b>Armor</b> 1 (lacks organs)". What
+    follows (Damage, Cost, Loyalty) is left as it is."""
+    head = next(
+        (k for k, l in enumerate(lines) if _defmt(l).split() == ["HP", "Armor"]),
+        None,
+    )
+    if head is None:
+        return lines
+    end = head + 1
+    while (
+        end < len(lines)
+        and not lines[end].startswith("\x02")
+        and not lines[end].lstrip().startswith(B_ON)
+    ):
+        end += 1
+    text = " ".join(_defmt(l) for l in lines[head + 1 : end])
+    hp = re.search(r"\bMax\.?\s*(\d+)", text)
+    rest = re.sub(r"\bMax\.?\s*\d+", " ", text)
+    armor = re.search(r"(?<!\S)(\d+)(?!\S)", rest)
+    note = re.sub(r"(?<!\S)\d+(?!\S)", " ", rest)
+    note = re.sub(r"\s+", " ", note).strip()
+    parts = []
+    if hp:
+        parts.append(f"{B_ON}HP{B_OFF} {hp.group(1)}")
+    parts.append(
+        f"{B_ON}Armor{B_OFF} {armor.group(1) if armor else 0}"
+        + (f" ({note})" if note else "")
+    )
+    return lines[:head] + ["; ".join(parts)] + lines[end:]
+
+
 def _lead_bold_prefix(text_spans: list[dict], text: str) -> str:
     """Visible text of the leading run of bold spans (for entry detection)."""
     parts: list[str] = []
@@ -964,10 +1040,48 @@ def extract_page_rich(
                 and fell_spans[0] is text_spans[0]
                 and fell_spans[-1]["text"].strip().lower() == "value"
             )
+            # A two-column table's head: the left column's name and, far
+            # to the right, the short label over the other column, both in
+            # the Fell the book sets heads in ("worst outcome" … "die",
+            # "if..." … "effect" — Dangers, Damage from hazards).
+            # Dangers' monster-making tables head the left column with a
+            # bold question instead ("How big is it? (pick 1)" … "add"), or
+            # with the "(pick …)" alone when the question wrapped above it.
+            label_head = None
+            head_spans = [g for g in text_spans if g["text"].strip()]
+            lead = head_spans[:-1]
+            lead_text = "".join(g["text"] for g in lead).strip()
+            if (
+                len(head_spans) >= 2
+                and "FellType" in head_spans[-1]["font"]
+                and head_spans[-1]["size"] >= 9.5
+                and len(head_spans[-1]["text"].strip()) <= 14
+                and head_spans[-1]["text"].strip().lower() != "value"
+                and (
+                    (
+                        all("FellType" in g["font"] for g in lead)
+                        and head_spans[-1]["x"] - head_spans[-2]["x1"] >= 30
+                    )
+                    or (
+                        ("Bold" in lead[0]["font"] or lead_text.startswith("(pick"))
+                        and head_spans[-1]["x"] - head_spans[0]["x"] >= 100
+                        and lead_text.endswith(")")
+                    )
+                )
+            ):
+                label_head = (
+                    _cell([(g["x"], g["x1"], g["text"], g["font"]) for g in lead]),
+                    normalize_text(head_spans[-1]["text"]).strip(),
+                    head_spans[-1]["x"],
+                )
             recs.append(
                 {
                     "y": y_top,
                     "x": first_x,
+                    "spans": [
+                        (g["x"], g["x1"], g["text"], g["font"]) for g in text_spans
+                    ],
+                    "label_head": label_head,
                     "x1": max(g["x1"] for g in text_spans),
                     # A roll table's row: its number a span of its own ("12",
                     # "10-11"), set at a tab stop apart from the words, where
@@ -1020,10 +1134,15 @@ def extract_page_rich(
             nonlocal table
             if table is None:
                 return
+            if table.get("label"):
+                keep_open = False  # its cells are told apart by x
             header_done = table.get("header_emitted", False)
             if table["rows"]:
                 if not header_done:
-                    out.append(M_VT + table["title"])
+                    label = table.get("label")
+                    out.append(
+                        M_VT + table["title"] + ("\x03" + label if label else "")
+                    )
                     header_done = True
                 for item, val in table["rows"]:
                     out.append(f"{M_VR}{item}\x03{val}")
@@ -1034,6 +1153,9 @@ def extract_page_rich(
             if keep_open:
                 state["table"] = {
                     "title": table["title"],
+                    "label": table.get("label"),
+                    "label_x": table.get("label_x"),
+                    "new_row": True,
                     "rows": [],
                     "notes": [],
                     "header_emitted": header_done,
@@ -1071,6 +1193,15 @@ def extract_page_rich(
                 # underlines it (Book I's gear lists rule every header);
                 # it opens the table rather than ending it.
                 if table is not None and not table["rows"]:
+                    prev_y = rec["y"]
+                    idx += 1
+                    continue
+                # A two-column table rules off every row: the rule starts
+                # the next one.
+                if table is not None and table.get("label"):
+                    table["new_row"] = True
+                    if table["rows"]:
+                        table["ruled"] = True
                     prev_y = rec["y"]
                     idx += 1
                     continue
@@ -1167,6 +1298,62 @@ def extract_page_rich(
                 entry_active = False
                 list_kind = None
                 continue
+            if rec.get("label_head") and not DICE_HEAD_RE.match(dtext):
+                close_table()
+                left, label, label_x = rec["label_head"]
+                above = out[-1].lstrip(PARA_BREAK + PARA_ROW_BREAK) if out else ""
+                if (
+                    above
+                    and not above.startswith("\x02")
+                    and re.fullmatch(B_ON + "[^" + B_ON + B_OFF + "]*" + B_OFF, above.strip())
+                    and gap <= 1.6 * rec["size"]
+                ):
+                    left = out.pop().lstrip(PARA_BREAK + PARA_ROW_BREAK) + " " + left
+                table = {
+                    "title": left, "label": label, "label_x": label_x,
+                    "rows": [], "notes": [], "new_row": True,
+                }
+                state.pop("table", None)
+                state["last_line"] = ""
+                entry_active = False
+                list_kind = None
+                continue
+
+            # A two-column table's row: the spans left of its label are the
+            # first column, the rest the second. A rule starts a row; a line
+            # at the leading below carries on the one above, in either
+            # column ("Broken bones, bad burns," / "debilitating pain",
+            # "1 piercing," / "messy").
+            if table is not None and table.get("label"):
+                left_sp, right_sp = _split_cells(
+                    rec["spans"], table["label_x"] - 20
+                )
+                item, val = _cell(left_sp), _cell(right_sp)
+                # A table without rules between its rows starts one on every
+                # line that fills both columns, unless the words are set in
+                # from the edge (tabbed in under the row they carry on).
+                if (
+                    not table["new_row"]
+                    and not table.get("ruled")
+                    and item
+                    and val
+                    and not left_sp[0][2][:1].isspace()
+                    and not item.startswith("(")
+                ):
+                    table["new_row"] = True
+                if table["new_row"] and val:
+                    table["rows"].append((item, val))
+                    table["new_row"] = False
+                    state["table"] = table
+                    continue
+                if table["rows"] and not table["new_row"] and gap <= 1.4 * rec["size"]:
+                    it, vl = table["rows"][-1]
+                    table["rows"][-1] = (
+                        (it + " " + item).strip(), (vl + " " + val).strip()
+                    )
+                    continue
+                close_table()
+
             # Fell Type at ~12pt marks table headers; at 9pt it's just
             # small-caps styling inside prose ("terrain", "encounter")
             is_fell = "FellType" in font and (
@@ -1180,6 +1367,7 @@ def extract_page_rich(
             # off the line above at the leading.
             if (
                 rec.get("fell_solo")
+                and not single_column  # a card's "front"/"back" label
                 and not is_fell
                 and table is None
                 and rec["size"] < 10.5
@@ -1527,7 +1715,14 @@ def extract_page_rich(
                     left_table = True
                     row["open"] = False
                     state["table_open"] = False
-            if left_table or (
+            # A card's "front"/"back" label under its last box, in a band of
+            # its own when the box was read as one, with no line above.
+            card_label = (
+                single_column
+                and rec.get("fell_solo")
+                and dtext.strip().lower() in ("front", "back")
+            )
+            if left_table or card_label or (
                 PARA_GAP_MIN * rec["size"] < gap < PARA_GAP_MAX
                 and line_above_x1 is not None
                 and (line_above_x1 < col_x1 - PARA_SHORT_BY or after_row)
@@ -1711,6 +1906,54 @@ def extract_page_rich(
         bands = [(lo, hi) for lo, hi in zip(edges, edges[1:])]
         band_gutters = [gutter] * len(bands)
 
+    # A follower's box on an arcanum's card (the Blackwood Fetishes' Astor
+    # and Halix, the Mindgem's Mighty Servant) is two columns inside the one
+    # the card reads as: name, tags, instinct and moves on the left; HP and
+    # Armor, Damage, Cost and Loyalty on the right. Read line by line they
+    # interleave ("Manifest a ghostly presence (harmed Cost proof of honor,
+    # nobility only by silver or salt)"). The box is a band of its own, from
+    # the rule over it to the rule under it, split where the stat column
+    # starts — just left of the "HP" printed over the HP box.
+    follower_bands: set[int] = set()
+    if single_column and not playbook:
+        boxes: list[tuple[float, float, float]] = []
+        for row in rows:
+            def _bold(word: str):
+                return next(
+                    (sp for sp in row if sp["text"].strip() == word and "Bold" in sp["font"]),
+                    None,
+                )
+            hp, armor = _bold("HP"), _bold("Armor")
+            name = next((sp for sp in row if sp["font"].startswith("Avara")), None)
+            if not (hp and armor and name and name["x1"] < hp["x"] < armor["x"]):
+                continue
+            y = hp["y"]
+            above = [r.y0 for r in hrules if y - 20.0 < r.y0 < y]
+            below = [r.y0 for r in hrules if r.y0 > y + 5.0]
+            top = max(above) - 0.5 if above else y - 8.0
+            # A box with no rule under it (the last on the card) ends where
+            # its lines stop coming at the leading — not at the card's
+            # "back" label further down.
+            last = y
+            for yy in sorted(r[0]["y"] for r in rows if r[0]["y"] > y):
+                if yy - last > 20.0:
+                    break
+                last = yy
+            bot = min(min(below) - 0.5 if below else float("inf"), last + 12.0)
+            boxes.append((top, bot, hp["x"] - 40.0))
+        if boxes:
+            bands, band_gutters = [], []
+            lo = float("-inf")
+            for top, bot, split in sorted(boxes):
+                bands.append((lo, top))
+                band_gutters.append(gutter)
+                bands.append((top, bot))
+                band_gutters.append(split)
+                follower_bands.add(len(bands) - 1)
+                lo = bot
+            bands.append((lo, float("inf")))
+            band_gutters.append(gutter)
+
     if stats_json:
         result.append(M_STATS + stats_json)
 
@@ -1733,13 +1976,16 @@ def extract_page_rich(
             )
             # Only a full-measure band is bounded in height; a playbook's
             # bands keep reading as they always have.
-            if full_top_band is not None:
+            if full_top_band is not None or follower_bands:
                 recs = build_lines(col, x_lo, x_hi, band_lo, band_hi)
             else:
                 recs = build_lines(col, x_lo, x_hi)
             # resume a table that carried over from the previous column/page
             carried = state.get("table")
-            result.extend(emit_region(recs, col_x0, False))
+            emitted = emit_region(recs, col_x0, False)
+            if bi in follower_bands and ci == 1:
+                emitted = _follower_stat_lines(emitted)
+            result.extend(emitted)
             # if the carried table produced no continuation rows, drop the state
             if carried is not None and state.get("table") is carried:
                 state.pop("table", None)
