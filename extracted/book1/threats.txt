@@ -571,7 +571,7 @@ C	<b>Impending doom:</b> Devours the Heart, becoming a permanent vortex of death
 PB
 P	<b>Stakes:</b> How will its link to Caradoc affect what happens?
 PAGE	298
-H2	Updating
+H2	Updating threats
 P	Threats change over time. Between each session, review your threats and update them as needed. For each threat, if…
 E	<b>it's no longer a threat</b> (because it's dead, it's left, the conflict has been resolved, etc.), then cross it off the threat tracker;
 E	<b>its threat type no longer rings true</b> (because you got it wrong, or because its nature has changed), then pick a new one;

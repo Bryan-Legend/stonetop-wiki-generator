@@ -1106,7 +1106,14 @@ def extract_page_rich(
             if text.isdigit() and len(text) <= 3 and y > page_h - 40:
                 continue
             near_top = y < 100
-            if is_running_header(_defmt(text), article_title, near_page_top=near_top):
+            # On a book page the title is furniture only up where the running
+            # head sits: lower down it is text that happens to share the name
+            # (the Pale Hunter's stat block). An arcanum's card prints its
+            # name on its face, which the card is built around anyway.
+            if is_running_header(
+                _defmt(text), article_title, near_page_top=near_top,
+                title_anywhere=single_column or y_clip is not None,
+            ):
                 continue
             if is_fully_pairwise_doubled(_defmt(text)):
                 text = undouble_words(_defmt(text))

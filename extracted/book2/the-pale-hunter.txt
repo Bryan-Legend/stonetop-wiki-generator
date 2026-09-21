@@ -52,6 +52,7 @@ PAGE	294
 H2	Dangers
 HR
 ICON	icons/hunter.svg
+H3	The Pale Hunter
 P	<i>Solitary</i>, <i>large</i>, <i>athletic</i>, <i>cunning</i>, <i>hoarder</i>, <i>magical</i>, <i>terrifying</i>, <i>tireless</i>
 P	<b>HP</b> 26; <b>Armor</b> 4 (resilience)
 P	<b>Damage</b> silver spear d12+3 w/advantage (<i>close</i>, <i>reach</i>, <i>thrown</i>, <i>forceful</i>, <i>messy</i>, 2 piercing) or silver antlers d12+5 w/advantage (<i>close</i>, <i>forceful</i>) or grapple d10+3 w/advantage (<i>hand</i>, <i>grabby</i>, <i>forceful</i>)

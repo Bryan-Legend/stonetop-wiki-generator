@@ -83,6 +83,7 @@ PAGE	61
 H2	Dangers
 HR
 ICON	icons/beast.svg
+H3	Crinwin
 P	<i>Horde</i>, <i>small</i>, <i>hoarder</i>, <i>cautious</i>, <i>stealthy</i>
 P	<b>HP</b> 3; <b>Armor</b> 1 (reflexes)
 P	<b>Damage</b> claws, rocks, choking d6 (<i>hand</i>)

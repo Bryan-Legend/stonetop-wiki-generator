@@ -83,7 +83,8 @@ E	the fortress is tainted by <b>Y'aaw'kara</b> (page 421), and any who dwell her
 E	some combination of the above; or
 E	something completely different.
 TH	steading improvement
-C	<b>TRADE WITH</b> Surely it would benefit both communities were we to trade with each other!
+C	<b>TRADE WITH</b> <b>BARRIER PASS</b>
+P	Surely it would benefit both communities were we to trade with each other!
 P	Requires getting them to talk to you in the first place, which requires 1 of these:
 C	Bringing them a valuable artifact of the Rime Lords, as a gift or to trade
 C	A resident in good standing, vouching for you

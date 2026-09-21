@@ -8,6 +8,7 @@ from __future__ import annotations
 import argparse
 import html
 import json
+import re
 import sys
 import time
 from pathlib import Path
@@ -855,6 +856,11 @@ def main(argv: list[str] | None = None) -> None:
             # is missing is a layout the extractor or the renderer got wrong,
             # and it is never silent (generator/coverage.py).
             n_unshown += report_unshown(slug, lines, body)
+            # Formatting sentinels are the renderer's private encoding; one
+            # reaching the HTML shows up as a stray box in the reader's text.
+            leaked = len(re.findall("[\x02-\x07]", body))
+            if leaked:
+                print(f"  WARNING: {slug}: {leaked} raw formatting marker(s) in the HTML")
             # …and every block it is supposed to hold is on it, with nothing
             # that is not listed (blocks.json).
             found = blockdata.found_in_html(body)

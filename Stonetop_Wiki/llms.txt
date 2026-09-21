@@ -113,7 +113,7 @@
 - [Appendix B: Artifact Creation](https://stonetop-wiki.github.io/appendix-b-artifact-creation.html): Use this procedure when you need an artifact, but none of the existing options fit. Or, use it when you have an idea that you want to flesh out. As you work through each step, take notes on your…
 - [Appendix C: Minor Arcana](https://stonetop-wiki.github.io/appendix-c-minor-arcana.html): Index of 64 individual arcana entries.
 - [Appendix D: Major Arcana](https://stonetop-wiki.github.io/appendix-d-major-arcana.html): Index of 18 individual arcana entries.
-- [Bestiary](https://stonetop-wiki.github.io/bestiary.html): Every stat block in both Stonetop books, A to Z — 255 creatures, spirits and people, each linked to its block and the page it lives on.
+- [Bestiary](https://stonetop-wiki.github.io/bestiary.html): Every stat block in both Stonetop books, A to Z — 256 creatures, spirits and people, each linked to its block and the page it lives on.
 
 ## Minor Arcana
 

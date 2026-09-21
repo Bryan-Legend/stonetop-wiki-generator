@@ -64,7 +64,7 @@ P	1-7 The <b>Green Lords</b> (page 210)
 P	8-11 The <b>Fae</b> (page 94)
 P	12 The <b>Things Below</b> (page 412)
 PAGE	189
-H2	Treasures of
+H2	Treasures of the Golden Oak
 HR
 B	A living ◇ leaf from the Golden Oak can be made into a <b>Goldleaf</b> <b>Cloak</b> (page 517).
 B	With proper tools and knowledge, the bark can be harvested to craft weapons or armor (2 armor, <i>warm</i>, <i>cumbersome</i>) that is hard as iron and bane to undead or things from beyond the Last Door.

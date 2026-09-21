@@ -5,7 +5,7 @@ P	A few minutes from Stonetop, near the base of the bluff, in the <b>Great Wood<
 B	The current's constant rush and murmur
 B	Flat plain on either side, gravelly, dotted with saplings, weeds, wildflowers
 B	Vague sense of dread, of being watched
-B	<b>Spring</b>: cold snowmelt swelling
+B	<b>Spring</b>: cold snowmelt swelling the Stream
 B	<b>Summer</b>: dragonflies, lightning bugs
 B	<b>Spring/Autumn</b>: leaves in current
 B	<b>Winter</b>: eerie stillness, icy surface

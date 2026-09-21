@@ -797,8 +797,8 @@
     },
     {
      "kind": "steading-improvement",
-     "name": "Trade With",
-     "id": "trade-with"
+     "name": "Trade with Barrier Pass",
+     "id": "trade-with-barrier-pass"
     },
     {
      "kind": "value-table",
@@ -1098,8 +1098,8 @@
    "crinwin": [
     {
      "kind": "stat-block",
-     "name": "Horde",
-     "id": "horde"
+     "name": "Crinwin",
+     "id": "crinwin"
     },
     {
      "kind": "stat-block",
@@ -3292,6 +3292,12 @@
      "kind": "roll-table",
      "name": "Quarry",
      "id": "quarry"
+    },
+    {
+     "kind": "stat-block",
+     "name": "The Pale Hunter",
+     "id": "the-pale-hunter",
+     "end": "When you deal damage to the Pale Hunter that he might dodge or roll with, roll with disadvantage."
     },
     {
      "kind": "stat-block",

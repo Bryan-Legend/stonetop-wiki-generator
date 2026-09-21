@@ -455,7 +455,21 @@ THREAT_TYPE_ICONS: dict[str, str] = {
 THREAT_MOVES_RE = re.compile(r"^GM moves for\s+(.+?)\s*:\s*$", re.I)
 
 
-def is_running_header(line: str, article_title: str, *, near_page_top: bool = False) -> bool:
+def is_running_header(
+    line: str,
+    article_title: str,
+    *,
+    near_page_top: bool = False,
+    title_anywhere: bool = True,
+) -> bool:
+    """Is ``line`` page furniture — a running head, or the title repeated?
+
+    ``title_anywhere=False`` is for a caller that knows where the line sits:
+    the article's title then counts as a running head only near the top of
+    the page. A creature can share its chapter's name — the Pale Hunter's
+    stat block is headed "The Pale Hunter", a third of the way down p. 294 —
+    and dropping every line equal to the title dropped its name.
+    """
     t = line.strip()
     if not t:
         return True
@@ -474,9 +488,10 @@ def is_running_header(line: str, article_title: str, *, near_page_top: bool = Fa
     at = re.sub(r"[^a-z0-9]+", "", article_title.lower())
     lt = re.sub(r"[^a-z0-9]+", "", t.lower())
     lc = re.sub(r"[^a-z0-9]+", "", cleaned.lower())
-    # Exact / undoubled title as running head (any occurrence — it's never useful body)
+    # Exact / undoubled title as running head
     if at and (lt == at or lc == at or lt == at + at or lc == at + at):
-        return True
+        if title_anywhere or near_page_top or lt == at + at or lc == at + at:
+            return True
     if near_page_top and at and len(lc) >= 6:
         # A truncated title fragment ("The Dread Riv") is a running head.
         if at.startswith(lc):

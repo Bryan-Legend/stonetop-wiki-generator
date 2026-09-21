@@ -1130,7 +1130,12 @@ def render_stat_block(
             tags
             and stats
             and looks_like_tag_line(line)
-            and not low.startswith(("damage", "hp", "instinct", "cost"))
+            # A stat line is never a creature's tags, however its words run
+            # ("Special qualities surrounded by mist; can grab/grapple…" was
+            # taken for the next creature's and dropped — the Pale Hunter's).
+            and not low.startswith(
+                ("damage", "hp", "instinct", "cost", "special qualit", "armor")
+            )
         ):
             # leftover identity of a following creature — stop via caller usually
             other.append(line)
@@ -1995,7 +2000,9 @@ def try_parse_improvement_block(
     # The title may be gathered from several lines: retitled plain, and
     # asked for with the tags of the lines it came from.
     title_tags += "".join(TAG_RE.findall(title))
-    title = titlecase_label(strip_tags(title))
+    # A title set in two bold runs ("<b>TRADE WITH</b> <b>BARRIER PASS</b>")
+    # keeps the second run's sentinels otherwise, and they reach the page.
+    title = titlecase_label(_defmt(strip_tags(title)))
     hid = anchors.add(title or "Steading improvement", caps_label=True)
     parts = [f'<div class="steading-improvement" id="{html.escape(hid)}">']
     if kind or starts_si:
@@ -3058,6 +3065,34 @@ def structure_html(
                     if cur.endswith(":") and cur[0:1].isupper() and len(cur) < 60:
                         break
                     num, body = entries[-1]
+                    # This rule is for a row broken across a column or a page:
+                    # its tail, arriving between two numbered rows. After the
+                    # last row a finished sentence followed by a new one is
+                    # the paragraph under the table (the Pale Hunter's quarry
+                    # table swallowed the two after it), unless it carries on
+                    # mid-sentence.
+                    j = i + 1
+                    while j < n and (lines[j] == M_HR or lines[j].startswith(M_ICON)):
+                        j += 1
+                    nxt_j = _defmt(lines[j]) if j < n else ""
+                    # The table carries on past a column break under its own
+                    # header repeated ("1d12 green lord ruin" over rows 7-12,
+                    # Vor Svetelik): the row before that is not the last.
+                    same_dice = re.match(r"^\s*(\d*d\d+)\b", nxt_j)
+                    last_row = not (
+                        ENTRY_RE.match(nxt_j)
+                        or (
+                            same_dice
+                            and looks_like_roll_header(nxt_j)
+                            and same_dice.group(1).lower() == str(dice).lower()
+                        )
+                    )
+                    if (
+                        last_row
+                        and _defmt(body).rstrip().endswith((".", "!", "?", "”", '"', ")"))
+                        and cur[:1].isupper()
+                    ):
+                        break
                     entries[-1] = (num, _cat(body, cur))
                     i += 1
                     continue

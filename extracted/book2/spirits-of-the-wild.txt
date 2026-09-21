@@ -311,7 +311,7 @@ P	6 <b>A patch of rainbow moss</b> (page 521)
 HR
 ICON	icons/arcana.svg
 H3	Major arcana
-P	These could be associated with the
+P	These could be associated with the spirits of the wild.
 B	The <b>Redwood Effigy</b> (page 570)
 B	The <b>Twisted Spear</b> (page 542)
 B	The <b>Shield of the Wisent Witch</b> (page 554)

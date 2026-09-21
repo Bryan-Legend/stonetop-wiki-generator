@@ -201,7 +201,7 @@ P	6 <b>A vein of milky crystal</b> (page 536)
 HR
 ICON	icons/arcana.svg
 H3	Major arcana
-P	The following are associated with
+P	The following are associated with death and the undying:
 B	The <b>Demonhide Cloak</b> (page 544)
 B	The <b>Hec'tumel Codex</b> (page 556)
 B	The <b>Blackwood Fetishes</b> (page 564)

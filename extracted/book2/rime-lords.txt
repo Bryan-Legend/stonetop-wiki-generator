@@ -344,7 +344,7 @@ P	<b>Damage</b> freezing touch or aura d8 (<i>hand</i> or <i>reach</i>, <i>area<
 P	<b>Special qualities</b> cold-proof; spirit sight; no longer ages; needs little food/drink/ sleep; powerful will
 P	<b>Instinct</b> see below
 P	• Send their mind forth into the spirit world, their bodies in stasis
-P	• Reveal a teaching/technique of the
+P	• Reveal a teaching/technique of the Rime Lords
 P	• 1-4 additional moves (next page)
 P	The Rime Lords taught that the self could be perfected. That the needs and frailties of the body could be purged. That the mind could free itself of the flesh and know the unseen world of spirits and fundamental forces. That the will could conquer all. The goal was nothing short of immortality, the preservation of the perfect self.
 P	For most of the Rime Lords' mortal disciples, these teachings did little more than strengthen the body and clear the mind. But for some—the adepts—these teachings unlocked a fragment of their masters' power.
