@@ -115,6 +115,7 @@ P	3 Storage (vault, warehouse, treasury, granary, etc.)
 P	4 Production (smithy, studio, mine, etc.)
 P	5 Civic life (baths, market, gardens, monument, governance, etc.)
 P	6 Pleasure (gallery, restaurant, theater, arena, etc.)
+PB
 P	<i>, seeking an audience with Mutra the Teeth. I</i> <i>think his compound is one of the Forge Lord ruins in town. I'm picturing something carved</i>
 PAGE	161
 P	1d6 architectural elements
@@ -341,6 +342,7 @@ HR
 ICON	icons/construct.svg
 H3	Bronze colossus
 P	<i>Solitary</i>, <i>huge</i>, <i>construct</i>, <i>plodding</i>, <i>implacable</i>
+PB
 P	<b>HP</b> 31; <b>Armor</b> 4 (metal, lacks organs)
 P	<b>Damage</b> trample d10+5 (<i>hand</i>, <i>close</i>, <i>area</i>, <i>forceful</i>) or crushing hands d10+5 (<i>close</i>, <i>reach</i>, <i>forceful</i>, <i>grabby</i>) or hurled object d10+5 (<i>far</i>, <i>area</i>, <i>forceful</i>, <i>reload</i>)
 P	<b>Special qualities</b> fireproof, too big to hurt with most weapons, vulnerable to lightning <b>Instinct</b> to defend its creator's honor

@@ -105,6 +105,7 @@ P	3 Storage (cellar, vault, library, granary, cemetery, etc.)
 P	4 Production (workshop, kitchen, farm, abattoir, mine, etc.)
 P	5 Fortification (wall, rampart, gatehouse, tower, etc.)
 P	6 Study/practice (shrine, meditation chamber, prayer hall, training hall, etc.)
+PB
 P	<i>The PCs have sent a logging crew up to</i> <i>the Foothills, but there's trouble! I think</i> <i>they stumbled on a Rime Lord ruin and</i> <i>upset whatever dwells there. I roll on the</i> terrain <i>table and get "ravine/gorge/gully/</i> <i>canyon." I get a</i> theme <i>of "mortal servants/</i> <i>disciples, with their sects/schisms/rivalries."</i>
 P	<i>For</i> structure <i>I get "chambers dug into</i> <i>the stone itself," and the purpose is "storage</i> <i>(cellar, vault, library, granary, cemetery,</i> <i>etc.)." It features "elaborate decorations"</i> <i>and is "buried, submerged and/or overgrown, but mostly intact." I ponder and</i> <i>come up with this:</i>
 HR
@@ -118,6 +119,7 @@ P	3 Walls/floors/ceilings of dark ice, perhaps in impossible shapes
 P	4 Statues formed of ice/snow/sand/ gravel, held in stasis
 P	5 Large, empty, spacious places
 P	6 Sound and light behaving strangely (endlessly echoing/reflecting, emanating from nowhere, strangely muffled/dimmed, changing/warping, etc.)
+PB
 P	Most Maker-ruins are sized for giants—people two or even three times as tall as humans—but often with smaller-scale rooms, passages, and so forth for their servants.
 P	1d6 condition
 HR
@@ -138,7 +140,9 @@ P	1-3 Fragment (chip/shard/chunk/etc.), from something larger
 P	4-5 Enigmatic shape (cube/sphere/spiral/etc.), its purpose unclear
 P	6-7 Mundane object (tool/utensil/ container/etc.), though perhaps not easily recognized as such
 P	8-9 Art or decoration (jewel/statue/ tiles/torc/amulet/ring/etc.)
-P	10-12 Construction (door/stairway/arch/ bricks/walls/etc.), likely <i>immobile</i> Consider rolling 1d6 to inform size/scale.
+P	10-12 Construction (door/stairway/arch/ bricks/walls/etc.), likely <i>immobile</i>
+PB
+P	Consider rolling 1d6 to inform size/scale.
 P	1d12 characteristic
 HR
 P	1 Breathtakingly beautiful
@@ -217,6 +221,7 @@ P	5-6 Labor/mundane tasks/convenience
 P	7-8 Curiosity/instruction/assistance/ practice
 P	9-10 Something obscure, or very specific
 P	11-12 Roll 1d10 twice, combine
+PB
 P	<b>1d12</b> size
 HR
 P	1 Cat-sized or smaller (<i>tiny</i>)
@@ -264,6 +269,7 @@ HR
 ICON	icons/primordial.svg
 H3	Gingkara
 P	<i>Horde</i>, <i>spirit</i>, <i>construct</i>, <i>organized</i>
+PB
 P	<b>HP</b> 10; <b>Armor</b> 1 (lacks organs) or 4 vs.
 P	stabbing (just bones)
 P	<b>Damage</b> bony fingers d4 (<i>hand</i>, <i>grabby</i>)
@@ -361,6 +367,7 @@ P	5-6 To drive their students towards perfection
 P	7-8 To prove their superiority
 P	9-10 To tame chaos
 P	11-12 To test themselves or their students
+PB
 P	<b>1d12</b> move
 HR
 P	1 As a spirit: animate a large mass of ice (<i>large</i>, +8 HP, +2 armor, +3 damage, <i>forceful</i>)

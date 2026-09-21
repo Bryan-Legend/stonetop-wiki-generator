@@ -969,6 +969,11 @@ def extract_page_rich(
                     "y": y_top,
                     "x": first_x,
                     "x1": max(g["x1"] for g in text_spans),
+                    # A roll table's row: its number a span of its own ("12",
+                    # "10-11"), set at a tab stop apart from the words, where
+                    # prose that wraps onto a line opening with a number keeps
+                    # the number in the words' span ("3 feet long, frayed").
+                    "row_num": bool(ROW_NUM_RE.match(text_spans[0]["text"].strip())),
                     "text": text,
                     "font": dom_font,
                     "size": dom_size,
@@ -1006,6 +1011,7 @@ def extract_page_rich(
         # to it, a paragraph's last line stops short of it.
         col_x1 = max((r.get("x1") or 0.0 for r in recs if r.get("text")), default=0.0)
         prev_x1: float | None = None
+        row_at: int | None = None  # where the last table row began in `out`
         head_size: float | None = None  # type size of the last heading emitted
         head_x: float | None = None  # its left edge (continuations hang left)
         table = state.get("table") if not in_box else None
@@ -1123,6 +1129,10 @@ def extract_page_rich(
             # De-tokenized copy for all content-based structural decisions;
             # `text` keeps its inline bold/italic sentinels for output.
             dtext = _defmt(text)
+            # A roll table's dice header opens a table, however it is set
+            # (plain, or in the display face the branches below take first).
+            if DICE_HEAD_RE.match(dtext):
+                state["table_open"] = True
 
             # Tail of the previously emitted line (persists across columns)
             prev_tail = _defmt(state.get("last_line") or "")
@@ -1492,14 +1502,60 @@ def extract_page_rich(
             # row ran (Primordial Powers' powers table: "12 Something special,
             # unique, thematic" fills its line, and its number sits at the
             # column edge the note under it starts at).
-            after_row = bool(ROW_START_RE.match(prev_tail))
-            if (
+            # …within the few lines a row wraps to; a flag that outlived its
+            # row would lower the bar for every paragraph after the table.
+            after_row = row_at is not None and len(out) - row_at <= 3
+            # A table's rows hang: the number at the column edge, the words
+            # indented past it, and a row that wraps keeps the indent. So a
+            # line back at the column edge that is not a new row has left the
+            # table — even across a page, where there is no space to measure
+            # (The Things Below's severity table: row 12 ends p. 422, "The
+            # dangers from a lower level…" opens p. 423). Kept in `state`,
+            # which outlives the column and the page.
+            # A numbered line is a table's row only inside a table: after the
+            # dice header that opened one (above), until the table ends.
+            # Prose can open a line with a number in a span of its own too —
+            # a bold roll result, "**1-3** signs of their presence…".
+            is_row = bool(rec.get("row_num")) and bool(state.get("table_open"))
+            row = state.get("row")
+            rel_x = (rec.get("x") or 0.0) - col_x0
+            left_table = False
+            if row and row.get("open") and not is_row:
+                if rel_x > row["rel"] + PARA_DEDENT:
+                    row["hang"] = True  # a wrapped line of the row
+                elif row.get("hang") and rel_x <= row["rel"] + 2.0:
+                    left_table = True
+                    row["open"] = False
+                    state["table_open"] = False
+            if left_table or (
                 PARA_GAP_MIN * rec["size"] < gap < PARA_GAP_MAX
                 and line_above_x1 is not None
                 and (line_above_x1 < col_x1 - PARA_SHORT_BY or after_row)
                 and not prev_tail.rstrip().endswith((",", ";"))
             ):
-                text = PARA_BREAK + text
+                # A break that ends a table is marked as such: the words
+                # after a row are joined onto it by the renderer unless the
+                # corpus says the row ended (M_PB), where a break between two
+                # paragraphs of prose needs no more than not being joined.
+                # (never before a row: the next row is the table carrying on)
+                ends_table = (left_table or after_row) and not is_row
+                text = (PARA_ROW_BREAK if ends_table else PARA_BREAK) + text
+                row_at = None
+                if state.get("row"):
+                    state["row"]["open"] = False
+                # (the space above a table's own dice header is not it ending)
+                if not is_row and not DICE_HEAD_RE.match(dtext):
+                    state["table_open"] = False
+            if is_row:
+                row_at = len(out)
+                prev_row = state.get("row") or {}
+                state["row"] = {
+                    "rel": rel_x,
+                    "open": True,
+                    # a table's rows all hang alike: what the last row's wrap
+                    # showed holds for this one, which may not wrap at all
+                    "hang": bool(prev_row.get("hang")) and abs(prev_row.get("rel", 0) - rel_x) <= 2.0,
+                }
             out.append(text)
 
         # A table still open at column end may continue in the next column
@@ -1743,13 +1799,24 @@ PARA_GAP_MAX = 80.0
 # Above this, a line sits where the running header does, not the text.
 RUNNING_HEAD_Y = 62.0
 # A roll-table row as the extractor emits it: "12 …", "3-4 …", "1–2 …".
-ROW_START_RE = re.compile(r"^\s*\d{1,2}(?:\s*[-\u2013]\s*\d{1,2})?\s+\S")
+# A row number as its own span ("12", "3-4", "11–12").
+# The dice header that opens a roll table ("1d12 theme", "1d6 site").
+DICE_HEAD_RE = re.compile(r"^\s*\d*d\d+\s+\S.{0,50}$")
+ROW_NUM_RE = re.compile(r"^\d{1,2}(?:\s*[-\u2013]\s*\d{1,2})?$")
 # ...and the line above stops at least this far short of the column's
 # right margin — about four characters of body type.
 PARA_SHORT_BY = 20.0
+# How far a table row's wrapped words sit in from its number.
+PARA_DEDENT = 8.0
 # Marks a line that starts a paragraph, between emit_region and
 # merge_wrapped_lines only; it never reaches the corpus.
 PARA_BREAK = "\x0b"
+# ...and one that ends a table: written to the corpus as M_PB.
+PARA_ROW_BREAK = "\x0c"
+
+
+# Marker lines nothing is ever joined onto.
+_NEVER_CONTINUED = (M_H2, M_H3, M_H4, M_HR, M_ICON, M_TH, M_VT, M_BOX, M_ENDBOX, M_BAND)
 
 
 def merge_wrapped_lines(
@@ -1765,12 +1832,19 @@ def merge_wrapped_lines(
         return ([], []) if pages is not None else []
     out: list[str] = []
     out_pages: list[int] = []
-    buf = lines[0].lstrip(PARA_BREAK)
+    buf = lines[0].lstrip(PARA_BREAK + PARA_ROW_BREAK)
     buf_page = pages[0] if pages is not None else 0
     for i, nxt in enumerate(lines[1:], 1):
-        new_para = nxt.startswith(PARA_BREAK)
-        nxt = nxt.lstrip(PARA_BREAK)
-        if new_para and should_join(buf, nxt):
+        row_break = nxt.startswith(PARA_ROW_BREAK)
+        new_para = row_break or nxt.startswith(PARA_BREAK)
+        nxt = nxt.lstrip(PARA_BREAK + PARA_ROW_BREAK)
+        # (not after a heading, a rule or an icon: nothing is ever joined to
+        # one, and a break there would read as ending the block it opens —
+        # "H3 Caralandrao" then its tags. A list item can take a line on, so
+        # a break after one still counts.)
+        if new_para and not buf.startswith(_NEVER_CONTINUED) and (
+            should_join(buf, nxt) or row_break
+        ):
             # The words would have joined these two; the page says no. Keep
             # them apart, and say so in the corpus (M_PB), or the renderer —
             # which glues a stray line onto the table row above it as a

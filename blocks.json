@@ -1082,17 +1082,17 @@
     {
      "kind": "roll-table",
      "name": "Size",
-     "id": ""
+     "id": "size"
     },
     {
      "kind": "roll-table",
      "name": "Trait",
-     "id": ""
+     "id": "trait"
     },
     {
      "kind": "roll-table",
      "name": "Additional Move",
-     "id": ""
+     "id": "additional-move"
     }
    ],
    "crinwin": [
@@ -3664,7 +3664,7 @@
     {
      "kind": "roll-table",
      "name": "Move",
-     "id": ""
+     "id": "move"
     },
     {
      "kind": "stat-block",
@@ -5002,11 +5002,6 @@
     },
     {
      "kind": "roll-table",
-     "name": "",
-     "id": ""
-    },
-    {
-     "kind": "roll-table",
      "name": "Form-Factor",
      "id": "form-factor"
     },
@@ -5031,11 +5026,6 @@
      "kind": "roll-table",
      "name": "What They Want",
      "id": "what-they-want"
-    },
-    {
-     "kind": "roll-table",
-     "name": "",
-     "id": ""
     },
     {
      "kind": "hazard-block",
@@ -5296,7 +5286,7 @@
     {
      "kind": "roll-table",
      "name": "Special Trait",
-     "id": ""
+     "id": "special-trait"
     },
     {
      "kind": "stat-block",

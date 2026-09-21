@@ -241,6 +241,7 @@ P	9 A silver tongue, or regal presence, or both
 P	10 Strength-at-arms worthy of the songs
 P	11 An utter lack of scruples
 P	12 The well-earned loyalty of their followers
+PB
 P	<b>1d12</b> flaw
 HR
 P	1 Debts owed

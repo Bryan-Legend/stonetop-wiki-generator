@@ -110,7 +110,9 @@ P	3-4 Open spaces: shafts, atriums, vaulted ceilings, overlooks, windows, skylig
 P	5-6 Lines of power: <b>aetherium inlays</b> (page 341), runes, conduits, nodes, currents
 P	7-8 Stylized mosaics/statuary: geometric patterns, fractals, celestial bodies, angelic beings, ships
 P	9-10 Brass fixtures, pipes and pumps, water and steam, gears and flywheels
-P	11-12 Verticality: standing stones, menhirs, obelisks, towers, spires, masts Most Maker-ruins are sized for giants—people two or even three times as tall as humans—but often with smaller-scale rooms, passages, and so forth for their servants.
+P	11-12 Verticality: standing stones, menhirs, obelisks, towers, spires, masts
+PB
+P	Most Maker-ruins are sized for giants—people two or even three times as tall as humans—but often with smaller-scale rooms, passages, and so forth for their servants.
 P	1d12 condition
 HR
 P	1-4 Shattered and laid waste by time, disaster, or vandalism; mostly buried, overgrown, collapsed; its purpose unrecognizable
@@ -142,6 +144,7 @@ P	10 Clothing/armor (robe/tunic/apron/ cuirass/brigandine/etc.)
 P	11 Weapon (spear/arrow/sword/maul/ shield/trident/wand/etc.)
 P	12 Construction (archway/truss/beam/ door/plating/pipes/etc.), likely
 P	<i>immobile</i>
+PB
 P	Consider rolling 1d6 to inform size/scale.
 P	1d12 characteristic
 HR
@@ -310,6 +313,7 @@ P	12 24 to 28 <i>huge</i>; Armor 3;
 P	Damage d10+5 (<i>hand</i>,
 P	<i>close</i>, <i>reach</i>, <i>area</i>, <i>forceful</i>)
 PAGE	409
+PB
 P	<b>Attacking the matrix:</b> A matrix itself has only 3 HP. If reduced to 0 HP, the spirit within escapes, dealing the vortex's current damage (+<i>area</i>, one range tag greater than normal).
 P	When <b><i>a PC tries to strike the matrix inside</i></b> <b><i>an active vortex</i></b>, the vortex's Armor applies. Also, tell them the requirements and/ or consequences. such as:
 B	You'll have disadvantage to Clash/ Let Fly/deal damage

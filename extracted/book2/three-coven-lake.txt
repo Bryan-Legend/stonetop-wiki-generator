@@ -117,6 +117,7 @@ P	10 Long stretches of narrow stone walkway, mostly buried by silt and shallow w
 P	11 Rocky island far from shore, like a great hand holding a broken stone platter. Ancient (?) skulls are heaped on every surface.
 P	12 Makerglass tower, largely intact but fallen sideways into the lake.
 P	Full of wonders, algae, eels, stale air pockets, Stone Lord ghosts.
+PB
 P	The above are just examples. See page 384 if you need to create more or different sites.
 P	Most sites were <b>reclaimed</b> (page 36) by the Barrow Builders at some point.
 P	Most sites around Three Coven Lake were long ago stripped of anything valuable. If a site contains some sort of treasure, there must be a reason. It could be…
@@ -160,6 +161,7 @@ P	2 <b>Witches or their ilk</b> (page 445)
 P	3 The <b>restless dead</b> (page 445)
 P	4-5 <b>Local wildlife</b> (page 445)
 P	6 <b>Other entities</b> (page 445)
+PB
 P	Pick or roll for their disposition. Let the result suggest the specifics of the encounter.
 P	1d6 disposition
 HR

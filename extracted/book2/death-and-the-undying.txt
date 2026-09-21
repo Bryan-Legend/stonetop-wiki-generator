@@ -230,6 +230,7 @@ P	7-9 A spectral form, horrible, clearly dead*
 P	10 A body made of soil/straw/rags/etc.
 P	11 A solid body, horrific and terrifying
 P	12 A solid body, seemingly alive but for a few telltale signs
+PB
 P	* Harmed only by silver or salt, or some other thematically appropriate substances
 P	1d12 ability
 HR
@@ -269,7 +270,9 @@ HR
 P	1-2 Can't leave its immediate presence
 P	3-6 Must stay on the premises/site
 P	7-10 Can roam a few miles; returns daily
-P	11-12 Can wander far and wide, but must return periodically If a ghost's manifest form is reduced to
+P	11-12 Can wander far and wide, but must return periodically
+PB
+P	If a ghost's manifest form is reduced to
 P	0 HP, they dissipate and return to their tether. They usually won't manifest before the next sunset; if they do, their max HP are halved.
 P	If a tether is destroyed, then the ghost might… (pick 1)
 E	fade away, utterly destroyed;

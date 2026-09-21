@@ -228,6 +228,7 @@ P	6 A tomb/barrow/memorial, left by the locals or their ancestors
 P	7 An old dwelling/gathering place of the locals or their ancestors
 P	8 A ruin of <b>the Makers</b> (page 264), or a lingering sign of their presence
 P	9-12 Deep water, the depths obscure, conceals the site (roll 1d8)
+PB
 P	Once the site is established, pick or roll its themes (page 416) to identify the nature of the Thing corrupting the place (or, if you know the Thing is one already established, apply its themes to the site).
 P	Pick or roll the cause and severity of the corruption. Populate the place with <b>artifacts</b> (page 424) and <b>dangers</b> (page 428) associated with the Things Below, plus discoveries and dangers appropriate to the surrounding area.
 P	1d12 cause
@@ -238,6 +239,7 @@ P	3-5 An artifact/a sorcerer's bones/ remains of a corrupted beast/etc., left to
 P	6-8 An offering of flesh/blood/trauma, intentional or not*
 P	9-10 A summoning/an invocation/ a misguided invitation*
 P	11-12 A seal or binding that kept prior corruption in check, now weakened* (roll d10 again for the original corruption)
+PB
 P	* Decide whether this was intentional, or have someone roll the Die of Fate (1-2:
 P	intentional; 3-4 misguided; 5-6 accidental/ incidental). If it was intentional or misguided, who did it and why? If accidental, what happened?
 P	1d12 severity
@@ -246,8 +248,10 @@ P	1-3 A shunned place: full of <b>disquiet</b> <b>and unease</b> (page 428), not
 P	4-6 A hungry place: full of <b>whispers</b> <b>and visions</b> (page 428), calling the unwholesome, trapping and consuming the unwary
 P	7-9 A poisonous place: full of <b>unnatural</b> <b>phenomena</b> (page 429), corrupting those who visit
 P	10-11 A spawning place: where <b>emanations</b> (page 436) congeal and manifest
-P	12 A wound in the world: spreading rot, bleeding horror, getting worse The dangers from a lower level of severity can be found in higher levels, too. A hungry place is full of whispers and visions but perhaps disquiet and unease as well.
+P	12 A wound in the world: spreading rot, bleeding horror, getting worse
 PAGE	423
+PB
+P	The dangers from a lower level of severity can be found in higher levels, too. A hungry place is full of whispers and visions but perhaps disquiet and unease as well.
 P	If a corrupted site will be a source of ongoing trouble, write it up as a <b>threat</b> (a <i>MacGuffin</i>), with an impending doom and grim portents that reflect it getting worse. Look to the list of causes (previous page) for ideas about what could make a corrupted site worse, and what sort of new dangers it might start to manifest.
 H3	Cleansing corrupted sites
 P	The Things Below are loathe to relinquish what power they have in the world, but they can be bested with bravery, cunning, and knowledge. Some PCs (like the Blessed) will have powers or arcana that let them bind or contain the evil in a place. Absent such power, the PCs will need to Make a Plan. Consider such requirements as:
@@ -494,6 +498,7 @@ P	9 Transformation/mutation/growth
 P	10 Uncanny insight/inexplicable knowledge
 P	11 Unnatural resilience (Armor 4 except vs. bronze, +4 HP)
 P	12 Vicious/terrible/mighty physical attacks
+PB
 P	<b>1d12</b> mark
 HR
 P	1 Contagion/pollution/transmission of their corruption
@@ -627,8 +632,10 @@ P	3-4 Burst forth from a <b>corrupted being</b> (page 432) that absorbed too muc
 P	5-6 Called forth, via a terrible ritual
 P	7-8 Given shape by worship/adoration/ feeding
 P	9-10 Let into the world by accident/ hubris, a failed attempt to bind/ cleanse/wield the power of the Things Below
-P	11-12 Spawned spontaneously from a truly <b>corrupted site</b> (page 422) Imagine the emanation that forms as a result. It will share at least some of the themes and aspects of the Thing from which it spawned, and might share its instinct. An emanation has its own memory, arguably its own personality. It might communicate with its progenitor, or do its bidding, but an emanation is its own thing.
+P	11-12 Spawned spontaneously from a truly <b>corrupted site</b> (page 422)
 PAGE	437
+PB
+P	Imagine the emanation that forms as a result. It will share at least some of the themes and aspects of the Thing from which it spawned, and might share its instinct. An emanation has its own memory, arguably its own personality. It might communicate with its progenitor, or do its bidding, but an emanation is its own thing.
 HR
 ICON	icons/aberration.svg
 H3	Hand of Daagon

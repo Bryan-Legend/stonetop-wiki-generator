@@ -112,6 +112,7 @@ P	1-2 Shattered and laid waste by time, war, or vandalism; mostly buried, submer
 P	3-4 Crumbling, largely buried, submerged, and/or overgrown
 P	5 Buried, submerged, and/or overgrown, but mostly intact
 P	6 Fully visible and strangely well-preserved
+PB
 P	See <b>Vor Svetelik</b> (the ruined city of the Green Lords, page 468) for additional examples.
 P	Many Green Lord ruins feature (or are preserved by) <b>Fae domains</b> (page 102).
 PAGE	215
@@ -230,6 +231,7 @@ P	8 Attack at range/over an area
 P	9 Prowess/mobility/speed
 P	10 Strength/toughness/durability
 P	11-12 Roll 1d10 twice
+PB
 P	<b>1d12</b> size
 HR
 P	1-2 Cat-sized or smaller (<i>tiny</i>)
@@ -268,6 +270,7 @@ P	7 Releases spores/pollen/etc. that irritate, obscure, agitate
 P	8 Draws attention (via noise, phosphorescence, scent, etc.)
 P	9-10 Roll 1d10 twice and combine
 P	11-12 Roll again with 1d10 but make it weird—elemental, psychic, spiritual, extremely specific, etc.
+PB
 P	See <b>Vor Svetelik</b> (ruined city of the Green Lords, page 468) for specific examples.
 PAGE	220
 HR

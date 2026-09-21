@@ -209,6 +209,7 @@ P	3 Floats in a pocket of air, loosely covered by rock/soil
 P	4 Makes skin tingle, hair stand up
 P	5 Nearby soil/stone is blue-white, plants/lichen glow
 P	6 Roll twice
+PB
 P	Shards of the Storm Orb are unstable aetherium (<i>magical</i>, <i>dangerous</i>). If damaged or overloaded, they might explode or violently discharge energy. But they are also etched with arcane runes. Find a big enough piece, or assemble enough smaller ones, and you might unlock some of the Tempest Lords' secrets.
 H3	Vitrified remains
 P	Stormcatcher's last spell turned anyone it touched into lumps of jagged glass. It was directed at <b>Og'molok</b> (page 349) and the <b>skittering horrors</b> (page 348), but many of the attacking cultists were caught by the spell as well. So were some of the tower's residents.
@@ -328,6 +329,7 @@ P	9 Extensive and/or notably intact <b>aetherium inlays</b> (page 341); perhaps 
 P	10 A wonder (see below)
 P	11 Roll 1d10 twice
 P	12 Roll 1d10 three times
+PB
 P	Consider rolling 1d6 for the scope or condition of any room/passage/feature.
 P	Fill it with <b>discoveries</b> (page 344) and/or <b>dangers</b> (page 346) as you see fit.
 H3	Wonders

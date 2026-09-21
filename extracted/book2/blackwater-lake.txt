@@ -82,6 +82,7 @@ P	10 Small hill of stacked stones; one slab hides a door. Inside, an icy crystal
 P	11 Cavernous, buried room, tilted but mostly whole. Full of chisels and <b>warded pavestones</b> (page 271):
 P	mostly smashed, a few in progress, some buried but intact.
 P	12 Onion-shaped dome of stone, ~30' across. Hollow, an opening facing down, water pooling impossibly on the ceiling inside.
+PB
 P	The above are just examples. To create more Stone Lord ruins, see page 386 but roll for condition with disadvantage.
 P	Those that are at all intact will be tilted and askew, and are likely to have been <b>reclaimed</b> (page 36) by the Barrow Builders at some point.
 P	To create more barrows, see page 39.
@@ -229,6 +230,7 @@ P	HP 3; Damage d6)
 P	4-9 A few, like 2-5 (<i>group</i>; HP 6;
 P	Damage d8)
 P	10-12 Just one (<i>solitary</i>; HP 12; damage d10)
+PB
 P	<b>1d12</b> size
 HR
 P	1-3 Child-sized (<i>small</i>; reduce damage die one size, <i>hand</i>)

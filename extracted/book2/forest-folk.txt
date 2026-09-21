@@ -74,6 +74,7 @@ P	3 … performed rituals/communed with spirits/worked magic
 P	4 … dwelt/worked/made things/ stored things
 P	5 … gathered/congregated/held festivals
 P	6 … left signs of what happened to them
+PB
 P	Pick or roll for an appropriate <b>terrain</b> (page 202). Populate it with signs of their presence (below), <b>artifacts</b> (page 154), and <b>dangers</b> (page 155) of the Forest Folk or the <b>Great Wood</b> (page 200).
 P	Consider combining with another <b>point of</b> <b>interest</b> (page 203) from the Great Wood.
 P	Signs of the Forest Folk's presence include:

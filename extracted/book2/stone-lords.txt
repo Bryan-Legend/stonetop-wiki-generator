@@ -140,7 +140,9 @@ P	3-4 Mundane object (tool/utensil/container/lantern/etc.), though perhaps not e
 P	5-6 Object of war (weapon/armor/ shield/helm/etc.)
 P	7-8 Art or decoration (jewel/statue/ tiles/torc/amulet/ring/etc.)
 P	9-10 Musical instrument (bell/chime/ flute/horn/etc.)
-P	11-12 Construction (door/stairway/arch/ bricks/walls/etc.), likely <i>immobile</i> Consider rolling 1d6 to inform size/scale.
+P	11-12 Construction (door/stairway/arch/ bricks/walls/etc.), likely <i>immobile</i>
+PB
+P	Consider rolling 1d6 to inform size/scale.
 P	1d12 characteristic
 HR
 P	1-2 Breathtakingly beautiful
@@ -164,6 +166,7 @@ HR
 ICON	icons/treasure.svg
 H3	A chalky potion
 P	<i>magical</i>, <i>fragile</i>, <i>slow</i>
+PB
 P	1d4 glass vials containing thick, gritty, whitish fluid. The stopper bears a mark of transformation, flesh, and stone.
 P	When you <b><i>drink the whole potion while</i></b> <b><i>touching stone</i></b>, you transform (over a matter of minutes) into a mass of stone, similar to that which you touch. You retain awareness of your surroundings, blind but with excellent hearing.
 PAGE	389
@@ -256,6 +259,7 @@ P	7 Lures/entices/deceives
 P	8 Draws attention
 P	9-10 Roll 1d8 twice
 P	11-12 Roll 1d10, but make it grandiose—it doesn't just capture, it petrifies; it doesn't just grind, it reduces something to dust, etc.
+PB
 P	Some examples:
 B	<b>Peacebond</b> (page 519) runes, worked into roads, halls, public places
 B	A glossy cube of blue-black stone that steals memories from those who touch it, playing them back for only the strongest of wills
@@ -330,6 +334,7 @@ HR
 ICON	icons/construct.svg
 H3	Lithic servant
 P	<i>Horde</i>, <i>construct</i>, <i>implacable</i>
+PB
 P	<b>HP</b> 11; <b>Armor</b> 3 (made of stone)
 P	<b>Damage</b> stone fists d6 (<i>hand</i>, <i>grabby</i>)
 P	<b>Special qualities</b> externally powered; bug-like intellect; blind; tremorsense <b>Instinct</b> to follow its last orders

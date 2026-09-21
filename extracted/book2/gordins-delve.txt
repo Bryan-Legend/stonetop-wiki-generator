@@ -295,6 +295,7 @@ P	2 A shady, strange, or desperate character, out of place
 P	3-4 Mining crew, or part of one
 P	5 Someone alone, taking something to/from a mine
 P	6 Prospector, or (1 in 6 chance) some <b>Ustrina</b> (page 464)
+PB
 P	For disposition, choose or have someone roll:
 P	1d6 disposition
 HR

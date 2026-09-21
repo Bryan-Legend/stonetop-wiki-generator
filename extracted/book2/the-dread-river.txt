@@ -89,6 +89,7 @@ P	9 Slope/hill
 P	10 Bluff/promontory/rocky outcrop
 P	11 Caves
 P	12 Island
+PB
 P	If you like, roll 1d6 for size/scope/intensity.
 PAGE	89
 H2	Discoveries
@@ -169,6 +170,7 @@ P	3 Those around you find themselves on edge, their emotions running raw, and ar
 P	4 You grow thin, haggard, and unwell. Mark a debility each week, which you cannot clear. Should you die, you become a <b>revenant</b> (<i>Book</i> <i>I</i>, page 150), tethered to the item, obsessed with either protecting it or returning it to where it was found (your choice).
 P	5 Wherever you go, plants wither, food spoils, crops fail, beasts grow barren and sickly.
 P	6 Those who die in your presence are unable to pass through the Last Door. They linger as <b>revenants</b> (page 80) or <b>ghosts</b> (page 76).
+PB
 P	Tailor a curse's specifics to the item, to where and with what it was it found. Incorporate the themes and aspects of any relevant entities. And feel free to create entirely new curses, riffing on the options above.
 P	How does one free oneself of a curse?
 P	Possibilities include…

@@ -170,6 +170,7 @@ P	5-6 Striving/making/toiling/growing
 P	7-8 Collecting/hoarding/obsessing
 P	9-10 Preening/politicking/gossiping
 P	11-12 Guarding/watching/sulking/hiding
+PB
 P	<b>1d12</b> size
 HR
 P	1 <i>tiny</i> (bug- or bird-sized)
@@ -191,7 +192,9 @@ P	8 Leafy/flowering/winding/delicate
 P	9 Ethereal/fluid/frosty/graceful/aloof
 P	10 Earthy/rocky/craggy/dirty/stolid
 P	11 Glittery/starry/luminous/fiery
-P	12 Puppet-like/artificial/made/hollow Consider rolling 1d6 to see how person-like and humanoid they are.
+P	12 Puppet-like/artificial/made/hollow
+PB
+P	Consider rolling 1d6 to see how person-like and humanoid they are.
 P	Next, pick or roll for 1-3 talents.
 P	1d12 talent
 HR
@@ -312,6 +315,7 @@ P	3 "Civilized" things, out of place: a feast hall in a mire, a house carved fro
 P	4 A real place, plucked from the world and the passing of time
 P	5 A vast and shifting place, easy to get lost in, always something new
 P	6 Decay/squalor/disorder, perhaps hidden by glamour or illusion
+PB
 P	Populate the domain with Fae and other inhabitants that make sense. Also fill it with <b>artifacts</b> (page 108), and any domain <b>hazards</b> (page 110) that make sense.
 P	<b>Time dilation</b> (page 105) is a particular concern to mortal visitors!
 P	<i>The theme and elements prompt me to rethink the anchor. The domain is barely maintained by</i> <i>threadbare glamours of the Green Lord's half-remembered deeds. An eternal paradise, indeed.</i>
@@ -528,6 +532,7 @@ HR
 ICON	icons/fae.svg
 H3	Auntie Sallow
 P	<i>Solitary</i>, <i>large</i>, <i>fae</i>, <i>magical</i>, <i>stealthy</i>, <i>corrupted</i>, <i>terrifying</i>
+PB
 P	<b>HP</b> 16; <b>Armor</b> 4 (resilience), 1 vs. iron (bark)
 P	<b>Damage</b> choking fingers/tendrils d10+1 (<i>hand</i>, <i>close</i>, <i>reach</i>, <i>grabby</i>)
 P	<b>Special qualities Fae nature</b> (page 98); takes +1d4 damage from bronze; leaches color from surroundings; knows whatever her moths know

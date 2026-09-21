@@ -912,6 +912,72 @@ def _roll_label(label: str) -> str:
     return titlecase_name(label) if tl == label else tl
 
 
+# A sentence finished, whatever closes it: "…etc.)", "…here.”"
+_ENDS_SENTENCE_RE = re.compile(r"[.!?][\)\]\"'”’]*\s*$")
+
+
+def _row_low(text: str) -> int:
+    """The first number a row line opens with ("3-4 …" → 3)."""
+    m = re.match(r"\s*(\d+)", text)
+    return int(m.group(1)) if m else 0
+
+
+def _row_high(num: str) -> int:
+    """The last number of a row's range ("3-4" → 4)."""
+    nums = re.findall(r"\d+", num)
+    return int(nums[-1]) if nums else 0
+
+
+def _pv_row(body, pv):
+    """A row's text with its provenance — a nested row's parts each with theirs."""
+    if isinstance(body, tuple):
+        text, sub = body
+        return (pv(text), [(n, pv(b)) for n, b in sub])
+    return pv(body)
+
+
+def _nest_subtables(entries: list) -> list:
+    """Fold a row's own table back under it.
+
+    The book sets some rows with a table of their own, indented beneath:
+    Ruined Tower's treasure, "2 Some… (roll 1d6 or pick)", then "1 …dark
+    ice" to "5-6 …aetherium", then the main table carries on at "3-4". The
+    corpus has them all as rows, so the page numbered them 1, 2, 1, 2, 3, 4,
+    5-6, 3-4, 5, 6. The shape is plain once read: the numbering starts over at
+    1 under a row that asks for a roll, and each of those rows carries the
+    row's words on with "…"; the first row that does neither is the main
+    table again.
+    """
+    out: list = []
+    i = 0
+    while i < len(entries):
+        num, body = entries[i]
+        plain = _defmt(body) if isinstance(body, str) else ""
+        if (
+            isinstance(body, str)
+            and re.search(r"\broll\s+\d*d\d+", plain, re.I)
+            and i + 1 < len(entries)
+            and _row_low(entries[i + 1][0]) == 1
+            and _defmt(entries[i + 1][1]).lstrip().startswith(("…", "..."))
+        ):
+            sub = []
+            j = i + 1
+            while (
+                j < len(entries)
+                and isinstance(entries[j][1], str)
+                and _defmt(entries[j][1]).lstrip().startswith(("…", "..."))
+            ):
+                sub.append(entries[j])
+                j += 1
+            out.append((num, (body, sub)))
+            i = j
+            continue
+        out.append((num, body))
+        i += 1
+    return out
+
+
+
 def render_roll_table(
     dice: str,
     label: str,
@@ -925,9 +991,21 @@ def render_roll_table(
     lkw = link_kw or {}
     rows = []
     for num, body in entries:
+        sub = ""
+        if isinstance(body, tuple):  # a row with a table of its own
+            body, sub_entries = body
+            sub = (
+                '<table class="roll-subtable"><tbody>'
+                + "".join(
+                    f'<tr><th scope="row">{html.escape(sn)}</th>'
+                    f"<td>{linkify_pages(sb, lookup, current_slug, section_index, **lkw)}</td></tr>"
+                    for sn, sb in sub_entries
+                )
+                + "</tbody></table>"
+            )
         rows.append(
             f"<tr><th scope=\"row\">{html.escape(num)}</th>"
-            f"<td>{linkify_pages(body, lookup, current_slug, section_index, **lkw)}</td></tr>"
+            f"<td>{linkify_pages(body, lookup, current_slug, section_index, **lkw)}{sub}</td></tr>"
         )
     id_attr = f' id="{html.escape(anchor_id)}"' if anchor_id else ""
     return (
@@ -3022,7 +3100,29 @@ def structure_html(
                             break
                         nxt = _plain(lines[i])
                         if ENTRY_RE.match(nxt):
+                            # A number that does not move the table on is the
+                            # row's own words carrying on, not a new row: Rime
+                            # Lords' "6 Create a minor tulpa (tiny, 8 HP," /
+                            # "1 armor, 1d4 damage)" — the row is mid-bracket,
+                            # or stopped on a comma, and 1 does not follow 6.
+                            if not (
+                                (body.count("(") > body.count(")")
+                                 or body.rstrip().endswith(","))
+                                and _row_low(nxt) <= _row_high(num)
+                            ):
+                                break
+                        # A footnote under the table ("* Decide whether this
+                        # was intentional…", The Things Below's cause) is
+                        # never a row's continuation.
+                        elif nxt.lstrip().startswith("*"):
                             break
+                        # A row still inside a bracket carries on, whatever the
+                        # next line looks like (Ustrina: "8 A chest or similar
+                        # amount of... (roll" / "1d6 or pick)" is no dice header).
+                        if body.count("(") > body.count(")") and not ENTRY_RE.match(nxt):
+                            body = _cat(body, nxt)
+                            i += 1
+                            continue
                         # Next dice table (e.g. "1d6 signs" after size row 6)
                         # must not be glued into this row — that merged tables.
                         if (
@@ -3034,7 +3134,9 @@ def structure_html(
                             break
                         # A finished sentence plus a new capital is the next
                         # paragraph, not a wrap (Sites: Sajra's 6 + tactics).
-                        if body.rstrip().endswith((".", "!", "?")) and nxt[:1].isupper():
+                        # A sentence may end inside a bracket or a quote
+                        # ("…training hall, etc.)"; Rime Lords' purpose).
+                        if _ENDS_SENTENCE_RE.search(body) and nxt[:1].isupper():
                             break
                         # Always glue non-entry lines into the current row
                         # (wrapped descriptions; e.g. wonder #9's second sentence).
@@ -3089,9 +3191,9 @@ def structure_html(
                     )
                     if (
                         last_row
-                        and _defmt(body).rstrip().endswith((".", "!", "?", "”", '"', ")"))
+                        and _ENDS_SENTENCE_RE.search(_defmt(body))
                         and cur[:1].isupper()
-                    ):
+                    ) or cur.lstrip().startswith("*"):
                         break
                     entries[-1] = (num, _cat(body, cur))
                     i += 1
@@ -3123,7 +3225,7 @@ def structure_html(
                     if last_num is not None and first_new == last_num + 1:
                         row_html = "".join(
                             f'<tr><th scope="row">{html.escape(num)}</th>'
-                            f"<td>{link(pv(body))}</td></tr>"
+                            f"<td>{link(pv(body if isinstance(body, str) else body[0]))}</td></tr>"
                             for num, body in entries
                         )
                         out[-1] = prev.replace(
@@ -3131,6 +3233,7 @@ def structure_html(
                         )
                         continue
             if entries:
+                entries = _nest_subtables(entries)
                 # Sanitize garbage labels
                 if label and re.search(r"[)(]", label) and len(label) < 12:
                     label = "result"
@@ -3138,7 +3241,7 @@ def structure_html(
                     render_roll_table(
                         dice,
                         label or "result",
-                        [(nm, pv(b)) for nm, b in entries],
+                        [(nm, _pv_row(b, pv)) for nm, b in entries],
                         lookup,
                         current_slug,
                         section_index,

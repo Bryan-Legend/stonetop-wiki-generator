@@ -78,6 +78,7 @@ P	7-8 A shaft/chimney (climb/squeeze?)
 P	9-10 A flooded chamber (wade, swim, find an exit underwater?)
 P	11 A chasm/rift, your path crossing it (jump, belay, or find a bridge?)
 P	12 Intense heat, foul air, brittle crust, magma flows (good luck)
+PB
 P	For any given tunnel or chamber, pick or have someone roll for 1-3 features. Consider rolling 1d6 for size/scope/intensity.
 P	1d12 feature
 HR
@@ -343,6 +344,7 @@ P	3 A huge <b>magma worm</b> (page 253)
 P	4 A <b>nightmare tableau</b> (previous page)
 P	5 An ordeal: heat, cold, hunger, intrusive thoughts, false memories, etc.
 P	6 Someone else lost down here, maybe from a different time, paranoid or at least extremely wary
+PB
 P	When you <b><i>escape or otherwise survive the</i></b> <b><i>danger and you hold 3+ Progress,</i></b> you find your goal. If you continue to seek your current goal, keep your Progress and make this move again. If you choose a new goal, lose all Progress.
 PAGE	252
 HR

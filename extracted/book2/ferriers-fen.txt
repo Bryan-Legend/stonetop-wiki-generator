@@ -101,6 +101,7 @@ P	9 Shrubs and scattered pines
 P	10 Thicket of trees, or one big tree
 P	11 Dead tree(s), fallen log(s)
 P	12 Hummock, hill, rocky outcrop
+PB
 P	If you like, roll 1d6 for size/scope/intensity.
 PAGE	119
 H2	Discoveries

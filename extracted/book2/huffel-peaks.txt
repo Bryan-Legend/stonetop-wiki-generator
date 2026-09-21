@@ -78,6 +78,7 @@ P	8-9 Steep slope/switchback trails/ ridgeline
 P	10 Ravine/canyon/gorge
 P	11 Gentle slope/meadow/valley/pass
 P	12 Cave, cavern, grotto
+PB
 P	If you like, roll 1d6 for size/scope/intensity.
 H2	Discoveries
 P	For any of these, pick 1 or have someone roll the Die of Fate.

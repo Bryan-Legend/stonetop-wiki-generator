@@ -1075,6 +1075,21 @@ ul.bestiary .be-from::before { content: "— "; }
 ul.bestiary .be-from a { color: inherit; }
 ul.bestiary .be-from a:hover { color: var(--link-hover); }
 
+/* A row's own table, nested in its cell: Ruined Tower's treasure ("2 Some…
+   (roll 1d6 or pick)" over "1 …dark ice" to "5-6 …aetherium"), Ustrina's
+   price. Set a little smaller and without the outer table's frame. */
+.roll-table table.roll-subtable {
+  margin: 0.3rem 0 0.1rem;
+  width: 100%;
+  font-size: 0.95em;
+}
+.roll-table table.roll-subtable th,
+.roll-table table.roll-subtable td {
+  padding-top: 0.05rem;
+  padding-bottom: 0.05rem;
+  border: none;
+}
+
 /* Deep-link :target — scroll still works; no outline flash on jump */
 
 /* --- Section links -------------------------------------------------------

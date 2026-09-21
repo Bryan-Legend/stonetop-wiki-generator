@@ -32,6 +32,7 @@ P	5-6 Decay: of its mind, its power, its sense of self (<b>Instinct</b> to lash 
 P	7-8 Fear: of the Fae, of the Makers, of the much-hated light (<b>Instinct</b> to see threats everywhere)
 P	9-10 Obsession: with hoarding, experimenting, digging, etc., to the exclusion of all else (<b>Instinct</b> to pursue its obsession)
 P	11-12 Patience: it waits, it gathers power, it makes preparations (<b>Instinct</b> to further its plans)
+PB
 P	<b>1d12</b> lair
 HR
 P	1 A yawning cavern, flooded; dotted with islands and unlikely structures
@@ -147,6 +148,7 @@ P	5-6 By filling them with euphoria/ pleasure
 P	7-8 By promising them power/immortality/revenge/a cure/etc.
 P	9-10 By wracking them with pain
 P	11-12 Roll 1d10 twice, or make up something new
+PB
 P	If you like, roll 1d6 for the extent of control.
 PAGE	141
 P	<b>1d12</b> gift
@@ -163,6 +165,7 @@ P	9 Influence/control over the minds of others
 P	10 Minions/servants/ability to send out extensions of itself
 P	11 Mobility (jumping, flying, climbing, burrowing, squeezing, etc.)
 P	12 Unnatural resilience/vigor/durability
+PB
 P	Should a PC or an important NPC become infected by a Fomoraij (or one of their servants), write it up as a threat (an <i>affliction</i>). If a PC willingly becomes an infected servant, consider creating a playbook insert, using the <b>Thrall</b> for inspiration (see
 P	<i>Book I</i>, page 152).
 HR

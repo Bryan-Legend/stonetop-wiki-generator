@@ -92,6 +92,7 @@ P	8-9 Swath of one type of tree
 P	10 Briars, thorns, nettles
 P	11 Slope, hill, ridge, ravine
 P	12 Single, notable tree
+PB
 P	If you like, roll 1d6 for size/scope/intensity.
 PAGE	203
 H2	Discoveries

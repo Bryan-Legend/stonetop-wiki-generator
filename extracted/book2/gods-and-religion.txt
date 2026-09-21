@@ -175,7 +175,9 @@ P	3-4 A particular village/band/clan
 P	5-6 A minority within a larger people (e.g. Manmarcher smiths)
 P	7-8 A whole people (e.g. Manmarchers)
 P	9-10 A minority across multiple peoples (e.g. thieves everywhere)
-P	11-12 Many different peoples A deity who is relevant to multiple peoples might have different standing and observances among each.
+P	11-12 Many different peoples
+PB
+P	A deity who is relevant to multiple peoples might have different standing and observances among each.
 P	1d12 standing
 HR
 P	1-2 Obscure, forgotten, misunderstood
@@ -196,8 +198,10 @@ P	7 Libations/offerings of material wealth (burnt, buried, etc.)
 P	8 Pilgrimage/hermitage
 P	9 Sacrifice (animal/blood/human)
 P	10 Taboo/proscribed behaviors
-P	11-12 Roll 1d10 again, twice, but one of them is done in secret From there, envision the god's specific sphere of influence, how it is depicted, its rites, its myths, and its <b>true nature</b> (page 180).
+P	11-12 Roll 1d10 again, twice, but one of them is done in secret
 PAGE	185
+PB
+P	From there, envision the god's specific sphere of influence, how it is depicted, its rites, its myths, and its <b>true nature</b> (page 180).
 P	To name your god, use one of these methods:
 B	Pick a word associated with the god, translate it into an appropriate language, then change it a little ("threshold" >> "trothwy" in Welsh >> "Troth")
 B	Pick a deity from actual mythology or popular culture, and change a letter or two ("Thor" >> "Tor").

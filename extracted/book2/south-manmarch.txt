@@ -88,6 +88,7 @@ P	9 Footpath/wagon ruts/trail
 P	10 Tree(s), savanna, thickets
 P	11 Gentle slope/low ridge/small hill
 P	12 Steep slope/rocky outcrop/large hill
+PB
 P	If you like, roll 1d6 for size/scope/intensity.
 PAGE	353
 H2	Discoveries

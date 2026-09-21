@@ -81,6 +81,7 @@ P	5-6 A <b>Forge Lord ruin</b> (page 160)
 P	7-10 A <b>Stone Lord ruin</b> (page 386)
 P	11-12 A ruin of multiple groups (roll
 P	1d10 twice)
+PB
 P	Then pick or roll for a theme (page 35) to reflect how the Barrow Builders used it,
 P	1-3 signs of their presence, and its current condition. Populate the site with artifacts and dangers of the Barrow Builders, as well as those of its original owners.
 P	1d12 signs
@@ -137,7 +138,9 @@ P	3-4 Obvious entrance (likely sealed)
 P	5-6 Irregular/elaborate/oval shape
 P	7-8 Works of the Makers, recycled
 P	9-10 Walls of dry-stacked stones
-P	11-12 Built around a spring: water bubbling up/pooling/flowing out Even in large barrows, chambers and passages are cramped and claustrophobic, often with packed-dirt floors and lined with large slabs of stone.
+P	11-12 Built around a spring: water bubbling up/pooling/flowing out
+PB
+P	Even in large barrows, chambers and passages are cramped and claustrophobic, often with packed-dirt floors and lined with large slabs of stone.
 P	1d12 condition
 HR
 P	1-4 Collapsed, torn open, only hints remaining
@@ -259,6 +262,7 @@ P	7-8 Breaking/disturbing something
 P	9-10 Opening/closing something
 P	11-12 Perceiving/examining/tinkering with something
 PAGE	43
+PB
 P	<b>1d12</b> tell
 HR
 P	1 A brief warning before it goes off

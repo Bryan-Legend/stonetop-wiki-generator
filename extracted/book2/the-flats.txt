@@ -85,6 +85,7 @@ P	9 Low ridge, embankment, rise
 P	10 Tree(s), savanna, shrubs
 P	11 Rocky outcropping, boulders, jagged stones
 P	12 Gully, sinkhole, crater, fissure (maybe full of water)
+PB
 P	If you like, roll 1d6 for size/scope/intensity.
 H2	Discoveries
 P	For any of these, pick 1 or have someone roll the Die of Fate (d12 or d6).

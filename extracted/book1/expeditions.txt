@@ -418,7 +418,9 @@ HR
 P	1 A danger springs on them, unavoidable
 P	2-3 Introduce a danger, right in front of them
 P	4-5 Point to a looming danger
-P	6 Point to a looming danger, but also present a discovery Also, feel free to spring dangers on them any time that they roll a 6- (on any move), or any time a move draws attention or generates a complication.
+P	6 Point to a looming danger, but also present a discovery
+PB
+P	Also, feel free to spring dangers on them any time that they roll a 6- (on any move), or any time a move draws attention or generates a complication.
 PAGE	324
 H2	Weather
 P	The weather is an important part of any journey. It colors the whole trip and can be a challenge all by itself.
@@ -434,7 +436,9 @@ HR
 P	1 Snow/sleet/hail, an early thunderstorm or day of cold, soaking rains
 P	2-3 Cold and windy, maybe some showers
 P	4 Clouds on the horizon, steady wind; roll again later with disadvantage
-P	5-6 A fine, sunny spring day; some clouds, some gusting winds summer
+P	5-6 A fine, sunny spring day; some clouds, some gusting winds
+PB
+P	summer
 HR
 P	1d6 weather
 HR
@@ -646,7 +650,9 @@ P	1 Something dangerous approaches, inclined to do harm.
 P	2 Something dangerous approaches, curious but not aggressive.
 P	3 Something annoying happens (critters in the food, rain, an argument, etc.).
 P	4-5 The night passes uneventfully.
-P	6 They observe something interesting, find something useful, or otherwise gain some small boon; or the night passes uneventfully For more about the benefits of Making Camp, see page 248 in <b>Harm & Healing</b>.
+P	6 They observe something interesting, find something useful, or otherwise gain some small boon; or the night passes uneventfully
+PB
+P	For more about the benefits of Making Camp, see page 248 in <b>Harm & Healing</b>.
 H2	Deprivation
 P	If PCs don't get food, drink, or rest, then at first the only consequence is that they don't get to make a choice when they Make Camp. But the longer they go with insufficient food, water, or rest, the more danger they're in. Start by asking them to Defy Danger (the danger being their hunger, thirst, or exhaustion). Escalate with a debility, then more debilities.
 P	Make increasingly aggressive GM moves (<b>tell them the requirements</b> <b>or consequences</b>, <b>show downsides</b>, <b>reveal unwelcome truths</b>, etc.) as they endure more deprivation. Use the GM moves for <b><i>afflictions</i></b> (see page 284). Between sessions, write up their deprivation as a threat.

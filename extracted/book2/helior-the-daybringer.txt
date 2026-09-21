@@ -137,6 +137,7 @@ HR
 ICON	icons/people.svg
 H3	Pilgrims
 P	Threat (<i>rabble</i>)
+PB
 P	<b>Instinct</b> to find succor and purpose
 P	• Grow in numbers: a steady trickle, a constant stream, a tide
 P	• Demand time, attention, consideration

@@ -56,4 +56,5 @@ P	3 To purge Destroying artifacts of the Green Lords or Things Below
 P	4 To build Progress towards building an enormous, enigmatic edifice
 C	Its instinct becomes "to pursue its purpose." You must Persuade it to do anything unrelated to that purpose, and it will flat-out refuse to act against its purpose.
 C	It wanders off in pursuit of its purpose, implacably pursuing it. It is no longer a follower, though you might still be able to Persuade it.
+PB
 P	back

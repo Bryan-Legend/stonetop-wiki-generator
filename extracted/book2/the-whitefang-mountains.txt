@@ -87,6 +87,7 @@ P	8-9 Steep slope/switchback trails/ridgeline
 P	10 Ravine/canyon/gorge
 P	11 Gentle slope/meadow/valley/pass
 P	12 Cave/cavern/grotto
+PB
 P	If you like, roll 1d6 for size/scope/intensity.
 H2	Discoveries
 P	For any of these, pick 1 or have someone roll the Die of Fate.
@@ -407,6 +408,7 @@ P	• Drag someone off into the night
 P	• Freeze things: flesh, moisture, the very air
 P	6 Roll again twice
 PAGE	491
+PB
 P	Also, pick or roll one:
 P	1d6 special trait
 HR
@@ -417,6 +419,7 @@ P	(<i>reach</i>, <i>grabby</i>)
 P	4 Scales of ice/rock (Armor 3)
 P	5 Wings (can fly)
 P	6 Regenerates wounds, unless from ritually prepared weapons
+PB
 P	<b>Something interesting:</b> The people of the Whitefangs fear bhoka and are well aware of the dangers they pose, but they never hunt them. They seem content to drive them off or appease them.
 P	<b>Something useful:</b> The monks claim that bhoka descended from <b>Rime Lords</b> (page 316) who were corrupted by the <b>Things</b> <b>Below</b> (page 412). They cannot abide the sound of the Rime Lords' meditative chants, recoiling and fleeing from anyone who performs such a chant without faltering.
 HR

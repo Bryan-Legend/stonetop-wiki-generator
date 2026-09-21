@@ -46,6 +46,7 @@ P	1-2 Nothing… yet.
 P	3-4 Paltry prey: a fox/rabbit/boar/deer, <b>crinwin</b> (page 58), a fool who crossed his path, etc.
 P	5 Worthy prey: a <b>ceirwmawr</b> (page 205), a <b>raselbaedd</b> (page 209), a <b>beast warden</b> (page 360), a <b>Fae</b> (page 94) with whom he's made a bet, etc.
 P	6 Undead prey: a <b>ghost</b> (page 76) or <b>revenant</b> (page 80), caught in the open, away from any <b>dool trees</b> (page 73).
+PB
 P	When the time is right, <b>point to a</b> <b>looming danger</b> (his horn blows, his hounds bay, his prey rushes past). <b>Offer an</b> <b>opportunity</b> (to run, to hide, to seek him out, etc.). <b>Announce trouble</b> (mist rises, his hounds appear).
 P	If the PCs cross the Hunter's path, what happens next depends on his current quarry, whether they hide or face him, how they comport themselves, whether there are undead among them, and the fickle whims of the dice.
 PAGE	294

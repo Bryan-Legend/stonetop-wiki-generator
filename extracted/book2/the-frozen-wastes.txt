@@ -72,6 +72,7 @@ P	9 Gentle slope/low ridge/small rise
 P	10 Low moraine, a small hill of broken stones and loose soil
 P	11 Rocky outcrop, a dozen feet tall at most
 P	12 Single, notable tree
+PB
 P	If you like, roll 1d6 for size/scope/intensity.
 H2	Discoveries
 P	For any of these, pick 1 or have someone roll the Die of Fate (d6).

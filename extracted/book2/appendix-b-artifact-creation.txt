@@ -56,6 +56,7 @@ P	9 It's exquisitely made, a thing of beauty (Value 3)
 P	10 It's inherently valuable—gold, gems, exotic goods, etc. (Value 3)
 P	11 It's a clue, or it hints at the bigger picture, and roll 1d10 again
 P	12 It presents an opportunity: a key, a resource they might mine, a map, etc.
+PB
 P	Now, go pick or roll for its <b>form</b> (page 505, step 3).
 PAGE	500
 HR
@@ -148,6 +149,7 @@ P	9 An <b>emanation</b> of a Thing Below (page 436)
 P	10 A fledgling spirit, and roll 1d8+1 again
 P	11 An <b>archon</b> (page 302) or other <b>primordial entity</b> (page 298)
 P	12 A multitude of... (roll again)
+PB
 P	Now, go pick or roll for it's <b>form</b> (page 505, step 3).
 PAGE	503
 HR
@@ -168,7 +170,9 @@ P	2-5 Inscribed on/in the artifact: ancient runes or writing in a long-dead lang
 P	6-7 Adorning the artifact: carvings/ paintings/decorations/diagrams
 P	8-9 Scrawled on/in the artifact: a cypher, mad ramblings, strange annotations, etc.
 P	10 As a vision/dream, imparted on whoever touches/enters/approaches
-P	11-12 Inscribed on/in the artifact: clear to those who can read the language Now, go pick or roll for it's <b>form</b> (page 505, step 3).
+P	11-12 Inscribed on/in the artifact: clear to those who can read the language
+PB
+P	Now, go pick or roll for it's <b>form</b> (page 505, step 3).
 PAGE	504
 HR
 H3	2g. Magical effect
@@ -200,8 +204,10 @@ P	8 Withering: weakens you/the artifact/the target
 P	9 Restricted: works only in specific, thematic conditions
 P	10 Costly: requires sacrifice, consumes resources
 P	11 Slow: takes time to cast/manifest
-P	12 Roll twice For artifacts that produce a magical effect (as opposed to spells or rituals), how often or frequently can it be used? Pick or roll.
+P	12 Roll twice
 PAGE	505
+PB
+P	For artifacts that produce a magical effect (as opposed to spells or rituals), how often or frequently can it be used? Pick or roll.
 P	1d12 usage
 HR
 P	1-3 1d6 uses, then it's consumed/ruined/powerless
@@ -223,7 +229,9 @@ P	3-4 A item or object ◇
 P	5-6 A ◇◇ item or object
 P	7-8 An <i>immobile</i> object or place
 P	9-10 Roll 1d8 again, but it's hard to extract, access, and/or take advantage of
-P	11-12 Roll 1d10 again, but it's also <i>crude</i>, <i>fragile</i>, <i>cumbersome</i>, and/or <i>dangerous</i> Now, what is it, exactly? Pick or roll.
+P	11-12 Roll 1d10 again, but it's also <i>crude</i>, <i>fragile</i>, <i>cumbersome</i>, and/or <i>dangerous</i>
+PB
+P	Now, what is it, exactly? Pick or roll.
 P	Interpret the results liberally, keeping in mind the origin, theme, and other details about the item. Let yourself be inspired!
 P	Note: an artifact might very well be made from or with an appropriate <b>strange</b> <b>material</b> (page 500, step 2b), even if you didn't get that result. Maybe your Forge Lord sword that absorbs heat and flame is made of aetherium, or has a red crystal for its pommel.
 P	1d12 what is it?
@@ -245,6 +253,7 @@ P	9 Textile: fibers, scarf, footwear, rope, clothes, furs, bedding, tapestry, et
 P	10 Tool: needle, file, chisel, saw, mallet, shovel, anvil, workspace, etc.
 P	11 Trade: coin, coins, satchel, scales, wheel, sled, cart, wagon, etc.
 P	12 Violence: knife, poison, sword, rod, staff, bow, spear, banner, etc.
+PB
 P	For example, if you started with "a ◇◇ item or object" and then got a 4 on the table above, that could be a quern stone or a small cauldron. But "an <i>immobile</i> object or place" plus a roll of 8 above might a mammoth tusk, or a whole ossuary!
 P	1d12 less common
 P	1 Art: pigments, brushes, carving, figurine, chisel, painting, statuary, etc.
@@ -259,6 +268,7 @@ P	9 Religion: symbol, offering, idol, altar, ceremonial ___ (roll again)
 P	10 Specialized equipment: astrolabe, level, gear, decanter, still, kiln, etc.
 P	11 Writing: ink, runes, stylus, scroll, parchment, tablet, codex, archive, etc.
 P	12 Highly decorated and/or exquisitely made more common object (previous column)
+PB
 P	Note: an artifact might very well be made from or with an appropriate <b>strange</b> <b>material</b> (page 500, step 2b), even if you didn't get that result. Maybe your Forge Lord sword that absorbs heat and flame is made of aetherium, or has a red crystal for its pommel.
 P	For example, if you started with "a small item" and rolled a 10 on this table, you might see "decanter" and think of a little vial of perfume or maybe poison. And maybe it's the liquid that's special, not the container!
 PAGE	507

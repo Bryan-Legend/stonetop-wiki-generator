@@ -16,6 +16,7 @@ P	1-2 Their soul is wounded but they'll live, suffering from unnatural, compulsi
 P	3-4 Their soul is wounded and their body gives up; they become a wraith.
 P	5-6 Their soul is consumed and utterly destroyed by the ring—mark 1 below.
 MARK	3
+PB
 P	When you <b><i>make the last mark</i></b>, you unlock the ring's mysteries. Gain Siphon (see reverse) and erase all the marks. Each time you mark the third circle, gain another move from the reverse. If you <b><i>have</i></b> <b><i>all the moves</i></b>, mark a consequence instead.
 P	front
 PAGE	573

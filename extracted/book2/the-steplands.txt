@@ -266,7 +266,9 @@ P	2 Long, narrow, meandering
 P	3 Twisting, interlaced tunnels; multiple chambers
 P	4 A few distinct sets of chambers, connected by long twisting tunnels
 P	5 Few small passages to a larger, massive chamber
-P	6 Large and open main tunnel, smaller side passages and chambers For any given opening, passage, or chamber, choose or have someone roll for clearance, footing, water, and decoration. For each, consider rolling 1d6 for size/scope/intensity.
+P	6 Large and open main tunnel, smaller side passages and chambers
+PB
+P	For any given opening, passage, or chamber, choose or have someone roll for clearance, footing, water, and decoration. For each, consider rolling 1d6 for size/scope/intensity.
 P	1d6 clearance
 HR
 P	1 Basically a crack, too small for grown humans without excavation

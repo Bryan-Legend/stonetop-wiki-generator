@@ -114,6 +114,7 @@ P	9 Raw material for a steading improvement, like a wagonload of timber (<i>immo
 P	10 High-quality materials (bright and permanent dye, potent medicinal herbs, etc., Value 2)
 P	11 A wonder (glowing flowers, floats in the air, fashionably dangerous, etc., Value 2)
 P	12 A legendary substance (extends youth, ensnares the will, brings prophecy, etc. Value 3)
+PB
 P	If it's not already obvious, pick or roll for the form-factor in which it's useful or valuable.
 P	1d12 form-factor
 HR
@@ -152,8 +153,10 @@ P	7 Distinct shape/configuration of leaves/stems/trunk/flowers/bulbs
 P	8 Leaves/flowers/seeds/fruits/pods that look like something else
 P	9 Strong, particular odor
 P	10 Bright/garish/unusual color
-P	11-12 Roll 1d10 twice Now, considering all of the above, and where and how it's found, decide:
+P	11-12 Roll 1d10 twice
 PAGE	463
+PB
+P	Now, considering all of the above, and where and how it's found, decide:
 P	<b>What is it?</b> Pick 1: Lichen, moss, algae, fungus, mushroom, fern, grass, sedge, plant, weed, vine, climber, creeper, briar, shrub, succulent, deciduous tree (willow, ash, oak, alder, birch, elm, fruit, maple, chestnut, rowan, walnut, etc.), conifer (cedar, pine, fir, juniper, cypress, spruce, yew, etc.).
 P	<b>What part is useful/valuable?</b> Pick 1-4:
 P	Trunk, stem, shoot, limb, body, wood, flesh, bark, skin, root, tuber, thorn, leaf, fruit, gourd, nut, seed, spore, flower, pollen, pod, cone, sap, oil, resin, ash, etc.

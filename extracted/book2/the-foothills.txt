@@ -97,6 +97,7 @@ P	9 Steep slope: forested, overgrown
 P	10 Sheer rock face, bluff, rocky outcrop
 P	11 Clearing, meadow, burn site
 P	12 Cave, cavern, grotto
+PB
 P	If you like, roll 1d6 for size/scope/intensity.
 PAGE	148
 H2	Discoveries

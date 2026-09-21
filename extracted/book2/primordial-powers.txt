@@ -288,6 +288,7 @@ P	5-6 Charm/talisman/jewelry/symbol
 P	7-8 Tool (nail/hammer/tongs/etc.)
 P	9-10 Weapon/shield/armor
 P	11-12 Construction (door/plating/throne/ etc.), likely <i>immobile</i>
+PB
 P	Pick or roll for its size and its Value to those who understand what it is. For worked items made of black iron, add their base Value to what's listed below. For example, a sword (Value 1) made of black ◇ iron would be Value 3.
 P	<b>1d12</b> size
 HR
@@ -296,6 +297,7 @@ P	5-8 A object/amount (Value 2)◇
 P	9-11 A ◇◇ object/amount (Value 2)
 P	12 An <i>immobile</i> object/amount (Value
 P	3 at least)
+PB
 P	Black iron is strong and hard like steel and worked much the same way. It's a little on the heavy side, and doesn't hold quite as keen an edge. Black iron weapons don't have "<i>x</i> piercing," but a black iron warhammer would still have 2 piercing.
 PAGE	308
 H2	Artifacts

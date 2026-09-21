@@ -67,6 +67,7 @@ P	7-8 Burrow/warren/tunnels, dug out by… something*
 P	9-10 Stairs/shaft/ladder/ramp, going up and/or further down*
 P	11 Crevasse, maybe open to the sky, maybe not*
 P	12 Sinkhole, leading down down down
+PB
 P	*Might connect to the undercity/surface
 PAGE	471
 P	1d12 green lord ruin
@@ -87,6 +88,7 @@ P	Door is stuck, but works. Lit by glowing lichen. Holds ancient foodstuffs; cru
 P	10 Massive tree trunk, ~10 paces wide, broken off at top. Remaining wood glints of silver. Entrance to hollow is embossed with ivory runes. Black sap drips from interior walls.
 P	11 Ramparts of iron-infused trees, sporting long thorns, blocking what once were streets. Rusted, crumbling, uprooted in places.
 P	12 Underground "cage" made of tree roots infused with iron. Still intact, no apparent entrances.
+PB
 P	The above are just examples. See page
 P	214 if you need to create more or different ruins.
 PAGE	472
