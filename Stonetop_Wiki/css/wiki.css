@@ -283,8 +283,8 @@ html, body {
 
 .wiki-title {
   font-family: var(--font-serif);
-  font-size: 1.05rem;
-  white-space: nowrap;
+  font-size: 0.95rem;
+  white-space: normal;
   font-weight: 400;
   letter-spacing: var(--track-display);
   line-height: var(--lh-display);

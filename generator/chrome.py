@@ -83,6 +83,9 @@ SITE_BASE_URL = "https://stonetop-wiki.github.io"
 
 
 SITE_NAME = "Stonetop"
+# The name in the sidebar and on the home page. The game stays "Stonetop";
+# this is the site.
+EDITION_NAME = "Stonetop Web Edition"
 
 # Cloudflare Web Analytics beacon, injected into every generated page's <head>.
 # Kept as a plain constant (not inlined) because the token payload contains
@@ -154,8 +157,8 @@ def social_meta_html(
         "A searchable web edition of Stonetop, the Powered-by-the-Apocalypse "
         "game by Jeremy Strandberg."
     )
-    # The home page is the site itself: no "Stonetop — Stonetop".
-    full = title if title == SITE_NAME else f"{title} — {SITE_NAME}"
+    # The home page is the site itself: no "Stonetop — Stonetop Web Edition".
+    full = title if title == SITE_NAME else f"{title} — {EDITION_NAME}"
     base = SITE_BASE_URL.rstrip("/")
     url = base + "/" + path.lstrip("/")
     img = base + "/images/favicon.png"
@@ -298,7 +301,7 @@ def _website_entity(base: str) -> dict:
     return {
         "@type": "WebSite",
         "@id": f"{base}/#website",
-        "name": "Stonetop Wiki",
+        "name": EDITION_NAME,
         "url": f"{base}/",
         "description": (
             "A free, searchable web edition of both Stonetop rulebooks: "
@@ -1209,7 +1212,7 @@ def page_shell(
     # (``write_localized_index``), so the wiki title leads there, not up to
     # the English one.
     home_href = "index.html" if locale else f"{rel_prefix}index.html"
-    doc_title = title if title == SITE_NAME else f"{title} — {SITE_NAME}"
+    doc_title = title if title == SITE_NAME else f"{title} — {EDITION_NAME}"
 
     return f"""<!DOCTYPE html>
 <html lang="{e(code)}"{dir_attr}>
@@ -1230,7 +1233,7 @@ def page_shell(
   <div class="layout">
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-head">
-        <a class="wiki-title" href="{home_href}">Stonetop</a>
+        <a class="wiki-title" href="{home_href}">{e(EDITION_NAME)}</a>
         <input type="search" id="nav-filter" class="nav-filter" placeholder="{e(ui["search_placeholder"])}" autocomplete="off" aria-label="{e(ui["search_label"])}">
         <div id="search-results" class="search-results" hidden></div>
       </div>
@@ -2160,7 +2163,7 @@ def write_index_custom(
     # defined; every other page refers to them by @id.
     jsonld = page_structured_data(
         None,
-        title="Stonetop Wiki",
+        title=EDITION_NAME,
         description=meta_description(
             "Stonetop is a hearth fantasy tabletop RPG by Jeremy Strandberg. "
             "A free, searchable wiki of both rulebooks: moves, playbooks, "
@@ -2177,7 +2180,7 @@ def write_index_custom(
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Stonetop — hearth fantasy tabletop RPG (TTRPG) wiki</title>
+  <title>Stonetop — hearth fantasy tabletop RPG (TTRPG) web edition</title>
 {home_meta}
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="images/favicon.ico" sizes="16x16 32x32 48x48 64x64">
@@ -2191,7 +2194,7 @@ def write_index_custom(
   <div class="layout">
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-head">
-        <a class="wiki-title" href="index.html">Stonetop</a>
+        <a class="wiki-title" href="index.html">{html.escape(EDITION_NAME)}</a>
         <input type="search" id="nav-filter" class="nav-filter" placeholder="Search wiki…" autocomplete="off" aria-label="Search wiki">
         <div id="search-results" class="search-results" hidden></div>
       </div>
@@ -2204,7 +2207,7 @@ def write_index_custom(
     </aside>
     <div class="main-wrap">
       <div class="content-scroll" id="main">
-        <main class="content"><h1 class="page-title">Stonetop</h1>
+        <main class="content"><h1 class="page-title">{html.escape(EDITION_NAME)}</h1>
         <div class="index-intro">{intro_html}</div>
         {cards_html}
         <div class="index-hero">
