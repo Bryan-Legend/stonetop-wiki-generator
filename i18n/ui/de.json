@@ -135,11 +135,15 @@
     "all_major": "Alle großen Arkana"
   },
   "home": {
-    "title": "Stonetop",
+    "title": "Stonetop-Webausgabe",
     "topics": "Themen",
     "lede_html": "Ein statisches, verlinktes Wiki zu <em>Stonetop</em> {books}. Seitenzahlen sind Links; Würfelausdrücke würfeln per Klick; fahre über einen Link, um eine Vorschau zu sehen (bei Deep Links mit vollständigem Werteblock).",
-    "remembers_html": "<strong>Es merkt sich alles.</strong> Hake ein Kästchen ab, beantworte eine Frage, fülle eine Lücke aus, verteile deine Werte – das Wiki behält es.",
-    "defects_html": "Diese Seiten werden automatisch aus den PDFs der Bücher extrahiert, also <strong>rechne mit Fehlern</strong>. Wenn dir einer auffällt, <a href=\"{issues}\">eröffne ein Issue auf GitHub</a>.",
-    "license_html": "Der <strong>Text</strong> der Bücher stammt von Jeremy Strandberg und steht unter <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>."
-  }
+    "remembers_html": "<strong>Es merkt sich alles.</strong> Hake ein Kästchen ab, beantworte eine Frage, fülle eine Lücke aus, verteile deine Werte — das Wiki behält das alles, sodass ein Spielbuch ein Charakterbogen ist, von dem du wirklich spielen kannst, und der Countdown einer Gefahr oder die Ausbauten einer Siedlung zwischen den Sitzungen markiert bleiben. Jedes Fragezeichen und jede Lücke in den Büchern nimmt eine Notiz an, und die Spielbücher würfeln: Klick auf einen Wert würfelt +diesen Wert, der Schadenswürfel würfelt Schaden. Markiere eine Beeinträchtigung, und ihre beiden Werte würfeln von selbst mit Nachteil.",
+    "defects_html": "Diese Seiten werden automatisch aus den PDFs der Bücher extrahiert, also <strong>rechne mit Fehlern</strong> — zerlegte Tabellen, verlorener oder doppelter Text, falsche Überschriften, kaputte Links. Wenn dir einer auffällt oder du beim Beheben helfen willst, <a href=\"{issues}\">eröffne ein Issue oder einen Pull Request auf GitHub</a>.",
+    "license_html": "Der <strong>Text</strong> der Bücher stammt von Jeremy Strandberg und steht unter <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>. Würfelgeräusche von <a href=\"https://opengameart.org/content/wooden-dice-on-wodden-table-roll\">Wuzzy</a>, <a href=\"https://creativecommons.org/publicdomain/zero/1.0/\" rel=\"license\">CC0</a>. Die gemeinsame Datenspeicherung stellt <a href=\"https://workers.cloudflare.com/\">Cloudflare</a> bereit.",
+    "doc_title": "Stonetop — Webausgabe des Herd-Fantasy-Tischrollenspiels (TTRPG)",
+    "and": "und",
+    "intro_html": "<p><strong>Stonetop</strong> ist ein Tischrollenspiel der Herd-Fantasy von Jeremy Strandberg, angesiedelt in einer Eisenzeit, die es nie gegeben hat. Drei bis fünf von euch setzen sich zusammen — eine Person als SL, die übrigen spielen die Helden eines einzigen kleinen, abgelegenen Dorfs am Ende der Welt. Ihr habt dort Verwandte, ein Handwerk, Nachbarn, die euch als Kind kannten, und die Gefahren, denen ihr begegnet, bedrohen das Zuhause — deshalb wendet sich das Spiel zwischen den Abenteuern der <a href=\"{homefront}\">Heimatfront</a> zu, wo das Dorf ein eigenes Spielbuch hat und neben den Charakteren wächst, leidet und sich verändert. Das unterscheidet dieses TTRPG von Dungeon-Fantasy-Rollenspielen: Der Ort, den ihr verteidigt, ist der Ort, an dem ihr lebt.</p><p>Darunter ist es ein Powered-by-the-Apocalypse-Rollenspiel auf dem Gerüst von <em>Dungeon World</em>: würfle 2d6 plus einen Wert — bei 10+ läuft es nach eurem Sinn, bei 7-9 kostet es euch etwas, bei 6- macht die SL einen Spielzug. Dieses Wiki ist eine freie, durchsuchbare Webausgabe der beiden Regelwerke des TTRPG: jeder Spielzug, jedes Spielbuch, jedes Monster, jede Gefahr, jede Siedlung, jede Gottheit und jedes Arkanum im Spiel. Wenn das Spiel neu für euch ist, beginnt mit <a href=\"{welcome}\">Willkommen in Stonetop</a>, dann <a href=\"{playing}\">Das Spiel spielen</a> — oder stöbert in den Themen unten.</p>"
+  },
+  "edition": "Stonetop-Webausgabe"
 }

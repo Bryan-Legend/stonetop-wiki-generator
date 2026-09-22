@@ -135,11 +135,15 @@
     "all_major": "Tous les arcanes majeurs"
   },
   "home": {
-    "title": "Stonetop",
+    "title": "Stonetop, édition web",
     "topics": "Sujets",
-    "lede_html": "Un wiki statique et hyperlié pour <em>Stonetop</em> {books}. Les numéros de page sont des liens ; les expressions de dés se lancent d’un clic ; survolez un lien pour un aperçu (bloc de caractéristiques complet quand le lien est profond).",
-    "remembers_html": "<strong>Il se souvient.</strong> Cochez une case, répondez à une question, remplissez un blanc, répartissez vos caractéristiques : le wiki garde tout.",
-    "defects_html": "Ces pages sont extraites automatiquement des PDF des livres, alors <strong>attendez-vous à des défauts</strong>. Si vous en repérez un, <a href=\"{issues}\">ouvrez un ticket sur GitHub</a>.",
-    "license_html": "Le <strong>texte</strong> des livres est de Jeremy Strandberg, sous licence <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>."
-  }
+    "lede_html": "Un wiki statique et hyperlié pour <em>Stonetop</em> {books}. Les numéros de page sont des liens ; les expressions de dés se lancent d'un clic ; survolez un lien pour un aperçu (le bloc de caractéristiques entier quand le lien est profond).",
+    "remembers_html": "<strong>Il se souvient.</strong> Cochez une case, répondez à une question, remplissez un blanc, répartissez vos caractéristiques — le wiki garde tout, si bien qu'un livret est une feuille de personnage dont on peut vraiment jouer, et le compte à rebours d'un danger ou les améliorations d'une bourgade restent marqués d'une séance à l'autre. Chaque point d'interrogation et chaque blanc des livres prend une note, et les livrets lancent les dés : cliquez une caractéristique pour lancer +cette caractéristique, ou le dé de dégâts pour lancer les dégâts. Marquez une affliction et ses deux caractéristiques se lancent avec un désavantage, toutes seules.",
+    "defects_html": "Ces pages sont extraites automatiquement des PDF des livres, donc <strong>attendez-vous à des défauts</strong> — tableaux déformés, texte perdu ou doublé, titres faux, liens cassés. Si vous en voyez un, ou voulez aider à le corriger, <a href=\"{issues}\">ouvrez un ticket ou une pull request sur GitHub</a>.",
+    "license_html": "Le <strong>texte</strong> des livres est de Jeremy Strandberg, sous <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>. Sons de dés par <a href=\"https://opengameart.org/content/wooden-dice-on-wodden-table-roll\">Wuzzy</a>, <a href=\"https://creativecommons.org/publicdomain/zero/1.0/\" rel=\"license\">CC0</a>. La synchro des données est fournie par <a href=\"https://workers.cloudflare.com/\">Cloudflare</a>.",
+    "doc_title": "Stonetop — jeu de rôle sur table (TTRPG) de fantasy du foyer, édition web",
+    "and": "et",
+    "intro_html": "<p><strong>Stonetop</strong> est un jeu de rôle sur table de fantasy du foyer, par Jeremy Strandberg, situé dans un âge du fer qui n'a jamais existé. Vous êtes trois à cinq autour de la table — une personne comme MJ, les autres jouant les héros d'un seul petit village isolé au bout du monde. Vous y avez de la parenté, un métier, des voisins qui vous ont connus enfants, et les dangers que vous affrontez menacent le foyer — entre les aventures, le jeu se tourne donc vers <a href=\"{homefront}\">l'Arrière</a>, où le village a son propre livret et grandit, souffre et change en même temps que les personnages. C'est ce qui distingue ce TTRPG des jeux de rôle de fantasy de donjon : l'endroit que vous défendez est celui où vous vivez.</p><p>En dessous, c'est un jeu Powered by the Apocalypse bâti sur l'ossature de <em>Dungeon World</em> : lancez 2d6 plus une caractéristique — 10+ et ça tourne comme vous voulez, 7-9 et ça vous coûte quelque chose, 6- et le MJ fait une manœuvre. Ce wiki est une édition web gratuite et consultable des deux livres de règles du TTRPG : chaque manœuvre, livret, monstre, danger, bourgade, divinité et arcane du jeu. Si le jeu est nouveau pour vous, commencez par <a href=\"{welcome}\">Bienvenue à Stonetop</a>, puis <a href=\"{playing}\">Jouer la partie</a> — ou parcourez les sujets ci-dessous.</p>"
+  },
+  "edition": "Stonetop, édition web"
 }

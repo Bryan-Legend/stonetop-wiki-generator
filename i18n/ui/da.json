@@ -135,11 +135,15 @@
     "all_major": "Alle store arkana"
   },
   "home": {
-    "title": "Stonetop",
+    "title": "Stonetop, webudgave",
     "topics": "Emner",
-    "lede_html": "En statisk wiki med hyperlinks til <em>Stonetop</em> {books}. Sidetal er links; terningudtryk slås med et klik; hold musen over et link for en forhåndsvisning (hele statblokken ved dybe links).",
-    "remembers_html": "<strong>Den husker.</strong> Sæt et flueben, svar på et spørgsmål, udfyld et tomt felt, fordel dine egenskaber – wikien gemmer det hele.",
-    "defects_html": "Disse sider er trukket automatisk ud af bøgernes PDF’er, så <strong>forvent fejl</strong>. Ser du en, så <a href=\"{issues}\">opret en issue på GitHub</a>.",
-    "license_html": "Bøgernes <strong>tekst</strong> er skrevet af Jeremy Strandberg under <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>."
-  }
+    "lede_html": "En statisk, hyperlinket wiki til <em>Stonetop</em> {books}. Sidetal er links; terningeudtryk slås med et klik; hold musen over et link for en forhåndsvisning (hele statistikblokken ved et dybt link).",
+    "remembers_html": "<strong>Den husker.</strong> Sæt kryds i et felt, svar på et spørgsmål, udfyld et hul, fordel dine egenskaber — wikien gemmer det hele, så en playbook er et karakterark man faktisk kan spille fra, og en fares nedtælling eller en bygds forbedringer bliver stående mellem sessionerne. Hvert spørgsmålstegn og hvert hul i bøgerne tager en note, og playbøgerne slår: klik en egenskab for at slå +den egenskab, eller skadeterningen for at slå skade. Markér en svækkelse, og dens to egenskaber slår med ulempe af sig selv.",
+    "defects_html": "Disse sider trækkes automatisk ud af bøgernes pdf'er, så <strong>forvent fejl</strong> — forvredne tabeller, tabt eller fordoblet tekst, forkerte overskrifter, brudte links. Hvis du ser en, eller vil hjælpe med at rette den, <a href=\"{issues}\">åbn et issue eller en pull request på GitHub</a>.",
+    "license_html": "Bøgernes <strong>tekst</strong> er af Jeremy Strandberg under <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>. Terninglyde af <a href=\"https://opengameart.org/content/wooden-dice-on-wodden-table-roll\">Wuzzy</a>, <a href=\"https://creativecommons.org/publicdomain/zero/1.0/\" rel=\"license\">CC0</a>. Fælles datasynk leveres af <a href=\"https://workers.cloudflare.com/\">Cloudflare</a>.",
+    "doc_title": "Stonetop — webudgave af bordrollespillet (TTRPG) i arnefantasy",
+    "and": "og",
+    "intro_html": "<p><strong>Stonetop</strong> er et bordrollespil i arnefantasy af Jeremy Strandberg, henlagt til en jernalder der aldrig fandtes. I sætter jer tre til fem — én som SL, de andre spiller heltene i én lille, isoleret by ved verdens ende. I har slægt der, et håndværk, naboer der kendte jer som børn, og farerne I møder truer hjemmet — så mellem eventyrene vender spillet sig mod <a href=\"{homefront}\">hjemmefronten</a>, hvor byen har sin egen playbook og vokser, lider og forandrer sig sammen med rollerne. Det er det der adskiller dette TTRPG fra fangekælder-fantasy-rollespil: stedet I forsvarer er stedet I bor.</p><p>Under det er det et Powered by the Apocalypse-spil bygget på <em>Dungeon World</em>s knogler: slå 2d6 plus en egenskab — 10+ og det går jeres vej, 7-9 og det koster jer noget, 6- og SL laver et træk. Denne wiki er en fri, søgbar webudgave af TTRPG'ets to regelbøger: hvert træk, hver playbook, hvert monster, hver fare, hver bygd, hver guddom og hvert arkanum i spillet. Hvis spillet er nyt for dig, så start med <a href=\"{welcome}\">Velkommen til Stonetop</a>, derefter <a href=\"{playing}\">At spille</a> — eller blad i emnerne nedenfor.</p>"
+  },
+  "edition": "Stonetop, webudgave"
 }

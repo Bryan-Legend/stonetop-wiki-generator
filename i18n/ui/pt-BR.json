@@ -65,12 +65,15 @@
     "pág."
   ],
   "home": {
-    "title": "Stonetop",
+    "title": "Stonetop, edição web",
     "topics": "Tópicos",
     "lede_html": "Um wiki estático e hiperligado para <em>Stonetop</em> {books}. Os números de página são links; expressões de dados rolam com um clique; passe o mouse sobre um link para ver uma prévia (blocos de estatísticas completos quando o link é profundo).",
-    "remembers_html": "<strong>Ele lembra.</strong> Marque uma caixa, responda a uma pergunta, preencha uma lacuna, distribua seus atributos — o wiki guarda tudo isso, então um livreto vira uma ficha de personagem que dá para jogar de verdade, e a contagem de um perigo ou as melhorias de um povoado continuam marcadas entre as sessões.",
-    "defects_html": "Estas páginas são extraídas automaticamente dos PDFs dos livros, então <strong>espere defeitos</strong> — tabelas embaralhadas, texto perdido ou duplicado, títulos errados, links quebrados. Se você encontrar algum, <a href=\"{issues}\">abra uma issue ou um pull request no GitHub</a>.",
-    "license_html": "O <strong>texto</strong> dos livros é de Jeremy Strandberg, sob <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>."
+    "remembers_html": "<strong>Ele lembra.</strong> Marque uma caixa, responda a uma pergunta, preencha uma lacuna, distribua seus atributos — o wiki guarda tudo isso, então um livreto vira uma ficha de personagem que dá para jogar de verdade, e a contagem de um perigo ou as melhorias de um povoado continuam marcadas entre as sessões. Cada ponto de interrogação e cada lacuna dos livros recebe uma nota, e os livretos rolam: clique num atributo para rolar +esse atributo, ou no dado de dano para rolar o dano. Marque uma debilidade e seus dois atributos rolam com desvantagem por conta própria.",
+    "defects_html": "Estas páginas são extraídas automaticamente dos PDFs dos livros, então <strong>espere defeitos</strong> — tabelas embaralhadas, texto perdido ou duplicado, títulos errados, links quebrados. Se você encontrar algum, ou quiser ajudar a corrigir, <a href=\"{issues}\">abra uma issue ou um pull request no GitHub</a>.",
+    "license_html": "O <strong>texto</strong> dos livros é de Jeremy Strandberg, sob <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>. Sons de dados por <a href=\"https://opengameart.org/content/wooden-dice-on-wodden-table-roll\">Wuzzy</a>, <a href=\"https://creativecommons.org/publicdomain/zero/1.0/\" rel=\"license\">CC0</a>. A sincronização de dados é oferecida pela <a href=\"https://workers.cloudflare.com/\">Cloudflare</a>.",
+    "doc_title": "Stonetop — RPG de mesa de fantasia do lar (TTRPG), edição web",
+    "and": "e",
+    "intro_html": "<p><strong>Stonetop</strong> é um RPG de mesa de fantasia do lar, de Jeremy Strandberg, ambientado numa idade do ferro que nunca existiu. De três a cinco de vocês se sentam juntos — um como Mestre, o resto jogando os heróis de uma única aldeia pequena e isolada no fim do mundo. Vocês têm parentes lá, um ofício, vizinhos que os conheceram crianças, e os perigos que enfrentam ameaçam o lar — por isso, entre aventuras, o jogo se volta para a <a href=\"{homefront}\">Frente doméstica</a>, onde a aldeia tem um livreto próprio e cresce, sofre e muda junto com os personagens. É isso que separa este TTRPG dos RPGs de fantasia de masmorra: o lugar que vocês defendem é o lugar em que vivem.</p><p>Por baixo é um RPG Powered by the Apocalypse montado sobre o esqueleto de <em>Dungeon World</em>: role 2d6 mais um atributo — 10+ e sai do seu jeito, 7-9 e custa alguma coisa, 6- e o Mestre faz um movimento. Este wiki é uma edição web gratuita e pesquisável dos dois livros de regras do TTRPG: cada movimento, livreto, monstro, perigo, povoado, divindade e arcano do jogo. Se o jogo é novo para você, comece por <a href=\"{welcome}\">Boas-vindas a Stonetop</a>, depois <a href=\"{playing}\">Jogando</a> — ou percorra os tópicos abaixo.</p>"
   },
   "arcana_hub": {
     "title_minor": "Apêndice C: Arcanos Menores",
@@ -153,5 +156,6 @@
     "sync_status_on": "Compartilhando esta campanha com a mesa",
     "sync_status_offline": "Servidor de sincronização inacessível: as alterações ficam salvas aqui e serão sincronizadas depois",
     "sync_status_local": "Este navegador mantém sua própria cópia"
-  }
+  },
+  "edition": "Stonetop, edição web"
 }

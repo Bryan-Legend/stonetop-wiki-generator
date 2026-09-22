@@ -135,11 +135,15 @@
     "all_major": "Wszystkie wielkie arkana"
   },
   "home": {
-    "title": "Stonetop",
+    "title": "Stonetop, wydanie internetowe",
     "topics": "Tematy",
-    "lede_html": "Statyczne, hiperłączone wiki do <em>Stonetop</em> {books}. Numery stron są odnośnikami; wyrażenia kości rzuca się kliknięciem; najedź na odnośnik, aby zobaczyć podgląd (pełny blok statystyk przy głębokim odnośniku).",
-    "remembers_html": "<strong>Pamięta.</strong> Zaznacz pole, odpowiedz na pytanie, wypełnij lukę, rozdziel cechy – wiki zachowa to wszystko.",
-    "defects_html": "Te strony są wyciągane z PDF-ów książek automatycznie, więc <strong>spodziewaj się błędów</strong>. Jeśli jakiś zauważysz, <a href=\"{issues}\">zgłoś go na GitHubie</a>.",
-    "license_html": "<strong>Tekst</strong> książek jest autorstwa Jeremy’ego Strandberga, na licencji <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>."
-  }
+    "lede_html": "Statyczne, hiperłączowe wiki dla <em>Stonetop</em> {books}. Numery stron są linkami; wyrażenia kości rzuca się kliknięciem; najedź na link, by zobaczyć podgląd (pełny blok statystyk przy głębokim linku).",
+    "remembers_html": "<strong>Pamięta.</strong> Zaznacz kratkę, odpowiedz na pytanie, wypełnij lukę, przydziel cechy — wiki trzyma to wszystko, więc playbook jest kartą postaci, z której naprawdę da się grać, a odliczanie niebezpieczeństwa albo ulepszenia osady zostają zaznaczone między sesjami. Każdy znak zapytania i każda luka w księgach przyjmuje notatkę, a playbooki rzucają: kliknij cechę, by rzucić +tę cechę, albo kość obrażeń, by rzucić obrażenia. Zaznacz ułomność, a jej dwie cechy rzucają z utrudnieniem same z siebie.",
+    "defects_html": "Te strony są wyciągane automatycznie z PDF-ów ksiąg, więc <strong>spodziewaj się usterek</strong> — pokiereszowanych tabel, zgubionego albo zdublowanego tekstu, złych nagłówków, zepsutych linków. Jeśli jakąś zauważysz albo chcesz pomóc ją naprawić, <a href=\"{issues}\">załóż issue albo pull request na GitHubie</a>.",
+    "license_html": "<strong>Tekst</strong> ksiąg napisał Jeremy Strandberg, na licencji <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>. Dźwięki kości: <a href=\"https://opengameart.org/content/wooden-dice-on-wodden-table-roll\">Wuzzy</a>, <a href=\"https://creativecommons.org/publicdomain/zero/1.0/\" rel=\"license\">CC0</a>. Wspólną synchronizację danych zapewnia <a href=\"https://workers.cloudflare.com/\">Cloudflare</a>.",
+    "doc_title": "Stonetop — internetowe wydanie stołowego RPG (TTRPG) fantasy domowego ogniska",
+    "and": "i",
+    "intro_html": "<p><strong>Stonetop</strong> to stołowe RPG fantasy domowego ogniska Jeremy'ego Strandberga, osadzone w epoce żelaza, której nigdy nie było. Siadacie w trzy do pięciu osób — jedna jako MG, reszta gra bohaterów jednej małej, odciętej osady na krańcu świata. Macie tam krewnych, rzemiosło, sąsiadów, którzy znali was jako dzieci, a niebezpieczeństwa, którym stawiacie czoła, grożą domowi — dlatego między przygodami gra schodzi na <a href=\"{homefront}\">front domowy</a>, gdzie osada ma własny playbook i rośnie, cierpi i zmienia się razem z postaciami. Tym ten TTRPG różni się od lochowych fantasy RPG: miejsce, którego bronicie, jest miejscem, w którym żyjecie.</p><p>Pod spodem to gra Powered by the Apocalypse zbudowana na kościach <em>Dungeon World</em>: rzuć 2d6 plus cechę — 10+ i idzie po waszemu, 7-9 i kosztuje was coś, 6- i MG wykonuje ruch. To wiki to darmowe, przeszukiwalne wydanie internetowe dwóch podręczników TTRPG: każdy ruch, playbook, potwór, niebezpieczeństwo, osada, bóstwo i arkanum w grze. Jeśli gra jest dla ciebie nowa, zacznij od <a href=\"{welcome}\">Witajcie w Stonetop</a>, potem <a href=\"{playing}\">Rozgrywka</a> — albo przejrzyj tematy poniżej.</p>"
+  },
+  "edition": "Stonetop, wydanie internetowe"
 }

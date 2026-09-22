@@ -44,6 +44,30 @@ keep one name, and in the others they take one localized name together.
 | zh-Hans · zh-Hant | 石顶 · 石頂 |
 | es · pt-BR · fr · it · de · nl · sv · da · nb · fi · cs · pl · hu · tr | Stonetop |
 
+**Web Edition** is ordinary speech, so it translates. *Stonetop* follows the
+table above. This is the name in the sidebar, the index heading, and the
+suffix on every other page's title.
+
+| | Web Edition |
+|---|---|
+| es | Stonetop, edición web |
+| pt-BR | Stonetop, edição web |
+| de | Stonetop-Webausgabe |
+| fr | Stonetop, édition web |
+| it | Stonetop, edizione web |
+| nl | Stonetop-webeditie |
+| sv | Stonetop, webbutgåva |
+| da | Stonetop, webudgave |
+| nb | Stonetop, nettutgave |
+| fi | Stonetop, verkkoversio |
+| cs | Stonetop, webové vydání |
+| pl | Stonetop, wydanie internetowe |
+| hu | Stonetop, webes kiadás |
+| tr | Stonetop web sürümü |
+| ru · uk | Стоунтоп, веб-издание · Стоунтоп, веб-видання |
+| ja · ko | ストーントップ・ウェブ版 · 스톤탑 웹판 |
+| zh-Hans · zh-Hant | 石顶网页版 · 石頂網頁版 |
+
 | | World's End | Golden Oak |
 |---|---|---|
 | es | el Fin del Mundo | Roble Dorado |

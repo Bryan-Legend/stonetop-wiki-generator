@@ -135,11 +135,15 @@
     "all_major": "대 아르카눔 전체"
   },
   "home": {
-    "title": "스톤탑",
+    "title": "스톤탑 웹판",
     "topics": "주제",
-    "lede_html": "<em>스톤탑</em>(Stonetop) {books}의 정적 하이퍼링크 위키입니다. 쪽 번호는 링크이고, 주사위 표기는 클릭하면 굴려집니다. 링크에 마우스를 올리면 미리보기가 뜹니다(깊은 링크에서는 스탯 블록 전체).",
-    "remembers_html": "<strong>기억합니다.</strong> 체크박스를 표시하고, 질문에 답하고, 빈칸을 채우고, 능력치를 배정하세요. 위키가 그 모두를 보관합니다.",
-    "defects_html": "이 페이지들은 책의 PDF에서 자동으로 추출한 것이므로 <strong>오류가 있을 수 있습니다</strong>. 발견하면 <a href=\"{issues}\">GitHub에 이슈를 열어 주세요</a>.",
-    "license_html": "책의 <strong>본문</strong>은 Jeremy Strandberg가 썼으며 <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a> 라이선스로 배포됩니다."
-  }
+    "lede_html": "<em>스톤탑</em>(Stonetop) {books}의 정적 하이퍼링크 위키입니다. 쪽수는 링크이고, 주사위 식은 클릭하면 굴러가며, 링크 위에 커서를 올리면 미리보기가 나옵니다(깊은 링크는 능력치 블록 전체).",
+    "remembers_html": "<strong>기억합니다.</strong> 칸을 표시하고, 질문에 답하고, 빈칸을 채우고, 능력치를 나누면 위키는 그 전부를 간직합니다. 플레이북은 실제로 플레이할 수 있는 캐릭터 시트가 되고, 위험의 카운트다운이나 정착지의 개선은 세션 사이에도 표시된 채로 남습니다. 책 속의 물음표와 빈칸은 모두 메모를 받고, 플레이북은 굴립니다. 능력치를 누르면 +그 능력치, 피해 주사위를 누르면 피해입니다. 약화에 표시하면 그에 묶인 두 능력치는 저절로 불리로 굴러갑니다.",
+    "defects_html": "이 페이지는 책 PDF에서 자동으로 뽑으므로 <strong>결함이 있다고 여기세요</strong>. 망가진 표, 빠지거나 중복된 글, 잘못된 제목, 끊긴 링크가 있습니다. 찾았거나 고치는 일을 돕고 싶다면 <a href=\"{issues}\">GitHub에 issue나 pull request를 여세요</a>.",
+    "license_html": "책의 <strong>본문</strong>은 제러미 스트랜드버그의 것이며 <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>으로 공개됩니다. 주사위 소리는 <a href=\"https://opengameart.org/content/wooden-dice-on-wodden-table-roll\">Wuzzy</a>, <a href=\"https://creativecommons.org/publicdomain/zero/1.0/\" rel=\"license\">CC0</a>. 공유 데이터 동기화는 <a href=\"https://workers.cloudflare.com/\">Cloudflare</a>가 제공합니다.",
+    "doc_title": "스톤탑(Stonetop) — 화롯가 판타지 테이블톱 RPG(TTRPG) 웹판",
+    "and": "및",
+    "intro_html": "<p><strong>스톤탑</strong>(Stonetop)은 제러미 스트랜드버그의 화롯가 판타지 테이블톱 RPG로, 존재한 적 없는 철기 시대를 배경으로 합니다. 셋에서 다섯이 앉습니다. 한 사람은 GM이고, 나머지는 세상 끝에 있는 작고 고립된 마을의 영웅을 연기합니다. 그곳에는 친척이 있고, 생업이 있고, 어릴 때부터 아는 이웃이 있으며, 맞닥뜨리는 위험은 집을 위협합니다. 그래서 모험과 모험 사이에 놀이는 <a href=\"{homefront}\">홈프론트</a>로 돌아갑니다. 마을은 자기 플레이북을 갖고, 캐릭터와 나란히 자라고 다치고 변합니다. 이 TTRPG를 던전 판타지 RPG와 가르는 지점이 그것입니다. 지키는 곳이 곧 사는 곳입니다.</p><p>속은 <em>Dungeon World</em>의 뼈대 위에 쌓은 Powered by the Apocalypse 놀이입니다. 2d6에 능력치를 더해 굴립니다. 10+이면 원하는 대로, 7-9이면 대가가 있고, 6-이면 GM이 무브를 합니다. 이 위키는 그 TTRPG의 두 규칙서를 무료로 검색할 수 있는 웹판입니다. 게임에 나오는 무브, 플레이북, 괴물, 위험, 정착지, 신, 아르카눔을 모두 담습니다. 처음이라면 <a href=\"{welcome}\">스톤탑에 오신 것을 환영합니다</a>에서 시작하고, 이어서 <a href=\"{playing}\">플레이 방법</a>을 보거나 아래 항목을 둘러보세요.</p>"
+  },
+  "edition": "스톤탑 웹판"
 }

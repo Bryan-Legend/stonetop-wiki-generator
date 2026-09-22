@@ -135,11 +135,15 @@
     "all_major": "Tüm büyük arkanalar"
   },
   "home": {
-    "title": "Stonetop",
+    "title": "Stonetop web sürümü",
     "topics": "Konular",
-    "lede_html": "<em>Stonetop</em> {books} için statik, bağlantılı bir wiki. Sayfa numaraları bağlantıdır; zar ifadeleri tıklayınca atılır; önizleme için imleci bir bağlantının üzerine getirin (derin bağlantılarda tam stat bloğu).",
-    "remembers_html": "<strong>Hatırlar.</strong> Bir kutuyu işaretleyin, bir soruyu yanıtlayın, bir boşluğu doldurun, statlarınızı dağıtın; wiki hepsini saklar.",
-    "defects_html": "Bu sayfalar kitapların PDF’lerinden otomatik olarak çıkarılır, bu yüzden <strong>kusur bekleyin</strong>. Bir tane görürseniz <a href=\"{issues}\">GitHub’da bir issue açın</a>.",
-    "license_html": "Kitapların <strong>metni</strong> Jeremy Strandberg’e aittir ve <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a> lisansıyla sunulur."
-  }
+    "lede_html": "<em>Stonetop</em> için durağan, bağlantılı bir wiki {books}. Sayfa numaraları bağlantıdır; zar ifadeleri tıklayınca atılır; bir bağlantının üzerine gelince önizleme çıkar (derin bağlantıda tam nitelik bloğu).",
+    "remembers_html": "<strong>Hatırlar.</strong> Bir kutuyu işaretle, bir soruyu yanıtla, bir boşluğu doldur, niteliklerini dağıt — wiki hepsini saklar; böylece bir kitapçık gerçekten üzerinden oynanan bir karakter kağıdıdır ve bir tehlikenin geri sayımı ya da bir yerleşkenin iyileştirmeleri oturumlar arasında işaretli kalır. Kitaplardaki her soru işareti ve her boşluk bir not alır, kitapçıklar da atar: bir niteliğe tıklayınca +o nitelik atılır, hasar zarına tıklayınca hasar atılır. Bir zafiyet işaretle, iki niteliği kendiliğinden dezavantajla atar.",
+    "defects_html": "Bu sayfalar kitapların PDF'lerinden otomatik çıkarılır, bu yüzden <strong>kusur bekle</strong> — bozulmuş tablolar, düşmüş ya da yinelenmiş metin, yanlış başlıklar, kırık bağlantılar. Birini görürsen ya da düzeltmeye yardım etmek istersen, <a href=\"{issues}\">GitHub'da bir issue ya da pull request aç</a>.",
+    "license_html": "Kitapların <strong>metni</strong> Jeremy Strandberg'e aittir, <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a> altında. Zar sesleri: <a href=\"https://opengameart.org/content/wooden-dice-on-wodden-table-roll\">Wuzzy</a>, <a href=\"https://creativecommons.org/publicdomain/zero/1.0/\" rel=\"license\">CC0</a>. Paylaşılan veri eşitlemesini <a href=\"https://workers.cloudflare.com/\">Cloudflare</a> sağlar.",
+    "doc_title": "Stonetop — ocak başı fantezisi masaüstü RPG'sinin (TTRPG) web sürümü",
+    "and": "ve",
+    "intro_html": "<p><strong>Stonetop</strong>, Jeremy Strandberg'in ocak başı fantezisi türünde bir masaüstü rol yapma oyunu; hiç var olmamış bir demir çağında geçer. Üç ila beş kişi oturursunuz — biri GM, geri kalanlar dünyanın sonundaki tek bir küçük, yalıtık köyün kahramanlarını oynar. Orada akrabanız, bir zanaatınız, sizi çocukken tanıyan komşularınız vardır ve karşılaştığınız tehlikeler yurdu tehdit eder — bu yüzden maceralar arasında oyun <a href=\"{homefront}\">yurt cephesine</a> döner; köyün kendi kitapçığı vardır ve karakterlerle birlikte büyür, acı çeker, değişir. Bu TTRPG'yi zindan fantezisi RPG'lerinden ayıran budur: savunduğunuz yer, yaşadığınız yerdir.</p><p>Altında, <em>Dungeon World</em>'ün iskeleti üzerine kurulu bir Powered by the Apocalypse oyunudur: 2d6 artı bir nitelik at — 10+ ise sizin istediğiniz gibi gider, 7-9 ise size bir şey mal olur, 6- ise GM bir hamle yapar. Bu wiki, TTRPG'nin iki kural kitabının ücretsiz, aranabilir web sürümüdür: oyundaki her hamle, kitapçık, canavar, tehlike, yerleşke, tanrı ve arkanum. Oyun size yeniyse <a href=\"{welcome}\">Stonetop'a hoş geldiniz</a> ile başlayın, sonra <a href=\"{playing}\">Oyunu oynamak</a> — ya da aşağıdaki konulara göz atın.</p>"
+  },
+  "edition": "Stonetop web sürümü"
 }

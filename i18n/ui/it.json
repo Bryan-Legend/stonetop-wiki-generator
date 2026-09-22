@@ -135,11 +135,15 @@
     "all_major": "Tutti gli arcani maggiori"
   },
   "home": {
-    "title": "Stonetop",
+    "title": "Stonetop, edizione web",
     "topics": "Argomenti",
-    "lede_html": "Un wiki statico e ipertestuale per <em>Stonetop</em> {books}. I numeri di pagina sono link; le espressioni dei dadi si tirano con un clic; passa il mouse su un link per un’anteprima (blocco statistiche completo con i link profondi).",
-    "remembers_html": "<strong>Si ricorda tutto.</strong> Spunta una casella, rispondi a una domanda, riempi uno spazio, assegna le caratteristiche: il wiki conserva ogni cosa.",
-    "defects_html": "Queste pagine sono estratte automaticamente dai PDF dei libri, quindi <strong>aspettati dei difetti</strong>. Se ne trovi uno, <a href=\"{issues}\">apri una segnalazione su GitHub</a>.",
-    "license_html": "Il <strong>testo</strong> dei libri è di Jeremy Strandberg, con licenza <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>."
-  }
+    "lede_html": "Un wiki statico e collegato per <em>Stonetop</em> {books}. I numeri di pagina sono link; le espressioni di dadi si tirano con un clic; passa il mouse su un link per un'anteprima (il blocco di caratteristiche intero quando il link è profondo).",
+    "remembers_html": "<strong>Ricorda.</strong> Spunta una casella, rispondi a una domanda, riempi uno spazio, assegna le caratteristiche — il wiki tiene tutto, così un libretto è una scheda del personaggio da cui si gioca davvero, e il conto alla rovescia di un pericolo o i miglioramenti di un insediamento restano segnati tra una sessione e l'altra. Ogni punto interrogativo e ogni spazio vuoto dei libri prende una nota, e i libretti tirano: clicca una caratteristica per tirare +quella caratteristica, o il dado dei danni per tirare i danni. Segna una menomazione e le sue due caratteristiche tirano con svantaggio da sole.",
+    "defects_html": "Queste pagine sono estratte automaticamente dai PDF dei libri, quindi <strong>aspettati difetti</strong> — tabelle storpiate, testo perso o duplicato, titoli sbagliati, link rotti. Se ne vedi uno, o vuoi aiutare a correggerlo, <a href=\"{issues}\">apri una issue o una pull request su GitHub</a>.",
+    "license_html": "Il <strong>testo</strong> dei libri è di Jeremy Strandberg, sotto <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>. Suoni dei dadi di <a href=\"https://opengameart.org/content/wooden-dice-on-wodden-table-roll\">Wuzzy</a>, <a href=\"https://creativecommons.org/publicdomain/zero/1.0/\" rel=\"license\">CC0</a>. La sincronizzazione dei dati è offerta da <a href=\"https://workers.cloudflare.com/\">Cloudflare</a>.",
+    "doc_title": "Stonetop — GdR da tavolo (TTRPG) di fantasy domestica, edizione web",
+    "and": "e",
+    "intro_html": "<p><strong>Stonetop</strong> è un gioco di ruolo da tavolo di fantasy domestica, di Jeremy Strandberg, ambientato in un'età del ferro che non è mai esistita. Vi sedete in tre-cinque — uno fa da GM, gli altri giocano gli eroi di un unico piccolo villaggio isolato alla fine del mondo. Lì avete parenti, un mestiere, vicini che vi hanno conosciuti da bambini, e i pericoli che affrontate minacciano casa — così, tra un'avventura e l'altra, il gioco si volta verso il <a href=\"{homefront}\">Fronte interno</a>, dove il villaggio ha un libretto suo e cresce, soffre e cambia insieme ai personaggi. È questo che distingue questo TTRPG dai GdR di fantasy da dungeon: il luogo che difendete è il luogo in cui vivete.</p><p>Sotto è un gioco Powered by the Apocalypse costruito sulle ossa di <em>Dungeon World</em>: tira 2d6 più una caratteristica — con 10+ va come vuoi, con 7-9 ti costa qualcosa, con 6- il GM fa una mossa. Questo wiki è un'edizione web gratuita e consultabile dei due regolamenti del TTRPG: ogni mossa, libretto, mostro, pericolo, insediamento, divinità e arcano del gioco. Se il gioco è nuovo per te, inizia da <a href=\"{welcome}\">Benvenuti a Stonetop</a>, poi <a href=\"{playing}\">Giocare</a> — oppure sfoglia gli argomenti qui sotto.</p>"
+  },
+  "edition": "Stonetop, edizione web"
 }

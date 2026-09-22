@@ -135,11 +135,15 @@
     "all_major": "Az összes nagy arkánum"
   },
   "home": {
-    "title": "Stonetop",
+    "title": "Stonetop, webes kiadás",
     "topics": "Témák",
-    "lede_html": "Statikus, hivatkozásokkal átszőtt wiki a <em>Stonetop</em> {books} anyagához. Az oldalszámok hivatkozások; a kockakifejezések kattintásra dobnak; vidd az egeret egy hivatkozás fölé az előnézethez (mély hivatkozásnál a teljes statisztikablokk).",
-    "remembers_html": "<strong>Megjegyzi.</strong> Pipálj ki egy négyzetet, válaszolj egy kérdésre, tölts ki egy üres helyet, oszd el a tulajdonságaidat – a wiki mindent megőriz.",
-    "defects_html": "Ezek az oldalak a könyvek PDF-jeiből automatikusan kinyert szövegek, ezért <strong>számíts hibákra</strong>. Ha látsz egyet, <a href=\"{issues}\">nyiss egy issue-t a GitHubon</a>.",
-    "license_html": "A könyvek <strong>szövege</strong> Jeremy Strandberg műve, <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a> licenc alatt."
-  }
+    "lede_html": "Statikus, hivatkozott wiki a <em>Stonetop</em>hoz {books}. Az oldalszámok linkek; a kockakifejezések kattintásra gurulnak; vidd az egeret egy link fölé az előnézethez (a teljes tulajdonságblokk mély linknél).",
+    "remembers_html": "<strong>Emlékszik.</strong> Pipálj egy négyzetet, válaszolj egy kérdésre, tölts ki egy rést, oszd ki a tulajdonságaidat — a wiki mindet megőrzi, így egy karakterfüzet olyan karakterlap, amelyről tényleg lehet játszani, egy veszély visszaszámlálása vagy egy település fejlesztései pedig megmaradnak a alkalmak között. A könyvek minden kérdőjele és minden kitöltendő helye jegyzetet fogad, és a füzetek dobnak: kattints egy tulajdonságra, hogy +azt a tulajdonságot dobd, vagy a sebzéskockára a sebzéshez. Jelölj meg egy gyengeséget, és a két tulajdonsága magától hátránnyal dob.",
+    "defects_html": "Ezeket az oldalakat a könyvek PDF-jeiből emeljük ki automatikusan, ezért <strong>számíts hibákra</strong> — széttört táblázatokra, elveszett vagy megkettőzött szövegre, rossz címsorokra, törött linkekre. Ha találsz egyet, vagy segítenél kijavítani, <a href=\"{issues}\">nyiss issue-t vagy pull requestet a GitHubon</a>.",
+    "license_html": "A könyvek <strong>szövegét</strong> Jeremy Strandberg írta, <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a> alatt. Kockahangok: <a href=\"https://opengameart.org/content/wooden-dice-on-wodden-table-roll\">Wuzzy</a>, <a href=\"https://creativecommons.org/publicdomain/zero/1.0/\" rel=\"license\">CC0</a>. A közös adatszinkront a <a href=\"https://workers.cloudflare.com/\">Cloudflare</a> adja.",
+    "doc_title": "Stonetop — az otthoni fantasy asztali szerepjáték (TTRPG) webes kiadása",
+    "and": "és",
+    "intro_html": "<p>A <strong>Stonetop</strong> Jeremy Strandberg asztali szerepjátéka, otthoni fantasy, egy sosemvolt vaskorban. Hárman-öten ültök le — egy KM, a többiek egy etlen kis, elzárt falu hőseit játsszák a világ végén. Ott van rokonotok, mesterségetek, szomszédaitok, akik gyerekként ismertek, és a veszélyek, amelyekkel szembenéztek, az otthont fenyegetik — kalandok között a játék ezért a <a href=\"{homefront}\">hátország</a> felé fordul, ahol a falunak saját karakterfüzete van, és a szereplőkkel együtt nő, szenved és változik. Ez választja el ezt a TTRPG-t a kazamata-fantasy szerepjátékoktól: a hely, amit védtek, az a hely, ahol éltek.</p><p>Alatta Powered by the Apocalypse játék, a <em>Dungeon World</em> csontjaira építve: dobj 2d6-ot plusz egy tulajdonságot — 10+ és a tiétek az út, 7-9 és kerül valamibe, 6- és a KM húz. Ez a wiki a TTRPG két szabálykönyvének ingyenes, kereshető webes kiadása: minden húzás, karakterfüzet, szörny, veszély, település, istenség és arkánum a játékban. Ha új neked a játék, kezdd itt: <a href=\"{welcome}\">Üdvözöl a Stonetop</a>, aztán <a href=\"{playing}\">A játék menete</a> — vagy nézd át a témákat lent.</p>"
+  },
+  "edition": "Stonetop, webes kiadás"
 }

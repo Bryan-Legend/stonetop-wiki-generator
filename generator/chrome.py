@@ -139,6 +139,7 @@ def social_meta_html(
     *,
     og_locale: str = "en_US",
     alternates: list[dict] | None = None,
+    edition: str | None = None,
 ) -> str:
     """Description + Open Graph/Twitter tags, canonical, and hreflang.
 
@@ -158,7 +159,14 @@ def social_meta_html(
         "game by Jeremy Strandberg."
     )
     # The home page is the site itself: no "Stonetop — Stonetop Web Edition".
-    full = title if title == SITE_NAME else f"{title} — {EDITION_NAME}"
+    # A translated page appends that language's name for the edition.
+    brand = edition or EDITION_NAME
+    if title == SITE_NAME:
+        full = brand
+    elif title == brand:
+        full = title
+    else:
+        full = f"{title} — {brand}"
     base = SITE_BASE_URL.rstrip("/")
     url = base + "/" + path.lstrip("/")
     img = base + "/images/favicon.png"
@@ -171,7 +179,7 @@ def social_meta_html(
         '  <meta name="robots" content="index, follow, max-snippet:-1,'
         ' max-image-preview:large, max-video-preview:-1">',
         f'  <link rel="canonical" href="{e(url)}">',
-        f'  <meta property="og:site_name" content="{e(SITE_NAME)}">',
+        f'  <meta property="og:site_name" content="{e(brand)}">',
         f'  <meta property="og:title" content="{e(full)}">',
         f'  <meta property="og:description" content="{e(desc)}">',
         '  <meta property="og:type" content="article">',
@@ -1138,6 +1146,7 @@ def page_shell(
     locale: dict | None = None,
     alternates: list[dict] | None = None,
     translated_slugs: set[str] | None = None,
+    doc_title: str | None = None,
 ) -> str:
     """One page, in one language.
 
@@ -1148,6 +1157,7 @@ def page_shell(
     """
     ui = (locale or {}).get("ui") or UI_FALLBACK
     code = (locale or {}).get("code") or "en"
+    edition = ui.get("edition") or EDITION_NAME
     path = f"{code}/{slug}.html" if locale else f"{slug}.html"
     meta_html = social_meta_html(
         title,
@@ -1155,6 +1165,7 @@ def page_shell(
         path,
         og_locale=(locale or {}).get("og_locale") or "en_US",
         alternates=alternates,
+        edition=edition,
     )
     nav_html = "\n".join(
         build_nav_items(
@@ -1212,7 +1223,14 @@ def page_shell(
     # (``write_localized_index``), so the wiki title leads there, not up to
     # the English one.
     home_href = "index.html" if locale else f"{rel_prefix}index.html"
-    doc_title = title if title == SITE_NAME else f"{title} — {EDITION_NAME}"
+    if doc_title is None:
+        if slug == "index":
+            doc_title = ((ui.get("home") or {}).get("doc_title")
+                         or HOME_FALLBACK["doc_title"])
+        elif title in (SITE_NAME, edition):
+            doc_title = title
+        else:
+            doc_title = f"{title} — {edition}"
 
     return f"""<!DOCTYPE html>
 <html lang="{e(code)}"{dir_attr}>
@@ -1233,7 +1251,7 @@ def page_shell(
   <div class="layout">
     <aside class="sidebar" id="sidebar">
       <div class="sidebar-head">
-        <a class="wiki-title" href="{home_href}">{e(EDITION_NAME)}</a>
+        <a class="wiki-title" href="{home_href}">{e(edition)}</a>
         <input type="search" id="nav-filter" class="nav-filter" placeholder="{e(ui["search_placeholder"])}" autocomplete="off" aria-label="{e(ui["search_label"])}">
         <div id="search-results" class="search-results" hidden></div>
       </div>
@@ -1520,8 +1538,10 @@ def home_intro_html(template: str, href) -> str:
 
 
 HOME_FALLBACK = {
-    "title": "Stonetop",
+    "title": EDITION_NAME,
+    "doc_title": "Stonetop — hearth fantasy tabletop RPG (TTRPG) web edition",
     "topics": "Topics",
+    "and": "and",
     "intro_html": HOME_INTRO_HTML,
     "lede_html": (
         "A static, hyperlinked wiki for <em>Stonetop</em> {books}. "
@@ -1530,18 +1550,39 @@ HOME_FALLBACK = {
     ),
     "remembers_html": (
         "<strong>It remembers.</strong> Tick a checkbox, answer a question, "
-        "fill in a blank, assign your stats — the wiki keeps all of it."
+        "fill in a blank, assign your stats — the wiki keeps all of it, so a "
+        "playbook is a character sheet you can actually play off, and a "
+        "danger's countdown or a steading's improvements stay marked between "
+        "sessions. Every question mark and every fill-in-the-blank in the "
+        "books takes a note, and the playbooks roll: click a stat to roll "
+        "+that stat, or the damage die to roll damage. Mark a debility and "
+        "its two stats roll with disadvantage on their own."
     ),
     "defects_html": (
         "These pages are extracted from the books' PDFs automatically, so "
-        "<strong>expect defects</strong>. If you spot one, "
-        '<a href="{issues}">open an issue on GitHub</a>.'
+        "<strong>expect defects</strong> — mangled tables, dropped or "
+        "duplicated text, wrong headings, broken links. If you spot one, or "
+        "want to help fix them, "
+        '<a href="{issues}">open an issue or a pull request on GitHub</a>.'
     ),
     "license_html": (
         "The books' <strong>text</strong> is by Jeremy Strandberg under "
-        '<a href="{license}" rel="license">CC BY-SA 4.0</a>.'
+        '<a href="{license}" rel="license">CC BY-SA 4.0</a>. '
+        'Dice sounds by <a href="https://opengameart.org/content/'
+        'wooden-dice-on-wodden-table-roll">Wuzzy</a>, '
+        '<a href="https://creativecommons.org/publicdomain/zero/1.0/" '
+        'rel="license">CC0</a>. '
+        "Free data sync provided by "
+        '<a href="https://workers.cloudflare.com/">Cloudflare</a>.'
     ),
 }
+
+
+def join_book_labels(labels: list[str], conj: str) -> str:
+    """``A``, ``A and B``, or ``A, B and C`` — ``conj`` is the language's and."""
+    if len(labels) <= 1:
+        return labels[0] if labels else ""
+    return ", ".join(labels[:-1]) + f" {conj} " + labels[-1]
 
 
 def arcana_hub_slugs(articles: list[dict]) -> set[str]:
@@ -1730,7 +1771,7 @@ def write_localized_index(
             f"<strong>{html.escape(book_labels.get(b) or lab)}</strong>"
             for b, lab in books_present
         ]
-        lede_books = labels[0] if len(labels) == 1 else ", ".join(labels)
+        lede_books = join_book_labels(labels, home.get("and") or "and")
         hero = (
             '<div class="index-hero">'
             f'<p class="lede">{home["lede_html"].format(books=lede_books)}</p>'
@@ -1747,7 +1788,7 @@ def write_localized_index(
                 f"{slug}.html" if slug in translated else f"../{slug}.html"
             ),
         )
-        title = home["title"]
+        title = ui.get("edition") or home["title"]
         body = (
             f'<h1 class="page-title">{html.escape(title)}</h1>'
             f'<div class="index-intro">{intro}</div>'
@@ -1766,6 +1807,7 @@ def write_localized_index(
             locale=locale,
             alternates=home_alts,
             translated_slugs=translated,
+            doc_title=home.get("doc_title") or HOME_FALLBACK["doc_title"],
         )
         (lang_dir / "index.html").write_text(html_out, encoding="utf-8")
         written.append(f"{code}/index.html")
@@ -2141,10 +2183,7 @@ def write_index_custom(
         f"<strong>{html.escape(label)}</strong>"
         for _b, label in books_present
     ]
-    if len(labels) > 1:
-        lede_books = ", ".join(labels[:-1]) + " and " + labels[-1]
-    else:
-        lede_books = labels[0]
+    lede_books = join_book_labels(labels, HOME_FALLBACK["and"])
     issues_url = html.escape(ISSUES_URL)
     license_url = html.escape(LICENSE_URL)
     intro_html = home_intro_html(HOME_INTRO_HTML, lambda slug: f"{slug}.html")
@@ -2180,7 +2219,7 @@ def write_index_custom(
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Stonetop — hearth fantasy tabletop RPG (TTRPG) web edition</title>
+  <title>{html.escape(HOME_FALLBACK["doc_title"])}</title>
 {home_meta}
   <link rel="icon" href="images/favicon.svg" type="image/svg+xml">
   <link rel="alternate icon" href="images/favicon.ico" sizes="16x16 32x32 48x48 64x64">
@@ -2211,27 +2250,10 @@ def write_index_custom(
         <div class="index-intro">{intro_html}</div>
         {cards_html}
         <div class="index-hero">
-          <p class="lede">A static, hyperlinked wiki for <em>Stonetop</em>
-          {lede_books}.
-          Page numbers are links; dice expressions roll on click; hover a link for a preview
-          (full stat blocks when deep-linked).</p>
-          <p class="index-vtt"><strong>It remembers.</strong> Tick a checkbox, answer a question,
-          fill in a blank, assign your stats — the wiki keeps all of it, so a playbook is a
-          character sheet you can actually play off, and a danger's countdown or a steading's
-          improvements stay marked between sessions. Every question mark and every fill-in-the-blank
-          in the books takes a note, and the playbooks roll: click a stat to roll +that stat, or the
-          damage die to roll damage. Mark a debility and its two stats roll with disadvantage on
-          their own.</p>
-          <p class="index-note">These pages are extracted from the books' PDFs automatically, so
-          <strong>expect defects</strong> — mangled tables, dropped or duplicated text, wrong
-          headings, broken links. If you spot one, or want to help fix them,
-          <a href="{issues_url}">open an issue or a pull request on GitHub</a>.</p>
-          <p class="index-license">The books' <strong>text</strong> is by
-          Jeremy Strandberg under <a href="{license_url}" rel="license">CC BY-SA 4.0</a>.
-          Dice sounds by <a href="https://opengameart.org/content/wooden-dice-on-wodden-table-roll">Wuzzy</a>,
-          <a href="https://creativecommons.org/publicdomain/zero/1.0/" rel="license">CC0</a>.
-          Free data sync provided by
-          <a href="https://workers.cloudflare.com/">Cloudflare</a>.</p>
+          <p class="lede">{HOME_FALLBACK["lede_html"].format(books=lede_books)}</p>
+          <p class="index-vtt">{HOME_FALLBACK["remembers_html"]}</p>
+          <p class="index-note">{HOME_FALLBACK["defects_html"].format(issues=issues_url)}</p>
+          <p class="index-license">{HOME_FALLBACK["license_html"].format(license=license_url)}</p>
         </div>
         </main>
       </div>

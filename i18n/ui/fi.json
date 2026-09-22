@@ -135,11 +135,15 @@
     "all_major": "Kaikki suuret arkanat"
   },
   "home": {
-    "title": "Stonetop",
+    "title": "Stonetop, verkkoversio",
     "topics": "Aiheet",
-    "lede_html": "Staattinen, linkitetty wiki <em>Stonetop</em>-pelin {books} materiaaliin. Sivunumerot ovat linkkejä; noppalausekkeet heitetään napsauttamalla; vie osoitin linkin päälle nähdäksesi esikatselun (syvälinkeissä koko tilastolohko).",
-    "remembers_html": "<strong>Se muistaa.</strong> Rastita ruutu, vastaa kysymykseen, täytä tyhjä kohta, jaa ominaisuutesi – wiki säilyttää kaiken.",
-    "defects_html": "Nämä sivut on poimittu kirjojen PDF-tiedostoista automaattisesti, joten <strong>odota virheitä</strong>. Jos huomaat sellaisen, <a href=\"{issues}\">avaa issue GitHubissa</a>.",
-    "license_html": "Kirjojen <strong>teksti</strong> on Jeremy Strandbergin, lisenssillä <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>."
-  }
+    "lede_html": "Staattinen, hyperlinkitetty wiki pelille <em>Stonetop</em> {books}. Sivunumerot ovat linkkejä; noppalausekkeet heitetään napsautuksella; vie osoitin linkin päälle nähdäksesi esikatselun (koko kykylohko syvässä linkissä).",
+    "remembers_html": "<strong>Se muistaa.</strong> Rastita ruutu, vastaa kysymykseen, täytä aukko, jaa kykysi — wiki säilyttää kaiken, joten pelikirja on hahmolomake jolta voi oikeasti pelata, ja vaaran lähtölaskenta tai asutuksen parannukset pysyvät merkittyinä istuntojen välillä. Jokainen kysymysmerkki ja jokainen täyttökohta kirjoissa ottaa muistiinpanon, ja pelikirjat heittävät: napsauta kykyä heittääksesi +sen kyvyn, tai vahinkonoppaa heittääksesi vahinkoa. Merkitse heikkous, niin sen kaksi kykyä heittävät haitalla itsestään.",
+    "defects_html": "Nämä sivut poimitaan kirjojen pdf-tiedostoista automaattisesti, joten <strong>odota virheitä</strong> — rikkinäisiä taulukoita, pudonnutta tai kahdentunutta tekstiä, vääriä otsikoita, katkenneita linkkejä. Jos huomaat sellaisen tai haluat auttaa korjaamaan sen, <a href=\"{issues}\">avaa issue tai pull request GitHubissa</a>.",
+    "license_html": "Kirjojen <strong>teksti</strong> on Jeremy Strandbergin, lisenssillä <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>. Noppaäänet: <a href=\"https://opengameart.org/content/wooden-dice-on-wodden-table-roll\">Wuzzy</a>, <a href=\"https://creativecommons.org/publicdomain/zero/1.0/\" rel=\"license\">CC0</a>. Jaetun datan synkronoinnin tarjoaa <a href=\"https://workers.cloudflare.com/\">Cloudflare</a>.",
+    "doc_title": "Stonetop — kotilieden fantasian pöytäroolipelin (TTRPG) verkkoversio",
+    "and": "ja",
+    "intro_html": "<p><strong>Stonetop</strong> on Jeremy Strandbergin pöytäroolipeli, kotilieden fantasiaa, sijoitettuna rautakauteen jota ei koskaan ollut. Istutte kolmesta viiteen — yksi pelinjohtajana, muut pelaavat yhden pienen, eristyneen kylän sankareita maailman äärellä. Teillä on siellä sukua, ammatti, naapureita jotka tunsivat teidät lapsina, ja kohtaamanne vaarat uhkaavat kotia — siksi seikkailujen välillä peli kääntyy <a href=\"{homefront}\">kotirintamaan</a>, jossa kylällä on oma pelikirja ja se kasvaa, kärsii ja muuttuu hahmojen rinnalla. Se erottaa tämän TTRPG:n luolastoseikkailun roolipeleistä: paikka jota puolustatte on paikka jossa asutte.</p><p>Pinnan alla se on Powered by the Apocalypse -peli <em>Dungeon World</em>in luilla: heitä 2d6 plus kyky — 10+ ja se menee teidän tavallanne, 7-9 ja se maksaa teille jotain, 6- ja PJ tekee siirron. Tämä wiki on ilmainen, haettava verkkoversio TTRPG:n kahdesta sääntökirjasta: jokainen siirto, pelikirja, hirviö, vaara, asutus, jumaluus ja arkaani pelissä. Jos peli on sinulle uusi, aloita sivulta <a href=\"{welcome}\">Tervetuloa Stonetopiin</a>, sitten <a href=\"{playing}\">Pelaaminen</a> — tai selaa aiheita alta.</p>"
+  },
+  "edition": "Stonetop, verkkoversio"
 }

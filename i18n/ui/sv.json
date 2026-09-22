@@ -135,11 +135,15 @@
     "all_major": "Alla stora arkana"
   },
   "home": {
-    "title": "Stonetop",
+    "title": "Stonetop, webbutgåva",
     "topics": "Ämnen",
-    "lede_html": "En statisk, hyperlänkad wiki för <em>Stonetop</em> {books}. Sidnummer är länkar; tärningsuttryck slås med ett klick; håll muspekaren över en länk för en förhandsvisning (hela statistikblocket vid djuplänkar).",
-    "remembers_html": "<strong>Den minns.</strong> Bocka i en ruta, svara på en fråga, fyll i ett tomrum, fördela dina grundegenskaper – wikin behåller alltihop.",
-    "defects_html": "De här sidorna extraheras automatiskt ur böckernas PDF-filer, så <strong>räkna med fel</strong>. Hittar du ett, <a href=\"{issues}\">öppna ett ärende på GitHub</a>.",
-    "license_html": "Böckernas <strong>text</strong> är skriven av Jeremy Strandberg under <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>."
-  }
+    "lede_html": "En statisk, hyperlänkad wiki för <em>Stonetop</em> {books}. Sidnummer är länkar; tärningsuttryck slås med ett klick; håll musen över en länk för en förhandsvisning (hela statistikblocket vid en djup länk).",
+    "remembers_html": "<strong>Den minns.</strong> Kryssa i en ruta, svara på en fråga, fyll i en lucka, fördela dina grundegenskaper — wikin behåller allt, så en playbook är ett rollformulär man faktiskt kan spela från, och en faras nedräkning eller en bosättnings förbättringar förblir markerade mellan spelmötena. Varje frågetecken och varje lucka i böckerna tar en anteckning, och playböckerna slår: klicka en grundegenskap för att slå +den grundegenskapen, eller skadetärningen för att slå skada. Markera en svaghet så slår dess två grundegenskaper med nackdel av sig själva.",
+    "defects_html": "De här sidorna extraheras automatiskt ur böckernas pdf:er, så <strong>räkna med fel</strong> — söndertrasade tabeller, tappad eller dubblerad text, fel rubriker, trasiga länkar. Om du ser ett, eller vill hjälpa till att laga det, <a href=\"{issues}\">öppna ett ärende eller en pull request på GitHub</a>.",
+    "license_html": "Böckernas <strong>text</strong> är av Jeremy Strandberg under <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>. Tärningsljud av <a href=\"https://opengameart.org/content/wooden-dice-on-wodden-table-roll\">Wuzzy</a>, <a href=\"https://creativecommons.org/publicdomain/zero/1.0/\" rel=\"license\">CC0</a>. Delad datasynk tillhandahålls av <a href=\"https://workers.cloudflare.com/\">Cloudflare</a>.",
+    "doc_title": "Stonetop — webbutgåva av bordsrollspelet (TTRPG) i härdfantasy",
+    "and": "och",
+    "intro_html": "<p><strong>Stonetop</strong> är ett bordsrollspel i härdfantasy av Jeremy Strandberg, förlagt till en järnålder som aldrig fanns. Ni sätter er tre till fem — en som SL, de andra spelar hjältarna i en enda liten, isolerad by vid världens ände. Ni har släkt där, ett yrke, grannar som kände er som barn, och farorna ni möter hotar hemmet — så mellan äventyren vänder sig spelet till <a href=\"{homefront}\">hemmafronten</a>, där byn har en egen playbook och växer, lider och förändras tillsammans med rollpersonerna. Det är det som skiljer den här TTRPG:n från dungeonfantasy-rollspel: platsen ni försvarar är platsen ni bor på.</p><p>Under ytan är det ett Powered by the Apocalypse-spel byggt på <em>Dungeon World</em>s stomme: slå 2d6 plus en grundegenskap — 10+ och det går er väg, 7-9 och det kostar er något, 6- och SL gör ett drag. Den här wikin är en fri, sökbar webbutgåva av TTRPG:ns två regelböcker: varje drag, playbook, monster, fara, bosättning, gudom och arkanum i spelet. Om spelet är nytt för dig, börja med <a href=\"{welcome}\">Välkommen till Stonetop</a>, sedan <a href=\"{playing}\">Att spela</a> — eller bläddra bland ämnena nedan.</p>"
+  },
+  "edition": "Stonetop, webbutgåva"
 }

@@ -261,13 +261,17 @@ rewrite (2026-09-16), so there is no longer a reason to commit a partial one.
 
 `write_localized_index()` in `generator/chrome.py` writes `<lang>/index.html`
 for every language that has any page, so a reader landing on `/pt-BR/` gets
-their own front door rather than the English one. Its prose — the lede, the
-"what your browser remembers" note, the defects note and the license line —
-lives in `ui/<code>.json` under `home`, with `{books}`, `{issues}` and
-`{license}` placeholders; a language without a `home` block falls back to
-English (`HOME_FALLBACK`). Cards use the page's translated title and
-description where there is one, and link to `../<slug>.html` where there
-isn't. Home pages are site-wide, so a `--pages` run skips them.
+their own front door rather than the English one. Its prose lives in
+`ui/<code>.json` under `home`: `intro_html` (`{homefront}`, `{welcome}`,
+`{playing}`), `lede_html` (`{books}`), `remembers_html`, `defects_html`
+(`{issues}`) and `license_html` (`{license}`). `and` is the word that joins
+the book names in the lede. `doc_title` is the index page's `<title>`.
+`edition`, beside `home`, is the name in the sidebar and the suffix on every
+other page's title (`Marshedge — Stonetop Web Edition`). A language without
+a `home` block falls back to English (`HOME_FALLBACK`). Cards use the page's
+translated title and description where there is one, and link to
+`../<slug>.html` where there isn't. Home pages are site-wide, so a `--pages`
+run skips them.
 
 ### Two details that only show up in a translated page
 

@@ -135,11 +135,15 @@
     "all_major": "Todos los arcanos mayores"
   },
   "home": {
-    "title": "Stonetop",
+    "title": "Stonetop, edición web",
     "topics": "Temas",
     "lede_html": "Un wiki estático e hiperenlazado de <em>Stonetop</em> {books}. Los números de página son enlaces; las expresiones de dados se tiran con un clic; pasa el cursor sobre un enlace para ver una vista previa (con el bloque de estadísticas completo cuando el enlace es profundo).",
-    "remembers_html": "<strong>Recuerda.</strong> Marca una casilla, responde a una pregunta, rellena un hueco, reparte tus características: el wiki lo guarda todo.",
-    "defects_html": "Estas páginas se extraen automáticamente de los PDF de los libros, así que <strong>espera defectos</strong>. Si ves alguno, <a href=\"{issues}\">abre una incidencia en GitHub</a>.",
-    "license_html": "El <strong>texto</strong> de los libros es de Jeremy Strandberg, bajo <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>."
-  }
+    "remembers_html": "<strong>Recuerda.</strong> Marca una casilla, responde a una pregunta, rellena un hueco, asigna tus estadísticas: el wiki lo guarda todo, así que un libreto es una hoja de personaje con la que de verdad puedes jugar, y la cuenta atrás de un peligro o las mejoras de un asentamiento siguen marcadas entre sesiones. Cada signo de interrogación y cada espacio en blanco de los libros admite una nota, y los libretos tiran: pulsa una estadística para tirar +esa estadística, o el dado de daño para tirar el daño. Marca una debilidad y sus dos estadísticas tiran con desventaja por su cuenta.",
+    "defects_html": "Estas páginas se extraen automáticamente de los PDF de los libros, así que <strong>espera defectos</strong>: tablas deshechas, texto perdido o duplicado, títulos erróneos, enlaces rotos. Si ves alguno, o quieres ayudar a corregirlo, <a href=\"{issues}\">abre una incidencia o una pull request en GitHub</a>.",
+    "license_html": "El <strong>texto</strong> de los libros es de Jeremy Strandberg, bajo <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>. Sonidos de dados de <a href=\"https://opengameart.org/content/wooden-dice-on-wodden-table-roll\">Wuzzy</a>, <a href=\"https://creativecommons.org/publicdomain/zero/1.0/\" rel=\"license\">CC0</a>. La sincronización de datos la ofrece <a href=\"https://workers.cloudflare.com/\">Cloudflare</a>.",
+    "doc_title": "Stonetop — juego de rol de mesa de fantasía del hogar (TTRPG), edición web",
+    "and": "y",
+    "intro_html": "<p><strong>Stonetop</strong> es un juego de rol de mesa de fantasía del hogar, obra de Jeremy Strandberg, ambientado en una edad del hierro que nunca existió. Os sentáis de tres a cinco: uno hace de DJ y el resto juega a los héroes de una sola aldea pequeña y aislada en el fin del mundo. Allí tenéis parientes, un oficio, vecinos que os conocieron de niños, y los peligros a los que os enfrentáis amenazan el hogar; por eso, entre aventuras, el juego pasa al <a href=\"{homefront}\">Frente doméstico</a>, donde la aldea tiene un libreto propio y crece, sufre y cambia junto a los personajes. Eso distingue a este TTRPG de los juegos de rol de fantasía de mazmorreo: el lugar que defendéis es el lugar en el que vivís.</p><p>Por dentro es un juego Powered by the Apocalypse armado sobre el esqueleto de <em>Dungeon World</em>: tira 2d6 más una estadística — con 10+ sale como quieres, con 7-9 te cuesta algo, con 6- el DJ hace un movimiento. Este wiki es una edición web gratuita y consultable de los dos reglamentos del TTRPG: cada movimiento, libreto, monstruo, peligro, asentamiento, deidad y arcano del juego. Si el juego es nuevo para ti, empieza por <a href=\"{welcome}\">Bienvenida a Stonetop</a>, luego <a href=\"{playing}\">Cómo se juega</a>, o recorre los temas de abajo.</p>"
+  },
+  "edition": "Stonetop, edición web"
 }

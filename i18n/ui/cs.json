@@ -135,11 +135,15 @@
     "all_major": "Všechna velká arkána"
   },
   "home": {
-    "title": "Stonetop",
+    "title": "Stonetop, webové vydání",
     "topics": "Témata",
-    "lede_html": "Statická, provázaná wiki ke hře <em>Stonetop</em> {books}. Čísla stránek jsou odkazy; výrazy s kostkami se hází kliknutím; najeďte na odkaz a zobrazí se náhled (u hlubokého odkazu celý blok statistik).",
-    "remembers_html": "<strong>Pamatuje si.</strong> Zaškrtněte políčko, odpovězte na otázku, vyplňte mezeru, rozdělte si vlastnosti – wiki si to všechno uchová.",
-    "defects_html": "Tyto stránky jsou z PDF knih vytaženy automaticky, takže <strong>počítejte s chybami</strong>. Když nějakou najdete, <a href=\"{issues}\">založte issue na GitHubu</a>.",
-    "license_html": "<strong>Text</strong> knih napsal Jeremy Strandberg a je pod licencí <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>."
-  }
+    "lede_html": "Statická wiki s odkazy pro <em>Stonetop</em> {books}. Čísla stran jsou odkazy; výrazy s kostkami se házejí kliknutím; najeď na odkaz pro náhled (celý blok vlastností u hlubokého odkazu).",
+    "remembers_html": "<strong>Pamatuje si to.</strong> Zaškrtni políčko, odpověz na otázku, vyplň mezeru, rozděl vlastnosti — wiki si to všechno nechá, takže deník je list postavy, ze kterého se opravdu dá hrát, a odpočet nebezpečí nebo vylepšení osady zůstanou označené mezi sezeními. Každý otazník a každá mezera v knihách bere poznámku a deníky házejí: klikni na vlastnost a hodíš +tu vlastnost, nebo na kostku zranění a hodíš zranění. Označ oslabení a jeho dvě vlastnosti házejí s nevýhodou samy.",
+    "defects_html": "Tyto stránky se automaticky vytahují z PDF knih, takže <strong>čekej vady</strong> — pokroucené tabulky, ztracený nebo zdvojený text, špatné nadpisy, rozbité odkazy. Když nějakou uvidíš nebo ji chceš pomoct opravit, <a href=\"{issues}\">založ issue nebo pull request na GitHubu</a>.",
+    "license_html": "<strong>Text</strong> knih napsal Jeremy Strandberg pod licencí <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>. Zvuky kostek: <a href=\"https://opengameart.org/content/wooden-dice-on-wodden-table-roll\">Wuzzy</a>, <a href=\"https://creativecommons.org/publicdomain/zero/1.0/\" rel=\"license\">CC0</a>. Sdílenou synchronizaci dat zajišťuje <a href=\"https://workers.cloudflare.com/\">Cloudflare</a>.",
+    "doc_title": "Stonetop — webové vydání stolní RPG (TTRPG) fantasy domácího krbu",
+    "and": "a",
+    "intro_html": "<p><strong>Stonetop</strong> je stolní hra na hrdiny, fantasy domácího krbu, od Jeremyho Strandberga, zasazená do doby železné, která nikdy nebyla. Sednete si ve třech až pěti — jeden jako PJ, ostatní hrají hrdiny jediné malé, odlehlé vesnice na konci světa. Máte tam příbuzné, řemeslo, sousedy, kteří vás znali jako děti, a nebezpečí, jimž čelíte, ohrožují domov — mezi výpravami se proto hra obrací k <a href=\"{homefront}\">domácí frontě</a>, kde má vesnice vlastní deník a roste, trpí a mění se spolu s postavami. Tím se tahle TTRPG liší od dungeonové fantasy: místo, které bráníte, je místo, kde žijete.</p><p>Pod kapotou je to hra Powered by the Apocalypse postavená na kostře <em>Dungeon World</em>: hoď 2d6 plus vlastnost — na 10+ to jde po vašem, na 7-9 vás to něco stojí, na 6- udělá PJ tah. Tahle wiki je volné, prohledávatelné webové vydání dvou pravidel TTRPG: každý tah, deník, příšera, nebezpečí, osada, božstvo a arkánum ve hře. Je-li pro tebe hra nová, začni u <a href=\"{welcome}\">Vítejte ve Stonetop</a>, pak <a href=\"{playing}\">Jak se hraje</a> — nebo projdi témata níže.</p>"
+  },
+  "edition": "Stonetop, webové vydání"
 }
