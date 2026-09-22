@@ -145,5 +145,9 @@
     "and": "og",
     "intro_html": "<p><strong>Stonetop</strong> er et bordrollespil i arnefantasy af Jeremy Strandberg, henlagt til en jernalder der aldrig fandtes. I sætter jer tre til fem — én som SL, de andre spiller heltene i én lille, isoleret by ved verdens ende. I har slægt der, et håndværk, naboer der kendte jer som børn, og farerne I møder truer hjemmet — så mellem eventyrene vender spillet sig mod <a href=\"{homefront}\">hjemmefronten</a>, hvor byen har sin egen playbook og vokser, lider og forandrer sig sammen med rollerne. Det er det der adskiller dette TTRPG fra fangekælder-fantasy-rollespil: stedet I forsvarer er stedet I bor.</p><p>Under det er det et Powered by the Apocalypse-spil bygget på <em>Dungeon World</em>s knogler: slå 2d6 plus en egenskab — 10+ og det går jeres vej, 7-9 og det koster jer noget, 6- og SL laver et træk. Denne wiki er en fri, søgbar webudgave af TTRPG'ets to regelbøger: hvert træk, hver playbook, hvert monster, hver fare, hver bygd, hver guddom og hvert arkanum i spillet. Hvis spillet er nyt for dig, så start med <a href=\"{welcome}\">Velkommen til Stonetop</a>, derefter <a href=\"{playing}\">At spille</a> — eller blad i emnerne nedenfor.</p>"
   },
-  "edition": "Stonetop, webudgave"
+  "edition": "Stonetop, webudgave",
+  "book_titles": {
+    "book1": "Bog I — Stonetop",
+    "book2": "Bog II — Den videre verden"
+  }
 }

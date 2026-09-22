@@ -145,5 +145,9 @@
     "and": "i",
     "intro_html": "<p><strong>Stonetop</strong> to stołowe RPG fantasy domowego ogniska Jeremy'ego Strandberga, osadzone w epoce żelaza, której nigdy nie było. Siadacie w trzy do pięciu osób — jedna jako MG, reszta gra bohaterów jednej małej, odciętej osady na krańcu świata. Macie tam krewnych, rzemiosło, sąsiadów, którzy znali was jako dzieci, a niebezpieczeństwa, którym stawiacie czoła, grożą domowi — dlatego między przygodami gra schodzi na <a href=\"{homefront}\">front domowy</a>, gdzie osada ma własny playbook i rośnie, cierpi i zmienia się razem z postaciami. Tym ten TTRPG różni się od lochowych fantasy RPG: miejsce, którego bronicie, jest miejscem, w którym żyjecie.</p><p>Pod spodem to gra Powered by the Apocalypse zbudowana na kościach <em>Dungeon World</em>: rzuć 2d6 plus cechę — 10+ i idzie po waszemu, 7-9 i kosztuje was coś, 6- i MG wykonuje ruch. To wiki to darmowe, przeszukiwalne wydanie internetowe dwóch podręczników TTRPG: każdy ruch, playbook, potwór, niebezpieczeństwo, osada, bóstwo i arkanum w grze. Jeśli gra jest dla ciebie nowa, zacznij od <a href=\"{welcome}\">Witajcie w Stonetop</a>, potem <a href=\"{playing}\">Rozgrywka</a> — albo przejrzyj tematy poniżej.</p>"
   },
-  "edition": "Stonetop, wydanie internetowe"
+  "edition": "Stonetop, wydanie internetowe",
+  "book_titles": {
+    "book1": "Księga I — Stonetop",
+    "book2": "Księga II — Szerszy świat"
+  }
 }

@@ -145,5 +145,9 @@
     "and": "ja",
     "intro_html": "<p><strong>Stonetop</strong> on Jeremy Strandbergin pöytäroolipeli, kotilieden fantasiaa, sijoitettuna rautakauteen jota ei koskaan ollut. Istutte kolmesta viiteen — yksi pelinjohtajana, muut pelaavat yhden pienen, eristyneen kylän sankareita maailman äärellä. Teillä on siellä sukua, ammatti, naapureita jotka tunsivat teidät lapsina, ja kohtaamanne vaarat uhkaavat kotia — siksi seikkailujen välillä peli kääntyy <a href=\"{homefront}\">kotirintamaan</a>, jossa kylällä on oma pelikirja ja se kasvaa, kärsii ja muuttuu hahmojen rinnalla. Se erottaa tämän TTRPG:n luolastoseikkailun roolipeleistä: paikka jota puolustatte on paikka jossa asutte.</p><p>Pinnan alla se on Powered by the Apocalypse -peli <em>Dungeon World</em>in luilla: heitä 2d6 plus kyky — 10+ ja se menee teidän tavallanne, 7-9 ja se maksaa teille jotain, 6- ja PJ tekee siirron. Tämä wiki on ilmainen, haettava verkkoversio TTRPG:n kahdesta sääntökirjasta: jokainen siirto, pelikirja, hirviö, vaara, asutus, jumaluus ja arkaani pelissä. Jos peli on sinulle uusi, aloita sivulta <a href=\"{welcome}\">Tervetuloa Stonetopiin</a>, sitten <a href=\"{playing}\">Pelaaminen</a> — tai selaa aiheita alta.</p>"
   },
-  "edition": "Stonetop, verkkoversio"
+  "edition": "Stonetop, verkkoversio",
+  "book_titles": {
+    "book1": "Kirja I — Stonetop",
+    "book2": "Kirja II — Laajempi maailma"
+  }
 }

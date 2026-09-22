@@ -145,5 +145,9 @@
     "and": "en",
     "intro_html": "<p><strong>Stonetop</strong> is een tafelrollenspel van haardfantasie door Jeremy Strandberg, gesitueerd in een ijzertijd die nooit heeft bestaan. Jullie gaan met z'n drieën tot vijven zitten — één als SL, de rest speelt de helden van één klein, afgelegen dorp aan het einde van de wereld. Je hebt er verwanten, een ambacht, buren die je als kind kenden, en de gevaren die je treft bedreigen thuis — dus tussen avonturen keert het spel zich naar het <a href=\"{homefront}\">thuisfront</a>, waar het dorp een eigen playbook heeft en groeit, lijdt en verandert naast de personages. Dat onderscheidt deze TTRPG van kerkerfantasie-rollenspellen: de plek die je verdedigt is de plek waar je woont.</p><p>Eronder is het een Powered by the Apocalypse-spel gebouwd op het geraamte van <em>Dungeon World</em>: gooi 2d6 plus een waarde — 10+ en het gaat jouw kant op, 7-9 en het kost je iets, 6- en de SL doet een zet. Deze wiki is een gratis, doorzoekbare webeditie van de twee regelboeken van de TTRPG: elke zet, elk playbook, elk monster, elk gevaar, elke nederzetting, elke godheid en elk arcanum in het spel. Als het spel nieuw voor je is, begin bij <a href=\"{welcome}\">Welkom in Stonetop</a>, dan <a href=\"{playing}\">Het spel spelen</a> — of blader door de onderwerpen hieronder.</p>"
   },
-  "edition": "Stonetop-webeditie"
+  "edition": "Stonetop-webeditie",
+  "book_titles": {
+    "book1": "Boek I — Stonetop",
+    "book2": "Boek II — De wijdere wereld"
+  }
 }

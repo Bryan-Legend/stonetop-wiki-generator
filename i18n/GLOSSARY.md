@@ -68,6 +68,30 @@ suffix on every other page's title.
 | ja · ko | ストーントップ・ウェブ版 · 스톤탑 웹판 |
 | zh-Hans · zh-Hant | 石顶网页版 · 石頂網頁版 |
 
+**The Wider World** is the short title the index prints after "Book II —".
+It is ordinary speech. Where a translation of the full printed subtitle
+(*The Wider World and Other Wonders*) already exists, the header uses that
+rendering of *the wider world* and drops *and other wonders*.
+
+| | Book II — The Wider World |
+|---|---|
+| es | Libro II — El mundo más amplio |
+| pt-BR | Livro II — O Mundo Mais Amplo |
+| de | Buch II — Die weitere Welt |
+| fr | Livre II — Le vaste monde |
+| it | Libro II — Il mondo più ampio |
+| nl | Boek II — De wijdere wereld |
+| sv | Bok II — Den vidare världen |
+| da · nb | Bog II — Den videre verden |
+| fi | Kirja II — Laajempi maailma |
+| cs | Kniha II — Širší svět |
+| pl | Księga II — Szerszy świat |
+| hu | II. könyv — A tágabb világ |
+| tr | Kitap II — Daha Geniş Dünya |
+| ru · uk | Книга II — Большой мир · Книга II — Ширший світ |
+| ja · ko | 第2巻 — より広い世界 · 제2권 — 더 넓은 세계 |
+| zh-Hans · zh-Hant | 第二卷 — 更广阔的世界 · 第二卷 — 更廣闊的世界 |
+
 | | World's End | Golden Oak |
 |---|---|---|
 | es | el Fin del Mundo | Roble Dorado |

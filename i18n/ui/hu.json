@@ -145,5 +145,9 @@
     "and": "és",
     "intro_html": "<p>A <strong>Stonetop</strong> Jeremy Strandberg asztali szerepjátéka, otthoni fantasy, egy sosemvolt vaskorban. Hárman-öten ültök le — egy KM, a többiek egy etlen kis, elzárt falu hőseit játsszák a világ végén. Ott van rokonotok, mesterségetek, szomszédaitok, akik gyerekként ismertek, és a veszélyek, amelyekkel szembenéztek, az otthont fenyegetik — kalandok között a játék ezért a <a href=\"{homefront}\">hátország</a> felé fordul, ahol a falunak saját karakterfüzete van, és a szereplőkkel együtt nő, szenved és változik. Ez választja el ezt a TTRPG-t a kazamata-fantasy szerepjátékoktól: a hely, amit védtek, az a hely, ahol éltek.</p><p>Alatta Powered by the Apocalypse játék, a <em>Dungeon World</em> csontjaira építve: dobj 2d6-ot plusz egy tulajdonságot — 10+ és a tiétek az út, 7-9 és kerül valamibe, 6- és a KM húz. Ez a wiki a TTRPG két szabálykönyvének ingyenes, kereshető webes kiadása: minden húzás, karakterfüzet, szörny, veszély, település, istenség és arkánum a játékban. Ha új neked a játék, kezdd itt: <a href=\"{welcome}\">Üdvözöl a Stonetop</a>, aztán <a href=\"{playing}\">A játék menete</a> — vagy nézd át a témákat lent.</p>"
   },
-  "edition": "Stonetop, webes kiadás"
+  "edition": "Stonetop, webes kiadás",
+  "book_titles": {
+    "book1": "I. könyv — Stonetop",
+    "book2": "II. könyv — A tágabb világ"
+  }
 }

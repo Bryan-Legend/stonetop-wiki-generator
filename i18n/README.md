@@ -265,7 +265,9 @@ their own front door rather than the English one. Its prose lives in
 `ui/<code>.json` under `home`: `intro_html` (`{homefront}`, `{welcome}`,
 `{playing}`), `lede_html` (`{books}`), `remembers_html`, `defects_html`
 (`{issues}`) and `license_html` (`{license}`). `and` is the word that joins
-the book names in the lede. `doc_title` is the index page's `<title>`.
+the book names in the lede. `book_titles` is the full index heading for each
+book (`Book II — The Wider World`), distinct from the short sidebar label in
+`books`. `doc_title` is the index page's `<title>`.
 `edition`, beside `home`, is the name in the sidebar and the suffix on every
 other page's title (`Marshedge — Stonetop Web Edition`). A language without
 a `home` block falls back to English (`HOME_FALLBACK`). Cards use the page's

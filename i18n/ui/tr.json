@@ -145,5 +145,9 @@
     "and": "ve",
     "intro_html": "<p><strong>Stonetop</strong>, Jeremy Strandberg'in ocak başı fantezisi türünde bir masaüstü rol yapma oyunu; hiç var olmamış bir demir çağında geçer. Üç ila beş kişi oturursunuz — biri GM, geri kalanlar dünyanın sonundaki tek bir küçük, yalıtık köyün kahramanlarını oynar. Orada akrabanız, bir zanaatınız, sizi çocukken tanıyan komşularınız vardır ve karşılaştığınız tehlikeler yurdu tehdit eder — bu yüzden maceralar arasında oyun <a href=\"{homefront}\">yurt cephesine</a> döner; köyün kendi kitapçığı vardır ve karakterlerle birlikte büyür, acı çeker, değişir. Bu TTRPG'yi zindan fantezisi RPG'lerinden ayıran budur: savunduğunuz yer, yaşadığınız yerdir.</p><p>Altında, <em>Dungeon World</em>'ün iskeleti üzerine kurulu bir Powered by the Apocalypse oyunudur: 2d6 artı bir nitelik at — 10+ ise sizin istediğiniz gibi gider, 7-9 ise size bir şey mal olur, 6- ise GM bir hamle yapar. Bu wiki, TTRPG'nin iki kural kitabının ücretsiz, aranabilir web sürümüdür: oyundaki her hamle, kitapçık, canavar, tehlike, yerleşke, tanrı ve arkanum. Oyun size yeniyse <a href=\"{welcome}\">Stonetop'a hoş geldiniz</a> ile başlayın, sonra <a href=\"{playing}\">Oyunu oynamak</a> — ya da aşağıdaki konulara göz atın.</p>"
   },
-  "edition": "Stonetop web sürümü"
+  "edition": "Stonetop web sürümü",
+  "book_titles": {
+    "book1": "Kitap I — Stonetop",
+    "book2": "Kitap II — Daha Geniş Dünya"
+  }
 }

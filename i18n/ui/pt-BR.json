@@ -157,5 +157,9 @@
     "sync_status_offline": "Servidor de sincronização inacessível: as alterações ficam salvas aqui e serão sincronizadas depois",
     "sync_status_local": "Este navegador mantém sua própria cópia"
   },
-  "edition": "Stonetop, edição web"
+  "edition": "Stonetop, edição web",
+  "book_titles": {
+    "book1": "Livro I — Stonetop",
+    "book2": "Livro II — O Mundo Mais Amplo"
+  }
 }

@@ -1713,7 +1713,7 @@ def write_localized_index(
         lang_dir.mkdir(parents=True, exist_ok=True)
         ui = locale.get("ui") or {}
         home = {**HOME_FALLBACK, **((ui.get("home") or {}))}
-        book_labels = (ui.get("books") or {})
+        book_titles = ui.get("book_titles") or {}
         titles = locale.get("titles") or {}
         translated = set(locale["pages"]) | arcana_hub_slugs(articles)
 
@@ -1759,7 +1759,9 @@ def write_localized_index(
                 )
             if not cards:
                 continue
-            heading = book_labels.get(book) or label
+            # The English index heads each book with its full title
+            # ("Book II — The Wider World"), not the short sidebar label.
+            heading = book_titles.get(book) or label
             if not multi_book:
                 heading = ui.get("nav_label") or home["topics"]
             sections.append(
@@ -1768,7 +1770,7 @@ def write_localized_index(
             )
 
         labels = [
-            f"<strong>{html.escape(book_labels.get(b) or lab)}</strong>"
+            f"<strong>{html.escape(book_titles.get(b) or lab)}</strong>"
             for b, lab in books_present
         ]
         lede_books = join_book_labels(labels, home.get("and") or "and")

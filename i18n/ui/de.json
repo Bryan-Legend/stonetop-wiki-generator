@@ -145,5 +145,9 @@
     "and": "und",
     "intro_html": "<p><strong>Stonetop</strong> ist ein Tischrollenspiel der Herd-Fantasy von Jeremy Strandberg, angesiedelt in einer Eisenzeit, die es nie gegeben hat. Drei bis fünf von euch setzen sich zusammen — eine Person als SL, die übrigen spielen die Helden eines einzigen kleinen, abgelegenen Dorfs am Ende der Welt. Ihr habt dort Verwandte, ein Handwerk, Nachbarn, die euch als Kind kannten, und die Gefahren, denen ihr begegnet, bedrohen das Zuhause — deshalb wendet sich das Spiel zwischen den Abenteuern der <a href=\"{homefront}\">Heimatfront</a> zu, wo das Dorf ein eigenes Spielbuch hat und neben den Charakteren wächst, leidet und sich verändert. Das unterscheidet dieses TTRPG von Dungeon-Fantasy-Rollenspielen: Der Ort, den ihr verteidigt, ist der Ort, an dem ihr lebt.</p><p>Darunter ist es ein Powered-by-the-Apocalypse-Rollenspiel auf dem Gerüst von <em>Dungeon World</em>: würfle 2d6 plus einen Wert — bei 10+ läuft es nach eurem Sinn, bei 7-9 kostet es euch etwas, bei 6- macht die SL einen Spielzug. Dieses Wiki ist eine freie, durchsuchbare Webausgabe der beiden Regelwerke des TTRPG: jeder Spielzug, jedes Spielbuch, jedes Monster, jede Gefahr, jede Siedlung, jede Gottheit und jedes Arkanum im Spiel. Wenn das Spiel neu für euch ist, beginnt mit <a href=\"{welcome}\">Willkommen in Stonetop</a>, dann <a href=\"{playing}\">Das Spiel spielen</a> — oder stöbert in den Themen unten.</p>"
   },
-  "edition": "Stonetop-Webausgabe"
+  "edition": "Stonetop-Webausgabe",
+  "book_titles": {
+    "book1": "Buch I — Stonetop",
+    "book2": "Buch II — Die weitere Welt"
+  }
 }
