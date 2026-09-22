@@ -1,15 +1,20 @@
-# Stonetop Wiki Generator
+# Stonetop Web Edition
 
-Generate a **static, hyperlinked wiki** from the *Stonetop* PDFs.
+The generator behind the **Stonetop Web Edition** — a free, searchable, hyperlinked
+edition of both *Stonetop* rulebooks, built from the PDFs.
 
 **Read it online: <https://stonetop-wiki.github.io/>**
 
-The wiki includes:
+The Web Edition includes:
 
-- Articles (moves, places, peoples, powers, …)
+- Every chapter and article of Book I and Book II (moves, places, peoples, powers, …)
+- The playbooks and inserts as fillable sheets, with stat rolls and HP tracking
 - Minor & major arcana as interactive cards (checkboxes for unlocks / progress / consequences)
+- A bestiary of every stat block in both books
 - Full-text search, hover previews, and dice rollers
 - Deep links between page references and monster/stat blocks
+- English plus twenty more languages
+- Optional campaign sync, so the whole table shares ticked boxes, countdowns and HP
 
 > **The book text in this repository is published under CC BY-SA 4.0** — both books state
 > *"All text herein is released under a CC BY-SA 4.0 license."*
@@ -169,7 +174,7 @@ Jeremy Strandberg and published by Lampblack & Brimstone. Both books' copyright 
 
 That text is reproduced here under
 [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/), reflowed from the PDFs into
-HTML, and **this edition is shared under the same license**. Every generated page carries the
+HTML, and **the Web Edition is shared under the same license**. Every generated page carries the
 attribution and license link in its footer.
 
 **Artwork is excluded.** Illustrations and maps remain © 2026 [Lucie Arnoux](https://www.luciedraws.com/) and are not
