@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="ja" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>プレイヤーのムーブ — ストーントップ・ウェブ版</title>
+  <meta name="description" content="基本ムーブの誘因・判定・結果とGM向けの運用解説（Player Moves）。">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+  <link rel="canonical" href="https://stonetop-wiki.github.io/ja/player-moves.html">
+  <meta property="og:site_name" content="ストーントップ・ウェブ版">
+  <meta property="og:title" content="プレイヤーのムーブ — ストーントップ・ウェブ版">
+  <meta property="og:description" content="基本ムーブの誘因・判定・結果とGM向けの運用解説（Player Moves）。">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:url" content="https://stonetop-wiki.github.io/ja/player-moves.html">
+  <meta property="og:image" content="https://stonetop-wiki.github.io/images/favicon.png">
+  <meta name="twitter:card" content="summary">
+  <link rel="alternate" hreflang="en" href="https://stonetop-wiki.github.io/player-moves.html">
+  <link rel="alternate" hreflang="pt-BR" href="https://stonetop-wiki.github.io/pt-BR/player-moves.html">
+  <link rel="alternate" hreflang="fr" href="https://stonetop-wiki.github.io/fr/player-moves.html">
+  <link rel="alternate" hreflang="ja" href="https://stonetop-wiki.github.io/ja/player-moves.html">
+  <link rel="alternate" hreflang="zh-Hans" href="https://stonetop-wiki.github.io/zh-Hans/player-moves.html">
+  <link rel="alternate" hreflang="x-default" href="https://stonetop-wiki.github.io/player-moves.html">
+  <link rel="icon" href="../images/favicon.svg" type="image/svg+xml">
+  <link rel="alternate icon" href="../images/favicon.ico" sizes="16x16 32x32 48x48 64x64">
+  <link rel="stylesheet" href="../css/wiki.css">
+  <script type="application/ld+json">{"@context":"https://schema.org","@graph":[{"@type":"Article","@id":"https://stonetop-wiki.github.io/ja/player-moves.html#article","url":"https://stonetop-wiki.github.io/ja/player-moves.html","mainEntityOfPage":"https://stonetop-wiki.github.io/ja/player-moves.html","headline":"プレイヤーのムーブ","name":"プレイヤーのムーブ","inLanguage":"ja","author":{"@type":"Person","name":"Jeremy Strandberg"},"publisher":{"@type":"Organization","name":"Lampblack & Brimstone","url":"https://lampblackandbrimstone.com/"},"license":"https://creativecommons.org/licenses/by-sa/4.0/","isAccessibleForFree":true,"about":{"@id":"https://stonetop-wiki.github.io/#game"},"isPartOf":[{"@id":"https://stonetop-wiki.github.io/#book1"},{"@id":"https://stonetop-wiki.github.io/#website"}],"description":"基本ムーブの誘因・判定・結果とGM向けの運用解説（Player Moves）。","pagination":"207-236"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Stonetop","item":"https://stonetop-wiki.github.io/ja/"},{"@type":"ListItem","position":2,"name":"プレイヤーのムーブ","item":"https://stonetop-wiki.github.io/ja/player-moves.html"}]}]}</script>
+  <!-- Cloudflare Web Analytics --><script type='module' src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "4536408101e64ba59733ed69779dd45c"}'></script><!-- End Cloudflare Web Analytics -->
+</head>
+<body data-wiki-root="../">
+  <a class="skip-link" href="#main">本文へスキップ</a>
+  <button type="button" class="sidebar-toggle" id="sidebar-toggle" aria-label="ナビゲーションの表示切り替え">☰</button>
+  <div class="layout">
+    <aside class="sidebar" id="sidebar">
+      <div class="sidebar-head">
+        <a class="wiki-title" href="index.html">ストーントップ・ウェブ版</a>
+        <input type="search" id="nav-filter" class="nav-filter" placeholder="ウィキ内を検索…" autocomplete="off" aria-label="ウィキ内を検索">
+        <div id="search-results" class="search-results" hidden></div>
+      </div>
+      <nav class="toc" aria-label="トピック">
+        <ul id="nav-list">
+          <li class="nav-book-label">第1巻</li>
+<li class="has-sections"><a href="welcome-to-stonetop.html">ストーントップへようこそ</a><ul class="nav-sections"><li class="nav-section"><a href="welcome-to-stonetop.html#expectations">想定</a></li><li class="nav-section"><a href="welcome-to-stonetop.html#the-setting">設定</a></li><li class="nav-section"><a href="welcome-to-stonetop.html#why-play">なぜ遊ぶのか？</a></li></ul></li>
+<li class="has-sections"><a href="getting-started.html">はじめに</a><ul class="nav-sections"><li class="nav-section"><a href="getting-started.html#review-the-setting">設定を確認する</a></li><li class="nav-section"><a href="getting-started.html#set-expectations">心構えをそろえる</a></li><li class="nav-section"><a href="getting-started.html#discuss-tone-and-content">雰囲気と内容について話し合う</a></li><li class="nav-section"><a href="getting-started.html#create-characters">キャラクターを作る</a></li><li class="nav-section"><a href="getting-started.html#intro-the-pcs">PCを紹介する</a></li><li class="nav-section"><a href="getting-started.html#let-spring-burst-forth">春の芽吹きを迎える</a></li><li class="nav-section"><a href="getting-started.html#after-the-session">セッションの後で</a></li></ul></li>
+<li class="has-sections"><a href="playing-the-game.html">ゲームの遊び方</a><ul class="nav-sections"><li class="nav-section"><a href="playing-the-game.html#the-conversation">会話</a></li><li class="nav-section"><a href="playing-the-game.html#your-agenda">あなたの指針</a></li><li class="nav-section"><a href="playing-the-game.html#flow-of-play">プレイの流れ</a></li><li class="nav-section"><a href="playing-the-game.html#dice-and-moves">ダイスとムーブ</a></li><li class="nav-section"><a href="playing-the-game.html#your-principles">あなたの原則</a></li><li class="nav-section"><a href="playing-the-game.html#other-things-to-do">その他にすること</a></li><li class="nav-section"><a href="playing-the-game.html#your-character">あなたのキャラクター</a></li><li class="nav-section"><a href="playing-the-game.html#arcana">アルカナ</a></li><li class="nav-section"><a href="playing-the-game.html#followers">従者</a></li><li class="nav-section"><a href="playing-the-game.html#your-home">あなたの故郷</a></li><li class="nav-section"><a href="playing-the-game.html#moves">ムーブ</a></li><li class="nav-section"><a href="playing-the-game.html#gear-and-possessions">道具と所持品</a></li><li class="nav-section"><a href="playing-the-game.html#if-you-want-to">もし……したいなら</a></li></ul></li>
+<li class="nav-hub has-sections"><a href="playbooks-inserts.html">プレイブックと別紙</a><ul class="nav-sections"><li class="nav-section"><a href="the-blessed.html">祝福されし者</a></li><li class="nav-section"><a href="the-fox.html">狐</a></li><li class="nav-section"><a href="the-heavy.html">用心棒</a></li><li class="nav-section"><a href="the-judge.html">裁き手</a></li><li class="nav-section"><a href="the-lightbearer.html">光を掲げる者</a></li><li class="nav-section"><a href="the-marshal.html">統率者</a></li><li class="nav-section"><a href="the-ranger.html">野伏</a></li><li class="nav-section"><a href="the-seeker.html">探求者</a></li><li class="nav-section"><a href="the-would-be-hero.html">英雄志願</a></li><li class="nav-section"><a href="inserts.html">別紙</a></li><li class="nav-section"><a href="inventory.html">所持品</a></li><li class="nav-section"><a href="animal-companion.html">動物の相棒</a></li><li class="nav-section"><a href="crew.html">部隊</a></li><li class="nav-section"><a href="initiates-of-danu.html">ダヌの入信者</a></li><li class="nav-section"><a href="invocations.html">祈願</a></li><li class="nav-section"><a href="followers.html">従者</a></li><li class="nav-section"><a href="ghost.html">亡霊</a></li><li class="nav-section"><a href="revenant.html">甦りし者</a></li><li class="nav-section"><a href="thrall.html">隷属者</a></li><li class="nav-section"><a href="steading-playbook.html">集落プレイブック</a></li></ul></li>
+<li class="has-sections"><a href="running-the-game.html">ゲームの運営</a><ul class="nav-sections"><li class="nav-section"><a href="running-the-game.html#your-agenda">あなたのアジェンダ</a></li><li class="nav-section"><a href="running-the-game.html#the-core-loop">基本の流れ</a></li><li class="nav-section"><a href="running-the-game.html#the-spotlight">スポットライト</a></li><li class="nav-section"><a href="running-the-game.html#scenes-and-loose-play">場面とゆるやかなプレイ</a></li><li class="nav-section"><a href="running-the-game.html#your-gm-moves">あなたのGMムーブ</a></li><li class="nav-section"><a href="running-the-game.html#example-of-play">プレイ例</a></li><li class="nav-section"><a href="running-the-game.html#your-principles">あなたの原則</a></li><li class="nav-section"><a href="running-the-game.html#other-things-to-do">その他にすべきこと</a></li><li class="nav-section"><a href="running-the-game.html#gming-is-a-practice">GMは修練である</a></li><li class="nav-section"><a href="running-the-game.html#prep">準備</a></li></ul></li>
+<li class="has-sections current"><a href="player-moves.html">プレイヤーのムーブ</a><ul class="nav-sections"><li class="nav-section"><a href="player-moves.html#defy-danger">危険に抗う</a></li><li class="nav-section"><a href="player-moves.html#aid">助力</a></li><li class="nav-section"><a href="player-moves.html#clash">斬り結ぶ</a></li><li class="nav-section"><a href="player-moves.html#defend">守り抜く</a></li><li class="nav-section"><a href="player-moves.html#interfere">妨害</a></li><li class="nav-section"><a href="player-moves.html#know-things">知識を語る</a></li><li class="nav-section"><a href="player-moves.html#let-fly">射放つ</a></li><li class="nav-section"><a href="player-moves.html#seek-insight">洞察を求める</a></li><li class="nav-section"><a href="player-moves.html#special-moves">特殊ムーブ</a></li><li class="nav-section"><a href="player-moves.html#advantage-disadvantage">有利／不利</a></li><li class="nav-section"><a href="player-moves.html#burn-brightly">燃え盛る</a></li><li class="nav-section"><a href="player-moves.html#end-of-session">セッションの終わり</a></li><li class="nav-section"><a href="player-moves.html#deaths-door">死の淵</a></li></ul></li>
+<li class="has-sections"><a href="harm-healing.html">ダメージと治癒</a><ul class="nav-sections"><li class="nav-section"><a href="harm-healing.html#hit-points-and-damage">ヒットポイントとダメージ</a></li><li class="nav-section"><a href="harm-healing.html#debilities">衰え</a></li><li class="nav-section"><a href="harm-healing.html#problematic-wounds">厄介な傷</a></li><li class="nav-section"><a href="harm-healing.html#death-and-dying">死と死にゆくこと</a></li></ul></li>
+<li class="has-sections"><a href="first-adventure.html">最初の冒険</a><ul class="nav-sections"><li class="nav-section"><a href="first-adventure.html#structure">構成</a></li><li class="nav-section"><a href="first-adventure.html#background">背景</a></li><li class="nav-section"><a href="first-adventure.html#setup-questions">導入の質問</a></li><li class="nav-section"><a href="first-adventure.html#setting-the-scene">場面を設定する</a></li><li class="nav-section"><a href="first-adventure.html#dropping-the-hook">フックを投じる</a></li><li class="nav-section"><a href="first-adventure.html#heading-out">出発</a></li></ul></li>
+<li class="has-sections"><a href="threats.html">脅威</a><ul class="nav-sections"><li class="nav-section"><a href="threats.html#when-to-write-up-threats">いつ脅威を書き上げるか</a></li><li class="nav-section"><a href="threats.html#writing-a-threat">脅威を書く</a></li><li class="nav-section"><a href="threats.html#example-threats">脅威の例</a></li><li class="nav-section"><a href="threats.html#updating-threats">脅威を更新する</a></li></ul></li>
+<li class="has-sections"><a href="expeditions.html">遠征</a><ul class="nav-sections"><li class="nav-section"><a href="expeditions.html#preparations">準備</a></li><li class="nav-section"><a href="expeditions.html#running-the-journey">旅路の運営</a></li><li class="nav-section"><a href="expeditions.html#player-moves">プレイヤー・ムーブ</a></li><li class="nav-section"><a href="expeditions.html#going-home">帰郷</a></li><li class="nav-section"><a href="expeditions.html#what-to-prep">何を準備するか</a></li></ul></li>
+<li class="has-sections"><a href="sites.html">遺跡</a><ul class="nav-sections"><li class="nav-section"><a href="sites.html#environmental-storytelling">環境による物語</a></li><li class="nav-section"><a href="sites.html#running-sites">遺跡の運営</a></li><li class="nav-section"><a href="sites.html#exploring-sites">遺跡の探索</a></li><li class="nav-section"><a href="sites.html#creating-sites">遺跡の作成</a></li><li class="nav-section"><a href="sites.html#the-green-lords-tomb">緑の君の墓</a></li></ul></li>
+<li class="has-sections"><a href="dangers.html">危険</a><ul class="nav-sections"><li class="nav-section"><a href="dangers.html#hazards">危害</a></li><li class="nav-section"><a href="dangers.html#monsters">怪物</a></li><li class="nav-section"><a href="dangers.html#running-combat">戦闘の運営</a></li></ul></li>
+<li class="has-sections"><a href="discoveries.html">発見</a><ul class="nav-sections"><li class="nav-section"><a href="discoveries.html#clues">手がかり</a></li><li class="nav-section"><a href="discoveries.html#sites">遺跡</a></li><li class="nav-section"><a href="discoveries.html#encounters">遭遇</a></li><li class="nav-section"><a href="discoveries.html#opportunities">好機</a></li><li class="nav-section"><a href="discoveries.html#artifacts">アーティファクト</a></li><li class="nav-section"><a href="discoveries.html#arcana">アルカナム</a></li></ul></li>
+<li class="has-sections"><a href="npcs-followers.html">NPCと従者</a><ul class="nav-sections"><li class="nav-section"><a href="npcs-followers.html#npcs-in-play">プレイにおけるNPC</a></li><li class="nav-section"><a href="npcs-followers.html#creating-npcs">NPCを作る</a></li><li class="nav-section"><a href="npcs-followers.html#follower-moves">従者のムーブ</a></li><li class="nav-section"><a href="npcs-followers.html#order-followers">従者に命じる</a></li><li class="nav-section"><a href="npcs-followers.html#strengthen-your-bond">絆を強める</a></li><li class="nav-section"><a href="npcs-followers.html#followers-in-play">プレイにおける従者</a></li><li class="nav-section"><a href="npcs-followers.html#creating-followers">従者を作る</a></li><li class="nav-section"><a href="npcs-followers.html#updating-followers">従者を更新する</a></li><li class="nav-section"><a href="npcs-followers.html#losing-followers">従者を失う</a></li></ul></li>
+<li class="has-sections"><a href="homefront.html">故郷</a><ul class="nav-sections"><li class="nav-section"><a href="homefront.html#bringing-the-village-to-life">村に命を吹き込む</a></li><li class="nav-section"><a href="homefront.html#running-the-homefront">故郷の運営</a></li><li class="nav-section"><a href="homefront.html#aftermath">後始末</a></li><li class="nav-section"><a href="homefront.html#the-steading-playbook">集落プレイブック</a></li><li class="nav-section"><a href="homefront.html#seasons-change">季節の移ろい</a></li><li class="nav-section"><a href="homefront.html#player-moves">プレイヤーのムーブ</a></li><li class="nav-section"><a href="homefront.html#bolster">鼓舞する</a></li><li class="nav-section"><a href="homefront.html#convalesce">静養する</a></li><li class="nav-section"><a href="homefront.html#deploy">派遣する</a></li><li class="nav-section"><a href="homefront.html#level-up">レベルアップ</a></li><li class="nav-section"><a href="homefront.html#make-a-plan">計画を立てよう</a></li><li class="nav-section"><a href="homefront.html#meet-with-disaster">災難に見舞われる</a></li><li class="nav-section"><a href="homefront.html#muster">招集する</a></li><li class="nav-section"><a href="homefront.html#pull-together">力を合わせる</a></li><li class="nav-section"><a href="homefront.html#trade-barter">交易と物々交換</a></li><li class="nav-section"><a href="homefront.html#what-to-prep">何を準備するか</a></li></ul></li>
+<li><a href="writing-moves-love-letters.html">ムーブとラブレターの書き方</a></li>
+<li class="has-sections"><a href="the-game-ongoing.html">続いていくゲーム</a><ul class="nav-sections"><li class="nav-section"><a href="the-game-ongoing.html#ending-a-session">セッションを終える</a></li><li class="nav-section"><a href="the-game-ongoing.html#between-sessions">セッションの合間</a></li><li class="nav-section"><a href="the-game-ongoing.html#starting-a-session">セッションを始める</a></li><li class="nav-section"><a href="the-game-ongoing.html#pacing">ペース配分</a></li><li class="nav-section"><a href="the-game-ongoing.html#advancement">成長</a></li><li class="nav-section"><a href="the-game-ongoing.html#retiring-pcs">PCの引退</a></li><li class="nav-section"><a href="the-game-ongoing.html#new-pcs">新しいPC</a></li><li class="nav-section"><a href="the-game-ongoing.html#conflict-between-pcs">PC同士の対立</a></li><li class="nav-section"><a href="the-game-ongoing.html#time-skips">時間を飛ばす</a></li><li class="nav-section"><a href="the-game-ongoing.html#shake-ups">激変</a></li><li class="nav-section"><a href="the-game-ongoing.html#ending-your-game">ゲームの終わらせ方</a></li></ul></li>
+<li><a href="acknowledgements.html">謝辞</a></li>
+<li><a href="mediography.html">参考作品</a></li>
+<li class="nav-book-label">第2巻</li>
+<li><a href="welcome-to-the-worlds-end.html">世界の果てへようこそ</a></li>
+<li><a href="../maps.html" class="nav-en" title="英語版のみ" hreflang="en">Maps</a></li>
+<li><a href="the-village-of-stonetop.html">ストーントップ村</a></li>
+<li><a href="aratis-the-lawkeeper.html">法の守り手アラティス</a></li>
+<li><a href="barrier-pass.html">防壁峠</a></li>
+<li><a href="barrow-builders.html">塚の築き手</a></li>
+<li><a href="blackwater-lake.html">黒水湖</a></li>
+<li><a href="crinwin.html">クリンウィン</a></li>
+<li><a href="the-crombil.html">クロンビル</a></li>
+<li><a href="danu-the-earth-mother.html">大地の母ダヌ</a></li>
+<li><a href="death-and-the-undying.html">死と不死なるもの</a></li>
+<li><a href="the-dread-river.html">恐れの川</a></li>
+<li><a href="fae.html">フェイ</a></li>
+<li><a href="ferriers-fen.html">フェリアーの沼</a></li>
+<li><a href="the-flats.html">平原</a></li>
+<li><a href="fomoraij.html">フォモライ</a></li>
+<li><a href="the-foothills.html">山麓</a></li>
+<li><a href="forest-folk.html">森の民</a></li>
+<li><a href="forge-lords.html">鍛冶の君</a></li>
+<li><a href="the-frozen-wastes.html">凍てつく荒野</a></li>
+<li><a href="gods-and-religion.html">神々と信仰</a></li>
+<li><a href="the-golden-oak.html">黄金の樫</a></li>
+<li><a href="gordins-delve.html">ゴルディン鉱山</a></li>
+<li><a href="the-great-wood.html">大森林</a></li>
+<li><a href="green-lords.html">緑の君</a></li>
+<li><a href="helior-the-daybringer.html">昼をもたらすヘリオル</a></li>
+<li><a href="hillfolk.html">丘の民</a></li>
+<li><a href="huffel-peaks.html">ハッフェル峰</a></li>
+<li><a href="the-labyrinth.html">迷宮</a></li>
+<li><a href="lygos-and-the-south.html">リュゴスと南方</a></li>
+<li><a href="the-makers.html">造り手</a></li>
+<li><a href="the-makers-roads.html">造り手の街道</a></li>
+<li><a href="marshedge.html">マーシュエッジ</a></li>
+<li><a href="the-maw.html">大顎</a></li>
+<li><a href="north-manmarch.html">北マンマーチ</a></li>
+<li><a href="the-pale-hunter.html">蒼ざめた狩人</a></li>
+<li><a href="primordial-powers.html">原初の力</a></li>
+<li><a href="red-groves.html">赤き木立</a></li>
+<li><a href="rime-lords.html">霧氷の君</a></li>
+<li><a href="the-ruined-tower.html">廃塔</a></li>
+<li><a href="south-manmarch.html">南マンマーチ</a></li>
+<li><a href="spirits-of-the-wild.html">野の精霊</a></li>
+<li><a href="the-steplands.html">段丘地帯</a></li>
+<li><a href="stone-lords.html">石の君</a></li>
+<li><a href="the-stream.html">小川</a></li>
+<li><a href="tempest-lords.html">嵐の君</a></li>
+<li><a href="the-things-below.html">下なるもの</a></li>
+<li><a href="three-coven-lake.html">三魔女会の湖</a></li>
+<li><a href="titan-bones.html">巨人の骨</a></li>
+<li><a href="tor-the-rain-maker.html">雨をもたらすトル</a></li>
+<li><a href="useful-or-valuable-flora.html">有用・貴重な植物</a></li>
+<li><a href="ustrina.html">ウストリナ</a></li>
+<li><a href="vor-svetelik.html">ヴォル・スヴェテリク</a></li>
+<li><a href="waystones.html">道標石</a></li>
+<li><a href="the-whitefang-mountains.html">白牙山脈</a></li>
+<li><a href="appendix-a-ages-of-the-world.html">付録A：世界の時代</a></li>
+<li><a href="appendix-b-artifact-creation.html">付録B：アーティファクトの作成</a></li>
+<li class="nav-hub"><a href="appendix-c-minor-arcana.html">付録C：小アルカナム</a></li>
+<li class="nav-arcana"><a href="minor-laoj-daveths-galvanic-infusion.html">1. ラオジ・ダヴェスの電撃の注入</a></li>
+<li class="nav-arcana"><a href="minor-truth-seeds.html">2. 真実の種</a></li>
+<li class="nav-arcana"><a href="minor-old-mothers-wine.html">3. 老母のワイン</a></li>
+<li class="nav-arcana"><a href="minor-aalz-galts-sudden-sinkhole.html">4. アールズ・ガルトの急な陥没</a></li>
+<li class="nav-arcana"><a href="minor-shell-game-of-souls.html">5. 魂の貝殻遊び</a></li>
+<li class="nav-arcana"><a href="minor-thunderous-bellow.html">6. 轟く咆哮</a></li>
+<li class="nav-arcana"><a href="minor-the-fiery-veil.html">7. 炎のヴェール</a></li>
+<li class="nav-arcana"><a href="minor-the-tomb-bogs-mark.html">8. 墓沼の印</a></li>
+<li class="nav-arcana"><a href="minor-fear-of-the-flame.html">9. 炎への恐れ</a></li>
+<li class="nav-arcana"><a href="minor-mantle-wraiths.html">10. 外套の亡霊</a></li>
+<li class="nav-arcana"><a href="minor-shattering-words-of-aalz-childric.html">11. アールズ・チルドリックの砕きの言葉</a></li>
+<li class="nav-arcana"><a href="minor-ffyrnig-tonic.html">12. フュルニグの強壮薬</a></li>
+<li class="nav-arcana"><a href="minor-song-of-the-dool-trees.html">13. ドゥールの木の歌</a></li>
+<li class="nav-arcana"><a href="minor-ward-of-still-waters.html">14. 静水の護り</a></li>
+<li class="nav-arcana"><a href="minor-ice-weaving.html">15. 氷織り</a></li>
+<li class="nav-arcana"><a href="minor-the-six-locks-of-sajua.html">16. サジュアの六つの錠</a></li>
+<li class="nav-arcana"><a href="minor-heliors-shining-ring.html">17. ヘリオルの輝く指輪</a></li>
+<li class="nav-arcana"><a href="minor-nerth-serpents-vigor.html">18. ネルス蛇の活力</a></li>
+<li class="nav-arcana"><a href="minor-goldleaf-cloak.html">19. 金箔の外套</a></li>
+<li class="nav-arcana"><a href="minor-opening-the-way.html">20. 道を開く</a></li>
+<li class="nav-arcana"><a href="minor-the-drowning-scale.html">21. 溺れの鱗</a></li>
+<li class="nav-arcana"><a href="minor-preserving-runes.html">22. 保存のルーン</a></li>
+<li class="nav-arcana"><a href="minor-peacebond.html">23. 和平の絆</a></li>
+<li class="nav-arcana"><a href="minor-the-eye-opened.html">24. 開かれし眼</a></li>
+<li class="nav-arcana"><a href="minor-sanctifying-mark.html">25. 聖別の印</a></li>
+<li class="nav-arcana"><a href="minor-the-green-lords-shade.html">26. 緑の君の影</a></li>
+<li class="nav-arcana"><a href="minor-chimeric-transmogrification.html">27. キメラ変成</a></li>
+<li class="nav-arcana"><a href="minor-the-sylvan-web.html">28. 森の網</a></li>
+<li class="nav-arcana"><a href="minor-flying-cloak.html">29. 飛行の外套</a></li>
+<li class="nav-arcana"><a href="minor-satchel-of-plenty.html">30. 豊穣の鞄</a></li>
+<li class="nav-arcana"><a href="minor-dancing-wind-spirit.html">31. 踊る風の精</a></li>
+<li class="nav-arcana"><a href="minor-call-of-the-hunt.html">32. 狩りの呼び声</a></li>
+<li class="nav-arcana"><a href="minor-convocation-of-the-soil.html">33. 土の招集</a></li>
+<li class="nav-arcana"><a href="minor-unliving-chimera.html">34. 生なきキメラ</a></li>
+<li class="nav-arcana"><a href="minor-impudent-polymorph.html">35. 不遜なる変身</a></li>
+<li class="nav-arcana"><a href="minor-make-pliant-the-stone.html">36. 石を柔らかに</a></li>
+<li class="nav-arcana"><a href="minor-plaster-of-joining.html">37. 接合の漆喰</a></li>
+<li class="nav-arcana"><a href="minor-cold-mind-iron-body.html">38. 冷たき心、鉄の身</a></li>
+<li class="nav-arcana"><a href="minor-little-friend.html">39. 小さな友</a></li>
+<li class="nav-arcana"><a href="minor-revealing-light.html">40. 暴きの光</a></li>
+<li class="nav-arcana"><a href="minor-darkwalker-cloak.html">41. 闇歩きの外套</a></li>
+<li class="nav-arcana"><a href="minor-the-flesh-is-like-clay.html">42. 肉は粘土のごとく</a></li>
+<li class="nav-arcana"><a href="minor-fetchs-mask.html">43. フェッチの仮面</a></li>
+<li class="nav-arcana"><a href="minor-witch-bottle.html">44. 魔女の瓶</a></li>
+<li class="nav-arcana"><a href="minor-wishing-candles.html">45. 願いの蝋燭</a></li>
+<li class="nav-arcana"><a href="minor-baleful-utterance.html">46. 呪いの言葉</a></li>
+<li class="nav-arcana"><a href="minor-aetherium-spear.html">47. エーテリウムの槍</a></li>
+<li class="nav-arcana"><a href="minor-staff-of-magnetism.html">48. 磁力の杖</a></li>
+<li class="nav-arcana"><a href="minor-groundskimmer.html">49. 地滑り</a></li>
+<li class="nav-arcana"><a href="minor-thunderbolt-bow.html">50. 雷の弓</a></li>
+<li class="nav-arcana"><a href="minor-bronze-protector.html">51. 青銅の守護者</a></li>
+<li class="nav-arcana"><a href="minor-sublime-words.html">52. 崇高なる言葉</a></li>
+<li class="nav-arcana"><a href="minor-flaming-sword.html">53. 炎の剣</a></li>
+<li class="nav-arcana"><a href="minor-searing-touch.html">54. 灼熱の手</a></li>
+<li class="nav-arcana"><a href="minor-sigil-of-authority.html">55. 権威の印章</a></li>
+<li class="nav-arcana"><a href="minor-horn-of-storms.html">56. 嵐の角笛</a></li>
+<li class="nav-arcana"><a href="minor-moonstone.html">57. 月長石</a></li>
+<li class="nav-arcana"><a href="minor-hand-of-aals-sannan.html">58. アールズ・サナンの手</a></li>
+<li class="nav-arcana"><a href="minor-bittersweet-elixir.html">59. ほろ苦い霊薬</a></li>
+<li class="nav-arcana"><a href="minor-the-brooms-lullaby.html">60. 箒の子守唄</a></li>
+<li class="nav-arcana"><a href="minor-the-angry-little-god.html">61. 怒れる小さな神</a></li>
+<li class="nav-arcana"><a href="minor-the-silver-branch.html">62. 銀の枝</a></li>
+<li class="nav-arcana"><a href="minor-void-elemental.html">63. 虚空の精霊</a></li>
+<li class="nav-arcana"><a href="minor-runes-of-creation.html">64. 創造のルーン</a></li>
+<li class="nav-hub"><a href="appendix-d-major-arcana.html">付録D：大アルカナム</a></li>
+<li class="nav-arcana"><a href="major-staff-of-the-lidless-orb.html">1. 瞼なき宝珠の杖</a></li>
+<li class="nav-arcana"><a href="major-twisted-spear.html">2. 捻じれた槍</a></li>
+<li class="nav-arcana"><a href="major-demonhide-cloak.html">3. 悪魔革の外套</a></li>
+<li class="nav-arcana"><a href="major-norubas-ice-sphere.html">4. ノルバの氷球</a></li>
+<li class="nav-arcana"><a href="major-mindgem.html">5. 精神宝石</a></li>
+<li class="nav-arcana"><a href="major-whispering-rocks.html">6. 囁く岩</a></li>
+<li class="nav-arcana"><a href="major-blood-quenched-sword.html">7. 血に焼き入れた剣</a></li>
+<li class="nav-arcana"><a href="major-shield-of-the-wisent-witch.html">8. ヴィーゼント魔女の盾</a></li>
+<li class="nav-arcana"><a href="major-hectumel-codex.html">9. ヘクトゥメル写本</a></li>
+<li class="nav-arcana"><a href="major-red-scepter.html">10. 赤き王笏</a></li>
+<li class="nav-arcana"><a href="major-ring-of-daagon.html">11. ダーゴンの指輪</a></li>
+<li class="nav-arcana"><a href="major-rune-laden-scales.html">12. ルーンの刻まれた天秤</a></li>
+<li class="nav-arcana"><a href="major-blackwood-fetishes.html">13. 黒木の呪物</a></li>
+<li class="nav-arcana"><a href="major-storm-markings.html">14. 嵐の印</a></li>
+<li class="nav-arcana"><a href="major-ineffable-words.html">15. 言い表せぬ言葉</a></li>
+<li class="nav-arcana"><a href="major-redwood-effigy.html">16. 赤木の像</a></li>
+<li class="nav-arcana"><a href="major-hungering-maw-of-hlad.html">17. フラドの飢えたる顎</a></li>
+<li class="nav-arcana"><a href="major-azure-hand.html">18. 紺碧の手</a></li>
+<li><a href="../bestiary.html" class="nav-en" title="英語版のみ" hreflang="en">Bestiary</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-foot"><details class="lang-switch"><summary title="言語"><span class="lang-globe" aria-hidden="true">🌐</span><span class="lang-code" aria-hidden="true">JA</span><span class="lang-label">言語</span><span class="lang-now">日本語</span></summary><ul class="lang-list"><li><a href="../player-moves.html" hreflang="en" lang="en">English</a></li><li><a href="../fr/player-moves.html" hreflang="fr" lang="fr">Français</a></li><li><a href="../pt-BR/player-moves.html" hreflang="pt-BR" lang="pt-BR">Português (Brasil)</a></li><li><span class="lang-current" aria-current="page" lang="ja">日本語</span></li><li><a href="../zh-Hans/player-moves.html" hreflang="zh-Hans" lang="zh-Hans">简体中文</a></li></ul></details><span class="sidebar-credit">本文は Jeremy Strandberg 著『<em>Stonetop</em>』より。<a href="https://creativecommons.org/licenses/by-sa/4.0/" rel="license">CC BY-SA 4.0</a></span><a class="sidebar-github" href="https://github.com/Bryan-Legend/stonetop-wiki-generator">GitHub</a><button type="button" class="sound-toggle" id="sound-toggle" aria-pressed="true" title="ダイスの効果音"><span class="sound-on" aria-hidden="true">🔊</span><span class="sound-off" aria-hidden="true">🔇</span><span class="sound-label">ダイスの効果音</span></button></div>
+    </aside>
+    <div class="main-wrap">
+      <div class="content-scroll" id="main">
+        <main class="content">
+          <h1 class="page-title">プレイヤーのムーブ</h1>
+<p>基本ムーブとは、すべてのプレイヤーとPCが使えるムーブであり、最も頻繁に使われ、ゲームの大部分を動かすムーブである。</p>
+<p>各ムーブには<strong>誘因</strong>があり、そのムーブがいつ発動するかを示す。誘因はほぼ常にフィクション上のものである。プレイヤーが自分のキャラクターが誘因を満たす行動をとると宣言し、ムーブの残りの部分がその行動をどう解決するかを教えてくれる。</p>
+<p>プレイヤーは、誘因を満たすとわかっている行動を描写して、意図的にムーブを発動させることもある。あるいは「斬り結びたい」「守り抜く」と言うこともあるだろう。それでかまわない。だがそのときは、彼らからフィクションを引き出すのがあなたの仕事だ。「いいね、何をする？」「よし、それはどんなふうに見える？」思い描けないなら、もっと詳しく尋ねよう。<strong>それをするには、</strong><strong>実際にそれをしなければならない。</strong></p>
+<p>逆もまた真である。<strong>それをしたなら、</strong><strong>それをしなければならない</strong>。彼らがクリンウィン（crinwin）の横を駆け抜けると言い、あなたがそれを危険で、賭け金が高く、運任せだと判断したなら、彼らは危険に抗っている。取りやめることはできる（「あ、そうとは知らなかった、やめておく」）が、そのまま続けるならムーブが発動し、ロールしなければならない。</p>
+<p>ムーブの発動を見張るのは全員の仕事だ。たいていはあなたが判断を下すにしても。どのプレイヤーもいつでも「それって守り抜くじゃない？」と言ってよく、卓が同意すれば、発動させたプレイヤーがダイスを振る。ムーブが発動しているかどうか、どのムーブが発動しているかで意見が分かれたら、話し合い、質問し、あなたの原則に従い、目標を追求することを忘れないように。</p>
+<p>ムーブが「+[能力値]でロールする」と言うとき、それは<button type="button" class="dice-roll" data-dice="2d6" title="クリックで2d6をロール — Shift: 有利 · Ctrl: 不利">2d6</button>を振り、指定された能力値（STR、DEXなど）を加えるという意味である。10+は完全な成功、7-9は部分的な成功（だが成功には違いない）である。基本ムーブはすべて、10+と7-9で何が起こるかを述べている。</p>
+<p>6以下は失敗である。その場合：</p>
+<ul class="bullets"><li>彼らはXPを1つ記録する</li><li>あなたは<strong>厳しいGMムーブ</strong>（178ページ）を行う。厳しいムーブはPCのしくじりを反映してもよいが、何かが彼らの成功を、あるいは宣言した行動を試みることさえ妨げたことを反映してもよい。やろうとしたことはやり遂げたが、恐ろしい結果を伴ったことを反映することさえある。</li></ul>
+<p>基本ムーブは6-で何が起こるかを述べていない。これが基本ムーブの仕組みなのだ。</p>
+<h2 id="advantage-and-disadvantage">有利と不利</h2>
+<p>プレイヤーが<strong><em>ロールに有利を</em></strong><strong><em>得たとき</em></strong>、ダイスを1つ余分に振り、最も低い目を捨てる。たいていのムーブでは、<button type="button" class="dice-roll" data-dice="3d6" title="クリックで3d6をロール — Shift: 有利 · Ctrl: 不利">3d6</button>を振って高い2つの目を合計することになる。</p>
+<p>プレイヤーが<strong><em>ロールに不利を</em></strong><strong><em>受けたとき</em></strong>、ダイスを1つ余分に振り、最も高い目を捨てる。たいていのムーブでは、<button type="button" class="dice-roll" data-dice="3d6" title="クリックで3d6をロール — Shift: 有利 · Ctrl: 不利">3d6</button>を振って低い2つの目を合計することになる。</p>
+<p>プレイヤーが<strong><em>ロールに有利と</em></strong><strong><em>不利の両方を持つとき</em></strong>、それらは互いに打ち消し合う。</p>
+<p>有利と不利の詳しい説明は230ページを参照。</p>
+<div class="move-block" id="defy-danger"><h3 class="move-name">Defy Danger</h3><p class="move-trigger"><strong><em>危険が迫り、賭け金が</em></strong><strong><em>高く、あなたが運任せのことをするとき</em></strong>、ほかのムーブが当てはまるか確認する。当てはまらなければ、以下でロールする…</p><ul class="ellipsis"><li>+STR：力で押し通す、または腕力を試す</li><li>+DEX：速さ、敏捷さ、巧みさを用いる</li><li>+CON：耐える、または踏みとどまる</li><li>+INT：専門知識を活かす、または巧妙な策を実行する</li><li>+WIS：意志の力を振り絞る、または感覚に頼る</li><li>+CHA：魅了する、はったりをかける、感心させる、または溶け込む</li></ul>
+<p><strong>10+なら</strong>、望みうる限り見事にやってのける。<strong>7-9なら</strong>、やり遂げられるが、GMが不完全な成功、代償、または結果を提示する（それらのどれかを選ばせたり、手を引く機会を与えたりすることもある）。</p>
+<p>PCの行動が危険に抗うとほかのムーブの両方を発動させうるなら（脚に噛みついているドレイクに手斧を振るうなど）、ほかのムーブが優先される（この場合は斬り結ぶ）。</p>
+<p>「ロールさせるべきだ」と思ったというだけで危険に抗うを求めてはならない。キャラクターが運任せのことをしても、迫る危険がないか賭け金がそれほど高くないなら、ロールさせないこと。原則と目標に従って判断し、何が起こるかを告げればよい。</p>
+<p>危険に抗うを求めるときは、危険や賭け金が何かを言おう。「それは危険に抗うだね。危険は、刺す前に気づかれることだ」</p>
+<p>あるいは「それは危険に抗うだと思う。失敗したら、恐怖で体がすくむ」。危険や賭け金を言葉にできないなら、それは危険に抗うではない。</p>
+<p>どの能力値を使うのか不明なら、はっきりするまで質問しよう。どちらでもありうるなら、考えを伝えてプレイヤーに選ばせる。「それは腕力を試すとも耐えるとも取れるね。STRかCON、好きなほうで」</p>
+<p>無茶を許してはならない。「矢が飛んでくる、どうする？」と言って「矢に笑いかけて、魅了して外させる」のような答えが返ってきたら、それは危険に抗うではなく、顔に矢を受けているのだ。<strong>結果を告げてから、</strong><strong>それでもやるか尋ねよう</strong>。</p>
+<p>10+なら、望みうる限り見事にやってのける。何が起こるかを描写する（あるいはプレイヤーに描写してもらう）。たいていは、行動の機会を与えることになる。だが危険がとりわけ深刻だったり、行動がとりわけ捨て身（あるいは無謀）だったりしたなら、望みうる最善は最悪を避けることだけかもしれない。</p>
+<p>7-9なら、不完全な成功、代償、または結果を提示する。何か明白なものがあるはずだ。さもなければ彼らは危険に抗って</p>
+<p>いないのだから。</p>
+<ul class="bullets"><li><strong>不完全な成功</strong>：望んだもののほとんどを得るが、すべてではない。「穴を飛び越えるが、半分はみ出してぶら下がる。這い上がるには時間がかかる」</li><li><strong>代償</strong>：やり遂げるが、その過程で何かを失うか被る。「穴を飛び越えるが、着地をしくじって足首をひねる」</li><li><strong>結果</strong>：やり遂げるが、ありがたくない成り行きを伴う。「穴を飛び越えるが、跳んだ瞬間に足場が崩れる。もうあちらへは戻れない！」</li></ul>
+<p>2つ以上の不完全な成功・代償・結果から選ばせること、あるいは手を引いて結局やらない機会を与えることも検討しよう。プレイヤーは、押しつけられた逆境より自分で選んだ逆境のほうを受け入れやすいものだ。ただし、悪い選択肢は釣り合いのとれたものにすること。</p>
+<p>忘れないように。7-9は本質的には成功である。不完全な成功、代償、結果を、何もしないほうがましだったと思えるほどひどいものにしてはならない。</p>
+<p>では6-なら？　存分にやろう。彼らが行動する前に、あるいは行動する最中に危険が襲いかかる。あるいは、行動は成功するが、その結果として事態がずっと悪化する。フィクションと準備から自然に流れ出ることをしよう。<strong>燃えるにまかせよ。</strong></p></div>
+<hr>
+<blockquote><p><em>カラドックは木からぶら下がり、握力が</em><em>尽きかけている。彼は脚を振り上げて</em><em>枝に絡め、体を引き上げる。「うん、</em><em>それは危険に抗うだね。危険は</em><em>80フィートほど落ちることだ。</em><em>腕力を試すようだから、+STR？」</em></p></blockquote>
+<p><em>「そうだね」と彼は言い、ロールする。</em><em>7-9なら代償を選び、恐怖と疲労で</em>衰弱<em>を記録させる</em><em>つもりだ。</em></p>
+<blockquote><p><em>だが彼は10を出したので、私は「いいね、</em><em>言ったとおりにやってのける」と言う。そして</em><strong><em>機会を</em></strong><strong><em>与える</em></strong><em>。「息を整えるのに少しかかるが、</em><em>ここからは巣まで楽に</em><em>登れる。どうする？」</em></p></blockquote>
+<hr>
+<blockquote><p><em>ブロドウェンは凍りつく。草むらで自分を取り囲む</em><em>ドレイクたちの鳴き声が聞こえるのだ。</em><em>彼女は土器の壺を取り出して放り投げ、</em><em>気をそらそうとする。</em></p><p><em>「賢い！　INTで危険に抗うだね」</em><em>彼女は7を出し、私は</em><em>選択肢を与える。「餌には食いついたが、まだ</em><em>安全とは言えない。物資の使用をさらに2つ</em><em>消費して、もっと物を</em><em>投げて引き離すか。それとも</em><em>今こっそり抜け出そうとして、DEXで</em><em>危険に抗うか。どうする？」</em></p></blockquote>
+<hr>
+<blockquote><p><em>リアンナはクリンウィンたちの横を駆け抜ける。「ここは</em><em>危険に抗うだと思う。速さに頼るから</em><em>DEXで」10+なら彼女は</em><em>難なく彼らを抜け、洞窟の口まで</em><em>たどり着く。</em></p><p><em>だが彼女は9を出し、私は結果を選ぶ。「駆け抜けると、何匹かが</em><em>振り向いて組みついてくる」リアンナのプレイヤーは</em><em>ずるいと抗議する。7-9は本質的には</em><em>成功のはずだ。「ああ、そうだった！」と私は</em><em>言う。「洞窟の口にはたどり着く。</em><em>だがクリンウィン2匹が跳ねるように追ってきて、</em><em>すぐ後ろに迫っている。どうする？」</em></p></blockquote>
+<hr>
+<div class="move-block" id="aid"><h3 class="move-name">Aid</h3><p class="move-trigger"><strong><em>まだロールしていない</em></strong><strong><em>誰かを手助けするとき</em></strong>、GMが1つ選ぶ：</p><ul class="bullets"><li>その人はひとりでできる以上のことを成し遂げられる</li><li>その人はロールに有利を得る。</li></ul>
+<p>いずれにせよ、あなたはその人のロールに伴うあらゆる危険、代償、結果にさらされる。</p>
+<p>このムーブは、あるPCがムーブを発動させ、別のPC（または従者）が手助けするとき、あるいは2人以上のキャラクターが同時に同じムーブを行うときに用いる。</p>
+<p>どのムーブもそうだが、それをするには実際にそれをしなければならない。プレイヤーが「よし、助力する！」や「手伝える？」のような曖昧なことを言ったら、「いいよ、どうやって手伝う？」と言おう。もっともらしいことを思いつけなければ、助力は発動しない。</p>
+<p>手助けがなければ主たるムーブが不可能な場合、あるいは助力によって主たるムーブにかかる時間が短くなるか効果が大きくなると思う場合は、「ひとりでできる以上のことを成し遂げられる」を選ぶ。最初のPCがひとりでも<em>できる</em>が助力で楽になる場合は、「ロールに有利を得る」を選ぶ。</p>
+<p>どちらの選択肢が当てはまるか確信がなければ、プレイヤーの意図とやり方を確かめよう。</p>
+<p>ムーブの悪い結果には両方のキャラクターを巻き込むこと。明白な結果のない10+であっても、助力したキャラクターに穏やかなムーブを行い、助力が彼らを危険にさらしたことを示すことを検討しよう。</p>
+<p><strong>任意のテクニック</strong>：助力で有利を与えるときは、手助けするプレイヤーに余分な<button type="button" class="dice-roll" data-dice="d6" title="クリックでd6をロール — Shift: 有利 · Ctrl: 不利">d6</button>を振らせよう。より参加している実感が持てる！</p></div>
+<hr>
+<blockquote><p><em>PCたちは、プライダーとレイナルが襲われた</em><em>空き地を調べている。</em><em>ヴァヒドは手がかりを探してあちこち探る。</em><em>「洞察を求めるようだね」と私は言う。</em></p><p><em>リアンナは部隊にもあたりを</em><em>調べさせると言う。「特にロウリ、彼が一番の</em><em>追跡者だから。わたしも洞察を求めるべき？」</em></p><p><em>「いや、彼がヴァヒドに助力していることにしよう」と私は言う。</em><em>「みんなで空き地を分担して、手早く</em><em>済ませる？　それとも一緒に作業して、意見を出し合い、彼に有利を与える？」</em></p><p><em>「どれくらい時間を節約できる？」とリアンナは</em><em>尋ねる。私は、30分くらいは節約できるだろうと</em><em>答える。「うーん。いや、念入りにやろう。</em><em>ロウリにヴァヒドを支えて助言させる」</em></p><p><em>「よし！　ヴァヒド、有利で</em><em>洞察を求めるをロールして」</em></p></blockquote>
+<hr>
+<blockquote><p><em>カラドックはネイラッド（巨大な</em><em>蜘蛛）に押さえ込まれ、それは</em><em>毒の顎で今にも噛みつこうとしている。彼は身をよじって押しやり、</em><em>逃れようとする。これはSTRで危険に抗うだと</em><em>全員が同意した。</em></p><p><em>「手伝える？」とブロドウェンが尋ねる。</em></p><p><em>「いいよ、どうやって手伝う？」</em></p><p><em>「近づいて怒鳴りつけて、杖で</em><em>つつく。でも傷つけたくはないの！」</em><em>（ブロドウェンは生き物に甘いのだ）</em></p><p><em>「はいはい、巨大蜘蛛は傷つけない、と。カラドック、</em><em>有利でロールして」彼は8を出し、</em><em>私はブロドウェンを巻き込む代償を選ぶ。</em><em>「カラドック、怒鳴り声が聞こえて、そいつが</em><em>身じろぎし、転がって抜け出せる。だがそのとき、</em><em>そいつがブロドウェンの手から杖を叩き落とすのが見える。</em><em>今にも彼女に飛びかかりそうだ。どうする？」</em></p></blockquote>
+<hr>
+<blockquote><p><em>リアンナが「仕留めろ！」と叫び、彼女と</em><em>ガレット、エイラ（彼女の部隊員）が</em><em>ドレイクに矢を浴びせ始める。これは部隊の助力を</em><em>受けた射放つだ。リアンナは</em><em>ひとりでも十分このムーブを行えるので、</em><em>有利でロールできる。</em></p><p><em>残念ながら、それでも6を出す。「とにかくダメージを振って」と私は言う。「でも仕留めたとしても、</em><em>それは突進してきて骨ばったとさかで</em><em><button type="button" class="dice-roll" data-dice="d8+2" title="クリックでd8+2をロール — Shift: 有利 · Ctrl: 不利">d8+2</button>の</em>強打<em>ダメージを与え、あなたを</em><em>跳ね飛ばす。それからエイラかガレットのどちらかを</em><em>爪で引き裂く。さらに<button type="button" class="dice-roll" data-dice="d8+2" title="クリックでd8+2をロール — Shift: 有利 · Ctrl: 不利">d8+2</button>、</em>凄惨<em>で1貫通だ。</em></p><p><em>どちらがやられる？」</em></p><p><em>「わたしが選ぶの？」</em></p><p><em>「そう」</em></p></blockquote>
+<hr>
+<blockquote><p><em>ブロドウェンは風の精霊を呼び出し、</em><em>崩れかけた遺跡を偵察するよう頼んでいる。</em><em>「説得するで+CHAを</em><em>ロールしてもらうよ」と私は言う。</em></p><p><em>「手伝える？」とヴァヒドが尋ねる。どうやって</em><em>手伝うのか尋ねる。「この精霊について何か知ってるかも。</em><em>何が動機になるかとか」だがそれは</em><em>助力ではなく、知識を語るだ。彼が</em><em>知識を語り、私が教えたことを使って</em><em>助力することはあるかもしれないが、今は助力していない！</em></p></blockquote>
+<hr>
+<blockquote><p><em>部屋が崩れ、ブロドウェンは</em><em>瓦礫と材木の山の下敷きになる。カラドックはよろめきながら近づき、</em><em>材木の1本をこじ上げる。「それでもまだ</em><em>瓦礫の下から抜け出せないよ、ブロドウェン。掘って</em><em>抜け出したいなら、STRで危険に抗うだ。</em><em>危険は、カラドックの力が尽きる前に</em><em>抜け出せないことだ」</em></p><p><em>カラドックは自分が助力しているのかと尋ねる。「してるよ！」と私は言う。</em><em>「彼女に抜け出そうとする機会を</em><em>与えている。でも、そういう意味なら、彼女は有利を</em><em>得られないよ」</em></p></blockquote>
+<div class="move-block" id="clash"><h3 class="move-name">Clash</h3><p class="move-trigger"><strong><em>白兵戦や至近距離で</em></strong><strong><em>戦うとき</em></strong>、+STRでロールする。<strong>10+なら</strong>、あなたの動きは期待どおりに成功し（自分のダメージを与える）、1つ選ぶ：</p><ul class="bullets"><li>敵の攻撃を避ける、防ぐ、または返す</li><li>強く素早く打ち込み、<button type="button" class="dice-roll" data-dice="1d6" title="クリックで1d6をロール — Shift: 有利 · Ctrl: 不利">1d6</button>の追加ダメージを与えるが、敵の攻撃を受ける</li></ul>
+<p><strong>7-9なら</strong>、あなたの動きはおおむね成功する（自分のダメージを与える）が、敵の攻撃を受ける。</p>
+<p>このムーブは白兵戦の応酬を扱う。PCが敵を傷つけるか制圧しようとし、敵のほうも積極的にPCを傷つけ・制圧し返そうとしているか、そうする能力と意志がある場合である。敵が反撃できない、あるいはしないなら、それは斬り結ぶではない。PCはただダメージを与える（あるいはあっさり殺す）。</p>
+<p>あなたが攻撃を告げ（「それがあなたに飛びかかる、どうする？」）、キャラクターが身を守ると同時に反撃するなら、それは斬り結ぶである。すでに危うい体勢にあったのでない限り、ふつうは先に危険に抗う必要はない。</p>
+<p>プレイヤーが「攻撃する」や「刺す」のようなことを言ったら、もっと詳しく探ろう。動きを思い描け、その意図を理解できれば、このムーブはずっと解決しやすくなる。</p>
+<p>その攻撃がどうしても通用しないなら、斬り結ぶは発動しない。代わりに<strong>必要条件を</strong><strong>告げる</strong>（「まず相手の守りの内側に入らないと」）か、<strong>ありがたくない真実を</strong><strong>明かす</strong>（「槍はまっすぐ突き抜ける、霧を刺しているようだ」）か、<strong>窮地に立たせる</strong>（「それはあなたの槍を払いのけ、喉を突いてくる。どうする？」）。</p>
+<p>7+なら、彼らの動きは成功し（7-9ならおおむね成功し）、敵を傷つける機会を得る。どれだけ傷つけるかはダメージロールが教えてくれる。敵を倒せなくても（あるいはアーマーを貫けなくても）、動き自体は基本的に成功している。フィクション上の状況はそれを反映して変わるべきだ！</p>
+<p>「敵の攻撃を受ける」は、ダメージを受けることだけを意味しない。敵を使って、そのキャラクターに攻撃的な厳しいGMムーブを行うという意味である。<strong>傷つける</strong>こともできる（「それはあなたの兜を叩き割り、世界がぐるぐる回る。<button type="button" class="dice-roll" data-dice="1d8+3" title="クリックで1d8+3をロール — Shift: 有利 · Ctrl: 不利">1d8+3</button>ダメージを受けて<em>朦朧</em>を記録して」）が、<strong>窮地に</strong><strong>立たせる</strong>（「あなたはそれを刺すが、それはあなたを手すりに叩きつけて<button type="button" class="dice-roll" data-dice="1d6" title="クリックで1d6をロール — Shift: 有利 · Ctrl: 不利">1d6</button>ダメージ。手すりにひびが入り、崩れかけている」）ことも、<strong>資源を使わせる</strong>（「あなたはそれを刺すが、それが跳ねてよじれ、槍が飛んでいく」）ことも、そのほか筋の通るどんなGMムーブ、特に怪物のムーブを行うこともできる！　ムーブがPCを傷つけたり、痛めつけたり、戦闘不能にしたりしうるなら、ムーブの一部としてダメージを与えよう。</p>
+<p>PCがダメージを与えつつ敵の攻撃を受けるときは、敵の攻撃がどんなものかを決める前にプレイヤーにダメージを振らせよう。PCにダメージを与える何かをするとわかっているなら、ムーブを決める前に怪物のダメージを振る（あるいはプレイヤーに振らせる）こともできる。与えたダメージ（とアーマー、タグ、各戦闘者が立っているかどうか）を、行うムーブの参考にしよう。</p>
+<p>6-なら、明白な結果はプレイヤーの動きが失敗し、敵の攻撃を受けることだ。だが原則に従うどんなムーブを行ってもよい。致命の一撃を与えたものの、怪物が倒れて従者を押しつぶすかもしれない！　この敵は斬り倒したが、次の敵に頭を殴られてPCが捕らえられるかもしれない。</p>
+<p>キャラクターの攻撃が複数の敵を傷つけうるとき（<em>範囲</em>タグのため、筋の通る描写をしたため、など）、斬り結ぶのロールはその集団全体に対して1回だけ行うが、ダメージは各敵ごとに別々に振る。</p>
+<p>複数のPCや従者が同時に1体の敵を攻撃するときは、1人が斬り結び、ほかは助力する。</p></div>
+<hr>
+<blockquote><p><em>ネイラッドはカラドックを放し、</em><em>ブロドウェンに飛びかかって麻痺毒で噛みつく。</em><em>カラドックは「攻撃する！　斬り結ぶ？」</em></p><p><em>「たぶんね。どんなふうに？」</em></p><p><em>「転がって立ち上がり、盾を拾って突っ込んで、</em><em>彼女から叩き落とす」</em></p><p><em>ブロドウェンは、それは彼女に集中しているのに斬り結ぶになるのかと尋ねる。「なるよ」と私は言う。「それは今</em><em>あなたに毒を打ち込んだばかりで、ものすごく素早い。カラドックから</em><em>身を守ることはできると思う」</em></p><p><em>そこでカラドックは+STRでロールし、11を出して、</em><em>賢明にも敵の攻撃を避けることを選ぶ。</em><em>残念ながら、ダメージはたった2で、</em><em>蜘蛛のアーマーを貫くには足りない。「じゃあ、何も</em><em>起こらないの？」と彼は尋ねる。</em></p><p><em>「ダメージは受けないけど、あなたの動きは</em><em>成功する。ブロドウェンからそれを叩き落とし、</em><em>それは仰向けにひっくり返って、起き上がろうと</em><em>しばらくもがいている。どうする？」</em></p></blockquote>
+<hr>
+<blockquote><p><em>クリンウィンがリアンナを押さえつけ、</em><em>奇妙な鳩のような声を立てながら首を</em><em>絞めようとしている。「片手で押し返して、もう片方で</em><em>ナイフを抜く。ぐさぐさ」これは</em><em>至近距離での戦いなので、彼女は+STRで</em><em>斬り結ぶをロールする。12だ！</em></p></blockquote>
+<hr>
+<p>複数の戦闘者が1体の敵にダメージを与えるときは、1人の戦闘者のダメージ（ふつうは最も高い者）を振り、最初の1人以降の有能な攻撃者1人につき+1ダメージを加える。全攻撃者のタグを、筋が通る範囲で適用する。</p>
+<p><strong>戦闘の運営</strong>（406ページ）も参照。特に<strong>傷つけられない敵</strong>（412ページ）、<strong>複数の戦闘者</strong>（414ページ）、<strong>戦いを面白く保つ</strong>（417ページ）。</p>
+<blockquote><p><em>「攻撃を避ける？　それとも追加ダメージ？」彼女は追加ダメージを選び、</em><em><button type="button" class="dice-roll" data-dice="d8" title="クリックでd8をロール — Shift: 有利 · Ctrl: 不利">d8</button>（彼女のダメージダイス）と<button type="button" class="dice-roll" data-dice="d6" title="クリックでd6をロール — Shift: 有利 · Ctrl: 不利">d6</button>を振って、合計7</em><em>ダメージ。倒すには十分だが、</em><em>彼女はクリンウィンの攻撃も受ける。刺されている間に石で頭を殴らせて</em><strong><em>彼女を傷つける</em></strong><em>ことも考えたが、</em><em>代わりに</em><strong><em>ありがたくない真実を明かす</em></strong><em>ことにする。</em></p><p><em>「5、6回は刺す。冷たく黒い</em><em>血があなたに降り注ぐ。でもクリンウィンは</em><em>臆病なはずだよね？　しっかり刺せば</em><em>逃げ出すはずだった。こいつは？</em><em>首を絞め続け、あのクークーという</em><em>声を立て、瞬きも身じろぎもせず、</em><em>血を流しきるまで。<button type="button" class="dice-roll" data-dice="d6" title="クリックでd6をロール — Shift: 有利 · Ctrl: 不利">d6</button>ダメージを受けて。今、</em><em>頭の中を何がよぎっている？」</em></p></blockquote>
+<hr>
+<blockquote><p><em>スウィンはヴァヒドと目を合わせ、</em><em>意志を砕こうとしたが、ヴァヒドは抵抗し、</em><em>屈したふりをすることに成功した。「それは</em><em>這い寄ってくる」と私は告げる。「『来るのだ、</em><em>わたしと』とシューと囁き、背を向けて去ろうとする。どうする？」</em></p><p><em>「ランタンを出してるよね？　それで顔を</em><em>ぶん殴る。斬り結ぶ？」</em></p><p><em>スウィンはヴァヒドが自分の支配下にあると思い込み、</em><em>攻撃を予期していない。「いや、</em><em>斬り結ぶじゃない。ダメージを与えるだけだ！」</em></p></blockquote>
+<div class="move-block" id="defend"><h3 class="move-name">Defend</h3><p class="move-trigger"><strong><em>守りの構えをとるとき</em></strong>、または<strong><em>他者を守るために飛び込むとき</em></strong>、 +CONでロールする。<strong>10+なら</strong>、備えを3ホールドする（盾を持っていれば4）。<strong>7-9なら</strong>、備えを1ホールドする（盾があれば2）。 備えを1対1で消費して、以下ができる：</p><ul class="bullets"><li>守る対象の代わりに攻撃のダメージや効果を受ける</li><li>攻撃の効果やダメージを半分にする</li><li>守る対象からすべての注意を自分に引きつける</li><li>攻撃者に反撃する（不利で自分のダメージを与える）</li></ul>
+<p><strong><em>攻勢に出るとき、守りに</em></strong><strong><em>集中するのをやめるとき、または脅威が去ったとき</em></strong>、ホールドしている備えをすべて失う。</p>
+<p>このムーブは先手でも後手でも発動しうる。</p>
+<p><strong>先手</strong>：危険が迫っているが、差し迫った、進行中の攻撃はない。彼らは危険を受け止め撥ね返す構えをとる。</p>
+<p>足を踏ん張り、盾と槍を掲げ、目を光らせる、など。守り抜くつもりの人のそば、あるいは前に立つかもしれない。</p>
+<p>陣地を保つため、あるいは何か貴重な品を守るために腰を据えるかもしれない。単に自分自身を守り抜いているだけかもしれない。</p>
+<p><strong>後手</strong>：あなたが、あるキャラクターへの具体的で差し迫った攻撃を確立するムーブを行い、別のキャラクターのプレイヤーが「その前に立ちはだかる！」や「突き飛ばしてどかす」のようなことを言う。</p>
+<p>この形は、誰か（あるいは何か）ほかのものを守るときにだけ使える。後手で自分自身を守るなら、それは危険に抗うか、あるいは斬り結ぶである。</p>
+<p>あなたがすでに攻撃が命中したと描写した後でも、全員が「うん、それはできただろうね」と同意するなら、キャラクターは別の者を守り抜くために飛び込むことが<em>できる</em>。</p>
+<p>7+なら、プレイヤーは備えをホールドし、それを消費して列挙された選択肢の1つを行える。ロールは不要である。プレイヤーは1回の攻撃に対して備えを何度でも消費できるが、ある攻撃に対して各選択肢は1回ずつしか選べない。<strong>フィクションに始まりフィクションに終わる</strong>ことを忘れずに。備えを消費するときにそれがどう見えるかをプレイヤーに尋ねよう。</p>
+<p>プレイヤーは筋の通るやり方でしか備えを消費できない。知覚できない攻撃を遮ったり、手の届かない敵に反撃したりはできない。</p>
+<p>攻撃のダメージや効果を半分にするのは、アーマーを適用する前にダメージを減らす。効果を半分にするとは何を意味するかをプレイヤーと一緒に決めよう。倒れる代わりによろめくのかもしれないし、触手が全身ではなく片腕だけをつかむのかもしれない。</p>
+<p>攻撃者に反撃するなら、彼らのダメージのタグ（<em>強打</em>や<em>凄惨</em>など）が適用される。この選択肢は、たとえ攻撃者を倒したとしても、それだけでは攻撃を止めたり防いだりしない。彼らは攻撃の前ではなく、攻撃への<em>応答</em>として備えを消費しているのだ。</p>
+<p>プレイヤーは備えをホールドしている間にほかのムーブを発動させ、その結果に応じて備えを消費できる。それこそが狙いだ！</p>
+<p>だが攻撃的になったり、守りの構えを捨てたりすれば、備えは失われる。</p>
+<p>誰かが先手で守り抜いて6-を出したら、状況を攻撃的に悪化させよう。<em>後手</em>で守り抜いて6-を出したなら、まあ、厳しいムーブはおそらくかなり明白だろう。</p></div>
+<hr>
+<blockquote><p><em>レイナル（NPC）が</em><em>ネイラッドに飛びかかられ、ヴァヒドが彼を救おうとする。「</em><em>彼をつかんで自分の後ろに引っ張る」これは</em><em>守り抜くだ！　ヴァヒドは8を出し、1つの</em><em>備えをすぐに消費する。</em></p><p><em>「それは彼に組みついて<button type="button" class="dice-roll" data-dice="1d8" title="クリックで1d8をロール — Shift: 有利 · Ctrl: 不利">1d8</button>ダメージを与え、</em><em>毒をたっぷり注ぎ込む」と私は言う。「彼を</em><em>救いたいなら、攻撃を代わりに受けるか、</em><em>ダメージ・効果を半分にするかだ」彼は</em><em>決める前にダメージを振っていいかと尋ね、私は</em><em>「もちろん！」と答える。彼は5を出し、毒も含めて</em><em>レイナルの代わりに攻撃を受けることを選ぶ。</em></p></blockquote>
+<hr>
+<blockquote><p><em>カラドックはドレイクから逃げる途中でつまずき、</em><em>リアンナは振り向いてそれに怒鳴り始め、</em><em>両者の間に割って入る。「カラドックを</em><em>守り抜いてるんだね？」</em></p><p><em>「そう。この子のお母さんに無事に連れて帰るって</em><em>約束したの」彼女は7を出し、備えを消費して</em><em>守る対象から自分に注意を引きつける。</em><em>「怒鳴って、槍とナイフを打ち鳴らして、</em><em>ぐるりと回り込んで、カラドックを見させないようにする」</em></p><p><em>「いいね！　カラドック、あのドレイクはすぐ</em><em>そばにいたが、振り向いてリアンナに唸った。</em><em>あなたは立ち上がれる。どうする？」</em><em>彼はもちろん、それを刺すことにする（そして</em><em>リアンナは小声で毒づく）。</em></p></blockquote>
+<hr>
+<blockquote><p><em>ブロドウェンはウィンフォーに近づく。彼は</em><em>気味の悪い、法悦の表情を浮かべている。ヴァヒドは</em><em>後ろに控えて扉を守っている。彼は</em><em>守り抜くをロールし、備えを1ホールドしている。</em></p><p><em>ウィンフォーが不意にブロドウェンを刺すと、</em><em>ヴァヒドは「備えを消費してダメージを</em><em>半分にする！」と言う。だが私はそうは思わない。彼は</em><em>扉のそば、3、4歩離れたところにいて、ウィンフォーは</em><em>何の前触れもなくブロドウェンを刺したのだ。「</em><em>備えはとっておいて」と私は言う。「でも、ウィンフォーからブロドウェンを守れる位置には全然いなかったよ」</em></p></blockquote>
+<hr>
+<blockquote><p><em>ブロドウェンがプライダーの傷の手当てをしていると、</em><em>カラドックは奇妙にまぜこぜの</em><em>獣の声が近づいてくるのを聞く。クリンウィンだ！　彼は</em><em>唾を飲み、入口に移動し、</em><em>盾と槍を構える。これは確かに守りの構えなので、</em><em>彼は+CONで守り抜くをロールする。</em><em>10+を出し、備えを3ホールドし、</em><em>盾で+1。</em></p><p><em>「最初の2匹のクリンウィンが突っ込んでくる。1匹は</em><em>顔めがけて跳びかかり、もう1匹は低く来る！　どう</em><em>する？」</em></p><p><em>彼は盾を掲げて踏みとどまり、</em><em>近づいてきたところを突く。それは白兵戦なので</em><em>斬り結ぶだ。「備えは残る？」と彼は尋ね、</em><em>うん、残ると思う。彼は戦っているが、</em><em>守りながらだ。（突っ込んで迎え撃っていたら、</em><em>備えは失われていただろう）</em></p><p><em>残念ながら、彼は斬り結ぶで4を出したので、私は</em><strong><em>彼を</em></strong><strong><em>窮地に立たせる</em></strong><em>。それも厳しく。「最初の1匹があなたを押し倒し、</em><em>2匹目があなたの脚をつかんで</em><em>思いきり噛みつく！　<button type="button" class="dice-roll" data-dice="d6+1" title="クリックでd6+1をロール — Shift: 有利 · Ctrl: 不利">d6+1</button>ダメージだ」彼は</em><em>5ダメージを出すが、備えを1消費して</em><em>攻撃のダメージと効果を半分にする。それで</em><em>3ダメージになり、アーマーで1減る。</em><em>「で、どんなふうに見える？」と私は尋ねる。「効果は</em><em>どう半分になる？」</em></p><p><em>「足は踏ん張れたと思う。でも1匹目は</em><em>盾にぶら下がっていて、もう1匹は</em><em>足首に噛みついてる。それと、うん、備えを</em><em>もう1つ消費して反撃する。盾にいるやつを</em><em>戸口の枠に叩きつける。</em><em>いい？」</em></p><p><em>とてもいい。彼は自分のダメージを（不利で）与え、備えはまだ2残っている。</em></p><p><em>「さて、ブロドウェン、こうしている間に…」</em></p></blockquote>
+<div class="move-block" id="interfere"><h3 class="move-name">Interfere</h3><p class="move-trigger">ほかのPCの行動を阻もうとし、どちらも引き下がらないとき、以下でロールする…</p><ul class="ellipsis"><li>+STR：力で押し通す、または腕力を試す</li><li>+DEX：速さ、敏捷さ、巧みさを用いる</li><li>+CON：耐える、または踏みとどまる</li><li>+INT：専門知識を活かす、または巧妙な策を実行する</li><li>+WIS：意志の力を振り絞る、または感覚に頼る</li><li>+CHA：魅了する、はったりをかける、感心させる、または溶け込む</li></ul>
+<p><strong>10+なら</strong>、相手は以下から1つ選ぶ。<strong>7-9なら</strong>、相手は以下から1つ選ぶが、あなたは体勢を崩す、無防備になる、あるいはほかの形で隙をさらす。</p>
+<ul class="bullets"><li>それでも行うが、（次の）ロールに不利を受ける</li><li>折れる、方針を変える、あるいはほかの形でムーブが阻まれるのを受け入れる。このムーブは、あるPCが行動し、別のPCが止めようとし、最初のPCが押し通そうとするときに用いる。いったん止めて状況を話し合い、両方のプレイヤーに引き下がる機会を与えよう。</li></ul>
+<p>どちらのプレイヤーも、ダイスに頼らず折れることができる。</p>
+<p>7+なら、最初のプレイヤー（妨害される側）が選ぶ。次のロールに不利を受けてでも行動するか、折れるか。</p>
+<p>行動することを選んだが、それがムーブを発動させないなら、次のロールに不利を受ける。たとえそのロールが無関係でもだ。行動したプレイヤーに、なぜ不利が尾を引くのかを尋ねよう。怒っているのか、気が散っているのか、自分を疑っているのかもしれない。</p>
+<p>7-9なら、妨害したキャラクターは体勢を崩す、無防備になる、または隙をさらす。もう一方のPCに報復の機会を与えよう。</p>
+<p>それが不可能か見込み薄なら、妨害したキャラクターを窮地に立たせるか、スポットライトを別の誰かに移そう。</p>
+<p>6-なら、明白な結果は最初のPCの行動を防げないことだ。最初のPCはやり始めたことをやり遂げ、</p>
+<p>それがプレイヤーのムーブを発動させるか、あなたが何が起こるかを告げる。ここで最初のPCに引き下がらせてはならない！　彼らは腹を決めたのだ。さもなければ妨害はロールされなかったはずだ。</p>
+<p>もっとも厳密には、妨害で6-が出たら、あなたは厳しいGMムーブを行える。</p>
+<p>妨害したPCが結局最初の行動を阻むが、そうすることで事態がはるかに、はるかに悪化するのかもしれない。</p>
+<p>はっきりさせておくと、妨害は怪物やほとんどのNPCには適用されない。ほかのPCの命令で行動している従者には適用されるかもしれないが、それはケースバイケースで判断する必要がある。</p></div>
+<hr>
+<blockquote><p><em>ウィンフォーがブロドウェンを刺したばかりで、全員が</em><em>驚いている。リアンナが反応する。「ああもう、</em><em>冗談じゃない。あいつを撃つ。脚を」</em></p><p><em>ブロドウェンは、ガラスのような目をした少年に刺されたばかりなのに、</em><em>「リアンナ、</em><em>だめ！」と言って手を上げて止める。私は</em><em>リアンナに撃つかどうか尋ねる。撃つなら、ブロドウェンは</em><em>妨害していることになる。</em></p><p><em>だがリアンナは射つのを控える。「でも</em><em>弓は引いたままだよ。『下がりな、坊や、</em><em>ナイフを捨てるんだ。あんたの母さんに脚の穴を</em><em>説明するのはごめんだからね』」</em></p></blockquote>
+<hr>
+<blockquote><p><em>カラドックにはまだスウィンの声が聞こえていて、</em><em>頭の中で悪い考えを囁いている。そしてリアンナは</em><em>たった今彼を叱りつけた。私は身を乗り出して</em><em>言う。「ほぉぉら？　軽蔑だ！　お前が何でできているか</em><em>見せてやれぇぇ」私は彼がリアンナを攻撃するならXPを</em><em>与えると持ちかけ、彼は乗る。</em></p><p><em>「唸って盾を彼女に振るう。</em><em>黙れ！って感じで。斬り結ぶ？」</em></p><p><em>「たぶんね、でも待って。リアンナ、カラドックが</em><em>攻撃してくる、どうする？」</em></p><p><em>「え？　やだ。後ろに下がって、盾をかわして、</em><em>脚を払う」</em></p><p><em>カラドックは引き下がらず、リアンナも</em><em>引き下がらないので、彼女は+DEXで妨害をロールする。</em><em>7を出す。カラドックは不利で斬り結ぶか、</em><em>攻撃を阻まれるのを受け入れるかだ。彼は</em><em>阻まれるのを受け入れるが、リアンナは体勢を崩し、</em><em>隙をさらしている。</em></p><p><em>「リアンナ、カラドックの脚を払うが、彼は</em><em>あなたに倒れ込んでくる。ふたりとも倒れ、彼が上だ。</em><em>カラドック、あなたは仰向けで、リアンナは</em><em>あなたの下、彼女の顔があなたの肘のすぐそばにある。そして</em><em>あの声が囁く『打てぇぇ！』どうする？」</em></p></blockquote>
+<hr>
+<blockquote><p><em>リアンナは後ろに下がり、しばらくヴァヒドと並んで</em><em>歩く。「ヴァヒド、あんたとエイラはどうなってるの？</em><em>あの子、気味悪がってるよ」ヴァヒドは</em><em>言葉を濁し、リアンナは「うん、立ち止まって、</em><em>あんたの謎めいた老人ぶった態度を</em><em>見透かす。洞察を求める？」</em></p><p><em>「いいよ」と私は言う。ヴァヒドは何か手は</em><em>あるかと尋ねる。「妨害できるよ。</em><em>でもどんなふうか教えて」</em></p><p><em>「ぎこちなく笑って、孤独な老人が</em><em>若いきれいな女性を見ていただけだ、みたいなことを</em><em>言う。実際はまったくそういうことじゃないのに」面白い！　私たちは</em><em>彼が妨害していると合意し、+CHAでロールさせる。</em><em>彼は</em><em>4を出す。</em></p><p><em>私は</em><strong><em>彼のムーブを彼自身に向け返し</em></strong><em>、リアンナに洞察を求める</em><em>有利を与えることも考える。だがこの問題はしばらく煮詰めておきたいので、</em><strong><em>厄介事を告げ</em></strong><em>、</em><em>会話を打ち切る。「リアンナ、彼がそのいい加減な言い訳をして、</em><em>あなたがそれを飲み込む前に、</em><em>ガレットが『ドレイクだ！』と叫び、前方から唸り声と</em><em>叫び声がする。どうする？」</em></p></blockquote>
+<hr>
+<blockquote><p><em>ソーンサムがブロドウェンにきれいな花を差し出し、</em><em>彼女は受け取ろうとする。ヴァヒドが妨害し、スプリガンの手からそれを叩き落とそうとする。彼は</em><em>10を出すが、ブロドウェンはそれでも花を受け取ると</em><em>決める。「彼が</em>わたしの<em>手から叩き落としたんだと思う。それでわたしは『ヴァヒド！　謝りなさい！』って」</em><em>ヴァヒドは歯を食いしばって謝り、それから</em><em>足音荒く去っていく。ソーンサムはそれを見てにやりと笑う。</em></p><p><em>ヴァヒドの10+の妨害にもかかわらず行動したので、</em><em>ブロドウェンは</em><em>次のロールに不利を受ける。私は彼女になぜだと思うか尋ねる。</em></p><p><em>「動揺してるの」と彼女は言う。「あの花はただの</em><em>優しい心遣いだったって自分に言い聞かせてるけど、</em><em>ソーンサムのにやりとした顔が頭から離れなくて、</em><em>ヴァヒドが正しかったんじゃないかって思ってる」</em></p></blockquote>
+<div class="move-block" id="know-things"><h3 class="move-name">Know Things</h3><p class="move-trigger"><strong><em>蓄えた知識を</em></strong><strong><em>掘り起こすとき</em></strong>、+INTでロールする。<strong>10+なら</strong>、GMは目下の話題について興味深く役に立つことを教えてくれる。<strong>7-9なら</strong>、GMは興味深いことを教えてくれる。それを役立てるのはあなた次第だ。<strong>いずれにせよ</strong>、GMは「どうしてそれを知っている？」と尋ねるかもしれない。 プレイヤーが、何かについて何を知っているか、知っているかどうかを尋ねたら、知識を語りたいか尋ねよう。こちらから促してもよい。 「なめし職人の見習いとして、それを知っているかもしれないね。知識を語る？」 誰でも知っていること（街道は比較的安全だ、など）を思い出したり、単に忘れてしまった細部（第2セッションでセレンが、フェイは鉄に触れるのを我慢できないと皆に話したこと、など）を思い出したりするために、知識を語らせてはならない。事実を思い出させて先へ進もう。 何について知識を語っているのか、何を知りたいのかが不明なら、尋ねよう！ そのほうがムーブをずっと解決しやすくなる。 プレイヤーは、ロールする前にその話題をどうして知っているかを説明する必要はない。ロールし、それからあなたが興味深いこと・役に立つことを教えて、「どうしてそれを知っている？」と尋ねればよい。プレイヤーが思いつく話は、まさに金の卵になりうる。 キャラクターがその話題を知りうる道が本当にないなら、そう言おう。「いや、これはあなたの経験の外だ」。だが控えめに！　多少無理があっても、プレイヤーが自由に知識を語れるほうがゲームはよくなる。 10+なら、その主題について興味深く役に立つ（そして真実の）ことを教える。それは明確な行動方針を示すか、ある方針を排除するか、その両方であるべきだ。「興味深いのは____で」（背景情報を与え）「役に立つのは____だ」（さらに役立つ細部を加える）で始めるとよい。役に立つことを与えたか自信がなければ、尋ねよう！ 7-9なら、興味深いことを教える義務があるが、それを役立てるのは彼ら次第だ。アイデアに詰まったら、以下のどれかを試そう。</p><ul class="bullets"><li><strong>役に立つ・行動につながることを考え</strong>、その情報をはっきり述べずに<em>ほのめかす</em>だけのことを教える。</li><li><strong>役に立つが矛盾する2つのことを</strong><strong>明かし</strong>、試されるまでどちらが真実かは決めない。PCがその情報に基づいて行動したら、運命のダイスか彼らのムーブの結果を見て、どちらが真実かを決める。</li><li><strong>役に立つが、すぐには</strong><strong>活かせないことを教える</strong>。「その羽は南方の商人にたいそう高く売れるし、生きた雛ならなおさらだ！　でもこいつは今まさにあなたに突っ込んでくる。どうする？」</li></ul>
+<p>答えについてプレイヤーに意見を求めてかまわない。特に準備していない話題なら。「いいよ、あなたが教えて。このドレイクたちは<em>どう</em>狩りをする？　それをどう自分に有利に使える？」</p>
+<p>複数のプレイヤーが同じ話題について知識を語りたがったら、1人にロールさせ、ほかの者に助力させる。同じ話題について何度も知識を語らせないようにしよう。そうしようとしたら、GMムーブを使って場面を先へ進めよう。</p>
+<p>6-なら、彼らが考え込んでいる間に<strong>窮地に立たせる</strong>か、<strong>危険を持ち込む</strong>（突然、ハグルが！）かもしれない。<strong>ありがたくない</strong><strong>真実を明かす</strong>、あるいはプレイヤーにそうさせるかもしれない。重大な（おそらく見えない）代償を伴う<strong>機会を与える</strong>かもしれない。守られて育った生い立ちの<strong>欠点を示し</strong>、単に知らないのだと告げるか、<strong>必要条件を告げる</strong>（「これについてはセレンに話を聞く必要がある」）かもしれない。</p></div>
+<hr>
+<blockquote><p><em>PCたちは数時間、跡をたどって</em><em>いる。リアンナが尋ねる。「この辺りに何か</em><em>ある？　わたしも部隊も狩人だから、</em><em>森はかなりよく知ってる」</em></p><p><em>「赤き木立（the Red Grove）からそう遠くない」と私は言う。</em><em>それは誰でも知っていることだからだ。彼女は</em><em>ほかに何かあるかと尋ねる。「知識を語るみたいだね。</em><em>赤き木立についてもっと知りたいの？</em><em>それとも何？」彼女は</em><em>ほかの目ぼしい場所を知りたがっている。遺跡、</em><em>巣穴、そういったものだ。「いいね、+INTでロールして」</em></p><p><em>6-なら、たぶんメモにある羽毛の</em><em>ドレイクを登場させただろう。だが彼女は</em><em>11を出したので、情報を出す。「この方角に</em><em>もう1日ほど行ったところに大きな造り手の遺跡が</em><em>ある。ほとんど埋もれていて、プライダーほど大きな少年を</em><em>クリンウィンが引きずっていくには</em><em>遠い。でもあなたが思いつく中では一番目立つ目印だ。</em><em>それにクリンウィンの巣と人間の捕虜を</em><em>収めるくらいの大きさはある。</em><em>これで十分役に立つ？」と私は尋ねる。</em></p><p><em>「うん。間違いなく」とリアンナは言う。「じゃあ</em><em>きっとそこへ向かってるんだ」</em></p><p><em>「その遺跡のことをどうして知ってるの？」と私は尋ねる。</em></p><p><em>「ああ、子どもの頃、父さんと狂犬病の狼を追って</em><em>こっちへ来たんだと思う。遺跡の近くで死んでいるのを</em><em>見つけたけど、怖くなって帰ったの」</em></p></blockquote>
+<hr>
+<p>6-なら、<strong>彼らのムーブを</strong><strong>彼ら自身に向け返し</strong>、彼らが真実だと信じるが、それに基づいて行動すれば厄介事に巻き込まれることを教えてもよい。これはプレイヤー全員が納得している場合にだけ有効だ。プレイヤーは失敗したことを知っているのだから。慎重に、やりすぎないように。嘘をつくより面白いことは、ほぼ常にできる。</p>
+<blockquote><p><em>ヴァヒドは、野営地から盗みを働いて捕まったばかりの</em><em>この植物人間について知識を語る。</em><em>10+なら、これはフェイであり、フェイは</em><em>約束を守り借りを返すよう縛られていると</em><em>教えるつもりだ。</em></p><p><em>残念ながら、ヴァヒドは6を出す。私はそれでも</em><em>興味深いことを教えることにし、そのとき</em><strong><em>挑発的な</em></strong><strong><em>質問をする</em></strong><em>。「ああそうだ、</em><em>このろくでなしには前に会ったことがある。ストーントップに</em><em>来て間もない頃だ。彼はフェイ、ソーンサムという</em><em>名の盗人だ。あのとき彼はどうやってあなたを騙し、</em><em>何を盗んだ？」</em></p></blockquote>
+<hr>
+<blockquote><p><em>ブロドウェンは、スウィンの影響から</em><em>ウィンフォーの心を解き放つ方法を考えている。</em><em>彼女は知識を語り、9を出す。</em></p><p><em>「ある薬草がある」と私は言う。「ええと…ムーンワート。</em><em>魔法にかかった心を晴らす。いや、</em><em>シルバーワートだったか？　しまった、一方は心を晴らし、</em><em>もう一方は幻を見せるが、どっちがどっちか思い出せない。これはどうやって知った？」</em></p><p><em>「ああ、グウェンディルから。でも彼女はいい</em><em>先生じゃないし、どちらの薬草も使う機会が</em><em>なかった。物資を使って持っていることにできるよね？</em><em>家に薬草園があるの」</em></p><p><em>「いいよ」と私は言う。「でもどっち？」そして</em><em>彼女が何か賢いことをしない限り、彼女が</em><em>ウィンフォーに与えるまで待ってから、</em><em>運命のダイスを振らせる。4+なら正解だ！</em></p></blockquote>
+<div class="move-block" id="let-fly"><h3 class="move-name">Let Fly</h3><p class="move-trigger"><strong><em>遠隔武器で容易な</em></strong><strong><em>射撃をするとき</em></strong>、自分のダメージを与える。 <strong><em>射撃が難しいか、あなたが</em></strong><strong><em>重圧の下にあるなら</em></strong>、まず+DEXでロールする。<strong>10+なら</strong>、射線が通り、自分のダメージを与える。<strong>7-9なら</strong>、1つ選ぶ：</p><ul class="bullets"><li>ダメージを与えるが、矢玉を減らす（武器の次の状態に印をつける。武器にそうした状態がなければこれは選べない）</li><li>構えを保って射線が通るのを待つ。その瞬間が来たら（GMが判断する）、ダメージを与える</li><li>射線を得るために動く。危険に身をさらすか何らかの優位を手放し（GMがどうなるかを言う）、それからダメージを与える</li><li>急いで射ってダメージを与えるが、GMが選ぶ代償や面倒事につながる</li></ul>
+<p>何が「容易な」射撃とみなされるかは、キャラクターと状況によって異なる。百発百中の野伏なら、遮蔽から何も気づいていない敵を射るのにダメージを振るだけでよい。だが一度も殺したことのない探求者なら「重圧の下」にあり、+DEXでロールする必要があるだろう。</p>
+<p>斬り結ぶと同様、射放つは標的を傷つける現実的な見込みがある場合にのみ発動する。見込みがないのにそれでも射つなら、<strong>ありがたくない真実を明かす</strong>か、<strong>結果を</strong><strong>告げる</strong>か、<strong>窮地に立たせる</strong>。</p>
+<p>射撃が可能だが本当に難しいなら、<strong>必要条件を</strong><strong>告げ</strong>（「狙いを定めるには時間がかかる」）、さらに／あるいは<strong>結果を告げる</strong>（「6-なら人質に当たる」）。</p>
+<p>PCが一度に複数の敵を攻撃できたなら、射放つのロールは1回だが、ダメージは各標的ごとに別々に振る。</p>
+<p>+DEXのロールは、PCが射線を得られるか、得るには何が必要かを教えてくれる。ダメージロール（と敵のアーマーとHP）は、射撃がどれだけ効いたかを教えてくれる。</p>
+<p>ダメージがわずかなら、かすっただけだ。</p>
+<p>ダメージが打ち消されたなら、アーマーに弾かれたか、標的がかわしたのだ。</p>
+<p>与えたダメージにかかわらず、敵がどう反応するかを言おう。痛みに吠えるか？　遮蔽に飛び込むか？　その結果、PCに<strong>機会を与える</strong>ことが多いだろう。だが敵の中には、しっかり命中しても怯まないほどタフなものもいる。それは恐ろしい、よいひねりになる。</p>
+<p>7-9なら、彼らの選択がフィクション上でどう見えるかを考えよう。筋を通せないなら、別の選択肢を選ぶよう頼もう。</p>
+<ul class="bullets"><li><strong>矢玉を減らす</strong>：何発か射るか、単に残りが少ないことに気づく。その矢玉は簡単には回収できない。</li><li><strong>構えを保って待つ</strong>：スポットライトを移し、ほかの1人以上のPCの行動を解決する。頃合いだと感じたら、「彼が射線から外れた、ダメージを与えて！」のように言ってこのプレイヤーに戻る。だが状況が変わって射撃が意味をなさなくなったら、それが待つことの危険だ！</li><li><strong>射線を得るために動く</strong>：どこへ行く必要があるかを言い、それを重要なものにする。続けて、今彼らがさらされている危険や、手放したばかりの位置を強調する穏やかなGMムーブを行う。</li><li><strong>急いで射つ</strong>：その攻撃から流れ出るGMムーブを行う。<strong>資源を</strong><strong>使わせる</strong>（槍が折れる）、<strong>厄介事を</strong><strong>告げる</strong>（標的が松明を落とし、火が出る）、<strong>誰かを窮地に立たせる</strong>（射撃が味方を驚かせ、敵がその味方を襲う）、急いだことの<strong>欠点を</strong><strong>示す</strong>（不利でダメージを振る）など。</li></ul>
+<p>彼らの選択が、ダメージを与える前に危険に抗うことを伴うと思うなら（たとえば敵の間をかわして抜けたり、攻撃を受けながら構えを保ったりする必要があるため）、あるいは避けられない結果（厳しいGMムーブ）につながるなら、プレイヤーに警告しよう。考え直す機会を与えること。</p></div>
+<hr>
+<blockquote><p><em>リアンナは転がって膝をつき、羽毛の</em><em>ドレイクがガレットを切り裂いたところを目にする。「</em><em>矢をつがえて、引いて、射る」と彼女は言う。</em></p><p><em>「ヴァヒドがすぐそこにいる」と私は言う。「外したら、</em><em>彼に当たる。それでも射る？」私は</em><strong><em>結果を告げて</em></strong><strong><em>尋ねている</em></strong><em>のだ。彼女は射って、</em><em>10を出すが、ダメージは2だけ。</em><em>ドレイクのアーマー1で、かすり傷にすぎない。「でも</em><em>いい知らせは、注意を引いたことだ。</em><em>それはガレットから顔を上げてシューと唸る。ヴァヒド、</em><em>すぐそこにいるね、どうする？」</em></p></blockquote>
+<hr>
+<blockquote><p><em>ネイラッドが今にもヴァヒドに飛びかかろうとしているが、</em><em>カラドックはそれに槍を投げられるかと尋ねる。</em><em>「いいよ」と私は言う。「でも難しい射撃だ。</em><em>射放つをロールする必要がある」</em></p><p><em>カラドックは7を出す。「矢玉は使えない。</em><em>待っている時間もない。射線を得るために</em><em>動ける？」もちろんできるが、そのときには</em><em>それはヴァヒドに飛びかかっているだろう。「じゃあ</em><em>急いで投げる」彼はダメージ4を出し、</em><em>蜘蛛を傷つけるには十分だが倒すには足りない。</em></p><p><em>「よし、いいね、槍がそれを</em><em>空中で叩き落とす。ヴァヒド、それはあなたの</em><em>右に転がり落ち、槍が突き刺さったまま、</em><em>起き上がろうともがいている。でも</em><em>カラドックが槍を投げたとき、ちょうど</em><em>走っていたエイラの前を横切って、彼女は</em><em>滑って、つまずいて、転んだと思う。しかも</em><em>まずい、もう1匹が跳ねるように彼女を追って</em><em>くる。ヴァヒド、どうする？」</em></p></blockquote>
+<hr>
+<p>6-なら、何が起こるかはあなたが決め、それはほぼ確実に悪いことだ。射撃が外れると決めつけてはならない！　射る前に邪魔が入るかもしれないし、射って（命中さえして）その結果何か悪いことが起こるかもしれない。味方や居合わせた者が近くにいたなら、代わりにその者に当たるかもしれない。</p>
+<blockquote><p><em>ブロドウェンは壊れた道標石のかけらを取り出す。</em><em>「これって悪霊を傷つけられるんだよね？</em><em>投げつける！」標的は、暗がりの中をひらひらと動く</em><em>実体のない影なので、私は</em><strong><em>必要条件を</em></strong><strong><em>告げる</em></strong><em>。見込みを得るだけでももっと近づく</em><em>必要がある。「いいよ」と彼女は言う。彼女は近づき、</em><em>射放つで8を出す。「うーん…じゃあ</em><em>構えを保って射線を待つ。投げようとした瞬間に</em><em>さっと逃げる、みたいな感じ？」</em></p><p><em>「まさにそれ！　あなたの目はそれを探して</em><em>あちこち動く。そのとき、カラドック、それが</em><em>闇の中からあなたに飛びかかってくる、どうする？」彼は</em><em>慌てて後ずさり、危険に抗って</em><em>10を出す。「ブロドウェン、そこだ、投げて！」</em></p><p><em>「よし！　また+DEXでロールする必要ある？」</em><em>いや、もう済んでいる。今は射線が</em><em>通っているので、石を投げて</em><em>ダメージを振るだけでよい。</em></p></blockquote>
+<hr>
+<blockquote><p><em>リアンナと部隊は発掘現場に忍び寄った。</em><em>3匹のクリンウィンは</em><em>彼らに気づいておらず、彼女は部隊に射撃の合図を送る。</em><em>「いいね。6人くらいいるから、</em><em>3匹とも確実に狙える。一斉射撃全体で</em><em>射放つを1回ロールして」</em></p><p><em>「そもそもロールする必要ある？」と彼女は尋ねる。「わたしたちは</em><em>本職の狩人で、向こうはわたしたちがいることを知らない。</em><em>容易な射撃に思えるけど」</em></p><p><em>「ふむ。そうだね。うん、じゃあ部隊の</em><em>ダメージをクリンウィン1匹ごとに振って。数で</em><em>上回っているから+1を加えて」</em></p></blockquote>
+<p>説得する（対NPC）</p>
+<p><strong><em>NPCに迫るか誘いかけるとき</em></strong>、相手に何をして（あるいはしないで）ほしいかを言う。相手に<strong><em>抵抗する理由があるなら</em></strong>、</p>
+<p>+CHAでロールする。<strong>10+なら</strong>、相手は望みどおりにするか、自分を納得させる最も簡単な方法を明かす。<strong>7-9なら</strong>、相手はあなたが納得させるためにできることを明かすが、それはおそらく高くつくか、厄介か、気の進まないものだ。</p>
+<p>この形の説得するは、PCがNPCに何かをするよう納得させようとするときに発動する。あなたがNPCとして抵抗し、PCがなおも粘るなら、それは説得するである。NPCに何をしてほしいのか（しないでほしいのか）をはっきりさせ、やり方が筋が通らなければ異を唱えよう。「彼女はあなたがそうしてほしいとどうやって知るの？　ええと、頼むの？」</p>
+<p>目標が決まったら、NPCに抵抗する理由があるかを判断する。本能、性格、生い立ち、望み、必要、恐れなどを考えよう。抵抗する理由がなければ、NPCはそうする。だがNPCに理由がある（たとえ理不尽なものでも）なら、ロールを求めよう。</p>
+<p>10+なら、PCのやり方とNPCの抵抗を比べよう。抵抗が弱いかPCのやり方が強ければ、NPCにそうさせればよい。だがPCのやり方では足りないと思うなら、PCがNPCを納得させる最も簡単な方法を明かそう。</p>
+<p>7-9なら、NPCはまだ納得していないが、納得しうる方法を明かす。その条件を厄介、高くつく、気の進まないものに<em>しなければならない</em>わけではないが、そうしたほうが面白い。</p>
+<p>NPCを納得させうるものには以下がある：</p>
+<ul class="bullets"><li>約束・誓い・誓約</li><li>安全に・自由に・人目につかずにそれをする機会</li><li>自尊心・名誉・良心・恐れをなだめる、あるいはそれに訴える</li><li>もっともらしい欺き</li><li>よりよい・公正な・過大な申し出</li><li>彼らを手伝う・一緒にやる</li><li>暴力（あるいはその本気の脅し）</li><li>彼らが望むか必要とするもの（硬貨・食べ物・酒など）</li><li>保証・証拠・裏づけ</li><li>____からの圧力・許可・助け</li><li>あるいはほかの筋の通るもの</li></ul>
+<p>NPCをどうすれば納得させられるかを、その言葉や反応、あるいはPCに浮かぶ洞察として明かそう。簡単である必要も、もっともらしい必要さえないが、明かされたことは真実でなければならない。</p>
+<p>NPCを納得させる方法を2つ以上提示してもかまわない。</p>
+<p>「彼は賄賂を待っている。銅貨数枚で足りるだろう。あるいは少し痛めつけてもいい。それでもうまくいくと、あなたはかなり確信している」</p>
+<p>6-なら、NPCが動かないことをはっきりさせ、会話を遮り、場面を終わらせてもよい。あるいはNPCが従うが面倒事を伴う（裏切り、行き過ぎ、誤解など）ことにしてもよい。あるいはそのやりとり全体が別の誰かを怒らせ、社会の秩序を乱し、ほかの形で混乱を生むのかもしれない。ここでは<strong>脅威</strong>（284ページ）と<strong>故郷</strong>のムーブ（502ページ）が役に立つ。</p>
+<hr>
+<blockquote><p><em>PCたちはクリンウィンの群れを倒したばかりだが、</em><em>さらに多くの蒼白い、瞬きしない目が</em><em>見下ろしているのに気づく。「うわ」とリアンナは言う。「</em><em>こいつらだってやっと片づけたのに。</em><em>脅して追い払う。説得する？」</em></p><p><em>「いいね。具体的に何をする？」</em></p><p><em>「一番近いクリンウィンの死体の頭をつかんで</em><em>持ち上げる。ほかのクリンウィンを睨みつける。それから</em><em>首を切り落として、叫び始めて、</em><em>その首を森に放り投げる。それで叫び続ける」</em></p><p><em>うわあ！　それでもクリンウィンは数で</em><em>上回り、PCたちはかなり傷ついているので、</em><em>抵抗する理由はあると思う。リアンナは</em><em>+CHAでロールして11を出す。あの</em><em>ちょっとした見せ物で十分だと思うので、私は言う。「</em><em>彼らは一目散に逃げ去り、あなたは黒い血にまみれて</em><em>そこに立ち尽くす。カラドック、</em><em>今リアンナのことをどう思っている？」</em></p></blockquote>
+<hr>
+<blockquote><p><em>カラドックはガレットと見張りをしながら、</em><em>少し探りを入れる。「『あんたはリアンナの</em><em>部隊に長くいるんだよね？　あんなの</em><em>見たことある？…ええと、あんなの』って。</em><em>話をさせて、リアンナの過去について</em><em>何か知れたらと思って。説得する？」</em></p><p><em>ロールさせることも考えたが、</em><em>ガレットには抵抗する本当の理由がないと気づく。</em><em>「いいよ、でもロールしなくていい。彼は喜んで</em><em>話す。リアンナ、彼がカラドックに話すのに</em><em>いい話は何？　たとえば、あなたが</em><em>血なまぐさく冷酷なことをしたときの話とか？」</em></p></blockquote>
+<hr>
+<blockquote><p><em>ブロドウェンはしゃがんでニアと目の高さを合わせ、</em><em>距離を保ったまま</em><em>平たいパンを差し出す。「ねえ。ねえ、お腹すいてる？」</em></p><p><em>彼女が少女に何かをするよう誘いかけているのは確かだが、</em><em>何なのかはわからない。「ええと、</em><em>隅から出てこさせようとしてる？」</em></p></blockquote>
+<hr>
+<blockquote><p><em>「どちらかというと、信頼してもらって</em><em>話を始めてもらおうとしてる」ニアは怯えきっていて、それは</em><em>抵抗する理由になるので、ブロドウェンはロールする。彼女は</em><em>10を出し、私はニアのことを考え、</em><em>彼女を納得させうるもののリストを見る。</em><em>恐れをなだめればうまくいくと思う。</em></p><p><em>「彼女の目は平たいパンに釘づけになり、</em><em>唾を飲み込むが、それから目がカラドックへ、</em><em>リアンナへ、彼女の部隊へと走る。彼女は</em><em>戦士たちを怖がっている。彼らが</em><em>いなくなれば落ち着くに違いない」ブロドウェンはほかの者たちに</em><em>外に出てくれるよう頼み、彼らは同意する。「いいね。</em><em>彼らが出ていくやいなや、少女はパンを</em><em>ひったくってがつがつ食べ、あなたを見つめる。それから</em><em>唾を飲み込んで、『もっと？』と言う。どうする？」</em></p></blockquote>
+<hr>
+<blockquote><p><em>ヴァヒドはゴルディン鉱山（Gordin&#x27;s Delve）にいて、</em><em>銀線細工の球を売ろうとしている。歯のムトラは</em><em>それに銀をふた握り出すと言った。「いやいや、</em><em>これは少なくとも銀貨ひと袋の価値がある」と</em><em>ヴァヒドは言う。「溶かすだけでふた握りは</em><em>手に入る」</em></p><p><em>「もっと硬貨を出すよう彼に迫っているようだね？</em><em>彼には確かに抵抗する</em><em>理由があるから、説得するをロールして」</em><em>10+なら、ムトラは球の出所についてもっと</em><em>情報を求め、真実かもっともらしい嘘と引き換えに</em><em>銀を出すと思う。そして失敗なら、</em><strong><em>ありがたくない</em></strong><strong><em>真実を明かす</em></strong><em>だろう。ムトラは</em><em>取引しないと</em><em>言うが、ヴァヒドは彼が後でごろつきを</em><em>送って球を盗ませるのではないかと疑う、と。</em></p><p><em>だがヴァヒドは8を出し、私は気の進まない</em><em>ものを選ぶ。「ふん！　こいつを溶かしても</em><em>ひと握りがやっとだ。だが</em><em>こうしよう…今ふた握り払う。</em><em>そしてうちのグンサーに、このべっぴんを</em><em>見つけた場所を案内してくれたら、彼が無事に戻ったとき</em><em>銀貨ひと袋の残りをくれてやる」</em><em>彼は鋭すぎる歯を見せて笑う。「取引</em><em>成立かね？」</em></p></blockquote>
+<p>説得する（対PC）</p>
+<p><strong><em>PCに迫るか誘いかけ、</em></strong><strong><em>相手が抵抗するとき</em></strong>、そのプレイヤーに尋ねる。「あなたにこれをさせることは、ありうる？　イエスかノーか」</p>
+<p>「ノー」と言われたら、引き下がる。</p>
+<p>「イエス」と言われたら、+CHAでロールしてよい。</p>
+<p><strong>10+なら</strong>、相手はあなたの望みどおりにすればXPを1つ記録し、そうしないなら、どうすれば納得させられるかを言わなければならない。<strong>7-9なら</strong>、相手はあなたの望みどおりにすればXPを1つ記録する（だが望むなら断るか、逆提案をしてもよい）。</p>
+<p>あるPCが別のPCに何かをさせたく、相手のPCが抵抗しているとき、このムーブを用いる。</p>
+<p>ムーブの最初の部分、つまり最初のプレイヤーが相手のプレイヤーのキャラクターを納得させることがありうるかを尋ねる部分は、決定的に重要だ。それによって、プレイヤーが自分のキャラクターならしないと思うことを、ルールが無理強いするのを防ぐのである。</p>
+<p>答えが「ノー」なら、最初のキャラクターがどうやってそれに気づくのかを対象のプレイヤーに尋ねよう。目を見ればわかるのか？　何か言うのか？　立ち去るのか？　「それはどんなふうに見える？」最初のキャラクターがなおも圧力をかけ続けるなら、タイムを取り、そのプレイヤーに引き下がる必要があると告げよう。失礼で、仲間のプレイヤーを尊重しておらず、ゲームのルールを無視しているのだ。</p>
+<p>答えが「イエス」なら、最初のプレイヤー（キャラクターが迫り・誘いかけている側）にロールしたいか尋ねよう。ロールするなら、それでよい。ロールしないなら、引き下がる必要がある。</p>
+<p>10+なら、対象のプレイヤーは、それ以上説得されることなく求められたことをすればXPを1つ記録する。断るなら、どうすれば納得させられるかを明かさなければならない。これはキャラクターとして言ってもよいし（「やるよ、リアンナ、でも誰も死なないと約束するならね」）、洞察として描写してもよいし（「わたしの目がヴァヒドのほうへ走る。彼が部屋にいる間は答えないとあなたは気づくと思う」）、プレイヤー同士で話し合ってもよい（「残ることには同意する。でもあれの死骸を持ち帰って研究させてくれると約束するならね」）。</p>
+<p>7-9なら、対象のプレイヤーは、それ以上説得されることなく求められたことをすればXPを1つ記録する。逆提案をしたなら（最終的に同意したとしても）XPは記録しない。</p>
+<p>6-なら、<strong>彼らのムーブを</strong><strong>彼ら自身に向け返し</strong>、対象のプレイヤーに、説得しようとしたキャラクターに何かをさせるにはどうすればよいかを尋ねさせてもよい。あるいは<strong>脅威を持ち込む</strong>、<strong>環境を変える</strong>など、別のムーブで会話を遮ってもよい。どちらのプレイヤーの行動や反応も決めつけず、彼らがどう感じているかを告げてもならない。行き詰まったら、卓（特に対象のプレイヤー）にアイデアを求めよう。</p>
+<h2 id="persuade-or-interfere">説得するか、妨害か？</h2>
+<p>あるPCが別のPCにある行動方針に<em>同意</em>させようとするときは説得するを使う。あるPCがある行動を<em>始めていて</em>、別のPCがそれを止めるか阻もうとするときは妨害を使う。</p>
+<p>あるPCが別のPCを説得するなら、もう一方のPCはその説得の試みを（意志の力やはったりなどで）妨害できる。</p>
+<hr>
+<blockquote><p><em>スウィンは死に、子どもたちは救い出され、</em><em>彼らは帰り支度をしている。だがヴァヒドは</em><em>行きたがらない。「ここには学ぶべきことが</em><em>山ほどある！　ただ去るなんてできない！」</em></p><p><em>リアンナが抵抗しているので、私はヴァヒドの</em><em>プレイヤーをこのムーブに導く。彼は彼女のプレイヤーに、</em><em>彼女を納得させることはありうるかと尋ねる。</em></p><p><em>リアンナのプレイヤーは即座に「ノー」と言う。私は</em><em>それがどう見えるか、ヴァヒドはどうして彼女が</em><em>折れないとわかるのかを尋ねる。「ああ、キレる。『いい加減にして、</em><em>ヴァヒド。帰るったら帰るの！』」</em></p><p><em>ヴァヒドは答える。「わかった。なら帰れ。だが</em><em>わしは残る。ひとりで帰れる」</em></p><p><em>リアンナはため息をつき、眉間をつまんで、</em><em>とても穏やかに言う。「いいえ、ヴァヒド。あなたには</em><em>無理。迷って、死ぬ。お願いだから</em><em>一緒に来て」つまり今度は</em>彼女が<em>彼に</em><em>迫っているのだ。</em></p><p><em>だがヴァヒドは折れない。「納得させることは</em><em>できる」と彼は言う。「だがロールしてもらう。そして</em><em>わしはとことん頑固になって妨害する」</em><em>リアンナは説得するをロールすると言い、ヴァヒドは</em><em>（意志の力なのでWISで）妨害をロールする。</em><em>彼は11を出し、リアンナはなおも</em></p></blockquote>
+<hr>
+<blockquote><p><em>彼に迫り続け、不利でロールすることにする。</em><em>「助力する」とブロドウェンが言う。「リアンナの</em><em>後ろに立って、うるうるした目で見つめる。『ヴァヒド。</em><em>お願い』」これは助けになると私たちは合意し、</em><em>彼女の助力による有利が</em><em>ヴァヒドの妨害による不利を打ち消す。</em></p><p><em>「じゃあ+CHAでロールするだけ？</em><em>それだけ？」そうだ。彼女は10を出す。ヴァヒドが</em><em>これ以上話し合わずに今来ることに同意すれば、</em><em>XPを1つ記録する。だが断るなら、</em><em>どうすれば納得させられるかを明かさなければならない。</em></p><p><em>「わかった、わかった…行くよ。だが入口に</em><em>聖別の印をつけさせてくれるならだ。</em><em>それと、ここを探索しに戻ってくると</em><em>約束してくれ。そしてこのことは誰にも</em><em>言わないこと。いいな？」</em></p><p><em>私は、彼がすぐに同意しているのではなく、どうすれば納得させられるかを明かしているのだと確認する。</em><em>XPが欲しいなら、そうした条件なしに</em><em>ただ同意しなければならない。「それでいい！」と彼は言う。</em></p><p><em>「わかった」とリアンナはため息をつく。「10分</em><em>あげる。印をつけてきて。ブロドウェン、</em><em>彼から目を離さないで」</em></p></blockquote>
+<div class="move-block" id="seek-insight"><h3 class="move-name">Seek Insight</h3><p class="move-trigger"><strong><em>状況や人物を観察し</em></strong>、GMに洞察を求めるとき、 +WISでロールする。<strong>10+なら</strong>、下のリストからGMに3つ質問する。<strong>7-9なら</strong>、 1つ質問する。<strong>いずれにせよ</strong>、その答えに基づいて行動する次のムーブに有利を得る。</p><ul class="questions"><li>ここで最近何があった？</li><li>何が起ころうとしている？</li><li>何に警戒すべきか？</li><li>ここで私にとって役に立つもの、価値あるものは何か？</li><li>ここを本当に支配しているのは誰か、何か？</li><li>ここで見かけどおりでないものは何か？</li></ul>
+<p>洞察を求めるは、キャラクターが<em>洞察</em>を得るために何かをするときに発動する。プレイヤーが何が見えるか、聞こえるかを尋ねたというだけでこのムーブを求めてはならない。彼らがあなたに断片をつなぎ合わせてほしいとき、あるいは明白なこと以上を明かしてほしいときに求めよう。</p>
+<p>PCは実際に<strong><em>状況や人物を</em></strong><strong><em>観察</em></strong>しなければならない。プレイヤーが洞察を求めると言っただけなら、それがどう見えるかを尋ねよう。さりげなくても（「彼らが話している間に彼の書斎を見回す」）、あからさまでも（「部屋をひっくり返す。棚から本を下ろし、壺の中をのぞき、壁を叩いて、など」）よいが、<em>何か</em>をしなければならない。</p>
+<p>7+なら、プレイヤーはリストから1つ以上質問する。リストは、単なる細部ではなく洞察をもたらす意味ある質問をするようプレイヤーを導く。とはいえ、杓子定規になる必要はない。リストにない良い質問なら、遠慮なく答えよう。あるいは質問を受け入れつつ、リストの質問に<em>答えて</em>もよい。</p>
+<p>正直に、気前よく、役に立つように答えよう。</p>
+<p>準備とフィクションの感覚を頼りにしよう。その場で細部を作り上げる必要があることも多い。そうした細部はフィクションの真実の一部になる！</p>
+<p>どう答えるか迷ったら、プレイヤーに手がかりを求めよう。「そうだね、古い硬貨は明らかに価値があるけど、どんなものを探していたの？」</p>
+<p><strong>フィクションに始まりフィクションに終わる！</strong>　シオワンが彼らを裏切ろうとしているとだけ言うのではなく、シオワンが落ち着かない様子で、誰かが飛び込んでくるかのように扉をちらちら見ていることを描写しよう。あるいは、直接的で簡潔な答えを与えてから、どんな細部からその結論に至ったのかを<em>彼ら</em>に尋ねてもよい。</p>
+<p>答えはフィクションを反映して調整しよう。</p>
+<p>このムーブは魔法ではない。PCが知りえないことを知らせるものではないのだ。入口から部屋をざっと見回しただけなら、中に入って触れてみる場合よりも具体性に欠け、役に立たない洞察しか得られないはずだ。</p>
+<p>最良の答えは、しばしば明白なものだ。</p>
+<p>「価値あるもの？　硬貨だ。ほかはがらくただ」ときには、唯一正直な答えが「何もない」こともある。「警戒すべきものは何もない。ここはまったく安全だ」</p>
+<p>「誰も支配していない。まったくの無法状態だ」こうした答えは疑いを取り除き、状況をはっきりさせる（そしてPCはやはり答えに基づいて行動する有利を得る）。</p>
+<p>10+なら、プレイヤーが有利を得るのは1回のロール、つまりいずれかの答えに基づいて行動する最初のロールだけだ。3つ質問しても、有利は3回ではなく1回である。</p>
+<p>緊迫した危険な場面で6-なら、キャラクターが状況を観察している最中に邪魔が入るか不意を突かれるムーブになることが多いだろう。</p>
+<p>「安全な」状況で洞察を求めて6-を出したなら、以前はなかった<strong>厄介事を告げる</strong>ムーブを使ってもよい。<strong>ありがたくない</strong><strong>真実を明かす</strong>か、<strong>迫り来る破滅へと</strong><strong>進める</strong>ことにして、彼らが着く前に画面外で何か悪いことが起きたと決めてもよい。あるいは<strong>資源を使わせ</strong>、何もわからなかったが松明が残り少なくなったと告げてもよい。</p></div>
+<hr>
+<blockquote><p><em>PCたちはクリンウィンの巣を見上げている。</em><em>彼らはその大きさ（「家ほどもある」）、</em><em>それがある木（「セコイアの紅杉のような」）、</em><em>巣の中に動きがあるか（「ない」）を尋ねる。それから</em><em>リアンナが尋ねる。「最近の動きは？　足跡とかを</em><em>探す」それは</em><em>洞察を求めるに思える。リアンナも同意する。</em></p><p><em>彼女は+WISでロールし（部隊の助力で</em><em>有利）、10を出す。「巣はまだ</em><em>使われてる？　最近の動きの兆しはある？」と彼女は尋ねる。</em><em>私はリストから質問するよう彼女を導く。</em></p><p><em>「あ、そうか。ええと、何に</em><em>警戒すべき？　つまり、クリンウィンはまだ</em><em>いる？」私は、いない、警戒すべきものは</em><em>何もないと言う。巣は空っぽで、壊れて</em><em>さえいる。ガレット（彼女の部隊員）が彼女を呼び寄せ、</em><em>茂みの中で腐りかけているクリンウィンの死骸を</em><em>見せる。</em></p><p><em>「うわ。ええと…ここで最近何があった？」</em></p><p><em>彼らはさらにクリンウィンの死骸を見つける。互いに殺し合ったように</em><em>見えるものもある。「少なくとも</em><em>数か月は経っている。だが巣1つ分にしては死骸が</em><em>足りない。それに、クリンウィンが</em><em>ほかのクリンウィンを引きずっていった跡がある。</em><em>プライダーが連れ去られたのとだいたい同じ方角へ」</em></p><p><em>「いったい何なの？」とリアンナは吐き捨てる。「ええと…</em><em>ここを本当に支配しているのは誰、何？</em><em>つまり、誰が、何がこの裏にいるの？」</em></p></blockquote>
+<hr>
+<p>6-でプレイヤーの主体性を奪ってはならない。<strong>彼らのムーブを彼ら自身に向け返し</strong>、偽の情報や悪い考えを吹き込んでもよいが、それはプレイヤーが納得し、劇的皮肉を楽しんでいる場合に限る。同様に、PCがプレイヤーがムーブを発動させたやり方に反する行動をとったと決めつけてはならない。部屋を見回していると言ったなら、中に踏み込んで罠を作動させたなどと言わないこと。</p>
+<blockquote><p><em>襲撃の裏にいるのはスウィンのサジュラ（巨大で、</em><em>催眠をかける、猿の頭をした蛇）だと私は知っているが、</em><em>リアンナがどうやってそれを推理できるかは</em><em>わからない。証拠が許す限り役に立つ答えを</em><em>与える。「道の先で、あなたは…</em><em>ドレイクの鱗？　を見つける。でももっと大きくて平たく、金色の輝きを帯びている」</em></p><p><em>彼女はそれに見覚えがあるかと尋ねる。「わからない」と</em><em>私は言う。「知識を語るみたいだね？」</em><em>彼女は同意し、答えに基づいて行動しているので</em><em>有利でロールする。</em></p></blockquote>
+<hr>
+<blockquote><p><em>ソーンサムという名のフェイがスウィンの巣について</em><em>話しているが、その目はヴァヒドの背嚢（精神宝石が</em><em>入っている）にちらちらと向く。ヴァヒドはそれがまったく気に入らない。「彼を値踏みして、</em><em>何を企んでいるのか見極めようとする」それは</em><em>洞察を求めるだが、彼は3を出す。</em></p><p><em>私は</em><strong><em>彼のムーブを彼自身に向け返し</em></strong><em>、</em><em>フェイにとって価値あるものを明かす。「あなたは、</em><em>背嚢を拾い上げようとして落とし、</em><em>精神宝石が転がり出る！」だがヴァヒドのプレイヤーは</em><em>納得しない。彼は背嚢に触れていなかったし、</em><em>精神宝石は一番底にしまってある。</em></p><p><em>「しまった、その通りだ。じゃあこうしよう。</em><em>あなたが彼の腹を読む前に、彼は茂みの中へ</em><em>跳ねるように去り、ついてこいと手招きする。</em><em>『道を教える、安全で秘密の道を』と彼は言う！」</em><em>だが彼の笑みの何かが、やはりあなたを</em><em>落ち着かなくさせる、ヴァヒド。皆どうする？」</em></p></blockquote>
+<h2 id="special-moves">特殊ムーブ</h2>
+<p>これらのムーブは常に有効だが、ほかのムーブに影響するか、ごく特定の状況で発動する。</p>
+<div class="move-block" id="advantage-disadvantage"><h3 class="move-name">Advantage/Disadvantage</h3><p class="move-trigger"><strong><em>有利でロールするとき</em></strong>、ダイスを1つ余分に振り、最も低い結果を捨てる。 <strong><em>不利でロールするとき</em></strong>、ダイスを1つ余分に振り、最も高い結果を捨てる。 <strong><em>有利と不利の両方で</em></strong><strong><em>ロールするとき</em></strong>、それらは互いに打ち消し合う。 <strong><em>ダメージロールに</em></strong><strong><em>有利／不利があるなら</em></strong>、主たるダイスを2回振り、低い／高いほうの結果を捨てる。 それから適用されるボーナスダイスを加える。 有利はふつう、<button type="button" class="dice-roll" data-dice="3d6" title="クリックで3d6をロール — Shift: 有利 · Ctrl: 不利">3d6</button>を振って高い2つの目を残すことを意味する。不利はふつう、<button type="button" class="dice-roll" data-dice="3d6" title="クリックで3d6をロール — Shift: 有利 · Ctrl: 不利">3d6</button>を振って低い2つの目を残すことを意味する。最低や最高が同点なら、どちらか1つを捨てる。どちらでもかまわない。 ダメージロールでは、有利／不利は「主たる」ダイスにだけ適用される。プレイヤーがボーナスダメージダイスを得ているなら、それらのダイスは最高／最低のダイスを選んだ後に加える。 たとえば用心棒（ダメージを与えるときに有利を持つ）が斬り結ぶで10+を出し、強く素早く打ち込んで+<button type="button" class="dice-roll" data-dice="1d6" title="クリックで1d6をロール — Shift: 有利 · Ctrl: 不利">1d6</button>ダメージを選ぶ。彼らは<button type="button" class="dice-roll" data-dice="2d10" title="クリックで2d10をロール — Shift: 有利 · Ctrl: 不利">2d10</button>を振り、その2つの高いほうに等しいダメージを与え、さらに+<button type="button" class="dice-roll" data-dice="1d6" title="クリックで1d6をロール — Shift: 有利 · Ctrl: 不利">1d6</button>ダメージを与える。 有利／不利は「重ならない」。 それらは二者択一だ。持っているか、持っていないかである。たとえば誰かが洞察を求めて7+を出すと、答えに基づいて行動する次のロールに有利を得る。そのロールに誰かが助力しても、再び有利を得ることはできない。<button type="button" class="dice-roll" data-dice="3d6" title="クリックで3d6をロール — Shift: 有利 · Ctrl: 不利">3d6</button>を振って最も低い目を捨てるだけだ。 同じロールに有利と不利の両方があるなら、2つは互いに打ち消し合い、ロールは通常どおり行う。デフォルトでは、有利の源が複数あって 不利の源が1つだけ（あるいはその逆）でも関係ない。だがあなたとプレイヤーが、有利や不利がいくつあるかを本気で数えたいなら、そうしてもよい。ゲームが壊れることはないが、進行が遅くなるかもしれない。 プレイヤーがロールに有利を持つのは、以下のような場合だ…</p><ul class="ellipsis"><li>ムーブ（助力や洞察を求めるなど）がそう述べている。</li><li>何らかの装備やアルカナが有利を与える。あるいは</li><li>あなたが特定のロールを有利で行う<strong>機会を与える</strong>（ただし反対ページのコラムを参照）。</li></ul>
+<p>プレイヤーがロールに不利を持つのは、以下のような場合だ…</p>
+<ul class="ellipsis"><li>ムーブ（妨害など）がそう述べている。</li><li><strong>衰え</strong>（241ページ）を記録していて、影響を受ける能力値でロールする。</li><li>何らかの装備やアルカナが不利を課す。あるいは</li><li>あなたが<strong>欠点を明かす</strong>か<strong>結果を</strong><strong>告げ</strong>、それが不利でのロールを伴う（ただし反対ページのコラムを参照）。</li></ul></div>
+<h2 id="adjusting-difficulty">難易度の調整</h2>
+<p>多くのRPGでは、GMが作業の難しさや容易さを反映して、プレイヤーのロールにボーナスやペナルティを日常的に与える。<em>ストーントップ</em>では、同じことをするのにその場で有利や不利を与えることもできるが、控えめにしよう。有利や不利を特に与えるムーブ、アルカナ、衰えの効果を損なうからだ。</p>
+<p>キャラクターの行動がとりわけ容易か難しく思えるなら、有利や不利の代わりに以下を検討しよう。</p>
+<p><strong>そもそもムーブを発動させているか？</strong></p>
+<p>やってのけた、知っている、わかった、と言うだけでよいのでは？　「いや、斬り結ぶじゃない、ダメージを与えるだけだ」あるいは「無理」と言って、うまくいかせるための<strong>必要条件を</strong><strong>告げる</strong>ことはできないか？</p>
+<p>「装備を全部背負ったままその跳躍は無理だ。まず軽装まで荷を減らす必要がある」</p>
+<p><strong>危険を調整できるか？</strong>　彼らが有利な立場にあるなら、危険が小さいことをはっきりさせよう。「彼の攻撃を受けるといっても、守りの内側に入られるだけだ」絶体絶命の立場にあるなら、どれほど悪くなりうるかを告げよう。「7-9なら岩棚をつかむ最後の機会があるが、6-なら死の淵をロールすることになる」</p>
+<p><strong>規模を調整できるか？</strong>　PCにとって容易なら、1回のロールでより多くを成し遂げさせる、より多くを明かす、などしよう。</p>
+<p>難しいなら、行動をより小さなムーブに分け、それぞれが目標の一部しか達成できないようにしよう。</p>
+<div class="move-block" id="burn-brightly"><h3 class="move-name">Burn Brightly</h3><p class="move-trigger"><strong><em>レベルアップに十分な</em></strong><strong><em>XPがあるとき</em></strong>（6＋現在のレベルの2倍）、自分が行った任意のロールの後に2 XPを消費して、そのロールに+1を加えてもよい（1回のロールにつき最大+1）。 PCは遠征中に<strong>レベルアップ</strong>（528ページ）できないので、余分なXPが溜まっていくことがある。このムーブはそのXPの一部を使って成功を確実にさせる。 PCが燃え盛ることができるおかげで、PCのレベルアップの速度が抑えられ、「2段階レベルアップ」が防がれる。また、長く現地にとどまり多くの挫折を味わった後には、さりげなくプレイヤーに有利に働く。 プレイヤーが6や9を出したら目を光らせ、燃え盛るのに十分なXPがあるか尋ねよう。十分にあれば、たぶんそうするだろう。 プレイヤーが燃え盛るのは、ムーブのために<button type="button" class="dice-roll" data-dice="2d6" title="クリックで2d6をロール — Shift: 有利 · Ctrl: 不利">2d6</button>を振ったときが最も多いだろうが、どのロールにも使える。ダメージロールや、運命のダイスにさえも。 プレイヤーが燃え盛ることができるのは自分自身が行うロールだけだ。余分なXPを使ってほかのプレイヤーのロールを改善することはできない。</p></div>
+<div class="move-block" id="end-of-session"><h3 class="move-name">End of Session</h3><p class="move-trigger"><strong><em>セッションが終わるとき</em></strong>、自分の本能をどう示したか、あるいはどう葛藤したかを指摘する。できたなら、XPを1つ記録する。 PC、NPC、集団との関係や意見がどう変わったかを言う。できたなら、XPを1つ記録する。 以下の質問に皆で答える。 「はい」1つにつき、全員がXPを1つ記録する。</p><ul class="questions"><li>世界やその歴史についてより多くを知ったか？</li><li>ストーントップや地域への脅威を打ち破ったか？</li><li>隣人たちとの関係を改善したか？</li><li>ストーントップに永続的な改善を加えたか、あるいはそれに向けて具体的な進展を得たか？</li></ul>
+<p>セッションについて楽しかったこと、ありがたかったこと（フィクション内でも卓を囲んででも）を何か褒める。</p>
+<p>最後に、今後のセッションへの願いを1つ出す。もっと__、__を減らす、__する機会、__を別のやり方で扱う、など。</p>
+<p>願いはフィクション内で起こることでも、卓を囲んでのことでもよい。GMはメモを取る。</p>
+<p>セッションの終わりのムーブは儀式である。グループがセッションを振り返り、ゲームをよりよくする助けになる。</p>
+<p>プレイヤーは、PCの本能がプレイに表れた場面を、良くも悪くも、意図的でもそうでなくても、どれでも指摘できる。誰も異を唱えなければ、そのプレイヤーはXPを1つ記録する。（本能が複数回表れても、1セッションにつき最大1 XP）</p>
+<p>次に各プレイヤーは、自分と誰かとの間で何が変わったかを述べられる。</p>
+<p>その変化は相互である必要も、理にかなっている必要さえないが、本物だと感じられるべきだ。誰も異を唱えなければ、そのプレイヤーはXPを1つ記録する。（複数の関係が変わっても、1セッションにつき最大1 XP）</p>
+<p>ほかのプレイヤーは提案をしたり、質問したり、主張に異を唱えたりできる。目的は全員がセッションを振り返り、役になりきったプレイヤーに報いることであって、XPをせびることではない。</p>
+<p>4つの質問は皆で話し合う。全員（GMであるあなたも含む）が、ある質問の答えが「はい」だと同意しなければならない。誰かが反対したら、その質問のXPはない。全員の認識を揃えるために、各「はい」について具体例を求めるとよい。</p>
+<p>質問に答えた後、各プレイヤー（GMであるあなたも含む）は気に入ったことを何か指摘する。あるプレイヤーの賢いアイデア、ちょっとしたロールプレイ、戦闘がなかったこと、森の民がどこへ行ったかを知ったこと、ボブが「タイム」をかけて全員の様子を確かめたとき、など。</p>
+<p>最後に、各プレイヤー（あなたも含む）は今後のセッションへの願いを出す。願いが表すのは…</p>
+<ul class="ellipsis"><li>何が起こってほしいかというプレイヤーの希望（「イワンを倒す機会が欲しい」）</li><li>特定の場面の要望（「カラドックとアンドラスがちょっと絆を深めるところを見たい」）</li><li>やり方を変えたいという望み（「もっとキャラクターとして話してみない？」）</li><li>あなたのGMぶりへのフィードバック（「戦いが始まったとき、周囲についてもっと詳しく知りたい」）、あるいは</li><li>本当に、ゲームについてのほかの何でも。</li></ul>
+<p>メモを取り、はっきりしない点は尋ね、その願いが叶うよう最善を尽くそう。</p></div>
+<div class="move-block" id="deaths-door"><h3 class="move-name">Death&#x27;s Door</h3><p class="move-trigger"><strong><em>死にかけているとき</em></strong>、あなたは最後の扉（the Last Door）とカラスの貴婦人（the Lady of Crows）を垣間見る（それらを描写する）。それから+0でロールする。 <strong>10+なら</strong>、あなたは生者の領域へと自らを引き戻す。 HP 1で復帰するが、死と擦れ違ったことがあなたにどんな痕を残したかを言う。<strong>7-9なら</strong>、貴婦人はあなたを追い払う。もう死にかけてはいないが、行動からは外れる。<strong>6-</strong><strong>なら</strong>、あなたの時が来た。1つ選ぶ：</p><ul class="bullets"><li>12+を出したかのように最後のムーブを1つ行い、それから最後の扉をくぐる</li><li>去ることを拒む。甦りし者か亡霊の別紙を得る</li><li>下なるもの（the Things Below）の1体を名で呼び、とりなしを乞う。隷属者の別紙を得る</li></ul>
+<p>このムーブについては、</p>
+<p><strong>ダメージと治癒</strong>の章の245ページで詳しく論じている。</p></div>
+<h2 id="other-player-moves">そのほかのプレイヤーのムーブ</h2>
+<p>そのほかのプレイヤーのムーブは、別の箇所で詳しく論じている。</p>
+<h3 id="follower-moves">従者のムーブ</h3>
+<ul class="bullets"><li>従者に命じる 462</li><li>絆を強める 464</li></ul>
+<h3 id="expedition-moves">遠征のムーブ</h3>
+<ul class="bullets"><li>進路を定める 302</li><li>装備を整える 306</li><li>徴発する 308</li><li>備えあり 326</li><li>療養する 328</li><li>食料を探す 336</li><li>共に過ごす 332</li><li>野営する 334</li><li>一丸となって挑む 328</li><li>凱旋する 339</li></ul>
+<h3 id="homefront-moves">故郷のムーブ</h3>
+<ul class="bullets"><li>鼓舞する 524</li><li>静養する 249</li><li>派遣する 526</li><li>レベルアップ 528</li><li>計画を立てる 530</li><li>災難に見舞われる 532</li><li>招集する 534</li><li>力を合わせる 536</li><li>季節の移ろい 517</li><li>交易と物々交換 540</li></ul>
+<p>キャラクターが複数のプレイヤーのムーブの誘因を満たしうることをしたなら、現在の状況に最も当てはまりそうなほうを使う。一般に、より具体的なムーブがより一般的なムーブに優先し、あらゆるムーブが危険に抗うに優先する。</p>
+<p>プレイヤーと話し合い、できれば合意に達しよう。できなければ判断を下そう。</p>
+<h2 id="custom-moves">カスタムムーブ</h2>
+<p><em>第2巻：より広い世界とその他の驚異（Book II: The Wider World and Other Wonders）</em>には、ゲームで使える何十ものカスタムムーブが収められている。これらのムーブは特定のゲーム要素や設定要素にのみ適用され、しかもあなたが使うと決めた場合に限られる。</p>
+<p>ほとんどのカスタムムーブには名前がない。単に設定要素の説明の一部として提示されている。</p>
+<p>たとえば<strong>造り手の街道</strong>（<em>Book II</em>、270ページ）にはいくつかのカスタムムーブがある。暴力を防ぐ護りに関するものを1つ挙げよう。</p>
+<p><strong><em>街道の上で暴力を</em></strong><strong><em>振るおうとするとき</em></strong>、あるいは街道やその上の何かを傷つけようとするとき、あなたはためらう。意志の力で続けるなら、<button type="button" class="dice-roll" data-dice="1d4" title="クリックで1d4をロール — Shift: 有利 · Ctrl: 不利">1d4</button> HPを失い、+WISでロールする。<strong>10+なら</strong>、やってよい。</p>
+<p><strong>7-9なら</strong>、行動できるが、暴力を振るうためのあらゆるロール（ダメージを含む）に不利を受ける。<strong>6-なら</strong>、行動できず、<em>朦朧</em>を記録する。</p>
+<p>これは、何かがどう働くかを確立するカスタムムーブの例である。PCが街道で戦おうとしたら何が起こるか、ありうる結果は何かを述べている。</p>
+<p>そしてこうしたカスタムムーブはNPCや怪物に直接は適用されないが、彼らがどう影響されるかの指針として使える。ほとんどの者は街道で戦えないが、意志の強いNPCなら無理にでもそうするかもしれない。</p>
+<p>PCは<strong>従者に命じて</strong>（462ページ）カスタムムーブを発動させられることに注意。いつものように、PCのプレイヤーがムーブをロールし、従者に代わってあらゆる決定を下す。</p>
+<p>街道、特に四つ辻に関する別のカスタムムーブを挙げよう。これは、何かが可能であること（死者を呼び出すこと）と、その賭け金、危険、ありうる利益や結果の一部を確立する。</p>
+<p><strong><em>新月の夜に四つ辻に立ち、死者を</em></strong><strong><em>名で呼ぶとき</em></strong>、ロールし、以下を加える…</p>
+<ul class="ellipsis"><li>血のつながりがあるなら+1</li><li>その者の持ち物を身につけているなら+1</li><li>その者が生前愛した食べ物か飲み物を捧げるなら+1</li></ul>
+<p><strong>10+なら</strong>、その亡霊が現れるが1つ選ぶ。<strong>7-9なら</strong>、その亡霊が現れるが2つ選ぶ：</p>
+<ul class="bullets"><li>錯乱している、混乱している、朦朧としている、話が通じない</li><li>おとなしく眠りに戻るつもりがない</li><li>何かがそれと一緒に最後の扉をすり抜けてくる。ドゥールの精霊、グウィルギ、縛られていないレイスなど</li></ul>
+<p>カスタムムーブが6-で何が起こるかを述べていないなら、標準のルールに従う。プレイヤーはXPを1つ記録し、あなたは確立された状況に合う厳しいGMムーブを行う。</p>
+<p>アーティファクトに関連する別のカスタムムーブを挙げよう。これには<button type="button" class="dice-roll" data-dice="2d6" title="クリックで2d6をロール — Shift: 有利 · Ctrl: 不利">2d6</button>のロールはない。ムーブは何が起こるかを述べるだけだ！</p>
+<p><strong><em>闇、混沌、死の存在を</em></strong><strong><em>砕けた道標石で打つとき</em></strong>（<em>至近</em>、<em>投擲</em>、<em>粗雑</em>）、それは<button type="button" class="dice-roll" data-dice="1d8" title="クリックで1d8をロール — Shift: 有利 · Ctrl: 不利">1d8</button>ダメージ（アーマー無視）を受けるが、石はその後崩れて塵になる。</p>
+<p>最後にもう1つ、危険に関連するカスタムムーブの例を挙げよう。夜に旅人を街道から誘い出す謎めいたノスガラウである。</p>
+<p><strong><em>ノスガラウの呼び声を聞くとき</em></strong>、風に乗って誰の声が聞こえるか、なぜその者のもとへ行かずにいられないのかを言う。それから+WISでロールする。<strong>10+なら</strong>、どうやって欺きを見破るかを言う。あなたは二度とその呼び声を聞かない。<strong>7-9なら</strong>、XPを1つ記録して呼び声に従うか、今回だけどうやって嘘を見抜くかを語る。<strong>6-なら</strong>、仲間が引き止めない限り、あなたは呼び声に従いノスガラウのもとへ行く。</p>
+<p>このムーブが受動的であることに注目しよう。プレイヤーが発動を選ぶのではなく、あなたが発動させるのだ！　<strong>厄介事を告げる</strong>ようなGMムーブを行い（「平原（the Flats）のはるか彼方の光を眺めていると、風向きが変わり、かすかな囁きが聞こえる…」）、それがムーブを発動させる。このように働くカスタムムーブのほとんどは危険に関連し、とりわけ厄介な、あるいは微妙な効果を反映している。</p>
+<p>また、上のムーブが状況を具体的かつテーマに沿った形で解決していることにも注目しよう。PCを街道から誘い出そうと試みて、プレイヤーが乗ってくれるのを願う必要はない。ムーブはPCが街道を離れずにいられないと断言し、どのように、なぜかをプレイヤーに語らせる。そしてロールが、PCが欺きを見破るかどうかを教えてくれる。これによって、どれほど用心深いプレイヤーのPCでもノスガラウの餌食になりうることが保証され、同時にその過程でキャラクターについて何かを明かすよう促される。なかなかうまいだろう？</p>
+<p>カスタムムーブの文面は、プレイヤーに関係するようになったらすぐに明かそう。プレイヤーはムーブが有効であること、それがどう働くかを知っているべきだ。そうすれば関わることを（あるいは避けることを）選べる。ムーブの写しを卓の上やグループチャットに放り込み、プレイヤーに読み上げてもらおう。あるいは自分で読み上げてもよい。</p>
+<p>「関係するようになったらすぐ」は場合によって異なる。「<strong><em>街道の上で暴力を</em></strong><strong><em>振るおうとするとき</em></strong>…」のムーブは、PCが出発したらすぐに共有し、怪物やNPCに出会ったときに思い出させるとよいだろう。だが「<strong><em>ノスガラウの</em></strong><strong><em>呼び声を聞くとき</em></strong>…」は発動するまで明かさないかもしれない。</p>
+<p>カスタムムーブの働きがPCにとって明らかではないと思うなら、すぐには明かさないこと。<strong>見かけ以上のものを</strong><strong>ほのめかす</strong>か、ほかの形で知るべきことがまだあると示唆し、彼らがどうするかを見よう。</p>
+<hr>
+<blockquote><p><em>ヴァヒドとカラドックは四つ辻で足を止めた。</em><em>私は近くのドゥールの</em><em>木々と、その場所の不気味な感じに触れる。</em><em>案の定、ヴァヒドは知識を語ることにする。</em><em>10+なら、前ページのカスタムムーブ全体を</em><em>彼に与える</em><em>ところだ。だが彼は7を出したので、</em><em>誘因だけを教える。「新月の夜に四つ辻で</em><em>名を呼べば死者の魂を呼び出せる、という</em><em>話を聞いたことがある」と私は言う。</em><em>「だがそれがどう働くのかもっと知りたいなら、</em><em>調べる必要がある。あるいは試してみるか。</em><em>今夜は</em><em>新月だ…」</em></p></blockquote>
+<hr>
+<p><strong>自分でカスタムムーブを書く</strong><strong>こと</strong>の手引きについては、551ページを参照。</p>
+        </main>
+      </div>
+    </div>
+  </div>
+  <div id="wiki-preview" class="wiki-preview" hidden></div>
+  <div id="dice-toast" class="dice-toast" hidden></div>
+  <script>window.WIKI_UI={"books": {"book1": "第1巻", "book2": "第2巻", "sites": "冒険の舞台"}, "english_only": "英語版のみ", "js": {"feedback_link": "このページについて意見を送る", "feedback_head": "意見を送る", "feedback_about": "対象", "feedback_what": "どこを直すべきですか？", "feedback_placeholder": "数値の誤り、抜けているムーブ、崩れた表など…", "feedback_email": "メールアドレス（任意・返信用）", "feedback_send": "送信", "feedback_cancel": "キャンセル", "feedback_close": "閉じる", "feedback_sending": "送信中…", "feedback_sent": "送信しました。ありがとうございます。", "feedback_failed": "送信できませんでした（{error}）。もう一度お試しください。", "feedback_network": "ネットワークエラー", "search_empty": "「{query}」に一致するページはありません。", "search_pages_one": "1ページ", "search_pages_many": "{n}ページ", "search_showing": "（{n}件を表示）", "search_in_title_text": "題名＋本文", "search_in_title": "題名", "search_in_text": "本文", "preview_no_summary": "要約はありません。", "preview_missing": "このリンクのプレビューはありません。", "location_label": "所在", "location_who": "所持者", "location_unknown": "— 不明 —", "location_other": "その他の場所／人物…", "location_placeholder": "どこにあるか、誰が持っているか", "arcana_head": "アルカナム", "arcana_none": "所持なし。アルカナムの所在に「{title}」を設定すると、ここに表示されます。", "sync_label": "キャンペーン", "sync_copied": "{what}をコピーしました", "sync_copy_this": "このリンクをコピー", "sync_nothing_export": "まだ書き出すものがありません", "sync_saved": "{n}件を{file}に保存しました", "sync_not_json": "そのファイルはJSONではありません", "sync_not_export": "それはキャンペーンの書き出しファイルではありません", "sync_data": "キャンペーンのデータ", "sync_export": "書き出し", "sync_export_title": "このキャンペーンの状態をファイルに保存", "sync_import": "読み込み", "sync_import_title": "保存したファイルをこのキャンペーンに統合", "sync_nothing_import": "そのファイルには読み込むものがありません", "sync_imported": "{n}件を{stores}個のストアに読み込みました", "sync_skipped": " · スキップ: {names}", "sync_read_failed": "そのファイルを読めませんでした", "sync_sharing_gm": "GMとして共有中", "sync_sharing_table": "卓と共有中", "sync_copy_player": "プレイヤー用リンクをコピー", "sync_copy_gm": "GM用リンクをコピー", "sync_copy_mine": "自分のリンクをコピー", "sync_player_link": "プレイヤー用リンク", "sync_gm_link": "GM用リンク", "sync_link": "リンク", "sync_no_player_token": "このブラウザはGM用リンクで参加したため、プレイヤー用トークンを持っていません。キャンペーンを作成したブラウザからプレイヤー用リンクをコピーしてください。", "sync_stop": "共有をやめる", "sync_stopped": "共有を停止しました——このブラウザは自分のコピーを保持します", "sync_what_shared": "チェックした改良、危険の時計、回答、シート、キャラクターのHPは全員と共有されます。敵のHPはGMだけのものです。", "sync_share_head": "このキャンペーンを共有", "sync_worker": "同期サーバー", "sync_create": "キャンペーンを作成", "sync_creating": "作成中…", "sync_enter_endpoint": "先に同期サーバーのアドレスを入力してください", "sync_unreachable": "同期サーバーに接続できませんでした", "sync_paste": "またはGMから送られたリンクを貼り付けてください：", "sync_join_link": "参加リンク", "sync_join": "参加", "sync_bad_link": "参加リンクには見えません", "sync_joined": "{campaign}に参加しました", "sync_the_campaign": "キャンペーン", "sync_status_on": "このキャンペーンを卓と共有しています", "sync_status_offline": "同期サーバーに接続できません——変更はここに保存され、後で追いつきます", "sync_status_local": "このブラウザは自分のコピーを保持します"}, "playbooks": {"the-blessed": "祝福されし者", "the-fox": "狐", "the-heavy": "用心棒", "the-judge": "裁き手", "the-lightbearer": "光を掲げる者", "the-marshal": "統率者", "the-ranger": "野伏", "the-seeker": "探求者", "the-would-be-hero": "英雄志願"}};</script>
+  <script src="../js/wiki.js"></script>
+</body>
+</html>

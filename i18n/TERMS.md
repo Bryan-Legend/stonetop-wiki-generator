@@ -762,3 +762,16 @@ language (the majority form, swept across every page):
 - **Creatures & names:** spectre (wraith, specter) · spectre des tertres (wight) · drake · Sorcière du Saule (Willow Witch) · archonte · Épine-Pouce (Thornthumb) · la Grand-Route (Highway) · verre des Bâtisseurs (makerglass) · Creuseurs (Delvers) · bison (wisent) · glace noire (dark ice) · le Torrent-de-Silex (Flintwash) · Caïds (Bosses) · Attrape-Tempête (Stormcatcher)
 - **Arcana:** Lance tordue (Twisted Spear) · Gemme-esprit (Mindgem) — both swept over the Seeker's earlier *Lance Torse* / *Gemme de l'Esprit*
 - HP and XP stay in English, as in the playbooks.
+
+### Japanese, complete — corpus route (2026-09-22)
+
+The ja section above holds the core terms. Settled while translating the whole
+language (the majority form, swept across every page):
+
+- **Kept in Latin script:** +STR…+CHA, HP, XP, GM, PC, NPC, dice. Roll-table rows open `6-8 ` (ASCII hyphen, ASCII space) as in English — `6〜8　` stops the row being matched and it renders in English; move bullets open `> `, not `＞　`.
+- **Chapters:** 遺跡 (Sites, and "site" generally) · 遠征 (Expeditions) · 故郷 (Homefront) · 脅威 · 危険 · 発見 · 第2巻：より広い世界とその他の驚異 (Book II)
+- **Moves & rules:** 燃え盛る (Burn Brightly) · 語らう / 共に過ごす (Keep Company) · 計画を立てる (Make a Plan) · 従者に命じる (Order Followers) · 絆を強める (Strengthen Your Bond) · 鼓舞する (Bolster) · 備え (Readiness) · 衰え (debility, generic) · GMムーブ (ソフトな/ハードな) · 10+なら / 7-9なら / 6-なら
+- **Threats:** 苦難 (affliction) · 迫りくる破滅 (impending doom) · 不吉な前兆 (grim portents) · ワイルドカード · マクガフィン · 烏合の衆 (rabble)
+- **Monster tags:** 単独 · 集団 · 群れ · 精霊 · 不死 · 恐怖 · 隠密 · 狡知 (cunning) · 狡猾 (devious) · 堕落 · 執拗 · 大型/小型 · 掴み (grabby) · アーマー無視 · 破壊不能 · 動かせない · 不定形 · 恐れ知らず · 騒々しい (loud) · 頑健 · 獰猛 · 構造体 (construct) · 凄惨 (messy)
+- **Names:** 係留 (tether) · レイス/スペクター/シェイド (wraith/specter/shade) · 柳の魔女 · カラスの貴婦人 · 吠え声の呪い (Howling Curse) · 暗黒の氷 (dark ice) · 街道 (Highway) · 果ての井戸 (Utterwell) · 嵐捕り (Stormcatcher) · 力の水晶 (power-crystal) · ブレナウエド · ネイラッド · スーラッハ · ノスガラウ · ケイルマウル · ヴィーゼント (wisent) · 造り手のガラス (makerglass) · 大災厄の時代 (Time of Cataclysm) · ソーンサム
+- **Improvements (prose follows the steading playbook):** 木柵 · 常設の警備隊 · 職人の拡充

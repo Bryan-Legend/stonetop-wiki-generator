@@ -151,6 +151,10 @@ Next: **zh-Hans**, same order — Book II first, then Book I.
 sheets through the corpus, and its old JSON pages deleted. Terms settled on
 the way are in `TERMS.md` (*French, complete*).
 
+**ja is complete** (2026-09-22): every page through the corpus, its JSON pages
+deleted, `leaks.py ja` clean but for glossed names and real titles. Terms:
+`TERMS.md` (*Japanese, complete*).
+
 ### Working a long chapter
 
 A Book I chapter runs 500–1400 work lines, which is more than one sitting.
