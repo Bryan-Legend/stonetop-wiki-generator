@@ -14,6 +14,14 @@ Rules that hold in **every** language:
 - **HP and XP stay as-is** in every language (the wiki's chrome and stat
   blocks use them untranslated). "Level", "Damage", "Armor" are translated.
 - Slugs, section ids, `data-*` attributes, field keys: never translated.
+- **Measurements are metric** in every translation (2026-09-23). The books'
+  feet, inches, miles, pounds and acres are description, not rules (ranges in
+  play are the *close*/*near*/*far* tags), so a translation rounds them the way a
+  published one would: 10 ft → 3 m, 20 ft → 6 m, 30 ft → 9 m, 60 ft → 18 m,
+  100 ft → 30 m, 300 ft → 90 m, a quarter-mile → 400 m, a mile → 1,5 km,
+  3 miles → 5 km, 25 miles → 40 km, 400 lb → 180 kg. Keep "about" where the
+  English estimates; idioms (*miles from help*, *on foot*) stay idioms. Use the
+  language's decimal separator; ja/ko/zh write the unit in their own convention.
 - Settlement proper names **transliterate** in Cyrillic/kana/hangul
   (Стоунтоп, マーシュエッジ) and go semantic in Chinese; geographic features and
   epithets in plain speech **translate** everywhere (Край Света, 世界の果て).
@@ -790,4 +798,3 @@ language (the majority form, swept across every page):
 - **Creatures:** espectro (wraith) · aparición (specter) · sombra (shade) · tumulario (wight) · inmortal (deathless one) · draco (drake) · arconte · plaga del vacío (voidblight) · ancla / anclado (tether) · alcaudón (butcherbird)
 - **Tags:** sucio (messy) · agarrador (grabby) · contundente (forceful) · recarga · incómodo (awkward) · aparatoso · arrojadizo (thrown) · corrompido · acaparador (hoarder) · intrépido (fearless) · ruidoso (loud) · ignífugo (fireproof) · astuto (cunning) · taimado (devious) · constructo
 - **Arcana:** every arcanum's page title is its name in prose too (Miedo a la Llama, Tejido de Hielo, Runas de Preservación, Salvaguarda de las Aguas Quietas, Metamorfosis Insolente, Los Seis Candados de Sajua…).
-- **Units:** distances may be given in feet/miles or converted to metric; both appear, as in fr.
