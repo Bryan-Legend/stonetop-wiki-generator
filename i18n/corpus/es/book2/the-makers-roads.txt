@@ -4,7 +4,7 @@
 # source_sha256: 7adb0888243f01125e7d190d8228db5ca6a242881ec87b9f0450c2059db1f174
 # title: Los Caminos de los Hacedores
 # nav_label: Los Caminos de los Hacedores
-# description: Los Caminos de los Hacedores cerca de Stonetop: su magia protectora, el Cruce, los Caminos Rotos, los apartaderos, los compañeros de viaje, los nosgalau y la caligrafía rúnica.
+# description: Los Caminos de los Hacedores cerca de Stonetop: su magia protectora, la Encrucijada, los Caminos Rotos, los apartaderos, los compañeros de viaje, los nosgalau y la caligrafía rúnica.
 PAGE	270
 P	El Camino del Oeste va de Stonetop a la <b>Cava de Gordin (Gordin's Delve)</b> (página 190). A unos 24 km del pueblo, cruza el Camino Real (Highway), que va desde el <b>Paso de la Barrera (Barrier Pass)</b> (página 26) hasta <b>Lindemarjal (Marshedge)</b> (página 274) y más allá.
 P	Los caminos son anchos (~6 m), grandiosos y sobrecogedores, obra evidente de los <b>Hacedores (Makers)</b> (página 264). Han durado siglos, extrañamente bien conservados y libres de vegetación.
@@ -23,14 +23,14 @@ HR
 P	Los caminos han durado siglos sin mantenimiento. Los depredadores los evitan. Los seres de la oscuridad, el caos y la muerte son repelidos, y por lo general no pueden cruzarlos ni pisarlos.
 P	Cuando <b><i>intentas cometer un acto violento sobre</i></b> <b><i>el camino</i></b>, o <b><i>dañar el camino o cualquier cosa</i></b> <b><i>que esté sobre él</i></b>, vacilas. Si <b><i>te obligas</i></b> <b><i>a continuar</i></b>, pierde 1d4 HP y tira +WIS:
 P	<b>con 10+</b>, adelante; <b>con 7-9</b>, actúas pero tienes desventaja en cualquier tirada para cometer violencia (incluido el daño); <b>con 6-</b>, no consigues actuar y marcas <i>aturdido</i>.
-H2	El Cruce
+H2	La Encrucijada
 HR
 P	El Camino del Oeste cruza el Camino Real a unos
-P	24 km del pueblo. Cerca crece un bosquecillo de <b>árboles dool</b> (página 73). A pesar de las salvaguardas, el Cruce (Crossroads) tiene algo inquietante. Todo el mundo lo nota. A nadie le gusta hablar de ello.
+P	24 km del pueblo. Cerca crece un bosquecillo de <b>árboles dool</b> (página 73). A pesar de las salvaguardas, la Encrucijada (Crossroads) tiene algo inquietante. Todo el mundo lo nota. A nadie le gusta hablar de ello.
 Q	¿Qué hay en este lugar que te dice que aquí el velo entre la vida y la muerte es fino?
-Q	¿El fantasma de quién se dice que ronda las Llanuras cerca del Cruce?
+Q	¿El fantasma de quién se dice que ronda las Llanuras cerca de la Encrucijada?
 PAGE	271
-P	<b>Algo interesante:</b> Se puede invocar a las sombras de los muertos plantándose en el Cruce bajo la luna nueva y pronunciando el nombre del difunto.
+P	<b>Algo interesante:</b> Se puede invocar a las sombras de los muertos plantándose en la Encrucijada bajo la luna nueva y pronunciando el nombre del difunto.
 P	<b>Algo útil:</b> Cuando <b><i>te plantas en el</i></b> <b><i>Cruce bajo la luna nueva y llamas al</i></b> <b><i>difunto por su nombre</i></b>, tira y suma…
 E	+1 si te une a él un lazo de sangre;
 E	+1 si llevas una posesión suya; o
@@ -43,7 +43,7 @@ B	Algo se cuela con ella por la Última Puerta (Last Door): un <b>espíritu dool
 P	Para más información sobre las <b>sombras</b>, consulta la página 85.
 H2	Los Caminos Rotos
 HR
-P	En otro tiempo había caminos que iban desde el Cruce hasta la <b>Torre en Ruinas (Ruined Tower)</b> (página 332), desde Stonetop hasta el interior del <b>Gran Bosque (Great Wood)</b> (página 200) y por todas las <b>Tierras Escalonadas (Steplands)</b> (página 372). Una magia terrible hizo añicos las piedras y calcinó sus runas. La mayoría quedaron enterrados hace mucho, pero a veces una bestia, la lluvia o un terremoto sacan a la luz una piedra agrietada.
+P	En otro tiempo había caminos que iban desde la Encrucijada hasta la <b>Torre en Ruinas (Ruined Tower)</b> (página 332), desde Stonetop hasta el interior del <b>Gran Bosque (Great Wood)</b> (página 200) y por todas las <b>Tierras Escalonadas (Steplands)</b> (página 372). Una magia terrible hizo añicos las piedras y calcinó sus runas. La mayoría quedaron enterrados hace mucho, pero a veces una bestia, la lluvia o un terremoto sacan a la luz una piedra agrietada.
 P	Cuando <b><i>golpeas a una entidad de la oscuridad,</i></b> <b><i>el caos o la muerte con una piedra rota del camino</i></b> (<i>mano</i>, <i>arrojadiza</i>, <i>tosca</i>), recibe 1d8 de daño (ignora la armadura), pero luego la piedra se desmorona hasta quedar reducida a polvo.
 H2	Apartaderos
 HR
@@ -89,7 +89,7 @@ P	Si alguien lograra vencer la magia de los caminos y arrancar una losa, encontr
 P	Para desvelar los misterios de esta caligrafía rúnica, debes:
 C	Dominar cada uno de estos arcanos menores:
 C	<b>Vínculo de Paz</b> (página 519)
-C	<b>Runas Preservadoras</b> (página 518)
+C	<b>Runas de Preservación</b> (página 518)
 C	<b>Marca Santificadora</b> (página 520)
 C	Conseguir una losa intacta
 C	Dedicar 1 estación y 1d4 puñados de plata a intentar reproducir las runas.

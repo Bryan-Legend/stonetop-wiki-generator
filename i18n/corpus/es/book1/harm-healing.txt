@@ -135,14 +135,14 @@ H2	La muerte y la agonía
 P	Cuando un PJ queda reducido a 0 HP por un ataque que podría matarlo, se está muriendo y debe hacer este movimiento. También puede estar muriéndose porque la ficción lo exige: si cae
 P	100 pies sobre unas rocas, no sufre daño: está a 0 HP y A las Puertas de la Muerte.
 P	<b>A LAS PUERTAS DE LA MUERTE</b>
-P	Cuando <b><i>te estás muriendo</i></b>, vislumbras la Última Puerta (Last Door) y a la Dama de los Cuervos (Lady of Crows) (descríbelas). Después, tira +nada:
+P	Cuando <b><i>te estás muriendo</i></b>, vislumbras la Última Puerta (Last Door) y a la Señora de los Cuervos (Lady of Crows) (descríbelas). Después, tira +nada:
 P	<b>con 10+</b>, te arrancas de vuelta al reino de los vivos: vuelve a
 P	1 HP, pero di cómo te ha marcado tu roce con la muerte; <b>con 7-9</b>, la Dama te despide con un gesto: ya no te estás muriendo, pero quedas fuera de la acción; <b>con</b> <b>6-</b>, ha llegado tu hora; elige 1:
 B	Haz un último movimiento como si hubieras sacado 12+ y después cruza la Última Puerta
 B	Niégate a irte; obtén el inserto Aparecido o Fantasma
 B	Invoca por su nombre a una de las Cosas de Abajo y suplícale que interceda; obtén el inserto Siervo
-P	Si quieres, puedes aplazar la resolución de este movimiento hasta que termine la escena o hasta que los demás PJs tengan un poco de foco. Si alguien intenta salvar al PJ moribundo (atendiendo sus heridas, etc.), está Ayudando en la tirada de A las Puertas de la Muerte. Los «riesgos, costes o consecuencias» a los que se expone dependerán en gran medida de cómo Ayude, de la visión que tenga tu mesa de la Dama de los Cuervos y del resultado de la tirada.
-P	La Dama de los Cuervos y la Última Puerta las describís tú y tu mesa. Incluso pueden aparecerse de forma distinta a distintos personajes.
+P	Si quieres, puedes aplazar la resolución de este movimiento hasta que termine la escena o hasta que los demás PJs tengan un poco de foco. Si alguien intenta salvar al PJ moribundo (atendiendo sus heridas, etc.), está Ayudando en la tirada de A las Puertas de la Muerte. Los «riesgos, costes o consecuencias» a los que se expone dependerán en gran medida de cómo Ayude, de la visión que tenga tu mesa de la Señora de los Cuervos y del resultado de la tirada.
+P	La Señora de los Cuervos y la Última Puerta las describís tú y tu mesa. Incluso pueden aparecerse de forma distinta a distintos personajes.
 P	Con 10+, vuelve a la acción y ya no se está muriendo, pero queda marcado en mente, cuerpo o alma. El jugador decide cómo, pero no dudes en ofrecerle sugerencias, como una cicatriz fea, un ojo perdido, visiones de la Última Puerta o una bandada de cuervos que siempre anda cerca. Elija lo que elija, saca a relucir la marca a menudo durante el juego. Quizá incluso puedas escribirla como una amenaza (una <b><i>aflicción</i></b>, página 284).
 P	Con 7-9+, el personaje ya no se está muriendo, pero queda inconsciente (o casi) hasta que tú digas otra cosa.
 P	Con 6-, ha llegado su hora y lo sensato es cruzar la Última Puerta.

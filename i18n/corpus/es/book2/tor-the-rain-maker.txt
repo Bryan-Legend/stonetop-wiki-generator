@@ -6,7 +6,7 @@
 # nav_label: Tor, el Hacedor de Lluvia
 # description: Tor, el Hacedor de Lluvia, dios del viento, la lluvia y las tormentas: su culto en Stonetop y fuera de ella, sus artefactos, sus peligros y el forastero de nueve dedos.
 PAGE	452
-P	Tor, el Hacedor de Lluvia (Rain-maker), también llamado el Nubarrón y Matador de Bestias, es uno de los <b>dioses</b> (página 178) del Pabellón de los Dioses de Stonetop. Es el dios del viento y la lluvia, del tiempo y las tormentas, y también patrón de guerreros y cazadores. Se cuentan muchas historias de sus victorias y, sí, también de sus flaquezas.
+P	Tor, el Hacedor de Lluvia (Rain-maker), también llamado la Nube de Tormenta y Matador de Bestias, es uno de los <b>dioses</b> (página 178) del Pabellón de los Dioses de Stonetop. Es el dios del viento y la lluvia, del tiempo y las tormentas, y también patrón de guerreros y cazadores. Se cuentan muchas historias de sus victorias y, sí, también de sus flaquezas.
 H2	Temas
 HR
 P	Elige, o tira 1d12.

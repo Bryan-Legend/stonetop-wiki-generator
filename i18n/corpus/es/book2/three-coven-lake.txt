@@ -286,7 +286,7 @@ PAGE	446
 HR
 ICON	icons/beast.svg
 H3	La Bestia Encadenada
-P	<i>Solitario</i>, <i>grande</i>, <i>corrupto</i>, <i>acuático</i>, <i>aterrador</i>
+P	<i>Solitario</i>, <i>grande</i>, <i>corrompido</i>, <i>acuático</i>, <i>aterrador</i>
 P	<b>HP</b> 20; <b>Armadura</b> 2 (pelaje y escamas)
 P	<b>Daño</b> fauces dentudas d10+3 con ventaja (<i>cerca</i>, <i>agarrador</i>, <i>sucio</i>, 1 perforante) o garras desgarradoras d10+1 (<i>mano</i>, <i>sucio</i>, 1 perforante)
 P	<b>Cualidades especiales</b> encadenada a un pesado bloque de vidrio de los Hacedores, recibe +1d6 de daño del bronce, una canción bien cantada la calma

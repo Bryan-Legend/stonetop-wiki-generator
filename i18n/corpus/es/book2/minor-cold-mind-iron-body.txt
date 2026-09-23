@@ -15,10 +15,10 @@ C	… descifrar los glifos de los Señores de la Escarcha (Rime Lords) grabados 
 C	… aprender los cánticos meditativos que acompañan a las cuentas (de un tesoro de saber o de alguien que los conozca).
 C	… pasar una estación aislado, desnudo y en ayunas, meditando con las cuentas de oración, con el riesgo de sufrir enfermedades, accidentes y desventuras.
 H3	Mente Fría, Cuerpo de Hierro
-P	Disposición ◇◇◇
-P	Cuando <b><i>Refuerzas pasando tu tiempo libre aislado, en ayunas y meditando con las cuentas de oración</i></b>, guarda Disposición (según el movimiento Reforzar).
-P	Mientras <b><i>tengas al menos 1 de Disposición</i></b>, solo necesitas una hora de sueño cada noche, puedes soportar el frío sin ropa <i>abrigada</i> y no necesitas consumir suministros ni provisiones al viajar o acampar. Tras unos diez días de una vida tan dura, pierdes 1 de Disposición.
-P	Además, puedes gastar 1 de Disposición para:
+P	Preparativos ◇◇◇
+P	Cuando <b><i>Refuerzas pasando tu tiempo libre aislado, en ayunas y meditando con las cuentas de oración</i></b>, guarda Preparativos (según el movimiento Reforzar).
+P	Mientras <b><i>tengas al menos 1 de Preparativos</i></b>, solo necesitas una hora de sueño cada noche, puedes soportar el frío sin ropa <i>abrigada</i> y no necesitas consumir suministros ni provisiones al viajar o acampar. Tras unos diez días de una vida tan dura, pierdes 1 de Preparativos.
+P	Además, puedes gastar 1 de Preparativos para:
 B	Sumar +1 a cualquier tirada, después de hacerla (máximo +1 por tirada)
 B	Borrar una debilidad, o negarte a marcar una
 B	Realizar una hazaña de resistencia extrema

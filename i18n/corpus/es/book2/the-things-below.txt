@@ -473,7 +473,7 @@ P	<i>aflicción</i>) y céntrate en marcas cada vez más problemáticas. Pero si
 PAGE	431
 HR
 H3	Quienes llevan su mancha
-B	La mayoría de los <b>imperecederos</b> (página 46)
+B	La mayoría de los <b>inmortales</b> (página 46)
 B	Los <b>Sirvientes de Daagon</b> (página 56), que surgen de la niebla o de las aguas profundas
 B	Los <b>Fomoraij</b> (página 136) y sus sirvientes infectados
 B	Algunas de las quimeras de los Señores Verdes: los <b>llamudwr</b> (página 220), los <b>swyn</b> (página 222) y los <b>zrajedak</b> (página 223)

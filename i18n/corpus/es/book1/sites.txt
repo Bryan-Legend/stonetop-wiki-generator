@@ -48,7 +48,7 @@ P	adecuado, puede ser mágica.
 P	En cada sala, área o escena, <b>intenta incluir</b> <b>al menos un detalle o elemento que refleje</b> <b>la historia del sitio</b>. Aunque tus jugadores no se den cuenta o nunca lleguen a reconstruir la historia, ese tipo de detalles hará que el sitio resulte más rico y misterioso.
 PAGE	349
 H2	Dirigir sitios
-P	Cuando los PJs exploran un sitio, diriges la partida con normalidad y sigues el <b>ciclo central</b> (página 169). Juegas una serie de escenas y situaciones, como siempre. Simplemente, resulta que transcurren en ese sitio.
+P	Cuando los PJs exploran un sitio, diriges la partida con normalidad y sigues el <b>bucle central</b> (página 169). Juegas una serie de escenas y situaciones, como siempre. Simplemente, resulta que transcurren en ese sitio.
 H2	Consideraciones
 P	Mientras los PJs exploran sitios (mientras estableces la situación, haces movimientos de DJ y resuelves
 P	las acciones de los PJs), ten en cuenta:

@@ -17,7 +17,7 @@ P	Durante siglos, la torre de Atrapatormentas se alzó entre los reinos de los d
 P	Sin embargo, no vivía sola. Alrededor de su torre creció una comunidad bulliciosa. Jornaleros, artesanos y eruditos. Granjeros y servicio doméstico. Incluso soldados. Generaciones de familias. Refugiados en busca de un nuevo hogar.
 P	Embajadores y proscritos de los demás
 P	Hacedores. Buscadores, inadaptados y náufragos de tierras lejanas.
-P	Cuando llegó la Época del Cataclismo (cuando los esclavos de los <b>Señores de Piedra (Stone Lords)</b> (página 382) se rebelaron y desataron a las <b>Cosas de Abajo (Things Below)</b> (página 412), cuando los discípulos de los <b>Señores de la Escarcha (Rime Lords)</b> (página 316) se volvieron salvajes, cuando las ciudades de los <b>Señores de la Forja (Forge Lords)</b> (página 156) quedaron sepultadas por la ceniza y la guerra), la torre de Atrapatormentas resistió. Un bastión de la civilización.
+P	Cuando llegó la Era del Cataclismo (cuando los esclavos de los <b>Señores de Piedra (Stone Lords)</b> (página 382) se rebelaron y desataron a las <b>Cosas de Abajo (Things Below)</b> (página 412), cuando los discípulos de los <b>Señores de la Escarcha (Rime Lords)</b> (página 316) se volvieron salvajes, cuando las ciudades de los <b>Señores de la Forja (Forge Lords)</b> (página 156) quedaron sepultadas por la ceniza y la guerra), la torre de Atrapatormentas resistió. Un bastión de la civilización.
 P	Una isla de seguridad. Un refugio.
 P	No podía durar. Los cultistas de <b>Og'molok,</b> <b>la Horda sin Rostro</b> (página 349) invadieron las murallas y obligaron a retroceder a los defensores.
 P	El propio Og'molok irrumpió desde abajo como una oleada de horrores correteantes.

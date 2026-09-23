@@ -137,21 +137,21 @@ PAGE	388
 H3	Como movimientos de jugador
 P	Escribe un movimiento de jugador a medida que refleje el riesgo (o parte de él), como «Cuando <b><i>respires el hedor espantoso de las Fauces</i></b>, tira
 P	+CON...». Cuando los PJs se encuentren con el riesgo y el movimiento sea relevante, compártelo con los jugadores. Resuélvelo como cualquier otro movimiento de jugador.
-P	Un movimiento de jugador es una forma estupenda de establecer y comunicar lo que está en juego. Puedes decirle a un jugador que tendrá que Desafiar el Peligro para saltar el abismo, pero a menos que también le digas qué pasará con 10+, con 7-9 y con 6-, no conoce <i>realmente</i> los riesgos. Con un movimiento a medida, puedes incluir lo que está en juego directamente en él.
+P	Un movimiento de jugador es una forma estupenda de establecer y comunicar lo que está en juego. Puedes decirle a un jugador que tendrá que Desafiar el Peligro para saltar el abismo, pero a menos que también le digas qué pasará con 10+, con 7-9 y con 6-, no conoce <i>realmente</i> los riesgos. Con un movimiento propio, puedes incluir lo que está en juego directamente en él.
 P	Los movimientos de jugador también son una buena forma de gestionar riesgos «raros», como magia que les trastoca la mente o que sigue extrañas reglas de causa y efecto. Un movimiento de jugador puede abstraer estas situaciones y darles una cualidad vaga, onírica.
 P	Recuerda: todo <b>empieza y termina</b> <b>en la ficción</b>. Si los PJs dan con una forma ingeniosa de sortear un riesgo o su desencadenante, puede que tu movimiento ya no se aplique.
-P	Eso es estupendo. No anules sus decisiones, su creatividad ni sus capacidades solo porque tengas un movimiento a medida chulo que quieras usar.
+P	Eso es estupendo. No anules sus decisiones, su creatividad ni sus capacidades solo porque tengas un movimiento propio chulo que quieras usar.
 P	Consulta <b>Escribir movimientos</b> (página 551) para más orientación.
 H3	Como combinación
 P	Muchos riesgos funcionarán mejor como combinación de estos enfoques. Podrías empezar con una descripción detallada de una cámara con trampa y luego añadir un movimiento de jugador para lo que ocurre cuando intentan sortear la trampa de una manera concreta. O podrías escribir una serie de movimientos de DJ y un instinto para un incendio forestal, más una cuenta atrás que describa cómo se propaga el fuego. Echa a volar la imaginación.
 HR
-P	<i>Antes describí el nido de crinwin en ruinas (y la escalada para llegar a él) como</i> <i>una simple descripción detallada. Anoté que</i> <i>una caída podría causar 1d10+3 de daño,</i> <i>pero pensándolo mejor, la caída podría</i> <i>fácilmente matar a alguien o herirlo</i> <i>de gravedad. Quiero que los PJs sepan lo</i> <i>peligrosa que podría ser la escalada, así que escribo</i> <i>este movimiento a medida:</i>
+P	<i>Antes describí el nido de crinwin en ruinas (y la escalada para llegar a él) como</i> <i>una simple descripción detallada. Anoté que</i> <i>una caída podría causar 1d10+3 de daño,</i> <i>pero pensándolo mejor, la caída podría</i> <i>fácilmente matar a alguien o herirlo</i> <i>de gravedad. Quiero que los PJs sepan lo</i> <i>peligrosa que podría ser la escalada, así que escribo</i> <i>este movimiento propio:</i>
 P	<b>Cuando caigas desde las ramas</b> <b>del árbol</b>, recibe 1d10+3 de daño (ignora la armadura, contundente) y tira
 P	+CON: con 10+, estás magullado, sangras y te duele muchísimo, pero milagrosamente no tienes nada roto; con 7-9, algo se ha roto: pregunta al DJ qué; con 6-, has caído mal y estás A las Puertas de la Muerte.
 HR
 PAGE	389
 HR
-P	<i>La guarida de Sajra es una antigua tumba de los Señores Verdes, y</i> <i>el Hacedor momificado sigue instalado en su</i> <i>cámara central. Para llegar a la cámara, hay que</i> <i>atravesar la Sala de la Humildad y la</i> <i>Sala de la Gratitud. Están protegidas con magia</i> <i>fae para asegurar que quienes se acercan a la</i> <i>cámara lo hagan con el debido respeto. Decido</i> <i>describir estos riesgos como movimientos a medida.</i>
+P	<i>La guarida de Sajra es una antigua tumba de los Señores Verdes, y</i> <i>el Hacedor momificado sigue instalado en su</i> <i>cámara central. Para llegar a la cámara, hay que</i> <i>atravesar la Sala de la Humildad y la</i> <i>Sala de la Gratitud. Están protegidas con magia</i> <i>fae para asegurar que quienes se acercan a la</i> <i>cámara lo hagan con el debido respeto. Decido</i> <i>describir estos riesgos como movimientos propios.</i>
 P	<b>Cuando entres en la Sala de la Humildad,</b> <b>elige 1:</b>
 P	* Cuéntanos un momento que te hizo sentir humilde y pequeño ante el mundo natural; entonces puedes pasar a la Sala de la Gratitud.
 P	* Cuéntanos un triunfo personal, un momento que te llena de orgullo y satisfacción; entonces sales de la Sala de la Humildad y te encuentras de nuevo en la antecámara.
@@ -213,7 +213,7 @@ P	grupo humano Fae
 ICON	icons/default.svg
 P	natural/bestia no muerto
 ICON	icons/default.svg
-P	corrupto/
+P	corrompido/
 ICON	icons/default.svg
 P	espíritu
 P	Fomoraij
@@ -260,7 +260,7 @@ PAGE	394
 H2	2	Nombre
 P	Querrás una forma de referirte al monstruo, al menos en tus propias notas. Apúntala.
 P	<b>Si el monstruo tiene un nombre propio por el</b> <b>que se le conoce</b>, llámalo así, quizá con una breve descripción. Por ejemplo, «Sajra el Swyn» o «Daedre la Roja, líder de bandidos». Elige nombres propios de una lista de nombres o una entrada del almanaque adecuadas, o inventa algo parecido.
-P	<b>Si la gente de Stonetop conoce</b> <b>al monstruo</b> y lo considera algo mundano o corriente, dale un nombre sencillo y descriptivo en lenguaje llano (como «draco emplumado» o «pájaro carnicero»).
+P	<b>Si la gente de Stonetop conoce</b> <b>al monstruo</b> y lo considera algo mundano o corriente, dale un nombre sencillo y descriptivo en lenguaje llano (como «draco emplumado» o «alcaudón»).
 P	<b>Si el monstruo está envuelto en misterio</b>, si es cosa de rumores y leyendas, dale un nombre que suene a galés (como «nailadd» o «ceffylwraig»). Piensa en una palabra o descripción en tu idioma asociada al monstruo y pásala por un servicio de traducción en línea. Combina y retoca la traducción resultante (o prueba otras frases) hasta que tengas algo que suene bien y sea lo bastante sencillo para usarlo en juego.
 P	(También puedes usar esta técnica para inventar nombres propios).
 P	<b>Para los monstruos que conoce otro</b> <b>pueblo</b>, como los de Manmarch o el Pueblo de las Colinas (Hillfolk), usa un proceso parecido al anterior. Pero, para los monstruos misteriosos y de los que solo hay rumores, traduce la descripción a un idioma adecuado para ese pueblo o región. Si es un monstruo misterioso conocido por...
@@ -299,7 +299,7 @@ HR
 P	Carece de forma física <i>espíritu</i>
 P	Entre lo físico y lo espiritual <i>fae</i>
 P	Hecho por alguien <i>constructo</i>
-P	Cambiado por las Cosas de Abajo <i>corrupto</i>
+P	Cambiado por las Cosas de Abajo <i>corrompido</i>
 P	De la primera era de la creación <i>primordial</i>
 P	Muerto, pero no lo acepta <i>no muerto</i>
 HR

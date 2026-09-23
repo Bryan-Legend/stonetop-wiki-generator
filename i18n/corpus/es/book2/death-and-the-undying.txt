@@ -459,7 +459,7 @@ B	<b>Señores Verdes momificados</b> y sus <b>sirvientes</b> (página 221)
 B	<b>Siervos</b> (página 435) de las Cosas de Abajo
 B	<b>Nemurvojak</b> (página 476)
 B	<b>Tumularios</b> (página 44)
-B	<b>Imperecederos</b> (página 46)
+B	<b>Inmortales</b> (página 46)
 PAGE	83
 H2	Peligros
 HR

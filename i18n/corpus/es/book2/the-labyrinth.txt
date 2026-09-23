@@ -220,7 +220,7 @@ P	2 Medios para preparar un veneno paralizante
 P	3 Un don adicional
 P	4 Más numerosos (una <i>aldea</i>, ~150 almas)
 P	5 Una <b>emanación</b> (página 436) como mascota
-P	6 Aún los dirige su fundador <b>imperecedero</b> (página 46), y vuelve a tirar
+P	6 Aún los dirige su fundador <b>inmortal</b> (página 46), y vuelve a tirar
 P	1d6 peculiaridad
 HR
 P	1 Soberbios y demasiado confiados

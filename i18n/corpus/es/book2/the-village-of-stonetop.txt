@@ -273,7 +273,7 @@ H3	La Cisterna
 P	¿Qué hay ahí abajo, en realidad? ¿Para qué la construyeron <b>los</b> <b>Hacedores</b> (página 264)? Quizá…
 E	conecta con un complejo de cámaras y túneles;
 E	algún ser maligno dormita en el agua;
-E	oculta un arcano, como una variante de las <b>Runas de Conservación</b> (página 518) o de la <b>Guarda de las Aguas Quietas</b> (página 514);
+E	oculta un arcano, como una variante de las <b>Runas de Preservación</b> (página 518) o de la <b>Salvaguarda de las Aguas Quietas</b> (página 514);
 E	no es más que una gran cámara para almacenar agua (los Hacedores también necesitaban beber);
 E	alguna combinación de lo anterior; o
 E	algo totalmente distinto.

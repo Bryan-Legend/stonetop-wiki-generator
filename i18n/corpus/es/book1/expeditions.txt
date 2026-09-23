@@ -279,7 +279,7 @@ P	<b>Si los PJs conocen este lugar</b>, porque han estado antes «fuera de panta
 P	<b>Si este lugar es conocido para los jugadores</b>, limítate a recordarles cómo es y señala lo que haya cambiado desde la última vez que lo visitaron en juego.
 PAGE	316
 H3	Haz preguntas
-P	<b>Si es la primera vez que los jugadores visitan en juego un</b> <b>hito conocido</b> (como el Arroyo o el Cruce), haz preguntas a los personajes sobre el lugar. Las entradas del <i>Libro II</i> para cada lugar incluyen preguntas que podrías hacer, y siempre puedes hacer preguntas como:
+P	<b>Si es la primera vez que los jugadores visitan en juego un</b> <b>hito conocido</b> (como el Arroyo o la Encrucijada), haz preguntas a los personajes sobre el lugar. Las entradas del <i>Libro II</i> para cada lugar incluyen preguntas que podrías hacer, y siempre puedes hacer preguntas como:
 Q	¿Qué es lo que más te llama la atención de este lugar?
 Q	¿Qué hay aquí que te dice que este es un lugar donde/de/que __?
 Q	¿Qué has oído sobre este lugar?
@@ -399,7 +399,7 @@ P	Una vez que los PJs emprenden el viaje, tienes que presentar los desafíos sob
 P	Al resolver un <b>tramo de viaje</b> (página 312), pregúntate si es un buen momento para presentar un desafío. Del mismo modo, al elegir <b>puntos de interés</b> (página 315), elige lugares donde puedas presentar un desafío.
 P	También puedes presentar un desafío después de haber planteado una escena por cualquier motivo, a menudo en respuesta al movimiento de un PJ.
 P	Normalmente: presenta un desafío haciendo un movimiento suave de DJ. Pregunta a los PJs qué hacen y resuelve sus acciones. Repite según haga falta.
-P	Puede que los PJs superen el desafío rápida y fácilmente, o puede que las cosas se desmadren hasta convertirse en un desastre humeante. Sigue el ciclo central y <b>juega para descubrir qué pasa</b>. Cuando la situación esté resuelta, pasa a la siguiente.
+P	Puede que los PJs superen el desafío rápida y fácilmente, o puede que las cosas se desmadren hasta convertirse en un desastre humeante. Sigue el bucle central y <b>juega para descubrir qué pasa</b>. Cuando la situación esté resuelta, pasa a la siguiente.
 P	Si presentas un desafío en respuesta a un 6- en un movimiento de un PJ, no dudes en meterlos de lleno en él. Si alguien saca un 6- al <b>Forrajear</b> (página 336) y uno de los desafíos es «corréis el riesgo de perderos», puedes hacer que se pierdan como movimiento duro. No tienes que <i>amenazarlos</i> antes con perderse. ¡Se han perdido!
 P	Presenta cada desafío una sola vez. Cuando el grupo lo haya afrontado, táchalo de tu lista. Presenta otro desafío, o el siguiente punto de interés, o el siguiente tramo de viaje, o haz que lleguen a su destino.
 P	Dicho esto: un desafío que ya han afrontado podría volver para atormentarlos si toman malas decisiones o si los dados no les acompañan. Sí, puede que hayan

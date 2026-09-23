@@ -510,7 +510,7 @@ ICON	icons/beast.svg
 H3	Simio de montaña
 P	<i>Grupo</i>, <i>cauteloso</i>, <i>sigiloso</i>, <i>acaparador</i>
 P	<b>HP</b> 6; <b>Armadura</b> 1 (pelaje espeso, pellejo)
-P	<b>Daño</b> manos prensiles d8+2 (<i>alcance</i>,
+P	<b>Daño</b> manos agarradores d8+2 (<i>alcance</i>,
 P	<i>cerca</i>, <i>agarrador</i>, <i>contundente</i>)
 P	<b>Cualidades especiales</b> arborícola, inmune al frío, agudos sentidos del olfato y el oído <b>Instinto</b>: guardar sus secretos
 P	• Esconderse en los árboles o en los ventisqueros

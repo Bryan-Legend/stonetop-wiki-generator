@@ -403,7 +403,7 @@ P	Por defecto, la armadura es 0. Lo normal es 0 o 1 de armadura. 2 de armadura e
 H2	XP
 P	Abreviatura de «puntos de experiencia». Empiezas sin XP. Marcas XP…
 E	<b>cuando tiras para un movimiento y sacas 6-</b> (salvo que el movimiento diga lo contrario);
-E	<b>como parte del movimiento Final de la Sesión</b> (página 232); y
+E	<b>como parte del movimiento Fin de la Sesión</b> (página 232); y
 E	<b>cuando otro movimiento lo indique</b>.
 P	«Marcar XP» significa que haces una marca en la casilla de XP de tu libreto, lo que aumenta en 1 tu XP total. Así:
 P	Una vez que hayas marcado suficiente XP, puedes gastarla para <b>Arder con Fuerza</b> (página 231) o para <b>Subir de Nivel</b> (página 81).
@@ -791,7 +791,7 @@ P	Los deseos pueden tratar de lo que pasa en la ficción o en la mesa. El DJ tom
 P	Para más información, consulta la página 232.
 PAGE	75
 P	<b>A LAS PUERTAS DE LA MUERTE</b>
-P	Cuando <b><i>te estás muriendo</i></b>, vislumbras la Última Puerta y a la Dama de los Cuervos (descríbelas). Luego, tira +nada:
+P	Cuando <b><i>te estás muriendo</i></b>, vislumbras la Última Puerta y a la Señora de los Cuervos (descríbelas). Luego, tira +nada:
 P	<b>con 10+</b>, te arrancas de vuelta al reino de los vivos: vuelves a
 P	1 HP, pero di cómo te ha marcado haber rozado la muerte; <b>con 7-9</b>, la Dama te despide con un gesto: ya no te estás muriendo, pero quedas fuera de la acción; <b>con</b> <b>6-</b>, ha llegado tu hora: elige 1:
 B	Haces un último movimiento como si hubieras sacado 12+ y luego cruzas la Última Puerta

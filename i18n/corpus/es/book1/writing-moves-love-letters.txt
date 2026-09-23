@@ -255,7 +255,7 @@ P	Fija los resultados de cada franja como mejor funcione para tu movimiento.
 H3	Estructuras de tirada alternativas
 P	Unos pocos movimientos usan un tipo de tirada totalmente distinto, y el tuyo también puede. Por ejemplo:
 B	<b>Velas de los Deseos</b> (<i>Libro II</i>, página 530) hace que el jugador tire un Dado del Destino para ver qué le cuesta su deseo, lo que resalta la naturaleza caprichosa de las velas.
-B	<b>Temor a la Llama</b> (<i>Libro II</i>, página 512) usa una tirada de riesgo, en la que el jugador tira un d6 y pasa algo malo si saca menos de cierto número que crece cada vez. Es una buena forma de reflejar una magia cada vez más arriesgada o costosa de usar.
+B	<b>Miedo a la Llama</b> (<i>Libro II</i>, página 512) usa una tirada de riesgo, en la que el jugador tira un d6 y pasa algo malo si saca menos de cierto número que crece cada vez. Es una buena forma de reflejar una magia cada vez más arriesgada o costosa de usar.
 B	El <b>Cuerno de las Tormentas</b> (<i>Libro II</i>, página 535) hace que el jugador tire una reserva de dados y asigne un dado a cada uno de estos aspectos de la tormenta: llegada, intensidad, alcance y duración, con un desenlace para cada uno según el resultado del dado asignado. Esto te permite tener varios ejes de efecto, cada uno con su propia franja.
 B	La <b>Astilla Ennegrecida</b> (<i>Libro II</i>, página 75) hace que el jugador tire 3d6, y el efecto depende de si saca más o menos que los HP actuales del objetivo. Es un buen truco para efectos que pueden derrotar directamente a un enemigo.
 P	También puedes combinar tiradas alternativas con tiradas estándar, como el <b>Poder del</b> <b>Orbe sin Párpado</b> (<i>Libro II</i>, página 541), que hace que el jugador tire +CON para invocar un efecto,
@@ -285,7 +285,7 @@ P	Entre 2 y 4 es lo ideal. 5 o 6 pueden funcionar, pero mira si puedes condensar
 PAGE	563
 P	Intenta que las distintas opciones sean paralelas, en su lenguaje y en su alcance, escala y plazo. No hagas que una de las opciones sea evidentemente y siempre mejor que las demás.
 P	Si tienes una lista de opciones, plantéate si alguna de ellas se beneficiaría de una cláusula «si no» al final. Por ejemplo, una opción de <b>Forrajear</b> (página 336) es «evitas el peligro o el riesgo (si no, lo hay)».
-P	Ese «si no» aclara que si no eligen esta opción, habrá peligro o riesgo. También puedes usar cláusulas «si no» para establecer un resultado de base de forma sucinta, lo que puede ser muy útil para los efectos mágicos. Mira <b>Tejer el Hielo</b> y <b>Polimorfia</b>
+P	Ese «si no» aclara que si no eligen esta opción, habrá peligro o riesgo. También puedes usar cláusulas «si no» para establecer un resultado de base de forma sucinta, lo que puede ser muy útil para los efectos mágicos. Mira <b>Tejido de Hielo</b> y <b>Metamorfosis Insolente</b>
 P	<b>Insolente</b> como ejemplos (<i>Libro II</i>, páginas
 P	515 y 525).
 HR

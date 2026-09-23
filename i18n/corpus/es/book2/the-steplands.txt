@@ -167,7 +167,7 @@ H3	Monstruos
 B	Bestias ariscas y alteradas: <b>uros</b> (página 131), <b>jabalí</b> (página 204), <b>osos</b> <b>cavernarios</b> (página 205) o <b>dracos del trueno</b> (página 135).
 B	Depredadores: <b>puma</b> (página 206), <b>dracos</b> <b>emplumados</b> (página 207), <b>dracos de manada</b> (página 134), <b>lobos</b> (página 209)
 B	<b>Espíritus de lo salvaje</b> (página 356)
-B	<b>Imperecederos</b> (página 46), <b>tumularios</b> <b>de los túmulos</b> (página 44) o <b>jinetes fantasma</b> (página 45), acechando en sus túmulos o liberados de ellos
+B	<b>Inmortales</b> (página 46), <b>tumularios</b> <b>de los túmulos</b> (página 44) o <b>jinetes fantasma</b> (página 45), acechando en sus túmulos o liberados de ellos
 B	La <b>Legión Fantasmal</b> (página 78), de cacería o conduciendo a mortales hasta su cueva
 B	Otros <b>fantasmas</b> (página 76) o <b>aparecidos</b> (página 80), víctimas de tragedias o de la violencia
 B	Alguna de las otras bestias peligrosas que recorren las Tierras Escalonadas

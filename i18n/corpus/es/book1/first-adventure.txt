@@ -106,8 +106,8 @@ P	Ahora bien, ¿quién podría ofrecer algo así? ¿Qué quiere a cambio? ¿Y po
 HR
 P	<i>Vahid quiere encontrar el intrincado yelmo</i> <i>que serviría de cabeza a la Gema Mental.</i> <i>Si hubiera sacado 10+, podría haber</i> <i>pedido una oportunidad de conseguirlo.</i> <i>Los Ustrina podrían haberlo encontrado y</i> <i>habérselo vendido a alguien de la Cava de Gordin,</i> <i>alguien que sabe que a Vahid le interesan</i> <i>este tipo de cosas. Claro que pedirían</i> <i>un buen pellizco por él o, más probablemente, algún</i> <i>servicio que solo Vahid podría prestar...</i>
 H3	Con 7-9, una amenaza y una ganancia
-P	Si sacaron 7-9, entonces se presenta (o empeora) una amenaza para el asentamiento. Pero también habrán elegido una ganancia estacional.
-P	La amenaza será el centro principal de la primera aventura, pero cómo se presenta debería estar influido por la ganancia estacional que eligieran.
+P	Si sacaron 7-9, entonces se presenta (o empeora) una amenaza para el asentamiento. Pero también habrán elegido una ganancia de temporada.
+P	La amenaza será el centro principal de la primera aventura, pero cómo se presenta debería estar influido por la ganancia de temporada que eligieran.
 P	Al diseñar la amenaza, asegúrate de que sea...
 E	<b>externa</b>, para sacar a los PJs del asentamiento; pero...
 E	<b>cercana</b>, a pocos días de Stonetop, para que puedan ir y volver con una cantidad modesta de suministros;
@@ -120,7 +120,7 @@ HR
 P	<i>Durante las presentaciones, la historia de guerra de</i> <i>Rhianna trataba de una incursión nocturna de los</i> <i>crinwin, hace solo unas semanas, y de cómo</i> <i>intentaron llevarse a rastras a unos niños al Bosque.</i> <i>Caradoc tenía que vigilar a Wynfor, pero dejó a Wynfor</i> <i>solo para ir a «demostrar» su valía en</i> <i>la batalla. Cuando las cosas se calmaron,</i> <i>Wynfor había desaparecido. La partida de búsqueda</i> <i>nunca encontró nada. Y, para colmo,</i> <i>Rhianna teme que algo esté empujando</i> <i>a los crinwin, haciéndolos</i> <i>más audaces y organizados. Está claro que los crinwin</i> <i>serán la amenaza.</i>
 P	<i>Entonces, ¿por qué se han vuelto tan audaces los crinwin</i> <i>últimamente? Se me ocurre que han caído bajo el influjo de un swyn (una serpiente enorme, arrogante,</i> <i>hipnótica y con cabeza de mono). Durante la incursión intentaban raptar</i> <i>niños con rasgos concretos para añadirlos a la</i> <i>«colección» del swyn. El swyn se ha</i> <i>instalado hace poco en (¿o ha salido de?) una vieja</i> <i>ruina de los Hacedores, no muy lejos del pueblo.</i>
 HR
-P	Tras decidir la amenaza, y por qué se ha convertido ahora en un problema, decide cómo se manifiesta y cómo presentarla. Usa como guía la ganancia estacional que eligieron los jugadores.
+P	Tras decidir la amenaza, y por qué se ha convertido ahora en un problema, decide cómo se manifiesta y cómo presentarla. Usa como guía la ganancia de temporada que eligieron los jugadores.
 P	<b>Si eligieron «noticias interesantes»</b>, elige un objetivo o un paso hacia una mejora del asentamiento (consulta la entrada de 10+) y vincúlalo a la amenaza. Podrían enterarse de la amenaza persiguiendo la oportunidad, o la oportunidad podría ser una consecuencia directa de la amenaza.
 P	<i>Durante las presentaciones, Blodwen mostró interés por averiguar adónde se fue el</i> <i>Pueblo del Bosque (Forest Folk). Podría enterarse de</i> <i>ello explorando uno de sus viejos campamentos, quizá una ruina de los Hacedores que</i> <i>abandonaron y que ahora es el hogar del</i> <i>swyn. Si Vahid hubiera elegido «noticias</i> <i>interesantes», un cazador podría toparse con la</i> <i>ruina y fijarse en las marcas del Pueblo del Bosque</i> <i>y luego huir de vuelta a Stonetop con esa</i> <i>noticia, perseguido por los crinwin.</i>
 HR
@@ -290,7 +290,7 @@ E	<b>hacerle tirar</b> y, según el resultado, dar al jugador…
 E	<b>información sobre la situación inicial o influencia</b> sobre ella, y/o…
 E	<b>algún tipo de recurso</b> que usar en la aventura que se avecina.
 P	Seren la Vieja te ha contado innumerables historias sobre criaturas antinaturales del Bosque. Últimamente, sin embargo, querida Blodwen, no para de sacar cosas que se llevan a los niños, como:
-P	* Los Fae, como los Chivos Blancos (White Billies; juerguistas eternos), Rubor del Alba (Blush-of-Dawn; que busca adoración) y la Tía Salguera (Auntie Sallow; que «protege» a los inocentes)* Los glasbren, hermosos espíritus de los árboles que, según se sabe, hechizan a mortales agraciados
+P	* Los Fae, como los Chivos Blancos (White Billies; juerguistas eternos), Rubor del Alba (Blush-of-Dawn; que busca adoración) y la Tía Sauce (Auntie Sallow; que «protege» a los inocentes)* Los glasbren, hermosos espíritus de los árboles que, según se sabe, hechizan a mortales agraciados
 P	* Los swyn, grandes serpientes con cara de mono, ojos hipnóticos y voces cautivadoras
 P	* Los Fomoraij, de los que apenas se atreve a susurrar, antiguos males que se esconden en la tierra. La vieja Seren no para de enrollarse, y rara vez cuenta una historia dos veces igual, así que veamos lo bien que has escuchado. Tira +INT: con 10+ guarda 2 de reserva de Historias; con 7-9, guarda 1 de reserva de Historias.
 P	Cuando gastes 1 de Historias y nos digas el nombre de uno de los cuentos de Seren, hazle al DJ una pregunta sobre una de las criaturas descritas arriba. El DJ te dirá algo interesante, útil, Con 6-, guarda 1 de Historias, pero cuando la gastes, el DJ te contará dos versiones de la historia con y relevante, tal como lo revela el cuento.

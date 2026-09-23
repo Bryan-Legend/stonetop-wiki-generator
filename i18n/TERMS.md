@@ -775,3 +775,19 @@ language (the majority form, swept across every page):
 - **Monster tags:** 単独 · 集団 · 群れ · 精霊 · 不死 · 恐怖 · 隠密 · 狡知 (cunning) · 狡猾 (devious) · 堕落 · 執拗 · 大型/小型 · 掴み (grabby) · アーマー無視 · 破壊不能 · 動かせない · 不定形 · 恐れ知らず · 騒々しい (loud) · 頑健 · 獰猛 · 構造体 (construct) · 凄惨 (messy)
 - **Names:** 係留 (tether) · レイス/スペクター/シェイド (wraith/specter/shade) · 柳の魔女 · カラスの貴婦人 · 吠え声の呪い (Howling Curse) · 暗黒の氷 (dark ice) · 街道 (Highway) · 果ての井戸 (Utterwell) · 嵐捕り (Stormcatcher) · 力の水晶 (power-crystal) · ブレナウエド · ネイラッド · スーラッハ · ノスガラウ · ケイルマウル · ヴィーゼント (wisent) · 造り手のガラス (makerglass) · 大災厄の時代 (Time of Cataclysm) · ソーンサム
 - **Improvements (prose follows the steading playbook):** 木柵 · 常設の警備隊 · 職人の拡充
+
+### Spanish, complete — corpus route (2026-09-23)
+
+The es section above holds the core terms. Settled while translating the whole
+language (the majority form, swept across every page):
+
+- **Kept in English:** +STR…+CHA, HP, XP. GM = DJ, PC = PJ (pl. PJs), NPC = PNJ. Roll results `10+` · `7-9` · `6-` ("con 10+").
+- **Chapters:** Cómo se juega · Primeros pasos · Dirigir la partida · El hogar (Homefront) · Expediciones · Sitios (Sites, and "site" generally) · Peligros · Descubrimientos · Amenazas · La partida continúa · Libro II: El ancho mundo y otras maravillas (index header: Libro II — El ancho mundo)
+- **Moves & rules:** Topar con el Desastre (Meet with Disaster) · Fin de la Sesión · Subir de Nivel · Trazar una Ruta · Hacer Compañía · Reforzar (Bolster; its hold is Preparativos) · Preparación (Readiness) · Dar Órdenes a los Seguidores · Fortalecer el Vínculo · movimiento de DJ (suave/duro) · movimiento propio (custom move) · desencadenante (trigger) · éxito total / éxito parcial / fallo · juego libre (loose play) · bucle central (core loop) · ganancia de temporada · foco (spotlight) · carta de amor · fantasía hogareña (hearth fantasy)
+- **Threats:** perdición inminente · presagios sombríos · Aflicción · Bestia · Institución · MacGuffin · Entidad mágica · Chusma (Rabble) · Villano · Comodín (Wildcard) · lo que está en juego (stakes)
+- **Site sections:** Saber (Lore) · Ganchos · Habitantes · Impresiones · Cualidades especiales · Algo interesante / Algo útil
+- **Names:** la Señora de los Cuervos (Lady of Crows) · la Nube de Tormenta (Tor's Thunderhead) · las Garras (Brennan's Claws) · la Encrucijada (Crossroads) · el Camino del Oeste · la Era del Cataclismo · los Primeros Creadores (First Creators — not the Makers) · la Tía Sauce (Auntie Sallow) · las Cavas (the Delves) · los Jefes (Bosses) · la Maldición Aullante · el Puño de Tor · la Madre de las Arañas · los Gemelos Silenciosos · las Brujas del Sauce · Atrapatormentas · eterio (aetherium) · oricalco · hierro negro · cristal rojo · hielo oscuro · vidrio de los Hacedores · hablaespíritus (spirit-talker) · caminante del pantano (fen-walker)
+- **Creatures:** espectro (wraith) · aparición (specter) · sombra (shade) · tumulario (wight) · inmortal (deathless one) · draco (drake) · arconte · plaga del vacío (voidblight) · ancla / anclado (tether) · alcaudón (butcherbird)
+- **Tags:** sucio (messy) · agarrador (grabby) · contundente (forceful) · recarga · incómodo (awkward) · aparatoso · arrojadizo (thrown) · corrompido · acaparador (hoarder) · intrépido (fearless) · ruidoso (loud) · ignífugo (fireproof) · astuto (cunning) · taimado (devious) · constructo
+- **Arcana:** every arcanum's page title is its name in prose too (Miedo a la Llama, Tejido de Hielo, Runas de Preservación, Salvaguarda de las Aguas Quietas, Metamorfosis Insolente, Los Seis Candados de Sajua…).
+- **Units:** distances may be given in feet/miles or converted to metric; both appear, as in fr.

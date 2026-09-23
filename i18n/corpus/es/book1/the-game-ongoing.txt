@@ -15,7 +15,7 @@ B	Cómo llevar vuestra partida a un final satisfactorio Este capítulo no contie
 PAGE	573
 H2	Terminar una sesión
 H2	Haz el movimiento
-P	Reserva tiempo para el movimiento <b>Fin de Sesión</b> (a la derecha) cada vez que juguéis. Empezad a cerrar la acción 30 minutos antes de que la gente tenga que irse, y dejaos al menos 15 minutos para hacer el movimiento Fin de Sesión.
+P	Reserva tiempo para el movimiento <b>Fin de la Sesión</b> (a la derecha) cada vez que juguéis. Empezad a cerrar la acción 30 minutos antes de que la gente tenga que irse, y dejaos al menos 15 minutos para hacer el movimiento Fin de la Sesión.
 P	Pon un temporizador. Es importante.
 P	¡Toma notas! No solo de los deseos, sino de todo: las veces que cada PJ se implicó con su instinto, los cambios en las relaciones, lo que el grupo aprendió y logró, y lo que elogió cada jugador. Estas notas son valiosísimas entre sesiones, cuando reflexionas e intentas recordar lo que pasó.
 P	Los dos últimos pasos del movimiento (los elogios y los deseos) son los más importantes. Te permiten calibrar la partida y crean un espacio para que todo el mundo dé su opinión.
@@ -55,7 +55,7 @@ B	Tus tareas pendientes personales («Trazar un Plan para el artilugio de Vahid�
 B	Los PNJ que has introducido y sus detalles clave («Stamat: mercenario sádico; extravagante; lleno de cicatrices, un ojo muerto»)
 B	Decisiones importantes que tomaste sobre la marcha, sobre todo las que aún no se han revelado en juego («Callum está muerto» o «Nanzl sabe que Brynmor miente»)
 B	Sucesos con consecuencias que quieras hacer relevantes en futuras sesiones («Nanzl consiguió un mechón del pelo de Kios» o «Sawyl está cabreado con Nolwen»).
-B	Lo que tenías en mente cuando dejaste caer una pista o introdujiste algún detalle provocador («La pasta plateada es señal del hagr corrupto» o «la gema ígnea de Una = corazón del Sirviente Poderoso»)
+B	Lo que tenías en mente cuando dejaste caer una pista o introdujiste algún detalle provocador («La pasta plateada es señal del hagr corrompido» o «la gema ígnea de Una = corazón del Sirviente Poderoso»)
 B	Decisiones que sabes que tienes que tomar («¿Qué hay en el sótano de Piotr?»)
 B	Preparación que sabes que querrás hacer («Dibujar un mapa del túmulo»)
 PAGE	575
@@ -81,7 +81,7 @@ P	Si uno de tus jugadores toma notas de la sesión, pídele que las publique en 
 P	Puede que te resulte útil (o necesario) hacer tú mismo un resumen de la sesión. Quizá tus jugadores no toman notas, o sus notas son tan detalladas que los demás jugadores nunca las leerán. Quizá se dejan fuera cosas que tú crees importantes.
 P	No hay una única forma correcta de hacerlo. A algunos grupos les gusta un desglose detallado, escena por escena. Otros prefieren una lista con viñetas de los sucesos clave, como esta:
 P	Caradoc y Vahid:
-P	• Fueron a la Torre en Ruinas • ¡Historias de fantasmas en el Cruce! • Exploraron las ruinas exteriores, consiguieron una esquirla de vidrio de los Hacedores y una placa de bronce con un conjuro • Les atacó un beznpol; se llevaron su piel
+P	• Fueron a la Torre en Ruinas • ¡Historias de fantasmas en la Encrucijada! • Exploraron las ruinas exteriores, consiguieron una esquirla de vidrio de los Hacedores y una placa de bronce con un conjuro • Les atacó un beznpol; se llevaron su piel
 P	Blodwen:
 P	• Gran pelea en público con Tegwen, reniega de ella como pariente • Se va de casa, se muda con Seren • Tegwen es mezquina y cruel (¡sorpresa!) • Lewela la visita, apoyo entre lágrimas
 P	Rhianna (no estuvo, ¿de caza?)
@@ -150,11 +150,11 @@ P	Esto podría significar:
 B	Preparar un gancho, sitio, peligro, etc. concreto, o prepararlo de una forma determinada
 B	Hacer una lista, un recordatorio o una chuleta y tenerla en algún sitio visible
 B	Escribir una lista de tareas para la sesión, con escenas que plantear, movimientos de DJ que hacer, preguntas que formular, etc.
-B	<b>Escribir un movimiento a medida</b> (página 551) para gestionar una situación concreta
+B	<b>Escribir un movimiento propio</b> (página 551) para gestionar una situación concreta
 B	Hacer una lluvia de ideas de posibles impresiones, movimientos de DJ, frases de diálogo de PNJ, formas de resolver movimientos de jugador, etc.
 PAGE	579
 HR
-P	<i>Durante el Fin de Sesión, el deseo de Vahid</i> <i>es conseguir una pista para completar el Sirviente</i> <i>Poderoso. Así que, entre sesiones, preparo un</i> <i>gancho: un viajero que vende un viejo pergamino que</i> <i>describe un «corazón» de vidrio ígneo que alimenta un</i> <i>artefacto en la ciudad caída de Tierstered.</i>
+P	<i>Durante el Fin de la Sesión, el deseo de Vahid</i> <i>es conseguir una pista para completar el Sirviente</i> <i>Poderoso. Así que, entre sesiones, preparo un</i> <i>gancho: un viajero que vende un viejo pergamino que</i> <i>describe un «corazón» de vidrio ígneo que alimenta un</i> <i>artefacto en la ciudad caída de Tierstered.</i>
 HR
 P	<i>Uno de mis objetivos es usar varios sentidos</i> <i>al describir los entornos. Así que</i> <i>escribo «SONIDO • OLOR • TACTO»</i> <i>en la parte de arriba de mi libreto de DJ.</i>
 HR
@@ -170,7 +170,7 @@ P	Prepara lo que necesitas, lo que no puedes improvisar y lo que te ayuda a dar 
 PAGE	580
 P	Si juegas con un grupo el tiempo suficiente, es inevitable que surjan problemas. Jugadores que se sacan de quicio unos a otros. Expectativas que no encajan. Comportamientos que perturban. Sentimientos heridos. Malentendidos. Etc.
 P	Cuando haya un problema a nivel de jugadores, habla con ellos. No dejes que las cosas se enquisten y, por Tor, no intentes «arreglar» el problema con mecánicas de juego o con «consecuencias» en la ficción (castigos). No hay solución dentro del juego para un problema entre jugadores.
-P	<i>Stonetop</i> incluye herramientas que facilitan este tipo de comunicación. Las <b>pautas de contenido</b> (página 66) ayudan a fijar expectativas y límites. Repasarlas al comienzo de cada sesión (consulta la página de enfrente) hace que se tengan presentes. Pedir «tiempo muerto» os da una forma de corregir el rumbo a mitad de sesión. Y el movimiento Fin de Sesión invita a los jugadores a pedir cambios. (Y si a tu grupo le resultan útiles otras herramientas de comunicación o de seguridad, ¡adelante, usadlas!).
+P	<i>Stonetop</i> incluye herramientas que facilitan este tipo de comunicación. Las <b>pautas de contenido</b> (página 66) ayudan a fijar expectativas y límites. Repasarlas al comienzo de cada sesión (consulta la página de enfrente) hace que se tengan presentes. Pedir «tiempo muerto» os da una forma de corregir el rumbo a mitad de sesión. Y el movimiento Fin de la Sesión invita a los jugadores a pedir cambios. (Y si a tu grupo le resultan útiles otras herramientas de comunicación o de seguridad, ¡adelante, usadlas!).
 P	Sin embargo, algunos problemas se gestionan mejor con una puesta en común: fuera de la sesión, cara a cara o solo con los jugadores implicados. Quizá lo hagas en persona, justo después de una sesión, o tomando algo, o dando un paseo, o lo que sea. Quizá sea una llamada o un chat en línea. Elige un enfoque con el que todos los implicados se sientan cómodos.
 P	Anima a tus jugadores a iniciar también ellos puestas en común, contigo y entre sí. Si algo les preocupa, lo mejor es hablarlo.
 H2	Puestas en común
@@ -191,7 +191,7 @@ P	Ten una lista de cosas que hacer al comienzo de cada sesión. Cuando todo el m
 H2	Logística
 P	¿Qué planes tenéis para la comida y la bebida?
 P	¿Quién toma notas? ¿Cuándo tiene que irse la gente? ¿Cuándo deberíais hacer pausas?
-P	Etc. Poned temporizadores según haga falta. ¡Aseguraos de reservar tiempo para el movimiento Fin de Sesión!
+P	Etc. Poned temporizadores según haga falta. ¡Aseguraos de reservar tiempo para el movimiento Fin de la Sesión!
 H2	Resumen
 P	Recuerda a todo el mundo lo que pasó la última vez y cómo quedaron las cosas. Si es posible, haz que lo hagan los propios jugadores. Pide a quien toma las notas que haga un resumen, o pide a los jugadores que lo hagan por turnos. Añade detalles y haz correcciones según haga falta, pero no seas quisquilloso.
 P	Escucha lo que dicen tus jugadores: ¡es un buen indicador de lo que les importa!
@@ -218,7 +218,7 @@ H2	Ritmo
 P	<i>Stonetop</i> suele tener un ritmo más pausado que muchos juegos de rol. Tiene sus momentos de drama y de acción intensa. Pero también te anima a recrearte en los detalles de la vida diaria y a dedicar tiempo a disfrutar del escenario. Encontrar el ritmo y la cadencia adecuados para tu grupo es importante.
 H2	Aventuras frente al hogar
 P	Una tensión clave del juego es cuánto tiempo dedicar a las aventuras (expediciones y crisis) frente al juego en el hogar. El juego no siempre te dirá cuándo es el momento de cambiar, y eso es intencionado.
-P	Usa los deseos de tus jugadores en el Fin de Sesión para calibrar el ritmo de la partida.
+P	Usa los deseos de tus jugadores en el Fin de la Sesión para calibrar el ritmo de la partida.
 P	Si los jugadores están deseando aventuras, empújalos a dejar que haya un Cambio de Estación, u ofréceles la oportunidad de avanzar hacia algún objetivo. Si quieren más descanso pero hay un Cambio de Estación y una amenaza empeora o se da a conocer, quizá puedas anunciar una amenaza contra la que no pueden hacer nada de momento (como el creciente descontento en Lindemarjal (Marshedge) o alguna bestia terrible avistada en las Llanuras (Flats)).
 P	Las mecánicas del juego a veces empujarán la partida de una forma concreta e inevitable. Si hay un Cambio de Estación y abundan las amenazas, no hay forma de que la gente tenga un invierno tranquilo. Pero ¿quizá puedas dar a cada PJ un día agradable antes de que empiecen los problemas?
 P	Si tus jugadores quieren estar trabajando constantemente en proyectos o partir en varias aventuras cada estación, no tengas miedo de frenar. Recuérdales sus obligaciones y, si las ignoran, empieza a oponerte a sus deseos. <b>Diles las consecuencias</b> de salir corriendo en una expedición a medio pensar y sin posibilidades de éxito. Etc.
@@ -240,7 +240,7 @@ P	Lo ideal es que los PJs Suban de Nivel una sola vez entre aventuras. Quieres q
 P	<b>Pon el XP a 0 al Subir de Nivel.</b> El ajuste más sencillo, pero puede que algunos jugadores lo odien. Además, resta incentivo al XP una vez que un PJ tiene suficiente para Subir de Nivel.
 P	<b>Aumenta el XP necesario.</b> El requisito por defecto es 6 + (2 × nivel). Cambia el 6 por un 10 para añadir una sesión extra a la mayoría de los niveles.
 P	Multiplica su nivel actual por 3 en lugar de por 2 para frenar de verdad el ritmo de avance en los niveles altos.
-P	<b>Ajusta las preguntas del Fin de Sesión.</b> Sé más estricto con lo que cuenta como «sí», o reescribe las preguntas para que sean más difíciles de lograr.
+P	<b>Ajusta las preguntas del Fin de la Sesión.</b> Sé más estricto con lo que cuenta como «sí», o reescribe las preguntas para que sean más difíciles de lograr.
 P	Por ejemplo, «¿Hemos aprendido algo más sobre el mundo o su historia?» podría convertirse en «¿Hemos desenterrado algún secreto del pasado?».
 P	<b>Permite a los jugadores Arder con Fuerza siempre</b>, aunque no tengan el XP para Subir de Nivel. (Si tienes un Aspirante a Héroe con el trasfondo Obsesionado, tendrás que retocar ese movimiento).
 H2	Juego a nivel alto
@@ -312,7 +312,7 @@ P	PJ no es disruptiva. Profundiza la partida y le añade texturas nuevas.
 PAGE	586
 H2	Conflicto entre PJs
 P	Una de las agendas de tus jugadores es <b>interpretar</b> <b>a un personaje convincente</b> (página 37), y esos personajes no siempre estarán de acuerdo. No pasa nada. De hecho, ¡es estupendo! Bien gestionado, el conflicto entre PJs puede dar lugar a momentos de gran drama y a algunas de las partes más memorables de la partida.
-P	La mayoría de los conflictos entre PJs son simples desacuerdos, o un PJ que intenta impedir que otro haga una temeridad. El Aspirante a Héroe va a cargar contra el jabalí corrupto, pero el Mariscal Interfiere y lo detiene. La Bendita quiere reducir a la bestia y curarla si puede, y Persuade a los demás PJs para que la dejen intentarlo.
+P	La mayoría de los conflictos entre PJs son simples desacuerdos, o un PJ que intenta impedir que otro haga una temeridad. El Aspirante a Héroe va a cargar contra el jabalí corrompido, pero el Mariscal Interfiere y lo detiene. La Bendita quiere reducir a la bestia y curarla si puede, y Persuade a los demás PJs para que la dejen intentarlo.
 P	Anima a los jugadores a discutir en personaje, no para «ganar», sino para establecer sus posturas y sus valores. Usa movimientos como Persuadir (contra PJs), Interferir y Buscar Indicios para que las cosas avancen.
 H2	Diferencias irreconciliables
 P	Con el tiempo, los desacuerdos pueden convertirse en conflictos persistentes. El Juez no tolera los engaños del Zorro. El Zorro no puede perdonar al Duro por la muerte de su marido. El Portaluz se inquieta por el estado del alma del Buscador.
@@ -376,7 +376,7 @@ P	<i>Todos los PJs han muerto intentando impedir la</i> <i>liberación de</i> <b
 P	<i>421). Se desata una nueva era glacial y</i> <i>la Maldición Aullante asola la tierra. Decidimos</i> <i>saltar una década más o menos y</i> <i>empezar de nuevo con PJs totalmente nuevos, y hablamos de</i> <i>cómo se ha adaptado Stonetop al nuevo y duro</i> <i>clima, actualizando sus recursos y</i> <i>posibles mejoras en consecuencia.</i> <i>Reescribo el movimiento Cambio de Estación,</i> <i>actualizo los insertos de inventario y las listas</i> <i>de equipo, y doy a todos un inserto a medida</i> <i>para llevar la cuenta de la</i> <b><i>Maldición Aullante</i></b> <i>(</i>Libro
 P	II<i>, página 492).</i>
 HR
-P	<i>Los PJs han sido desterrados de Stonetop</i> <i>y han adoptado una vida de aventureros</i> <i>errantes. El libreto del asentamiento ya</i> <i>no les resultará relevante; la mayoría de</i> <i>los movimientos del hogar ya no se aplican,</i> <i>o serían mucho más difíciles de activar, así que</i> <i>reescribo algunas de las preguntas del movimiento</i> <i>Fin de Sesión y actualizo Subir de Nivel para que</i> <i>requiera «un periodo tranquilo de descanso» en lugar de «un periodo tranquilo en casa». En</i> <i>resumen, la partida se jugará ahora más como</i> <i>un juego de rol tradicional de aventuras de fantasía.</i>
+P	<i>Los PJs han sido desterrados de Stonetop</i> <i>y han adoptado una vida de aventureros</i> <i>errantes. El libreto del asentamiento ya</i> <i>no les resultará relevante; la mayoría de</i> <i>los movimientos del hogar ya no se aplican,</i> <i>o serían mucho más difíciles de activar, así que</i> <i>reescribo algunas de las preguntas del movimiento</i> <i>Fin de la Sesión y actualizo Subir de Nivel para que</i> <i>requiera «un periodo tranquilo de descanso» en lugar de «un periodo tranquilo en casa». En</i> <i>resumen, la partida se jugará ahora más como</i> <i>un juego de rol tradicional de aventuras de fantasía.</i>
 HR
 PAGE	591
 H2	Terminar vuestra partida

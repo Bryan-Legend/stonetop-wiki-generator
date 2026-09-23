@@ -510,7 +510,7 @@ P	Del mismo modo, el PJ puede indicar a un miembro de la cuadrilla que Tenga lo 
 P	En general, no te preocupes por los objetos pequeños ni por qué miembro lleva exactamente cuántos usos de suministros. Los jugadores pueden llevar la cuenta de este nivel de detalle si de verdad quieren, pero rara vez merece la pena.
 PAGE	473
 HR
-P	<i>Vahid ahuyenta a las arañas usando su</i> <i>arcano Temor a la Llama. Rhianna</i> <i>vuelve y saca a rastras a Hari de allí.</i> <i>Todos consiguen volver a la piedra guía,</i> <i>donde Pulgarespino el spriggan</i> <i>los ha estado esperando.</i>
+P	<i>Vahid ahuyenta a las arañas usando su</i> <i>arcano Miedo a la Llama. Rhianna</i> <i>vuelve y saca a rastras a Hari de allí.</i> <i>Todos consiguen volver a la piedra guía,</i> <i>donde Pulgarespino el spriggan</i> <i>los ha estado esperando.</i>
 P	<i>Antes de regresar por los senderos</i> <i>Fae, Blodwen atiende a Hari, le restaura</i> <i>los HP y lo estabiliza, pero sigue</i> <i>paralizado. Rhianna hace que Lowri convierta</i> <i>sus 2</i> ◇ <i>sin definir en una camilla enrollable</i> <i>para transportar a Hari. Escribe «</i> ◇◇ <i>camilla</i> <i>(Lowri)» en la lista de inventario de su cuadrilla.</i>
 P	<i>Luego hace que el resto de su cuadrilla</i>
 P	<i>convierta cada uno un</i> ◇ <i>sin definir en</i> ◇ <i>suministros,</i>

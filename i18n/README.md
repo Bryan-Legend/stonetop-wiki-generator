@@ -155,6 +155,10 @@ the way are in `TERMS.md` (*French, complete*).
 deleted, `leaks.py ja` clean but for glossed names and real titles. Terms:
 `TERMS.md` (*Japanese, complete*).
 
+**es is complete** (2026-09-23): every page through the corpus, its JSON pages
+deleted, `leaks.py es` clean but for glossed names and real titles. Terms:
+`TERMS.md` (*Spanish, complete*).
+
 ### Working a long chapter
 
 A Book I chapter runs 500–1400 work lines, which is more than one sitting.
