@@ -222,7 +222,7 @@ P	<b>Instinto</b> dominar el Río del Pavor
 P	• Percibir a un intruso en sus dominios
 P	• Hipnotizar a alguien con uno de sus innumerables ojos (ver abajo)
 P	• Arrastrar a los intrusos a su perdición
-P	Es una criatura de leyenda. Un gran gusano escamoso, dicen, de cientos de pasos de largo, con el cuerpo cuajado de ojos. Cientos de ojos, muchísimos. Dicen que ve todo lo que ocurre a lo largo del río. Dicen que no tolera intrusiones, que ahoga o devora a todo el que invade sus dominios.
+P	Es una criatura de leyenda. Un gran gusano escamoso, dicen, de muchas decenas de metros de largo, con el cuerpo cuajado de ojos. Cientos de ojos, muchísimos. Dicen que ve todo lo que ocurre a lo largo del río. Dicen que no tolera intrusiones, que ahoga o devora a todo el que invade sus dominios.
 P	Pero eso no es del todo cierto. Hay quien se ha topado con el Suileach y ha vivido para contarlo, atormentado por lo que vio reflejado en sus ojos.
 P	Cuando <b><i>te quedas mirando, hipnotizado, uno de los</i></b> <b><i>ojos del Suileach</i></b>, marca <i>aturdido</i> y elige 1:
 B	Te ves a ti mismo, libre de cargas. Nombra a un PNJ al que ames; tu corazón se enfría hacia él. Después, obtén un movimiento nuevo de tu libreto.

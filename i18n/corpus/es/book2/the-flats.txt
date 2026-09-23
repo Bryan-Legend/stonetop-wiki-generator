@@ -250,7 +250,7 @@ H3	Frythanc
 P	<i>Solitario</i>, <i>grande</i>, <i>sigiloso</i>, <i>aterrador</i>
 P	<b>HP</b> 16; <b>Armadura</b> 0 <b>Daño</b> garras en picado d10+2 (<i>mano</i>, <i>cerca</i>, <i>contundente</i>, <i>agarrador</i>), pico d10 (<i>alcance</i>, desventaja)
 P	<b>Cualidades especiales</b> vista increíble, oído pésimo <b>Instinto</b> esperar el momento oportuno
-P	• Planear en las corrientes térmicas, a miles de pies de altura
+P	• Planear en las corrientes térmicas, a cientos de metros de altura
 P	• Lanzarse en picado como un rayo y atrapar a su presa
 P	• Arrastrar a su presa a 9 o 12 metros de altura con aleteos lentos y poderosos… y luego soltarla
 P	Grandes aves escamosas, con alas de unos 12 m de envergadura y plumas azul cielo y blancas en la parte inferior para ocultarse en el cielo. Se dice que anidan en los Picos de Huffel pero cazan en las Llanuras, atrapando a los incautos (hombre, mujer, ciervo, caballo) y dejándolos caer al suelo. La caída suele matar o lisiar a la presa, y entonces el frythanc se posa para comérsela tranquilamente.

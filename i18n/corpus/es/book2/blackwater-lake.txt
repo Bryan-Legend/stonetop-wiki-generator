@@ -191,7 +191,7 @@ PAGE	55
 HR
 ICON	icons/danger.svg
 H3	La Boca de Daagon
-P	En el fondo del lago, a cientos de pies de profundidad, hay una Boca de Daagon.
+P	En el fondo del lago, a muchas decenas de metros de profundidad, hay una Boca de Daagon.
 P	Cualquier cosa que caiga en las aguas profundas acabará llegando allí con el tiempo. Los objetos de valor que se dejen en la orilla o se arrojen a los bajíos probablemente los encontrarán los <b>siervos</b> (página 56), que los llevarán a la Boca en tu nombre. Los artefactos peligrosos que se dejen para los siervos puede que los lleven y sean consumidos, o puede que no.
 P	Cuando <b><i>la Boca se traga algo</i></b>, Daagon lo consume por completo. Cuando <b><i>la</i></b> <b><i>Boca se traga a alguien</i></b>, desaparece, en cuerpo y alma.
 P	Cuando <b><i>das de comer a la Boca algo</i></b> <b><i>o a alguien querido</i></b> (por cualquiera, no solo por ti), Daagon te recompensa.

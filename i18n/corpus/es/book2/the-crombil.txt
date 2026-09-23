@@ -6,7 +6,7 @@
 # nav_label: El Crombil
 # description: El Crombil, un gran gusano escamoso que duerme bajo el Gran Bosque y despierta cada pocas décadas para arrasarlo todo: qué es, ganchos, señales y presagios, y sus estadísticas.
 PAGE	62
-P	Un gran gusano escamoso, de cientos de metros de largo.
+P	Un gran gusano escamoso, de muchas decenas de metros de largo.
 P	Duerme en algún lugar bajo el <b>Gran</b> <b>Bosque</b> (Great Wood) (página 200) y despierta cada pocas décadas para abrir a mordiscos y a fuego un reguero de destrucción.
 H3	¿Qué es, exactamente?
 P	Eso lo decides tú. Quizá...

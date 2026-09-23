@@ -256,7 +256,7 @@ B	Posiblemente la propia <b>Piedra</b> (página 12).
 PAGE	306
 H2	Portales
 HR
-P	Hay lugares repartidos por el mundo que se tocan entre sí a un nivel fundamental, pese a estar a cientos de millas de distancia.
+P	Hay lugares repartidos por el mundo que se tocan entre sí a un nivel fundamental, pese a estar a cientos de kilómetros de distancia.
 P	Los Hacedores sabían crear portales en esos lugares, lo que permitía viajar entre ellos de forma instantánea. Se puede encontrar un portal así…
 E	bajo la <b>Torre en Ruinas</b> (página 332)
 E	en el <b>Laberinto</b> (página 242)

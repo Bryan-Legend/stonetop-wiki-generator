@@ -187,14 +187,14 @@ P	O haz que se encuentren con un habitante del sitio, o con un grupo de ellos. L
 HR
 P	<i>«De pie junto al estanque, tan quieto que al principio ni</i> <i>siquiera reparáis en él, está Wynfor. No</i> <i>levantó la vista cuando entrasteis. Sigue</i> <i>sin hacerlo. Solo… mira fijamente el agua,</i> <i>con los ojos vidriosos y una media sonrisa.</i> <i>¿Estará drogado? ¿Qué hacéis?».</i>
 HR
-P	<i>«¿Un 2? Vaya. Bueno. Te acercas a la</i> <i>entrada del túmulo, pero entonces, ¡AGH!, se te</i> <i>engancha el pie en algo. Miras</i> <i>abajo y ves una enredadera rojiza, enroscada</i> <i>alrededor de tu tobillo y tu pantorrilla, cubierta</i> <i>de espinas de una pulgada, algunas de ellas</i> <i>clavadas en ti. Pero apenas lo notas. ¿Qué</i> <i>haces?».</i>
+P	<i>«¿Un 2? Vaya. Bueno. Te acercas a la</i> <i>entrada del túmulo, pero entonces, ¡AGH!, se te</i> <i>engancha el pie en algo. Miras</i> <i>abajo y ves una enredadera rojiza, enroscada</i> <i>alrededor de tu tobillo y tu pantorrilla, cubierta</i> <i>de espinas de un par de centímetros, algunas de ellas</i> <i>clavadas en ti. Pero apenas lo notas. ¿Qué</i> <i>haces?».</i>
 PAGE	354
 H3	Corta el paso
 P	Haz este movimiento para impedir el acceso a una parte de un sitio. Puede ser algo que siempre ha estado ahí, como una puerta cerrada con llave o un abismo. O puedes cortar el paso a los PJs mientras exploran, con un derrumbe, una trampa, un puente que se hunde a sus espaldas, etc.
 P	¿Quizá hay una llave que puedan encontrar, o una forma de pasar con mucho esfuerzo, u otro camino más arriesgado?
 P	O no. A veces el camino está cerrado y tienen que dar media vuelta, de momento.
 HR
-P	<i>«No, la losa es maciza, y tendrá un</i> <i>pie o dos de grosor, ¿no? Aunque es raro.</i> <i>Esto tiene toda la pinta de ser una entrada.</i> <i>Por cómo está encajada en la construcción</i> <i>de alrededor… ¿cayó, así, en su sitio?</i> <i>Sea como sea, no veis forma de volver a</i> <i>levantarla. ¿Qué hacéis?».</i>
+P	<i>«No, la losa es maciza, y tendrá unos</i> <i>30 o 60 centímetros de grosor, ¿no? Aunque es raro.</i> <i>Esto tiene toda la pinta de ser una entrada.</i> <i>Por cómo está encajada en la construcción</i> <i>de alrededor… ¿cayó, así, en su sitio?</i> <i>Sea como sea, no veis forma de volver a</i> <i>levantarla. ¿Qué hacéis?».</i>
 HR
 P	<i>«¿Cuál es la mejor forma de pasar? Bueno, por</i> <i>ahí no. El pasadizo ya no existe, solo hay</i> <i>escombros, roca y polvo flotando en</i> <i>el aire. Si quieres reunirte con los demás,</i> <i>tendrás que dar un rodeo, volviendo por</i> <i>el santuario y la cámara central.</i> <i>¿Qué haces?».</i>
 HR
