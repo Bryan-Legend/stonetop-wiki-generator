@@ -8,9 +8,9 @@
 PAGE	449
 P	A unos dos días de marcha de Stonetop se alza una colina solitaria que surge de <b>las Llanuras (Flats)</b> (página 126). En una de las laderas de la colina se ve un enorme esqueleto fosilizado.
 P	El <b>Camino Real</b> (página 270) pasa junto a la colina por el este; a sus pies hay un apeadero.
-P	La colina se eleva más de 300 pies sobre la pradera.
+P	La colina se eleva más de 90 metros sobre la pradera.
 P	La cara norte, a sotavento, es empinada, rocosa, casi un acantilado. Las otras caras son laderas escarpadas pero transitables, cubiertas de robles retorcidos y dispersos y de matorrales más bajos.
-P	La cima es llana, con pocos árboles, el punto más alto en casi 100 millas a la redonda. Cuando Stonetop o el <b>Pueblo de las Colinas (Hillfolk)</b> (página 228) necesitan hacerse señales, encienden allí arriba una gran hoguera, en lo alto de los Huesos del Titán (Titan Bones).
+P	La cima es llana, con pocos árboles, el punto más alto en casi 160 km a la redonda. Cuando Stonetop o el <b>Pueblo de las Colinas (Hillfolk)</b> (página 228) necesitan hacerse señales, encienden allí arriba una gran hoguera, en lo alto de los Huesos del Titán (Titan Bones).
 H2	Impresiones
 HR
 B	La colina en el horizonte, que nunca parece acercarse hasta que la tienes encima

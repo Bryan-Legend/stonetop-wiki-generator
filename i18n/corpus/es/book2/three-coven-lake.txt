@@ -306,7 +306,7 @@ P	<b>Instinto</b> alimentarse de presas fáciles
 P	• Acercarse sigilosamente a una presa potencial
 P	• Chillar para atraer a otras anguilas (apenas se oye fuera del agua)
 P	• Atacar en un enjambre frenético, todo mordiscos, chillidos y agua ensangrentada y revuelta
-P	De metro y medio o dos metros de largo. Sobre todo cazan peces o aves, en silencio y en solitario. Sin embargo, de algún modo, aprendieron que las personas están deliciosas. Demasiado grandes para que una sola anguila las abata, claro. Pero las personas en el agua son torpes y no se enteran de nada. Así que, cuando una anguila chillona ve a alguien en el agua, llama a sus amigas. Y cuando se han reunido suficientes, se dan un festín.
+P	De 1,5 o 1,8 metros de largo. Sobre todo cazan peces o aves, en silencio y en solitario. Sin embargo, de algún modo, aprendieron que las personas están deliciosas. Demasiado grandes para que una sola anguila las abata, claro. Pero las personas en el agua son torpes y no se enteran de nada. Así que, cuando una anguila chillona ve a alguien en el agua, llama a sus amigas. Y cuando se han reunido suficientes, se dan un festín.
 PAGE	447
 HR
 ICON	icons/danger.svg

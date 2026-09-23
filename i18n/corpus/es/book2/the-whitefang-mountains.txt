@@ -360,14 +360,14 @@ P	• Hacer que la congelación empeore (+sucio)
 P	• Empujarlos a hacer alguna estupidez (dormirse, quitarse ropa, etc.)
 ICON	icons/danger.svg
 H3	Mal de altura
-P	El aire peligrosamente enrarecido empieza un par de miles de pies por debajo del límite de las nieves, y empeora cuanto más se sube. Los lugareños están acostumbrados al aire enrarecido, pero incluso ellos deben tener cuidado.
+P	El aire peligrosamente enrarecido empieza unos 600 metros por debajo del límite de las nieves, y empeora cuanto más se sube. Los lugareños están acostumbrados al aire enrarecido, pero incluso ellos deben tener cuidado.
 P	• Poner a prueba su resistencia para seguir adelante, o simplemente para respirar
 P	• Infligir una debilidad
 P	• Revelar que se les ha pasado algo por alto
 P	• Hacer que se desplomen, incapaces de continuar
 P	• Llenarles los pulmones de líquido, hincharles el cerebro, hacer que tiren A las Puertas de la Muerte
 P	<b>Algo interesante:</b> Los discípulos de los Señores de la Escarcha practican técnicas para prosperar en el aire enrarecido, pero se tarda meses o años en dominarlas.
-P	<b>Algo útil:</b> Uno puede aclimatarse sin peligro si no asciende más de ~1.000 pies al día, e incluso así el esfuerzo extremo puede ser peligroso. Una infusión de hierba del draco morada puede aliviar los síntomas, pero una sobredosis puede causar la muerte por asfixia.
+P	<b>Algo útil:</b> Uno puede aclimatarse sin peligro si no asciende más de ~300 metros al día, e incluso así el esfuerzo extremo puede ser peligroso. Una infusión de hierba del draco morada puede aliviar los síntomas, pero una sobredosis puede causar la muerte por asfixia.
 HR
 H3	Monstruos
 B	Depredadores: <b>osos cavernarios</b> (página 205), <b>pumas</b> (página 206) y <b>lobos</b> (página 209)

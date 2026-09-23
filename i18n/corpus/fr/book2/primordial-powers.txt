@@ -256,7 +256,7 @@ B	Peut-être la <b>Pierre</b> (page 12) elle-même.
 PAGE	306
 H2	Portails
 HR
-P	Il existe à travers le monde des lieux qui se touchent à un niveau fondamental, malgré des centaines de milles qui les séparent.
+P	Il existe à travers le monde des lieux qui se touchent à un niveau fondamental, malgré des centaines de kilomètres qui les séparent.
 P	Les Bâtisseurs savaient créer des portails en de tels lieux, permettant un voyage instantané entre eux. On pourrait trouver un tel portail…
 E	sous la <b>Tour en Ruine</b> (page 332)
 E	dans le <b>Labyrinthe</b> (page 242)

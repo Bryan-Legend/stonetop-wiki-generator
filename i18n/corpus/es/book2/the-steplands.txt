@@ -183,7 +183,7 @@ P	• No darse mucha cuenta de algo
 P	• Arrancar árboles como un niño arranca hierba
 P	• Dar un zarpazo a algo que lo molesta
 P	• Revolverse enfurecido (+<i>área</i>), y luego cansarse
-P	Piensa en algo como un tejón o un perezoso, pero grande como una casa: 6 metros de largo, casi 3 metros hasta la cruz y unos antebrazos de casi 3,5 metros si cuentas esas garras como palas. Casi siempre se limitan a deambular pesadamente por las Tierras Escalonadas, buscando sus árboles favoritos para arrancarlos y masticarlos, y a veces despejan laderas enteras. Casi todo se aparta de su camino siempre que puede. Ni siquiera los superdepredadores como un kleztigr creen que merezca la pena el esfuerzo.
+P	Piensa en algo como un tejón o un perezoso, pero grande como una casa: 6 metros de largo, 2,7 metros hasta la cruz y unos antebrazos de casi 3,5 metros si cuentas esas garras como palas. Casi siempre se limitan a deambular pesadamente por las Tierras Escalonadas, buscando sus árboles favoritos para arrancarlos y masticarlos, y a veces despejan laderas enteras. Casi todo se aparta de su camino siempre que puede. Ni siquiera los superdepredadores como un kleztigr creen que merezca la pena el esfuerzo.
 P	Uno pensaría que son fáciles de ver y de evitar, y casi siempre tendría razón. Pero a veces doblas un recodo o coronas una ladera y ahí está uno, avanzando pesadamente, mordisqueando un tronco o echándose la siesta, y más te vale intentar rodearlo, sin hacer ruido.
 PAGE	378
 HR

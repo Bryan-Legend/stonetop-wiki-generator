@@ -50,8 +50,8 @@ H2	Lugares
 HR
 B	<b>La subida</b>: tras serpentear por unas curvas cerradas, el Camino Real se endereza y entra en un paso ancho con empinadas laderas rocosas a ambos lados.
 B	<b>Grandes jaulas bordean las laderas</b>, balanceándose al viento, llenas de huesos (¿humanos?) o de prisioneros famélicos que deliran.
-B	<b>La Muralla</b>, grandiosa e implacable, de 50 pies de alto y 20 de ancho, que abarca toda la anchura del paso.
-B	<b>Una puerta en la Muralla</b>, cerrada, por supuesto; el Camino Real termina 50 pies antes de llegar a ella.
+B	<b>La Muralla</b>, grandiosa e implacable, de 15 metros de alto y 6 de ancho, que abarca toda la anchura del paso.
+B	<b>Una puerta en la Muralla</b>, cerrada, por supuesto; el Camino Real termina 15 metros antes de llegar a ella.
 B	<b>La Ladera Este</b>, salpicada de viviendas, establos y huertos en terrazas, todo ello conectado por escaleras estrechas y senderos en zigzag.
 B	<b>Una cascada</b> se precipita por la ladera este, al norte de la muralla. Su agua se desvía a los huertos y las cisternas.
 B	<b>La Ladera Oeste</b>, con antiguas estructuras a escala de gigante, que ahora sirven de dormitorios, cocinas y demás para monjes y guardianes.
@@ -183,9 +183,9 @@ B	<b>Hipotermia y congelación</b> (página 489), si te quedas a la intemperie c
 B	<b>Desprendimientos de rocas</b> (página 376) o <b>aludes</b> (página 489) en invierno
 H3	Fortificaciones
 B	<b>Tulpas</b> (página 324) menores que vigilan la subida y avisan a la fortaleza de los visitantes
-B	Una muralla de piedra lisa, de 50 pies de alto y 20 de ancho
+B	Una muralla de piedra lisa, de 15 metros de alto y 6 de ancho
 B	Adarves y almenas en lo alto de la muralla
-B	Un último tramo de acercamiento, de unos 50 pies, sin la protección de los Caminos de los Hacedores
+B	Un último tramo de acercamiento, de unos 15 metros, sin la protección de los Caminos de los Hacedores
 B	Una puerta enorme de madera y bronce
 B	Tras la puerta, una barbacana llena de buheras
 B	Puertas hábilmente ocultas que solo se abren desde dentro

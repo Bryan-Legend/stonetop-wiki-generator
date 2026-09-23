@@ -15,7 +15,7 @@ C	… pasa unas horas copiándolas, con el riesgo de cometer un error.
 C	… pasa semanas trazando las runas sobre objetos, hasta que brillen plateadas y se desvanezcan.
 H3	Runas de Preservación
 P	Cuando <b><i>trazas las runas por el interior de una</i></b> <b><i>sala o un recipiente</i></b>, brillan plateadas y se desvanecen, protegiendo el contenido del polvo, la descomposición, la herrumbre, etc. Pierde 1 HP, más 1 HP por cada una de las siguientes que se cumpla:
-B	El recipiente o la sala mide más de unos pocos pies en alguna dimensión
+B	El recipiente o la sala mide más de un par de metros en alguna dimensión
 B	El recipiente es portátil (si no, el efecto termina si se mueve)
 B	El efecto dura indefinidamente, mientras las runas estén intactas (si no, empieza cuando se sella la sala o el recipiente y termina cuando se abre)
 P	Una vez colocadas las runas, tira +CON: <b>con</b> <b>10+</b>, recuperas los HP perdidos con normalidad; <b>con 7-9</b>, no puedes recuperar los HP perdidos hasta que pase una estación <i>o</i> termine el efecto, lo que ocurra antes; <b>con 6-</b>, no puedes recuperar los HP perdidos hasta que termine el efecto

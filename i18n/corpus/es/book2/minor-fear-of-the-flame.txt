@@ -8,7 +8,7 @@
 PAGE	512
 H3	Una alfombra ricamente tejida
 P	◇◇, <i>mágico</i>
-P	Desenrollada mide unos 4 pies por 7 y está tejida con dibujos estilizados de fuego y llamas. En el tejido se ven parpadeantes runas de los Hacedores, siempre desenfocadas pero que insinúan poder.
+P	Desenrollada mide unos 1,2 m por 2 m y está tejida con dibujos estilizados de fuego y llamas. En el tejido se ven parpadeantes runas de los Hacedores, siempre desenfocadas pero que insinúan poder.
 P	Puedes desentrañar los secretos de esta alfombra, pero antes debes…
 C	… ser marcado por el fuego, abandonándote al pánico o al dolor de las quemaduras.
 C	… después, pasar semanas meditando sobre la alfombra y estudiando las runas, ahora nítidas.

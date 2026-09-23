@@ -8,7 +8,7 @@
 PAGE	513
 H3	Una enorme esfera de madera
 P	<i>inmóvil</i>
-P	Medio enterrada y casi cubierta de vegetación, mide unos 4 pies de diámetro y pesa cientos de libras.
+P	Medio enterrada y casi cubierta de vegetación, mide unos 1,2 m de diámetro y pesa cientos de kilos.
 P	Está extrañamente bien conservada y adornada con intrincados pictogramas. Cerca se pudren unas cuantas esferas más.
 P	Los pictogramas representan una especie de receta, que puedes aprender, pero debes...
 C	… primero desenterrar y limpiar la esfera.

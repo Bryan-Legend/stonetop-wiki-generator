@@ -14,7 +14,7 @@ PB
 P	Un escudo de roble astado, lustroso por el largo uso, ribeteado de bronce y adornado con un cráneo estilizado de bisonte (wisent).
 P	Pesa más de lo que parece, pero su peso te infunde confianza, como si cualquiera fuera un necio por meterse con un titán como tú.
 HR
-P	Cuando <b><i>portas el Escudo a la vista</i></b>, las criaturas naturales se apartan de tu camino y te tratan con el respeto que mostrarían a un bisonte de 1000 libras.
+P	Cuando <b><i>portas el Escudo a la vista</i></b>, las criaturas naturales se apartan de tu camino y te tratan con el respeto que mostrarían a un bisonte de 450 kg.
 P	Cuando <b><i>usas el Escudo para Defender con ambos pies bien plantados en el suelo,</i></b> mientras tengas Preparación no se te puede mover ni derribar. Cuando <b><i>gastas Preparación para devolver el golpe a un atacante</i></b>, además frenas su impulso, lo haces retroceder o lo dejas tambaleándose (o todo ello).
 P	Cuando <b><i>realizas los ritos sagrados de las brujas del bosque</i></b>, a solas en el bosque bajo una luna creciente despejada, marca 1:
 MARK	5
@@ -38,7 +38,7 @@ HR
 H2	Consecuencias
 HR
 C	Desprendes un olor fuerte y almizclado por mucho que te bañes. Es característico y fácil de reconocer.
-C	En los próximos días creces entre 4 y 6 pulgadas.
+C	En los próximos días creces entre 10 y 15 cm.
 C	En los próximos días tu masa corporal se duplica. Tu tamaño y tu fuerza relativa siguen más o menos igual.
 C	Consumes cada día el doble de la cantidad normal de suministros o provisiones.
 C	Haces un ruido desmesurado; tu voz retumba, tus pies pisan con fuerza e incluso tu respiración es ruidosa.

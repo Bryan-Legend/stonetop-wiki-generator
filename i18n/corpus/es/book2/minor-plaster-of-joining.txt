@@ -21,4 +21,4 @@ P	Usos ◇◇◇
 P	Cuando <b><i>viertes agua, una pizca de sangre y reactivos especiales (Valor 1) en la urna y cantas sobre</i></b> <b><i>ella durante un día y una noche enteros</i></b>, la urna gana 1 uso (máximo 3 usos) de argamasa.
 P	Cuando <b><i>usas la argamasa para unir dos o más trozos</i></b> <b><i>de piedra, roca o cristal</i></b> y dejas que fragüe unas horas, los trozos se funden entre sí. Los materiales distintos muestran una juntura natural y gradual.
 P	Los materiales similares se funden sin dejar juntura alguna.
-P	Un solo uso de argamasa puede cubrir una zona de unas pocas pulgadas de ancho y de alto. Varios usos pueden unir trozos de piedra más grandes. La argamasa sin usar se conserva indefinidamente mientras la urna siga sellada.
+P	Un solo uso de argamasa puede cubrir una zona de unos centímetros de ancho y de alto. Varios usos pueden unir trozos de piedra más grandes. La argamasa sin usar se conserva indefinidamente mientras la urna siga sellada.

@@ -359,7 +359,7 @@ P	• Blandir las plantas que la rodean como un arma
 P	• Poseer un árbol cercano (vulnerable al fuego, casi imposible de dañar con la mayoría de armas)
 P	• Purgar o atar una corrupción antinatural
 P	• Conceder un secreto o un favor a un amigo del bosque
-P	A medida que maduran, las Brennauwed se vuelven más sedentarias, y solo se manifiestan a través de su propio árbol o poseyendo otros árboles en unas pocas millas a la redonda. Una birdwaig siente un afecto maternal por todas las cosas naturales de su territorio, y volverá el mismísimo bosque contra cualquiera que pretenda hacerle daño.
+P	A medida que maduran, las Brennauwed se vuelven más sedentarias, y solo se manifiestan a través de su propio árbol o poseyendo otros árboles en unos kilómetros a la redonda. Una birdwaig siente un afecto maternal por todas las cosas naturales de su territorio, y volverá el mismísimo bosque contra cualquiera que pretenda hacerle daño.
 HR
 ICON	icons/spirit.svg
 H3	Hennain

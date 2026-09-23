@@ -6,7 +6,7 @@
 # nav_label: Los Caminos de los Hacedores
 # description: Los Caminos de los Hacedores cerca de Stonetop: su magia protectora, la Encrucijada, los Caminos Rotos, los apartaderos, los compañeros de viaje, los nosgalau y la caligrafía rúnica.
 PAGE	270
-P	El Camino del Oeste va de Stonetop a la <b>Cava de Gordin (Gordin's Delve)</b> (página 190). A unos 24 km del pueblo, cruza el Camino Real (Highway), que va desde el <b>Paso de la Barrera (Barrier Pass)</b> (página 26) hasta <b>Lindemarjal (Marshedge)</b> (página 274) y más allá.
+P	El Camino del Oeste va de Stonetop a la <b>Cava de Gordin (Gordin's Delve)</b> (página 190). A unos 25 km del pueblo, cruza el Camino Real (Highway), que va desde el <b>Paso de la Barrera (Barrier Pass)</b> (página 26) hasta <b>Lindemarjal (Marshedge)</b> (página 274) y más allá.
 P	Los caminos son anchos (~6 m), grandiosos y sobrecogedores, obra evidente de los <b>Hacedores (Makers)</b> (página 264). Han durado siglos, extrañamente bien conservados y libres de vegetación.
 B	Grandes losas de basalto encajadas, ligeramente biseladas, que se extienden hasta el horizonte
 B	Un hilillo de agua de lluvia o de nieve derretida que corre por unas cunetas que nunca se atascan
@@ -26,7 +26,7 @@ P	<b>con 10+</b>, adelante; <b>con 7-9</b>, actúas pero tienes desventaja en cu
 H2	La Encrucijada
 HR
 P	El Camino del Oeste cruza el Camino Real a unos
-P	24 km del pueblo. Cerca crece un bosquecillo de <b>árboles dool</b> (página 73). A pesar de las salvaguardas, la Encrucijada (Crossroads) tiene algo inquietante. Todo el mundo lo nota. A nadie le gusta hablar de ello.
+P	25 km del pueblo. Cerca crece un bosquecillo de <b>árboles dool</b> (página 73). A pesar de las salvaguardas, la Encrucijada (Crossroads) tiene algo inquietante. Todo el mundo lo nota. A nadie le gusta hablar de ello.
 Q	¿Qué hay en este lugar que te dice que aquí el velo entre la vida y la muerte es fino?
 Q	¿El fantasma de quién se dice que ronda las Llanuras cerca de la Encrucijada?
 PAGE	271

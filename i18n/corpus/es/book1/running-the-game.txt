@@ -240,7 +240,7 @@ P	<i>«“¿Vvvasil? Cielosss, no. Vvvasil</i> <i>se marchó del pueblo el otoñ
 HR
 P	<i>«¿Qué ha pasado aquí hace poco? Bueno,</i> <i>hay como una docena de rastros de huellas en el</i> <i>barro, todo revuelto como si hubiera habido una</i> <i>pelea. También hay unas cuantas salpicaduras de sangre en</i> <i>el follaje. Está bastante claro que a Lowri</i> <i>la asaltaron los crinwin».</i>
 HR
-P	<i>«Uf, ¿un 6-? Bueno, recorres las colinas durante</i> <i>el resto del día y... supongo que no la</i> <i>encuentras. No, espera. ¿Sabes qué? Sí que</i> <i>encuentras a Cadi. A cosa de media milla</i> <i>del campamento maderero, encuentras su cuerpo.</i> <i>Algo la atravesó, la ensartó de parte a parte</i> <i>por el vientre».</i>
+P	<i>«Uf, ¿un 6-? Bueno, recorres las colinas durante</i> <i>el resto del día y... supongo que no la</i> <i>encuentras. No, espera. ¿Sabes qué? Sí que</i> <i>encuentras a Cadi. A cosa de 800 metros</i> <i>del campamento maderero, encuentras su cuerpo.</i> <i>Algo la atravesó, la ensartó de parte a parte</i> <i>por el vientre».</i>
 HR
 PAGE	181
 H3	Hacer una pregunta provocadora
@@ -257,7 +257,7 @@ H3	Poner a alguien en un aprieto
 P	Es una versión más agresiva de <b>anunciar problemas</b>: tienen que hacer algo, ya, o la cosa se pondrá fea.
 P	«Alguien» puede ser un PJ o un PNJ, y puedes jugar con el foco. Quizá la persona a la que pones en el aprieto no sea la que hace algo al respecto.
 HR
-P	<i>«¡Por los pelos! Das el salto, pero te estampas</i> <i>contra la rama. Resbalas y a duras penas consigues agarrarte. Estás colgando de esa rama</i> <i>así, jadeando, a unos 25 metros de altura,</i> <i>y empiezan a fallarte las fuerzas. ¿Qué</i> <i>haces?».</i>
+P	<i>«¡Por los pelos! Das el salto, pero te estampas</i> <i>contra la rama. Resbalas y a duras penas consigues agarrarte. Estás colgando de esa rama</i> <i>así, jadeando, a unos 24 metros de altura,</i> <i>y empiezan a fallarte las fuerzas. ¿Qué</i> <i>haces?».</i>
 HR
 P	<i>«El grandullón se levanta y te fulmina con la mirada</i> <i>desde arriba. “¿Cómo me has llamado, rata</i> <i>esmirriada?”. Rhianna, ves lo que pasa</i> <i>y te fijas en que otros tres tipos, fornidos,</i> <i>con pinta de mineros, se levantan también, y ninguno</i> <i>sonríe. ¿Qué haces?».</i>
 HR
@@ -423,7 +423,7 @@ P	<i>Yo</i> <b><i>anuncio problemas</i></b><i>. «Estás seguro de que Iwan</i> 
 P	<i>Hacen preguntas y aclaro un poco la situación (está oscuro, la pelea suena bastante</i> <i>cerca, ninguno conoce bien estas colinas).</i> <i>Entonces Rhianna dice: «Vamos. A las colinas».</i>
 P	<i>¡Eso cierra la escena! Hay un poco de juego libre</i> <i>mientras hablamos de logística. Vahid y Blodwen</i> <i>cogen una antorcha cada uno, encendida en el fuego de cocina.</i> <i>«¿Os ponéis en marcha?», pregunto. Sí.</i>
 P	<i>Abro el plano y describo la situación en</i> <i>general: «Está oscuro, las colinas son empinadas y</i> <i>boscosas, y os orientáis por el oído,</i> <i>siguiendo los ruidos de la batalla». Hago mi</i> <i>movimiento suave y</i> <b><i>les digo los requisitos</i></b><i>.</i> <i>«Si intentáis llegar rápido, eso</i> <i>desencadena Luchar como Uno Solo, y el peligro es</i> <i>que os perdáis, os separéis u os hagáis daño por</i> <i>el camino. Si os lo tomáis con calma y avanzáis</i> <i>con cuidado, no desencadenaréis ningún movimiento, pero</i> <i>probablemente no lleguéis a tiempo de ayudar</i> <i>en la pelea. ¿Qué hacéis?».</i>
-P	<i>Deciden Luchar como Uno Solo. Resolvemos</i> <i>el movimiento y todos sacan buenas tiradas, así que</i> <i>pasamos a la siguiente escena. «Es una carrera desesperada,</i> <i>medio a ciegas por el bosque, pero entonces</i> <i>salís a un claro. A la luz parpadeante de vuestras antorchas, veis a Eira y a Lowri</i> <i>plantando cara a un bruto enorme y descomunal,</i> <i>de unos 4 metros de alto y la mitad de ancho».</i>
+P	<i>Deciden Luchar como Uno Solo. Resolvemos</i> <i>el movimiento y todos sacan buenas tiradas, así que</i> <i>pasamos a la siguiente escena. «Es una carrera desesperada,</i> <i>medio a ciegas por el bosque, pero entonces</i> <i>salís a un claro. A la luz parpadeante de vuestras antorchas, veis a Eira y a Lowri</i> <i>plantando cara a un bruto enorme y descomunal,</i> <i>de unos 3,5 metros de alto y la mitad de ancho».</i>
 PAGE	191
 HR
 P	<i>Apenas tomo aire antes de hacer mi movimiento</i> <i>suave (</i><b><i>poner a alguien en un aprieto</i></b><i>): «Levanta</i> <i>un árbol pequeño como si fuera un garrote y ruge, a punto</i> <i>de aplastarlas a las dos, y ellas se quedan</i> <i>mirando a esa cosa, boquiabiertas». Me he estado dirigiendo al grupo, con el foco abierto,</i> <i>así que ahora lo cierro. «Rhianna, Blodwen,</i> <i>habéis llegado primero, ¿qué hacéis?».</i>

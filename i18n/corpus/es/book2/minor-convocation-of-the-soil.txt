@@ -8,7 +8,7 @@
 PAGE	524
 H3	Una losa hundida
 P	<i>inmóvil</i>
-P	Un gran bloque de piedra antiguo, de quizá 5 pies de ancho, cubierto de barro y algas. Tiene runas de los Hacedores (Makers), apenas visibles. Runas de la tierra, de los espíritus y del rejuvenecimiento.
+P	Un gran bloque de piedra antiguo, de quizá 1,5 metros de ancho, cubierto de barro y algas. Tiene runas de los Hacedores (Makers), apenas visibles. Runas de la tierra, de los espíritus y del rejuvenecimiento.
 P	La losa revela el funcionamiento de un ritual, que puedes aprender si…
 C	… sacas la losa del lodo.
 C	… la limpias con cuidado.

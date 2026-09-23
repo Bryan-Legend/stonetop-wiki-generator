@@ -50,8 +50,8 @@ H2	Lugares
 HR
 B	<b>A chegada</b>: depois de subir os ziguezagues, a Via Principal se endireita e entra num passo largo, com encostas rochosas e íngremes dos dois lados.
 B	<b>Grandes jaulas ladeiam as encostas</b>, balançando ao vento, cheias de ossos humanos (?) ou de prisioneiros famintos e delirantes.
-B	<b>A Muralha</b>, imponente e implacável, de 50 pés de altura e 20 de largura, cobrindo toda a largura do passo.
-B	<b>Um portão na Muralha</b>, fechado, claro, com a Via Principal terminando 50 pés antes dele.
+B	<b>A Muralha</b>, imponente e implacável, de 15 metros de altura e 6 de largura, cobrindo toda a largura do passo.
+B	<b>Um portão na Muralha</b>, fechado, claro, com a Via Principal terminando 15 metros antes dele.
 B	<b>A Encosta Leste</b>, salpicada de moradias, estábulos e hortas em terraços, tudo ligado por escadas estreitas e caminhos em ziguezague.
 B	<b>Uma cachoeira</b> despenca pela encosta leste, ao norte da muralha. Desviada para hortas e cisternas.
 B	<b>A Encosta Oeste</b>, com antigas construções à escala dos gigantes, hoje usadas como dormitórios, cozinhas e afins para monges e guardiões.
@@ -183,9 +183,9 @@ B	<b>Hipotermia e frieiras</b> (página 489), se você ficar exposto ao frio
 B	<b>Deslizamentos de pedras</b> (página 376) ou <b>avalanches</b> (página 489) no inverno
 H3	Fortificações
 B	<b>Tulpas</b> menores (página 324) vigiando a chegada, avisando a fortaleza sobre visitantes
-B	Uma muralha de pedra lisa, de 50 pés de altura e 20 de largura
+B	Uma muralha de pedra lisa, de 15 metros de altura e 6 de largura
 B	Passadiços e ameias no alto da muralha
-B	Um trecho final de chegada, uns 50 pés sem a proteção das Estradas dos Construtores
+B	Um trecho final de chegada, uns 15 metros sem a proteção das Estradas dos Construtores
 B	Um portão enorme de madeira e bronze
 B	Depois do portão, uma barbacã forrada de buracos de matar
 B	Portas engenhosamente ocultas que só abrem por dentro

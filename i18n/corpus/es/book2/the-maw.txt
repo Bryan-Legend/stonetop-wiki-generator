@@ -6,7 +6,7 @@
 # nav_label: Las Fauces
 # description: Las Fauces (the Maw), una cueva siniestra del Gran Bosque a unas horas al norte de Stonetop: impresiones, preguntas, ganchos y lo que podría esconderse dentro.
 PAGE	281
-P	Hay una cueva en el <b>Gran Bosque (Great Wood)</b> (página 200), a unas horas al norte de Stonetop. No crece maleza a menos de 30 pies de ella, y la entrada está sembrada de huesos. Los tramperos y cazadores la evitan, y aseguran haber oído ruidos extraños que llegan de allí, sobre todo de noche.
+P	Hay una cueva en el <b>Gran Bosque (Great Wood)</b> (página 200), a unas horas al norte de Stonetop. No crece maleza a menos de 9 metros de ella, y la entrada está sembrada de huesos. Los tramperos y cazadores la evitan, y aseguran haber oído ruidos extraños que llegan de allí, sobre todo de noche.
 H2	Impresiones
 HR
 B	Un silencio antinatural, el bosque conteniendo el aliento

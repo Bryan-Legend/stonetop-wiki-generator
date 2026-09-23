@@ -32,8 +32,8 @@ PAGE	382
 HR
 P	<i>Vahid, Caradoc, Blodwen, Rhianna y</i> <i>Andras están explorando las ruinas en torno al Lago</i> <i>de los Tres Aquelarres (Three Coven Lake). Suben por una escalinata amplia</i> <i>y antigua que asciende por la ladera de un risco. Sería</i> <i>una caída terrible sobre agua llena de rocas, pero hasta ahora los escalones</i> <i>estaban bien construidos y eran estables.</i>
 P	<i>Decido cambiar eso e</i> <b><i>introducir un peligro</i></b><i>. «La escalinata y el risco se curvan hacia dentro, alejándose</i> <i>del lago, y luego los escalones se nivelan en un breve</i> <i>rellano. Vahid, tú vas delante, así que lo ves</i> <i>primero. El rellano se ha derrumbado en parte y,</i> <i>aunque queda lo suficiente para pasar corriendo, no</i> <i>parece del todo estable. Los escalones del</i> <i>otro lado parecen estar bien, eso sí. ¿Qué hacéis?».</i>
-P	<i>Hacen algunas preguntas sobre la caída (unos</i> <i>15 o 18 metros, sobre rocas) y el tamaño del</i> <i>rellano (originalmente de unos 3,5 metros de lado,</i> <i>pero en casi toda su extensión solo quedan unos 60 o 90 centímetros,</i> <i>pegados a la pared del acantilado, y un hueco de</i> <i>casi 3 metros).</i>
-P	<i>«¿Solo 3 metros? Entonces podemos saltarlo,</i> <i>¿no?», dice Caradoc.</i>
+P	<i>Hacen algunas preguntas sobre la caída (unos</i> <i>15 o 18 metros, sobre rocas) y el tamaño del</i> <i>rellano (originalmente de unos 3,5 metros de lado,</i> <i>pero en casi toda su extensión solo quedan unos 60 centímetros o 1 metro,</i> <i>pegados a la pared del acantilado, y un hueco de</i> <i>casi 2,7 metros).</i>
+P	<i>«¿Solo 2,7 metros? Entonces podemos saltarlo,</i> <i>¿no?», dice Caradoc.</i>
 P	<i>Les</i> <b><i>digo las consecuencias y pregunto</i></b><i>. «Desde</i> <i>luego se puede saltar, pero no es seguro.</i> <i>Cada uno tendrá que Desafiar el Peligro, y cualquiera que lleve una carga normal o pesada tendrá</i> <i>desventaja. Ah, y no creo que Andras</i> <i>pueda lograrlo: aún se está curando esa herida</i> <i>de flecha en la pierna, ¿verdad? Pero los demás</i> <i>podéis intentarlo si queréis. ¿Qué hacéis?».</i>
 HR
 P	<i>Deciden no saltar. Vahid tantea</i> <i>el rellano con su lanza y, por lo demás,</i> <i>estudia la situación: Busca Indicios.</i> <i>Saca un 7-9. «¿Qué hay aquí que me sea útil o valioso?»,</i> <i>pregunta.</i>
@@ -84,7 +84,7 @@ PAGE	385
 HR
 P	<i>En nuestra primera aventura hay un</i> <i>nido de crinwin en ruinas con el que los PJs</i> <i>podrían toparse de camino a</i> <i>la guarida de Sajra, el swyn.</i>
 P	<i>Sospecho que los PJs podrían</i> <i>querer investigar el nido, o</i> <i>prenderle fuego, pero sé que está</i> <i>muy alto, en un árbol enorme. La escalada</i> <i>sería sin duda un riesgo.</i>
-P	<i>Tomo algunas notas: el nido está a unos 20 metros</i> <i>de altura y las ramas más bajas están quizá a 12</i> <i>metros. El tronco mide quizá 3 metros de ancho.</i> <i>Busco imágenes de secuoyas rojas y</i> <i>hago un pequeño boceto de referencia.</i>
+P	<i>Tomo algunas notas: el nido está a unos 21 metros</i> <i>de altura y las ramas más bajas están quizá a 12</i> <i>metros. El tronco mide quizá 3 metros de ancho.</i> <i>Busco imágenes de secuoyas rojas y</i> <i>hago un pequeño boceto de referencia.</i>
 P	<i>Una caída al trepar a un árbol tan alto podría</i> <i>sin duda matar a una persona, pero no es muerte</i> <i>segura. Desde luego es grande y aterradora, zarandearía</i> <i>a cualquiera y la armadura no</i> <i>serviría de nada, así que fijo el daño en</i>
 P	<i>1d10+2 (ignora la armadura,</i> contundente<i>).</i>
 HR

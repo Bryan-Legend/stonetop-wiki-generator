@@ -97,7 +97,7 @@ H3	Tesoros diversos
 B	Una pequeña talla de madera de alguna bestia o quimera (Valor 0)
 B	◇ Punta de lanza de sílex enorme, exquisitamente tallada (<i>tosco</i>, <i>incómodo</i>, Valor 1 para un coleccionista) ◇◇ Gran cuenco de madera con tapa, sellado con cera de abeja y lleno de hierba medicinal seca (Valor 2)
 B	Esqueleto casi enterrado de una bestia del tamaño de un elefante, con los huesos tallados con glifos y pictogramas que cuentan una historia importante (<i>inmóvil</i>, Valor 2)
-B	Una hectárea de bosque con 3d6 variedades de <b>flora útil</b> (página 458) creciendo en cuidada armonía; 1d6-1 se pueden cosechar en este momento.
+B	Media hectárea de bosque con 3d6 variedades de <b>flora útil</b> (página 458) creciendo en cuidada armonía; 1d6-1 se pueden cosechar en este momento.
 HR
 ICON	icons/treasure.svg
 H3	Una máscara de madera

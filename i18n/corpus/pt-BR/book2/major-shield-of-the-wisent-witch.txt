@@ -14,7 +14,7 @@ PB
 P	Um escudo de carvalho-chifre, lustroso pelo longo uso, reforçado com bronze e adornado com um crânio estilizado de bisão.
 P	É mais pesado do que parece, mas o peso lhe dá uma sensação de confiança, como se só um tolo fosse se meter com um titã como você.
 HR
-P	Quando você <b><i>porta o Escudo à vista</i></b>, as criaturas naturais lhe dão bastante espaço e o tratam com o respeito que dariam a um bisão de meia tonelada.
+P	Quando você <b><i>porta o Escudo à vista</i></b>, as criaturas naturais lhe dão bastante espaço e o tratam com o respeito que dariam a um bisão de 450 kg.
 P	Quando você <b><i>usa o Escudo para Defender com os dois pés firmemente plantados no chão,</i></b> enquanto guardar Prontidão não pode ser movido nem derrubado. Quando você <b><i>gasta Prontidão para revidar contra um atacante</i></b>, também quebra o ímpeto dele, o empurra para trás e/ou o deixa cambaleando.
 P	Quando você <b><i>realiza os ritos sagrados das bruxas da floresta</i></b>, sozinho na mata sob uma lua crescente límpida, marque 1:
 MARK	5

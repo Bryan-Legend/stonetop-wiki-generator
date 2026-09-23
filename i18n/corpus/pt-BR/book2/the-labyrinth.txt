@@ -7,7 +7,7 @@
 # description: O Labirinto sob os Picos de Huffel: como navegá-lo, seus terrenos e sítios, o Cofre do Portal, os thraulgwyn, as Profundezas e o Poço Absoluto.
 PAGE	242
 P	Entre nas Cavas que dão nome à <b>Cava de Gordin</b> (página 190) e desça. Continue descendo. Pegue uma passagem lateral, uma sem mineiros.
-P	Desça mais ainda. Por fim, os túneis talhados pelos Construtores e os poços de mina de corte tosco dão lugar a cavernas naturais e tubos de lava, que serpenteiam e se curvam e correm por milhas. O Labirinto.
+P	Desça mais ainda. Por fim, os túneis talhados pelos Construtores e os poços de mina de corte tosco dão lugar a cavernas naturais e tubos de lava, que serpenteiam e se curvam e correm por quilômetros. O Labirinto.
 P	Esses túneis se estendem sob os <b>Picos de Huffel</b> (página 236), ligando-se de vez em quando à superfície. Talvez cheguem mais longe, às <b>Presa-Branca</b> (página 480), às <b>Terras Escalonadas</b> (página 372) ou até à <b>Grande Mata</b> (página 200).
 P	Os <b>Ustrina</b> (página 464) saem do Labirinto quando visitam a Cava de Gordin para comerciar. Mas, quando perguntados, afirmam que ele não é seu lar.
 P	Outras coisas também saem daqueles túneis, para atacar os mineiros nas Cavas. Os sobreviventes contam histórias cheias de horror extravagante.
@@ -151,14 +151,14 @@ B	Um vasto lago subterrâneo, talvez o mesmo que se liga à <b>Segunda</b> <b>Ca
 B	A <b>Floresta Pendente</b>, um túnel longo e largo cheio de raízes finas pendendo da superfície. Cheio de grilos e de coisas que os comem.
 B	O <b>Forte-Espelho</b>, um posto avançado dos Senhores da Forja, bastante intacto, forrado de mosaicos reflexivos. Fica sobre um poço sem fundo (?).
 B	O <b>Sopro Sonhador</b>, uma poça de fonte termal. Bolor e fungos encrostam a pedra em volta. As águas restauram o vigor, mas causam uma euforia estonteante.
-B	O <b>Glutão Vermelho</b>, uma estátua sapoide de 40 pés de altura e com chifres, com um braseiro sempre aceso e rubis do tamanho de um punho (Valor 4) por olhos. Reverenciado pelos thraulgwyn.
+B	O <b>Glutão Vermelho</b>, uma estátua sapoide de 12 metros de altura e com chifres, com um braseiro sempre aceso e rubis do tamanho de um punho (Valor 4) por olhos. Reverenciado pelos thraulgwyn.
 B	As portas trancadas do <b>Cofre do Portal</b> (próxima coluna), frias e imponentes.
 HR
 H3	O Cofre do Portal
-P	A cinco horas das Cavas (se você conhece o caminho mais curto) há um par de portas duplas: 30 pés de altura, de bronze, cobertas de salvaguardas rúnicas e relevos das glórias dos Senhores da Forja.
+P	A cinco horas das Cavas (se você conhece o caminho mais curto) há um par de portas duplas: 9 metros de altura, de bronze, cobertas de salvaguardas rúnicas e relevos das glórias dos Senhores da Forja.
 P	Uma fechadura engenhosa as sela. Só existem seis chaves; os <b>Ustrina</b> (página 464) têm cinco.
-P	Dentro há um vasto espaço octogonal, de 60 pés do chão ao teto inclinado. Seis de seus cantos têm nichos de 20 pés de altura, cada um abrigando um grande <b>constructo de metal</b> (página 167) que ataca qualquer grupo que não traga uma das chaves.
-P	Uma laje de pedra branca, de 30 pés de altura e 3 de espessura, ergue-se no centro do cofre.
+P	Dentro há um vasto espaço octogonal, de 18 metros do chão ao teto inclinado. Seis de seus cantos têm nichos de 6 metros de altura, cada um abrigando um grande <b>constructo de metal</b> (página 167) que ataca qualquer grupo que não traga uma das chaves.
+P	Uma laje de pedra branca, de 9 metros de altura e 1 de espessura, ergue-se no centro do cofre.
 P	Cada face é gravada com um círculo mágico. É um <b>portal</b> (página 306), ligado aos da <b>Torre em Ruínas</b> (página 332), do <b>Lago das Três Assembleias</b> (página 438), de <b>Vor Svetelik</b> (página 468) e assim por diante. Está plenamente funcional e pode ser usado por meio de <b>Abrir o Caminho</b> (página 517).
 P	Os Ustrina usam este lugar para ir à Cava de Gordin e para voltar a seus lares distantes. Nenhuma seita controla o Cofre, e eles o tratam como terreno neutro. Mas isso não vale para quem não é Ustrina.
 PAGE	247
@@ -397,8 +397,8 @@ P	• Comer através da rocha sólida
 P	• Irromper da parede de um túnel
 P	• Exalar gás sulfuroso e sufocante
 P	• Derreter o metal que o perfura
-P	Criaturas da primeira era, coisas de fogo e pedra. São segmentados, com 3 pés de espessura e 20 de comprimento, cobertos de placas sobrepostas que brilham vermelho nas juntas. O ar ondula de calor em volta deles. Não têm olhos, só uma grande abertura de boca e fileiras concêntricas de dentes trituradores que derretem e escavam a rocha. Túneis sinuosos se estendem atrás deles, forrados de escória endurecida em pedra encordoada.
-P	Os vermes descritos aqui têm apenas alguns séculos, e são os mais prováveis de se encontrar. Nas Profundezas sobrevivem outros mais velhos e maiores, de até 10 pés de largura e mais de 100 de comprimento (<i>enormes</i>, +6 HP, +2 de dano, e role 1d12 em vez de 1d10). Em eras remotas, vermes ainda maiores escavaram boa parte do Labirinto.
+P	Criaturas da primeira era, coisas de fogo e pedra. São segmentados, com 1 metro de espessura e 6 de comprimento, cobertos de placas sobrepostas que brilham vermelho nas juntas. O ar ondula de calor em volta deles. Não têm olhos, só uma grande abertura de boca e fileiras concêntricas de dentes trituradores que derretem e escavam a rocha. Túneis sinuosos se estendem atrás deles, forrados de escória endurecida em pedra encordoada.
+P	Os vermes descritos aqui têm apenas alguns séculos, e são os mais prováveis de se encontrar. Nas Profundezas sobrevivem outros mais velhos e maiores, de até 3 metros de largura e mais de 30 de comprimento (<i>enormes</i>, +6 HP, +2 de dano, e role 1d12 em vez de 1d10). Em eras remotas, vermes ainda maiores escavaram boa parte do Labirinto.
 ICON	icons/people.svg
 H3	Saqueador thraulgwyn
 P	<i>Grupo</i>, <i>corrompido</i>, <i>furtivo</i>, <i>organizado</i>, <i>cauteloso</i>

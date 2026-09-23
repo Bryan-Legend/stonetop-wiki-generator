@@ -212,4 +212,4 @@ P	<b>Instinto</b> comer e crescer
 P	• Agarrar-se a paredões, camuflado
 P	• Sobrevoar a presa em rasante
 P	• Derrubar a presa de um beiral
-P	Os frythancs adultos que caçam nas <b>Planícies</b> (página 126) são terrores. Os filhotes, felizmente, ficam nas montanhas. Lá, caçam cabras e ovelhas e, de vez em quando, um viajante desatento. Os filhotes não são nem de longe tão perigosos quanto os pais adultos, mas, ainda assim, vamos ver como você se sai quando pássaros de 12 pés de envergadura tentam arrancar você de uma trilha em ziguezague.
+P	Os frythancs adultos que caçam nas <b>Planícies</b> (página 126) são terrores. Os filhotes, felizmente, ficam nas montanhas. Lá, caçam cabras e ovelhas e, de vez em quando, um viajante desatento. Os filhotes não são nem de longe tão perigosos quanto os pais adultos, mas, ainda assim, vamos ver como você se sai quando pássaros de 3,5 metros de envergadura tentam arrancar você de uma trilha em ziguezague.

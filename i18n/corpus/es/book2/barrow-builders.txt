@@ -292,7 +292,7 @@ P	12 Ya activada/desactivada anteriormente
 PB
 P	Los materiales especiales pueden incluir <b>crecimientos peligrosos</b> (página 219), <b>oricalco</b> (página 162), <b>hierro negro</b> (página 307), <b>hielo oscuro</b> (página 322), <b>vidrio de los Hacedores</b> (página 388), <b>eterio</b> (página 404), <b>cristal rojo</b> (página 424) u otras cosas de tu invención.
 P	<b>Ejemplos:</b>
-B	Un foso de 15 pies de profundidad con el fondo cubierto de pinchos oxidados; tapado con una tela tensa, guijarros y polvo
+B	Un foso de 4,5 metros de profundidad con el fondo cubierto de pinchos oxidados; tapado con una tela tensa, guijarros y polvo
 B	Una ranura recorre el techo de un túnel bajo; al pisar una losa se suelta un hacha pendular
 B	Una caja rompecabezas sobre un ataúd señuelo; trastear con ella libera del ataúd unos pequeños constructos apuñaladores
 B	La espada de un cadáver; al moverla se tira de un alambre que vuelca una urna llena de sal y libera a un espectro atrapado

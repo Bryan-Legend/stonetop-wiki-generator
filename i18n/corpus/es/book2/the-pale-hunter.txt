@@ -86,7 +86,7 @@ ICON	icons/spirit.svg
 H3	Sabuesos fantasmales
 P	<i>Horda</i>, <i>espíritu</i>, <i>aterrador</i>, <i>fiero</i>, <i>organizado</i>
 P	<b>HP</b> 10; <b>Armadura</b> 1 (carece de órganos), solo le daña la sal o cuando muerde <b>Daño</b> mordisco d6 con ventaja (<i>mano</i>, <i>agarrador</i>)
-P	<b>Cualidades especiales</b> atados al Cazador; solo pueden alejarse ~1 milla de él
+P	<b>Cualidades especiales</b> atados al Cazador; solo pueden alejarse ~1,5 km de él
 P	<b>Instinto</b> dar caza
 P	• Manifestar una forma hecha de niebla
 P	• Olfatear a la presa, o a los muertos

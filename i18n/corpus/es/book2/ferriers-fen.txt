@@ -7,7 +7,7 @@
 # description: Un laberinto de lodo, turba y ruinas corrompidas de los Señores Verdes, hogar de los suarachan, los trols del pantano y las Brujas del Sauce.
 PAGE	116
 P	El Pantano de Ferrier (Ferrier's Fen) se extiende entre el <b>Gran Bosque</b> (Great Wood) (página 200), las <b>Tierras Escalonadas</b> (Steplands) (página 372) y el <b>Manmarch del Norte</b> (North Manmarch) (página 282).
-P	Es un humedal inmenso, de 100 millas de ancho y 50 de norte a sur, alimentado por el <b>Arroyo</b> (Stream) (página 396), el Sruth cerca de <b>Lindemarjal</b> (Marshedge) (página 274) y muchos riachuelos más pequeños. Es un laberinto de terreno firme, charcas estancadas, arroyos poco profundos y caídas bruscas a aguas muy muy profundas. Y barro. Muchísimo barro.
+P	Es un humedal inmenso, de 160 km de ancho y 80 de norte a sur, alimentado por el <b>Arroyo</b> (Stream) (página 396), el Sruth cerca de <b>Lindemarjal</b> (Marshedge) (página 274) y muchos riachuelos más pequeños. Es un laberinto de terreno firme, charcas estancadas, arroyos poco profundos y caídas bruscas a aguas muy muy profundas. Y barro. Muchísimo barro.
 P	Hace mucho tiempo, esta zona fue la cuna de la civilización de <b>los</b> <b>Señores Verdes</b> (Green Lords) (página 210). Pero cuando sus sirvientes se rebelaron y los Señores Verdes abrazaron a las <b>Cosas de Abajo</b> (Things Below) (página 412), los demás <b>Hacedores</b> (Makers) (página 264) hundieron la región y destrozaron la civilización de los Señores Verdes. Sigue siendo un lugar roto, que rezuma magia antigua y corrupción.
 H2	Impresiones
 HR

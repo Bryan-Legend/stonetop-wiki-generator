@@ -72,8 +72,8 @@ P	¿Quién o qué más hay aquí? ¿Qué señales de su presencia podrían encon
 H2	Fuentes de luz y etiquetas
 P	Aquí tienes una referencia rápida:
 P	<b><i>Mano</i></b>: p. ej., una vela de junco. No ilumina más allá de tu alcance. Apenas basta para orientarse o leer.
-P	<b><i>Cerca, área</i></b>: p. ej., una vela, un candil de aceite o un farol. Proyecta luz a unos pocos pies, suficiente para que se orienten 2 personas.
-P	<b><i>Alcance, área</i></b>: p. ej., una antorcha. Ilumina hasta unos 10 pies, suficiente para que se oriente un grupo pequeño.
+P	<b><i>Cerca, área</i></b>: p. ej., una vela, un candil de aceite o un farol. Proyecta luz a un par de metros, suficiente para que se orienten 2 personas.
+P	<b><i>Alcance, área</i></b>: p. ej., una antorcha. Ilumina hasta unos 3 metros, suficiente para que se oriente un grupo pequeño.
 P	<b><i>Tosco</i></b>: p. ej., una vela de junco, un candil de aceite.
 P	Tiende a titilar o a apagarse si se mueve deprisa o con un poco de viento.
 P	<b><i>Peligroso</i></b>: p. ej., una antorcha. Una llama grande y abierta, humeante, que tiende a prender fuego a las cosas si no se tiene cuidado.
@@ -124,7 +124,7 @@ HR
 P	También podrías hacer un movimiento suave de DJ. <b>Agota</b> <b>sus recursos</b> mientras avanzan («Tacha otra hora de aceite de tu lámpara»). <b>Insinúa</b> <b>que hay más de lo que parece</b> («Es la tercera vez que veis esa marca»). <b>Señala</b> <b>un peligro inminente</b> («Un poco más adelante encontráis estos surcos, como de las garras de algo muy grande»).
 P	O, qué demonios. <b>Introduce un peligro</b> o <b>presenta un descubrimiento</b> en algún punto del camino y, bueno, resulta que es aquí donde transcurre la siguiente escena.
 P	<i>Blodwen se interesa por Andras, que le quita</i> <i>importancia. Luego retomo mi</i> <i>descripción. «Un poco más adelante, la escalera gira y</i> <i>sube por la ladera del risco. No hay barandilla, solo una caída a pico a vuestra izquierda, hasta las</i> <i>rocas y más agua de la que habéis visto nunca.</i> <i>¿Qué está pensando cada uno ahora mismo?».</i>
-P	<i>Cuando los jugadores responden, hago zoom para hacer</i> <i>mi movimiento. «Al cabo de una hora o así, la escalera pasa</i> <i>por un túnel corto en un peñasco. Y,</i> <i>Caradoc, algo… se mueve. Arriba, encima de</i> <i>ese peñasco, a unos 30 pies. Es una… ¿persona?</i> <i>No… más bien una marioneta de tamaño humano hecha</i> <i>de piedra, que os observa. ¿Qué hacéis?».</i>
+P	<i>Cuando los jugadores responden, hago zoom para hacer</i> <i>mi movimiento. «Al cabo de una hora o así, la escalera pasa</i> <i>por un túnel corto en un peñasco. Y,</i> <i>Caradoc, algo… se mueve. Arriba, encima de</i> <i>ese peñasco, a unos 9 metros. Es una… ¿persona?</i> <i>No… más bien una marioneta de tamaño humano hecha</i> <i>de piedra, que os observa. ¿Qué hacéis?».</i>
 P	<i>El grupo se detiene. Vahid Sabe Cosas (es un</i> <i>constructo de los Señores de Piedra, pero no sabe si es un</i> <i>autómata controlado, autónomo o qué). Intentan</i> <i>comunicarse, pero no responde. Caradoc</i> <i>intenta trepar hasta él, pero se escabulle.</i> <i>Siguen adelante, pero los sigue a distancia.</i>
 P	<i>«Esto no me gusta», dice Rhianna. «Leo el</i> <i>Terreno. ¿Cuál es el mejor sitio para una emboscada?</i> <i>Quiero atrapar a esa cosa». Decidimos que</i> <i>podrían atraerlo a una cámara de los</i> <i>riscos que Rhianna ve un poco más adelante, y</i> <i>¡ahí es donde planteamos la siguiente escena!</i>
 PAGE	352
@@ -606,9 +606,9 @@ P	<b>Si los PJs molestan un nido de crinwin</b>: los crinwin del nido salen en t
 HR
 H3	Entradas
 P	<b>Entrada principal</b>: empotrada en la ladera norte de la colina, al final de una zanja llena de zarzas.
-P	Las zarzas ocultan un arco de 15 pies, parcialmente cegado por tierra y escombros. Lleva a la cámara de entrada (A). Los PJs pueden entrar si cortan las zarzas o no les importa arañarse (1d4 de daño), pero se arriesgan a alborotar un nido. <b>Túnel secreto</b>: la abertura está al oeste de la colina,
-P	30 pies más allá de la linde del bosque, bajo una roca y oculta por un encantamiento y maleza. Un PJ con carga ligera cabe muy justo. Lleva a la trampilla [T] de la cámara del musgo (D). Sajra y los crinwin no la conocen.
-P	<b>Madrigueras</b> (S): excavadas en la colina o en los escombros, de unas 18 pulgadas de ancho, visibles solo cuando se está justo al lado. Las usan los crinwin y Sajra. Demasiado pequeñas para los PJs o para Pryder.
+P	Las zarzas ocultan un arco de 4,5 m, parcialmente cegado por tierra y escombros. Lleva a la cámara de entrada (A). Los PJs pueden entrar si cortan las zarzas o no les importa arañarse (1d4 de daño), pero se arriesgan a alborotar un nido. <b>Túnel secreto</b>: la abertura está al oeste de la colina,
+P	9 metros más allá de la linde del bosque, bajo una roca y oculta por un encantamiento y maleza. Un PJ con carga ligera cabe muy justo. Lleva a la trampilla [T] de la cámara del musgo (D). Sajra y los crinwin no la conocen.
+P	<b>Madrigueras</b> (S): excavadas en la colina o en los escombros, de unos 45 cm de ancho, visibles solo cuando se está justo al lado. Las usan los crinwin y Sajra. Demasiado pequeñas para los PJs o para Pryder.
 P	En teoría, Wynfor, Tiwlip y Pulgarespino podrían colarse por ellas.
 HR
 H2	Interior
@@ -618,10 +618,10 @@ B	Arcos de madera, como si hubieran crecido allí
 B	Pintadas talladas toscamente (imágenes groseras, maldiciones en escritura de los Señores Verdes)
 B	Avispas perezosas y aletargadas
 B	Ecos lejanos de voces y ruidos de animales
-P	Los <b>pasillos</b> tienen 10 pies de ancho y están flanqueados por nichos funerarios: de 8 a 24 por pasillo, de tamaño humano, aunque unos pocos más grandes. No hay cuerpos, pero algunos exhiben baratijas (huesos, fragmentos de cerámica, piedras, quizá alguna gala de Valor 1 con algún defecto), colocadas por los crinwin para imitar el tesoro de Sajra.
+P	Los <b>pasillos</b> tienen 3 metros de ancho y están flanqueados por nichos funerarios: de 8 a 24 por pasillo, de tamaño humano, aunque unos pocos más grandes. No hay cuerpos, pero algunos exhiben baratijas (huesos, fragmentos de cerámica, piedras, quizá alguna gala de Valor 1 con algún defecto), colocadas por los crinwin para imitar el tesoro de Sajra.
 PAGE	373
 H3	Cámara de entrada (A)
-P	Iluminación tenue desde fuera. Tierra y escombros amontonados hasta casi 4 pies de altura en la entrada, en pendiente hacia el interior de la sala. Más allá, el suelo está inmundo y embarrado.
+P	Iluminación tenue desde fuera. Tierra y escombros amontonados hasta casi 1,2 metros de altura en la entrada, en pendiente hacia el interior de la sala. Más allá, el suelo está inmundo y embarrado.
 B	Una gruesa capa de hojarasca, resbaladiza bajo los pies
 B	Plantas, arbustos y arbolillos que crecen en la tierra
 B	Musgo, líquenes y enredaderas en las paredes, sobre todo cerca de la entrada
@@ -631,7 +631,7 @@ H3	Pasillo derrumbado (B)
 P	Se hundió cuando los Fae saquearon la tumba. Ocho <b>sirvientes momificados</b> (<i>Libro II</i>, página 221) atrapados entre los escombros. Los crinwin han excavado un túnel por el que ellos y Sajra pueden colarse; también lleva al exterior (a través de una de las madrigueras). Se puede distinguir el rastro de Sajra.
 HR
 H3	Cámara central (C)
-P	Techos abovedados de hasta 20 pies, cubiertos de hollín.
+P	Techos abovedados de hasta 6 metros, cubiertos de hollín.
 P	Marcas de quemaduras muy desvaídas en el suelo. Nichos funerarios vacíos a lo largo de las paredes. Grandes sarcófagos (destrozados, vacíos); el de la esquina SE, el más intacto, está atestado de huesos, conchas de caracol, caparazones de bichos y una enorme piel de serpiente (de Sajra).
 P	Un pequeño canal, encajado en el suelo, lleva agua desde el santuario (E), a través de esta cámara, hasta la cámara del musgo (D).
 B	<b>Estatua rota</b> ◇◇ ): mezclada con los escombros del sarcófago del NO. Los crinwin la arrastraron hasta aquí desde el santuario (E). Un icono de la versión de Danu de los Señores Verdes (?).
@@ -653,7 +653,7 @@ P	<b>Bichos</b>: hormigas, caracoles, ranas, polillas, mosquitos.
 P	Las avispas y los crinwin suelen cazarlos.
 HR
 H3	Santuario (E)
-P	<b>Estanque rectangular</b>: alimentado por un manantial, de un pie de profundidad, con un suave resplandor (que se desvanece cuando el agua sale del estanque). Un canal encajado en el suelo lleva el agua hacia el oeste. Un altar domina la pared este, pero los iconos se han sustituido por objetos del tesoro de Sajra.
+P	<b>Estanque rectangular</b>: alimentado por un manantial, de 30 cm de profundidad, con un suave resplandor (que se desvanece cuando el agua sale del estanque). Un canal encajado en el suelo lleva el agua hacia el oeste. Un altar domina la pared este, pero los iconos se han sustituido por objetos del tesoro de Sajra.
 B	Un aire notablemente más fresco
 B	Agua de manantial que borbotea entre el limo
 B	Reflejos de luz que bailan en el techo y las paredes. <b>El tesoro de Sajra</b>: objetos finamente labrados en el altar y en los estantes que cubren las paredes (<i>inmóvil</i>, <i>hermoso</i>, Valor 4 en total). Los PJs prometieron a Pulgarespino que no robarían nada.
@@ -672,7 +672,7 @@ P	<b>Pryder</b> (<i>conocedor del bosque</i>, <i>apuesto</i>, <i>conmocionado</i
 P	HP 0 de 6; Daño d6 si está armado; <b>Instinto</b> de ver el lado bueno de las cosas. <b>Notas:</b> dormido por orden de Sajra. Herida en la cabeza, cortes y moratones, fiebre. Lento, se cansa enseguida, pero tiene la mente libre.
 HR
 H3	Gran sala (G)
-P	Tres pilares de 20 pies de alto (árboles, básicamente).
+P	Tres pilares de 6 metros de alto (árboles, básicamente).
 P	El cuarto pilar y parte de la pared y del techo se derrumbaron hace mucho. En el centro de la sala se abre una escalera que baja a la <b>tumba interior intacta</b>.
 B	Olor a col y huevos podridos, pero peor
 B	Grandes bajorrelieves, todos vandalizados o desfigurados
@@ -708,7 +708,7 @@ P	Usa los túneles para flanquear. Elige como objetivo a los rezagados y a los g
 PAGE	377
 H2	Tumba interior intacta
 P	Por debajo del nivel principal, con acceso por la escalera de la <b>gran sala</b> (G). Consta de:
-B	<b>Antecámara</b>: sala hexagonal de 20 pies de ancho. Mármol blanco liso, sin ningún rasgo. No se puede avanzar con hierro o acero.
+B	<b>Antecámara</b>: sala hexagonal de 6 metros de ancho. Mármol blanco liso, sin ningún rasgo. No se puede avanzar con hierro o acero.
 B	<b>Sala de la Humildad</b>: salvaguarda mágica, solo los humildes pasarán (¿cómo?).
 B	<b>Sala de la Gratitud</b>: prueba onírica, muestra las vidas salvajes de los mortales antes de los Señores Verdes. (¿Movimiento personalizado?)
 B	<b>Sala de las Ofrendas</b>: custodiada por los <b>Almtakers</b> (página 405). Incluye un portal al falso más allá del Señor Verde.

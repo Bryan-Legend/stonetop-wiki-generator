@@ -84,7 +84,7 @@ P	1 Campo de ceniza, tallos quemados, incendio reciente
 P	2 Terreno yermo: arena, piedra, polvo
 P	3 Madriguera, refugio excavado o conejera
 P	4 Suelo empapado, barro o agua estancada
-P	5-6 Espesura densa de tallos altos (5'-8') y rígidos
+P	5-6 Espesura densa de tallos altos (1,5-2,5 m) y rígidos
 P	7-8 Prado abierto, hierba por la cintura o más baja
 P	9 Loma baja, terraplén, elevación
 P	10 Árbol(es), sabana, arbustos
@@ -240,7 +240,7 @@ P	• Excavar enormes cantidades de tierra
 P	• Saltar de entre la hierba sobre su presa
 P	• Rociar un almizcle aturdidor (<i>alcance</i>, <i>área</i>, debilidades)
 P	• Enroscarse en una bola de escamas duras y dentadas (4 de armadura)
-P	Enormes mustélidos acorazados, como un cruce entre un armiño, un tejón y un pangolín, pero de unos 6 pies de largo sin contar la cola.
+P	Enormes mustélidos acorazados, como un cruce entre un armiño, un tejón y un pangolín, pero de unos 1,8 m de largo sin contar la cola.
 P	Recorren las Llanuras desenterrando madrigueras de casi cualquier cosa, pero lo que más les gusta es revolver un nido de <b>hlomren</b> (página 134) y ñam, ñam, ñam. Aun así, distan mucho de estar en lo alto de la cadena alimentaria. Si se asustan, rocían almizcle e intentan huir. Si se ven acorralados, se enroscan y esperan a que el atacante se aburra.
 P	Un curtidor hábil puede convertir un par de pieles en una magnífica ◇◇ cota de escamas de beznpol (2 de armadura, <i>abrigado</i>, protege contra el ácido, Valor 3). Se sabe que los campeones del Pueblo de las Colinas las visten.
 PAGE	133
@@ -252,8 +252,8 @@ P	<b>HP</b> 16; <b>Armadura</b> 0 <b>Daño</b> garras en picado d10+2 (<i>mano</
 P	<b>Cualidades especiales</b> vista increíble, oído pésimo <b>Instinto</b> esperar el momento oportuno
 P	• Planear en las corrientes térmicas, a miles de pies de altura
 P	• Lanzarse en picado como un rayo y atrapar a su presa
-P	• Arrastrar a su presa a 30 o 40 pies de altura con aleteos lentos y poderosos… y luego soltarla
-P	Grandes aves escamosas, con alas de unos 40 pies de envergadura y plumas azul cielo y blancas en la parte inferior para ocultarse en el cielo. Se dice que anidan en los Picos de Huffel pero cazan en las Llanuras, atrapando a los incautos (hombre, mujer, ciervo, caballo) y dejándolos caer al suelo. La caída suele matar o lisiar a la presa, y entonces el frythanc se posa para comérsela tranquilamente.
+P	• Arrastrar a su presa a 9 o 12 metros de altura con aleteos lentos y poderosos… y luego soltarla
+P	Grandes aves escamosas, con alas de unos 12 m de envergadura y plumas azul cielo y blancas en la parte inferior para ocultarse en el cielo. Se dice que anidan en los Picos de Huffel pero cazan en las Llanuras, atrapando a los incautos (hombre, mujer, ciervo, caballo) y dejándolos caer al suelo. La caída suele matar o lisiar a la presa, y entonces el frythanc se posa para comérsela tranquilamente.
 P	Son, gracias a Tor, muy raros: solo hay una pareja cazando en las Llanuras cada vez.
 P	Aunque al otro lado de los Picos de Huffel… ¿quién sabe?
 PAGE	134
@@ -267,7 +267,7 @@ P	<b>Instinto</b> proteger la colonia
 P	• Excavar para entrar en/salir de/atravesar tierra suelta
 P	• Enjambrarse sobre una amenaza
 P	• Reventar soltando ácido al morir, d4 de daño (<i>cerca</i>, <i>área</i>)
-P	Estos insectos de caparazón rojo parecen un cruce entre una hormiga y un escarabajo, pero del tamaño de un gato pequeño. Forman colonias de unos cuantos cientos, normalmente en terreno elevado. Una colonia recoge toda la hierba muerta en varias millas a la redonda, hiberna durante el invierno y luego, en primavera, se traslada a una parte de las Llanuras que no se haya quemado ni cosechado en unos años. Casi siempre hacen caso omiso de las personas y de otros animales grandes, pero atacan en enjambre si se sienten amenazados.
+P	Estos insectos de caparazón rojo parecen un cruce entre una hormiga y un escarabajo, pero del tamaño de un gato pequeño. Forman colonias de unos cuantos cientos, normalmente en terreno elevado. Una colonia recoge toda la hierba muerta en unos kilómetros a la redonda, hiberna durante el invierno y luego, en primavera, se traslada a una parte de las Llanuras que no se haya quemado ni cosechado en unos años. Casi siempre hacen caso omiso de las personas y de otros animales grandes, pero atacan en enjambre si se sienten amenazados.
 HR
 ICON	icons/beast.svg
 H3	Klezln
@@ -303,7 +303,7 @@ P	<b>Cualidades especiales</b> casi ciego, percibe las vibraciones <b>Instinto</
 P	• Enterrarse en el suelo
 P	• Esperar a su presa medio enterrado
 P	• Replegarse en su caparazón (Armadura 5)
-P	Como una tortuga mordedora, pero de 6 pies de largo y 400 libras, con grandes garras como de tejón.
+P	Como una tortuga mordedora, pero de 1,8 m de largo y 180 kg, con grandes garras como de tejón.
 P	Mucho más rápido de lo que crees. Se entierra bajo una capa de tierra y espera lo suficiente como para que el gwead empiece a crecerle encima. Entonces, cuando algo se acerca… ¡ÑAC!
 P	Un caparazón intacto vale bastante (<i>inmóvil</i>, Valor 2). Pero suerte matando a uno sin agrietarle el caparazón.
 PAGE	135

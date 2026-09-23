@@ -212,4 +212,4 @@ P	<b>Instinto</b> comer y crecer
 P	• Aferrarse a las paredes de roca, camuflado
 P	• Atacar a su presa en vuelo rasante
 P	• Tirar a su presa de una cornisa
-P	Los frythanc adultos que cazan en las <b>Llanuras</b> (página 126) son un terror. Sus crías, por suerte, no salen de las montañas. Allí cazan cabras y ovejas y, de vez en cuando, a algún viajero desprevenido. Las crías no son ni de lejos tan peligrosas como sus padres adultos, pero aun así, a ver qué tal te va cuando unos pájaros de 12 pies de envergadura intenten arrancarte de algún sendero en zigzag.
+P	Los frythanc adultos que cazan en las <b>Llanuras</b> (página 126) son un terror. Sus crías, por suerte, no salen de las montañas. Allí cazan cabras y ovejas y, de vez en cuando, a algún viajero desprevenido. Las crías no son ni de lejos tan peligrosas como sus padres adultos, pero aun así, a ver qué tal te va cuando unos pájaros de 3,5 m de envergadura intenten arrancarte de algún sendero en zigzag.

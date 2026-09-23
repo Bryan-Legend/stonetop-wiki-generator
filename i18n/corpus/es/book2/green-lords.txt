@@ -175,7 +175,7 @@ HR
 ICON	icons/treasure.svg
 H3	Un gran cofre de piedra
 P	<i>inmóvil</i>, <i>mágico</i>
-P	Tallado en serpentina, de 120 cm por 60 por 60, con una pesada tapa de piedra. Cuando se encuentra, lo más probable es que esté medio lleno de tierra. Para quienes son sensibles a estas cosas, vibra con el poder de la fertilidad y el crecimiento.
+P	Tallado en serpentina, de 1,2 m por 60 cm por 60 cm, con una pesada tapa de piedra. Cuando se encuentra, lo más probable es que esté medio lleno de tierra. Para quienes son sensibles a estas cosas, vibra con el poder de la fertilidad y el crecimiento.
 P	Cuando <b><i>echas tierra fresca en el cofre, plantas</i></b> <b><i>semillas en él y cierras la tapa</i></b>, las semillas germinarán y brotarán durante la noche. Cada semilla brota una sola vez, y a partir de entonces los brotes crecen a un ritmo normal, tanto si se quedan en el cofre como si se plantan en otro sitio.
 P	Con organización, esto podría suponer un auge en los huertos de Stonetop y +1 de Excedente cada verano. En manos de un herbolario hábil, puede mejorar mucho un huerto de hierbas y permitir el cultivo de plantas raras o difíciles. Los herbolarios de Lindemarjal (Marshedge) matarían por esto, o incluso empezarían una guerra.
 ICON	icons/treasure.svg
@@ -295,7 +295,7 @@ P	• Saltar fuera del agua a una velocidad asombrosa
 P	• Seguir a su presa desde el cielo, o colgado de los árboles
 P	• Lanzarse en picado sobre su presa y asestarle un aguijonazo doloroso y debilitante
 P	• Dar un mordisco y luego tragarse entera a la presa
-P	Todo el mundo sabe que hay que evitar las aguas profundas y quietas, y los llamudwr (o «saltadores de agua») son sin duda una de las razones. Toma el cuerpo de una rana de 2 metros de largo. Añádele otros 2,5 metros de cola restallante rematada por una púa venenosa. Quítale las patas, ni siquiera muñones, pero dale alas de murciélago de casi 6 metros de envergadura desplegadas. Escóndela en un lago o un pantano, lejos de la cruel luz del sol.
+P	Todo el mundo sabe que hay que evitar las aguas profundas y quietas, y los llamudwr (o «saltadores de agua») son sin duda una de las razones. Toma el cuerpo de una rana de 1,8 o 2 metros de largo. Añádele otros 2,5 o 2,7 metros de cola restallante rematada por una púa venenosa. Quítale las patas, ni siquiera muñones, pero dale alas de murciélago de casi 6 metros de envergadura desplegadas. Escóndela en un lago o un pantano, lejos de la cruel luz del sol.
 P	Y, por último, haz que tenga hambre. Mucha, muchísima hambre.
 PAGE	221
 HR

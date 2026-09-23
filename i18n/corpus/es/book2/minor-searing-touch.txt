@@ -9,7 +9,7 @@ PAGE	534
 H3	Un hierro de marcar rúnico
 P	◇, <i>mágico</i>
 P	Se encontró en el taller de algún Señor de la Forja (Forge Lord), aún sujeto en un torno. La cabeza tiene forma rúnica,
-P	de 6 por 6 pulgadas, con runas más pequeñas grabadas en su superficie. O al menos en la mayor parte. Unas pocas pulgadas están en blanco; la obra quedó claramente sin terminar.
+P	de 15 por 15 cm, con runas más pequeñas grabadas en su superficie. O al menos en la mayor parte. Unos centímetros están en blanco; la obra quedó claramente sin terminar.
 P	Para desentrañar los misterios de este hierro y reclamar su poder como tuyo, debes...
 C	… descifrar el significado de las runas e identificar las que faltan.
 C	… terminar los grabados, con el riesgo de cometer un error que haga fracasar el siguiente paso.

@@ -241,7 +241,7 @@ HR
 H3	Otros sitios de poder primordial
 B	Un pequeño lago: frío, ácido, sin vida. Durante las nieblas espesas, conecta con otros tiempos, lugares o realidades.
 B	Una colina que domina un río, donde una <b>emanación</b> (página 436) está empalada en una vara de hierro negro. Un arconte oculta la colina y a su prisionero del mundo.
-B	La base de una torre de metal oxidado, de 6 pies de ancho, que se alza sobre un prado exuberante rebosante de espíritus de la naturaleza. Debajo están enterrados los huesos de un titán.
+B	La base de una torre de metal oxidado, de 1,8 m de ancho, que se alza sobre un prado exuberante rebosante de espíritus de la naturaleza. Debajo están enterrados los huesos de un titán.
 B	Un megalito caído, medio hundido en la turba y el lodo. Cuando las estrellas se alinean, un mortal puede hacer aquí una pregunta y obtener una respuesta total, abrumadora.
 B	Un pico solitario donde, si uno no tiene cuidado, su espíritu será arrancado de su cuerpo y arrastrado hacia el vacío.
 P	<i>Saco un 4 en la tabla de terreno de los Colmilloblanco («suelo empapado, helado o embarrado») y un 9 en</i> <i>unos cuantos bloques de piedra tallada por los Hacedores que asoman del suelo embarrado. Hay una quietud en el aire, en</i>
@@ -314,7 +314,7 @@ B	Un montón de placas de estaño con plantillas ◇ perforadas; bien dispuestas
 B	Una bolsa de extrañas monedas blancas con ◇ símbolos raros, mucho más ligeras y duras de lo que cabría esperar (Valor 1, ¿quizá?)
 B	Una… ¿punta de lanza?, clavada profundamente en el lecho de roca, que brilla con una eterna luz estelar (<i>mano</i>, <i>mágico</i>, <i>hermoso</i>, Valor 2)
 B	Un cáliz de plata (Valor 2), abollado ◇ y deslustrado, grabado con imágenes de monstruos atrapados en un globo
-B	Una estatua de 8 pies de una diosa desconocida que sostiene estrellas y lunas en sus muchas manos (<i>inmóvil</i>, <i>frágil</i>, Valor 2)
+B	Una estatua de 2,5 m de una diosa desconocida que sostiene estrellas y lunas en sus muchas manos (<i>inmóvil</i>, <i>frágil</i>, Valor 2)
 B	Una gema de llama azul cristalizada; fría al tacto, pero con el tiempo funde el metal y provoca incendios (<i>peligroso</i>, Valor 3)
 B	Una cota de malla ◇◇ de hierro negro (2 de armadura, <i>abrigado</i>, <i>aparatoso</i>, Valor 4), absolutamente inmune a la magia
 B	Una cantera abandonada de piedra blanca pura, como la que hace falta para un portal; inundada, pero aún llena de buen material
@@ -338,7 +338,7 @@ P	El ánfora en sí es un recipiente perfecto: mientras esté sellada, ninguna s
 ICON	icons/treasure.svg
 H3	Un cuerno fosilizado
 P	◇, <i>mágico</i>
-P	Una cosa en espiral, de unos 2 pies de largo, resto de alguna <b>encarnación</b> (página 300) desaparecida hace mucho. Quienes son sensibles al mundo de los espíritus pueden percibir su poder radiante, que aún perdura.
+P	Una cosa en espiral, de unos 60 cm de largo, resto de alguna <b>encarnación</b> (página 300) desaparecida hace mucho. Quienes son sensibles al mundo de los espíritus pueden percibir su poder radiante, que aún perdura.
 P	Cuando <b><i>llevas el cuerno fosilizado</i></b>, tienes ventaja en cualquier movimiento para impresionar, intimidar o amenazar a un espíritu (aunque no otorga ninguna capacidad especial para comunicarse con los espíritus de entrada). Si sacas 6- en una de esas tiradas, el espíritu puede elegir destruir el cuerno y poner fin a su efecto, además de lo que diga el DJ.
 HR
 ICON	icons/arcana.svg

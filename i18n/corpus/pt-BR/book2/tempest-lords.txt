@@ -76,16 +76,16 @@ B	O casco de um navio, quase todo soterrado mas de algum modo ainda intacto
 B	Uma vela rasgada de malha de <b>etério</b> (página 404), presa a uma cruz de metal enferrujada
 B	Objetos estranhos, espalhados e há muito soterrados: um cilindro de latão amassado, um disco de metal gravado, um leme de navio descomunal, um leme de popa etc.
 B	Um afloramento rochoso, com a pedra alheia ao terreno em volta, inclinado num ângulo estranho
-B	Uma laje rachada de granito, do tamanho do celeiro e atravessada de etério, flutuando alguns pés acima do chão e girando sem rumo
+B	Uma laje rachada de granito, do tamanho do celeiro e atravessada de etério, flutuando um par de metros acima do chão e girando sem rumo
 B	Lajes de pedra lavrada: quebradas, soterradas e espalhadas, como o brinquedo de uma criança atirado de uma altura impossível
 H3	Estruturas enigmáticas
 P	Por exemplo:
 B	Agulhas de ferro, como árvores ocas e enferrujadas, postas em linha pela paisagem
-B	Um cubo negro do tamanho de uma casa; quando cai um raio, a terra se acende por milhas com linhas luminosas que somem nos minutos seguintes
-B	Plintos de pedra ao longo de uma crista, alguns encimados por esculturas de 6 pés, como tulipas, girando à brisa
-B	Cilindros de cobre, cada um com uns 8 pés de altura e encrostados de verdete; quase todos soterrados num solo branco e calcário
+B	Um cubo negro do tamanho de uma casa; quando cai um raio, a terra se acende por quilômetros com linhas luminosas que somem nos minutos seguintes
+B	Plintos de pedra ao longo de uma crista, alguns encimados por esculturas de 1,8 metro, como tulipas, girando à brisa
+B	Cilindros de cobre, cada um com uns 2,5 metros de altura e encrostados de verdete; quase todos soterrados num solo branco e calcário
 B	Megálitos, gravados com ideogramas que descrevem os movimentos das estrelas
-B	Uma placa de bronze sobre uma laje de pedra, o único traço notável por milhas; intocada pelo líquen; ideogramas gravados fundo que começam com a frase "Este não é um lugar de honra"
+B	Uma placa de bronze sobre uma laje de pedra, o único traço notável por quilômetros; intocada pelo líquen; ideogramas gravados fundo que começam com a frase "Este não é um lugar de honra"
 PAGE	402
 HR
 H3	Uma ruína
@@ -213,7 +213,7 @@ P	Quando <b><i>a urna está aberta e vazia</i></b>, ela puxa força elemental br
 HR
 ICON	icons/treasure.svg
 H3	Anel de bronze
-P	◇, <i>mágico</i>, <i>à prova de fogo</i>, horas Com cerca de 8 polegadas de diâmetro e uma polegada de espessura em toda a volta, chamuscado e sujo de cinza. Um botão se projeta, com um glifo dos Senhores da Tempestade que pode significar "teimoso".
+P	◇, <i>mágico</i>, <i>à prova de fogo</i>, horas Com cerca de 20 centímetros de diâmetro e 2,5 centímetros de espessura em toda a volta, chamuscado e sujo de cinza. Um botão se projeta, com um glifo dos Senhores da Tempestade que pode significar "teimoso".
 P	Quando você <b><i>acha o anel</i></b>, ele tem energia para funcionar por 1d4-1 horas.
 P	Quando você <b><i>aperta o botão</i></b>, o anel se fixa no lugar, desafiando a gravidade. Ele simplesmente não sai do lugar. O efeito acaba se o anel for entortado ou quebrado, ou quando a energia acabar.
 P	Não há jeito óbvio de encerrar o efeito antes. Quando <b><i>a energia do anel acaba</i></b>, o botão salta e o efeito termina.
@@ -222,13 +222,13 @@ HR
 ICON	icons/treasure.svg
 H3	Faixa flutuante
 P	<i>mágica</i>
-P	Uma tira de lamê branco-azulado, de talvez 6 polegadas de largura por 6 pés de comprimento, serpenteando no ar. Como um cinto, mas para alguém bem maior que você.
+P	Uma tira de lamê branco-azulado, de talvez 15 centímetros de largura por 1,8 metro de comprimento, serpenteando no ar. Como um cinto, mas para alguém bem maior que você.
 P	Quando você <b><i>enrola a faixa com firmeza em volta</i></b> <b><i>da cintura</i></b>, ela o sustenta nas quedas—você nunca cai mais rápido do que se tivesse caído da própria altura.
 HR
 ICON	icons/treasure.svg
 H3	Diapasão prateado
 P	<i>mágico</i>, <i>ruidoso</i>
-P	Quando você <b><i>bate este diapasão numa</i></b> <b><i>superfície dura</i></b>, ele emite um tom alto por cerca de um minuto. Efeitos e criaturas mágicas por perto (<i>alcance</i>, <i>área</i>) ficam visíveis: tremendo, vibrando, distorcidos. O barulho chama a atenção de quaisquer espíritos ou seres sintonizados com a magia por milhas ao redor.
+P	Quando você <b><i>bate este diapasão numa</i></b> <b><i>superfície dura</i></b>, ele emite um tom alto por cerca de um minuto. Efeitos e criaturas mágicas por perto (<i>alcance</i>, <i>área</i>) ficam visíveis: tremendo, vibrando, distorcidos. O barulho chama a atenção de quaisquer espíritos ou seres sintonizados com a magia por quilômetros ao redor.
 PAGE	407
 HR
 ICON	icons/treasure.svg
@@ -298,7 +298,7 @@ E	alguma combinação do acima; ou
 E	algo completamente diferente.
 ICON	icons/spirit.svg
 H3	Vórtice elemental
-P	Imagine uma esfera de etério em filigrana, de talvez 6 polegadas de diâmetro, com um ponto luminoso rodopiando no centro. Este aparelho—chamado de matriz—prende um <b>espírito elemental</b> (página 360) e absorve certa força, com a qual o espírito consegue manifestar um vórtice rodopiante.
+P	Imagine uma esfera de etério em filigrana, de talvez 15 centímetros de diâmetro, com um ponto luminoso rodopiando no centro. Este aparelho—chamado de matriz—prende um <b>espírito elemental</b> (página 360) e absorve certa força, com a qual o espírito consegue manifestar um vórtice rodopiante.
 P	Um espírito preso a uma matriz precisa seguir quaisquer ordens dadas na língua primordial dos Senhores da Tempestade. Como poucos vivos sabem dá-las, qualquer matriz encontrada provavelmente está agindo conforme ordens de séculos atrás.
 P	<b>Poder e tamanho:</b> Cada matriz absorve certo tipo de poder, e os HP atuais de seu vórtice refletem seu poder atual.
 P	Conforme o vórtice ganha ou perde HP, seu tamanho, sua armadura e seu dano também mudam. Com 0 HP, ele se dissipa e sua matriz cai no chão, inerte até absorver mais HP.

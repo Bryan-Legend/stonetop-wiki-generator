@@ -8,7 +8,7 @@
 PAGE	539
 H3	Una caja rompecabezas de metal
 P	◇, <i>indestructible</i>
-P	Un cubo de 6 pulgadas de un metal gris mate, cubierto de bisagras, pomos, diales, correderas, palancas y cosas así. Una obra de un genio loco, que resiste todo intento de abrirla por la fuerza bruta.
+P	Un cubo de 15 cm de un metal gris mate, cubierto de bisagras, pomos, diales, correderas, palancas y cosas así. Una obra de un genio loco, que resiste todo intento de abrirla por la fuerza bruta.
 P	Para desentrañar sus misterios, debes...
 C	… tirar +INT para abrir la caja: <b>con 10+</b>, te lleva unos días de trasteo; <b>con 7-9</b>, te lleva unas cuantas semanas obsesivas; <b>con 6-</b>, te supera.
 C	… pasar una estación descifrando los símbolos grabados en su interior.

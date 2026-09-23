@@ -8,7 +8,7 @@
 PAGE	526
 H3	Un rosario de cuentas de oración
 P	◇ <b>,</b> <i>mágico</i><b>,</b> <i>hermoso</i>
-P	Un cordón de casi 10 pies de largo, ensartado con cuentas de bronce. Cada cuenta lleva tallado un glifo distinto y una figura en una postura meditativa única.
+P	Un cordón de casi 3 metros de largo, ensartado con cuentas de bronce. Cada cuenta lleva tallado un glifo distinto y una figura en una postura meditativa única.
 P	Si pasas los dedos por las cuentas, sientes una sensación de quietud, pero también el peso implacable de un juicio.
 P	Para desentrañar los secretos de las cuentas de oración, debes...
 C	… descifrar los glifos de los Señores de la Escarcha (Rime Lords) grabados en relieve en las cuentas.

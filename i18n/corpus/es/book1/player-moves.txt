@@ -50,7 +50,7 @@ P	Plantéate darles a elegir entre dos o más éxitos menores/costes/consecuenci
 P	Recuerda: un 7-9 sigue siendo, en esencia, un éxito. No hagas que el éxito menor, el coste o la consecuencia sean tan malos que les hubiera ido mejor no haciendo nada.
 P	¿Pero con 6-? Desmádrate. El peligro se desata antes de que puedan actuar, o mientras actúan. O su acción tiene éxito, pero las cosas empeoran mucho como resultado. Haz algo que surja de forma natural de la ficción y de tu preparación. <b>Deja que las cosas ardan.</b>
 HR
-P	<i>Caradoc cuelga de un árbol, y se le</i> <i>resbalan las manos. Balancea las piernas hasta rodear</i> <i>la rama y luego se aúpa. «Sí,</i> <i>eso es Desafiar el Peligro; el peligro es</i> <i>que caigas desde unos 25 metros. Suena a</i> <i>poner a prueba tu poderío, así que ¿+STR?».</i>
+P	<i>Caradoc cuelga de un árbol, y se le</i> <i>resbalan las manos. Balancea las piernas hasta rodear</i> <i>la rama y luego se aúpa. «Sí,</i> <i>eso es Desafiar el Peligro; el peligro es</i> <i>que caigas desde unos 24 metros. Suena a</i> <i>poner a prueba tu poderío, así que ¿+STR?».</i>
 P	<i>«Me parece bien», dice, y tira. Con</i> <i>7-9, optaré por un coste y le haré</i> <i>marcar</i> debilitado <i>por el miedo y el cansancio.</i>
 P	<i>Pero no, saca un 10, así que digo: «Genial,</i> <i>lo haces, tal como has dicho». Luego</i> <b><i>le ofrezco una</i></b> <b><i>oportunidad</i></b><i>. «Tardas un momento en recuperar</i> <i>el aliento, pero desde aquí es fácil</i> <i>trepar hasta el nido. ¿Qué haces?».</i>
 HR

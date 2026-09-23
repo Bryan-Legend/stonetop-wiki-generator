@@ -104,7 +104,7 @@ B	Un bezoar (trágatelo para curar cualquier veneno, Valor 1)
 B	Una bolsita de sal rosa, buena para ◇ cocinar/conservar y perdición de las criaturas <i>corrompidas</i> (Valor 1)
 B	Un zurrón sagrado de ◇ piel de draco cosida con runas; cuando está cerrado, nada de lo que hay dentro puede detectarse ni encontrarse mediante magia, ni nada de su interior puede escapar ni afectar al mundo exterior (<i>mágico</i>, Valor 2)
 B	Una daga de aleación de plata, útil contra los espíritus no muertos (<i>mano</i>, Valor 2)
-B	Una estatua de Danu de 6 pies de altura, tallada en una geoda, con el torso abierto y lleno de cristales de amatista (<i>inmóvil</i>, Valor 3)
+B	Una estatua de Danu de 1,8 m de altura, tallada en una geoda, con el torso abierto y lleno de cristales de amatista (<i>inmóvil</i>, Valor 3)
 B	Un pergamino (◇ <i>frágil</i>, Valor 4 para el comprador adecuado) con instrucciones crípticas sobre cómo crear una <b>Efigie de Secuoya</b> (Redwood Effigy, página 570)
 PAGE	67
 HR

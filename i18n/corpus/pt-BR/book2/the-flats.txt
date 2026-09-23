@@ -31,7 +31,7 @@ B	A coceira e o arranhão das urtigas, dos cardos e dos talos duros como lixa
 B	Barulho constante: canto de pássaro, zumbido de inseto, farfalhar do capim
 B	Sol implacável, sem sombra alguma
 B	Uma parede de chuva, rolando na sua direção A pradaria é salpicada de colinas pequenas, afloramentos e, de vez em quando, um renque de árvores encolhidas contra o vento incessante. Riachos sinuosos cortam o solo. Mas, na maior parte?
-P	Só milha após milha após milha de capim.
+P	Só quilômetro após quilômetro após quilômetro de capim.
 ICON	icons/autumn.svg
 H3	Outono
 B	Crepitar, estalo e farfalhar a cada passo, a cada movimento
@@ -84,7 +84,7 @@ P	1 Campo de cinzas, talos queimados, incêndio recente
 P	2 Chão estéril: areia, pedra, poeira
 P	3 Toca, abrigo cavado ou coelheira
 P	4 Solo encharcado, lama ou água parada
-P	5-6 Matagal denso de talos altos (5 a 8 pés) e rígidos
+P	5-6 Matagal denso de talos altos (1,5 a 2,5 metros) e rígidos
 P	7-8 Campina aberta, capim na altura da cintura ou mais baixo
 P	9 Crista baixa, aterro, elevação
 P	10 Árvore(s), savana, arbustos
@@ -114,7 +114,7 @@ P	6 Um bando do <b>Povo das Colinas</b> (página 228), ou talvez só o acampamen
 PAGE	129
 HR
 H3	Pedaços da Torre em Ruínas
-P	Espalhados por toda parte, a milhas e milhas da própria torre, como se atirados por alguma força impossível. Provavelmente soterrados ou ao menos tomados pelo mato.
+P	Espalhados por toda parte, a quilômetros e quilômetros da própria torre, como se atirados por alguma força impossível. Provavelmente soterrados ou ao menos tomados pelo mato.
 P	1d6 pedaços
 HR
 P	1 Instrumentos ou ferramentas de metal, possivelmente do tamanho de gigantes, despedaçados, retorcidos ou surpreendentemente intactos
@@ -240,7 +240,7 @@ P	• Revirar quantidades sérias de terra
 P	• Saltar do capim em cima da presa
 P	• Esguichar um almíscar estonteante (<i>alcance</i>, <i>área</i>, debilidades)
 P	• Enrolar-se numa bola de escamas duras e recortadas (4 de armadura)
-P	Mustelídeos enormes e blindados, como um cruzamento de arminho, texugo e pangolim, mas com uns 6 pés sem contar a cauda.
+P	Mustelídeos enormes e blindados, como um cruzamento de arminho, texugo e pangolim, mas com uns 1,8 metro sem contar a cauda.
 P	Percorrem as Planícies desenterrando tocas de praticamente qualquer coisa, mas adoram mesmo revirar um ninho de <b>hlomren</b> (página 134) e mastigar, mastigar, mastigar. Estão longe do topo da cadeia alimentar, porém. Se assustados, esguicham almíscar e tentam fugir. Se encurralados, enrolam-se e torcem para que o atacante se entedie.
 P	Um curtidor habilidoso pode transformar dois couros num magnífico ◇◇ casaco de escamas de beznpol (2 de armadura, <i>quente</i>, protege contra ácido, Valor 3). Campeões do Povo das Colinas costumam usá-los.
 PAGE	133
@@ -250,10 +250,10 @@ H3	Frythanc
 P	<i>Solitário</i>, <i>grande</i>, <i>furtivo</i>, <i>aterrorizante</i>
 P	<b>HP</b> 16; <b>Armadura</b> 0 <b>Dano</b> garras em mergulho d10+2 (<i>mão</i>, <i>perto</i>, <i>fortes</i>, <i>agarradoras</i>), bico d10 (<i>alcance</i>, desvantagem)
 P	<b>Qualidades especiais</b> visão incrível, audição péssima <b>Instinto</b> esperar o momento certo
-P	• Planar nas térmicas, a milhares de pés de altura
+P	• Planar nas térmicas, a centenas de metros de altura
 P	• Mergulhar como um raio, arrebatando a presa
-P	• Erguer a presa a 30 ou 40 pés com batidas lentas e poderosas—e então soltá-la
-P	Grandes pássaros escamosos, com uns 40 pés de envergadura, penas azul-céu e brancas na barriga para se esconder no céu. Dizem que se aninham nos Picos de Huffel, mas caçam nas Planícies, arrebatando os desatentos—homem, mulher, cervo, cavalo—e soltando-os no chão. A queda em geral mata ou aleija a presa, e então ele pousa para jantar com calma.
+P	• Erguer a presa a 9 ou 12 metros com batidas lentas e poderosas—e então soltá-la
+P	Grandes pássaros escamosos, com uns 12 metros de envergadura, penas azul-céu e brancas na barriga para se esconder no céu. Dizem que se aninham nos Picos de Huffel, mas caçam nas Planícies, arrebatando os desatentos—homem, mulher, cervo, cavalo—e soltando-os no chão. A queda em geral mata ou aleija a presa, e então ele pousa para jantar com calma.
 P	São, graças a Tor, raríssimos, com apenas um casal caçando nas Planícies por vez.
 P	Do outro lado dos Picos de Huffel, porém… quem sabe?
 PAGE	134
@@ -267,7 +267,7 @@ P	<b>Instinto</b> proteger a colônia
 P	• Escavar para dentro/para fora/através do solo solto
 P	• Enxamear sobre uma ameaça
 P	• Explodir em ácido ao morrer, d4 de dano (<i>perto</i>, <i>área</i>)
-P	Esses insetos de carapaça vermelha parecem um cruzamento de formiga com besouro, mas do tamanho de um gato pequeno. Formam colônias de algumas centenas, em geral em terreno mais alto. Uma colônia colhe todo o capim morto num raio de algumas milhas, hiberna no inverno e então se muda na primavera para uma parte das Planícies que não queimou nem foi colhida há alguns anos. Em geral ignoram pessoas e outros animais grandes, mas enxameiam se ameaçados.
+P	Esses insetos de carapaça vermelha parecem um cruzamento de formiga com besouro, mas do tamanho de um gato pequeno. Formam colônias de algumas centenas, em geral em terreno mais alto. Uma colônia colhe todo o capim morto num raio de alguns quilômetros, hiberna no inverno e então se muda na primavera para uma parte das Planícies que não queimou nem foi colhida há alguns anos. Em geral ignoram pessoas e outros animais grandes, mas enxameiam se ameaçados.
 HR
 ICON	icons/beast.svg
 H3	Klezln
@@ -303,7 +303,7 @@ P	<b>Qualidades especiais</b> quase cego, sente vibrações <b>Instinto</b> dar 
 P	• Enterrar-se no solo
 P	• Esperar a presa meio soterrado
 P	• Recolher-se em sua carapaça (Armadura 5)
-P	Como um cágado-de-barbicha, mas com 6 pés de comprimento e 400 libras, com garras grandes como as de um texugo.
+P	Como um cágado-de-barbicha, mas com 1,8 metro de comprimento e 180 kg, com garras grandes como as de um texugo.
 P	Muito mais rápido do que você imagina. Ele se enterra sob uma camada de solo e espera tempo suficiente para o gwead crescer por cima. Aí, quando algo chega perto? CLAC!
 P	Uma carapaça intacta vale bastante (<i>imóvel</i>, Valor 2). Mas boa sorte para matar um sem rachar a carapaça.
 PAGE	135

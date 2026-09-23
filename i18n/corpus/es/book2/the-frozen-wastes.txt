@@ -75,7 +75,7 @@ P	4-6 Una extensión amplia y abierta, solo hierba y arbustos durante kilómetro
 P	7-8 Gran zona de barro o barro helado
 P	9 Pendiente suave, cresta baja o pequeña elevación
 P	10 Morrena baja, una pequeña colina de piedras rotas y tierra suelta
-P	11 Afloramiento rocoso, de unos pocos metros de altura como mucho
+P	11 Afloramiento rocoso, de unos 4 metros de altura como mucho
 P	12 Un único árbol, llamativo
 PB
 P	Si quieres, tira 1d6 para el tamaño/alcance/intensidad.

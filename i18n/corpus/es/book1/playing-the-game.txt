@@ -81,7 +81,7 @@ P	Lo contrario también es cierto: <b>si lo haces, tienes</b> <b>que hacerlo</b>
 P	Estar atento a los movimientos es trabajo de todos. Si crees que has desencadenado un movimiento, dilo.
 P	Si otro jugador desencadena un movimiento y nadie se da cuenta, ¡di algo! «Oye, darle un codazo en la cara a un tipo suena a "luchar en distancias cortas", ¿esto es Chocar Aceros?».
 P	Todos tenéis que estar de acuerdo en que estás haciendo algo verosímil y en que el desencadenante se cumple de verdad. Por ejemplo:
-B	Si el tipo mide 12 pies y te mantiene a distancia con el brazo extendido, ¡su cara no está lo bastante cerca para darle un codazo! Haz otra cosa.
+B	Si el tipo mide 3,5 metros y te mantiene a distancia con el brazo extendido, ¡su cara no está lo bastante cerca para darle un codazo! Haz otra cosa.
 B	Si el tipo está literalmente hecho de hierro, un codazo en la cara no le hará ni cosquillas y Chocar Aceros no se desencadena. Si te empeñas en intentarlo, el DJ dice qué pasa.
 B	Si el tipo está distraído y no lo ve venir, entonces en realidad no estás <b><i>luchando</i></b> y Chocar Aceros no se desencadena. Simplemente le partes la cara y el DJ dice qué pasa a continuación.
 P	Si no está claro si estás desencadenando un movimiento, o cuál estás desencadenando, habladlo. Aclara tu intención y los detalles hasta que todos estéis de acuerdo.
@@ -124,7 +124,7 @@ HR
 P	<i>Tú y tus compañeros PJs habéis entrado en</i> <i>la guarida de los osos cavernarios, con la esperanza de conseguir</i> <i>una carne muy necesaria durante un invierno largo</i> <i>y duro. Juegas con Caradoc (el</i> <i>Aspirante a Héroe).</i>
 P	<i>«Caradoc», dice el DJ, «tus ojos se están</i> <i>acostumbrando a la penumbra cuando oyes</i> <i>resoplidos y el ruido de algo que</i> <i>se mueve, algo grande. Al borde</i> <i>de la luz, una forma enorme se alza y</i> <i>RUGE. Es un oso, ¿qué haces?».</i>
 P	<i>«Allá vamos», dices. «Grito y cargo contra él,</i> <i>con el escudo en alto, atacando con la lanza».</i>
-P	<i>«Eso suena a que estás luchando cuerpo a cuerpo</i> <i>con este oso de 10 pies de alto. ¡Tira</i> <i>+STR para Chocar Aceros!».</i>
+P	<i>«Eso suena a que estás luchando cuerpo a cuerpo</i> <i>con este oso de 3 metros de alto. ¡Tira</i> <i>+STR para Chocar Aceros!».</i>
 P	<i>Tienes suerte y sacas un 4 y un 5. Con</i> <i>tu STR +1, ¡eso es un 10! (Quizá</i> <i>imprudentemente) eliges golpear fuerte para infligir daño</i> <i>adicional, pero a cambio sufres su ataque.</i> <i>Infliges 6 de daño en total, ¡nada mal! Tú y</i> <i>el DJ acordáis que eso significa que tu golpe</i> <i>ha acertado y has hecho sangrar a la gran bestia.</i>
 P	<i>Pero también sufres su ataque. El DJ</i> <i>dice: «Cuando aciertas, te ARREA un zarpazo</i> <i>con la pata derecha. Recibes 1d10+4</i> <i>de daño. Tíralo». Recibes 9 de daño</i> <i>(casi la mitad de tus puntos de golpe). El DJ</i> <i>dice: «Creo que consigues levantar el escudo, pero</i> <i>la fuerza del golpe te lo estampa contra la</i> <i>cabeza y te hace retroceder tambaleándote.</i>
 P	<i>Marca la debilidad</i> aturdido<i>, mientras el mundo</i>
@@ -1016,7 +1016,7 @@ P	◇ <b>Utensilios de cocina</b> ◇◇ (requieren fuego y agua; hacen que los 
 P	◇ <b>Petate</b> (recupera 1d6 HP adicionales cuando Acampas)
 P	◇ <b>Manta</b> (
 P	<i>abrigado</i>)
-P	◇ <b>Cuerda</b>, ~25 pies
+P	◇ <b>Cuerda</b>, ~7,5 m
 P	◇◇ <b>Trineo/camilla/narria</b> ◇ <b>Muda de ropa</b>
 P	, enrollable ◇ <b>Pala</b>
 P	◇ <b>Antorcha</b> (dura ~1 hora; ◇ <b>Raquetas de nieve</b>
@@ -1295,7 +1295,7 @@ VR	◇ Manta (abrigado)	0
 VR	Cuerda de arco, de repuesto	0
 VR	Puñado de monedas de cobre	0
 VR	◇ Utensilios de cocina (requieren fuego y agua)	0
-VR	◇ Cuerda, ~25 pies	0
+VR	◇ Cuerda, ~7,5 m	0
 VR	Saco (vacío)	0
 VR	◇◇ Trineo/camilla/narria, enrollable	0
 VR	◇ Raquetas de nieve	0

@@ -217,7 +217,7 @@ HR
 ICON	icons/treasure.svg
 H3	Dos espejos
 P	◇, <i>hermoso</i>, <i>mágico</i>, Valor 4
-P	Uno es un espejo ◇◇ plateado e impecable (<i>mágico</i>, <i>hermoso</i>, <i>frágil</i>, Valor 4), de casi un metro de alto y con un marco dorado. Adornan el marco runas de los Señores de la Forja, que se traducen así: «A mi hermosa Esé, mi fiel, mi roca».
+P	Uno es un espejo ◇◇ plateado e impecable (<i>mágico</i>, <i>hermoso</i>, <i>frágil</i>, Valor 4), de un metro de alto y con un marco dorado. Adornan el marco runas de los Señores de la Forja, que se traducen así: «A mi hermosa Esé, mi fiel, mi roca».
 P	El otro es un espejo más pequeño y humilde ◇ (<i>mágico</i>, <i>frágil</i>, Valor 2), de apenas 30 cm de alto, con un marco de bronce. Lleva la misma inscripción que el otro espejo, pero invertida. Del marco sobresale una pequeña aguja, manchada de oscuro.
 P	Cuando <b><i>te pinchas el dedo y tocas el</i></b> <b><i>espejo más pequeño</i></b>, este muestra lo que se refleja en el espejo más grande hasta que dejas de tocarlo.
 P	Tu sangre empapa la superficie sin dejar mancha.

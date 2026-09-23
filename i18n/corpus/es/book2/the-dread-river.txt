@@ -197,7 +197,7 @@ P	<b>Instinto</b> alimentarse
 P	• Percibir el campo eléctrico de una criatura
 P	• Aturdir o paralizar con un toque, bzzzt
 P	• Abalanzarse en enjambre sobre una criatura aturdida
-P	Cada uno mide cerca de un metro de largo, como una sepia cruzada con un gusano gigante, gris y húmedo, retorciéndose, con una cara llena de palpos cuyo toque pica como un rayo.
+P	Cada uno mide un par de metros de largo, como una sepia cruzada con un gusano gigante, gris y húmedo, retorciéndose, con una cara llena de palpos cuyo toque pica como un rayo.
 P	Pasan la mayor parte de su vida en el agua, congregándose cerca de <b>cristales de poder</b> (página 389) y artefactos de <b>eterio</b> (página 404) que el río se ha tragado. Parecen hechizados por esa energía pasiva, casi adormecidos. Pero cuando perciben algo más dinámico, algo con más chicha, salen del agua retorciéndose bien deprisa.
 P	Algunos montañeses aseguran que los luglfsk no son más que renacuajos, y cuentan historias de horrores más grandes, de muchas patas, que lanzan rayos desde unos palpos faciales tan largos como alto es un hombre. Pero seguramente no son más que cuentos de miedo para asustar a los viajeros. Seguramente.
 ICON	icons/beast.svg

@@ -22,7 +22,7 @@ HR
 P	◇ <b>Utensilios de cocina</b> (requieren fuego y agua; hacen que los Suministros duren más)
 P	◇ <b>Petate</b> (recupera 1d6 HP extra cuando Acampas)
 P	◇ <b>Manta</b> (<i>abrigado</i>) ◇ <b>Muda de ropa</b>
-P	◇ <b>Cuerda</b>, ~25 pies ◇ <b>Pala</b>
+P	◇ <b>Cuerda</b>, ~7,5 m ◇ <b>Pala</b>
 P	◇◇ <b>Trineo/camilla/narria</b>, enrollable ◇ <b>Raquetas de nieve</b>
 HR
 P	◇ <b>Antorcha</b> (dura ~1 hora; <i>alcance</i>, <i>área</i>, <i>peligroso</i>)

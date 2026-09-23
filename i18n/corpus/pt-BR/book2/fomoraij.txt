@@ -45,7 +45,7 @@ P	2 Túneis sem fim, escavados de forma tosca, como um formigueiro
 P	3 Uma floresta invertida de raízes, tubérculos e fungos pendendo do teto
 P	4 Uma série de córregos, rios e lagos subterrâneos, todos fervilhando de horrores
 P	5 Um poço vertical profundo que termina num salão abobadado de pedra branca
-P	6 Túneis e câmaras, cada polegada forrada de ossos
+P	6 Túneis e câmaras, cada centímetro forrada de ossos
 P	7 O ventre petrificado de um <b>titã</b> primordial e gigantesco (página 303)
 P	8 Túneis abobadados forrados de raízes de madeira infundida de ferro, enferrujadas e sangrando
 P	9 Cavernas de calcário, as paredes pulsando com <b>cristal vermelho</b> (página 424)

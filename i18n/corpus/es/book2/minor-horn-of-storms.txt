@@ -21,6 +21,6 @@ P	Asigna un d4 a cada uno de los siguientes:
 P	____ <b>Inicio: 1</b> = al día siguiente; <b>2-3</b> = en unas horas; <b>4</b> = antes de una hora.
 P	____ <b>Intensidad: 1</b> = es peligroso estar a la intemperie;
 P	<b>2-3</b> = daña las estructuras endebles; <b>4</b> = arrasa las estructuras endebles y daña las sólidas.
-P	____ <b>Extensión: 1</b> = una milla más o menos; <b>2-3</b> = una docena de millas más o menos; <b>4</b> = decenas o veintenas de millas.
+P	____ <b>Extensión: 1</b> = un kilómetro y medio más o menos; <b>2-3</b> = una veintena de kilómetros más o menos; <b>4</b> = decenas o centenares de kilómetros.
 P	____ <b>Duración</b> (una vez que arranca)<b>: 1</b> = menos de una hora; <b>2-3</b> = unas horas; <b>4</b> = un día más o menos.
 P	56

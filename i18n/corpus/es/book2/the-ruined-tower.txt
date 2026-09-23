@@ -70,7 +70,7 @@ C	Si ha habido grandes nevadas, tenéis que esperar al deshielo, o…
 C	Necesitaréis raquetas de nieve, y…
 C	El camino seguirá siendo agotador; corréis el riesgo de agotaros o de agotar vuestro equipo, o ambas cosas
 H2	Zonas
-B	<b>Terraplén cubierto de vegetación</b>, de unos 5-6 m de alto, que rodea la torre a ~1 km de distancia. Asoman enormes piedras labradas, parecidas a las de la <b>Vieja Muralla (Old Wall)</b> (página 12).
+B	<b>Terraplén cubierto de vegetación</b>, de unos 4,5-6 m de alto, que rodea la torre a ~1 km de distancia. Asoman enormes piedras labradas, parecidas a las de la <b>Vieja Muralla (Old Wall)</b> (página 12).
 B	<b>Ruinas exteriores</b> entre el terraplén y la torre. En otro tiempo una ciudad próspera, ahora solo un revoltijo de ruinas que la pradera se ha tragado casi por completo.
 B	<b>Un cráter poco profundo</b> que se extiende ~120 m desde el borde noreste de la torre. Hierba, tierra, barro y agua estancada cubren un lecho de roca vítreo, como de escoria.
 B	<b>La propia torre</b>: ~90 m de diámetro. El tercio noreste es casi todo escombros, pero al sur y al oeste quedan algunas plantas, con muros de ~60 m de alto.
@@ -109,7 +109,7 @@ P	1 Terreno yermo de arena, polvo o vidrio
 P	2 Barro, agua estancada o nieve profunda
 P	3 Zanja, barranco o terraplén; el contorno de ruinas enterradas
 P	4 Muro(s) al descubierto, desmoronándose y cubiertos de musgo o líquenes
-P	5-6 Extensión de hierba de 1d6+2 pies de alto
+P	5-6 Extensión de hierba de (1d6+2) × 30 cm de alto
 P	7 Arbustos, matorral, árbol(es), quizá incluso <b>árboles dool</b> (página 73)
 P	8 Enorme losa de piedra, medio enterrada; un trozo caído de la torre
 P	9-10 Montón de tierra o piedra y un pozo cercano; una excavación o una madriguera
@@ -520,7 +520,7 @@ P	• Investigar sonidos o señales de vida
 P	• Chasquear, trinar, zumbar con fuerza
 P	• Llamar a otros a la caza
 P	• Atacar con una furia estremecedora
-P	• Ensañarse con un enemigo caído De 2 m de largo, con el cuerpo segmentado y demasiadas patas. Extremidades delanteras como guadañas. Antenas plumosas que acarician el aire y tiemblan cuando perciben una presa. No tiene ojos, solo un cristal rojo que palpita dentro del cráneo. No tiene boca, pues nunca come y vive de odio y malicia.
+P	• Ensañarse con un enemigo caído De 1,8 m de largo, con el cuerpo segmentado y demasiadas patas. Extremidades delanteras como guadañas. Antenas plumosas que acarician el aire y tiemblan cuando perciben una presa. No tiene ojos, solo un cristal rojo que palpita dentro del cráneo. No tiene boca, pues nunca come y vive de odio y malicia.
 PAGE	349
 P	Cada uno es una manifestación de la voluntad cruel de Og'molok. Nacidos de la sangre, recibieron forma y fueron enviados a corretear hacia arriba para masacrar. Y masacraron, hasta que el último conjuro de Atrapatormentas los convirtió a todos en pedazos de vidrio dentado.
 P	O a casi todos. Unas cuantas docenas escaparon al conjuro vitrificador. Siguen ahí, aletargados hasta que perciben un ser vivo y sintiente. Entonces despiertan. Entonces cazan. Entonces vuelven a masacrar.

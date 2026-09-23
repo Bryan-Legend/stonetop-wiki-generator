@@ -86,7 +86,7 @@ ICON	icons/spirit.svg
 H3	Cães fantasmagóricos
 P	<i>Horda</i>, <i>espírito</i>, <i>aterrorizante</i>, <i>feroz</i>, <i>organizada</i>
 P	<b>HP</b> 10; <b>Armadura</b> 1 (não tem órgãos), só é ferida por sal ou enquanto morde <b>Dano</b> mordida d6 com vantagem (<i>mão</i>, <i>agarradora</i>)
-P	<b>Qualidades especiais</b> presos ao Caçador; só podem se afastar cerca de 1 milha dele
+P	<b>Qualidades especiais</b> presos ao Caçador; só podem se afastar cerca de 1,5 km dele
 P	<b>Instinto</b> dar caça
 P	• Manifestar uma forma feita de névoa
 P	• Farejar a presa, ou os mortos

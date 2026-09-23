@@ -55,7 +55,7 @@ B	<b>Cresta exterior:</b> Un escarpe que rodea el lago y cae 15-30 m hasta la or
 B	<b>Orilla:</b> Se extiende 30-60 m desde la cresta exterior. Montones de escombros, en gran parte mampostería antigua. Líquenes espesos, hierba que se inclina alejándose del lago.
 B	<b>El río Aberzh:</b> Atraviesa la cresta occidental, luego se ensancha y fluye perezoso hasta el lago. Fangoso, poco profundo, pedregoso. Muchas algas oscuras.
 B	<b>El Pilar:</b> En la orilla norte, de 12 m de ancho y más de 30 m de alto. Hecho con sillares de mampostería recuperados, apilados toscamente. Sin entrada evidente. Una escalada precaria. Parece maldito.
-B	<b>El lago:</b> De unas 2 x 3 millas. Imposiblemente quieto, oscuro, reflectante. Siempre frío, nunca se congela. De cientos de pies de profundidad cerca del centro.
+B	<b>El lago:</b> De unos 3 x 5 km. Imposiblemente quieto, oscuro, reflectante. Siempre frío, nunca se congela. De muchas decenas de metros de profundidad cerca del centro.
 H2	Terreno
 P	Elige 1 o combina 2, o haz que alguien tire el Dado del Destino (d12). Si quieres, tira 1d6 para el tamaño/alcance/intensidad.
 P	1d12 terreno

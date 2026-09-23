@@ -64,7 +64,7 @@ HR
 H3	Algo atrapado
 P	Por ejemplo:
 B	Alguien atrapado en una estalagmita, con sus manos crispadas, su rostro angustiado y sus lamentos apenas perceptibles
-B	Un cubo hueco y sin juntas de piedra blanca tallada con runas, de 2 metros de lado, gélido; una docena de <b>apariciones</b> (página 79) están selladas dentro, impotentes y enloquecidas
+B	Un cubo hueco y sin juntas de piedra blanca tallada con runas, de 1,8 metros de lado, gélido; una docena de <b>apariciones</b> (página 79) están selladas dentro, impotentes y enloquecidas
 B	Un tramo de losas negras relucientes que muestran reflejos de gente del pasado lejano; quienes abren su mente ven un desfile de recuerdos, nítidos como la luz del día
 B	Un <b>constructo</b> (página 392) con una grieta en la «cabeza», poseído por un espíritu maligno; atado dentro de un círculo de runas profundamente talladas
 B	Un laberinto de muros de piedra cuyos pasillos forman una runa de atadura, con algún tipo de demonio atrapado en el centro

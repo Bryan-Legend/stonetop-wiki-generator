@@ -8,7 +8,7 @@
 PAGE	517
 H3	Una hoja de roble gigante
 P	◇, <i>mágico</i>
-P	Mide unos 6 pies de largo, cerosa y rígida, y brilla con una iridiscencia dorada. ¿De verdad es una hoja del Roble Dorado (Golden Oak)?
+P	Mide unos 1,8 m de largo, cerosa y rígida, y brilla con una iridiscencia dorada. ¿De verdad es una hoja del Roble Dorado (Golden Oak)?
 P	Puedes convertir la hoja en una capa maravillosa, pero para ello debes...
 C	… aprender los secretos de su confección (de un Fae, de un espíritu de lo salvaje o quizá de un siervo predilecto de Danu).
 C	… curtir la hoja con una mezcla de agua de cal, guano de cuervo, el cerebro de un oso cavernario y tu propia sangre.

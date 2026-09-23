@@ -214,7 +214,7 @@ C	Un molinero a tiempo completo
 P	Cuando <b><i>cumples los requisitos</i></b>, aumenta la Fortuna en 1, añade "Molino" a la lista de Recursos y dibújalo en el mapa.
 P	A partir de entonces, cuando <b><i>se completa la cosecha de otoño</i></b>, el asentamiento genera +1 Excedente. Además, cuando te <b><i>Equipas en Stonetop o Tienes lo Necesario después</i></b> <b><i>de hacerlo</i></b>, cada ◇ de suministros tiene 1 uso extra.
 HR
-C	<b>EMPALIZADA</b> Un muro de troncos afilados, de 10 pies de alto, para mantener el mal a raya.
+C	<b>EMPALIZADA</b> Un muro de troncos afilados, de 3 m de alto, para mantener el mal a raya.
 P	<b>Requiere</b> todo lo siguiente, en orden:
 C	Mucha madera (~20-25 carros cargados, Valor 3)
 C	Un ingeniero/capataz competente

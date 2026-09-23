@@ -178,7 +178,7 @@ HR
 ICON	icons/treasure.svg
 H3	Un huso de hilo fino
 P	<i>mágico</i>
-P	Una hebra de fibra, de unos 50 pies de largo, hilada por un fantasma con todo el pelo que alguna vez se les cayó a sus hijas. El hilo es ligero, fino y de una resistencia casi irrompible, pero solo puede manejarlo quien haya visto la Última Puerta. Solo el filo de una hoja de plata puede cortarlo. Puede usarse para atar con firmeza a un fantasma, si eres astuto y puedes manejar el hilo tú mismo.
+P	Una hebra de fibra, de unos 15 metros de largo, hilada por un fantasma con todo el pelo que alguna vez se les cayó a sus hijas. El hilo es ligero, fino y de una resistencia casi irrompible, pero solo puede manejarlo quien haya visto la Última Puerta. Solo el filo de una hoja de plata puede cortarlo. Puede usarse para atar con firmeza a un fantasma, si eres astuto y puedes manejar el hilo tú mismo.
 HR
 ICON	icons/treasure.svg
 H3	Una espada de madera pálida
@@ -274,7 +274,7 @@ P	1d12 lo estrechamente atado
 HR
 P	1-2 No puede alejarse de su presencia inmediata
 P	3-6 Debe permanecer en el recinto/el sitio
-P	7-10 Puede vagar unas pocas millas; vuelve cada día
+P	7-10 Puede vagar unos kilómetros; vuelve cada día
 P	11-12 Puede vagar lejos y por todas partes, pero debe volver periódicamente
 PB
 P	Si la forma manifestada de un fantasma queda a
@@ -293,7 +293,7 @@ H3	La Gwraig Wen
 P	<i>Solitaria</i>, <i>espíritu</i>, <i>no muerta</i>, <i>desamparada</i>
 P	<b>HP</b> 19; <b>Armadura</b> 1 (carece de órganos)
 P	<b>Daño</b> manos desnudas d6 con desventaja (<i>mano</i>)
-P	<b>Cualidades especiales</b> atada a unas pocas millas de sus huesos; no puede formar recuerdos nuevos; no deja huellas <b>Instinto</b> arrastrar a otros a su búsqueda
+P	<b>Cualidades especiales</b> atada a unos kilómetros de sus huesos; no puede formar recuerdos nuevos; no deja huellas <b>Instinto</b> arrastrar a otros a su búsqueda
 P	• Manifestarse a la luz de la luna como una mujer pálida y desaliñada
 P	• Pedir ayuda, e insistir
 P	• Agitarse cada vez más, parpadeando y vibrando mientras tanto

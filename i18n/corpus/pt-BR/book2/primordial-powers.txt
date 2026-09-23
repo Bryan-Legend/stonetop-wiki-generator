@@ -314,7 +314,7 @@ B	Uma pilha de pratos de estanho, com estênceis ◇ vazados; dispostos corretam
 B	Uma bolsa de moedas brancas esquisitas, com símbolos ◇ esquisitos, muito mais leves e duras do que se esperaria (Valor 1, talvez?)
 B	Uma… ponta de lança (?), encravada fundo na rocha, brilhando com luz estelar eterna (<i>mão</i>, <i>mágica</i>, <i>bela</i>, Valor 2)
 B	Um cálice de prata (Valor 2), amassado ◇ e embaçado, gravado com imagens de monstros sendo presos num globo
-B	Uma estátua de 2,4 m de uma deusa desconhecida com estrelas e luas em suas muitas mãos (<i>imóvel</i>, <i>frágil</i>, Valor 2)
+B	Uma estátua de 2,5 m de uma deusa desconhecida com estrelas e luas em suas muitas mãos (<i>imóvel</i>, <i>frágil</i>, Valor 2)
 B	Uma gema de chama azul cristalizada; fria ao toque, mas derrete metal e inicia incêndios com o tempo (<i>perigosa</i>, Valor 3)
 B	Uma cota de malha ◇◇ de ferro negro (2 de armadura, <i>quente</i>, <i>incômoda</i>, Valor 4), absolutamente imune à magia
 B	Uma pedreira abandonada de pedra branca pura, do tipo que se precisa para um portal; alagada, mas ainda cheia de bom material

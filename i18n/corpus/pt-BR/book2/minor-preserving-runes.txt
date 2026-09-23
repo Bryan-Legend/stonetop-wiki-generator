@@ -15,7 +15,7 @@ C	… passe algumas horas copiando-as, arriscando um erro.
 C	… passe semanas traçando as runas em objetos, até elas reluzirem prateadas e sumirem.
 H3	As Runas da Preservação
 P	Quando você <b><i>traça as runas pelo interior de um</i></b> <b><i>cômodo ou recipiente</i></b>, elas reluzem prateadas e somem, preservando o conteúdo de poeira, deterioração, ferrugem etc. Perca 1 HP, mais 1 HP para cada um dos seguintes que for verdade:
-B	O recipiente/cômodo tem mais de um metro em qualquer dimensão
+B	O recipiente/cômodo tem mais de um par de metros em qualquer dimensão
 B	O recipiente é portátil (caso contrário, o efeito acaba se ele for movido)
 B	O efeito dura indefinidamente, enquanto as runas estiverem intactas (caso contrário, começa quando o cômodo/recipiente é selado e acaba quando é aberto)
 P	Assim que as runas estiverem no lugar, role +CON: <b>com</b> <b>10+</b>, você recupera normalmente os HP perdidos; <b>com 7-9</b>, não pode recuperar os HP perdidos até passar uma estação <i>ou</i> o efeito acabar, o que vier primeiro; <b>com 6-</b>, não pode recuperar os HP perdidos até o efeito acabar

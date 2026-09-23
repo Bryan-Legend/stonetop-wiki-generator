@@ -32,17 +32,17 @@ P	Una aldea agrícola en el extremo oriental de <b>las Llanuras (the Flats)</b> 
 P	Los PJ llaman hogar a esta aldea. Es una comunidad muy unida, pobre pero un buen lugar para vivir. Se espera que todo el mundo arrime el hombro, pero pocos piensan mal de quienes sufren una desgracia. El pueblo se une; su comunidad es su fuerza.
 H2	Lugares
 HR
-B	La <b>Piedra</b> mide bastante más de 50 pies de alto y está grabada con runas desvaídas. Parece más antigua incluso que las ruinas de los <b>Hacedores (Makers)</b> (página 264) sobre las que se fundó la aldea. Cuando llegan las tormentas, los rayos caen sobre la Piedra una y otra vez.
+B	La <b>Piedra</b> mide bastante más de 15 metros de alto y está grabada con runas desvaídas. Parece más antigua incluso que las ruinas de los <b>Hacedores (Makers)</b> (página 264) sobre las que se fundó la aldea. Cuando llegan las tormentas, los rayos caen sobre la Piedra una y otra vez.
 B	La <b>Cisterna</b> es una cámara subterránea, claramente un artefacto de los Hacedores. Los lugareños la llenan con lluvia, nieve y agua del <b>Arroyo (the Stream)</b> (página 396).
 B	La <b>taberna</b> es un gran salón donde la gente se reúne tras la puesta de sol para beber y charlar. Ofrece sitio en el suelo a los viajeros y un pequeño establo bajo el mismo techo. Allí se guardan los caballos del pueblo.
 B	El <b>granero</b> es un almacén construido sobre los cimientos de una ruina de los Hacedores. Aquí se guardan los víveres. Todos contribuyen, todos comparten.
 B	El <b>pabellón de los dioses</b> es una estructura al aire libre con santuarios a <b>Aratis</b> (página 22), <b>Danu</b> (página 64), <b>Helior</b> (página 224), <b>Tor</b> (página 452) y quizá otros (página 178). Es lo más parecido a un templo que tiene Stonetop.
 PAGE	13
-B	La <b>Muralla Circular (Ringwall)</b> es un murete de piedras de campo que llega a la cintura, de 2 o 3 pies de grosor. No detendrá a unos asaltantes serios, pero ofrece algo de cobertura si hace falta. Las casas que quedan fuera son más nuevas, construidas por inmigrantes o familias más jóvenes.
-B	Las <b>torres de vigilancia</b> se alzan a lo largo de la Muralla Circular, de una docena de pies de alto más o menos. Una al norte, otra al sudeste y otra al sudoeste. Los aldeanos se turnan para hacer guardia por la noche.
+B	La <b>Muralla Circular (Ringwall)</b> es un murete de piedras de campo que llega a la cintura, de 60 cm o 1 m de grosor. No detendrá a unos asaltantes serios, pero ofrece algo de cobertura si hace falta. Las casas que quedan fuera son más nuevas, construidas por inmigrantes o familias más jóvenes.
+B	Las <b>torres de vigilancia</b> se alzan a lo largo de la Muralla Circular, de unos 4 metros de alto. Una al norte, otra al sudeste y otra al sudoeste. Los aldeanos se turnan para hacer guardia por la noche.
 B	Un <b>sendero en zigzag</b> baja por el risco hasta el <b>Arroyo</b> (página 396) y el <b>Gran Bosque</b> (página 200). Subirlo lleva de 10 a 15 minutos, más con una carga pesada.
-B	Los <b>campos</b> se extienden alrededor del pueblo, unos 1000 acres en total. Cada año, un tercio de la tierra queda en barbecho, y en el resto se cultiva cebada, avena, judías y patatas. Los granjeros trabajan los campos en común, en lugar de en parcelas familiares.
-B	La <b>Vieja Muralla (Old Wall)</b> rodea los campos, a una milla de la Piedra y al final del <b>Camino del Oeste</b> (página 270). Es evidente que fue una poderosa muralla, pero se ha derrumbado y las eras la han enterrado. Cuando los aldeanos necesitan piedra para construir, la sacan de la vieja muralla y la acarrean hasta el pueblo.
+B	Los <b>campos</b> se extienden alrededor del pueblo, unas 400 hectáreas en total. Cada año, un tercio de la tierra queda en barbecho, y en el resto se cultiva cebada, avena, judías y patatas. Los granjeros trabajan los campos en común, en lugar de en parcelas familiares.
+B	La <b>Vieja Muralla (Old Wall)</b> rodea los campos, a unos 1,5 km de la Piedra y al final del <b>Camino del Oeste</b> (página 270). Es evidente que fue una poderosa muralla, pero se ha derrumbado y las eras la han enterrado. Cuando los aldeanos necesitan piedra para construir, la sacan de la vieja muralla y la acarrean hasta el pueblo.
 H2	Preguntas
 HR
 Q	¿Cuál es tu leyenda favorita sobre el origen de la Piedra?

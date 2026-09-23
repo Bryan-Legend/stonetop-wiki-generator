@@ -11,7 +11,7 @@ TH	apéndice d: arcanos mayores
 P	<i>mágico</i>
 P	Un anillo de cobre finamente tallado, cubierto de verdín y siempre algo húmedo. Tiene la forma de una extraña criatura reptiliana que devora su propia cola.
 HR
-P	Cuando <b><i>te pones el Anillo</i></b>, percibes la presencia de toda masa de agua en unas pocas millas a la redonda, natural o no, aunque esté bajo tierra.
+P	Cuando <b><i>te pones el Anillo</i></b>, percibes la presencia de toda masa de agua en unos kilómetros a la redonda, natural o no, aunque esté bajo tierra.
 P	Cuando <b><i>llevas puesto el Anillo y acaricias su cabeza reptiliana</i></b>, el aire a tu alrededor se vuelve más húmedo y fresco.
 P	Si sigues acariciándolo durante un minuto o así, se forma una neblina a ras de suelo que crece y se espesa mientras continúes. Unos minutos acariciando el Anillo cubrirán tus alrededores inmediatos con una niebla espesa y cegadora. Media hora cubrirá toda la comarca. La niebla persiste mientras acaricies el Anillo y luego se disipa de forma natural según el tiempo que haga.
 P	Cuando <b><i>has usado el Anillo para invocar una niebla cegadora y una criatura con nombre muere dentro de esa niebla</i></b>, el Anillo te preguntará (en silencio, en tu mente, no tanto con palabras como con un profundo anhelo) <i>¿Puedo</i> <i>llevarme a este?</i> Si accedes, el cuerpo de la criatura desaparecerá —esfumado entre la bruma— en cuanto ningún mortal le esté prestando atención directa. La primera vez que esto ocurra durante cada niebla que invoques, marca 1:
@@ -59,6 +59,6 @@ C	Tu piel se vuelve fría, húmeda y escamosa.
 C	Puedes respirar agua a través de la piel, pero debes mantenerla húmeda o sufrir debilidades cada vez mayores.
 C	Solo te nutre la carne. Las plantas, los cereales y similares ya no cuentan como suministros ni provisiones cuando necesitas comer.
 C	Solo te nutre la carne cruda, pero eres inmune a las enfermedades transmitidas por los alimentos.
-C	Aparecen 1d6 simas a pocas millas de ti. En el fondo de cada una sobresale un megalito de un agua estancada, atendido por siervos de Daagon.
+C	Aparecen 1d6 simas a unos kilómetros de ti. En el fondo de cada una sobresale un megalito de un agua estancada, atendido por siervos de Daagon.
 C	El Coste del Anillo pasa a ser «Sacrificios vivos, indefensos e inteligentes».
 P	reverso

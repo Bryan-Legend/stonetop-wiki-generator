@@ -222,7 +222,7 @@ P	<b>Instinct</b> dominer la Rivière d'Effroi
 P	• Sentir un intrus dans son domaine
 P	• Transfixer quelqu'un avec l'un de ses innombrables yeux (voir ci-dessous)
 P	• Entraîner les intrus vers leur perte
-P	C'est une chose de légende. Un grand ver écailleux, dit-on, long de centaines de pieds, orné d'yeux sur toute sa longueur. Des centaines d'yeux, tant et tant. On dit qu'il voit tout ce qui se passe le long du fleuve. On dit qu'il ne tolère aucune intrusion, qu'il noie ou dévore tous ceux qui empiètent sur son domaine.
+P	C'est une chose de légende. Un grand ver écailleux, dit-on, long de plusieurs dizaines de mètres, orné d'yeux sur toute sa longueur. Des centaines d'yeux, tant et tant. On dit qu'il voit tout ce qui se passe le long du fleuve. On dit qu'il ne tolère aucune intrusion, qu'il noie ou dévore tous ceux qui empiètent sur son domaine.
 P	Mais ce n'est pas tout à fait vrai. Certaines personnes ont rencontré le Suileach et ont vécu pour raconter l'histoire, hantées par ce qu'elles ont vu se refléter dans ses yeux.
 P	Quand tu <b><i>fixes, transfixé, l'un des</i></b> <b><i>yeux du Suileach</i></b>, marque <i>hébété</i> et choisis 1 :
 B	Tu te vois toi-même, délesté de tout fardeau. Nomme un PNJ que tu aimes ; ton cœur se refroidit envers lui. Ensuite, gagne une nouvelle manœuvre de ton livret.

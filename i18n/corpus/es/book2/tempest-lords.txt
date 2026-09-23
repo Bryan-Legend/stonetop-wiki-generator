@@ -76,14 +76,14 @@ B	El casco de un barco, casi todo enterrado pero de algún modo aún intacto
 B	Una vela desgarrada de malla de <b>eterio</b> (página 404), atada a una cruz de metal oxidado
 B	Objetos extraños, desperdigados y enterrados desde hace mucho: un cilindro de latón abollado, un disco de metal grabado, un timón de rueda desmesurado, un timón de popa, etc.
 B	Un afloramiento rocoso, de una piedra ajena al terreno que lo rodea, inclinado en un ángulo extraño
-B	Una losa de granito agrietada, grande como el granero y veteada de eterio, que flota a unos pies del suelo y gira con desgana
+B	Una losa de granito agrietada, grande como el granero y veteada de eterio, que flota a un par de metros del suelo y gira con desgana
 B	Losas de piedra labrada: rotas, enterradas y dispersas, como el juguete de un niño estrellado desde alturas imposibles
 H3	Estructuras enigmáticas
 P	Por ejemplo:
 B	Agujas de hierro, como árboles huecos y oxidados, colocadas en línea a través del paisaje
 B	Un cubo negro del tamaño de una casa; cuando cae un rayo, la tierra se ilumina durante millas con líneas brillantes que se desvanecen en los minutos siguientes
-B	Pedestales de piedra a lo largo de una cresta, algunos coronados con esculturas de 6 pies de alto, como tulipanes, que giran con la brisa
-B	Cilindros de cobre, cada uno de quizá 8 pies de alto y cubierto de verdín; casi enterrados en un suelo blanco y calizo
+B	Pedestales de piedra a lo largo de una cresta, algunos coronados con esculturas de 1,8 m de alto, como tulipanes, que giran con la brisa
+B	Cilindros de cobre, cada uno de quizá 2,5 m de alto y cubierto de verdín; casi enterrados en un suelo blanco y calizo
 B	Megalitos, grabados con ideogramas que describen los movimientos de las estrellas
 B	Una placa de bronce sobre una losa de piedra, lo único destacable en millas a la redonda; intacta, sin líquenes; sus ideogramas, profundamente grabados, empiezan con la frase «Este no es un lugar de honor»
 PAGE	402
@@ -213,7 +213,7 @@ P	Cuando <b><i>la urna está abierta y vacía</i></b>, atrae hacia sí la fuerza
 HR
 ICON	icons/treasure.svg
 H3	Anillo de bronce
-P	◇, <i>mágico</i>, <i>ignífugo</i>, horas. De unas 8 pulgadas de diámetro y una pulgada de grosor en toda su extensión, chamuscado y manchado de ceniza. Sobresale un botón, con un glifo de los Señores de la Tempestad que podría significar «testarudo».
+P	◇, <i>mágico</i>, <i>ignífugo</i>, horas. De unos 20 cm de diámetro y 2,5 cm de grosor en toda su extensión, chamuscado y manchado de ceniza. Sobresale un botón, con un glifo de los Señores de la Tempestad que podría significar «testarudo».
 P	Cuando <b><i>encuentras el anillo</i></b>, tiene energía suficiente para funcionar 1d4-1 horas.
 P	Cuando <b><i>pulsas el botón</i></b>, el anillo queda fijo en su sitio, desafiando la gravedad. Sencillamente, no se mueve. El efecto termina si el anillo se dobla o se rompe, o cuando se queda sin energía.
 P	No hay ninguna forma evidente de terminar el efecto antes de tiempo. Cuando <b><i>el anillo se queda sin energía</i></b>, el botón salta y el efecto termina.
@@ -222,7 +222,7 @@ HR
 ICON	icons/treasure.svg
 H3	Faja flotante
 P	<i>mágica</i>
-P	Una tira de lamé blanco azulado, de quizá 6 pulgadas de ancho por 6 pies de largo, que serpentea en el aire. Como un cinturón, pero para alguien mucho más grande que tú.
+P	Una tira de lamé blanco azulado, de quizá 15 cm de ancho por 1,8 m de largo, que serpentea en el aire. Como un cinturón, pero para alguien mucho más grande que tú.
 P	Cuando <b><i>te ciñes bien la faja</i></b> <b><i>a la cintura</i></b>, te sostiene en las caídas: nunca caes más rápido que si hubieras caído desde tu propia altura.
 HR
 ICON	icons/treasure.svg
@@ -298,7 +298,7 @@ E	alguna combinación de lo anterior; o
 E	algo totalmente distinto.
 ICON	icons/spirit.svg
 H3	Vórtice elemental
-P	Imagina una esfera de filigrana de eterio, de quizá 6 pulgadas de diámetro, con una mota brillante que gira en su centro. Este artilugio, llamado matriz, ata a un <b>espíritu elemental</b> (página 360) y absorbe una fuerza concreta, con la que el espíritu puede manifestar un vórtice arremolinado.
+P	Imagina una esfera de filigrana de eterio, de quizá 15 cm de diámetro, con una mota brillante que gira en su centro. Este artilugio, llamado matriz, ata a un <b>espíritu elemental</b> (página 360) y absorbe una fuerza concreta, con la que el espíritu puede manifestar un vórtice arremolinado.
 P	Un espíritu atado a una matriz debe obedecer cualquier orden dada en la lengua primordial de los Señores de la Tempestad. Como pocos seres vivos pueden darle esas órdenes, es probable que cualquier matriz que se encuentre esté actuando según órdenes de hace siglos.
 P	<b>Poder y tamaño:</b> Cada matriz absorbe un tipo concreto de poder, y los HP actuales de su vórtice reflejan su poder actual.
 P	A medida que un vórtice gana o pierde HP, su tamaño, su armadura y su daño también cambian. A 0 HP, se disipa y su matriz cae al suelo, inerte hasta que absorba más HP.

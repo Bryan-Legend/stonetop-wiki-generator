@@ -8,7 +8,7 @@
 PAGE	515
 H3	Un códice desmesurado
 P	<i>inmóvil</i>, <i>frágil</i>
-P	Un libro de unos 2 pies por 3, de algo más de 6 pulgadas de grosor cerrado. Las tapas están hechas de tablas de cedro plateado. Las hojas son de vitela fina, estirada a partir de la piel de alguna bestia enorme.
+P	Un libro de unos 60 cm por 1 m, de algo más de 15 cm de grosor cerrado. Las tapas están hechas de tablas de cedro plateado. Las hojas son de vitela fina, estirada a partir de la piel de alguna bestia enorme.
 P	Las páginas están llenas de caligrafía grande y precisa, con muchos diagramas que muestran posturas meditativas y extraños patrones geométricos relacionados con el calor, el agua y el hielo.
 P	Para desentrañar los misterios del códice, debes…
 C	… descifrar la escritura, redactada en una variante del alfabeto de los Señores de la Escarcha (Rime Lords).

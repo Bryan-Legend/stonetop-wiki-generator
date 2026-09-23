@@ -250,7 +250,7 @@ H3	Frythanc
 P	<i>Solitaire</i>, <i>grand</i>, <i>furtif</i>, <i>terrifiant</i>
 P	<b>HP</b> 16; <b>Armure</b> 0 <b>Dégâts</b> serres plongeantes d10+2 (<i>main</i>, <i>rapproché</i>, <i>puissant</i>, <i>agrippant</i>), bec d10 (<i>allonge</i>, désavantage)
 P	<b>Qualités spéciales</b> vue incroyable, ouïe déplorable <b>Instinct</b> attendre le bon moment
-P	• Planer sur les courants thermiques, à des milliers de pieds de haut
+P	• Planer sur les courants thermiques, à des centaines de mètres de haut
 P	• Piquer comme la foudre, happant sa proie
 P	• Traîner une proie sur 9 à 12 mètres à coups d'ailes lents et puissants — puis la lâcher
 P	De grands oiseaux écailleux, aux ailes d'une douzaine de mètres d'envergure, aux plumes bleu ciel et blanches sur leur face inférieure pour se fondre dans le ciel. On dit qu'ils nichent dans les Pics de Huffel mais chassent dans les Plaines, happant les imprudents — homme, femme, cerf, cheval — et les laissant tomber au sol. La chute tue ou estropie généralement sa proie, puis il se pose pour dîner à loisir.

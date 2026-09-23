@@ -20,7 +20,7 @@ C	… hacerte con una rama del árbol de plata.
 C	… volver a casa.
 H3	La Rama de Plata
 P	◇, <i>mágico</i>, <i>hermoso</i>
-C	◇ fresca, ◇ marchitándose, ◇ desnuda Mide unos pocos pies de largo y está cargada de flores blancas y frutos dorados que tintinean. Es sorprendentemente resistente y se mantiene fresca indefinidamente a menos que se usen sus poderes. Solo puede salir del dominio de los Fae una rama así a la vez.
+C	◇ fresca, ◇ marchitándose, ◇ desnuda Mide un par de metros de largo y está cargada de flores blancas y frutos dorados que tintinean. Es sorprendentemente resistente y se mantiene fresca indefinidamente a menos que se usen sus poderes. Solo puede salir del dominio de los Fae una rama así a la vez.
 P	Cuando <b><i>haces tintinear la rama de plata</i></b>, todos los que la oyen (<i>alcance</i>, <i>área</i> excepto tú) se llenan de dicha y olvidan sus penas durante unas horas. Tira +CHA:
 P	<b>con 10+</b>, elige 1; <b>con 7-9</b>, elige 1 y el DJ elige otra; <b>con 6-</b>, las 3.
 B	La rama empieza a marchitarse; si ya se estaba marchitando, queda desnuda y pierde sus poderes

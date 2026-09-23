@@ -35,7 +35,7 @@ P	Cuando <b><i>reúnes poder elemental en torno a la Mano Azur</i></b>, puedes e
 HR
 C	<b>EL OJO DE LA TORMENTA</b> Cuando <b><i>agarras la Mano Azur e impones tu voluntad a los elementos que te rodean</i></b>, tira +CON: <b>con</b> <b>10+</b>, los elementos se calman o pierden fuerza, y elige 2 de la lista de abajo; <b>con 7-9</b>, los elementos se calman o pierden fuerza, y elige 1.
 B	No sufres ninguna consecuencia (si no, marca una)
-B	El efecto tiene gran alcance, hasta una milla a tu alrededor (si no, solo abarca unos pocos pasos)
+B	El efecto tiene gran alcance, hasta 1,5 km a tu alrededor (si no, solo abarca unos pocos pasos)
 B	Puedes mantener el efecto sin esfuerzo (si no, requiere toda tu concentración)
 HR
 C	<b>RESONANCIA</b> (Requiere: Batería, El Ojo de la Tormenta) Cuando <b><i>has capturado una fuerza elemental tremenda</i></b> (como la de una tormenta o un incendio forestal) y <b><i>luego</i></b> <b><i>la canalizas hacia los remolinos del aire o de la tierra</i></b>, elige 1 de la lista de abajo y tira +INT: <b>con 10+</b>, ocurre; <b>con 7-9</b>, ocurrirá si eliges marcar una consecuencia; <b>con 6-</b>, marca una consecuencia y prepárate para lo peor.

@@ -151,14 +151,14 @@ B	Un vasto lago subterráneo, quizá el mismo que conecta con la <b>Segunda</b> 
 B	El <b>Bosque Colgante</b>, un túnel largo y ancho lleno de raíces delgadas que cuelgan desde la superficie. Lleno de grillos y de cosas que se los comen.
 B	El <b>Torreón de los Espejos</b>, un puesto avanzado de los Señores de la Forja, casi intacto, revestido de mosaicos reflectantes. Se alza sobre un pozo sin fondo (?).
 B	El <b>Aliento Soñador</b>, un estanque de aguas termales. Mohos y hongos cubren la piedra cercana. Las aguas devuelven el vigor, pero provocan una euforia que atonta.
-B	El <b>Glotón Rojo,</b> una estatua con cuernos, de 40 pies de alto y forma de sapo, con un brasero que arde eternamente y rubíes del tamaño de un puño (Valor 4) por ojos. Los thraulgwyn la veneran.
+B	El <b>Glotón Rojo,</b> una estatua con cuernos, de 12 m de alto y forma de sapo, con un brasero que arde eternamente y rubíes del tamaño de un puño (Valor 4) por ojos. Los thraulgwyn la veneran.
 B	Las puertas cerradas de la <b>Cámara del Portal</b> (columna siguiente), frías e imponentes.
 HR
 H3	La Cámara del Portal
-P	A cinco horas de las Cavas (si conoces la ruta más corta) se alza una puerta de dos hojas: 30 pies de alto, de bronce, cubierta de salvaguardas rúnicas y relieves de las glorias de los Señores de la Forja.
+P	A cinco horas de las Cavas (si conoces la ruta más corta) se alza una puerta de dos hojas: 9 m de alto, de bronce, cubierta de salvaguardas rúnicas y relieves de las glorias de los Señores de la Forja.
 P	Una ingeniosa cerradura la sella. Solo existen seis llaves; los <b>Ustrina</b> (página 464) tienen cinco.
-P	Dentro hay un vasto espacio octogonal, de 60 pies desde el suelo hasta el techo inclinado. En seis de sus esquinas hay nichos de 20 pies de alto, cada uno de los cuales alberga un gran <b>constructo de metal</b> (página 167) que ataca a cualquier grupo que no porte una de las llaves.
-P	Una losa de piedra blanca, de 30 pies de alto y 3 de grosor, se alza en posición vertical en el centro de la cámara.
+P	Dentro hay un vasto espacio octogonal, de 18 m desde el suelo hasta el techo inclinado. En seis de sus esquinas hay nichos de 6 m de alto, cada uno de los cuales alberga un gran <b>constructo de metal</b> (página 167) que ataca a cualquier grupo que no porte una de las llaves.
+P	Una losa de piedra blanca, de 9 m de alto y 1 de grosor, se alza en posición vertical en el centro de la cámara.
 P	Cada cara tiene grabado un círculo mágico. Es un <b>portal</b> (página 306), conectado con los de la <b>Torre en Ruinas</b> (página 332), el <b>Lago de los Tres Aquelarres</b> (página 438), <b>Vor Svetelik</b> (página 468), etc. Es plenamente funcional y puede usarse mediante <b>Abrir el Camino</b> (página 517).
 P	Los Ustrina usan este lugar para viajar a la Cava de Gordin y para volver a sus lejanos hogares. Ninguna secta controla la Cámara, y la tratan como terreno neutral. Pero eso no se aplica a quienes no son Ustrina.
 PAGE	247
@@ -397,8 +397,8 @@ P	• Abrirse paso comiendo la roca sólida
 P	• Irrumpir desde la pared de un túnel
 P	• Exhalar un gas sulfuroso asfixiante
 P	• Fundir el metal que lo atraviesa
-P	Criaturas de la primera era, seres de fuego y piedra. Son segmentados, de 3 pies de grosor y 20 de largo, cubiertos de placas superpuestas que brillan en rojo por las junturas. El aire reverbera de calor a su alrededor. No tienen ojos, solo una gran abertura bucal con hileras concéntricas de dientes trituradores que funden la roca y excavan a través de ella. Tras ellos se extienden túneles sinuosos, revestidos de escoria endurecida en forma de piedra cordada.
-P	Los gusanos descritos aquí solo tienen unos siglos de edad, y son los que es más probable encontrar. En las Profundidades sobreviven otros más viejos y grandes, de hasta 10 pies de ancho y más de 100 de largo (<i>enorme</i>, +6 HP, +2 de daño y tira 1d12 en vez de 1d10). En eones pasados, gusanos aún más grandes excavaron buena parte del Laberinto.
+P	Criaturas de la primera era, seres de fuego y piedra. Son segmentados, de 1 m de grosor y 6 de largo, cubiertos de placas superpuestas que brillan en rojo por las junturas. El aire reverbera de calor a su alrededor. No tienen ojos, solo una gran abertura bucal con hileras concéntricas de dientes trituradores que funden la roca y excavan a través de ella. Tras ellos se extienden túneles sinuosos, revestidos de escoria endurecida en forma de piedra cordada.
+P	Los gusanos descritos aquí solo tienen unos siglos de edad, y son los que es más probable encontrar. En las Profundidades sobreviven otros más viejos y grandes, de hasta 3 m de ancho y más de 30 de largo (<i>enorme</i>, +6 HP, +2 de daño y tira 1d12 en vez de 1d10). En eones pasados, gusanos aún más grandes excavaron buena parte del Laberinto.
 ICON	icons/people.svg
 H3	Saqueador thraulgwyn
 P	<i>Grupo</i>, <i>corrompido</i>, <i>sigiloso</i>, <i>organizado</i>, <i>cauteloso</i>

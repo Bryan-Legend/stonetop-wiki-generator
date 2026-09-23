@@ -7,7 +7,7 @@
 # description: O Brejo de Ferrier (Ferrier's Fen): o pântano quebrado dos Senhores Verdes, seus terrenos, as Bruxas do Salgueiro, o mal do brejo, os trolls e os suarachan.
 PAGE	116
 P	O Brejo de Ferrier fica entre a <b>Grande Mata</b> (página 200), as <b>Terras Escalonadas</b> (página 372) e a <b>Marcha Norte</b> (página 282).
-P	É um brejo enorme, de 100 milhas de largura e 50 de norte a sul, alimentado pelo <b>Riacho</b> (página 396), pelo Sruth perto de <b>Beira-Brejo</b> (página 274) e por muitos córregos menores. É um labirinto de terra firme, poças estagnadas, riachos rasos e quedas súbitas em água muito, muito funda. E lama. Muita lama.
+P	É um brejo enorme, de 160 km de largura e 80 de norte a sul, alimentado pelo <b>Riacho</b> (página 396), pelo Sruth perto de <b>Beira-Brejo</b> (página 274) e por muitos córregos menores. É um labirinto de terra firme, poças estagnadas, riachos rasos e quedas súbitas em água muito, muito funda. E lama. Muita lama.
 P	Há muito tempo, esta região foi o berço da civilização dos <b>Senhores</b> <b>Verdes</b> (página 210). Mas, quando seus servos se rebelaram e os Senhores Verdes abraçaram as <b>Coisas de Baixo</b> (página 412), os outros <b>Construtores</b> (página 264) afundaram a região e estilhaçaram a civilização dos Senhores Verdes. Continua sendo um lugar quebrado, escorrendo magia antiga e corrupção.
 H2	Impressões
 HR

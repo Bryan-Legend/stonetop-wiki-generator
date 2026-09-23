@@ -214,7 +214,7 @@ C	Um moleiro em tempo integral
 P	Quando vocês <b><i>cumprirem os requisitos</i></b>, aumentem Fortuna em 1, acrescentem "Moinho" à lista de Recursos e desenhem-no no mapa.
 P	Daí em diante, quando <b><i>a colheita de outono terminar</i></b>, o povoado gera +1 Excedente. Além disso, quando vocês <b><i>Equiparem-se em Stonetop ou Tiverem o Necessário depois</i></b> <b><i>de fazer isso</i></b>, cada ◇ de suprimentos tem 1 uso extra.
 HR
-C	<b>PALIÇADA</b> Uma muralha de troncos afiados, de 10 pés de altura, para manter o mal à distância.
+C	<b>PALIÇADA</b> Uma muralha de troncos afiados, de 3 metros de altura, para manter o mal à distância.
 P	<b>Requer</b> todos os seguintes, nesta ordem:
 C	Muita madeira (~20-25 carroçadas, Valor 3)
 C	Um engenheiro/mestre de obras competente

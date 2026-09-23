@@ -183,7 +183,7 @@ P	• Não notar direito alguma coisa
 P	• Arrancar árvores como uma criança arranca capim
 P	• Dar uma patada em algo que o irrita
 P	• Debater-se numa fúria (+<i>área</i>) e depois cansar
-P	Imagine algo como um texugo ou uma preguiça, mas do tamanho de uma casa: 20 pés de comprimento, 9 pés de altura no ombro, antebraços de quase 12 pés incluindo aquelas garras que parecem pás. Em geral só perambulam pelas Terras Escalonadas, procurando suas árvores favoritas para arrancar e mastigar, às vezes limpando encostas inteiras. Praticamente tudo passa longe deles quando pode. Até predadores de topo como um kleztigr acham que não vale o trabalho.
+P	Imagine algo como um texugo ou uma preguiça, mas do tamanho de uma casa: 6 metros de comprimento, 2,7 metros de altura no ombro, antebraços de quase 3,5 metros incluindo aquelas garras que parecem pás. Em geral só perambulam pelas Terras Escalonadas, procurando suas árvores favoritas para arrancar e mastigar, às vezes limpando encostas inteiras. Praticamente tudo passa longe deles quando pode. Até predadores de topo como um kleztigr acham que não vale o trabalho.
 P	Você pensaria que são fáceis de avistar e evitar, e quase sempre estaria certo. Mas às vezes você contorna uma curva ou vence uma encosta e lá está um deles, andando devagar ou mastigando um tronco ou tirando um cochilo, e é melhor tentar contornar, bem quietinho.
 PAGE	378
 HR
@@ -234,7 +234,7 @@ P	<b>Instinto</b> derrubar uma refeição boa e farta
 P	• Seguir a presa por horas, até dias
 P	• Dar o bote na presa a partir do esconderijo (<i>alcance</i>, <i>forte</i>, <i>agarrador</i>)
 P	• Infligir um ferimento letal e sangrento
-P	Como uma <b>onça</b> (página 206), mas duas vezes maior, com presas de 8 polegadas saindo da boca. Contos do Povo das Colinas afirmam que já foram muito mais comuns, até bichos de estimação dos Senhores da Pedra. Hoje são (felizmente) raros.
+P	Como uma <b>onça</b> (página 206), mas duas vezes maior, com presas de 20 centímetros saindo da boca. Contos do Povo das Colinas afirmam que já foram muito mais comuns, até bichos de estimação dos Senhores da Pedra. Hoje são (felizmente) raros.
 P	<b>Algo interessante:</b> Alguns bandos do Povo das Colinas "adotam" um kleztigr, fazendo oferendas de carne ou de cabritos, cordeiros ou até cavalos. O kleztigr acompanha o bando, protegendo-o de forasteiros.
 P	<b>Algo útil:</b> Um kleztigr desses não fere ninguém que use algum item ou roupa característica do "seu" bando (mas pode esperar um presente).
 HR

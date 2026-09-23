@@ -8,7 +8,7 @@
 PAGE	531
 H3	Un báculo con bandas de cobre
 P	◇, <i>mágico</i>
-P	Un báculo corto, de unos 4 pies de alto, que se afina hacia la punta, hecho de roble ennegrecido con un extraño brillo metálico. Lo adornan una docena de bandas de cobre corroído, cubiertas de verdín y desmoronadas en algunos puntos. Las bandas llevan en relieve runas de poder, algunas desgastadas o ilegibles.
+P	Un báculo corto, de unos 1,2 m de alto, que se afina hacia la punta, hecho de roble ennegrecido con un extraño brillo metálico. Lo adornan una docena de bandas de cobre corroído, cubiertas de verdín y desmoronadas en algunos puntos. Las bandas llevan en relieve runas de poder, algunas desgastadas o ilegibles.
 P	El báculo aún hormiguea de poder. Para desentrañar sus misterios, debes…
 C	… averiguar la forma de las runas que faltan o están dañadas.
 C	… sustituir las bandas por otras nuevas de eterio (aetherium) con runas en relieve.

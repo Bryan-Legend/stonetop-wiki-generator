@@ -257,7 +257,7 @@ H3	Colocar alguém em apuros
 P	Esta é uma versão mais agressiva de <b>anunciar encrenca</b> — eles têm que fazer alguma coisa, agora, ou vai ficar feio.
 P	"Alguém" pode ser um PJ ou um NPC, e você pode brincar com os holofotes. Talvez a pessoa que você coloca em apuros não seja a que vai resolver.
 HR
-P	<i>"Quase! Você faz o salto, mas bate</i> <i>no galho. Escorrega e se segura por um triz. Você está pendurado naquele galho</i> <i>assim, ofegante, uns 25 metros de altura,</i> <i>e sua pegada está cedendo. O que</i> <i>você faz?"</i>
+P	<i>"Quase! Você faz o salto, mas bate</i> <i>no galho. Escorrega e se segura por um triz. Você está pendurado naquele galho</i> <i>assim, ofegante, uns 24 metros de altura,</i> <i>e sua pegada está cedendo. O que</i> <i>você faz?"</i>
 HR
 P	<i>"O grandalhão se levanta e te encara de cima.</i> <i>'Como foi que você me chamou, seu ratinho</i> <i>magrelo?' Rhianna, você vê isso acontecer</i> <i>e nota uns três outros caras, tipos parrudos</i> <i>de mineração, se levantando também, sem um sorriso</i> <i>entre eles. O que você faz?"</i>
 HR
@@ -423,7 +423,7 @@ P	<i>Eu</i> <b><i>anuncio encrenca</i></b><i>. "Você tem certeza de que o Iwan<
 P	<i>Eles fazem perguntas e eu esclareço um pouco a situação (está escuro, a briga soa bem</i> <i>perto, nenhum deles conhece bem estas colinas).</i> <i>Então a Rhianna diz: "Vamos. Para as colinas."</i>
 P	<i>Isso encerra a cena! Vem um pouco de jogo solto</i> <i>enquanto falamos de logística. O Vahid e a Blodwen</i> <i>levam uma tocha cada, acesa na fogueira de cozinha.</i> <i>"Vocês partem?", pergunto. Eles partem.</i>
 P	<i>Afasto a lente e descrevo a situação em</i> <i>geral: "Está escuro, as colinas são íngremes e</i> <i>arborizadas, e vocês estão se guiando pelo som,</i> <i>seguindo os ruídos da luta." Faço meu</i> <i>movimento suave e</i> <b><i>digo a eles os requisitos</i></b><i>.</i> <i>"Se vocês estão tentando chegar lá depressa, isso vai</i> <i>disparar Lutar como Um Só — o perigo sendo</i> <i>que vocês se percam, se separem ou se machuquem no</i> <i>caminho. Se forem com calma e se moverem</i> <i>com cuidado, não vão disparar movimento nenhum — mas</i> <i>provavelmente não vão chegar a tempo de ajudar</i> <i>na luta. O que vocês fazem?"</i>
-P	<i>Eles decidem Lutar como Um Só. Resolvemos</i> <i>o movimento e cada um rola bem, então</i> <i>fazemos a transição para a próxima cena. "É uma corrida desesperada,</i> <i>meio às cegas pela mata, mas então</i> <i>vocês desembocam numa clareira. À luz trêmula das tochas, vocês veem a Eira e a Lowri</i> <i>encarando um brutamontes enorme e corpulento,</i> <i>tipo quatro metros de altura e metade disso de largura."</i>
+P	<i>Eles decidem Lutar como Um Só. Resolvemos</i> <i>o movimento e cada um rola bem, então</i> <i>fazemos a transição para a próxima cena. "É uma corrida desesperada,</i> <i>meio às cegas pela mata, mas então</i> <i>vocês desembocam numa clareira. À luz trêmula das tochas, vocês veem a Eira e a Lowri</i> <i>encarando um brutamontes enorme e corpulento,</i> <i>tipo três metros e meio de altura e metade disso de largura."</i>
 PAGE	191
 HR
 P	<i>Mal tomo fôlego antes de fazer meu</i> <i>movimento suave (</i><b><i>colocar alguém em apuros</i></b><i>): "Ele ergue</i> <i>uma arvorezinha como um porrete e ruge, prestes</i> <i>a esmagar as duas, e elas duas estão só</i> <i>encarando essa coisa, boquiabertas." Eu vinha me dirigindo ao grupo, com os holofotes desfocados,</i> <i>então agora fecho o foco. "Rhianna, Blodwen,</i> <i>vocês chegaram primeiro — o que vocês fazem?"</i>

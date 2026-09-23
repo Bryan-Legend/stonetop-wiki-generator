@@ -472,7 +472,7 @@ Q	¿Con quién vives? ¿Con tu familia? ¿Solo? ¿Vivís juntos alguno de vosotr
 Q	¿Por qué está tu casa ahí, y no en otro sitio?
 Q	¿Dónde viven tus padres/abuelos/ hermanos/etc.?
 Q	¿Dónde está la herrería/la tenería/ la Crónica/la pajarera/la cerería/etc.?
-P	Además, añade cualquier punto de interés nuevo a los mapas correspondientes. Por ejemplo, si el Buscador conoce la ubicación de unas tallas espeluznantes en una cueva de caliza, en la pared del acantilado a unas millas al norte del pueblo, añádela al mapa de los Alrededores.
+P	Además, añade cualquier punto de interés nuevo a los mapas correspondientes. Por ejemplo, si el Buscador conoce la ubicación de unas tallas espeluznantes en una cueva de caliza, en la pared del acantilado a unos kilómetros al norte del pueblo, añádela al mapa de los Alrededores.
 P	Una vez que hayas actualizado los mapas, llega el momento de <b>que estalle la primavera</b>.
 PAGE	32
 H2	Que estalle la primavera

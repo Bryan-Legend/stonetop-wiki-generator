@@ -8,7 +8,7 @@
 PAGE	525
 H3	Un carillón de vidrio de los Hacedores
 P	◇◇ <b>,</b> <i>indestructible</i><b>,</b> <i>mágico</i><b>,</b> <i>ruidoso</i><b>,</b> <i>peligroso</i>
-P	Un cilindro de unos 4 pies de largo y 3 pulgadas de ancho, de un vidrio sorprendentemente fino. Al golpearlo con suavidad, suena con un tañido rico y sonoro. Al golpearlo con fuerza, el sonido es casi ensordecedor y hace que aparezcan ondulaciones en la superficie de la piedra, el cristal o el vidrio común cercanos.
+P	Un cilindro de unos 1,2 m de largo y 8 cm de ancho, de un vidrio sorprendentemente fino. Al golpearlo con suavidad, suena con un tañido rico y sonoro. Al golpearlo con fuerza, el sonido es casi ensordecedor y hace que aparezcan ondulaciones en la superficie de la piedra, el cristal o el vidrio común cercanos.
 P	El carillón es una herramienta poderosa, si logras desentrañar sus secretos. Para ello…
 C	… agárralo con firmeza y descarga un golpe sólido y potente, tirando +CON: <b>con 10+</b>, lo consigues; <b>con 7-9</b>, marca una debilidad y tendrás que volver a intentarlo; <b>con 6-</b>, pregunta al DJ qué sale terriblemente mal.
 C	… pasa una semana o así aprendiendo a controlar el tañido del carillón.

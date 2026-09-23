@@ -322,7 +322,7 @@ B	Empiezas a sufrir pesadillas de horrores que se revuelven bajo la tierra
 B	El menhir te hace una pregunta sobre tu vergüenza, tu culpa o tus miedos; respóndela con sinceridad
 ICON	icons/site.svg
 H3	Un pozo hondo y oscuro
-P	Un agujero en el suelo, de unos 5 pies de ancho y al menos 100 pies de hondo, que acaba en una cámara inundada o un lago subterráneo donde hay una <b>Boca de Daagon</b> (página 55).
+P	Un agujero en el suelo, de unos 1,5 metros de ancho y al menos 30 metros de hondo, que acaba en una cámara inundada o un lago subterráneo donde hay una <b>Boca de Daagon</b> (página 55).
 P	Cuando <b><i>te demoras junto al pozo</i></b>, responde a una de las siguientes preguntas:
 Q	¿De quién sientes más envidia y por qué?
 Q	¿Qué deseas poseer más que ninguna otra cosa?
@@ -344,7 +344,7 @@ HR
 ICON	icons/treasure.svg
 H3	Una araña de hierro
 P	<i>mágica</i>, <i>indestructible</i>
-P	Del tamaño de la palma de la mano, de media pulgada de grosor, oxidada por los bordes, con las patas plegadas sobre el lomo. Un botón oculto hace que las patas se extiendan y muestren sus puntas afiladas. A veces, cuando vas a cogerla, no está exactamente donde la dejaste.
+P	Del tamaño de la palma de la mano, de un centímetro de grosor, oxidada por los bordes, con las patas plegadas sobre el lomo. Un botón oculto hace que las patas se extiendan y muestren sus puntas afiladas. A veces, cuando vas a cogerla, no está exactamente donde la dejaste.
 P	La araña está hambrienta cuando la encuentras.
 P	Cuando <b><i>clavas la araña hambrienta en la</i></b> <b><i>carne de una persona</i></b>, esta pierde 1d4 HP cada pocos segundos hasta que se la arrancan (1d8 de daño, <i>sucio</i>, ignora la armadura). Si la araña la deja a 0 HP, queda saciada.
 P	Cuando <b><i>clavas la araña saciada en la</i></b> <b><i>carne de una persona</i></b>, esta recibe 1 de daño (ignora la armadura) y no envejecerá durante 1d10 años. Si es de mediana edad o mayor, recupera algo del vigor de su juventud. Después, la araña vuelve a estar hambrienta.
@@ -367,7 +367,7 @@ HR
 ICON	icons/treasure.svg
 H3	Un lazo de seda
 P	<i>mágico</i>
-P	Un trozo de cordel fino, atado en forma de lazo corredizo con unos cuantos pies de cuerda sobrante. Es muy resistente, pero una hoja de bronce lo corta limpiamente. Si se desata y se deja sin vigilancia, vuelve a anudarse solo en forma de lazo.
+P	Un trozo de cordel fino, atado en forma de lazo corredizo con un par de metros de cuerda sobrante. Es muy resistente, pero una hoja de bronce lo corta limpiamente. Si se desata y se deja sin vigilancia, vuelve a anudarse solo en forma de lazo.
 P	Cuando <b><i>pasas el lazo por el cuello de</i></b> <b><i>alguien</i></b>, se ciñe con fuerza: queda ajustado e incómodo, pero la víctima puede respirar.
 P	Cuando <b><i>tu víctima miente o se niega a responder</i></b> <b><i>una pregunta</i></b>, el lazo se aprieta y la estrangula hasta que muere o suelta la verdad entre jadeos.
 P	Cuando tú (o cualquier otro) <b><i>intentas quitar</i></b> <b><i>o aflojar el lazo</i></b>, empieza a estrangular a la víctima. Si tú (o quien sea) paras, se relaja. Si tú (o quien sea) insistes, aplasta rápidamente la tráquea de la víctima.

@@ -133,7 +133,7 @@ P	<b><i>Diles los requisitos:</i></b> <i>«Si quieres</i> <i>andar con ese tobil
 PAGE	245
 H2	La muerte y la agonía
 P	Cuando un PJ queda reducido a 0 HP por un ataque que podría matarlo, se está muriendo y debe hacer este movimiento. También puede estar muriéndose porque la ficción lo exige: si cae
-P	100 pies sobre unas rocas, no sufre daño: está a 0 HP y A las Puertas de la Muerte.
+P	30 metros sobre unas rocas, no sufre daño: está a 0 HP y A las Puertas de la Muerte.
 P	<b>A LAS PUERTAS DE LA MUERTE</b>
 P	Cuando <b><i>te estás muriendo</i></b>, vislumbras la Última Puerta (Last Door) y a la Señora de los Cuervos (Lady of Crows) (descríbelas). Después, tira +nada:
 P	<b>con 10+</b>, te arrancas de vuelta al reino de los vivos: vuelve a

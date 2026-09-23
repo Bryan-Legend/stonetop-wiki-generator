@@ -215,7 +215,7 @@ P	<b>Instinto</b> defender el sitio donde está
 P	• Esperar pacientemente para saltar sobre su presa
 P	• Sisear amenazadoramente ante una amenaza
 P	• Morder rápidamente y prepararse para atacar de nuevo
-P	La célebre «víbora arborícola», la serpiente más letal del Bosque, de hasta 2 metros de largo y chorreando veneno. En los meses cálidos cazan y toman el sol en el dosel o en claros soleados. En los meses fríos se esconden en huecos y bajo troncos, y en invierno se aletargan. No cazan personas, pero tampoco les tienen miedo.
+P	La célebre «víbora arborícola», la serpiente más letal del Bosque, de hasta 1,8 metros de largo y chorreando veneno. En los meses cálidos cazan y toman el sol en el dosel o en claros soleados. En los meses fríos se esconden en huecos y bajo troncos, y en invierno se aletargan. No cazan personas, pero tampoco les tienen miedo.
 P	Cuando te muerde un cwisarff, marca una debilidad además de recibir el daño.
 P	Hasta que se trate el veneno, no puedes recuperar HP y corres el peligro de sufrir más daño y debilidades.
 ICON	icons/beast.svg

@@ -97,7 +97,7 @@ H3	Tesouros variados
 B	Um pequeno entalhe de madeira de alguma fera ou quimera (Valor 0)
 B	◇ Ponta de lança de sílex, enorme e primorosamente lascada (<i>tosca</i>, <i>desajeitada</i>, Valor 1 para um colecionador) ◇◇ Tigela grande de madeira com tampa, vedada com cera de abelha, cheia de erva medicinal seca (Valor 2)
 B	Esqueleto quase todo enterrado de uma fera do tamanho de um elefante, com os ossos gravados de glifos e pictogramas que contam uma história importante (<i>imóvel</i>, Valor 2)
-B	Um acre de floresta com 3d6 variedades de <b>flora útil</b> (página 458) crescendo em harmonia cuidadosa; 1d6-1 podem ser colhidas no momento.
+B	Meio hectare de floresta com 3d6 variedades de <b>flora útil</b> (página 458) crescendo em harmonia cuidadosa; 1d6-1 podem ser colhidas no momento.
 HR
 ICON	icons/treasure.svg
 H3	Uma máscara de madeira

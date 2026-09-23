@@ -8,7 +8,7 @@
 PAGE	529
 H3	Una botella de vidrio plateado
 P	◇, <i>frágil</i>, <i>mágico</i>
-P	Mide unas 10 pulgadas de alto, se estrecha en la parte superior y está hecha de un vidrio viejo y deformado, surcado de vetas plateadas, como los rastros que dejan las babosas. Los dibujos del vidrio parecen distintos cada vez que miras, casi como si se movieran mientras los observas. Te hace llorar los ojos y te da vueltas la cabeza.
+P	Mide unos 25 cm de alto, se estrecha en la parte superior y está hecha de un vidrio viejo y deformado, surcado de vetas plateadas, como los rastros que dejan las babosas. Los dibujos del vidrio parecen distintos cada vez que miras, casi como si se movieran mientras los observas. Te hace llorar los ojos y te da vueltas la cabeza.
 P	Puedes desentrañar los secretos de esta vieja botella de vidrio, pero debes, o bien…
 C	… encontrar a alguien que conozca su funcionamiento y conseguir que te lo enseñe; o bien…
 C	… llenar la botella de agua de manantial y setas alucinógenas y dejarla macerar a oscuras durante quince días.

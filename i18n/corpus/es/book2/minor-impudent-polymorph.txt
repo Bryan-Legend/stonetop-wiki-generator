@@ -8,7 +8,7 @@
 PAGE	525
 H3	Una gran tinaja de madera
 P	◇◇ <b>,</b> <i>aparatoso</i><b>,</b> <i>frágil</i><b>,</b> <i>mágico</i>
-P	Mide 30 pulgadas de alto y está tallada en tejo, con una tapa en forma de león con cuernos y sellada con cera.
+P	Mide 75 cm de alto y está tallada en tejo, con una tapa en forma de león con cuernos y sellada con cera.
 P	Su superficie está agrietada y atravesada por esquirlas de cristal rojo. Al tocarla, sientes un enorme fastidio y un leve atisbo de miedo.
 P	Para desentrañar los misterios de la tinaja, debes…
 C	… lavar su superficie con tu propia sangre fresca (pierdes 1d10 HP y marcas una debilidad).

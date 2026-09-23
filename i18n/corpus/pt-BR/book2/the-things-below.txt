@@ -344,7 +344,7 @@ HR
 ICON	icons/treasure.svg
 H3	Uma aranha de ferro
 P	<i>mágica</i>, <i>indestrutível</i>
-P	Mais ou menos do tamanho da palma da mão, com pouco mais de um centímetro de espessura, enferrujada nas bordas, com as pernas dobradas no dorso. Um botão escondido faz as pernas se estenderem e revela suas pontas de lâmina. Às vezes, quando você vai buscá-la, ela não está exatamente onde você a deixou.
+P	Mais ou menos do tamanho da palma da mão, com cerca de um centímetro de espessura, enferrujada nas bordas, com as pernas dobradas no dorso. Um botão escondido faz as pernas se estenderem e revela suas pontas de lâmina. Às vezes, quando você vai buscá-la, ela não está exatamente onde você a deixou.
 P	A aranha está com fome quando você a encontra.
 P	Quando você <b><i>crava a aranha faminta na carne de</i></b> <b><i>uma pessoa</i></b>, ela perde 1d4 HP a cada poucos segundos até que a aranha seja arrancada (1d8 de dano, <i>sujo</i>, ignora armadura). Se a aranha a drenar até 0 HP, fica saciada.
 P	Quando você <b><i>crava a aranha saciada na carne de</i></b> <b><i>uma pessoa</i></b>, ela sofre 1 de dano (ignora armadura) e não envelhece por 1d10 anos. Se for de meia-idade ou mais velha, recupera um pouco do vigor da juventude. Então a aranha fica com fome.
