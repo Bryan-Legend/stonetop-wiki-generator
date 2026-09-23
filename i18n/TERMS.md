@@ -750,3 +750,15 @@ linked through fallback phrases, so a translation may render them.
 | look to for vibes | para pegar o clima | 找找感觉 |
 | information design | design de informação | 信息设计 |
 | & between two authors / et al / present | e / et al / presente | 与 / 等 / 至今 |
+
+### French, complete — corpus route (2026-09-22)
+
+The fr section above holds the core terms. Settled while translating the whole
+language (the majority form, swept across every page):
+
+- **Tags:** sanglant (messy) · agrippant (grabby) · lancé (thrown) · rechargement (reload) · malcommode (awkward) · grossier (crude) · encombrant (clumsy) · énorme · horde · minuscule · retors (devious) · rusé (cunning) · automate (construct)
+- **Moves & resources:** Tracer un Itinéraire (Chart a Course) · Tenir Compagnie · Revenir en Triomphe · Lire le Terrain · Jauger (Take the Measure) · Renforcer (Bolster) · Élaborer un Plan · Commander les Suivants · Préparation (Readiness) · action de MJ (GM move; douce/dure) · Dé du Destin (Die of Fate)
+- **Threat types:** Affliction · Bête · Institution · MacGuffin · Entité magique · Ramassis (Rabble) · Vilain · Électron libre (Wildcard) · malheur imminent (impending doom) · présages funestes (grim portents)
+- **Creatures & names:** spectre (wraith, specter) · spectre des tertres (wight) · drake · Sorcière du Saule (Willow Witch) · archonte · Épine-Pouce (Thornthumb) · la Grand-Route (Highway) · verre des Bâtisseurs (makerglass) · Creuseurs (Delvers) · bison (wisent) · glace noire (dark ice) · le Torrent-de-Silex (Flintwash) · Caïds (Bosses) · Attrape-Tempête (Stormcatcher)
+- **Arcana:** Lance tordue (Twisted Spear) · Gemme-esprit (Mindgem) — both swept over the Seeker's earlier *Lance Torse* / *Gemme de l'Esprit*
+- HP and XP stay in English, as in the playbooks.

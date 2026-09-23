@@ -147,6 +147,10 @@ known false positives (real book and film titles in the mediography and
 `first-adventure`, and a localized name carrying its English gloss).
 Next: **zh-Hans**, same order — Book II first, then Book I.
 
+**fr is complete** (2026-09-22): Book II, Book I, every arcanum and all six
+sheets through the corpus, and its old JSON pages deleted. Terms settled on
+the way are in `TERMS.md` (*French, complete*).
+
 ### Working a long chapter
 
 A Book I chapter runs 500–1400 work lines, which is more than one sitting.

@@ -1575,6 +1575,11 @@ HOME_FALLBACK = {
         "Free data sync provided by "
         '<a href="https://workers.cloudflare.com/">Cloudflare</a>.'
     ),
+    # Last line of the home page: stars are how other tables find the repo.
+    "stars_html": (
+        'Find it useful? <a href="{repo}">Give it a star on GitHub</a> — '
+        "it helps other tables find the Web Edition."
+    ),
 }
 
 
@@ -1782,6 +1787,9 @@ def write_localized_index(
             f'{home["defects_html"].format(issues=html.escape(ISSUES_URL))}</p>'
             f'<p class="index-license">'
             f'{home["license_html"].format(license=html.escape(LICENSE_URL))}'
+            "</p>"
+            f'<p class="index-stars">'
+            f'{home["stars_html"].format(repo=html.escape(GITHUB_PROJECT_URL))}'
             "</p></div>"
         )
         intro = home_intro_html(
@@ -2256,6 +2264,7 @@ def write_index_custom(
           <p class="index-vtt">{HOME_FALLBACK["remembers_html"]}</p>
           <p class="index-note">{HOME_FALLBACK["defects_html"].format(issues=issues_url)}</p>
           <p class="index-license">{HOME_FALLBACK["license_html"].format(license=license_url)}</p>
+          <p class="index-stars">{HOME_FALLBACK["stars_html"].format(repo=html.escape(GITHUB_PROJECT_URL))}</p>
         </div>
         </main>
       </div>

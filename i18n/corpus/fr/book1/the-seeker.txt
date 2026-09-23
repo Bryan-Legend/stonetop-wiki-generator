@@ -19,12 +19,12 @@ C	<b>ANTIQUAIRE</b> Le passé a enfoui bien des secrets, et tu es déterminé à
 P	Quoi qu'il en soit, tes voyages et tes études font que tu commences avec la manœuvre Polyglotte et que tu es Érudit en Bâtisseurs et leurs arts (coche-les maintenant). Tu as aussi acquis 1 arcane majeur :
 C	◇ La Sphère de Glace de Noruba (Noruba's Ice Sphere)
 C	◇ La Main d'Azur (The Azure Hand)
-C	◇◇ La Gemme de l'Esprit (The Mindgem)
+C	◇◇ La Gemme-esprit (The Mindgem)
 C	<b>CHASSEUR DE SORCIÈRES</b> Tu as consacré ta vie à débusquer et détruire les horreurs et leurs serviteurs. Qu'est-ce qui t'a mis sur cette voie ? Qu'as-tu sacrifié pour la suivre ? Qu'est-ce qui t'a amené à faire de Stonetop ton foyer ?
 P	Quoi qu'il en soit, tu commences avec la manœuvre Tout Saigne et tu es Érudit en (choisis-en 1) Fae, Choses d'En Bas, ou Dernière Porte et ce qui se trouve au-delà (coche-les maintenant). Tu as aussi acquis 1 arcane majeur :
 C	◇ La Cape en Peau de Démon (The Demonhide Cloak)
 C	L'Effigie de Séquoia (The Redwood Effigy)
-C	◇◇ La Lance Torse (The Twisted Spear)
+C	◇◇ La Lance tordue (The Twisted Spear)
 H2	Instinct (Choisis-en 1)
 C	<b>RUSE</b> Intriguer, manipuler et comploter.
 HR

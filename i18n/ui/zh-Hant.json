@@ -143,7 +143,8 @@
     "license_html": "書籍的<strong>正文</strong>由傑里米·斯特蘭德伯格撰寫，以<a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>許可發布。骰子音效來自<a href=\"https://opengameart.org/content/wooden-dice-on-wodden-table-roll\">Wuzzy</a>，<a href=\"https://creativecommons.org/publicdomain/zero/1.0/\" rel=\"license\">CC0</a>。共享資料同步由<a href=\"https://workers.cloudflare.com/\">Cloudflare</a>提供。",
     "doc_title": "石頂（Stonetop）— 爐邊奇幻桌面角色扮演遊戲（TTRPG）網頁版",
     "and": "與",
-    "intro_html": "<p><strong>石頂</strong>（Stonetop）是傑里米·斯特蘭德伯格所作的爐邊奇幻桌面角色扮演遊戲，背景是一個從未存在的鐵器時代。你們三到五人坐下：一人擔任GM，其餘人扮演世界盡頭一座小小的、與世隔絕的村莊裡的英雄。你們在那裡有親人、有營生、有從小認識你們的鄰居，而你們面對的危險威脅的是家。所以在冒險之間，遊戲轉到<a href=\"{homefront}\">家園前線</a>：村莊有自己的劇本，並與角色一同成長、受苦、改變。這便是這款TTRPG有別於地下城奇幻RPG之處：你們守護的地方，就是你們生活的地方。</p><p>底層是架在<em>Dungeon World</em>骨架上的Powered by the Apocalypse遊戲：擲2d6再加上一項屬性——10+則如你們所願，7-9則要付出代價，6-則由GM採取一次行動。本維基是這款TTRPG兩本規則書的免費、可檢索網頁版：遊戲中的每一條行動、每一本劇本、每一隻怪物、每一項危險、每一處聚落、每一尊神、每一件秘寶。若你初次接觸，請從<a href=\"{welcome}\">歡迎來到石頂</a>開始，接著看<a href=\"{playing}\">玩遊戲</a>，或瀏覽下面的主題。</p>"
+    "intro_html": "<p><strong>石頂</strong>（Stonetop）是傑里米·斯特蘭德伯格所作的爐邊奇幻桌面角色扮演遊戲，背景是一個從未存在的鐵器時代。你們三到五人坐下：一人擔任GM，其餘人扮演世界盡頭一座小小的、與世隔絕的村莊裡的英雄。你們在那裡有親人、有營生、有從小認識你們的鄰居，而你們面對的危險威脅的是家。所以在冒險之間，遊戲轉到<a href=\"{homefront}\">家園前線</a>：村莊有自己的劇本，並與角色一同成長、受苦、改變。這便是這款TTRPG有別於地下城奇幻RPG之處：你們守護的地方，就是你們生活的地方。</p><p>底層是架在<em>Dungeon World</em>骨架上的Powered by the Apocalypse遊戲：擲2d6再加上一項屬性——10+則如你們所願，7-9則要付出代價，6-則由GM採取一次行動。本維基是這款TTRPG兩本規則書的免費、可檢索網頁版：遊戲中的每一條行動、每一本劇本、每一隻怪物、每一項危險、每一處聚落、每一尊神、每一件秘寶。若你初次接觸，請從<a href=\"{welcome}\">歡迎來到石頂</a>開始，接著看<a href=\"{playing}\">玩遊戲</a>，或瀏覽下面的主題。</p>",
+    "stars_html": "覺得有用嗎？<a href=\"{repo}\">在 GitHub 上給個星標</a>，幫助更多的桌遊團找到這個網頁版。"
   },
   "edition": "石頂網頁版",
   "book_titles": {

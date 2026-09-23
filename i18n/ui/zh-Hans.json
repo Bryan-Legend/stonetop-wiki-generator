@@ -143,7 +143,8 @@
     "license_html": "书籍的<strong>正文</strong>由杰里米·斯特兰德伯格撰写，以<a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>许可发布。骰子音效来自<a href=\"https://opengameart.org/content/wooden-dice-on-wodden-table-roll\">Wuzzy</a>，<a href=\"https://creativecommons.org/publicdomain/zero/1.0/\" rel=\"license\">CC0</a>。共享数据同步由<a href=\"https://workers.cloudflare.com/\">Cloudflare</a>提供。",
     "doc_title": "石顶（Stonetop）— 炉边奇幻桌面角色扮演游戏（TTRPG）网页版",
     "and": "和",
-    "intro_html": "<p><strong>石顶</strong>（Stonetop）是杰里米·斯特兰德伯格所作的炉边奇幻桌面角色扮演游戏，背景是一个从未存在的铁器时代。你们三到五人坐下：一人担任GM，其余人扮演世界尽头一座小小的、与世隔绝的村庄里的英雄。你们在那里有亲人、有营生、有从小认识你们的邻居，而你们面对的危险威胁的是家。所以在冒险之间，游戏转到<a href=\"{homefront}\">家园前线</a>：村庄有自己的剧本，并与角色一同成长、受苦、改变。这便是这款TTRPG有别于地下城奇幻RPG之处：你们守护的地方，就是你们生活的地方。</p><p>底层是架在<em>Dungeon World</em>骨架上的Powered by the Apocalypse游戏：掷2d6再加上一项属性——10+则如你们所愿，7-9则要付出代价，6-则由GM采取一次行动。本维基是这款TTRPG两本规则书的免费、可检索网页版：游戏中的每一条行动、每一本剧本、每一只怪物、每一项危险、每一处聚落、每一尊神、每一件秘宝。若你初次接触，请从<a href=\"{welcome}\">欢迎来到石顶</a>开始，接着看<a href=\"{playing}\">玩游戏</a>，或浏览下面的主题。</p>"
+    "intro_html": "<p><strong>石顶</strong>（Stonetop）是杰里米·斯特兰德伯格所作的炉边奇幻桌面角色扮演游戏，背景是一个从未存在的铁器时代。你们三到五人坐下：一人担任GM，其余人扮演世界尽头一座小小的、与世隔绝的村庄里的英雄。你们在那里有亲人、有营生、有从小认识你们的邻居，而你们面对的危险威胁的是家。所以在冒险之间，游戏转到<a href=\"{homefront}\">家园前线</a>：村庄有自己的剧本，并与角色一同成长、受苦、改变。这便是这款TTRPG有别于地下城奇幻RPG之处：你们守护的地方，就是你们生活的地方。</p><p>底层是架在<em>Dungeon World</em>骨架上的Powered by the Apocalypse游戏：掷2d6再加上一项属性——10+则如你们所愿，7-9则要付出代价，6-则由GM采取一次行动。本维基是这款TTRPG两本规则书的免费、可检索网页版：游戏中的每一条行动、每一本剧本、每一只怪物、每一项危险、每一处聚落、每一尊神、每一件秘宝。若你初次接触，请从<a href=\"{welcome}\">欢迎来到石顶</a>开始，接着看<a href=\"{playing}\">玩游戏</a>，或浏览下面的主题。</p>",
+    "stars_html": "觉得有用吗？<a href=\"{repo}\">在 GitHub 上点个星标</a>，帮助更多的桌游团找到这个网页版。"
   },
   "edition": "石顶网页版",
   "book_titles": {

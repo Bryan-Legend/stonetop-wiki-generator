@@ -2125,6 +2125,17 @@ li.check-item input.wiki-check:checked + span {
 .index-hero p.index-license strong { color: var(--quote); }
 .index-hero p.index-license a { color: var(--link); }
 .index-hero p.index-license a:hover { color: var(--link-hover); }
+/* The star request closes the home page: one quiet line, not a banner. */
+.index-hero p.index-stars {
+  margin: 0.6rem 0 0;
+  max-width: 40rem;
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.5;
+}
+.index-hero p.index-stars::before { content: "★ "; color: var(--accent); }
+.index-hero p.index-stars a { color: var(--link); }
+.index-hero p.index-stars a:hover { color: var(--link-hover); }
 .index-hero p.index-note a { color: var(--link); }
 .index-hero p.index-note a:hover { color: var(--link-hover); }
 
