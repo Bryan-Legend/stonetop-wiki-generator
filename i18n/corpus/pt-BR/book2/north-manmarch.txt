@@ -123,9 +123,9 @@ P	<b>Defesas</b> +1
 B	Cultura guerreira
 B	Armas de ferro, escudos de madeira
 B	Proteção do chefe local
-P	As aldeolas são feitas de uma casa comprida para cada família e seu rebanho, mais construções menores (galpões, porões etc.), agrupadas. Os moradores trabalham as terras num raio de 1-2 milhas. Cada aldeola leva o nome de seu morador mais notável, talvez encurtado, seguido de "-hall" (Dagmarhall, Swanhall etc.).
+P	As aldeolas são feitas de uma casa comprida para cada família e seu rebanho, mais construções menores (galpões, porões etc.), agrupadas. Os moradores trabalham as terras num raio de 2-3 km. Cada aldeola leva o nome de seu morador mais notável, talvez encurtado, seguido de "-hall" (Dagmarhall, Swanhall etc.).
 H2	Forte de colina
-P	Há cerca de meia dúzia de assentamentos maiores e fortificados espalhados pela Marcha Norte, cada um a 20-30 milhas do outro. A maioria fica nas colinas do oeste, mas alguns ficam nas planícies a leste, na borda oeste das matas que se debruçam sobre o Rio Pavor.
+P	Há cerca de meia dúzia de assentamentos maiores e fortificados espalhados pela Marcha Norte, cada um a 30-50 km do outro. A maioria fica nas colinas do oeste, mas alguns ficam nas planícies a leste, na borda oeste das matas que se debruçam sobre o Rio Pavor.
 P	Nomes de fortes de colina podem incluir: Wulfberg, Rabenberg, Eikelberg, Hokberg, Tiefberg, Baerinberg, Schutberg etc.
 P	<b>Tamanho</b> <i>vila</i> (~150 a 350 almas)
 P	<b>População</b> -1

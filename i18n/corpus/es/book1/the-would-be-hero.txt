@@ -61,7 +61,7 @@ PAGE	139
 H2	Posesiones especiales (Elige 2)
 HR
 C	<b>Un montón de expectativas</b>: de poca utilidad
-C	<b>Un buen perro</b>, seguidor ( <i>cobrador</i> o <i>pastor</i>, <i>olfato fino</i>, <i>listo</i>); HP 6; Daño d6 (<i>mano</i>, <i>prensil</i>); <b>Instinto</b> jugar; Coste: cariño.
+C	<b>Un buen perro</b>, seguidor ( <i>cobrador</i> o <i>pastor</i>, <i>olfato fino</i>, <i>listo</i>); HP 6; Daño d6 (<i>mano</i>, <i>agarrador</i>); <b>Instinto</b> jugar; Coste: cariño.
 C	<b>Útiles de ganadería</b>: cepillos, bozales, collares, pienso, ◇ látigos, ◇ bridas, etc. Obtienes ventaja para Persuadir a animales domésticos (ganado, perros, etc.).
 C	<b>Herrería</b> (o acceso a una): artículos de hierro, lingotes, guantes gruesos, ◇ tenazas, ◇ fuelles, un yunque, etc.
 C	<b>Herramientas de cantero</b>: cinceles, taladros, ◇ palancas, ◇ cuñas, ◇ poleas y aparejos, carretilla, etc.

@@ -8,7 +8,7 @@
 PAGE	525
 H3	Un carillon en verre des Bâtisseurs
 P	◇◇ <b>,</b> <i>indestructible</i><b>,</b> <i>magique</i><b>,</b> <i>bruyant</i><b>,</b> <i>dangereux</i>
-P	Un cylindre d'environ 4 pieds de long et 3 pouces de large, le verre étonnamment fin. Il résonne d'un carillon riche et sonore quand on le frappe doucement. Frappé fermement, le son est presque assourdissant et fait apparaître un motif ondulant à la surface de la pierre, du cristal ou du verre ordinaire à proximité.
+P	Un cylindre d'environ 1,2 mètre de long et 8 centimètres de large, le verre étonnamment fin. Il résonne d'un carillon riche et sonore quand on le frappe doucement. Frappé fermement, le son est presque assourdissant et fait apparaître un motif ondulant à la surface de la pierre, du cristal ou du verre ordinaire à proximité.
 P	Le carillon est un outil puissant, si tu peux en percer les secrets. Pour cela…
 C	… saisis-le fermement et porte un coup solide et puissant, en lançant +CON : <b>sur 10+</b>, tu l'as maîtrisé ; <b>sur 7-9</b>, marque un handicap et tu devras réessayer ; <b>sur 6-</b>, demande au MJ ce qui tourne terriblement mal.
 C	… passe une semaine environ à apprendre à contrôler le carillon résonnant.

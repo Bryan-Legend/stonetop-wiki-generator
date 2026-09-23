@@ -212,4 +212,4 @@ P	<b>Instinct</b> manger et grandir
 P	• S'accrocher aux parois rocheuses, camouflé
 P	• Mitrailler sa proie en piqué
 P	• Faire tomber une proie d'une corniche
-P	Les frythancs adultes qui chassent dans les <b>Plaines</b> (page 126) sont des terreurs. Leurs petits, heureusement, restent dans les montagnes. Là, ils chassent chèvres et moutons et, à l'occasion, quelque voyageur imprudent. Les juvéniles ne sont pas aussi dangereux que leurs parents adultes, mais tout de même, voyons voir comment tu t'en sors quand des oiseaux aux ailes de 12 pieds d'envergure essaient de t'arracher d'un sentier en lacets.
+P	Les frythancs adultes qui chassent dans les <b>Plaines</b> (page 126) sont des terreurs. Leurs petits, heureusement, restent dans les montagnes. Là, ils chassent chèvres et moutons et, à l'occasion, quelque voyageur imprudent. Les juvéniles ne sont pas aussi dangereux que leurs parents adultes, mais tout de même, voyons voir comment tu t'en sors quand des oiseaux aux ailes de 3,5 mètres d'envergure essaient de t'arracher d'un sentier en lacets.

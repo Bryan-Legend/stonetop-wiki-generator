@@ -8,7 +8,7 @@
 PAGE	525
 H3	Um sino de vidro dos Construtores
 P	◇◇ <b>,</b> <i>indestrutível</i><b>,</b> <i>mágica</i><b>,</b> <i>barulhento</i><b>,</b> <i>perigosa</i>
-P	Um cilindro de cerca de 1,2 metro de comprimento por 7 centímetros de largura, com o vidro surpreendentemente fino. Ele soa com um toque rico e sonoro quando percutido de leve. Percutido com firmeza, o som é quase ensurdecedor e faz surgir um padrão ondulante na superfície da pedra, do cristal ou do vidro comum por perto.
+P	Um cilindro de cerca de 1,2 metro de comprimento por 8 centímetros de largura, com o vidro surpreendentemente fino. Ele soa com um toque rico e sonoro quando percutido de leve. Percutido com firmeza, o som é quase ensurdecedor e faz surgir um padrão ondulante na superfície da pedra, do cristal ou do vidro comum por perto.
 P	O sino é uma ferramenta poderosa, se você conseguir desvendar seus segredos. Para isso…
 C	… segure-o com firmeza e desfira um golpe sólido e poderoso, rolando +CON: <b>com 10+</b>, você conseguiu; <b>com 7-9</b>, marque uma debilidade e precisará tentar de novo; <b>com 6-</b>, pergunte ao mestre o que dá terrivelmente errado.
 C	… passe uma semana mais ou menos aprendendo a controlar o toque do sino.

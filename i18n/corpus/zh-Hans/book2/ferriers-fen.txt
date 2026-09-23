@@ -7,7 +7,7 @@
 # description: 费里尔沼泽（Ferrier's Fen）：绿领主破碎的湿地，其地形、柳巫、沼疫、沼巨魔与苏阿拉坎。
 PAGE	116
 P	费里尔沼泽（Ferrier's Fen）位于<b>大森林</b>（Great Wood）（page 200）、<b>阶地</b>（Steplands）（page 372）和<b>北曼马奇</b>（North Manmarch）（page 282）之间。
-P	这是一片巨大的湿地，宽100英里，南北50英里，由<b>溪流</b>（the Stream）（page 396）、<b>泽畔</b>（Marshedge）（page 274）附近的斯鲁斯（Sruth），以及许多更小的溪水喂养。它是一片迷宫：硬地、死水潭、浅溪，还有骤然坠入极深极深之水的落差。还有泥。那么多泥。
+P	这是一片巨大的湿地，宽160公里，南北80公里，由<b>溪流</b>（the Stream）（page 396）、<b>泽畔</b>（Marshedge）（page 274）附近的斯鲁斯（Sruth），以及许多更小的溪水喂养。它是一片迷宫：硬地、死水潭、浅溪，还有骤然坠入极深极深之水的落差。还有泥。那么多泥。
 P	很久以前，这一带是<b>绿之</b> <b>主</b>（Green Lords）文明的摇篮（page 210）。但当他们的仆从反叛、绿领主投入<b>地底之物</b>（Things Below）（page 412）的怀抱时，其他<b>匠造者</b>（Makers）（page 264）塌陷了这片地区，粉碎了绿领主的文明。它至今仍是一处破碎之地，渗着旧日魔法和腐化。
 H2	印象
 HR

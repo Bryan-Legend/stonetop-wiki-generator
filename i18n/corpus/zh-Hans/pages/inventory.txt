@@ -29,7 +29,7 @@ ENDLIST
 LIST	fs-lines inv-list
 INV	inv-blanket	1	<b>毯子</b>（<i>保暖</i>）
 INV	inv-change-of-clothes	1	<b>换洗衣物</b>
-INV	inv-rope	1	<b>绳子</b>，约25英尺
+INV	inv-rope	1	<b>绳子</b>，约7.5米
 INV	inv-shovel	1	<b>铲子</b>
 INV	inv-sledge	2	<b>雪橇/担架/曳架</b>，可展开
 INV	inv-snow-shoes	1	<b>雪鞋</b>

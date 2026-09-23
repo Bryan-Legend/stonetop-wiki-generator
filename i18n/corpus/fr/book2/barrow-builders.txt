@@ -292,7 +292,7 @@ P	12 Déjà déclenché/désamorcé
 PB
 P	Les matériaux spéciaux peuvent inclure des <b>excroissances dangereuses</b> (page 219), de l'<b>orichalque</b> (page 162), du <b>fer noir</b> (page 307), de la <b>glace noire</b> (page 322), du <b>verre des Bâtisseurs</b> (page 388), de l'<b>éthérium</b> (page 404), du <b>cristal rouge</b> (page 424), et/ou d'autres éléments de ton invention.
 P	<b>Exemples :</b>
-B	Une fosse de 15 pieds de profondeur, le fond tapissé de pointes rouillées ; recouverte de tissu tendu, de graviers, et de poussière
+B	Une fosse de 4,5 mètres de profondeur, le fond tapissé de pointes rouillées ; recouverte de tissu tendu, de graviers, et de poussière
 B	Une fissure court le long du plafond d'un tunnel bas ; marcher sur une dalle libère une hache oscillante
 B	Un coffret à énigme sur un cercueil-leurre ; le tripoter libère de petits constructs poignardeurs hors du cercueil
 B	L'épée d'un cadavre ; la déplacer tire un fil, qui renverse une urne pleine de sel et libère un spectre piégé

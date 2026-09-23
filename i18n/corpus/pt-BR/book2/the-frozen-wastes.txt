@@ -69,13 +69,13 @@ HR
 P	Escolha 1 ou combine 2, ou peça que alguém role o Dado do Destino (d12).
 P	1d12 terreno
 HR
-P	1 Lago de kettle, pequeno mas com dezenas ou centenas de pés de fundo
+P	1 Lago de kettle, pequeno mas com muitos metros, às vezes dezenas de metros, de fundo
 P	2-3 Trecho de água parada rasa/gelo
-P	4-6 Extensão bem aberta, só capim e arbusto por milhas
+P	4-6 Extensão bem aberta, só capim e arbusto por quilômetros
 P	7-8 Grande mancha de lama/lama congelada
 P	9 Encosta suave/crista baixa/pequena elevação
 P	10 Moraina baixa, uma colina pequena de pedras quebradas e terra solta
-P	11 Afloramento rochoso, de uns poucos metros de altura no máximo
+P	11 Afloramento rochoso, de uns 4 metros de altura no máximo
 P	12 Uma única árvore, notável
 PB
 P	Se quiser, role 1d6 para tamanho/extensão/intensidade.

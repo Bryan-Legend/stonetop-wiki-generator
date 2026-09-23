@@ -8,9 +8,9 @@
 PAGE	449
 P	A cerca de dois dias de caminhada de Stonetop ergue-se uma colina solitária, saindo das <b>Planícies</b> (página 126). Um esqueleto fossilizado enorme fica visível num dos lados da colina.
 P	A <b>Via Principal</b> (página 270) passa pela colina a leste; um pouso de estrada fica ao pé dela.
-P	A colina sobe mais de 300 pés acima da pradaria.
+P	A colina sobe mais de 90 metros acima da pradaria.
 P	A face norte, a sotavento, é íngreme, rochosa, quase um paredão. Os outros lados são encostas acidentadas mas transitáveis, cobertas de carvalhos retorcidos e esparsos e de mato baixo.
-P	O topo é plano, de poucas árvores, o ponto mais alto por quase 100 milhas. Quando Stonetop ou o <b>Povo das Colinas</b> (página 228) precisam sinalizar um ao outro, acendem uma grande fogueira lá em cima, no alto dos Ossos do Titã.
+P	O topo é plano, de poucas árvores, o ponto mais alto por quase 160 km. Quando Stonetop ou o <b>Povo das Colinas</b> (página 228) precisam sinalizar um ao outro, acendem uma grande fogueira lá em cima, no alto dos Ossos do Titã.
 H2	Impressões
 HR
 B	A colina no horizonte, que nunca parece ficar mais perto até estar bem em cima de você

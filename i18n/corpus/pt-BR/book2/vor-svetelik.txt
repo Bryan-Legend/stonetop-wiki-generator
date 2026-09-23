@@ -66,7 +66,7 @@ P	1d12 terreno da subcidade
 HR
 P	1 Câmara alagada
 P	2 Água corrente
-P	3-4 Túneis/poços antigos, alguns estendendo-se por milhas
+P	3-4 Túneis/poços antigos, alguns estendendo-se por quilômetros
 P	5-6 ruína de senhor verde (veja a próxima página) ou parte de uma, soterrada/afundada/tombada*
 P	7-8 Toca/galeria/túneis, cavados por… alguma coisa*
 P	9-10 Escadas/poço/escada de mão/rampa, subindo e/ou descendo ainda mais*

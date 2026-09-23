@@ -6,8 +6,8 @@
 # nav_label: Estradas dos Construtores
 # description: As Estradas dos Construtores (the Makers' Roads): a Estrada Oeste e a Via Principal, sua magia contra a violência, a Encruzilhada, os pousos de estrada e os nosgalau.
 PAGE	270
-P	A Estrada Oeste se estende de Stonetop até a <b>Cava de Gordin</b> (página 190). A umas 15 milhas da vila, ela cruza a Via Principal, que vai do <b>Passo da Barreira</b> (página 26) até <b>Beira-Brejo</b> (página 274) e além.
-P	As estradas são largas (uns 20 pés), grandiosas e humilhantes, claramente obra dos <b>Construtores</b> (página 264). Duraram séculos, estranhamente bem conservadas e livres de vegetação.
+P	A Estrada Oeste se estende de Stonetop até a <b>Cava de Gordin</b> (página 190). A uns 25 km da vila, ela cruza a Via Principal, que vai do <b>Passo da Barreira</b> (página 26) até <b>Beira-Brejo</b> (página 274) e além.
+P	As estradas são largas (uns 6 metros), grandiosas e humilhantes, claramente obra dos <b>Construtores</b> (página 264). Duraram séculos, estranhamente bem conservadas e livres de vegetação.
 B	Grandes lajes de basalto assentadas, de bordas suavemente chanfradas, estendendo-se até o horizonte
 B	Fio de água da chuva ou do degelo correndo por sarjetas que nunca entopem
 B	O jeito perturbador com que poeira, sementes, folhas etc. se recusam a pousar sobre as lajes
@@ -26,7 +26,7 @@ P	<b>com 10+</b>, pode ir em frente; <b>com 7-9</b>, você age, mas tem desvanta
 H2	A Encruzilhada
 HR
 P	A Estrada Oeste cruza a Via Principal a umas
-P	15 milhas da vila. Um bosque de <b>árvores dool</b> (página 73) cresce ali perto. Apesar das proteções, há algo de inquietante na Encruzilhada. Todo mundo sente. Ninguém gosta de falar disso.
+P	25 km da vila. Um bosque de <b>árvores dool</b> (página 73) cresce ali perto. Apesar das proteções, há algo de inquietante na Encruzilhada. Todo mundo sente. Ninguém gosta de falar disso.
 Q	O que neste lugar lhe diz que o véu entre a vida e a morte é fino aqui?
 Q	De quem é o fantasma que dizem assombrar as Planícies perto da Encruzilhada?
 PAGE	271
@@ -47,7 +47,7 @@ P	Estradas já se estenderam da Encruzilhada até a <b>Torre em Ruínas</b> (pá
 P	Quando você <b><i>golpeia uma entidade das trevas,</i></b> <b><i>do caos ou da morte com uma pedra de estrada estilhaçada</i></b> (<i>mão</i>, <i>arremesso</i>, <i>tosca</i>), ela sofre 1d8 de dano (ignora armadura), mas a pedra então se desfaz em pó.
 H2	Pousos de estrada
 HR
-P	A cada 25 milhas mais ou menos, as estradas se abrem num círculo amplo, largo o bastante para os viajantes acamparem sem deixar as lajes protegidas.
+P	A cada 40 km mais ou menos, as estradas se abrem num círculo amplo, largo o bastante para os viajantes acamparem sem deixar as lajes protegidas.
 P	Cada pouso de estrada tem um poço, uma fogueira, um obelisco marcado com uma única runa e talvez mais. Muitos têm um santuário a <b>Aratis</b> (página 22).
 Q	O que, por tradição, os viajantes deixam para trás cada vez que param num pouso de estrada?
 Q	O que distingue este pouso dos demais?
@@ -102,4 +102,4 @@ C	Ensinar as runas a pelo menos 2 artesãos de tempo integral, de mente rápida 
 C	Garantir uma fonte quase ilimitada de blocos de basalto
 C	Recrutar um mestre de obras de grande habilidade, que tenha estudado a construção das Estradas
 C	Recrutar e manter uma equipe de uns 50 trabalhadores e pedreiros hábeis
-P	Quando você <b><i>marcar todos os requisitos</i></b>, pode expandir ou reparar as Estradas dos Construtores. Cada 25 milhas de estrada exigem <b>Unir Esforços</b>, uma estação de trabalho, 2 de Excedente para alimentar os trabalhadores e uma bolsa de pratas para pagamento e suprimentos.
+P	Quando você <b><i>marcar todos os requisitos</i></b>, pode expandir ou reparar as Estradas dos Construtores. Cada 40 km de estrada exigem <b>Unir Esforços</b>, uma estação de trabalho, 2 de Excedente para alimentar os trabalhadores e uma bolsa de pratas para pagamento e suprimentos.

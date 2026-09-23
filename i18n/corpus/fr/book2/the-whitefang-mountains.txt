@@ -360,7 +360,7 @@ P	• Aggraver les gelures (+sanglant)
 P	• Les pousser à faire quelque chose d'insensé (s'endormir, se dévêtir, etc.)
 ICON	icons/danger.svg
 H3	Mal d'altitude
-P	L'air dangereusement raréfié commence quelques centaines de mètres sous la limite des neiges, et empire à mesure que l'on monte. Les habitants sont habitués à l'air raréfié, mais même eux doivent être prudents.
+P	L'air dangereusement raréfié commence environ 600 mètres sous la limite des neiges, et empire à mesure que l'on monte. Les habitants sont habitués à l'air raréfié, mais même eux doivent être prudents.
 P	• Mettre à l'épreuve leur endurance pour continuer, ou simplement pour respirer
 P	• Infliger un handicap
 P	• Révéler qu'ils ont manqué quelque chose

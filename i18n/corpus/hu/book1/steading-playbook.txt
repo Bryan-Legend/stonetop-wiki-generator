@@ -214,7 +214,7 @@ C	Teljes idejű molnár
 P	Ha <b><i>teljesíted a követelményeket</i></b>, növeld a Fortunát 1-gyel, add hozzá a „Malom”-ot az Erőforrások listájához, és rajzold fel a térképre.
 P	Ezután, amikor <b><i>az őszi aratás befejeződött</i></b>, a település +1 Többletet termel. Emellett, ha <b><i>Stonetopról Szerelkezel Fel, vagy utána Legyen Nálad,</i></b> <b><i>Ami Kell</i></b>, minden ◇ készletnek 1 extra használata van.
 HR
-C	<b>CÖLÖPKERÍTÉS</b> Kihegyezett rönkök fala, 10 láb magas, hogy a gonoszt távol tartsa.
+C	<b>CÖLÖPKERÍTÉS</b> Kihegyezett rönkök fala, 3 m magas, hogy a gonoszt távol tartsa.
 P	<b>Szükséges</b> a következők mindegyike, sorban:
 C	Sok faanyag (~20-25 szekérnyi, Érték 3)
 C	Egy rátermett mérnök/előmunkás

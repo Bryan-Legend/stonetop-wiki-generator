@@ -143,7 +143,7 @@ PAGE	354
 H2	Perigos
 HR
 H3	Riscos
-B	Sol escaldante, sem sombra por milhas
+B	Sol escaldante, sem sombra por quilômetros
 B	Virada feia do tempo: vento que açoita, frio cortante, calor abrasador, granizo fino/ granizo/chuva/neve; raios
 B	Enxurradas repentinas nos vales/nas encostas
 B	Falta de abrigo, água ou lenha para um fogo duradouro (tente esterco seco de auroque, se achar)

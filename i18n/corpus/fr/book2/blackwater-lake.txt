@@ -75,7 +75,7 @@ HR
 P	1 Monticule de terre et de pierres partiellement effondré, chacune gravée de runes de peur. Contient des ossements, des récipients d'argile pleins de grain pourri.
 P	2 Bunker de la taille d'un entrepôt fait de blocs massifs, enterré selon un angle sévère. Portes de baie visibles, lourdement abîmées, mais encore intactes.
 P	3 Dédale de pièces à taille humaine, creusées dans la crête extérieure. Plan déroutant, angles étranges, instable, éclairé par des cristaux luminescents.
-P	4 Porte dans la crête, menant à une pièce voûtée et grossière. Contient une statue de 4 mètres d'une bête trapue et poissonneuse. Sa bouche s'ouvre sur un puits profond.
+P	4 Porte dans la crête, menant à une pièce voûtée et grossière. Contient une statue de 3,5 mètres d'une bête trapue et poissonneuse. Sa bouche s'ouvre sur un puits profond.
 P	5 Des dizaines de tubes en verre des Bâtisseurs, chacun plus petit que le précédent, alignés en rangs et fusionnés ensemble. Carillonnent de façon obsédante quand on les frappe.
 P	6 Murs d'une pièce de pierre cubique aux nombreuses niches. Inclinée d'environ 30°. Dispositif cristallin dans un mur. Les mots prononcés ici résonnent depuis quelque part de l'autre côté du lac.
 P	7 Série de pièces et tunnels disparates, menant à un amphithéâtre souterrain massif, comme un kyste dans la terre. En grande partie inondé.

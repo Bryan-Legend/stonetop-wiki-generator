@@ -38,7 +38,7 @@ B	A <b>taberna</b> é um salão grande, onde as pessoas se encontram depois do p
 B	O <b>celeiro</b> é um armazém construído sobre uma fundação de ruína dos Construtores. Os alimentos são guardados aqui. Todos contribuem, todos compartilham.
 B	O <b>pavilhão dos deuses</b> é uma construção a céu aberto com santuários a <b>Aratis</b> (página 22), <b>Danu</b> (página 64), <b>Helior</b> (página 224), <b>Tor</b> (página 452) e talvez outros (página 178). É o mais perto de um templo que Stonetop tem.
 PAGE	13
-B	A <b>Muralha Circular</b> é uma cerca de pedras de campo na altura da cintura, com 60 a 90 centímetros de espessura. Ela não vai deter saqueadores de verdade, mas dá um pouco de cobertura se preciso. As casas para além dela são mais novas, construídas por imigrantes ou famílias jovens.
+B	A <b>Muralha Circular</b> é uma cerca de pedras de campo na altura da cintura, com 60 centímetros a 1 metro de espessura. Ela não vai deter saqueadores de verdade, mas dá um pouco de cobertura se preciso. As casas para além dela são mais novas, construídas por imigrantes ou famílias jovens.
 B	<b>Torres de vigia</b> se erguem ao longo da Muralha Circular, com uns 4 metros de altura. Uma ao norte, uma a sudeste, uma a sudoeste. Os moradores se revezam na vigia à noite.
 B	Uma <b>trilha em ziguezague</b> desce o penhasco até o <b>Riacho</b> (página 396) e a <b>Grande Mata</b> (página 200). Subi-la leva de 10 a 15 minutos, mais com carga pesada.
 B	Os <b>campos</b> se estendem em volta da aldeia, num total de cerca de 400 hectares. Um terço da terra fica em pousio a cada ano, e no resto se cultiva cevada, aveia, feijão e batata. Os agricultores trabalham os campos em comum, não em lotes familiares.

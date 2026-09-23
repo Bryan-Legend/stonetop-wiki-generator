@@ -50,7 +50,7 @@ P	Considere dar a eles uma escolha entre dois ou mais sucessos parciais/custos/c
 P	Lembre-se: um 7-9 ainda é, no fundo, um sucesso. Não faça o sucesso parcial, o custo ou a consequência tão ruins a ponto de teria sido melhor não fazer nada.
 P	Mas com 6-? Solte os cachorros. O perigo se concretiza antes que eles possam agir, ou no momento em que agem. Ou a ação deles dá certo, mas as coisas pioram muito por causa disso. Faça algo que flua naturalmente da ficção e da sua preparação. <b>Deixe queimar.</b>
 HR
-P	<i>Caradoc está pendurado numa árvore, com</i> <i>a pegada escorregando. Ele joga as pernas</i> <i>em volta do galho e se puxa para cima.</i> <i>“É, isso é Desafiar o Perigo — o perigo</i> <i>é você cair uns 25 metros. Parece</i> <i>testar sua força, então +FOR?”</i>
+P	<i>Caradoc está pendurado numa árvore, com</i> <i>a pegada escorregando. Ele joga as pernas</i> <i>em volta do galho e se puxa para cima.</i> <i>“É, isso é Desafiar o Perigo — o perigo</i> <i>é você cair uns 24 metros. Parece</i> <i>testar sua força, então +FOR?”</i>
 P	<i>“Faz sentido”, ele diz, e rola. Num</i> <i>7-9, vou de custo e mando ele</i> <i>marcar</i> enfraquecido <i>de medo e cansaço.</i>
 P	<i>Mas não, ele tira 10, então eu digo “Beleza,</i> <i>você consegue, do jeitinho que disse”. Aí</i> <b><i>eu ofereço uma</i></b> <b><i>oportunidade</i></b><i>. “Leva um instante para</i> <i>recuperar o fôlego, mas daqui é uma subida</i> <i>fácil até o ninho. O que você faz?”</i>
 HR

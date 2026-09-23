@@ -178,7 +178,7 @@ HR
 ICON	icons/treasure.svg
 H3	Um fuso de linha fina
 P	<i>mágico</i>
-P	Um fio de uns 50 pés de comprimento, fiado por um fantasma com todo o cabelo que já caiu da cabeça de suas filhas. A linha é leve, fina e quase inquebrável, mas só pode ser manuseada por quem já viu a Última Porta. Só o fio de uma lâmina de prata a corta. Pode ser usada para prender um fantasma, se você for esperto e conseguir manuseá-la.
+P	Um fio de uns 15 metros de comprimento, fiado por um fantasma com todo o cabelo que já caiu da cabeça de suas filhas. A linha é leve, fina e quase inquebrável, mas só pode ser manuseada por quem já viu a Última Porta. Só o fio de uma lâmina de prata a corta. Pode ser usada para prender um fantasma, se você for esperto e conseguir manuseá-la.
 HR
 ICON	icons/treasure.svg
 H3	Uma espada de madeira pálida
@@ -274,7 +274,7 @@ P	1d12 quão firmemente preso
 HR
 P	1-2 Não pode deixar as imediações dela
 P	3-6 Precisa ficar no local/no sítio
-P	7-10 Pode rondar algumas milhas; volta todo dia
+P	7-10 Pode rondar alguns quilômetros; volta todo dia
 P	11-12 Pode vagar por toda parte, mas precisa voltar periodicamente
 PB
 P	Se a forma manifesta de um fantasma for reduzida a
@@ -293,7 +293,7 @@ H3	A Gwraig Wen
 P	<i>Solitária</i>, <i>espírito</i>, <i>morta-viva</i>, <i>desolada</i>
 P	<b>HP</b> 19; <b>Armadura</b> 1 (não tem órgãos)
 P	<b>Dano</b> mãos nuas d6 com desvantagem (<i>mão</i>)
-P	<b>Qualidades especiais</b> presa a poucas milhas de seus ossos; não consegue formar lembranças novas; não deixa pegadas <b>Instinto</b> arrastar os outros para sua busca
+P	<b>Qualidades especiais</b> presa a poucos quilômetros de seus ossos; não consegue formar lembranças novas; não deixa pegadas <b>Instinto</b> arrastar os outros para sua busca
 P	• Manifestar-se ao luar como uma mulher pálida e desgrenhada
 P	• Pedir ajuda, insistir nela
 P	• Ficar cada vez mais agitada, tremulando e vibrando enquanto isso

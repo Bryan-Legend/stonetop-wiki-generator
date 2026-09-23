@@ -214,7 +214,7 @@ C	Einen hauptberuflichen Müller
 P	Wenn du die <b><i>Voraussetzungen erfüllst</i></b>, erhöhe Geschick um 1, trage „Mühle" in die Ressourcenliste ein und zeichne sie in die Karte.
 P	Fortan, wenn <b><i>die Herbsternte eingebracht ist</i></b>, erzeugt die Siedlung +1 Überschuss. Außerdem: Wenn du dich <b><i>in Stonetop Ausrüstest oder danach Das Nötige</i></b> <b><i>dabeihast</i></b>, hat jedes ◇ Vorräte 1 zusätzliche Anwendung.
 HR
-C	<b>PALISADE</b> Eine Wand aus angespitzten Stämmen, 10 Fuß hoch, um das Böse fernzuhalten.
+C	<b>PALISADE</b> Eine Wand aus angespitzten Stämmen, 3 m hoch, um das Böse fernzuhalten.
 P	<b>Erfordert</b> alle folgenden, der Reihe nach:
 C	Viel Bauholz (~20-25 Wagenladungen, Wert 3)
 C	Einen fähigen Baumeister/Vorarbeiter

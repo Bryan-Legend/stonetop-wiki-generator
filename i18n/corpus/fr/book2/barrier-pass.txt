@@ -50,8 +50,8 @@ H2	Lieux
 HR
 B	<b>L'approche</b> : après avoir serpenté en lacets, la Grand-Route se redresse et entre dans un large col bordé de part et d'autre de pentes rocheuses abruptes.
 B	<b>De grandes cages bordent les pentes</b>, se balançant au vent, remplies d'ossements humains (?) ou de prisonniers affamés et délirants.
-B	<b>Le Mur</b>, grandiose et implacable, haut de 50 pieds et large de 20, barrant toute la largeur du col.
-B	<b>Une porte dans le Mur</b>, fermée bien entendu, la Grand-Route s'arrêtant 50 pieds avant elle.
+B	<b>Le Mur</b>, grandiose et implacable, haut de 15 mètres et large de 6, barrant toute la largeur du col.
+B	<b>Une porte dans le Mur</b>, fermée bien entendu, la Grand-Route s'arrêtant 15 mètres avant elle.
 B	<b>La Pente Est</b>, parsemée d'habitations, d'étables et de jardins en terrasses, tous reliés par d'étroits escaliers et des sentiers en lacets.
 B	<b>Une cascade</b> dévale la pente est, au nord du mur. Détournée vers les jardins et les citernes.
 B	<b>La Pente Ouest</b>, avec d'anciens édifices à l'échelle des géants, qui servent aujourd'hui de dortoirs, de cuisines, etc. aux moines et aux gardiens.
@@ -183,9 +183,9 @@ B	<b>Hypothermie et gelures</b> (page 489), si tu restes dehors dans le froid
 B	<b>Éboulements</b> (page 376) ou <b>avalanches</b> (page 489) en hiver
 H3	Fortifications
 B	Des <b>tulpas</b> mineurs (page 324) qui surveillent l'approche et avertissent la forteresse des visiteurs
-B	Un mur de pierre lisse, haut de 50 pieds et large de 20
+B	Un mur de pierre lisse, haut de 15 mètres et large de 6
 B	Des chemins de ronde et des créneaux au sommet du mur
-B	Une dernière approche d'environ 50 pieds sans aucune protection depuis les Routes des Bâtisseurs (Makers' Roads)
+B	Une dernière approche d'environ 15 mètres sans aucune protection depuis les Routes des Bâtisseurs (Makers' Roads)
 B	Une porte massive de bois et de bronze
 B	Derrière la porte, une barbacane percée d'assommoirs
 B	Des portes habilement dissimulées qui ne s'ouvrent que de l'intérieur

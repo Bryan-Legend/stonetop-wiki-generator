@@ -64,7 +64,7 @@ HR
 H3	Algo preso
 P	Por exemplo:
 B	Alguém preso numa estalagmite, com as mãos que agarram, o rosto angustiado e os gemidos lamentosos mal discerníveis
-B	Um cubo oco e sem emendas de pedra branca gravada de runas, de 6 pés de lado, gélido; uma dúzia de <b>espectros</b> (página 79) está selada lá dentro, impotente e louca
+B	Um cubo oco e sem emendas de pedra branca gravada de runas, de 1,8 metro de lado, gélido; uma dúzia de <b>espectros</b> (página 79) está selada lá dentro, impotente e louca
 B	Um trecho de lajes negras e brilhantes, que mostram reflexos de gente há muito passada; quem abre a mente vê um desfile de lembranças, claro como o dia
 B	Um <b>constructo</b> (página 392) com uma rachadura na "cabeça", possuído por um espírito maligno; preso num círculo de runas talhadas fundo
 B	Um labirinto de paredes de pedra, cujos caminhos formam uma runa de amarra, com algum tipo de demônio preso no centro
@@ -85,8 +85,8 @@ B	Uma cratera de pedra nua, de 100 passos de diâmetro, com um losango de pedra 
 B	Uma estátua talhada numa encosta de montanha, com fragmentos de sua espada de pedra espalhados pelo vale abaixo
 B	Um pedestal com duas pernas de pedra vastas e sem tronco; vestígios de uma inscrição, agora ilegível
 B	Cabeças gigantes de pedra dispostas numa encosta, com os rostos desbotados mas ainda reprovadores
-B	Um pilone de vidro, de pelo menos 100 pés de altura (e sabe-se lá quão fundo fincado na terra), zumbindo de leve, brilhando de leve
-B	Grandes linhas escavadas na terra, correndo por milhas; sem sentido do chão, mas formando runas enormes quando vistas do alto
+B	Um pilone de vidro, de pelo menos 30 metros de altura (e sabe-se lá quão fundo fincado na terra), zumbindo de leve, brilhando de leve
+B	Grandes linhas escavadas na terra, correndo por quilômetros; sem sentido do chão, mas formando runas enormes quando vistas do alto
 B	Uma sala grande em alguma caverna ou ruína, com os ossos carbonizados de um gigante no centro; pedaços de osso/dente/carapaça enegrecidos cobrem as bordas; centenas de cacos de cristal do tamanho de um punho estão cravados nas paredes
 B	Uma câmara com dezenas de cilindros de vidro, fixados na vertical contra uma parede, cada um de comprimento e largura diferentes—algum tipo de instrumento, talvez?
 PAGE	386
@@ -191,7 +191,7 @@ HR
 ICON	icons/treasure.svg
 H3	Uma laje de mármore marcada
 P	<i>imóvel</i>, <i>mágica</i>
-P	Uma laje de pedra outrora bela, com uns 30 pés de altura e cerca de metade disso a mais de largura, erguida numa câmara abobadada, cercada de runas talhadas fundo que falam de união e proteção, consumo e sacrifício.
+P	Uma laje de pedra outrora bela, com uns 9 metros de altura e cerca de metade disso a mais de largura, erguida numa câmara abobadada, cercada de runas talhadas fundo que falam de união e proteção, consumo e sacrifício.
 P	A pedra traz uma infinidade de lascas, entalhes e rachaduras. Poeira e destroços a cercam.
 P	Quando você <b><i>arranca uma lasca de pedra do mármore</i></b>
 P	<b><i>e a engole inteira, estando</i></b>

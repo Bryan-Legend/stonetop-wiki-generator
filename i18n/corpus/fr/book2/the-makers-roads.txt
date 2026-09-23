@@ -6,7 +6,7 @@
 # nav_label: Routes des Bâtisseurs
 # description: Les Routes des Bâtisseurs : leur magie protectrice, le Carrefour, les Routes Brisées, les haltes, les nosgalau, et la calligraphie runique.
 PAGE	270
-P	La Route de l'Ouest s'étend de Stonetop jusqu'au <b>Creux de Gordin</b> (page 190). À environ 24 kilomètres de la ville, elle croise la Grand-Route, qui va du <b>Col de la Barrière</b> (page 26) jusqu'à <b>Bordemarais</b> (page 274) et au-delà.
+P	La Route de l'Ouest s'étend de Stonetop jusqu'au <b>Creux de Gordin</b> (page 190). À environ 25 kilomètres de la ville, elle croise la Grand-Route, qui va du <b>Col de la Barrière</b> (page 26) jusqu'à <b>Bordemarais</b> (page 274) et au-delà.
 P	Les routes sont larges (~6 mètres), grandioses, et impressionnent l'humilité, manifestement l'œuvre des <b>Bâtisseurs</b> (page 264). Elles ont duré des siècles, étrangement bien préservées et libres de toute végétation.
 B	De grandes dalles de basalte carrelé, doucement biseautées, s'étendant jusqu'à l'horizon
 B	Un filet d'eau de pluie ou de fonte des neiges s'écoulant dans des caniveaux qui ne se bouchent jamais
@@ -26,7 +26,7 @@ P	<b>sur 10+</b>, vas-y ; <b>sur 7-9</b>, tu agis mais tu as un désavantage sur
 H2	Le Carrefour
 HR
 P	La Route de l'Ouest croise la Grand-Route à environ
-P	24 kilomètres de la ville. Un bosquet d'<b>arbres dool</b> (page 73) pousse à proximité. Malgré les protections, il y a quelque chose de troublant au Carrefour. Tout le monde le sent. Personne n'aime en parler.
+P	25 kilomètres de la ville. Un bosquet d'<b>arbres dool</b> (page 73) pousse à proximité. Malgré les protections, il y a quelque chose de troublant au Carrefour. Tout le monde le sent. Personne n'aime en parler.
 Q	Qu'est-ce qui, dans ce lieu, te dit que le voile entre la vie et la mort est mince ici ?
 Q	Le fantôme de qui est-il dit qu'il hante les Plaines près du Carrefour ?
 PAGE	271

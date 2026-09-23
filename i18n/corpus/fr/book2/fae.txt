@@ -500,7 +500,7 @@ HR
 ICON	icons/treasure.svg
 H3	Une solide boîte cerclée
 P	◇, <i>magique</i>
-P	6 x 4 x 3 pouces, faite d'épais bois de sorbier et cerclée de bronze. Elle ne paie pas de mine. Elle s'efface facilement de la mémoire.
+P	15 x 10 x 8 cm, faite d'épais bois de sorbier et cerclée de bronze. Elle ne paie pas de mine. Elle s'efface facilement de la mémoire.
 P	Quand tu <b><i>laisses tomber une goutte de ton sang dans</i></b> <b><i>le coffre vide</i></b>, nomme une promesse que tu as faite, un serment que tu as prêté, ou une dette que tu dois. Ton sang se change en perle de plomb en tombant dans le coffre, et la promesse, le serment, ou la dette n'a plus aucun pouvoir sur toi tant que le coffre reste scellé.
 HR
 ICON	icons/arcana.svg

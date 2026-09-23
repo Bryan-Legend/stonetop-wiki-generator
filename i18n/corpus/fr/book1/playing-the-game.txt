@@ -81,7 +81,7 @@ P	L'inverse est également vrai : <b>si tu le fais, tu</b> <b>dois le faire</b>.
 P	C'est le travail de chacun de guetter les manœuvres. Si tu penses avoir déclenché une manœuvre, dis-le.
 P	Si un autre joueur déclenche une manœuvre et que personne ne le remarque, dis quelque chose ! « Hé, mettre un coude au visage d'un type, ça ressemble à 'combattre en espace confiné', c'est Croiser le Fer, non ? »
 P	Tout le monde doit être d'accord sur le fait que tu fais quelque chose de plausible et que le déclencheur est effectivement rempli. Par exemple :
-B	Si le type mesure 4 mètres et te tient à bout de bras, alors son visage n'est pas assez proche pour un coup de coude ! Fais autre chose.
+B	Si le type mesure 3,5 mètres et te tient à bout de bras, alors son visage n'est pas assez proche pour un coup de coude ! Fais autre chose.
 B	Si le type est littéralement fait de fer, un coup de coude à son visage ne fera rien du tout et Croiser le Fer ne se déclenche pas. Si tu insistes pour essayer, le MJ dit ce qui se passe.
 B	Si le type est distrait et ne voit rien venir, alors tu ne <b><i>combats</i></b> pas vraiment et Croiser le Fer ne se déclenche pas. Tu lui fracasses simplement le visage et le MJ dit ce qui se passe ensuite.
 P	S'il n'est pas clair que tu déclenches une manœuvre, ou laquelle tu déclenches, discutez-en. Clarifie ton intention et les détails jusqu'à ce que tout le monde soit d'accord.

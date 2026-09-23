@@ -8,7 +8,7 @@
 PAGE	517
 H3	Une feuille de chêne géante
 P	◇, <i>magique</i>
-P	Longue d'environ 2 mètres, cireuse et rigide, chatoyant d'un éclat doré irisé. Est-ce vraiment une feuille du Chêne Doré ?
+P	Longue d'environ 1,8 mètre, cireuse et rigide, chatoyant d'un éclat doré irisé. Est-ce vraiment une feuille du Chêne Doré ?
 P	Tu peux transformer la feuille en une cape merveilleuse, mais pour cela tu dois...
 C	… apprendre les secrets de sa confection (auprès d'un Fae, d'un esprit de la nature sauvage, ou peut-être d'un serviteur favori de Danu).
 C	… tanner la feuille avec un mélange d'eau de chaux, de guano de corbeau, de cervelle d'ours des cavernes, et de ton propre sang.

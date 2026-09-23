@@ -89,7 +89,7 @@ P	Por exemplo:
 B	Uma estátua enorme e estilizada de um Senhor da Geada, talhada na encosta da montanha
 B	Uma caverna vasta, com as paredes rebocadas, trazendo uma pintura vívida de um Senhor da Geada irradiando poder, com mortais/espíritos/demônios curvados diante dele
 B	Uma coluna de gelo negro, alta como uma torre, com símbolos e glifos em relevo
-B	Uma estátua de 50 pés de um Senhor da Geada no alto de uma montanha, feita de seixos mantidos impossivelmente no lugar
+B	Uma estátua de 15 metros de um Senhor da Geada no alto de uma montanha, feita de seixos mantidos impossivelmente no lugar
 PAGE	320
 HR
 H3	Uma ruína
@@ -164,8 +164,8 @@ ICON	icons/treasure.svg
 H2	Artefatos
 H3	Tesouros variados
 B	Um ◇◇ tambor, de madeira e pele esticada, impossivelmente preservado (<i>ruidoso</i>, <i>frágil</i>)
-B	Um cubo de gelo negro de 1 polegada (<i>mágico</i>, Valor 1)
-B	Um pedaço de corrente de 2 pés, com os elos ◇ feitos de gelo negro duro como pedra e fechos de bronze nas duas pontas (<i>mágica</i>, Valor 1)
+B	Um cubo de gelo negro de 2,5 cm (<i>mágico</i>, Valor 1)
+B	Um pedaço de corrente de 60 centímetros, com os elos ◇ feitos de gelo negro duro como pedra e fechos de bronze nas duas pontas (<i>mágica</i>, Valor 1)
 B	Um topázio do tamanho de um polegar, engastado em bronze num… cinto (?); enche você de pavor só de olhar (<i>mágico</i>, <i>aterrorizante</i>, Valor 2) ◇◇ Mantos em escala de gigante, de uma seda estranha quase impossível de cortar/rasgar; desfia e se desmancha depressa com qualquer dano, por menor que seja (<i>quentes</i>, <i>pesados</i>, Valor 2)
 B	Uma tigela funda e redonda de latão, estranhamente ◇ ressonante, com as bordas externas adornadas de safiras (Valor 3)
 B	Uma estátua dourada do tamanho de uma criança (<i>imóvel</i>, <i>mágica</i>, Valor 4) de um Senhor da Geada em meditação, com a cabeça irradiando luz fria
@@ -174,7 +174,7 @@ HR
 ICON	icons/site.svg
 H3	Uma coluna de gelo
 P	<i>mágica</i>, <i>imóvel</i>
-P	No meio de uma campina alta e solitária ergue-se um pilar de gelo roxo-escuro, de 12 pés de altura e 2 de espessura. Ele repousa sobre uma laje circular de pedra gravada de runas, de uma dúzia de passos de diâmetro, intocada pelo tempo ou pela natureza. Há uma imobilidade no lugar, uma tensão no ar.
+P	No meio de uma campina alta e solitária ergue-se um pilar de gelo roxo-escuro, de 3,5 metros de altura e 60 centímetros de espessura. Ele repousa sobre uma laje circular de pedra gravada de runas, de uma dúzia de passos de diâmetro, intocada pelo tempo ou pela natureza. Há uma imobilidade no lugar, uma tensão no ar.
 P	<b>Algo interessante:</b> As runas parecem ser algum tipo de feitiço, à espera de ser disparado; levaria dias de estudo para decifrar a palavra de comando (e você arrisca dispará-lo sem querer).
 P	<b>Algo útil:</b> Você consegue determinar a palavra de comando com algumas horas de estudo (menos, se for versado na escrita dos Senhores da Geada).
 P	Quando você <b><i>fala a palavra de comando perto</i></b> <b><i>da coluna</i></b>, o gelo negro se expande num átimo, encerrando a laje de pedra e tudo o que estiver sobre ela.
@@ -189,10 +189,10 @@ P	Quando você <b><i>apunhala uma entidade morta-viva com a</i></b> <b><i>faca</
 ICON	icons/treasure.svg
 H3	Uma pequena esfera negra
 P	<i>mágica</i>, <i>indestrutível</i>, <i>imóvel</i>
-P	Achada numa ruína de Senhores da Geada ou perto dela, esta… coisa… parece ser uma esfera perfeita de chumbo, de talvez 2 polegadas de diâmetro. Ela paira imóvel no ar. Nenhuma força física a marca, nem a tira de sua posição relativa.
+P	Achada numa ruína de Senhores da Geada ou perto dela, esta… coisa… parece ser uma esfera perfeita de chumbo, de talvez 5 centímetros de diâmetro. Ela paira imóvel no ar. Nenhuma força física a marca, nem a tira de sua posição relativa.
 P	Quando você <b><i>concentra toda a sua vontade na esfera</i></b> <b><i>negra</i></b>, role +SAB: <b>com 10+</b>, você consegue mover a esfera devagar com a mente, desde que mantenha a atenção fixa na tarefa; <b>com 7-9</b>, escolha 1:
 B	Marque uma debilidade e mova a esfera como no 10+
-B	Mova a esfera, mas só algumas polegadas
+B	Mova a esfera, mas só alguns centímetros
 B	Arremesse a esfera numa direção aleatória (se isso importar: d8 de dano, <i>forte</i>, <i>sujo</i>)
 HR
 ICON	icons/arcana.svg

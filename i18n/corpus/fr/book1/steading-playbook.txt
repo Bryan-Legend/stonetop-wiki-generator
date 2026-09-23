@@ -214,7 +214,7 @@ C	Un meunier à temps plein
 P	Quand tu <b><i>remplis les conditions</i></b>, augmente la Fortune de 1, ajoute « Moulin » à la liste des Ressources et dessine-le sur la carte.
 P	Désormais, quand <b><i>la récolte d'automne est terminée</i></b>, la bourgade génère +1 Surplus. De plus, quand tu <b><i>t'Équipes à Stonetop ou As ce qu'il Faut après</i></b> <b><i>l'avoir fait</i></b>, chaque ◇ de fournitures dispose d'une utilisation supplémentaire.
 HR
-C	<b>PALISSADE</b> Un mur de rondins taillés en pointe, haut de 10 pieds, pour tenir le mal à distance.
+C	<b>PALISSADE</b> Un mur de rondins taillés en pointe, haut de 3 mètres, pour tenir le mal à distance.
 P	<b>Requiert</b> tous les éléments suivants, dans l'ordre :
 C	Beaucoup de bois (~20-25 charretées, Valeur 3)
 C	Un ingénieur/contremaître compétent

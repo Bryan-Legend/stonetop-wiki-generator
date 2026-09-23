@@ -21,6 +21,6 @@ P	Assigne un d4 à chacun des éléments suivants :
 P	____ <b>Déclenchement : 1</b> = le lendemain ; <b>2-3</b> = dans quelques heures ; <b>4</b> = dans l'heure qui vient.
 P	____ <b>Intensité : 1</b> = dangereuse à affronter dehors ;
 P	<b>2-3</b> = endommage les structures faibles ; <b>4</b> = ravage les structures faibles et endommage les solides.
-P	____ <b>Portée : 1</b> = un mille ou deux ; <b>2-3</b> = une douzaine de milles ou deux ; <b>4</b> = des dizaines ou des vingtaines de milles.
+P	____ <b>Portée : 1</b> = un kilomètre et demi environ ; <b>2-3</b> = une vingtaine de kilomètres environ ; <b>4</b> = des dizaines, voire des centaines de kilomètres.
 P	____ <b>Durée</b> (une fois lancée)<b>: 1</b> = moins d'une heure ; <b>2-3</b> = quelques heures ; <b>4</b> = une journée ou presque.
 P	56

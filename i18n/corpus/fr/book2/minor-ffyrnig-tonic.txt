@@ -8,7 +8,7 @@
 PAGE	513
 H3	Une immense sphère de bois
 P	<i>immobile</i>
-P	À moitié enterrée et largement envahie par la végétation, environ 1,2 mètre de diamètre et pesant plusieurs centaines de livres.
+P	À moitié enterrée et largement envahie par la végétation, environ 1,2 mètre de diamètre et pesant plus d'une centaine de kilos.
 P	Elle est étrangement bien préservée et ornée de pictogrammes complexes. Une poignée d'autres sphères pourrissent à proximité.
 P	Les pictogrammes représentent une sorte de recette, que tu peux apprendre mais tu dois...
 C	… d'abord déterrer et nettoyer la sphère.

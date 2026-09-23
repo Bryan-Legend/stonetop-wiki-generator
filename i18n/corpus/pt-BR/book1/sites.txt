@@ -72,7 +72,7 @@ P	Quem ou o que mais está aqui? Que sinais da presença deles os PJs poderiam e
 H2	Fontes de luz e etiquetas
 P	Aqui vai uma referência rápida:
 P	<b><i>Mão</i></b>: Ex.: uma vela de junco. Ilumina só até onde seu braço alcança. Mal dá para andar ou ler.
-P	<b><i>Perto, área</i></b>: Ex.: uma vela, uma lamparina a óleo ou uma lanterna. Lança luz por alguns passos, o bastante para 2 pessoas andarem.
+P	<b><i>Perto, área</i></b>: Ex.: uma vela, uma lamparina a óleo ou uma lanterna. Lança luz por um par de metros, o bastante para 2 pessoas andarem.
 P	<b><i>Alcance, área</i></b>: Ex.: uma tocha. Ilumina até uns 3 metros, o bastante para um grupo pequeno andar.
 P	<b><i>Tosca</i></b>: Ex.: uma vela de junco, uma lamparina a óleo.
 P	Propensa a tremular ou apagar quando movida depressa ou com vento leve.
@@ -124,7 +124,7 @@ HR
 P	Você pode fazer um movimento suave de Mestre também. <b>Gaste</b> <b>os recursos deles</b> enquanto marcham ("Marque mais uma hora do seu óleo de lamparina"). <b>Sugira</b> <b>que há mais do que os olhos veem</b> ("É a terceira vez que vocês veem essa marca"). <b>Aponte</b> <b>para um perigo à espreita</b> ("Um pouco depois, vocês acham esses sulcos, como das garras de algo bem grande").
 P	Ou, dane-se. <b>Introduza um perigo</b> ou <b>apresente uma descoberta</b> em algum ponto do caminho, e acho que é aqui que a próxima cena acontece, afinal.
 P	<i>A Blodwen dá uma conferida no Andras, que faz</i> <i>pouco caso. Então volto à minha</i> <i>descrição. "Um pouco depois, a escada vira e</i> <i>sobe pela lateral do penhasco. Não tem corrimão, só uma queda a pique à sua esquerda, lá para baixo, para</i> <i>as pedras e mais água do que vocês já viram na vida.</i> <i>O que cada um de vocês está pensando agora?"</i>
-P	<i>Depois que os jogadores respondem, aproximo a lente para fazer</i> <i>meu movimento. "Depois de tipo uma hora, a escada passa</i> <i>por um túnel curto num afloramento. E,</i> <i>Caradoc, alguma coisa… se mexe. Lá em cima,</i> <i>naquele afloramento, uns 10 metros acima. É uma… pessoa?</i> <i>Não… mais para um boneco do tamanho de um homem feito</i> <i>de pedra, observando vocês. O que você faz?"</i>
+P	<i>Depois que os jogadores respondem, aproximo a lente para fazer</i> <i>meu movimento. "Depois de tipo uma hora, a escada passa</i> <i>por um túnel curto num afloramento. E,</i> <i>Caradoc, alguma coisa… se mexe. Lá em cima,</i> <i>naquele afloramento, uns 9 metros acima. É uma… pessoa?</i> <i>Não… mais para um boneco do tamanho de um homem feito</i> <i>de pedra, observando vocês. O que você faz?"</i>
 P	<i>O grupo para. O Vahid Sabe das Coisas (é um</i> <i>construto dos Senhores da Pedra, mas ele não tem certeza se é um</i> <i>autômato ou algo autônomo ou o quê). Eles tentam</i> <i>se comunicar, mas ele não responde. O Caradoc</i> <i>tenta escalar até ele, mas ele se esgueira para longe.</i> <i>Eles seguem em frente, mas ele os segue à distância.</i>
 P	<i>"Assim não dá", diz a Rhianna. "Eu Leio o</i> <i>terreno. Qual é o melhor ponto para uma emboscada?</i> <i>Quero pegar essa coisa." Decidimos que</i> <i>eles poderiam atraí-lo para uma câmara nos</i> <i>penhascos que a Rhianna avista mais adiante — e</i> <i>é ali que enquadramos a próxima cena!</i>
 PAGE	352
@@ -606,7 +606,7 @@ P	<b>Se os PJs mexerem num ninho de crinwin</b>: os crinwin do ninho saem em dis
 HR
 H3	Entradas
 P	<b>Entrada principal</b>: recuada no lado norte da colina, no fim de uma vala cheia de sarça.
-P	A sarça esconde um arco de quase 5 metros, parcialmente tomado por terra e entulho. Leva à câmara de entrada (A). Os PJs podem entrar se cortarem a sarça ou se não se importarem em se arranhar (1d4 de dano), mas correm o risco de agitar um ninho <b>Túnel secreto</b>: a abertura fica a oeste da colina,
+P	A sarça esconde um arco de 4,5 metros, parcialmente tomado por terra e entulho. Leva à câmara de entrada (A). Os PJs podem entrar se cortarem a sarça ou se não se importarem em se arranhar (1d4 de dano), mas correm o risco de agitar um ninho <b>Túnel secreto</b>: a abertura fica a oeste da colina,
 P	a uns 9 metros depois da linha das árvores, sob um pedregulho e escondida por glamour e mato. Um aperto para um PJ com carga leve. Leva ao alçapão [T] da câmara musgosa (D). Desconhecido da Sajra e dos crinwin.
 P	<b>Tocas</b> (S): cavadas na colina ou no entulho, com uns 45 centímetros de largura, visíveis só quando você está bem ao lado delas. Usadas pelos crinwin e pela Sajra. Pequenas demais para os PJs ou o Pryder.
 P	O Wynfor, a Tiwlip e o Dedo-de-Espinho poderiam, em tese, se espremer por elas.
@@ -621,7 +621,7 @@ B	Ecos distantes de vozes/ruídos de animais
 P	Os <b>corredores</b> têm 3 metros de largura e são ladeados por nichos funerários: de 8 a 24 por salão, do tamanho de uma pessoa, mas alguns maiores. Sem corpos, mas alguns têm exposições de bugiganga (ossos, cacos de cerâmica, pedras, talvez um adorno de Valor 1 com algum defeito), montadas pelos crinwin para imitar o tesouro da Sajra.
 PAGE	373
 H3	Câmara de entrada (A)
-P	Iluminada fracamente de fora. Terra e detritos empilhados a quase 1,20 metro na entrada, descendo em declive para dentro da sala. Mais adiante, o chão está imundo, enlameado.
+P	Iluminada fracamente de fora. Terra e detritos empilhados a quase 1,2 metro na entrada, descendo em declive para dentro da sala. Mais adiante, o chão está imundo, enlameado.
 B	Camada grossa de folhas caídas, escorregadia sob os pés
 B	Plantas/arbustos/mudas crescendo na terra
 B	Musgo/liquens/trepadeiras nas paredes, principalmente perto da entrada

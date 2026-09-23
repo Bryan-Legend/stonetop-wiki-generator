@@ -51,11 +51,11 @@ PAGE	50
 H2	Áreas
 HR
 B	<b>Colinas próximas:</b> Um lugar maleável, onde os caminhos podem mudar na névoa, cheio de ruínas, <b>túmulos</b> (página 39) e <b>cavernas</b> (página 380). A rocha e as ruínas se inclinam todas para o lago.
-B	<b>Crista externa:</b> Uma escarpa que circunda o lago, caindo de 50 a 100 pés até as margens. Pouco arborizada no alto. Guarda várias ruínas, enterradas em ângulos esquisitos, algumas espetando para fora.
-B	<b>Margem:</b> Estende-se de 100 a 200 pés a partir da crista externa. Muito entulho, boa parte de alvenaria antiga. Líquen espesso, capim que se inclina para longe do lago.
+B	<b>Crista externa:</b> Uma escarpa que circunda o lago, caindo de 15 a 30 metros até as margens. Pouco arborizada no alto. Guarda várias ruínas, enterradas em ângulos esquisitos, algumas espetando para fora.
+B	<b>Margem:</b> Estende-se de 30 a 60 metros a partir da crista externa. Muito entulho, boa parte de alvenaria antiga. Líquen espesso, capim que se inclina para longe do lago.
 B	<b>O rio Aberzh:</b> Corta a crista oeste, depois se alarga e corre preguiçoso até o lago. Barrento, raso, pedregoso. Muita alga escura.
-B	<b>O Pilar:</b> Na margem norte, com 40 pés de largura e mais de 100 de altura. Feito de pedras de alvenaria reaproveitadas, empilhadas de modo tosco. Sem entrada aparente. Uma escalada precária. Parece amaldiçoado.
-B	<b>O lago:</b> Cerca de 2 por 3 milhas. Impossivelmente parado, escuro, espelhado. Sempre frio, nunca congela. Centenas de pés de profundidade perto do centro.
+B	<b>O Pilar:</b> Na margem norte, com 12 metros de largura e mais de 30 de altura. Feito de pedras de alvenaria reaproveitadas, empilhadas de modo tosco. Sem entrada aparente. Uma escalada precária. Parece amaldiçoado.
+B	<b>O lago:</b> Cerca de 3 por 5 km. Impossivelmente parado, escuro, espelhado. Sempre frio, nunca congela. Dezenas de metros de profundidade perto do centro.
 H2	Terreno
 P	Escolha 1 ou combine 2, ou peça que alguém role o Dado do Destino (d12). Se quiser, role 1d6 para tamanho/extensão/intensidade.
 P	1d12 terreno
@@ -75,7 +75,7 @@ HR
 P	1 Montículo de terra e pedras parcialmente desabado, cada pedra entalhada com runas de medo. Guarda ossos e vasos de barro cheios de grão apodrecido.
 P	2 Bunker do tamanho de um armazém, de blocos enormes, enterrado num ângulo acentuado. Portões de carga visíveis, muito danificados, mas ainda intactos.
 P	3 Labirinto de salas do tamanho de um humano, cavado na crista externa. Traçado confuso, ângulos estranhos, instável, iluminado por cristais que brilham.
-P	4 Porta que entra na crista, levando a uma sala abobadada e tosca. Guarda uma estátua de 12 pés de uma fera atarracada e peixosa. A boca dela se abre para um poço profundo.
+P	4 Porta que entra na crista, levando a uma sala abobadada e tosca. Guarda uma estátua de 3,5 metros de uma fera atarracada e peixosa. A boca dela se abre para um poço profundo.
 P	5 Dezenas de tubos de vidro dos Construtores, cada um menor que o anterior, alinhados em fileiras e fundidos entre si. Soam de modo assombroso quando percutidos.
 P	6 Paredes de uma sala cúbica de pedra com muitos nichos. Inclinada uns 30°. Aparelho cristalino numa das paredes. Palavras ditas aqui ressoam de algum ponto do outro lado do lago.
 P	7 Série de salas e túneis dessemelhantes, levando a um enorme anfiteatro subterrâneo, como um cisto na terra. Em boa parte alagado.
@@ -86,7 +86,7 @@ P	Lá dentro: um cadáver ressequido preso por bronze, uma pilha de oferendas.
 P	10 Pequena colina de pedras empilhadas; uma laje esconde uma porta. Dentro, um cristal gélido atrai aparições e as prende; dezenas já estão presas.
 P	11 Sala cavernosa e soterrada, inclinada mas quase inteira. Cheia de cinzéis e <b>lajes protegidas</b> (página 271):
 P	quase todas estilhaçadas, algumas inacabadas, outras enterradas mas intactas.
-P	12 Domo de pedra em forma de cebola, com uns 30 pés de diâmetro. Oco, com abertura voltada para baixo e água acumulada impossivelmente no teto por dentro.
+P	12 Domo de pedra em forma de cebola, com uns 9 metros de diâmetro. Oco, com abertura voltada para baixo e água acumulada impossivelmente no teto por dentro.
 PB
 P	Os exemplos acima são só isso. Para criar mais ruínas dos Senhores da Pedra, veja a página 386, mas role a condição com desvantagem.
 P	As que estiverem minimamente intactas estarão inclinadas e tortas, e provavelmente foram <b>reaproveitadas</b> (página 36) pelos Construtores de Túmulos em algum momento.
@@ -191,7 +191,7 @@ PAGE	55
 HR
 ICON	icons/danger.svg
 H3	Boca de Daagon
-P	No fundo do lago, centenas de pés abaixo, há uma Boca de Daagon.
+P	No fundo do lago, dezenas de metros abaixo, há uma Boca de Daagon.
 P	Tudo o que for largado na água funda chega lá com o tempo. Objetos de valor deixados na margem ou lançados nos baixios provavelmente serão achados pelos <b>servos</b> (página 56) e entregues à Boca em seu nome. Artefatos perigosos deixados para os servos podem ser entregues e consumidos, ou não.
 P	Quando <b><i>a Boca engole alguma coisa</i></b>, Daagon a consome por completo. Quando <b><i>a</i></b> <b><i>Boca engole alguém</i></b>, essa pessoa se vai, corpo e alma.
 P	Quando você <b><i>alimenta a Boca com algo</i></b> <b><i>ou alguém amado</i></b> (por qualquer um, não só por você), Daagon o recompensa.

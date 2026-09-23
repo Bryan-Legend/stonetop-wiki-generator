@@ -249,7 +249,7 @@ HR
 ICON	icons/treasure.svg
 H3	Tira de couro trançado
 P	<i>mágica</i>
-P	Com 3 pés de comprimento, desfiada numa ponta e encrostada de... alguma coisa que descasca. As tranças entrelaçam 2d4 contas de madeira vermelha. Cada conta contém um dano: um ferimento (1d10 de dano, <i>sujo</i>, ignora armadura), uma doença, um veneno, um delírio. O conjunto todo prende um espírito da praga.
+P	Com 1 metro de comprimento, desfiada numa ponta e encrostada de... alguma coisa que descasca. As tranças entrelaçam 2d4 contas de madeira vermelha. Cada conta contém um dano: um ferimento (1d10 de dano, <i>sujo</i>, ignora armadura), uma doença, um veneno, um delírio. O conjunto todo prende um espírito da praga.
 P	Quando você <b><i>desfaz a trança e deixa uma</i></b> <b><i>conta de madeira vermelha cair no chão</i></b>, o espírito se manifesta como um vento morno e úmido. Nomeie alguém em sua presença; o espírito inflige a essa pessoa o dano que estava guardado na conta. Se você não nomear ninguém em sua presença, o espírito escolhe alguém ao acaso (talvez até você).
 HR
 ICON	icons/treasure.svg
@@ -291,7 +291,7 @@ HR
 ICON	icons/treasure.svg
 H3	Um galho bifurcado de madeira vermelha
 P	◇, <i>mágico</i>
-P	Um galho robusto de uns 2 pés, sem casca, com trilhas finas de carunchos formando padrões regulares demais. Se você o segurar com delicadeza, com uma mão em cada ponta da forquilha, sente que ele puxa, levando você de leve em certas direções.
+P	Um galho robusto de uns 60 centímetros, sem casca, com trilhas finas de carunchos formando padrões regulares demais. Se você o segurar com delicadeza, com uma mão em cada ponta da forquilha, sente que ele puxa, levando você de leve em certas direções.
 P	Quando você <b><i>rabdomancia com o galho de madeira vermelha</i></b>, ele o guia até o sítio sagrado aos espíritos do ermo mais próximo. Com prática, você consegue estimar a distância e até a disposição dos espíritos que ali moram.
 ICON	icons/treasure.svg
 H3	Um naco de âmbar
@@ -359,7 +359,7 @@ P	• Empunhar as plantas ao redor como arma
 P	• Possuir uma árvore próxima (vulnerável ao fogo, quase impossível de ferir com a maioria das armas)
 P	• Purgar ou prender uma mácula antinatural
 P	• Conceder um segredo ou uma graça a um amigo da floresta
-P	Conforme amadurecem, as Brennauwed ficam mais sedentárias, manifestando-se apenas pela própria árvore ou possuindo outras árvores num raio de algumas milhas. Uma birdwaig tem um zelo maternal por todas as coisas naturais de seu território, e volta a própria floresta contra quem tentar lhes fazer mal.
+P	Conforme amadurecem, as Brennauwed ficam mais sedentárias, manifestando-se apenas pela própria árvore ou possuindo outras árvores num raio de alguns quilômetros. Uma birdwaig tem um zelo maternal por todas as coisas naturais de seu território, e volta a própria floresta contra quem tentar lhes fazer mal.
 HR
 ICON	icons/spirit.svg
 H3	Hennain

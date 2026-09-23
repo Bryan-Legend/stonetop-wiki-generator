@@ -89,7 +89,7 @@ B	Pequenos espíritos de chama, cada um preso numa esfera de vidro diferente, en
 B	Uma <b>aparição de cinzas</b> (página 166) e os ossos a que está atada, presa atrás de uma parede de alvenaria no porão de algum Senhor da Forja
 H3	Monumento ou marco
 P	Por exemplo:
-B	Uma estátua de bronze de uma figura régia, um dia com 60 pés de altura, achada tombada, amassada e soterrada num vale.
+B	Uma estátua de bronze de uma figura régia, um dia com 18 metros de altura, achada tombada, amassada e soterrada num vale.
 B	Outra estátua enorme de bronze de uma figura régia, ainda no alto de seu cume, mas meio derretida.
 B	Um retrato numa encosta de montanha, um mosaico feito de milhões de contas de vidro.
 B	Uma torre de basalto sem emendas, encimada por um domo em forma de cebola, de latão brilhante e face aberta, com uma chama eterna ardendo dentro.
@@ -193,7 +193,7 @@ B	<b>Um estojo acolchoado</b>◇ com 4 esferas de barro, cada uma contendo nafta
 B	<b>Uma fita de Möbius de ouro</b> numa corrente (Valor 2)
 B	<b>Uma</b> ◇◇ <b>ponta de lança de oricalco descomunal</b> (Valor 2), grande demais para usar, mas um ferreiro pode refundi-la
 B	<b>Uma caixa</b>◇ com um diorama de engrenagens; dê corda na chave e ele toca música, com as figuras mascaradas dançando e rodopiando (<i>frágil</i>, <i>mágico</i>?, Valor 3)
-B	<b>Um vaso impecável</b>◇ (<i>frágil</i>, <i>belo</i>, Valor 4), de uns 2 pés de altura, com vidrado iridescente; lembra você da fragilidade da vida
+B	<b>Um vaso impecável</b>◇ (<i>frágil</i>, <i>belo</i>, Valor 4), de uns 60 centímetros de altura, com vidrado iridescente; lembra você da fragilidade da vida
 B	<b>Uma pilha de moedas, joias, arte e</b> <b>maravilhas</b> (<i>imóvel</i>, Valor 5), o tesouro de um <b>draventao</b> (página 170)
 PB
 P	Veja também: as <b>curiosidades e maravilhas</b> (página 467) que os Ustrina às vezes levam à Cava de Gordin para negociar.
@@ -217,8 +217,8 @@ HR
 ICON	icons/treasure.svg
 H3	Dois espelhos
 P	◇, <i>belos</i>, <i>mágicos</i>, Valor 4
-P	Um é um ◇◇ espelho prateado impecável (<i>mágico</i>, <i>belo</i>, <i>frágil</i>, Valor 4), de 3 pés de altura e moldura dourada. Runas dos Senhores da Forja adornam a moldura, traduzidas como: "À minha bela Esé, minha fiel, minha rocha."
-P	O outro é um espelho menor e humilde ◇ (<i>mágico</i>, <i>frágil</i>, Valor 2), de apenas 12 polegadas de altura, em moldura de bronze. Traz a mesma inscrição do outro espelho, mas invertida. Uma agulhinha se projeta da moldura, manchada de escuro.
+P	Um é um ◇◇ espelho prateado impecável (<i>mágico</i>, <i>belo</i>, <i>frágil</i>, Valor 4), de 1 metro de altura e moldura dourada. Runas dos Senhores da Forja adornam a moldura, traduzidas como: "À minha bela Esé, minha fiel, minha rocha."
+P	O outro é um espelho menor e humilde ◇ (<i>mágico</i>, <i>frágil</i>, Valor 2), de apenas 30 centímetros de altura, em moldura de bronze. Traz a mesma inscrição do outro espelho, mas invertida. Uma agulhinha se projeta da moldura, manchada de escuro.
 P	Quando você <b><i>fura o dedo e toca o</i></b> <b><i>espelho menor</i></b>, ele mostra o que está refletido no espelho maior até você interromper o contato.
 P	Seu sangue penetra na superfície, sem deixar mancha.
 HR
@@ -355,7 +355,7 @@ P	• Fingir ser "só" mais uma estátua
 P	• Ganhar vida, rangendo ao se mover
 P	• Lançar um desafio estrondoso numa língua esquecida
 P	• Bloquear o caminho deles
-P	Tem quase 60 pés de altura, um Senhor da Forja musculoso fundido em bronze. Estátuas parecidas se erguem por perto, cada uma grandiosa e imponente.
+P	Tem quase 18 metros de altura, um Senhor da Forja musculoso fundido em bronze. Estátuas parecidas se erguem por perto, cada uma grandiosa e imponente.
 P	Esta estátua, porém, é atravessada por veios azulados. E parece que está observando você. Porque está.
 P	O colosso guarda a entrada do domínio de seu mestre. Se alguém se aproxima com honra, falando a língua dos Senhores da Forja, ele diz educadamente que volte mais tarde, pois seu mestre está fora. Invasores, fanfarrões e ladrões são tratados à força.
 P	<b>Algo interessante:</b> Aqueles veios azulados são de <b>etério</b> (página 404), e provavelmente é o que anima a estátua. O que, infelizmente, significa que não há um único ponto fraco. Talvez você consiga feri-la puxando o relâmpago de dentro dela.

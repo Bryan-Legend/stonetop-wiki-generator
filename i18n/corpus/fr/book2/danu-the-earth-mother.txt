@@ -104,7 +104,7 @@ B	Un bézoard (à avaler pour guérir n'importe quel poison, Valeur 1)
 B	Une bourse de sel rose, bon pour ◇ cuisiner/conserver et néfaste aux créatures <i>corrompues</i> (Valeur 1)
 B	Une bourse sacrée de peau de drake ◇ brodée de runes ; une fois scellée, rien à l'intérieur ne peut être détecté ni trouvé par magie, et rien à l'intérieur ne peut s'échapper ni affecter le monde extérieur (<i>magique</i>, Valeur 2)
 B	Une dague en alliage d'argent, utile contre les esprits morts-vivants (<i>main</i>, Valeur 2)
-B	Une statue de Danu de 2 mètres de haut, taillée dans une géode, le torse ouvert et rempli de cristaux d'améthyste (<i>immobile</i>, Valeur 3)
+B	Une statue de Danu de 1,8 mètre de haut, taillée dans une géode, le torse ouvert et rempli de cristaux d'améthyste (<i>immobile</i>, Valeur 3)
 B	Un parchemin (◇ <i>fragile</i>, Valeur 4 pour le bon acheteur) contenant des instructions énigmatiques pour créer une <b>Effigie de bois rouge</b> (page 570)
 PAGE	67
 HR

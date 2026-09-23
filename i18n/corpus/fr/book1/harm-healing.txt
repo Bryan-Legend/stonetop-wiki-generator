@@ -133,7 +133,7 @@ P	<b><i>Leur dire les exigences :</i></b> <i>« Si tu veux</i> <i>marcher sur ce
 PAGE	245
 H2	Mort et agonie
 P	Quand un PJ est réduit à 0 HP par une attaque qui pourrait le tuer, il agonise et doit faire cette manœuvre. Il pourrait aussi agoniser parce que la fiction l'exige : s'il tombe
-P	de 100 pieds sur des rochers, il ne subit pas de dégâts, il est à 0 HP et Aux Portes de la Mort.
+P	de 30 mètres sur des rochers, il ne subit pas de dégâts, il est à 0 HP et Aux Portes de la Mort.
 P	<b>AUX PORTES DE LA MORT</b>
 P	Quand tu <b><i>agonises</i></b>, tu entraperçois la Dernière Porte et la Dame des Corbeaux (décris-les). Ensuite, lance +rien :
 P	<b>sur un 10+</b>, tu t'arraches de force au royaume des vivants — reviens à

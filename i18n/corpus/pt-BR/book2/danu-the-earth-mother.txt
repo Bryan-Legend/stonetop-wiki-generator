@@ -104,7 +104,7 @@ B	Um bezoar (engula para curar qualquer veneno, Valor 1)
 B	Uma bolsa de sal rosa, bom para ◇ cozinhar/conservar e funesto para criaturas <i>corrompidas</i> (Valor 1)
 B	Uma bolsa sagrada de ◇ pele de drake costurada com runas; quando fechada, nada que esteja dentro pode ser detectado ou achado por magia, nem nada lá dentro pode escapar ou afetar o mundo de fora (<i>mágica</i>, Valor 2)
 B	Uma adaga de liga de prata, útil contra espíritos mortos-vivos (<i>mão</i>, Valor 2)
-B	Uma estátua de Danu de 6 pés de altura, entalhada num geodo, o torso aberto e cheio de cristais de ametista (<i>imóvel</i>, Valor 3)
+B	Uma estátua de Danu de 1,8 metro de altura, entalhada num geodo, o torso aberto e cheio de cristais de ametista (<i>imóvel</i>, Valor 3)
 B	Um pergaminho (◇ <i>frágil</i>, Valor 4 para o comprador certo) com instruções enigmáticas de como criar uma <b>Efígie de Sequoia</b> (página 570)
 PAGE	67
 HR

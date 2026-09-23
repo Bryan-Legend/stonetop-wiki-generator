@@ -215,14 +215,14 @@ P	<b>Instinto</b> defender o lugar onde está
 P	• Esperar com paciência para dar o bote
 P	• Sibilar de forma ameaçadora para uma ameaça
 P	• Morder rápido e ficar pronta para atacar de novo
-P	A célebre “víbora das árvores”, a serpente mais letal da Mata, com até quase 2 metros e escorrendo veneno. Nos meses quentes, ela caça e toma sol na copa ou em clareiras ensolaradas. Nos meses frios, se esconde em ocos e sob troncos, entrando em torpor no inverno. Elas não caçam pessoas, mas também não as temem.
+P	A célebre “víbora das árvores”, a serpente mais letal da Mata, com até 1,8 metro e escorrendo veneno. Nos meses quentes, ela caça e toma sol na copa ou em clareiras ensolaradas. Nos meses frios, se esconde em ocos e sob troncos, entrando em torpor no inverno. Elas não caçam pessoas, mas também não as temem.
 P	Quando você é mordido por uma cwisarff, marque uma debilidade além de sofrer o dano.
 P	Até o veneno ser tratado, você não pode recuperar HP e corre risco de mais dano e mais debilidades.
 ICON	icons/beast.svg
 H3	Cynddaraig
 P	<i>Solitário</i>, <i>grande</i>, <i>aterrorizante</i>, <i>destemido</i>
 P	<b>HP</b> 20; <b>Armadura</b> 2 (escamas)
-P	<b>Dano</b> dentes de sete centímetros d10+3 (<i>perto</i>, <i>alcance</i>, <i>agarrador</i>, <i>sujo</i>, 3 perfurante, vantagem)
+P	<b>Dano</b> dentes de oito centímetros d10+3 (<i>perto</i>, <i>alcance</i>, <i>agarrador</i>, <i>sujo</i>, 3 perfurante, vantagem)
 P	<b>Instinto</b> dominar seu território
 P	• Rugir e eriçar os espinhos, fazendo até guerreiros valentes tremerem
 P	• Arrancar um membro com uma mordida

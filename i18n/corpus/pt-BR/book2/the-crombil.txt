@@ -6,7 +6,7 @@
 # nav_label: Crombil
 # description: O Crombil, o wurm colossal que dorme sob a Grande Mata e desperta a cada poucas décadas: o que ele é, seus sinais e presságios e seu bloco de estatísticas.
 PAGE	62
-P	Um grande wurm escamoso, de centenas de pés de comprimento.
+P	Um grande wurm escamoso, de dezenas e dezenas de metros de comprimento.
 P	Ele dorme em algum ponto sob a <b>Grande</b> <b>Mata</b> (página 200) e desperta a cada poucas décadas para abrir, mordendo e queimando, uma faixa de destruição.
 H3	O que ele é, exatamente?
 P	Isso é você quem decide. Talvez…

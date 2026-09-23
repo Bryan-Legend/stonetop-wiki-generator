@@ -26,7 +26,7 @@ H3	Été
 B	Un vert éclatant le long des rives, le soleil scintillant sur l'eau
 B	Un chœur sans fin d'oiseaux d'eau, d'étourneaux, d'insectes, du courant
 B	Un éclaboussement occasionnel — juste un poisson, ou une tortue effrayée, peut-être ?
-P	Dans son cours inférieur, le fleuve lui-même est large et profond, jamais moins d'un quart de mile de large et de plusieurs dizaines — voire centaines — de pieds de profondeur.
+P	Dans son cours inférieur, le fleuve lui-même est large et profond, jamais moins de 400 mètres de large et d'une dizaine — voire de plusieurs dizaines — de mètres de profondeur.
 P	De loin, il paraît placide et immobile. Mais il coule avec un courant terrible et implacable.
 P	La rive occidentale alterne entre zones humides, vastes plaines inondables, et falaises escarpées, des ruines éparpillées sur toute sa longueur. Ce serait un lieu idyllique où vivre, sauf que toute la longueur du fleuve est maudite.
 ICON	icons/autumn.svg
@@ -197,7 +197,7 @@ P	<b>Instinct</b> se nourrir
 P	• Sentir le champ électrique d'une créature
 P	• Étourdir ou paralyser d'un contact, bzzzt
 P	• Grouiller sur une créature étourdie
-P	Chacun mesure quelques pieds de long, comme une seiche croisée avec un asticot géant, se tortillant, humide et gris, un visage plein de tentacules dont le contact pique comme la foudre.
+P	Chacun mesure un mètre ou deux de long, comme une seiche croisée avec un asticot géant, se tortillant, humide et gris, un visage plein de tentacules dont le contact pique comme la foudre.
 P	Ils passent la plupart de leur vie dans l'eau, se rassemblant près des <b>cristaux d'énergie</b> (page 389) et des artefacts d'<b>éthérium</b> (page 404) que le fleuve a réclamés. Ils semblent en transe devant l'énergie passive, presque bercés jusqu'au sommeil. Mais quand ils sentent quelque chose de plus dynamique, quelque chose de plus charnu, ils se tortillent hors de l'eau bien assez vite.
 P	Certains membres du Peuple des Collines affirment que les luglfsk ne sont que des têtards, et racontent des histoires de terreurs plus grandes, aux nombreuses pattes, projetant la foudre depuis des tentacules faciaux aussi longs qu'un homme est grand. Mais ce ne sont probablement que des histoires pour effrayer les voyageurs. Probablement.
 ICON	icons/beast.svg
@@ -222,7 +222,7 @@ P	<b>Instinct</b> dominer la Rivière d'Effroi
 P	• Sentir un intrus dans son domaine
 P	• Transfixer quelqu'un avec l'un de ses innombrables yeux (voir ci-dessous)
 P	• Entraîner les intrus vers leur perte
-P	C'est une chose de légende. Un grand ver écailleux, dit-on, long de centaines de pieds, orné d'yeux sur toute sa longueur. Des centaines d'yeux, tant et tant. On dit qu'il voit tout ce qui se passe le long du fleuve. On dit qu'il ne tolère aucune intrusion, qu'il noie ou dévore tous ceux qui empiètent sur son domaine.
+P	C'est une chose de légende. Un grand ver écailleux, dit-on, long de plusieurs dizaines de mètres, orné d'yeux sur toute sa longueur. Des centaines d'yeux, tant et tant. On dit qu'il voit tout ce qui se passe le long du fleuve. On dit qu'il ne tolère aucune intrusion, qu'il noie ou dévore tous ceux qui empiètent sur son domaine.
 P	Mais ce n'est pas tout à fait vrai. Certaines personnes ont rencontré le Suileach et ont vécu pour raconter l'histoire, hantées par ce qu'elles ont vu se refléter dans ses yeux.
 P	Quand tu <b><i>fixes, transfixé, l'un des</i></b> <b><i>yeux du Suileach</i></b>, marque <i>hébété</i> et choisis 1 :
 B	Tu te vois toi-même, délesté de tout fardeau. Nomme un PNJ que tu aimes ; ton cœur se refroidit envers lui. Ensuite, gagne une nouvelle manœuvre de ton livret.

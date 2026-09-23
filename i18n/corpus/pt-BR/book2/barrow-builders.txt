@@ -292,7 +292,7 @@ P	12 Já disparada/desarmada
 PB
 P	Materiais especiais podem incluir <b>vegetações perigosas</b> (página 219), <b>oricalco</b> (página 162), <b>ferro negro</b> (página 307), <b>gelo negro</b> (página 322), <b>vidro dos Construtores</b> (página 388), <b>etério</b> (página 404), <b>cristal vermelho</b> (página 424) e/ou outras coisas que você inventar.
 P	<b>Exemplos:</b>
-B	Um poço de 15 pés de fundo, com o fundo forrado de espigões enferrujados; coberto por tecido esticado, pedrinhas e poeira
+B	Um poço de 4,5 metros de fundo, com o fundo forrado de espigões enferrujados; coberto por tecido esticado, pedrinhas e poeira
 B	Uma fenda percorre o teto de um túnel baixo; pisar numa laje solta um machado pendular
 B	Uma caixa-quebra-cabeça sobre um caixão-isca; mexer nela solta pequenos constructos perfurantes de dentro do caixão
 B	A espada de um cadáver; movê-la puxa um arame, que vira uma urna cheia de sal e solta uma aparição presa

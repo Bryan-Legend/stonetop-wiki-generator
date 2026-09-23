@@ -1016,7 +1016,7 @@ P	◇ <b>Kit de cozinha</b> ◇◇ (requer fogo e água; faz os Suprimentos dura
 P	◇ <b>Esteira de dormir</b> (recupere 1d6 HP extras quando você Acampa)
 P	◇ <b>Cobertor</b> (
 P	<i>quente</i>)
-P	◇ <b>Corda</b>, ~8 metros
+P	◇ <b>Corda</b>, ~7,5 metros
 P	◇◇ <b>Trenó/padiola/zorra</b> ◇ <b>Muda de roupa</b>
 P	, enrolável ◇ <b>Pá</b>
 P	◇ <b>Tocha</b> (dura ~1 hora; ◇ <b>Raquetes de neve</b>
@@ -1295,7 +1295,7 @@ VR	◇ Cobertor (quente)	0
 VR	Corda de arco, sobressalente	0
 VR	Punhado de moedas de cobre	0
 VR	◇ Kit de cozinha (requer fogo e água)	0
-VR	◇ Corda, ~8 metros	0
+VR	◇ Corda, ~7,5 metros	0
 VR	Saco (vazio)	0
 VR	◇◇ Trenó/padiola/zorra, enrolável	0
 VR	◇ Raquetes de neve	0

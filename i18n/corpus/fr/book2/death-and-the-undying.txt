@@ -178,7 +178,7 @@ HR
 ICON	icons/treasure.svg
 H3	Une bobine de fil fin
 P	<i>magique</i>
-P	Une longueur de fibre, longue d'environ 50 pieds, filée par un fantôme à partir de tous les cheveux jamais tombés de la tête de ses filles. Le fil est léger, fin, et presque indestructible, mais ne peut être manié que par quelqu'un qui a vu la Dernière Porte. Seul le tranchant d'une lame d'argent peut le couper. Il peut servir à ligoter solidement un fantôme, si l'on est habile et capable de manier soi-même le fil.
+P	Une longueur de fibre, longue d'environ 15 mètres, filée par un fantôme à partir de tous les cheveux jamais tombés de la tête de ses filles. Le fil est léger, fin, et presque indestructible, mais ne peut être manié que par quelqu'un qui a vu la Dernière Porte. Seul le tranchant d'une lame d'argent peut le couper. Il peut servir à ligoter solidement un fantôme, si l'on est habile et capable de manier soi-même le fil.
 HR
 ICON	icons/treasure.svg
 H3	Une épée de bois pâle

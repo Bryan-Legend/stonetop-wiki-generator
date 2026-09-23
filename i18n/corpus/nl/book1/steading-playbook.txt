@@ -214,7 +214,7 @@ C	Een molenaar in volle dienst
 P	Wanneer je de <b><i>vereisten vervult</i></b>, verhoog Fortuin met 1, voeg „Molen" toe aan de Hulpbronnenlijst en teken haar op de kaart.
 P	Voortaan, wanneer <b><i>de herfstoogst binnen is</i></b>, levert de nederzetting +1 Overschot. Ook: wanneer je je <b><i>in Stonetop Uitrust of daarna Hebt Wat Je</i></b> <b><i>Nodig Hebt</i></b>, heeft elk ◇ voorraden 1 extra gebruik.
 HR
-C	<b>PALISSADE</b> Een muur van aangescherpte stammen, 10 voet hoog, om het kwaad buiten te houden.
+C	<b>PALISSADE</b> Een muur van aangescherpte stammen, 3 m hoog, om het kwaad buiten te houden.
 P	<b>Vereist</b> al het volgende, in volgorde:
 C	Veel hout (~20-25 wagenladingen, Waarde 3)
 C	Een bekwame ingenieur/voorman

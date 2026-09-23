@@ -123,7 +123,7 @@ P	<b>Défenses</b> +1
 B	Culture guerrière
 B	Armes en fer, boucliers en bois
 B	Protection du chef local
-P	Les hameaux se composent d'une longère par famille et son bétail, plus de plus petites dépendances (remises, caves, etc.), regroupées ensemble. Les habitants travaillent les 3 à 4 kilomètres de terre alentour. Chaque hameau porte le nom de son résident le plus notable, éventuellement tronqué, suivi de « -hall » (Dagmarhall, Swanhall, etc.).
+P	Les hameaux se composent d'une longère par famille et son bétail, plus de plus petites dépendances (remises, caves, etc.), regroupées ensemble. Les habitants travaillent les 2 à 3 kilomètres de terre alentour. Chaque hameau porte le nom de son résident le plus notable, éventuellement tronqué, suivi de « -hall » (Dagmarhall, Swanhall, etc.).
 H2	Fort de colline
 P	Il y a environ une demi-douzaine d'établissements plus grands et fortifiés répartis à travers la Manmarche du Nord, chacun à 30-50 kilomètres des autres. La plupart se trouvent dans les collines occidentales, mais quelques-uns se dressent dans les plaines à l'est, à la lisière occidentale des bois qui surplombent la Rivière d'Effroi.
 P	Les noms de forts de colline pourraient inclure : Wulfberg, Rabenberg, Eikelberg, Hokberg, Tiefberg, Baerinberg, Schutberg, etc.

@@ -26,7 +26,7 @@ H3	Verão
 B	Verde vivo ao longo das margens, a luz do sol faiscando na água
 B	Coro sem fim de aves aquáticas, estorninhos, insetos, correnteza
 B	Um ou outro mergulho—só um peixe, ou uma tartaruga assustada, quem sabe?
-P	Em seu curso inferior, o rio é largo e fundo, nunca com menos de um quarto de milha de margem a margem e dezenas—se não centenas—de pés de profundidade.
+P	Em seu curso inferior, o rio é largo e fundo, nunca com menos de 400 metros de margem a margem e muitos metros—se não dezenas de metros—de profundidade.
 P	De longe, parece plácido e parado. Mas corre com uma correnteza terrível e implacável.
 P	A margem oeste alterna brejos, planícies de inundação bem abertas e barrancos acidentados, com ruínas espalhadas por toda a sua extensão. Seria um lugar idílico para viver, não fosse o rio amaldiçoado em toda a sua extensão.
 ICON	icons/autumn.svg
@@ -61,7 +61,7 @@ P	Os <b>Senhores da Pedra</b> (página 382) a chamavam de
 P	<i>Aavonkaer</i> ("Cidade do Rio"). Para os <b>Senhores</b> <b>Verdes</b> (página 210) era <i>Pazara</i> ("O Mercado"). Os <b>Senhores da Geada</b> (página 316) a chamavam de <i>Jalampravahati</i> ("Por Onde as Águas Correm").
 P	Agora, porém, a cidade se chama Ruínas do Fim da Estrada. Pois quando os servos dos Senhores da Pedra se rebelaram e despertaram as <b>Coisas de Baixo</b> (página 412), o Rio Pavor vomitou horrores incontáveis. Os habitantes da cidade foram massacrados numa única noite.
 P	Ao longo do tempo dos <b>Construtores</b> <b>de Túmulos</b> (página 34), vários senhores da guerra e aspirantes a reis-feiticeiros reivindicaram a cidade em ruínas. Buscavam recuperar os artefatos perdidos dos Construtores, ou dominar as almas inquietas da cidade, ou dobrar os horrores do rio à sua vontade. Às vezes até conseguiam. Mas nunca por muito tempo.
-P	As ruínas se espalham por milhas ao longo da margem, e vestígios parecidos do passado são visíveis do outro lado do rio. As pernas de uma ponte outrora imponente ainda espetam para fora da água. Todos concordam que grandes riquezas e acervos de saber permanecem entre as paredes que ruem.
+P	As ruínas se espalham por quilômetros ao longo da margem, e vestígios parecidos do passado são visíveis do outro lado do rio. As pernas de uma ponte outrora imponente ainda espetam para fora da água. Todos concordam que grandes riquezas e acervos de saber permanecem entre as paredes que ruem.
 P	Mas todos concordam também que aqueles velhos porões e estruturas esqueléticas—junto com tudo o que se tire deles—estão <b>amaldiçoados</b> (página 90).
 PAGE	88
 H2	A leste do Rio
@@ -197,7 +197,7 @@ P	<b>Instinto</b> alimentar-se
 P	• Sentir o campo elétrico de uma criatura
 P	• Atordoar ou paralisar com um toque, bzzzt
 P	• Enxamear sobre uma criatura atordoada
-P	Cada um tem uns poucos pés de comprimento, como um choco cruzado com uma larva gigante, contorcendo-se úmido e cinzento, com o rosto cheio de apalpadores cujo toque queima como raio.
+P	Cada um tem um par de metros de comprimento, como um choco cruzado com uma larva gigante, contorcendo-se úmido e cinzento, com o rosto cheio de apalpadores cujo toque queima como raio.
 P	Passam quase a vida toda na água, juntando-se perto de <b>cristais de poder</b> (página 389) e artefatos de <b>etério</b> (página 404) reclamados pelo rio. Parecem enfeitiçados pela energia passiva, quase adormecidos por ela. Mas, quando sentem algo mais dinâmico, algo mais carnudo, saem da água bem depressa.
 P	Alguns do Povo das Colinas dizem que os luglfsk são apenas girinos, e contam histórias de terrores maiores e de muitas patas, que arremessam raios de apalpadores compridos como um homem é alto. Mas isso é provavelmente só história de assombração para assustar viajantes. Provavelmente.
 ICON	icons/beast.svg
@@ -222,7 +222,7 @@ P	<b>Instinto</b> dominar o Rio Pavor
 P	• Sentir um invasor em seu domínio
 P	• Fixar alguém com um de seus incontáveis olhos (veja abaixo)
 P	• Arrastar invasores para a perdição
-P	É coisa de lenda. Um grande wurm escamoso, dizem, de centenas de pés de comprimento, coberto de olhos por toda a extensão. Centenas de olhos, tantos e tantos. Dizem que ela vê tudo o que acontece ao longo do rio. Dizem que não tolera invasão, que afoga ou devora todos os que avançam sobre seu domínio.
+P	É coisa de lenda. Um grande wurm escamoso, dizem, de dezenas e dezenas de metros de comprimento, coberto de olhos por toda a extensão. Centenas de olhos, tantos e tantos. Dizem que ela vê tudo o que acontece ao longo do rio. Dizem que não tolera invasão, que afoga ou devora todos os que avançam sobre seu domínio.
 P	Mas isso não é totalmente verdade. Algumas pessoas encontraram a Suileach e viveram para contar, assombradas pelo que viram refletido em seus olhos.
 P	Quando você <b><i>fica fixado, encarando um dos</i></b> <b><i>olhos da Suileach</i></b>, marque <i>atordoado</i> e escolha 1:
 B	Você se vê livre de um fardo. Nomeie um PDN que você ama; seu coração esfria para com ele. Depois, ganhe um movimento novo do seu livreto.

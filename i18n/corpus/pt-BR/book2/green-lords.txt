@@ -135,7 +135,7 @@ B	<b>Um pássaro mumificado num pote de barro</b>◇ (<i>frágil</i>, Valor 0)
 B	<b>Vários machadinhos de bronze</b> ◇ <b>corroídos</b> de fatura antiga, com cabos de madeira lindamente preservados (<i>toscos</i> e Valor 0 como estão; <i>mão</i> e Valor 1 se restaurados)
 B	<b>Uma bela camisa de seda</b>, bordada com padrões de cipó (Valor 1)
 B	<b>Pilhas de madeira bruta, não lavrada</b>, com brilho metálico nas fibras; incrivelmente forte, mas incrivelmente difícil de trabalhar (<i>imóvel</i>, Valor 2)
-B	<b>Uma armadura de escamas</b> para alguém de 20 pés de altura. As escamas são estranhas, orgânicas, semitranslúcidas e iridescentes nas bordas. Cipós grossos e retorcidos crescem da armadura onde deveria haver um corpo; nada mais cresce por perto. A armadura é impraticável e sinistra, mas, se extraída intacta, pode render um bom preço (<i>imóvel</i>, Valor 2) a um colecionador.
+B	<b>Uma armadura de escamas</b> para alguém de 6 metros de altura. As escamas são estranhas, orgânicas, semitranslúcidas e iridescentes nas bordas. Cipós grossos e retorcidos crescem da armadura onde deveria haver um corpo; nada mais cresce por perto. A armadura é impraticável e sinistra, mas, se extraída intacta, pode render um bom preço (<i>imóvel</i>, Valor 2) a um colecionador.
 B	<b>Um</b> ◇◇ <b>chifre de beber descomunal</b>, com ouro e âmbar fundidos ao chifre de modos impossíveis (Valor 3)
 B	<b>Uma árvore alta, grossa e nodosa</b> que dá frutos grandes e deliciosos no início do outono. Fornece tantas provisões (4 usos) ◇ quantas os PJs quiserem levar, e poderia ser cultivada num pomar de rhoillyg.
 HR
@@ -160,7 +160,7 @@ HR
 ICON	icons/treasure.svg
 H3	Um cipó num vaso gravado de runas
 P	◇, <i>mágico</i>
-P	Tem mais ou menos a grossura do seu dedo e talvez 30 pés esticado, com gavinhas fininhas. Parece bem ressecado, mas se move de leve se você o tocar, ou tocar o vaso. Se você o regar, ele estremece de empolgação.
+P	Tem mais ou menos a grossura do seu dedo e talvez 9 metros esticado, com gavinhas fininhas. Parece bem ressecado, mas se move de leve se você o tocar, ou tocar o vaso. Se você o regar, ele estremece de empolgação.
 P	Um espírito vegetal está preso ao cipó e ao vaso. Se você fizer amizade com ele e carregar seu vaso, ele se anima e age como seguidor: <i>agarrador</i>,
 P	<i>esperto</i>, <i>brincalhão</i>; <b>HP</b> 3; <b>Dano</b> 0; <b>Instinto</b> não largar; <b>Custo</b> afeto e tempo de brincadeira.
 PAGE	217
@@ -168,14 +168,14 @@ HR
 ICON	icons/treasure.svg
 H3	Uma adaga-presa
 P	<i>mão</i>, <i>mágica</i>, +1 de dano
-P	Uma presa de 8 polegadas, presa a um cabo de madeira por fibra que nunca apodrece. Uma coisa de aspecto cruel, com entalhes estranhos ao longo da lâmina.
+P	Uma presa de 20 centímetros, presa a um cabo de madeira por fibra que nunca apodrece. Uma coisa de aspecto cruel, com entalhes estranhos ao longo da lâmina.
 P	<b>Algo interessante:</b> A presa parece ter vindo de um <b>cynddaraig</b> (página 206), e as marcas são sem dúvida algum tipo de feitiço ligado a sangue e solo.
 P	<b>Algo útil:</b> Quando você <b><i>enterra a</i></b> <b><i>adaga-presa e rega o solo com sangue</i></b>, o chão cede e incha. Um minuto depois, um cynddaraig adulto irrompe da terra—furioso, confuso e faminto. O feitiço não dá controle algum sobre a fera nem jeito de dispensá-la. A adaga se foi, agora é um dente na goela do drake da fúria.
 HR
 ICON	icons/treasure.svg
 H3	Um grande cofre de pedra
 P	<i>imóvel</i>, <i>mágico</i>
-P	Talhado em serpentina, de 4 pés por 2 por 2, com uma tampa pesada de pedra. Quando achado, provavelmente está meio cheio de terra. Para quem é sensível a essas coisas, ele vibra com o poder da fertilidade e do crescimento.
+P	Talhado em serpentina, de 1,2 metro por 60 por 60 centímetros, com uma tampa pesada de pedra. Quando achado, provavelmente está meio cheio de terra. Para quem é sensível a essas coisas, ele vibra com o poder da fertilidade e do crescimento.
 P	Quando você <b><i>põe terra fresca no cofre, planta</i></b> <b><i>sementes nela e fecha a tampa</i></b>, as sementes germinam e brotam da noite para o dia. Cada semente brota apenas uma vez, e os brotos passam a crescer num ritmo normal, fiquem eles no cofre ou sejam plantados em outro lugar.
 P	Com coordenação, isso poderia levar a um salto nas hortas de Stonetop e a +1 de Excedente a cada verão. Nas mãos de um herborista habilidoso, pode melhorar muito uma horta de ervas e permitir o cultivo de plantas raras ou difíceis. Os herboristas de Beira-Brejo matariam por isso—ou até começariam uma guerra.
 ICON	icons/treasure.svg
@@ -295,7 +295,7 @@ P	• Saltar da água com velocidade chocante
 P	• Seguir a presa pelo céu, ou pendurado em árvores
 P	• Sobrevoar a presa em rasante e desferir uma ferroada dolorosa e debilitante
 P	• Abocanhar e então engolir inteiro
-P	Todo mundo sabe que se deve evitar água funda e parada, e os llamudwr (ou "saltadores de água") são sem dúvida um dos motivos. Pegue o corpo de uma rã, de 6 ou 7 pés. Acrescente mais 8 ou 9 pés de cauda que chicoteia, com um ferrão venenoso na ponta. Tire as pernas, sem deixar nem tocos, mas dê a ele asas de morcego, com quase 20 pés de envergadura aberta. Esconda-o num lago ou brejo, longe da luz cruel do sol.
+P	Todo mundo sabe que se deve evitar água funda e parada, e os llamudwr (ou "saltadores de água") são sem dúvida um dos motivos. Pegue o corpo de uma rã, de 1,8 ou 2 metros. Acrescente mais 2,5 ou 2,7 metros de cauda que chicoteia, com um ferrão venenoso na ponta. Tire as pernas, sem deixar nem tocos, mas dê a ele asas de morcego, com quase 6 metros de envergadura aberta. Esconda-o num lago ou brejo, longe da luz cruel do sol.
 P	E, por fim, deixe-o faminto. Muito, muito faminto.
 PAGE	221
 HR

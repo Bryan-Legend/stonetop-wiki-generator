@@ -70,7 +70,7 @@ C	Se tiver nevado muito, vocês precisam esperar o degelo, ou…
 C	Vocês vão precisar de raquetes de neve, e…
 C	O caminho ainda assim será extenuante; vocês arriscam se esgotar e/ou estragar seu equipamento
 H2	Áreas
-B	<b>Talude coberto de mato</b>, de uns 4,5 a 6 m de altura, cercando a torre a cerca de 1,2 km de distância. Enormes pedras lavradas despontam dele, parecidas com as da <b>Muralha Velha</b> (página 12).
+B	<b>Talude coberto de mato</b>, de uns 4,5 a 6 m de altura, cercando a torre a cerca de 1 km de distância. Enormes pedras lavradas despontam dele, parecidas com as da <b>Muralha Velha</b> (página 12).
 B	<b>Ruínas externas</b> entre o talude e a torre. Outrora uma cidade próspera, hoje só um amontoado de ruínas quase todo engolido pela campina.
 B	<b>Uma cratera rasa</b>, que se estende por uns 120 m a partir da borda nordeste da torre. Capim/terra/ lama/água parada cobrem uma rocha vítrea e escoriácea.
 B	<b>A própria torre</b>: uns 90 m de diâmetro. O terço nordeste é quase todo escombro, mas ao sul e a oeste ainda restam alguns andares, com muros de uns 60 m de altura.
@@ -109,7 +109,7 @@ P	1 Trecho estéril de areia/poeira/vidro
 P	2 Lama/água parada/neve funda
 P	3 Vala, ravina ou aterro; o contorno de ruínas enterradas
 P	4 Parede(s) exposta(s), se esfarelando e cobertas de musgo/líquen
-P	5-6 Trecho de capim, de 1d6+2 pés de altura
+P	5-6 Trecho de capim, de (1d6+2) × 30 cm de altura
 P	7 Arbustos, matagal, árvore(s)—talvez até <b>árvores dool</b> (página 73)
 P	8 Enorme laje de pedra, parcialmente enterrada; um pedaço caído da torre
 P	9-10 Monte de terra/pedra e um poço ali perto; uma escavação ou toca
@@ -355,7 +355,7 @@ P	9 Embutidos de etério bem juntinhos.
 P	Imagens nebulosas mostram o que qualquer um na sala está prestes a fazer.
 P	10 Ladrilhos deslizantes nas paredes/teto/chão mudam a direção e/ou a intensidade da gravidade na sala.
 P	11 Sala sem ar com uma pequena esfera negra flutuante, que aniquila qualquer matéria que toque.
-P	12 Um raio negro crepita entre dois dentes, a uns 90 cm um do outro. Pó fino de vidro por toda parte. Um <b>raio vitrificador</b> (página 408), contido por pouco.
+P	12 Um raio negro crepita entre dois dentes, a cerca de 1 m um do outro. Pó fino de vidro por toda parte. Um <b>raio vitrificador</b> (página 408), contido por pouco.
 PAGE	344
 HR
 H3	Descobertas

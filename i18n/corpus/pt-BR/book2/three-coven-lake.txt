@@ -6,7 +6,7 @@
 # nav_label: Lago das Três Assembleias
 # description: O Lago das Três Assembleias (Three Coven Lake), onde ficava Teirstered: suas ruínas, o portal, os perigos das águas, os mortos inquietos e a Rainha Ébria de Sangue.
 PAGE	438
-P	No fundo das <b>Terras Escalonadas</b> (página 372) há um grande lago, de oito milhas de comprimento por três de largura. As águas são turvas, muitas vezes agitadas, rasas em alguns pontos e com 100 pés de fundo em outros.
+P	No fundo das <b>Terras Escalonadas</b> (página 372) há um grande lago, de 13 km de comprimento por 5 de largura. As águas são turvas, muitas vezes agitadas, rasas em alguns pontos e com 30 metros de fundo em outros.
 P	Ilhas rochosas espetam da água. Barrancos ladeiam boa parte da margem. Mas olhe mais de perto.
 P	Aquelas ilhas são os pés de torres antigas, e aqueles barrancos são crivados de salas talhadas na rocha. Pois há muito tempo, nos dias dos <b>Senhores da Pedra</b> (página 382), aqui havia uma cidade poderosa. Teirstered, eles a chamavam. A Cidade das Três Estrelas, rivalizada apenas pela grande <b>Dulenn</b> (página 48).
 P	Imagine! Veja com a mente! As agulhas de pedra e cristal, erguendo-se do lago.
@@ -108,14 +108,14 @@ P	1d12 sítio de senhores da pedra
 HR
 P	1 Cabeça afundada de uma estátua enorme, coberta de alga. Canta uma canção assombrosa a cada pôr do sol.
 P	2 Câmara abobadada, coberta de pedaços de um espelho de obsidiana que um dia teve
-P	30 pés de diâmetro. Os cacos refletem vinhetas breves de dias há muito passados.
+P	9 metros de diâmetro. Os cacos refletem vinhetas breves de dias há muito passados.
 P	3 "Torre" de quatro andares talhada num barranco. Cristais lá dentro emanam luz, assombro, reverência.
 P	4 Prédio do tamanho de um barranco, de pedra sem emendas. Dentro, um labirinto de aposentos instáveis e cobertos de ossos.
 P	5 Portas duplas, barricadas de modo tosco.
 P	Além delas: um cristal rachado, uma salvaguarda rompida, um mal remanescente.
 P	6 Ilha grande feita quase toda de lajes de pedra enormes e curvas. Alcovas guardam sinais de antigos acampamentos de refugiados:
 P	panelas, coisas salvadas, lembranças.
-P	7 Escada em espiral, subindo 100 pés de uma pilha de entulho. Vidro dos Construtores, degraus do tamanho de gigantes, cobertos de cipós.
+P	7 Escada em espiral, subindo 30 metros de uma pilha de entulho. Vidro dos Construtores, degraus do tamanho de gigantes, cobertos de cipós.
 P	8 Prédio grande e maciço. Intacto. Portas soterradas por entulho/cascalho. Guarda um estoque de peças sobressalentes de constructos.
 P	9 Labirinto de salas talhado num barranco. Um dia foi o casarão de um Senhor da Pedra, depois a fortaleza de uma senhora da guerra, por fim o palco de sua morte.
 P	10 Longos trechos de passadiço estreito de pedra, quase todos soterrados por silte e água rasa. Cobertos de alga, lama e runas desbotadas.
@@ -185,7 +185,7 @@ P	5 Um símbolo que destranca a porta e contorna os guardiões
 P	6 O próprio portal (veja abaixo)
 H2	O portal de Teirstered
 HR
-P	Escondida em algum cofre—guardada por constructos, armadilhas e feitiços de desorientação—há uma laje de pedra branca, de 40 por 40 pés, gravada com um círculo de runas talhadas fundo.
+P	Escondida em algum cofre—guardada por constructos, armadilhas e feitiços de desorientação—há uma laje de pedra branca, de 12 por 12 metros, gravada com um círculo de runas talhadas fundo.
 P	O círculo é um <b>portal</b> (página 306), ligado aos da <b>Torre em Ruínas</b> (página 332), do <b>Labirinto</b> (página 242), de <b>Vor Svetelik</b> (página 468) e assim por diante. Ele exige uma fonte de energia. Se houver uma, pode ser usado por meio de <b>Abrir o Caminho</b> (página 517).
 PAGE	444
 H2	Perigos
@@ -215,7 +215,7 @@ B	Pavor instintivo, de um medo de água que vem de gerações
 B	Desníveis íngremes e inesperados
 B	Piso ruim (pedras escorregadias, lama, plantas e outras armadilhas)
 B	Correntes fortes, muitas vezes invisíveis
-B	Água agitada, com ondas de até 4 pés em dias de vento forte
+B	Água agitada, com ondas de até 1,2 metro em dias de vento forte
 B	Frio de tremer, o risco de debilidades ou até de <b>hipotermia</b> (página 489)
 B	Ser puxado para o fundo pelo próprio equipamento
 B	O fato de que eles provavelmente não sabem nadar
@@ -232,7 +232,7 @@ B	Cair a 0 HP; você está se afogando e logo estará à Beira da Morte
 HR
 ICON	icons/danger.svg
 H3	Gelo fino
-P	O lago começa a congelar no início do inverno e degela no início da primavera. Em geral está congelado com ao menos 4 polegadas de espessura (seguro para andar) lá pelo meio do inverno. Mas não congela por igual; pode ter 2 pés de espessura num ponto e só uns poucos dedos a alguns metros dali.
+P	O lago começa a congelar no início do inverno e degela no início da primavera. Em geral está congelado com ao menos 10 centímetros de espessura (seguro para andar) lá pelo meio do inverno. Mas não congela por igual; pode ter 60 centímetros de espessura num ponto e só uns poucos dedos a alguns metros dali.
 P	• Os passos soam ocos
 P	• Água/lama de gelo brota em volta dos seus pés
 P	• Algo estala e cede sob os pés
@@ -306,7 +306,7 @@ P	<b>Instinto</b> alimentar-se de presa fácil
 P	• Esgueirar-se até uma presa em potencial
 P	• Guinchar para atrair outras enguias (mal se ouve fora da água)
 P	• Atacar num enxame frenético, só mordidas, guinchos e água revolta e sangrenta
-P	Têm uns 5 ou 6 pés de comprimento. Caçam sobretudo peixes ou aves, em silêncio e sozinhas. De algum modo, porém, aprenderam que gente é deliciosa. Grande demais para uma enguia só encarar, é verdade. Mas gente na água é desajeitada e alheia. Então, quando uma enguia-guincho avista alguém na água, ela chama as amigas. E, quando um número suficiente se junta, elas se banqueteiam.
+P	Têm uns 1,5 ou 1,8 metro de comprimento. Caçam sobretudo peixes ou aves, em silêncio e sozinhas. De algum modo, porém, aprenderam que gente é deliciosa. Grande demais para uma enguia só encarar, é verdade. Mas gente na água é desajeitada e alheia. Então, quando uma enguia-guincho avista alguém na água, ela chama as amigas. E, quando um número suficiente se junta, elas se banqueteiam.
 PAGE	447
 HR
 ICON	icons/danger.svg

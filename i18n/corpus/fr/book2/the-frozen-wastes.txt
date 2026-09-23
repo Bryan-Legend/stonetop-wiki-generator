@@ -19,7 +19,7 @@ HR
 ICON	icons/spring.svg
 H3	Printemps
 B	Herbe jaune et brune, éclaboussée de fleurs d'un violet pâle
-B	Des champs d'eau stagnante, profonde de quelques pouces à peine, où se reflète le ciel vide
+B	Des champs d'eau stagnante, profonde de quelques centimètres à peine, où se reflète le ciel vide
 B	Le bruit spongieux et craquant du sol à demi gelé sous les pieds Plus au nord, le plateau devient encore plus froid, encore plus venteux, et la steppe cède la place à la toundra. Finalement, un mur de <b>glace noire</b> (page 322) semblable à une montagne barre le chemin, s'étirant sur tout l'horizon. Ce glacier est l'ultime œuvre des <b>Seigneurs du Givre (Rime Lords)</b> (page 316). Il scelle une faille dans le monde et tient en respect le pire de la <b>Malédiction Hurlante</b> (page 492). Les éleveurs de mammouths viennent ici extraire de la glace noire, entamant lentement le glacier.
 ICON	icons/summer.svg
 H3	Été
@@ -69,13 +69,13 @@ HR
 P	Choisis-en 1 ou combines-en 2, ou fais lancer le Dé du Destin (d12) à quelqu'un.
 P	1d12 terrain
 HR
-P	1 Lac de kettle, petit mais profond de dizaines ou de centaines de pieds
+P	1 Lac de kettle, petit mais profond d'une dizaine, voire de plusieurs dizaines de mètres
 P	2-3 Étendue d'eau stagnante peu profonde/de glace
 P	4-6 Vaste étendue dégagée, rien que de l'herbe et des arbustes sur des lieues
 P	7-8 Grande plaque de boue/de boue gelée
 P	9 Pente douce/crête basse/petite éminence
 P	10 Moraine basse, une petite colline de pierres brisées et de terre meuble
-P	11 Affleurement rocheux, haut d'une douzaine de pieds tout au plus
+P	11 Affleurement rocheux, haut d'environ 4 mètres tout au plus
 P	12 Un arbre isolé et remarquable
 PB
 P	Si tu veux, lance 1d6 pour la taille/l'étendue/l'intensité.
