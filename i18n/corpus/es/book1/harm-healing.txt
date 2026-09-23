@@ -116,7 +116,7 @@ PAGE	244
 HR
 P	<b><i>Anuncia problemas (futuros o fuera de escena):</i></b> <i>«Andras está blanco como la cal, y esa mordedura</i> <i>de serpiente está roja e hinchada, y ves unas furiosas</i> <i>líneas rojas que le suben por las venas del brazo.</i> <i>¿Qué haces?»</i>
 HR
-P	<b><i>Revela una verdad indeseada:</i></b> <i>«Uf. Sí,</i> <i>Blodwen, retiras las vendas de la herida de</i> <i>Garet y… no tiene buena pinta. Huele</i> <i>mal, la carne está como negruzca y</i> <i>hay un pus verdoso. Está infectada, y va</i> <i>a empeorar. ¿Qué haces?»</i>
+P	<b><i>Revela una verdad incómoda:</i></b> <i>«Uf. Sí,</i> <i>Blodwen, retiras las vendas de la herida de</i> <i>Garet y… no tiene buena pinta. Huele</i> <i>mal, la carne está como negruzca y</i> <i>hay un pus verdoso. Está infectada, y va</i> <i>a empeorar. ¿Qué haces?»</i>
 HR
 P	<b><i>Pon a alguien en un aprieto:</i></b> <i>«Te araña la</i> <i>cara antes de que lo lances lejos. Sufre d6 de daño. ¿Sigues en pie? Vale, creo que te ha abierto un tajo en</i> <i>la frente y la sangre empieza a caerte a chorros en</i> <i>los ojos. No ves gran cosa, pero lo oyes</i> <i>moverse, preparándose para abalanzarse</i> <i>otra vez. ¿Qué haces?»</i>
 HR

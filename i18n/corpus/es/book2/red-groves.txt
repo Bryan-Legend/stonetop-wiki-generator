@@ -14,7 +14,7 @@ B	<b>Primavera/Verano:</b> brotes/hojas de un verde intenso que surgen de la cor
 B	<b>Otoño/Invierno:</b> un rojo lustroso y abrumador
 PB
 P	<b>Consejo:</b> susurra débilmente cosas como «da la vuelta», «no eres bienvenido» o «vete» y luego haz como si no hubieras dicho nada
-H2	Conocimientos
+H2	Saber
 HR
 P	<b>Algo interesante:</b> Una docena de arboledas así salpican el Gran Bosque. Algunas enrojecen en otoño, otras en primavera. Algunas, como la que está cerca de Stonetop, son grandes y antiguas; otras no son más que unos pocos árboles jóvenes.
 P	<b>Algo útil:</b> Cuando <b><i>entras en una</i></b> <b><i>arboleda roja</i></b>, atraes la ira del bosque, a menos que…

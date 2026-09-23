@@ -24,7 +24,7 @@ Q	¿Cómo se trata en Stonetop a quienes tienen «los ojos del bosque»? ¿Y a s
 Q	¿Llegaste a conocer a alguien del Pueblo del Bosque? Aparte de sus ojos, ¿cuál de sus rasgos inhumanos te pareció más inquietante?
 Q	Es un misterio, desde luego, pero ¿qué crees que le pasó al Pueblo del Bosque? ¿Por qué?
 PAGE	151
-H2	Conocimientos
+H2	Saber
 HR
 P	Los antepasados del Pueblo del Bosque eran sirvientes mortales de los <b>Señores Verdes</b> (Green Lords, página 210). Llevaban una vida nómada entre los árboles, viajando en pequeñas bandas y viviendo de lo que daba la tierra.
 P	<b>Algo interesante:</b> El Pueblo solía comulgar con los <b>espíritus de lo salvaje</b> (página 356) y a veces trataba con los <b>Fae</b> (página 94). ¿Quizá ellos sepan adónde fue el Pueblo?
