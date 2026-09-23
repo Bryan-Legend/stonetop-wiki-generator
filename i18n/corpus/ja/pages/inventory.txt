@@ -29,7 +29,7 @@ ENDLIST
 LIST	fs-lines inv-list
 INV	inv-blanket	1	<b>毛布</b>（<i>暖かい</i>）
 INV	inv-change-of-clothes	1	<b>着替え</b>
-INV	inv-rope	1	<b>ロープ</b>、約25フィート
+INV	inv-rope	1	<b>ロープ</b>、約7.5メートル
 INV	inv-shovel	1	<b>シャベル</b>
 INV	inv-sledge	2	<b>橇／担架／トラボイ</b>、広げて使う
 INV	inv-snow-shoes	1	<b>かんじき</b>

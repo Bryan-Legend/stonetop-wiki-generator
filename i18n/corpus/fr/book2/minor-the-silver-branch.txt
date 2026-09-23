@@ -20,7 +20,7 @@ C	… cueillir une branche de l'arbre d'argent.
 C	… rentrer chez toi sain et sauf.
 H3	La Branche d'argent
 P	◇, <i>magique</i>, <i>belle</i>
-C	◇ fraîche, ◇ fanée, ◇ nue Longue d'un mètre environ, chargée de fleurs blanches et de fruits d'or tintinnabulants. Étonnamment robuste, elle reste fraîche indéfiniment tant que ses pouvoirs ne sont pas utilisés. Une seule branche de ce type peut quitter le domaine féerique à la fois.
+C	◇ fraîche, ◇ fanée, ◇ nue Longue d'un mètre ou deux, chargée de fleurs blanches et de fruits d'or tintinnabulants. Étonnamment robuste, elle reste fraîche indéfiniment tant que ses pouvoirs ne sont pas utilisés. Une seule branche de ce type peut quitter le domaine féerique à la fois.
 P	Quand tu <b><i>fais tinter la branche d'argent</i></b>, tous ceux qui l'entendent (<i>allonge</i>, <i>zone</i>, sauf toi) sont emplis de félicité et oublient leurs soucis pendant quelques heures. Lance +CHA :
 P	<b>sur un 10+</b>, choisis-en 1 ; <b>sur un 7-9</b>, choisis-en 1 et le MJ en choisit un autre ; <b>sur un 6-</b>, les 3.
 B	La branche commence à se faner ; si elle est déjà fanée, elle devient nue et perd ses pouvoirs

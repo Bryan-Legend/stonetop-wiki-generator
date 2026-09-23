@@ -76,13 +76,13 @@ B	Une coque de navire, en grande partie ensevelie mais étrangement encore intac
 B	Une voile déchirée en maille d'<b>éthérium</b> (page 404), sanglée à une croix de métal rouillé
 B	D'étranges objets, éparpillés et enfouis depuis longtemps : un cylindre de laiton froissé, un disque de métal gravé, une roue de navire surdimensionnée, un gouvernail, etc.
 B	Un affleurement rocheux, la pierre étrangère au terrain environnant, incliné selon un angle bizarre
-B	Une dalle de granit fendue, grosse comme le grenier et traversée d'éthérium, flottant à quelques dizaines de centimètres du sol et tournant nonchalamment
+B	Une dalle de granit fendue, grosse comme le grenier et traversée d'éthérium, flottant à un mètre ou deux du sol et tournant nonchalamment
 B	Des dalles de pierre taillée : brisées, enfouies et éparpillées, comme le jouet d'un enfant jeté depuis des hauteurs impossibles
 H3	Structures énigmatiques
 P	Par exemple :
 B	Des flèches de fer, comme des arbres creux et rouillés, disposées en ligne à travers le paysage
 B	Un cube noir de la taille d'une maison ; quand la foudre le frappe, le sol s'illumine sur des kilomètres de lignes lumineuses qui s'estompent au cours des minutes suivantes
-B	Des socles de pierre le long d'une crête, certains surmontés de sculptures de deux mètres de haut, comme des tulipes, tournoyant dans la brise
+B	Des socles de pierre le long d'une crête, certains surmontés de sculptures de 1,8 mètre de haut, comme des tulipes, tournoyant dans la brise
 B	Des cylindres de cuivre, chacun d'environ deux mètres et demi de haut et couverts de vert-de-gris ; en grande partie enfouis dans un sol blanc et crayeux
 B	Des mégalithes, gravés d'idéogrammes décrivant les mouvements des astres
 B	Une plaque de bronze sur une dalle de pierre, seul trait notable sur des kilomètres ; épargnée par les lichens ; des idéogrammes profondément gravés commencent par la phrase « Ceci n'est pas un lieu d'honneur »
@@ -222,7 +222,7 @@ HR
 ICON	icons/treasure.svg
 H3	Écharpe flottante
 P	<i>magique</i>
-P	Une bande de lamé blanc-bleuté, large d'environ 15 centimètres et longue de presque deux mètres, ondulant dans les airs. Comme une ceinture, mais pour quelqu'un bien plus grand que toi.
+P	Une bande de lamé blanc-bleuté, large d'environ 15 centimètres et longue de 1,8 mètre, ondulant dans les airs. Comme une ceinture, mais pour quelqu'un bien plus grand que toi.
 P	Quand tu <b><i>enroules l'écharpe fermement</i></b> <b><i>autour de ta taille</i></b>, elle t'empêche de couler lors des chutes — tu ne tombes jamais plus vite que si tu étais tombé de ta propre hauteur.
 HR
 ICON	icons/treasure.svg

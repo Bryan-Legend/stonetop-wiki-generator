@@ -8,7 +8,7 @@
 PAGE	525
 H3	Un grand pot en bois
 P	◇◇ <b>,</b> <i>encombrant</i><b>,</b> <i>fragile</i><b>,</b> <i>magique</i>
-P	Haut de 30 pouces et taillé dans l'if, avec un couvercle en forme de lion cornu, scellé à la cire.
+P	Haut de 75 centimètres et taillé dans l'if, avec un couvercle en forme de lion cornu, scellé à la cire.
 P	Sa surface est fissurée et hérissée d'éclats de cristal rouge. Quand tu le touches, tu peux ressentir une grande irritation et juste une pointe de peur.
 P	Pour percer les mystères du pot, tu dois…
 C	… laver sa surface avec ton propre sang frais (perds 1d10 HP et coche un handicap).

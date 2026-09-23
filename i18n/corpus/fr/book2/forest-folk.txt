@@ -97,7 +97,7 @@ H3	Divers trésors
 B	Une petite sculpture de bois représentant une bête ou une chimère (Valeur 0)
 B	◇ Une pointe de lance de silex surdimensionnée, taillée avec un art exquis (<i>brute</i>, <i>malcommode</i>, Valeur 1 pour un collectionneur) ◇◇ Un grand bol de bois avec son couvercle, scellé à la cire d'abeille, rempli d'herbes médicinales séchées (Valeur 2)
 B	Squelette en grande partie enfoui d'une bête de la taille d'un éléphant, ses os gravés de glyphes et de pictogrammes qui racontent une histoire importante (<i>immobile</i>, Valeur 2)
-B	Un arpent de forêt où poussent en harmonie 3d6 variétés de <b>flore utile</b> (page 458) ; 1d6-1 peuvent être récoltées sur le moment.
+B	Un demi-hectare de forêt où poussent en harmonie 3d6 variétés de <b>flore utile</b> (page 458) ; 1d6-1 peuvent être récoltées sur le moment.
 HR
 ICON	icons/treasure.svg
 H3	Un masque de bois

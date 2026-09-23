@@ -72,7 +72,7 @@ P	Qui ou quoi d'autre se trouve ici ? Quels signes de leur présence les PJ pour
 H2	Sources de lumière et traits
 P	Voici un aide-mémoire rapide :
 P	<b><i>Main</i></b> : Par ex., une mèche de jonc. N'illumine pas plus loin que votre portée. Tout juste assez pour naviguer ou lire.
-P	<b><i>Rapproché, zone</i></b> : Par ex., une bougie, une lampe à huile, ou une lanterne. Projette de la lumière sur quelques pas, assez pour que 2 personnes puissent s'orienter.
+P	<b><i>Rapproché, zone</i></b> : Par ex., une bougie, une lampe à huile, ou une lanterne. Projette de la lumière sur un mètre ou deux, assez pour que 2 personnes puissent s'orienter.
 P	<b><i>Allonge, zone</i></b> : Par ex., une torche. Illumine jusqu'à environ 3 mètres, assez pour qu'un petit groupe puisse s'orienter.
 P	<b><i>Rudimentaire</i></b> : Par ex., une mèche de jonc, une lampe à huile.
 P	Sujette à vaciller ou s'éteindre si on la déplace vite ou par vent léger.
@@ -124,7 +124,7 @@ HR
 P	Vous pourriez aussi faire une manœuvre de MJ douce. <b>Épuisez</b> <b>leurs ressources</b> pendant qu'ils marchent (« Raye une heure de plus sur ton huile de lampe »). <b>Suggérez</b> <b>qu'il y a plus que ce qu'on voit</b> (« C'est la troisième fois que tu vois cette marque »). <b>Pointez</b> <b>vers un danger imminent</b> (« Un peu plus loin, vous trouvez ces entailles, comme celles des griffes de quelque chose de vraiment gros »).
 P	Ou, tant pis. <b>Introduisez un danger</b> ou <b>présentez une découverte</b> à un moment donné du trajet, et là, je suppose, c'est là que se passe la prochaine scène, en fait.
 P	<i>Blodwen prend des nouvelles d'Andras, qui fait comme si de</i> <i>rien n'était. Puis je reviens à ma</i> <i>description. « Un peu plus tard, l'escalier tourne et</i> <i>longe le flanc de la falaise. Il n'y a pas de rambarde, juste une chute à pic à votre gauche, jusqu'aux</i> <i>rochers et plus d'eau que vous n'en avez jamais vu.</i> <i>À quoi pensez-vous chacun en ce moment ? »</i>
-P	<i>Après que les joueurs ont répondu, je zoome pour faire</i> <i>ma manœuvre. « Après environ une heure, l'escalier passe</i> <i>par un court tunnel dans un éperon rocheux. Et</i> <i>Caradoc, quelque chose… bouge. Là-haut, au sommet</i> <i>de cet éperon, à environ 10 mètres. C'est une… personne ?</i> <i>Non… plutôt une marionnette de la taille d'un homme, faite</i> <i>de pierre, qui vous observe. Que faites-vous ? »</i>
+P	<i>Après que les joueurs ont répondu, je zoome pour faire</i> <i>ma manœuvre. « Après environ une heure, l'escalier passe</i> <i>par un court tunnel dans un éperon rocheux. Et</i> <i>Caradoc, quelque chose… bouge. Là-haut, au sommet</i> <i>de cet éperon, à environ 9 mètres. C'est une… personne ?</i> <i>Non… plutôt une marionnette de la taille d'un homme, faite</i> <i>de pierre, qui vous observe. Que faites-vous ? »</i>
 P	<i>Le groupe s'arrête. Vahid Sait des Choses (c'est</i> <i>une construction des Seigneurs de Pierre, mais il n'est pas sûr que ce soit</i> <i>un automate, une chose autonome, ou quoi). Ils essaient de</i> <i>communiquer mais elle ne répond pas. Caradoc</i> <i>essaie d'y grimper, mais elle se dérobe.</i> <i>Ils continuent, mais elle les suit à distance.</i>
 P	<i>« Ça ne va pas », dit Rhianna. « Je Lis le</i> <i>Terrain. Quel est le meilleur endroit pour une embuscade ?</i> <i>Je veux attraper cette chose. » Nous décidons</i> <i>qu'ils pourraient l'attirer dans une salle des</i> <i>falaises que Rhianna repère plus loin — et</i> <i>c'est là que nous cadrons la prochaine scène !</i>
 PAGE	352

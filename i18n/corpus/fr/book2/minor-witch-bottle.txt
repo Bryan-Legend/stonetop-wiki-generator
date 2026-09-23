@@ -8,7 +8,7 @@
 PAGE	529
 H3	Une bouteille de verre argenté
 P	◇, <i>fragile</i>, <i>magique</i>
-P	Haute d'environ 10 pouces, effilée vers le haut, faite d'un vieux verre déformé traversé de traînées argentées, comme les traces que laissent les limaces. Les motifs dans le verre semblent différents à chaque regard, changeant presque sous tes yeux. Cela te fait venir les larmes aux yeux et tourner la tête.
+P	Haute d'environ 25 centimètres, effilée vers le haut, faite d'un vieux verre déformé traversé de traînées argentées, comme les traces que laissent les limaces. Les motifs dans le verre semblent différents à chaque regard, changeant presque sous tes yeux. Cela te fait venir les larmes aux yeux et tourner la tête.
 P	Tu peux percer les secrets de cette vieille bouteille de verre, mais tu dois soit…
 C	… trouver quelqu'un qui en connaît le fonctionnement, et le convaincre de te l'enseigner ; soit…
 C	… remplir la bouteille d'eau de source et de champignons hallucinogènes, et la laisser infuser dans l'obscurité pendant une quinzaine de jours.

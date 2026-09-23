@@ -75,7 +75,7 @@ P	4-6 Vaste étendue dégagée, rien que de l'herbe et des arbustes sur des lieu
 P	7-8 Grande plaque de boue/de boue gelée
 P	9 Pente douce/crête basse/petite éminence
 P	10 Moraine basse, une petite colline de pierres brisées et de terre meuble
-P	11 Affleurement rocheux, haut d'une douzaine de pieds tout au plus
+P	11 Affleurement rocheux, haut d'environ 4 mètres tout au plus
 P	12 Un arbre isolé et remarquable
 PB
 P	Si tu veux, lance 1d6 pour la taille/l'étendue/l'intensité.

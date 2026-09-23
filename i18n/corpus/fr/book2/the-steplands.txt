@@ -183,7 +183,7 @@ P	• Ne pas vraiment remarquer quelque chose
 P	• Arracher des arbres comme un enfant arrache de l'herbe
 P	• Frapper quelque chose qui l'agace
 P	• Se débattre dans une rage (+<i>zone</i>), puis se fatiguer
-P	Imaginez quelque chose comme un blaireau ou un paresseux, mais gros comme une maison : 6 mètres de long, presque 3 mètres au garrot, des avant-bras de près de 4 mètres de long en comptant ces griffes en forme de pelle. La plupart du temps, ils déambulent lourdement à travers les Terres Étagées, cherchant leurs arbres préférés à arracher et à mâchonner, dénudant parfois des pentes entières. Presque tout le monde leur laisse une large marge, quand c'est possible. Même les super-prédateurs comme le kleztigr ne pensent pas qu'ils en valent la peine.
+P	Imaginez quelque chose comme un blaireau ou un paresseux, mais gros comme une maison : 6 mètres de long, presque 2,7 mètres au garrot, des avant-bras de près de 3,5 mètres de long en comptant ces griffes en forme de pelle. La plupart du temps, ils déambulent lourdement à travers les Terres Étagées, cherchant leurs arbres préférés à arracher et à mâchonner, dénudant parfois des pentes entières. Presque tout le monde leur laisse une large marge, quand c'est possible. Même les super-prédateurs comme le kleztigr ne pensent pas qu'ils en valent la peine.
 P	On pourrait croire qu'ils sont faciles à repérer et à éviter, et le plus souvent on aurait raison. Mais parfois tu contournes un virage ou franchis une pente et il y en a un, là, qui avance pesamment, ou mâchonne une bûche, ou fait une sieste, et tu ferais mieux d'essayer de le contourner, tout en douceur.
 PAGE	378
 HR

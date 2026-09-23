@@ -214,7 +214,7 @@ C	Młynarza na pełny etat
 P	Gdy <b><i>spełnisz wymagania</i></b>, zwiększ Fortunę o 1, dodaj „Młyn” do listy Zasobów i zaznacz go na mapie.
 P	Od tej pory, gdy <b><i>zbiory jesienne zostaną zakończone</i></b>, osada generuje +1 Nadwyżkę. Ponadto, gdy <b><i>Wyekwipujesz Się w Stonetop albo sprawdzisz, czy Masz To, Czego Trzeba, robiąc</i></b> <b><i>to później</i></b>, każdy ◇ zapasów ma 1 dodatkowe użycie.
 HR
-C	<b>PALISADA</b> Mur z zaostrzonych bali, wysoki na 10 stóp, by trzymać zło z dala.
+C	<b>PALISADA</b> Mur z zaostrzonych bali, wysoki na 3 m, by trzymać zło z dala.
 P	<b>Wymaga</b> wszystkiego z poniższych, po kolei:
 C	Mnóstwa drewna (~20-25 wozów, Wartość 3)
 C	Kompetentnego inżyniera/majstra

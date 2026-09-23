@@ -135,7 +135,7 @@ B	<b>Un oiseau momifié dans un pot d'argile</b>◇ (<i>fragile</i>, Valeur 0)
 B	<b>Plusieurs haches</b> ◇ <b>de bronze corrodées</b>, de facture ancienne, aux manches de bois magnifiquement préservés (<i>grossier</i> et Valeur 0 en l'état ; <i>main</i> et Valeur 1 si restaurées)
 B	<b>Une magnifique chemise de soie</b>, brodée de motifs en forme de liane (Valeur 1)
 B	<b>Des piles de bois brut, non travaillé</b>, au grain d'un éclat métallique ; incroyablement solide mais incroyablement difficile à travailler (<i>immobile</i>, Valeur 2)
-B	<b>Une cotte d'armure à écailles</b> pour quelqu'un de 20 pieds de haut. Les écailles sont étranges, organiques, semi-translucides et irisées sur les bords. D'épaisses lianes tordues poussent depuis l'armure là où devrait se trouver un corps ; rien d'autre ne pousse à proximité. L'armure est peu pratique et inquiétante, mais si elle est extraite intacte, elle pourrait rapporter une somme correcte (<i>immobile</i>, Valeur 2) auprès d'un collectionneur.
+B	<b>Une cotte d'armure à écailles</b> pour quelqu'un de 6 mètres de haut. Les écailles sont étranges, organiques, semi-translucides et irisées sur les bords. D'épaisses lianes tordues poussent depuis l'armure là où devrait se trouver un corps ; rien d'autre ne pousse à proximité. L'armure est peu pratique et inquiétante, mais si elle est extraite intacte, elle pourrait rapporter une somme correcte (<i>immobile</i>, Valeur 2) auprès d'un collectionneur.
 B	<b>Une corne à boire</b> ◇◇ <b>surdimensionnée</b>, où l'or et l'ambre se sont fondus dans la corne de façons impossibles (Valeur 3)
 B	<b>Un arbre haut, épais et noueux</b> portant de gros fruits délicieux au début de l'automne. Fournit autant de provisions (4 utilisations) ◇ que les PJ souhaitent en prendre, et pourrait être cultivé pour donner un verger de rhoillyg.
 HR
@@ -160,7 +160,7 @@ HR
 ICON	icons/treasure.svg
 H3	Une liane dans un pot gravé de runes
 P	◇, <i>magique</i>
-P	Elle est à peu près aussi épaisse que ton doigt et mesure peut-être 30 pieds de long une fois déroulée, avec de fines petites vrilles. Elle semble plutôt desséchée, mais bouge légèrement si tu la touches, elle ou son pot. Si tu l'arroses, elle frémit avec enthousiasme.
+P	Elle est à peu près aussi épaisse que ton doigt et mesure peut-être 9 mètres de long une fois déroulée, avec de fines petites vrilles. Elle semble plutôt desséchée, mais bouge légèrement si tu la touches, elle ou son pot. Si tu l'arroses, elle frémit avec enthousiasme.
 P	Un esprit végétal est lié à la liane et au pot. Si tu te lies d'amitié avec lui et portes son pot, il s'animera et agira comme un suivant : <i>agrippant</i>,
 P	<i>malin</i>, <i>joueur</i> ; <b>HP</b> 3 ; <b>Dégâts</b> 0 ; <b>Instinct</b> ne jamais lâcher prise ; <b>Prix</b> affection, temps de jeu.
 PAGE	217
@@ -168,14 +168,14 @@ HR
 ICON	icons/treasure.svg
 H3	Un poignard-croc
 P	<i>main</i>, <i>magique</i>, +1 dégâts
-P	Un croc de 8 pouces, fixé à un manche de bois par une fibre qui ne pourrit jamais. Un objet à l'aspect cruel, avec d'étranges gravures le long de la lame.
+P	Un croc de 20 centimètres, fixé à un manche de bois par une fibre qui ne pourrit jamais. Un objet à l'aspect cruel, avec d'étranges gravures le long de la lame.
 P	<b>Quelque chose d'intéressant :</b> Le croc a l'air de provenir d'un <b>cynddaraig</b> (page 206), et les marques sont assurément une sorte de sortilège lié au sang et à la terre.
 P	<b>Quelque chose d'utile :</b> Quand tu <b><i>enterres le</i></b> <b><i>poignard-croc et arroses le sol de sang</i></b>, la terre se soulève et se bombe. Une minute plus tard, un cynddaraig adulte jaillit du sol — furieux, désorienté et affamé. Le sortilège n'accorde aucun contrôle sur la bête et ne fournit aucun moyen de la renvoyer. Le poignard a disparu, devenu une dent dans la gueule du dragon-de-rage.
 HR
 ICON	icons/treasure.svg
 H3	Un grand coffre de pierre
 P	<i>immobile</i>, <i>magique</i>
-P	Taillé dans la serpentine, 4 pieds sur 2 sur 2, avec un lourd couvercle de pierre. Quand on le trouve, il est probablement à moitié rempli de terre. Pour ceux qui sont sensibles à ce genre de choses, il vibre du pouvoir de la fertilité et de la croissance.
+P	Taillé dans la serpentine, 1,2 mètre sur 60 centimètres sur 60, avec un lourd couvercle de pierre. Quand on le trouve, il est probablement à moitié rempli de terre. Pour ceux qui sont sensibles à ce genre de choses, il vibre du pouvoir de la fertilité et de la croissance.
 P	Quand tu <b><i>ajoutes de la terre fraîche au coffre, y plantes</i></b> <b><i>des graines, et refermes le couvercle</i></b>, les graines germent et poussent du jour au lendemain. Chaque graine ne germe qu'une seule fois, et les pousses grandissent ensuite à un rythme normal, qu'elles restent dans le coffre ou soient plantées ailleurs.
 P	Avec une bonne coordination, cela pourrait provoquer un essor des jardins de Stonetop et +1 Surplus chaque été. Entre les mains d'un herboriste chevronné, cela peut grandement améliorer un jardin d'herbes et permettre la culture de plantes rares ou difficiles. Les herboristes de Bordemarais tueraient pour ça — ou déclencheraient même une guerre.
 ICON	icons/treasure.svg
@@ -295,7 +295,7 @@ P	• Bondir hors de l'eau avec une vitesse stupéfiante
 P	• Suivre sa proie depuis le ciel, ou suspendu aux arbres
 P	• Mitrailler sa proie et lui infliger une piqûre douloureuse et débilitante
 P	• Mordre fort, puis avaler tout rond
-P	Tout le monde sait qu'il faut éviter les eaux profondes et stagnantes, et les llamudwr (ou « bondisseurs d'eau ») en sont sûrement l'une des raisons. Prends le corps d'une grenouille, longue de 6 ou 7 pieds. Ajoute encore 8 ou 9 pieds de queue fouettante, terminée par un dard venimeux. Débarrasse-la de ses pattes, sans même laisser de moignons, mais donne-lui des ailes de chauve-souris, d'une envergure de presque 20 pieds une fois déployées. Cache-la dans un lac ou un marécage, loin de la lumière cruelle du soleil.
+P	Tout le monde sait qu'il faut éviter les eaux profondes et stagnantes, et les llamudwr (ou « bondisseurs d'eau ») en sont sûrement l'une des raisons. Prends le corps d'une grenouille, longue de 1,8 ou 2 mètres. Ajoute encore 2,5 ou 2,7 mètres de queue fouettante, terminée par un dard venimeux. Débarrasse-la de ses pattes, sans même laisser de moignons, mais donne-lui des ailes de chauve-souris, d'une envergure de presque 6 mètres une fois déployées. Cache-la dans un lac ou un marécage, loin de la lumière cruelle du soleil.
 P	Et enfin, rends-la affamée. Très, très affamée.
 PAGE	221
 HR

@@ -26,7 +26,7 @@ H3	Été
 B	Un vert éclatant le long des rives, le soleil scintillant sur l'eau
 B	Un chœur sans fin d'oiseaux d'eau, d'étourneaux, d'insectes, du courant
 B	Un éclaboussement occasionnel — juste un poisson, ou une tortue effrayée, peut-être ?
-P	Dans son cours inférieur, le fleuve lui-même est large et profond, jamais moins d'un quart de mile de large et de plusieurs dizaines — voire centaines — de pieds de profondeur.
+P	Dans son cours inférieur, le fleuve lui-même est large et profond, jamais moins de 400 mètres de large et d'une dizaine — voire de plusieurs dizaines — de mètres de profondeur.
 P	De loin, il paraît placide et immobile. Mais il coule avec un courant terrible et implacable.
 P	La rive occidentale alterne entre zones humides, vastes plaines inondables, et falaises escarpées, des ruines éparpillées sur toute sa longueur. Ce serait un lieu idyllique où vivre, sauf que toute la longueur du fleuve est maudite.
 ICON	icons/autumn.svg
@@ -197,7 +197,7 @@ P	<b>Instinct</b> se nourrir
 P	• Sentir le champ électrique d'une créature
 P	• Étourdir ou paralyser d'un contact, bzzzt
 P	• Grouiller sur une créature étourdie
-P	Chacun mesure quelques pieds de long, comme une seiche croisée avec un asticot géant, se tortillant, humide et gris, un visage plein de tentacules dont le contact pique comme la foudre.
+P	Chacun mesure un mètre ou deux de long, comme une seiche croisée avec un asticot géant, se tortillant, humide et gris, un visage plein de tentacules dont le contact pique comme la foudre.
 P	Ils passent la plupart de leur vie dans l'eau, se rassemblant près des <b>cristaux d'énergie</b> (page 389) et des artefacts d'<b>éthérium</b> (page 404) que le fleuve a réclamés. Ils semblent en transe devant l'énergie passive, presque bercés jusqu'au sommeil. Mais quand ils sentent quelque chose de plus dynamique, quelque chose de plus charnu, ils se tortillent hors de l'eau bien assez vite.
 P	Certains membres du Peuple des Collines affirment que les luglfsk ne sont que des têtards, et racontent des histoires de terreurs plus grandes, aux nombreuses pattes, projetant la foudre depuis des tentacules faciaux aussi longs qu'un homme est grand. Mais ce ne sont probablement que des histoires pour effrayer les voyageurs. Probablement.
 ICON	icons/beast.svg

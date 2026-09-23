@@ -214,7 +214,7 @@ C	Tam gün bir değirmenci
 P	<b><i>Gereksinimleri karşıladığında</i></b> Talihi 1 yükselt, Kaynaklar listesine „Değirmen" ekle ve haritaya çiz.
 P	Bundan böyle <b><i>sonbahar hasadı bittiğinde</i></b> yerleşke +1 Fazlalık üretir. Ayrıca <b><i>Stonetop'tan Kuşandığında ya da ardından Gerekeni</i></b> <b><i>Bulundurduğunda</i></b> her ◇ malzeme 1 ek kullanım taşır.
 HR
-C	<b>KAZIK SUR</b> Sivriltilmiş kütüklerden 10 ayak yüksekliğinde bir duvar, kötülüğü uzak tutmak için.
+C	<b>KAZIK SUR</b> Sivriltilmiş kütüklerden 3 m yüksekliğinde bir duvar, kötülüğü uzak tutmak için.
 P	<b>Gerektirir</b> aşağıdakilerin hepsini, sırayla:
 C	Bol kereste (~20-25 araba, Değer 3)
 C	Yetkin bir mühendis/ustabaşı

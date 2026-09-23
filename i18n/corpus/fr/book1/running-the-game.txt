@@ -240,7 +240,7 @@ P	<i>« Vvvasil ? Ciel, non. Vvvassil</i> <i>a quitté la ville cccet automne</i
 HR
 P	<i>« Que s'est-il passé ici récemment ? Eh</i> <i>bien, il y a genre une douzaine d'empreintes dans la</i> <i>boue, tout retourné comme s'il y avait eu une</i> <i>bagarre. Quelques éclaboussures de sang</i> <i>aussi, sur le feuillage. C'est assez clair,</i> <i>Lowri s'est fait attaquer par les crinwin. »</i>
 HR
-P	<i>« Aïe, un 6- ? Eh bien, tu fouilles les collines pour</i> <i>le reste de la journée et... je suppose que tu ne</i> <i>la trouves pas ? Non, attends. Tu sais</i> <i>quoi ? Tu</i> <i>trouves bien Cadi. À peut-être un demi-kilomètre</i> <i>du camp de bûcherons, tu trouves son corps.</i> <i>Quelque chose l'a poignardée, l'a empalée en plein ventre. »</i>
+P	<i>« Aïe, un 6- ? Eh bien, tu fouilles les collines pour</i> <i>le reste de la journée et... je suppose que tu ne</i> <i>la trouves pas ? Non, attends. Tu sais</i> <i>quoi ? Tu</i> <i>trouves bien Cadi. À peut-être 800 mètres</i> <i>du camp de bûcherons, tu trouves son corps.</i> <i>Quelque chose l'a poignardée, l'a empalée en plein ventre. »</i>
 HR
 PAGE	181
 H3	Poser une question provocatrice
@@ -257,7 +257,7 @@ H3	Mettre quelqu'un dans une situation difficile
 P	C'est une version plus agressive d'<b>annoncer un problème</b> — ils doivent faire quelque chose, maintenant, ou ça va mal tourner.
 P	« Quelqu'un » peut être un PJ ou un PNJ, et tu peux jouer avec le projecteur. Peut-être que la personne que tu mets en difficulté n'est pas celle qui va agir.
 HR
-P	<i>« Si près du but ! Tu fais le saut, mais</i> <i>tu percutes la branche. Tu glisses, arrivant tout juste à t'accrocher. Tu es suspendu à cette branche</i> <i>comme ça, hors d'haleine, genre à 25 mètres</i> <i>de haut, et ta prise commence à lâcher. Que</i> <i>fais-tu ? »</i>
+P	<i>« Si près du but ! Tu fais le saut, mais</i> <i>tu percutes la branche. Tu glisses, arrivant tout juste à t'accrocher. Tu es suspendu à cette branche</i> <i>comme ça, hors d'haleine, genre à 24 mètres</i> <i>de haut, et ta prise commence à lâcher. Que</i> <i>fais-tu ? »</i>
 HR
 P	<i>« Le grand costaud se lève et te toise.</i> <i>"Comment tu m'as appelé, espèce de petit</i> <i>rat maigrichon ?" Rhianna, tu vois ça se passer</i> <i>et tu remarques genre trois autres types, des mineurs</i> <i>baraqués, qui se lèvent aussi, pas un sourire</i> <i>parmi eux. Que fais-tu ? »</i>
 HR
@@ -423,7 +423,7 @@ P	<i>J'</i><b><i>annonce un problème</i></b><i>. « Tu es sûr qu'Iwan</i> <i>e
 P	<i>Ils posent des questions et je clarifie un peu la situation (il fait noir, le combat semble assez</i> <i>proche, aucun d'eux ne connaît bien ces collines).</i> <i>Puis Rhianna dit « On y va. Dans les collines. »</i>
 P	<i>Ça termine la scène ! Il y a un peu de jeu libre</i> <i>pendant qu'on parle logistique. Vahid et Blodwen</i> <i>prennent chacun une torche, allumée au feu de cuisson.</i> <i>« Vous partez ? » je demande. Ils partent.</i>
 P	<i>Je fais un plan large et je décris la situation en</i> <i>général : « Il fait noir, les collines sont escarpées et</i> <i>boisées, et vous naviguez au son,</i> <i>suivant les bruits du combat. » Je fais ma</i> <i>manœuvre douce et je</i> <b><i>leur dis les exigences</i></b><i>.</i> <i>« Si vous essayez d'y arriver vite, ça</i> <i>déclenchera Faire Front — le danger étant</i> <i>que vous vous perdiez, ou soyez séparés, ou blessés en</i> <i>chemin. Si vous prenez votre temps et avancez</i> <i>prudemment, vous ne déclencherez pas de manœuvre — mais</i> <i>vous n'arriverez probablement pas à temps pour aider</i> <i>dans le combat. Que faites-vous ? »</i>
-P	<i>Ils décident de Faire Front. On résout</i> <i>la manœuvre et ils font tous les deux de bons jets, donc on</i> <i>passe à la scène suivante. « C'est une course désespérée,</i> <i>à moitié aveugle à travers les bois, mais soudain</i> <i>vous débouchez dans une clairière. À la lueur vacillante de vos torches, vous voyez Eira et Lowri</i> <i>faire face à cette brute massive et énorme,</i> <i>genre 4 mètres de haut et deux fois plus large. »</i>
+P	<i>Ils décident de Faire Front. On résout</i> <i>la manœuvre et ils font tous les deux de bons jets, donc on</i> <i>passe à la scène suivante. « C'est une course désespérée,</i> <i>à moitié aveugle à travers les bois, mais soudain</i> <i>vous débouchez dans une clairière. À la lueur vacillante de vos torches, vous voyez Eira et Lowri</i> <i>faire face à cette brute massive et énorme,</i> <i>genre 3,5 mètres de haut et deux fois plus large. »</i>
 PAGE	191
 HR
 P	<i>J'ai à peine le temps de reprendre mon souffle avant de faire ma manœuvre douce</i> <i>(</i><b><i>mettre quelqu'un dans une situation difficile</i></b><i>) : « Elle soulève</i> <i>un petit arbre comme une massue et rugit, sur le point</i> <i>de les écraser tous les deux, et ils restent tous les deux</i> <i>bouche bée devant cette chose. » Je m'adressais au groupe, le projecteur flou,</i> <i>donc maintenant je le resserre. « Rhianna, Blodwen,</i> <i>vous êtes arrivées les premières — que faites-vous ? »</i>

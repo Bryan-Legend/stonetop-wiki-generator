@@ -214,7 +214,7 @@ C	En møller på fuld tid
 P	Når du <b><i>oppfyller kravene</i></b>, øk Lykke med 1, legg til „Mølle" til Ressurslisten og tegn den på kortet.
 P	Herefter, når <b><i>høsten er i hus</i></b>, skaber bygden +1 Overskudd. Desuten: når du <b><i>Utruster Deg fra Stonetop eller derefter Har det</i></b> <b><i>Nødvendige</i></b>, har hvert ◇ forsyninger 1 ekstra anvendelse.
 HR
-C	<b>PALISADE</b> En mur av tilspidsede stammer, 10 fod høj, for at holde ondt ute.
+C	<b>PALISADE</b> En mur av tilspidsede stammer, 3 m høj, for at holde ondt ute.
 P	<b>Krever</b> alt følgende, i rekkefølge:
 C	Meget tømmer (~20-25 vognlass, Verdi 3)
 C	En dygtig ingeniør/formand

@@ -240,7 +240,7 @@ P	• Creuser de sérieuses quantités de terre
 P	• Bondir hors de l'herbe sur une proie
 P	• Vaporiser un musc stupéfiant (<i>allonge</i>, <i>zone</i>, handicaps)
 P	• Se rouler en boule d'écailles dures et déchiquetées (4 armure)
-P	De gros mustélidés cuirassés, comme un croisement entre une hermine, un blaireau et un pangolin, mais longs d'environ 2 mètres sans compter la queue.
+P	De gros mustélidés cuirassés, comme un croisement entre une hermine, un blaireau et un pangolin, mais longs d'environ 1,8 mètre sans compter la queue.
 P	Ils parcourent les Plaines en déterrant les terriers de à peu près n'importe quoi, mais ils adorent particulièrement remuer un nid de <b>hlomren</b> (page 134) et croquer, croquer, croquer. Ils sont cependant loin du sommet de la chaîne alimentaire. S'ils sont surpris, ils vaporisent du musc et tentent de fuir. Acculés, ils se roulent en boule et espèrent que l'attaquant se lasse.
 P	Un tanneur habile peut transformer une paire de peaux en un magnifique ◇◇ manteau d'écailles de beznpol (2 armure, <i>chaud</i>, protège contre l'acide, Valeur 3). Les champions du Peuple des Collines sont connus pour en porter.
 PAGE	133
@@ -252,7 +252,7 @@ P	<b>HP</b> 16; <b>Armure</b> 0 <b>Dégâts</b> serres plongeantes d10+2 (<i>mai
 P	<b>Qualités spéciales</b> vue incroyable, ouïe déplorable <b>Instinct</b> attendre le bon moment
 P	• Planer sur les courants thermiques, à des milliers de pieds de haut
 P	• Piquer comme la foudre, happant sa proie
-P	• Traîner une proie sur 10 à 12 mètres à coups d'ailes lents et puissants — puis la lâcher
+P	• Traîner une proie sur 9 à 12 mètres à coups d'ailes lents et puissants — puis la lâcher
 P	De grands oiseaux écailleux, aux ailes d'une douzaine de mètres d'envergure, aux plumes bleu ciel et blanches sur leur face inférieure pour se fondre dans le ciel. On dit qu'ils nichent dans les Pics de Huffel mais chassent dans les Plaines, happant les imprudents — homme, femme, cerf, cheval — et les laissant tomber au sol. La chute tue ou estropie généralement sa proie, puis il se pose pour dîner à loisir.
 P	Ils sont, grâce à Tor, très rares, avec un seul couple chassant les Plaines à la fois.
 P	De l'autre côté des Pics de Huffel, cependant... qui sait ?

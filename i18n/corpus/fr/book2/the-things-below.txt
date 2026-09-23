@@ -322,7 +322,7 @@ B	Tu commences à souffrir de cauchemars, d'horreurs remuant sous la terre
 B	Le menhir pose une question sur ta honte, ta culpabilité ou tes peurs — réponds sincèrement
 ICON	icons/site.svg
 H3	Un puits profond et sombre
-P	Un trou dans le sol, large d'environ 5 pieds, profond d'au moins 100 pieds, se terminant dans une chambre aquatique ou un lac souterrain qui abrite une <b>Bouche de Daagon</b> (page 55).
+P	Un trou dans le sol, large d'environ 1,5 mètre, profond d'au moins 30 mètres, se terminant dans une chambre aquatique ou un lac souterrain qui abrite une <b>Bouche de Daagon</b> (page 55).
 P	Quand tu <b><i>t'attardes près du puits</i></b>, réponds à l'une des questions suivantes :
 Q	De qui es-tu le plus jaloux, et pourquoi ?
 Q	Que désires-tu posséder, plus que tout ?
@@ -367,7 +367,7 @@ HR
 ICON	icons/treasure.svg
 H3	Un nœud coulant de soie
 P	<i>magique</i>
-P	Une longueur de fine corde, nouée en un nœud coulant avec quelques pieds pendant librement. Elle est remarquablement résistante, mais une lame de bronze la tranche net. Si elle est dénouée et laissée sans surveillance, elle se renoue d'elle-même en un nœud coulant.
+P	Une longueur de fine corde, nouée en un nœud coulant avec un mètre ou deux pendant librement. Elle est remarquablement résistante, mais une lame de bronze la tranche net. Si elle est dénouée et laissée sans surveillance, elle se renoue d'elle-même en un nœud coulant.
 P	Quand tu <b><i>glisses le nœud coulant autour du cou</i></b> <b><i>de quelqu'un</i></b>, il se resserre — serré et inconfortable, mais la victime peut respirer.
 P	Quand <b><i>ta victime ment ou refuse de répondre à</i></b> <b><i>une question</i></b>, le nœud se resserre et l'étrangle jusqu'à ce qu'elle meure ou avoue la vérité en haletant.
 P	Quand toi (ou quelqu'un d'autre) <b><i>essaie de retirer</i></b> <b><i>ou de desserrer le nœud</i></b>, il commence à étrangler la victime. Si toi (ou eux) t'arrêtes, il se relâche. Si toi (ou eux) persistez, il broie rapidement la trachée de la victime.

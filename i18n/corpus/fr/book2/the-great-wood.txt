@@ -215,7 +215,7 @@ P	<b>Instinct</b> défendre son territoire actuel
 P	Attendre patiemment pour bondir sur sa proie
 P	Siffler avec menace face à une menace
 P	Mordre vite et se tenir prêt à frapper à nouveau
-P	La fameuse « vipère des arbres », le serpent le plus mortel du Bois, pouvant atteindre 1,80 mètre de long et dégoulinant de venin. Durant les mois chauds, elle chasse et se prélasse dans la canopée ou les clairières ensoleillées. Durant les mois froids, elle se cache dans des creux et sous des troncs, entrant en torpeur l'hiver. Elle ne chasse pas les gens, mais elle ne les craint pas non plus.
+P	La fameuse « vipère des arbres », le serpent le plus mortel du Bois, pouvant atteindre 1,8 mètre de long et dégoulinant de venin. Durant les mois chauds, elle chasse et se prélasse dans la canopée ou les clairières ensoleillées. Durant les mois froids, elle se cache dans des creux et sous des troncs, entrant en torpeur l'hiver. Elle ne chasse pas les gens, mais elle ne les craint pas non plus.
 P	Quand tu es mordu par un cwisarff, coche un handicap en plus de subir des dégâts.
 P	Tant que le poison n'est pas traité, tu ne peux pas récupérer de HP et risques de subir davantage de dégâts et de handicaps.
 ICON	icons/beast.svg

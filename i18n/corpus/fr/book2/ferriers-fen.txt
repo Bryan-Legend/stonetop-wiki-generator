@@ -7,7 +7,7 @@
 # description: Le Marais de Ferrier : ses saisons, ses dangers, les Sorcières du Saule et les créatures qui hantent ses eaux.
 PAGE	116
 P	Le Marais de Ferrier s'étend entre le <b>Grand Bois</b> (page 200), les <b>Terres Étagées</b> (page 372), et la <b>Manmarche du Nord</b> (page 282).
-P	C'est une immense zone humide, large de 100 miles, longue de 50 miles du nord au sud, alimentée par le <b>Ruisseau</b> (page 396), le Sruth, près de <b>Bordemarais</b> (page 274), et par de nombreux ruisselets. C'est un labyrinthe de sol ferme, de mares stagnantes, de ruisseaux peu profonds, et de gouffres plongeant dans des eaux très profondes. Et de boue. Tellement de boue.
+P	C'est une immense zone humide, large de 160 kilomètres, longue de 80 kilomètres du nord au sud, alimentée par le <b>Ruisseau</b> (page 396), le Sruth, près de <b>Bordemarais</b> (page 274), et par de nombreux ruisselets. C'est un labyrinthe de sol ferme, de mares stagnantes, de ruisseaux peu profonds, et de gouffres plongeant dans des eaux très profondes. Et de boue. Tellement de boue.
 P	Il y a bien longtemps, cette région était le berceau de la civilisation des <b>Seigneurs</b> <b>Verts</b> (page 210). Mais quand leurs serviteurs se rebellèrent et que les Seigneurs Verts embrassèrent les <b>Choses d'En Bas</b> (page 412), les autres <b>Bâtisseurs</b> (page 264) firent s'effondrer la région et brisèrent la civilisation des Seigneurs Verts. C'est encore un lieu brisé, suintant d'une magie ancienne et de corruption.
 H2	Impressions
 HR

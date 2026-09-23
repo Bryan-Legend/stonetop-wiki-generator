@@ -214,7 +214,7 @@ C	En mjölnare på heltid
 P	När du <b><i>uppfyller kraven</i></b>, höj Fortuna med 1, lägg till „Kvarn" på Resurslistan och rita den på kartan.
 P	Hädanefter, när <b><i>höstskörden är bärgad</i></b>, ger bosättningen +1 Överskott. Dessutom: när du <b><i>Rustar Dig från Stonetop eller sedan Har Det Man</i></b> <b><i>Behöver</i></b> har varje ◇ förnödenheter 1 extra användning.
 HR
-C	<b>PALISAD</b> En mur av vässade stockar, 10 fot hög, för att hålla ondskan borta.
+C	<b>PALISAD</b> En mur av vässade stockar, 3 m hög, för att hålla ondskan borta.
 P	<b>Kräver</b> allt följande, i ordning:
 C	Mycket virke (~20-25 vagnlass, Värde 3)
 C	En duglig ingenjör/förman

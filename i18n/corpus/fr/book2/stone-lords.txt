@@ -64,7 +64,7 @@ HR
 H3	Quelque chose de piégé
 P	Par exemple :
 B	Quelqu'un piégé dans une stalagmite, ses mains tendues, son visage angoissé et ses gémissements funèbres à peine discernables
-B	Un cube creux et sans jointure de pierre blanche gravée de runes, 6 pieds de côté, d'un froid mordant ; une douzaine de <b>spectres</b> (page 79) y sont scellés, impuissants et fous
+B	Un cube creux et sans jointure de pierre blanche gravée de runes, 1,8 mètre de côté, d'un froid mordant ; une douzaine de <b>spectres</b> (page 79) y sont scellés, impuissants et fous
 B	Une étendue de dalles noires et brillantes, montrant les reflets de gens depuis longtemps disparus ; ceux qui ouvrent leur esprit voient un défilé de souvenirs, clair comme le jour
 B	Un <b>automate</b> (page 392) avec une fissure dans sa « tête », possédé par un esprit malveillant ; lié dans un cercle de runes profondément gravées
 B	Un labyrinthe de murs de pierre, les passages formant une rune de liage, une sorte de démon piégé en son centre
@@ -85,7 +85,7 @@ B	Un cratère de pierre nue, 100 pas de diamètre, avec un losange de pierre noi
 B	Une statue taillée à même le flanc d'une montagne, les fragments de son épée de pierre jonchant la vallée en contrebas
 B	Un piédestal portant deux vastes jambes de pierre sans tronc ; les traces d'une inscription, désormais illisible
 B	Des têtes de pierre géantes disposées sur une pente, leurs visages érodés mais toujours réprobateurs
-B	Un pylône de verre, haut d'au moins 100 pieds (et qui sait à quelle profondeur il s'enfonce dans la terre), bourdonnant faiblement, luisant faiblement
+B	Un pylône de verre, haut d'au moins 30 mètres (et qui sait à quelle profondeur il s'enfonce dans la terre), bourdonnant faiblement, luisant faiblement
 B	De grandes lignes creusées dans la terre, s'étirant sur des kilomètres ; dénuées de sens depuis le sol, mais formant d'énormes runes vues d'en haut
 B	Une vaste salle dans quelque grotte ou ruine, les ossements calcinés d'un géant en son centre ; des morceaux d'os, de dents ou de carapace noircis jonchent les bords ; des centaines d'éclats de cristal de la taille d'un poing sont incrustés dans les murs
 B	Une chambre avec des dizaines de cylindres de verre, fixés verticalement contre un mur, chacun de longueur et de largeur différentes — une sorte d'instrument, peut-être ?
@@ -130,7 +130,7 @@ P	Beaucoup de ruines des Seigneurs de Pierre furent <b>récupérées</b> (page 3
 PAGE	387
 HR
 P	<i>Les PJ obliquent vers le nord depuis le Lac des Trois Cercles et cherchent un endroit où</i> <i>camper. Je décide qu'ils trouvent une ruine de Seigneur de Pierre. Je lance 6 pour le thème</i> <i>(autorité/ordre/hiérarchie/tradition), un 5 pour la structure (chambres</i> <i>creusées dans les flancs de collines), un 6 pour la finalité (vie civique), un 3 pour les</i> <i>éléments architecturaux (cristaux/verre des Bâtisseurs), et un 4 pour l'état</i> <i>(enfouie ou dissimulée, globalement intacte). J'imagine une sorte de clocher, autrefois utilisé pour sonner l'heure et rythmer la journée.</i>
-P	<i>Ce qu'il en reste, c'est l'esquisse d'un escalier de pierre montant vers un</i> <i>affleurement rocheux. Près du sommet, un tunnel partiellement effondré s'ouvre</i> <i>sur une chambre à voûte lisse. Un carillon de verre des Bâtisseurs</i> <i>pend du plafond, à peine quelques pouces de diamètre mais haut d'une</i> <i>centaine de pieds ou plus, plongeant dans un puits à peine</i> <i>plus large que lui. Si on le tapote, le carillon résonne douloureusement</i> <i>fort. Si on le frappe fermement, il résonne d'un bruit tonitruant et</i> <i>assourdissant. Je pense qu'il y a aussi un grand maillet de bronze</i> <i>encore dans la chambre, et qu'un</i> <b><i>kleztigr</i></b> <i>(page</i> <i>379) utilise cet endroit comme tanière.</i>
+P	<i>Ce qu'il en reste, c'est l'esquisse d'un escalier de pierre montant vers un</i> <i>affleurement rocheux. Près du sommet, un tunnel partiellement effondré s'ouvre</i> <i>sur une chambre à voûte lisse. Un carillon de verre des Bâtisseurs</i> <i>pend du plafond, à peine quelques centimètres de diamètre mais haut d'une</i> <i>trentaine de mètres ou plus, plongeant dans un puits à peine</i> <i>plus large que lui. Si on le tapote, le carillon résonne douloureusement</i> <i>fort. Si on le frappe fermement, il résonne d'un bruit tonitruant et</i> <i>assourdissant. Je pense qu'il y a aussi un grand maillet de bronze</i> <i>encore dans la chambre, et qu'un</i> <b><i>kleztigr</i></b> <i>(page</i> <i>379) utilise cet endroit comme tanière.</i>
 HR
 PAGE	388
 ICON	icons/material.svg
@@ -191,7 +191,7 @@ HR
 ICON	icons/treasure.svg
 H3	Une dalle de marbre balafrée
 P	<i>immobile</i>, <i>magique</i>
-P	Une dalle de pierre autrefois magnifique, haute d'environ 30 pieds et large d'à peu près une fois et demie plus, dressée dans une chambre voûtée, entourée de runes profondément gravées qui parlent d'union et de protection, de consomption et de sacrifice.
+P	Une dalle de pierre autrefois magnifique, haute d'environ 9 mètres et large d'à peu près une fois et demie plus, dressée dans une chambre voûtée, entourée de runes profondément gravées qui parlent d'union et de protection, de consomption et de sacrifice.
 P	La pierre porte une multitude d'éclats, d'entailles et de fissures. Poussière et débris l'entourent.
 P	Quand tu <b><i>arraches un éclat de pierre de la</i></b>
 P	<b><i>dalle et l'avales tout entier, en te tenant</i></b>

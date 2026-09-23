@@ -214,7 +214,7 @@ C	Täyspäiväinen mylläri
 P	Kun <b><i>täytät vaatimukset</i></b>, nosta Onnea 1:llä, lisää „Mylly" Voimavarojen listaan ja piirrä se karttaan.
 P	Tästä lähtien, kun <b><i>syyssato on korjattu</i></b>, asutus tuottaa +1 Ylijäämän. Lisäksi, kun <b><i>Varustaudut Stonetopista tai sen jälkeen Olet</i></b> <b><i>Varautunut</i></b>, jokaisella ◇ tarvikkeella on 1 lisäkäyttö.
 HR
-C	<b>PAALUVARUSTUS</b> Teroitettujen runkojen seinä, 10 jalkaa korkea, pahan pitämiseksi loitolla.
+C	<b>PAALUVARUSTUS</b> Teroitettujen runkojen seinä, 3 m korkea, pahan pitämiseksi loitolla.
 P	<b>Vaatii</b> kaikki seuraavat, järjestyksessä:
 C	Paljon puutavaraa (~20-25 vaunulastia, Arvo 3)
 C	Pätevä insinööri/työnjohtaja

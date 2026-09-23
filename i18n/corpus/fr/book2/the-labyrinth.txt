@@ -158,7 +158,7 @@ H3	La Voûte du Portail
 P	À cinq heures des Creux (si tu connais le chemin le plus court) se dressent une paire de portes doubles : hautes de 9 mètres, en bronze, couvertes de protections runiques et de reliefs célébrant les gloires des Seigneurs de la Forge.
 P	Une serrure ingénieuse les scelle. Seules six clés existent ; les <b>Ustrina</b> (page 464) en détiennent cinq.
 P	À l'intérieur se trouve un vaste espace octogonal, haut de 18 mètres du sol au plafond incliné. Six de ses angles présentent des niches de 6 mètres de haut, chacune abritant un grand <b>construct de métal</b> (page 167) qui attaque tout groupe ne portant pas l'une des clés.
-P	Une dalle de pierre blanche, haute de 9 mètres et épaisse de 90 centimètres, se dresse au centre de la voûte.
+P	Une dalle de pierre blanche, haute de 9 mètres et épaisse de 1 mètre, se dresse au centre de la voûte.
 P	Chaque face est gravée d'un cercle magique. C'est un <b>portail</b> (page 306), relié à ceux de la <b>Tour en Ruine</b> (page 332), du <b>Lac des Trois Cercles</b> (page 438), de <b>Vor Svetelik</b> (page 468), et ainsi de suite. Il est pleinement fonctionnel, et peut être utilisé via <b>Ouvrir la Voie</b> (page 517).
 P	Les Ustrina utilisent ce lieu pour voyager jusqu'au Creux de Gordin, et pour retourner dans leurs foyers lointains. Aucune secte ne contrôle la Voûte, et ils la traitent comme un terrain neutre. Mais cela ne s'applique pas aux non-Ustrina.
 PAGE	247
@@ -397,7 +397,7 @@ P	• Ronger la roche solide
 P	• Jaillir de la paroi d'un tunnel
 P	• Exhaler un gaz sulfureux et suffocant
 P	• Faire fondre le métal qui le transperce
-P	Créatures du premier âge, faites de feu et de pierre. Elles sont segmentées, épaisses de 90 centimètres et longues de 6 mètres, couvertes de plaques qui se chevauchent et rougeoient aux jointures. L'air miroite de chaleur autour d'elles. Elles n'ont pas d'yeux, juste une grande ouverture buccale et des rangées concentriques de dents broyeuses qui fondent et creusent à travers la roche. Des tunnels sinueux s'étendent derrière elles, tapissés de scories durcies en pierre cordée.
+P	Créatures du premier âge, faites de feu et de pierre. Elles sont segmentées, épaisses de 1 mètre et longues de 6 mètres, couvertes de plaques qui se chevauchent et rougeoient aux jointures. L'air miroite de chaleur autour d'elles. Elles n'ont pas d'yeux, juste une grande ouverture buccale et des rangées concentriques de dents broyeuses qui fondent et creusent à travers la roche. Des tunnels sinueux s'étendent derrière elles, tapissés de scories durcies en pierre cordée.
 P	Les vers décrits ici n'ont que quelques siècles, ce sont ceux qu'on est le plus susceptible de rencontrer. Des spécimens plus vieux et plus grands survivent dans les Profondeurs, jusqu'à 3 mètres de large et plus de 30 mètres de long (<i>énorme</i>, +6 HP, +2 dégâts et lance 1d12 au lieu de 1d10). Il y a des éons, des vers encore plus grands ont creusé une grande partie du Labyrinthe.
 ICON	icons/people.svg
 H3	Maraudeur thraulgwyn

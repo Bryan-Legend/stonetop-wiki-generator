@@ -214,7 +214,7 @@ C	Un mugnaio a tempo pieno
 P	Quando <b><i>soddisfi i requisiti</i></b>, aumenta la Fortuna di 1, aggiungi "Mulino" alla lista delle Risorse e disegnalo sulla mappa.
 P	D'ora in poi, quando <b><i>il raccolto d'autunno è completo</i></b>, l'insediamento genera +1 Eccedenza. Inoltre, quando ti <b><i>Equipaggi da Stonetop o Hai il Necessario dopo</i></b> <b><i>averlo fatto</i></b>, ogni ◇ di provviste ha 1 uso in più.
 HR
-C	<b>PALIZZATA</b> Un muro di tronchi appuntiti, alto 10 piedi, per tenere lontano il male.
+C	<b>PALIZZATA</b> Un muro di tronchi appuntiti, alto 3 m, per tenere lontano il male.
 P	<b>Richiede</b> tutte le seguenti cose, in ordine:
 C	Molto legname (~20-25 carichi di carro, Valore 3)
 C	Un ingegnere/capomastro competente

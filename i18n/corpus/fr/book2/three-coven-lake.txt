@@ -6,7 +6,7 @@
 # nav_label: Lac des Trois Cercles
 # description: Une cité engloutie des Seigneurs de Pierre au fond d'un lac hanté, où rôdent la Reine Avide de Sang et d'antiques secrets.
 PAGE	438
-P	Au cœur des <b>Terres Étagées</b> (page 372) s'étend un grand lac, long de huit milles sur trois de large. Ses eaux sont troubles, souvent agitées, peu profondes par endroits, ailleurs profondes de 100 pieds.
+P	Au cœur des <b>Terres Étagées</b> (page 372) s'étend un grand lac, long de 13 kilomètres sur 5 de large. Ses eaux sont troubles, souvent agitées, peu profondes par endroits, ailleurs profondes de 30 mètres.
 P	Des îlots rocheux percent la surface. Des falaises bordent une grande partie du rivage. Mais regarde de plus près.
 P	Ces îlots sont les pieds d'antiques tours, et ces falaises sont trouées de salles taillées dans la roche. Car jadis, du temps des <b>Seigneurs de Pierre</b> (page 382), s'élevait ici une puissante cité. Teirstered, l'appelait-on. La Cité des Trois Étoiles, que seule la grande <b>Dulenn</b> (page 48) égalait.
 P	Imagine-la ! Vois-la dans ton esprit ! Les flèches de pierre et de cristal, s'élevant du lac.
@@ -108,14 +108,14 @@ P	1d12 site des seigneurs de pierre
 HR
 P	1 Tête engloutie d'une statue colossale, couverte d'algues. Chante un air envoûtant à chaque coucher du soleil.
 P	2 Chambre voûtée, jonchée de fragments d'un miroir d'obsidienne autrefois
-P	large de 30 pieds. Les éclats reflètent de brefs instantanés de jours depuis longtemps révolus.
+P	large de 9 mètres. Les éclats reflètent de brefs instantanés de jours depuis longtemps révolus.
 P	3 « Tour » de quatre étages taillée dans une falaise. Des cristaux à l'intérieur émanent lumière, émerveillement, révérence.
 P	4 Bâtiment de la taille d'une falaise, en pierre sans joints. À l'intérieur, un dédale d'appartements instables jonchés d'ossements.
 P	5 Double porte, grossièrement barricadée.
 P	Au-delà : un cristal fêlé, une protection brisée, un mal persistant.
 P	6 Grande île faite surtout d'énormes dalles de pierre incurvées. Des alcôves renferment des traces d'anciens camps de réfugiés :
 P	ustensiles de cuisine, débris récupérés, souvenirs.
-P	7 Escalier en spirale, s'élevant sur 100 pieds depuis un amas de gravats. Marches de verre des Bâtisseurs, taille géante, drapées de lianes.
+P	7 Escalier en spirale, s'élevant sur 30 mètres depuis un amas de gravats. Marches de verre des Bâtisseurs, taille géante, drapées de lianes.
 P	8 Grand bâtiment massif. Intact. Portes enfouies sous les gravats/éboulis. Renferme une réserve de pièces détachées de constructs.
 P	9 Dédale de salles taillées dans une falaise. Jadis le manoir d'un Seigneur de Pierre, puis la forteresse d'une chef de guerre, enfin le lieu de sa perte.
 P	10 Longs tronçons d'étroite passerelle de pierre, en grande partie ensevelis sous la vase et les eaux peu profondes. Couverts d'algues, de boue, de runes effacées.
@@ -185,7 +185,7 @@ P	5 Un jeton qui déverrouille la porte et contourne les gardiens
 P	6 Le portail lui-même (voir ci-dessous)
 H2	Le portail de Teirstered
 HR
-P	Caché dans quelque caveau — gardé par des constructs, des pièges, et des sorts de diversion — se dresse une dalle de pierre blanche, 40 pieds sur 40, gravée d'un cercle de runes profondément creusées.
+P	Caché dans quelque caveau — gardé par des constructs, des pièges, et des sorts de diversion — se dresse une dalle de pierre blanche, 12 mètres sur 12, gravée d'un cercle de runes profondément creusées.
 P	Le cercle est un <b>portail</b> (page 306), relié à ceux de la <b>Tour en Ruine</b> (page 332), du <b>Labyrinthe</b> (page 242), de <b>Vor Svetelik</b> (page 468), et ainsi de suite. Il nécessite une source d'énergie. Si l'on en fournit une, il peut être utilisé via <b>Ouvrir la Voie</b> (page 517).
 PAGE	444
 H2	Dangers
@@ -215,7 +215,7 @@ B	Une terreur instinctive, née d'une peur de l'eau transmise de génération en
 B	Des dénivelés brusques et inattendus
 B	Un sol instable (rochers glissants, boue, plantes et autres pièges)
 B	De forts courants, souvent invisibles
-B	Une eau agitée, des vagues jusqu'à 4 pieds les jours de grand vent
+B	Une eau agitée, des vagues jusqu'à 1,2 mètre les jours de grand vent
 B	Un froid glacial, la menace de handicaps voire d'<b>hypothermie</b> (page 489)
 B	Être entraîné vers le fond par son propre équipement
 B	Le fait qu'ils ne sachent probablement pas nager
@@ -232,7 +232,7 @@ B	Tombe à 0 HP ; tu te noies et seras bientôt aux Portes de la Mort
 HR
 ICON	icons/danger.svg
 H3	Glace fine
-P	Le lac commence à geler au début de l'hiver et dégèle au début du printemps. Il est généralement gelé sur au moins 4 pouces d'épaisseur (assez sûr pour y marcher) au cœur de l'hiver. Mais il ne gèle pas uniformément ; la glace peut faire 2 pieds d'épaisseur à un endroit et seulement quelques pouces à peine quelques mètres plus loin.
+P	Le lac commence à geler au début de l'hiver et dégèle au début du printemps. Il est généralement gelé sur au moins 10 centimètres d'épaisseur (assez sûr pour y marcher) au cœur de l'hiver. Mais il ne gèle pas uniformément ; la glace peut faire 60 centimètres d'épaisseur à un endroit et seulement quelques centimètres à peine quelques mètres plus loin.
 P	• Les pas résonnent avec un bruit creux
 P	• De l'eau/de la neige fondue remonte autour de tes pieds
 P	• Quelque chose craque et se dérobe sous tes pieds
@@ -306,7 +306,7 @@ P	<b>Instinct</b> se nourrir de proies faciles
 P	• Se glisser furtivement vers une proie potentielle
 P	• Hurler pour attirer d'autres anguilles (à peine audible en surface)
 P	• Attaquer en nuée frénétique, un chaos de morsures, de hurlements et d'eau ensanglantée en furie
-P	Longues d'environ 5 ou 6 pieds. Elles se nourrissent surtout de poissons ou d'oiseaux, chassant silencieusement et en solitaire. Mais elles ont d'une manière ou d'une autre appris que les gens sont délicieux. Trop gros pour qu'une seule anguille s'y attaque, certes. Mais les gens dans l'eau sont maladroits et inattentifs. Alors quand une anguille hurleuse repère quelqu'un dans l'eau, elle appelle ses semblables. Et quand suffisamment d'entre elles se sont rassemblées, elles festoient.
+P	Longues d'environ 1,5 ou 1,8 mètre. Elles se nourrissent surtout de poissons ou d'oiseaux, chassant silencieusement et en solitaire. Mais elles ont d'une manière ou d'une autre appris que les gens sont délicieux. Trop gros pour qu'une seule anguille s'y attaque, certes. Mais les gens dans l'eau sont maladroits et inattentifs. Alors quand une anguille hurleuse repère quelqu'un dans l'eau, elle appelle ses semblables. Et quand suffisamment d'entre elles se sont rassemblées, elles festoient.
 PAGE	447
 HR
 ICON	icons/danger.svg

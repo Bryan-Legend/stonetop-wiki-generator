@@ -70,11 +70,11 @@ C	S'il y a eu de fortes chutes de neige, vous devez attendre le dégel, ou…
 C	Il vous faudra des raquettes, et…
 C	Le chemin sera malgré tout épuisant ; vous risquez de vous épuiser, vous et/ou votre équipement
 H2	Zones
-B	<b>Talus envahi par la végétation</b>, haut d'environ 15 à 20 pieds, encerclant la tour à environ ¾ de mile. D'énormes pierres taillées en dépassent, semblables au <b>Vieux Mur</b> (page 12).
+B	<b>Talus envahi par la végétation</b>, haut d'environ 4,5 à 6 mètres, encerclant la tour à environ 1 kilomètre. D'énormes pierres taillées en dépassent, semblables au <b>Vieux Mur</b> (page 12).
 B	<b>Ruines extérieures</b> entre le talus et la tour. Jadis une ville prospère, aujourd'hui un simple fatras de ruines en grande partie englouti par la prairie.
-B	<b>Un cratère peu profond</b>, s'étendant sur environ 400 pieds depuis le bord nord-est de la tour. Herbe, terre, boue et eau stagnante recouvrent une roche-mère vitreuse, semblable à du laitier.
-B	<b>La tour elle-même</b> : environ 300 pieds de diamètre. Le tiers nord-est n'est presque que décombres, mais au sud et à l'ouest quelques étages subsistent, avec des murs d'environ 200 pieds de haut.
-B	<b>Les tunnels supérieurs</b> commencent à environ 100 pieds sous la surface. Lourdement pillés, très hantés, entretenus pour l'essentiel par un fantomatique Seigneur de la Forge et ses <b>constructs</b> <b>hétéroclites</b> (page 348).
+B	<b>Un cratère peu profond</b>, s'étendant sur environ 120 mètres depuis le bord nord-est de la tour. Herbe, terre, boue et eau stagnante recouvrent une roche-mère vitreuse, semblable à du laitier.
+B	<b>La tour elle-même</b> : environ 90 mètres de diamètre. Le tiers nord-est n'est presque que décombres, mais au sud et à l'ouest quelques étages subsistent, avec des murs d'environ 60 mètres de haut.
+B	<b>Les tunnels supérieurs</b> commencent à environ 30 mètres sous la surface. Lourdement pillés, très hantés, entretenus pour l'essentiel par un fantomatique Seigneur de la Forge et ses <b>constructs</b> <b>hétéroclites</b> (page 348).
 B	<b>Les profondeurs</b> s'étendent encore plus bas, un dédale de chambres, de salles, d'escaliers, de conduits et de terriers, tous dans divers états d'entretien. Remplies d'infrastructures, d'artefacts, d'expériences, de prisons, et d'horreurs vitrifiées.
 PAGE	336
 H2	En surface
@@ -109,7 +109,7 @@ P	1 Plaque aride de sable/poussière/verre
 P	2 Boue/eau stagnante/neige profonde
 P	3 Fossé, ravine, ou talus ; le contour de ruines enfouies
 P	4 Mur(s) à découvert, s'effritant et couvert(s) de mousse/lichen
-P	5-6 Étendue d'herbe, haute de 1d6+2 pieds
+P	5-6 Étendue d'herbe, haute de (1d6+2) × 30 cm
 P	7 Buissons, fourré, arbre(s) — peut-être même des <b>arbres Dool</b> (page 73)
 P	8 Énorme dalle de pierre, partiellement enfouie ; un morceau de la tour tombé
 P	9-10 Tas de terre/pierre et une fosse à proximité ; une excavation ou un terrier
@@ -130,23 +130,23 @@ P	11-12 Ésotérisme/expérimentation
 PAGE	337
 HR
 H3	La tour elle-même
-P	La base de la tour fait environ 300 pieds de diamètre ; les décombres et la terre amoncelée s'étendent encore plus loin. Les sections sud et ouest se dressent toujours fièrement, s'élevant à environ 200 pieds au-dessus du sommet de la colline.
+P	La base de la tour fait environ 90 mètres de diamètre ; les décombres et la terre amoncelée s'étendent encore plus loin. Les sections sud et ouest se dressent toujours fièrement, s'élevant à environ 60 mètres au-dessus du sommet de la colline.
 P	<b>Flèches :</b> Quatre <b>flèches de métal</b> soutiennent les murs de la tour, une à chaque point cardinal :
 P	massives, rouillées, tendues vers le ciel.
-P	Les flèches sud et ouest s'élèvent chacune encore d'environ 200 pieds au-dessus des murs (soit environ 400 pieds au total). Une longueur de câble pend du sommet de la flèche sud.
+P	Les flèches sud et ouest s'élèvent chacune encore d'environ 60 mètres au-dessus des murs (soit environ 120 mètres au total). Une longueur de câble pend du sommet de la flèche sud.
 P	<b>Décombres :</b> Le <b>tiers nord-est</b> de la tour n'est que décombres, murs épais, et terre amoncelée
-P	sur environ 30 pieds de haut, couronnée d'herbe et de buissons.
+P	sur environ 9 mètres de haut, couronnée d'herbe et de buissons.
 P	Les décombres sont criblés de tranchées, de fosses, d'anciennes excavations, de salles enfouies, de terriers.
-P	<b>Rez-de-chaussée :</b> Les <b>tiers sud et ouest</b> de la tour sont intacts au niveau du sol, renfermant d'immenses chambres voûtées (plafonds d'environ 40 pieds), notamment :
+P	<b>Rez-de-chaussée :</b> Les <b>tiers sud et ouest</b> de la tour sont intacts au niveau du sol, renfermant d'immenses chambres voûtées (plafonds d'environ 12 mètres), notamment :
 B	Un <b>salon</b> aux hautes fenêtres étroites. Des frises stylisées (fanées, vandalisées, pleines de nids d'oiseaux) montrent des scènes de l'empire des <b>Seigneurs de la Tempête</b> (page 398).
 B	Les <b>bains</b>, un profond bassin rempli d'une eau stagnante et infecte. Les murs sont éventrés, les tuyaux pillés.
 B	La <b>grande salle</b>, presque intacte, avec une table de pierre géante. Le plafond est enchanté pour montrer le ciel nocturne.
 P	Des couloirs et des pièces de service à l'échelle humaine longent les chambres et les salles plus grandes.
 P	<b>Incrustations :</b> Les pièces à l'intérieur de la tour avaient jadis des <b>incrustations d'éthérium</b> (page 341) tout le long de leurs murs et plafonds, mais elles ont été arrachées il y a longtemps par des pillards et des <b>drakes du tonnerre</b> (page 135).
-P	<b>Escalier principal :</b> Un <b>puits circulaire</b> au centre de la tour, large de 30 pieds. Il monte jusqu'au deuxième étage, et descend sur environ 100 pieds jusqu'aux tunnels supérieurs.
+P	<b>Escalier principal :</b> Un <b>puits circulaire</b> au centre de la tour, large de 9 mètres. Il monte jusqu'au deuxième étage, et descend sur environ 30 mètres jusqu'aux tunnels supérieurs.
 P	Des escaliers à l'échelle humaine s'enroulent le long du mur extérieur, bien trop petits pour des Bâtisseurs. <i>Volaient</i>-ils ?
-P	<b>Étages supérieurs :</b> Le <b>deuxième étage</b> est à environ 50 pieds de haut et partiellement ouvert au ciel, couvrant la moitié sud-ouest de la tour. Accessible par l'escalier, des trous dans les plafonds, ou en escaladant les murs extérieurs. Quelques pièces intactes subsistent, où des <b>pies bleues</b> (page 340) cachent des objets brillants et construisent d'élaborates mosaïques.
-P	Les <b>troisième et quatrième étages</b> sont chacun 40 pieds plus haut, accessibles seulement par des escalades périlleuses.
+P	<b>Étages supérieurs :</b> Le <b>deuxième étage</b> est à environ 15 mètres de haut et partiellement ouvert au ciel, couvrant la moitié sud-ouest de la tour. Accessible par l'escalier, des trous dans les plafonds, ou en escaladant les murs extérieurs. Quelques pièces intactes subsistent, où des <b>pies bleues</b> (page 340) cachent des objets brillants et construisent d'élaborates mosaïques.
+P	Les <b>troisième et quatrième étages</b> sont chacun 12 mètres plus haut, accessibles seulement par des escalades périlleuses.
 P	Instables, avec seulement quelques « pièces », toutes au moins partiellement ouvertes à l'air libre.
 P	Les nids de pies abondent.
 HR
@@ -196,7 +196,7 @@ P	6 Un <b>artefact</b> (page 40) des Bâtisseurs de Tertres, preuve qu'eux aussi
 PAGE	339
 HR
 H3	Éclats de l'Orbe de la Tempête
-P	C'était une sphère filigranée d'<b>éthérium</b> (page 404), large d'environ 50 pieds. Elle flottait près de la tour, à la fois une batterie et un foyer pour un formidable pouvoir élémentaire.
+P	C'était une sphère filigranée d'<b>éthérium</b> (page 404), large d'environ 15 mètres. Elle flottait près de la tour, à la fois une batterie et un foyer pour un formidable pouvoir élémentaire.
 P	Le sortilège final de Capte-Tempête fit exploser l'Orbe. Des éclats furent projetés à travers les <b>Plaines</b> (page 126), dans la tour elle-même, et profondément dans le sol — pour être un jour déterrés par l'érosion, les tremblements de terre, ou des bêtes fouisseuses.
 P	Si les PJ rencontrent un éclat, choisis ou lance pour sa taille et ses signes.
 P	1d6 taille
@@ -261,7 +261,7 @@ P	Elles adorent les objets brillants, surtout le verre et les fragments d'objets
 PAGE	341
 H2	Sous terre
 HR
-P	La plupart des pièces et des salles sous la tour sont spacieuses, voûtées jusqu'à environ 30 pieds. Les portes font environ 25 pieds de haut et le plus souvent environ 10 pieds de large.
+P	La plupart des pièces et des salles sous la tour sont spacieuses, voûtées jusqu'à environ 9 mètres. Les portes font environ 7,5 mètres de haut et le plus souvent environ 3 mètres de large.
 P	Il existe quelques pièces à l'échelle humaine, mais pas beaucoup.
 HR
 H3	Impressions
@@ -300,7 +300,7 @@ B	<b>Latrines</b> près de la caserne, avec des tuyaux qui cliquettent, gémisse
 B	<b>Grande chambre</b>, à l'écart, l'entrée bloquée par des pierres amoncelées. Remplie à ras bord d'horreurs vitrifiées par les constructs de Ferocedes.
 B	<b>Pièce gelée</b>, un goulet d'étranglement rempli de <b>glace noire</b> (page 322), emprisonnant des dizaines d'<b>horreurs grouillantes</b> (page 348) et une <b>Ustrina</b> (page 464) qui servait d'intendante à Capte-Tempête.
 B	<b>Oubliette</b>, une salle en cul-de-sac avec de multiples cellules/coffres. Chacun contient ou contenait un artefact ou une entité dangereuse en stase. Certains sont éventrés. Les autres sont gardés par des sortilèges de protection, des dispositifs, des constructs, de la magie.
-B	<b>Chambre la plus profonde</b>, large de 400 pieds, partiellement inondée. Abrite les pieds des quatre flèches, une immense bobine toroïdale, des centaines d'<b>horreurs vitrifiées</b> (page 346), et la manifestation piégée d'<b>Og'molok, la Horde sans Visage</b> (page 349).
+B	<b>Chambre la plus profonde</b>, large de 120 mètres, partiellement inondée. Abrite les pieds des quatre flèches, une immense bobine toroïdale, des centaines d'<b>horreurs vitrifiées</b> (page 346), et la manifestation piégée d'<b>Og'molok, la Horde sans Visage</b> (page 349).
 H3	Le Portail
 P	Dans les tunnels supérieurs, on peut trouver une paire de doubles portes : verrouillées et protégées par des sortilèges, barricadées de l'intérieur, avec d'innombrables entailles griffées sur leur surface.
 P	Au-delà de ces portes : une pièce austère avec une douzaine de personnes vitrifiées, des <b>appliques foudroyantes</b> (page 346) grillées, une fenêtre en verre des Bâtisseurs donnant sur la pièce suivante, et encore une autre porte verrouillée.
@@ -355,7 +355,7 @@ P	9 Des incrustations d'éthérium densément serrées.
 P	Des images floues montrent ce que quiconque dans la pièce est sur le point de faire.
 P	10 Des dalles coulissantes dans les murs/le plafond/le sol changent la direction et/ou l'intensité de la gravité dans la pièce.
 P	11 Une pièce sans air avec une petite sphère noire flottante, annihilant toute matière qu'elle touche.
-P	12 Un éclair noir crépite entre deux pointes, distantes d'environ 3 pieds. Une fine poussière de verre tout autour. Un <b>éclair vitrifiant</b> (page 408), à peine contenu.
+P	12 Un éclair noir crépite entre deux pointes, distantes d'environ 1 mètre. Une fine poussière de verre tout autour. Un <b>éclair vitrifiant</b> (page 408), à peine contenu.
 PAGE	344
 HR
 H3	Découvertes
@@ -463,7 +463,7 @@ P	• Gicler du sang caustique quand elle est blessée
 P	• Détaler, se cacher, servir d'appât
 P	• Déclencher un effondrement ou un éboulement
 PB
-P	De grands rats-taupes nus, longs d'environ 5 pieds, à la peau flasque, aux taches de rousseur luisantes, et à des grappes de tentacules frétillants sur le museau. Elles se nourrissent de vermine et de champignons qui poussent près des tuyaux qui fuient. Elles creusent aussi à travers la roche-mère, font s'effondrer des passages, et exposent des pièces scellées.
+P	De grands rats-taupes nus, longs d'environ 1,5 mètre, à la peau flasque, aux taches de rousseur luisantes, et à des grappes de tentacules frétillants sur le museau. Elles se nourrissent de vermine et de champignons qui poussent près des tuyaux qui fuient. Elles creusent aussi à travers la roche-mère, font s'effondrer des passages, et exposent des pièces scellées.
 P	De temps à autre, elles réveillent une <b>horreur</b> <b>grouillante</b> (page 348) de sa torpeur. Cela scelle la perte de la colonie, à moins qu'elles ne parviennent à la piéger ou à couper l'accès au nid. Elles traiteront les PJ comme une menace similaire.
 ICON	icons/beast-large.svg
 H3	Ferocedes Ogran, fantomatique
@@ -520,7 +520,7 @@ P	• Enquêter sur des bruits/signes de vie
 P	• Striduler, gazouiller, bourdonner fort
 P	• Appeler d'autres à la chasse
 P	• Attaquer avec une fureur saisissante
-P	• Massacrer un ennemi à terre 6 pieds de long, avec des corps segmentés et bien trop de pattes. Des membres antérieurs en forme de faux. Des antennes duveteuses qui caressent l'air et frémissent quand elles perçoivent une proie. Pas d'yeux, seulement un cristal rouge pulsant dans leur crâne. Pas de bouche, car elles ne mangent jamais et vivent de haine et de malveillance.
+P	• Massacrer un ennemi à terre 1,8 mètre de long, avec des corps segmentés et bien trop de pattes. Des membres antérieurs en forme de faux. Des antennes duveteuses qui caressent l'air et frémissent quand elles perçoivent une proie. Pas d'yeux, seulement un cristal rouge pulsant dans leur crâne. Pas de bouche, car elles ne mangent jamais et vivent de haine et de malveillance.
 PAGE	349
 P	Chacune est une manifestation de la volonté cruelle d'Og'molok. Nées du sang, dotées d'une forme, envoyées grouiller vers le massacre. Et elles ont massacré, jusqu'à ce que le sortilège final de Capte-Tempête les transforme toutes en amas de verre déchiqueté.
 P	Ou presque toutes. Quelques dizaines ont échappé au sortilège vitrifiant. Elles subsistent, dans un état de torpeur, jusqu'à ce qu'elles perçoivent un être vivant et sensible. Alors elles s'éveillent. Alors elles chassent. Alors elles massacrent à nouveau.

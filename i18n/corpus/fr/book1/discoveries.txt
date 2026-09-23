@@ -319,7 +319,7 @@ P	<i>II</i>, page 216).
 PAGE	437
 P	<i>J'y réfléchis un peu puis j'écris ce qui</i> <i>suit, en m'inspirant de la manœuvre du Juge,</i> <b><i>Censure</i></b> <i>(page 118).</i>
 P	BRASERO DE SÉQUOIA (◇◇, magique, proche, zone)
-P	Un bol en bois peu profond, d'environ 90 cm de large.
+P	Un bol en bois peu profond, d'environ 1 m de large.
 P	D'un rouge lustré, sculpté d'icônes d'Aratis. L'intérieur est calciné, mais intact.
 P	Quand tu allumes un feu dans le brasero et éveilles l'esprit de flamme sanctifiée qui s'y trouve, les mortels et les Fae en sa présence ressentent un sentiment de crainte solennelle. Quand quelqu'un viole les convenances en présence de la flamme, il est empli de… (il choisit 1)
 P	• Honte, et agit en conséquence • Doute, et hésite ou marque une pause • Peur, et cherche à se cacher ou à fuir

@@ -8,7 +8,7 @@
 PAGE	515
 H3	Un codex démesuré
 P	<i>immobile</i>, <i>fragile</i>
-P	Un livre, d'environ 2 pieds sur 3 pieds, un peu plus de 6 pouces d'épaisseur une fois fermé. La couverture est faite de planches de cèdre argenté. Les feuillets sont faits d'un vélin fin, tendu à partir des peaux d'une bête énorme.
+P	Un livre, d'environ 60 centimètres sur 1 mètre, un peu plus de 15 centimètres d'épaisseur une fois fermé. La couverture est faite de planches de cèdre argenté. Les feuillets sont faits d'un vélin fin, tendu à partir des peaux d'une bête énorme.
 P	Les pages sont pleines de calligraphie, grande et précise, avec de nombreux diagrammes montrant des postures méditatives et d'étranges motifs géométriques liés à la chaleur, à l'eau, et à la glace.
 P	Pour percer les mystères du codex, tu dois…
 C	… déchiffrer l'écriture, rédigée dans une forme de l'alphabet des Seigneurs du Givre.

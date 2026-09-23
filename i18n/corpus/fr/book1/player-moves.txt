@@ -50,7 +50,7 @@ P	Envisage de leur laisser un choix entre deux réussites moindres/coûts/consé
 P	Souviens-toi : un 7-9 reste fondamentalement une réussite. Ne rends pas la réussite moindre, le coût ou la conséquence si terrible qu'ils auraient mieux fait de ne rien faire.
 P	Mais sur un 6-, alors là, lâche-toi. Le danger survient avant qu'ils puissent agir, ou pendant qu'ils agissent. Ou bien leur action réussit mais les choses empirent nettement en conséquence. Fais quelque chose qui découle naturellement de la fiction et de ta préparation. <b>Laisse les choses brûler.</b>
 HR
-P	<i>Caradoc est suspendu à un arbre, sa prise</i> <i>qui glisse. Il balance ses jambes autour</i> <i>de la branche, puis se hisse. « Ouais,</i> <i>c'est bien Défier le Danger — le danger</i> <i>étant que tu tombes d'environ 25 mètres.</i> <i>On dirait éprouver ta vigueur, donc +FOR ? »</i>
+P	<i>Caradoc est suspendu à un arbre, sa prise</i> <i>qui glisse. Il balance ses jambes autour</i> <i>de la branche, puis se hisse. « Ouais,</i> <i>c'est bien Défier le Danger — le danger</i> <i>étant que tu tombes d'environ 24 mètres.</i> <i>On dirait éprouver ta vigueur, donc +FOR ? »</i>
 P	<i>« Ça me semble juste », dit-il, et il lance. Sur</i> <i>un 7-9, je vais choisir un coût et lui faire</i> <i>marquer</i> affaibli <i>par la peur et la fatigue.</i>
 P	<i>Mais non, il fait un 10, alors je dis « Cool, tu</i> <i>le fais, comme tu l'as décrit. » Puis</i> <b><i>je lui offre une</i></b> <b><i>opportunité</i></b><i>. « Ça te prend un moment pour</i> <i>reprendre ton souffle, mais d'ici, c'est une</i> <i>montée facile jusqu'au nid. Tu fais quoi ? »</i>
 HR

@@ -86,7 +86,7 @@ ICON	icons/spirit.svg
 H3	Chiens fantomatiques
 P	<i>Horde</i>, <i>esprit</i>, <i>terrifiant</i>, <i>féroce</i>, <i>organisé</i>
 P	<b>HP</b> 10 ; <b>Armure</b> 1 (dépourvu d'organes), blessé seulement par le sel ou en mordant <b>Dégâts</b> morsure d6 avec avantage (<i>main</i>, <i>agrippant</i>)
-P	<b>Qualités spéciales</b> lié au Chasseur ; ne peut s'éloigner de lui de plus d'~1,6 km
+P	<b>Qualités spéciales</b> lié au Chasseur ; ne peut s'éloigner de lui de plus d'~1,5 km
 P	<b>Instinct</b> donner la chasse
 P	• Se manifester sous une forme faite de brume
 P	• Flairer une proie, ou les morts

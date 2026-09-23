@@ -214,7 +214,7 @@ C	Mlynáře na plný úvazek
 P	Když <b><i>splníš požadavky</i></b>, zvyš Štěstěnu o 1, přidej „Mlýn" na seznam Zdrojů a nakresli ho na mapu.
 P	Nadále, když <b><i>je podzimní sklizeň hotová</i></b>, osada vytvoří +1 Přebytek. Navíc když se <b><i>ve Stonetopu Vystrojíš nebo poté Máš, Co Je</i></b> <b><i>Třeba</i></b>, má každé ◇ zásob 1 použití navíc.
 HR
-C	<b>PALISÁDA</b> Zeď z naostřených kmenů, 10 stop vysoká, aby držela zlo venku.
+C	<b>PALISÁDA</b> Zeď z naostřených kmenů, 3 m vysoká, aby držela zlo venku.
 P	<b>Vyžaduje</b> všechno následující, v tomto pořadí:
 C	Hodně dřeva (~20-25 fůr, Hodnota 3)
 C	Zdatného inženýra/mistra

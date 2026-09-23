@@ -241,7 +241,7 @@ HR
 H3	Autres sites de puissance primordiale
 B	Un petit lac : froid, acide, dépourvu de vie. Pendant les brumes épaisses, il se connecte à d'autres temps, lieux, ou réalités.
 B	Une colline surplombant une rivière, où une <b>émanation</b> (page 436) est empalée sur une tige de fer noir. Un archon cache la colline et son prisonnier au monde.
-B	La base d'une tour métallique rouillée, large de 2 mètres, s'élevant au-dessus d'une prairie luxuriante grouillante d'esprits de la nature. Les os d'un titan sont enterrés en dessous.
+B	La base d'une tour métallique rouillée, large de 1,8 mètre, s'élevant au-dessus d'une prairie luxuriante grouillante d'esprits de la nature. Les os d'un titan sont enterrés en dessous.
 B	Un mégalithe abattu, à moitié enfoncé dans la tourbe et la boue. Quand les étoiles s'alignent, un mortel peut ici poser une question et obtenir une réponse totale, accablante.
 B	Un pic solitaire où, si l'on n'y prend garde, son esprit sera arraché de son corps et attiré vers le vide.
 P	<i>Je lance un 4 sur la table de terrain des Croc-Blanc (« sol gorgé d'eau, gelé ou boueux ») et un 9 pour</i> <i>quelques blocs de pierre taillée par les Bâtisseurs qui dépassent d'un sol boueux. L'air est étrangement immobile, dans</i>
@@ -314,7 +314,7 @@ B	◇ Une pile de plaques d'étain, avec des pochoirs découpés ; disposées co
 B	◇ Une bourse de pièces blanches étranges portant des symboles étranges, bien plus légères et dures que prévu (Valeur 1, peut-être ?)
 B	Une… pointe de lance (?), profondément fichée dans la roche-mère, brillant d'une lumière stellaire éternelle (<i>main</i>, <i>magique</i>, <i>magnifique</i>, Valeur 2)
 B	◇ Un calice d'argent (Valeur 2), cabossé et terni, gravé d'images de monstres pris au piège dans un globe
-B	Une statue de 2,50 m d'une déesse inconnue portant des étoiles et des lunes dans ses nombreuses mains (<i>immobile</i>, <i>fragile</i>, Valeur 2)
+B	Une statue de 2,5 m d'une déesse inconnue portant des étoiles et des lunes dans ses nombreuses mains (<i>immobile</i>, <i>fragile</i>, Valeur 2)
 B	Une gemme de flamme bleue cristallisée ; froide au toucher mais qui fait fondre le métal et déclenche des incendies avec le temps (<i>dangereux</i>, Valeur 3)
 B	Un ◇◇ haubert de fer noir (2 armure, <i>chaud</i>, <i>encombrant</i>, Valeur 4), totalement immunisé contre la magie
 B	Une carrière abandonnée de pierre blanche pure, comme celle qu'il faut pour un portail ; inondée mais toujours pleine de bon matériau
