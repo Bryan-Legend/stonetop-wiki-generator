@@ -6,7 +6,7 @@
 # nav_label: El Gran Bosque
 # description: El Gran Bosque al este de Stonetop: impresiones por estación, el pacto con el Pueblo del Bosque, terreno, descubrimientos, peligros y las bestias que lo habitan.
 PAGE	200
-P	Stonetop se alza sobre un risco que domina el Gran Bosque (Great Wood), que se extiende cientos de millas hacia el este. Pocos aldeanos se atreven siquiera a cruzar el <b>Arroyo (Stream)</b> (página 396) que corre cerca del pie del risco. Los cazadores, tramperos y recolectores se adentran más, pero incluso ellos se aventuran como mucho uno o dos días en el bosque.
+P	Stonetop se alza sobre un risco que domina el Gran Bosque (Great Wood), que se extiende cientos de kilómetros hacia el este. Pocos aldeanos se atreven siquiera a cruzar el <b>Arroyo (Stream)</b> (página 396) que corre cerca del pie del risco. Los cazadores, tramperos y recolectores se adentran más, pero incluso ellos se aventuran como mucho uno o dos días en el bosque.
 H2	Impresiones
 HR
 H3	Siempre
