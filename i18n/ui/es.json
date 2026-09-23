@@ -14,7 +14,7 @@
   "books": {
     "book1": "Libro I",
     "book2": "Libro II",
-    "sites": "Lugares"
+    "sites": "Sitios"
   },
   "sheet": {
     "dice_title": "Haz clic para tirar {expr} — Mayús: ventaja · Ctrl: desventaja",
@@ -109,7 +109,7 @@
     "sync_no_player_token": "Este navegador se unió con un enlace de DJ, así que no tiene el token de jugador. Copia el enlace de jugador desde el navegador que creó la campaña.",
     "sync_stop": "Dejar de compartir",
     "sync_stopped": "Se dejó de compartir: este navegador conserva su propia copia",
-    "sync_what_shared": "Las mejoras marcadas, los relojes de peligro, las respuestas, las hojas y los PV de un personaje se comparten con todos. Los PV de los enemigos son solo del DJ.",
+    "sync_what_shared": "Las mejoras marcadas, los relojes de peligro, las respuestas, las hojas y los HP de un personaje se comparten con todos. Los HP de los enemigos son solo del DJ.",
     "sync_share_head": "Compartir esta campaña",
     "sync_worker": "Servidor de sincronización",
     "sync_create": "Crear campaña",
@@ -134,6 +134,10 @@
     "all_minor": "Todos los arcanos menores",
     "all_major": "Todos los arcanos mayores"
   },
+  "page_words": [
+    "página",
+    "pág."
+  ],
   "home": {
     "title": "Stonetop, edición web",
     "topics": "Temas",
@@ -143,7 +147,7 @@
     "license_html": "El <strong>texto</strong> de los libros es de Jeremy Strandberg, bajo <a href=\"{license}\" rel=\"license\">CC BY-SA 4.0</a>. Sonidos de dados de <a href=\"https://opengameart.org/content/wooden-dice-on-wodden-table-roll\">Wuzzy</a>, <a href=\"https://creativecommons.org/publicdomain/zero/1.0/\" rel=\"license\">CC0</a>. La sincronización de datos la ofrece <a href=\"https://workers.cloudflare.com/\">Cloudflare</a>.",
     "doc_title": "Stonetop — juego de rol de mesa de fantasía del hogar (TTRPG), edición web",
     "and": "y",
-    "intro_html": "<p><strong>Stonetop</strong> es un juego de rol de mesa de fantasía del hogar, obra de Jeremy Strandberg, ambientado en una edad del hierro que nunca existió. Os sentáis de tres a cinco: uno hace de DJ y el resto juega a los héroes de una sola aldea pequeña y aislada en el fin del mundo. Allí tenéis parientes, un oficio, vecinos que os conocieron de niños, y los peligros a los que os enfrentáis amenazan el hogar; por eso, entre aventuras, el juego pasa al <a href=\"{homefront}\">Frente doméstico</a>, donde la aldea tiene un libreto propio y crece, sufre y cambia junto a los personajes. Eso distingue a este TTRPG de los juegos de rol de fantasía de mazmorreo: el lugar que defendéis es el lugar en el que vivís.</p><p>Por dentro es un juego Powered by the Apocalypse armado sobre el esqueleto de <em>Dungeon World</em>: tira 2d6 más una estadística — con 10+ sale como quieres, con 7-9 te cuesta algo, con 6- el DJ hace un movimiento. Este wiki es una edición web gratuita y consultable de los dos reglamentos del TTRPG: cada movimiento, libreto, monstruo, peligro, asentamiento, deidad y arcano del juego. Si el juego es nuevo para ti, empieza por <a href=\"{welcome}\">Bienvenida a Stonetop</a>, luego <a href=\"{playing}\">Cómo se juega</a>, o recorre los temas de abajo.</p>",
+    "intro_html": "<p><strong>Stonetop</strong> es un juego de rol de mesa de fantasía del hogar, obra de Jeremy Strandberg, ambientado en una edad del hierro que nunca existió. Os sentáis de tres a cinco: uno hace de DJ y el resto juega a los héroes de una sola aldea pequeña y aislada en el fin del mundo. Allí tenéis parientes, un oficio, vecinos que os conocieron de niños, y los peligros a los que os enfrentáis amenazan el hogar; por eso, entre aventuras, el juego pasa al <a href=\"{homefront}\">El hogar</a>, donde la aldea tiene un libreto propio y crece, sufre y cambia junto a los personajes. Eso distingue a este TTRPG de los juegos de rol de fantasía de mazmorreo: el lugar que defendéis es el lugar en el que vivís.</p><p>Por dentro es un juego Powered by the Apocalypse armado sobre el esqueleto de <em>Dungeon World</em>: tira 2d6 más una estadística — con 10+ sale como quieres, con 7-9 te cuesta algo, con 6- el DJ hace un movimiento. Este wiki es una edición web gratuita y consultable de los dos reglamentos del TTRPG: cada movimiento, libreto, monstruo, peligro, asentamiento, deidad y arcano del juego. Si el juego es nuevo para ti, empieza por <a href=\"{welcome}\">Bienvenidos a Stonetop</a>, luego <a href=\"{playing}\">Cómo se juega</a>, o recorre los temas de abajo.</p>",
     "stars_html": "¿Te resulta útil? <a href=\"{repo}\">Dale una estrella en GitHub</a>: así otras mesas encontrarán la edición web."
   },
   "edition": "Stonetop, edición web",
