@@ -309,7 +309,7 @@ P	1d6 kleines Arkanum
 HR
 P	1 <b>Ein Pfad im Wald</b> (Seite 516)
 P	2 <b>Ein reich bestickter Umhang</b> (Seite 522)
-P	3 <b>Eine perlenbestickte Umhängetasche</b> (Seite 522)
+P	3 <b>Eine perlenbestickte Tasche</b> (Seite 522)
 P	4 <b>Eine gesprungene Flöte</b> (Seite 523)
 P	5 <b>Ein Wolfsfell</b> (Seite 523)
 P	6 <b>Ein Fleck Regenbogenmoos</b> (Seite 521)
@@ -460,16 +460,16 @@ P	Ebenso das Hügelvolk. Die Leute aus Manmarch wissen es, und die Fennwanderer 
 P	<b>Etwas Interessantes:</b> Zeichnet dich der Halfeyd, wirst du 3 Tage und 3 Nächte lang gehetzt – selbst von kleinen Raubtieren, die dich normalerweise nie jagen würden. <b>Etwas</b> <b>Nützliches:</b> Ein Geist fließenden Wassers (etwa der eines Baches) kann das Zeichen des Halfeyd fortwaschen.
 HR
 ICON	icons/spirit.svg
-H3	Nerth-Schlange
+H3	Nerthschlange
 P	<i>Einzeln</i>, <i>groß</i>, <i>Geist</i>, <i>furchtlos</i>
 P	<b>HP</b> 20; <b>Rüstung</b> 4 (Widerstandskraft) oder 0 gegen bloße Hände <b>Schaden</b> Biss und Würgen d10+3 (<i>Hand</i>,
 P	<i>nah</i>, <i>Reichweite</i>, <i>wuchtig</i>, <i>packend</i>)
-P	<b>Besondere Eigenschaften</b> an den Nerth-Baum gebunden
+P	<b>Besondere Eigenschaften</b> an den Nerthbaum gebunden
 P	<b>Instinkt</b> die Stärke der Bittsteller zu prüfen
 P	• Höflich die Möglichkeit bieten, einen Rückzieher zu machen
 P	• Eine Gliedmaße des Gegners festhalten
 P	• Einem Feind seine eigenen Zweifel ins Ohr zisssschen
-P	Der Nerth-Baum wächst im Großen Wald.
+P	Der Nerthbaum wächst im Großen Wald.
 P	Er kann nur von einem einzigen Sterblichen in jedem Mittsommer gefunden werden, indem er einem bestimmten <b>Pfad</b> <b>im Wald</b> (Seite 516) folgt. Zwischen den Wurzeln liegen die Knochen früherer Bittsteller.
 P	Vom Baum hängt: eine große Schlange.
 P	Zerquetsche sie und iss ihr Herz, und du erlangst ihre Lebenskraft. Aber viel Glück dabei.
