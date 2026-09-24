@@ -134,6 +134,10 @@
     "all_minor": "Alle kleinen Arkana",
     "all_major": "Alle großen Arkana"
   },
+  "page_words": [
+    "Seite",
+    "S."
+  ],
   "home": {
     "title": "Stonetop-Webausgabe",
     "topics": "Themen",
