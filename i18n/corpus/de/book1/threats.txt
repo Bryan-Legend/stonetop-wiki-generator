@@ -51,7 +51,7 @@ P	• Lässt jemanden umbringen
 HR
 P	Anwen ist bisher noch nicht in Erscheinung getreten. Sie war die Antwort eines Spielers auf die Frage: „Wer ist der schlimmste Mensch, den du in Gordins Grube kennst, und warum ist er so furchteinflößend?“ Sie ist noch kein Problem, aber die SC sind auf dem Weg nach Gordins Grube, und dort wird sie ganz sicher eins werden. Sie und ihre Handlanger sind Bedrohungen.
 P	Bedrohungen auszuarbeiten ist eine Möglichkeit, lose Enden und schwelende Konflikte im Blick zu behalten, und das hilft dir, <b>eine reiche</b> <b>und geheimnisvolle Welt darzustellen</b>.
-P	Bedrohungen liefern Probleme und schlimme Folgen, mit denen du die SC überraschen kannst, und so fällt es dir leichter, <b>ihr Leben</b> <b>mit Abenteuern zu würzen</b>. Und die Ausarbeitung einer Bedrohung macht es leichter, sie stimmig darzustellen, und hilft dir so, <b>zu spielen, um herauszufinden,</b> <b>was passiert</b>.
+P	Bedrohungen liefern Probleme und schlimme Folgen, mit denen du die SC überraschen kannst, und so fällt es dir leichter, <b>ihr Leben</b> <b>mit Abenteuern zu durchbrechen</b>. Und die Ausarbeitung einer Bedrohung macht es leichter, sie stimmig darzustellen, und hilft dir so, <b>zu spielen, um herauszufinden,</b> <b>was geschieht</b>.
 PAGE	280
 H2	Wann du Bedrohungen ausarbeitest
 P	Bedrohungen sind Vorbereitung: Du arbeitest sie zwischen den Sitzungen aus. Wenn du eine Bedrohung ausarbeitest, triffst du echte, verbindliche Entscheidungen über sie, die Nachdenken und Sorgfalt erfordern.
@@ -97,7 +97,7 @@ P	Gib deiner Bedrohung einen schlichten Namen, der sie leicht von allen anderen 
 P	Jede Bedrohung hat außerdem einen <b>Typ</b>, der ihr grundlegendes Wesen beschreibt, ihren Platz in der Welt und in der fortlaufenden Geschichte. Es gibt acht verschiedene Bedrohungstypen, die auf den folgenden Seiten beschrieben werden.
 P	Meist ist offensichtlich, zu welchem Typ eine neue Bedrohung gehört. Wenn nicht, überflieg die Spielzüge jedes Typs und wähle den, der am besten passt.
 H3	Bedrohungstypen im Spiel
-P	Zu jedem Bedrohungstyp gehört eine Reihe von SL-Spielzügen, die widerspiegeln, wie diese Art von Bedrohung typischerweise Ärger macht. Du kannst die besonderen Spielzüge einer Bedrohung immer dann einsetzen, wenn die Bedrohung beteiligt ist, ob im Bild oder außerhalb. Du bist nicht auf diese Spielzüge beschränkt – du kannst natürlich weiterhin all deine üblichen SL-Spielzüge einsetzen, etwa <b>enthülle eine unwillkommene Wahrheit</b> oder <b>bring sie in eine Zwickmühle</b> –, aber die Bedrohungsspielzüge sind eine großartige Inspiration dafür, wie diese Art von Bedrohung handelt.
+P	Zu jedem Bedrohungstyp gehört eine Reihe von SL-Spielzügen, die widerspiegeln, wie diese Art von Bedrohung typischerweise Ärger macht. Du kannst die besonderen Spielzüge einer Bedrohung immer dann einsetzen, wenn die Bedrohung beteiligt ist, ob im Bild oder außerhalb. Du bist nicht auf diese Spielzüge beschränkt – du kannst natürlich weiterhin all deine üblichen SL-Spielzüge einsetzen, etwa <b>enthülle eine unwillkommene Wahrheit</b> oder <b>bring jemanden in die Klemme</b> –, aber die Bedrohungsspielzüge sind eine großartige Inspiration dafür, wie diese Art von Bedrohung handelt.
 PAGE	283
 HR
 P	<i>Für unser erstes Abenteuer habe ich entschieden, dass</i> <i>sich ein Swyn in einigen Ruinen der Erbauer im Großen</i> <i>Wald eingenistet hat (oder daraus hervorgekommen ist?).</i> <i>Er hat die Crinwin in der Nähe</i> <i>unter seine hypnotische Kontrolle gebracht, und sie</i> <i>entführen Kinder für die</i> <i>Sammlung des Swyn.</i>
@@ -372,7 +372,7 @@ P	Arbeite so lange rückwärts, bis du ein düsteres Vorzeichen hast, das vom ge
 P	Beim Schreiben deiner düsteren Vorzeichen wirst du wahrscheinlich merken, dass du deine Meinung änderst und vielleicht sogar das drohende Verhängnis umschreibst. Das ist in Ordnung! Aber versuch, die Dinge locker zu halten; ein grober Umriss ist viel nützlicher und flexibler als ein detaillierter Plan.
 H3	Verhängnisse und Vorzeichen im Spiel
 P	Düstere Vorzeichen und drohende Verhängnisse sind deine Pläne. Sie sind das, was geschehen wird, wenn die SC nicht eingreifen.
-P	Einer deiner grundlegenden SL-Spielzüge lautet <b>treib das drohende Verhängnis</b> <b>voran</b>. Sieh dir die düsteren Vorzeichen einer deiner Bedrohungen an, hak das nächste ab und zeig den SC ein Anzeichen dafür, dass es eingetreten ist oder gerade eintritt.
+P	Einer deiner grundlegenden SL-Spielzüge lautet <b>treibe ein drohendes Verhängnis</b> <b>voran</b>. Sieh dir die düsteren Vorzeichen einer deiner Bedrohungen an, hak das nächste ab und zeig den SC ein Anzeichen dafür, dass es eingetreten ist oder gerade eintritt.
 P	Du kannst diesen Spielzug machen, wenn …
 E	<b>die Jahreszeiten wechseln</b> und ihr Wurf dazu führt, dass eine Bedrohung schlimmer wird oder es von Bedrohungen nur so wimmelt. Zeig ihnen in der nächsten Sitzung oder in einer bevorstehenden Szene, dass ein düsteres Vorzeichen oder Verhängnis eingetreten ist.
 E	<b>die Spieler eine 6- würfeln</b> und das der harte Spielzug ist, den du machen willst. Oft wirst du das bei Spielzügen tun, die im <b>freien</b> <b>Spiel</b> (Seite 176) gemacht werden, aber nicht immer.
