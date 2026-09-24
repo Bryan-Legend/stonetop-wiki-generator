@@ -406,7 +406,7 @@ E	<b>wenn du für einen Spielzug würfelst und 6- erzielst</b> (sofern der Spiel
 E	<b>als Teil des Spielzugs Sitzungsende</b> (Seite 232); und
 E	<b>wenn ein anderer Spielzug es sagt</b>.
 P	„XP ankreuzen“ heißt, dass du im XP-Feld deines Spielbuchs einen Strich machst und so deine XP insgesamt um 1 erhöhst. Etwa so:
-P	Sobald du genug XP angekreuzt hast, kannst du sie ausgeben, um entweder <b>Hell zu brennen</b> (Seite 231) oder einen <b>Stufenaufstieg</b> (Seite 81) zu machen.
+P	Sobald du genug XP angekreuzt hast, kannst du sie ausgeben, um entweder <b>Hell brennen</b> (Seite 231) oder einen <b>Stufenaufstieg</b> (Seite 81) zu machen.
 PAGE	54
 H2	Stufe
 P	Deine Stufe spiegelt wider, wie sehr dein SC an Können und Fähigkeiten gewachsen ist. Du beginnst auf Stufe 1. Wenn du XP in Höhe von 6 plus dem Doppelten deiner aktuellen Stufe angekreuzt hast, kannst du dir eine Ruhepause gönnen und diese XP für einen <b>Stufenaufstieg</b> (Seite 81) ausgeben.
@@ -772,7 +772,7 @@ P	Wenn du <b><i>mit Vorteil und Nachteil</i></b> <b><i>zugleich würfelst</i></b
 P	Wenn du <b><i>Vorteil/Nachteil auf einen</i></b> <b><i>Schadenswurf hast</i></b>, würfle den Hauptwürfel zweimal und streiche das niedrigere/höhere Ergebnis.
 P	Addiere dann alle zutreffenden Bonuswürfel.
 P	Mehr dazu auf Seite 230.
-P	<b>HELL ZU BRENNEN</b>
+P	<b>HELL BRENNEN</b>
 P	Wenn du <b><i>genug XP für einen Stufenaufstieg</i></b> <b><i>hast</i></b> (6 + das Doppelte deiner aktuellen Stufe), kannst du nach jedem Wurf 2 XP ausgeben, um
 P	+1 zu diesem Wurf zu addieren (höchstens +1 pro Wurf).
 P	Mehr dazu auf Seite 231.
@@ -986,11 +986,11 @@ PAGE	85
 H2	Jahreszeitliche Gewinne
 B	<b>Bevölkerungszuwachs:</b> Eine Reihe junger Leute wird erwachsen und/oder Fremde lassen sich hier nieder. Erhöht die Bevölkerung um 1 (maximal +3).
 B	<b>Tors Segen:</b> Es herrscht bestes Wetter. Ihr erhaltet in dieser Jahreszeit +1 beim Zusammenhalten, und jedes Mal, wenn ihr für das Wetter den Schicksalswürfel werft, würfelt zweimal und wählt ein Ergebnis aus.
-B	<b>Unerwarteter Reichtum:</b> Ein plötzlicher Zustrom an Wild, Handelsgewinnen oder einer anderen Ressource erzeugt sofort 1 Überschuss.
+B	<b>Unerwartete Fülle:</b> Ein plötzlicher Zustrom an Wild, Handelsgewinnen oder einer anderen Ressource erzeugt sofort 1 Überschuss.
 H2	Jahreszeitliche Gewinne
 B	<b>Handelsgelegenheit:</b> Irgendwann in dieser Jahreszeit bietet jemand an, etwas Wertvolles zu einem guten Preis oder etwas Einzigartiges/Ungewöhnliches zu einem vernünftigen Preis zu tauschen. Zahlt, was verlangt wird, und es gehört euch.
 B	<b>Interessante Neuigkeiten:</b> Es bietet sich eine Gelegenheit, euer Geschick, euer Wissen oder eure Beziehungen zu verbessern und/oder bei einer Siedlungs-Verbesserung voranzukommen.
-B	<b>Wertvolle Einsicht:</b> Ihr erfahrt etwas, das euch die Gelegenheit gibt, einer Bedrohung zu begegnen, die die Siedlung schon länger plagt.
+B	<b>Wertvolle Erkenntnis:</b> Ihr erfahrt etwas, das euch die Gelegenheit gibt, einer Bedrohung zu begegnen, die die Siedlung schon länger plagt.
 PAGE	86
 H2	Ausrüstung und Besitztümer
 P	Du hältst nicht jeden Gegenstand und jeden Besitz fest, den dein SC hat. Du und deine Familie habt ein ganzes Haus voller Habseligkeiten, und du bist Teil einer eng verbundenen Gemeinschaft, in der man Güter freigiebig teilt, verschenkt und tauscht. Im Allgemeinen hältst du nur fest:
@@ -1397,7 +1397,7 @@ B	Unternimm eine Expedition im Namen des Dorfes und <b>kehre triumphal heim</b> 
 B	Schließt eine Siedlungs-Verbesserung ab, die das Geschick erhöht.
 H2	… Überschuss gewinnen
 P	Das Dorf erzeugt jeden Sommer und am Ende des Herbstes, wenn die Ernte eingebracht ist, Überschuss. Wenn du mehr willst:
-B	Wähle „Unerwarteter Reichtum“, wenn du einen <b>jahreszeitlichen Gewinn</b> (Seite 85) erhältst.
+B	Wähle „Unerwartete Fülle“, wenn du einen <b>jahreszeitlichen Gewinn</b> (Seite 85) erhältst.
 B	Wähle „Handelsgelegenheit“, wenn du einen jahreszeitlichen Gewinn erhältst, und schlag vor, dass du gern gegen zusätzlichen Überschuss tauschen würdest.
 B	Unternimm eine Expedition zur Jagd auf Großwild: Elche, Wisente, Höhlenbären, Ceirwmawr usw.
 B	Kauf welchen! Überschuss ist nicht allgemein erhältlich, also musst du <b>Handeln und</b> <b>Feilschen</b> (Seite 83), um zu sehen, ob ein durchreisender Händler welchen hat. Wenn nicht, musst du in eine benachbarte Siedlung reisen. Überschuss hat Wert 2, rechne also damit, einen Geldbeutel Silbermünzen, einen Esel, ein Fass feinen Whisky oder dergleichen zu zahlen.

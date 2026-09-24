@@ -4,9 +4,9 @@
 # source_sha256: a233ffd514b8b3ff176d85257ecb70bf9e29c925e7bcd16b82af83e073b62ec2
 # title: Willkommen am Ende der Welt
 # nav_label: Willkommen am Ende der Welt
-# description: Der Settingband zu Stonetop: wie du Buch II benutzt, es an deine Runde anpasst und ob die Spieler es lesen sollten.
+# description: Der Weltenführer zu Stonetop: wie du Buch II benutzt, es an deine Runde anpasst und ob die Spieler es lesen sollten.
 PAGE	6
-P	Dies ist der Settingband zu <i>Stonetop</i>, einem Herd-Fantasy-Rollenspiel in einer Eisenzeit, die es nie gegeben hat. Er beschreibt die Heimat der SC – das Dorf Stonetop – und das Ende der Welt (World's End), die Gegend, in der Stonetop liegt. Er ist ein Verzeichnis der Orte, Völker und Mächte, die diese Gegend ausmachen oder prägen.
+P	Dies ist der Weltenführer zu <i>Stonetop</i>, einem Herd-Fantasy-Rollenspiel in einer Eisenzeit, die es nie gegeben hat. Er beschreibt die Heimat der SC – das Dorf Stonetop – und das Ende der Welt (World's End), die Gegend, in der Stonetop liegt. Er ist ein Verzeichnis der Orte, Völker und Mächte, die diese Gegend ausmachen oder prägen.
 P	Dies ist <i>Buch II</i>; die Regeln des Spiels und Hinweise, wie man es spielt oder leitet, findest du in
 P	<i>Buch I: Stonetop.</i>
 H2	Wie du dieses Buch benutzt
@@ -17,7 +17,7 @@ P	Überflieg den Eintrag zum <b>Dorf Stonetop</b> (Seite 12). Wenn dort ein Them
 P	Die Themen verweisen aufeinander. Liest du dies als gedrucktes Buch, nimm ein, zwei Lesezeichen, um im Blick zu behalten, wo du hergekommen bist. Liest du es als PDF, sind alle Seitenverweise verlinkt, und die „Zurück“-Schaltfläche (oder ALT + Pfeil nach links in den meisten PDF-Readern) ist dein Freund.
 P	Sieh dir zwischen den Sitzungen die Themen an, die bald wichtig werden dürften. Nutze die Einzelheiten und Hilfsmittel darin für deine Vorbereitung.
 P	Greif während des Spiels auf dieses Buch zurück, um die Umgebung zu beschreiben, Fragen zu stellen und SL-Spielzüge zu machen. Nutze es, um Gefahren und Entdeckungen einzuführen oder Schauplätze zu improvisieren, die die SC erkunden können.
-H2	Beute den Settingband aus
+H2	Beute den Weltenführer aus
 HR
 P	Dieses Buch ist eine Fundgrube, keine Bibel. Es stellt viele Wahrheiten über das Setting auf, wirft aber auch viele Fragen auf, die du und deine Gruppe im Spiel beantworten sollt. Wenn ihr etwas festlegt, das dem widerspricht, was im Buch steht, haben die Wahrheiten eurer Gruppe Vorrang.
 PAGE	7

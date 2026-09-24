@@ -700,7 +700,7 @@ es · fr · it · pt-BR · sv · da · nb · fi · hu · tr · ru · uk · ja ·
 Omens · Resolve · Rapport · Burn Brightly, per language. Dog tags follow each
 Animal Companion page (clever, keen-nosed / close, grabby).
 
-- **de:** Omen · Entschlossenheit · Draht · Hell zu brennen
+- **de:** Omen · Entschlossenheit · Draht · Hell brennen
 - **nl:** Voortekenen · Vastberadenheid · Klik · Fel Branden
 - **es:** Presagios · Determinación · Sintonía · Arder con Fuerza
 - **pt-BR:** Presságios · Determinação · Sintonia · Arder com Intensidade
@@ -798,3 +798,19 @@ language (the majority form, swept across every page):
 - **Creatures:** espectro (wraith) · aparición (specter) · sombra (shade) · tumulario (wight) · inmortal (deathless one) · draco (drake) · arconte · plaga del vacío (voidblight) · ancla / anclado (tether) · alcaudón (butcherbird)
 - **Tags:** sucio (messy) · agarrador (grabby) · contundente (forceful) · recarga · incómodo (awkward) · aparatoso · arrojadizo (thrown) · corrompido · acaparador (hoarder) · intrépido (fearless) · ruidoso (loud) · ignífugo (fireproof) · astuto (cunning) · taimado (devious) · constructo
 - **Arcana:** every arcanum's page title is its name in prose too (Miedo a la Llama, Tejido de Hielo, Runas de Preservación, Salvaguarda de las Aguas Quietas, Metamorfosis Insolente, Los Seis Candados de Sajua…).
+
+### German, complete — corpus route (2026-09-24)
+
+The de section above holds the core terms. Settled while translating the whole
+language (the majority form, swept across every page):
+
+- **Kept in English:** +STR…+CHA, HP, XP. GM = SL, PC = SC, NPC = NSC. Roll results `10+` · `7-9` · `6-` ("bei 10+"). Page references "(Seite N)".
+- **Chapters:** Das Spiel spielen · Erste Schritte · Das Spiel leiten · Die Heimatfront · Expeditionen · Schauplätze (Sites, and "site" generally) · Gefahren · Entdeckungen · Bedrohungen · Das fortlaufende Spiel · Buch II: Die weite Welt und andere Wunder (index header: Buch II — Die weite Welt)
+- **Moves & rules:** Hell brennen (Burn Brightly — not *Hell zu brennen*) · Das Gelände lesen (Read the Land) · Ins Unglück geraten · Sitzungsende · Stufenaufstieg · Bestärken (Bolster; its hold is Vorbereitung) · Bereitschaft (Readiness) · Gefolgsleuten Befehle erteilen · Die Bindung stärken · SL-Spielzug (weich/hart) · eigener Spielzug · Auslöser · Kernschleife · freies Spiel · Rampenlicht · Weltenführer (setting guide) · Aufhänger (hook) · jahreszeitlicher Gewinn: Bevölkerungszuwachs · Tors Segen · Unerwartete Fülle · Handelsgelegenheit · Interessante Neuigkeiten · Wertvolle Erkenntnis
+- **Threats:** drohendes Verhängnis · düstere Vorzeichen · worum es geht (stakes)
+- **Site sections:** Überlieferung (Lore) · Aufhänger · Eindrücke · Etwas Interessantes / Etwas Nützliches · Besondere Eigenschaften
+- **Names:** die Sturmfängerin (Stormcatcher — she is a woman) · die Gewitterwolke, der Regenmacher, der Bestientöter (Tor's epithets) · die Krähenherrin · die Wegkreuzung · die Zeit der Katastrophe · die Klauen · die Gruben (the Delves) · die Bosse · die Spinnenmutter · der Abgrundbrunnen (Utterwell) · Ätherium · Orichalkum · Schwarzeisen · Dunkeleis · Geistersprecher · Weihgut und geweihter Beutel (the Blessed's Stock and sacred pouch)
+- **Creatures:** Gespenst (wraith) · Erscheinung (specter) · Schatten (shade) · Grabunhold (wight) · die Todlosen · Drake, Pl. Draken · Archon · Emanation (a being — not *Ausstrahlung*) · Urkraft (fundamental) · Doolbaum, Doolgeist (not *Trauerbaum*) · Hagr · Neuntöter (butcherbird) · Rastplatz (wayside)
+- **Tags:** blutig (messy) · wuchtig · nachladen · unhandlich · roh · sperrig · Wurfwaffe · packend (grabby) · verderbt (corrupted — not *korrumpiert*) · sanftmütig (meek) · widerstandsfähig (hardy) · zäh (tough) · furchtlos · laut · feuerfest
+- **Arcana:** every arcanum's page title is its name in prose too (Friedensbann, Runen der Bewahrung, Horn der Stürme, Heiligendes Zeichen, Schutz der Stillen Wasser, Das Netz des Waldes…). Page furniture is translated: Anhang C/D: Kleine/Große Arkana · Vorderseite/Rückseite · Geheimnisse … · Spielzüge · Konsequenzen.
+- **SL gender:** both *der SL* and *die SL* appear; either is normal German RPG usage and was not swept.

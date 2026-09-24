@@ -207,7 +207,7 @@ HR
 H3	Gebundene Wesen
 B	<b>Geister der Wildnis</b> (Seite 356), gezwungen oder verlockt, eine bestimmte Aufgabe zu erfüllen oder einen bestimmten Ort zu schützen
 B	<b>Fae</b> (Seite 94), treu und ihren einbalsamierten Herren noch immer dienend (möglicherweise verbittert und mit ihrem Schicksal hadernd) oder aufständisch und für ihre Verbrechen eingekerkert
-B	Geister und Bestien, <b>korrumpiert</b> von den Dingen in der Tiefe (Seite 432), entweder von den Grünen Herren weggeschlossen oder als Waffe gegen die Fae eingesetzt
+B	Geister und Bestien, <b>verderbt</b> von den Dingen in der Tiefe (Seite 432), entweder von den Grünen Herren weggeschlossen oder als Waffe gegen die Fae eingesetzt
 B	<b>Plasmagrauen</b> (Seite 477), die einst als leere Leinwände für die Fleischweberei dienten
 HR
 ICON	icons/construct.svg
@@ -287,7 +287,7 @@ B	<b>Gespenster</b> (Seite 79) von Grünen Herren, die mumifiziert und bestattet
 B	<b>Nemurvojak</b> (Seite 476), die Leichen sterblicher Diener, durch Dämonensaat wiederbelebt
 ICON	icons/construct.svg
 H3	Llamudwr
-P	<i>Einzeln</i>, <i>groß</i>, <i>Konstrukt</i>, <i>korrumpiert</i>, <i>vorsichtig</i>, <i>verstohlen</i>
+P	<i>Einzeln</i>, <i>groß</i>, <i>Konstrukt</i>, <i>verderbt</i>, <i>vorsichtig</i>, <i>verstohlen</i>
 P	<b>HP</b> 16; <b>Rüstung</b> 4 (Widerstandskraft), 0 gegen Bronze <b>Schaden</b> stechender Schwanz d10+1 (<i>Reichweite</i>), knirschender Biss d10+1 (<i>Hand</i>, <i>packend</i>, <i>blutig</i>, 1 durchdringend)
 P	<b>Besondere Eigenschaften</b> an Land unbeholfen, hasst die Sonne <b>Instinkt</b>: sich den Bauch zu füllen und sich unter Wasser zurückzuziehen
 P	• Ungesehen lauern, ein Ziel auswählen und bis Sonnenuntergang warten
@@ -342,7 +342,7 @@ P	<b>Etwas Interessantes:</b> Den Geschichten zufolge hält der Gesang eines rot
 P	<b>Etwas Nützliches:</b> Zufällig weißt du, wie man die Melodie pfeift (ob du sie gut genug pfeifen kannst, ist fraglich).
 ICON	icons/construct.svg
 H3	Swyn
-P	<i>Einzeln</i>, <i>groß</i>, <i>Konstrukt</i>, <i>korrumpiert</i>, <i>verstohlen</i>, <i>magisch</i>, <i>hinterlistig</i>, <i>vorsichtig</i>, <i>hortend</i>
+P	<i>Einzeln</i>, <i>groß</i>, <i>Konstrukt</i>, <i>verderbt</i>, <i>verstohlen</i>, <i>magisch</i>, <i>hinterlistig</i>, <i>vorsichtig</i>, <i>hortend</i>
 P	<b>HP</b> 20; <b>Rüstung</b> 4 (Widerstandskraft), 2 gegen Bronze (Schuppen)
 P	<b>Schaden</b> Biss und Umschlingen d10+3 (<i>Hand</i>,
 P	<i>nah</i>, <i>wuchtig</i>, <i>packend</i>)
@@ -362,7 +362,7 @@ PAGE	223
 HR
 ICON	icons/construct.svg
 H3	Zrajedak
-P	<i>Einzeln</i>, <i>groß</i>, <i>Konstrukt</i>, <i>korrumpiert</i>, <i>hinterlistig</i>, <i>furchterregend</i>, <i>verstohlen</i>
+P	<i>Einzeln</i>, <i>groß</i>, <i>Konstrukt</i>, <i>verderbt</i>, <i>hinterlistig</i>, <i>furchterregend</i>, <i>verstohlen</i>
 P	<b>HP</b> 16; <b>Rüstung</b> 4 (Widerstandskraft), 1 gegen Bronze (Haut)
 P	<b>Schaden</b> Maul voller Eisenzähne d10+3 (<i>Hand</i>, <i>blutig</i>, <i>packend</i>, 1 durchdringend, Vorteil), eiserne Schwanzstacheln d10+1 (<i>kurz</i>,
 P	<i>Fläche</i>, <i>nachladen</i>)

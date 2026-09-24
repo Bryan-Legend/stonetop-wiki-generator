@@ -127,7 +127,7 @@ P	Das Obige sind nur Beispiele. Siehe Seite 384, wenn du weitere oder andere Sch
 P	Die meisten Schauplätze wurden irgendwann von den Hügelgrabbauern <b>in Besitz genommen</b> (Seite 36).
 P	Die meisten Schauplätze rund um den Dreizirkelsee wurden schon vor langer Zeit aller Wertgegenstände beraubt. Enthält ein Schauplatz irgendeinen Schatz, muss es dafür einen Grund geben. Er könnte …
 E	unzugänglich sein (verschüttet, verschlossen, überflutet, gut versteckt usw.);
-E	von der Macht der Dinge in der Tiefe <b>korrumpiert</b> sein (Seite 430);
+E	von der Macht der Dinge in der Tiefe <b>verderbt</b> sein (Seite 430);
 E	gefährlich <b>heimgesucht</b> sein (Seite 72);
 E	von <b>Konstrukten</b> (Seite 392), <b>gefährlichem Stein</b> (Seite 391), gebundenen Geistern und/oder anderer Magie geschützt sein;
 E	derzeit bewohnt sein; oder
@@ -261,12 +261,12 @@ H3	Hexen und dergleichen
 B	Ein <b>Totenbeschwörer</b> (Seite 84), der mit den vielen, vielen Toten verhandelt
 B	Ein <b>Hdour</b> (Seite 234) oder <b>Zauberer</b> (Seite 435), der Macht sucht/hortet
 B	<b>Kultisten</b> (Seite 435) und/oder ein <b>Höriger</b> (Seite 435), die in den Ruinen leben
-B	Ein <b>Gouzadn</b> (Seite 378), sehr wahrscheinlich <b>korrumpiert</b> (Seite 430)
+B	Ein <b>Gouzadn</b> (Seite 378), sehr wahrscheinlich <b>verderbt</b> (Seite 430)
 B	Ein <b>Todloser</b> (Seite 46), der schon die ganze Zeit hier ist
 ICON	icons/undead.svg
 H3	Die ruhelosen Toten
 B	Eine Vielzahl von <b>Geistern</b> (Seite 76), die Schlachtfelder, Massengräber und Orte persönlicheren Sterbens heimsuchen
-B	<b>Hügelgrab-Grabunholde</b> (Seite 44), die ein „königliches“ Grab bewachen
+B	<b>Grabunholde</b> (Seite 44), die ein „königliches“ Grab bewachen
 B	<b>Phantomreiter</b> (Seite 45), die noch immer ihrem längst toten Kriegsherrn dienen
 B	Ein vollgesogener <b>Pyped</b> (Seite 82), der nach den Knochen der Ertrunkenen taucht
 B	Ein kleines Heer von <b>Anan Gllo</b> (Seite 81), in Starre, das auf frisches Blut wartet
@@ -277,16 +277,16 @@ H3	Tiere der Gegend
 B	<b>Fledermausschwärme</b> (Seite 376), <b>Höhlenbären</b> (Seite 205), <b>Grochslons</b> (Seite 379) oder <b>Kleztigr</b> (Seite 379), die in Steilwänden oder Ruinen hausen
 B	<b>Pumas</b> (Seite 206), <b>Wölfe</b> (Seite 209) oder <b>Speidraken</b> (Seite 379) auf der Jagd oder auf der Lauer
 B	<b>Auerochsen</b> (Seite 131), <b>Wildschweine</b> (Seite 204), <b>Horndraken</b> (Seite 354) oder ein <b>Brawzbedr</b> (Seite 377), die am See nach Futter suchen oder trinken
-B	Alle oben genannten, von den Dingen in der Tiefe <b>korrumpiert</b> (Seite 430)
+B	Alle oben genannten, von den Dingen in der Tiefe <b>verderbt</b> (Seite 430)
 H3	Andere Wesen
 B	<b>Konstrukte</b> (Seite 392) der Steinherren in unterschiedlichem Erhaltungszustand
-B	<b>Geister der Wildnis</b> (Seite 356), sehr wahrscheinlich <b>korrumpiert</b> (Seite 430)
+B	<b>Geister der Wildnis</b> (Seite 356), sehr wahrscheinlich <b>verderbt</b> (Seite 430)
 B	Schrecken des Wassers: <b>Luglfsk</b> (Seite 92), <b>Gallertgrauen</b> (Seite 92), <b>Llamudwr</b> (Seite 220) oder <b>Diener Daagons</b> (Seite 56)
 PAGE	446
 HR
 ICON	icons/beast.svg
 H3	Die Angekettete Bestie
-P	<i>Einzeln</i>, <i>groß</i>, <i>korrumpiert</i>, <i>im Wasser lebend</i>, <i>furchterregend</i>
+P	<i>Einzeln</i>, <i>groß</i>, <i>verderbt</i>, <i>im Wasser lebend</i>, <i>furchterregend</i>
 P	<b>HP</b> 20; <b>Rüstung</b> 2 (Fell und Schuppen)
 P	<b>Schaden</b> zahnbewehrtes Maul d10+3 mit Vorteil (<i>nah</i>, <i>packend</i>, <i>blutig</i>, 1 durchdringend) oder reißende Klauen d10+1 (<i>Hand</i>, <i>blutig</i>, 1 durchdringend)
 P	<b>Besondere Eigenschaften</b> an einen schweren Block aus Erbauerglas gekettet, erleidet +1d6 Schaden durch Bronze, lässt sich durch ein gut gesungenes Lied besänftigen

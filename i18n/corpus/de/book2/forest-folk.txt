@@ -156,4 +156,4 @@ ICON	icons/spirit.svg
 H3	Geister
 B	<b>Geister</b> (Seite 76) oder <b>Wiedergänger</b> (Seite 80) von Angehörigen des Waldvolks, die einen schlimmen Tod starben oder deren Werk unvollendet blieb
 B	<b>Geister der Wildnis</b> (Seite 356), die glücklich an der Seite des Volkes lebten oder von ihm eingesperrt wurden
-B	<b>Emanationen</b> (Seite 436) und Geister, die von den Dingen in der Tiefe <b>korrumpiert</b> wurden (Seite 432), gefangen, aber an ihren Fesseln zerrend.
+B	<b>Emanationen</b> (Seite 436) und Geister, die von den Dingen in der Tiefe <b>verderbt</b> wurden (Seite 432), gefangen, aber an ihren Fesseln zerrend.

@@ -179,7 +179,7 @@ P	<b>HP</b> 3; <b>Rüstung</b> 2 (Panzer)
 P	<b>Schaden</b> Zangen d4 mit Nachteil (<i>Hand</i>, <i>packend</i>)
 P	<b>Besondere Eigenschaften</b> klettern wie Spinnen, getarnter Panzer
 P	<b>Instinkt</b>, sich von Magie zu ernähren
-P	• Mystische Ausstrahlungen aus der Ferne wittern
+P	• Mystische Emanationen aus der Ferne wittern
 P	• Unbemerkt nahe herankommen
 P	• Hin und her huschen, flitzen und ausweichen
 P	• Sich mit etwas Magischem davonmachen

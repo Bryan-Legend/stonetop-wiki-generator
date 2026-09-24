@@ -19,7 +19,7 @@ B	Ein Gefühl von Kleinheit, Bedeutungslosigkeit
 B	Südwind: unablässig, böig
 B	Reiter, die sich nähern, die Anspannung, während du wartest
 PB
-P	<b>Tipp:</b> Stelle NSC oben auf dem Hügel mit kurzen, lauten Sätzen dar, als müssten sie den Wind überschreien. Frag „Was?“, wenn die Spieler es nicht genauso machen. Unten an der Raststätte blick immer wieder nach oben und in die Ferne, als wären die NSC vom Hügel abgelenkt.
+P	<b>Tipp:</b> Stelle NSC oben auf dem Hügel mit kurzen, lauten Sätzen dar, als müssten sie den Wind überschreien. Frag „Was?“, wenn die Spieler es nicht genauso machen. Unten am Rastplatz blick immer wieder nach oben und in die Ferne, als wären die NSC vom Hügel abgelenkt.
 H2	Fragen
 HR
 Q	Wer von euch war schon einmal dort (hier)? Warum?
@@ -30,7 +30,7 @@ Q	Welche anderen Merkwürdigkeiten habt ihr auf dem Hügel oder in seiner Umgebu
 PAGE	450
 H2	Treffpunkt
 HR
-P	Ein Fußpfad führt von der Raststätte in einer Reihe von Serpentinen den rauen Hang hinauf.
+P	Ein Fußpfad führt vom Rastplatz in einer Reihe von Serpentinen den rauen Hang hinauf.
 P	In gemäßigtem Tempo braucht man eine halbe Stunde bis zur Kuppe, doch wer gut in Form ist, könnte in nur wenigen Minuten geradewegs hinaufstürmen (mit beträchtlichem Risiko für Verletzungen oder Missgeschicke).
 P	Wenn die SC das Hügelvolk zu einem Treffen rufen wollen, müssen sie:
 C	Zu den Titanenknochen reisen und den Hügel erklimmen
@@ -61,7 +61,7 @@ P	4-5 Zurückhaltend, distanziert, fragen sich, worum es geht und ob das Zeitver
 P	6 Neugierig, begierig, zu handeln und Neuigkeiten auszutauschen
 PB
 P	Entzündet das Hügelvolk selbst ein Signalfeuer, sehen die Leute in Stonetop wahrscheinlich zuerst die Rauchsäule und dann bei Sonnenuntergang das Feuer. Brennt es die Nacht hindurch bis in den Morgen, bedeutet das, dass das Hügelvolk sich treffen will.
-P	Treffen finden auf der Raststätte am Fuß des Hügels statt, unter dem Schutz der <b>Bannzeichen gegen Gewalt</b> (Seite 270) in den Pflastersteinen. Das Hügelvolk hält alles andere für eine Falle.
+P	Treffen finden auf dem Rastplatz am Fuß des Hügels statt, unter dem Schutz der <b>Bannzeichen gegen Gewalt</b> (Seite 270) in den Pflastersteinen. Das Hügelvolk hält alles andere für eine Falle.
 Q	Wie oft finden solche Treffen statt?
 Q	Wann wurde das letzte Treffen einberufen? Von wem? Worum ging es?
 Q	Mit welcher Gruppe des Hügelvolks trefft ihr euch normalerweise?
@@ -76,7 +76,7 @@ E	einer der drei großen Bestien, die <b>Tor</b> (Seite 452) bezwungen hat;
 E	eines der <b>Ersten Schöpfer</b> (Seite 299), von den <b>Dingen in der Tiefe</b> (Seite 412) erschlagen, als diese eingekerkert wurden;
 E	einer grimmigen Bestie, die die <b>Grünen Herren</b> (Seite 210) herangezüchtet haben;
 E	eines mächtigen <b>Konstrukts der Steinherren</b> (Seite 392), überhaupt keiner Kreatur;
-E	einer kolossalen <b>Ausstrahlung</b> (Seite 436) der Dinge in der Tiefe, eines weltvernichtenden Schreckens, verglast durch die Magie des <b>Sturmfängers</b> (Seite 332);
+E	einer kolossalen <b>Emanation</b> (Seite 436) der Dinge in der Tiefe, eines weltvernichtenden Schreckens, verglast durch die Magie des <b>Sturmfängers</b> (Seite 332);
 E	einer Kombination davon; oder
 E	von etwas ganz anderem.
 H2	Ruinen der Vergangenheit

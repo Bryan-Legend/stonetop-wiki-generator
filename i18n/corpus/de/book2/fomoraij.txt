@@ -128,7 +128,7 @@ B	<b>Crinwin</b> (Seite 58), <b>Llamudwr</b> (Seite 220), <b>Rhagedn</b> (Seite 
 B	Fast jeder der Schrecken aus <b>Vor</b> <b>Svetelik</b> (Seite 468)
 HR
 H3	Dienstbare Geister
-B	<b>Ausstrahlungen</b> der Dinge in der Tiefe (Seite 436)
+B	<b>Emanationen</b> der Dinge in der Tiefe (Seite 436)
 B	<b>Geister der Wildnis</b> (Seite 356), in elende Knechtschaft gezwungen
 B	Gebundene <b>Geister</b> (Seite 76), an der kurzen Leine gehalten
 B	Ungebundene <b>Gespenster</b> (Seite 79), wie Schakale, die um eine Fleischerei schnüffeln

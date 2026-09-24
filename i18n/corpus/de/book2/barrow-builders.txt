@@ -154,7 +154,7 @@ P	7-10 Größtenteils intakt, aber überwuchert oder teilweise verschüttet; lei
 P	11-12 Seltsam intakt, vollständig sichtbar
 P	1d12 Besonderheit
 HR
-P	1-2 <b>Heimgesucht</b> (Seite 72), gekennzeichnet durch Dool-Bäume
+P	1-2 <b>Heimgesucht</b> (Seite 72), gekennzeichnet durch Doolbäume
 P	3-4 Verderbt von den <b>Dingen in der Tiefe</b> (Seite 412)
 P	5 Schützende(r) Geist(er)/Konstrukt(e)/Dämon(en)/Zauber/Falle(n)
 P	6 Mit <b>Höhlen</b> (Seite 380) verbunden
@@ -315,8 +315,8 @@ B	<b>Konstrukte</b> (Seite 392), den Steinherren gestohlen oder nach ihrer Kunst
 B	<b>Verderbte Wesen</b> (Seite 432), uralte Haustiere uralter Zauberer oder einheimische Tiere, die von fortbestehendem Bösen befallen sind
 B	<b>Geister der Wildnis</b> (Seite 356), gebunden durch alte Zauber
 ICON	icons/undead.svg
-H3	Hügelgrabunhold
-P	<i>Gruppe</i>, <i>untot</i>, <i>korrumpiert</i>, <i>furchterregend</i>, <i>widerstandsfähig</i>, <i>hortend</i>
+H3	Grabunhold
+P	<i>Gruppe</i>, <i>untot</i>, <i>verderbt</i>, <i>furchterregend</i>, <i>widerstandsfähig</i>, <i>hortend</i>
 P	<b>HP</b> 14; <b>Rüstung</b> 4 (Widerstandskraft), 2 gegen Bronze oder Feuer (Kettenhemd)
 P	<b>Schaden</b> rostiges Schwert d8+2 (<i>nah</i>, <i>wuchtig</i>) oder zermalmender Griff d8+2 (<i>Hand</i>, <i>packend</i>,
 P	<i>wuchtig</i>)
@@ -388,7 +388,7 @@ P	<i>Ich habe bereits entschieden, dass er „seine Seele an eine arkane Vorrich
 P	<i>Ich stelle ihn mir in seinem übergroßen Herrenhaus vor, auf einem behelfsmäßigen Thron sitzend, dauerhaft verwundet,</i> <i>unfähig, sich aus eigener Kraft zu bewegen. Ein Dutzend gesichtsloser Steindiener umsorgt ihn und bewegt ihn bei Bedarf wie eine</i> <i>Marionette. Hinter dem Thron steht eine Apparatur aus runenbeschnitztem Stein und Kristall, in deren Kern das</i> <i>Erbauerglas-Herz brennt. Sein Geist ist über seine Diener verteilt, von denen einige</i> <i>den Dreizirkelsee nach Artefakten, Gerüchten und Material zur Instandhaltung seiner Vorrichtung absuchen. Sollte</i> <i>die Vorrichtung versagen, wird sein Bewusstsein zersplittern und sein Körper endlich sterben. Die Diener, von denen jeder</i> <i>einen Splitter seiner Seele enthält, werden untereinander um die Vorherrschaft kämpfen. Keinem wird es gelingen.</i>
 P	<i>Seine Werte schreibe ich so auf:</i>
 P	MYGHAL, TODLOSER ZAUBERER
-P	Einzeln, untot, korrumpiert, paranoid,
+P	Einzeln, untot, verderbt, paranoid,
 P	magisch, hortend, furchterregend
 P	HP 16; RÜSTUNG 4 (Schutzzauber)
 P	SCHADEN Wort des falschen Schmerzes d8 (kurz, Fläche, ignoriert Rüstung)

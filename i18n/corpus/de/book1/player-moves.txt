@@ -445,11 +445,11 @@ P	„Mit deiner ganzen Ausrüstung schaffst du den Sprung nicht, du musst erst a
 P	<b>Kannst du die Risiken anpassen?</b> Sind sie in einer starken Position, mach klar, dass die Risiken geringer sind. „Seinen Angriff zu erleiden heißt nur, dass er an deiner Deckung vorbeikommt.“ Sind sie in einer verzweifelten Lage, sag ihnen, wie schlimm es werden könnte. „Bei 7-9 hast du eine letzte Chance, den Vorsprung zu packen, aber bei 6- würfelst du auf An der Schwelle des Todes.“
 P	<b>Kannst du den Umfang anpassen?</b> Fällt dem SC etwas leicht, lass einen einzigen Wurf mehr erreichen, mehr enthüllen usw.
 P	Fällt es ihm schwer, zerlege die Handlung in kleinere Spielzüge, von denen jeder nur einen Teil des Ziels erreichen kann.
-P	<b>HELL ZU BRENNEN</b>
+P	<b>HELL BRENNEN</b>
 P	Wenn du <b><i>genug XP für einen Stufenaufstieg</i></b> <b><i>hast</i></b> (6 + das Doppelte deiner aktuellen Stufe), kannst du nach jedem Wurf 2 XP ausgeben, um +1 zu diesem Wurf zu addieren (höchstens +1 pro Wurf).
 P	SC können auf einer Expedition keinen <b>Stufenaufstieg</b> (Seite 528) machen, sodass sie womöglich überschüssige XP ansammeln. Mit diesem Spielzug können sie einen Teil dieser XP ausgeben, um sich den Erfolg zu sichern.
 P	Dass SC hell brennen können, bremst das Tempo, in dem SC aufsteigen können, und hilft, „doppelte Stufenaufstiege“ zu verhindern. Außerdem kippt es die Lage unauffällig zugunsten der Spieler, wenn sie schon lange unterwegs sind und etliche Rückschläge erlitten haben.
-P	Achte darauf, wenn Spieler 6en oder 9en würfeln, und frag den Spieler, ob er genug XP hat, um hell zu brennen. Hat er genug, wird er es wahrscheinlich tun.
+P	Achte darauf, wenn Spieler 6en oder 9en würfeln, und frag den Spieler, ob er genug XP hat, um hell brennen. Hat er genug, wird er es wahrscheinlich tun.
 P	Am häufigsten brennen Spieler hell, wenn sie für einen Spielzug 2d6 würfeln, aber sie können es bei jedem Wurf nutzen – auch bei Schadenswürfen oder sogar beim Schicksalswürfel.
 P	Ein Spieler kann nur bei einem Wurf hell brennen, den er selbst macht; er kann seine überschüssigen XP nicht ausgeben, um den Wurf eines anderen Spielers zu verbessern.
 PAGE	232
@@ -521,7 +521,7 @@ P	Tut ein Charakter etwas, das den Auslöser für mehr als einen Spielzug der Sp
 P	Besprich es mit deinen Spielern und kommt nach Möglichkeit zu einem Konsens, oder triff eine Entscheidung, wenn das nicht gelingt.
 PAGE	234
 H2	Eigene Spielzüge
-P	<i>Buch II: The Wider World and Other Wonders</i> enthält Dutzende eigene Spielzüge, die du in deinem Spiel verwenden kannst. Diese Spielzüge gelten nur für bestimmte Spiel- oder Settingelemente und nur, wenn du sie verwenden willst.
+P	<i>Buch II: Die weite Welt und andere Wunder</i> enthält Dutzende eigene Spielzüge, die du in deinem Spiel verwenden kannst. Diese Spielzüge gelten nur für bestimmte Spiel- oder Settingelemente und nur, wenn du sie verwenden willst.
 P	Die meisten eigenen Spielzüge haben keinen Namen; sie werden einfach als Teil der Beschreibung eines Settingelements präsentiert.
 P	Die <b>Straßen der Erbauer</b> (Makers' Roads, <i>Buch II</i>, Seite 270) haben zum Beispiel ein paar eigene Spielzüge. Hier ist einer, der mit ihren Schutzzaubern gegen Gewalt zusammenhängt:
 P	Wenn du <b><i>versuchst, auf der Straße</i></b> <b><i>Gewalt zu verüben</i></b> oder der Straße oder etwas auf ihr zu schaden, zögerst du. Zwingst du dich weiterzumachen, verlierst du 1d4 HP und würfelst +WIS: <b>Bei 10+</b> nur zu;
@@ -537,7 +537,7 @@ E	+1, wenn du Speise oder Trank darbringst, die sie im Leben liebten.
 P	<b>Bei 10+</b> erscheint ihr Schatten, aber wähle 1; <b>bei 7-9</b> erscheint ihr Schatten, aber wähle 2:
 B	Er ist wirr, verwirrt, benebelt, unvernünftig
 B	Er hat nicht die Absicht, friedlich zu seiner Ruhe zurückzukehren
-B	Mit ihm schlüpft etwas durch die Letzte Tür – ein Trauerbaumgeist, ein Gwyllgi, ein ungebundenes Gespenst usw.
+B	Mit ihm schlüpft etwas durch die Letzte Tür – ein Doolgeist, ein Gwyllgi, ein ungebundenes Gespenst usw.
 P	Sagt ein eigener Spielzug nicht, was bei 6- geschieht, gelten die Standardregeln: Der Spieler kreuzt XP an, und du machst einen harten SL-Spielzug, der zur etablierten Situation passt.
 P	Hier ist noch ein eigener Spielzug, der mit einem Artefakt verbunden ist. Bei diesem wird nicht mit 2d6 gewürfelt; der Spielzug sagt einfach, was geschieht!
 P	Wenn du <b><i>ein Wesen der Dunkelheit,</i></b> <b><i>des Chaos oder des Todes mit einem zerbrochenen Straßenstein triffst</i></b> (<i>Hand</i>, <i>Wurfwaffe</i>, <i>roh</i>), erleidet es 1d8 Schaden (ignoriert Rüstung), doch der Stein zerfällt danach zu Staub.
@@ -550,6 +550,6 @@ P	Gib den Text eines eigenen Spielzugs an die Spieler weiter, sobald er für sie
 P	„Sobald er relevant ist“ ist von Fall zu Fall verschieden. Den Spielzug „Wenn du <b><i>versuchst, auf der Straße</i></b> <b><i>Gewalt zu verüben</i></b> …“ willst du wahrscheinlich teilen, sobald die SC aufbrechen, und sie daran erinnern, wenn sie einem Monster oder NSC begegnen. „Wenn du <b><i>den Ruf</i></b> <b><i>der Nosgalau hörst</i></b> …“ enthüllst du dagegen vielleicht erst, wenn er ausgelöst wird.
 P	Glaubst du nicht, dass die Funktionsweise eines eigenen Spielzugs für die SC ersichtlich wäre, dann enthülle ihn ihnen nicht sofort. <b>Deute</b> vielleicht nur <b>an, dass mehr dahintersteckt, als man sieht</b>, oder lass anderweitig durchblicken, dass es mehr zu erfahren gibt, und schau, was sie tun.
 HR
-P	<i>Vahid und Caradoc haben an der</i> <i>Wegkreuzung haltgemacht. Ich erwähne die nahen</i> <i>Trauerbäume und das unheimliche Gefühl an diesem</i> <i>Ort, und prompt beschließt Vahid, auf</i> <i>Dinge wissen zu würfeln. Bei 10+ würde ich ihm</i> <i>den vollständigen eigenen Spielzug von der vorigen</i> <i>Seite geben. Aber er bekommt eine 7, also nenne ich ihm nur</i> <i>den Auslöser. „Du hast Geschichten gehört, dass man</i> <i>eine tote Seele heraufbeschwören kann, indem man ihren</i> <i>Namen bei Neumond an der Wegkreuzung</i> <i>ruft“, sage ich. „Aber wenn du mehr</i> <i>darüber wissen willst, wie das funktioniert, musst du</i> <i>ein wenig nachforschen. Oder es ausprobieren. Heute Nacht</i> <i>ist Neumond …“</i>
+P	<i>Vahid und Caradoc haben an der</i> <i>Wegkreuzung haltgemacht. Ich erwähne die nahen</i> <i>Doolbäume und das unheimliche Gefühl an diesem</i> <i>Ort, und prompt beschließt Vahid, auf</i> <i>Dinge wissen zu würfeln. Bei 10+ würde ich ihm</i> <i>den vollständigen eigenen Spielzug von der vorigen</i> <i>Seite geben. Aber er bekommt eine 7, also nenne ich ihm nur</i> <i>den Auslöser. „Du hast Geschichten gehört, dass man</i> <i>eine tote Seele heraufbeschwören kann, indem man ihren</i> <i>Namen bei Neumond an der Wegkreuzung</i> <i>ruft“, sage ich. „Aber wenn du mehr</i> <i>darüber wissen willst, wie das funktioniert, musst du</i> <i>ein wenig nachforschen. Oder es ausprobieren. Heute Nacht</i> <i>ist Neumond …“</i>
 HR
 P	Hinweise zum <b>Schreiben eigener</b> <b>Spielzüge</b> findest du auf Seite 551.

@@ -187,7 +187,7 @@ HR
 H2	Titanen
 HR
 P	Legenden erzählen von einer Zeit, als Tiere und Wesen von unmöglicher Größe die Welt durchstreiften. Der Gott <b>Tor</b> (Seite 452) soll drei solcher Tiere erschlagen haben, und jeder kennt das Skelett am Hang der <b>Titanenknochen</b> (Titan Bones; Seite 448).
-P	Vielleicht haben die Ersten Schöpfer diese Titanen in die Welt gesetzt. Vielleicht haben sie sich inmitten der überbordenden Lebenskraft der frühen Welt entwickelt. Manche könnten Inkarnationen der Großen Geister gewesen sein oder <b>Ausstrahlungen</b> (Seite 436) der Dinge in der Tiefe.
+P	Vielleicht haben die Ersten Schöpfer diese Titanen in die Welt gesetzt. Vielleicht haben sie sich inmitten der überbordenden Lebenskraft der frühen Welt entwickelt. Manche könnten Inkarnationen der Großen Geister gewesen sein oder <b>Emanationen</b> (Seite 436) der Dinge in der Tiefe.
 P	Wie dem auch sei, Titanen durchstreifen die Welt nicht mehr wie einst. Der <b>Crombil</b> (Seite 62) könnte einer sein, doch er erwacht nur alle paar Jahrzehnte. Der <b>Suileach</b> (Seite 93) könnte ein weiterer sein, doch er ist auf den Grauenfluss beschränkt. Die verborgenen Lande um die <b>Goldene Eiche</b> (Golden Oak; Seite 186) sind voller gigantischer Tiere, doch ob es wirklich Titanen sind, entscheidest du.
 P	Es mag noch andere solche Titanen geben, verborgen in entlegenen Winkeln der Welt, die die Jahrhunderte verschlafen und darauf warten, sich erneut zu erheben.
 PAGE	304
@@ -217,7 +217,7 @@ P	11-12 Das Wirken (erfolgreich oder nicht) eines mächtigen Zaubers oder Kunstw
 P	1d12 Besonderheiten
 HR
 P	1 Ein <b>Archont</b> (Seite 302), der über ihn oder seinen Inhalt wacht
-P	2 Eine gefangene urzeitliche Wesenheit oder <b>Ausstrahlung</b> (Seite 436)
+P	2 Eine gefangene urzeitliche Wesenheit oder <b>Emanation</b> (Seite 436)
 P	3 Eine Fülle bestimmter Geister
 P	4 Der <b>Schatten</b> (Seite 85) eines toten Gottes oder einer urzeitlichen Wesenheit, leicht herbeizurufen
 P	5 Anomalien (Zeitschleifen oder -schwankungen, Raumverzerrungen, seltsame Schwerkraft, laut hörbare Gedanken usw.)
@@ -240,7 +240,7 @@ P	<i>Als interessante Neuigkeit, denke ich, erhalten die SC eine Schriftrolle, d
 HR
 H3	Andere Stätten urzeitlicher Macht
 B	Ein kleiner See: kalt, sauer, ohne jedes Leben. Bei dichtem Nebel verbindet er sich mit anderen Zeiten, Orten oder Wirklichkeiten.
-B	Ein Hügel über einem Fluss, auf dem eine <b>Ausstrahlung</b> (Seite 436) auf einem Stab aus Schwarzeisen aufgespießt ist. Ein Archont verbirgt den Hügel und seinen Gefangenen vor der Welt.
+B	Ein Hügel über einem Fluss, auf dem eine <b>Emanation</b> (Seite 436) auf einem Stab aus Schwarzeisen aufgespießt ist. Ein Archont verbirgt den Hügel und seinen Gefangenen vor der Welt.
 B	Der Sockel eines rostigen Metallturms, 1,8 m breit, der sich über eine üppige Wiese voller Naturgeister erhebt. Darunter sind die Knochen eines Titanen begraben.
 B	Ein umgestürzter Megalith, halb in Torf und Morast versunken. Wenn die Sterne richtig stehen, kann ein Sterblicher hier eine Frage stellen und erhält eine allumfassende, überwältigende Antwort.
 B	Ein einsamer Gipfel, auf dem der Geist eines Unvorsichtigen aus seinem Körper gezogen und hinauf in die Leere gesogen wird.

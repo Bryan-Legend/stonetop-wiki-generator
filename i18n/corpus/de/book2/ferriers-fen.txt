@@ -243,7 +243,7 @@ B	Ein verwesender <b>Pyped</b> (Seite 82), der sich von Aas und Moorleichen ern�
 HR
 ICON	icons/beast.svg
 H3	Fenntroll
-P	<i>Einzeln</i>, <i>groß</i>, <i>korrumpiert</i>, <i>hortend</i>, <i>gefräßig</i>, <i>verstohlen</i>
+P	<i>Einzeln</i>, <i>groß</i>, <i>verderbt</i>, <i>hortend</i>, <i>gefräßig</i>, <i>verstohlen</i>
 P	<b>HP</b> 16; <b>Rüstung</b> 1 (dicke Haut)
 P	<b>Schaden</b> knochenbrechender Griff d10+3 (<i>Hand</i>, <i>nah</i>, <i>packend</i>, <i>wuchtig</i>), reißendes Maul d10+3 (<i>Hand</i>, <i>blutig</i>, 1 durchdringend)
 P	<b>Besondere Eigenschaften</b>: scharfe Sinne, grässlicher Gestank, schämt sich seines Aussehens <b>Instinkt</b>: sich den Bauch zu füllen und seinen Hort eifersüchtig zu bewachen
@@ -307,7 +307,7 @@ P	Die Suarachan glauben, dass ihre Gesänge die Dinge in der Tiefe ruhig halten.
 P	Die meisten Suarachan tragen Mutationen: zusätzliche Beine (oft verdreht und nutzlos), übergroße oder verkümmerte Gliedmaßen, fehlende oder zusätzliche Augen, seltsame Auswüchse usw. Die Beweglichsten werden zu Jägern, doch der Chor heißt jeden Suarachan willkommen, der singen kann.
 ICON	icons/beast.svg
 H3	Suarachan-Wahrsager
-P	<i>Einzeln</i>, <i>korrumpiert</i>, <i>gerissen</i>, <i>magisch</i>, <i>amphibisch</i>
+P	<i>Einzeln</i>, <i>verderbt</i>, <i>gerissen</i>, <i>magisch</i>, <i>amphibisch</i>
 P	<b>HP</b> 12; <b>Rüstung</b> 0 <b>Schaden</b> giftige Haut d10 (<i>Hand</i>), schnappende Zunge d4 (<i>Reichweite</i>)
 P	<b>Besondere Eigenschaften</b>: ausgezeichnete Nachtsicht, Salz verbrennt ihre Haut, von den Dingen in der Tiefe gezeichnet (Seite 432)
 P	<b>Instinkt</b>: die Dinge in der Tiefe zu besänftigen

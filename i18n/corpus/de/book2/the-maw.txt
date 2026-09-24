@@ -31,7 +31,7 @@ HR
 P	Das entscheidest du, aber vielleicht ist es …
 E	ein <b>Hagr</b> (Seite 208), geschlagen mit einem auszehrenden Fluch;
 E	ein brutaler, gefräßiger <b>Fae</b> (Seite 94) und ein Zugang zu seiner <b>Domäne</b> (Seite 102);
-E	ein Götzenbild oder eine Ausstrahlung der <b>Dinge</b> <b>in der Tiefe</b> (Seite 412);
+E	ein Götzenbild oder eine Emanation der <b>Dinge</b> <b>in der Tiefe</b> (Seite 412);
 E	ein Durchgang in eines der verdrehten Reiche der <b>Fomoraij</b> (Seite 136);
 E	eine <b>Erscheinung</b> (Seite 79) oder ein Rudel <b>Gespenster</b> (Seite 79), schrecklich und uralt und nur teilweise gebunden; oder
 E	etwas völlig anderes.

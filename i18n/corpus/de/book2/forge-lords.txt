@@ -378,7 +378,7 @@ PAGE	169
 HR
 ICON	icons/construct.svg
 H3	Eisenhund
-P	<i>Horde</i>, <i>Konstrukt</i>, <i>untot</i>, <i>korrumpiert</i>, <i>unermüdlich</i>, <i>furchterregend</i>
+P	<i>Horde</i>, <i>Konstrukt</i>, <i>untot</i>, <i>verderbt</i>, <i>unermüdlich</i>, <i>furchterregend</i>
 P	<b>HP</b> 10; <b>Rüstung</b> 4 (Metall, hat keine Organe)
 P	<b>Schaden</b> Biss d6+2 (<i>Hand</i>, <i>packend</i>)
 P	<b>Besondere Eigenschaften</b> feuerfest, spürt Wärme

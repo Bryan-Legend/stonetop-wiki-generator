@@ -213,7 +213,7 @@ P	menschliche Gruppe Fae
 ICON	icons/default.svg
 P	natürlich/Bestie untot
 ICON	icons/default.svg
-P	korrumpiert/
+P	verderbt/
 ICON	icons/default.svg
 P	Geist
 P	Fomoraij
@@ -299,7 +299,7 @@ HR
 P	Hat keine physische Gestalt <i>Geist</i>
 P	Zwischen physisch und geistig <i>Fae</i>
 P	Von jemandem erschaffen <i>Konstrukt</i>
-P	Von den Dingen in der Tiefe verändert <i>korrumpiert</i>
+P	Von den Dingen in der Tiefe verändert <i>verderbt</i>
 P	Aus dem ersten Zeitalter der Schöpfung <i>urzeitlich</i>
 P	Tot, will es aber nicht wahrhaben <i>untot</i>
 HR

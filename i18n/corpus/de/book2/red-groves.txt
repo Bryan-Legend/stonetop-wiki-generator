@@ -33,7 +33,7 @@ PAGE	315
 H2	Aufhänger
 HR
 B	Eine sterbende <b>Glasbren</b> (Seite 366) sucht einen Sterblichen, der sie zum Roten Hain bringt.
-B	Der Rote Hain ist von den <b>Dingen in der Tiefe</b> (Things Below, Seite 412) korrumpiert. Seine Geister sind verwirrt und krank, und bald wird der Hain Schrecken hervorbringen.
+B	Der Rote Hain ist von den <b>Dingen in der Tiefe</b> (Things Below, Seite 412) verderbt. Seine Geister sind verwirrt und krank, und bald wird der Hain Schrecken hervorbringen.
 B	Ein Dorfbewohner stiehlt einen Rotholzzweig und wird mit dem Zorn des Waldes verflucht.
 H2	Bewohner
 HR

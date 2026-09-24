@@ -55,7 +55,7 @@ C	<b>Der Manmarch</b>: Alfher, Bertrim, Dagmar, Elfrida, Hramn, Meike, Swanhilde
 C	<b>Lygos oder ein anderer Ort im Süden:</b> Ari, Boriz, Dimitra, Gorhan, Nitza, Selen, Todora oder Vasil
 WRITE	Man nennt mich...
 PAGE	130
-STATS	{"gloss": "Verteile diese Werte: +2, +1, +1, +0, +0, -1. Ist eine Schwächung angekreuzt, würfelst du mit Nachteil.", "die": "d8", "hp": "HP (max. 18)", "stats": [["Strength", "STR"], ["Dexterity", "DEX"], ["Intelligence", "INT"], ["Wisdom", "WIS"], ["Constitution", "CON"], ["Charisma", "CHA"]], "debilities": [["weakened", ["STR", "DEX"]], ["dazed", ["INT", "WIS"]], ["miserable", ["CON", "CHA"]]], "tracks": ["Damage", "HP", "Armor", "XP", "Level"]}
+STATS	{"gloss": "Verteile diese Werte: +2, +1, +1, +0, +0, -1. Ist eine Schwäche angekreuzt, würfelst du mit Nachteil.", "die": "d8", "hp": "HP (max. 18)", "stats": [["Strength", "STR"], ["Dexterity", "DEX"], ["Intelligence", "INT"], ["Wisdom", "WIS"], ["Constitution", "CON"], ["Charisma", "CHA"]], "debilities": [["weakened", ["STR", "DEX"]], ["dazed", ["INT", "WIS"]], ["miserable", ["CON", "CHA"]]], "tracks": ["Damage", "HP", "Armor", "XP", "Level"]}
 PAGE	131
 H2	Besondere Besitztümer (Wähle 2, zusätzlich zu deinem Kompositbogen)
 HR

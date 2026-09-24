@@ -251,10 +251,10 @@ P	8 Leere/Einsamkeit/Kummer/Überdruss
 P	9-10 Narben/Behinderungen/sichtbare Wunden
 P	11-12 Würfle zweimal 1d10, kombiniere
 PB
-P	Außerdem: Sind sie von den Dingen in der Tiefe <b>korrumpiert</b> (Seite 430)? Würfle 1d6; bei einer 1 sind sie es.
+P	Außerdem: Sind sie von den Dingen in der Tiefe <b>verderbt</b> (Seite 430)? Würfle 1d6; bei einer 1 sind sie es.
 P	Wähle oder erfinde einen <b>Namen</b> (Seite 97) und schreib ihre Werte auf. Alle Fae haben das Merkmal <i>Fae</i>; viele sind außerdem <i>magisch</i>. Sie besitzen eine unnatürliche Widerstandskraft (4 Rüstung, 0 gegen Eisen), da sie weder ganz Fleisch noch ganz Geist sind.
 HR
-P	<i>Mein kleiner Weidenmann stammt eindeutig</i> <i>von einem Pflanzengeist ab. Ich würfle eine 11 dafür, wozu</i> <i>er gezüchtet wurde („arbeiten/schuften …“),</i> <i>eine 2 für seine Rolle im Krieg („Opfer …“)</i> <i>und eine 12 für sein bleibendes Mal, gefolgt</i> <i>von einer 6 („wilde Beschützerhaltung“) und einer 3</i> <i>(„Feindschaft“). Er ist nicht korrumpiert.</i>
+P	<i>Mein kleiner Weidenmann stammt eindeutig</i> <i>von einem Pflanzengeist ab. Ich würfle eine 11 dafür, wozu</i> <i>er gezüchtet wurde („arbeiten/schuften …“),</i> <i>eine 2 für seine Rolle im Krieg („Opfer …“)</i> <i>und eine 12 für sein bleibendes Mal, gefolgt</i> <i>von einer 6 („wilde Beschützerhaltung“) und einer 3</i> <i>(„Feindschaft“). Er ist nicht verderbt.</i>
 P	<i>Ich sehe ihn den Garten irgendeines Grünen Herrn</i> <i>pflegen und dabei Krimskrams</i> <i>und Pflanzen und Steine aus der Erde sammeln. Er</i> <i>hütete seine Sammlung mit wilder Entschlossenheit</i> <i>und kümmerte sich kaum um seine Fae-Gefährten. Sein</i> <i>Beet brannte nieder, sein Hort ging verloren, und</i> <i>er wurde zum Einzelgänger und Ausgestoßenen, der sich</i> <i>aus dem Krieg heraushielt. Vor ein paar Jahrhunderten fand er</i> <i>das Grabmal, machte es zu seinem Zuhause und begann,</i> <i>seinen Hort an Krimskrams neu aufzubauen. Doch ein</i> <b><i>Swyn</i></b> (Seite 222) <i>hat ihn vertrieben, und er</i>
 P	<i>will seine Sachen verzweifelt zurückhaben.</i>
 P	<i>Ich nenne ihn „Dornendaumen“ (Thornthumb), nach dem stacheligen</i> <i>Gärtner, der er ist. Ich schreibe ihn so auf:</i>
@@ -275,7 +275,7 @@ P	Fae-Reiche sind verborgene Wirklichkeiten zwischen der körperlichen Welt und 
 P	Andere sind weitläufig und prächtig.
 P	Nicht jeder Ort, an dem ein Fae haust, ist wirklich ein Reich. Viele Fae hausen in Ruinen oder Höhlen oder hohlen Bäumen, vielleicht mit Blendwerk herausgeputzt, aber ganz und gar in dieser Welt.
 P	Reiche sind anders, abgesondert.
-P	Um ein Fae-Reich zu erschaffen, beginne mit dem Gelände der wirklichen Welt, an das es grenzt oder mit dem es sich überlappt. Die meisten finden sich im <b>Großen Wald</b> (Seite 200), im <b>Vorgebirge</b> (Foothills, Seite 144) oder in <b>Ferriers Fenn</b> (Seite 116); die im Fenn sind oft <b>korrumpiert</b> (Seite 430). Viele gehören zu <b>Ruinen der Grünen Herren</b> (Seite 214).
+P	Um ein Fae-Reich zu erschaffen, beginne mit dem Gelände der wirklichen Welt, an das es grenzt oder mit dem es sich überlappt. Die meisten finden sich im <b>Großen Wald</b> (Seite 200), im <b>Vorgebirge</b> (Foothills, Seite 144) oder in <b>Ferriers Fenn</b> (Seite 116); die im Fenn sind oft <b>verderbt</b> (Seite 430). Viele gehören zu <b>Ruinen der Grünen Herren</b> (Seite 214).
 P	Sobald das Gelände der wirklichen Welt feststeht, wähle oder würfle seinen Zugang. Deute das Ergebnis im Licht des Ortes, an dem es sich befindet.
 P	1d6 Zugang
 HR
@@ -536,7 +536,7 @@ B	<b>Danus Gesegnete</b> (Seite 66), von denen manche gern mit den Fae verhandel
 HR
 ICON	icons/fae.svg
 H3	Tante Salweide
-P	<i>Einzeln</i>, <i>groß</i>, <i>Fae</i>, <i>magisch</i>, <i>verstohlen</i>, <i>korrumpiert</i>, <i>furchterregend</i>
+P	<i>Einzeln</i>, <i>groß</i>, <i>Fae</i>, <i>magisch</i>, <i>verstohlen</i>, <i>verderbt</i>, <i>furchterregend</i>
 PB
 P	<b>HP</b> 16; <b>Rüstung</b> 4 (Widerstandskraft), 1 gegen Eisen (Borke)
 P	<b>Schaden</b> würgende Finger/Ranken d10+1 (<i>Hand</i>, <i>nah</i>, <i>Reichweite</i>, <i>packend</i>)
@@ -664,7 +664,7 @@ PAGE	115
 P	Winzige kleine Dinger, geflügelt und flatternd, so groß wie Mäuse oder Libellen. Seltsame kleine Dinger noch dazu: ein Mischmasch aus Pelz und Federn, Schuppen und Chitin, Spinnweb und Flügeln.
 P	Schön, niedlich oder grotesk.
 P	Manche lebten schon unter der Herrschaft der Grünen Herren zusammen, andere fanden nach dem Krieg zueinander. Überraschend viele wurden in Freiheit geboren, unbelastet von den Narben ihrer Älteren.
-P	Man findet sie vielleicht, wie sie über einen korrumpierten Ort oder eine verfallende Ruine der Grünen Herren wachen. Oder man stößt auf eine ihrer wimmelnden Städte, versteckt in einem Bau oder einem ausgehöhlten uralten Baum. Oder, wenn man Pech hat, begegnet man einer ihrer Banden, die durch Wald oder Fenn streift, gelangweilt und grausam und auf der Suche nach Zeitvertreib – und man selbst wäre genau das Richtige.
+P	Man findet sie vielleicht, wie sie über einen verderbten Ort oder eine verfallende Ruine der Grünen Herren wachen. Oder man stößt auf eine ihrer wimmelnden Städte, versteckt in einem Bau oder einem ausgehöhlten uralten Baum. Oder, wenn man Pech hat, begegnet man einer ihrer Banden, die durch Wald oder Fenn streift, gelangweilt und grausam und auf der Suche nach Zeitvertreib – und man selbst wäre genau das Richtige.
 HR
 ICON	icons/fae.svg
 H3	Die Weißen Böcke

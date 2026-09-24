@@ -50,7 +50,7 @@ HR
 P	1-2 Nichts … noch nicht.
 P	3-4 Kümmerliche Beute: ein Fuchs/Kaninchen/Keiler/Hirsch, ein <b>crinwin</b> (Seite 58), ein Narr, der ihm über den Weg lief, usw.
 P	5 Würdige Beute: ein <b>ceirwmawr</b> (Seite 205), ein <b>raselbaedd</b> (Seite 209), ein <b>Tierwächter</b> (Seite 360), ein <b>Fae</b> (Seite 94), mit dem er gewettet hat, usw.
-P	6 Untote Beute: ein <b>Geist</b> (Seite 76) oder <b>Wiedergänger</b> (Seite 80), der im Freien erwischt wird, fern von allen <b>Trauerbäumen</b> (dool trees, Seite 73).
+P	6 Untote Beute: ein <b>Geist</b> (Seite 76) oder <b>Wiedergänger</b> (Seite 80), der im Freien erwischt wird, fern von allen <b>Doolbäumen</b> (dool trees, Seite 73).
 PB
 P	Wenn die Zeit reif ist, <b>deute auf eine</b> <b>drohende Gefahr</b> (sein Horn erschallt, seine Hunde heulen, seine Beute prescht vorbei). <b>Biete eine</b> <b>Gelegenheit</b> (zu fliehen, sich zu verstecken, ihn aufzusuchen usw.). <b>Kündige Ärger an</b> (Nebel steigt auf, seine Hunde tauchen auf).
 P	Kreuzen die SC den Weg des Jägers, hängt das Weitere von seiner aktuellen Beute ab, davon, ob sie sich verstecken oder ihm entgegentreten, wie sie sich verhalten, ob Untote unter ihnen sind, und von den launischen Würfeln.
@@ -99,7 +99,7 @@ HR
 ICON	icons/danger.svg
 H3	Der Ruf der Jagd
 P	Wenn <b><i>der Bleiche Jäger vorbeiprescht</i></b>, erbebt deine Seele beim Ruf seines Horns und dem Heulen seiner Hunde – kreuze XP an, wenn du dich der Jagd anschließt.
-P	Wenn du <b><i>dich der Jagd nicht anschließt</i></b> oder <b><i>der Jäger dich verstößt</i></b>, wird dein Instinkt zu „Zweifel: vor Gefahr zurückzuschrecken, dich selbst infrage zu stellen“, und du kannst nicht Hell zu brennen einsetzen.
+P	Wenn du <b><i>dich der Jagd nicht anschließt</i></b> oder <b><i>der Jäger dich verstößt</i></b>, wird dein Instinkt zu „Zweifel: vor Gefahr zurückzuschrecken, dich selbst infrage zu stellen“, und du kannst nicht Hell brennen einsetzen.
 P	Beides hält an, bis dir eine kühne und waghalsige Tat gelingt.
 HR
 ICON	icons/danger.svg
@@ -156,18 +156,18 @@ E	<b>an einen Ort zu gehen, wohin er nicht folgt</b> (siehe unten);
 E	fließendes Wasser zu durchqueren, um seine Hunde abzuschütteln;
 E	den eigenen Geruch mit Moschuskraut oder einer anderen stark riechenden Pflanze zu überdecken;
 E	ihn mit einem Geist abzulenken oder mit etwas, das wie einer wirkt;
-E	ihn einer großen, revierbewussten Kreatur in den Weg zu führen – etwa einem <b>hagr</b> (Seite 208) oder <b>cynddaraig</b> (Seite 206) –, etwas, das ihn aufhält;
+E	ihn einer großen, revierbewussten Kreatur in den Weg zu führen – etwa einem <b>Hagr</b> (Seite 208) oder <b>cynddaraig</b> (Seite 206) –, etwas, das ihn aufhält;
 E	sich Hilfe von einem <b>Fae</b> (Seite 94) oder einem <b>Geist der Wildnis</b> (Seite 356) zu holen; oder
 E	Magie einzusetzen, um ihn und seine Hunde zu fangen, abzuwehren oder sich vor ihnen zu verbergen.
 HR
 H3	Orte, wohin er nicht folgt
 P	Die Beute des Jägers könnte Zuflucht finden …
-E	in der Nähe von <b>Trauerbäumen</b> (Seite 73), denen er sich offenbar nicht nähern kann;
+E	in der Nähe von <b>Doolbäumen</b> (Seite 73), denen er sich offenbar nicht nähern kann;
 E	an bestimmten Orten, die mit <b>Glyphen</b> (Seite 152) des Waldvolks markiert sind;
 E	in einem der <b>Roten Haine</b> (Seite 314), je nach der wahren Natur des Jägers vielleicht;
 E	vielleicht durch einen <b>Wegstein</b> (Seite 478), auf den Pfaden der Fae;
 E	in Höhlen oder anderen Orten, die zu klein sind, als dass der Jäger hineinkäme (seine Hunde aber wahrscheinlich schon); oder
-E	in der Nähe eines stark <b>korrumpierten Schauplatzes</b> (Seite 422).
+E	in der Nähe eines stark <b>verderbten Schauplatzes</b> (Seite 422).
 P	Viele dieser Orte bergen eigene Gefahren, und der Jäger ist geduldig und gerissen. Er wird sie einkreisen, abwarten und/oder versuchen, sie herauszutreiben, wie es sinnvoll ist.
 PAGE	297
 HR

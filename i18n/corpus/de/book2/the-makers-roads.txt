@@ -88,8 +88,8 @@ HR
 P	Überwindet jemand die Magie der Straßen und hebelt einen Pflasterstein heraus, fände er dessen Unterseite übersät mit unmöglich verschlungenen, schwindelerregenden Runen. Sie verleihen die Magie der Straßen, sind aber unentzifferbar, sofern man die passende Magie nicht bereits kennt.
 P	Um die Geheimnisse dieser Runenkalligrafie zu entschlüsseln, musst du:
 C	Jedes dieser kleinen Arkana meistern:
-C	<b>Friedensband</b> (Seite 519)
-C	<b>Bewahrende Runen</b> (Seite 518)
+C	<b>Friedensbann</b> (Seite 519)
+C	<b>Runen der Bewahrung</b> (Seite 518)
 C	<b>Heiligendes Zeichen</b> (Seite 520)
 C	Einen unversehrten Pflasterstein beschaffen
 C	1 Jahreszeit und 1d4 Handvoll Silber darauf verwenden, die Runen nachzubilden.

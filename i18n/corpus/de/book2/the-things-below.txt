@@ -59,7 +59,7 @@ B	Wie ihre Macht Orte, Artefakte, Menschen, Tiere und Geister verdirbt
 B	Wie man ihren Makel, ihre Macht oder ihre Schergen bindet, tilgt oder abwehrt
 B	Dass unreine Wesen vor dem Rauch der Bendiswurzel zurückschrecken, wirklich wilde oder willensstarke ihn aber überwinden können
 B	Dass Bronze den Dingen in der Tiefe zum Verderben gereicht und <b>Orichalkum</b> (Seite 162) sogar noch wirksamer ist
-B	Den Unterschied zwischen verderbten Wesen und Ausstrahlungen
+B	Den Unterschied zwischen verderbten Wesen und Emanationen
 P	<b>Nur sehr wenige wissen:</b>
 B	Um ihre wahre Natur
 B	Wie es dazu kam, dass sie eingekerkert wurden
@@ -72,7 +72,7 @@ Q	Von welchem Ort in der Nähe heißt es, er sei von ihrem Einfluss befleckt? We
 Q	Wie sprechen die Leute hier von ihnen? Mit gedämpfter Stimme? In düsteren Predigten? Irgendwo dazwischen?
 Q	Wann hatte das Dorf zuletzt mit einem Dämon, einem Kult oder einem Hexenmeister zu tun?
 H2	Dämonen
-P	In Wahrheit gibt es keine Dämonen. Oder vielmehr: „Dämon“ ist kein aussagekräftiger Begriff. Oft bezeichnet man damit <b>Ausstrahlungen</b> (Seite 436) der Dinge in der Tiefe oder <b>von ihnen verderbte Wesen</b> (Seite 432). Doch die Leute verwenden das Wort womöglich für alle möglichen übernatürlichen Schrecken. Wenn etwas feindselig und magisch ist und eine körperliche Gestalt hat (oder annehmen kann), wird es wahrscheinlich irgendwer einen Dämon nennen.
+P	In Wahrheit gibt es keine Dämonen. Oder vielmehr: „Dämon“ ist kein aussagekräftiger Begriff. Oft bezeichnet man damit <b>Emanationen</b> (Seite 436) der Dinge in der Tiefe oder <b>von ihnen verderbte Wesen</b> (Seite 432). Doch die Leute verwenden das Wort womöglich für alle möglichen übernatürlichen Schrecken. Wenn etwas feindselig und magisch ist und eine körperliche Gestalt hat (oder annehmen kann), wird es wahrscheinlich irgendwer einen Dämon nennen.
 PAGE	416
 H2	Themen
 HR
@@ -252,7 +252,7 @@ HR
 P	1-3 Ein gemiedener Ort: voller <b>Beklemmung</b> <b>und Unbehagen</b> (Seite 428), nicht unmittelbar gefährlich, aber ein Ort, an dem man leicht ihre Macht anzapfen kann
 P	4-6 Ein hungriger Ort: voller <b>Flüstern</b> <b>und Visionen</b> (Seite 428), der das Unheilvolle ruft und die Unvorsichtigen fängt und verschlingt
 P	7-9 Ein giftiger Ort: voller <b>unnatürlicher</b> <b>Phänomene</b> (Seite 429), der alle verdirbt, die ihn aufsuchen
-P	10-11 Ein Brutort: an dem <b>Ausstrahlungen</b> (Seite 436) Gestalt annehmen und sich manifestieren
+P	10-11 Ein Brutort: an dem <b>Emanationen</b> (Seite 436) Gestalt annehmen und sich manifestieren
 P	12 Eine Wunde in der Welt: breitet Fäulnis aus, blutet Grauen, wird immer schlimmer
 PAGE	423
 PB
@@ -461,7 +461,7 @@ P	Das kann geschehen, wenn sie …
 E	die Dinge in der Tiefe um Macht anrufen, absichtlich oder nicht
 E	Zeit an einem <b>verderbten Schauplatz</b> (Seite 422) verbringen, der giftig oder schlimmer ist
 E	versuchen, jemanden oder etwas von Verderbnis zu reinigen, und etwas schiefgeht
-E	von einem <b>Artefakt</b> (Seite 424) oder einer <b>Ausstrahlung</b> (Seite 436) der Dinge in der Tiefe verletzt/angesteckt werden, von einem <b>derer,</b> <b>die ihren Makel tragen</b> (nächste Seite), oder von einem <b>verderbten Wesen</b> (Seite 432).
+E	von einem <b>Artefakt</b> (Seite 424) oder einer <b>Emanation</b> (Seite 436) der Dinge in der Tiefe verletzt/angesteckt werden, von einem <b>derer,</b> <b>die ihren Makel tragen</b> (nächste Seite), oder von einem <b>verderbten Wesen</b> (Seite 432).
 P	Füge diese der Liste der SL-Spielzüge für Heimsuchungen hinzu:
 P	• Gib ihnen eine Gabe (Seite 432) oder verstärke die Wirkung einer bestehenden
 P	• Versieh sie mit einem Mal (Seite 432) oder verschlimmere eines
@@ -623,13 +623,13 @@ P	Die Opfer von L'bin'bozia (Fleischkerze, der Wachsschädel, Wallendes Grab) fi
 P	Zierrat. Fleischmassen, bei denen man kaum erkennt, wo eine arme Seele endet und die nächste beginnt. Sie sterben nicht an Altersschwäche.
 P	Sie können nicht verhungern. Sie müssen ausharren, gefangen in der Höhle oder im Sumpf oder im Grab oder wo auch immer ihr Schicksal sie ereilt hat. Sie müssen fortbestehen, unter Schmerzen, und flehen, dass jemand von außen kommt und ihrem Leiden ein Ende macht.
 ICON	icons/aberration.svg
-H3	Ausstrahlung
+H3	Emanation
 P	Die Dinge in der Tiefe sind wahrhaft und endgültig gefangen – in der Erde gebunden, <i>an</i> die Erde gebunden. Selbst während der Zeit der Katastrophe wandelten sie nicht frei umher. Sie sind gebunden, solange die Welt besteht.
 P	Doch es gibt Risse in der Welt. Orte, an denen ihr Einfluss aufsprudelt. Tiefes Wasser ist der sicherste davon, weshalb es oft voller Schrecken ist. Doch jeder Ort kann ihren Makel tragen.
 P	Die Macht der Dinge in der Tiefe verdirbt meist nur, was bereits da ist. Doch manchmal verdichtet sie sich. Sie erschafft etwas Neues, etwas Schreckliches. Einen Geist oder ein Wesen mit eigenem Willen und eigenem Zweck.
-P	Gelehrte nennen diese „Ausstrahlungen“. Sie sind nicht wirklich Teil eines Dings in der Tiefe. Sie sind …
+P	Gelehrte nennen diese „Emanationen“. Sie sind nicht wirklich Teil eines Dings in der Tiefe. Sie sind …
 P	Ausfluss. Überbleibsel. Brut.
-P	Um eine Ausstrahlung zu erschaffen, bestimme das Ding in der Tiefe, aus dem sie hervorgegangen ist, samt seiner Themen (Seite 416), Erscheinungsformen und seines Instinkts (Seite 417). Bestimme auch den <b>verderbten Schauplatz</b> (Seite 422), den sie bewohnt. Wähle oder würfle ihren Ursprung.
+P	Um eine Emanation zu erschaffen, bestimme das Ding in der Tiefe, aus dem sie hervorgegangen ist, samt seiner Themen (Seite 416), Erscheinungsformen und seines Instinkts (Seite 417). Bestimme auch den <b>verderbten Schauplatz</b> (Seite 422), den sie bewohnt. Wähle oder würfle ihren Ursprung.
 P	1d12 Ursprung
 HR
 P	1-2 Entstand nach einer großen Verwüstung/Gräueltat
@@ -640,11 +640,11 @@ P	9-10 Durch Zufall/Hochmut in die Welt gelassen, bei einem gescheiterten Versuc
 P	11-12 Spontan aus einem wahrhaft <b>verderbten Schauplatz</b> (Seite 422) hervorgegangen
 PAGE	437
 PB
-P	Stell dir die Ausstrahlung vor, die daraus entsteht. Sie teilt zumindest einige Themen und Erscheinungsformen des Dings, aus dem sie hervorgegangen ist, und womöglich auch seinen Instinkt. Eine Ausstrahlung hat ein eigenes Gedächtnis, im Grunde eine eigene Persönlichkeit. Sie mag mit ihrem Urheber in Verbindung stehen oder seinen Willen tun, doch eine Ausstrahlung ist ein eigenständiges Ding.
+P	Stell dir die Emanation vor, die daraus entsteht. Sie teilt zumindest einige Themen und Erscheinungsformen des Dings, aus dem sie hervorgegangen ist, und womöglich auch seinen Instinkt. Eine Emanation hat ein eigenes Gedächtnis, im Grunde eine eigene Persönlichkeit. Sie mag mit ihrem Urheber in Verbindung stehen oder seinen Willen tun, doch eine Emanation ist ein eigenständiges Ding.
 HR
 ICON	icons/aberration.svg
 H3	Hand des Daagon
-P	<i>Einzeln</i>, <i>groß</i>, <i>Ausstrahlung</i>, <i>furchterregend</i>, <i>vorsichtig</i>, <i>neugierig</i>
+P	<i>Einzeln</i>, <i>groß</i>, <i>Emanation</i>, <i>furchterregend</i>, <i>vorsichtig</i>, <i>neugierig</i>
 P	<b>HP</b> 23; <b>Rüstung</b> 4 (Zähigkeit), 0 gegen Bronze <b>Schaden</b> viele Hände d12+1 (<i>Hand</i>, <i>nah</i>, <i>packend</i>, ignoriert Rüstung)
 P	<b>Besondere Eigenschaften</b> blind; Erschütterungssinn; greift durch Materie, als wäre sie Wasser
 P	<b>Instinkt</b> das Maul füttern
@@ -657,7 +657,7 @@ P	Und in den Höhlen rund um diesen See? Dort findest du die Hand: ewig tastend,
 HR
 ICON	icons/aberration.svg
 H3	Stimme des Ewigen Schlunds
-P	<i>Einzeln</i>, <i>Geist</i>, <i>Ausstrahlung</i>, <i>hinterlistig</i>, <i>furchterregend</i>, <i>hungrig</i>
+P	<i>Einzeln</i>, <i>Geist</i>, <i>Emanation</i>, <i>hinterlistig</i>, <i>furchterregend</i>, <i>hungrig</i>
 P	<b>HP</b> 19; <b>Rüstung</b> 4 (Zähigkeit), 0 gegen Bronze <b>Schaden</b> Schrei d10 (<i>kurz</i>, <i>Fläche</i>, <i>nachladen</i>, ignoriert Rüstung) oder unnatürlich großes, zahnbewehrtes Maul d10+2 (<i>Hand</i>, <i>blutig</i>,
 P	3 durchdringend)
 P	<b>Besondere Eigenschaften</b> an den Wirbel gebunden, kann den Berg nicht verlassen <b>Instinkt</b> mehr Mäuler, mehr Gespenster erschaffen

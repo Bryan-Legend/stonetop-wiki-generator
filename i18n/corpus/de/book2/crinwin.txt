@@ -39,7 +39,7 @@ HR
 P	Was sind sie, und woher kommen sie? Das entscheidet ihr als Gruppe, aber mögliche Antworten sind:
 B	Sie wurden von den <b>Fomoraij</b> (Seite 136) als Krieger erschaffen, um gegen die <b>Fae</b> (Seite 94) zu kämpfen.
 B	Sie waren ein gescheitertes Experiment der <b>Grünen Herren</b> (Green Lords, Seite 210) und entkamen in die Wildnis, als die Fae rebellierten.
-B	Sie waren einst <b>Waldvolk</b> (Seite 150), das von irgendeiner Hexe oder einem Zauberer verflucht oder korrumpiert wurde.
+B	Sie waren einst <b>Waldvolk</b> (Seite 150), das von irgendeiner Hexe oder einem Zauberer verflucht oder verderbt wurde.
 B	Sie kamen durch das gesprungene Portal von <b>Vor Svetelik</b> (Seite 468), von irgendeinem fernen Ort (oder sogar aus einer anderen Welt).
 B	Sie krochen aus irgendeinem See, abscheuliche Brut der <b>Dinge in der Tiefe</b> (Things Below, Seite 412).
 H2	Nester

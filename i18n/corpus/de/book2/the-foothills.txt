@@ -51,7 +51,7 @@ Q	Warum glaubst du ihm (nicht)?
 Q	Welche alltäglichen Gefahren dort oben bereiten dir mehr Sorgen als irgendeine sagenhafte Bestie?
 H2	Aufhänger
 B	Ein Holzfällerzug verschwindet
-B	Holzfäller stoßen auf eine Ruine oder einen korrumpierten Schauplatz
+B	Holzfäller stoßen auf eine Ruine oder einen verderbten Schauplatz
 B	Jemand ist vor Jahren bei einem Holzfällerzug verschwunden und taucht nun wieder auf
 B	Starke Regenfälle spülen ein Stück der Fernstraße weg und versperren den Zugang zu gutem Holz
 B	Ein Abenteurer behauptet, die Lage eines alten Hügelgrabs im Vorgebirge zu kennen, das voller Gold und anderer Schätze sein soll
@@ -136,7 +136,7 @@ P	5 Eine gefährliche Bestie – etwa ein <b>Keiler</b> (Seite 204), ein <b>Höh
 P	6 Wild: gut zu essen, aber schreckhaft (Hirsche, Kaninchen, Fasane usw.)
 P	1d6 interessanter Ort
 HR
-P	1 Ein von den <b>Dingen</b> <b>in der Tiefe</b> (Seite 412) korrumpierter Ort
+P	1 Ein von den <b>Dingen</b> <b>in der Tiefe</b> (Seite 412) verderbter Ort
 P	2 Ein Ort, an dem der Tod oder die Untoten <b>spuken</b> (Seite 72)
 P	3 Eine Stätte oder ein Artefakt der <b>Hügelgrab</b><b>bauer</b> (Seite 34)
 P	4 Eine Ruine oder ein Artefakt der <b>Grünen</b> <b>Herren</b> (Seite 210) oder ein <b>Reich der Fae</b> (Seite 102)

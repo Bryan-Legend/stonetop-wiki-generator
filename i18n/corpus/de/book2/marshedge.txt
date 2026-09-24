@@ -43,7 +43,7 @@ B	<b>Die Palisade</b> umgibt die Stadt; in Kohlenbecken brennt Tag und Nacht Ben
 B	<b>Der Sruth</b>, ein breiter, seichter Fluss, der träge an Marschrand vorbei ins Fenn fließt. Gesäumt von Schilf und Weiden, das Bett aus lockerem, saugendem Schlamm.
 B	<b>Die Brücke</b>, ein hölzerner Übergang über den Sruth, wo einst ein Straßenstück lag, gerade breit genug für einen Wagen. Zwei Wachen kassieren im Torhaus Zoll.
 B	<b>Die Unterstadt</b>, die Katen der arbeitenden Leute rund um den Hügel und den Randmarkt. Flechtwerk und Lehm, beengte Gärten, schmutzige Kinder, viel Vieh. Die Wache patrouilliert hier nicht.
-B	<b>Der Randmarkt</b> (Edgemarket), auf einer <b>Raststätte</b> (Seite 271) nahe der Stadtmitte, vollgestopft mit Zelten, Wagen, Händlern und Besuchern. Umgeben von Läden, zwei Schänken und ein paar Reisendenhäusern. Von zwei Wachen bestreift.
+B	<b>Der Randmarkt</b> (Edgemarket), auf einer <b>Rastplatz</b> (Seite 271) nahe der Stadtmitte, vollgestopft mit Zelten, Wagen, Händlern und Besuchern. Umgeben von Läden, zwei Schänken und ein paar Reisendenhäusern. Von zwei Wachen bestreift.
 PAGE	275
 B	<b>Der Morast</b>, ein schlammiges Elendsviertel nördlich der Hauptpalisade, das ins Fenn hineinragt. Holzstege spannen sich zwischen Sumpffeldern mit Reis und Kräutern. Zwei Tore verbinden ihn mit der Unterstadt, jedes mit einer Wache besetzt.
 B	<b>Der Abhang</b>, Häuser und Läden des Mittelstands rund um den Hang des Hügels. Zwei Wachen sind hier ständig auf Streife.

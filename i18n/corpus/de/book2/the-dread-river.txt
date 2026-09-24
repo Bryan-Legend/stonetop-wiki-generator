@@ -189,7 +189,7 @@ PAGE	92
 HR
 ICON	icons/beast.svg
 H3	Luglfsk
-P	<i>Horde</i>, <i>klein</i>, <i>amphibisch</i>, <i>korrumpiert</i>
+P	<i>Horde</i>, <i>klein</i>, <i>amphibisch</i>, <i>verderbt</i>
 P	<b>HP</b> 3; <b>Rüstung</b> 1 (Haut)
 P	<b>Schaden</b> elektrischer Schlag d6 (<i>Hand</i>, <i>nachladen</i>) oder Kauen d4 (<i>Hand</i>)
 P	<b>Besondere Eigenschaften</b> blitzfest
@@ -214,7 +214,7 @@ PAGE	93
 HR
 ICON	icons/beast.svg
 H3	Der Suileach
-P	<i>Einzeln</i>, <i>riesig</i>, <i>magisch</i>, <i>furchterregend</i>, <i>im Wasser lebend</i>, <i>korrumpiert</i>
+P	<i>Einzeln</i>, <i>riesig</i>, <i>magisch</i>, <i>furchterregend</i>, <i>im Wasser lebend</i>, <i>verderbt</i>
 P	<b>HP</b> 26; <b>Rüstung</b> 2 (Schuppen)
 P	<b>Schaden</b> Kiefer wie eine Höhle d10+7 (<i>Reichweite</i>, <i>wuchtig</i>, <i>blutig</i>, 3 durchdringend) oder peitschende Windungen d10+5 (<i>nah</i>, <i>Fläche</i>, <i>wuchtig</i>)
 P	<b>Besondere Eigenschaften</b> vieläugig; unmöglich zu überraschen

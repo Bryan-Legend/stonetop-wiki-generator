@@ -142,7 +142,7 @@ PB
 P	Wähle dann einen Geist oder ein Bewusstsein, das zu Bindung, Herkunft und Thema passt. Bist du unsicher, würfle 1d12.
 P	1d12 Geist/Bewusstsein
 HR
-P	1 Ein <b><i>korrumpierter</i></b> Geist (Seite 432), und würfle erneut
+P	1 Ein <b><i>verderbter</i></b> Geist (Seite 432), und würfle erneut
 P	2 Ein <b>Gespenst</b> (Seite 76)
 P	3 Ein <b>Schatten</b> (Seite 85) oder ein ähnlicher Abdruck der Persönlichkeit eines Menschen
 P	4 Etwas von jenseits der Letzten Tür, etwa ein <b>Dool-Geist</b> (Seite 83) oder <b>Gwyllgi</b> (Seite 84)

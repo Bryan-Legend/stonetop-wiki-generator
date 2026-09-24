@@ -74,7 +74,7 @@ P	Zum Beispiel:
 B	Irgendein Ungeheuer, in Dunkeleis eingeschlossen
 B	Ein <b>Geist der Wildnis</b> (Seite 356) oder eine <b>Fae</b> (Seite 94), selbst Schüler der Reifherren, in Meditation vorgefunden
 B	Eine <b>Erscheinung</b> (Seite 79), gezwungen, eine endlose Aufgabe zu verrichten (die Schneeflocken auf einem Berg zählen, einen Fluss mit einem Fingerhut leeren usw.)
-B	Eine <b>Ausstrahlung</b> der Dinge in der Tiefe (Seite 436), schrecklich und mächtig, durch den Willen eines alterslosen, meditierenden <b>Adepten</b> (Seite 328) in Stillstand gehalten
+B	Eine <b>Emanation</b> der Dinge in der Tiefe (Seite 436), schrecklich und mächtig, durch den Willen eines alterslosen, meditierenden <b>Adepten</b> (Seite 328) in Stillstand gehalten
 B	Ein verwilderter <b>Reifherr</b> (Seite 330), in einem Stillstandsfeld gehalten und von Glyphen umringt, die Wolfsaugen offen und voller Hass
 PAGE	319
 HR

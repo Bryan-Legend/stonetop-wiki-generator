@@ -52,7 +52,7 @@ P	Offensichtlich birgt Tors Faust ein Geheimnis, aber welcher Art es ist, entsch
 E	das Grab der <b>Sturmfängerin</b> (Stormcatcher, Seite 332), ihres Sohnes oder ihres Geliebten;
 E	eine Felsspalte, aus der der <b>Stein</b> (Seite 12) selbst gehauen wurde;
 E	einen der letzten dreizehn <b>Reifherren</b> (Rime Lords, Seite 316), noch immer in Starre, beschützt von mächtigen <b>Tulpas</b> (Seite 324);
-E	einen mächtigen Sturmgeist, von den Dingen in der Tiefe (Things Below, Seite 432) <b>korrumpiert</b>, aber durch uralte Magie der Reifherren dort gebunden;
+E	einen mächtigen Sturmgeist, von den Dingen in der Tiefe (Things Below, Seite 432) <b>verderbt</b>, aber durch uralte Magie der Reifherren dort gebunden;
 E	das Reich einer mächtigen, launischen <b>Fae</b> (Seite 94);
 E	ein zerschmettertes <b>Portal</b> (Seite 306), aufgerissen und zerstört;
 E	ein Volk von großem Wuchs, das <b>Tor</b> (Seite 452) verehrt;
@@ -115,7 +115,7 @@ PAGE	483
 P	1d6 interessanter Ort
 HR
 P	1 Eine Siedlung (siehe unten), von <b>Kyakaara</b> (Seite 493) überrannt/zerstört
-P	2 Ein von den <b>Dingen</b> <b>in der Tiefe</b> (Seite 412) korrumpierter Ort
+P	2 Ein von den <b>Dingen</b> <b>in der Tiefe</b> (Seite 412) verderbter Ort
 P	3 Ein Ort, an dem Tote oder Untote <b>spuken</b> (Seite 72)
 P	4 Eine den <b>Geistern der</b> <b>Wildnis</b> (Seite 356) heilige Stätte oder vielleicht ein <b>Reich</b> <b>der Fae</b> (Seite 102)
 P	5-6 Eine Ruine oder ein Artefakt der <b>Reif</b><b>herren</b> (Seite 316)
@@ -372,7 +372,7 @@ HR
 H3	Monster
 B	Raubtiere: <b>Höhlenbären</b> (Seite 205), <b>Pumas</b> (Seite 206) und <b>Wölfe</b> (Seite 209)
 B	<b>Geister der Wildnis</b> (Seite 356)
-B	<b>Gespenster</b> (Seite 79) derer, die an Hunger und Not gestorben sind oder vom <b>Heulenden Fluch</b> (Seite 492) korrumpiert wurden
+B	<b>Gespenster</b> (Seite 79) derer, die an Hunger und Not gestorben sind oder vom <b>Heulenden Fluch</b> (Seite 492) verderbt wurden
 B	<b>Tulpas</b> (Seite 324), frei umherstreifend oder an etwas in der Nähe gebunden
 HR
 H3	Leute
@@ -383,7 +383,7 @@ PAGE	490
 HR
 ICON	icons/aberration.svg
 H3	Bhoka
-P	<i>Einzeln</i>, <i>groß</i>, <i>vorsichtig</i>, <i>magisch</i>, <i>korrumpiert</i>
+P	<i>Einzeln</i>, <i>groß</i>, <i>vorsichtig</i>, <i>magisch</i>, <i>verderbt</i>
 P	<b>HP</b> 16; <b>Rüstung</b> 1 (Fell)
 P	<b>Schaden</b> Klauen 1d10+3 (<i>Hand</i>, <i>nah</i>, <i>packend</i>,
 P	<i>wuchtig</i>)
@@ -426,7 +426,7 @@ P	5 Flügel (kann fliegen)
 P	6 Regeneriert Wunden, außer von rituell vorbereiteten Waffen
 PB
 P	<b>Etwas Interessantes:</b> Die Leute der Weißzähne fürchten Bhoka und sind sich der Gefahren, die von ihnen ausgehen, wohl bewusst, doch sie jagen sie nie. Sie scheinen damit zufrieden, sie zu vertreiben oder zu besänftigen.
-P	<b>Etwas Nützliches:</b> Die Mönche behaupten, dass die Bhoka von <b>Reifherren</b> (Seite 316) abstammen, die von den <b>Dingen</b> <b>in der Tiefe</b> (Seite 412) korrumpiert wurden. Sie ertragen den Klang der meditativen Gesänge der Reifherren nicht und weichen zurück und fliehen vor jedem, der einen solchen Gesang ohne Stocken vorträgt.
+P	<b>Etwas Nützliches:</b> Die Mönche behaupten, dass die Bhoka von <b>Reifherren</b> (Seite 316) abstammen, die von den <b>Dingen</b> <b>in der Tiefe</b> (Seite 412) verderbt wurden. Sie ertragen den Klang der meditativen Gesänge der Reifherren nicht und weichen zurück und fliehen vor jedem, der einen solchen Gesang ohne Stocken vorträgt.
 HR
 ICON	icons/people.svg
 H3	Wächter
@@ -458,7 +458,7 @@ H3	Der Heulende Fluch
 P	Bedrohung (<i>Heimsuchung</i>)
 P	<b>Instinkt</b>, Menschen zu Monstern zu machen
 P	In der <b>Zeit der Katastrophe</b> (Seite 413) stürzte die Stimme von <b>Y'aaw'kara</b> (Seite 421) den Norden in den Wahnsinn. Ganze Dörfer wandten sich gegeneinander. Die Überlebenden wurden zu marodierenden Bestien. Die <b>Reifherren</b> (Seite 316) opferten sich, um den Heulenden Fluch (Howling Curse) einzudämmen, doch er hält sich an Orten, an denen Grausamkeit und Gewalt großes Leid verursacht haben.
-P	Orte, die vom Heulenden Fluch befleckt sind, sind <b>korrumpierte Schauplätze</b> (Seite 422), hungrige Orte oder Schlimmeres, voller <b>Flüstern und Visionen</b> (siehe Seite 428), die die Menschen zu Blutvergießen, Grausamkeit und Wildheit treiben. Menschen, die vom Heulenden Fluch befleckt sind, tragen solches Flüstern und solche Visionen mit sich.
+P	Orte, die vom Heulenden Fluch befleckt sind, sind <b>verderbte Schauplätze</b> (Seite 422), hungrige Orte oder Schlimmeres, voller <b>Flüstern und Visionen</b> (siehe Seite 428), die die Menschen zu Blutvergießen, Grausamkeit und Wildheit treiben. Menschen, die vom Heulenden Fluch befleckt sind, tragen solches Flüstern und solche Visionen mit sich.
 P	Wenn du <b><i>dich der Blutgier des</i></b> <b><i>Heulenden Fluchs hingibst</i></b>, wähle bis zu 3 Optionen, die noch nicht dauerhaft sind:
 C	Deine Finger werden lang, dein Griff wird schrecklich stark (<i>packend</i>, <i>wuchtig</i>)
 C	Du wirst sehnig und hager und schwelgst im Schmerz; erhalte +1 Rüstung
@@ -471,7 +471,7 @@ PAGE	493
 HR
 ICON	icons/aberration.svg
 H3	Kyakaara
-P	<i>Horde</i>, <i>widerstandsfähig</i>, <i>organisiert</i>, <i>furchtlos</i>, <i>sadistisch</i>, <i>furchterregend</i>, <i>korrumpiert</i>
+P	<i>Horde</i>, <i>widerstandsfähig</i>, <i>organisiert</i>, <i>furchtlos</i>, <i>sadistisch</i>, <i>furchterregend</i>, <i>verderbt</i>
 P	<b>HP</b> 10; <b>Rüstung</b> 1 (Zähigkeit)
 P	<b>Schaden</b> reißende Finger/Klauen d4+2 mit Vorteil (<i>Hand</i>, <i>packend</i>, <i>wuchtig</i>, <i>blutig</i>,
 P	1 durchdringend) oder rohe Waffen d6 mit Vorteil (Tags je nach Waffe)
@@ -536,7 +536,7 @@ P	• Versucht, bei Unbefleckten Blutvergießen zu vermeiden
 P	• Streckt die Verurteilten gnadenlos nieder,
 P	und jeden, der sie beschützt
 P	• Kontert geschickt einen Angriff, den er kommen sieht
-P	Nur eine Handvoll dieser „ruhigen Töter“ ist noch übrig, höchstens drei oder vier. Sie durchstreifen die Weißzähne und jagen <b>Kyakaara</b> (Seite 493) und alle anderen, die vom <b>Heulenden Fluch</b> (Seite 492) korrumpiert sind. In jeder Siedlung sind sie willkommen, doch dieser Empfang ist oft steif, förmlich, angespannt. Nur wenige fühlen sich unter dem durchdringenden Blick eines Shantyara wohl.
+P	Nur eine Handvoll dieser „ruhigen Töter“ ist noch übrig, höchstens drei oder vier. Sie durchstreifen die Weißzähne und jagen <b>Kyakaara</b> (Seite 493) und alle anderen, die vom <b>Heulenden Fluch</b> (Seite 492) verderbt sind. In jeder Siedlung sind sie willkommen, doch dieser Empfang ist oft steif, förmlich, angespannt. Nur wenige fühlen sich unter dem durchdringenden Blick eines Shantyara wohl.
 P	Shantyara werben ihre Schüler unter verwaisten oder ungewollten Kindern an. Viele fliehen vor der harten, endlosen Ausbildung.
 P	Die meisten anderen sterben an Kälte oder Entbehrung oder an einer der vielen Gefahren, die ein solches Leben mit sich bringt. Einige wenige halten lange
 P	genug durch, um nützliche Gefährten zu werden (<b>HP</b> 10;

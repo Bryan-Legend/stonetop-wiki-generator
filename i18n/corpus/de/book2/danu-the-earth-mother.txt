@@ -101,7 +101,7 @@ B	Ein paar Menhire auf einer Anhöhe, mit Ritzungen, die die Bahnen bestimmter g
 B	Getrocknete, halluzinogene Pilze (2d4 Anwendungen, Wert 1)
 B	Ein Beutel Bendiswurzel (~10 Anwendungen, ◇ ihre Rauchschwaden vertreiben Widernatürliches; jede Anwendung hält ~1 Stunde, <i>Reichweite</i>, <i>Fläche</i>, Wert 1)
 B	Ein Bezoar (schlucken, um jedes Gift zu heilen, Wert 1)
-B	Ein Beutel rosa Salz, gut zum ◇ Kochen/Haltbarmachen und Gift für <i>korrumpierte</i> Kreaturen (Wert 1)
+B	Ein Beutel rosa Salz, gut zum ◇ Kochen/Haltbarmachen und Gift für <i>verderbte</i> Kreaturen (Wert 1)
 B	Ein geweihter Beutel aus runenbestickter ◇ Drakenhaut; ist er verschlossen, kann nichts darin durch Magie entdeckt oder gefunden werden, und nichts darin kann entkommen oder auf die Außenwelt einwirken (<i>magisch</i>, Wert 2)
 B	Ein Dolch aus Silberlegierung, nützlich gegen untote Geister (<i>Hand</i>, Wert 2)
 B	Eine 1,8 m hohe Statue der Danu, aus einer Geode gehauen, der Rumpf offen und mit Amethystkristallen gefüllt (<i>unbeweglich</i>, Wert 3)

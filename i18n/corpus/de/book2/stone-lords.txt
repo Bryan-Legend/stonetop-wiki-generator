@@ -219,7 +219,7 @@ H2	Gefahren
 HR
 H3	Gebundene Wesen
 B	<b>Geister der Wildnis</b> (Seite 356), besonders Elementare, die mit Erde, Stein und Gelände verbunden sind, durch Runenkunst ins Joch gezwungen, um den Bedürfnissen der Steinherren zu dienen
-B	Von <b>den</b> <b>Dingen in der Tiefe</b> (Seite 412) korrumpierte Geister und Bestien: versteinert, in Stein eingeschlossen oder hinter Schichten von Runen versiegelt
+B	Von <b>den</b> <b>Dingen in der Tiefe</b> (Seite 412) verderbte Geister und Bestien: versteinert, in Stein eingeschlossen oder hinter Schichten von Runen versiegelt
 B	Möchtegern-<b>Zauberkönige</b> (Seite 34), versteinert oder anderweitig eingekerkert, bevor sie zu viel Ärger anrichten konnten
 B	<b>Geister</b> (Seite 76), die geistlos Pflichten erfüllen, an die sie im Leben gebunden waren, ohne zu ahnen, dass sie etwas anderes wollen könnten
 B	<b>Urzeitliche Wesen</b> (Seite 298), durch ausgeklügelte Werke aus Kristall und Runen eingekerkert, gebunden, um zu dienen, oder zur sicheren Verwahrung weggesperrt
@@ -266,7 +266,7 @@ P	9-10 Würfle zweimal 1d8
 P	11-12 Würfle 1d10, aber mach es gewaltig – es fängt nicht nur, es versteinert; es zermahlt nicht nur, es verwandelt etwas zu Staub usw.
 PB
 P	Einige Beispiele:
-B	Runen des <b>Friedensbunds</b> (Peacebond, Seite 519), in Straßen, Hallen und öffentliche Orte eingearbeitet
+B	Runen des <b>Friedensbanns</b> (Peacebond, Seite 519), in Straßen, Hallen und öffentliche Orte eingearbeitet
 B	Ein glänzender Würfel aus blauschwarzem Stein, der denen, die ihn berühren, Erinnerungen stiehlt und sie nur den Willensstärksten vorspielt
 B	Ein Steingewölbe, das zufallen könnte, wenn man unachtsam ist, und das sich von innen nicht öffnen lässt
 B	Ein menschengroßer Kristall, gesprungen, der tellurische Energien absorbiert und sie gelegentlich als Blitze entlädt

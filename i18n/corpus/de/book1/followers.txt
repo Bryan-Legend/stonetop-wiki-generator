@@ -74,7 +74,7 @@ H3	Spielzüge auslösen
 P	Wenn du es tun willst, dann tu es in der Fiktion.
 P	Erzähl uns, wie du es tust, wie es aussieht.
 P	Sei konkret.
-P	Aber denk dran: Wenn du es in der Fiktion tust, dann musst du es auch tun. „Ich stürme am hagr vorbei, um das glühende Schwert zu packen“ – und die SL sagt, das ist Gefahr trotzen mit DEX. Es ist in Ordnung zu sagen: „Oh, wirklich? Dann lasse ich das wohl lieber.“ Aber wenn du am hagr vorbeistürmen willst, dann her mit den Würfeln.
+P	Aber denk dran: Wenn du es in der Fiktion tust, dann musst du es auch tun. „Ich stürme am Hagr vorbei, um das glühende Schwert zu packen“ – und die SL sagt, das ist Gefahr trotzen mit DEX. Es ist in Ordnung zu sagen: „Oh, wirklich? Dann lasse ich das wohl lieber.“ Aber wenn du am Hagr vorbeistürmen willst, dann her mit den Würfeln.
 H3	Vorrat halten und ausgeben
 P	Wenn ein Spielzug sagt: „halte X [Ressource] (bis/während/solange __)“, dann notiere die Ressource, die du hältst, und gib sie so aus, wie der Spielzug es beschreibt. Gehaltene Ressourcen auszugeben heißt meist, dass du es einfach tust, ganz ohne Wurf.
 P	Manchmal aber erlaubt es dir das Ausgeben einer gehaltenen Ressource, einen Spielzug auszulösen (und damit zu würfeln), wo du es sonst schlicht nicht gekonnt hättest.

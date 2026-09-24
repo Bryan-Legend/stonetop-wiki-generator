@@ -66,7 +66,7 @@ C	<b>AASGESTANK</b> Ein grauenhafter Geruch folgt dir überallhin. Natürliche T
 HR
 C	<b>TOTENANTLITZ</b> Jedem, der dich ansieht, ist klar, dass du tot bist. Wenn du <b><i>Einschüchterung und deine unheimliche</i></b> <b><i>Erscheinung nutzt, um zu Überzeugen</i></b>, hast du Vorteil.
 HR
-C	<b>HEIM DES UNGEZIEFERS</b> Käfer, Motten und anderes Ungeziefer haben sich in deinem Leichnam eingenistet. Sie erweisen dir Gefallen, wenn du sie bittest. Behandle sie als Gefolgsleute: <i>Gruppe</i>, <i>winzig</i>, <i>widerlich</i>, <i>kleinlaut</i>, <i>verstohlen</i>; HP je 1; <b>Instinkt</b> sich ablenken zu lassen; Preis: aufrichtige Zuneigung.
+C	<b>HEIM DES UNGEZIEFERS</b> Käfer, Motten und anderes Ungeziefer haben sich in deinem Leichnam eingenistet. Sie erweisen dir Gefallen, wenn du sie bittest. Behandle sie als Gefolgsleute: <i>Gruppe</i>, <i>winzig</i>, <i>widerlich</i>, <i>sanftmütig</i>, <i>verstohlen</i>; HP je 1; <b>Instinkt</b> sich ablenken zu lassen; Preis: aufrichtige Zuneigung.
 C	<b>KIND DER NACHT</b> Du siehst selbst in völliger Dunkelheit klar, allerdings nur in Schwarz, Weiß und Rot. Sonnenlicht jedoch blendet dich, und direktes Sonnenlicht verbrennt deine Haut.
 HR
 C	<b>BEUTE</b> Der Bleiche Jäger (Pale Hunter) hat deine Witterung aufgenommen. Rechne bald mit Besuch.

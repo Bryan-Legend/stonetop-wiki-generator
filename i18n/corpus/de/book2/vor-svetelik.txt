@@ -32,7 +32,7 @@ P	Die Ruinen von Vor Svetelik liegen im <b>Großen</b> <b>Wald (Great Wood)</b> 
 P	Um die Ruinen zu finden, brauchen die SC einen Führer oder eine genaue Wegbeschreibung.
 B	Ein Fae, ein <b>Geist der Wildnis</b> (Seite 356) oder das <b>Waldvolk</b> (Seite 150) könnte sie führen, würde es aber nicht wollen. Alle Wesen bei Verstand meiden die Ruinen.
 B	Eine Ruine der Grünen Herren könnte eine Karte oder Wegbeschreibung enthalten, doch die SC liefen Gefahr, sich zu verirren. Solche Anweisungen wären Jahrhunderte veraltet!
-B	Magie wie das <b>Waldnetz (Sylvan Web)</b> (Seite 521) könnte den SC helfen, die Ruinen selbst zu finden, auch wenn sie unterwegs trotzdem Gefahr liefen, sich zu verirren.
+B	Magie wie das <b>Netz des Waldes (Sylvan Web)</b> (Seite 521) könnte den SC helfen, die Ruinen selbst zu finden, auch wenn sie unterwegs trotzdem Gefahr liefen, sich zu verirren.
 B	Die <b>Weststraße (West Road)</b> (Seite 270) führte einst von dort, wo heute Stonetop steht, nach Vor Svetelik. Sie ist zerbrochen und längst verschüttet, könnte aber jemandem, der weiß, wonach er suchen muss, den Weg weisen.
 H2	Gebiete
 B	<b>Die Außenhänge der Hügel rings um</b> <b>die Stadt</b>, zerklüftet, überwuchert, übersät mit Glyphen des Waldvolks und Gräbern der Eindringlinge.
@@ -230,7 +230,7 @@ B	Der <b>infizierte Diener</b> eines Fomoraij (Seite 140)
 B	Ein <b>Fomoraij</b> selbst (Seite 136), tief in der Unterstadt.
 ICON	icons/undead.svg
 H3	Nemurvojak
-P	<i>Horde</i>, <i>Konstrukt</i>, <i>untot</i>, <i>korrumpiert</i>, <i>furchtlos</i>
+P	<i>Horde</i>, <i>Konstrukt</i>, <i>untot</i>, <i>verderbt</i>, <i>furchtlos</i>
 P	<b>HP</b> 11; <b>Rüstung</b> 4 (Widerstandskraft), 0 gegen Bronze <b>Schaden</b> Eisenholzspeere d6 mit Vorteil (<i>nah</i>, <i>blutig</i>, 1 durchdringend) oder Zerfetzen mit bloßen Händen d4 mit Vorteil (<i>Hand</i>, <i>packend</i>, <i>blutig</i>, 1 durchdringend)
 P	<b>Besondere Eigenschaften</b> an seine letzten Befehle gebunden; meidet die Sonne oder heiliges Licht <b>Instinkt</b> sich an der Angst und dem Leid seiner Beute zu weiden
 P	• Mit einem unirdischen Heulen auf einen Feind losstürmen

@@ -55,7 +55,7 @@ B	Deine persönlichen Folgeaufgaben („Einen Plan schmieden für Vahids Apparat
 B	NSC, die du eingeführt hast, und ihre wichtigsten Details („Stamat: sadistischer Söldner; extravagant; vernarbt, totes Auge“)
 B	Wichtige Entscheidungen, die du spontan getroffen hast, besonders solche, die im Spiel noch nicht enthüllt wurden („Callum ist tot“ oder „Nanzl weiß, dass Brynmor lügt“)
 B	Folgenreiche Ereignisse, die du in künftigen Sitzungen aufgreifen willst („Nanzl hat eine Locke von Kios’ Haar“ oder „Sawyl ist stinksauer auf Nolwen“).
-B	Was du im Sinn hattest, als du einen Hinweis fallen ließt oder ein provokantes Detail eingeführt hast („Silberner Schleim ist ein Zeichen des korrumpierten hagr“ oder „Unas feuriger Edelstein = Herz des Mächtigen Dieners“)
+B	Was du im Sinn hattest, als du einen Hinweis fallen ließt oder ein provokantes Detail eingeführt hast („Silberner Schleim ist ein Zeichen des verderbten Hagr“ oder „Unas feuriger Edelstein = Herz des Mächtigen Dieners“)
 B	Entscheidungen, von denen du weißt, dass du sie treffen musst („Was ist in Piotrs Keller?“)
 B	Vorbereitungen, von denen du weißt, dass du sie treffen willst („Eine Karte des Hügelgrabs zeichnen“)
 PAGE	575
@@ -234,7 +234,7 @@ P	Zeig ihnen dann ein paar Wege auf, ihre Ziele zu erreichen. Drehen sie sich we
 PAGE	583
 H2	Fortschritt
 P	Anfangs verdienen die SC genug XP, um alle 2–4 Sitzungen einen Stufenaufstieg zu machen. Je weiter die SC fortschreiten, desto mehr Sitzungen braucht ein Stufenaufstieg – die XP-Kosten steigen, und die Spieler würfeln seltener eine 6-.
-P	Ein SC kann einen Stufenaufstieg nur zu Hause machen, was die Spieler ermutigt, nach Stonetop zurückzukehren, sobald sie genug XP gesammelt haben. An diesem Punkt können die SC auch Hell zu brennen nutzen, womit sie überschüssige XP gegen Erfolg (oder weniger Komplikationen) eintauschen können.
+P	Ein SC kann einen Stufenaufstieg nur zu Hause machen, was die Spieler ermutigt, nach Stonetop zurückzukehren, sobald sie genug XP gesammelt haben. An diesem Punkt können die SC auch Hell brennen nutzen, womit sie überschüssige XP gegen Erfolg (oder weniger Komplikationen) eintauschen können.
 H2	Das Tempo drosseln
 P	Idealerweise sollten die SC zwischen zwei Abenteuern nur einen Stufenaufstieg machen. Die Spieler sollen jeden neuen Spielzug im Spiel erleben, bevor sie den nächsten bekommen. Machen deine Spieler zwischen den Abenteuern oft mehrere Stufenaufstiege, zieh einige der folgenden Möglichkeiten in Betracht.
 P	<b>Setz die XP beim Stufenaufstieg auf 0 zurück.</b> Die einfachste Anpassung, aber manche Spieler könnten sie hassen. Außerdem untergräbt sie die XP-Anreize, sobald ein SC genug für einen Stufenaufstieg hat.
@@ -242,7 +242,7 @@ P	<b>Erhöhe den XP-Bedarf.</b> Der Standardbedarf beträgt 6 + (2 × Stufe). Er
 P	Multipliziere die aktuelle Stufe mit 3 statt mit 2, um den Fortschritt auf höheren Stufen deutlich zu verlangsamen.
 P	<b>Passe die Fragen beim Sitzungsende an.</b> Sei strenger darin, was als „Ja“ zählt, oder formuliere die Fragen so um, dass sie schwerer zu erfüllen sind.
 P	Zum Beispiel könnte aus „Haben wir mehr über die Welt oder ihre Geschichte erfahren?“ die Frage „Haben wir Geheimnisse der Vergangenheit ans Licht gebracht?“ werden.
-P	<b>Lass die Spieler immer Hell zu brennen nutzen</b>, selbst wenn ihnen die XP für einen Stufenaufstieg fehlen. (Hast du einen Möchtegern-Helden mit dem Hintergrund Getrieben, musst du diesen Spielzug anpassen.)
+P	<b>Lass die Spieler immer Hell brennen nutzen</b>, selbst wenn ihnen die XP für einen Stufenaufstieg fehlen. (Hast du einen Möchtegern-Helden mit dem Hintergrund Getrieben, musst du diesen Spielzug anpassen.)
 H2	Spiel auf höheren Stufen
 P	Ab Stufe 6 werden die SC immer fähiger und schwerer herauszufordern. Sie haben bessere Werte, mehr Möglichkeiten, sich Vorteil zu verschaffen, und viele Werkzeuge, um Herausforderungen zu meistern und Gefahren abzumildern. Sie können sich allmählich unbesiegbar fühlen.
 P	Um SC auf höheren Stufen weiterhin herauszufordern:
@@ -312,7 +312,7 @@ P	SC nicht. Sie vertieft euer Spiel und gibt ihm neue Facetten.
 PAGE	586
 H2	Konflikte zwischen SC
 P	Ein Punkt der Agenda deiner Spieler ist, <b>einen fesselnden</b> <b>Charakter darzustellen</b> (Seite 37), und solche Charaktere sind sich nicht immer einig. Das ist in Ordnung. Eigentlich ist es großartig! Gut gehandhabt, können Konflikte zwischen SC hochdramatisch sein und zu den denkwürdigsten Teilen des Spiels gehören.
-P	Die meisten Konflikte zwischen SC sind bloß Meinungsverschiedenheiten oder ein SC, der einen anderen SC von etwas Unüberlegtem abhalten will. Der Möchtegern-Held will den korrumpierten Eber angreifen, aber der Marschall stört und hält ihn auf. Die Gesegnete will die Bestie bändigen und sie heilen, wenn sie kann, und überzeugt die anderen SC, sie es versuchen zu lassen.
+P	Die meisten Konflikte zwischen SC sind bloß Meinungsverschiedenheiten oder ein SC, der einen anderen SC von etwas Unüberlegtem abhalten will. Der Möchtegern-Held will den verderbten Eber angreifen, aber der Marschall stört und hält ihn auf. Die Gesegnete will die Bestie bändigen und sie heilen, wenn sie kann, und überzeugt die anderen SC, sie es versuchen zu lassen.
 P	Ermutige die Spieler, in ihrer Rolle zu streiten, nicht um zu „gewinnen“, sondern um ihre Standpunkte und Werte festzulegen. Nutze Spielzüge wie Überzeugen (gegenüber SC), Stören und Erkenntnis suchen, um die Dinge in Bewegung zu halten.
 H2	Unüberbrückbare Gegensätze
 P	Mit der Zeit können Meinungsverschiedenheiten zu anhaltenden Konflikten wachsen. Der Richter duldet die Täuschungen des Fuchses nicht. Der Fuchs kann dem Haudegen den Tod seines Ehemanns nicht verzeihen. Der Lichtträger sorgt sich um den Zustand der Seele des Suchers.
@@ -327,7 +327,7 @@ P	Sind alle mit dem Konflikt einverstanden, gib allen Beteiligten die Gelegenhei
 P	Nutze die Ergebnisse der Handlungen der SC und der Spielzüge der Spieler, um zu bestimmen, was als Nächstes kommt. Halte weiter Rücksprache mit den Spielern. Verschieb das Rampenlicht und gib anderen SC Gelegenheit, sich einzubringen. Würfelt jemand eine 6-, treib die Dinge zu ihrem logischen (wenn auch unglücklichen) Ende oder unterbrich den ganzen Konflikt durch ein unabhängiges, aber dringendes Problem.
 H2	Abstieg in die Schurkerei
 P	Manchmal schlägt ein SC einen dunklen Pfad ein.
-P	Vielleicht benutzt er immer wieder ein großes Arkanum und häuft Konsequenzen an. Vielleicht wird er von den Dingen in der Tiefe (Things Below) korrumpiert. Vielleicht stirbt er, weigert sich aber hinüberzugehen und verweilt als <b>Geist</b> (Seite 148), <b>Wiedergänger</b> (Seite 150) oder <b>Höriger</b> (Seite 152). Vielleicht trifft er einfach eine düstere Entscheidung nach der anderen.
+P	Vielleicht benutzt er immer wieder ein großes Arkanum und häuft Konsequenzen an. Vielleicht wird er von den Dingen in der Tiefe (Things Below) verderbt. Vielleicht stirbt er, weigert sich aber hinüberzugehen und verweilt als <b>Geist</b> (Seite 148), <b>Wiedergänger</b> (Seite 150) oder <b>Höriger</b> (Seite 152). Vielleicht trifft er einfach eine düstere Entscheidung nach der anderen.
 P	Meist ist es in Ordnung, wenn ein SC eigensinnig oder böse ist, aber nicht beides. Intrigiert ein SC, lügt und macht den anderen SC Ärger, hat aber das Herz am rechten Fleck, ist das interessant. Und stützt sich ein SC auf finstere Magie oder verabscheuungswürdige Taten, tut das aber im Einklang mit den Zielen der anderen SC, kann das fesselnd sein. Aber ein SC, der sowohl böse ist als auch gegen die anderen SC steht, ist kein Protagonist mehr. Er ist ein Schurke.
 P	Überschreitet ein SC die Grenze zur Schurkerei oder kommt ihr auch nur nahe, halte Rücksprache. Glaubt der Spieler dieses SC, dass er erlöst werden kann?
 P	Wollen die anderen Spieler es versuchen? Wenn nicht, wollen alle einen letzten Konflikt oder eine letzte Intrige ausspielen? Lautet die Antwort auf eine dieser Fragen „Nein“, sollte der SC <b>zur</b> <b>Bedrohung werden</b> (Seite 584). Lautet die Antwort auf alle drei Fragen „Ja“, konzentriert euch in einer kommenden Sitzung auf diese Konfrontation. Gelingt es der Gruppe nicht, ihren einstigen Verbündeten zu erlösen, wird dieser SC zur Bedrohung.

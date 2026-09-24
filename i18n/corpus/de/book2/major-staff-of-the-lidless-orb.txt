@@ -7,7 +7,7 @@
 # description: Der Stab des Lidlosen Auges (The Staff of the Lidless Orb), ein großes Arkanum aus Stonetop: eine grünliche Glaskugel mit Katzenauge auf einem eisernen Stab, die durch Dunkelheit und Trug sieht.
 PAGE	540
 FACE	front
-TH	appendix d: major arcana
+TH	Anhang D: Große Arkana
 P	◇ <i>, nah</i>, <i>magisch</i>, <i>unhandlich</i>
 P	Eine Kugel aus grünlichem Glas, geätzt mit einem Katzenaugenmuster und auf einen Stab aus rauem, narbigem schwarzem Eisen gesetzt. Die Kugel fängt das Licht und scheint zu leuchten, und die Pupille scheint sich im Dunkeln zu weiten und sich bei Tageslicht zu einem Schlitz zu verengen.
 P	Und manchmal könnte man schwören, dass sie sich von selbst umsieht.
@@ -23,13 +23,13 @@ P	<b>Bei 6-</b> zeigt dir die Kugel eine schreckliche Vision einer fernen Zeit o
 MARK	3
 P	Wenn du <b><i>die letzte Markierung ankreuzt</i></b>, entschlüsselst du die Geheimnisse des Stabs und kannst Macht des Lidlosen Auges einsetzen (siehe Rückseite). Kreuze eine der vier Wirkungen an (deine Wahl); du kannst diese Wirkung hervorrufen.
 P	Wenn du <b><i>einen Kreis ankreuzen würdest, aber schon alle drei angekreuzt hast</i></b>, kreuze eine neue Wirkung für Macht des Lidlosen Auges an. Du kannst diese Wirkung nun hervorrufen.
-P	front
+P	Vorderseite
 PAGE	541
 FACE	back
-TH	appendix d: major arcana
-H3	Mysteries of the Staff of the Lidless Orb
+TH	Anhang D: Große Arkana
+H3	Geheimnisse des Stabs des Lidlosen Auges
 HR
-H2	Moves
+H2	Spielzüge
 HR
 C	<b>Macht des Lidlosen Auges</b> Wenn du <b><i>den Stab trägst und die Macht der Kugel anrufst</i></b>, wähle eine der Wirkungen, die du angekreuzt hast:
 C	Wirf deinen Blick in die Ferne und sieh entweder eine vergangene Zeit deines jetzigen Aufenthaltsorts oder die Gegenwart eines fernen Ortes, den du schon einmal besucht hast. Solange du die Wirkung aufrechterhältst, bist du blind für die Welt um dich herum.
@@ -47,4 +47,4 @@ C	Du kannst keine Schönheit mehr sehen. Deine Sinne sind unverändert, aber nic
 C	Ersetze deinen Instinkt durch „Ekel: Das Grauenhafte und Groteske bestaunen."
 C	Du siehst die Hässlichkeit in anderen Menschen deutlich. Wenn du einem NSC zum ersten Mal begegnest, kannst du die SL fragen: „Welche geheime Scham oder Schuld trägt er?" und erhältst eine ehrliche Antwort.
 C	Du wirst dir El'rash-Orras bewusst, der Vielen Augen, die aus der Tiefe zu dir heraufstarren. Sie flüstert dir eine Aufgabe zu; verweigere sie – jetzt oder später – und das Lidlose Auge wird dunkel und für dich nutzlos.
-P	back
+P	Rückseite

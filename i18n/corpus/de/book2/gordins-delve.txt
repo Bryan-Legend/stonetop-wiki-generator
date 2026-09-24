@@ -233,7 +233,7 @@ P	• Keine Zeugen zurücklassen
 HR
 ICON	icons/people.svg
 H3	Verzweifelte Seelen
-P	<i>Gruppe</i>, <i>feige</i>, <i>kleinlaut</i>, <i>opportunistisch</i>
+P	<i>Gruppe</i>, <i>feige</i>, <i>sanftmütig</i>, <i>opportunistisch</i>
 P	<b>HP</b> 6; <b>Rüstung</b> 0 <b>Schaden</b> Ziegelstein, behelfsmäßige Keule, rostiges Messer
 P	d6 (<i>Hand</i>, <i>roh</i>)
 P	<b>Instinkt</b> zu tun, was sie tun müssen

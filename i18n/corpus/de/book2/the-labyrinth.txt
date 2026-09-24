@@ -138,7 +138,7 @@ P	6 Ein Zeichen ihres Ziels/ihrer Beute
 PAGE	246
 P	1d6 interessanter Ort
 HR
-P	1 Ein von den <b>Dingen</b> <b>in der Tiefe</b> (Seite 412) korrumpierter Ort, vielleicht ein Schrein, der von <b>Thraulgwyn</b> (Seite 247) oder <b>Kultisten</b> (Seite 435) gepflegt wird
+P	1 Ein von den <b>Dingen</b> <b>in der Tiefe</b> (Seite 412) verderbter Ort, vielleicht ein Schrein, der von <b>Thraulgwyn</b> (Seite 247) oder <b>Kultisten</b> (Seite 435) gepflegt wird
 P	2 Ein <b>Spukort</b> (Seite 72)
 P	3 Ein <b>bemerkenswerter Ort</b> (siehe unten)
 P	4 Eine <b>Siedlung der Thraulgwyn</b> (Seite 248)
@@ -192,7 +192,7 @@ B	Kriegerische Kultur
 B	Knochenkeulen/Speere mit Obsidianspitzen
 B	Verderbte Gaben
 B	Magische Artefakte
-P	Jede Stammesgruppe stammt von einem bestimmten Kriegsherrn oder Zauberkönig der Hügelgrabbauer und den Jüngern ab, die ihm ins Exil folgten. Und jede Gruppe ist ebenso von einem anderen der Dinge in der Tiefe korrumpiert.
+P	Jede Stammesgruppe stammt von einem bestimmten Kriegsherrn oder Zauberkönig der Hügelgrabbauer und den Jüngern ab, die ihm ins Exil folgten. Und jede Gruppe ist ebenso von einem anderen der Dinge in der Tiefe verderbt.
 P	Wähle oder erschaffe für jede Stammesgruppe die <b>Wesenheit, die sie verehrt</b> (Seite 417). Wähle oder würfle eine Gabe und ein Mal aus, die diese Wesenheit ihrem Volk verleiht. Wähle oder würfle dann einen Vorzug und eine Eigenart aus. Bestimme schließlich 1d6 <b>Artefakte</b> der Hügelgrabbauer, der <b>Schmiedeherren</b> (Seite 164) oder der <b>Dinge in der Tiefe</b> (Seite 424), die sie als heilige Schätze hüten.
 P	1d6 Gabe
 HR
@@ -379,9 +379,9 @@ B	Ein <b>Grochslon</b> (Seite 379) in der Nähe eines Baches, Sees oder Höhlene
 B	Forscher: <b>Abenteurer</b> (Seite 260), ein <b>Altertumsforscher</b> (Seite 260), ein <b>Hexer</b> (Seite 435) usw.
 B	<b>Ustrina</b> (Seite 464), unterwegs oder auf der Suche nach etwas
 B	Ein <b>Draventao</b> (Seite 170), der hier unten seinen Bau hat
-B	<b>Korrumpierte Wesen</b> (Seite 432): Fledermäuse, Felsratten, Geister, alles oben Genannte
+B	<b>Verderbte Wesen</b> (Seite 432): Fledermäuse, Felsratten, Geister, alles oben Genannte
 B	<b>Emanationen</b> (Seite 436) der Dinge in der Tiefe, die aus den Tiefen heraussickern
-H3	Korruption, je tiefer man kommt
+H3	Verderbnis, je tiefer man kommt
 B	<b>Unruhe und Unbehagen</b> (Seite 428)
 B	<b>Flüstern und Visionen</b> (Seite 428), die von unten kommen
 B	<b>Widernatürliche Phänomene</b> (Seite 429) in den Tiefen oder in ihrer Nähe
@@ -401,7 +401,7 @@ P	Geschöpfe des ersten Zeitalters, Wesen aus Feuer und Stein. Sie sind gegliede
 P	Die hier beschriebenen Würmer sind erst wenige Jahrhunderte alt; ihnen begegnet man am ehesten. Ältere und größere überleben in den Tiefen, bis zu 3 m breit und über 30 m lang (<i>riesig</i>, +6 HP, +2 Schaden, und würfle 1d12 statt 1d10). In längst vergangenen Äonen haben noch größere Würmer einen Großteil des Labyrinths ausgehöhlt.
 ICON	icons/people.svg
 H3	Thraulgwyn-Plünderer
-P	<i>Gruppe</i>, <i>korrumpiert</i>, <i>verstohlen</i>, <i>organisiert</i>, <i>vorsichtig</i>
+P	<i>Gruppe</i>, <i>verderbt</i>, <i>verstohlen</i>, <i>organisiert</i>, <i>vorsichtig</i>
 P	<b>HP</b> 6; <b>Rüstung</b> 0 oder 1 (Menschenhaut)
 P	<b>Schaden</b> Knochenspeer mit Obsidianspitze d8 (<i>nah</i>, <i>Wurfwaffe</i>, <i>roh</i>), Oberschenkelknochen d8 (<i>nah</i>, <i>roh</i>), Netz aus Haarseil (<i>Wurfwaffe</i>, <i>roh</i>, <i>packend</i>), Biss d6 (<i>Hand</i>)
 P	<b>Besondere Eigenschaften</b> mit Gaben und Malen je nach Stamm (Seite 248) <b>Instinkt</b>, ihren Stamm zu verherrlichen
@@ -417,7 +417,7 @@ PAGE	254
 HR
 ICON	icons/person.svg
 H3	Soithech
-P	<i>Einzeln</i>, <i>korrumpiert</i>, <i>hinterlistig</i>, <i>magisch</i>, <i>vorsichtig</i>
+P	<i>Einzeln</i>, <i>verderbt</i>, <i>hinterlistig</i>, <i>magisch</i>, <i>vorsichtig</i>
 P	<b>HP</b> 18; <b>Rüstung</b> 5 (Widerstandskraft, Menschenhaut),
 P	1 gegen Bronze <b>Schaden</b> Obsidianmesser d10 (<i>Hand</i>, <i>roh</i>)
 P	<b>Besondere Eigenschaften</b> mit mächtigen Gaben und Malen je nach Stamm (Seite 248) <b>Instinkt</b>, ihren Rang zu wahren
@@ -430,7 +430,7 @@ P	Die Macht eines Soitech ist nicht nur politischer Natur. Die Gabe und das Mal 
 P	Passe ihre Werte entsprechend an.
 ICON	icons/construct.svg
 H3	Tcaventes, Fessel und Schlüssel
-P	<i>Einzeln</i>, <i>groß</i>, <i>urzeitlich</i>, <i>Konstrukt</i>, <i>magisch</i>, <i>furchterregend</i>, <i>korrumpiert</i>
+P	<i>Einzeln</i>, <i>groß</i>, <i>urzeitlich</i>, <i>Konstrukt</i>, <i>magisch</i>, <i>furchterregend</i>, <i>verderbt</i>
 P	<b>HP</b> 25; <b>Rüstung</b> 6 (hart, geschützt, keine lebenswichtigen Organe), 4 gegen Schwarzeisen <b>Schaden</b> Wort der Macht d12+3 (<i>kurz</i>, <i>Fläche</i>, <i>wuchtig</i>) oder vier Fäuste d12+3 mit Vorteil (<i>nah</i>, <i>Reichweite</i>, <i>wuchtig</i>)
 P	<b>Besondere Eigenschaften</b> alterslos; immun gegen die Elemente; nimmt Gedanken und Materie wahr; spricht alle Sprachen <b>Instinkt</b>, die Beweise des eigenen Versagens zu verbergen, selbst vor sich selbst
 P	• Spürt Bedrohungen auf und schaltet sie mit kalter Präzision aus
@@ -438,7 +438,7 @@ P	• Verändert die Umgebung, um eine Öffnung zu schaffen oder zu schließen
 P	• Versiegelt oder entsiegelt: eine Tür, eine Bindung, einen Mund, ein Geheimnis usw.
 P	• Erstrahlt plötzlich im blendenden Licht der Schöpfung
 P	Tcaventes ist ein <b>Archon</b> (Seite 302), geschmiedet von den Ersten Schöpfern (First Creators), um über den <b>Abgrundbrunnen</b> (Seite 252) zu wachen und als Bollwerk gegen die Dinge in der Tiefe zu dienen. Tcaventes, Fessel und Schlüssel. Ein makelloser Wächter.
-P	Oder zumindest war er das. Im Lauf von Äonen erlag selbst er dem Flüstern der Dinge in der Tiefe. Die Korruption führt zu Nachlässigkeiten, durch die der Einfluss seiner Schützlinge durch die Tiefen heraussickert. Sie verstärkt seine Schuld, was zu einer Verleugnung führt, die stark genug ist, Tcaventes in den Wahnsinn zu treiben.
+P	Oder zumindest war er das. Im Lauf von Äonen erlag selbst er dem Flüstern der Dinge in der Tiefe. Die Verderbnis führt zu Nachlässigkeiten, durch die der Einfluss seiner Schützlinge durch die Tiefen heraussickert. Sie verstärkt seine Schuld, was zu einer Verleugnung führt, die stark genug ist, Tcaventes in den Wahnsinn zu treiben.
 PAGE	255
 P	Sollten die SC Tcaventes auf seinem Thron begegnen, erleben sie den Archon konzentriert, wachsam und streng, mit nur einem Hauch seines zerfallenden Verstandes.
 P	Sollten die SC Tcaventes aber anderswo in den Tiefen begegnen, wandert der Archon ziellos umher, spricht stockend mit sich selbst, ringt darum, einen Gedanken festzuhalten, abwechselnd herrisch und voller Selbstvorwürfe. Die SC müssen auf Messers Schneide balancieren, um seinen Zorn nicht auf sich zu ziehen.

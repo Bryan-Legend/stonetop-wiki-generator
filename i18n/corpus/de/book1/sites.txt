@@ -216,7 +216,7 @@ P	So gehst du dabei vor:
 P	<b>1) Lege das Fundament</b>
 B	Stelle Fragen
 B	Baue auf dem auf, was du hast
-B	Nutze den Settingband
+B	Nutze den Weltenführer
 P	<b>2) Entwickle seine Geschichte</b>
 B	Suche nach Verbindungen
 B	Stelle dir selbst Fragen
@@ -265,7 +265,7 @@ P	• 1½ Tage entfernt, im Großen Wald • Sajra ist seit letztem Herbst hier 
 P	<i>Ich bringe diesen Schauplatz ins Spiel, weil</i> <i>ich einen Unterschlupf für den Schurken brauche und weil</i> <i>ich möchte, dass die SC vielleicht einem mumifizierten</i> <i>Grünen Herrn begegnen. Was mir sagt:</i>
 P	• Das Grab ist im Wesentlichen intakt
 PAGE	357
-H3	Nutze den Settingband
+H3	Nutze den Weltenführer
 P	<i>Buch II</i> ist voller Beispielschauplätze und Werkzeuge, die dir helfen, eigene zu erschaffen. Nutze es als Inspiration und um Schauplätze zu gestalten, die zum größeren Setting von <i>Stonetop</i> passen.
 P	Wenn du einen Schauplatz von Grund auf erschaffst, entscheide zuerst, welche Art von Schauplatz es ist: eine Fae-Domäne, eine Ruine der Erbauer, ein heimgesuchter Schauplatz usw. Bist du unsicher, schlag den Eintrag der betreffenden Region nach und sieh dir die Abschnitte „Gelände“ und/oder „Entdeckungen“ darin an.
 P	Sobald du weißt, welche Art von Schauplatz du erschaffst, geh zum Abschnitt „Schauplätze“ des passenden Eintrags. Zum Beispiel findest du den Eintrag zu <b>Schauplätzen der Schmiedeherren</b> auf Seite 158 von <i>Buch II</i> und <b>heimgesuchte Schauplätze</b> auf Seite 72 im Eintrag „Der Tod und die Untoten“. Nutze die Verfahren und Tabellen dort, um das Konzept des Schauplatzes zu entwickeln.

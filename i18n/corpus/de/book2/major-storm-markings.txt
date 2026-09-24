@@ -10,7 +10,7 @@ FACE	front
 TH	Anhang D: Große Arkana
 P	<i>eingepflanzt</i>, <i>magisch</i>
 P	Eine Reihe verzweigter, baumartiger Male, die sich über deine Haut ziehen. Meist blassblau, fast wie Adern, doch wenn du dich erregst, scheinen sie zu glühen, zu pulsieren und vor Licht zu wogen.
-P	Die Male gelten gemeinhin als Segen Tors (Regenmacher, Donnerkopf, Bestientöter). Doch wie die meisten Segnungen der Götter sind sie zugleich eine schwere Bürde.
+P	Die Male gelten gemeinhin als Segen Tors (Regenmacher, Gewitterwolke, Bestientöter). Doch wie die meisten Segnungen der Götter sind sie zugleich eine schwere Bürde.
 HR
 P	Wenn du <b><i>vor Wut kochst</i></b>, verursachst du +1 Schaden, bis du dich beruhigst. Doch wenn du <b><i>versuchst, dein</i></b> <b><i>Temperament zu zügeln</i></b>, würfle +WIS: <b>bei 10+</b> bewahrst du einen kühlen Kopf und handelst, wie du willst; <b>bei 7-9</b> wähle 1 aus der Liste unten; <b>bei 6-</b> verlierst du einfach die Beherrschung – sag der SL, welchen verdammten Unsinn du am Ende anstellst.
 B	Atme ein paarmal tief durch und zähle bis zehn, während du die ganze Zeit vor Wut schäumst

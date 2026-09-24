@@ -38,7 +38,7 @@ B	Etwas, das die SC wollen, findet sich an einem heiligen Ort, von dem man weiß
 B	Jemand hat unwissentlich den Anker eines Geistes ins Dorf gebracht, und der Geist beginnt, Verheerungen anzurichten.
 B	Ein SC erfährt, dass ein bestimmter Geist ein wichtiges Geheimnis kennt, etwas, das er unbedingt erfahren will.
 PAGE	358
-P	Das Folgende gilt nicht nur für die Geister der Wildnis, sondern auch für <b>Geister</b> (Seite 76), <b>Trauerbaumgeister</b> (dool spirits, Seite 83), manche <b>Ur</b><b>mächte</b> (Seite 298), die <b>Dinge in der Tiefe</b> (Seite 412) und <b>kleine Götter</b> (Seite 182).
+P	Das Folgende gilt nicht nur für die Geister der Wildnis, sondern auch für <b>Geister</b> (Seite 76), <b>Doolgeister</b> (dool spirits, Seite 83), manche <b>Ur</b><b>mächte</b> (Seite 298), die <b>Dinge in der Tiefe</b> (Seite 412) und <b>kleine Götter</b> (Seite 182).
 H3	Manifestation
 P	Geister haben keine stoffliche Gestalt; sie existieren im Reich der Gedanken und Symbole. Sie können das sterbliche Reich auf subtile Weise wahrnehmen und beeinflussen, doch um unmittelbar darauf einzuwirken, muss ein Geist sich manifestieren oder eine stoffliche Gestalt in Besitz nehmen.
 P	Jeder Geist manifestiert sich anders. Manche formen sich einen Körper aus grober Materie. Andere erscheinen als Ungreifbares: Kälte, Schatten, Mondlicht usw. Manche können nur Lebewesen „reiten“. Andere können Wesen beleben, die einst lebendig waren, oder Gefäße, die eigens dafür bereitet wurden, sie aufzunehmen. Einige wenige können sich Körper aus reiner Geistessubstanz erschaffen.
@@ -73,8 +73,8 @@ P	Ist das Bewusstsein eines Sterblichen erst im Geisterreich, muss er den oder d
 E	sie brauchen einen kundigen Führer oder genaue Anweisungen;
 E	sie riskieren, sich zu verirren;
 E	der Weg ist zermürbend, sie riskieren Erschöpfung; und/oder
-E	sie müssen sich in Acht nehmen vor <b>Erscheinungen</b> (Seite 79), <b>Gespenstern</b> (Seite 79) oder anderen <b>Geistern</b> (Seite 76); <b>Trauerbaumgeistern</b> (Seite 83);
-P	<b>Grundmächten</b> (Seite 312); <b>Leerfäule</b> (Seite 313); Geistern, die von den Dingen in der Tiefe <b>verderbt</b> wurden (Seite 432); oder einfach <b>Elementargeistern</b>, die ihr Revier verteidigen, gewalttätig sind oder mächtig und achtlos.
+E	sie müssen sich in Acht nehmen vor <b>Erscheinungen</b> (Seite 79), <b>Gespenstern</b> (Seite 79) oder anderen <b>Geistern</b> (Seite 76); <b>Doolgeistern</b> (Seite 83);
+P	<b>Urkräften</b> (Seite 312); <b>Leerfäule</b> (Seite 313); Geistern, die von den Dingen in der Tiefe <b>verderbt</b> wurden (Seite 432); oder einfach <b>Elementargeistern</b>, die ihr Revier verteidigen, gewalttätig sind oder mächtig und achtlos.
 P	Je nach dem Geist, den sie suchen, müssen sie vielleicht auch einen gefährlichen Abschnitt des Geisterreichs überwinden/durchstehen/durchqueren und/oder riskieren, die Aufmerksamkeit bestimmter Geister auf sich zu ziehen. Suchen sie etwa den Geist der <b>Goldenen Eiche</b> (Golden Oak, Seite 186) auf, könntest du ihnen sagen …
 E	sie riskieren, die Aufmerksamkeit des Wächters des Übergangs auf sich zu ziehen; und/oder
 E	sie müssen den geheimen Übergang selbst durchstehen, der an die Letzte Tür und das Reich der Toten grenzt.

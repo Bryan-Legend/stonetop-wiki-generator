@@ -21,7 +21,7 @@ P	<b>Bei 10+</b> spürst du, was davon sie gleich tun werden, und kannst, wenn d
 C	<b>BLUTGETRÄNKTE VERGANGENHEIT</b> Du hast ein Leben voller Gewalt hinter dir gelassen und einen Namen, mit dem Mütter ihren Kindern Angst machten. Aus welchem Grund auch immer haben die Leute von Stonetop dich (wieder?) aufgenommen und behandeln dich wie einen der Ihren.
 P	Wenn du <b><i>mit Gewalt oder Drohungen jemanden Überzeugst, der</i></b> <b><i>deinen finsteren Ruf kennt</i></b>, kannst du +STR statt +CHA würfeln. Nimmst du außerdem den Spielzug Furchteinflößend, kannst du +CON statt +CHA würfeln.
 P	Wenn du <b><i>ohne Gnade oder Zögern kämpfst, um zu töten</i></b>, verursachst du +1d4 Schaden.
-C	<b>STURMGEZEICHNET</b> Tor (Regenbringer, Donnerkopf, Bestientöter!) hat dich berührt, und du trägst runenartige Male, ähnlich denen, die in den Stein geritzt sind. Wann zeigten sich die Male? Sind sie ein Zeichen deiner Stärke, Schnelligkeit und deines Mutes? Oder deren Quelle?
+C	<b>STURMGEZEICHNET</b> Tor (Regenmacher, Gewitterwolke, Bestientöter!) hat dich berührt, und du trägst runenartige Male, ähnlich denen, die in den Stein geritzt sind. Wann zeigten sich die Male? Sind sie ein Zeichen deiner Stärke, Schnelligkeit und deines Mutes? Oder deren Quelle?
 P	Du beginnst mit dem großen Arkanum Sturmmale.
 P	Kreuze eines der Kästchen auf der Vorderseite des Sturmmale-Blatts an und beschreibe hier, wie du vom Blitz getroffen wurdest und unversehrt davongingst:
 H2	Instinkt (Wähle 1)
