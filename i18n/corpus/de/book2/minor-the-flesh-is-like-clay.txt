@@ -13,7 +13,7 @@ C	… den Namen des Dings in der Tiefe erfahren, das diesen Ort einst verdorben 
 C	… mindestens einen ganzen Tag in völliger Dunkelheit hierbleiben, trotz der Albträume und Trugbilder, die deine Seele prüfen.
 C	… ein noch lebendes, warmblütiges Wesen in die Höhle bringen und sein Lebensblut auf die Steine vergießen, während du den Namen des Dings in der Tiefe anstimmst, das diesen unheiligen Ort einst berührt hat.
 H3	Das Fleisch ist wie Ton
-P	Wenn du <b><i>in der Höhle grausam ein warmblütiges Wesen tötest,</i></b> <b><i></i></b> eines von ähnlicher Größe wie du, und <b><i>sowohl sein Blut als auch deines auf die Steine schmierst,</i></b> kreuze 1 an:
+P	Wenn du <b><i>grausam ein warmblütiges Wesen</i></b> <b><i>in der Höhle tötest,</i></b> eines von ähnlicher Größe wie du, und <b><i>sowohl sein Blut als auch deines auf die Steine schmierst,</i></b> kreuze 1 an:
 C	Erhalte unheilige Widerstandskraft: Erhöhe deine maximalen HP um 2 und erhalte +1 Rüstung gegen alles außer Bronze.
 C	Erhalte eine der körperlichen Eigenschaften deines Opfers (seine Stärke, seine Schnelligkeit, sein Aussehen, sein starkes Herz usw.).
 C	Heile eine dauerhafte Verletzung (eine Gliedmaße nachwachsen lassen, eine Narbe entfernen, ein kaputtes Knie richten usw.).
