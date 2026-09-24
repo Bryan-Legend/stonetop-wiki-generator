@@ -150,5 +150,13 @@
   "book_titles": {
     "book1": "Księga I — Stonetop",
     "book2": "Księga II — Szerszy świat"
-  }
+  },
+  "page_words": [
+    "str.",
+    "strona",
+    "stronie",
+    "strony",
+    "stronach",
+    "stron"
+  ]
 }
