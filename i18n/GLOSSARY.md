@@ -77,7 +77,7 @@ rendering of *the wider world* and drops *and other wonders*.
 |---|---|
 | es | Libro II — El ancho mundo |
 | pt-BR | Livro II — O Mundo Mais Amplo |
-| de | Buch II — Die weitere Welt |
+| de | Buch II — Die weite Welt |
 | fr | Livre II — Le vaste monde |
 | it | Libro II — Il mondo più ampio |
 | nl | Boek II — De wijdere wereld |

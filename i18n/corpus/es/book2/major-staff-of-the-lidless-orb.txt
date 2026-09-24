@@ -7,7 +7,7 @@
 # description: El Báculo del Orbe sin Párpado (The Staff of the Lidless Orb), arcano mayor de Stonetop: una esfera de vidrio verdoso con ojo de gato sobre un báculo de hierro que ve a través de la oscuridad y el engaño.
 PAGE	540
 FACE	front
-TH	appendix d: major arcana
+TH	apéndice d: arcanos mayores
 P	◇ <i>, cerca</i>, <i>mágica</i>, <i>torpe</i>
 P	Una esfera de vidrio verdoso, grabada con un diseño de ojo de gato y montada sobre un báculo de hierro negro, tosco y picado. El orbe atrapa la luz y parece brillar, y la pupila parece dilatarse en la oscuridad y estrecharse hasta ser una rendija a la luz del día.
 P	Y a veces juraríais que mira a su alrededor por sí solo.
@@ -23,13 +23,13 @@ P	<b>Con 6-</b>, el orbe te muestra una visión terrible de algún tiempo o luga
 MARK	3
 P	Cuando <b><i>haces la última marca</i></b>, desvelas los misterios del Báculo y puedes usar Poder del Orbe sin Párpado (ver reverso). Marca uno de los cuatro efectos (a tu elección); puedes producir ese efecto.
 P	Cuando <b><i>debas marcar un círculo pero ya hayas marcado los tres</i></b>, marca un nuevo efecto de Poder del Orbe sin Párpado. Ahora puedes producir ese efecto.
-P	front
+P	anverso
 PAGE	541
 FACE	back
-TH	appendix d: major arcana
-H3	Mysteries of the Staff of the Lidless Orb
+TH	apéndice d: arcanos mayores
+H3	Misterios del Báculo del Orbe sin Párpado
 HR
-H2	Moves
+H2	Movimientos
 HR
 C	<b>Poder del Orbe sin Párpado</b> Cuando <b><i>portas el báculo e invocas el poder del Orbe</i></b>, elige uno de los efectos que tengas marcados:
 C	Proyecta tu vista a lo lejos y ve un tiempo pasado del lugar donde estás o el presente de un lugar lejano que hayas visitado antes. Mientras mantengas el efecto, estás ciego al mundo que te rodea.
@@ -47,4 +47,4 @@ C	Te vuelves incapaz de ver la belleza. Tus sentidos no cambian, pero nada te pa
 C	Sustituye tu instinto por «Asco: Maravillarse ante lo horrible y lo grotesco».
 C	Ves con claridad la fealdad de los demás. Cuando conoces a un PNJ por primera vez, puedes preguntar al DJ «¿Qué vergüenza o culpa secreta carga?» y obtener una respuesta sincera.
 C	Tomas conciencia de El'rash-Orra, los Muchos Ojos, que te contempla desde Abajo. Te susurra una tarea; recházala —ahora o más tarde— y el Orbe sin Párpado se oscurece y ya no te sirve.
-P	back
+P	reverso

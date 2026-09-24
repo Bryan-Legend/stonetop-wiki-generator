@@ -19,7 +19,7 @@ C	Ein geliebter Mensch wurde getötet oder entführt
 C	Jemand hat sein Leben gegeben, um dich zu retten
 C	Dein Vorbild opferte sich, um viele zu retten
 C	Du bist auf ein finsteres Geheimnis gestoßen
-C	Du musst einen schrecklichen Fehler wiedergutmachen Du hast immer die Möglichkeit, Hell zu brennen; du kannst nach dem Wurf 2 XP ausgeben, um +1 zu addieren, selbst wenn du nicht genug XP für einen Stufenaufstieg hast.
+C	Du musst einen schrecklichen Fehler wiedergutmachen Du hast immer die Möglichkeit, Hell brennen; du kannst nach dem Wurf 2 XP ausgeben, um +1 zu addieren, selbst wenn du nicht genug XP für einen Stufenaufstieg hast.
 C	<b>AUSERWÄHLT</b> ◇◇◇ Das Schicksal hat seine Hand auf dich gelegt. Wähle 3–4 der Begriffe unten, um deine Bestimmung zu beschreiben:
 C	gesalbt bei der Geburt gezeichnet dein Kommen wurde vorhergesagt
 C	zerstören entdecken befreien beschützen wiederherstellen
