@@ -71,7 +71,7 @@ P	12 <b>Dinge in der Tiefe</b> (Things Below; Seite 412)
 PAGE	189
 H2	Schätze der Goldenen Eiche
 HR
-B	Aus einem lebenden ◇ Blatt der Goldenen Eiche lässt sich ein <b>Goldblatt-</b> <b>Umhang</b> (Goldleaf Cloak; Seite 517) fertigen.
+B	Aus einem lebenden ◇ Blatt der Goldenen Eiche lässt sich ein <b>Goldblatt</b><b>-Umhang</b> (Goldleaf Cloak; Seite 517) fertigen.
 B	Mit dem richtigen Werkzeug und Wissen lässt sich die Rinde ernten, um daraus Waffen oder Rüstungen (2 Rüstung, <i>warm</i>, <i>sperrig</i>) zu fertigen, die hart wie Eisen sind und Untoten sowie Dingen von jenseits der Letzten Tür zum Verhängnis werden.
 B	Eine im Herbst geerntete ◇◇ goldene Eichel kann andernorts gepflanzt werden, um einen <b>Goldenen Setzling</b> heranzuziehen (siehe Kasten).
 H2	Begraben an den Wurzeln
