@@ -50,7 +50,8 @@
       "all_major": "Tutti gli arcani maggiori",
       "all_minor": "Tutti gli arcani minori",
       "uses": "Usi"
-    }
+    },
+    "value": "Valore"
   },
   "js": {
     "feedback_link": "Segnala un problema su questa pagina",

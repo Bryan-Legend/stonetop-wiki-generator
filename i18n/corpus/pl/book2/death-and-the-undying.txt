@@ -504,7 +504,7 @@ P	Gwyllgi to zwiastun śmierci, istota z tamtej strony. Nekromanta może go przy
 HR
 ICON	icons/danger.svg
 H3	Klątwa śmierci
-P	Zagrożenie (<i>przypadłość</i>)
+P	Zagrożenie (<i>plaga</i>)
 P	<b>Instynkt</b> podsycać napięcie i grozę
 P	• Spowodować wypadek lub zbieg okoliczności
 P	• Doprowadzić ofiarę do lęku, desperacji

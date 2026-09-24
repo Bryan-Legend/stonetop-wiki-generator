@@ -174,7 +174,7 @@ H2	Rozpisz swoje zagrożenie(-a)
 P	Jeśli twoja pierwsza przygoda obejmuje zagrożenie, rozbuduj je zgodnie ze wskazówkami z rozdziału <b>Zagrożenia</b> (str. 277). Spróbuj wymyślić nadciągającą zgubę i uczyń pierwszy złowieszczy zwiastun haczykiem swojej pierwszej przygody.
 P	Rozpisz też wszelkie powiązane zagrożenia, albo przynajmniej przypisz im typ zagrożenia i instynkt.
 P	Pomyśl też o innych zagrożeniach ustalonych podczas przedstawienia postaci, które mogłyby nałożyć się na tę przygodę, przeciąć jej ścieżkę albo po prostu dodać faktury. Czy czają się inne niebezpieczeństwa?
-P	Czy w osadzie są jakieś osoby, instytucje albo przypadłości, które przysporzą BG kłopotów? Je również rozpisz – przynajmniej z typem zagrożenia i instynktem.
+P	Czy w osadzie są jakieś osoby, instytucje albo plagi, które przysporzą BG kłopotów? Je również rozpisz – przynajmniej z typem zagrożenia i instynktem.
 HR
 P	<i>Vahid wyrzucił 7-9 na Zmianę Pór Roku</i> <i>i moim głównym zagrożeniem jest swyn, który</i> <i>nakłania crinwiny do kradzieży dzieci.</i> <i>Rozpisuję go tak:</i>
 P	Sajra Swyn (<i>złoczyńca</i>)

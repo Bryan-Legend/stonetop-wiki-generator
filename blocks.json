@@ -2892,11 +2892,6 @@
      "id": ""
     },
     {
-     "kind": "stat-block",
-     "name": "Keen-Nosed, Agile, Brave, Large);",
-     "id": "keen-nosed-agile-brave-large"
-    },
-    {
      "kind": "value-table",
      "name": "Service/Favor",
      "id": ""
@@ -3875,8 +3870,8 @@
     },
     {
      "kind": "stat-block",
-     "name": "Ferocedes Ogran",
-     "id": "ferocedes-ogran"
+     "name": "Ferocedes Ogran, Ghostly Forge Lord",
+     "id": "ferocedes-ogran-ghostly-forge-lord"
     },
     {
      "kind": "stat-block",

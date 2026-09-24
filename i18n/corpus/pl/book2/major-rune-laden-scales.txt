@@ -7,7 +7,7 @@
 # description: Runiczna Waga (The Rune-laden Scales), wielkie arkanum ze Stonetop: runiczna łuskowa zbroja Twórców, która chroni przed zimnem i magią chaosu.
 PAGE	562
 FACE	front
-TH	appendix d: major arcana
+TH	dodatek d: wielkie arkana
 P	◇◇, 2 pancerza, <i>magiczna</i>
 P	Prastary kaftan z niebieskawej stali, a na każdej łusce wytrawiona srebrzysta runa, podobna do tych, które można znaleźć w ruinach nieopodal Przełęczy Zapory (Barrier Pass). Bez wątpienia dzieło Twórców, a przynajmniej ich najzdolniejszych uczniów. Zbroja jest zaskakująco lekka i giętka. Łuski są zawsze zimne w dotyku i często obrzeżone szronem.
 HR
@@ -16,13 +16,13 @@ P	Gdy <b><i>nosisz Runiczną Wagę i nieugięcie stawiasz czoła magicznemu atak
 P	Gdy <b><i>nosisz Runiczną Wagę i pokonujesz kogoś, kto włada magią chaosu</i></b>, zaznacz 1:
 MARK	5
 P	Gdy <b><i>stawiasz ostatni znacznik</i></b>, odkrywasz tajemnice zbroi. Zyskujesz wybrany ruch (patrz rewers), ale zaznacz też konsekwencję. Następnie wymaż wszystkie znaczniki.
-P	front
+P	awers
 PAGE	563
 FACE	back
-TH	appendix d: major arcana
-H3	Mysteries of the Rune-laden Scales
+TH	dodatek d: wielkie arkana
+H3	Tajemnice Runicznej Wagi
 HR
-H2	Moves
+H2	Ruchy
 HR
 C	<b>NIEZŁOMNY</b> Gdy <b><i>nosisz Wagę i nieugięcie stawiasz czoła magicznemu atakowi</i></b>, możesz po rzucie zaznaczyć konsekwencję, by dodać 3 do wyniku.
 HR
@@ -44,4 +44,4 @@ C	Gdy <b><i>zabijasz żywą istotę z gniewu, strachu lub namiętności</i></b>,
 C	Gdy <b><i>dopuszczasz się jakiegokolwiek aktu przemocy z gniewu, strachu lub namiętności</i></b>, nawet wobec sługi chaosu, masz utrudnienie we wszystkich rzutach, dopóki nie odpokutujesz i nie oczyścisz się w obrzędzie.
 C	Zwracasz na siebie uwagę jednej z najpotężniejszych Istot z Głębin, która czyni twoją zgubę – albo twoje skażenie – swoim priorytetem.
 C	Wznosisz się w stan wizji, w którym spotykasz ducha ostatniego bohatera, który nosił Wagę. Jeśli odrzucisz zadanie, które ci powierzy, Runiczna Waga przestanie działać.
-P	back
+P	rewers

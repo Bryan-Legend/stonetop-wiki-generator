@@ -50,7 +50,8 @@
       "all_major": "Alle store arkana",
       "all_minor": "Alle små arkana",
       "uses": "Bruk"
-    }
+    },
+    "value": "Verdi"
   },
   "js": {
     "feedback_link": "Send tilbakemelding om denne siden",

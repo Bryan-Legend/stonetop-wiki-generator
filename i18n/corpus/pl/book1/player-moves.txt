@@ -448,10 +448,10 @@ P	Jeśli sprawy są trudne, rozbij działanie na mniejsze ruchy, z których każ
 P	<b>ROZPALIĆ SIĘ JASNO</b>
 P	Gdy <b><i>masz dość XP na Awans na</i></b> <b><i>Poziom</i></b> (6 + dwukrotność twojego obecnego poziomu), możesz po dowolnym swoim rzucie wydać 2 XP, by dodać do niego +1 (maks. +1 na rzut).
 P	BG nie mogą <b>Awansować na Poziom</b> (str. 528) podczas wyprawy, więc mogą skończyć z nadwyżką XP. Ten ruch pozwala im wydać część tych XP, by zapewnić sobie sukces.
-P	To, że BG mogą Rozpalić Się Jasno, pomaga spowolnić tempo awansowania BG i zapobiega „podwójnym awansom”. Subtelnie przechyla też szalę na korzyść graczy, gdy spędzili w terenie dużo czasu i doznali wielu niepowodzeń.
-P	Zwracaj uwagę, gdy gracze wyrzucają 6 lub 9, i pytaj gracza, czy ma dość XP, by Rozpalić Się Jasno. Jeśli ma, pewnie to zrobi.
+P	To, że BG mogą Płonąć Jasno, pomaga spowolnić tempo awansowania BG i zapobiega „podwójnym awansom”. Subtelnie przechyla też szalę na korzyść graczy, gdy spędzili w terenie dużo czasu i doznali wielu niepowodzeń.
+P	Zwracaj uwagę, gdy gracze wyrzucają 6 lub 9, i pytaj gracza, czy ma dość XP, by Płonąć Jasno. Jeśli ma, pewnie to zrobi.
 P	Gracze najczęściej Rozpalają Się Jasno, gdy rzucają 2d6 na ruch, ale mogą to zrobić przy każdym rzucie – także na obrażenia, a nawet Kością Losu.
-P	Gracz może Rozpalić Się Jasno tylko przy rzucie, który wykonuje sam; nie może wydać nadwyżki XP, by poprawić rzut innego gracza.
+P	Gracz może Płonąć Jasno tylko przy rzucie, który wykonuje sam; nie może wydać nadwyżki XP, by poprawić rzut innego gracza.
 PAGE	232
 P	<b>KONIEC SESJI</b>
 P	Gdy <b><i>sesja się kończy</i></b>, wskaż, jak wykazałeś się swoim instynktem lub się z nim zmagałeś. Jeśli możesz, zaznacz XP.
@@ -494,7 +494,7 @@ H2	Inne ruchy graczy
 P	Inne ruchy graczy są szczegółowo omówione gdzie indziej:
 H3	Ruchy stronników
 B	Rozkazywać Stronnikom 462
-B	Wzmocnij więź 464
+B	Wzmocnić Więź 464
 H3	Ruchy wypraw
 B	Wyznaczyć Kurs 302
 B	Wyekwipować Się 306

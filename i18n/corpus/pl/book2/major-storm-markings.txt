@@ -7,7 +7,7 @@
 # description: Znamiona Burzy (Storm Markings), wielkie arkanum ze Stonetop: rozgałęzione znaki na skórze, dar Tora, który podsyca gniew i wzywa burzę.
 PAGE	566
 FACE	front
-TH	appendix d: major arcana
+TH	dodatek d: wielkie arkana
 P	<i>wszczepione</i>, <i>magiczne</i>
 P	Ciąg rozgałęzionych, podobnych do drzew znaków biegnących w górę i w dół po twojej skórze. Zwykle bladoniebieskich, niemal jak żyły, ale gdy się wzburzasz, zdają się świecić, pulsować i falować światłem.
 P	Znamiona zwykle uważa się za błogosławieństwo Tora (deszczodawcy, gromowładnego, pogromcy bestii). Ale jak większość błogosławieństw bogów są też wielkim brzemieniem.
@@ -19,13 +19,13 @@ P	Gdy <b><i>trafia cię piorun lub wyładowanie elektryczne</i></b>, zaznacz 1, 
 MARK	3
 P	Gdy <b><i>zaznaczasz ostatnie pole</i></b>, odkrywasz tajemnice Znamion Burzy i możesz używać Furii Burzy (zob. rewers).
 P	Gdy <b><i>miałbyś zaznaczyć pole, ale wszystkie 3 są już zaznaczone</i></b>, ustaw swoją Furię na 3.
-P	front
+P	awers
 PAGE	567
 FACE	back
-TH	appendix d: major arcana
-H3	Mysteries of the Storm Markings
+TH	dodatek d: wielkie arkana
+H3	Tajemnice Znamion Burzy
 HR
-H2	Moves
+H2	Ruchy
 HR
 C	<b>FURIA BURZY</b> ◇◇◇◇ Gdy <b><i>zaczynasz kipieć gniewem</i></b>, twoje znamiona trzaskają elektrycznością, a powietrze pulsuje ciśnieniem. Rzuć +CON: <b>przy 10+</b> zyskujesz zapas 3 Furii; <b>przy 7-9</b> zyskujesz zapas 2 Furii; <b>przy 6-</b> zyskujesz zapas 2 Furii, ale zaznacz też konsekwencję.
 P	Możesz wydawać Furię 1 za 1, by przejawić jedno z poniższych:
@@ -48,4 +48,4 @@ C	Od tej pory, gdy zyskujesz Furię, zyskaj +1 Furii. Ale rzucasz też z utrudni
 C	W twojej najbliższej okolicy powstaje (lub przybiera na sile) burza. Nadciąga nienaturalnie szybko, choć nie cudownie.
 C	W twojej najbliższej okolicy zaczyna się zbierać straszliwa burza, która smaga cały region. Zamiecie, trąby powietrzne, powodzie – jest źle.
 C	Powstaje straszliwa burza (jak wyżej), a pogoda przez kilka miesięcy pozostaje dziwaczna. Twoja osada ma -2 do następnego rzutu na wytworzenie Nadwyżki, a jej następny rzut Fortuny przy Zmianie Pór Roku jest automatycznie 6-. Inne społeczności w regionie również cierpią.
-P	back
+P	rewers

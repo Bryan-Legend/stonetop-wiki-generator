@@ -16,7 +16,7 @@ C	… nauczyć się medytacyjnych pieśni towarzyszących paciorkom (ze skarbnic
 C	… spędzić porę roku w odosobnieniu, nago i poszcząc, medytując z paciorkami, ryzykując chorobę, wypadek i niefortunne przygody.
 H3	Zimny Umysł, Żelazne Ciało
 P	Przygotowanie ◇◇◇
-P	Gdy <b><i>Umacniasz Się, spędzając czas wolny w odosobnieniu, poszcząc i medytując z paciorkami modlitewnymi</i></b>, zyskujesz zapas Przygotowania (zgodnie z ruchem Umacniać Się).
+P	Gdy <b><i>Umacniasz Się, spędzając czas wolny w odosobnieniu, poszcząc i medytując z paciorkami modlitewnymi</i></b>, zyskujesz zapas Przygotowania (zgodnie z ruchem Wzmocnić Się).
 P	Dopóki <b><i>masz co najmniej 1 Przygotowanie</i></b>, potrzebujesz tylko godziny snu na dobę, możesz znosić zimną pogodę bez <i>ciepłego</i> ubrania i nie musisz zużywać zapasów ani prowiantu w podróży ani przy rozbijaniu obozu. Po mniej więcej dziesięciu dniach takiego surowego życia trać 1 Przygotowanie.
 P	Możesz też wydać 1 Przygotowanie, by:
 B	Dodać +1 do dowolnego rzutu już po jego wykonaniu (maks. +1 na rzut)

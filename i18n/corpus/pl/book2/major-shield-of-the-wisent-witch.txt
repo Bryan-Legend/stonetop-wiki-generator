@@ -7,7 +7,7 @@
 # description: Tarcza Żubrzej Wiedźmy (Shield of the Wisent Witch), wielkie arkanum ze Stonetop: tarcza z rogowego dębu, która przyzywa duchy stada żubrów.
 PAGE	554
 FACE	front
-TH	appendix d: major arcana
+TH	dodatek d: wielkie arkana
 P	◇◇ <i>,</i> +1 pancerza, <i>blisko</i>, <i>odrzucająca</i>, <i>magiczna</i>,
 P	+1 Gotowości przy 7+, gdy Bronisz
 PB
@@ -19,13 +19,13 @@ P	Gdy <b><i>używasz Tarczy, by Bronić, stojąc twardo obiema nogami na ziemi,<
 P	Gdy <b><i>odprawiasz święte obrzędy leśnych wiedźm</i></b>, samotnie w lesie, pod czystym niebem i sierpem księżyca, zaznacz 1:
 MARK	5
 P	Gdy <b><i>stawiasz ostatni znacznik</i></b>, odkrywasz tajemnice tarczy i możesz używać Duchów Stada (patrz rewers).
-P	front
+P	awers
 PAGE	555
 FACE	back
-TH	appendix d: major arcana
-H3	Mysteries of the Shield of the Wisent Witch
+TH	dodatek d: wielkie arkana
+H3	Tajemnice Tarczy Żubrzej Wiedźmy
 HR
-H2	Moves
+H2	Ruchy
 HR
 C	<b>DUCHY STADA</b> Gdy <b><i>dumnie nosisz Tarczę Żubrzej Wiedźmy i wzywasz duchy stada</i></b>, wybierz 1 z poniższych efektów:
 B	Dopóki nosisz Tarczę i dopóki któreś z was nie przemówi ludzką mową, ty i wszyscy sojusznicy, których naznaczysz błotem z leśnego poszycia, przybieracie postać stada żubrów. Dopóki trwa to zaklęcie, ty i twoi sojusznicy pokonujecie teren z wielką prędkością i możecie się paść zamiast zużywać zapasy/prowiant.
@@ -45,4 +45,4 @@ C	Robisz nieproporcjonalnie dużo hałasu; twój głos dudni, stopy ciężko tup
 C	Wszystkie twoje ataki zyskują cechę <i>odrzucający</i> (a jeśli już były <i>odrzucające</i>, stają się jeszcze bardziej), a duża broń traci cechę <i>niewygodna</i>. Niestety, ledwie znasz własną siłę i musisz uważać, by czegoś nie połamać (łącznie z przyjaciółmi).
 C	Drapieżniki wyczuwają, że byłbyś pyszny, i zaatakują oraz pożrą cię przed niemal każdą inną potencjalną ofiarą.
 C	Stajesz się terytorialny i nadmiernie opiekuńczy wobec sojuszników. Gdy ktoś lub coś <b><i>okazuje ci brak szacunku,</i></b> <b><i>podważa twój autorytet lub bezpośrednio zagraża twoim sojusznikom</i></b>, masz utrudnienie do wszystkiego poza przywołaniem go do porządku.
-P	back
+P	rewers

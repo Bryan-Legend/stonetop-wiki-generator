@@ -143,7 +143,7 @@ H3	Tor
 HR
 ICON	icons/danger.svg
 H3	Susza
-P	Zagrożenie (<i>przypadłość</i>)
+P	Zagrożenie (<i>plaga</i>)
 P	<b>Instynkt</b> wyczerpywać zasoby
 P	Deszcz i śnieg to życiodajne dary Tora.
 P	Ale co, jeśli ich poskąpi? Albo gorzej – nie może ich swobodnie dawać?
@@ -172,7 +172,7 @@ P	Gdy bohater opowieści stanie na wysokości zadania, zdobywa od nieznajomego d
 P	Ale gdy „bohater” nie podoła, zostaje przeklęty albo „zdobywa” jakiś skarb, który sprowadza na niego zgubę i nieszczęście.
 H3	Tor
 P	Gdy wprowadzasz dziewięciopalcego nieznajomego, wybierz lub wylosuj manifestację i wyzwanie, jakie rzuca. Zastanów się też, jaki dar lub klątwę może rozdać:
-P	arkanum, odpowiedź, radę, błogosławieństwo (np. zapas 3 Przygotowania, jak w ruchu Umocnić Się), klątwę (<i>zagrożenie</i>, <i>magiczną</i> <i>przypadłość</i>) itp.
+P	arkanum, odpowiedź, radę, błogosławieństwo (np. zapas 3 Przygotowania, jak w ruchu Wzmocnić Się), klątwę (<i>zagrożenie</i>, <i>magiczną</i> <i>plagę</i>) itp.
 P	1d6 manifestacja
 HR
 P	1 Zuchwały młodzieniec

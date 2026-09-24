@@ -52,11 +52,11 @@ P	Wybierz 1 albo niech ktoś rzuci Kością Losu.
 P	1d12 co oferują
 HR
 P	1 Skorupy ceramiki, strzępy postrzępionej tkaniny, dziwne kamyki albo inne rupiecie (Wartość 0), które szczerze uważają za cenne
-P	2–3 Kunsztownie wykonane przedmioty (Wartość 2), jak przepiękna statuetka z brązu, ◇ sztylet ze stopu srebra (<i>ręka</i>), haftowany złotem ◇ płaszcz (<i>ciepły</i>), doskonale wyważony krótki miecz (◇ <i>ręka</i>, <i>blisko</i>, +1 obrażeń, 1 przebijający) itd.
-P	4–5 <b>Osobliwość lub cudo</b> (następna strona)
-P	6–7 Metale szlachetne lub klejnoty (Wartość 3), jak sztaba złota, ◇◇◇ skrzynia prastarych srebrnych monet, złoty pierścień wysadzany klejnotami, kilka szafirów
+P	2-3 Kunsztownie wykonane przedmioty (Wartość 2), jak przepiękna statuetka z brązu, ◇ sztylet ze stopu srebra (<i>ręka</i>), haftowany złotem ◇ płaszcz (<i>ciepły</i>), doskonale wyważony krótki miecz (◇ <i>ręka</i>, <i>blisko</i>, +1 obrażeń, 1 przebijający) itd.
+P	4-5 <b>Osobliwość lub cudo</b> (następna strona)
+P	6-7 Metale szlachetne lub klejnoty (Wartość 3), jak sztaba złota, ◇◇◇ skrzynia prastarych srebrnych monet, złoty pierścień wysadzany klejnotami, kilka szafirów
 P	8 1d4 małe sztabki <b>orichalku</b> (str. 162)
-P	9–10 Jakiś <b>artefakt</b> (str. 164) Władców Kuźni
+P	9-10 Jakiś <b>artefakt</b> (str. 164) Władców Kuźni
 P	11 Artefakt innych <b>Twórców</b> (str. 264)
 P	12 Jakiś „bezcenny” skarb (Wartość
 P	4), jak szafir wielkości oka, ◇◇ skrzynia złotych monet, ◇ wysadzana klejnotami złota korona, wóz (<i>nieruchomy</i>) doskonałych stalowych mieczy ◇ (<i>blisko</i>, +1 obrażeń, 1 przebijający)
@@ -70,7 +70,7 @@ P	4 … świeżych ludzkich zwłok
 P	5 … ludzkich zwłok, w jakimkolwiek stanie
 P	6 … urn pełnych ludzkiej krwi (dostarczą urny)
 P	2 1d4 wozy określonego egzotycznego towaru, jak jedwab, konkretna przyprawa, bursztyn, rogi tura itd. (Wartość 4)
-P	3–5 Konkretny artefakt Władców Kuźni (opiszą go)
+P	3-5 Konkretny artefakt Władców Kuźni (opiszą go)
 P	6 Jakieś inne, konkretne arkanum (opiszą je)
 P	7 Dziwne i trudne zadanie (jak zabicie jakiejś potworności w Labiryncie)
 P	8 Skrzynię lub podobną ilość… (rzuć

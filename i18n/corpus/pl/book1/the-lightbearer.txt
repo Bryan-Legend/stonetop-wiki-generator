@@ -98,7 +98,7 @@ C	<b>LATARNIK</b> Kiedy <b><i>szepczesz do łatwopalnego przedmiotu</i></b> (poc
 C	<b>POBOŻNOŚĆ</b> ◇ Kiedy <b><i>spędzasz co najmniej godzinę na należnej czci</i></b> <b><i>dla Heliora,</i></b> zyskujesz zapas 1 Błogosławieństwa. Inni wierni BG, którzy biorą udział w tej czci, także zyskują 1 Błogosławieństwo. W dowolnej chwili możesz wydać 1 Błogosławieństwo, by dodać +1 do rzutu, który właśnie wykonałeś w słusznej sprawie.
 C	<b>OCZYSZCZAJĄCE PŁOMIENIE</b> Kiedy <b><i>władasz świętym światłem przeciw istocie</i></b> <b><i>ciemności</i></b>, liczy się ono jako broń (d10 obrażeń, <i>ręka</i>, <i>blisko</i>, <i>obszar</i>, 2 przebijający) i możesz wybrać rzut
 P	+WIS, by Zewrzeć Się.
-C	<b>PROMIENNE OBLICZE</b> Kiedy <b><i>obdarzasz kogoś czułą uwagą</i></b>, możesz potem Przekonywać go z przewagą. Jeśli to stronnik, możesz zamiast tego wybrać Wzmocnij więź (jakbyś zapłacił jego cenę).
+C	<b>PROMIENNE OBLICZE</b> Kiedy <b><i>obdarzasz kogoś czułą uwagą</i></b>, możesz potem Przekonywać go z przewagą. Jeśli to stronnik, możesz zamiast tego wybrać Wzmocnić Więź (jakbyś zapłacił jego cenę).
 C	<b>WSTAŃ JAK SŁOŃCE</b> Kiedy <b><i>słowem lub czynem przyciągasz uwagę do siebie</i></b>, rzuć +CHA: <b>przy 10+</b> wszyscy odwracają się i patrzą, a ty trzymasz ich spojrzenia, dopóki dajesz im powód do patrzenia; <b>przy 7-9</b> wszyscy odwracają się i patrzą.
 C	<b>PIERWSZA WIOSENNA ODWILŻ</b> Kiedy <b><i>spędzasz czas (co najmniej godzinę, może więcej)</i></b>
 P	<b><i>próbując obudzić nadzieję, życzliwość lub miłosierdzie w BN</i></b>,

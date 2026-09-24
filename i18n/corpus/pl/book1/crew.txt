@@ -36,7 +36,7 @@ C	Zwycięstwa nad godnymi przeciwnikami
 C	Bogactwo zdobyte dla siebie lub dla Stonetop
 HR
 P	Inwentarz 3 ◇ lub mniej to lekki ładunek;
-P	4–6 ◇ to normalny ładunek; 7–9 ◇ to ciężki ładunek.
+P	4-6 ◇ to normalny ładunek; 7–9 ◇ to ciężki ładunek.
 HR
 P	◇ <b>Toporek</b>, żelazny (<i>ręka</i>, <i>miotany</i>, <i>x</i> przebijający)
 P	◇ <b>Włócznia</b>, żelazna (<i>blisko</i>, <i>miotany</i>, <i>x</i> przebijający)

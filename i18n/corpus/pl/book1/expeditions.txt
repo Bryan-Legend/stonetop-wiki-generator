@@ -757,7 +757,7 @@ E	cel podróży.
 P	Potem ustal <b>etapy podróży</b> między punktami zainteresowania. Zanotuj, ile prawdopodobnie zajmie każdy etap.
 P	Dla każdego etapu podróży i punktu zainteresowania zrób kilka notatek:
 B	Krótki opis, nie dłuższy niż zdanie.
-B	2–3 wrażenia, najlepiej odbierane innymi zmysłami niż wzrok.
+B	2-3 wrażenia, najlepiej odbierane innymi zmysłami niż wzrok.
 B	Kilka pytań, które chcesz zadać graczom.
 B	Wszelkie wyzwania (z Wyznaczania Kursu), które planujesz tam wprowadzić.
 B	Wszelkie inne niebezpieczeństwa czy odkrycia, na które według ciebie się tam natkną.

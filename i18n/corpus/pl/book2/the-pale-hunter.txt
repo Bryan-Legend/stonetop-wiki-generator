@@ -99,7 +99,7 @@ HR
 ICON	icons/danger.svg
 H3	Zew Łowów
 P	Gdy <b><i>Blady Łowca przemyka obok</i></b>, twoja dusza drży na zew jego rogu i ujadanie ogarów – zaznacz XP, jeśli dołączysz do łowów.
-P	Jeśli <b><i>nie dołączysz do łowów</i></b> albo <b><i>Łowca cię przepędzi</i></b>, twoim instynktem staje się „Zwątpienie: cofać się przed niebezpieczeństwem, podważać własne decyzje” i nie możesz Rozpalić Się Jasno.
+P	Jeśli <b><i>nie dołączysz do łowów</i></b> albo <b><i>Łowca cię przepędzi</i></b>, twoim instynktem staje się „Zwątpienie: cofać się przed niebezpieczeństwem, podważać własne decyzje” i nie możesz Płonąć Jasno.
 P	Jedno i drugie trwa, dopóki nie dokonasz jakiegoś śmiałego i lekkomyślnego czynu.
 HR
 ICON	icons/danger.svg
@@ -114,7 +114,7 @@ P	<i>zwierzyna w ucieczce</i>
 ICON	icons/danger.svg
 H3	Pościg
 P	Gdy <b><i>Blady Łowca naznacza</i></b> <b><i>BG jako zwierzynę</i></b>, daje im fory. Odczekaj chwilę, a potem rozpocznij poniższe.
-P	Jeśli BG się rozdzielą, śledź złowieszcze znaki osobno dla każdego.
+P	Jeśli BG się rozdzielą, śledź złowrogie znaki osobno dla każdego.
 C	Słyszą w oddali jego róg
 C	Ujadanie ogarów się przybliża
 C	Podnosi się mgła, pojawiają się pierwsze ogary

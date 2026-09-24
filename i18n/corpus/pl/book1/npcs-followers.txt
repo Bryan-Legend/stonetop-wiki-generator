@@ -240,7 +240,7 @@ P	BN może nie potrzebować tych statystyk, gdy go tworzysz albo wymyślasz, ale
 HR
 P	<i>Gdy pierwszy raz wprowadzam Eliosa, nie spodziewam się,</i> <i>że wda się w walkę z BG, i nie</i> <i>przysparza im żadnych kłopotów. Nie ma więc potrzeby dawać</i> <i>mu statystyk potwora ani opisywać go jako zagrożenia.</i>
 P	<i>Szanuje Rhiannę i w sprawach obrony</i> <i>miasteczka zwykle jej ustępuje, ale tak naprawdę</i> <i>nie widzę w nim jej stronnika.</i>
-P	<i>W miarę postępu gry, gdy jednak</i> <i>miasteczko zaczyna być sfrustrowane</i> <i>przywództwem Rhianny, mogę uznać, że Elios</i> <i>stał się nieustającym problemem, i opisać</i> <i>go jako zagrożenie (</i> dzika karta<i>,</i>
+P	<i>W miarę postępu gry, gdy jednak</i> <i>miasteczko zaczyna być sfrustrowane</i> <i>przywództwem Rhianny, mogę uznać, że Elios</i> <i>stał się nieustającym problemem, i opisać</i> <i>go jako zagrożenie (</i> dżoker<i>,</i>
 P	<i>najpewniej, przynajmniej na początek).</i>
 HR
 PAGE	460

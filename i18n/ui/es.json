@@ -50,7 +50,8 @@
       "all_major": "Todos los arcanos mayores",
       "all_minor": "Todos los arcanos menores",
       "uses": "Usos"
-    }
+    },
+    "value": "Valor"
   },
   "js": {
     "feedback_link": "Enviar comentarios sobre esta página",

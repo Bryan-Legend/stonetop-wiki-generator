@@ -996,6 +996,28 @@ class TextMemory:
         ]
 
 
+_NOT_WORD_RE = re.compile(r"[\W_]+")
+
+
+def _visible_leaks(unused: list[str], body: str) -> list[str]:
+    """The unused lines whose English is on the rendered page. A line the
+    renderer never asked for is often one the page never shows at all (an
+    arcanum's running header and front/back labels) or one it translated
+    piecewise (a roll table's "1d12 terrain" head); only English that is
+    actually printed is a leak."""
+    if not unused:
+        return []
+    text = re.sub(r"<script\b.*?</script>|<style\b.*?</style>", " ", body, flags=re.S)
+    text = " " + _NOT_WORD_RE.sub(" ", html_unescape(re.sub(r"<[^>]+>", " ", text)).lower()) + " "
+    out = []
+    for en in unused:
+        # Whole words, the first six: "1d12 form" is not "1d12 forma".
+        words = _NOT_WORD_RE.sub(" ", _defmt(en).lower()).split()[:6]
+        if words and f" {' '.join(words)} " in text:
+            out.append(en)
+    return out
+
+
 # ------------------------------------------------------ loading translations
 
 def load_corpus_translations(code: str) -> dict[str, dict]:
@@ -1148,7 +1170,7 @@ def render_translated(
     parts = []
     if "book" in tr:
         done, total = coverage(en_lines, tr["book"][0], sheet=False)
-        leaks = tm.unused() if tm else []
+        leaks = _visible_leaks(tm.unused(), body) if tm else []
         parts.append(f"book {done}/{total} lines translated" + (f", {len(leaks)} not shown whole" if leaks else ""))
         if leaks:
             notes.append(f"{where}: not shown whole: " + "; ".join(_defmt(x)[:40] for x in leaks[:4]))

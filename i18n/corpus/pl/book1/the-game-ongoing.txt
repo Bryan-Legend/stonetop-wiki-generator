@@ -234,7 +234,7 @@ P	Potem przedstaw kilka sposobów osiągnięcia ich celów. Jeśli dalej kręcą
 PAGE	583
 H2	Rozwój
 P	Na początku BG zdobywają dość XP na Awans na Poziom co 2–4 sesje. W miarę rozwoju BG potrzeba więcej sesji na Awans na Poziom – koszt XP rośnie, a gracze rzadziej wyrzucają 6-.
-P	BG może wykonać Awans na Poziom tylko w domu, co zachęca graczy do powrotu do Stonetop, gdy zgromadzą dość XP. W tym momencie BG mogą też Rozpalić Się Jasno, co pozwala wymienić nadmiar XP na sukces (albo mniej komplikacji).
+P	BG może wykonać Awans na Poziom tylko w domu, co zachęca graczy do powrotu do Stonetop, gdy zgromadzą dość XP. W tym momencie BG mogą też Płonąć Jasno, co pozwala wymienić nadmiar XP na sukces (albo mniej komplikacji).
 H2	Spowalnianie tempa
 P	Najlepiej, by BG wykonywali Awans na Poziom tylko raz między przygodami. Chcesz, by gracze zobaczyli każdy nowy ruch w grze, zanim zdobędą kolejny. Jeśli twoi gracze często awansują kilka razy między przygodami, rozważ któreś z poniższych.
 P	<b>Zeruj XP przy Awansie na Poziom.</b> Najprostsza poprawka, ale niektórzy gracze mogą jej nie znosić. Osłabia też zachęty XP, gdy BG ma już dość na Awans na Poziom.
@@ -242,7 +242,7 @@ P	<b>Podnieś wymóg XP.</b> Domyślny wymóg to 6 + (2 × poziom). Zmień 6 na 
 P	Mnóż obecny poziom przez 3 zamiast przez 2, by naprawdę spowolnić rozwój na wyższych poziomach.
 P	<b>Dostosuj pytania Końca Sesji.</b> Bądź surowszy w ocenie, co liczy się jako „tak”, albo przepisz pytania tak, by trudniej było je spełnić.
 P	Na przykład „Czy dowiedzieliśmy się czegoś więcej o świecie lub jego historii?” może się zmienić w „Czy wydobyliśmy na światło dzienne jakieś tajemnice przeszłości?”.
-P	<b>Pozwól graczom zawsze Rozpalić Się Jasno</b>, nawet jeśli brakuje im XP na Awans na Poziom. (Jeśli masz Niedoszłego Bohatera z pochodzeniem Opętany Celem, trzeba będzie poprawić ten ruch).
+P	<b>Pozwól graczom zawsze Płonąć Jasno</b>, nawet jeśli brakuje im XP na Awans na Poziom. (Jeśli masz Niedoszłego Bohatera z pochodzeniem Opętany Celem, trzeba będzie poprawić ten ruch).
 H2	Gra na wysokich poziomach
 P	Po poziomie 6 BG stają się coraz bardziej kompetentni i coraz trudniej rzucić im wyzwanie. Mają lepsze cechy, więcej sposobów na zdobycie przewagi i mnóstwo narzędzi do pokonywania wyzwań i łagodzenia niebezpieczeństw. Mogą zacząć czuć się niepokonani.
 P	By dalej stawiać wyzwania BG na wysokich poziomach:

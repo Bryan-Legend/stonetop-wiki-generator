@@ -599,8 +599,8 @@ P	Jednym ze sposobów zrzekania się decyzji jest pozwolić rozstrzygnąć kośc
 P	Kość Losu to po prostu rzut kością, zwykle d6, gdzie niższy wynik oznacza coś złego, a wyższy coś dobrego. Każ graczowi rzucić Kością Losu, gdy nie masz konkretnego zdania o tym, co powinno się stać albo jak coś powinno pójść, i/lub gdy to zwykła kwestia szczęścia. Jaka jest dziś pogoda? Co napotkają po drodze? Ile użyć zapasów mogą złupić? Na ogół 1–2 to coś złego, 3–4 to wynik neutralny lub mieszany, a 5–6 to całkiem dobrze.
 P	Czasem przygotujesz zestaw wyników dla Kości Losu. Na przykład: co się dzieje, gdy rozbijają obóz?
 P	1 Crinwin atakują obóz!
-P	2–3 Crinwin próbują zwabić kogoś poza obóz.
-P	4–5 Są gdzieś tam i tylko was obserwują.
+P	2-3 Crinwin próbują zwabić kogoś poza obóz.
+P	4-5 Są gdzieś tam i tylko was obserwują.
 P	6 Unikacie ich uwagi.
 P	Nie ograniczaj się do d6, zwłaszcza gdy masz przygotowaną tabelę wyników. Jeśli masz 12 ciekawych wyników, niech rzucą d12.
 PAGE	202

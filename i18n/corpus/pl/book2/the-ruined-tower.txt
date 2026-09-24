@@ -527,7 +527,7 @@ P	A raczej prawie wszystkich. Kilkadziesiąt uniknęło zeszklającego zaklęcia
 HR
 ICON	icons/threat.svg
 H3	Og'molok, Beztwarza Horda
-P	Zagrożenie (<i>magiczna istota</i>)
+P	Zagrożenie (<i>istota magiczna</i>)
 P	<b>Instynkt</b> rozkoszować się rzezią, bólem i grozą
 P	<b>Motywy</b> okrucieństwo/tortury/przemoc oraz zniszczenie/chaos/ruina
 P	• Zsyłać straszne sny/wizje tym, których dotknęła przemoc

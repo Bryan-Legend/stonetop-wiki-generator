@@ -7,7 +7,7 @@
 # description: Pierścień Daagona (The Ring of Daagon), wielkie arkanum ze Stonetop: miedziany pierścień-wąż, który przywołuje mgłę, pożera poległych i wzywa Głębinowych.
 PAGE	560
 FACE	front
-TH	appendix d: major arcana
+TH	dodatek d: wielkie arkana
 P	<i>magiczny</i>
 P	Misternie rzeźbiony pierścień z miedzi, pokryty patyną i zawsze odrobinę wilgotny. Ma kształt dziwnego, gadziego stworzenia pożerającego własny ogon.
 HR
@@ -28,10 +28,10 @@ P	• Wyjawić sekret, za cenę
 P	• Znać czyjeś pragnienia
 PAGE	561
 FACE	back
-TH	appendix d: major arcana
-H3	Mysteries of the Ring of Daagon
+TH	dodatek d: wielkie arkana
+H3	Tajemnice Pierścienia Daagona
 HR
-H2	Moves
+H2	Ruchy
 HR
 C	<b>WEZWAĆ GŁĘBINOWYCH</b> Gdy <b><i>stoisz w gęstej mgle albo nad głęboką wodą i wzywasz sługi Daagona, by ci służyły</i></b>, wydaj 1 Lojalności albo zaznacz konsekwencję, a pojawią się. Traktuj je jako stronników, dzielących pulę Lojalności z samym Pierścieniem. Zawsze możesz zaznaczyć konsekwencję zamiast wydawać ich Lojalność.
 HR
@@ -61,4 +61,4 @@ C	Pożywienie daje ci tylko mięso. Rośliny, zboża i tym podobne nie liczą si
 C	Pożywia cię tylko surowe mięso, ale jesteś odporny na choroby przenoszone przez jedzenie.
 C	W promieniu kilku kilometrów od ciebie pojawia się 1d6 zapadlisk. Na dnie każdego ze stojącej wody wystaje megalit, a doglądają go słudzy Daagona.
 C	Cena pierścienia zmienia się na „Żywe, bezradne, rozumne ofiary”.
-P	back
+P	rewers

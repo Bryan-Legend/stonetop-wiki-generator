@@ -54,5 +54,5 @@ C	Twoje emocje tępieją. Nie mogą już na ciebie wpływać strach, nienawiść
 C	Zastąp swój instynkt „Dystans: Oddalać się od ludzkich więzi i emocji”.
 C	Twoja skóra nabiera niebieskawego odcienia; twoje ciało staje się zimne w dotyku. Nie działa na ciebie nawet najsroższy mróz, ale żar i ciepło są dla ciebie nie do zniesienia.
 C	Gdy otrzymujesz obrażenia od ognia, rzuć dwa razy i weź wyższy wynik.
-C	Gdy <b><i>wyrzucisz 6- U Progu Śmierci</i></b>, nie masz wyboru: otrzymujesz wkładkę Duch (z Lodową Kulą jako uwiązaniem).
+C	Gdy <b><i>wyrzucisz 6- U Progu Śmierci</i></b>, nie masz wyboru: otrzymujesz wkładkę Duch (z Lodową Kulą jako kotwicą).
 P	rewers

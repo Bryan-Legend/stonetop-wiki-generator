@@ -50,7 +50,8 @@
       "all_major": "Tous les arcanes majeurs",
       "all_minor": "Tous les arcanes mineurs",
       "uses": "Utilisations"
-    }
+    },
+    "value": "Valeur"
   },
   "js": {
     "feedback_link": "Signaler un problème sur cette page",

@@ -1071,7 +1071,7 @@ def render_value_table(
         head_cell = linkify_pages(title, lookup, current_slug, section_index, **lkw)
         head_cell = re.sub(r"^((?:<[^>]+>)*)([a-z])", lambda m: m[1] + m[2].upper(), head_cell)
     else:
-        val_head = "Value"
+        val_head = UI("value", "Value")
     return (
         f'<div class="value-table">'
         f"<table>"
@@ -1212,6 +1212,14 @@ def render_stat_block(
             and not line.startswith(("•", "·"))
             and (
                 stats[-1].rstrip().endswith(",")
+                # "Instinct (roll 1d4) 1 = to languish;" / "2 = to run
+                # rampant; …" (Gods and Religion's garden spirits)
+                or (
+                    stats[-1].rstrip().endswith(";")
+                    and not re.match(
+                        r"(damage|hp|instinct|cost|special qualit|armor)\b", low
+                    )
+                )
                 or stats[-1].count("(") > stats[-1].count(")")
                 # "Armor 4 (resilience), 1 vs." / "bronze (blubbery hide)":
                 # what the armor is weaker against is on the next line.
@@ -2215,6 +2223,22 @@ def _join_wrapped_stat_heads(lines: list[str]) -> list[str]:
     i = 0
     while i < len(out) - 1:
         a, b = out[i], out[i + 1]
+        if a.startswith(M_H3) and b.startswith(M_H3) and i + 2 < len(out):
+            # A creature's name heading wrapped over two lines ("Ferocedes
+            # Ogran, ghostly" / "Forge Lord", The Ruined Tower): the first
+            # half ends on a lowercase word after a comma, and the tags
+            # follow. Split, the second half read as a tag and the whole tag
+            # line, pieced from three lines, matched no translation.
+            da = _defmt(a[len(M_H3):]).strip()
+            nxt = out[i + 2]
+            if (
+                re.search(r",\s*[a-z][\w\-]*$", da)
+                and not nxt.startswith("\x02")
+                and looks_like_tag_line(_defmt(nxt))
+            ):
+                out[i] = a.rstrip() + " " + b[len(M_H3):].lstrip()
+                del out[i + 1]
+                continue
         if a.startswith("\x02") or b.startswith("\x02"):
             i += 1
             continue
@@ -2647,6 +2671,38 @@ def structure_html(
                     else:
                         notes_v.append(L[len(M_VF):].strip())
                     i += 1
+                # Rows the extractor let fall out of the table as plain lines
+                # (Hillfolk's livestock): a bullet carrying on a row that
+                # stopped mid-sentence ("…can butcher for" / "• ◇ provisions
+                # (9 uses)"), and a row whose value is glued to its first
+                # line inside a bracket ("Upland horse, follower? (powerful,
+                # 3" / "keen-nosed, …);" / "HP 14; …;" / "Cost firm
+                # training"). Each piece is translated on its own — the value
+                # cut out of a line leaves text no translation matches whole.
+                while rows_v and i < n and not lines[i].startswith("\x02"):
+                    L = lines[i]
+                    d = _defmt(L).strip()
+                    last_b, last_v = rows_v[-1]
+                    if d.startswith(("•", "·")) and not re.search(
+                        r"[.!?)]$", _defmt(last_b).strip()
+                    ):
+                        piece = re.sub(r"^\s*[•·]\s*", "", T(L))
+                        rows_v[-1] = (T(last_b) + " " + piece, last_v)
+                        i += 1
+                        continue
+                    m_row = re.match(r"^(.*\S)\s+(\d+)$", d)
+                    if not (m_row and d.count("(") > d.count(")")):
+                        break
+                    en = m_row.group(1)
+                    body_ = re.sub(r"\s*\d+(\s*(?:\x05|\x07)*)\s*$", r"\1", T(L))
+                    i += 1
+                    while i < n and not lines[i].startswith("\x02") and (
+                        en.count("(") > en.count(")") or en.rstrip().endswith(";")
+                    ):
+                        en += " " + _defmt(lines[i]).strip()
+                        body_ += " " + T(lines[i])
+                        i += 1
+                    rows_v.append((body_, m_row.group(2)))
                 if (
                     vt_title is None
                     and rows_v
@@ -3161,6 +3217,15 @@ def structure_html(
                         # next line looks like (Ustrina: "8 A chest or similar
                         # amount of... (roll" / "1d6 or pick)" is no dice header).
                         if body.count("(") > body.count(")") and not ENTRY_RE.match(nxt):
+                            body = _cat(body, nxt)
+                            i += 1
+                            continue
+                        # …and so does a row that stops on "roll": the dice
+                        # are its own (The Labyrinth: "11-12 obstruction (see
+                        # below), and roll" / "1d10 again" is no dice header).
+                        if re.search(r"\broll$", _defmt(body).rstrip()) and re.match(
+                            r"^\d{0,2}d\d+\b", nxt
+                        ):
                             body = _cat(body, nxt)
                             i += 1
                             continue

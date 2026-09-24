@@ -294,5 +294,5 @@ B	<b>Mniejsze arkanum</b>, małą kartę, którą dajesz graczowi, z opisem i wy
 B	<b>Wielkie arkanum</b>: wkładkę do playbooka na pół strony, z ruchami/opcjami do odblokowania i konsekwencjami ich używania.
 P	Pamiętaj, dla kogo to opracowujesz. Wszystko, co dajesz graczom (cechy, opisy fizyczne, własne ruchy, arkana), powinno być jasne i zwięzłe. Ale historia artefaktu, jego przeszłość, szczegóły miejsca, w którym się go znajduje, niuanse jego działania… to wszystko dla ciebie, by ukształtować, jak go wprowadzisz i wykorzystasz w grze. Rozpisz tyle, ile tobie osobiście się przyda.
 P	Jeśli Wartość artefaktu nie została ustalona, zastanów się, czy powinien ją mieć i jaka mogłaby być. Orientacyjne wskazówki znajdziesz w <i>Księdze I</i>, str. 92-93.
-P	Jeśli spodziewasz się, że artefakt będzie źródłem kłopotów, rozpisz go też jako zagrożenie (zapewne <i>MacGuffin</i>, a może <i>magiczny</i> <i>byt</i> albo nawet <i>przypadłość</i>).
+P	Jeśli spodziewasz się, że artefakt będzie źródłem kłopotów, rozpisz go też jako zagrożenie (zapewne <i>MacGuffin</i>, a może <i>istota</i> <i>magiczna</i> albo nawet <i>plaga</i>).
 P	Przykładów szukaj wśród artefaktów w całej tej księdze. Więcej wskazówek i kilka rozpracowanych przykładów znajdziesz w <i>Księdze I</i>, str. 434.

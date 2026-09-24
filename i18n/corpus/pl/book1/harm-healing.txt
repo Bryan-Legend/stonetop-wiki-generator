@@ -143,7 +143,7 @@ B	Odmów odejścia; otrzymujesz wkładkę Upiór lub Duch
 B	Wezwij po imieniu jedną z Istot z Głębin i błagaj ją o wstawiennictwo; otrzymujesz wkładkę Zniewolony
 P	Jeśli chcesz, możesz wstrzymać się z rozstrzygnięciem tego ruchu do końca sceny albo aż pozostali BG dostaną trochę uwagi. Jeśli ktoś próbuje ocalić umierającego BG (opatrując rany itp.), Pomaga w rzucie U Progu Śmierci. „Ryzyko, cena lub konsekwencje”, na które się naraża, zależą głównie od tego, jak Pomaga, od tego, jak wasz stół widzi Panią Wron, i od wyniku rzutu.
 P	Panią Wron i Ostatnie Wrota opisujesz ty i twój stół. Mogą nawet wyglądać różnie dla różnych postaci.
-P	Przy 10+ postać wraca do akcji i już nie umiera, ale zostaje naznaczona na umyśle, ciele lub duszy. Gracz decyduje jak, ale śmiało podsuwaj pomysły, np. paskudną bliznę, utracone oko, wizje Ostatnich Wrót czy stado wron zawsze w pobliżu. Cokolwiek wybierze, często przywołuj to znamię w grze. Może nawet rozpisz je jako zagrożenie (<b><i>przypadłość</i></b>, str. 284).
+P	Przy 10+ postać wraca do akcji i już nie umiera, ale zostaje naznaczona na umyśle, ciele lub duszy. Gracz decyduje jak, ale śmiało podsuwaj pomysły, np. paskudną bliznę, utracone oko, wizje Ostatnich Wrót czy stado wron zawsze w pobliżu. Cokolwiek wybierze, często przywołuj to znamię w grze. Może nawet rozpisz je jako zagrożenie (<b><i>plaga</i></b>, str. 284).
 P	Przy 7–9+ postać już nie umiera, ale jest nieprzytomna (albo prawie), dopóki nie postanowisz inaczej.
 P	Przy 6- nadszedł jej czas i rozsądnie jest przejść przez Ostatnie Wrota.
 P	Może wykonać ostatni ruch, ale potem jest martwa. Nie da się jej uratować. Nie może użyć tego ostatniego ruchu, by uniknąć śmierci. Tylko najrzadsza magia może ją przywrócić.
@@ -151,7 +151,7 @@ P	Jeśli odmawia odejścia, zapytaj dlaczego. Niech gracz przejrzy wkładki Duch
 P	Aby stać się Zniewolonym, BG musi znać imię jednej z Istot z Głębin. Jeśli żadna z nich nie pojawiła się w grze, może BG Zna Się na Rzeczy przed śmiercią?
 P	Jeśli postać „zostaje”, czeka ją stały upadek – staje się coraz bardziej niestabilna i potworna.
 P	Podkreślaj grozę. Pokazuj, że ich „życie” nie jest już takie samo. Wprowadzaj do gry ich Straszliwy
-P	Cel lub Impuls. Dla Ducha lub Upiora stwórz ich Straszliwy Cel jako przypadłość; dla Zniewolonego stwórz jego pana jako <i>magiczny byt</i> (zob. <b>Zagrożenia</b>, str. 277).
+P	Cel lub Impuls. Dla Ducha lub Upiora stwórz ich Straszliwy Cel jako plagę; dla Zniewolonego stwórz jego pana jako <i>magiczny byt</i> (zob. <b>Zagrożenia</b>, str. 277).
 P	Nieumarły BG powinien czuć, że żyje na kredyt – bo tak jest. Pozostali BG powinni mieć się na baczności przed nieumarłym sojusznikiem.
 P	Co najmniej na baczności.
 PAGE	246

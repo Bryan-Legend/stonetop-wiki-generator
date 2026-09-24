@@ -58,7 +58,8 @@
       "WIS": "SAB",
       "CON": "CON",
       "CHA": "CAR"
-    }
+    },
+    "value": "Valor"
   },
   "page_words": [
     "página",

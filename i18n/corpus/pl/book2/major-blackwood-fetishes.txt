@@ -7,7 +7,7 @@
 # description: Fetysze z Czarnego Drewna (Blackwood Fetishes), wielkie arkanum ze Stonetop: dwie figurki więżące duchy Astora i Halix, które można wezwać jako stronników.
 PAGE	564
 FACE	front
-TH	appendix d: major arcana
+TH	dodatek d: wielkie arkana
 P	◇ <i>, magiczne</i>, <i>niezniszczalne</i>
 P	Para drewnianych figurek, wyrzeźbionych z czarnego drewna i wygładzonych wiekiem i używaniem. W czubek głowy każdej figurki wbito białawy pręt, a oczy i czoło każdej z nich są poplamione rdzawym, czerwonawym kolorem.
 P	Figurki opierają się wszelkim zwyczajnym próbom ich uszkodzenia. Takie próby mogą je nieco naznaczyć, ale ich kształt pozostaje nienaruszony.
@@ -17,13 +17,13 @@ P	Gdy <b><i>namaszczasz figurkę własną krwią, a potem śpisz w jej obecnośc
 P	Gdy <b><i>poznajesz imię jednego ze związanych duchów</i></b> albo znak, który je przywołuje i wiąże, zaznacz 1:
 MARK	3
 P	Gdy <b><i>stawiasz ostatni znacznik</i></b>, odkrywasz tajemnice Fetyszy z Czarnego Drewna i możesz używać ruchu Wezwać i Rozkazywać (patrz rewers).
-P	front
+P	awers
 PAGE	565
 FACE	back
-TH	appendix d: major arcana
-H3	Mysteries of the Blackwood Fetishes
+TH	dodatek d: wielkie arkana
+H3	Tajemnice Fetyszy z Czarnego Drewna
 HR
-H2	Moves
+H2	Ruchy
 HR
 C	<b>Wezwać i Rozkazywać</b> Gdy <b><i>znaczysz obie figurki własną krwią i wzywasz po imieniu zarówno Astora, jak i Halix</i></b>, przed tobą ukazują się ich duchy. Traktuj je jak stronników. Są zobowiązane słuchać twoich bezpośrednich rozkazów i nie mogą jawnie działać przeciwko tobie, ale być może będziesz musiał je Przekonywać, by zrobiły cokolwiek poza wykonaniem twoich rozkazów co do joty.
 P	Gdy <b><i>odprawiasz Astora lub Halix</i></b>, oboje wracają do swoich figurek, dopóki znów ich nie wezwiesz.
@@ -55,4 +55,4 @@ P	<b>HP</b> 10; <b>Pancerz</b> 1 (brak narządów)
 P	<b>Obrażenia</b> widmowy dotyk d4 (<i>ręka</i>, ignoruje pancerz) lub broń nosiciela d6 (etykiety różne)
 P	<b>Cena</b> rozkosze ciała (Lojalność ◇◇◇ )
 PB
-P	back
+P	rewers

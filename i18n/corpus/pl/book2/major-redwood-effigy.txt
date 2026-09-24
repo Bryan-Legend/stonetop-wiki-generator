@@ -43,7 +43,7 @@ C	<b>Jesteśmy jednością</b> Możesz odczuwać, mówić, a nawet czynić magi�
 HR
 H2	Konsekwencje
 HR
-C	Twoje serce bije wolniej, a emocje tępieją. Magia nie może poruszyć twoich emocji, chyba że jest wymierzona konkretnie w kukłę. Niestety, nie możesz już Rozpalić Się Jasno.
+C	Twoje serce bije wolniej, a emocje tępieją. Magia nie może poruszyć twoich emocji, chyba że jest wymierzona konkretnie w kukłę. Niestety, nie możesz już Płonąć Jasno.
 C	Twoja krew płynie jak żywica, a mięśnie stają się jak drewno. Zyskujesz +1 pancerza i +4 do maks. HP, ale nie możesz już odzyskiwać HP ruchem Dochodzić do Siebie. Gdy <b><i>Rozbijasz Obóz</i></b>, musisz odpoczywać, dotykając gleby, inaczej nic ci to nie daje.
 C	Od tej pory, gdy <b><i>ktokolwiek czyni magię na kukle</i></b>, działa ona zamiast tego na ciebie i omija wszelkie twoje zabezpieczenia (w tym Zastępcze cierpienie).
 C	Od tej pory, gdy <b><i>doznajesz fizycznej krzywdy, mając Kanał</i></b>, musisz go wydać i użyć Zastępczego cierpienia.

@@ -7,7 +7,7 @@
 # description: Kodeks Hec'tumela (The Hec'tumel Codex), wielkie arkanum ze Stonetop: miedziane płytki, które uczą zaklęć Bladej Jaszczurki – za cenę wężowej przemiany.
 PAGE	556
 FACE	front
-TH	appendix d: major arcana
+TH	dodatek d: wielkie arkana
 P	◇ <i>, prymitywny</i>, <i>powolny</i>, <i>magiczny</i>
 P	Tuzin miedzianych płytek, zzieleniałych ze starości i spiętych pętlami czerwonawego metalowego drutu. Zewnętrzne płytki zdobią wytłoczone dziwne wizerunki ludzi i zwierząt, a wewnętrzne pokrywają wytrawione tajemne diagramy z przypiskami w jakimś zapomnianym piśmie.
 HR
@@ -23,11 +23,11 @@ P	Gdy <b><i>Hec'tumel spędza noc, ucząc cię zaklęcia z Kodeksu</i></b>, zazn
 MARK	4
 P	Za każdym razem, gdy <b><i>stawiasz znacznik</i></b>, wybierz jedno z <b>Zaklęć Kodeksu</b> (patrz rewers) – możesz je teraz rzucać.
 P	Gdy <b><i>stawiasz ostatni znacznik</i></b>, odkrywasz tajemnice Kodeksu i zyskujesz ruch Mroczne Naczynie (patrz rewers).
-P	front
+P	awers
 PAGE	557
 FACE	back
-TH	appendix d: major arcana
-H3	Mysteries of the Hec'tumel Codex
+TH	dodatek d: wielkie arkana
+H3	Tajemnice Kodeksu Hec'tumela
 HR
 H2	Zaklęcia Kodeksu
 HR
@@ -39,7 +39,7 @@ C	<b>Zdmuchnięcie Ducha.</b> Wskaż żywą ofiarę w zasięgu <i>niedaleko</i> 
 HR
 C	<b>Odrętwienie.</b> Spójrz komuś w oczy i wyszeptaj kojące słowa. Zaczyna zasypiać. Jeśli się opiera, rzuć 3d4 – jeśli wynik przekracza jego obecne HP, opór zawodzi. Gdy już zaśnie, nie starzeje się, nie musi jeść ani pić i nie odnosi obrażeń od trucizn ani chorób. Nie da się go zbudzić, dopóki nie usłyszy swojego imienia wypowiedzianego trzykrotnie. <b>Wzmocnione</b>: W ciągu 3d6 dni goją się wszystkie fizyczne obrażenia, odrastają utracone kończyny (itp.), trucizny i choroby zostają uleczone, a słabości wieku się cofają.
 HR
-H2	Moves
+H2	Ruchy
 HR
 C	<b>MROCZNE NACZYNIE</b> Gdy <b><i>rzucasz zaklęcie z Kodeksu</i></b>, przy 12+ możesz wybrać efekt Wzmocniony. Gdy <b><i>postanawiasz</i></b> <b><i>zaznaczyć konsekwencję przed rzuceniem zaklęcia</i></b>, nie rzucasz; uzyskujesz 12+.
 HR
@@ -52,4 +52,4 @@ C	Twoje tętno i oddech zwalniają i potrafisz pozostawać zupełnie nieruchomo 
 C	W ciągu kilku dni twoje uszy maleją i przylegają płasko do głowy. Twój język się wydłuża, a szczękę i gardło potrafisz rozewrzeć tak, by połykać rzeczy, których żaden człowiek połknąć nie powinien.
 C	Twoje oczy mętnieją, przestajesz mrugać i z trudem dostrzegasz rzeczy, które się nie poruszają. Twój język się rozwidla i zyskujesz nadnaturalnie wyczulony węch i dotyk.
 C	Wszystko, co postrzegasz, postrzega też Hec'tumel.
-P	back
+P	rewers

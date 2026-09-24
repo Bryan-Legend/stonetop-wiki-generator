@@ -50,7 +50,8 @@
       "all_major": "Všechna velká arkána",
       "all_minor": "Všechna malá arkána",
       "uses": "Použití"
-    }
+    },
+    "value": "Hodnota"
   },
   "js": {
     "feedback_link": "Poslat připomínku k této stránce",

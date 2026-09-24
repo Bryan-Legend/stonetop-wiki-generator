@@ -118,7 +118,7 @@ P	<i>Nadaję im też instynkt: „usidlić”.</i>
 P	<i>Nie widzę, żeby ta przeszkoda zadawała obrażenia – po prostu unieruchamia ofiarę, wprawia ją w błogość,</i> <i>sprawia, że przestaje się szamotać, a potem powoli</i> <i>ją dusi. Uznaję, że każdy, komu</i> <i>wstrzyknięto euforyczną truciznę,</i> <i>musi Stawić Czoła Niebezpieczeństwu, by zrobić cokolwiek innego</i> <i>niż odprężyć się i cieszyć chwilą.</i>
 HR
 PAGE	387
-H3	Jako nieuchronna zguba
+H3	Jako nadciągająca zguba
 P	Spisz serię coraz gorszych zdarzeń zakończonych jakąś ostateczną zgubą.
 P	Zacznij od wyobrażenia sobie ostatecznej, najgorszej rzeczy, jaka może się zdarzyć, i spisz krótki opis, na przykład „Sala tronowa się zawala”. Potem spisz 1-4 złowrogie znaki, zdarzenia, które pokazują, jak przeszkoda się zaczyna i jak narasta. Przypisz każdemu znakowi obrażenia i tagi, jeśli to stosowne.
 P	Postaw jedno lub więcej pól wyboru obok każdego złowrogiego znaku (kilka pól oznacza, że znak zdarza się kilka razy). Zakończ nieuchronną zgubą. W grze, gdy wykonujesz ruch MG, możesz <b>przybliżyć</b> <b>nieuchronną zgubę</b> i sprawić, że nastąpi kolejne zdarzenie.
@@ -281,13 +281,13 @@ PAGE	395
 H2	3	Tagi
 P	Zbierz listę tagów, odpowiadając na poniższe pytania.
 HR
-VT	<b>Jak poluje lub walczy?</b> (wybierz 1)	tag
+VT	<b>Jak poluje lub walczy?</b> (wybierz 1)	etykieta
 VR	W dużych grupach (6 lub więcej)	<i>horda</i>
 VR	W małych grupach (2-5 w grupie)	<i>grupa</i>
 VR	Samotnie	<i>samotny</i>
 P	Jeśli pojedynczy potwór należy do grupy, ale nadal walczy lub poluje głównie w pojedynkę, nadaj mu tag <i>samotny</i> (i odpowiednie wartości HP i obrażeń; patrz niżej).
 HR
-VT	<b>Jak jest duży?</b> (wybierz 1)	tag
+VT	<b>Jak jest duży?</b> (wybierz 1)	etykieta
 VR	Wielkości kota lub mniejszy	<i>maleńki</i>
 VR	Jak ludzkie dziecko	<i>mały</i>
 VR	Wielkości dorosłego człowieka	<i>-</i>

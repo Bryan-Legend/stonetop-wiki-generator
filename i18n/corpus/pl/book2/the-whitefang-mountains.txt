@@ -455,7 +455,7 @@ PAGE	492
 HR
 ICON	icons/danger.svg
 H3	Wyjąca Klątwa
-P	Zagrożenie (<i>przypadłość</i>)
+P	Zagrożenie (<i>plaga</i>)
 P	<b>Instynkt</b> zmieniać ludzi w potwory
 P	W <b>Czasie Kataklizmu</b> (str. 413) głos <b>Y'aaw'kary</b> (str. 421) pogrążył północ w szaleństwie. Całe wioski zwróciły się przeciwko sobie. Ocalali zdziczeli, stając się grasującymi bestiami. <b>Władcy Szronu</b> (str. 316) poświęcili się, by powstrzymać Wyjącą Klątwę (Howling Curse), ale trwa ona w miejscach, gdzie okrucieństwo i przemoc wywołały wielkie cierpienie.
 P	Miejsca skażone Wyjącą Klątwą to <b>skażone miejsca</b> (str. 422), głodne miejsca lub gorsze, pełne <b>szeptów i wizji</b> (patrz str. 428), które pchają ludzi ku rozlewowi krwi, okrucieństwu i dzikości. Ludzie skażeni Wyjącą Klątwą noszą takie szepty i wizje ze sobą.

@@ -406,7 +406,7 @@ E	<b>gdy rzucasz na ruch i wyrzucasz 6-</b> (chyba że ruch mówi inaczej);
 E	<b>w ramach ruchu Koniec Sesji</b> (str. 232); oraz
 E	<b>gdy mówi tak inny ruch</b>.
 P	„Zaznacz XP” oznacza, że stawiasz kreskę w polu XP w swoim playbooku, zwiększając łączną liczbę XP o 1. O tak:
-P	Gdy zaznaczysz dość XP, możesz je wydać, by <b>Rozpalić Się Jasno</b> (str. 231) albo na <b>Awans na Poziom</b> (str. 81).
+P	Gdy zaznaczysz dość XP, możesz je wydać, by <b>Płonąć Jasno</b> (str. 231) albo na <b>Awans na Poziom</b> (str. 81).
 PAGE	54
 H2	Poziom
 P	Twój poziom odzwierciedla, jak bardzo twój BG urósł w kompetencjach i możliwościach. Zaczynasz na poziomie 1. Gdy zaznaczysz XP równe 6 plus dwukrotność twojego obecnego poziomu, możesz wziąć trochę wolnego i wydać te XP na <b>Awans na Poziom</b> (str. 81).
@@ -590,7 +590,7 @@ B	<b>Obrażenia</b>, <b>punkty zdrowia</b> i <b>pancerz</b> (str. 53), które dz
 B	<b>Instynkt</b>, który opisuje, w jaki sposób zwykle przysparzają ci kłopotów.
 B	<b>Ruchy MG</b>, zapisane jako rzeczy, które mogą/będą robić (np. „ Wywęszyć kłopoty w powiewie wiatru”); nie każdy stronnik je ma.
 B	<b>Cenę</b>, która opisuje, co sprawia, że idą za tobą
-P	Gdy płacisz cenę stronnika, zyskuje on wobec ciebie zapas Lojalności. Możesz potem wydać tę Lojalność, by przezwyciężył strach, oparł się swojemu instynktowi lub tagom albo zrobił coś, czego nie chce robić (w granicach rozsądku). Szczegóły – zob. <b>Wzmocnij więź</b> (str. 464).
+P	Gdy płacisz cenę stronnika, zyskuje on wobec ciebie zapas Lojalności. Możesz potem wydać tę Lojalność, by przezwyciężył strach, oparł się swojemu instynktowi lub tagom albo zrobił coś, czego nie chce robić (w granicach rozsądku). Szczegóły – zob. <b>Wzmocnić Więź</b> (str. 464).
 P	Stronnik z tagiem <i>grupa</i> reprezentuje wiele osób, które mają wspólne statystyki i często działają jak jedna. Członkowie grupy mają te same tagi, maksymalne HP, pancerz, obrażenia, instynkt, ruchy MG i cenę. Dzielą wspólną pulę Lojalności, ale każdy ma własne obecne HP.
 P	Możesz kazać stronnikowi z tagiem <i>grupa</i> działać jako oddział albo wydawać rozkazy poszczególnym członkom.
 P	Gdy któryś z członków się wyróżnia, ty albo MG możecie przypisać tag lub dwa tylko jemu. Na przykład jeśli jesteś Marszałkiem, każdy w twojej drużynie może mieć tagi <i>łucznik</i>, <i>spostrzegawczy</i>, <i>skradający się</i> i <i>szanowany</i>, ale twoja porucznik Eira może być dodatkowo <i>cyniczna</i>.

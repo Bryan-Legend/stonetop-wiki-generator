@@ -14,8 +14,8 @@ P	Jako MG zapoznaj się z Przeglądem świata, <b>playbookiem</b> <b>osady</b> S
 P	Jeśli chodzi o przygotowania fizyczne, poza tą księgą potrzebujesz wydruków następujących materiałów:
 B	1 egzemplarz każdego playbooka postaci
 B	1 egzemplarz playbooka osady
-B	1–4 egzemplarze Przeglądu świata
-B	1–3 egzemplarze handoutu Ruchy i ekwipunek (jeśli możesz, na kolorowym papierze)
+B	1-4 egzemplarze Przeglądu świata
+B	1-3 egzemplarze handoutu Ruchy i ekwipunek (jeśli możesz, na kolorowym papierze)
 B	1 egzemplarz kart arkanów
 B	1 egzemplarz playbooka MG
 P	Wydrukuj pliki PDF tych dokumentów dwustronnie (z obracaniem wzdłuż krótszej krawędzi).

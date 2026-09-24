@@ -50,7 +50,8 @@
       "all_major": "Az összes nagy arkánum",
       "all_minor": "Az összes kis arkánum",
       "uses": "Használat"
-    }
+    },
+    "value": "Érték"
   },
   "js": {
     "feedback_link": "Visszajelzés küldése erről az oldalról",

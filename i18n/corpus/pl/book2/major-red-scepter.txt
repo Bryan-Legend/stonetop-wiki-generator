@@ -7,7 +7,7 @@
 # description: Czerwone Berło (The Red Scepter), wielkie arkanum ze Stonetop: brązowe berło z czerwonym kryształem, które pije krew i rozpala w ludziach żądzę przemocy.
 PAGE	558
 FACE	front
-TH	appendix d: major arcana
+TH	dodatek d: wielkie arkana
 P	◇ <i>, magiczne</i>
 P	Brązowy pręt zakończony jarzącym się czerwonym kryształem, rzeźbiony w ażurowe kształty głodnych, szyderczo wykrzywionych twarzy.
 HR
@@ -23,13 +23,13 @@ B	Opiera się, ale doznaje bolesnych oparzeń (2d4 obrażeń, ignoruje pancerz).
 P	Gdy <b><i>kogoś Rozpalasz, a on w rezultacie zabija jedną lub więcej żywych istot</i></b>, zaznacz 1:
 MARK	4
 P	Gdy <b><i>stawiasz ostatni znacznik</i></b>, odkrywasz tajemnice Berła i zyskujesz Płonącą Nienawiść (patrz rewers).
-P	front
+P	awers
 PAGE	559
 FACE	back
-TH	appendix d: major arcana
-H3	Mysteries of the Red Scepter
+TH	dodatek d: wielkie arkana
+H3	Tajemnice Czerwonego Berła
 HR
-H2	Moves
+H2	Ruchy
 HR
 C	<b>Płonąca Nienawiść</b> <i>(niedaleko, magiczny, przeładowanie)</i> Gdy <b><i>wskazujesz Czerwonym Berłem obiekt swojej nienawiści i wymazujesz 1 ładunek</i></b>, rzuć +CHA: <b>przy 10+</b> Berło zadaje 2d4 obrażeń (<i>krwawy</i>, ignoruje pancerz), objawiających się jako pęcherze oparzeń; <b>przy 7–9</b> jak przy 10+, ale wybierz 1:
 B	Zaznacz Konsekwencję
@@ -52,4 +52,4 @@ C	Od tej pory, gdy <b><i>podżegasz kogoś Berłem do przemocy, a on działa tak
 C	Gdy <b><i>używasz Płonącej Nienawiści</i></b>, coś, co masz przy sobie lub w zasięgu ręki, również zajmuje się ogniem.
 C	Zawsze słyszysz ciche wycie w głębi umysłu. Gdy wieje wiatr, wycie przybiera na sile, przez co trudno ci usłyszeć cokolwiek poza obelgami lub planami przemocy.
 C	Gdy <b><i>Przekonujesz czymkolwiek innym niż groźby, ból lub przemoc</i></b>, najlepszy wynik, jaki możesz uzyskać, to 7–9.
-P	back
+P	rewers

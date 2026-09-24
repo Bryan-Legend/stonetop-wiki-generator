@@ -4,7 +4,7 @@
 # source_sha256: dea8cc9943b974984256b907536cbf83eba0a44ebe772e613ffeb562e2b15b69
 # title: Czerwone Gaje
 # nav_label: Czerwone Gaje
-# description: Czerwone Gaje (Red Groves): kępy drzew w Wielkiej Puszczy, które jesienią czerwienieją – wiedza, zaczepki, mieszkańcy i Gniew Lasu.
+# description: Czerwone Gaje (Red Groves): kępy drzew w Wielkiej Puszczy, które jesienią czerwienieją – wiedza, zaczepki, mieszkańcy i Gniew Puszczy.
 PAGE	314
 P	Pół dnia drogi na wschód od Stonetop rośnie kępa drzew, które w porze jesiennego zrównania dnia z nocą stają się krwistoczerwone (liście, kora i wszystko). Do wiosny barwa wraca do normy. <b>Lud</b> <b>Lasu (Forest Folk)</b> (str. 150) ostrzegał mieszkańców wioski, by unikali tego miejsca. Nigdy nie powiedzieli dlaczego.
 B	Żelazny posmak w powietrzu
@@ -40,8 +40,8 @@ HR
 P	Można tu spotkać dowolnego <b>ducha dziczy</b> (str. 356), ale w każdym gaju żyje co najmniej kilka <b>brennauwed</b> (str. 366), a chronią go <b>coedwaig</b> (str. 369). Gdy Gaje są czerwone, często zaglądają do nich <b>dzierzby</b> (str. 204).
 HR
 ICON	icons/danger.svg
-H3	Gniew Lasu
-P	Zagrożenie (<i>przypadłość</i>)
+H3	Gniew Puszczy
+P	Zagrożenie (<i>plaga</i>)
 P	<b>Instynkt</b>: ukarać winowajcę i tych, którzy go chronią
 P	Im większe przewinienie, tym szybciej klątwa narasta i tym większa pokuta jest wymagana.
 C	Koszmary, gniew zwierząt i ptaków, rośliny więdną i obumierają

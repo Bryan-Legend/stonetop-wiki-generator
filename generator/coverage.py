@@ -27,6 +27,7 @@ import re
 from .text import (
     PAGE_NUMS,
     M_H3,
+    M_VR,
     undouble_words,
     M_BAND,
     M_BOX,
@@ -132,6 +133,13 @@ def unshown_lines(lines: list[str], body_html: str, title: str = "") -> list[str
         key = _norm(_LEADING_NUM.sub("", _TRAILING_REF.sub("", plain)))
         # A line the extractor doubled ("A folktale folktale") is shown once.
         undoubled = _norm(_REPEATED_TAIL.sub(r"\1 \2", undouble_words(plain)))
+        # A table row whose wrapped tail the renderer took back sits
+        # between the row's words and its value (Hillfolk's livestock).
+        if line.startswith(M_VR):
+            item, _, val = line[len(M_VR):].partition("\x03")
+            item_key = _norm(strip_markers(item))
+            if len(item_key) >= _MIN_LEN and item_key in shown:
+                continue
         if len(key) < _MIN_LEN or key in shown or undoubled in shown or (title_key and key in title_key):
             continue
         missing.append(text)

@@ -50,7 +50,8 @@
       "all_major": "Alla stora arkana",
       "all_minor": "Alla små arkana",
       "uses": "Användningar"
-    }
+    },
+    "value": "Värde"
   },
   "js": {
     "feedback_link": "Skicka synpunkter på den här sidan",

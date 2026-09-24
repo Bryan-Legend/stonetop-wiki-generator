@@ -84,7 +84,7 @@ C	<b>AMATOR</b> (Wymaga poziomu 2+ i Lisa) Za każdym razem, gdy bierzesz ten ru
 C	<b>WYCZUCIE NIEBEZPIECZEŃSTWA</b> Zawsze możesz zapytać MG: „Czy jest tu zasadzka albo pułapka?”. Jeśli odpowie „tak”, rzuć +INT: <b>przy 10+</b> zadaj MG oba pytania poniżej; <b>przy 7–9</b> zadaj 1; <b>tak czy inaczej</b> masz przewagę przy następnym rzucie, by działać zgodnie z odpowiedzią.
 Q	Co uruchomi zasadzkę lub pułapkę?
 Q	Co się stanie, gdy zostanie uruchomiona?
-P	<b>Przy 6-</b> nie zaznaczaj PD; wiesz, że jest tu pułapka lub zasadzka, ale na razie nic złego się nie dzieje.
+P	<b>Przy 6-</b> nie zaznaczaj XP; wiesz, że jest tu pułapka lub zasadzka, ale na razie nic złego się nie dzieje.
 C	<b>SWOBODNY BIEG</b> Gdy <b><i>niesiesz lekki ładunek i poruszasz się szybko</i></b> <b><i>i zwinnie</i></b>, masz przewagę przy każdym ruchu, by pokonać lub ominąć fizyczną przeszkodę.
 C	<b>LEPSZA CECHA</b> Za każdym razem, gdy bierzesz ten ruch, zwiększ jedną ze swoich cech o 1 (maksymalnie do +2).
 C	<b>NIEODPARTY UROK</b> Gdy <b><i>masz z kimś do czynienia</i></b>, możesz zapytać jego gracza, czy uważa cię za atrakcyjnego, i otrzymać szczerą odpowiedź (zwykle „tak”).

@@ -28,7 +28,7 @@ B	Twój dotyk (lub upiorna broń) może ranić żywych (ignoruje pancerz)
 P	Pozostajesz zmaterializowany, dopóki się skupiasz; ból, wstrząs czy bezpośrednie światło słońca z pewnością zagrażają twojemu skupieniu.
 HR
 P	• <b>UWIĄZANY</b> Wybierz coś, z czym jesteś związany: twoje doczesne szczątki, miejsce, w którym zginąłeś, przedmiot o osobistym znaczeniu itp.
-P	Gdy <b><i>twoje HP spadają do 0</i></b>, zaznacz konsekwencję (patrz rewers), a twoja istota rozprasza się do następnego zachodu słońca. Odradzasz się w pobliżu swojego uwiązania z połową maksymalnych HP. Jeśli twoje uwiązanie zostało zniszczone, zaznacz Ostateczną Konsekwencję.
+P	Gdy <b><i>twoje HP spadają do 0</i></b>, zaznacz konsekwencję (patrz rewers), a twoja istota rozprasza się do następnego zachodu słońca. Odradzasz się w pobliżu swojej kotwicy z połową maksymalnych HP. Jeśli twoja kotwica została zniszczona, zaznacz Ostateczną Konsekwencję.
 H3	Straszliwy Cel
 P	Wybierz 1:
 HR

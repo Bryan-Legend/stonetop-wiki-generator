@@ -70,7 +70,7 @@ P	• ◇◇ ). Możesz też ignorować cechę <i>nieporęczny</i> każdego panc
 P	Jeśli bierzesz ten ruch na początku gry, dodaj do inwentarza ◇◇ żelazną kolczugę, ◇◇ brązowy kirys lub ◇◇ zbroję łuskową (każde daje 2 pancerza,
 P	<i>ciepły</i>, <i>nieporęczny</i>).
 C	<b>BITEWNY SZAŁ</b> Gdy <b><i>przelewasz krew — swoją lub cudzą — i</i></b> <b><i>zatracasz się w walce</i></b>, ignorujesz strach, ból, kontrolę umysłu i skutki osłabień, dopóki walczysz.
-P	Gdy <b><i>akcja się kończy</i></b>, rzuć +CON: <b>przy 10+</b> ale to był dreszcz, odzyskaj 1d4 HP; <b>przy 7–9</b> brak ci tchu i jesteś nieprzytomny myślami, ale po kilku minutach odpoczynku nic ci nie będzie; <b>przy 6-</b> zaznacz osłabienie, ale nie zaznaczaj PD.
+P	Gdy <b><i>akcja się kończy</i></b>, rzuć +CON: <b>przy 10+</b> ale to był dreszcz, odzyskaj 1d4 HP; <b>przy 7–9</b> brak ci tchu i jesteś nieprzytomny myślami, ale po kilku minutach odpoczynku nic ci nie będzie; <b>przy 6-</b> zaznacz osłabienie, ale nie zaznaczaj XP.
 C2	<b>BERSERKER</b>
 P	(Wymaga Bitewnego Szału)
 P	Gdy <b><i>jesteś w Bitewnym Szale</i></b>, twoje ataki wręcz zyskują cechę <i>obszar</i> i smagasz każdego w pobliżu (przyjaciela i wroga). Rzucaj na obrażenia osobno dla każdego celu.

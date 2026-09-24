@@ -50,7 +50,8 @@
       "all_major": "Wszystkie wielkie arkana",
       "all_minor": "Wszystkie mniejsze arkana",
       "uses": "Użycia"
-    }
+    },
+    "value": "Wartość"
   },
   "js": {
     "feedback_link": "Zgłoś uwagi do tej strony",

@@ -276,7 +276,7 @@ P	• Niech swędzi ich skóra, niech czują się źle
 P	• Nałóż osłabienie, które nie chce ustąpić
 P	• Niech objawy pojawią się (lub wrócą) wiele godzin lub dni po ekspozycji
 P	• Niech objawy utrzymują się lub nasilają, może przez miesiące
-P	BG lub BN wystawieni na takie promieniowanie są podatni na straszliwą, wyniszczającą chorobę, miesiące lub lata później. Rozpisz to jako zagrożenie (<i>przypadłość</i>).
+P	BG lub BN wystawieni na takie promieniowanie są podatni na straszliwą, wyniszczającą chorobę, miesiące lub lata później. Rozpisz to jako zagrożenie (<i>plaga</i>).
 PAGE	408
 HR
 ICON	icons/danger.svg

@@ -50,7 +50,8 @@
       "all_major": "Alle grote arcana",
       "all_minor": "Alle kleine arcana",
       "uses": "Gebruiken"
-    }
+    },
+    "value": "Waarde"
   },
   "js": {
     "feedback_link": "Feedback over deze pagina sturen",

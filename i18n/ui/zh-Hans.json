@@ -50,7 +50,8 @@
       "all_major": "全部大秘宝",
       "all_minor": "全部小秘宝",
       "uses": "次数"
-    }
+    },
+    "value": "价值"
   },
   "js": {
     "feedback_link": "就本页提交反馈",

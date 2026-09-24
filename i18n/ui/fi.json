@@ -50,7 +50,8 @@
       "all_major": "Kaikki suuret arkanat",
       "all_minor": "Kaikki pienet arkanat",
       "uses": "Käyttökerrat"
-    }
+    },
+    "value": "Arvo"
   },
   "js": {
     "feedback_link": "Lähetä palautetta tästä sivusta",

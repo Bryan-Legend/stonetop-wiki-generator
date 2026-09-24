@@ -50,7 +50,8 @@
       "all_major": "Alle store arkana",
       "all_minor": "Alle små arkana",
       "uses": "Anvendelser"
-    }
+    },
+    "value": "Værdi"
   },
   "js": {
     "feedback_link": "Send feedback om denne side",

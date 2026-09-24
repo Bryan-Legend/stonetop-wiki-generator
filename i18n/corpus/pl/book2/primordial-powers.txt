@@ -95,7 +95,7 @@ P	1d12 ograniczenie
 HR
 P	1 Nie zdaje sobie sprawy, czym jest
 P	2 Jest podporządkowany innemu
-P	3-4 Ma <b>uwiąz</b> (str. 358)
+P	3-4 Ma <b>kotwicę</b> (str. 358)
 P	5-7 Wiążą go pewne nienaruszalne zasady
 P	8 Może się wcielać tylko na krótko, w pewnych okolicznościach/czasach
 P	9 Podlega śmiertelnym popędom/potrzebom/ emocjom/słabościom
@@ -105,7 +105,7 @@ P	12 Nie może użyć swej mocy bez strasznych konsekwencji dla siebie/świata
 HR
 P	<i>BG przeszukują trzewia</i> <b><i>Zrujnowanej Wieży</i></b> (str. 332) <i>w poszukiwaniu brązowego</i> <i>hełmu, który służy za oprawę</i> <b><i>Klejnotu Umysłu</i></b> (str. 548)<i>. Na następnej sesji</i> <i>zapewne znajdą</i> <b><i>loch zapomnienia</i></b> (str. 342) <i>i pod wpływem kaprysu postanawiam, że w jednej z</i> <i>cel więzione jest wcielenie.</i>
 P	<i>Nie mam w głowie wiele więcej,</i> <i>więc losuję dwa pierwotne motywy. Wypada 4</i> <i>(„świat duchów: świadomość, symbole</i> <i>i myśl, więź wszystkich rzeczy”)</i> <i>i 12 („portale, możliwości…”). To</i> <i>brzmi jak byt, który burzy bariery między umysłami, snami i rzeczywistością.</i>
-P	<i>Potem wyrzucam 5 na to, dlaczego się wcielił</i> <i>(„by realizować jakiś zamiar”), 4 na jego</i> <i>przejaw („z pozoru naturalne zwierzę”)</i> <i>i 3 na ograniczenie („uwiąz”).</i> <i>Myślę, że wcielił się, by spełniać sny</i> <i>i pragnienia. Wybieram dodatkowe</i> <i>ograniczenie: „Nie może użyć swej mocy bez</i> <i>strasznych konsekwencji”. Przybył spełniać życzenia,</i> <i>ale w rzeczywistości sieje chaos – i dlatego</i> <i>Łowczyni Burz (Stormcatcher) go zamknęła.</i>
+P	<i>Potem wyrzucam 5 na to, dlaczego się wcielił</i> <i>(„by realizować jakiś zamiar”), 4 na jego</i> <i>przejaw („z pozoru naturalne zwierzę”)</i> <i>i 3 na ograniczenie („kotwica”).</i> <i>Myślę, że wcielił się, by spełniać sny</i> <i>i pragnienia. Wybieram dodatkowe</i> <i>ograniczenie: „Nie może użyć swej mocy bez</i> <i>strasznych konsekwencji”. Przybył spełniać życzenia,</i> <i>ale w rzeczywistości sieje chaos – i dlatego</i> <i>Łowczyni Burz (Stormcatcher) go zamknęła.</i>
 HR
 P	SŁOWIK
 P	Samotny, drobny, pierwotny, magiczny,

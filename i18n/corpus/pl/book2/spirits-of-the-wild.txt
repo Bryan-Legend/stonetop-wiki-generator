@@ -296,7 +296,7 @@ P	Gdy <b><i>różdżkujesz kijem z czerwonego drewna</i></b>, zaprowadzi cię do
 ICON	icons/treasure.svg
 H3	Bryła bursztynu
 P	◇, <i>magiczna</i>, Wartość 2
-P	Ma wielkość mniej więcej dwóch pięści, a w jej środku unosi się masa krwiopijnych owadów. Jest kotwicą ambitnego ducha owadów, zarazy i choroby. Traktuj go jak zagrożenie (typ: <i>magiczna istota</i>, <b>Instynkt</b> szerzyć swój kult) z następującymi ruchami:
+P	Ma wielkość mniej więcej dwóch pięści, a w jej środku unosi się masa krwiopijnych owadów. Jest kotwicą ambitnego ducha owadów, zarazy i choroby. Traktuj go jak zagrożenie (typ: <i>istota magiczna</i>, <b>Instynkt</b> szerzyć swój kult) z następującymi ruchami:
 P	• Zażądać krwawej ofiary, wylanej na bursztyn
 P	• Osłonić kogoś przed chorobą, robactwem i trucizną
 P	• Porazić wroga chorobą, robactwem albo jednym i drugim

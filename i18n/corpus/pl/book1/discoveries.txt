@@ -221,7 +221,7 @@ H2	Artefakty jako zagrożenia
 P	<b>Zastanów się, jak BN reagują na artefakty</b>.
 P	Są zaintrygowani? Przerażeni? Zazdrośni?
 P	Czy wieść o nim rozchodzi się do innych miast? Jeśli sposób, w jaki ludzie reagują na artefakt, staje się źródłem kłopotów, rozpisz go jako <b>zagrożenie</b> (str. 277, <i>MacGuffin</i>).
-P	Podobnie <b>jeśli sam artefakt jest źródłem</b> <b>kłopotów</b>, rozpisz go jako zagrożenie – najpewniej <i>magiczną istotę</i> albo <i>przypadłość</i>.
+P	Podobnie <b>jeśli sam artefakt jest źródłem</b> <b>kłopotów</b>, rozpisz go jako zagrożenie – najpewniej <i>istotę magiczną</i> albo <i>plagę</i>.
 P	Jeśli BG chcą zniszczyć, odczarować albo zapieczętować niebezpieczny artefakt, zastanów się nad jego cechami, ustaloną fikcją i tym, co ma sens w twojej grze. <i>Kruchy</i> artefakt powinien być łatwy do zniszczenia; <i>niezniszczalny</i> powinno być znacznie trudniej unicestwić. Ale zniszczenie któregokolwiek z nich może wiązać się z poważnym ryzykiem lub konsekwencjami, jak uwolnienie wrogiego ducha albo skażenie okolicy. Zachęcaj BG, by Znali Się na Rzeczy, Szukali
 P	Wglądu albo Ułożyli Plan, by ustalić, czego to wymaga.
 H2	Sprzedawanie artefaktów
@@ -395,7 +395,7 @@ P	Ustawiaj sceny w razie potrzeby, by rozstrzygać ruchy BG albo rozgrywać opis
 P	Gdy wymaganie arkanum mówi, że „ryzykują __”, niemal na pewno oznacza to Stawienie Czoła Niebezpieczeństwu. Może <b>postawisz ich w trudnym</b> <b>położeniu</b> i zapytasz: „Co robisz?”. A może pozostaniesz w oddalonej perspektywie i zapytasz ogólnie, jak radzą sobie z ryzykiem, na podstawie ich podejścia decydując, na jaką cechę rzucają i jakie mogą być wyniki.
 PAGE	441
 P	Nawet jeśli rozstrzygasz ryzyko w oddalonej perspektywie, przy 7-9 albo 6- możesz przybliżyć akcję, by rozegrać konsekwencje. Ale nie musisz. Mnóstwo konsekwencji i kosztów działa też w oddalonej perspektywie.
-P	Może po prostu trwa to dłużej. A może budzą jakąś od dawna uśpioną broń biologiczną Zielonych Władców – nowe zagrożenie typu <i>przypadłość</i>, które jednak stanie się istotne dopiero w następnej porze roku. <b>Daj sprawom odetchnąć</b>.
+P	Może po prostu trwa to dłużej. A może budzą jakąś od dawna uśpioną broń biologiczną Zielonych Władców – nowe zagrożenie typu <i>plaga</i>, które jednak stanie się istotne dopiero w następnej porze roku. <b>Daj sprawom odetchnąć</b>.
 HR
 P	<i>Caradoc przyprowadza Vahida, by obejrzał na wpół zakopaną tablicę. Nie grozi im bezpośrednie niebezpieczeństwo, a to dokładnie ten rodzaj</i> <i>rzeczy, które bada Vahid, więc po prostu daję mu</i> <i>kartę mniejszego arkanum.</i>
 P	<i>Wcześniej ostrzegłem Caradoca przed dużą</i> <i>bestią w okolicy, więc próbują (bez powodzenia)</i> <i>po cichu wykopać tablicę. Caradoc musi</i> <i>walczyć z beznpolem, ale wykopują</i> <i>tablicę i zanoszą ją do domu. Spełnili</i> <i>pierwsze wymaganie arkanum.</i>
@@ -440,7 +440,7 @@ P	By odzwierciedlić potwora lub BN używającego magicznego artefaktu lub arkan
 E	po prostu <b>wyobrazić sobie, jak działa w jego</b> <b>rękach</b>, i uwzględnić to w swoich opisach i ruchach MG, gdy go odgrywasz;
 E	<b>odzwierciedlić to w jego statystykach</b> jako jedną lub więcej cech, cech szczególnych, ruchów albo ich połączenie;
 E	<b>napisać własne ruchy gracza</b> (str. 551) na to, co się dzieje, gdy używa artefaktu przeciwko BG, i/lub…
-E	<b>rozpisać go jako zagrożenie</b> (najpewniej <i>przypadłość</i>, <i>magiczną istotę</i> albo <i>MacGuffin</i>), jeśli użycie artefaktu przez BN ma wywołać długotrwałe kłopoty. To szczególnie dobry wybór w przypadku wielkich arkanów – ich konsekwencje to świetne złowrogie znaki!
+E	<b>rozpisać go jako zagrożenie</b> (najpewniej <i>plagę</i>, <i>istotę magiczną</i> albo <i>MacGuffin</i>), jeśli użycie artefaktu przez BN ma wywołać długotrwałe kłopoty. To szczególnie dobry wybór w przypadku wielkich arkanów – ich konsekwencje to świetne złowrogie znaki!
 P	Robiąc to wszystko, nie przejmuj się dokładnym odwzorowaniem artefaktu czy arkanum. Magia jest dziwna i kapryśna i może działać inaczej dla różnych osób czy istot. Staraj się uchwycić charakter wymagań, ruchów i wad, ale nie zamartwiaj się zbytnio spójnością.
 PAGE	444
 H2	Tworzenie mniejszych arkanów

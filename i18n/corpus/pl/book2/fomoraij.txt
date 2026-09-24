@@ -28,7 +28,7 @@ H2	Mieszkańcy głębin
 HR
 P	Fomoraij od stuleci mieszkają pod Wielką Puszczą (Great Wood). Ich wpływ z pewnością daje się odczuć, a czasem wysyłają popleczników, ale nie widzieli powierzchni od upadku <b>Vor Svetelik</b> (str. 468).
 P	Aby stworzyć Fomoraij, zacznij od 2 motywów <b>Istot z Głębin</b> (str. 412).
-P	Połącz je z ograniczeniem, które nie pozwala mu wyjść na powierzchnię, naturą jego leża i 2–3 formami. Nadaj mu imię i może złowieszczy tytuł. Rozpisz go jako zagrożenie (<i>złoczyńcę</i>, <i>bestię</i> lub <i>magiczną istotę</i>). Jeśli BG prawdopodobnie będą z nim walczyć, rozpisz go też jako potwora (patrz przykład na str. 142).
+P	Połącz je z ograniczeniem, które nie pozwala mu wyjść na powierzchnię, naturą jego leża i 2–3 formami. Nadaj mu imię i może złowieszczy tytuł. Rozpisz go jako zagrożenie (<i>złoczyńcę</i>, <i>bestię</i> lub <i>istotę magiczną</i>). Jeśli BG prawdopodobnie będą z nim walczyć, rozpisz go też jako potwora (patrz przykład na str. 142).
 P	1d12 ograniczenie
 HR
 P	1-2 Uwięzienie: przypadkowe, sztuczne, za sprawą własnego rozmiaru lub natury (<b>Instynkt</b> chwytać innych, uciec)
@@ -92,7 +92,7 @@ H3	Przekrwiony bursztyn
 P	◇ każdy, <i>magiczny</i>
 P	1d4 klejnoty wielkości pięści, poprzecinane czerwono-czarnymi wtrąceniami.
 P	Gdy <b><i>kapiesz krwią na bursztyn</i></b>, wskaż ujawnionego ducha w swojej obecności i rzuć
-P	+CHA. Jeśli duch ma nienaruszony <b>uwiąz</b> (str. 358), rzucasz z utrudnieniem. <b>Przy</b> <b>10+</b> duch zostaje uwięziony w bursztynie;
+P	+CHA. Jeśli duch ma nienaruszoną <b>kotwicę</b> (str. 358), rzucasz z utrudnieniem. <b>Przy</b> <b>10+</b> duch zostaje uwięziony w bursztynie;
 P	<b>przy 7–9</b> bursztyn zaczyna wsysać ducha, ale ten może jeszcze stawiać opór; <b>przy 6-</b> duch się wyrywa, a bursztyn pęka.
 P	Gdy <b><i>więzisz ducha w przekrwionym</i></b> <b><i>bursztynie</i></b>, ducha szarpie ból i nie może się ujawnić. Naraz można uwięzić tylko jednego ducha. Gdy <b><i>dotykasz bursztynu</i></b> <b><i>gołą skórą</i></b>, możesz porozumiewać się z duchem w środku i uwolnić go, jeśli chcesz (nawet jeśli to nie ty go uwięziłeś).
 P	Znaleziony przekrwiony bursztyn zapewne zawiera ducha, który od stuleci tkwi w nim w męczarniach.
@@ -171,7 +171,7 @@ P	10 Poplecznicy/słudzy/zdolność wysyłania przedłużeń samego siebie
 P	11 Ruchliwość (skakanie, latanie, wspinanie się, ryjenie, przeciskanie się itp.)
 P	12 Nienaturalna odporność/wigor/wytrzymałość
 PB
-P	Jeśli BG lub ważny BN zostanie zakażony przez Fomoraij (albo jednego z jego sług), rozpisz to jako zagrożenie (<i>przypadłość</i>). Jeśli BG dobrowolnie zostaje zakażonym sługą, rozważ stworzenie wkładki do playbooka, czerpiąc inspirację ze <b>Zniewolonego</b> (patrz
+P	Jeśli BG lub ważny BN zostanie zakażony przez Fomoraij (albo jednego z jego sług), rozpisz to jako zagrożenie (<i>plaga</i>). Jeśli BG dobrowolnie zostaje zakażonym sługą, rozważ stworzenie wkładki do playbooka, czerpiąc inspirację ze <b>Zniewolonego</b> (patrz
 P	<i>Księga I</i>, str. 152).
 HR
 P	<i>Chcę dużego, strasznego sługi</i> <b><i>Yaarowslowa Mnogiego</i></b> <i>(str. 142) –</i> <b><i>hagra</i></b> <i>(str. 208), który natknął się na skażone</i> <i>źródło. Losuję „plugawa substancja, wstrzyknięta/</i> <i>wdychana/wypita” i myślę o srebrzystym śluzie Yaarowslowa. Jako sposób kontroli dostaję „zżerając</i> <i>to, czym ofiara niegdyś była”</i> <i>i wyobrażam sobie srebrny śluz,</i> <i>który psuje go od środka, zastępując mu</i> <i>krew i narządy i zalewając jego</i> <i>umysł głosami i urojeniami. Jako dary</i> <i>wybieram „nienaturalna odporność/wigor/wytrzymałość” oraz „sposób szerzenia zakażenia</i> <i>i/lub wpływu pana”. Następnie losuję</i> <i>trzeci dar i dostaję „atak obszarowy”.</i>

@@ -7,7 +7,7 @@
 # description: Laska Bezpowiekiego Oka (The Staff of the Lidless Orb), wielkie arkanum ze Stonetop: zielonkawa szklana kula z kocim okiem na żelaznej lasce, która widzi przez ciemność i iluzję.
 PAGE	540
 FACE	front
-TH	appendix d: major arcana
+TH	dodatek d: wielkie arkana
 P	◇ <i>, blisko</i>, <i>magiczna</i>, <i>niewygodny</i>
 P	Kula z zielonkawego szkła, wytrawiona we wzór kociego oka i osadzona na lasce z szorstkiego, dziobatego czarnego żelaza. Kula chwyta światło i zdaje się jarzyć, a źrenica zdaje się rozszerzać w ciemności i zwężać w szparkę za dnia.
 P	A czasem można by przysiąc, że rozgląda się sama z siebie.
@@ -23,13 +23,13 @@ P	<b>Przy 6-</b> kula ukazuje ci straszliwą wizję jakiegoś odległego czasu l
 MARK	3
 P	Gdy <b><i>stawiasz ostatni znacznik</i></b>, odkrywasz tajemnice Laski i możesz używać Mocy Bezpowiekiego Oka (patrz rewers). Zaznacz jeden z czterech efektów (według wyboru); możesz wywoływać ten efekt.
 P	Gdy <b><i>miałbyś zaznaczyć kółko, ale wszystkie trzy są już zaznaczone</i></b>, zaznacz nowy efekt Mocy Bezpowiekiego Oka. Odtąd możesz wywoływać ten efekt.
-P	front
+P	awers
 PAGE	541
 FACE	back
-TH	appendix d: major arcana
-H3	Mysteries of the Staff of the Lidless Orb
+TH	dodatek d: wielkie arkana
+H3	Tajemnice Laski Bezpowiekiego Oka
 HR
-H2	Moves
+H2	Ruchy
 HR
 C	<b>Moc Bezpowiekiego Oka</b> Gdy <b><i>nosisz laskę i wzywasz moc Oka</i></b>, wybierz jeden z zaznaczonych efektów:
 C	Poślij wzrok w dal, by ujrzeć albo dawny czas miejsca, w którym przebywasz, albo teraźniejszość odległego miejsca, które już odwiedziłeś. Dopóki podtrzymujesz efekt, jesteś ślepy na świat wokół siebie.
@@ -47,4 +47,4 @@ C	Tracisz zdolność dostrzegania piękna. Twoje zmysły się nie zmieniają, al
 C	Zastąp swój instynkt „Wstręt: Zachwycać się rzeczami okropnymi i groteskowymi."
 C	Wyraźnie widzisz brzydotę w innych ludziach. Gdy po raz pierwszy spotykasz BN, możesz zapytać MG: „Jaki sekretny wstyd lub jaką winę dźwiga?" i otrzymać szczerą odpowiedź.
 C	Zaczynasz dostrzegać El'rash-Orrę, Mnogie Oczy, wpatrzone w ciebie z Głębin. Szepcze ci zadanie; odmów — teraz lub później — a Bezpowiekie Oko zgaśnie i stanie się dla ciebie bezużyteczne.
-P	back
+P	rewers
